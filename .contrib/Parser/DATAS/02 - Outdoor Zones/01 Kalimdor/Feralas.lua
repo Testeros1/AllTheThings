@@ -4,16 +4,10 @@
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(FERALAS, {
 		["lore"] = "Feralas is a rainforest surrounded by arid zones in southern Kalimdor. It is known for the mystery surrounding Dire Maul--a former city of the Highborne that remained hermetic and drew upon demonic energy to stay immortal. There is a strong Night Elf presence--both in Feathermoon Stronghold, the base of operations for the Sentinels, and in the numerous ruins scattered around the zones.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_feralas",
-		-- #endif
+		["icon"] = 236764,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(849, {	-- Explore Feralas
-					-- #if BEFORE WRATH
-					["description"] = "Explore Feralas, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(849),	-- Explore Feralas
 				ach(4932, {	-- Feralas Quests
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -354,7 +348,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 14637,	-- Zorbin Fandazzle
 					["sourceQuest"] = 7003,	-- Zapped Giants
 					["coord"] = { 44.8, 43.4, FERALAS },
-					["maxReputation"] = { 169, EXALTED },	-- Steamweedle Cartel, Exalted.
+					["maxReputation"] = { FACTION_STEAMWHEEDLE_CARTEL, EXALTED },	-- Steamwheedle Cartel, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
 					["lvl"] = 45,
@@ -475,6 +469,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 					["coord"] = { 65.9, 62.8, FERALAS },
 					["timeline"] = { ADDED_4_0_3 },
+					["isBreadcrumb"] = true,
 					["groups"] = {
 						objective(1, {	-- 0/6 Soul Essence
 							["provider"] = { "i", 53136 },	-- Soul Essence
@@ -1361,7 +1356,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 14637,	-- Zorbin Fandazzle
 					["sourceQuest"] = 7721,	-- Fuel for the Zapping
 					["coord"] = { 44.8, 43.4, FERALAS },
-					["maxReputation"] = { 169, EXALTED },	-- Steamweedle Cartel, Exalted.
+					["maxReputation"] = { FACTION_STEAMWHEEDLE_CARTEL, EXALTED },	-- Steamwheedle Cartel, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
 					["lvl"] = 45,
@@ -1832,6 +1827,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 					["coord"] = { 65.9, 62.8, FERALAS },
 					["timeline"] = { ADDED_4_0_3 },
+					["isBreadcrumb"] = true,
 					["groups"] = {
 						objective(1, {	-- 0/6 Glowing Soil
 							["providers"] = {
@@ -2737,7 +2733,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(SOD_PHASE_THREE, q(81924, {	-- Wisdom of the Guardians
 					["qg"] = 221985,	-- Tyrisius
 					["coord"] = { 57.2, 69, FERALAS },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["maps"] = { THE_HINTERLANDS, AZSHARA },
 					["classes"] = { DRUID },
 					["lvl"] = 45,
@@ -3155,9 +3151,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			-- #endif
 			n(TREASURES, {
 				i(212991, {	-- Grimoire of the Dire Observer (CI!)
-					--["provider"] = { "o", xxxxx },	-- Carved Eye
+					["provider"] = { "o", 420954 },	-- Carved Eye
 					["description"] = "Click on the Carved Eye in the room under the Maul Arena in Dire Maul",
-					--["coord"] = { X, Y, FERALAS },
+					["coord"] = { 61.5, 30.6, FERALAS },
 					["timeline"] = { ADDED_10_2_5 },
 				}),
 				i(8564, {	-- Hippogryph Egg
@@ -3409,8 +3405,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 	}),
 }));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(42078),	-- Ysondre's Seal - if you are druid and done the "Sealing the Dream" (questID 25398) you can reopen the Feralas portal
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(KALIMDOR, {
+		m(FERALAS, {
+			q(42078),	-- Ysondre's Seal - if you are druid and done the "Sealing the Dream" (questID 25398) you can reopen the Feralas portal
+		}),
 	}),
-});
+})));

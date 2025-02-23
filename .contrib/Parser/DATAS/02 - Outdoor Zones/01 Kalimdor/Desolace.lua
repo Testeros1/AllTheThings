@@ -8,9 +8,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "Centaur control this rugged wilderness. Desolace is a land of craggy rock faces and stormy skies, and the rampaging centaur let no other race survive. Five centaur tribes strike from individual strongholds, but the great fortress of Maraudon occasionally plays host to them all.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_desolace",
-		-- #endif
+		["icon"] = 236742,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(4930, {	-- Desolace Quests
@@ -75,11 +73,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #endif
 					-- #endif
 				}),
-				explorationAch(848, {	-- Explore Desolace
-					-- #if BEFORE WRATH
-					["description"] = "Explore Desolace, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(848),	-- Explore Desolace
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -102,14 +96,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						["description"] = "Found in the southeastern area of Desolace. It only spawns during the night between 6:30pm to 6:30am PST(US)/CEST(EU)/AEST(OCE).",
 						-- #endif
 					}),
-					pet(480),	-- Topaz Shale Hatchling (PET!)
+					pet(480, {	-- Topaz Shale Hatchling (PET!)
+						["description"] = "The biggest concentration can be found in Desolace, the orange section of open world Maraudon. Can also be found in Deepholm around Therazane's Throne, beneath Silvermarsh, as well as inside Fungal Deep.",
+						["coords"] = {
+							{ 26.8, 43.5, DESOLACE },	-- Maraudon entrance
+							{ 69.4, 68.2, DEEPHOLM },	-- Cavern beneath Silvermarsh
+							{ 68.65, 28.5, DEEPHOLM },	-- Fungal Deep cavern entrance
+							{ 57.0, 13.2, DEEPHOLM },	-- Therazane's Throne
+						},
+					}),
 				},
 			}),
 			explorationHeader({
 				-- #if AFTER CATA
 				exploration(4804),	-- Cenarion Wildlands
 				-- #endif
-				exploration(2405),	-- Ethel Rethor
+				visit_exploration(2405,{coord={41.6,29.8,DESOLACE}}),	-- Ethel Rethor
 				-- #if AFTER CATA
 				exploration(4803),	-- Furien's Post
 				-- #endif
@@ -126,16 +128,14 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(604),	-- Magram Village / Shok'Thokar [CATA+]
 				-- #endif
 				exploration(602),	-- Mannoroc Coven
-				-- #if AFTER CATA
-				exploration(2100),	-- Maraudon
-				-- #endif
+				visit_exploration(2100,{coord={29.4,62.3,DESOLACE}}),	-- Maraudon
 				exploration(608),	-- Nijel's Point
 				exploration(2406),	-- Ranazjar Isle
 				exploration(603),	-- Sargeron
 				exploration(2198),	-- Shadowbreak Ravine
 				exploration(2408),	-- Shadowprey Village
 				-- #if AFTER CATA
-				exploration(604),	-- Shok'Thokar [CATA+] / Magram Village
+				visit_exploration(604,{coord={66.0,76.7,DESOLACE}}),	-- Shok'Thokar [CATA+] / Magram Village
 				exploration(4796),	-- Slitherblade Shore
 				-- #endif
 				exploration(2404),	-- Tethris Aran
@@ -149,8 +149,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(607),	-- Valley of Spears
 			}),
 			n(FACTIONS, {
-				faction(92, {	-- Gelkis Clan Centaur
-					["icon"] = "Interface\\Icons\\INV_Misc_Head_Centaur_01",
+				faction(FACTION_GELKIS_CLAN_CENTAUR, {	-- Gelkis Clan Centaur
+					["icon"] = 134151,
 					-- #if AFTER CATA
 					-- #if ANYCLASSIC
 					-- CRIEVE NOTE: Blizzard included the rep update with Cata instead of making us wait until 8.0.1. :)
@@ -162,13 +162,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["timeline"] = { REMOVED_4_0_3, ADDED_8_0_1 },
 					-- #endif
 					-- #else
-					["minReputation"] = { 92, HONORED },	-- Gelkis Clan Centaur, must be Honored.
-					["maxReputation"] = { 93, HONORED },	-- Magram Clan Centaur, must be lower than Honored.
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.DesolaceCentaurs,
+					["minReputation"] = { FACTION_GELKIS_CLAN_CENTAUR, HONORED },	-- Gelkis Clan Centaur, must be Honored.
+					["maxReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, HONORED },	-- Magram Clan Centaur, must be lower than Honored.
+					["OnTooltip"] = [[_.OnTooltipDB.DesolaceCentaurs]],
 					-- #endif
 				}),
-				faction(93, {	-- Magram Clan Centaur
-					["icon"] = "Interface\\Icons\\INV_Misc_Head_Centaur_01",
+				faction(FACTION_MAGRAM_CLAN_CENTAUR, {	-- Magram Clan Centaur
+					["icon"] = 134151,
 					-- #if AFTER CATA
 					-- #if ANYCLASSIC
 					-- CRIEVE NOTE: Blizzard included the rep update with Cata instead of making us wait until 8.0.1. :)
@@ -180,9 +180,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["timeline"] = { REMOVED_4_0_3, ADDED_8_0_1 },
 					-- #endif
 					-- #else
-					["minReputation"] = { 93, HONORED },	-- Magram Clan Centaur, must be Honored.
-					["maxReputation"] = { 92, HONORED },	-- Gelkis Clan Centaur, must be lower than Honored.
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.DesolaceCentaurs,
+					["minReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, HONORED },	-- Magram Clan Centaur, must be Honored.
+					["maxReputation"] = { FACTION_GELKIS_CLAN_CENTAUR, HONORED },	-- Gelkis Clan Centaur, must be lower than Honored.
+					["OnTooltip"] = [[_.OnTooltipDB.DesolaceCentaurs]],
 					-- #endif
 				}),
 			}),
@@ -321,7 +321,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1386, {	-- Assault on the Kolkar
 					["qg"] = 5398,	-- Warug
 					["sourceQuest"] = 1385,	-- Brutal Politics
-					["minReputation"] = { 93, FRIENDLY },	-- Magram Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, FRIENDLY },	-- Magram Clan Centaur, Friendly.
 					["coord"] = { 74.8, 68.0, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,	-- TODO: Double check that this is only Alliance Only
@@ -473,7 +473,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						1386,	-- Assault on the Kolkar
 						1367,	-- Magram Alliance
 					},
-					["minReputation"] = { 93, FRIENDLY },	-- Magram Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, FRIENDLY },	-- Magram Clan Centaur, Friendly.
 					["coord"] = { 74.8, 68.0, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -1048,7 +1048,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1371, {	-- Gizmo for Warug
 					["qg"] = 5398,	-- Warug
 					["sourceQuest"] = 1369,	-- Broken Tears
-					["minReputation"] = { 93, FRIENDLY },	-- Magram Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, FRIENDLY },	-- Magram Clan Centaur, Friendly.
 					["coord"] = { 74.8, 68.0, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 4392, 1 }},	-- Advanced Target Dummy
@@ -1103,17 +1103,18 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 					},
 				}),
-				q(25938, {	-- Help for Desolace (mutually exclusive with Rerouted! and Hero's Call: Desolace!)
+				q(25938, {	-- Help for Desolace
 					["qg"] = 41487,	-- Hierophant Malyk
 					["coord"] = { 33.0, 59.6, STONETALON_MOUNTAINS },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isBreadcrumb"] = true,
 				}),
-				heroscall(q(28531, {    -- Hero's Call: Desolace! (breadcrumb quest for 14384, not available if 25938 is completed) (max level 33)
+				heroscall(q(28531, {    -- Hero's Call: Desolace!
 					["timeline"] = { ADDED_4_0_3 },
 					["maps"] = { DARNASSUS, THE_EXODAR },	-- Only found in Darnassus & The Exodar in Cataclysm.
 					["isBreadcrumb"] = true,
+					["lockCriteria"] = { 1, "questID", 25938 },	-- Help for Desolace
 					-- #if BEFORE 7.3.5
 					-- Cataclysm: Minimum is level 29. (TODO: Confirm this.)
 					-- Cataclysm: Maximum is level 33 (TODO: Test max level between 32 and 37)
@@ -1124,7 +1125,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(SOD_PHASE_TWO, q(79229, {	-- Highway Robbery
 					["provider"] = { "o", 417353 },	-- Extinguished Campfire
 					["coord"] = { 47.5, 54.6, DESOLACE },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 30,
 				})),
 				-- #endif
@@ -1257,7 +1258,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1380, {	-- Khan Hratha (Gelkis)
 					["qg"] = 5397,	-- Uthek the Wise
 					["sourceQuest"] = 1374,	-- Khan Jehn
-					["minReputation"] = { 92, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_GELKIS_CLAN_CENTAUR, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
 					["coord"] = { 36.2, 79.2, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -1279,7 +1280,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1381, {	-- Khan Hratha (Magram)
 					["qg"] = 5398,	-- Warug
 					["sourceQuest"] = 1375,	-- Khan Shaka
-					["minReputation"] = { 93, FRIENDLY },	-- Magram Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, FRIENDLY },	-- Magram Clan Centaur, Friendly.
 					["coord"] = { 74.8, 68.0, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -1301,7 +1302,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1374, {	-- Khan Jehn
 					["qg"] = 5397,	-- Uthek the Wise
 					["sourceQuest"] = 1373,	-- Ongeku
-					["minReputation"] = { 92, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_GELKIS_CLAN_CENTAUR, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
 					["coord"] = { 36.2, 79.2, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -1316,7 +1317,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1375, {	-- Khan Shaka
 					["qg"] = 5398,	-- Warug
 					["sourceQuest"] = 1371,	-- Gizmo for Warug
-					["minReputation"] = { 93, FRIENDLY },	-- Magram Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_MAGRAM_CLAN_CENTAUR, FRIENDLY },	-- Magram Clan Centaur, Friendly.
 					["coord"] = { 74.8, 68.0, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -1457,14 +1458,14 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 11438,	-- Bibbly F'utzbuckle
 					["sourceQuest"] = 79229,	-- Highway Robbery
 					["coord"] = { 62.2, 38.8, DESOLACE },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 30,
 				})),
 				-- #endif
 				q(1373, {	-- Ongeku
 					["qg"] = 5397,	-- Uthek the Wise
 					["sourceQuest"] = 1370,	-- Stealing Supplies
-					["minReputation"] = { 92, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_GELKIS_CLAN_CENTAUR, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
 					["coord"] = { 36.2, 79.2, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { SWAMP_OF_SORROWS },
@@ -1809,7 +1810,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(14384, {	-- Rerouted!
 					["qg"] = 36410,	-- Officer Jankie
-					["sourceQuest"] = 28531,	-- Hero's Call: Desolace!
+					["sourceQuests"] = {
+						25938,	-- Help for Desolace
+						28531,	-- Hero's Call: Desolace!
+					},
 					["coord"] = { 54.25, 9.29, DESOLACE },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -1978,7 +1982,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(1370, {	-- Stealing Supplies
 					["qg"] = 5397,	-- Uthek the Wise
 					["sourceQuest"] = 1384,	-- Raid on the Kolkar
-					["minReputation"] = { 92, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
+					["minReputation"] = { FACTION_GELKIS_CLAN_CENTAUR, FRIENDLY },	-- Gelkis Clan Centaur, Friendly.
 					["coord"] = { 36.2, 79.2, DESOLACE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -2085,7 +2089,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								4705,	-- Burning Blade Invoker
 							},
 						}),
-						objective(2, {	-- 	Find someone who can tell you about the hammer
+						objective(2, {	-- Find someone who can tell you about the hammer
 							["provider"] = { "n", 5492 },	-- Katherine the Pure <Paladin Trainer>
 							["coord"] = { 37.8, 31.6, STORMWIND_CITY },
 						}),
@@ -2625,7 +2629,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(SOD_PHASE_TWO, i(213513, {	-- Libram of Deliverance
 					["provider"] = { "o", 423695 },	-- Libram of Deliverance
 					["coord"] = { 66.5, 7.5, DESOLACE },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {

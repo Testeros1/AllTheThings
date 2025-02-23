@@ -72,12 +72,18 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["coord"] = { 57.0, 30.6, 1159 },	-- Blackrock Depths: Dark Iron Dwarf Scenario
 				["maps"] = { 1160 },	-- Blackrock Depths: Dark Iron Dwarf Scenario
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(163708),	-- Ironfoe (QI!)
+				},
 			}),
 			q(53342, {	-- Molten Core
 				["sourceQuests"] = { 53351 },	-- The MOTHERLODE!!: Ironfoe
 				["provider"] = { "n", 133197 },	-- Moira Thaurissan
 				["coord"] = { 52.0, 13.8, STORMWIND_CITY },
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(163693),	-- Fragment o' the Molten Core (QI!)
+				},
 			}),
 			q(53352, {	-- Firelands
 				["sourceQuests"] = { 53342 },	-- Molten Core
@@ -111,7 +117,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(161329),	-- Tabard of the Dark Iron
-					i(157022),	-- Letter from King Anduin Wrynn
+					i(157022),	-- Letter from King Anduin Wrynn (QI!)
 				},
 			}),
 			q(53500, {	-- Stranger in a Strange Land
@@ -124,10 +130,13 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 		},
 	}),
 	header(HEADERS.Race, EARTHEN_ALLIANCE, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 }}, {
-		-- TODO: Make this automated again when we can
-		achraw(40307, {	-- Allied Races: Earthen
-			-- TODO: missing questid 83503, currently not sourced
-			crit(66993), -- The War Within campaign
+		-- TODO: Why isn't this achievement being automated? Is it because all quests already belong to other criteria of other achievements?
+		ach(40307, {	-- Allied Races: Earthen
+			crit(66993, { -- The War Within campaign
+				["_quests"] = {
+					83503,	-- Return to Dornogal
+				},
+			}),
 			crit(68162, { -- Mourning Rise
 				["_quests"] = {
 					82895, -- Mourning Rise
@@ -143,16 +152,20 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 					79530, -- Merrix and Steelvein
 				},
 			}),
+			i(223572),	-- Slatestone Ramolith (MOUNT!)
 		}),
 		q(79200, {	-- Who am I?
 			--["sourceQuests"] = { xx },	-- probably some hqt or something like from adventure mode (if they didn't change requirement?)
 			["provider"] = { "n", 221839 },	-- Dawn
 			["coord"] = { 89.4, 48.0, 2322 },
+			["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE },
 		}),
-		q(79201, {	-- The Analysis Interface
+		q(79201, {	-- The Analysis Interface (non-Hunter)
 			["sourceQuests"] = { 79200 },	-- Who am I?
 			["provider"] = { "n", 221891 },	-- Foreman Uzjax
 			["coord"] = { 62.6, 49.2, 2322 },	-- Hall of Awakening
+			["classes"] = exclude({ HUNTER }, EARTHEN_CLASSES),
+			["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE },
 			["g"] = {
 				-- bag
 				i(222982),	-- Earthen Satchel
@@ -219,20 +232,47 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				i(222994),	-- Earthen Staff
 			},
 		}),
+		q(83328, {	-- The Analysis Interface (Hunter)
+			["sourceQuests"] = { 79200 },	-- Who am I?
+			["provider"] = { "n", 221891 },	-- Foreman Uzjax
+			["coord"] = { 62.6, 49.2, 2322 },	-- Hall of Awakening
+			["classes"] = HUNTER,
+			["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE },
+			["g"] = {
+				-- bag
+				i(222982),	-- Earthen Satchel
+				-- mail
+				-- hunter (a)
+				i(219412),	-- Earthen Belt
+				i(219407),	-- Earthen Chestpiece
+				i(219410),	-- Earthen Coif
+				i(219411),	-- Earthen Greaves
+				i(219409),	-- Earthen Handguards
+				i(219408),	-- Earthen Striders
+				-- hunter missing shoulder piece (bug reported)
+			},
+		}),
 		q(79202, {	-- Rock Beats Rock
-			["sourceQuests"] = { 79201 },	-- The Analysis Interface
+			["sourceQuests"] = {
+				79201,	-- The Analysis Interface (non-Hunter)
+				83328,	-- The Analysis Interface (Hunter)
+			},
+			["sourceQuestNumRequired"] = 1,
 			["provider"] = { "n", 221888 },	-- Dawn
 			["coord"] = { 47.7, 54.7, 2322 },
+			["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE },
 		}),
 		q(79203, {	-- Authorization: Negated
 			["sourceQuests"] = { 79202 },	-- Rock Beats Rock
 			["provider"] = { "n", 221898 },	-- Speaker Kuldas
 			["coord"] = { 30.9, 48.5, 2322 },
+			["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE },
 		}),
 		q(79204, {	-- Whoever You Want to Be
 			["sourceQuests"] = { 79203 },	-- Authorization: Negated
 			["provider"] = { "n", 221900 },	-- Speaker Kuldas
 			["coord"] = { 16.3, 48.1, 2322 },
+			["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE },
 			["g"] = {
 				i(224166),	-- Awakened Tabard
 			},
@@ -251,54 +291,53 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 			["races"] = { EARTHEN_ALLIANCE },
 			["g"] = {
 				--spell(452029),	-- Ensemble: Earthen Copper Regalia
-				--according to in-game report this was added (double up in unsorted)
-				--i(224195),	-- Earthen Shoulders
-				--i(224196),	-- Earthen Trousers
-				--i(224197),	-- Earthen Grips
-				--i(224198),	-- Earthen Vest
-				--i(224199),	-- Earthen Boots
-				--i(224200),	-- Earthen Chain
-				--i(224201),	-- Earthen Chestpiece
-				--i(224202),	-- Earthen Striders
-				--i(224203),	-- Earthen Handguards
-				--i(224204),	-- Earthen Coif
-				--i(224205),	-- Earthen Greaves
-				--i(224206),	-- Earthen Belt
-				--i(224207),	-- Earthen Helm
-				--i(224208),	-- Earthen Breastplate
-				--i(224209),	-- Earthen Sabatons
-				--i(224210),	-- Earthen Gauntlets
-				--i(224211),	-- Earthen Legguards
-				--i(224212),	-- Earthen Mantle
-				--i(224213),	-- Earthen Girdle
-				--i(224214),	-- Earthen Vestment
-				--i(224215),	-- Earthen Sandals
-				--i(224216),	-- Earthen Handbraces
-				--i(224217),	-- Earthen Hood
-				--i(224218),	-- Earthen Kilt
-				--i(224219),	-- Earthen Waistguard
-				--i(224220),	-- Earthen Collar
-				--i(224221),	-- Earthen Slippers
-				--i(224222),	-- Earthen Gloves
-				--i(224223),	-- Earthen Waistcoat
-				--i(224224),	-- Earthen Toolbelt
-				--i(224225),	-- Earthen Cogwheel
-				--i(224226),	-- Earthen Chestguard
-				--i(224227),	-- Earthen Footguards
-				--i(224228),	-- Earthen Handwraps
-				--i(224229),	-- Earthen Mining Hat
-				--i(224230),	-- Earthen Leggings
-				--i(224231),	-- Earthen Cord
-				--i(224241),	-- Earthen Spire
-				--i(224242),	-- Earthen Handaxe
-				--i(224243),	-- Earthen Shiv
-				--i(224244),	-- Earthen Staff
-				--i(224245),	-- Earthen Bulwark
-				--i(224246),	-- Earthen Blade
-				--i(224247),	-- Earthen Cleaver
-				--i(224248),	-- Earthen Blunderbuss
-				--i(224249),	-- Earthen Shillelagh
-				--i(226363),	-- Earthen Backpack
+				i(224195),	-- Earthen Shoulders
+				i(224196),	-- Earthen Trousers
+				i(224197),	-- Earthen Grips
+				i(224198),	-- Earthen Vest
+				i(224199),	-- Earthen Boots
+				i(224200),	-- Earthen Chain
+				i(224201),	-- Earthen Chestpiece
+				i(224202),	-- Earthen Striders
+				i(224203),	-- Earthen Handguards
+				i(224204),	-- Earthen Coif
+				i(224205),	-- Earthen Greaves
+				i(224206),	-- Earthen Belt
+				i(224207),	-- Earthen Helm
+				i(224208),	-- Earthen Breastplate
+				i(224209),	-- Earthen Sabatons
+				i(224210),	-- Earthen Gauntlets
+				i(224211),	-- Earthen Legguards
+				i(224212),	-- Earthen Mantle
+				i(224213),	-- Earthen Girdle
+				i(224214),	-- Earthen Vestment
+				i(224215),	-- Earthen Sandals
+				i(224216),	-- Earthen Handbraces
+				i(224217),	-- Earthen Hood
+				i(224218),	-- Earthen Kilt
+				i(224219),	-- Earthen Waistguard
+				i(224220),	-- Earthen Collar
+				i(224221),	-- Earthen Slippers
+				i(224222),	-- Earthen Gloves
+				i(224223),	-- Earthen Waistcoat
+				i(224224),	-- Earthen Toolbelt
+				i(224225),	-- Earthen Cogwheel
+				i(224226),	-- Earthen Chestguard
+				i(224227),	-- Earthen Footguards
+				i(224228),	-- Earthen Handwraps
+				i(224229),	-- Earthen Mining Hat
+				i(224230),	-- Earthen Leggings
+				i(224231),	-- Earthen Cord
+				i(224241),	-- Earthen Spire
+				i(224242),	-- Earthen Handaxe
+				i(224243),	-- Earthen Shiv
+				i(224244),	-- Earthen Staff
+				i(224245),	-- Earthen Bulwark
+				i(224246),	-- Earthen Blade
+				i(224247),	-- Earthen Cleaver
+				i(224248),	-- Earthen Blunderbuss
+				i(224249),	-- Earthen Shillelagh
+				i(226363),	-- Earthen Backpack
 			},
 		}),
 		q(81888, {	-- For the Horde [H]
@@ -312,8 +351,57 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 			["provider"] = { "n", 133407 },	-- Ambassador Blackguard
 			["coord"] = { 39.4, 79.5, ORGRIMMAR },
 			["races"] = { EARTHEN_HORDE },
-			-- didn't have Ensemble (spell) as reward here
-			-- and didn't fire 82770, 82788, 82789 (they are already flagged as completed)
+			["g"] = {
+				-- didn't have Ensemble (spell) as reward here
+				-- and didn't fire 82770, 82788, 82789 (they are already flagged as completed)
+				i(224195),	-- Earthen Shoulders
+				i(224196),	-- Earthen Trousers
+				i(224197),	-- Earthen Grips
+				i(224198),	-- Earthen Vest
+				i(224199),	-- Earthen Boots
+				i(224200),	-- Earthen Chain
+				i(224201),	-- Earthen Chestpiece
+				i(224202),	-- Earthen Striders
+				i(224203),	-- Earthen Handguards
+				i(224204),	-- Earthen Coif
+				i(224205),	-- Earthen Greaves
+				i(224206),	-- Earthen Belt
+				i(224207),	-- Earthen Helm
+				i(224208),	-- Earthen Breastplate
+				i(224209),	-- Earthen Sabatons
+				i(224210),	-- Earthen Gauntlets
+				i(224211),	-- Earthen Legguards
+				i(224212),	-- Earthen Mantle
+				i(224213),	-- Earthen Girdle
+				i(224214),	-- Earthen Vestment
+				i(224215),	-- Earthen Sandals
+				i(224216),	-- Earthen Handbraces
+				i(224217),	-- Earthen Hood
+				i(224218),	-- Earthen Kilt
+				i(224219),	-- Earthen Waistguard
+				i(224220),	-- Earthen Collar
+				i(224221),	-- Earthen Slippers
+				i(224222),	-- Earthen Gloves
+				i(224223),	-- Earthen Waistcoat
+				i(224224),	-- Earthen Toolbelt
+				i(224225),	-- Earthen Cogwheel
+				i(224226),	-- Earthen Chestguard
+				i(224227),	-- Earthen Footguards
+				i(224228),	-- Earthen Handwraps
+				i(224229),	-- Earthen Mining Hat
+				i(224230),	-- Earthen Leggings
+				i(224231),	-- Earthen Cord
+				i(224241),	-- Earthen Spire
+				i(224242),	-- Earthen Handaxe
+				i(224243),	-- Earthen Shiv
+				i(224244),	-- Earthen Staff
+				i(224245),	-- Earthen Bulwark
+				i(224246),	-- Earthen Blade
+				i(224247),	-- Earthen Cleaver
+				i(224248),	-- Earthen Blunderbuss
+				i(224249),	-- Earthen Shillelagh
+				i(226363),	-- Earthen Backpack
+			},
 		}),
 	})),
 	race(HIGHMOUNTAIN_TAUREN, {
@@ -441,7 +529,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(157757),	-- Highmountain Tabard
-					i(157028),	-- Letter from Lady Sylvannas
+					i(157028),	-- Letter from Lady Sylvannas (QI!)
 				},
 			}),
 			q(50319, {	-- Stranger in a Strange Land
@@ -621,7 +709,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(165010),	-- Tabard of Kul Tiras
-					i(157022),	-- Letter from King Anduin Wrynn
+					i(157022),	-- Letter from King Anduin Wrynn (QI!)
 				},
 			}),
 			q(55146, {	-- Stranger in a Strange Lane
@@ -673,7 +761,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(157756),	-- Lightforged Tabard
-					i(157022),	-- Letter from King Anduin Wrynn
+					i(157022),	-- Letter from King Anduin Wrynn (QI!)
 				},
 			}),
 			q(50313, {	-- Stranger in a Strange Land
@@ -767,7 +855,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(161328),	-- Tabard of the Mag'har Clans
-					i(157028),	-- Letter from Lady Sylvannas
+					i(157028),	-- Letter from Lady Sylvannas (QI!)
 				},
 			}),
 			q(53502, {	-- Stranger in a Strange Land
@@ -895,7 +983,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(174068),	-- Mechagonian Tabard
-					i(157022),	-- Letter from King Anduin Wrynn
+					i(157022),	-- Letter from King Anduin Wrynn (QI!)
 				},
 			}),
 			q(58147, {	-- Stranger in a Strange Land
@@ -951,7 +1039,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(157759),	-- Shal'dorei Tabard
-					i(157028),	-- Letter from Lady Sylvannas
+					i(157028),	-- Letter from Lady Sylvannas (QI!)
 				},
 			}),
 			q(50303, {	-- Stranger in a Strange Land
@@ -997,7 +1085,7 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 				["lvl"] = 20,
 				["g"] = {
 					i(157758),	-- Ren'dorei Tabard
-					i(157022),	-- Letter from King Anduin Wrynn
+					i(157022),	-- Letter from King Anduin Wrynn (QI!)
 				},
 			}),
 			q(50305, {	-- Stranger in a Strange Land
@@ -1353,7 +1441,10 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 			-- Zandalari Troll Starter Quests
 			q(55137, {	-- For the Horde
 				["provider"] = { "n", 146335 },	--  Queen Talanji
-				["coord"] = { 42.2, 9.4, DAZARALOR },
+				["coords"] = {
+					{ 42.2, 9.4, DAZARALOR },
+					{ 49.9, 46.6, DAZARALOR },
+				},
 				["races"] = { ZANDALARI },
 				["lvl"] = 20,
 				["g"] = {
@@ -1375,11 +1466,11 @@ root(ROOTS.Character, n(ALLIED_RACES, {
 	}),
 }));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 } }, {
 	n(ALLIED_RACES, {
 		q(48575),	-- Turned in "The Call for Allies" in stormwind. Possibly used to denote flag activity? Maybe an alliance/horde equivalent?
 		q(53441),	-- Turned in "The Call for Allies" in stormwind. Possibly used to denote flag activity?
 		q(53468),	-- Turned in "The Call for Allies" (49930) Orgrimmar
 		q(48432),	-- Unknown. Triggered as horde sometime after turning in "The Call for Allies" at 110 and before turning in "Hour of Reckoning." Could be phasing related?
 	}),
-}));
+})));

@@ -8,17 +8,11 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			8,	-- Palemane Rock
 			9,	-- The Venture Co. Mine
 		},
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_mulgore_01",
-		-- #endif
+		["icon"] = 236809,
 		["groups"] = {
 			m(CAMP_NARACHE, {
 				["lore"] = "Camp Narache is the starting area and town for the Tauren, which is located in southern Mulgore at the northern edge of the Red Cloud Mesa. Tauren Shamans will find their first totem quest here for the Earth Totem. Camp Narache is the main village of the Hawkwind Tribe, and its Chief is a member of that Tribe.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Tauren_Male",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Tauren_Male")]],
-				-- #endif
+				["icon"] = 236454,
 				-- #if BEFORE MOP
 				["zone-text-areas"] = {
 					221,	-- Camp Narache
@@ -126,7 +120,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 						q(1519, {	-- Call of Earth (1/3)
 							["qg"] = 5888,	-- Seer Ravenfeather
-							["altQuests"] = { 1516 }, -- Call of Earth (1/3 Durotar)
+							["altQuests"] = { 1516 },	-- Call of Earth (1/3 Durotar)
 							["coord"] = { 44.8, 76.2, MULGORE },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -145,7 +139,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								{ "i", 6635 },	-- Earth Sapta
 							},
 							["sourceQuest"] = 1519,	-- Call of Earth (1/3)
-							["altQuests"] = { 1517 }, -- Call of Earth (2/3 Durotar)
+							["altQuests"] = { 1517 },	-- Call of Earth (2/3 Durotar)
 							["coord"] = { 44.8, 76.2, MULGORE },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -158,7 +152,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								{ "i", 6656 },	-- Rough Quartz
 							},
 							["sourceQuest"] = 1520,	-- Call of Earth (2/3)
-							["altQuests"] = { 1518 }, -- Call of Earth (3/3 Durotar)
+							["altQuests"] = { 1518 },	-- Call of Earth (3/3 Durotar)
 							["coord"] = { 53.8, 80.4, MULGORE },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -191,7 +185,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(1462, {	-- Earth Sapta
 							["qg"] = 5888,	-- Seer Ravenfeather
 							["sourceQuest"] = 1519,	-- Call of Earth (1/3)
-							["altQuests"] = { 1463 }, -- Earth Sapta (Durotar)
+							["altQuests"] = { 1463 },	-- Earth Sapta (Durotar)
 							["coord"] = { 44.8, 76.2, MULGORE },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -647,11 +641,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				},
 			}),
 			n(ACHIEVEMENTS, {
-				explorationAch(736, {	-- Explore Mulgore
-					-- #if BEFORE WRATH
-					["description"] = "Explore Mulgore, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(736),	-- Explore Mulgore
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -678,7 +668,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(4836),	-- Stonetalon Pass
 				-- #endif
 				exploration(820),	-- The Golden Plains
-				exploration(821),	-- The Rolling Plains
+				visit_exploration(821,{coord={61.9,64.1,MULGORE}}),	-- The Rolling Plains
 				exploration(360),	-- The Venture Co. Mine
 				exploration(1638),	-- Thunder Bluff
 				exploration(397),	-- Thunderhorn Water Well
@@ -1219,6 +1209,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				}),
 				q(14438, {	-- Sharing the Land
+							-- For some reason, on Retail this quest got marked as completed when [The Angerfang Menace (26189)] in Wetlands got turned in. Check if it happens vice-versa. -Exo 10-01-25
 					["qg"] = 36644,	-- Ahmo Thunderhorn
 					["coord"] = { 47.6, 59.5, MULGORE },
 					["timeline"] = { ADDED_4_0_1 },
@@ -1891,7 +1882,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 
 					-- Available to Tauren without faction requirements.
-					["minReputation"] = { 81, EXALTED },	-- Thunder Bluff, Exalted.
+					["minReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },	-- Thunder Bluff, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. TAUREN .. [[ then
 							t.minReputation = nil;
@@ -1990,7 +1981,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 47.6, 58.4, MULGORE },
 					-- #endif
 					-- Available to Tauren without faction requirements.
-					["minReputation"] = { 81, EXALTED },	-- Thunder Bluff, Exalted.
+					["minReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },	-- Thunder Bluff, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. TAUREN .. [[ then
 							t.minReputation = nil;

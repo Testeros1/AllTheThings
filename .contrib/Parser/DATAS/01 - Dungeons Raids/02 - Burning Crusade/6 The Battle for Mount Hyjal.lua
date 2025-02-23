@@ -20,623 +20,620 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_THREE
 		["lvl"] = lvlsquish(70, 68, 30),	-- The attunement quests were originally level 70 required, but once removed, level 68s could zone in.
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				achWithRep(959, 990, {	-- The Scale of the Sands
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with The Scale of the Sands to Exalted.",
-					-- #endif
+				achWithRep(959, FACTION_THE_SCALE_OF_THE_SANDS, {	-- The Scale of the Sands
 					["maps"] = { CAVERNS_OF_TIME },
 				}),
 			}),
 			n(FACTIONS, {
-				faction(990, {	-- The Scale of the Sands
+				faction(FACTION_THE_SCALE_OF_THE_SANDS, {	-- The Scale of the Sands
 					["maps"] = { CAVERNS_OF_TIME },
 				}),
 			}),
 			n(QUESTS, {
-				q(10947, {	-- An Artifact From the Past
-					["qg"] = 21700,	-- Akama
-					["sourceQuest"] = 10946,	-- Ruse of the Ashtongue
-					["coord"] = { 58.0, 48.2, SHADOWMOON_VALLEY },
-					["groups"] = {
-						objective(1, {	-- 0/1 Time-Phased Phylactery
-							["provider"] = { "i", 32459 },	-- Time-Phased Phylactery
+				["g"] = bubbleDownClassicRep(FACTION_THE_SCALE_OF_THE_SANDS, {
+					{		-- Neutral
+						q(10947, {	-- An Artifact From the Past
+							["qg"] = 21700,	-- Akama
+							["sourceQuest"] = 10946,	-- Ruse of the Ashtongue
+							["coord"] = { 58.0, 48.2, SHADOWMOON_VALLEY },
+							["groups"] = {
+								objective(1, {	-- 0/1 Time-Phased Phylactery
+									["provider"] = { "i", 32459 },	-- Time-Phased Phylactery
+								}),
+							},
 						}),
-					},
-				}),
-				q(11105, {	-- Champion No More
-					["qg"] = 19935,	-- Soridormi
-					["sourceQuests"] = {
-						10474,	-- Champion's Covenant
-						10475,	-- Defender's Covenant
-						10473,	-- Restorer's Covenant
-						10472,	-- Sage's Covenant
-					},
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["repeatable"] = true,
-					["cost"] = {
-						{ "i", 29301, 1 },	-- Band of the Eternal Champion
-						{ "g", 750000 },	-- 75g
-					},
-					["groups"] = {
-						i(29297),	-- Band of the Eternal Defender
-						i(29309),	-- Band of the Eternal Restorer
-						i(29305),	-- Band of the Eternal Sage
-					},
-				}),
-				q(10474, {	-- Champion's Covenant
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10470,	-- Champion's Oath
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						--10474,	-- Champion's Covenant
-						10475,  -- Defender's Covenant
-						10473,  -- Restorer's Covenant
-						10472,  -- Sage's Covenant
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29300 },	-- Band of Eternity
+					}, {	-- Friendly
+						q(10462, {	-- Champion's Pledge
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuests"] = {
+								-- #if AFTER 3.0.2
+								13432,	-- The Vials of Eternity
+								-- #else
+								10445,	-- The Vials of Eternity
+								-- #endif
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								--10462,	-- Champion's Pledge
+								10460,	-- Defender's Pledge
+								10461,	-- Restorer's Pledge
+								10463,	-- Sage's Pledge
+							},
+							["groups"] = {
+								i(29298),	-- Band of Eternity
+							},
 						}),
-						i(29301),	-- Band of the Eternal Champion
-					},
-				}),
-				q(10470, {	-- Champion's Oath
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10466,	-- Champion's Vow
-					["minReputation"] = { 990, REVERED },	-- The Scale of the Sands, Revered.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						--10470,	-- Champion's Oath
-						10471,  -- Defender's Oath
-						10469,  -- Restorer's Oath
-						10468,  -- Sage's Oath
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29299 },	-- Band of Eternity
+						q(10460, {	-- Defender's Pledge
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuests"] = {
+								-- #if AFTER 3.0.2
+								13432,	-- The Vials of Eternity
+								-- #else
+								10445,	-- The Vials of Eternity
+								-- #endif
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10462,	-- Champion's Pledge
+								--10460,	-- Defender's Pledge
+								10461,	-- Restorer's Pledge
+								10463,	-- Sage's Pledge
+							},
+							["groups"] = {
+								i(29294),	-- Band of Eternity
+							},
 						}),
-						i(29300),	-- Band of Eternity
-					},
-				}),
-				q(10462, {	-- Champion's Pledge
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuests"] = {
-						-- #if AFTER 3.0.2
-						13432,	-- The Vials of Eternity
-						-- #else
-						10445,	-- The Vials of Eternity
-						-- #endif
-					},
-					["minReputation"] = { 990, FRIENDLY },	-- The Scale of the Sands, Friendly.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						--10462,	-- Champion's Pledge
-						10460,  -- Defender's Pledge
-						10461,  -- Restorer's Pledge
-						10463,  -- Sage's Pledge
-					},
-					["groups"] = {
-						i(29298),	-- Band of Eternity
-					},
-				}),
-				q(10466, {	-- Champion's Vow
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10462,	-- Champion's Pledge
-					["minReputation"] = { 990, HONORED },	-- The Scale of the Sands, Honored.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						--10466,	-- Champion's Vow
-						10467,  -- Defender's Vow
-						10465,  -- Restorer's Vow
-						10464,  -- Sage's Vow
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29298 },	-- Band of Eternity
+						q(10461, {	-- Restorer's Pledge
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuests"] = {
+								-- #if AFTER 3.0.2
+								13432,	-- The Vials of Eternity
+								-- #else
+								10445,	-- The Vials of Eternity
+								-- #endif
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10462,	-- Champion's Pledge
+								10460,	-- Defender's Pledge
+								--10461,	-- Restorer's Pledge
+								10463,	-- Sage's Pledge
+							},
+							["groups"] = {
+								i(29307),	-- Band of Eternity
+							},
 						}),
-						i(29299),	-- Band of Eternity
-					},
-				}),
-				q(11106, {	-- Defender No More
-					["qg"] = 19935,	-- Soridormi
-					["sourceQuests"] = {
-						10474,	-- Champion's Covenant
-						10475,	-- Defender's Covenant
-						10473,	-- Restorer's Covenant
-						10472,	-- Sage's Covenant
-					},
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["repeatable"] = true,
-					["cost"] = {
-						{ "i", 29297, 1 },	-- Band of the Eternal Defender
-						{ "g", 750000 },	-- 75g
-					},
-					["groups"] = {
-						i(29301),	-- Band of the Eternal Champion
-						i(29309),	-- Band of the Eternal Restorer
-						i(29305),	-- Band of the Eternal Sage
-					},
-				}),
-				q(10475, {	-- Defender's Covenant
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10471,	-- Defender's Oath
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10474,	-- Champion's Covenant
-						--10475,  -- Defender's Covenant
-						10473,  -- Restorer's Covenant
-						10472,  -- Sage's Covenant
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29296 },	-- Band of Eternity
+						q(10463, {	-- Sage's Pledge
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuests"] = {
+								-- #if AFTER 3.0.2
+								13432,	-- The Vials of Eternity
+								-- #else
+								10445,	-- The Vials of Eternity
+								-- #endif
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10462,	-- Champion's Pledge
+								10460,	-- Defender's Pledge
+								10461,	-- Restorer's Pledge
+								--10463,	-- Sage's Pledge
+							},
+							["groups"] = {
+								i(29302),	-- Band of Eternity
+							},
 						}),
-						i(29297),	-- Band of the Eternal Defender
-					},
-				}),
-				q(10471, {	-- Defender's Oath
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10467,	-- Defender's Vow
-					["minReputation"] = { 990, REVERED },	-- The Scale of the Sands, Revered.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10470,	-- Champion's Oath
-						--10471,  -- Defender's Oath
-						10469,  -- Restorer's Oath
-						10468,  -- Sage's Oath
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29295 },	-- Band of Eternity
+					}, {	-- Honored
+						q(10466, {	-- Champion's Vow
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10462,	-- Champion's Pledge
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								--10466,	-- Champion's Vow
+								10467,	-- Defender's Vow
+								10465,	-- Restorer's Vow
+								10464,	-- Sage's Vow
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29298 },	-- Band of Eternity
+								}),
+								i(29299),	-- Band of Eternity
+							},
 						}),
-						i(29296),	-- Band of Eternity
-					},
-				}),
-				q(10460, {	-- Defender's Pledge
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuests"] = {
-						-- #if AFTER 3.0.2
-						13432,	-- The Vials of Eternity
-						-- #else
-						10445,	-- The Vials of Eternity
-						-- #endif
-					},
-					["minReputation"] = { 990, FRIENDLY },	-- The Scale of the Sands, Friendly.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10462,	-- Champion's Pledge
-						--10460,  -- Defender's Pledge
-						10461,  -- Restorer's Pledge
-						10463,  -- Sage's Pledge
-					},
-					["groups"] = {
-						i(29294),	-- Band of Eternity
-					},
-				}),
-				q(10467, {	-- Defender's Vow
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10460,	-- Defender's Pledge
-					["minReputation"] = { 990, HONORED },	-- The Scale of the Sands, Honored.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10466,	-- Champion's Vow
-						--10467,  -- Defender's Vow
-						10465,  -- Restorer's Vow
-						10464,  -- Sage's Vow
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29294 },	-- Band of Eternity
+						q(10467, {	-- Defender's Vow
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10460,	-- Defender's Pledge
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10466,	-- Champion's Vow
+								--10467,	-- Defender's Vow
+								10465,	-- Restorer's Vow
+								10464,	-- Sage's Vow
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29294 },	-- Band of Eternity
+								}),
+								i(29295),	-- Band of Eternity
+							},
 						}),
-						i(29295),	-- Band of Eternity
-					},
-				}),
-				q(11104, {	-- Restorer No More
-					["qg"] = 19935,	-- Soridormi
-					["sourceQuests"] = {
-						10474,	-- Champion's Covenant
-						10475,	-- Defender's Covenant
-						10473,	-- Restorer's Covenant
-						10472,	-- Sage's Covenant
-					},
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["repeatable"] = true,
-					["cost"] = {
-						{ "i", 29309, 1 },	-- Band of the Eternal Restorer
-						{ "g", 750000 },	-- 75g
-					},
-					["groups"] = {
-						i(29301),	-- Band of the Eternal Champion
-						i(29297),	-- Band of the Eternal Defender
-						i(29305),	-- Band of the Eternal Sage
-					},
-				}),
-				q(10473, {	-- Restorer's Covenant
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10469,	-- Restorer's Oath
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10474,	-- Champion's Covenant
-						10475,  -- Defender's Covenant
-						--10473,  -- Restorer's Covenant
-						10472,  -- Sage's Covenant
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29308 },	-- Band of Eternity
+						q(10465, {	-- Restorer's Vow
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10461,	-- Restorer's Pledge
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10466,	-- Champion's Vow
+								10467,	-- Defender's Vow
+								--10465,	-- Restorer's Vow
+								10464,	-- Sage's Vow
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29307 },	-- Band of Eternity
+								}),
+								i(29306),	-- Band of Eternity
+							},
 						}),
-						i(29309),	-- Band of the Eternal Restorer
-					},
-				}),
-				q(10469, {	-- Restorer's Oath
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10465,	-- Restorer's Vow
-					["minReputation"] = { 990, REVERED },	-- The Scale of the Sands, Revered.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10470,	-- Champion's Oath
-						10471,  -- Defender's Oath
-						--10469,  -- Restorer's Oath
-						10468,  -- Sage's Oath
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29306 },	-- Band of Eternity
+						q(10464, {	-- Sage's Vow
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10463,	-- Sage's Pledge
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10466,	-- Champion's Vow
+								10467,	-- Defender's Vow
+								10465,	-- Restorer's Vow
+								--10464,	-- Sage's Vow
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29302 },	-- Band of Eternity
+								}),
+								i(29303),	-- Band of Eternity
+							},
 						}),
-						i(29308),	-- Band of Eternity
-					},
-				}),
-				q(10461, {	-- Restorer's Pledge
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuests"] = {
-						-- #if AFTER 3.0.2
-						13432,	-- The Vials of Eternity
-						-- #else
-						10445,	-- The Vials of Eternity
-						-- #endif
-					},
-					["minReputation"] = { 990, FRIENDLY },	-- The Scale of the Sands, Friendly.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10462,	-- Champion's Pledge
-						10460,  -- Defender's Pledge
-						--10461,  -- Restorer's Pledge
-						10463,  -- Sage's Pledge
-					},
-					["groups"] = {
-						i(29307),	-- Band of Eternity
-					},
-				}),
-				q(10465, {	-- Restorer's Vow
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10461,	-- Restorer's Pledge
-					["minReputation"] = { 990, HONORED },	-- The Scale of the Sands, Honored.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10466,	-- Champion's Vow
-						10467,  -- Defender's Vow
-						--10465,  -- Restorer's Vow
-						10464,  -- Sage's Vow
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29307 },	-- Band of Eternity
+					}, {	-- Revered
+						q(10470, {	-- Champion's Oath
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10466,	-- Champion's Vow
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								--10470,	-- Champion's Oath
+								10471,	-- Defender's Oath
+								10469,	-- Restorer's Oath
+								10468,	-- Sage's Oath
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29299 },	-- Band of Eternity
+								}),
+								i(29300),	-- Band of Eternity
+							},
 						}),
-						i(29306),	-- Band of Eternity
-					},
-				}),
-				q(11103, {	-- Sage No More
-					["qg"] = 19935,	-- Soridormi
-					["sourceQuests"] = {
-						10474,	-- Champion's Covenant
-						10475,	-- Defender's Covenant
-						10473,	-- Restorer's Covenant
-						10472,	-- Sage's Covenant
-					},
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["repeatable"] = true,
-					["cost"] = {
-						{ "i", 29305, 1 },	-- Band of the Eternal Sage
-						{ "g", 750000 },	-- 75g
-					},
-					["groups"] = {
-						i(29301),	-- Band of the Eternal Champion
-						i(29297),	-- Band of the Eternal Defender
-						i(29309),	-- Band of the Eternal Restorer
-					},
-				}),
-				q(10472, {	-- Sage's Covenant
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10468,	-- Sage's Oath
-					["minReputation"] = { 990, EXALTED },	-- The Scale of the Sands, Exalted.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10474,	-- Champion's Covenant
-						10475,  -- Defender's Covenant
-						10473,  -- Restorer's Covenant
-						--10472,  -- Sage's Covenant
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29304 },	-- Band of Eternity
+						q(10471, {	-- Defender's Oath
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10467,	-- Defender's Vow
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10470,	-- Champion's Oath
+								--10471,	-- Defender's Oath
+								10469,	-- Restorer's Oath
+								10468,	-- Sage's Oath
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29295 },	-- Band of Eternity
+								}),
+								i(29296),	-- Band of Eternity
+							},
 						}),
-						i(29305),	-- Band of the Eternal Sage
-					},
-				}),
-				q(10468, {	-- Sage's Oath
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10464,	-- Sage's Vow
-					["minReputation"] = { 990, REVERED },	-- The Scale of the Sands, Revered.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10470,	-- Champion's Oath
-						10471,  -- Defender's Oath
-						10469,  -- Restorer's Oath
-						--10468,  -- Sage's Oath
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29303 },	-- Band of Eternity
+						q(10469, {	-- Restorer's Oath
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10465,	-- Restorer's Vow
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10470,	-- Champion's Oath
+								10471,	-- Defender's Oath
+								--10469,	-- Restorer's Oath
+								10468,	-- Sage's Oath
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29306 },	-- Band of Eternity
+								}),
+								i(29308),	-- Band of Eternity
+							},
 						}),
-						i(29304),	-- Band of Eternity
-					},
-				}),
-				q(10463, {	-- Sage's Pledge
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuests"] = {
-						-- #if AFTER 3.0.2
-						13432,	-- The Vials of Eternity
-						-- #else
-						10445,	-- The Vials of Eternity
-						-- #endif
-					},
-					["minReputation"] = { 990, FRIENDLY },	-- The Scale of the Sands, Friendly.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10462,	-- Champion's Pledge
-						10460,  -- Defender's Pledge
-						10461,  -- Restorer's Pledge
-						--10463,  -- Sage's Pledge
-					},
-					["groups"] = {
-						i(29302),	-- Band of Eternity
-					},
-				}),
-				q(10464, {	-- Sage's Vow
-					["providers"] = {
-						{ "n", 19935 },	-- Soridormi
-						{ "n", 19936 },	-- Arazmodu
-					},
-					["sourceQuest"] = 10463,	-- Sage's Pledge
-					["minReputation"] = { 990, HONORED },	-- The Scale of the Sands, Honored.
-					["maps"] = { CAVERNS_OF_TIME },
-					["altQuests"] = {
-						10466,	-- Champion's Vow
-						10467,  -- Defender's Vow
-						10465,  -- Restorer's Vow
-						--10464,  -- Sage's Vow
-					},
-					["groups"] = {
-						objective(1, {	-- 0/1 Band of Eternity
-							["provider"] = { "i", 29302 },	-- Band of Eternity
+						q(10468, {	-- Sage's Oath
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10464,	-- Sage's Vow
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10470,	-- Champion's Oath
+								10471,	-- Defender's Oath
+								10469,	-- Restorer's Oath
+								--10468,	-- Sage's Oath
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29303 },	-- Band of Eternity
+								}),
+								i(29304),	-- Band of Eternity
+							},
 						}),
-						i(29303),	-- Band of Eternity
+					}, {	-- Exalted
+						q(11105, {	-- Champion No More
+							["qg"] = 19935,	-- Soridormi
+							["sourceQuests"] = {
+								10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["repeatable"] = true,
+							["cost"] = {
+								{ "i", 29301, 1 },	-- Band of the Eternal Champion
+								{ "g", 750000 },	-- 75g
+							},
+							["groups"] = {
+								i(29297),	-- Band of the Eternal Defender
+								i(29309),	-- Band of the Eternal Restorer
+								i(29305),	-- Band of the Eternal Sage
+							},
+						}),
+						q(10474, {	-- Champion's Covenant
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10470,	-- Champion's Oath
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								--10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29300 },	-- Band of Eternity
+								}),
+								i(29301),	-- Band of the Eternal Champion
+							},
+						}),
+						q(11106, {	-- Defender No More
+							["qg"] = 19935,	-- Soridormi
+							["sourceQuests"] = {
+								10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["repeatable"] = true,
+							["cost"] = {
+								{ "i", 29297, 1 },	-- Band of the Eternal Defender
+								{ "g", 750000 },	-- 75g
+							},
+							["groups"] = {
+								i(29301),	-- Band of the Eternal Champion
+								i(29309),	-- Band of the Eternal Restorer
+								i(29305),	-- Band of the Eternal Sage
+							},
+						}),
+						q(10475, {	-- Defender's Covenant
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10471,	-- Defender's Oath
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10474,	-- Champion's Covenant
+								--10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29296 },	-- Band of Eternity
+								}),
+								i(29297),	-- Band of the Eternal Defender
+							},
+						}),
+						q(11104, {	-- Restorer No More
+							["qg"] = 19935,	-- Soridormi
+							["sourceQuests"] = {
+								10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["repeatable"] = true,
+							["cost"] = {
+								{ "i", 29309, 1 },	-- Band of the Eternal Restorer
+								{ "g", 750000 },	-- 75g
+							},
+							["groups"] = {
+								i(29301),	-- Band of the Eternal Champion
+								i(29297),	-- Band of the Eternal Defender
+								i(29305),	-- Band of the Eternal Sage
+							},
+						}),
+						q(10473, {	-- Restorer's Covenant
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10469,	-- Restorer's Oath
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								--10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29308 },	-- Band of Eternity
+								}),
+								i(29309),	-- Band of the Eternal Restorer
+							},
+						}),
+						q(11103, {	-- Sage No More
+							["qg"] = 19935,	-- Soridormi
+							["sourceQuests"] = {
+								10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								10472,	-- Sage's Covenant
+							},
+							["maps"] = { CAVERNS_OF_TIME },
+							["repeatable"] = true,
+							["cost"] = {
+								{ "i", 29305, 1 },	-- Band of the Eternal Sage
+								{ "g", 750000 },	-- 75g
+							},
+							["groups"] = {
+								i(29301),	-- Band of the Eternal Champion
+								i(29297),	-- Band of the Eternal Defender
+								i(29309),	-- Band of the Eternal Restorer
+							},
+						}),
+						q(10472, {	-- Sage's Covenant
+							["providers"] = {
+								{ "n", 19935 },	-- Soridormi
+								{ "n", 19936 },	-- Arazmodu
+							},
+							["sourceQuest"] = 10468,	-- Sage's Oath
+							["maps"] = { CAVERNS_OF_TIME },
+							["altQuests"] = {
+								10474,	-- Champion's Covenant
+								10475,	-- Defender's Covenant
+								10473,	-- Restorer's Covenant
+								--10472,	-- Sage's Covenant
+							},
+							["groups"] = {
+								objective(1, {	-- 0/1 Band of Eternity
+									["provider"] = { "i", 29304 },	-- Band of Eternity
+								}),
+								i(29305),	-- Band of the Eternal Sage
+							},
+						}),
 					},
 				}),
 			}),
 			n(VENDORS, {
 				n(23437, {	-- Indormi <Keeper of Ancient Gem Lore>
 					-- TODO: can re-verify this, but it should be exactly the same as before, but way less complicated to understand
-					-- #if BEFORE CATA
-					i(32299),	-- Design: Balanced Shadowsong Amethyst [TBC] / Design: Shifting Shadowsong Amethyst [CATA+]
-					i(32274),	-- Design: Bold Crimson Spinel
-					i(32283, {	-- Design: Bright Crimson Spinel [TBC] / Design: Delicate Crimson Spinel [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
+					["groups"] = bubbleDownClassicRep(FACTION_THE_SCALE_OF_THE_SANDS, {
+						{		-- Neutral
+						}, {	-- Friendly
+							i(32274),	-- Design: Bold Crimson Spinel
+							-- #if BEFORE CATA
+							i(32283, {	-- Design: Bright Crimson Spinel [TBC] / Design: Delicate Crimson Spinel [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #else
+							i(32282),	-- Design: Brilliant Crimson Spinel [CATA+] / Design: Runed Crimson Spinel [TBC]
+							i(32281, {	-- Design: Brilliant Crimson Spinel [CATA+] / Design: Teardrop Crimson Spinel [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32290, {	-- Design: Brilliant Lionseye
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_9_0_1, -- Unsure exactly when this was removed but not in SL at least.566
+								},
+							}),
+							i(32283, {	-- Design: Delicate Crimson Spinel [CATA+] / Design: Bright Crimson Spinel [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #endif
+							i(32277),	-- Design: Delicate Crimson Spinel
+							-- #if BEFORE CATA
+							i(32293, {	-- Design: Gleaming Lionseye [TBC] / Design: Smooth Lionseye [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32288, {	-- Design: Lustrous Empyrean Sapphire [TBC] / Design: Sparkling Empyrean Sapphire [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32282),	-- Design: Runed Crimson Spinel [TBC] / Design: Brilliant Crimson Spinel [CATA+]
+							-- #else
+							i(32293, {	-- Design: Smooth Lionseye [CATA+] / Design: Gleaming Lionseye [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #endif
+							i(32291),	-- Design: Smooth Lionseye
+							i(32286),	-- Design: Solid Empyrean Sapphire
+							i(32287),	-- Design: Sparkling Empyrean Sapphire
+							-- #if BEFORE CATA
+							i(32288, {	-- Design: Sparkling Empyrean Sapphire [CATA+] / Design: Lustrous Empyrean Sapphire [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32294, {	-- Design: Subtle Lionseye [CATA+] / Design: Thick Lionseye [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #endif
+							i(32284),	-- Design: Subtle Lionseye
+							-- #if BEFORE CATA
+							i(32281, {	-- Design: Teardrop Crimson Spinel [TBC] / Design: Brilliant Crimson Spinel [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32294, {	-- Design: Thick Lionseye [TBC] / Design: Subtle Lionseye [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #endif
+						}, {	-- Honored
+							-- #if BEFORE CATA
+							i(32299),	-- Design: Balanced Shadowsong Amethyst [TBC] / Design: Shifting Shadowsong Amethyst [CATA+]
+							i(32311),	-- Design: Dazzling Seaspray Emerald [TBC] / Design: Purified Shadowsong Amethyst [CATA+]
+							-- #endif
+							applyclassicphase(TBC_PHASE_FIVE, i(35765)),	-- Design: Forceful Seaspray Emerald
+							-- #if BEFORE CATA
+							i(32306),	-- Design: Glinting Pyrestone [TBC] / Design: Glinting Shadowsong Amethyst [CATA+]
+							i(32301),	-- Design: Glowing Shadowsong Amethyst [TBC] / Design: Timeless Shadowsong Amethyst [CATA+]
+							i(32300, {	-- Design: Infused Shadowsong Amethyst [TBC] / Design: Glinting Shadowsong Amethyst [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #else
+							i(32306),	-- Design: Glinting Shadowsong Amethyst [CATA+] / Design: Glinting Pyrestone [TBC]
+							i(32300, {	-- Design: Glinting Shadowsong Amethyst [CATA+] / Design: Infused Shadowsong Amethyst [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #endif
+							i(32312),	-- Design: Jagged Seaspray Emerald
+							-- #if BEFORE CATA
+							i(32305, {	-- Design: Luminous Pyrestone [TBC] / Design: Reckless Pyrestone [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							-- #endif
+							i(32304),	-- Design: Potent Pyrestone
+							-- #if AFTER CATA
+							i(32311),	-- Design: Purified Shadowsong Amethyst [CATA+] / Design: Dazzling Seaspray Emerald [TBC]
+							-- #endif
+							applyclassicphase(TBC_PHASE_FIVE, i(35763)),	-- Design: Quick Lionseye
+							i(32310),	-- Design: Radiant Seaspray Emerald
+							applyclassicphase(TBC_PHASE_FIVE, i(35762)),	-- Design: Reckless Pyrestone
+							-- #if AFTER CATA
+							i(32305, {	-- Design: Reckless Pyrestone [CATA+] / Design: Luminous Pyrestone [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32299, {	-- Design: Shifting Shadowsong Amethyst [CATA+] / Design: Balanced Shadowsong Amethyst [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and available after Cata
+								},
+							}),
+							-- #endif
+							applyclassicphase(TBC_PHASE_FIVE, i(35764)),	-- Design: Steady Seaspray Emerald
+							-- #if AFTER CATA
+							i(32301),	-- Design: Timeless Shadowsong Amethyst [CATA+] / Design: Glowing Shadowsong Amethyst [TBC]
+							-- #endif
+						}, {	-- Revered
+							-- #if BEFORE CATA
+							i(32309),	-- Design: Enduring Seaspray Emerald [TBC] / Design: Regal Seaspray Emerald [CATA+]
+							i(32292),	-- Design: Rigid Lionseye [TBC] / Design: Rigid Empyrean Sapphire [CATA+]
+							i(32302, {	-- Design: Royal Shadowsong Amethyst [TBC] / Design: Purified Shadowsong Amethyst [CATA+]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32308),	-- Design: Wicked Pyrestone [TBC] / Design: Deadly Pyrestone [CATA+]
+							-- #else
+							i(32308),	-- Design: Deadly Pyrestone [CATA+] / Design: Wicked Pyrestone [TBC]
+							i(32302, {	-- Design: Purified Shadowsong Amethyst [CATA+] / Design: Royal Shadowsong Amethyst [TBC]
+								["timeline"] = {
+									ADDED_2_1_0,
+									REMOVED_4_0_1, -- Renamed and not available after Cata
+								},
+							}),
+							i(32309),	-- Design: Regal Seaspray Emerald [CATA+] / Design: Enduring Seaspray Emerald [TBC]
+							i(32292),	-- Design: Rigid Empyrean Sapphire [CATA+] / Design: Rigid Lionseye [TBC]
+							-- #endif
+							}, {	-- Exalted
 						},
 					}),
-					i(32290, {	-- Design: Brilliant Lionseye
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_9_0_1, -- Unsure exactly when this was removed but not in SL at least.566
-						},
-					}),
-					i(32311),	-- Design: Dazzling Seaspray Emerald [TBC] / Design: Purified Shadowsong Amethyst [CATA+]
-					i(32277),	-- Design: Delicate Crimson Spinel
-					i(32309),	-- Design: Enduring Seaspray Emerald [TBC] / Design: Regal Seaspray Emerald [CATA+]
-					applyclassicphase(TBC_PHASE_FIVE, i(35765)),	-- Design: Forceful Seaspray Emerald
-					i(32293, {	-- Design: Gleaming Lionseye [TBC] / Design: Smooth Lionseye [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32306),	-- Design: Glinting Pyrestone [TBC] / Design: Glinting Shadowsong Amethyst [CATA+]
-					i(32301),	-- Design: Glowing Shadowsong Amethyst [TBC] / Design: Timeless Shadowsong Amethyst [CATA+]
-					i(32300, {	-- Design: Infused Shadowsong Amethyst [TBC] / Design: Glinting Shadowsong Amethyst [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32312),	-- Design: Jagged Seaspray Emerald
-					i(32305, {	-- Design: Luminous Pyrestone [TBC] / Design: Reckless Pyrestone [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32288, {	-- Design: Lustrous Empyrean Sapphire [TBC] / Design: Sparkling Empyrean Sapphire [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32304),	-- Design: Potent Pyrestone
-					applyclassicphase(TBC_PHASE_FIVE, i(35763)),	-- Design: Quick Lionseye
-					i(32310),	-- Design: Radiant Seaspray Emerald
-					applyclassicphase(TBC_PHASE_FIVE, i(35762)),	-- Design: Reckless Pyrestone
-					i(32292),	-- Design: Rigid Lionseye [TBC] / Design: Rigid Empyrean Sapphire [CATA+]
-					i(32302, {	-- Design: Royal Shadowsong Amethyst [TBC] / Design: Purified Shadowsong Amethyst [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32282),	-- Design: Runed Crimson Spinel [TBC] / Design: Brilliant Crimson Spinel [CATA+]
-					i(32291),	-- Design: Smooth Lionseye
-					i(32286),	-- Design: Solid Empyrean Sapphire
-					i(32287),	-- Design: Sparkling Empyrean Sapphire
-					applyclassicphase(TBC_PHASE_FIVE, i(35764)),	-- Design: Steady Seaspray Emerald
-					i(32284),	-- Design: Subtle Lionseye
-					i(32281, {	-- Design: Teardrop Crimson Spinel [TBC] / Design: Brilliant Crimson Spinel [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32294, {	-- Design: Thick Lionseye [TBC] / Design: Subtle Lionseye [CATA+]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32308),	-- Design: Wicked Pyrestone [TBC] / Design: Deadly Pyrestone [CATA+]
-					-- #else
-					i(32274),	-- Design: Bold Crimson Spinel
-					i(32282),	-- Design: Brilliant Crimson Spinel [CATA+] / Design: Runed Crimson Spinel [TBC]
-					i(32281, {	-- Design: Brilliant Crimson Spinel [CATA+] / Design: Teardrop Crimson Spinel [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32290, {	-- Design: Brilliant Lionseye
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_9_0_1, -- Unsure exactly when this was removed but not in SL at least.566
-						},
-					}),
-					i(32308),	-- Design: Deadly Pyrestone [CATA+] / Design: Wicked Pyrestone [TBC]
-					i(32277),	-- Design: Delicate Crimson Spinel
-					i(32283, {	-- Design: Delicate Crimson Spinel [CATA+] / Design: Bright Crimson Spinel [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					applyclassicphase(TBC_PHASE_FIVE, i(35765)),	-- Design: Forceful Seaspray Emerald
-					i(32306),	-- Design: Glinting Shadowsong Amethyst [CATA+] / Design: Glinting Pyrestone [TBC]
-					i(32300, {	-- Design: Glinting Shadowsong Amethyst [CATA+] / Design: Infused Shadowsong Amethyst [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32312),	-- Design: Jagged Seaspray Emerald
-					i(32304),	-- Design: Potent Pyrestone
-					i(32311),	-- Design: Purified Shadowsong Amethyst [CATA+] / Design: Dazzling Seaspray Emerald [TBC]
-					i(32302, {	-- Design: Purified Shadowsong Amethyst [CATA+] / Design: Royal Shadowsong Amethyst [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					applyclassicphase(TBC_PHASE_FIVE, i(35763)),	-- Design: Quick Lionseye
-					i(32310),	-- Design: Radiant Seaspray Emerald
-					applyclassicphase(TBC_PHASE_FIVE, i(35762)),	-- Design: Reckless Pyrestone
-					i(32305, {	-- Design: Reckless Pyrestone [CATA+] / Design: Luminous Pyrestone [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32309),	-- Design: Regal Seaspray Emerald [CATA+] / Design: Enduring Seaspray Emerald [TBC]
-					i(32292),	-- Design: Rigid Empyrean Sapphire [CATA+] / Design: Rigid Lionseye [TBC]
-					i(32299, {	-- Design: Shifting Shadowsong Amethyst [CATA+] / Design: Balanced Shadowsong Amethyst [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and available after Cata
-						},
-					}),
-					i(32291),	-- Design: Smooth Lionseye
-					i(32293, {	-- Design: Smooth Lionseye [CATA+] / Design: Gleaming Lionseye [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32286),	-- Design: Solid Empyrean Sapphire
-					i(32287),	-- Design: Sparkling Empyrean Sapphire
-					i(32288, {	-- Design: Sparkling Empyrean Sapphire [CATA+] / Design: Lustrous Empyrean Sapphire [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					applyclassicphase(TBC_PHASE_FIVE, i(35764)),	-- Design: Steady Seaspray Emerald
-					i(32284),	-- Design: Subtle Lionseye
-					i(32294, {	-- Design: Subtle Lionseye [CATA+] / Design: Thick Lionseye [TBC]
-						["timeline"] = {
-							ADDED_2_1_0,
-							REMOVED_4_0_1, -- Renamed and not available after Cata
-						},
-					}),
-					i(32301),	-- Design: Timeless Shadowsong Amethyst [CATA+] / Design: Glowing Shadowsong Amethyst [TBC]
-					-- #endif
 				}),
 				n(23381, {	-- Tydormu
 					cl(WARRIOR, {
@@ -951,7 +948,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_THREE
 					i(32303),	-- Design: Inscribed Pyrestone
 					i(32295),	-- Design: Mystic Lionseye
 					-- #if AFTER CATA
+					-- #if BEFORE MOP
+					-- not sure when removed but this ItemID doesn't exist in Retail
 					i(32296),	-- Design: Rigid Empyrean Sapphire [CATA+] / Design: Great Lionseye [TBC]
+					-- #endif
 					-- #endif
 					i(32298),	-- Design: Shifting Shadowsong Amethyst
 					i(32297),	-- Design: Sovereign Shadowsong Amethyst

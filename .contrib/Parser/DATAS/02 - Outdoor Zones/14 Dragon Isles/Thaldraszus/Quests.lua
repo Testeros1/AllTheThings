@@ -52,7 +52,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 190180 },	-- Guardian Velomir
 					["coord"] = { 35.8, 82.6, THALDRASZUS },
 					["g"] = {
-						i(197110),	-- Highland Drake: Plated Head (DM!)
+						i(197110),	-- Highland Drake: Plated Head (MM!)
 					},
 				}),
 				q(66246, {	-- The Fog of Battle
@@ -103,7 +103,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 190180 },	-- Guardian Velomir
 					["coord"] = { 37.6, 83.1, THALDRASZUS },
 					["g"] = {
-						i(197126),	-- Highland Drake: Hooked Horns (DM!)
+						i(197126),	-- Highland Drake: Hooked Horns (MM!)
 					},
 				}),
 				q(66250, {	-- Where's The Chief?
@@ -211,7 +211,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 186711 },	-- Chromie
 					["coord"] = { 59.6, 81.7, THALDRASZUS },
 					["g"] = {
-						i(197151),	-- Highland Drake: Spiked Tail (DM!)
+						i(197151),	-- Highland Drake: Spiked Tail (MM!)
 					},
 				}),
 				q(66646, {	-- Quelling Causalities
@@ -285,6 +285,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 61.4, 50.2, THE_PRIMALIST_FUTURE },
 					["g"] = {
 						i(195185),	-- Annihilation Warder's Cloak
+						i(192454),	-- Elemental Essence (QI!)
 					},
 				}),
 				q(66030, {	-- Resistance Isn't Futile
@@ -400,8 +401,14 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						DF_ACCOUNT_CAMPAIGN_QUEST,
 					},
 					["sourceQuestNumRequired"] = 1,
-					["provider"] = { "n", 190902 },	-- Alexstrasza the Life-Binder
-					["coord"] = { 72.5, 56.2, THALDRASZUS },
+					["providers"] = {
+						{ "n", 187678 },	-- Alexstrasza the Life-Binder
+						{ "n", 190902 },	-- Alexstrasza the Life-Binder
+					},
+					["coords"] = {
+						{ 72.5, 56.2, THALDRASZUS },
+						{ 57.9, 35.6, VALDRAKKEN },	-- TODO: possibly only after DF?
+					},
 				}),
 				------ Chapter 4 ------
 				q(70437, {	-- To Tyrhold
@@ -453,7 +460,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 189174 },	-- Commander Thadezus
 					["coord"] = { 52.7, 67.3, THALDRASZUS },
 					["g"] ={
-						i(197097),	-- Highland Drake: Spined Back (DM!)
+						i(197097),	-- Highland Drake: Spined Back (MM!)
 						i(192795),	-- Rejuvenating Draught
 					},
 				}),
@@ -483,7 +490,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 189188 },	-- Sharnax
 					["coord"] = { 54.8, 64.3, THALDRASZUS },
 					["g"] = {
-						i(197103),	--	Highland Drake: Maned Chin (DM!)
+						i(197103),	--	Highland Drake: Maned Chin (MM!)
 					},
 				}),
 				q(66472, {	-- Primal List
@@ -569,7 +576,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 187289 },	-- Waywatcher Alvi
 					["coord"] = { 57.0, 67.7, THALDRASZUS },
 					["g"] = {
-						i(197122),	-- Highland Drake: Heavy Horns (DM!)
+						i(197122),	-- Highland Drake: Heavy Horns (MM!)
 					},
 				}),
 			}),
@@ -702,7 +709,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 183912 },	-- Harleen Chirpsnide
 					["coord"] = { 43.5, 72.1, THALDRASZUS },
 					["g"] = {
-						i(197133),	-- Highland Drake: Spined Cheek (DM!)
+						i(197133),	-- Highland Drake: Spined Cheek (MM!)
 						i(191891),	-- Professor Chirpsnide's Im-PECK-able Harpy Disguise (TOY!)
 						i(191763),	-- Im-PECK-able Screechflight Disguise v2
 					},
@@ -1178,9 +1185,10 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						["provider"] = { "n", 206971 },	-- Nozdormu
 						["coord"] = { 37.7, 83.2, TANARIS },
 						["g"] = {
-							i(210024, {	-- Ensemble: Temporal Burdens
-								i(208207),	-- Morchie's Timeworn Shoulderpads
-								i(208600),	-- Chromie's Timespun Shoulderpads
+							iensemble(210024, {	-- Ensemble: Temporal Burdens
+								["extraTransmogSetSpells"] = {
+									424247,	-- Ensemble: Temporal Burdens
+								},
 							}),
 						},
 					}),
@@ -1273,46 +1281,37 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		}),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(THALDRASZUS, {
-		q(67030),	-- Unlocks access to Adventure Mode within the Dragon Isles (spellID 393788 & 377069)
-		q(72366, {["name"] = "Dragonflight Campaign Completed [Account]"}),	-- triggered after completing 'Moving On' (questID 66221)
-		q(72369, {["repeatable"] = true}),	-- flags complete while 'Aiding the Accord' is active/completed
-		q(72084),	-- Triggers during 'The Fog of Battle' (questID 66246) (spellID 392476)
-		q(72110),	-- when delivering Gleamfish to spawn 'The Great Shellkhan' (spellID 392694)
-		q(72125),	-- Triggers during 'Tying Things Together' (questID 66248) (spellID 392925)
-		-- Achievement Framing a New Perspective
-		q(72142),	-- The Seat of the Aspects
-		q(72143),	-- The Cascades
-		q(72144),	-- Passage of Time
-		q(72145),	-- Vault of the Incarnates
-		q(72146),	-- Tryhold
-		q(72147),	-- Algeth'era Court
-		q(72148),	-- Veiled Ossuary
-		q(72149),	-- Serene Dreams Spa
-		q(72150),	-- Shadow Ledge
-		q(72151),	-- Valdrakken's Portal Room
-		q(72152),	-- Tryhold Reservoir
-		-- During Solicited Opinions (72418)
-		q(75199),    -- Solicited Opinions question 3 answer 3
-		q(75198),    -- Solicited Opinions question 3 answer 2
-		q(75197),    -- Solicited Opinions question 3 answer 1
-		q(75196),    -- Solicited Opinions question 2 answer 3
-		q(75195),    -- Solicited Opinions question 2 answer 2
-		q(75194),    -- Solicited Opinions question 2 answer 1
-		q(75193),    -- Solicited Opinions question 1 answer 3
-		q(75192),    -- Solicited Opinions question 1 answer 2
-		q(75191),    -- Solicited Opinions question 1 answer 1
-		-- Stay awhile Listening
-		q(73960),	-- (spellID 406027)
-		-- 10.1.7
-		-- Nozdormu & Eternus
-		q(77422, {["timeline"] = {ADDED_10_1_7}}),	-- qID 76407 - Timeport to Tanaris (spellID 414260)
-		q(77612, {["timeline"] = {ADDED_10_1_7}}),	-- Dialog option 1 during qID 76421 - (spellID 419463 - Option 1 [DNT])
-		q(77613, {["timeline"] = {ADDED_10_1_7}}),	-- Dialog option 2 during qID 76421 - <Well, your way hasn't worked so far...> - (spellID 419464 - Option 2 [DNT])
-		q(77614, {["timeline"] = {ADDED_10_1_7}}),	-- Dialog option 3 during qID 76421 - (spellID 419466 - Option 3 [DNT])
-		q(78173, {["timeline"] = {ADDED_10_1_7}}),	-- `Ensemble: Temporal Burdens` (itemID 210024) (spellID 424097)
-		q(78191, {["timeline"] = {ADDED_10_1_7}}),	-- `Ensemble: Temporal Burdens` (itemID 210024) (spellID 424247)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(THALDRASZUS, {
+			n(QUESTS, {
+				q(67030),	-- Unlocks access to Adventure Mode within the Dragon Isles (spellID 393788 & 377069)
+				q(72366, {["name"] = "Dragonflight Campaign Completed [Account]"}),	-- triggered after completing 'Moving On' (questID 66221)
+				q(72369, {["repeatable"] = true}),	-- flags complete while 'Aiding the Accord' is active/completed
+				q(72084),	-- Triggers during 'The Fog of Battle' (questID 66246) (spellID 392476)
+				q(72110),	-- when delivering Gleamfish to spawn 'The Great Shellkhan' (spellID 392694)
+				q(72125),	-- Triggers during 'Tying Things Together' (questID 66248) (spellID 392925)
+				-- During Solicited Opinions (72418)
+				q(75199, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 3 answer 3
+				q(75198, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 3 answer 2
+				q(75197, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 3 answer 1
+				q(75196, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 2 answer 3
+				q(75195, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 2 answer 2
+				q(75194, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 2 answer 1
+				q(75193, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 1 answer 3
+				q(75192, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 1 answer 2
+				q(75191, {["timeline"] = {ADDED_10_1_0}}),	-- Solicited Opinions question 1 answer 1
+				------ Stay awhile and listen ------
+				hqt(73960),	-- Stay awhile and listen (spellID 406027)
+				-- 10.1.7
+				-- Nozdormu & Eternus
+				q(77422, {["timeline"] = {ADDED_10_1_7}}),	-- qID 76407 - Timeport to Tanaris (spellID 414260)
+				q(77612, {["timeline"] = {ADDED_10_1_7}}),	-- Dialog option 1 during qID 76421 - (spellID 419463 - Option 1 [DNT])
+				q(77613, {["timeline"] = {ADDED_10_1_7}}),	-- Dialog option 2 during qID 76421 - <Well, your way hasn't worked so far...> - (spellID 419464 - Option 2 [DNT])
+				q(77614, {["timeline"] = {ADDED_10_1_7}}),	-- Dialog option 3 during qID 76421 - (spellID 419466 - Option 3 [DNT])
+				-- q(78173, {["timeline"] = {ADDED_10_1_7}}),	-- Ensemble: Temporal Burdens (itemID 210024) (spellID 424097) (automated)
+				-- q(78191, {["timeline"] = {ADDED_10_1_7}}),	-- Ensemble: Temporal Burdens (itemID 210024) (spellID 424247) (automated)
+			}),
+		}),
 	}),
-}));
+})));

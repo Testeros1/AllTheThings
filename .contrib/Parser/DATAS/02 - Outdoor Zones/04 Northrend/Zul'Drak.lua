@@ -5,7 +5,7 @@ root(ROOTS.Zones, {
 	m(NORTHREND, applyclassicphase(WRATH_PHASE_ONE, {
 		m(ZULDRAK, {
 			["lore"] = "Zul'Drak is a zone in central Northrend, intended for level 20+ players leveling. It is the home of the Drakkari ice trolls, who have gone insane after sacrificing their loa gods to fight off the Scourge. The Argent Dawn and the Zandalari tribe have tried to restore order to the zone, after its decimation and betrayal by Drakkuru. The zone is covered in Scourge blight and abandoned ziggurats, with Gundrak at its pinnacle.",
-			["icon"] = "Interface\\Icons\\Achievement_zone_zuldrak_03",
+			["icon"] = 236858,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
 					explorationAch(1267),	-- Explore Zul'Drak
@@ -114,7 +114,6 @@ root(ROOTS.Zones, {
 						641,	-- Arctic Hare (PET!)
 						387,	-- Snake (PET!)
 						412,	-- Spider (PET!)
-						1238,	-- Unborn Val'kyr (PET!)
 					}},
 					["groups"] = {
 						pet(535, {	-- Water Waveling (PET!)
@@ -131,14 +130,18 @@ root(ROOTS.Zones, {
 					exploration(4276),	-- Altar of Sseratus
 					exploration(4320),	-- Amphitheater of Anguish
 					exploration(4469),	-- Dargath's Demise
+					visit_exploration(4280,{coord={46.4,63.3,ZULDRAK}}),	-- Drak'Agal
 					exploration(4327),	-- Drak'Mabwa
 					exploration(4279),	-- Drak'Sotra
 					exploration(4278),	-- Drak'Sotra Fields
+					visit_exploration(4309,{coord={26.5,86.8,ZULDRAK}}),	-- Drak'Tharon Keep
+					visit_exploration(4579,{coord={70.8,23.4,ZULDRAK}}),	-- Dubra'Jin
 					exploration(4312),	-- Ebon Watch
+					visit_exploration(4390,{coord={33.3,39.9,ZULDRAK}}),	-- Frigid Breach
 					exploration(4375),	-- Gundrak
-					exploration(4326),	-- Heb'Drakkar
+					visit_exploration(4326,{coord={64.2,53.7,ZULDRAK}}),	-- Heb'Drakkar
 					exploration(4294),	-- Heb'Valok
-					exploration(4481),	-- Jintha'kalar Passage
+					visit_exploration(4194,{coord={14.9,89.2,ZULDRAK}}),	-- Jintha'kalar
 					exploration(4299),	-- Kolramas
 					exploration(4317),	-- Light's Breach
 					exploration(4371),	-- Mam'toth Crater
@@ -155,7 +158,8 @@ root(ROOTS.Zones, {
 					exploration(4310),	-- Zeramas
 					exploration(4319),	-- Zim'Abwa
 					exploration(4328),	-- Zim'Rhuk
-					exploration(4323),	-- Zim'Torga
+					visit_exploration(4323,{coord={59.0,54.8,ZULDRAK}}),	-- Zim'Torga
+					visit_exploration(4373,{coord={79.8,37.2,ZULDRAK}}),	-- Zol'Heb
 					exploration(4372),	-- Zol'Maz Stronghold
 				}),
 				n(FLIGHT_PATHS, {
@@ -236,7 +240,11 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 12647,	-- An End to the Suffering
 					}),
 					q(12713, {	-- Betrayal
-						["coord"] = { 28.4, 44.9, ZULDRAK },	-- technically, this can be done any at the Reliquary of Pain
+						["coords"] = {
+							{ 28.4, 44.9, ZULDRAK },
+							{ 14.0, 73.8, ZULDRAK },
+							{ 27.6, 53.8, ZULDRAK },
+						},
 						["qg"] = 28518,	-- Stefan Vadu
 						["sourceQuests"] = {
 							12652,	-- Feedin' Da Goolz
@@ -325,7 +333,7 @@ root(ROOTS.Zones, {
 						-- TODO: based on speed completion of "Troll Patrol" daily. Determine condition and add as description
 						["qg"] = 28039,	-- Commander Kunz
 						["coord"] = { 40.2, 66.6, ZULDRAK },
-						["maxReputation"] = { 1106, EXALTED },	-- Argent Crusade, Exalted.
+						["maxReputation"] = { FACTION_ARGENT_CRUSADE, EXALTED },	-- Argent Crusade, Exalted.
 						["isDaily"] = true,
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
@@ -451,7 +459,11 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 12912,	-- A Great Storm Approaches
 					}),
 					q(12677, {	-- Hazardous Materials
-						["coord"] = { 28.4, 44.9, ZULDRAK },	-- technically, this can be done any at the Reliquary of Pain
+						["coords"] = {
+							{ 28.4, 44.9, ZULDRAK },
+							{ 14.0, 73.8, ZULDRAK },
+							{ 27.6, 53.8, ZULDRAK },
+						},
 						["qg"] = 28518,	-- Stefan Vadu
 						["sourceQuest"] = 12669,	-- So Far, So Bad
 					}),
@@ -690,7 +702,11 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 12649,	-- Suit Up!
 					}),
 					q(12676, {	-- Sabotage
-						["coord"] = { 28.4, 44.9, ZULDRAK },	-- technically, this can be done any at the Reliquary of Pain
+						["coords"] = {
+							{ 28.4, 44.9, ZULDRAK },
+							{ 14.0, 73.8, ZULDRAK },
+							{ 27.6, 53.8, ZULDRAK },
+						},
 						["qg"] = 28518,	-- Stefan Vadu
 						["sourceQuest"] = 12677,	-- Hazardous Materials
 						["groups"] = {
@@ -741,7 +757,11 @@ root(ROOTS.Zones, {
 					q(12793, {	-- Smoke on the Horizon -- completes along with 12763, 12770, 12789, 12792 (probably a breadcrumb)
 					}),
 					q(12669, {	-- So Far, So Bad
-						["coord"] = { 28.4, 44.9, ZULDRAK },	-- technically, this can be done any at the Reliquary of Pain
+						["coords"] = {
+							{ 28.4, 44.9, ZULDRAK },
+							{ 14.0, 73.8, ZULDRAK },
+							{ 27.6, 53.8, ZULDRAK },
+						},
 						["qg"] = 28518,	-- Stefan Vadu
 						["sourceQuest"] = 12661,	-- Infiltrating Voltarus
 						["groups"] = {
@@ -968,7 +988,7 @@ root(ROOTS.Zones, {
 						["qg"] = 28039,	-- Commander Kunz
 						["sourceQuest"] = 12596,	-- Pa'Troll
 						["coord"] = { 40.2, 66.6, ZULDRAK },
-						["maxReputation"] = { 1106, EXALTED },	-- Argent Crusade, Exalted.
+						["maxReputation"] = { FACTION_ARGENT_CRUSADE, EXALTED },	-- Argent Crusade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(12563, {	-- Troll Patrol
@@ -976,7 +996,7 @@ root(ROOTS.Zones, {
 						["qg"] = 28039,	-- Commander Kunz
 						["sourceQuest"] = 12596,	-- Pa'Troll
 						["coord"] = { 40.2, 66.6, ZULDRAK },
-						["maxReputation"] = { 1106, EXALTED },	-- Argent Crusade, Exalted.
+						["maxReputation"] = { FACTION_ARGENT_CRUSADE, EXALTED },	-- Argent Crusade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(12587, {	-- Troll Patrol
@@ -985,7 +1005,7 @@ root(ROOTS.Zones, {
 						["qg"] = 28039,	-- Commander Kunz
 						["sourceQuest"] = 12596,	-- Pa'Troll
 						["coord"] = { 40.2, 66.6, ZULDRAK },
-						["maxReputation"] = { 1106, EXALTED },	-- Argent Crusade, Exalted.
+						["maxReputation"] = { FACTION_ARGENT_CRUSADE, EXALTED },	-- Argent Crusade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(12588, {	-- Troll Patrol: Can You Dig It?

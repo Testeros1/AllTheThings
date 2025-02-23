@@ -4,40 +4,30 @@
 local function bo(questID, isDaily)
     return { ["questID"] = questID, ["isDaily"] = isDaily };
 end
-
 root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 	m(AZJ_KAHET, {
 		n(RARES, sharedData({ ["isDaily"] = true }, {
-			n(216031, {	-- Abyssal Devourer
-				["coord"] = { 47.4, 43.7, AZJ_KAHET },
-				["questID"] = 81695,
-				["g"] = {
-					i(223390),	-- Leggings of Dark Hunger
-					i(223391),	-- Legguards of Dark Hunger
-					i(223389),	-- Legplates of Dark Hunger
-					i(223392),	-- Trousers of Dark Hunger
-				},
-			}),
-			n(214151, {	-- Ahg'zagall
-				["coord"] = { 40.0, 47.3, AZJ_KAHET },
-				["questID"] = 81698,	-- 78905 on 80s 2nd character??
-				["g"] = {
-					i(223375),	-- Clattering Chitin Necklace
-				},
-			}),
 			n(216042, {	-- Cha'tak
-				["coord"] = { 70.0, 27.7, AZJ_KAHET },
+				["description"] = "Inside the cave, behind the waterfall.",
+				["coord"] = { 70.7, 21.4, AZJ_KAHET },
 				["questID"] = 81704,
 				["g"] = {
 					i(221212),	-- Death Burrower Handguards
+					i(221237),	-- Lamentable Vagrant's Lantern
 				},
 			}),
 			n(222624, {	-- Deepcrawler Tx'kesh
 				["coord"] = { 64.5, 6.4, AZJ_KAHET },
 				["questID"] = 82077,
+				["g"] = {
+					i(223923),	-- Gilded Cryptlord's Sabatons
+					i(223917),	-- Nerubian Covert's Cloak
+					i(223916),	-- Nerubian Cutthroat's Reach
+					i(223915),	-- Nerubian Orator's Stiletto
+				},
 			}),
 			n(216045, {	-- Enduring Gutterface
-				["coord"] = { 58.0, 62.1, AZJ_KAHET },
+				["coord"] = { 58.0, 62.3, AZJ_KAHET },
 				["questID"] = 81707,
 				["g"] = {
 					i(221248),	-- Deep Terror Carver
@@ -45,7 +35,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			n(216050, {	-- Harverster Qixt
-				["description"] = "Patrol in area",
+				["description"] = "Patrols in the area.",
 				["questID"] = 82036,
 				["coords"] = {
 					{ 62.4, 86.4, AZJ_KAHET_LOWER},	-- Start
@@ -54,6 +44,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 				["g"] = {
 					i(223941),	-- Nerubian Cultivator's Girdle
+					i(223916),	-- Nerubian Cutthroat's Reach
+					i(223915),	-- Nerubian Orator's Stiletto
 				},
 			}),
 			n(216048, {	-- Jix'ak the Crazed
@@ -62,10 +54,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["coord"] = { 65.1, 85.7, AZJ_KAHET_LOWER},
 				["g"] = {
 					i(223950),	-- Corruption Sifter's Treads
+					i(223917),	-- Nerubian Covert's Cloak
+					i(223916),	-- Nerubian Cutthroat's Reach
+					i(223915),	-- Nerubian Orator's Stiletto
 				},
 			}),
 			n(221327, {	-- Kaheti Silk Hauler
-				["description"] = "Patrol on road",
+				["description"] = "Patrols on the road.",
 				["coords"] = {
 					{ 65.2, 18.9, AZJ_KAHET },	-- Start
 					{ 63.2, 25.2, AZJ_KAHET },	-- Mid
@@ -83,6 +78,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["questID"] = 81706,
 				["g"] = {
 					i(221217),	-- Nerubian Bomber's Leggings
+					i(221252),	-- Nerubian Slayer's Claymore
+					i(221263),	-- Nerubian Venom-Tipped Dart (dupe from Tka'ktath - nerubian bugs-like?)
 				},
 			}),
 			n(216043, {	-- Monstrous Lasharoth
@@ -90,12 +87,100 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["questID"] = 81705,
 				["g"] = {
 					i(221250),	-- Creeping Lasher Machete
+					i(221253),	-- Cultivator's Plant Puncher
+					i(221227),	-- Monstrous Fungal Cord
 				},
 			}),
 			n(216052, {	-- Skrimisher Sa'zryk
-				--TODO: add more waypoint next time
-				["coord"] = { 61.3, 7.4, AZJ_KAHET },
+				["description"] = "Patrolling the path from the base to the top.",
+				["coords"] = {
+						{ 61.3, 7.6, AZJ_KAHET },
+						{ 62.9, 4.8, AZJ_KAHET },
+				},
 				["questID"] = 82078,
+				["g"] = {
+					i(223939),	-- Esteemed Nerubian's Mantle
+					i(223917),	-- Nerubian Covert's Cloak
+					i(223916),	-- Nerubian Cutthroat's Reach
+					i(223915),	-- Nerubian Orator's Stiletto
+				},
+			}),
+			n(216038, {	-- The Groundskeeper
+				["coord"] = { 30.6, 55.5, NERUBAR },
+				["questID"] = 81634,
+				["g"] = {
+					i(221214),	-- Chitin Chain Headpiece
+				},
+			}),
+			n(216047, {	-- The One Left [This is the only Weird Rare....]
+				["questID"] = 82290,
+				["coord"] = { 63.5, 95.2, AZJ_KAHET },
+				["g"] = {
+					i(221251),	-- Bestial Underground Cleaver
+					i(221265),	-- Charm of the Underground Beast
+					i(225998),	-- Earthen Adventurer's Cloak
+					i(221246),	-- Fierce Beast Staff
+				},
+			}),
+			n(216049, {	-- The Oozekhan
+				["questID"] = 82035,
+				["coord"] = { 61.7, 89.4, AZJ_KAHET_LOWER },
+				["g"] = {
+					i(223931),	-- Black Blood Cowl
+				},
+			}),
+			n(216046, {	-- Tka'ktath
+				["questID"] = 82289,
+				["coord"] = { 62.8, 66.7, AZJ_KAHET },
+				["g"] = {
+					i(221252),	-- Nerubian Slayer's Claymore
+					i(221263),	-- Nerubian Venom-Tipped Dart
+					i(225952),	-- Vial of Tka'ktath's Blood (QS!)
+				},
+			}),
+			n(216051, {	-- Umbraclaw Matra
+				["coord"] = { 64.5, 3.4, AZJ_KAHET },
+				["questID"] = 82037,
+				["g"] = {
+					i(223930),	-- Monstrous Chain Pincers
+					i(221240),	-- Nerubian Stagshell Gouger
+				},
+			}),
+			n(216039, {	-- Xishorr
+				["coord"] = { 67.3, 58.4, NERUBAR_LOWER },
+				["questID"] = 81701,
+				["g"] = {
+					i(221506),	-- Arachnid's Web-Sown Guise
+					i(221239),	-- Spider Blasting Blunderbuss
+					i(221221),	-- Venomous Lurker's Shoulderplates
+				},
+			}),
+			n(216034, {	-- XT-Minecrusher 8700
+				["coord"] = { 76.6, 57.8, AZJ_KAHET },
+				["questID"] = 81703,
+				["g"] = {
+					i(221232),	-- Polished Goblin Bling
+					i(221231),	-- Steam-Powered Wristwatch
+				},
+			}),
+		})),
+		n(RARES, {
+			n(216031, {	-- Abyssal Devourer
+				["coord"] = { 47.4, 43.7, AZJ_KAHET },
+				["questID"] = 81695,
+				["g"] = {
+					i(223390),	-- Leggings of Dark Hunger
+					i(223391),	-- Legguards of Dark Hunger
+					i(223389),	-- Legplates of Dark Hunger
+					i(223392),	-- Trousers of Dark Hunger
+				},
+			}),
+			n(214151, {	-- Ahg'zagall
+				["coord"] = { 40.0, 47.3, AZJ_KAHET },
+				["questID"] = 78905,
+				["g"] = {
+					i(223375),	-- Clattering Chitin Necklace
+				},
 			}),
 			n(216032, {	-- Stronghold Scouts (Khak'ik npcID)
 				["crs"] = { 221032 },	-- Rhak'ik
@@ -112,34 +197,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					i(223408),	-- Treads of the Nerubian Twins
 				},
 			}),
-			n(216038, {	-- The Groundskeeper
-				["coord"] = { 30.6, 55.5, NERUBAR },
-				["questID"] = 81634,
-			}),
-			n(216047, {	-- The One Left [This is the only Weird Rare....]
-				["questID"] = 82290,
-				["coord"] = { 63.5, 95.2, AZJ_KAHET },
-			}),
-			n(216049, {	-- The Oozekhan
-				["questID"] = 82035,
-				["coord"] = { 61.7, 89.4, AZJ_KAHET_LOWER },
-				["g"] = {
-					i(223006),	-- Signet of Dark Horizons (alpha data)
-				},
-			}),
-			n(216046, {	-- Tka'ktath
-				["questID"] = 82289,
-				["coord"] = { 62.8, 66.7, AZJ_KAHET },
-				["g"] = {
-					i(225952),	-- Vial of Tka'ktath's Blood (QS!)
-				},
-			}),
-			n(216051, {	-- Umbraclaw Matra
-				["coord"] = { 64.5, 3.4, AZJ_KAHET },
-				["questID"] = 82037,
-			}),
 			n(216037, {	-- Vilewing
-				["description"] = "Fly around",
+				["description"] = "Flies around the area.",
 				["coord"] = { 36.6, 44.3, AZJ_KAHET },
 				["questID"] = 81700,
 				["g"] = {
@@ -150,43 +209,69 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			n(216041, {	-- Webspeaker Grik'ik
-				["coord"] = { 61.3, 33.0, AZJ_KAHET },
+				["coord"] = { 61.3, 27.3, AZJ_KAHET },
 				["questID"] = 81699,
 				["g"] = {
 					i(223369),	-- Webspeaker's Spiritual Cloak
 				},
 			}),
-			n(216039, {	-- Xishorr
-				["coord"] = { 67.3, 58.4, NERUBAR_LOWER },
-				["questID"] = 81701,
-				["g"] = {
-					i(221239),	-- Spider Blasting Blunderbuss
-					i(221221),	-- Venomous Lurker's Greathelm
-				},
-			}),
-			n(216034, {	-- XT-Minecrusher 8700
-				["coord"] = { 75.4, 61.0, AZJ_KAHET },
-				["questID"] = 81703,
-			}),
-		})),
+		}),
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(KHAZ_ALGAR, {
-	m(AZJ_KAHET, {
-		q(84073),	-- Extra HQT: Cha'tak
-		q(84081),	-- Extra HQT: Deepcrawler Tx'kesh
-		q(84076),	-- Extra HQT: Enduring Gutterface
-		q(84079),	-- Extra HQT: Harverster Qixt
-		q(84071),	-- Extra HQT: Kaheti Silk Hauler
-		q(84070),	-- Extra HQT: Xishorr
-		q(84075),	-- Extra HQT: Maddened Siegebomber
-		q(84074),	-- Extra HQT: Monstrous Lasharoth
-		q(84082),	-- Extra HQT: Skrimisher Sa'zryk
-		q(84069),	-- Extra HQT: The Groundskeeper
-		q(85167),	-- Extra HQT: The One Left
-		q(84078),	-- Extra HQT: The Oozekhan
-		q(84080),	-- Extra HQT: Umbraclaw Matra
-		q(84072),	-- Extra HQT: XT-Minecrusher 8700
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	m(KHAZ_ALGAR, {
+		m(AZJ_KAHET, {
+			n(RARES, {
+				q(84073, {	-- Weekly reputation: Cha'tak
+					["name"] = "Cha'tak weekly reputation obtained.",
+				}),
+				q(84081, {	-- Weekly reputation: Deepcrawler Tx'kesh
+					["name"] = "Deepcrawler Tx'kesh weekly reputation obtained.",
+				}),
+				q(84076, {	-- Weekly reputation: Enduring Gutterface
+					["name"] = "Enduring Gutterface weekly reputation obtained.",
+				}),
+				q(84079, {	-- Weekly reputation: Harverster Qixt
+					["name"] = "Harverster Qixt weekly reputation obtained.",
+				}),
+				q(84077, {	-- Weekly reputation: Jix'ak the Crazed
+					["name"] = "Jix'ak the Crazed weekly reputation obtained.",
+				}),
+				q(84071, {	-- Weekly reputation: Kaheti Silk Hauler
+					["name"] = "Kaheti Silk Hauler weekly reputation obtained.",
+				}),
+				q(84075, {	-- Weekly reputation: Maddened Siegebomber
+					["name"] = "Maddened Siegebomber weekly reputation obtained.",
+				}),
+				q(84074, {	-- Weekly reputation: Monstrous Lasharoth
+					["name"] = "Monstrous Lasharoth weekly reputation obtained.",
+				}),
+				q(84082, {	-- Weekly reputation: Skrimisher Sa'zryk
+					["name"] = "Skrimisher Sa'zryk weekly reputation obtained.",
+				}),
+				q(84069, {	-- Weekly reputation: The Groundskeeper
+					["name"] = "The Groundskeeper weekly reputation obtained.",
+				}),
+				q(85167, {	-- Weekly reputation: The One Left
+					["name"] = "The One Left weekly reputation obtained.",
+				}),
+				q(84078, {	-- Weekly reputation: The Oozekhan
+					["name"] = "The Oozekhan weekly reputation obtained.",
+				}),
+				q(85166, {	-- Weekly reputation: Tka'ktath
+					["name"] = "Tka'ktath weekly reputation obtained.",
+				}),
+				q(84080, {	-- Weekly reputation: Umbraclaw Matra
+					["name"] = "Umbraclaw Matra weekly reputation obtained.",
+				}),
+				q(84070, {	-- Weekly reputation: Xishorr
+					["name"] = "Xishorr weekly reputation obtained.",
+				}),
+				q(84072, {	-- Weekly reputation: XT-Minecrusher 8700
+					["name"] = "XT-Minecrusher 8700 weekly reputation obtained.",
+				}),
+			}),
+		}),
 	}),
-}));
+})));

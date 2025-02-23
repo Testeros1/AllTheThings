@@ -9,7 +9,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 		["isWeekly"] = true,
 		["provider"] = { "o", 322533 },	-- Mardivas's Tome of the Elements
 		["coord"] = { 60.7, 32.4, NAZJATAR },
-		["icon"] = "Interface\\Icons\\inv_crystallized_water",	-- icon for Strange Mineralized Water
+		["icon"] = 132774,	-- icon for Strange Mineralized Water
 		["g"] = {
 			currency(1721),	-- Prismatic Manapearl x5
 			n(155139, {	-- Arcane Amalgamation
@@ -24,7 +24,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					154991,	-- Lesser Pyroclasmic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169333, 1 }, -- Strange Volcanic Rock
+					{ "i", 169333, 1 },	-- Strange Volcanic Rock
 				},
 				["g"] = {
 					i(170126),	-- Igneous Longbow
@@ -36,7 +36,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155009,	-- Lesser Lithic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169334, 1 }, -- Strange Oceanic Sediment
+					{ "i", 169334, 1 },	-- Strange Oceanic Sediment
 				},
 				["g"] = {
 					i(170383),	-- Coralspine Bulwark
@@ -49,7 +49,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155031,	-- Greater Lithic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169334, 2 }, -- Strange Oceanic Sediment
+					{ "i", 169334, 2 },	-- Strange Oceanic Sediment
 				},
 				["g"] = {
 					i(170125),	-- Behemoth Claw of the Abyss
@@ -62,8 +62,8 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155031,	-- Greater Lithic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169333, 1 }, -- Strange Volcanic Rock
-					{ "i", 169334, 1 }, -- Strange Oceanic Sediment
+					{ "i", 169333, 1 },	-- Strange Volcanic Rock
+					{ "i", 169334, 1 },	-- Strange Oceanic Sediment
 				},
 				["g"] = {
 					i(170128),	-- Majestic Shirakess Greatstaff
@@ -76,8 +76,8 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155025,	-- Greater Pyroclasmic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169332, 1 }, -- Strange Mineralized Water
-					{ "i", 169333, 1 }, -- Strange Volcanic Rock
+					{ "i", 169332, 1 },	-- Strange Mineralized Water
+					{ "i", 169333, 1 },	-- Strange Volcanic Rock
 				},
 				["g"] = {
 					i(170132),	-- Slicer of Omus
@@ -91,7 +91,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					154979,	-- Greater Benthic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169332, 2 }, -- Strange Mineralized Water
+					{ "i", 169332, 2 },	-- Strange Mineralized Water
 				},
 				["g"] = {
 					i(170130),	-- Glaive of Swells
@@ -104,8 +104,8 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155025,	-- Greater Pyroclasmic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169333, 1 }, -- Strange Volcanic Rock
-					{ "i", 169334, 1 }, -- Strange Oceanic Sediment
+					{ "i", 169333, 1 },	-- Strange Volcanic Rock
+					{ "i", 169334, 1 },	-- Strange Oceanic Sediment
 				},
 				["g"] = {
 					i(170129),	-- Salgos' Volatile Basher
@@ -118,8 +118,8 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					154979,	-- Greater Benthic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169332, 1 }, -- Strange Mineralized Water
-					{ "i", 169334, 1 }, -- Strange Oceanic Sediment
+					{ "i", 169332, 1 },	-- Strange Mineralized Water
+					{ "i", 169334, 1 },	-- Strange Oceanic Sediment
 				},
 				["g"] = {
 					i(170124),	-- Coral-Sharpened Greatsword
@@ -132,7 +132,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155025,	-- Greater Pyroclasmic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169333, 2 }, -- Strange Volcanic Rock
+					{ "i", 169333, 2 },	-- Strange Volcanic Rock
 				},
 				["g"] = {
 					i(170131),	-- Tidal Wand of Malevolence
@@ -144,7 +144,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					154970,	-- Lesser Benthic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169332, 1 }, -- Strange Mineralized Water
+					{ "i", 169332, 1 },	-- Strange Mineralized Water
 				},
 				["g"] = {
 					i(170138),	-- Scroll of Violent Tides
@@ -157,8 +157,8 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					154979,	-- Greater Benthic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169332, 1 }, -- Strange Mineralized Water
-					{ "i", 169333, 1 }, -- Strange Volcanic Rock
+					{ "i", 169332, 1 },	-- Strange Mineralized Water
+					{ "i", 169333, 1 },	-- Strange Volcanic Rock
 				},
 				["g"] = {
 					i(170127),	-- Pyroclastic Halberd
@@ -172,13 +172,62 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					155031,	-- Greater Lithic Arcanocrystal
 				},
 				["cost"] = {
-					{ "i", 169332, 1 }, -- Strange Mineralized Water
-					{ "i", 169334, 1 }, -- Strange Oceanic Sediment
+					{ "i", 169332, 1 },	-- Strange Mineralized Water
+					{ "i", 169334, 1 },	-- Strange Oceanic Sediment
 				},
 				["g"] = {
 					i(170137),	-- Azerite-Infused Crystal Flayer
 				},
 			}),
 		},
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } }, {
+	m(NAZJATAR, {
+		n(RARES, {
+			q(55202),	-- Elemental Essence Amalgamator Selection	-- Needs confirmation
+			q(55198),	-- Small Water
+			-- q(56478),	-- Greater Benthic (Blue) ?? maybe
+			q(56428),	-- Summoned Arcane Amalgamation
+			q(55144),	-- Summoned Dusty Amalgamation
+			q(55205),	-- Summoned Moghiea
+			q(55206),	-- Summoned Ungormath
+			q(55203),	-- Summoned Salgos, the Eternal
+			q(55201),	-- Summoned Spawn of Salgos
+			q(55204),	-- Summoned Xue
+			q(55199),	-- Summoned Zomera
+			q(55200),	-- Summoned Omus
+			q(55143),	-- Killed Watery Amalgamation (first time)
+			q(56477),	-- Killed Watery Amalgamation (first time)
+			q(56720),	-- Killed Watery Amalgamation (first time)
+			q(56476),	-- Killed Arcane Amalgamation
+			q(56892),	-- Killed Arcane Amalgamation, Burning Amalgamation, Herald of Salgos, Moghiea, Salgos the Eternal, Spawn of Salgos, Xue, and Zomera
+			q(56724),	-- Triggered when killing Arcane Amalgamation in mardivas' lab. Probably used to disable something else in the room
+			q(55145),	-- Killed Burning Amalgamation
+			q(56481),	-- Killed Burning Amalgamation
+			q(56725),	-- Killed Burning Amalgamation
+			q(56891),	-- Killed Burning Amalgamation, Moghiea, Salgos the Eternal, Spawn of Salgos, and Xue
+			q(56485),	-- Killed Dusty Amalgamation
+			q(56730),	-- First kill of Dusty Amalgamation
+			q(56488),	-- Killed Herald of Salgos
+			q(56733),	-- First kill of Herald of Salgos
+			q(56484),	-- Killed Moghiea
+			q(56728),	-- killed Moghiea (first time)
+			q(56479),	-- Killed Omus
+			q(56722),	-- Killed Omus
+			q(56483),	-- Killed Ungormath
+			q(56487),	-- Killed Salgos, the Eternal
+			q(56732),	-- Killed Salgos, the Eternal
+			q(56486),	-- Killed Spawn of Salgos
+			q(56731),	-- Killed Spawn of Salgos
+			q(56482),	-- Killed Xue
+			q(56726),	-- Killed Xue
+			q(56480),	-- Killed Zomera
+			q(56723),	-- Killed Zomera
+			q(56721),	-- Killed Osgen
+			q(56478),	-- Killed Osgen (first time)
+			q(56727),	-- Killed Ungormath
+		}),
 	}),
 })));

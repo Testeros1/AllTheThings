@@ -1,10 +1,6 @@
 SEASON_VENGEFUL = createHeader({
 	readable = "Vengeful Gladiator",
-	-- #if BEFORE WRATH
-	icon = [[~_.asset("achievement_featsofstrength_gladiator_03")]],
-	-- #else
-	icon = "Interface\\Icons\\achievement_featsofstrength_gladiator_03",
-	-- #endif
+	icon = 236536,
 	text = {
 		-- #if BEFORE WRATH
 		en = "Vengeful Gladiator: Season 3",
@@ -16,11 +12,13 @@ SEASON_VENGEFUL = createHeader({
 		ru = "Мстительный гладиатор: Сезон 3",
 		ko = "복수심에 불타는 검투사: Season 3",
 		cn = "复仇角斗士：第3赛季",
+		tw = "仇恨鬥士：第3賽季",
 		-- #else
 		en = WOWAPI_GetAchievementName(419).. [[..": Season 3"]],
 		fr = WOWAPI_GetAchievementName(419).. [[..": Saison 3"]],
 		ru = WOWAPI_GetAchievementName(419).. [[..": Сезон 3"]],
 		cn = WOWAPI_GetAchievementName(419).. [[.."：第3赛季"]],
+		tw = WOWAPI_GetAchievementName(419).. [[.."：第3賽季"]],
 		-- #endif
 	},
 });

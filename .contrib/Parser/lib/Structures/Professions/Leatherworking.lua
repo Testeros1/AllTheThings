@@ -59,7 +59,7 @@ APPRENTICE_JOURNEYMAN_LEATHERWORKING = {
 		r(9074),	-- Nimble Leather Gloves
 		r(19102, {["timeline"] = {ADDED_2_1_0}}),	-- Runic Leather Armor
 		r(19072, {["timeline"] = {ADDED_2_1_0}}),	-- Runic Leather Belt
-		r(19065, {["timeline"] = {ADDED_2_1_0}}), 	-- Runic Leather Bracers
+		r(19065, {["timeline"] = {ADDED_2_1_0}}),	-- Runic Leather Bracers
 		r(19055, {["timeline"] = {ADDED_2_1_0}}),	-- Runic Leather Gauntlets
 		r(19082, {["timeline"] = {ADDED_2_1_0}}),	-- Runic Leather Headband
 		r(19091, {["timeline"] = {ADDED_2_1_0}}),	-- Runic Leather Pants
@@ -851,7 +851,6 @@ COMMON_MOP_LEATHERWORKING_RECIPES = applyclassicphase(MOP_PHASE_ONE, sharedData(
 }));
 DRAENOR_LEATHERWORKING = applyclassicphase(WOD_PHASE_ONE, i(115358, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
 	["description"] = "This is a reward for completing the introductory Leaterworking questline that can drop from any Draenor mob.",
-	["filterID"] = MISC,
 	["g"] = {
 		r(158752, {	-- Leatherworking (Draenor Master)
 			["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_8_0_1_LAUNCH },
@@ -1318,7 +1317,6 @@ TWW_LEATHERWORKING = sharedData({ ["timeline"] = { ADDED_11_0_2 } }, {
 		r(444075),	-- Carapace-Backed Hide
 		r(444086),	-- Chitin Armor Banding
 		r(444076),	-- Crystalfused Hide
-		r(444085),	-- Deepfury Hide
 		r(444079),	-- Leyfused Hide
 		r(444078),	-- Sporecoated Hide
 		r(444087),	-- Storm-Touched Weapon Wrap

@@ -13,19 +13,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			43,	-- The Master's Cellar
 			44,	-- The Master's Cellar
 			45,	-- The Master's Cellar
-			46,	-- Karazhan Catacombs
+			-- 46,	-- Karazhan Catacombs [not really helpful to show all Deadwind Pass in the Catacombs]
 		},
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_deadwindpass",
-		-- #endif
+		["icon"] = 236741,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(777, {	-- Explore Deadwind Pass
-					-- #if BEFORE WRATH
-					["description"] = "Explore Deadwind Pass, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(777),	-- Explore Deadwind Pass
 			}),
 			battlepets({
 				pet(1160, {	-- Arcane Eye (PET!)
@@ -40,8 +34,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 			}),
 			explorationHeader({
+				visit_exploration(2560,{coord={52.6,36.8,DEADWIND_PASS}}),	-- Ariden's Camp
 				exploration(2697),	-- Deadman's Crossing
 				exploration(2562),	-- Karazhan
+				visit_exploration(7971,{coord={46.7,69.0,DEADWIND_PASS}}),	-- Karazhan Catacombs
 				exploration(2938),	-- Sleeping Gorge
 				exploration(2561),	-- The Vice
 			}),
@@ -145,7 +141,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216947 },	-- Whirring Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 					["maps"] = { ARATHI_HIGHLANDS },
 				})),
@@ -154,7 +150,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216951 },	-- Slippery Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 					["maps"] = { BADLANDS },
 				})),
@@ -163,7 +159,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216945 },	-- Curious Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 				})),
 				applyclassicphase(SOD_PHASE_TWO, q(80151, {	-- Curious Dalaran Relic [Desolace]
@@ -171,7 +167,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216950 },	-- Creepy Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 					["maps"] = { DESOLACE },
 				})),
@@ -180,7 +176,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216946 },	-- Glittering Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 					["maps"] = { DUSKWOOD },
 				})),
@@ -189,7 +185,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216948 },	-- Odd Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 					["maps"] = { SWAMP_OF_SORROWS },
 				})),
@@ -198,7 +194,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 216949 },	-- Heavy Dalaran Relic
 						{ "n", 218920 },	-- Dalaran Agent <Violet Eye>
 					},
-					--["sourceQuest"] = ,	-- 
+					--["sourceQuest"] = ,	--
 					["coord"] = { 52, 34.2, DEADWIND_PASS },
 					["maps"] = { THE_BARRENS },
 				})),
@@ -226,7 +222,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226406, {	-- Rune of Sword Specialization
 					["provider"] = { "o", 457088 },	-- Advanced Swordplay
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 43.1, 74.6, DEADWIND_PASS },
 					["classes"] = { WARRIOR, PALADIN, HUNTER, MAGE, WARLOCK, ROGUE },
 					["groups"] = {

@@ -4,7 +4,7 @@
 local VEILED_ARGUNITE = 1508;
 root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 	m(THE_VINDICAAR_ANTORAN_WASTES_UPPER, {
-		["icon"] = "Interface\\Icons\\inv_lightforgedmechsuit",
+		["icon"] = 1586383,
 		["lore"] = "For untold millennia, the Army of the Light waged war against the Burning Legion throughout the Twisting Nether. The draenei most committed to their long crusade would undergo a ritual to become Lightforged, infusing their bodies with the very essence of the Holy Light. After finally achieving victory on Argus, the Lightforged draenei have undertaken a new mission: protecting Azeroth from rising threats and helping the Alliance push back against Horde aggression.",
 		["maps"] = {
 			THE_VINDICAAR_KROKUUN_UPPER,
@@ -184,6 +184,7 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 						i(151738),	-- Design: Masterful Argulite (RECIPE!)
 						i(151737),	-- Design: Quick Lightsphene (RECIPE!)
 						i(151739),	-- Design: Versatile Labradorite (RECIPE!)
+						i(151876),	-- Vorel's Design Book (QI!)
 					},
 				}),
 				q(48076, {	-- A Crowning Achievment
@@ -218,16 +219,25 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 					["sourceQuests"] = { 49143 },	-- Essence of the Light Mother
 					["provider"] = { "n", 126307 },	-- Prophet Velen
 					["coord"] = { 46.0, 36.7, THE_VINDICAAR_KROKUUN_UPPER },
+					["g"] = {
+						i(152593),	-- Essence of Light (QI!)
+					},
 				}),
 				q(48560, {	-- An Offering of Shadow
 					["sourceQuests"] = { 47220 },	-- A Beacon in the Dark
 					["provider"] = { "n", 128722 },	-- Prophet Velen
 					["coord"] = { 53.1, 48.8, THE_VINDICAAR_EREDATH_UPPER },
+					["g"] = {
+						i(152594),	-- Essence of Shadow (QI!)
+					},
 				}),
 				q(49143, {	-- Essence of the Light Mother
 					["sourceQuests"] = { 47743 },	-- The Child of Light and Shadow
 					["provider"] = { "n", 126307 },	-- Prophet Velen
 					["coord"] = { 45.9, 34.0, THE_VINDICAAR_KROKUUN_UPPER },
+					["g"] = {
+						i(153125),	-- Vestige of Light (QI!)
+					},
 				}),
 				q(47134, {	-- Foiling the Legion's Jailbreak
 					["sourceQuests"] = { 47104 },	-- Imprisoned Inquisitor
@@ -248,9 +258,18 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 						47473,	-- Sizing Up the Opposition (Light's Purchase)
 						48929,	-- Sizing Up the Opposition (The Veiled Den)
 					},
-					["provider"] = { "n", 124312 },	-- High Exarch Turalyon
+					["providers"] = {
+						{ "n", 124312 },	-- High Exarch Turalyon @ Krokuun
+						{ "n", 126954 },	-- High Exarch Turalyon @ Antoran Wastes
+					},
 					["isWeekly"] = true,
-					["coord"] = { 46.7, 24.6, THE_VINDICAAR_KROKUUN_UPPER },
+					["coords"] = {
+						{ 46.7, 24.6, THE_VINDICAAR_KROKUUN_UPPER },
+						{ 33.5, 58.3, THE_VINDICAAR_ANTORAN_WASTES_UPPER },
+					},
+					["g"] = {
+						i(153014),	-- Pristine Argunite (QI!)
+					},
 				}),
 				q(48636, {	-- Fueling the Antoran Campaign
 					["sourceQuests"] = { 48912 },	-- Supplying the Antoran Campaign
@@ -290,14 +309,18 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				q(47182, {	-- Long Overdue
 					["sourceQuests"] = { 47134 },	-- Foiling the Legion's Jailbreak
 					["provider"] = { "n", 121263 },	-- Grand Artificer Romuul
-					["coord"] = { 43.2, 25.5, THE_VINDICAAR_KROKUUN_UPPER },
-					["lvl"] = 110,
+					["coord"] = { 43.3, 23.2, THE_VINDICAAR_KROKUUN_UPPER },
+					["lvl"] = 45,
+					["g"] = {
+						i(147906),	-- Fel Heart of Argus (QI!)
+					},
 				}),
 				q(48074, {	-- Looming Over Me
 					["requireSkill"] = TAILORING,
 					["sourceQuests"] = { 46941 },	-- The Path Forward
 					["g"] = {
 						recipe(247807),	-- Lightweave Breeches [Rank 1]
+						i(151874),	-- Lightweave Loom (QI!)
 					},
 				}),
 				q(46815, {	-- Eredath, Jewel of Argus
@@ -321,6 +344,9 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 					["sourceQuests"] = { 47220 },	-- A Beacon in the Dark
 					["provider"] = { "n", 128722 },	-- Prophet Velen
 					["coord"] = { 53.1, 48.8, THE_VINDICAAR_EREDATH_UPPER },
+					["g"] = {
+						i(151090),	-- The Crest of Knowledge (QI!)
+					},
 				}),
 				q(48200, {	-- Securing a Foothold
 					["sourceQuests"] = { 48199 },	-- The Burning Heart
@@ -499,10 +525,7 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 							i(153027),	-- Orphaned Marsuul (PET!)
 						}, {	-- Revered
 							i(153197),	-- Boon of the Steadfast
-							i(152964, {	-- Krokul Flute
-								["collectible"] = false,
-								["filterID"] = CONSUMABLES,
-							}),
+							i(152964),	-- Krokul Flute (CI!)
 							i(151707),	-- Recipe: Astral Alchemist Stone [Rank 2] (RECIPE!)
 						}, {	-- Exalted
 							i(152669),	-- Argussian Reach Tabard
@@ -519,9 +542,9 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				}),
 				n(121589, {	-- Thaumaturge Vashreen <Purveyor of Exquisite Furnishings>
 					["coords"] = {
-						{ 67.6, 55.8, THE_VINDICAAR_KROKUUN_UPPER },
-						{ 66.2, 57.8, THE_VINDICAAR_EREDATH_UPPER },
-						{ 56.6, 30.2, THE_VINDICAAR_ANTORAN_WASTES_UPPER },
+						{ 46.4, 71.8, THE_VINDICAAR_KROKUUN_UPPER },
+						{ 46.1, 65.9, THE_VINDICAAR_EREDATH_UPPER },
+						{ 61.6, 59.1, THE_VINDICAAR_ANTORAN_WASTES_UPPER },
 					},
 					["g"] = sharedData({ ["cost"] = { { "c", VEILED_ARGUNITE, 650 } } }, {
 						i(153211, {	-- Relinquished Hood
@@ -656,21 +679,31 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(48668),	-- Lightforged Beacon: City Center - triggers during the cutscene while on "Into the Night" (questID 48440)
-		q(47888),	-- Triggers when turning in "Alone in the Abyss" (questID 46938)
-		q(47869),	-- Triggers when turning in "Light's Exodus" (questID 47223)
-		q(49161),	-- Triggers when turning in "Where They Least Expect It" (questID 48461)
-		q(49383),	-- Changing specialization: Arms/Balance/Elemental/...
-		q(49384),	-- Changing specialization: Fury/Feral/Enhance/...
-		q(49385),	-- Changing specialization: Prot(War)/Guardian/Resto(Sham)/...
-		q(49386),	-- Changing specialization: Restoration(Druid)
-		-- Vindicaar Matrix Abilities
-		q(48449),	-- Shroud of Arcane Echoes/Warframe
-		q(48450),	-- Shroud of Arcane Echoes/Fel Heart
-		q(48451),	-- Shroud of Arcane Echoes/Light's Judgement/Fel Heart
-		-- Stay a while and Listen
-		q(49164),	-- Silgryn and Liadrin
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {
+	m(ARGUS, {
+		m(THE_VINDICAAR_ANTORAN_WASTES_UPPER, {
+			n(FACTIONS, {
+				n(EMISSARY_QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {
+					q(48973),	-- Paragon of Argussian Reach
+					q(48974),	-- Paragon of the Army of the Light
+				})),
+			}),
+			n(QUESTS, {
+				q(48668),	-- Lightforged Beacon: City Center - triggers during the cutscene while on "Into the Night" (questID 48440)
+				q(47888),	-- Triggers when turning in "Alone in the Abyss" (questID 46938)
+				q(47869),	-- Triggers when turning in "Light's Exodus" (questID 47223)
+				q(49161),	-- Triggers when turning in "Where They Least Expect It" (questID 48461)
+				------ Stay awhile and listen ------
+				hqt(49164),	-- Silgryn and Liadrin
+			}),
+			q(49383),	-- Changing specialization: Arms/Balance/Elemental/...
+			q(49384),	-- Changing specialization: Fury/Feral/Enhance/...
+			q(49385),	-- Changing specialization: Prot(War)/Guardian/Resto(Sham)/...
+			q(49386),	-- Changing specialization: Restoration(Druid)
+			-- Vindicaar Matrix Abilities
+			q(48449),	-- Shroud of Arcane Echoes/Warframe
+			q(48450),	-- Shroud of Arcane Echoes/Fel Heart
+			q(48451),	-- Shroud of Arcane Echoes/Light's Judgement/Fel Heart
+		}),
 	}),
-});
+})));

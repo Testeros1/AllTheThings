@@ -157,7 +157,7 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 	})),
 	expansion(EXPANSION.CATA, applyclassicphase(CATA_PHASE_ONE, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
 		n(QUESTS, {
-			q(28778,  {	-- Broken Boar Figurine
+			q(28778, {	-- Broken Boar Figurine
 				["provider"] = { "i", 65895 },	-- Figurine - King of Boars
 				-- #if BEFORE 10.2.
 				["classes"] = { DEATHKNIGHT, PALADIN, WARRIOR },
@@ -166,7 +166,7 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 					i(52351),	-- Figurine - King of Boars
 				},
 			}),
-			q(28776,  {	-- Broken Earthen Figurine
+			q(28776, {	-- Broken Earthen Figurine
 				["provider"] = { "i", 65897 },	-- Figurine - Earthen Guardian
 				-- #if BEFORE 10.2.
 				["classes"] = { DEATHKNIGHT, PALADIN, WARRIOR, DRUID, DEMONHUNTER, MONK },
@@ -175,7 +175,7 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 					i(52352),	-- Figurine - Earthen Guardian
 				},
 			}),
-			q(28777,  {	-- Broken Owl Figurine
+			q(28777, {	-- Broken Owl Figurine
 				["provider"] = { "i", 65894 },	-- Figurine - Dream Owl
 				-- #if BEFORE 10.2.
 				["classes"] = { PALADIN, SHAMAN, DRUID, MONK, PRIEST },
@@ -184,7 +184,7 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 					i(52354),	-- Figurine - Dream Owl
 				},
 			}),
-			q(25047,  {	-- Broken Panther Figurine
+			q(25047, {	-- Broken Panther Figurine
 				["provider"] = { "i", 52197 },	-- Figurine - Demon Panther
 				-- #if BEFORE 10.2.
 				["classes"] = { HUNTER, SHAMAN, MONK, DEMONHUNTER, DRUID, ROGUE },
@@ -193,7 +193,7 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 					i(52199),	-- Figurine - Demon Panther
 				},
 			}),
-			q(28775,  {	-- Broken Serpent Figurine
+			q(28775, {	-- Broken Serpent Figurine
 				["provider"] = { "i", 65896 },	-- Figurine - Jeweled Serpent
 				-- #if BEFORE 10.2.
 				["classes"] = { SHAMAN, DRUID, MONK, PALADIN, PRIEST, MAGE, WARLOCK },
@@ -285,6 +285,9 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["modelScale"] = 2,
 				["races"] = ALLIANCE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(155590),	-- Shard of Golden Beryl (QI!)
+				},
 			}),
 			q(49583, {	-- Out With the Old [H]
 				["sourceQuests"] = { 49589 },	-- The Shrine of the Dawning
@@ -332,6 +335,9 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["races"] = ALLIANCE_ONLY,
 				["maps"] = { 974, 975, 976, 977, 978, 979, 980 },	-- Tol Dagor
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(155648),	-- Jewel of the Tides (QI!)
+				},
 			}),
 			q(49582, {	-- Atal'Dazar: Not All That Glitters...
 				["sourceQuests"] = { 49587 },	-- The Shrine of Nature
@@ -341,6 +347,9 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["races"] = HORDE_ONLY,
 				["maps"] = { 934, 935 },	-- Atal'Dazar
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(155666),	-- Eye of Dazar (QI!)
+				},
 			}),
 			q(55590, {	-- Setting Things Right [A]
 				["sourceQuests"] = { 49575 },	-- Tol Dagor: Jewel of the Tides
@@ -379,6 +388,10 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["modelScale"] = 2,
 				["races"] = ALLIANCE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(155661),	-- Pristine Kubiline Shards (QI!)
+					i(155830),	-- Runic Core (QI!)
+				},
 			}),
 			q(49581, {	-- Sun-Speckled Dunes
 				["sourceQuests"] = { 49588 },	-- The Shrine of the Sands
@@ -387,6 +400,10 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["modelScale"] = 2,
 				["races"] = HORDE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(155664),	-- Polished Fire Spinel (QI!)
+					i(155665),	-- Rough Fire Spinel (QI!)
+				},
 			}),
 			q(55586, {	-- Polished Up [A]
 				["sourceQuests"] = { 49576 },	-- High Prospects
@@ -414,6 +431,8 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["races"] = ALLIANCE_ONLY,
 				["g"] = {
 					r(256703),	-- Jewelhammer's Focus
+					i(155668),	-- The Missing Chapter (QI!)
+					i(155669),	-- Transcribed Final Chapter (QI!)
 				},
 			})),
 			q(49599, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {	-- The Missing Chapter [H]
@@ -426,6 +445,8 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				["races"] = HORDE_ONLY,
 				["g"] = {
 					r(256703),	-- Jewelhammer's Focus
+					i(155668),	-- The Missing Chapter (QI!)
+					i(155669),	-- Transcribed Final Chapter (QI!)
 				},
 			})),
 		}),
@@ -496,8 +517,14 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				},
 			}),
 			q(70032, {	-- Artisan's Supply: Jeweler's Specs
-				["provider"] = { "n", 192121 },	-- Falron Greygold
-				["coord"] = { 25.4, 54.2, THE_WAKING_SHORES },
+				["providers"] = {
+					{ "n", 192121 },	-- Falron Greygold
+					{ "n", 190103 },	-- Uluami
+				},
+				["coords"] = {
+					{ 25.4, 54.2, THE_WAKING_SHORES },
+					{ 65.3, 25.3, OHNAHRAN_PLAINS },
+				},
 				["cost"] = {{ "i", 193037, 1 }},	-- Sundered Onyx Loupe
 				["_drop"] = { "g" },
 			}),
@@ -768,21 +795,21 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 			},
 		},{
 			i(198612),	-- Jeweler's Cuts
-			q(74112, {	-- Inscription Order: Jewelcrafting
-				["name"] = "Inscription Order: Jewelcrafting",
+			q(74112, {	-- DF Inscription Order: Jewelcrafting
+				["name"] = "DF Inscription Order: Jewelcrafting",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194703 },	-- Draconic Treatise on Jewelcrafting
 			}),
-			q(66388, {	-- Weekly Jewelcrafting Knowledgepoint #1
-				["name"] = "Jewelcrafting Treasure #1",
+			q(66388, {	-- DF Weekly Jewelcrafting Knowledgepoint #1
+				["name"] = "DF Jewelcrafting Treasure #1",
 				["provider"] = { "i", 193909 },		-- Ancient Gem Fragments
 			}),
-			q(66389, {	-- Weekly Jewelcrafting Knowledgepoint #2
-				["name"] = "Jewelcrafting Treasure #2",
+			q(66389, {	-- DF Weekly Jewelcrafting Knowledgepoint #2
+				["name"] = "DF Jewelcrafting Treasure #2",
 				["provider"] = { "i", 193907 },		-- Chipped Tyrstone
 			}),
-			q(70521, {	-- Weekly Jewelcrafting Knowledgepoint #3
-				["name"] = "Jewelcrafting Drop #1: Well Dressed",
+			q(70521, {	-- DF Weekly Jewelcrafting Knowledgepoint #3
+				["name"] = "DF Jewelcrafting Drop #1: Well Dressed",
 				["description"] = "Drops from any Well Dressed Humanoids & Dragonkins.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					195215,	-- Rebel Bruiser
@@ -796,8 +823,8 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 					{ 45.8 ,58.2, THALDRASZUS },
 				},
 			}),
-			q(70520, {	-- Weekly Jewelcrafting Knowledgepoint #4
-				["name"] = "Jewelcrafting Drop #2: Earth Elemental",
+			q(70520, {	-- DF Weekly Jewelcrafting Knowledgepoint #4
+				["name"] = "DF Jewelcrafting Drop #2: Earth Elemental",
 				["description"] = "Drops from any Earth Elemental.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					194212,	-- Unleashed Rubble
@@ -815,6 +842,18 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(228777),	-- Algari Jewelcrafter's Notebook
+			},
+		},{
+			q(84130, {	-- Jewelcrafting Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
+			}),
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{"c", TWW_JEWELCRAFTING_KNOWLEDGE, 1}} }, {
@@ -840,33 +879,162 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 				r(434552),	-- Versatile Ruby
 			}),
 		}),
-
+		n(TREASURES, {
+			o(455973, {	-- Arathi Sizing Gauges
+				["coord"] = { 47.3, 60.6, HALLOWFALL },
+				["questID"] = 83894,
+				["g"] = {
+					i(226320),	-- Arathi Sizing Gauges
+				},
+			}),
+			o(455975, {	-- Carved Stone File
+				["coord"] = { 48.5, 35.2, THE_RINGING_DEEPS },
+				["questID"] = 83892,
+				["g"] = {
+					i(226318),	-- Carved Stone File
+				},
+			}),
+			o(455976, {	-- Earthen Gem Pliers
+				["coord"] = { 34.9, 52.3, DORNOGAL },
+				["questID"] = 83891,
+				["g"] = {
+					i(226317),	-- Earthen Gem Pliers
+				},
+			}),
+			o(455977, {	-- Gentle Jewel Hammer
+				["coord"] = { 63.5, 66.8, ISLE_OF_DORN },
+				["questID"] = 83890,
+				["g"] = {
+					i(226316),	-- Gentle Jewel Hammer
+				},
+			}),
+			o(455974, {	-- Jeweler's Delicate Drill
+				["coord"] = { 57.0, 54.6, THE_RINGING_DEEPS },
+				["questID"] = 83893,
+				["g"] = {
+					i(226319),	-- Jeweler's Delicate Drill
+				},
+			}),
+			o(455972, {	-- Librarian's Magnifiers
+				["coord"] = { 44.7, 50.9, HALLOWFALL },
+				["questID"] = 83895,
+				["g"] = {
+					i(226321),	-- Librarian's Magnifiers
+				},
+			}),
+			o(455970, {	-- Nerubian Bench Blocks
+				["coord"] = { 56.1, 58.6, AZJ_KAHET },
+				["questID"] = 83897,
+				["g"] = {
+					i(226323),	-- Nerubian Bench Blocks
+				},
+			}),
+			o(455971, {	-- Ritual Caster's Crystal
+				["coord"] = { 47.7, 19.4, NERUBAR },
+				["questID"] = 83896,
+				["g"] = {
+					i(226322),	-- Ritual Caster's Crystal
+				},
+			}),
+		}),
 		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
 			["isWeekly"] = true,
 			["g"] = {
 				currency(TWW_JEWELCRAFTING_KNOWLEDGE),
 			},
 		},{
-			q(83731, {	-- Inscription Order: Jewelcrafting
-				["name"] = "Inscription Order: Jewelcrafting",
-				["provider"] = { "i", 222551 },	-- Algari Treatise on Jewelcrafting
+			q(83265, {	-- TWW Weekly Jewelcrafting Knowledgepoint #1
+				["name"] = "TWW Weekly Jewelcrafting Treasure #1",
+				["provider"] = { "i", 225224 },	-- Diaphanous Gem Shards
+			}),
+			q(83266, {	-- TWW Weekly Jewelcrafting Knowledgepoint #2
+				["name"] = "TWW Weekly Jewelcrafting Treasure #2",
+				["provider"] = { "i", 225225 },	-- Deepstone Fragment
 			}),
 		})),
 	})),
 })));
 
 root(ROOTS.HiddenQuestTriggers, {
-	n(PROFESSIONS, {
-		prof(JEWELCRAFTING, {
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
+		n(PROFESSIONS, {
+			prof(JEWELCRAFTING, {
 				q(40557),	-- FLAG: Clive Cozen Leave - Triggers after completing Hidden Intentions (40539)
 				q(40302),	-- FLAG - Prospecting 01 - triggered when completing a jewelcrafting world quest in Dalaran
-				q(40303),	-- FLAG - Prospecting 02 - triggered when completing a jewelcrafting world quest in Dalaran
+				q(40303),	-- FLAG - Prospecting 02 - triggered when completing a jewelcrafting world quest in Dalaran, triggered when openning 'Wyrmtongue Cache of Shiny Things' (itemID 153118)
 				q(40304),	-- FLAG - Prospecting 03 - triggered when completing a jewelcrafting world quest in Dalaran
-			})),
+			}),
 		}),
-	}),
+	})),
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
+		n(PROFESSIONS, {
+			prof(JEWELCRAFTING, {
+				q(55631),	-- Jewelcrafting Diode shrine. harvesting gems from them triggered this quest. Nazmir location
+			}),
+		}),
+	})),
 });
+
+-- Bloodied Crafted Gear was added with Cataclysm and then removed from the game after Firelands was released.
+-- #if ANYCLASSIC
+local BLOODIED_ONUPDATE = [[function(t)
+	if _.Settings:GetUnobtainableFilter(]] .. CATA_PHASE_RAGE_OF_THE_FIRELANDS .. [[) then
+		t.u = ]] .. REMOVED_FROM_GAME .. [[;
+		t.rwp = nil;
+	else
+		t.u = ]] .. CATA_PHASE_ONE .. [[;
+		t.rwp = 40200;
+	end
+end]];
+-- #endif
+local function bloodied(t)
+	-- #if CATA
+	t.timeline = { ADDED_4_0_3_LAUNCH, REMOVED_5_0_4 };
+		-- #if ANYCLASSIC
+		t.OnUpdate = BLOODIED_ONUPDATE;
+		-- #endif
+	-- #else
+	t.timeline = { ADDED_4_0_3_LAUNCH, REMOVED_4_2_0 };
+	-- #endif
+	return t;
+end
+
+-- Bloodthirsty Crafted Gear was added with Firelands and then removed from the game after Dragon Soul was released.
+-- #if ANYCLASSIC
+local BLOODTHIRSTY_ONUPDATE = [[function(t)
+	if _.Settings:GetUnobtainableFilter(]] .. CATA_PHASE_HOUR_OF_TWILIGHT .. [[) then
+		t.u = ]] .. REMOVED_FROM_GAME .. [[;
+		t.rwp = nil;
+	else
+		t.u = ]] .. CATA_PHASE_RAGE_OF_THE_FIRELANDS .. [[;
+		t.rwp = 40300;
+	end
+end]];
+-- #endif
+local function bloodthirsty(t)
+	-- #if CATA
+	t.timeline = { ADDED_4_2_0, REMOVED_5_0_4 };
+		-- #if ANYCLASSIC
+		t.OnUpdate = BLOODTHIRSTY_ONUPDATE;
+		-- #endif
+	-- #else
+	t.timeline = { ADDED_4_2_0, REMOVED_4_3_0 };
+	-- #endif
+	return applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, t);
+end
+
+local function moltenfront(t)
+	t.timeline = { ADDED_4_2_0 };
+	return applyclassicphase(CATA_PHASE_MOLTEN_FRONT, t);
+end
+local function firelands(t)
+	t.timeline = { ADDED_4_2_0 };
+	return applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, t);
+end
+local function dragonsoul(t)
+	t.timeline = { ADDED_4_3_0 };
+	return applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, t);
+end
 
 -- #if ANYCLASSIC
 local REMOVED_WITH_CATA = REMOVED_4_0_1;
@@ -1281,7 +1449,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				{
 					["name"] = "Dazzling Deep Peridot",	-- NOTE: Actually removed from the game completely.
 					["timeline"] = { REMOVED_WITH_CATA },
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 28924
 				},
 				applyclassicphase(TBC_PHASE_THREE, {
@@ -1559,7 +1727,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				},
 				{
 					["name"] = "Purified Shadow Draenite [CATA+] / Royal Shadow Draenite [TBC]",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 28927
 				},
 				-- #endif
@@ -1592,7 +1760,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				},
 				{
 					["name"] = "Royal Shadow Draenite [TBC] / Purified Shadow Draenite [CATA+]",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 28927
 				},
 				applyclassicphase(TBC_PHASE_THREE, {
@@ -1688,7 +1856,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				-- #if AFTER CATA
 				{
 					["name"] = "Brilliant Blood Garnet [CATA+] / Teardrop Blood Garnet [TBC]",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 28903
 				},
 				applyclassicphase(TBC_PHASE_THREE, {
@@ -1742,7 +1910,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				-- #if BEFORE CATA
 				{
 					["name"] = "Runed Blood Garnet",	-- NOTE: Actually removed from the game completely.
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["timeline"] = { REMOVED_WITH_CATA },
 					["recipeID"] = 28906
 				},
@@ -1816,7 +1984,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				},
 				{
 					["name"] = "Gleaming Golden Draenite [TBC] / Smooth Golden Draenite [CATA+]",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 28944
 				},
 				applyclassicphase(TBC_PHASE_THREE, {
@@ -1884,7 +2052,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				-- #if AFTER CATA
 				{
 					["name"] = "Smooth Golden Draenite [CATA+] / Gleaming Golden Draenite [TBC]",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 28944
 				},
 				-- #endif
@@ -2032,7 +2200,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				},
 				{
 					["name"] = "Pendant of Shadow's End",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 31065
 				},
 				applyclassicphase(TBC_PHASE_FIVE, {
@@ -2049,7 +2217,7 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 				},
 				{
 					["name"] = "Pendant of Withering",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 31064
 				},
 				{
@@ -3755,6 +3923,20 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 					["name"] = "Alicite Pendant",
 					["recipeID"] = 73496
 				},
+				-- #if ANYCLASSIC
+				firelands({
+					["name"] = "Bloodthirsty Amberjewel Pendant",
+					["recipeID"] = 1216321
+				}),
+				firelands({
+					["name"] = "Bloodthirsty Ruby Choker",
+					["recipeID"] = 1216331
+				}),
+				firelands({
+					["name"] = "Bloodthirsty Sapphire Necklace",
+					["recipeID"] = 1216330
+				}),
+				-- #endif
 				{
 					["name"] = "Brazen Elementium Medallion",
 					["recipeID"] = 73521
@@ -3775,18 +3957,34 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 					["name"] = "Nightstone Choker",
 					["recipeID"] = 73497
 				},
-				{
+				-- #if ANYCLASSIC
+				--[[
+				dragonsoul({
+					["name"] = "Vicious Amberjewel Pendant",
+					["recipeID"] = 99543	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				dragonsoul({
+					["name"] = "Vicious Ruby Choker",
+					["recipeID"] = 99544	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				dragonsoul({
+					["name"] = "Vicious Sapphire Necklace",
+					["recipeID"] = 99542	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				--]]
+				-- #endif
+				bloodied({
 					["name"] = "Vicious Amberjewel Pendant",
 					["recipeID"] = 99543
-				},
-				{
+				}),
+				bloodied({
 					["name"] = "Vicious Ruby Choker",
 					["recipeID"] = 99544
-				},
-				{
+				}),
+				bloodied({
 					["name"] = "Vicious Sapphire Necklace",
 					["recipeID"] = 99542
-				}
+				}),
 			}
 		},
 		{
@@ -3797,6 +3995,20 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 					["name"] = "Band of Blades",
 					["recipeID"] = 73498
 				},
+				-- #if ANYCLASSIC
+				firelands({
+					["name"] = "Bloodthirsty Amberjewel Band",
+					["recipeID"] = 1216328
+				}),
+				firelands({
+					["name"] = "Bloodthirsty Ruby Signet",
+					["recipeID"] = 1216329
+				}),
+				firelands({
+					["name"] = "Bloodthirsty Sapphire Ring",
+					["recipeID"] = 1216323
+				}),
+				-- #endif
 				{
 					["name"] = "Elementium Destroyer's Ring",
 					["recipeID"] = 73520
@@ -3821,18 +4033,34 @@ applyclassicphase(TBC_PHASE_ONE, profession(JEWELCRAFTING, {
 					["name"] = "Ring of Warring Elements",
 					["recipeID"] = 73502
 				},
-				{
+				-- #if ANYCLASSIC
+				--[[
+				dragonsoul({
+					["name"] = "Vicious Amberjewel Band",
+					["recipeID"] = 99540	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				dragonsoul({
+					["name"] = "Vicious Ruby Signet",
+					["recipeID"] = 99541	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				dragonsoul({
+					["name"] = "Vicious Sapphire Ring",
+					["recipeID"] = 99539	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				]]--
+				-- #endif
+				bloodied({
 					["name"] = "Vicious Amberjewel Band",
 					["recipeID"] = 99540
-				},
-				{
+				}),
+				bloodied({
 					["name"] = "Vicious Ruby Signet",
 					["recipeID"] = 99541
-				},
-				{
+				}),
+				bloodied({
 					["name"] = "Vicious Sapphire Ring",
 					["recipeID"] = 99539
-				}
+				}),
 			}
 		},
 		{
@@ -6165,10 +6393,5 @@ local neverimplemented = function(thing)
 end
 recipeCache = nil;	-- Disable the cache validation.
 
--- #if AFTER BFA
-root(ROOTS.HiddenQuestTriggers, {
-	q(55631),	-- Jewelcrafting Diode shrine. harvesting gems from them triggered this quest. Nazmir location
-});
--- #endif
 -- #endif
 -- #endif

@@ -11,7 +11,11 @@ root(ROOTS.Zones, {
 				}),
 				q(45473),	-- A Giant Problem
 				q(46932),	-- A Tad More Corruption
-				q(45988),	-- Ancient Bones
+				q(45988, {	-- Ancient Bones
+					["g"] = {
+						i(144238),	-- Ancient Bones (QI!)
+					},
+				}),
 				q(46105),	-- Arachnid Superiority
 				q(46104),	-- Arachnid Toxicity
 				q(45694),	-- Arachnicide
@@ -39,7 +43,14 @@ root(ROOTS.Zones, {
 					["classes"] = { DRUID },
 				}),
 				q(45970),	-- Duty's End
-				q(46829),	-- Elemental Abuse
+				q(46829, {	-- Elemental Abuse
+					["g"] = {
+						i(147283),	-- Air Power Core (QI!)
+						i(147284),	-- Earth Power Core (QI!)
+						i(147285),	-- Water Power Core (QI!)
+						i(147286),	-- Fire Power Core (QI!)
+					},
+				}),
 				q(46288),	-- Everyone to the Front
 				q(45878),	-- Exterminating with Impunity
 				q(45744),	-- Fall of the Felskorn
@@ -113,7 +124,11 @@ root(ROOTS.Zones, {
 				q(46811, {	-- The Broodmother's Wrath
 					["classes"] = { DEATHKNIGHT },
 				}),
-				q(45805),	-- The Burning Keys
+				q(45805, {	-- The Burning Keys
+					["g"] = {
+						i(143924),	-- Burning Key (QI!)
+					},
+				}),
 				q(45035),	-- The Call of Battle
 				q(46942),	-- The Cost of Power
 				q(46160),	-- The Shackled Void
@@ -122,7 +137,11 @@ root(ROOTS.Zones, {
 				q(46063),	-- The Wailing Dead
 				q(46866),	-- Torture Chamber
 				q(45379),	-- Treasure Master Iks'reeged
-				q(45973),	-- Unchecked Power
+				q(45973, {	-- Unchecked Power
+					["g"] = {
+						i(146951),	-- Abjurist's Scroll of Knowledge (QI!)
+					},
+				}),
 				q(45791),	-- War Materiel
 				q(45930),	-- We Didn't Start the Fire
 				q(45977, {	-- Where There is a Whip...

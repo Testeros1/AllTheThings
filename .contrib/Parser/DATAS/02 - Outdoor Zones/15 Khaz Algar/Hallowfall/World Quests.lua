@@ -8,8 +8,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				79197,	-- Surface Bound
 				TWW_ACCOUNT_CAMPAIGN_QUEST,
 			},
-			["g"] = sharedData({ ["isWorldQuest"] = true, }, {
+			["g"] = bubbleDownFiltered({ ["isWorldQuest"] = true, },FILTERFUNC_questID,{
 				petbattle(q(82294, {	-- Miniature Army
+					["provider"] = { "n", 223442 },	-- Kyrie
 					["coord"] = { 57.4, 62.8, HALLOWFALL },
 				})),
 				petbattle(q(82298, {	-- The Thing from the Swamp
@@ -27,6 +28,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				q(82041, {	-- Beledar's Blessing
 					["coord"] = { 24.3, 60.9, HALLOWFALL },
+				}),
+				q(82257, {	-- Burrow Burial
+					["coord"] = { 71.3, 56.4, HALLOWFALL },
 				}),
 				q(82133, {	-- Documenting: Field Manual Edition
 					["coord"] = { 39.9, 74.7, HALLOWFALL },
@@ -51,12 +55,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				q(82584, {	-- Light's Gambit
 					["coord"] = { 48.6, 39.4, HALLOWFALL },
+					["g"] = {
+						ach(40729),		-- Light's Gambit Champion
+					},
 				}),
 				q(82582, {	-- Mired in Shadow
 					["coord"] = { 74.8, 50.3, HALLOWFALL },
 				}),
 				q(82120, {	-- Pool Cleaner
 					["coord"] = { 51.1, 50.9, HALLOWFALL },
+					["sym"] = {{"select","achievementID",40082}},	-- Never Enough
 				}),
 				q(81620, {	-- Recovery Job
 					["coord"] = { 56.0, 67.1, HALLOWFALL },
@@ -88,6 +96,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(81816, {	-- Skyrider Racing - Tenir's Traversal
 					["coord"] = { 59.2, 68.9, HALLOWFALL },
 				}),
+				q(81823, {	-- Skyrider Racing - Velhan's Venture
+					["coord"] = { 54.1, 17.6, HALLOWFALL },
+				}),
 				q(82586, {	-- Spore Ender (previous questID 82588?)
 					["coord"] = { 60.2, 62.2, HALLOWFALL },
 					["g"] = {
@@ -102,6 +113,24 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				q(82288, {	-- Work Hard, Play Hard
 					["coord"] = { 41.8, 55.3, HALLOWFALL },
+					["g"] = {
+						ach(40150),		-- Children's Entertainer
+					},
+				}),
+				n(SPECIAL, {
+					q(82852, {	-- Special Assignment: Lynx Rescue
+						-- ["coord"] = { x, y, HALLOWFALL },
+					}),
+					q(82158, {	-- Special Assignment: Lynx Rescue
+						-- ["coord"] = { x, y, HALLOWFALL },
+					}),
+					q(82157),	-- Special Assignment: Rise of the Colossals [Trigger]
+					q(82787, {	-- Special Assignment: Rise of the Colossals
+						-- ["coord"] = { x, y, HALLOWFALL },
+						["g"] = {
+							i(224183),	-- Bleak Chum (QI!)
+						},
+					}),
 				}),
 			}),
 		}),

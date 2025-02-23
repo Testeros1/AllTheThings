@@ -474,28 +474,28 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
 		n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
 			ach(18840, {	-- Fourth War Mining Techniques
-				crit(61525, {	-- 	Monelite Deposit
+				crit(61525, {	-- Monelite Deposit
 					["sourceQuests"] = {
 						48761,	-- Spiderphobia
 						51964,	-- Insufferable Bloodsuckers
 					},
 					["sourceQuestNumRequired"] = 1,
 				}),
-				crit(61526, {	-- 	Storm Silver Deposit
+				crit(61526, {	-- Storm Silver Deposit
 					["sourceQuests"] = {
 						48768,	-- Brined Justice [A]
 						52015,	-- Brined Justice [H]
 					},
 					["sourceQuestNumRequired"] = 1,
 				}),
-				crit(61527, {	-- 	Platinum Deposit
+				crit(61527, {	-- Platinum Deposit
 					["sourceQuests"] = {
 						52050,	-- A More Challenging Career
 						52055,	-- An Ore for an Eye
 					},
 					["sourceQuestNumRequired"] = 1,
 				}),
-				crit(61528, {	-- 	Monelite Seam
+				crit(61528, {	-- Monelite Seam
 					["sourceQuests"] = {
 						48767,	-- Seams Familiar
 						51971,	-- An Exquisite Brooch
@@ -720,6 +720,9 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 					["sourceQuests"] = { 52044 },	-- An Exceptional Platinum Shard [A]
 					["provider"] = { "i", 161085 },	-- Tattered Map
 					["races"] = ALLIANCE_ONLY,
+					["g"] = {
+						i(161085),	-- Tattered Map (QI!)
+					},
 				}),
 				q(52053, {	-- The Platinum Map
 					["description"] = "This can drop from |cFFFFD700Platinum Deposits|r and |cFFFFD700Rich Platinum Deposits|r at any mining level.  You can only turn it in at Level 150 Zandalari Mining.",
@@ -777,6 +780,7 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 					["races"] = ALLIANCE_ONLY,
 					["g"] = {
 						r(253337),	-- Storm Silver Deposit [Rank 2]
+						i(160974),	-- Sanctified Storm Silver Ingots (QI!)
 						i(161133),	-- Unsanctified Storm Silver Ingots (QI!)
 						i(160440),	-- Unsanctified Storm Silver Ore (QI!)
 					},
@@ -792,6 +796,7 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						r(253337),	-- Storm Silver Deposit [Rank 2]
+						i(160974),	-- Sanctified Storm Silver Ingots (QI!)
 						i(161133),	-- Unsanctified Storm Silver Ingots (QI!)
 						i(160440),	-- Unsanctified Storm Silver Ore (QI!)
 					},
@@ -1213,7 +1218,7 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 			}),
 		}),
 		n(QUESTS, sharedData({
-			["description"] = "Requires 25 Skill.",
+			["sharedDescription"] = "Requires 25 Skill.",
 			["provider"] = { "n", 185553 },	-- Sekita the Burrower
 			["coord"] = { 39.0, 51.2, VALDRAKKEN },
 			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
@@ -1246,41 +1251,41 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 			},
 		},{
 			i(199122),	-- Mining Field Notes
-			q(74106, {		-- Inscription Order: Mining
-				["name"] = "Inscription Order: Mining",
+			q(74106, {		-- DF Inscription Order: Mining
+				["name"] = "DF Inscription Order: Mining",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194708 },	-- Draconic Treatise on Mining
 			}),
-			q(72160, {	-- Weekly Mining Knowledgepoint #1
-				["name"] = "Weekly Mining Knowledgepoint #1",
+			q(72160, {	-- DF Weekly Mining Knowledgepoint #1
+				["name"] = "DF Weekly Mining Knowledgepoint #1",
 				["provider"] = { "i", 201300 },	-- Iridescent Ore Fragments
 			}),
-			q(72161, {	-- Weekly Mining Knowledgepoint #2
-				["name"] = "Weekly Mining Knowledgepoint #2",
+			q(72161, {	-- DF Weekly Mining Knowledgepoint #2
+				["name"] = "DF Weekly Mining Knowledgepoint #2",
 				["provider"] = { "i", 201300 },	-- Iridescent Ore Fragments
 			}),
-			q(72162, {	-- Weekly Mining Knowledgepoint #3
-				["name"] = "Weekly Mining Knowledgepoint #3",
+			q(72162, {	-- DF Weekly Mining Knowledgepoint #3
+				["name"] = "DF Weekly Mining Knowledgepoint #3",
 				["provider"] = { "i", 201300 },	-- Iridescent Ore Fragments
 			}),
-			q(72163, {	-- Weekly Mining Knowledgepoint #4
-				["name"] = "Weekly Mining Knowledgepoint #4",
+			q(72163, {	-- DF Weekly Mining Knowledgepoint #4
+				["name"] = "DF Weekly Mining Knowledgepoint #4",
 				["provider"] = { "i", 201300 },	-- Iridescent Ore Fragments
 			}),
-			q(72164, {	-- Weekly Mining Knowledgepoint #5
-				["name"] = "Weekly Mining Knowledgepoint #5",
+			q(72164, {	-- DF Weekly Mining Knowledgepoint #5
+				["name"] = "DF Weekly Mining Knowledgepoint #5",
 				["provider"] = { "i", 201300 },	-- Iridescent Ore Fragments
 			}),
-			q(72165, {	-- Weekly Mining Knowledgepoint #6
-				["name"] = "Weekly Mining Knowledgepoint #6",
+			q(72165, {	-- DF Weekly Mining Knowledgepoint #6
+				["name"] = "DF Weekly Mining Knowledgepoint #6",
 				["provider"] = { "i", 201301 },	-- Iridescent Ore
 			}),
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 		n(QUESTS, sharedData({
-			["description"] = "Requires 25 Skill.",
-			["provider"] = { "n", 219097 },	-- Tarib
+			["sharedDescription"] = "Requires 25 Skill.",
+			["provider"] = { "n", 219097 },	-- Tarib <Mining Trainer>
 			["coord"] = { 52.6, 52.6, DORNOGAL },
 			["isWeekly"] = true,
 			["g"] = {
@@ -1288,6 +1293,7 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 			},
 		},{
 			q(83103),	-- Acquiring Aqirite
+			q(83102),	-- Bismuth is Business
 			q(83104),	-- Identifying Ironclaw
 			q(83106),	-- Null Pebble Excavation
 			q(83105),	-- Rush-order Requisition
@@ -1303,6 +1309,18 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 				r(442333),	-- Refine Ironclaw Ore+++
 			}),
 		}),
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(224818),	-- Algari Mining Notes
+			},
+		},{
+			q(83103, {	-- Acquiring Aqirite
+				["provider"] = { "n", 219097 },	-- Tarib <Mining Trainer>
+				["coord"] = { 52.6, 52.6, DORNOGAL },
+			}),
+		})),
 		n(TREASURES, {
 			o(455957, {	-- Arathi Precision Drill
 				["coord"] = { 46.1, 64.4, HALLOWFALL },
@@ -1367,34 +1385,28 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 				currency(TWW_MINING_KNOWLEDGE),
 			},
 		},{
-			i(224818),	-- Algari Mining Notes
-			q(83733, {		-- Inscription Order: Mining
-				["name"] = "Inscription Order: Mining",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222553 },	-- Algari Treatise on Mining
-			}),
-			q(83054, {	-- Weekly Mining Knowledgepoint #1
-				["name"] = "Weekly Mining Knowledgepoint #1",
+			q(83054, {	-- TWW Weekly Mining Knowledgepoint #1
+				["name"] = "TWW Weekly Mining Knowledgepoint #1",
 				["provider"] = { "i", 224583 },	-- Slab of Slate
 			}),
-			q(83053, {	-- Weekly Mining Knowledgepoint #2
-				["name"] = "Weekly Mining Knowledgepoint #2",
+			q(83053, {	-- TWW Weekly Mining Knowledgepoint #2
+				["name"] = "TWW Weekly Mining Knowledgepoint #2",
 				["provider"] = { "i", 224583 },	-- Slab of Slate
 			}),
-			q(83052, {	-- Weekly Mining Knowledgepoint #3
-				["name"] = "Weekly Mining Knowledgepoint #3",
+			q(83052, {	-- TWW Weekly Mining Knowledgepoint #3
+				["name"] = "TWW Weekly Mining Knowledgepoint #3",
 				["provider"] = { "i", 224583 },	-- Slab of Slate
 			}),
-			q(83051, {	-- Weekly Mining Knowledgepoint #4
-				["name"] = "Weekly Mining Knowledgepoint #4",
+			q(83051, {	-- TWW Weekly Mining Knowledgepoint #4
+				["name"] = "TWW Weekly Mining Knowledgepoint #4",
 				["provider"] = { "i", 224583 },	-- Slab of Slate
 			}),
-			q(83050, {	-- Weekly Mining Knowledgepoint #5
-				["name"] = "Weekly Mining Knowledgepoint #5",
+			q(83050, {	-- TWW Weekly Mining Knowledgepoint #5
+				["name"] = "TWW Weekly Mining Knowledgepoint #5",
 				["provider"] = { "i", 224583 },	-- Slab of Slate
 			}),
-			q(83049, {	-- Weekly Mining Knowledgepoint #6
-				["name"] = "Weekly Mining Knowledgepoint #6",
+			q(83049, {	-- TWW Weekly Mining Knowledgepoint #6
+				["name"] = "TWW Weekly Mining Knowledgepoint #6",
 				["provider"] = { "i", 224584 },	-- Erosion Polished Slate
 			}),
 		})),

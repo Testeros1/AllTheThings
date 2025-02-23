@@ -8,16 +8,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "This canyon desert gets its name from the innumerable sandstone spires that thrust up from the salt flats. Engineers have constructed bridges across the peaks of these towers, allowing travelers to cross the region without having to set foot on the ground below. The Thousand Needles is a dry and hot desert of salt. At its center is a stagnant lake ten times saltier than the ocean.\n\nResourceful goblins have discovered oil in the Scorched Basin, but they, a few scorpions, and the occasional centaur warband are the only signs of life in this parched land.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_thousandneedles_01",
-		-- #endif
+		["icon"] = 236848,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(846, {	-- Explore Thousand Needles
-					-- #if BEFORE WRATH
-					["description"] = "Explore Thousand Needles, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(846),	-- Explore Thousand Needles
 				ach(4938, {	-- Thousand Needles Quests
 					["timeline"] = { ADDED_4_0_3 },
 					-- #if ANYCLASSIC
@@ -91,6 +85,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(5041),	-- Fizzle & Pozzik's Speedbarge
 				exploration(484),	-- Freewind Post
 				exploration(482),	-- Highperch
+				visit_exploration(5046,{coord={96.5,61.4,THOUSAND_NEEDLES}}),	-- Mirage Abyss
 				exploration(5092),	-- Razorfen Downs
 				exploration(5028),	-- Southsea Holdfast
 				exploration(5027),	-- Splithoof Heights
@@ -1801,7 +1796,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(1194, {	-- Rizzle's Schematics
 					["providers"] = {
-						{ "o", 20805 }, -- Rizzle's Unguarded Plans
+						{ "o", 20805 },	-- Rizzle's Unguarded Plans
 						{ "i", 5866 },	-- Sample of Indurium Ore
 					},
 					["sourceQuest"] = 1190,	-- Keeping Pace

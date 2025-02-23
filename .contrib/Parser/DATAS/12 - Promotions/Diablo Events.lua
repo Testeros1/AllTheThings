@@ -4,28 +4,31 @@
 -- #if AFTER 7.1.0.22908
 DIABLO_EVENTS = createHeader({
 	readable = "Diablo Events",
-	icon = "Interface\\Icons\\DiabloAnniversary_HoradricCube",
+	icon = 1529348,
 	text = {
 		en = "Diablo Events",
 		ru = "События Diablo",
+		cn = "暗黑破坏神活动",
+		tw = "暗黑破壞神活動",
 	},
 });
 DIABLO_TWENTIETH_ANNIVERSARY = createHeader({
 	readable = "Diablo 20th Anniversary",
-	icon = "Interface\\Icons\\diabloanniversary_achievement",
+	icon = 1529344,
 	text = {
 		en = "Diablo 20th Anniversary",
 		de = "20. Geburtstag von Diablo",
 		fr = "20e anniversaire de Diablo",
 		ru = "20-ая годовщина Diablo",
 		cn = "暗黑破坏神20周年庆",
+		tw = "《暗黑破壞神》20週年慶",
 	},
 });
 A_GREEDY_EMISSARY = 1382;
 GREEDY_EMISSARY_EVENT = createHeader({
 	-- https://www.wowhead.com/event=1382/a-greedy-emissary
 	readable = "A Greedy Emissary",
-	icon = "Interface\\Icons\\inv_misc_bag_horadricsatchel",
+	icon = 5160585,
 	eventID = A_GREEDY_EMISSARY,
 	text = {
 		en = "A Greedy Emissary",
@@ -37,6 +40,7 @@ GREEDY_EMISSARY_EVENT = createHeader({
 		ru = "Алчный посланец",
 		ko = "탐욕의 사절",
 		cn = "贪婪的特使",
+		tw = "貪婪使者",
 	},
 });
 root(ROOTS.Promotions, n(DIABLO_EVENTS, {
@@ -138,13 +142,35 @@ root(ROOTS.Promotions, n(DIABLO_EVENTS, {
 			},
 		}),
 	}))),
+	i(206007, {	-- Treasure Nabbin' Bag
+		["description"] = "Can be earned by logging into Diablo Immortal on a level 10+ character during the 'Eternal War' crossover event between November 13, 3:00 a.m. & December 11, 2:59 a.m. local server time.",
+		["timeline"] = { "added 11.0.5.57388", "removed 11.0.5.57689" },
+	}),
+	n(DIABLO_IV, {
+		["description"] = "Granted to players who owned WoW: The War Within and Diablo IV: Vessel of Hatred before January 7th, 2025.",
+		["timeline"] = { ADDED_11_0_7, "removed 11.0.7.58608" },
+		["g"] = {
+			i(191114),	-- Amalgam of Rage (MOUNT!)
+			i(206018),	-- Baa'lial (PET!)
+			i(206039, {	-- Enmity Bundle
+				i(206004),	-- Enmity Cloak
+				i(206020),	-- Enmity Hood
+			}),
+			i(143327),	-- Lovestock Lochaber Axe
+			i(206008),	-- Nightmare Banner (TOY!)
+			i(142542),	-- Tome of Town Portal (TOY!)
+			i(143543),	-- Twelve String Guitar (TOY!)
+			i(206275),	-- Wirt's Fightin' Leg
+			i(206276),	-- Wirt's Haunted Leg
+			i(206005),	-- Wirt's Last Leg
+		},
+	}),
 }));
--- #endif
 
--- #if AFTER 10.1.0
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_0} }, {
 	n(DIABLO_EVENTS, {
 		q(76216),	-- 'Bonus loot' if Tyrael's Charger unlearned / first goblin kill per day for account
 	}),
-}));
+})));
 -- #endif

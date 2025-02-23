@@ -266,6 +266,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 70.5, 27.2, BORALUS },
 										["races"] = ALLIANCE_ONLY,
+										["g"] = {
+											i(162977),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -306,6 +309,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },		-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(162646),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -346,6 +352,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(162577),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -363,6 +372,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(163602),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -386,6 +398,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },		-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(162553),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -409,6 +424,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(162604),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -426,6 +444,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(163597),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -449,6 +470,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = ALLIANCE_ONLY,
 										["coord"] = { 70.5, 27.2, BORALUS },
+										["g"] = {
+											i(163039),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -466,6 +490,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 70.5, 27.2, BORALUS },
 										["races"] = ALLIANCE_ONLY,
+										["g"] = {
+											i(163572),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -515,6 +542,8 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = ALLIANCE_ONLY,
 				["g"] = {
 					a(ach(12741)),	-- Giving a Scrap (A)
+					i(160266),	-- Scrapped Cloth (QI!)
+					i(160267),	-- Tattered Pants (QI!)
 				},
 			}),
 			q(52762, {	-- A Local Guide
@@ -700,6 +729,12 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 67.2, 15.6, BORALUS },
 				["races"] = ALLIANCE_ONLY,
 			}),
+			q(49223, {	-- The Long Con
+				["sourceQuests"] = { 49523 },	-- A Bad Deal
+				["provider"] = { "n", 129940 },	-- Roko <Wandering Merchant>
+				["coord"] = { 70.3, 8.4, BORALUS },
+				["races"] = ALLIANCE_ONLY,
+			}),
 			q(52449, {	-- The Mysterious Island
 				["sourceQuests"] = { 52445 },	-- Tol Dagor: The Fourth Key
 				["provider"] = { "n", 140732 },	-- Flynn Fairwind
@@ -761,7 +796,10 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 122370 },	-- Cyrus Crestfall
 				["coord"] = { 67.9, 22.0, BORALUS },
 				["races"] = ALLIANCE_ONLY,
-				["lvl"] = 115,	-- wowhead says 110.  it's wrong.  tol dagor doesn't unlock until 115, and that's the other requirement to make this quest available.
+				["lvl"] = 10,
+				["g"] = {
+					i(163161),	-- Tol Dagor Master Key (QI!)
+				}
 			}),
 			q(49715, {	-- Trouble at Greystone Keep
 				-- ["sourceQuests"] = { 50790 },	-- Hot Pursuit	-- TODO maybe earlier? maybe none?
@@ -795,23 +833,29 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	-- Missions
-	q(53746),	-- Verdant Hollow completed
-	q(53747),	-- Veiled Grotto completed
-	q(53748),	-- Mugamba Overlook completed
-	q(53749),	-- Mistvine Ledge completed
-	q(53750),	-- Vulture's Nest completed
-	q(53751),	-- Grimwatt's Crash completed
-	-- Outpost Upgrades
-	q(54292),	-- Brennadam completed
-	q(54261),	-- Upgrade: Brennadam started
-	q(54296),	-- Castaway Point completed
-	q(54305),	-- Mission Report: Arom's Stand
-	q(54293),	-- Mission Report: Castaway Point
-	q(54283),	-- Upgrade: Castaway Point started
-	q(54304),	-- Upgrade: Arom's Stand started
-	-- Misc
-	q(54870),	-- "Stay a while and listen" type conversation between Jaina and Katherine Proudmoore next to the flight master. Available during the war campaign after Clearing Out the Cache.
-	q(55464),	-- "Stay a while and listen" type conversation between Jaina and Tandred Proudmoore in Proudmoore Keep at 48, 60. Obtainable after Sail with the Tides completed.
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(KUL_TIRAS, {
+		m(BORALUS, {
+			n(QUESTS, {
+				-- Missions
+				q(53746),	-- Verdant Hollow completed
+				q(53747),	-- Veiled Grotto completed
+				q(53748),	-- Mugamba Overlook completed
+				q(53749),	-- Mistvine Ledge completed
+				q(53750),	-- Vulture's Nest completed
+				q(53751),	-- Grimwatt's Crash completed
+				-- Outpost Upgrades
+				q(54292),	-- Brennadam completed
+				q(54261),	-- Upgrade: Brennadam started
+				q(54296),	-- Castaway Point completed
+				q(54305),	-- Mission Report: Arom's Stand
+				q(54293),	-- Mission Report: Castaway Point
+				q(54283),	-- Upgrade: Castaway Point started
+				q(54304),	-- Upgrade: Arom's Stand started
+				------ Stay awhile and listen ------ (TODO upgrade to proper HQT in Boralus)
+				hqt(54870),	-- "Stay a while and listen" type conversation between Jaina and Katherine Proudmoore next to the flight master. Available during the war campaign after Clearing Out the Cache.
+				hqt(55464),	-- "Stay a while and listen" type conversation between Jaina and Tandred Proudmoore in Proudmoore Keep at 48, 60. Obtainable after Sail with the Tides completed.
+			}),
+		}),
+	}),
+})));

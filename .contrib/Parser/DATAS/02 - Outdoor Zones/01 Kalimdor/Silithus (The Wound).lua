@@ -3,7 +3,7 @@
 -------------------------------------------------------------------
 SILITHUS_THE_WOUND = createHeader({
 	readable = "Silithus (The Wound)",
-	icon = "Interface\\Icons\\Achievement_zone_silithus_01",
+	icon = 236829,
 	text = {
 		en = [[~C_Map.GetAreaInfo(9310)]],
 	},
@@ -19,7 +19,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 			m(CHAMBER_OF_HEART, {
 				["provider"] = { "o", 289521 },	-- Titan Translocator
 				["lore"] = "The Chamber of Heart is a titan chamber at the heart of the world. It is accessed via the Titan Translocator in Silithus. Like the Hall of Communion, it is possible here to communicate with Azeroth, the world-soul of the planet. Magni brings a hero here at Azeroth's request to obtain the [Heart of Azeroth], a necklace that can gather the  [Azerite] - the planet's lifeblood - necessary to heal Azeroth's wounds. The seal on the chamber protects Azeroth's world-soul.",
-				["icon"] = "Interface\\Icons\\inv_heartofazeroth",
+				["icon"] = 1869493,
 				["coord"] = { 43.2, 44.5, SILITHUS },
 				["timeline"] = { ADDED_8_0_1 },
 				["maps"] = {
@@ -36,6 +36,16 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							ach(13772),	-- Essence Essentials
 							ach(13773),	-- Essence Gains
 						})),
+						ach(40958, {	-- Full Heart, Can't Lose
+							["timeline"] = { ADDED_11_0_7 },
+							-- Meta Achievement
+							["sym"] = {{"meta_achievement",
+								12918,	-- Have a Heart
+								13777,	-- My Heart Container is Full
+								13771,	-- Power Is Beautiful
+								13572,	-- The Heart Forge
+							}},
+						}),
 						ach(12918, {	-- Have a Heart
 							["sourceQuest"] = 51211,	-- The Heart of Azeroth
 						}),
@@ -55,7 +65,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 						}),
 					}),
 					n(EMISSARY_QUESTS, {
-						faction(2164, {	-- Champions of Azeroth
+						faction(FACTION_CHAMPIONS_OF_AZEROTH, {	-- Champions of Azeroth
 							q(50562, {	-- Champions of Azeroth
 								["isWorldQuest"] = true,
 								["coord"] = { 42.22, 44.27, SILITHUS },
@@ -230,10 +240,11 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["sourceQuest"] = 57222,	-- Investigating the Halls
 							["cost"] = { { "i", 171219, 1 } },	-- Corrupt Black Dragonscales
 							["g"] = {
-								i(171219),	-- Corrupt Black Dragonscales (QI!)
 								i(169223, {	-- Ashjra'kamas, Shroud of Resolve
-									["bonusID"] = 6272,	-- Rank 1 Appearence
+									["bonusID"] = 6272,	-- Rank 1 Appearance
 								}),
+								i(171219),	-- Corrupt Black Dragonscales (QI!)
+								i(172072),	-- Experimental Vial
 							},
 						}),
 						q(56187, {	-- Black Winged Shadow
@@ -290,6 +301,11 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["provider"] = { "n", 152095 },	-- Magni Bronzebeard
 							["coord"] = { 62.0, 24.9, MOUNT_HYJAL },
 							["sourceQuest"] = 55520,	-- Healing Nordrassil
+							["g"] = {
+								n(152095, {	-- Magni Bronzebeard
+									["description"] = "This is a terrible experience if you are working through content chronologically, as you cannot circumvent this phased version of Nordrassil.\n\nYou have to get started with Battle for Azeroth, get access to Chamber of Heart in Silithus: The Wound, and reach Heart of Azeroth power level 55. Then you can pick up 'A Fresh Trauma' from Magni in Chamber of Heart and return to Nordrassil for the short questline.",
+								}),
+							},
 						}),
 						q(55425, {	-- Dominating the Indomitable
 							["provider"] = { "n", 152385 },	-- Spiritwalker Ebonhorn
@@ -331,7 +347,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 						}),
 						q(55390, {	-- In Darkness, I Dream
 							["provider"] = { "n", 152365 },	-- Kalecgos
-							["coord"] = { 53.1, 70.9, REPAIRED_CHAMBER_OF_HEART },
+							["coord"] = { 52.5, 69.9, REPAIRED_CHAMBER_OF_HEART },
 							["description"] = "Your Heart of Azeroth needs to be 54 to start the questline.",
 						}),
 						q(55657, {	-- In the Shadow of Crimson Wings
@@ -351,6 +367,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["coord"] = { 50.3, 54.4, CHAMBER_OF_HEART },
 							["sourceQuest"] = 51211,	-- The Heart of Azeroth
 							["g"] = {
+								i(159671),	-- Silithus Portal Stone (QI!)
 								i(160909),	-- Crown of the Champion
 								i(160913),	-- Crown of the Champion
 								i(160917),	-- Mantle of the Champion
@@ -401,13 +418,13 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["provider"] = { "n", 152206 },	-- Magni Bronzebeard
 							["sourceQuest"] = 56377,	-- Forging Onward
 						}),
-						q(58876, {	-- Lost Flight
+						q(58876,	-- Lost Flight
+						bubbleDownSelf({["timeline"] = { ADDED_7_3_5, REMOVED_9_0_2_LAUNCH }}, {
 							["provider"] = { "i", 174863 },	-- Spawn of Vexiona
-							["u"] = REMOVED_FROM_GAME,
 							["g"] = {
 								i(174862),	-- Uncorrupted Voidwing (MOUNT!)
 							},
-						}),
+						})),
 						q(58737, {	-- Magni's Findings
 							["coord"] = { 50.1, 59.1, REPAIRED_CHAMBER_OF_HEART },
 							["provider"] = { "n", 152206 },	-- Magni Bronzebeard
@@ -592,7 +609,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 						}),
 						q(56190, {	-- Save Ebonhorn
 							["provider"] = { "n", 155191 },	-- Potion of Mental Clarity
-							["coord"] = { 69.5, 16.5, 46 },	-- Karazhan Catacombs
+							["coord"] = { 69.4, 16.6, 46 },	-- Karazhan Catacombs
 							["sourceQuest"] = 56189,	-- On the Trail of the Black Prince
 							["timeline"] = {
 								ADDED_8_2_5,
@@ -634,7 +651,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["cost"] = { { "i", 174782, 1 } },	-- Fear and Flesh
 							["g"] = {
 								i(169223, {	-- Ashjra'kamas, Shroud of Resolve
-									["bonusID"] = 6277,	-- (Rank 6 appearence)
+									["bonusID"] = 6277,	-- (Rank 6 Appearance)
 								}),
 								i(171354),	-- Horrific Core
 							},
@@ -669,6 +686,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["coord"] = { 42.2, 44.2, SILITHUS },
 							["timeline"] = { ADDED_8_0_1 },
 							["groups"] = {
+								i(159671),	-- Silithus Portal Stone (QI!)
 								i(158075, {	-- Heart of Azeroth
 									["timeline"] = { ADDED_8_0_1 },
 								}),
@@ -712,8 +730,8 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["sourceQuest"] = 55397,	-- Before I Wake
 							["g"] = {
 								i(167831),	-- Emerald Shards (QI!)
-								i(167875),	-- Reforged Dreamglow Dragonscale (QI!)
 								i(168612),	-- Dreamglow Dragonscale
+								i(167875),	-- Reforged Dreamglow Dragonscale (QI!)
 							},
 						}),
 						q(61872, {	-- To Current Matters (A)
@@ -722,8 +740,9 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["provider"] = { "n", 136907 },	-- Magni Bronzebeard
 							["coord"] = { 50.1, 53.6, CHAMBER_OF_HEART },
 							["timeline"] = { ADDED_9_0_2_LAUNCH },
-							["lockCriteria"] = { 1, "questID", 51211 },	-- The Heart of Azeroth
+							["lockCriteria"] = { 1, "questID", 56043 },	-- Send the Fleet
 							["DisablePartySync"] = true,
+							["description"] = "This quest becomes available after completing 'A One-Way Ticket to the Heart' and unlocking the three outposts through the War Campaign, and becomes unavailable after setting foot in Nazjatar.",
 						}),
 						q(61871, {	-- To Current Matters (H)
 							["sourceQuests"] = { 54964 },	-- A One-Way Ticket to the Heart
@@ -731,8 +750,9 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["provider"] = { "n", 136907 },	-- Magni Bronzebeard
 							["coord"] = { 50.1, 53.6, CHAMBER_OF_HEART },
 							["timeline"] = { ADDED_9_0_2_LAUNCH },
-							["lockCriteria"] = { 1, "questID", 51211 },	-- The Heart of Azeroth
+							["lockCriteria"] = { 1, "questID", 56044 },	-- Send the Fleet
 							["DisablePartySync"] = true,
+							["description"] = "This quest becomes available after completing 'A One-Way Ticket to the Heart' and unlocking the three outposts through the War Campaign, and becomes unavailable after setting foot in Nazjatar.",
 						}),
 						q(56188, {	-- To the Catacombs!
 							["provider"] = { "n", 154874 },	-- Blacktalon Watcher
@@ -786,7 +806,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["cost"] = { { "i", 174784, 1 } },	-- The Final Truth
 							["g"] = {
 								i(169223, {	-- Ashjra'kamas, Shroud of Resolve
-									["bonusID"] = 6283,	 -- (Rank 12 Appearence)
+									["bonusID"] = 6283,	-- (Rank 12 Appearance)
 								}),
 								i(171355),	-- Voidborn Core
 							},
@@ -816,7 +836,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							},
 						}),
 						q(58615, {	-- Whispers in the Dark
-							["coord"] = { 50.1, 59.1, REPAIRED_CHAMBER_OF_HEART }, -- technicaly 1604?
+							["coord"] = { 50.1, 59.1, REPAIRED_CHAMBER_OF_HEART },	-- technicaly 1604?
 							["provider"] = { "n", 161805 },	-- Magni Bronzebeard
 							["sourceQuest"] = 57374,	-- Into the Darkest Depths
 						}),
@@ -920,13 +940,13 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 									["cost"] = 11000000,	-- 1,100g
 								}),
 								i(163555, {	-- Azerite Puddle (PET!)
-									["cost"] = { { "i", 163036, 200 } },	-- 200x Polished Pet Charm
+									["cost"] = { { "i", POLISHED_PET_CHARM, 200 } },
 								}),
 								i(161563, {	-- Helm of the Azerothian Champion
 									["cost"] = 22500000,	-- 2,250g
 								}),
 								i(163515, {	-- Azeriti (PET!)
-									["cost"] = { { "i", 163036, 100 } },	-- 100x Polished Pet Charm
+									["cost"] = { { "i", POLISHED_PET_CHARM, 100 } },
 								}),
 								i(161557, {	-- Vest of the Azerothian Champion
 									["cost"] = 22500000,	-- 2,250g
@@ -938,7 +958,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 							["coord"] = { 48.2, 72.5, REPAIRED_CHAMBER_OF_HEART },
 							["g"] = {
 								i(173363, {	-- Vessel of Horrific Visions
-									["cost"] = { { "c", 1803, 1750 }, }, -- 1750 Echoes of Ny'alotha
+									["cost"] = { { "c", 1803, 1750 }, },	-- 1750 Echoes of Ny'alotha
 								}),
 								i(175062, {	-- Malefic Core
 									["cost"] = { { "c", 1803, 2000 } },	-- 2000 Echoes of Ny'alotha
@@ -1087,6 +1107,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 									["cost"] = { { "c", 1719, 5000 }, },	-- 5,000 Corrupted Mementos
 								}),
 								i(174770, {	-- Wicked Swarmer (MOUNT!)
+									["modelScale"] = 1.5,
 									["cost"] = { { "c", 1719, 100000 }, },	-- 100,000 Corrupted Mementos
 								}),
 							},
@@ -1103,12 +1124,10 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 				}),
 				q(50229, {	-- A Wee Bit O' Cloth
 					["provider"] = { "o", 280948 },	-- Twilight Outhouse
-					-- TODO: Find proper SourceQuest
-					-- ["sourceQuests"] = {
-					-- 50358,	-- Desert Research (H)
-					-- 50372,	-- Desert Research (A)
-					-- },
 					["coord"] = { 29.6, 69.6, SILITHUS },
+					["g"] = {
+						i(156797),	-- Twilight Silk (QI!)
+					},
 				}),
 				q(50372, {	-- Desert Research (A)
 					["qg"] = 131963,	-- Nolan Speed
@@ -1130,6 +1149,9 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 					["sourceQuest"] = 49981,	-- Witness to the Wound
 					["coord"] = { 69.4, 17.6, SILITHUS },
 					["races"] = ALLIANCE_ONLY,
+					["g"] = {
+						i(156711),	-- Mysterious Ore (QI!)
+					},
 				}),
 				q(50046, {	-- It's a Sabotage
 					["qg"] = 130030,	-- Kelsey Steelspark
@@ -1150,12 +1172,18 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 					["sourceQuest"] = 50372,	-- Desert Research (A)
 					["coord"] = { 69.4, 19.0, SILITHUS },
 					["races"] = ALLIANCE_ONLY,
+					["g"] = {
+						i(156795),	-- Silithid Broodling (QI!)
+					},
 				}),
 				q(50231, {	-- Larvae By The Dozen (H)
 					["qg"] = 132040,	-- Pixni Rustbomb
 					["sourceQuest"] = 50358,	-- Desert Research (H)
 					["coord"] = { 66.9, 56.5, SILITHUS },
 					["races"] = HORDE_ONLY,
+					["g"] = {
+						i(156795),	-- Silithid Broodling (QI!)
+					},
 				}),
 				q(50053, {	-- Lazy Prospectors
 					["qg"] = 132147,	-- Grol Warblade
@@ -1172,6 +1200,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 				q(50374, {	-- The Blood of Azeroth (A)
 					["qg"] = 130216,	-- Magni Bronzebeard
 					["sourceQuest"] = 50049,	-- The Speaker's Perspective (A)
+					["coord"] = { 42.2, 44.2, SILITHUS },
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(50364, {	-- The Blood of Azeroth (H)
@@ -1210,12 +1239,18 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 					["sourceQuest"] = 50372,	-- Desert Research (A)
 					["coord"] = { 69.4, 19.0, SILITHUS },
 					["races"] = ALLIANCE_ONLY,
+					["g"] = {
+						i(156794),	-- Silithid Brain (QI!)
+					},
 				}),
 				q(50230, {	-- The Source of Power (H)
 					["qg"] = 132040,	-- Pixni Rustbomb
 					["sourceQuest"] = 50358,	-- Desert Research (H)
 					["coord"] = { 66.9, 56.5, SILITHUS },
 					["races"] = HORDE_ONLY,
+					["g"] = {
+						i(156794),	-- Silithid Brain (QI!)
+					},
 				}),
 				q(50056, {	-- The Speaker's Call (A)
 					["qg"] = 131963,	-- Nolan Speed
@@ -1233,6 +1268,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 				q(50049, {	-- The Speaker's Perspective (A)
 					["qg"] = 130032,	-- Archmage Khadgar
 					["sourceQuest"] = 50373,	-- A Recent Arrival
+					["coord"] = { 68.9, 19.2, SILITHUS },
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(50055, {	-- The Speaker's Perspective (H)
@@ -1249,12 +1285,18 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 					},
 					["coord"] = { 69.4, 17.6, SILITHUS },
 					["races"] = ALLIANCE_ONLY,
+					["g"] = {
+						i(156796),	-- Michiel Voidstrider's Head (QI!)
+					},
 				}),
 				q(50232, {	-- The Twilight Survivor (H)
 					["qg"] = 132147,	-- Grol Warblade
 					["sourceQuest"] = 50053,	-- Lazy Prospectors
 					["coord"] = { 65.9, 54.7, SILITHUS },
 					["races"] = HORDE_ONLY,
+					["g"] = {
+						i(156796),	-- Michiel Voidstrider's Head (QI!)
+					},
 				}),
 				q(49981, {	-- Witness to the Wound (A)
 					["qg"] = 132255,	-- Master Mathias Shaw
@@ -1308,7 +1350,7 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 				n(132139, {	-- Hagras Wartaker <Blacksmith> (Silithus)
 					["coord"] = { 66.2, 55.2, SILITHUS },
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3356}, -- Sumi <Blacksmithing Supplies>
+						{"sub", "common_recipes_vendor", 3356},	-- Sumi <Blacksmithing Supplies>
 					},
 					["races"] = HORDE_ONLY,
 					["groups"] = {
@@ -1342,12 +1384,13 @@ root(ROOTS.Zones, m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_7_3_5 } }, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	m(KALIMDOR, bubbleDown({ ["timeline"] = { ADDED_8_3_0 } }, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_3_0 } }, {
+	m(KALIMDOR, {
 		n(SILITHUS_THE_WOUND, {
 			m(CHAMBER_OF_HEART, {
 				q(59133),	-- Upgrading Ashjra'kamas from 122 -> 125 corruption
+				q(59553),	-- Entering the Chamber of Heart for the first time
 			}),
 		}),
-	})),
-});
+	}),
+})));

@@ -2,7 +2,7 @@
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
 -- #if BEFORE 4.0.3
-local OnTooltipForRatchet = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForRatchet = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -15,16 +15,10 @@ end]];
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(THE_BARRENS, {
 		["lore"] = "The Barrens is a vast, arid savannah. Dust devils swirl across the dry land and canyons cut the earth. Despite its inhospitable nature, numerous trade routes, including the major Gold Road, cross the Barrens. Centaur raiding parties are a constant threat, as are lions and thunder lizards. The orcs and tauren drove the quilboar tribes out of their lands, and the creatures now lair in the Barrens.\n\nIronforge dwarves have discovered a great Titan ruin in this region, and an enormous dig site and settlement has sprung up around it. Called Bael Modan, this fortified city is a common stop for the caravans that trundle across the dusty landscape. The goblin city of Ratchet, full of clanging coins, shining lights and debauchery, sprawls on the Barrens' eastern coast.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_barrens_01",
-		-- #endif
+		["icon"] = 236717,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(750, {	-- Explore The Barrens
-					-- #if BEFORE WRATH
-					["description"] = "Explore The Barrens, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(750),	-- Explore The Barrens
 			}),
 			explorationHeader({
 				exploration(1700),	-- Agama'gor
@@ -54,9 +48,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(1699),	-- Thorn Hill
 			}),
 			n(FACTIONS, {
-				faction(470, {	-- Ratchet
-					["icon"] = "Interface\\Icons\\INV_Misc_Coin_01",
-					["OnTooltip"] = OnTooltipForRatchet,
+				faction(FACTION_RATCHET, {	-- Ratchet
+					["icon"] = 133784,
+					["OnTooltip"] = [[_.OnTooltipDB.ForRatchet]],
 					["maps"] = { TANARIS },
 				}),
 			}),
@@ -118,7 +112,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 46.4, 73.9, THE_BARRENS },
 						{ 37.5, 50.8, WESTFALL },
 					},
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["races"] = HORDE_ONLY,
 					["lvl"] = 14,
 					["groups"] = {
@@ -1745,7 +1739,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(9267, {	-- Mending Old Wounds
 					["qg"] = 16418,	-- Mupsi Shacklefridd
 					["coord"] = { 61.22, 37.86, THE_BARRENS },
-					["maxReputation"] = { 470, NEUTRAL },	-- Ratchet, must be less than Neutral
+					["maxReputation"] = { FACTION_RATCHET, NEUTRAL },	-- Ratchet, must be less than Neutral
 					["cost"] = {
 						{ "i", 2589, 40 },	-- Linen Cloth
 						{ "i", 3371, 4 },	-- Empty Vial
@@ -2435,7 +2429,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(4962, {	-- Shard of a Felhound
 					["qg"] = 6254,	-- Acolyte Wytula
-					["altQuests"] = { 4963 }, -- Shard of an Infernal
+					["altQuests"] = { 4963 },	-- Shard of an Infernal
 					["coord"] = { 62.5, 35.5, THE_BARRENS },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { DESOLACE },
@@ -2460,7 +2454,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(4963, {   -- Shard of an Infernal
 					["qg"] = 6252, -- Acolyte Magaz
-					["altQuests"] = { 4962 }, -- Shard of a Felhound
+					["altQuests"] = { 4962 },	-- Shard of a Felhound
 					["coord"] = { 62.6, 35.2, THE_BARRENS },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { DESOLACE },
@@ -2546,7 +2540,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_ONE, n(createHeader({	-- Speak to Grizzby
 					readable = "Speak to Grizzby",
-					icon = "Interface\\CURSOR\\Speak",
+					icon = 131038,
 					text = {
 						en = "Speak to Grizzby",
 						es = "Habla con el Grizzby",
@@ -2567,7 +2561,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				})),
 				applyclassicphase(SOD_PHASE_ONE, n(createHeader({	-- Speak to N'ora
 					readable = "Speak to N'ora",
-					icon = "Interface\\CURSOR\\Speak",
+					icon = 131038,
 					text = {
 						en = "Speak to N'ora",
 						es = "Habla con el N'ora",
@@ -2642,7 +2636,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 37.5, 50.8, WESTFALL },
 					},
 					["maps"] = { STONETALON_MOUNTAINS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 14,
 					["groups"] = {
 						i(3334),	-- Farmer's Shovel

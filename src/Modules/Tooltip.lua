@@ -11,17 +11,18 @@ local GetItemID = app.WOWAPI.GetItemID;
 -- Encapsulates the functionality for interacting with and hooking into game Tooltips
 
 -- Global locals
-local ipairs, pairs, InCombatLockdown, pcall, tinsert, tostring, tonumber, C_Map_GetPlayerMapPosition, math_sqrt, GameTooltip
-	= ipairs, pairs, InCombatLockdown, pcall, tinsert, tostring, tonumber, C_Map.GetPlayerMapPosition, math.sqrt, GameTooltip
+local ipairs, pairs, InCombatLockdown, pcall, tinsert, tostring, tonumber, math_sqrt, GameTooltip
+	= ipairs, pairs, InCombatLockdown, pcall, tinsert, tostring, tonumber, math.sqrt, GameTooltip
 
 local timeFormatter = CreateFromMixins(SecondsFormatterMixin);
 timeFormatter:Init(1, SecondsFormatter.Abbreviation.Truncate);
 
 -- App locals
 local GetRelativeValue, SearchForField, SearchForObject = app.GetRelativeValue, app.SearchForField, app.SearchForObject
+local distance = app.distance
 
--- Module locals (can be set via OnReady if they do not change during Session but are not yet defined)
-local SearchForLink
+-- Module locals (can be set via OnLoad if they do not change during Session but are not yet defined)
+local SearchForLink, GetPlayerPosition
 
 -- Object Name Lookups
 local objectNamesToIDs = {};
@@ -37,21 +38,6 @@ local function OnLoad_CacheObjectNames()
 		end
 	end
 end
-local function distance( x1, y1, x2, y2 )
-	return math_sqrt( (x2-x1)^2 + (y2-y1)^2 )
-end
-local function GetPlayerPosition()
-	local mapID = app.CurrentMapID;
-	if mapID and not IsInInstance() then
-		local pos = C_Map_GetPlayerMapPosition(mapID, "player");
-		if pos then
-			local px, py = pos:GetXY();
-			return mapID, px * 100, py * 100;
-		end
-	end
-	return mapID, 50, 50;
-end
-
 local GetBestObjectIDForName;
 if app.IsRetail then
 	local InGame = app.Modules.Filter.Filters.InGame
@@ -96,15 +82,16 @@ if app.IsRetail then
 								end
 							end
 							-- if we haven't found any object by coord-distance, we can check the hierarchy for matching Location-based mapID
-							if not closestObjectID then
+							if not closestObjectID and not mappedObjectID then
 								-- check the parent hierarchy for a map or maps
+								local hierarchyMaps
 								local hierarchyMapID = app.GetRelativeValue(searchResult, "mapID")
 								-- app.PrintDebug("Check hierarchy map",app:SearchLink(searchResult),hierarchyMapID)
 								if hierarchyMapID == mapID then
 									-- app.PrintDebug("Object by hierarchy map",app:SearchLink(searchResult),hierarchyMapID)
 									mappedObjectID = objectID
 								else
-									local hierarchyMaps = app.GetRelativeValue(searchResult, "maps")
+									hierarchyMaps = app.GetRelativeValue(searchResult, "maps")
 									-- app.PrintDebug("Check hierarchy maps",app:SearchLink(searchResult),hierarchyMaps and #hierarchyMaps)
 									if hierarchyMaps and app.contains(hierarchyMaps, mapID) then
 										-- app.PrintDebug("Object by hierarchy maps",app:SearchLink(searchResult),hierarchyMapID)
@@ -112,7 +99,8 @@ if app.IsRetail then
 									end
 								end
 								-- if we also haven't found any map-based object, then this object is unmapped
-								if not mappedObjectID then
+								-- but only save as unmapped if the checked object also has no known map relationship
+								if not hierarchyMaps and not hierarchyMapID then
 									unmappedObjectID = objectID
 								end
 							end
@@ -293,15 +281,15 @@ for i,guid in ipairs({
 	-- Darkal
 	"Player-3391-0A512DEB",	-- Claella-Silvermoon EU
 	"Player-3391-07DAA0FA",	-- Cresaida-Silvermoon EU
-	"Player-3391-0CA26A8E",	-- Darkaldh-Silvermoon EU
+	"Player-3391-0CF60215",	-- Darkaldh-Silvermoon EU
 	"Player-3391-07B0B708",	-- Darkas-Silvermoon EU
 	"Player-3391-07DB0DD7",	-- Darkgrip-Silvermoon EU
 	"Player-3391-08E7E3F5",	-- Delonna-Silvermoon EU
 	"Player-3391-09E34204",	-- Kinquin-Silvermoon EU
-	"Player-3391-0C5619B9",	-- Lynnan-Silvermoon EU
+	"Player-3391-0C5619B9",	-- Sarkoth-Silvermoon EU
 	"Player-3391-07568D56",	-- Maylesa-Silvermoon EU
 	"Player-3391-082E58AE",	-- Eliclia-Silvermoon EU
-	"Player-3391-0CC7EE6E",	-- Palach-Silvermoon EU
+	"Player-3391-0CF60219",	-- Palach-Silvermoon EU
 	"Player-3391-0757575C",	-- Sianor-Silvermoon EU
 	"Player-3391-08D25BFA",	-- Smesue-Silvermoon EU
 	-- Danny Donkey
@@ -340,12 +328,20 @@ for i,guid in ipairs({
 	-- Aldori
 	"Player-3676-0E1027D9",	-- Àldori-Area52 US
 	"Player-3676-0DC9ECFD",	-- Húlkstab-Area52 US
-    -- Sanctuari
-    "Player-63-08E17A71", -- Sanctuari-Ysera US
+	-- Sanctuari
+	"Player-63-08E17A71", -- Sanctuari-Ysera US
 	-- Jez
 	"Player-3676-0A6CC504",	-- Jezartroz-Area52 US
 	-- rootkit1337
 	"Player-3674-0B3F8DA8", -- Cerealm-TwistingNether EU
+	-- Exodius
+	"Player-1096-076FE799",	-- Felhaim-DefiasBrotherhood EU
+	"Player-1096-076FE593",	-- Exodiüs-DefiasBrotherhood EU
+	"Player-1096-0A7FACBF",	-- Thrëx-DefiasBrotherhood EU
+	"Player-1096-0A57D3A7",	-- Kaala-DefiasBrotherhood EU
+	"Player-1096-0A7FDD25",	-- Atröpos-DefiasBrotherhood EU
+	-- Eremeir
+	"Player-3675-06DC8D18",	-- Eremeir-MoonGuard US
 }) do
 	PLAYER_TOOLTIPS[guid] = tooltipFunction;
 end
@@ -480,6 +476,27 @@ for i,guid in ipairs({
 	PLAYER_TOOLTIPS[guid] = tooltipFunction;
 end
 
+-- BRINGER_OF_FLAMES GUID
+local BRINGER_OF_FLAMES_TITLE = app.Modules.Color.Colorize(L.TOOLTIP_MODULE.TITLES.XX_BRINGER_OF_FLAMES, "ffa335ee");
+tooltipFunction = function(self, locClass, engClass, locRace, engRace, gender, name, server)
+	local leftSide = _G[self:GetName() .. "TextLeft1"];
+	if leftSide then leftSide:SetText(BRINGER_OF_FLAMES_TITLE:format(name)); end
+end
+for i,guid in ipairs({
+	"Player-4372-03E59723",	-- Sarkan-Atiesh
+	"Player-4372-03E59B16",	-- Vapid-Atiesh
+	"Player-4372-03FB9D25",	-- Psark-Atiesh
+	"Player-4372-03E59A2D",	-- Trite-Atiesh
+	"Player-4372-03F43929",	-- Faletupe-Atiesh
+	"Player-4372-03F6DD89",	-- Toiletcat-Atiesh
+	"Player-4372-03F6AF1A",	-- Hoofsies-Atiesh
+	"Player-4372-03E59A78",	-- Xisis-Atiesh
+	"Player-4372-03E6CD1C",	-- Quickibanki-Atiesh
+	"Player-4372-03FDCBF9",	-- Muttstuff-Atiesh
+}) do
+	PLAYER_TOOLTIPS[guid] = tooltipFunction;
+end
+
 -- Pinkey GUID
 tooltipFunction = function(self, locClass, engClass, locRace, engRace, gender, name, server)
 	local leftSide = _G[self:GetName() .. "TextLeft1"];
@@ -487,6 +504,7 @@ tooltipFunction = function(self, locClass, engClass, locRace, engRace, gender, n
 end
 for i,guid in ipairs({
 	"Player-4372-01D307D4",	-- Pinkey-Atiesh
+	"Player-4372-00EE32DA",	-- Missdreamie-Atiesh
 }) do
 	PLAYER_TOOLTIPS[guid] = tooltipFunction;
 end
@@ -566,13 +584,17 @@ local SkipPurchases = {
 	-- 2 	- (popout, skipped unless within popout)
 	-- 2.5 	- (popout root, skipped unless root of popout)
 	itemID = {
-		[137642] = 2,	-- Mark of Honor
+		[137642] = 2.5,	-- Mark of Honor
 		[21100] = 1,	-- Coin of Ancestry
 		[23247] = 1,	-- Burning Blossom
+		[33226] = 1,	-- Tricky Treat
+		[37829] = 1,	-- Brewfest Prize Token
 		[49927] = 1,	-- Love Token
 	},
 	currencyID = {
-		[2778] = 2,		-- Bronze
+		[515] = 1,		-- Darkmoon Prize Ticket
+		[1166] = 1,		-- Timewarped Badge
+		[2778] = 2.5,		-- Bronze
 	},
 }
 app.ShouldFillPurchases = function(group, FillData)
@@ -582,7 +604,7 @@ app.ShouldFillPurchases = function(group, FillData)
 		if val then
 			val = values[val]
 			if not val then return true end
-			if CurrentSkipLevel < val - (group == FillData.Root and 0.5 or 0) then
+			if (FillData.SkipLevel or CurrentSkipLevel) < val - (group == FillData.Root and 0.5 or 0) then
 				return false;
 			end
 		end
@@ -635,12 +657,13 @@ local function StripColorAndTextureData(txt)
 end
 --[[
 app.StripColorAndTextureData = function()
-	return StripColorAndTextureData("|TInterface\\MONEYFRAME\\UI-GoldIcon:0|t2 |cffff0000GOLD|r Coins")
+	return StripColorAndTextureData("|T237618:0|t2 |cffff0000GOLD|r Coins")
 end;
 ]]--
+local HexToARGB = app.Modules.Color.HexToARGB;
 local function AttachTooltipInformationEntry(tooltip, entry)
 	if entry.color then
-		entry.a, entry.r, entry.g, entry.b = app.Modules.Color.HexToARGB(entry.color);
+		entry.a, entry.r, entry.g, entry.b = HexToARGB(entry.color);
 		entry.color = nil;
 	end
 
@@ -693,7 +716,8 @@ local function AttachTooltipInformationEntry(tooltip, entry)
 end
 local function AttachTooltipInformation(tooltip, tooltipInfo)
 	if tooltipInfo and #tooltipInfo > 0 then
-		-- if app.Debugging then app.PrintDebug("ATI") app.PrintTable(tooltipInfo) end
+		-- app.PrintDebug("ATI",#tooltipInfo)
+		-- app.PrintTable(tooltipInfo)
 		for _,entry in ipairs(tooltipInfo) do
 			AttachTooltipInformationEntry(tooltip, entry);
 		end
@@ -702,8 +726,9 @@ end
 local CanAttachTooltips = app.EmptyFunction
 app.AddEventHandler("OnReady", function()
 	CanAttachTooltips = function()
+		local settings = app.Settings
 		-- Consolidated logic for whether a tooltip should include ATT information based on combat & user settings
-		return (not InCombatLockdown() or app.Settings:GetTooltipSetting("DisplayInCombat")) and app.Settings:GetTooltipSettingWithMod("Enabled")
+		return (not InCombatLockdown() or settings:GetTooltipSetting("DisplayInCombat")) and settings:GetTooltipSettingWithMod("Enabled")
 	end
 end)
 local function ClearTooltip(tooltip)
@@ -711,7 +736,45 @@ local function ClearTooltip(tooltip)
 	tooltip.AllTheThingsProcessing = nil;
 	tooltip.ATT_AttachComplete = nil;
 end
-local function AttachTooltipSearchResults(tooltip, lineNumber, method, ...)
+
+-- Stores a cache of the 'tooltipInfo' for a given group
+-- TODO: this isnt too effective right now since we have to clear the search cache as well
+-- basically constantly. some tooltip information types rely on the 'Update' outcome of a group
+-- which is cached with the cached group
+-- perhaps will need to link the Update logic separately from the Search logic and use that
+-- when needing to re-render a tooltip for an existing Group
+-- but otherwise, Search cache would only need to be cleared when changing something that affects Search
+-- outcome, and Tooltip cache cleared when changing Tooltip-related settings
+local TooltipInfoCache = setmetatable({}, { __mode = "kv", __index = function(t,group)
+	-- We need to generate tooltip-only content for this group since it hasn't been cached
+	-- Classic still has some tooltipInfo generated into the group directly
+	local tooltipInfo = group.tooltipInfo
+	if tooltipInfo then
+		t[group] = tooltipInfo
+		return tooltipInfo
+	end
+	tooltipInfo = {}
+	group.working = nil
+	-- app.PrintDebug("TIC.__index",app:SearchLink(group))
+	app.ProcessInformationTypesForExternalTooltips(tooltipInfo, group)
+	-- only save the cached tooltip info for this group if it is not working
+	if not group.working then
+		-- app.PrintDebug("TIC.__index.cached")
+		t[group] = tooltipInfo
+	end
+	return tooltipInfo
+end})
+local function WipeTooltipInfoCache()
+	wipe(TooltipInfoCache)
+	-- app.PrintDebug("WipeTooltipInfoCache")
+end
+app.WipeTooltipInfoCache = WipeTooltipInfoCache
+-- app.AddEventRegistration("PLAYER_DIFFICULTY_CHANGED", WipeTooltipInfoCache);
+-- app.AddEventHandler("OnRefreshComplete", WipeTooltipInfoCache);
+-- app.AddEventHandler("OnThingCollected", WipeTooltipInfoCache);
+-- app.AddEventHandler("OnThingRemoved", WipeTooltipInfoCache);
+-- app.AddEventHandler("OnSettingsRefreshed", WipeTooltipInfoCache);
+local function AttachTooltipSearchResults(tooltip, method, ...)
 	-- app.PrintDebug("AttachTooltipSearchResults",...)
 	app.SetSkipLevel(1);
 	local status, group, working = pcall(app.GetCachedSearchResults, method, ...)
@@ -723,21 +786,7 @@ local function AttachTooltipSearchResults(tooltip, lineNumber, method, ...)
 				tooltip:AddDoubleLine(group.text, " ", 1, 1, 1, 1);
 			end
 
-			local tooltipInfo = group.tooltipInfo
-			-- TODO: comment in once all tooltip logic is hooked via information types
-			-- If we need to generate tooltip-only content for this group then do that now
-			-- if not tooltipInfo then
-			-- 	tooltipInfo = {}
-			-- 	group.tooltipInfo = tooltipInfo
-			-- 	app.ProcessInformationTypesForExternalTooltips(tooltipInfo, group)
-
-			-- 	-- Some tooltip items might be added using a color instead of argb, so we have to convert them... TODO maybe clean up
-			-- 	if #tooltipInfo > 0 then
-			-- 		for i,item in ipairs(tooltipInfo) do
-			-- 			if item.color then item.a, item.r, item.g, item.b = HexToARGB(item.color) end
-			-- 		end
-			-- 	end
-			-- end
+			local tooltipInfo = TooltipInfoCache[group]
 
 			-- If there was info text generated for this search result, then display that first.
 			AttachTooltipInformation(tooltip, tooltipInfo);
@@ -747,6 +796,7 @@ local function AttachTooltipSearchResults(tooltip, lineNumber, method, ...)
 		app.PrintDebug("pcall tooltip failed",group)
 	end
 	tooltip.ATT_AttachComplete = not (working or (group and group.working));
+	-- app.PrintDebug("ATT_AttachComplete",tooltip.ATT_AttachComplete,working,group.working)
 end
 
 -- Battle Pet Tooltips
@@ -877,7 +927,7 @@ if TooltipDataProcessor and app.GameBuildVersion > 50000 then
 
 			local encounterID = owner.encounterID;
 			if encounterID and not owner.itemID then
-				AttachTooltipSearchResults(self, 1, SearchForField, "encounterID", tonumber(encounterID));
+				AttachTooltipSearchResults(self, SearchForField, "encounterID", tonumber(encounterID));
 				return true;
 			end
 		end
@@ -957,6 +1007,7 @@ if TooltipDataProcessor and app.GameBuildVersion > 50000 then
 					self:AddDoubleLine(version[3], app.Modules.Color.GetProgressColorText(version[1],version[2]));
 				end
 			elseif type == "Creature" or type == "Vehicle" then
+				if InCombatLockdown() and app.Settings:GetTooltipSetting("DisplayInCombatExceptNPCs") then return end
 				if spawn_uid then
 					local showAliveTime = app.Settings:GetTooltipSetting("Alive");
 					local showSpawnTime = app.Settings:GetTooltipSetting("Spawned");
@@ -971,34 +1022,29 @@ if TooltipDataProcessor and app.GameBuildVersion > 50000 then
 				if server_id and zone_uid and app.Settings:GetTooltipSetting("Layer") then
 					self:AddDoubleLine(L.LAYER, app.Modules.Color.Colorize((ServerUID ~= server_id and (server_id .. "-") or "") .. zone_uid, app.Colors.White));
 				end
-				AttachTooltipSearchResults(self, 1, SearchForField, "creatureID", tonumber(npc_id));
+				AttachTooltipSearchResults(self, SearchForField, "creatureID", tonumber(npc_id));
 			end
 			return true;
 		end
 
 		-- Does the tooltip have a spell? [Mount Journal, Action Bars, etc]
 		if self.AllTheThingsProcessing and spellID then
-			AttachTooltipSearchResults(self, 1, SearchForField, "spellID", spellID);
+			AttachTooltipSearchResults(self, SearchForField, "spellID", spellID);
 			return true;
 		end
 
 		-- Does the tooltip have an itemlink?
 		if self.AllTheThingsProcessing and link then
 			-- app.PrintDebug("Search Item",link,id,ttId);
-			if id == 137642 then -- skip Mark of Honor for now
-				AttachTooltipSearchResults(self, 1, app.EmptyFunction, "itemID", 137642);
-				return true;
+			local itemID = GetItemID(link);
+			-- TODO: review if Blizzard ever fixes their tooltips returning the wrong Item link when using TooltipUtil.GetDisplayedItem
+			-- on Auction House tooltips (i.e. Recipes) where one Item is nested inside another Item
+			if itemID ~= ttId then
+				-- app.PrintDebug("Mismatch TT data!",link,itemID,ttId)
+				-- fallout to the generalized Item search below
 			else
-				local itemID = GetItemID(link);
-				-- TODO: review if Blizzard ever fixes their tooltips returning the wrong Item link when using TooltipUtil.GetDisplayedItem
-				-- on Auction House tooltips (i.e. Recipes) where one Item is nested inside another Item
-				if itemID ~= ttId then
-					-- app.PrintDebug("Mismatch TT data!",link,itemID,ttId)
-					-- fallout to the generalized Item search below
-				else
-					AttachTooltipSearchResults(self, 1, SearchForLink, link);
-					return true;
-				end
+				AttachTooltipSearchResults(self, SearchForLink, link);
+				return true;
 			end
 		end
 
@@ -1040,7 +1086,7 @@ if TooltipDataProcessor and app.GameBuildVersion > 50000 then
 			end
 			if knownSearchField and ttId then
 				-- app.PrintDebug("TT Search",knownSearchField,ttId)
-				AttachTooltipSearchResults(self, 1, SearchForField, knownSearchField, tonumber(ttId));
+				AttachTooltipSearchResults(self, SearchForField, knownSearchField, tonumber(ttId));
 				if knownSearchField == "currencyID" and self.ATT_AttachComplete == false then
 					app.CallbackHandlers.DelayedCallback(RerenderCurrency, 0.05, self, ttId);
 				end
@@ -1118,6 +1164,7 @@ else
 								self:AddDoubleLine(version[3], app.Modules.Color.GetProgressColorText(version[1],version[2]));
 							end
 						elseif type == "Creature" or type == "Vehicle" then
+							if InCombatLockdown() and app.Settings:GetTooltipSetting("DisplayInCombatExceptNPCs") then return end
 							if spawn_uid then
 								local showAliveTime = app.Settings:GetTooltipSetting("Alive");
 								local showSpawnTime = app.Settings:GetTooltipSetting("Spawned");
@@ -1132,7 +1179,7 @@ else
 							if server_id and zone_uid and app.Settings:GetTooltipSetting("Layer") then
 								self:AddDoubleLine(L.LAYER, app.Modules.Color.Colorize((ServerUID ~= server_id and (server_id .. "-") or "") .. zone_uid, app.Colors.White));
 							end
-							AttachTooltipSearchResults(self, 1, SearchForField, "creatureID", tonumber(npcID));
+							AttachTooltipSearchResults(self, SearchForField, "creatureID", tonumber(npcID));
 						end
 
 						return true;
@@ -1146,7 +1193,7 @@ else
 						-- Actionbars, don't want that.
 						return true;
 					end
-					AttachTooltipSearchResults(self, 1, SearchForField, "spellID", spellID);
+					AttachTooltipSearchResults(self, SearchForField, "spellID", spellID);
 					self:Show();
 					return true;
 				end
@@ -1163,7 +1210,7 @@ else
 								-- Also the ToyBox UI is broken and returns the wrong item information when you look at any other item's tooltip before looking at the toybox.
 								local leftSide = _G[self:GetName() .. "TextLeft1"]:GetText();
 								if itemName ~= leftSide then link = select(2, GetItemInfo(leftSide)); end
-								AttachTooltipSearchResults(self, 1, SearchForLink, link);
+								AttachTooltipSearchResults(self, SearchForLink, link);
 								self:Show();
 								return true;
 							end
@@ -1171,7 +1218,7 @@ else
 					end
 
 					-- Normal item tooltip, not on the Toy Box.
-					AttachTooltipSearchResults(self, 1, SearchForLink, link);
+					AttachTooltipSearchResults(self, SearchForLink, link);
 					if app.GameBuildVersion > 40000 then self:Show(); end
 					return true;
 				end
@@ -1181,7 +1228,7 @@ else
 
 				local objectID = GetBestObjectIDForName(_G[self:GetName() .. "TextLeft1"]:GetText());
 				if objectID then
-					AttachTooltipSearchResults(self, 1, SearchForField, "objectID", objectID);
+					AttachTooltipSearchResults(self, SearchForField, "objectID", objectID);
 					self:Show();
 					return true;
 				end
@@ -1224,10 +1271,10 @@ else
 				local name, texturePath, quantity, isBonusReward, spec, itemID = GetLFGDungeonRewardInfo(dungeonID, rewardIndex);
 				if itemID then
 					if spec == "item" then
-						AttachTooltipSearchResults(self, 1, SearchForField, "itemID", itemID);
+						AttachTooltipSearchResults(self, SearchForField, "itemID", itemID);
 						self:Show();
 					elseif spec == "currency" then
-						AttachTooltipSearchResults(self, 1, SearchForField, "currencyID", itemID);
+						AttachTooltipSearchResults(self, SearchForField, "currencyID", itemID);
 						self:Show();
 					end
 				end
@@ -1245,10 +1292,10 @@ else
 				local name, texturePath, quantity, isBonusReward, spec, itemID = GetLFGDungeonShortageRewardInfo(dungeonID, shortageSeverity, lootIndex);
 				if itemID then
 					if spec == "item" then
-						AttachTooltipSearchResults(self, 1, SearchForField, "itemID", itemID);
+						AttachTooltipSearchResults(self, SearchForField, "itemID", itemID);
 						self:Show();
 					elseif spec == "currency" then
-						AttachTooltipSearchResults(self, 1, SearchForField, "currencyID", itemID);
+						AttachTooltipSearchResults(self, SearchForField, "currencyID", itemID);
 						self:Show();
 					end
 				end
@@ -1264,7 +1311,7 @@ else
 			GameTooltip_SetCurrencyByID(self, currencyID, count);
 		end
 		if CanAttachTooltips() then
-			AttachTooltipSearchResults(self, 1, SearchForField, "currencyID", currencyID);
+			AttachTooltipSearchResults(self, SearchForField, "currencyID", currencyID);
 			self:Show();
 		end
 	end
@@ -1280,7 +1327,7 @@ else
 				-- Determine what kind of list data this is. (Blizzard is whack and using this API call for headers too...)
 				local currencyID = select(12, GetCurrencyListInfo(tokenID));
 				if currencyID then
-					AttachTooltipSearchResults(self, 1, SearchForField, "currencyID", currencyID);
+					AttachTooltipSearchResults(self, SearchForField, "currencyID", currencyID);
 					self:Show();
 				end
 			end
@@ -1311,6 +1358,7 @@ api.AttachTooltipSearchResults = AttachTooltipSearchResults;
 api.GetBestObjectIDForName = GetBestObjectIDForName;
 app.AddEventHandler("OnLoad", function()
 	SearchForLink = app.SearchForLink;
+	GetPlayerPosition = app.GetPlayerPosition
 	OnLoad_CacheObjectNames();
 end);
 
@@ -1350,7 +1398,7 @@ local function ShowItemCompareTooltips(...)
 			if count > 2 then totalWidth = totalWidth + shoppingTooltip3:GetWidth(); end
 			if ( (side == "left") and (totalWidth > leftPos) ) then
 				GameTooltip:SetAnchorType(anchorType, (totalWidth - leftPos), 0);
-			elseif ( (side == "right") and (rightPos + totalWidth) >  GetScreenWidth() ) then
+			elseif ( (side == "right") and (rightPos + totalWidth) > GetScreenWidth() ) then
 				GameTooltip:SetAnchorType(anchorType, -((rightPos + totalWidth) - GetScreenWidth()), 0);
 			end
 		end

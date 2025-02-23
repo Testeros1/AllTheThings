@@ -46,21 +46,30 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			n(226211, {	-- Ax'ill <Alchemixologist>
-				--["coord"] = { 47.8, 18.7, NERUBAR },
+				["coord"] = { 60.80, 42.60, NERUBAR },
 				["g"] = {
 					i(223961, {	-- Recipe: Azj-Kahet Special (RECIPE!)
 						["cost"] = {{"c", KEJ, 1500}},
 					}),
 				},
 			}),
+			n(218224, {	-- "Calmest" Gobbu <Pots, Urns, and Armamnets>
+				["coord"] = { 46.6, 29.2, NERUBAR },
+				["sym"] = {{"select","itemID",
+					222973,	-- Fringe (PET!)
+					222968,	-- Itchbite (PET!)
+				}},
+			}),
 			n(218207, {	-- Clutchmother Marn'tiq <Pet Battle Master>
 				["coord"] = { 44.2, 17.1, NERUBAR },
 				["g"] = {
 					i(222973, {	-- Fringe (PET!)
 						["cost"] = {{"c", KEJ, 2250}},
+						["isLimited"] = true,
 					}),
 					i(222968, {	-- Itchbite (PET!)
 						["cost"] = {{"c", KEJ, 2250}},
+						["isLimited"] = true,
 					}),
 				},
 			}),
@@ -70,12 +79,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					i(226177, {	-- Recipe: Outsider's Provisions (RECIPE!)
 						["cost"] = {{"c", KEJ, 2638}},
 					}),
-				},
-			}),
-			n(227607, {	-- Fliq'ri <Mistress of Minions>
-				--["coord"] = { X, Y, MAP },
-				["g"] = {
-					i(226191),	-- Web Pet Leash (TOY!)
 				},
 			}),
 			n(218193, {	-- Iliani <Enchanting Supplies>
@@ -142,6 +145,20 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					}),
 				},
 			}),
+			n(218199, {	-- Kram'an <Head Clerk>
+				["coord"] = { 49.6, 26.6, NERUBAR },
+				["sym"] = {{"select","itemID",
+					221850,	-- Freshly Webbed Kebab (PET!)
+					223956,	-- Recipe: Everything-on-a-Stick (RECIPE!)
+				}},
+			}),
+			n(218197, {	-- Kurth <Clerk>
+				["coord"] = { 49.0, 26.8, NERUBAR },
+				["sym"] = {{"select","itemID",
+					221850,	-- Freshly Webbed Kebab (PET!)
+					223956,	-- Recipe: Everything-on-a-Stick (RECIPE!)
+				}},
+			}),
 			n(218169, {	-- Llyot <Plant Sundries & Herbalism Supplies>
 				["coord"] = { 46.9, 16.1, NERUBAR },
 				["g"] = {
@@ -156,6 +173,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						},
 					}),
 				},
+			}),
+			n(227176, {	-- Mattimeo Twinstar <Quartermaster>
+				["coord"] = { 23.1, 51.3, AZJ_KAHET },
+				["sym"] = {{"sub", "common_vendor", 217989}},	-- Aeden Braesmeld <Weaponsmith>
+			}),
+			n(223354, {	-- Nataniel Highdawn <Quartermaster>
+				["coord"] = { 44.9, 66.4, AZJ_KAHET },	-- He is sporadically walking around the campfire
+				["sym"] = {{"sub", "common_vendor", 217989}},	-- Aeden Braesmeld <Weaponsmith>
 			}),
 			n(218176, {	-- Nuel Prill <Inscription Supplies>
 				["coord"] = { 42.2, 27.2, NERUBAR },
@@ -175,11 +200,11 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			n(218198, {	-- Pelefien <Clerk>
 				["coord"] = { 50.5, 26.3, NERUBAR },
 				["g"] = {
-					i(221850, {	-- Bean (PET!)
+					i(221850, {	-- Freshly Webbed Kebab (PET!)
 						["cost"] = {{"c", KEJ, 2250}},
 						["isLimited"] = true,
 					}),
-					i(223956, {	-- Recipe: Everything-On-A-Stick (RECIPE!)
+					i(223956, {	-- Recipe: Everything-on-a-Stick (RECIPE!)
 						["cost"] = {{"c", KEJ, 1500}},
 					}),
 				},
@@ -239,7 +264,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			n(218195, {	-- Rukku <Engineering Supplies>
-				["coord"] = { 46.8, 20.0, NERUBAR },
+				["coord"] = { 58.3, 31.5, NERUBAR },
 				["g"] = {
 					i(224052, {	-- Clocks, Gears, Sprockets, and Legs (CI!)
 						["cost"] = {{"c", KEJ, 565}},
@@ -298,6 +323,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					}),
 				},
 			}),
+			n(218209, {	-- Tyro Uwe <Custom Twitchery Goods>
+				["coord"] = { 45.0, 16.7, NERUBAR },
+				["sourceQuests"] = { 78256 },	-- The General Consensus
+				["sym"] = {{"select","itemID",
+					221850,	-- Freshly Webbed Kebab (PET!)
+					222973,	-- Fringe (PET!)
+					222968,	-- Itchbite (PET!)
+					223956,	-- Recipe: Everything-on-a-Stick (RECIPE!)
+				}},
+			}),
 			n(218210, {	-- Tyro Whalekk <Organic Pet Food>
 				["coord"] = { 43.4, 17.0, NERUBAR },
 				["g"] = {
@@ -325,6 +360,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						["cost"] = {{"c", KEJ, 2250}},
 					}),
 				},
+			}),
+			n(218200, {	-- Yaggi <Sitck Cook>
+				["coord"] = { 49.6, 26.2, NERUBAR },
+				["sym"] = {{"select","itemID",
+					221850,	-- Freshly Webbed Kebab (PET!)
+					223956,	-- Recipe: Everything-on-a-Stick (RECIPE!)
+				}},
 			}),
 			n(224337, {	-- Zara'azj the Magnificent <Alchemy Supplies>
 				["coord"] = { 55.6, 47.5, NERUBAR_LOWER },
@@ -360,16 +402,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					}),
 				},
 			}),
-			--Raid vendor gear for curio (move it if needed)
-			n(227003, {	-- Kir'xal
-				["coord"] = { 56.7, 46.1, NERUBAR_LOWER },
-				["g"] = {
-					--symlink?
-					--everything for 1x
-					i(225634),	-- Web-Wrapped Curio
-				},
-			}),
-			--Seasonal gear vendor for Mark of the Spelunker Supreme
+			--Seasonal gear vendor for Mark of the Spelunker Supreme (TODO: move & symlink to M+ category)
 			--raid, hero gear
 			n(224270, {	-- Ip'xal
 				["coord"] = { 57.0, 45.8, NERUBAR_LOWER },

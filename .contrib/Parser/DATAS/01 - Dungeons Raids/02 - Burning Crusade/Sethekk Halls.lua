@@ -75,6 +75,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["groups"] = {
 						objective(1, {	-- 0/3 Cobalt Eye
 							["provider"] = { "i", 72480 },	-- Cobalt Eye
+							["cr"] = 19428,	-- Cobalt Serpent
 						}),
 					},
 				}),
@@ -135,9 +136,6 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						}),
 						ach(2359, {	-- Swift Flight Form
 							["sourceQuest"] = 11001,	-- Vanquish the Raven God
-							-- #if BEFORE WRATH
-							["description"] = "Completed the druid quest to obtain Swift Flight Form.",
-							-- #endif
 							["timeline"] = { REMOVED_4_0_1 },
 							["classes"] = { DRUID },
 							["filterID"] = MOUNTS,
@@ -171,10 +169,6 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 				}),
 			}),
 			n(ZONE_DROPS, {
-				i(72480, {	-- Cobalt Eye
-					["timeline"] = { ADDED_4_3_0 },
-					["cr"] = 19428,	-- Cobalt Serpent
-				}),
 				i(29669, {	-- Pattern: Shadow Armor Kit (RECIPE!)
 					["timeline"] = { REMOVED_5_0_4 },
 					["cr"] = 18320,	-- Time-Lost Shadowmage
@@ -298,9 +292,6 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						["groups"] = {
 							ach(883, {	-- Reins of the Raven Lord
 								["provider"] = { "i", 32768 },	-- Reins of the Raven Lord
-								-- #if BEFORE WRATH
-								["description"] = "Obtain the Reins of the Raven Lord from Anzu in Sethekk Halls.",
-								-- #endif
 								["filterID"] = MOUNTS,
 							}),
 							i(32768),	-- Raven Lord (MOUNT!)
@@ -352,12 +343,11 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 		},
 	}),
 })));
--- #if AFTER WOD
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(252, {
 		q(35541),	-- Sethekk Halls Bonus Objective
 		q(35539),	-- Sethekk Halls Reward Quest - Normal completion
 		q(35540),	-- Sethekk Halls Reward Quest - Heroic completion
 	}),
-});
--- #endif
+})));

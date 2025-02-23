@@ -1,18 +1,18 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	inst(1271, {	-- Ara-Kara, City of Echoes
 		["coord"] = { 52.2, 45.8, NERUBAR_LOWER },
 		["maps"] = {
-			2357,	-- 	-- CityOfEchoes_A // Echoing Overlook
-			2358,	-- 	-- CityOfEchoes_B // The Undercache
+			2357,	--	-- CityOfEchoes_A // Echoing Overlook
+			2358,	--	-- CityOfEchoes_B // The Undercache
 		},
 		["g"] = {
 			n(QUESTS, {
 				q(83166, {	-- Ara-Kara, the City of Echoes: Harverst's End
 					["provider"] = { "n", 224733 },	-- Tulumun
-					["coord"] = { 56.7, 46.7, AZJ_KAHET },
+					["coord"] = { 56.2, 42.3, AZJ_KAHET },
 				}),
 			}),
 			d(DIFFICULTY.DUNGEON.MULTI.NORMAL_PLUS, {

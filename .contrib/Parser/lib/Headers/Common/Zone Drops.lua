@@ -7,5 +7,7 @@ ZONE_DROPS = createHeader({
 	text = {
 		en = [[~ZONE.." "..BATTLE_PET_SOURCE_1]],
 		ru = "Добыча локации",
+		cn = "地区掉落",
+		tw = "地區掉落",
 	},
 });

@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(PANDARIA, {
 		m(DREAD_WASTES, {
 			["lore"] = "The Dread Wastes are an area of Pandaria, located south of Townlong Steppes and west of the Valley of the Four Winds and Vale of Eternal Blossoms. Separated from the rest of Pandaria by the Serpent's Spine constructed during the rule of Lei Shen, the Dread Wastes are the home of the Mantid. The landscape is dotted with massive Kypari trees that produce the amber which the Mantid utilize in many ways. Klaxxi'vess serves as the main quest hub for the zone, but there are two Pandaren settlements, Soggy's Gamble and Sunset Brewgarden, that provide additional quests and are necessary for unlocking all of the Paragons.",
-			["icon"] = "Interface\\Icons\\achievement_zone_dreadwastes",
+			["icon"] = 624970,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
 					ach(7312, {	-- Amber is the Color of My Energy
@@ -111,8 +111,11 @@ root(ROOTS.Zones, {
 					},
 				}),
 				explorationHeader({
+					visit_exploration(6446,{coord={29.6,89.6,DREAD_WASTES}}),	-- Amber Quarry
 					exploration(6429),	-- Chittering Coast
+					visit_exploration(6441,{coord={53.4,56.6,DREAD_WASTES}}),	-- Duskroot Fen
 					exploration(6437),	-- Fear Clutch
+					visit_exploration(6425,{coord={67.5,36.9,DREAD_WASTES}}),	-- Forgotten Mire
 					exploration(6435),	-- Heart of Fear
 					exploration(6315),	-- Klaxxi'vess
 					exploration(6329),	-- Kor'vess
@@ -121,21 +124,27 @@ root(ROOTS.Zones, {
 					exploration(6300),	-- Kypari Zar
 					exploration(6293),	-- Lake of Stars
 					exploration(6433),	-- Lonesome Cove
+					visit_exploration(6448,{coord={51.9,71.8,DREAD_WASTES}}),	-- Mazu's Overlook
+					visit_exploration(6346,{coord={47.0,16.8,DREAD_WASTES}}),	-- Morrowchamber
+					visit_exploration(6506,{coord={36.9,16.9,DREAD_WASTES}}),	-- Motherseed Pit
 					exploration(6404),	-- Muckscale Shallows
 					exploration(6439),	-- Panic Clutch
 					exploration(6339),	-- Rikkilea
 					exploration(6336),	-- Rikkitun Village
 					exploration(6368),	-- Soggy's Gamble
 					exploration(6306),	-- Terrace of Gurthan
+					visit_exploration(6347,{coord={53.6,15.3,DREAD_WASTES}}),	-- The Amber Vault
 					exploration(6391),	-- The Briny Muck
 					exploration(6442),	-- The Clutches of Shek'zeer
+					visit_exploration(6447,{coord={32.8,51.7,DREAD_WASTES}}),	-- The Stinging Trail
 					exploration(6334),	-- The Sunset Brewgarden
+					visit_exploration(6434,{coord={66.4,23.0,DREAD_WASTES}}),	-- The Thundering Run
 					exploration(6418),	-- Venomous Ledge
 					exploration(6443),	-- Writhingwood
 					exploration(6444),	-- Zan'vess
 				}),
 				n(FACTIONS, {
-					faction(1337, {	-- The Klaxxi
+					faction(FACTION_THE_KLAXXI, {	-- The Klaxxi
 						n(ACHIEVEMENTS, {
 							ach(6545),	-- The Klaxxi
 							ach(7313, {	-- Stay Klaxxi
@@ -219,6 +228,10 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = {
 							31092,	-- Feed or Be Eaten
 							31359,	-- The Kunchong Whisperer
+						},
+						["g"] = {
+							i(85885),	-- Amber-Encrusted Brain (QI!)
+							i(85884),	-- Sonic Emitter (QI!)
 						},
 					}),
 					q(31730, {	-- A Not So Friendly Request
@@ -312,6 +325,9 @@ root(ROOTS.Zones, {
 						["isDaily"] = true,
 						["provider"] = { "n", 62180 },	-- Korven the Prime
 						["sourceQuest"] = 31026,	-- The Root of the Problem
+						["g"] = {
+							i(85634),	-- Gurthani Tablet (QI!)
+						},
 					}),
 					q(31676, {	-- Ancient Vengeance
 						["coord"] = { 70.1, 25.6, DREAD_WASTES },
@@ -330,7 +346,7 @@ root(ROOTS.Zones, {
 					q(31018, {	-- Beneath the Heart of Fear
 						["coord"] = { 55.0, 35.8, DREAD_WASTES },
 						["provider"] = { "n", 62538 },	-- Kil'ruk the Wind-Reaver
-						["minReputation"] = { 1337, REVERED },
+						["minReputation"] = { FACTION_THE_KLAXXI, REVERED },
 					}),
 					q(31090, {	-- Better With Age
 						["coord"] = { 48.1, 49.6, DREAD_WASTES },
@@ -413,6 +429,9 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = {
 							31092,	-- Feed or Be Eaten
 							31359,	-- The Kunchong Whisperer
+						},
+						["g"] = {
+							i(85665),	-- Mushan Tongue (QI!)
 						},
 					}),
 					q(31682, {	-- By the Sea, Nevermore
@@ -568,7 +587,7 @@ root(ROOTS.Zones, {
 					q(31439, {	-- Dropping Our Signal
 						["coord"] = { 54.7, 34.0, DREAD_WASTES },
 						["provider"] = { "n", 64815 },	-- Kor'ik
-						["minReputation"] = { 1337, REVERED },
+						["minReputation"] = { FACTION_THE_KLAXXI, REVERED },
 						["sourceQuest"] = 31066,	-- A Cry From Darkness
 						["groups"] = {
 							i(87202),	-- Klaxxi Tuning Fork (QI!)
@@ -594,6 +613,9 @@ root(ROOTS.Zones, {
 						["altQuests"] = { 31679 },	-- Extending Our Coverage
 						["sourceQuest"] = 31066,	-- A Cry From Darkness
 						["description"] = "This version is available if Kor'ik has not been killed yet.",
+						["g"] = {
+							i(86009),	-- Resonating Crystal (QI!)
+						},
 					}),
 					q(31679, {	-- Extending Our Coverage
 						["coord"] = { 48.0, 49.6, DREAD_WASTES },
@@ -601,6 +623,9 @@ root(ROOTS.Zones, {
 						["altQuests"] = { 31087 },	-- Extending Our Coverage
 						["sourceQuest"] = 31441,	-- Corruption Runs Deep
 						["description"] = "This version is available if Kor'ik has been killed.",
+						["g"] = {
+							i(86009),	-- Resonating Crystal (QI!)
+						},
 					}),
 					q(31465, {	-- Extracting Answers
 						["coord"] = { 56.2, 58.2, DREAD_WASTES },
@@ -842,6 +867,9 @@ root(ROOTS.Zones, {
 							31092,	-- Feed or Be Eaten
 							31359,	-- The Kunchong Whisperer
 						},
+						["g"] = {
+							i(82869),	-- Meaty Turtle Haunch (QI!)
+						},
 					}),
 					q(31598, {	-- Kypa'rak's Core
 						["cr"] = 65229,	-- Kypa'rak
@@ -902,6 +930,9 @@ root(ROOTS.Zones, {
 						["isDaily"] = true,
 						["provider"] = { "n", 62180 },	-- Korven the Prime
 						["sourceQuest"] = 31026,	-- The Root of the Problem
+						["g"]  = {
+							i(87841),	-- Korven's Experimental Grenades (QI!)
+						},
 					}),
 					q(31267, {	-- Mistblade Destruction
 						["coord"] = { 55.0, 35.8, DREAD_WASTES },
@@ -1035,6 +1066,9 @@ root(ROOTS.Zones, {
 							{ "n", 63072 },	-- Rik'kal the Dissector
 							{ "n", 67091 },	-- Rik'kal the Dissector
 						},
+						["g"] = {
+							i(85635),	-- Pristine Mire Beast Eye (QI!)
+						},
 					}),
 					q(31510, {	-- Quiet Now
 						["coord"] = { 54.8, 36.2, DREAD_WASTES },
@@ -1136,18 +1170,27 @@ root(ROOTS.Zones, {
 						["isDaily"] = true,
 						["provider"] = { "n", 62180 },	-- Korven the Prime
 						["sourceQuest"] = 31026,	-- The Root of the Problem
+						["g"] = {
+							i(87400),	-- Sap Jar (QI!)
+						},
 					}),
 					q(31233, {	-- Sap Tapping
 						["coord"] = { 54.3, 36.0, DREAD_WASTES },
 						["isDaily"] = true,
 						["provider"] = { "n", 62180 },	-- Korven the Prime
 						["sourceQuest"] = 31026,	-- The Root of the Problem
+						["g"] = {
+							i(85664),	-- Amber Sap (QI!)
+						},
 					}),
 					q(31603, {	-- Seeds of Fear
 						["coord"] = { 55.0, 35.6, DREAD_WASTES },
 						["provider"] = { "n", 64599 },	-- Ambersmith Zikk
 						["repeatable"] = true,
 						["sourceQuest"] = 31108,	-- Concentrated Fear
+						["g"] = {
+							i(87903),	-- Dread Amber Shards (QI!)
+						},
 					}),
 					q(31506, {	-- Shackles of Manipulation
 						["coord"] = { 54.3, 35.8, DREAD_WASTES },
@@ -1157,12 +1200,15 @@ root(ROOTS.Zones, {
 							31092,	-- Feed or Be Eaten
 							31359,	-- The Kunchong Whisperer
 						},
+						["g"] = {
+							i(87813),	-- Zan'thik Shackles (QI!)
+						},
 					}),
 					q(31612, {	-- Shadow of the Empire
 						["coord"] = { 55.1, 35.9, DREAD_WASTES },
 						["provider"] = { "n", 62538 },	-- Kil'ruk the Wind-Reaver
 						["sourceQuest"] = 31609,	-- The Wrath of Shek'zeer
-						["minReputation"] = { 1337, EXALTED },
+						["minReputation"] = { FACTION_THE_KLAXXI, EXALTED },
 						["g"] = {
 							i(90859),	-- Seal of the Lucid
 							i(90860),	-- Seal of the Unscathed
@@ -1200,7 +1246,7 @@ root(ROOTS.Zones, {
 						["coord"] = { 55.0, 35.8, DREAD_WASTES },
 						["provider"] = { "n", 62538 },	-- Kil'ruk the Wind-Reaver
 						["sourceQuest"] = 31066,	-- A Cry From Darkness
-						["minReputation"] = { 1337, HONORED },
+						["minReputation"] = { FACTION_THE_KLAXXI, HONORED },
 					}),
 					q(31487, {	-- Sonic Disruption
 						["coord"] = { 54.2, 35.7, DREAD_WASTES },
@@ -1210,6 +1256,9 @@ root(ROOTS.Zones, {
 							31092,	-- Feed or Be Eaten
 							31359,	-- The Kunchong Whisperer
 						},
+						["g"] = {
+							i(87394),	-- Sonic Disruption Fork (QI!)
+						},
 					}),
 					q(31508, {	-- Specimen Request
 						["coord"] = { 54.4, 35.9, DREAD_WASTES },
@@ -1218,6 +1267,9 @@ root(ROOTS.Zones, {
 						["providers"] = {
 							{ "n", 63072 },	-- Rik'kal the Dissector
 							{ "n", 67091 },	-- Rik'kal the Dissector
+						},
+						["g"] = {
+							i(87874),	-- Kyparite Shards (QI!)
 						},
 					}),
 					q(31075, {	-- Sunset Kings
@@ -1261,7 +1313,7 @@ root(ROOTS.Zones, {
 					q(31959, {	-- The Empress' Gambit
 						["coord"] = { 55.1, 35.5, DREAD_WASTES },
 						["provider"] = { "n", 62774 },	-- Malik the Unscathed
-						["minReputation"] = { 1337, EXALTED },
+						["minReputation"] = { FACTION_THE_KLAXXI, EXALTED },
 						["description"] = "Must also have completed the |cFFFFD700Amber is the Color of My Energy|r achievement.",
 					}),
 					q(31270, {	-- The Fight Against Fear
@@ -1407,13 +1459,13 @@ root(ROOTS.Zones, {
 						["coord"] = { 55.0, 35.6, DREAD_WASTES },
 						["provider"] = { "n", 64599 },	-- Ambersmith Zikk
 						["sourceQuest"] = 31959,	-- The Empress' Gambit
-						["minReputation"] = { 1337, EXALTED },
+						["minReputation"] = { FACTION_THE_KLAXXI, EXALTED },
 					}),
 					q(31605, {	-- The Zan'thik Dig
 						["coord"] = { 54.7, 34.0, DREAD_WASTES },
 						["provider"] = { "n", 64815 },	-- Kor'ik
 						["isBreadcrumb"] = true,
-						["minReputation"] = { 1337, HONORED },
+						["minReputation"] = { FACTION_THE_KLAXXI, HONORED },
 						["sourceQuest"] = 31066,	-- A Cry From Darkness
 					}),
 					q(31208, {	-- Venomous Intent
@@ -1443,6 +1495,7 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 63317 },	-- Captain "Soggy" Su-Dao
 						["sourceQuest"] = 31183,	-- Meet the Cap'n
 						["g"] = {
+							i(85955),	-- Dog's Whistle (QI!)
 							i(84010),	-- Motherseed Leggings
 							i(84011),	-- Sapfly Legguards
 							i(84012),	-- Withered Wood Kilt
@@ -1469,6 +1522,9 @@ root(ROOTS.Zones, {
 						["providers"] = {
 							{ "n", 63072 },	-- Rik'kal the Dissector
 							{ "n", 67091 },	-- Rik'kal the Dissector
+						},
+						["g"] = {
+							i(87401),	-- Needler Wings (QI!)
 						},
 					}),
 					q(31074, {	-- Wood and Shade
@@ -1632,99 +1688,106 @@ root(ROOTS.Zones, {
 				n(VENDORS, {
 					n(64599, {	-- Ambersmith Zikk <Klaxxi Quartermaster>
 						["coord"] = { 55.0, 35.5, DREAD_WASTES },
-						["g"] = {
-							i(89396),	-- Amber Espada of Klaxxi'vess
-							i(89398),	-- Amber Flammard of Klaxxi'vess
-							i(89397),	-- Amber Saber of Klaxxi'vess
-							i(89395),	-- Amber Scythe of Klaxxi'vess
-							i(89400),	-- Amber Sledge of Klaxxi'vess
-							i(89393),	-- Amber Slicer of Klaxxi'vess
-							i(89394),	-- Amber Spear of Klaxxi'vess
-							i(89392),	-- Amber Spine of Klaxxi'vess
-							i(89399),	-- Amber Sprayer of Klaxxi'vess
-							i(89094),	-- Ambersmith Legplates
-							i(89064),	-- Bloodseeker's Solitaire
-							i(89671),	-- Chestplate of the Stone Lion
-							i(89065),	-- Choker of the Klaxxi'va
-							i(89645),	-- Cruel Mercy Bracers
-							i(89090),	-- Dreadsworn Slayer Legs
-							i(89650),	-- Emperor's Riding Gloves
-							i(89647),	-- Entombed Traitor's Wristguards
-							i(92522),	-- Grand Commendation of the Klaxxi
-							i(89670),	-- Inner Serenity Chestplate
-							i(89060),	-- Klaxxi Lash of the Borrower
-							i(89056),	-- Klaxxi Lash of the Consumer
-							i(89057),	-- Klaxxi Lash of the Doubter
-							i(89061),	-- Klaxxi Lash of the Harbinger
-							i(89062),	-- Klaxxi Lash of the Orator
-							i(89059),	-- Klaxxi Lash of the Precursor
-							i(89055),	-- Klaxxi Lash of the Rescinder
-							i(89063),	-- Klaxxi Lash of the Seeker
-							i(89058),	-- Klaxxi Lash of the Winnower
-							i(89798),	-- Klaxxi Tabard
-							i(89093, {	-- Kovok's Riven Legguards
-								["cost"] = 5019100,	-- 501g 91s
-							}),
-							i(89651),	-- Krompf's Fine-Tuning Gloves
-							i(89088),	-- Leggings of the Poisoned Soul
-							i(89095),	-- Legguards of the Unscathed
-							i(89067),	-- Links of the Lucid
-							i(89092, {	-- Locust Swarm Legguards
-								["cost"] = 5001400,	-- 500g 14s
-							}),
-							i(89066),	-- Paragon's Pale Pendant
-							i(83791, {	-- Plans: Breastplate of Ancient Steel (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(83792, {	-- Plans: Gauntlets of Ancient Steel (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(90531, {	-- Plans: Ghost Iron Shield Spike (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(83787, {	-- Plans: Ghost Reaver's Breastplate (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(83788, {	-- Plans: Ghost Reaver's Gauntlets (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(84196, {	-- Plans: Living Steel Belt Buckle (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(83789, {	-- Plans: Living Steel Breastplate (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(83790, {	-- Plans: Living Steel Gauntlets (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(90532, {	-- Plans: Living Steel Weapon Chain (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(84197, {	-- Plans: Masterwork Forgewire Axe (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(84198, {	-- Plans: Masterwork Ghost Shard (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(84200, {	-- Plans: Masterwork Ghost-Forged Blade (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(84217, {	-- Plans: Masterwork Phantasmal Hammer (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(84218, {	-- Plans: Masterwork Spiritblade Decimator (RECIPE!)
-								["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
-							}),
-							i(89087),	-- Poisoncrafter's Kilt
-							i(85262, {	-- Amber Scorpion (MOUNT!)
-								["cost"] = 100000000,	-- 10,000g
-							}),
-							i(89646),	-- Runoff Wristguards
-							i(89644),	-- Sudden Insight Bracers
-							i(89091),	-- Swarmkeeper's Leggings
-							i(89089),	-- Wind-Reaver Greaves
-							i(89068),	-- Wire of the Wakener
-						},
+						["g"] = bubbleDownClassicRep(FACTION_THE_KLAXXI, {
+							{		-- Neutral
+								i(89094),	-- Ambersmith Legplates
+								i(89064),	-- Bloodseeker's Solitaire
+								i(89671),	-- Chestplate of the Stone Lion
+								i(89065),	-- Choker of the Klaxxi'va
+								i(89645),	-- Cruel Mercy Bracers
+								i(89090),	-- Dreadsworn Slayer Legs
+								i(89650),	-- Emperor's Riding Gloves
+								i(89647),	-- Entombed Traitor's Wristguards
+								i(89670),	-- Inner Serenity Chestplate
+								i(89060),	-- Klaxxi Lash of the Borrower
+								i(89056),	-- Klaxxi Lash of the Consumer
+								i(89057),	-- Klaxxi Lash of the Doubter
+								i(89061),	-- Klaxxi Lash of the Harbinger
+								i(89062),	-- Klaxxi Lash of the Orator
+								i(89059),	-- Klaxxi Lash of the Precursor
+								i(89055),	-- Klaxxi Lash of the Rescinder
+								i(89063),	-- Klaxxi Lash of the Seeker
+								i(89058),	-- Klaxxi Lash of the Winnower
+								i(89093, {	-- Kovok's Riven Legguards
+									["cost"] = 5019100,	-- 501g 91s
+								}),
+								i(89651),	-- Krompf's Fine-Tuning Gloves
+								i(89088),	-- Leggings of the Poisoned Soul
+								i(89095),	-- Legguards of the Unscathed
+								i(89067),	-- Links of the Lucid
+								i(89092, {	-- Locust Swarm Legguards
+									["cost"] = 5001400,	-- 500g 14s
+								}),
+								i(89066),	-- Paragon's Pale Pendant
+								i(89087),	-- Poisoncrafter's Kilt
+								i(89646),	-- Runoff Wristguards
+								i(89644),	-- Sudden Insight Bracers
+								i(89091),	-- Swarmkeeper's Leggings
+								i(89089),	-- Wind-Reaver Greaves
+								i(89068),	-- Wire of the Wakener
+							}, {	-- Friendly
+							}, {	-- Honored
+								i(83791, {	-- Plans: Breastplate of Ancient Steel (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(83792, {	-- Plans: Gauntlets of Ancient Steel (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(90531, {	-- Plans: Ghost Iron Shield Spike (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(83787, {	-- Plans: Ghost Reaver's Breastplate (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(83788, {	-- Plans: Ghost Reaver's Gauntlets (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(84196, {	-- Plans: Living Steel Belt Buckle (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(83789, {	-- Plans: Living Steel Breastplate (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(83790, {	-- Plans: Living Steel Gauntlets (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(90532, {	-- Plans: Living Steel Weapon Chain (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(84197, {	-- Plans: Masterwork Forgewire Axe (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(84198, {	-- Plans: Masterwork Ghost Shard (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(84200, {	-- Plans: Masterwork Ghost-Forged Blade (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(84217, {	-- Plans: Masterwork Phantasmal Hammer (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(84218, {	-- Plans: Masterwork Spiritblade Decimator (RECIPE!)
+									["cost"] = { { "i", 72093, 20 }, },	-- 20x Kyparite
+								}),
+								i(89230),	-- Restorative Amber
+							}, {	-- Revered
+								i(92522),	-- Grand Commendation of the Klaxxi
+							}, {	-- Exalted
+								i(89396),	-- Amber Espada of Klaxxi'vess
+								i(89398),	-- Amber Flammard of Klaxxi'vess
+								i(89397),	-- Amber Saber of Klaxxi'vess
+								i(89395),	-- Amber Scythe of Klaxxi'vess
+								i(89400),	-- Amber Sledge of Klaxxi'vess
+								i(89393),	-- Amber Slicer of Klaxxi'vess
+								i(89394),	-- Amber Spear of Klaxxi'vess
+								i(89392),	-- Amber Spine of Klaxxi'vess
+								i(89399),	-- Amber Sprayer of Klaxxi'vess
+								i(89798),	-- Klaxxi Tabard
+								i(85262, {	-- Reins of the Amber Scorpion (MOUNT!)
+									["cost"] = 100000000,	-- 10,000g
+								}),
+							},
+						}),
 					}),
 				}),
 				n(ZONE_DROPS, {
@@ -1738,19 +1801,31 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers,{
-	expansion(EXPANSION.MOP, {
-		q(31666),	-- FLAG - Wind-Reaver's Dagger - second trigger for Wind-Reaver's Dagger of Quick Strikes treasure
-		q(31282),	-- Kaz'tik Tracking Quest - triggers after freeing Kaz'tik from amber
-		q(31343),	-- Kovok Tracking - triggers after turning in "Reunited" (questID 31091), allows Kovok to follow you
-		q(31484),	-- Hisek Tracking Quest
-		q(32012),	-- Kovok tracking [GROWING]
-		q(31115),	-- FLAG - Freed Han
-		q(31992),	-- [FLAG] Dread Wastes Buff Bitflag - Enhancement 01 - Angel of Death
-		q(31993),	-- [FLAG] Dread Wastes Buff Bitflag - Enhancement 02 - Iron Mantid
-		q(31994),	-- [FLAG] Dread Wastes Buff Bitflag - Enhancement 03 - Raining Blood
-		q(31995),	-- [FLAG] Dread Wastes Buff Bitflag - Augmentation 01 - Speed King
-		q(31996),	-- [FLAG] Dread Wastes Buff Bitflag - Augmentation 02 - Seek and Destroy
-		q(31997),	-- [FLAG] Dread Wastes Buff Bitflag - Augmentation 03 - Speed King
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
+	m(PANDARIA, {
+		m(DREAD_WASTES, {
+			n(FACTIONS, {
+				header(HEADERS.Faction, FACTION_THE_KLAXXI, {
+					q(31992),	-- [FLAG] Dread Wastes Buff Bitflag - Enhancement 01 - Angel of Death
+					q(31993),	-- [FLAG] Dread Wastes Buff Bitflag - Enhancement 02 - Iron Mantid
+					q(31994),	-- [FLAG] Dread Wastes Buff Bitflag - Enhancement 03 - Raining Blood
+					q(31995),	-- [FLAG] Dread Wastes Buff Bitflag - Augmentation 01 - Speed King
+					q(31996),	-- [FLAG] Dread Wastes Buff Bitflag - Augmentation 02 - Seek and Destroy
+					q(31997),	-- [FLAG] Dread Wastes Buff Bitflag - Augmentation 03 - Speed King
+					n(QUESTS, {
+						q(31484),	-- Hisek Tracking Quest
+						q(31282),	-- Kaz'tik Tracking Quest - triggers after freeing Kaz'tik from amber
+						q(31343),	-- Kovok Tracking - triggers after turning in "Reunited" (questID 31091), allows Kovok to follow you
+						q(32012),	-- Kovok tracking [GROWING]
+					}),
+				}),
+			}),
+			n(QUESTS, {
+				q(31115),	-- FLAG - Freed Han
+			}),
+			n(TREASURES, {
+				q(31666),	-- FLAG - Wind-Reaver's Dagger - second trigger for Wind-Reaver's Dagger of Quick Strikes treasure
+			}),
+		}),
 	}),
-});
+})));

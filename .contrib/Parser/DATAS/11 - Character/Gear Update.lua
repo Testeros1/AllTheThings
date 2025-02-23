@@ -3,9 +3,9 @@
 -------------------------------------------
 GEAR_UPDATE = createHeader({
 	readable = "Gear Update",
-	icon = "Interface\\Icons\\ability_bossmagistrix_timewarp1",
+	icon = 1391675,
 	text = {
-		en = "Gear Update",
+		en = [[~RPE_GEAR_UPDATE]],
 	},
 });
 root(ROOTS.Character, n(GEAR_UPDATE, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {
@@ -107,8 +107,8 @@ root(ROOTS.Character, n(GEAR_UPDATE, bubbleDownSelf({ ["timeline"] = { ADDED_10_
 		}),
 		cl(DRUID, {
 			i(205877, {	-- Adventurer's Footlocker
-				i(170617), -- Springrain Spear
-				i(170611), -- Springrain Stave
+				i(170617),	-- Springrain Spear
+				i(170611),	-- Springrain Stave
 			}),
 			cl(DRUID, BALANCE, {
 				i(153760),	-- Springrain Stave
@@ -203,8 +203,10 @@ root(ROOTS.Character, n(GEAR_UPDATE, bubbleDownSelf({ ["timeline"] = { ADDED_10_
 		]]--
 		cl(HUNTER, {
 			i(205877, {	-- Adventurer's Footlocker
+				i(231840, {["timeline"] = {ADDED_11_0_5}}),	-- Trailseeker Crossbow
+				i(231839, {["timeline"] = {ADDED_11_0_5}}),	-- Trailseeker Longbow
 				i(170638),	-- Trailseeker Shotgun
-				i(170639),	-- Trailseekeer Spear
+				i(170639),	-- Trailseeker Spear
 			}),
 			cl(HUNTER, BEAST_MASTERY, {
 				i(153813),	-- Trailseeker Shotgun

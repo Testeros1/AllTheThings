@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(WORLD_BOSSES, {
 		["isRaid"] = true,
 		["g"] = sharedData({
@@ -31,26 +31,24 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 			e(2625, {	-- Orta, the Broken Mountain
 				["crs"] = { 221067 },	-- Orta, the Broken Mountain
 				["coord"] = { 18.3, 33.1, NERUBAR },
-				--["questID"] = xx,
+				["questID"] = 83468,
 				["g"] = sharedData({
 					["modID"] = 3,
 				},{
 					i(225751),	-- Seal of the Broken Mountain
 				}),
 			}),
-			--[[
-			q(xx, {	-- Orta, the Broken Mountain (WQ)
+			q(81624, {	-- Orta, the Broken Mountain (WQ)
 				["coord"] = { 18.3, 33.1, NERUBAR },
 				["isWorldQuest"] = true,
 				["sym"] = {
 					{"select","encounterID",2625,},{"pop"},	-- Original WB
 				},
 			}),
-			--]]
 			e(2635, {	-- Aggregation of Horrors
 				["crs"] = { 220999 },	-- Aggregation of Horrors
 				["coord"] = { 64.8, 87.0, THE_RINGING_DEEPS },
-				--["questID"] = xx,
+				["questID"] = 83466,
 				["g"] = sharedData({
 					["modID"] = 3,
 				},{
@@ -84,22 +82,39 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 			e(2636, {	-- Shurrai, Atrocity of the Undersea
 				["crs"] = { 221224 },	-- Shurrai <Atrocity of the Undersea>
 				["coord"] = { 45.6, 18.4, HALLOWFALL },
-				--["questID"] = xx,
+				["questID"] = 83467,
 				["g"] = sharedData({
 					["modID"] = 3,
 				},{
 					i(225750),	-- Seal of the Abyssal Terror
 				}),
 			}),
-			--[[
-			q(xx, {	-- xx (WQ)
+			q(81653, {	-- Shurrai, Atrocity of the Undersea (WQ)
 				["coord"] = { 45.6, 18.4, HALLOWFALL },
 				["isWorldQuest"] = true,
 				["sym"] = {
 					{"select","encounterID",2636,},{"pop"},	-- Original WB
 				},
 			}),
-			--]]
+			e(3128,	-- The Gobfather
+			bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+				["crs"] = { 231821 },	-- The Gobfather <Demodome Champion>
+				["coord"] = { 58.9, 11.2, UNDERMINE },
+				["questID"] = 85089,
+				--["g"] = sharedData({
+				--	["modID"] = 3,
+				--},{
+				--	i(),	-- missing journal loot table
+				--}),
+			})),
+			q(85088,	-- The Main Event (WQ)
+			bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+				["coord"] = { 58.9, 11.2, UNDERMINE },
+				["isWorldQuest"] = true,
+				--["sym"] = {
+				--	{"select","encounterID",3128,},{"pop"},
+				--},
+			})),
 		}),
 	}),
 })));

@@ -18,9 +18,7 @@ local LYNA_GROUPS = {
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 	m(SILVERMOON_CITY, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
 		["lore"] = "Silvermoon City is the capital city of the blood elves. It is located in Eversong Woods, next to the tainted Dead Scar.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Inv_misc_tournaments_symbol_bloodelf",
-		-- #endif
+		["icon"] = 255136,
 		["isRaid"] = true,
 		["groups"] = {
 			battlepets({
@@ -31,8 +29,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				}},
 			}),
 			n(FACTIONS, {
-				faction(911, {	-- Silvermoon City
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+				faction(FACTION_SILVERMOON_CITY, {	-- Silvermoon City
+					-- #if AFTER CATA
+					["provider"] = { "i", 45585 },	-- Silvermoon City Tabard
+					-- #endif
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = HORDE_ONLY,
 				}),
 			}),
@@ -529,7 +530,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["coord"] = { 56.0, 51.8, SILVERMOON_CITY },
 					["races"] = HORDE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = { { "sub", "common_recipes_vendor", 3364 } }, -- Borya <Tailoring Supplies>
+					["sym"] = { { "sub", "common_recipes_vendor", 3364 } },	-- Borya <Tailoring Supplies>
 					-- #endif
 					["groups"] = {
 						i(21892),	-- Pattern: Bolt of Imbued Netherweave (RECIPE!)
@@ -544,7 +545,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["coord"] = { 80.6, 37.0, SILVERMOON_CITY },
 					["races"] = HORDE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = { { "sub", "common_recipes_vendor", 3356 } }, -- Sumi <Blacksmithing Supplies>
+					["sym"] = { { "sub", "common_recipes_vendor", 3356 } },	-- Sumi <Blacksmithing Supplies>
 					-- #endif
 					["groups"] = {
 						i(23591, {	-- Plans: Adamantite Cleaver (RECIPE!)
@@ -575,7 +576,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["coord"] = { 90.8, 73.6, SILVERMOON_CITY },
 					["races"] = HORDE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = { { "sub", "common_recipes_vendor", 50482 } }, -- Marith Lazuria <Jewelcrafting Supplies>
+					["sym"] = { { "sub", "common_recipes_vendor", 50482 } },	-- Marith Lazuria <Jewelcrafting Supplies>
 					-- #endif
 					["groups"] = {
 						i(20854, {	-- Design: Amulet of the Moon
@@ -618,14 +619,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				}),
 				n(16610, {	-- Kredis <Tabard Vendor>
 					["coord"] = { 78.6, 84.6, SILVERMOON_CITY },
-					["sym"] = {{"sub", "common_vendor", 5188}}, -- Garyl <Tabard Vendor>
+					["sym"] = {{"sub", "common_vendor", 5188}},	-- Garyl <Tabard Vendor>
 					["races"] = HORDE_ONLY,
 				}),
 				n(16635, {	-- Lyna <Enchanting Supplies>
 					["coord"] = { 70.0, 24.6, SILVERMOON_CITY },
 					["races"] = HORDE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = { { "sub", "common_recipes_vendor", 3346 } }, -- Kithas <Enchanting Supplies>
+					["sym"] = { { "sub", "common_recipes_vendor", 3346 } },	-- Kithas <Enchanting Supplies>
 					-- #endif
 					["groups"] = LYNA_GROUPS,
 				}),
@@ -787,7 +788,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["coord"] = { 84.6, 78.8, SILVERMOON_CITY },
 					["races"] = HORDE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = { { "sub", "common_recipes_vendor", 3366 } }, -- Tamar <Leatherworking Supplies>
+					["sym"] = { { "sub", "common_recipes_vendor", 3366 } },	-- Tamar <Leatherworking Supplies>
 					-- #endif
 					["groups"] = {
 						i(25726, {	-- Pattern: Comfortable Insoles (RECIPE!)
@@ -850,6 +851,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = WARCHIEFS_COMMAND_BOARD_SYMLINK,
 				["races"] = HORDE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 		},

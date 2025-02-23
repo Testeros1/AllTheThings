@@ -53,6 +53,7 @@ root(ROOTS.Zones, {
 				}),
 				q(45841, {	-- A Triumphant Report
 					["sourceQuests"] = { 45796 },	-- Destroying the Nest
+					["_drop"] = { "classes", "c" },	-- Hide classes Blizz API insists can get the quest
 					["classes"] = {
 						HUNTER,		-- Beast Mastery
 						MONK,		-- Windwalker
@@ -249,6 +250,7 @@ root(ROOTS.Zones, {
 				}),
 				q(45796, {	-- Destroying the Nest
 					["sourceQuests"] = { 45587 },	-- The Feltotem Menace
+					["_drop"] = { "classes", "c" },	-- Hide classes Blizz API insists can get the quest
 					["classes"] = {
 						HUNTER,		-- Beast Mastery
 						MONK,		-- Windwalker
@@ -723,6 +725,7 @@ root(ROOTS.Zones, {
 						47020,	-- Discipline: Rumblings Near Feltotem
 						47019,	-- Windwalker: Rumblings Near Feltotem
 					},
+					["_drop"] = { "classes", "c" },	-- Hide classes Blizz API insists can get the quest
 					["classes"] = {
 						HUNTER,		-- Beast Mastery
 						MONK,		-- Windwalker
@@ -731,6 +734,9 @@ root(ROOTS.Zones, {
 					},
 					["provider"] = { "n", 117225 },	-- Navarrogg
 					["coord"] = { 35.6, 24.0, HIGHMOUNTAIN },
+					["g"] = {
+						i(143778),	-- Fel Infusing Totem (QI!)
+					},
 				}),
 				q(39026, {	-- The Drogbar
 					["sourceQuests"] = { 42104 },	-- The Underking Comes
@@ -739,6 +745,7 @@ root(ROOTS.Zones, {
 				}),
 				q(45587, {	-- The Feltotem Menace
 					["sourceQuests"] = { 45575 },	-- Village of the Corruptors
+					["_drop"] = { "classes", "c" },	-- Hide classes Blizz API insists can get the quest
 					["classes"] = {
 						HUNTER,		-- Beast Mastery
 						MONK,		-- Windwalker
@@ -806,6 +813,7 @@ root(ROOTS.Zones, {
 				}),
 				q(45726, {	-- The Tainted Marsh
 					["sourceQuests"] = { 45564 },	-- The Burning Birds
+					["_drop"] = { "classes", "c" },	-- Hide classes Blizz API insists can get the quest
 					["classes"] = {
 						HUNTER,		-- Beast Mastery
 						MONK,		-- Windwalker
@@ -928,6 +936,7 @@ root(ROOTS.Zones, {
 				}),
 				q(45575, {	-- Village of the Corruptors
 					["sourceQuests"] = { 45726 },	-- The Tainted Marsh
+					["_drop"] = { "classes", "c" },	-- Hide classes Blizz API insists can get the quest
 					["classes"] = {
 						HUNTER,		-- Beast Mastery
 						MONK,		-- Windwalker
@@ -976,7 +985,7 @@ root(ROOTS.Zones, {
 				}),
 				n(BONUS_OBJECTIVES, sharedData({
 					["lockCriteria"] = { 1, "lvl", 45 },
-					["description"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
+					["sharedDescription"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
 				},{
 					-- TODO: Check SQ, also probably can't do after a certain level
 					q(39274),	-- Defend the Riverlands
@@ -991,17 +1000,27 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(40609),	-- 7.0 Highmountain - Vignette - Windripper Peak - Taurson - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing The Beastly Boxer
-		q(40610),	-- 7.0 Highmountain - Vignette - Worm Treasure - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing Treasure Worm
-		q(40612),	-- 7.0 Highmountain - Vignette - Amateur Hunters - Tracking Quest Credit - See Treasure (JAP) - NYI. Triggered after killing Irewing during Scout It Out
-		q(39991),	-- Blessing of Cenarius - being blessed by Cenarius during "Huln's War - Shadowsong" (questID 40388)
-		q(43957),	-- Jade Darkhaven
-		q(42571),	-- Shaman Shrine - Highmountain Earth 01
-		q(42572),	-- Shaman Shrine - Highmountain Earth 02
-		q(42578),	-- Shaman Shrine - Highmountain Wind 01
-		q(42579),	-- Shaman Shrine - Highmountain Wind 02
-		q(41246),	-- Snowblind Mesa Phased Terrain Tracking Quest - when Snowblind Mesa phases during "Highmountain Stands" (questID 42512)
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(BROKEN_ISLES, {
+		m(HIGHMOUNTAIN, {
+			n(FACTIONS, {
+				n(EMISSARY_QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+					q(46796),	-- Paragon of Highmountain
+				})),
+			}),
+			n(QUESTS, {
+				q(40609),	-- 7.0 Highmountain - Vignette - Windripper Peak - Taurson - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing The Beastly Boxer
+				q(40610),	-- 7.0 Highmountain - Vignette - Worm Treasure - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing Treasure Worm
+				q(40612),	-- 7.0 Highmountain - Vignette - Amateur Hunters - Tracking Quest Credit - See Treasure (JAP) - NYI. Triggered after killing Irewing during Scout It Out
+				q(39991),	-- Blessing of Cenarius - being blessed by Cenarius during "Huln's War - Shadowsong" (questID 40388)
+				q(43957),	-- Jade Darkhaven
+				q(42571),	-- Shaman Shrine - Highmountain Earth 01
+				q(42572),	-- Shaman Shrine - Highmountain Earth 02
+				q(42578),	-- Shaman Shrine - Highmountain Wind 01
+				q(42579),	-- Shaman Shrine - Highmountain Wind 02
+				q(41246),	-- Snowblind Mesa Phased Terrain Tracking Quest - when Snowblind Mesa phases during "Highmountain Stands" (questID 42512)
+			}),
+		}),
 	}),
-});
+})));

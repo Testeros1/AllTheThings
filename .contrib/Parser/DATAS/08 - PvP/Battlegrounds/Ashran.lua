@@ -137,31 +137,31 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				ach(9225, {	-- Take Them Out (A)
 					["races"] = ALLIANCE_ONLY,
 					["g"] = {
-						crit(26303,  {	-- Captain Hoodrych
+						crit(26303, {	-- Captain Hoodrych
 							["cr"] = 79900,	-- Captain Hoodrych
 						}),
-						crit(26304,  {	-- Elementalist Novo
+						crit(26304, {	-- Elementalist Novo
 							["cr"] = 80491,	-- Elementalist Novo
 						}),
-						crit(25350,  {	-- Elliott Van Rook
+						crit(25350, {	-- Elliott Van Rook
 							["cr"] = 80493,	-- Elliott Van Rook
 						}),
-						crit(26305,  {	-- Jared V. Hellstrike
+						crit(26305, {	-- Jared V. Hellstrike
 							["cr"] = 85131,	-- Jared V. Hellstrike
 						}),
-						crit(26306,  {	-- Kaz Endsky
+						crit(26306, {	-- Kaz Endsky
 							["cr"] = 87690,	-- Kaz Endsky
 						}),
-						crit(26307,  {	-- Lord Mes
+						crit(26307, {	-- Lord Mes
 							["cr"] = 80497,	-- Lord Mes
 						}),
-						crit(26308,  {	-- Mindbender Talbadar
+						crit(26308, {	-- Mindbender Talbadar
 							["cr"] = 80490,	-- Mindbender Talbadar
 						}),
-						crit(26309,  {	-- Mor'riz, The Ultimate Troll
+						crit(26309, {	-- Mor'riz, The Ultimate Troll
 							["cr"] = 85133,	-- Mor'riz
 						}),
-						crit(26310,  {	-- Necrolord Azael
+						crit(26310, {	-- Necrolord Azael
 							["cr"] = 80486,	-- Necrolord Azael
 						}),
 						crit(26311, {	-- Soulbrewer Nadagast
@@ -181,35 +181,35 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				ach(9224, {	-- Take Them Out (H)
 					["races"] = HORDE_ONLY,
 					["g"] = {
-						crit(26289,  {	-- Alune Windmane
+						crit(26289, {	-- Alune Windmane
 							["cr"] = 80488,	-- Alune Windmane
 						}),
-						crit(26290,  {	-- Anne Otther
+						crit(26290, {	-- Anne Otther
 							["cr"] = 85140,	-- Anne Otther
 						}),
-						crit(26291,  {	-- Avenger Turley
+						crit(26291, {	-- Avenger Turley
 							["cr"] = 80499,	-- Avenger Turley
 						}),
-						crit(26293,  {	-- Chani Malflame
+						crit(26293, {	-- Chani Malflame
 							["cr"] = 85129,	-- Chani Malflame
 						}),
-						crit(26294,  {	-- Hildie Hackerguard
+						crit(26294, {	-- Hildie Hackerguard
 							["cr"] = 80495,	-- Hildie Hackerguard
 						}),
-						crit(26295,  {	-- Jackson Bajheera
+						crit(26295, {	-- Jackson Bajheera
 							["cr"] = 80484,	-- Jackson Bajheera
 						}),
 						-- #if BEFORE 8.0.1
 						-- This doesn't appear be in the game anymore?
 						-- BFA Hotfix (2020-06-22): Removed John Swifty. Ahhhhh.
-						crit(26296,  {	-- John Swifty
+						crit(26296, {	-- John Swifty
 							["cr"] = 79902,	-- John Swifty
 						}),
 						-- #endif
-						crit(26297,  {	-- Malda Brewbelly
+						crit(26297, {	-- Malda Brewbelly
 							["cr"] = 85122,	-- Malda Brewbelly
 						}),
-						crit(26298,  {	-- Mathias Zunn
+						crit(26298, {	-- Mathias Zunn
 							["cr"] = 85137,	-- Mathias Zunn
 						}),
 						crit(26299, {	-- Shani Freezewind
@@ -237,14 +237,14 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 			}),
 			n(FACTIONS, {
-				faction(1681, sharedDataSelf({ -- Vol'jin's Spear
+				faction(FACTION_VOLJINS_SPEAR, sharedDataSelf({ -- Vol'jin's Spear
 					["races"] = HORDE_ONLY,
 				},{
 					ach(9473, {	-- Vol'jin's Spear
 						un(REMOVED_FROM_GAME, title(285)),	-- <Name>, Spear of Vol'jin
 					}),
 				})),
-				faction(1682, sharedDataSelf({ -- Wyrnn's Vanguard
+				faction(FACTION_WRYNNS_VANGUARD, sharedDataSelf({ -- Wyrnn's Vanguard
 					["races"] = ALLIANCE_ONLY,
 				},{
 					ach(9474, {	-- Wrynn's Vanguard
@@ -1090,13 +1090,13 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						}),
 						n(SEASON_WILD, {
 							cl(DEATHKNIGHT, {
-								un(REMOVED_FROM_GAME, i(125651)), -- Wild Gladiator's Dreadplate Chestpiece
-								un(REMOVED_FROM_GAME, i(125652)), -- Wild Gladiator's Dreadplate Gauntlets
-								un(REMOVED_FROM_GAME, i(125653)), -- Wild Gladiator's Dreadplate Helm
-								un(REMOVED_FROM_GAME, i(125654)), -- Wild Gladiator's Dreadplate Legguards
-								un(REMOVED_FROM_GAME, i(125655)), -- Wild Gladiator's Dreadplate Shoulders
-								un(REMOVED_FROM_GAME, i(125720)), -- Wild Gladiator's Dreadplate Girdle
-								un(REMOVED_FROM_GAME, i(125723)), -- Wild Gladiator's Dreadplate Warboots
+								un(REMOVED_FROM_GAME, i(125651)),	-- Wild Gladiator's Dreadplate Chestpiece
+								un(REMOVED_FROM_GAME, i(125652)),	-- Wild Gladiator's Dreadplate Gauntlets
+								un(REMOVED_FROM_GAME, i(125653)),	-- Wild Gladiator's Dreadplate Helm
+								un(REMOVED_FROM_GAME, i(125654)),	-- Wild Gladiator's Dreadplate Legguards
+								un(REMOVED_FROM_GAME, i(125655)),	-- Wild Gladiator's Dreadplate Shoulders
+								un(REMOVED_FROM_GAME, i(125720)),	-- Wild Gladiator's Dreadplate Girdle
+								un(REMOVED_FROM_GAME, i(125723)),	-- Wild Gladiator's Dreadplate Warboots
 							}),
 							cl(DRUID, {
 								un(REMOVED_FROM_GAME, i(125656)),	-- Wild Gladiator's Dragonhide Gloves
@@ -1154,20 +1154,20 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(125781)),	-- Wild Gladiator's Copperskin Waistband
 							}),
 							cl(PALADIN, {
-								un(REMOVED_FROM_GAME, i(125706)), -- Wild Gladiator's Scaled Chestpiece
-								un(REMOVED_FROM_GAME, i(125707)), -- Wild Gladiator's Scaled Gauntlets
-								un(REMOVED_FROM_GAME, i(125708)), -- Wild Gladiator's Scaled Helm
-								un(REMOVED_FROM_GAME, i(125709)), -- Wild Gladiator's Scaled Legguards
-								un(REMOVED_FROM_GAME, i(125710)), -- Wild Gladiator's Scaled Shoulders
-								un(REMOVED_FROM_GAME, i(125711)), -- Wild Gladiator's Scaled Clasp
-								un(REMOVED_FROM_GAME, i(125714)), -- Wild Gladiator's Scaled Greaves
-								un(REMOVED_FROM_GAME, i(125712)), -- Wild Gladiator's Ornamented Clasp
-								un(REMOVED_FROM_GAME, i(125713)), -- Wild Gladiator's Ornamented Greaves
-								un(REMOVED_FROM_GAME, i(125715)), -- Wild Gladiator's Ornamented Chestguard
-								un(REMOVED_FROM_GAME, i(125716)), -- Wild Gladiator's Ornamented Gloves
-								un(REMOVED_FROM_GAME, i(125717)), -- Wild Gladiator's Ornamented Headcover
-								un(REMOVED_FROM_GAME, i(125718)), -- Wild Gladiator's Ornamented LegPlates
-								un(REMOVED_FROM_GAME, i(125719)), -- Wild Gladiator's Ornamented Spaulders
+								un(REMOVED_FROM_GAME, i(125706)),	-- Wild Gladiator's Scaled Chestpiece
+								un(REMOVED_FROM_GAME, i(125707)),	-- Wild Gladiator's Scaled Gauntlets
+								un(REMOVED_FROM_GAME, i(125708)),	-- Wild Gladiator's Scaled Helm
+								un(REMOVED_FROM_GAME, i(125709)),	-- Wild Gladiator's Scaled Legguards
+								un(REMOVED_FROM_GAME, i(125710)),	-- Wild Gladiator's Scaled Shoulders
+								un(REMOVED_FROM_GAME, i(125711)),	-- Wild Gladiator's Scaled Clasp
+								un(REMOVED_FROM_GAME, i(125714)),	-- Wild Gladiator's Scaled Greaves
+								un(REMOVED_FROM_GAME, i(125712)),	-- Wild Gladiator's Ornamented Clasp
+								un(REMOVED_FROM_GAME, i(125713)),	-- Wild Gladiator's Ornamented Greaves
+								un(REMOVED_FROM_GAME, i(125715)),	-- Wild Gladiator's Ornamented Chestguard
+								un(REMOVED_FROM_GAME, i(125716)),	-- Wild Gladiator's Ornamented Gloves
+								un(REMOVED_FROM_GAME, i(125717)),	-- Wild Gladiator's Ornamented Headcover
+								un(REMOVED_FROM_GAME, i(125718)),	-- Wild Gladiator's Ornamented LegPlates
+								un(REMOVED_FROM_GAME, i(125719)),	-- Wild Gladiator's Ornamented Spaulders
 							}),
 							cl(PRIEST, {
 								un(REMOVED_FROM_GAME, i(125640)),	-- Wild Gladiator's Mooncloth Cord
@@ -1226,24 +1226,24 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(125772)),	-- Wild Gladiator's Felweave Trousers
 							}),
 							cl(WARRIOR, {
-								un(REMOVED_FROM_GAME, i(125721)), -- Wild Gladiator's Plate Girdle
-								un(REMOVED_FROM_GAME, i(125722)), -- Wild Gladiator's Plate Warboots
-								un(REMOVED_FROM_GAME, i(125775)), -- Wild Gladiator's Plate Chestpiece
-								un(REMOVED_FROM_GAME, i(125776)), -- Wild Gladiator's Plate Gauntlets
-								un(REMOVED_FROM_GAME, i(125777)), -- Wild Gladiator's Plate Helm
-								un(REMOVED_FROM_GAME, i(125778)), -- Wild Gladiator's Plate Legguards
-								un(REMOVED_FROM_GAME, i(125779)), -- Wild Gladiator's Plate Shoulders
+								un(REMOVED_FROM_GAME, i(125721)),	-- Wild Gladiator's Plate Girdle
+								un(REMOVED_FROM_GAME, i(125722)),	-- Wild Gladiator's Plate Warboots
+								un(REMOVED_FROM_GAME, i(125775)),	-- Wild Gladiator's Plate Chestpiece
+								un(REMOVED_FROM_GAME, i(125776)),	-- Wild Gladiator's Plate Gauntlets
+								un(REMOVED_FROM_GAME, i(125777)),	-- Wild Gladiator's Plate Helm
+								un(REMOVED_FROM_GAME, i(125778)),	-- Wild Gladiator's Plate Legguards
+								un(REMOVED_FROM_GAME, i(125779)),	-- Wild Gladiator's Plate Shoulders
 							}),
 						}),
 						n(SEASON_WARMONGERING, {
 							cl(DEATHKNIGHT, {
-								un(REMOVED_FROM_GAME, i(126765)), -- Warmongering Gladiator's Dreadplate Chestpiece
-								un(REMOVED_FROM_GAME, i(126766)), -- Warmongering Gladiator's Dreadplate Gauntlets
-								un(REMOVED_FROM_GAME, i(126767)), -- Warmongering Gladiator's Dreadplate Helm
-								un(REMOVED_FROM_GAME, i(126768)), -- Warmongering Gladiator's Dreadplate Legguards
-								un(REMOVED_FROM_GAME, i(126769)), -- Warmongering Gladiator's Dreadplate Shoulders
-								un(REMOVED_FROM_GAME, i(126834)), -- Warmongering Gladiator's Dreadplate Girdle
-								un(REMOVED_FROM_GAME, i(126837)), -- Warmongering Gladiator's Dreadplate Warboots
+								un(REMOVED_FROM_GAME, i(126765)),	-- Warmongering Gladiator's Dreadplate Chestpiece
+								un(REMOVED_FROM_GAME, i(126766)),	-- Warmongering Gladiator's Dreadplate Gauntlets
+								un(REMOVED_FROM_GAME, i(126767)),	-- Warmongering Gladiator's Dreadplate Helm
+								un(REMOVED_FROM_GAME, i(126768)),	-- Warmongering Gladiator's Dreadplate Legguards
+								un(REMOVED_FROM_GAME, i(126769)),	-- Warmongering Gladiator's Dreadplate Shoulders
+								un(REMOVED_FROM_GAME, i(126834)),	-- Warmongering Gladiator's Dreadplate Girdle
+								un(REMOVED_FROM_GAME, i(126837)),	-- Warmongering Gladiator's Dreadplate Warboots
 							}),
 							cl(DRUID, {
 								un(REMOVED_FROM_GAME, i(126899)),	-- Warmongering Gladiator's Dragonhide Belt
@@ -1303,20 +1303,20 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(126895)),	-- Warmongering Gladiator's Copperskin Waistband
 							}),
 							cl(PALADIN, {
-								un(REMOVED_FROM_GAME, i(126826)), -- Warmongering Gladiator's Ornamented Clasp
-								un(REMOVED_FROM_GAME, i(126827)), -- Warmongering Gladiator's Ornamented Greaves
-								un(REMOVED_FROM_GAME, i(126829)), -- Warmongering Gladiator's Ornamented Chestguard
-								un(REMOVED_FROM_GAME, i(126830)), -- Warmongering Gladiator's Ornamented Gloves
-								un(REMOVED_FROM_GAME, i(126831)), -- Warmongering Gladiator's Ornamented Headcover
-								un(REMOVED_FROM_GAME, i(126832)), -- Warmongering Gladiator's Ornamented LegPlates
-								un(REMOVED_FROM_GAME, i(126833)), -- Warmongering Gladiator's Ornamented Spaulders
-								un(REMOVED_FROM_GAME, i(126820)), -- Warmongering Gladiator's Scaled Chestpiece
-								un(REMOVED_FROM_GAME, i(126821)), -- Warmongering Gladiator's Scaled Gauntlets
-								un(REMOVED_FROM_GAME, i(126822)), -- Warmongering Gladiator's Scaled Helm
-								un(REMOVED_FROM_GAME, i(126823)), -- Warmongering Gladiator's Scaled Legguards
-								un(REMOVED_FROM_GAME, i(126824)), -- Warmongering Gladiator's Scaled Shoulders
-								un(REMOVED_FROM_GAME, i(126825)), -- Warmongering Gladiator's Scaled Clasp
-								un(REMOVED_FROM_GAME, i(126828)), -- Warmongering Gladiator's Scaled Greaves
+								un(REMOVED_FROM_GAME, i(126826)),	-- Warmongering Gladiator's Ornamented Clasp
+								un(REMOVED_FROM_GAME, i(126827)),	-- Warmongering Gladiator's Ornamented Greaves
+								un(REMOVED_FROM_GAME, i(126829)),	-- Warmongering Gladiator's Ornamented Chestguard
+								un(REMOVED_FROM_GAME, i(126830)),	-- Warmongering Gladiator's Ornamented Gloves
+								un(REMOVED_FROM_GAME, i(126831)),	-- Warmongering Gladiator's Ornamented Headcover
+								un(REMOVED_FROM_GAME, i(126832)),	-- Warmongering Gladiator's Ornamented LegPlates
+								un(REMOVED_FROM_GAME, i(126833)),	-- Warmongering Gladiator's Ornamented Spaulders
+								un(REMOVED_FROM_GAME, i(126820)),	-- Warmongering Gladiator's Scaled Chestpiece
+								un(REMOVED_FROM_GAME, i(126821)),	-- Warmongering Gladiator's Scaled Gauntlets
+								un(REMOVED_FROM_GAME, i(126822)),	-- Warmongering Gladiator's Scaled Helm
+								un(REMOVED_FROM_GAME, i(126823)),	-- Warmongering Gladiator's Scaled Legguards
+								un(REMOVED_FROM_GAME, i(126824)),	-- Warmongering Gladiator's Scaled Shoulders
+								un(REMOVED_FROM_GAME, i(126825)),	-- Warmongering Gladiator's Scaled Clasp
+								un(REMOVED_FROM_GAME, i(126828)),	-- Warmongering Gladiator's Scaled Greaves
 							}),
 							cl(PRIEST, {
 								un(REMOVED_FROM_GAME, i(126754)),	-- Warmongering Gladiator's Mooncloth Cord
@@ -1376,13 +1376,13 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(126886)),	-- Warmongering Gladiator's Felweave Trousers
 							}),
 							cl(WARRIOR, {
-								un(REMOVED_FROM_GAME, i(126835)), -- Warmongering Gladiator's Plate Girdle
-								un(REMOVED_FROM_GAME, i(126836)), -- Warmongering Gladiator's Plate Warboots
-								un(REMOVED_FROM_GAME, i(126889)), -- Warmongering Gladiator's Plate Chestpiece
-								un(REMOVED_FROM_GAME, i(126890)), -- Warmongering Gladiator's Plate Gauntlets
-								un(REMOVED_FROM_GAME, i(126891)), -- Warmongering Gladiator's Plate Helm
-								un(REMOVED_FROM_GAME, i(126892)), -- Warmongering Gladiator's Plate Legguards
-								un(REMOVED_FROM_GAME, i(126893)), -- Warmongering Gladiator's Plate Shoulders
+								un(REMOVED_FROM_GAME, i(126835)),	-- Warmongering Gladiator's Plate Girdle
+								un(REMOVED_FROM_GAME, i(126836)),	-- Warmongering Gladiator's Plate Warboots
+								un(REMOVED_FROM_GAME, i(126889)),	-- Warmongering Gladiator's Plate Chestpiece
+								un(REMOVED_FROM_GAME, i(126890)),	-- Warmongering Gladiator's Plate Gauntlets
+								un(REMOVED_FROM_GAME, i(126891)),	-- Warmongering Gladiator's Plate Helm
+								un(REMOVED_FROM_GAME, i(126892)),	-- Warmongering Gladiator's Plate Legguards
+								un(REMOVED_FROM_GAME, i(126893)),	-- Warmongering Gladiator's Plate Shoulders
 							}),
 						}),
 					},
@@ -1659,13 +1659,13 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						}),
 						n(SEASON_WILD, {
 							cl(DEATHKNIGHT, {
-								un(REMOVED_FROM_GAME, i(125651)), -- Wild Gladiator's Dreadplate Chestpiece
-								un(REMOVED_FROM_GAME, i(125652)), -- Wild Gladiator's Dreadplate Gauntlets
-								un(REMOVED_FROM_GAME, i(125653)), -- Wild Gladiator's Dreadplate Helm
-								un(REMOVED_FROM_GAME, i(125654)), -- Wild Gladiator's Dreadplate Legguards
-								un(REMOVED_FROM_GAME, i(125655)), -- Wild Gladiator's Dreadplate Shoulders
-								un(REMOVED_FROM_GAME, i(125720)), -- Wild Gladiator's Dreadplate Girdle
-								un(REMOVED_FROM_GAME, i(125723)), -- Wild Gladiator's Dreadplate Warboots
+								un(REMOVED_FROM_GAME, i(125651)),	-- Wild Gladiator's Dreadplate Chestpiece
+								un(REMOVED_FROM_GAME, i(125652)),	-- Wild Gladiator's Dreadplate Gauntlets
+								un(REMOVED_FROM_GAME, i(125653)),	-- Wild Gladiator's Dreadplate Helm
+								un(REMOVED_FROM_GAME, i(125654)),	-- Wild Gladiator's Dreadplate Legguards
+								un(REMOVED_FROM_GAME, i(125655)),	-- Wild Gladiator's Dreadplate Shoulders
+								un(REMOVED_FROM_GAME, i(125720)),	-- Wild Gladiator's Dreadplate Girdle
+								un(REMOVED_FROM_GAME, i(125723)),	-- Wild Gladiator's Dreadplate Warboots
 							}),
 							cl(DRUID, {
 								un(REMOVED_FROM_GAME, i(125656)),	-- Wild Gladiator's Dragonhide Gloves
@@ -1723,20 +1723,20 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(125781)),	-- Wild Gladiator's Copperskin Waistband
 							}),
 							cl(PALADIN, {
-								un(REMOVED_FROM_GAME, i(125706)), -- Wild Gladiator's Scaled Chestpiece
-								un(REMOVED_FROM_GAME, i(125707)), -- Wild Gladiator's Scaled Gauntlets
-								un(REMOVED_FROM_GAME, i(125708)), -- Wild Gladiator's Scaled Helm
-								un(REMOVED_FROM_GAME, i(125709)), -- Wild Gladiator's Scaled Legguards
-								un(REMOVED_FROM_GAME, i(125710)), -- Wild Gladiator's Scaled Shoulders
-								un(REMOVED_FROM_GAME, i(125711)), -- Wild Gladiator's Scaled Clasp
-								un(REMOVED_FROM_GAME, i(125714)), -- Wild Gladiator's Scaled Greaves
-								un(REMOVED_FROM_GAME, i(125712)), -- Wild Gladiator's Ornamented Clasp
-								un(REMOVED_FROM_GAME, i(125713)), -- Wild Gladiator's Ornamented Greaves
-								un(REMOVED_FROM_GAME, i(125715)), -- Wild Gladiator's Ornamented Chestguard
-								un(REMOVED_FROM_GAME, i(125716)), -- Wild Gladiator's Ornamented Gloves
-								un(REMOVED_FROM_GAME, i(125717)), -- Wild Gladiator's Ornamented Headcover
-								un(REMOVED_FROM_GAME, i(125718)), -- Wild Gladiator's Ornamented LegPlates
-								un(REMOVED_FROM_GAME, i(125719)), -- Wild Gladiator's Ornamented Spaulders
+								un(REMOVED_FROM_GAME, i(125706)),	-- Wild Gladiator's Scaled Chestpiece
+								un(REMOVED_FROM_GAME, i(125707)),	-- Wild Gladiator's Scaled Gauntlets
+								un(REMOVED_FROM_GAME, i(125708)),	-- Wild Gladiator's Scaled Helm
+								un(REMOVED_FROM_GAME, i(125709)),	-- Wild Gladiator's Scaled Legguards
+								un(REMOVED_FROM_GAME, i(125710)),	-- Wild Gladiator's Scaled Shoulders
+								un(REMOVED_FROM_GAME, i(125711)),	-- Wild Gladiator's Scaled Clasp
+								un(REMOVED_FROM_GAME, i(125714)),	-- Wild Gladiator's Scaled Greaves
+								un(REMOVED_FROM_GAME, i(125712)),	-- Wild Gladiator's Ornamented Clasp
+								un(REMOVED_FROM_GAME, i(125713)),	-- Wild Gladiator's Ornamented Greaves
+								un(REMOVED_FROM_GAME, i(125715)),	-- Wild Gladiator's Ornamented Chestguard
+								un(REMOVED_FROM_GAME, i(125716)),	-- Wild Gladiator's Ornamented Gloves
+								un(REMOVED_FROM_GAME, i(125717)),	-- Wild Gladiator's Ornamented Headcover
+								un(REMOVED_FROM_GAME, i(125718)),	-- Wild Gladiator's Ornamented LegPlates
+								un(REMOVED_FROM_GAME, i(125719)),	-- Wild Gladiator's Ornamented Spaulders
 							}),
 							cl(PRIEST, {
 								un(REMOVED_FROM_GAME, i(125640)),	-- Wild Gladiator's Mooncloth Cord
@@ -1795,24 +1795,24 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(125772)),	-- Wild Gladiator's Felweave Trousers
 							}),
 							cl(WARRIOR, {
-								un(REMOVED_FROM_GAME, i(125721)), -- Wild Gladiator's Plate Girdle
-								un(REMOVED_FROM_GAME, i(125722)), -- Wild Gladiator's Plate Warboots
-								un(REMOVED_FROM_GAME, i(125775)), -- Wild Gladiator's Plate Chestpiece
-								un(REMOVED_FROM_GAME, i(125776)), -- Wild Gladiator's Plate Gauntlets
-								un(REMOVED_FROM_GAME, i(125777)), -- Wild Gladiator's Plate Helm
-								un(REMOVED_FROM_GAME, i(125778)), -- Wild Gladiator's Plate Legguards
-								un(REMOVED_FROM_GAME, i(125779)), -- Wild Gladiator's Plate Shoulders
+								un(REMOVED_FROM_GAME, i(125721)),	-- Wild Gladiator's Plate Girdle
+								un(REMOVED_FROM_GAME, i(125722)),	-- Wild Gladiator's Plate Warboots
+								un(REMOVED_FROM_GAME, i(125775)),	-- Wild Gladiator's Plate Chestpiece
+								un(REMOVED_FROM_GAME, i(125776)),	-- Wild Gladiator's Plate Gauntlets
+								un(REMOVED_FROM_GAME, i(125777)),	-- Wild Gladiator's Plate Helm
+								un(REMOVED_FROM_GAME, i(125778)),	-- Wild Gladiator's Plate Legguards
+								un(REMOVED_FROM_GAME, i(125779)),	-- Wild Gladiator's Plate Shoulders
 							}),
 						}),
 						n(SEASON_WARMONGERING, {
 							cl(DEATHKNIGHT, {
-								un(REMOVED_FROM_GAME, i(126765)), -- Warmongering Gladiator's Dreadplate Chestpiece
-								un(REMOVED_FROM_GAME, i(126766)), -- Warmongering Gladiator's Dreadplate Gauntlets
-								un(REMOVED_FROM_GAME, i(126767)), -- Warmongering Gladiator's Dreadplate Helm
-								un(REMOVED_FROM_GAME, i(126768)), -- Warmongering Gladiator's Dreadplate Legguards
-								un(REMOVED_FROM_GAME, i(126769)), -- Warmongering Gladiator's Dreadplate Shoulders
-								un(REMOVED_FROM_GAME, i(126834)), -- Warmongering Gladiator's Dreadplate Girdle
-								un(REMOVED_FROM_GAME, i(126837)), -- Warmongering Gladiator's Dreadplate Warboots
+								un(REMOVED_FROM_GAME, i(126765)),	-- Warmongering Gladiator's Dreadplate Chestpiece
+								un(REMOVED_FROM_GAME, i(126766)),	-- Warmongering Gladiator's Dreadplate Gauntlets
+								un(REMOVED_FROM_GAME, i(126767)),	-- Warmongering Gladiator's Dreadplate Helm
+								un(REMOVED_FROM_GAME, i(126768)),	-- Warmongering Gladiator's Dreadplate Legguards
+								un(REMOVED_FROM_GAME, i(126769)),	-- Warmongering Gladiator's Dreadplate Shoulders
+								un(REMOVED_FROM_GAME, i(126834)),	-- Warmongering Gladiator's Dreadplate Girdle
+								un(REMOVED_FROM_GAME, i(126837)),	-- Warmongering Gladiator's Dreadplate Warboots
 							}),
 							cl(DRUID, {
 								un(REMOVED_FROM_GAME, i(126899)),	-- Warmongering Gladiator's Dragonhide Belt
@@ -1872,20 +1872,20 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(126895)),	-- Warmongering Gladiator's Copperskin Waistband
 							}),
 							cl(PALADIN, {
-								un(REMOVED_FROM_GAME, i(126826)), -- Warmongering Gladiator's Ornamented Clasp
-								un(REMOVED_FROM_GAME, i(126827)), -- Warmongering Gladiator's Ornamented Greaves
-								un(REMOVED_FROM_GAME, i(126829)), -- Warmongering Gladiator's Ornamented Chestguard
-								un(REMOVED_FROM_GAME, i(126830)), -- Warmongering Gladiator's Ornamented Gloves
-								un(REMOVED_FROM_GAME, i(126831)), -- Warmongering Gladiator's Ornamented Headcover
-								un(REMOVED_FROM_GAME, i(126832)), -- Warmongering Gladiator's Ornamented LegPlates
-								un(REMOVED_FROM_GAME, i(126833)), -- Warmongering Gladiator's Ornamented Spaulders
-								un(REMOVED_FROM_GAME, i(126820)), -- Warmongering Gladiator's Scaled Chestpiece
-								un(REMOVED_FROM_GAME, i(126821)), -- Warmongering Gladiator's Scaled Gauntlets
-								un(REMOVED_FROM_GAME, i(126822)), -- Warmongering Gladiator's Scaled Helm
-								un(REMOVED_FROM_GAME, i(126823)), -- Warmongering Gladiator's Scaled Legguards
-								un(REMOVED_FROM_GAME, i(126824)), -- Warmongering Gladiator's Scaled Shoulders
-								un(REMOVED_FROM_GAME, i(126825)), -- Warmongering Gladiator's Scaled Clasp
-								un(REMOVED_FROM_GAME, i(126828)), -- Warmongering Gladiator's Scaled Greaves
+								un(REMOVED_FROM_GAME, i(126826)),	-- Warmongering Gladiator's Ornamented Clasp
+								un(REMOVED_FROM_GAME, i(126827)),	-- Warmongering Gladiator's Ornamented Greaves
+								un(REMOVED_FROM_GAME, i(126829)),	-- Warmongering Gladiator's Ornamented Chestguard
+								un(REMOVED_FROM_GAME, i(126830)),	-- Warmongering Gladiator's Ornamented Gloves
+								un(REMOVED_FROM_GAME, i(126831)),	-- Warmongering Gladiator's Ornamented Headcover
+								un(REMOVED_FROM_GAME, i(126832)),	-- Warmongering Gladiator's Ornamented LegPlates
+								un(REMOVED_FROM_GAME, i(126833)),	-- Warmongering Gladiator's Ornamented Spaulders
+								un(REMOVED_FROM_GAME, i(126820)),	-- Warmongering Gladiator's Scaled Chestpiece
+								un(REMOVED_FROM_GAME, i(126821)),	-- Warmongering Gladiator's Scaled Gauntlets
+								un(REMOVED_FROM_GAME, i(126822)),	-- Warmongering Gladiator's Scaled Helm
+								un(REMOVED_FROM_GAME, i(126823)),	-- Warmongering Gladiator's Scaled Legguards
+								un(REMOVED_FROM_GAME, i(126824)),	-- Warmongering Gladiator's Scaled Shoulders
+								un(REMOVED_FROM_GAME, i(126825)),	-- Warmongering Gladiator's Scaled Clasp
+								un(REMOVED_FROM_GAME, i(126828)),	-- Warmongering Gladiator's Scaled Greaves
 							}),
 							cl(PRIEST, {
 								un(REMOVED_FROM_GAME, i(126754)),	-- Warmongering Gladiator's Mooncloth Cord
@@ -1945,13 +1945,13 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 								un(REMOVED_FROM_GAME, i(126886)),	-- Warmongering Gladiator's Felweave Trousers
 							}),
 							cl(WARRIOR, {
-								un(REMOVED_FROM_GAME, i(126835)), -- Warmongering Gladiator's Plate Girdle
-								un(REMOVED_FROM_GAME, i(126836)), -- Warmongering Gladiator's Plate Warboots
-								un(REMOVED_FROM_GAME, i(126889)), -- Warmongering Gladiator's Plate Chestpiece
-								un(REMOVED_FROM_GAME, i(126890)), -- Warmongering Gladiator's Plate Gauntlets
-								un(REMOVED_FROM_GAME, i(126891)), -- Warmongering Gladiator's Plate Helm
-								un(REMOVED_FROM_GAME, i(126892)), -- Warmongering Gladiator's Plate Legguards
-								un(REMOVED_FROM_GAME, i(126893)), -- Warmongering Gladiator's Plate Shoulders
+								un(REMOVED_FROM_GAME, i(126835)),	-- Warmongering Gladiator's Plate Girdle
+								un(REMOVED_FROM_GAME, i(126836)),	-- Warmongering Gladiator's Plate Warboots
+								un(REMOVED_FROM_GAME, i(126889)),	-- Warmongering Gladiator's Plate Chestpiece
+								un(REMOVED_FROM_GAME, i(126890)),	-- Warmongering Gladiator's Plate Gauntlets
+								un(REMOVED_FROM_GAME, i(126891)),	-- Warmongering Gladiator's Plate Helm
+								un(REMOVED_FROM_GAME, i(126892)),	-- Warmongering Gladiator's Plate Legguards
+								un(REMOVED_FROM_GAME, i(126893)),	-- Warmongering Gladiator's Plate Shoulders
 							}),
 						}),
 					},

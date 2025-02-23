@@ -109,7 +109,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["g"] = {
 						i(198037),	-- Brimming Arcanocrystal
 						i(190769),	-- Unstable Arcana (QI!)
-						i(197622),	-- Windborne Velocidrake: Finned Tail (DM!)
+						i(197622),	-- Windborne Velocidrake: Finned Tail (MM!)
 					},
 				}),
 				q(65852, {	-- Straight to the Top
@@ -177,7 +177,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						i(198030),	-- Sleet Shined Legplates
 						i(198015),	-- Twisted Leather Breeches
 						i(197998),	-- Windswept Leggings
-						i(197388),	-- Renewed Proto-Drake: Finned Jaw (DM!)
+						i(197388),	-- Renewed Proto-Drake: Finned Jaw (MM!)
 					},
 				}),
 				q(65866, {	-- Snap the Traps
@@ -190,7 +190,11 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 188809 },	-- Elder Poa
 					["coord"] = { 35.4, 36.9, THE_AZURE_SPAN },
 					["g"] = {
+						i(191669),	-- Engraved Tusk (QI!)
 						i(191107),	-- Funerary Offering (QI!)
+						i(191671),	-- Fragmented Tuskarr Effigy (QI!)
+						i(191673),	-- Grinning Dolphin Fetish (QI!)
+						i(191672),	-- Mark of the Provider (QI!)
 					},
 				}),
 				q(65871, {	-- Gnoll Way Out
@@ -288,7 +292,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["g"] = {
 						i(191928),	-- Brena's Totem
 						i(198001),	-- Tuskarr Spirit Shawl
-						i(197408),	-- Renewed Proto-Drake: Finned Throat (DM!)
+						i(197408),	-- Renewed Proto-Drake: Finned Throat (MM!)
 					},
 				}),
 				q(65846, {	-- Ley Litter
@@ -374,6 +378,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 70.0, 35.3, THE_AZURE_SPAN },
 					["g"] = {
 						i(198025),	-- Bramble Chain Belt
+						i(192478),	-- Elemental Focus (QI!)
 						i(198026),	-- Sleet Shined Waistguard
 						i(198017),	-- Twisted Leather Belt
 						i(197996),	-- Windswept Sash
@@ -427,7 +432,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						i(198031),	-- Sleet Shined Crushers
 						i(198014),	-- Twisted Leather Gloves
 						i(198000),	-- Windswept Gloves
-						i(197603),	-- Windborne Velocidrake: Curved Horns (DM!)
+						i(197603),	-- Windborne Velocidrake: Curved Horns (MM!)
 					},
 				}),
 				q(70041, {	-- The Storm-Eater's Fury
@@ -522,21 +527,33 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["sourceQuests"] = { 71234 },	-- Nook News
 					["provider"] = { "n", 190691 },	-- Mordigan Ironjaw
 					["coord"] = { 7.6, 44.3, THE_AZURE_SPAN },
+					["g"] = {
+						i(193052),	-- Large Stone (QI!)
+					},
 				}),
 				q(66147, {	-- Crystals in the Water
 					["sourceQuests"] = { 66781 },	-- A Matter of Taste
 					["provider"] = { "n", 187156 },	-- Aelnara
 					["coord"] = { 7.6, 44.2, THE_AZURE_SPAN },
+					["g"] = {
+						i(192203),	-- Crystal Sample (QI!)
+					},
 				}),
 				q(66164, {	-- Fishy Fingers
 					["sourceQuests"] = { 66781 },	-- A Matter of Taste
 					["provider"] = { "n", 187198 },	-- LOU-C Fitzcog
 					["coord"] = { 7.6, 44.3, THE_AZURE_SPAN },
+					["g"] = {
+						i(191680),	-- Stolen Parts (QI!)
+					},
 				}),
 				q(66154, {	-- Salivatory Samples
 					["sourceQuests"] = { 66781 },	-- A Matter of Taste
 					["provider"] = { "n", 187136 },	-- Examiner Rowe
 					["coord"] = { 7.7, 44.3, THE_AZURE_SPAN },
+					["g"] = {
+						i(191202),	-- Saliva Sample (QI!)
+					},
 				}),
 				q(66175, {	-- Field Experiment
 					["sourceQuests"] = {
@@ -565,7 +582,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 188030 },	-- Aelnara
 					["coord"] = { 10.8, 41.2, THE_AZURE_SPAN },
 					["g"] = {
-						i(197381),	-- Renewed Proto-Drake: Gradient Horns (DM!)
+						i(197381),	-- Renewed Proto-Drake: Gradient Horns (MM!)
 						i(201294),	-- Salt Crystal Ring
 					},
 				}),
@@ -759,7 +776,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["g"] = {
 						i(198432),	-- Crude Wind Charm
 						i(198036),	-- Spineripper's Fang
-						i(197385),	-- Renewned Proto-Drake: Horned Jaw (DM!)
+						i(197385),	-- Renewned Proto-Drake: Horned Jaw (MM!)
 					},
 				}),
 			}),
@@ -929,7 +946,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						i(199826),	-- Tuskarr Puddle Steppers
 						i(199829),	-- Tuskarr Wading Boots
 						i(199827),	-- Tuskarr Water Kickers
-						i(197607),	-- Windborne Velocidrake: Split Horns (DM!)
+						i(197607),	-- Windborne Velocidrake: Split Horns (MM!)
 					},
 				}),
 			}),
@@ -1078,7 +1095,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(66428, {	-- Friendship For Granted
 					["sourceQuests"] = { 66427 },	-- A Looming Menace
 					["provider"] = { "n", 189791 },	-- Rannan Korren
-					["coord"] = { 69.5, 60.4, THE_AZURE_SPAN },
+					["coord"] = { 68.5, 60.4, THE_AZURE_SPAN },
 					["g"] = {
 						i(192475),	-- R.A.D.D.E.R.E.R
 					},
@@ -1185,7 +1202,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 65.4, 15.9, THE_AZURE_SPAN },
 					["g"] = {
 						i(197988),	-- Frozen Shard Ring
-						i(197627),	-- Windborne Velocidrake: Finned Neck (DM!)
+						i(197627),	-- Windborne Velocidrake: Finned Neck (MM!)
 					},
 				}),
 			}),
@@ -1224,7 +1241,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 188915 },	-- Supply Portal
 					["coord"] = { 46.0, 38.8, THE_AZURE_SPAN },
 					["g"] = {
-						i(197107),	-- Highland Drake: Triple Finned Head (DM!)
+						i(197107),	-- Highland Drake: Triple Finned Head (MM!)
 					},
 				}),
 			}),
@@ -1254,7 +1271,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(66212, {	-- Fishing: Aileron Seamoth
 					["sourceQuests"] = { 65849 },	-- To Iskaara
 					["provider"] = { "n", 193877 },	-- Lukoturukk
-					["coord"] = { 13.5, 48.6, THE_AZURE_SPAN },
+					["coord"] = { 14.1, 49.4, THE_AZURE_SPAN },
 					["requireSkill"] = FISHING,
 					["cost"] = { { "i", 194967, 5 }, },	-- 5xAileron Seamoth
 				}),
@@ -1822,7 +1839,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						["coord"] = { 39.5, 63.1, THE_AZURE_SPAN },
 						["maps"] = { 2183 },	-- The Azure Vault
 						["groups"] = {
-							i(197134),	-- Highland Drake: Spiked Legs (DM!)
+							i(197134),	-- Highland Drake: Spiked Legs (MM!)
 						},
 					}),
 					q(72951, {	-- A Peaceful Farewell
@@ -1833,13 +1850,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 							ach(17773, {	-- A Blue Dawn
 								["timeline"] = { ADDED_10_1_7 },
 							}),
-							i(205958, {	-- Ensemble: Azure Renewal Finery
-								["groups"] = {
-									i(205956),	-- Azure Renewal Cape
-									i(205955),	-- Azure Renewal Mantle
-									i(205957),	-- Azure Renewal Tabard
-								},
-							}),
+							iensemble(205958),	-- Ensemble: Azure Renewal Finery
 							i(205908, {	-- Inherited Wisdom of Senegos (TOY!)
 								["description"] = "You will find this in your mailbox upon completing this quest",
 							}),
@@ -2115,8 +2126,8 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["coord"] = { 75.8, 24.2, THE_AZURE_SPAN },
 				["description"] = "Requires 2 players (or solo if you time it perfectly). Kill the Lost Elemental, then each player needs to click on a different Lava Orb to open a nearby cave. Kill the Stranded Soul inside the cave and loot the quest item.",
 				["g"] = {
-					i(197141),	-- Highland Drake: Scaled Pattern (DM!)
-					i(197137),	-- Highland Drake: Spined Nose (DM!)
+					i(197141),	-- Highland Drake: Scaled Pattern (MM!)
+					i(197137),	-- Highland Drake: Spined Nose (MM!)
 				},
 			}),
 			q(67175, {	-- How To Stop An Exploding Toy Boat
@@ -2131,7 +2142,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["sourceQuests"] = { 65686 },	-- To the Azure Span
 				["provider"] = { "n", 185608 },	-- Khuri
 				["coord"] = { 41.5, 35.6, THE_AZURE_SPAN },
-				["requireSkill"] = FISHING,
+				--["requireSkill"] = FISHING,	-- TODO: It doesn't require to pickup this quest but you cannot finish it without it
 				["g"] = {
 					i(191646),	-- Blue-Tailed Minnow (QI!)
 				},
@@ -2194,110 +2205,110 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		}),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(THE_AZURE_SPAN, {
-		q(72140),	-- Pop after touch 'Missaligned Ley Crystal' (objectID 378175), do mini-game to convert it into 'Aligned Ley Crystal' (npcID 198268).
-		q(66046),	-- Pop after killing/completing bonus objective (Cascade) ... or skinning knowledge proc possibly
-		q(72779),	-- After completion of [70938]
-		q(72516),	-- After completion of (72487)
-		-- During The Weave of a Tale (66213)
-		-- First Question
-		q(66563, { ["name"] = "The Weave of a Tale: Rarest Fish",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66562, 66561 },	-- Slaying / Handstand
-		}),
-		q(66562, { ["name"] = "The Weave of a Tale: Slaying",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66563, 66561 },	-- Rarest Fish / Handstand
-		}),	-- "Slaying"
-		q(66561, { ["name"] = "The Weave of a Tale: Handstand",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66563, 66562 },	-- Rarest Fish / Slaying
-		}),	-- "Handstand"
-		-- Second Question
-		q(66566, { ["name"] = "The Weave of a Tale: Average",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66565, 66564 },	-- Biggest / Half Squid
-		}),	-- "Average"
-		q(66565, { ["name"] = "The Weave of a Tale: Biggest",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66566, 66564 },	-- Average / Half Squid
-		}),	-- "Biggest"
-		q(66564, { ["name"] = "The Weave of a Tale: Half Squid",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66566, 66565 },	-- Average / Biggest
-		}),	-- "Half Squid"
-		-- Third Question
-		q(66569, { ["name"] = "The Weave of a Tale: Slipped",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66568, 66567 },	-- Sword / Whisper
-		}),	-- "Slipped"
-		q(66568, { ["name"] = "The Weave of a Tale: Sword",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66569, 66567 },	-- Slipped / Whisper
-		}),	-- "Sword"
-		q(66567, { ["name"] = "The Weave of a Tale: Whisper",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66569, 66568 },	-- Slipped / Sword
-		}),	-- Whisper"
-		-- Fourth Question
-		q(66571, { ["name"] = "The Weave of a Tale: Ate",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66570 },	-- Threw
-		}),	-- "Ate"
-		q(66570, { ["name"] = "The Weave of a Tale: Threw",
-			["sourceQuest"] = 66213,	-- The Weave of a Tale
-			["altQuests"] = { 66571 },	-- Ate
-		}),	-- "Threw"
-		-- During The Heart of the Deck (66846)
-		-- First Question
-		q(66992, { ["name"] = "The Heart of the Deck: Draconic Form",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66993 },	-- My Form
-		}),
-		q(66993, { ["name"] = "The Heart of the Deck: My Form",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66992 },	-- Draconic Form
-		}),
-		-- Second Question
-		q(66984, { ["name"] = "The Heart of the Deck: Destroyer",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66985, 66983 },	-- Guardian / Life-Giver
-		}),
-		q(66985, { ["name"] = "The Heart of the Deck: Guardian",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66984, 66983 },	-- Destroyer / Life-Giver
-		}),
-		q(66983, { ["name"] = "The Heart of the Deck: Life-Giver",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66985, 66984 },	-- Guardian / Destroyer
-		}),
-		-- Third Question
-		q(66994, { ["name"] = "The Heart of the Deck: Motivation",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66995, 66996 },	-- Adaptation / Reaction
-		}),
-		q(66995, { ["name"] = "The Heart of the Deck: Adaptation",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66994, 66996 },	-- Motivation / Reaction
-		}),
-		q(66996, { ["name"] = "The Heart of the Deck: Reaction",
-			["sourceQuest"] = 66846,	-- The Heart of the Deck
-			["altQuests"] = { 66995, 66994 },	-- Adaptation / Motivation
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(THE_AZURE_SPAN, {
+			n(QUESTS, {
+				q(66046),	-- Pop after killing/completing bonus objective (Cascade) ... or skinning knowledge proc possibly
+				q(72779),	-- After completion of [70938]
+				q(72516),	-- After completion of (72487)
+				-- During The Weave of a Tale (66213)
+				-- First Question
+				q(66563, { ["name"] = "The Weave of a Tale: Rarest Fish",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66562, 66561 },	-- Slaying / Handstand
+				}),
+				q(66562, { ["name"] = "The Weave of a Tale: Slaying",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66563, 66561 },	-- Rarest Fish / Handstand
+				}),	-- "Slaying"
+				q(66561, { ["name"] = "The Weave of a Tale: Handstand",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66563, 66562 },	-- Rarest Fish / Slaying
+				}),	-- "Handstand"
+				-- Second Question
+				q(66566, { ["name"] = "The Weave of a Tale: Average",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66565, 66564 },	-- Biggest / Half Squid
+				}),	-- "Average"
+				q(66565, { ["name"] = "The Weave of a Tale: Biggest",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66566, 66564 },	-- Average / Half Squid
+				}),	-- "Biggest"
+				q(66564, { ["name"] = "The Weave of a Tale: Half Squid",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66566, 66565 },	-- Average / Biggest
+				}),	-- "Half Squid"
+				-- Third Question
+				q(66569, { ["name"] = "The Weave of a Tale: Slipped",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66568, 66567 },	-- Sword / Whisper
+				}),	-- "Slipped"
+				q(66568, { ["name"] = "The Weave of a Tale: Sword",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66569, 66567 },	-- Slipped / Whisper
+				}),	-- "Sword"
+				q(66567, { ["name"] = "The Weave of a Tale: Whisper",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66569, 66568 },	-- Slipped / Sword
+				}),	-- Whisper"
+				-- Fourth Question
+				q(66571, { ["name"] = "The Weave of a Tale: Ate",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66570 },	-- Threw
+				}),	-- "Ate"
+				q(66570, { ["name"] = "The Weave of a Tale: Threw",
+					["sourceQuest"] = 66213,	-- The Weave of a Tale
+					["altQuests"] = { 66571 },	-- Ate
+				}),	-- "Threw"
+				-- During The Heart of the Deck (66846)
+				-- First Question
+				q(66992, { ["name"] = "The Heart of the Deck: Draconic Form",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66993 },	-- My Form
+				}),
+				q(66993, { ["name"] = "The Heart of the Deck: My Form",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66992 },	-- Draconic Form
+				}),
+				-- Second Question
+				q(66984, { ["name"] = "The Heart of the Deck: Destroyer",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66985, 66983 },	-- Guardian / Life-Giver
+				}),
+				q(66985, { ["name"] = "The Heart of the Deck: Guardian",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66984, 66983 },	-- Destroyer / Life-Giver
+				}),
+				q(66983, { ["name"] = "The Heart of the Deck: Life-Giver",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66985, 66984 },	-- Guardian / Destroyer
+				}),
+				-- Third Question
+				q(66994, { ["name"] = "The Heart of the Deck: Motivation",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66995, 66996 },	-- Adaptation / Reaction
+				}),
+				q(66995, { ["name"] = "The Heart of the Deck: Adaptation",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66994, 66996 },	-- Motivation / Reaction
+				}),
+				q(66996, { ["name"] = "The Heart of the Deck: Reaction",
+					["sourceQuest"] = 66846,	-- The Heart of the Deck
+					["altQuests"] = { 66995, 66994 },	-- Adaptation / Motivation
+				}),
+				--
+				q(73096, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Booty Bay is chosen
+				q(73097, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Booty Bay is chosen (spell ID 398606)
+				q(73098, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Crystalsong Forest is chosen (spellID 398610)
+				q(73400, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Crystalsong Forest is chosen
+				q(73228, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when The Jade Forst is chosen (spellID 399077)
+				q(73401, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when The Jade Forst is chosen
+				q(73402, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Theramore is chosen
+				q(74785, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Theramore is chosen (spellID 403046)
+				q(73403, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Winterspring is chosen
+				q(74353, {["timeline"] = {ADDED_10_1_0}}),	-- triggers when Winterspring is chosen (spellID 400338)
+			}),
 		}),
 	}),
-	n(QUESTS, bubbleDownSelf({ ["timeline"] = ADDED_10_1_0 }, {
-		q(73096),	-- triggers when Booty Bay is chosen
-		q(73097),	-- triggers when Booty Bay is chosen (spell ID 398606)
-		q(73098),	-- triggers when Crystalsong Forest is chosen (spellID 398610)
-		q(73400),	-- triggers when Crystalsong Forest is chosen
-		q(73228),	-- triggers when The Jade Forst is chosen (spellID 399077)
-		q(73401),	-- triggers when The Jade Forst is chosen
-		q(73402),	-- triggers when Theramore is chosen
-		q(74785),	-- triggers when Theramore is chosen (spellID 403046)
-		q(73403),	-- triggers when Winterspring is chosen
-		q(74353),	-- triggers when Winterspring is chosen (spellID 400338)
-		q(76018),	-- Ensemble: Azure Renewal Finery
-	})),
-}));
+})));

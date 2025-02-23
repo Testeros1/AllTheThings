@@ -8,9 +8,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "Azshara was taken over by the goblins post-Shattering. It used to be the night elves' greatest center before the Sundering, but was destroyed due to the reckless magic of the Highborne. Known for being a beautiful and tranquil autumnal zone pre-Shattering, the Goblins have marred the landscape with their pollution and quarries, carving the land into the shape of a Horde symbol.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_azshara_01",
-		-- #endif
+		["icon"] = 236714,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(4927, {	-- Azshara Quests
@@ -68,11 +66,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #endif
 					-- #endif
 				}),
-				explorationAch(852, {	-- Explore Azshara
-					-- #if BEFORE WRATH
-					["description"] = "Explore Azshara, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(852),	-- Explore Azshara
 				ach(5448, {	-- Glutton for Fiery Punishment
 					["timeline"] = { ADDED_4_0_3 },
 				}),
@@ -279,7 +273,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 8399,	-- Nyrill <Xylem's Apprentice>
 					["coord"] = { 26.4, 46.2, AZSHARA },
 					["timeline"] = { REMOVED_1_7_0 },
-					["repeatable"] = true,
 					["lvl"] = 45,
 				}),
 				q(14432, {	-- A Pale Brew
@@ -641,7 +634,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 221400,	-- Kajind
 					["sourceQuest"] = 81682,	-- The Old Champ
 					["coord"] = { 25.4, 66.2, AZSHARA },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["classes"] = { WARRIOR },
 					["lvl"] = 45,
 					["groups"] = {
@@ -1052,6 +1045,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 117252,	-- Archmage Xylem
 					["coord"] = { 25.2, 38.0, AZSHARA },
 					["timeline"] = { ADDED_7_2_0, REMOVED_8_0_1 },
+					["g"] = {
+						i(143779),	-- The Focusing Iris (QI!)
+					},
 				}),
 				q(14472, {	-- In The Face!
 					["qg"] = 36744,	-- Glix Grindlock
@@ -1636,7 +1632,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 221400,	-- Kajind
 					["sourceQuest"] = 81697,	-- Defanged
 					["coord"] = { 25.4, 66.2, AZSHARA },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["maps"] = { TANARIS },
 					["classes"] = { WARRIOR },
 					["lvl"] = 45,
@@ -2591,7 +2587,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226412, {	-- Rune of Pole Weapon Specialization
 					["provider"] = { "o", 457091 },	-- Chen's Training Manual
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 76.9, 44.2, AZSHARA },
 					["classes"] = { WARRIOR, PALADIN, HUNTER, PRIEST, SHAMAN, MAGE, WARLOCK, DRUID },
 					["groups"] = {

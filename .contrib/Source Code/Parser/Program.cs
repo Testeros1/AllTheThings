@@ -46,10 +46,10 @@ namespace ATT
                 if (!Framework.HasConfig())
                 {
                     // Ensure the Parser uses the default config if nothing is specified.
-                    Framework.InitConfigSettings("parser.config");
+                    Framework.InitConfigSettings(".config/retail/retail.config");
 
 #if DEBUG
-                    Framework.InitConfigSettings("parser.debug.config");
+                    Framework.InitConfigSettings("parser/retail/debug.config");
 #endif
                 }
             }
@@ -60,14 +60,13 @@ namespace ATT
                 return;
             }
 
-            var preprocessorArray = Framework.Config["PreProcessorTags"];
+            string[] preprocessorArray = Framework.Config["PreProcessorTags"];
             if (preprocessorArray != null)
             {
                 foreach (var preprocessor in preprocessorArray)
                 {
                     PreProcessorTags[preprocessor] = true;
-                    Console.Write("PREPROCESSOR: ");
-                    Console.WriteLine((string)preprocessor);
+                    Console.WriteLine($"PREPROCESSOR: {preprocessor}");
                 }
             }
 
@@ -102,7 +101,12 @@ namespace ATT
                 {
                     Errored = false;
                     // Load all of the RAW JSON Data into the database.
-                    var files = Directory.EnumerateFiles(databaseRootFolder, "*.csv", SearchOption.AllDirectories).Where(p => p.Contains("Wago")).ToList();
+                    if (!string.IsNullOrWhiteSpace(Framework.Config["wago-directory"]))
+                    {
+                        Trace.WriteLine($"Loading Wago DB CSV files from {Framework.Config["wago-directory"]}.");
+                    }
+                    var files = Directory.EnumerateFiles(databaseRootFolder + Framework.Config["wago-directory"], "*.csv", SearchOption.AllDirectories).ToList();
+
                     files.Sort(StringComparer.InvariantCulture);
                     foreach (var f in files) ParseWagoDbCsvFile(f);
 
@@ -209,10 +213,17 @@ namespace ATT
                         Framework.AssignCustomHeaders(Framework.ParseAsDictionary<long>(customHeaders));
                     }
 
+                    // Try to grab the contents of the global variable "Phases".
+                    var phases = lua.GetTable("Phases");
+                    if (phases != null)
+                    {
+                        Framework.AssignPhases(Framework.ParseAsDictionary<long>(phases));
+                    }
+
                     Framework.Objects.SKILL_ID_CONVERSION_TABLE =
                         Framework.ParseAsDictionary<long>(lua.GetTable("SKILL_ID_CONVERSION_TABLE") ?? throw new InvalidDataException("Missing 'SKILL_ID_CONVERSION_TABLE' Global!"))
                         .ToDictionary(kvp => kvp.Key, kvp => (long)kvp.Value);
- 
+
                     Framework.Objects.MERGE_OBJECT_FIELDS =
                         Framework.ParseAsStringDictionary(lua.GetTable("MERGE_OBJECT_FIELDS") ?? throw new InvalidDataException("Missing 'MERGE_OBJECT_FIELDS' Global!"))
                         .ToDictionary(kvp => kvp.Key, kvp => (kvp.Value as List<object>)?.Select(o => o.ToString()).ToArray());
@@ -334,7 +345,7 @@ namespace ATT
         private static void ParseWagoDbCsvFile(string f)
         {
             // Ignore Wago DB files if not on Retail... they're always latest so can't be used for older versions
-            if (!((string[])Framework.Config["PreProcessorTags"]).Contains("RETAIL")) return;
+            //if (!((string[])Framework.Config["PreProcessorTags"]).Contains("RETAIL")) return;
 
             string csv = File.ReadAllText(f);
             string type = f.Substring(f.LastIndexOf('\\') + 1);
@@ -347,13 +358,13 @@ namespace ATT
             switch (name)
             {
                 case "baseconfig":
-                    if (!string.IsNullOrWhiteSpace(value))
-                        Framework.InitConfigSettings(value, true);
-                    break;
+                if (!string.IsNullOrWhiteSpace(value))
+                    Framework.InitConfigSettings(value, true);
+                break;
                 case "config":
-                    if (!string.IsNullOrWhiteSpace(value))
-                        Framework.InitConfigSettings(value);
-                    break;
+                if (!string.IsNullOrWhiteSpace(value))
+                    Framework.InitConfigSettings(value);
+                break;
             }
         }
 
@@ -415,15 +426,15 @@ namespace ATT
             switch (command[0])
             {
                 case "IF":
-                    // This is an IF command. It is the start of a new internal command block.
-                    ProcessInternalCommandBlock(command, builder, content, ref index, length);
-                    break;
+                // This is an IF command. It is the start of a new internal command block.
+                ProcessInternalCommandBlock(command, builder, content, ref index, length);
+                break;
                 case "IMPORT:":
-                    // This is an IMPORT command. It indicates that a Live DB file should be loaded.
-                    ProcessImportCommand(command, builder, content, ref index, length);
-                    break;
+                // This is an IMPORT command. It indicates that a Live DB file should be loaded.
+                ProcessImportCommand(command, builder, content, ref index, length);
+                break;
                 default:
-                    throw new Exception($"Malformed #{command[0]} statement: Expected #IF statement first... '{string.Join(" ", command)}'\nNear Index {index}:\n{content.Substring(Math.Max(0, index - 15), Math.Min(index, 15))}");
+                throw new Exception($"Malformed #{command[0]} statement: Expected #IF statement first... '{string.Join(" ", command)}'\nNear Index {index}:\n{content.Substring(Math.Max(0, index - 15), Math.Min(index, 15))}");
             }
         }
 
@@ -434,15 +445,15 @@ namespace ATT
                 switch (command[0])
                 {
                     case "ELSE":
-                        // This is an ELSE.
-                        return true;
+                    // This is an ELSE.
+                    return true;
                     case "IF":
                     case "ELIF":    // Requires at least 2
                     case "ELSEIF":  // Requires at least 2
                     case "ENDIF":   // Requires at least 1 command before it.
-                        throw new Exception($"Malformed command statement. '{string.Join(" ", command)}'");
+                    throw new Exception($"Malformed command statement. '{string.Join(" ", command)}'");
                     default:
-                        throw new Exception($"Unknown command statement. '{string.Join(" ", command)}'");
+                    throw new Exception($"Unknown command statement. '{string.Join(" ", command)}'");
                 }
             }
             else if (command.Length > 1)
@@ -454,56 +465,56 @@ namespace ATT
                 switch (command[1])
                 {
                     case "NOT":
-                        // Skip the "NOT" and parse the command without it and then flip the state.
-                        int j = 0;
-                        var newCommand = new string[command.Length - 1];
-                        newCommand[0] = command[0];
-                        for (int i = 2; i < command.Length; ++i)
-                        {
-                            newCommand[++j] = command[i];
-                        }
-                        return !ProcessCommand(newCommand);
+                    // Skip the "NOT" and parse the command without it and then flip the state.
+                    int j = 0;
+                    var newCommand = new string[command.Length - 1];
+                    newCommand[0] = command[0];
+                    for (int i = 2; i < command.Length; ++i)
+                    {
+                        newCommand[++j] = command[i];
+                    }
+                    return !ProcessCommand(newCommand);
                     case "BEFORE":
-                        if (command.Length == 3)    // Example: "IF" "BEFORE" "WOD"
+                    if (command.Length == 3)    // Example: "IF" "BEFORE" "WOD"
+                    {
+                        if (Framework.FIRST_EXPANSION_PHASE.TryGetValue(command[2], out int phase))
                         {
-                            if (Framework.FIRST_EXPANSION_PHASE.TryGetValue(command[2], out int phase))
-                            {
-                                return Framework.CURRENT_RELEASE_PHASE < phase;
-                            }
-                            else
-                            {
-                                return Framework.CURRENT_RELEASE_VERSION < command[2].Split('.').ConvertVersion();
-                            }
+                            return Framework.CURRENT_RELEASE_PHASE < phase;
                         }
-                        throw new Exception($"Malformed #IF BEFORE statement. '{string.Join(" ", command)}'");
+                        else
+                        {
+                            return Framework.CURRENT_RELEASE_VERSION < command[2].Split('.').ConvertVersion();
+                        }
+                    }
+                    throw new Exception($"Malformed #IF BEFORE statement. '{string.Join(" ", command)}'");
                     case "AFTER":
-                        if (command.Length == 3)    // Example: "IF" "AFTER" "WOD"
+                    if (command.Length == 3)    // Example: "IF" "AFTER" "WOD"
+                    {
+                        if (Framework.FIRST_EXPANSION_PHASE.TryGetValue(command[2], out int phase))
                         {
-                            if (Framework.FIRST_EXPANSION_PHASE.TryGetValue(command[2], out int phase))
-                            {
-                                return Framework.CURRENT_RELEASE_PHASE >= phase;
-                            }
-                            else
-                            {
-                                return Framework.CURRENT_RELEASE_VERSION >= command[2].Split('.').ConvertVersion();
-                            }
+                            return Framework.CURRENT_RELEASE_PHASE >= phase;
                         }
-                        throw new Exception($"Malformed #IF AFTER statement. '{string.Join(" ", command)}'");
+                        else
+                        {
+                            return Framework.CURRENT_RELEASE_VERSION >= command[2].Split('.').ConvertVersion();
+                        }
+                    }
+                    throw new Exception($"Malformed #IF AFTER statement. '{string.Join(" ", command)}'");
 
                     // These are flagged in the parser.config files. (PreProcessorTags returns true above the switch statement)
                     case "ANYCLASSIC":
                     case "CRIEVE":
-                        return false;
+                    return false;
                     default:
-                        // If the command matches the name of a possible release phase, then return it.
-                        if (Framework.FIRST_EXPANSION_PHASE.ContainsKey(command[1])) return Framework.CURRENT_RELEASE_PHASE_NAME == command[1];
+                    // If the command matches the name of a possible release phase, then return it.
+                    if (Framework.FIRST_EXPANSION_PHASE.ContainsKey(command[1])) return Framework.CURRENT_RELEASE_PHASE_NAME == command[1];
 
-                        // Potentially a more complicated pre-processed if statement?
-                        if (command.Length == 4)     // "IF" "PHASE" ">" "5"
-                        {
-                            // TODO
-                        }
-                        return false;
+                    // Potentially a more complicated pre-processed if statement?
+                    if (command.Length == 4)     // "IF" "PHASE" ">" "5"
+                    {
+                        // TODO
+                    }
+                    return false;
                 }
             }
             else throw new Exception($"Malformed #IF statement. '{string.Join(" ", command)}'");
@@ -567,20 +578,20 @@ namespace ATT
                 switch (command[0])
                 {
                     case "IF":
-                        // This is a nested IF. It is the start of a new internal command block.
-                        ProcessInternalCommandBlock(command, ConditionalSatisfied ? builder : new StringBuilder(), content, ref index, length);
-                        previousIndex = index;
-                        break;
+                    // This is a nested IF. It is the start of a new internal command block.
+                    ProcessInternalCommandBlock(command, ConditionalSatisfied ? builder : new StringBuilder(), content, ref index, length);
+                    previousIndex = index;
+                    break;
                     case "ELSE":
                     case "ELIF":
                     case "ELSEIF":
-                        // This is an ELSE/IF.
-                        if (ProcessInternalCommandBlock(command, !ConditionalSatisfied ? builder : new StringBuilder(), content, ref index, length)) return true;
-                        previousIndex = index;
-                        break;
+                    // This is an ELSE/IF.
+                    if (ProcessInternalCommandBlock(command, !ConditionalSatisfied ? builder : new StringBuilder(), content, ref index, length)) return true;
+                    previousIndex = index;
+                    break;
                     default:
-                        // Break the loop.
-                        return true;
+                    // Break the loop.
+                    return true;
                 }
             }
 

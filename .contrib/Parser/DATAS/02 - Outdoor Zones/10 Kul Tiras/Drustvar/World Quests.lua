@@ -66,8 +66,16 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(51687, {	-- A Smelly Solution
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(160557),	-- Pungent Onion (QI!)
+				},
 			}),
-			q(51745),	-- A Smelly Solution
+			q(51745, {	-- A Smelly Solution
+				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(160557),	-- Pungent Onion (QI!)
+				},
+			}),
 			q(51576, {	-- Any Witch Way but Dead
 				["races"] = ALLIANCE_ONLY,
 			}),
@@ -197,12 +205,30 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(53270, {	-- Flourishing Riverbud
 				["requireSkill"] = HERBALISM,
+				["g"] = {
+					i(163595),	-- Flourishing Riverbud (QI!)
+				},
 			}),
 			q(53266, {	-- Flourishing Sea Stalks
 				["requireSkill"] = HERBALISM,
+				["g"] = {
+					i(163588),	-- Flourishing Sea Stalk (QI!)
+				},
 			}),
 			q(51658, {	-- Fly the Coop!
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					o(281326, {	-- Falcon Cage
+						["coords"] = {
+							{ 31.8, 25.5, DRUSTVAR },
+							{ 31.9, 24.2, DRUSTVAR },
+							{ 31.6, 24.9, DRUSTVAR },
+							{ 31.4, 24.2, DRUSTVAR },
+							{ 31.3, 24.8, DRUSTVAR },
+						},
+						["g"] = { i(157840) },	-- Falconer's Key (QI!)
+					}),
+				},
 			}),
 			q(54507, {	-- Fungal Infestation (Faction Assault WQ)
 				["races"] = ALLIANCE_ONLY,
@@ -213,6 +239,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51887),	-- Fungi Trio
 			q(53311, {	-- Gleaming Storm Silver
 				["requireSkill"] = MINING,
+				["g"] = {
+					i(163623),	-- Gleaming Storm Silver (QI!)
+				},
 			}),
 			q(51507),	-- Gorehorn
 			q(51874),	-- Gorged Boar
@@ -253,6 +282,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51972),	-- Lost Goat
 			q(53308, {	-- Luminous Monelite
 				["requireSkill"] = MINING,
+				["g"] = {
+					i(163609),	-- Luminous Monelite (QI!)
+				},
 			}),
 			q(54690, {	-- Maddok the Sniper (Faction Assault WQ)
 				["races"] = HORDE_ONLY,
@@ -264,23 +296,30 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(54686, {	-- Medical Emergency (Faction Assault WQ)
 				["races"] = HORDE_ONLY,
 			}),
-			q(51707, {	-- More Valuable Than Gold (A)
-				["races"] = ALLIANCE_ONLY,
-			}),
-			q(51743, {	-- More Valuable Than Gold (H)
-				["races"] = HORDE_ONLY,
-			}),
+			{	-- More Valuable Than Gold
+				["allianceQuestData"] = q(51707, {	-- More Valuable Than Gold (Alliance)
+					["races"] = ALLIANCE_ONLY,
+				}),
+				["hordeQuestData"] = q(51743, {	-- More Valuable Than Gold (Horde)
+					["races"] = HORDE_ONLY,
+				}),
+				["g"] = {
+					o(290975, {	-- Silver Nugget
+						i(160577),	-- Silver Nugget (QI!)
+					}),
+				},
+			},
 			q(54650, {	-- Muk'luk (Faction Assault WQ)
 				["races"] = ALLIANCE_ONLY,
 			}),
 			q(53979, {	-- Naga Attack!
 				["g"] = {
-					i(165605),  -- Azsharan Medallion
+					i(165605),	-- Azsharan Medallion
 				},
 			}),
 			q(53963, {	-- Naga Attack!
 				["g"] = {
-					i(165605),  -- Azsharan Medallion
+					i(165605),	-- Azsharan Medallion
 				},
 			}),
 			q(51620, {	-- Natural Resources
@@ -300,10 +339,12 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(53274, {	-- Overgrown Anchor Weed
 				["requireSkill"] = HERBALISM,
 				["races"] = ALLIANCE_ONLY,	-- probably?  reported as seen on an alliance character
+				["g"] = { i(163601) },	-- Overgrown Anchor Weed (QI!)
 			}),
 			q(53282, {	-- Overgrown Anchor Weed
 				["requireSkill"] = HERBALISM,
 				["races"] = HORDE_ONLY,	-- probably?
+				["g"] = { i(163601) },	-- Overgrown Anchor Weed (QI!)
 			}),
 			q(54666, {	-- Packmaster Swiftarrow (Faction Assault WQ)
 				["races"] = ALLIANCE_ONLY,
@@ -318,9 +359,15 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51897),	-- Rimestone
 			q(51710, {	-- Rise of the Yetis (A)
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(164309),	-- Lost Supplies (QI!)
+				},
 			}),
 			q(51739, {	-- Rise of the Yetis (H)
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(164309),	-- Lost Supplies (QI!)
+				},
 			}),
 			petbattle(q(52278, {	-- Rogue Azerite
 				["filterID"] = BATTLE_PETS,
@@ -363,7 +410,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51667, {	-- This Bird You Cannot Change
 				["races"] = ALLIANCE_ONLY,
 				["g"] = {
-					i(157845),	-- Falconer's Whistle
+					i(157845),	-- Falconer's Whistle (QI!)
 				},
 			}),
 			q(51767, {	-- Trapline
@@ -397,6 +444,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(51694, {	-- Which Witch?
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(160571),	-- Lucille's Sewing Needle (QI!)
+				},
 			}),
 			q(51988),	-- Whitney "Steelclaw" Ramsay
 			q(51682, {	-- Witches by the Dozen (A)
@@ -487,5 +537,17 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = ALLIANCE_ONLY,
 			}),
 		})),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(KUL_TIRAS, {
+		m(DRUSTVAR, {
+			n(WORLD_QUESTS, {
+				q(52000),	-- Matron Morana killID
+				q(52002),	-- Soul Goliath killID
+				q(51999),	-- Stone Golem killID
+			}),
+		}),
 	}),
 })));

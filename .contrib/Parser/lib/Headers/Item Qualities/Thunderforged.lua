@@ -1,8 +1,9 @@
 THUNDERFORGED = createHeader({
 	readable = "Thunderforged",
-	icon = "Interface\\Icons\\Ability_thunderking_overcharge",
+	icon = 839979,
 	text = {
 		en = "Thunderforged",
 		ru = "Создано в Кузне Грома",
+		cn = "雷霆",
 	},
 });

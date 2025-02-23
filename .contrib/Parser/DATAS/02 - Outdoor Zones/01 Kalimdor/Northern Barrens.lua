@@ -2,7 +2,7 @@
 --         Z O N E S        M O D U L E         --
 ---------------------------------------------------
 -- #if AFTER 4.0.3
-local OnTooltipForRatchet = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForRatchet = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -16,7 +16,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 	m(NORTHERN_BARRENS, {
 		["lore"] = "Northern Barrens is a dry grassy zone, dotted with farms and few lush oasis. It is primarily a low-level zone for Horde players, but Alliance players can travel to the Steamwheedle Cartel city of Ratchet.",
 		["maps"] = { 11 },	-- Wailing Caverns (Outside instance)
-		["icon"] = "Interface\\Icons\\achievement_zone_barrens_01",
+		["icon"] = 236717,
 		["timeline"] = { ADDED_4_0_3 },
 		["groups"] = {
 			n(ACHIEVEMENTS, {
@@ -140,9 +140,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(718),	-- Wailing Caverns
 			}),
 			n(FACTIONS, {
-				faction(470, {	-- Ratchet
-					["icon"] = "Interface\\Icons\\INV_Misc_Coin_01",
-					["OnTooltip"] = OnTooltipForRatchet,
+				faction(FACTION_RATCHET, {	-- Ratchet
+					["icon"] = 133784,
+					["OnTooltip"] = [[_.OnTooltipDB.ForRatchet]],
 					["maps"] = { TANARIS },
 				}),
 			}),
@@ -2078,7 +2078,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #else
 					["coord"] = { 61.22, 37.86, THE_BARRENS },
 					-- #endif
-					["maxReputation"] = { 470, NEUTRAL },	-- Ratchet, must be less than Neutral
+					["maxReputation"] = { FACTION_RATCHET, NEUTRAL },	-- Ratchet, must be less than Neutral
 					["cost"] = {
 						{ "i", 2589, 40 },	-- Linen Cloth
 						{ "i", 3371, 4 },	-- Empty Vial
@@ -2821,7 +2821,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(4962, {	-- Shard of a Felhound
 					["qg"] = 6254,	-- Acolyte Wytula
-					["altQuests"] = { 4963 }, -- Shard of an Infernal
+					["altQuests"] = { 4963 },	-- Shard of an Infernal
 					["coord"] = { 62.5, 35.5, THE_BARRENS },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { DESOLACE },
@@ -2846,7 +2846,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(4963, {   -- Shard of an Infernal
 					["qg"] = 6252, -- Acolyte Magaz
-					["altQuests"] = { 4962 }, -- Shard of a Felhound
+					["altQuests"] = { 4962 },	-- Shard of a Felhound
 					["coord"] = { 62.6, 35.2, THE_BARRENS },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { DESOLACE },
@@ -3830,6 +3830,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 62.0, 63.2, NORTHERN_BARRENS },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
+					-- #if AFTER 9.0.1
+					["description"] = "This quest is a stand-alone quest involving lvl 30 raptors and have nothing to do with the lvl 35 Kor'kron mobs around the zone. The lvl 35 mobs got added with patch 5.3.0 as part of the late MoP storyline.",
+					-- #endif
 					["groups"] = {
 						objective(1, {	-- 0/5 Wittle Waptor
 							["providers"] = {
@@ -3932,8 +3935,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #endif
 					["description"] = "Roams around the waterfall just outside the Wailing Caverns dungeon portal.",
 					["groups"] = {
-						i(5423),  -- Boahn's Fang
-						i(5422),  -- Brambleweed Leggings
+						i(5423),	-- Boahn's Fang
+						i(5422),	-- Brambleweed Leggings
 					},
 				}),
 				n(5838, {	-- Brokespear

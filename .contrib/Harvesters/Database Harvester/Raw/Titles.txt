@@ -764,3 +764,53 @@
 11.0.2.56110
 548@@@%s the Tempered Hero
 579@@@%s the Tempered
+11.0.5.56487
+555@@@Forged Marshal %s
+571@@@Detective %s
+577@@@Grizzly Hills Hiker %s
+578@@@Plaguelands Survivor %s
+581@@@Classic Enthusiast %s
+582@@@Outland Enthusiast %s
+583@@@Northrend Enthusiast %s
+584@@@Cataclsym Enthusiast %s
+585@@@Pandaria Enthusiast %s
+586@@@Draenor Enthusiast %s
+587@@@Broken Isles Enthusiast %s
+588@@@Zuldazar Enthusiast %s
+589@@@Kul Tiras Enthusiast %s
+590@@@Shadowlands Enthusiast %s
+591@@@Dragon Isles Enthusiast %s
+594@@@Khaz Algar Racer %s
+595@@@Molten Core Prospector %s
+596@@@Karazhan Graduate %s
+11.0.5.56572
+584@@@Cataclysm Enthusiast %s
+11.0.7.57361
+560@@@Ascension Breaker %s
+569@@@%s, Witness of the Kirin Tor
+600@@@Landlubber %s
+601@@@%s the Treasured
+11.0.7.57409
+588@@@Zandalar Enthusiast %s
+11.1.0.58221
+580@@@Skyrocketer %s
+592@@@%s the Enterprising
+593@@@%s the Enterprising Hero
+597@@@Breaknecker %s
+598@@@Delver %s
+599@@@Infinite Delver %s
+602@@@High Roller %s
+603@@@%s the Explosive
+604@@@%s, Famed Slayer of The Chrome King
+605@@@%s, Liberator of Undermine
+606@@@Darkfuse Diplomat %s
+607@@@Trade-Duke %s
+608@@@Prized Gladiator %s
+609@@@Prized Warlord %s
+610@@@Prized Marshal %s
+611@@@Prized Legend %s
+612@@@%s, the Real Deal
+613@@@Junkmaestro %s
+616@@@Part-Timer %s
+617@@@%s, "Employee" of the Month
+618@@@%s, the Reel Deal

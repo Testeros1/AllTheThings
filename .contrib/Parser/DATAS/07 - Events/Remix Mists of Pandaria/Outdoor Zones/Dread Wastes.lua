@@ -3,18 +3,10 @@
 -----------------------------------------------------
 root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
 	m(DREAD_WASTES, {
-		["icon"] = "Interface\\Icons\\achievement_zone_dreadwastes",
+		["icon"] = 624970,
 		["g"] = {
 			n(ACHIEVEMENTS, {
-				ach(19890, {	-- Campaign: Dread Wastes
-						crit(67265),	-- The First Paragons
-						crit(67266),	-- Taste of Amber
-						crit(67267),	-- Like a Deck Boss
-						crit(67268, {	-- The Might of the Klaxxi
-							["_noautomation"] = true,
-							["_quests"] = { 31398 },	-- Falling to Pieces
-						}),
-				}),
+				ach(19890),	-- Campaign: Dread Wastes (automated)
 				ach(19878, {	-- Dread Wastes
 					-- Meta Achievement
 					["sym"] = {{"meta_achievement",
@@ -37,7 +29,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 				}),
 			}),
 			n(FACTIONS, {
-				faction(1337, {	-- The Klaxxi
+				faction(FACTION_THE_KLAXXI, {	-- The Klaxxi
 					n(ACHIEVEMENTS, {
 						ach(19915),		-- The Klaxxi
 					}),
@@ -47,7 +39,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 				q(80320, {	-- Aid the Klaxxi
 					["provider"] = { "n", 62538 },	-- Kil'ruk the Wind-Reaver
 					["coord"] = { 54.9, 35.8, DREAD_WASTES },
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 			}),

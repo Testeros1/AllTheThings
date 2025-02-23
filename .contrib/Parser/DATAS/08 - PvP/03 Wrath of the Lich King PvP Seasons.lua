@@ -64,6 +64,9 @@ end]];
 -- #endif
 root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbleDown({ ["timeline"] = { ADDED_3_0_2 } }, pvp(expansion(EXPANSION.WRATH, {
 	n(SEASON_DEADLY, {
+		n(ACHIEVEMENTS, {
+			ach(11710, {["timeline"] = {ADDED_7_2_0}}),	-- Lethal Looks (PvP Season 5)
+		}),
 		elitepvp(n(ACHIEVEMENTS, bubbleDown({
 			["timeline"] = { ADDED_3_0_2, REMOVED_3_1_0 },
 			-- #if BEFORE 5.0.1
@@ -80,7 +83,6 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 			i(46708, {	-- Deadly Gladiator's Frost Wyrm
 				["description"] = "Awarded to members of the Arena teams during Wrath Season 1 that were in the 0.5% bracket of their battlegroup.",
 			}),
-			ach(11710, {["timeline"] = {ADDED_7_2_0}}),	-- Lethal Looks (PvP Season 5)
 		}))),
 		-- #if AFTER 7.0.3
 		n(40212, {	-- Trapjaw Rix <Savage Gladiator> [Legion?] / Blazik Fireclaw <Legacy Arena Armor> [CATA+]
@@ -97,44 +99,115 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 								{"sub", "pvp_weapons_ensemble", EXPANSION.WRATH, SEASON_DEADLY, PVP_HONOR },
 							},
 						}),
-						i(42557),	-- Savage Gladiator's Barrier
-						i(42511),	-- Savage Gladiator's Baton of Light
-						i(42356),	-- Savage Gladiator's Battle Staff
-						i(42221),	-- Savage Gladiator's Bonecracker
-						i(42295),	-- Savage Gladiator's Bonegrinder
-						i(42212),	-- Savage Gladiator's Chopper
-						i(42206),	-- Savage Gladiator's Cleaver
-						i(42294),	-- Savage Gladiator's Decapitator
-						i(42382),	-- Savage Gladiator's Energy Staff
-						i(42220),	-- Savage Gladiator's Fleshslicer
-						i(44416),	-- Savage Gladiator's Focus Staff
-						i(42344),	-- Savage Gladiator's Gavel
-						i(42297),	-- Savage Gladiator's Greatsword
-						i(42213),	-- Savage Gladiator's Hacker
-						i(42446),	-- Savage Gladiator's Heavy Crossbow
-						i(42445),	-- Savage Gladiator's Longbow
-						i(42215),	-- Savage Gladiator's Mutilator
-						i(42517),	-- Savage Gladiator's Piercing Touch
-						i(42296),	-- Savage Gladiator's Pike
-						i(42222),	-- Savage Gladiator's Pummeler
-						i(42223),	-- Savage Gladiator's Quickblade
-						i(42568),	-- Savage Gladiator's Redoubt
-						i(42447),	-- Savage Gladiator's Rifle
-						i(42218),	-- Savage Gladiator's Ripper
-						i(42216),	-- Savage Gladiator's Shanker
-						i(42556),	-- Savage Gladiator's Shield Wall
-						i(42217),	-- Savage Gladiator's Shiv
-						i(42219),	-- Savage Gladiator's Slasher
-						i(42224),	-- Savage Gladiator's Slicer
-						i(42343),	-- Savage Gladiator's Spellblade
-						i(42388),	-- Savage Gladiator's Staff
-						i(42448),	-- Savage Gladiator's Touch of Defeat
 						-- #if BEFORE MOP
 						i(42444, {	-- Savage Gladiator's War Edge (Throw Wep)
 							["timeline"] = { REMOVED_5_0_4 },
 						}),
 						-- #endif
-						i(44415),	-- Savage Gladiator's War Staff
+						-- Wands, and Hunter Waraxe are still in Cata classic
+						i(42511, {	-- Savage Gladiator's Baton of Light
+							["timeline"] = { ADDED_3_0_2 },
+						}),
+						i(42448, {	-- Savage Gladiator's Touch of Defeat
+							["timeline"] = { ADDED_3_0_2 },
+						}),
+						i(42517, {	-- Savage Gladiator's Piercing Touch
+							["timeline"] = { ADDED_3_0_2 },
+						}),
+						i(42214, {	-- Savage Gladiator's Waraxe
+							["timeline"] = { ADDED_3_0_2 },
+						}),
+						-- Other Savage Gladiator weapons have never been implemented
+						i(42557, {	-- Savage Gladiator's Barrier
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42356, {	-- Savage Gladiator's Battle Staff
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42221, {	-- Savage Gladiator's Bonecracker
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42295, {	-- Savage Gladiator's Bonegrinder
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42212, {	-- Savage Gladiator's Chopper
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42206, {	-- Savage Gladiator's Cleaver
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42294, {	-- Savage Gladiator's Decapitator
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42382, {	-- Savage Gladiator's Energy Staff
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42220, {	-- Savage Gladiator's Fleshslicer
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(44416, {	-- Savage Gladiator's Focus Staff
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42344, {	-- Savage Gladiator's Gavel
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42297, {	-- Savage Gladiator's Greatsword
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42213, {	-- Savage Gladiator's Hacker
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42446, {	-- Savage Gladiator's Heavy Crossbow
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42445, {	-- Savage Gladiator's Longbow
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42215, {	-- Savage Gladiator's Mutilator
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42296, {	-- Savage Gladiator's Pike
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42222, {	-- Savage Gladiator's Pummeler
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42223, {	-- Savage Gladiator's Quickblade
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42568, {	-- Savage Gladiator's Redoubt
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42447, {	-- Savage Gladiator's Rifle
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42218, {	-- Savage Gladiator's Ripper
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42216, {	-- Savage Gladiator's Shanker
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42556, {	-- Savage Gladiator's Shield Wall
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42217, {	-- Savage Gladiator's Shiv
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42219, {	-- Savage Gladiator's Slasher
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42224, {	-- Savage Gladiator's Slicer
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42343, {	-- Savage Gladiator's Spellblade
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(42388, {	-- Savage Gladiator's Staff
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
+						i(44415, {	-- Savage Gladiator's War Staff
+							["timeline"] = { CREATED_3_0_2, ADDED_7_2_0 },
+						}),
 					}),
 					cl(DEATHKNIGHT, {
 						i(146580, {	-- Ensemble: Savage Gladiator's Dreadplate Armor
@@ -1177,7 +1250,7 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 			["coord"] = { 59.4, 57.8, NORTHREND_THE_UNDERBELLY },
 			["timeline"] = { ADDED_7_0_3 },
 			["groups"] = {
-		-- #endif	
+		-- #endif
 				n(PVP_GLADIATOR, {
 					n(WEAPONS, {
 						i(146645, {	-- Arsenal: Deadly Gladiator's Weapon
@@ -1876,6 +1949,9 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 		-- #endif
 	}),
 	applyclassicphase(WRATH_PHASE_TWO, n(SEASON_FURIOUS, {
+		n(ACHIEVEMENTS, {
+			ach(11711, {["timeline"] = {ADDED_7_2_0}}),	-- The Fierce and the Furious (PvP Season 6)
+		}),
 		elitepvp(n(ACHIEVEMENTS, bubbleDown({
 			["timeline"] = { ADDED_3_1_0, REMOVED_3_2_0 },
 			-- #if BEFORE 5.0.1
@@ -1892,7 +1968,6 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 			i(46171, {	-- Furious Gladiator's Frost Wyrm
 				["description"] = "Awarded to members of the Arena teams during Wrath Season 2 that were in the 0.5% bracket of their battlegroup.",
 			}),
-			ach(11711, {["timeline"] = {ADDED_7_2_0}}),	-- The Fierce and the Furious (PvP Season 6)
 		}))),
 		-- #if AFTER 7.0.3
 		n(69318, {	-- Kylo Kelwin <Furious Gladiator>
@@ -2621,6 +2696,9 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 		})),
 	})),
 	applyclassicphase(WRATH_PHASE_THREE, n(SEASON_RELENTLESS, {
+		n(ACHIEVEMENTS, {
+			ach(11712, {["timeline"] = {ADDED_7_2_0}}),	-- Relentlessly Good Looking (PvP Season 7)
+		}),
 		elitepvp(n(ACHIEVEMENTS, bubbleDown({
 			["timeline"] = { ADDED_3_2_0, REMOVED_3_3_2 },
 			-- #if BEFORE 5.0.1
@@ -2637,7 +2715,6 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 			i(47840, {	-- Relentless Gladiator's Frost Wyrm
 				["description"] = "Awarded to members of the Arena teams during Wrath Season 3 that were in the 0.5% bracket of their battlegroup.",
 			}),
-			ach(11712, {["timeline"] = {ADDED_7_2_0}}),	-- Relentlessly Good Looking (PvP Season 7)
 		}))),
 		-- #if AFTER 7.0.3
 		n(69973, {	-- Zom Bocom <Relentless Gladiator> [Legion?] / Zom Bocom <Honor Quartermaster> [MOP?]
@@ -3384,6 +3461,9 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 		})),
 	})),
 	applyclassicphase(WRATH_PHASE_FOUR, n(SEASON_WRATHFUL, {
+		n(ACHIEVEMENTS, {
+			ach(11713, {["timeline"] = {ADDED_7_2_0}}),	-- Wrath of the Stitch King (PvP Season 8)
+		}),
 		elitepvp(n(ACHIEVEMENTS, bubbleDown({
 			["timeline"] = { ADDED_3_3_2, REMOVED_4_0_1 },
 			-- #if BEFORE 5.0.1
@@ -3400,7 +3480,6 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 			i(50435, {	-- Wrathful Gladiator's Frost Wyrm
 				["description"] = "Awarded to members of the Arena teams during Wrath Season 4 that were in the 0.5% bracket of their battlegroup.",
 			}),
-			ach(11713, {["timeline"] = {ADDED_7_2_0}}),	-- Wrath of the Stitch King (PvP Season 8)
 		}))),
 		-- #if AFTER 7.0.3
 		n(69971, {	-- Xazi Smolderpipe <Wrathful Gladiator> [Legion?] / Xazi Smolderpipe <Conquest Quartermaster> [MOP?]
@@ -4139,9 +4218,8 @@ root(ROOTS.PVP, applyclassicphase(WRATH_PHASE_ONE, run(MarkOfWHOOOWHATNow, bubbl
 	})),
 }))))));
 
--- #if AFTER LEGION
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+	n(PVP, {
 		-- PvP Ensembles
 		q(46555),	-- Savage Gladiator's Chain Armor (Hunter)
 		q(46556),	-- Savage Gladiator's Dragonhide Armor (Druid)
@@ -4212,5 +4290,4 @@ root(ROOTS.HiddenQuestTriggers, {
 		q(46609),	-- Furious Gladiator's Arsenal
 		q(46620),	-- Relentless Gladiator's Arsenal
 	}),
-});
--- #endif
+})));

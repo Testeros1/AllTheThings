@@ -5,7 +5,7 @@ root(ROOTS.Zones, {
 	m(NORTHREND, applyclassicphase(WRATH_PHASE_ONE, {
 		m(ICECROWN, {
 			["lore"] = "Icecrown is a zone intended for level 25+ players to quest in, as well as return to at max level for the Argent Tournament, a daily quest hub that has many vanity rewards. Icecrown, composed literally of solid ice, is home to the Frozen Throne and Icecrown Citadel. The Lich King's presence can be felt across the zone, with the Argent Crusade and Ebon Blade battling all sorts of Scourge horrors. There are also quest chains covering the Scarlet Onslaught's final outpost, as well as the presence of the corrupted Vrykul.",
-			["icon"] = "Interface\\Icons\\achievement_zone_icecrown_01",
+			["icon"] = 236793,
 			["maps"] = { 170 },	-- Hrothgar's Landing
 			["groups"] = {
 				n(ACHIEVEMENTS, {
@@ -107,24 +107,20 @@ root(ROOTS.Zones, {
 						}),
 						-- #endif
 					}),
-					achWithReps(945, { 529, 1106 }, {	-- The Argent Champion
-						-- #if BEFORE WRATH
-						["description"] = "Earn exalted status with the Argent Dawn and the Argent Crusade.",
-						-- #endif
+					achWithReps(945, { FACTION_ARGENT_DAWN, FACTION_ARGENT_CRUSADE }, {	-- The Argent Champion
 						["maps"] = { WESTERN_PLAGUELANDS, EASTERN_PLAGUELANDS },
 						["groups"] = {
 							title(99),	-- <Name> the Argent Champion
 						},
 					}),
-					achWithRep(947, 1106),	-- The Argent Crusade
-					achWithRep(1009, 1098),	-- Knights of the Ebon Blade
+					achWithRep(947, FACTION_ARGENT_CRUSADE),	-- The Argent Crusade
+					achWithRep(1009, FACTION_EBON_BLADE),	-- Knights of the Ebon Blade
 				}),
 				battlepets({
 					["sym"] = {{"select","speciesID",
 						635,	-- Adder (PET!)
 						641,	-- Arctic Hare (PET!)
 						633,	-- Mountain Skunk (PET!)
-						1238,	-- Unborn Val'kyr (PET!)
 					}},
 					["groups"] = {
 						pet(393),	-- Cockroach (PET!)
@@ -135,10 +131,17 @@ root(ROOTS.Zones, {
 					exploration(4510),	-- Aldur'thar: The Desolation Gate
 					applyclassicphase(WRATH_PHASE_TWO, exploration(4658)),	-- Argent Tournament Grounds
 					exploration(4527),	-- Balargarde Fortress
+					visit_exploration(4594,{coord={28.3,50.5,ICECROWN}}),	-- Battlescar Spire
+					visit_exploration(4588,{coord={35.5,66.3,ICECROWN}}),	-- Blackwatch
 					exploration(4521),	-- Cathedral of Darkness
 					exploration(4518),	-- Corp'rethar: The Horror Gate
+					visit_exploration(4580,{coord={79.6,72.3,ICECROWN}}),	-- Crusaders' Pinnacle
+					visit_exploration(4467,{coord={21.1,47.8,ICECROWN}}),	-- Death's Rise
+					visit_exploration(4743,{coord={60.7,21.9,ICECROWN}}),	-- Deathspeaker's Watch
+					visit_exploration(4622,{coord={64.1,43.2,ICECROWN}}),	-- First Legion Forward Camp
+					visit_exploration(4498,{coord={27.6,47.2,ICECROWN}}),	-- Halls of the Ancestors
 					exploration(4522),	-- Icecrown Citadel
-					exploration(4523),	-- Icecrown Glacier
+					visit_exploration(4523,{coord={45.8,51.0,ICECROWN}}),	-- Icecrown Glacier
 					exploration(4503),	-- Ironwall Dam
 					exploration(4516),	-- Ironwall Rampart
 					exploration(4496),	-- Jotunheim
@@ -147,30 +150,46 @@ root(ROOTS.Zones, {
 					exploration(4508),	-- Mord'rethar: The Death Gate
 					exploration(4526),	-- Njorndar Village
 					exploration(4417),	-- Onslaught Harbor
+					visit_exploration(4692,{coord={74.0,30.9,ICECROWN}}),	-- Quel'Delar's Rest
+					visit_exploration(4597,{coord={54.4,70.2,ICECROWN}}),	-- Rise of Suffering
+					visit_exploration(4530,{coord={34.4,68.4,ICECROWN}}),	-- Sanctum of Reanimation
+					visit_exploration(4514,{coord={56.5,57.4,ICECROWN}}),	-- Saronite Mines
 					exploration(4497),	-- Savage Ledge
 					exploration(4506),	-- Scourgeholme
+					visit_exploration(4591,{coord={74.8,39.3,ICECROWN}}),	-- Silent Vigil
 					exploration(4533),	-- Sindragosa's Fall
+					visit_exploration(4676,{coord={76.2,24.1,ICECROWN}}),	-- Sunreaver Pavilion
+					visit_exploration(4672,{coord={75.3,18.3,ICECROWN}}),	-- The Alliance Valiants' Ring
+					visit_exploration(4671,{coord={68.9,20.3,ICECROWN}}),	-- The Argent Valiants' Ring
 					exploration(4501),	-- The Argent Vanguard
-					exploration(4509),	-- The Bombardment
+					visit_exploration(4670,{coord={70.9,19.8,ICECROWN}}),	-- The Aspirants' Ring
+					visit_exploration(4509,{coord={57.4,42.1,ICECROWN}}),	-- The Bombardment
 					exploration(4505),	-- The Breach
 					exploration(4507),	-- The Broken Front
-					exploration(4515),	-- The Conflagration
+					visit_exploration(4515,{coord={47.7,63.2,ICECROWN}}),	-- The Conflagration
 					exploration(4519),	-- The Court of Bones
+					visit_exploration(4529,{coord={9.7,46.6,ICECROWN}}),	-- The Crimson Cathedral
 					exploration(4531),	-- The Fleshwerks
+					visit_exploration(4862,{coord={54.2,90.6,ICECROWN}}),	-- The Frozen Halls
+					visit_exploration(4673,{coord={75.6,25.7,ICECROWN}}),	-- The Horde Valiants' Ring
+					visit_exploration(4593,{coord={76.4,52.6,ICECROWN}}),	-- The Pit of Fiends
+					visit_exploration(4669,{coord={72.0,24.0,ICECROWN}}),	-- The Ring of Champions
 					exploration(4477),	-- The Shadow Vault
 					exploration(4540),	-- The Valley of Fallen Heroes
-					exploration(4537),	-- The Valley of Lost Hope
+					visit_exploration(4537,{coord={64.3,49.2,ICECROWN}}),	-- The Valley of Lost Hope
 					exploration(4492),	-- Ufrang's Hall
 					exploration(4524),	-- Valhalas
 					exploration(4504),	-- Valley of Echoes
 					exploration(4517),	-- Weeping Quarry
-					exploration(4513),	-- Ymirheim
+					visit_exploration(4513,{coord={53.0,53.7,ICECROWN}}),	-- Ymirheim
 				}),
 				n(FACTIONS, {
-					faction(1106, {	-- Argent Crusade
+					faction(FACTION_ARGENT_CRUSADE, {	-- Argent Crusade
+						["provider"] = { "i", 43154 },	-- Tabard of the Argent Crusade
 						["maps"] = { ZULDRAK },
 					}),
-					faction(1098, {	-- Knights of the Ebon Blade
+					faction(FACTION_EBON_BLADE, {	-- Knights of the Ebon Blade
+						["provider"] = { "i", 43155 },	-- Tabard of the Ebon Blade
 						["maps"] = { ZULDRAK },
 					}),
 				}),
@@ -310,7 +329,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31808,	-- Ground Commander Koup
 						["sourceQuest"] = 13341,	-- Joining the Assault
 						["coord"] = { 62.5, 51.3, ICECROWN },
-						["maxReputation"] = { 1050, EXALTED },	-- Valiance Expedition, Exalted.
+						["maxReputation"] = { FACTION_VALIANCE_EXPEDITION, EXALTED },	-- Valiance Expedition, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -318,7 +337,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31834,	-- Ground Commander Xutjja
 						["sourceQuest"] = 13340,	-- Joining the Assault
 						["coord"] = { 58.3, 45.9, ICECROWN },
-						["maxReputation"] = { 1085, EXALTED },	-- Warsong Offensive, Exalted.
+						["maxReputation"] = { FACTION_WARSONG_OFFENSIVE, EXALTED },	-- Warsong Offensive, Exalted.
 						["races"] = HORDE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -326,7 +345,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31737,	-- Skybreaker Squad Leader
 						["sourceQuest"] = 13341,	-- Joining the Assault
 						["coord"] = { 62.5, 51.1, ICECROWN },
-						["maxReputation"] = { 1050, EXALTED },	-- Valiance Expedition, Exalted.
+						["maxReputation"] = { FACTION_VALIANCE_EXPEDITION, EXALTED },	-- Valiance Expedition, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -334,7 +353,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31833,	-- Kor'kron Squad Leader
 						["sourceQuest"] = 13340,	-- Joining the Assault
 						["coord"] = { 58.3, 46.1, ICECROWN },
-						["maxReputation"] = { 1085, EXALTED },	-- Warsong Offensive, Exalted.
+						["maxReputation"] = { FACTION_WARSONG_OFFENSIVE, EXALTED },	-- Warsong Offensive, Exalted.
 						["races"] = HORDE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -452,7 +471,7 @@ root(ROOTS.Zones, {
 						["qg"] = 32302,	-- Knight-Captain Drosche
 						["description"] = "On the Skybreaker.",
 						["sourceQuest"] = 13225,	-- The Skybreaker
-						["maxReputation"] = { 1050, EXALTED },	-- Valiance Expedition, Exalted.
+						["maxReputation"] = { FACTION_VALIANCE_EXPEDITION, EXALTED },	-- Valiance Expedition, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -460,7 +479,7 @@ root(ROOTS.Zones, {
 						["qg"] = 32301,	-- Warbringer Davos Rioht
 						["sourceQuest"] = 13224,	-- Orgrim's Hammer
 						["description"] = "On Orgrim's Hammer.",
-						["maxReputation"] = { 1085, EXALTED },	-- Warsong Offensive, Exalted.
+						["maxReputation"] = { FACTION_WARSONG_OFFENSIVE, EXALTED },	-- Warsong Offensive, Exalted.
 						["races"] = HORDE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -526,7 +545,7 @@ root(ROOTS.Zones, {
 						["qg"] = 29799,	-- Thassarian
 						["description"] = "On the Skybreaker.",
 						["sourceQuest"] = 13314,	-- Get the Message
-						["maxReputation"] = { 1050, EXALTED },	-- Valiance Expedition, Exalted.
+						["maxReputation"] = { FACTION_VALIANCE_EXPEDITION, EXALTED },	-- Valiance Expedition, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -767,7 +786,7 @@ root(ROOTS.Zones, {
 						["qg"] = 29396,	-- Setaal Darkmender
 						["sourceQuest"] = 12807,	-- The Story Thus Far...
 						["coord"] = { 19.6, 48.3, ICECROWN },
-						["maxReputation"] = { 1098, EXALTED },	-- Knights of the Ebon Blade, Exalted.
+						["maxReputation"] = { FACTION_EBON_BLADE, EXALTED },	-- Knights of the Ebon Blade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(13171, {	-- From Whence They Came
@@ -935,7 +954,7 @@ root(ROOTS.Zones, {
 						["qg"] = 29456,	-- Aurochs Grimbane
 						["sourceQuest"] = 12807,	-- The Story Thus Far...
 						["coord"] = { 20.0, 47.9, ICECROWN },
-						["maxReputation"] = { 1098, EXALTED },	-- Knights of the Ebon Blade, Exalted.
+						["maxReputation"] = { FACTION_EBON_BLADE, EXALTED },	-- Knights of the Ebon Blade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(13139, {	-- Into The Frozen Heart Of Northrend
@@ -1008,7 +1027,7 @@ root(ROOTS.Zones, {
 						["qg"] = 30824,	-- Sky-Reaver Korm Blackscar
 						["sourceQuest"] = 13313,	-- Blinding the Eyes in the Sky
 						["description"] = "On Orgrim's Hammer.",
-						["maxReputation"] = { 1085, EXALTED },	-- Warsong Offensive, Exalted.
+						["maxReputation"] = { FACTION_WARSONG_OFFENSIVE, EXALTED },	-- Warsong Offensive, Exalted.
 						["races"] = HORDE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -1035,7 +1054,7 @@ root(ROOTS.Zones, {
 						["qg"] = 30345,	-- Chief Engineer Boltwrench
 						["sourceQuest"] = 13296,	-- Get to Ymirheim!
 						["coord"] = { 62.8, 50.5, ICECROWN },
-						["maxReputation"] = { 1050, EXALTED },	-- Valiance Expedition, Exalted.
+						["maxReputation"] = { FACTION_VALIANCE_EXPEDITION, EXALTED },	-- Valiance Expedition, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -1043,7 +1062,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31781,	-- Blast Thunderbomb
 						["sourceQuest"] = 13293,	-- Get to Ymirheim!
 						["coord"] = { 51.9, 57.5, ICECROWN },
-						["maxReputation"] = { 1085, EXALTED },	-- Warsong Offensive, Exalted.
+						["maxReputation"] = { FACTION_WARSONG_OFFENSIVE, EXALTED },	-- Warsong Offensive, Exalted.
 						["races"] = HORDE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -1068,7 +1087,7 @@ root(ROOTS.Zones, {
 						["qg"] = 29343,	-- Baron Sliver
 						["sourceQuest"] = 12951,	-- Let the Baron Know
 						["coord"] = { 42.8, 25.0, ICECROWN },
-						["maxReputation"] = { 1098, EXALTED },	-- Knights of the Ebon Blade, Exalted.
+						["maxReputation"] = { FACTION_EBON_BLADE, EXALTED },	-- Knights of the Ebon Blade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(12951, {	-- Let the Baron Know
@@ -1170,7 +1189,7 @@ root(ROOTS.Zones, {
 						["qg"] = 29405,	-- Uzo Deathcaller
 						["sourceQuest"] = 12814,	-- You'll Need a Gryphon
 						["coord"] = { 19.6, 47.7, ICECROWN },
-						["maxReputation"] = { 1098, EXALTED },	-- Knights of the Ebon Blade, Exalted.
+						["maxReputation"] = { FACTION_EBON_BLADE, EXALTED },	-- Knights of the Ebon Blade, Exalted.
 						["isDaily"] = true,
 					}),
 					pvp(q(13233, {	-- No Mercy!
@@ -1554,7 +1573,7 @@ root(ROOTS.Zones, {
 						["qg"] = 30074,	-- The Leaper
 						["sourceQuest"] = 12982,	-- Ebon Blade Prisoners
 						["coord"] = { 43.5, 25.1, ICECROWN },
-						["maxReputation"] = { 1098, EXALTED },	-- Knights of the Ebon Blade, Exalted.
+						["maxReputation"] = { FACTION_EBON_BLADE, EXALTED },	-- Knights of the Ebon Blade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(13397, {	-- Sindragosa's Fall
@@ -1574,7 +1593,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31259,	-- Absalan the Pious
 						["description"] = "On the Skybreaker.",
 						["sourceQuest"] = 13225,	-- The Skybreaker
-						["maxReputation"] = { 1106, EXALTED },	-- Argent Crusade, Exalted.
+						["maxReputation"] = { FACTION_ARGENT_CRUSADE, EXALTED },	-- Argent Crusade, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -1582,7 +1601,7 @@ root(ROOTS.Zones, {
 						["qg"] = 31261,	-- Brother Keltan
 						["sourceQuest"] = 13224,	-- Orgrim's Hammer
 						["description"] = "On Orgrim's Hammer.",
-						["maxReputation"] = { 1106, EXALTED },	-- Argent Crusade, Exalted.
+						["maxReputation"] = { FACTION_ARGENT_CRUSADE, EXALTED },	-- Argent Crusade, Exalted.
 						["races"] = HORDE_ONLY,
 						["isDaily"] = true,
 					}),
@@ -2149,7 +2168,7 @@ root(ROOTS.Zones, {
 						["qg"] = 30216,	-- Vile
 						["sourceQuest"] = 12992,	-- Crush Dem Vrykuls!
 						["coord"] = { 42.9, 25.5, ICECROWN },
-						["maxReputation"] = { 1098, EXALTED },	-- Knights of the Ebon Blade, Exalted.
+						["maxReputation"] = { FACTION_EBON_BLADE, EXALTED },	-- Knights of the Ebon Blade, Exalted.
 						["isDaily"] = true,
 					}),
 					q(13239, {	-- Volatility
@@ -2257,46 +2276,58 @@ root(ROOTS.Zones, {
 						},
 					}),
 				}),
+				n(TREASURES, {
+					o(191543, {	-- Scarlet Onslaught Trunk
+						i(40666),	-- Note from the Grand Admiral
+					}),
+				}),
 				n(VENDORS, {
 					n(32538, {	-- Duchess Mynx <Ebon Blade Quartermaster>
 						["coord"] = { 43.4, 20.6, ICECROWN },
-						["groups"] = {
-							i(44149, {	-- Arcanum of Torment
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44138, {	-- Arcanum of Toxic Warding
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44302),	-- Belt of Dark Mending
-							i(44242),	-- Dark Soldier Cape
-							i(44303),	-- Darkheart Chestguard
-							i(44306),	-- Death-Insured Sabatons
-							i(41562),	-- Design: Deadly Huge Citrine
-							-- #if AFTER CATA
-							i(41721),	-- Design: Deadly Monarch Topaz [CATA+] / Design: Wicked Monarch Topaz [WRATH]
-							i(41725),	-- Design: Timeless Twilight Opal [CATA+] / Design: Glowing Twilight Opal [WRATH]
-							-- #else
-							i(41725),	-- Design: Glowing Twilight Opal [WRATH] / Design: Timeless Twilight Opal [CATA+]
-							i(41721),	-- Design: Wicked Monarch Topaz [WRATH] / Design: Deadly Monarch Topaz [CATA+]
-							-- #endif
-							i(44305),	-- Kilt of Dark Mercy
-							i(42183),	-- Pattern: Abyssal Bag
-							i(44512, {	-- Pattern: Nerubian Reinforced Quiver (RECIPE!)
-								["timeline"] = { REMOVED_4_0_1 },
-							}),
-							i(44250),	-- Reaper of Dark Souls
-							i(44249),	-- Runeblade of Demonstrable Power
-							i(44257),	-- Spaulders of the Black Arrow
-							i(44256),	-- Sterile Flesh-Handling Gloves
-							i(43155, {	-- Tabard of the Ebon Blade
-								["factionID"] = 1098,	-- Knights of the Ebon Blade
-							}),
-							i(44243),	-- Toxin-Tempered Sabatons
-							i(44241),	-- Unholy Persuader
-							i(44258),	-- Wound-Binder Wristguards
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_EBON_BLADE, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(41562),	-- Design: Deadly Huge Citrine (RECIPE!)
+								i(43155),	-- Tabard of the Ebon Blade
+							}, {	-- Honored
+								i(44138, {	-- Arcanum of Toxic Warding
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44242),	-- Dark Soldier Cape
+								i(44512, {	-- Pattern: Nerubian Reinforced Quiver (RECIPE!)
+									["timeline"] = { REMOVED_4_0_1 },
+								}),
+								i(44243),	-- Toxin-Tempered Sabatons
+								i(44241),	-- Unholy Persuader
+							}, {	-- Revered
+								i(44149, {	-- Arcanum of Torment
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								-- #if AFTER CATA
+								i(41721),	-- Design: Deadly Monarch Topaz [CATA+] / Design: Wicked Monarch Topaz [WRATH] (RECIPE!)
+								-- #else
+								i(41721),	-- Design: Wicked Monarch Topaz [WRATH] / Design: Deadly Monarch Topaz [CATA+] (RECIPE!)
+								-- #endif
+								i(42183),	-- Pattern: Abyssal Bag (RECIPE!)
+								i(44250),	-- Reaper of Dark Souls
+								i(44249),	-- Runeblade of Demonstrable Power
+								i(44257),	-- Spaulders of the Black Arrow
+								i(44256),	-- Sterile Flesh-Handling Gloves
+								i(44258),	-- Wound-Binder Wristguards
+							}, {	-- Exalted
+								i(44302),	-- Belt of Dark Mending
+								i(44303),	-- Darkheart Chestguard
+								i(44306),	-- Death-Insured Sabatons
+								-- #if AFTER CATA
+								i(41725),	-- Design: Timeless Twilight Opal [CATA+] / Design: Glowing Twilight Opal [WRATH] (RECIPE!)
+								-- #else
+								i(41725),	-- Design: Glowing Twilight Opal [WRATH] / Design: Timeless Twilight Opal [CATA+] (RECIPE!)
+								-- #endif
+								i(44305),	-- Kilt of Dark Mercy
+							},
+						}),
 					}),
 					n(30067, {	-- Initiate Claget <Blades>
 						["coord"] = { 20.4, 47.8, ICECROWN },
@@ -2311,33 +2342,37 @@ root(ROOTS.Zones, {
 					}),
 					n(30431, {	-- Veteran Crusader Aliocha Segard <Argent Crusade Quartermaster>
 						["coord"] = { 87.6, 75.6, ICECROWN },
-						["groups"] = {
-							i(44139, {	-- Arcanum of the Fleeing Shadow
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44150, {	-- Arcanum of the Stalwart Protector
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44244),	-- Argent Skeleton Crusher
-							i(44248),	-- Battle Mender's Helm
-							i(44297),	-- Boots of the Neverending Path
-							i(44216),	-- Cloak of Holy Extermination
-							i(41726),	-- Design: Guardian's Twilight Opal
-							i(44247),	-- Fang-Deflecting Faceguard
-							i(44296),	-- Helm of Purified Thoughts
-							i(42187),	-- Pattern: Brilliant Spellthread
-							i(44295),	-- Polished Regimental Hauberk
-							i(44214),	-- Purifying Torch
-							i(44283),	-- Signet of Hopeful Light
-							i(44240),	-- Special Issue Legplates
-							i(44239),	-- Standard Issue Legplates
-							i(43154, {	-- Tabard of the Argent Crusade
-								["factionID"] = 1106,	-- Argent Crusade
-							}),
-							i(44245),	-- Zombie Sweeper Shotgun
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_ARGENT_CRUSADE, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(43154),	-- Tabard of the Argent Crusade
+							}, {	-- Honored
+								i(44139, {	-- Arcanum of the Fleeing Shadow
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44216),	-- Cloak of Holy Extermination
+								i(44240),	-- Special Issue Legplates
+								i(44239),	-- Standard Issue Legplates
+							}, {	-- Revered
+								i(44150, {	-- Arcanum of the Stalwart Protector
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44244),	-- Argent Skeleton Crusher
+								i(44248),	-- Battle Mender's Helm
+								i(41726),	-- Design: Guardian's Twilight Opal (RECIPE!)
+								i(44247),	-- Fang-Deflecting Faceguard
+								i(44214),	-- Purifying Torch
+								i(44245),	-- Zombie Sweeper Shotgun
+							}, {	-- Exalted
+								i(44297),	-- Boots of the Neverending Path
+								i(44296),	-- Helm of Purified Thoughts
+								i(42187),	-- Pattern: Brilliant Spellthread (RECIPE!)
+								i(44295),	-- Polished Regimental Hauberk
+								i(44283),	-- Signet of Hopeful Light
+							},
+						}),
 					}),
 				}),
 				n(ZONE_DROPS, {

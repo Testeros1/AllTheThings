@@ -3,10 +3,10 @@
 -------------------------------------------
 root(ROOTS.Character, n(CLASS_TRIAL, {
 	expansion(EXPANSION.SL, bubbleDown({["u"] = REMOVED_FROM_GAME}, {
-		n(LEVEL_FIFTY_BOOST, {
+		header(HEADERS.Achievement, 14782, {
 			-- Note: [As of October 13th, 2020 Level 120 Boost became Level 50 Boost]
 			-- Note: [As of November 11th, 2021 SL Character boost increased from 50 to 60. Some of the old 50 items went to the new class trial level 50]
-			["description"] = "These are gained by using a Lvel 50 Boost of that particular class.  Each class has one default spec.  Shamans and Druids have two specs available and both are needed to 100% each category.",
+			["description"] = "These are gained by using a Level 50 Boost of that particular class.  Each class has one default spec.  Shamans and Druids have two specs available and both are needed to 100% each category.",
 			["lvl"] = 50,
 			["groups"] = {
 				cl(DEATHKNIGHT, {
@@ -51,8 +51,8 @@ root(ROOTS.Character, n(CLASS_TRIAL, {
 				}),
 				cl(DRUID, {
 					i(171988, {	-- Adventurer's Footlocker
-						i(170617), -- Springrain Spear
-						i(170611), -- Springrain Stave
+						i(170617),	-- Springrain Spear
+						i(170611),	-- Springrain Stave
 					}),
 					cl(DRUID, BALANCE, {
 						i(170611),	-- Springrain Stave
@@ -376,7 +376,7 @@ root(ROOTS.Character, n(CLASS_TRIAL, {
 				}),
 				cl(WARRIOR, {
 					i(171988, {	-- Adventurer's Footlocker
-						i(170745),  -- Oathsworn Axe
+						i(170745),	-- Oathsworn Axe
 						i(170743),	-- Oathsworn Greataxe
 						i(170744),	-- Oathsworn Headchopper
 						i(170746),	-- Oathsworn Bulwark

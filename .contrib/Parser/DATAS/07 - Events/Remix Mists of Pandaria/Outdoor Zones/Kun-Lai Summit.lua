@@ -3,7 +3,7 @@
 -----------------------------------------------------
 root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
 	m(KUN_LAI_SUMMIT, {
-		["icon"] = "Interface\\Icons\\achievement_zone_kunlaisummit",
+		["icon"] = 617832,
 		["g"] = {
 			n(ACHIEVEMENTS, {
 				ach(19887, {	-- Campaign: Kun-Lai Summit [A]
@@ -80,7 +80,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 						{ 66.4, 46.4, KUN_LAI_SUMMIT },
 						{ 68.6, 44.4, KUN_LAI_SUMMIT },
 					},
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 			}),

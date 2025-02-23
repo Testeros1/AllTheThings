@@ -36,6 +36,8 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 					["sourceQuest"] = 28845,	-- The Vortex Pinnacle
 					["groups"] = {
 						i(66901),	-- Greaves of Orsis
+						i(66903),	-- Caliph's Band
+						i(66902),	-- Token of Gratitude
 					},
 				}),
 				q(28800, {	-- Whispers of the Djinn
@@ -94,6 +96,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 				e(115, {	-- Altairus
 					["crs"] = { 43873 },	-- Altairus
 					["groups"] = {
+						i(63040),	-- Drake of the North Wind (MOUNT!)
 						i(55840),	-- Amulet of Tender Breath
 						i(55841),	-- Axe of the Eclipse
 						i(55835),	-- Hail-Strung Belt
@@ -117,6 +120,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(55851),	-- Ring of Frozen Rain
 						i(55850),	-- Shadow of Perfect Bliss
 						i(55853),	-- Thundercall
+							-- #if BEFORE MOP
+							i(55852, {	-- Captured Lightning
+								["timeline"] = { REMOVED_5_0_4 },
+							}),
+							-- #endif
 					},
 				}),
 			})),
@@ -163,6 +171,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 							i(56373),	-- Ring of Frozen Rain
 							i(56371),	-- Shadow of Perfect Bliss
 							i(56376),	-- Thundercall
+							-- #if BEFORE MOP
+							i(56372, {	-- Captured Lightning
+								["timeline"] = { REMOVED_5_0_4 },
+							}),
+							-- #endif
 						},
 					}),
 				},
@@ -240,6 +253,19 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 				}),
 			}),
 			-- #endif
+			-- #if ANYCLASSIC
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(PROTOCOL_INFERNO, {
+				["OnInit"] = FUNCTION_TEMPLATES.OnInit.GenerateShouldExcludeFromTooltipForBuffs(470595),
+				["groups"] = {
+					e(116, {	-- Asaad, Caliph of Zephyrs
+						["crs"] = { 43875 },	-- Asaad, Caliph of Zephyrs
+						["groups"] = {
+							ach(41142),	-- Protocol Inferno: The Vortex Pinnacle
+						},
+					}),
+				},
+			})),
+			-- #endif
 			n(MYTHIC_PLUS, sharedDataSelf({ ["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 } }, {
 				i(206183),	-- Amulet of Tender Breath
 				i(206180),	-- Choker of Stolen Thunder
@@ -252,9 +278,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(68, {
 		q(35401),	-- The Vortex Pinnacle Reward Quest
 		q(35403),	-- The Vortex Pinnacle Reward Quest
 	}),
-});
+})));

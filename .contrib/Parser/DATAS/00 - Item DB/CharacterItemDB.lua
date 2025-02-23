@@ -76,14 +76,23 @@ is(44811, 61780, MAGE);				-- Tome of Polymorph: Turkey
 -----------------
 is(82470, 120146, MAGE);			-- Ancient Tome of Portal: Dalaran
 is(82469, 120145, MAGE);			-- Ancient Tome of Teleport: Dalaran
-iq(86125, 31304);					-- Kafa Press
-iq(86529, 31432);					-- Manipulator's Talisman
+-- iq(86125, 31304);					-- Kafa Press
+-- iq(86529, 31432);					-- Manipulator's Talisman
+is(0, 131204);						-- Path of the Jade Serpent
 
 -----------------
 -- PATCH 5.2.0 --
 -----------------
 is(94232, 138430, HUNTER);			-- Ancient Tome of Dinomancy
 is(0, 101508, WARLOCK);				-- The Codex of Xerrath
+
+-----------------
+-- PATCH 6.0.1 --
+-----------------
+is(0, 159899);						-- Path of the Crescent Moon
+is(0, 159900);						-- Path of the Dark Rail
+is(0, 159896);						-- Path of the Iron Prow
+is(0, 159901);						-- Path of the Verdant
 
 -----------------
 -- PATCH 6.0.2 --
@@ -110,6 +119,7 @@ iq(128444, 39561);					-- Blueprint: Oil Rig
 iq(113212, 39463);					-- Treasure Map: Tanaan Jungle
 iq(128251, 39359);					-- Equipment Blueprint: Tuskarr Fishing Net
 iq(128490, 39561);					-- Blueprint: Oil Rig
+iq(128446, 39564);					-- Saberstalker Teachings: Trailblazer
 
 -----------------
 -- PATCH 7.0.3 --
@@ -145,11 +155,6 @@ iq(132525, 40732);					-- Reaves Module: Repair Mode
 iq(132531, 40737);					-- Reaves Module: Piloted Combat Mode
 iq(132530, 40736);					-- Reaves Module: Bling Mode
 iq(132524, 40738);					-- Reaves Module: Wormhole Generator Mode
-iq(140665, 44097);					-- Nearly Satisfactory Eredar Head
-iq(140664, 44096);					-- Deficient Eredar Head
-iq(140663, 44095);					-- Malformed Eredar Head
-iq(140662, 44094);					-- Deformed Eredar Head
-iq(140661, 44093);					-- Damaged Eredar Head
 -- NYI
 is(136971, 211010, SHAMAN);			-- Tome of Hex: Snake
 
@@ -158,7 +163,12 @@ is(136971, 211010, SHAMAN);			-- Tome of Hex: Snake
 -----------------
 is(147580, 242155, HUNTER);			-- Tome of the Hybrid Beast
 -- NYI --
-is(147770, nil, HUNTER);				-- Tome of the PTR Beast
+is(147770, nil, HUNTER);			-- Tome of the PTR Beast
+
+-----------------
+-- PATCH 7.3.0 --
+-----------------
+iq(152964, 49006);					-- Krokul Flute
 
 -----------------
 -- PATCH 8.0.1 --
@@ -168,12 +178,6 @@ is(162625, 277787, MAGE);			-- Tome of Polymorph: Direhorn
 is(159841, 269352, SHAMAN);			-- Tome of Hex: Skeletal Hatchling
 is(162624, 277784, SHAMAN);			-- Tome of Hex: Wicker Mongrel
 is(162623, 277778, SHAMAN);			-- Tome of Hex: Zandalari Tendonripper
-iq(162581, 52859);					-- Yellowed Treasure Map
-iq(162571, 52853);					-- Soggy Treasure Map
-iq(162584, 52860);					-- Singed Treasure Map
-iq(162580, 52854);					-- Fading Treasure Map
-iq(163702, 53200);					-- Rosaline's Letter
-iq(163699, 53111);					-- Annealed Honey Amulet
 
 -----------------
 -- PATCH 8.1.0 --
@@ -184,9 +188,6 @@ iq(166749, 54859);					-- Lyrics: Song of the Sea
 -----------------
 -- PATCH 8.2.0 --
 -----------------
-iq(170147, 56908);					-- Paint Bottle: Goblin Green
-iq(170146, 56907);					-- Paint Bottle: Nukular Red
-iq(170148, 56909);					-- Paint Bottle: Electric Blue
 
 -----------------
 -- PATCH 8.2.5 --
@@ -224,14 +225,12 @@ iq(180705, 61160, HUNTER);			-- Gargon Training Manual
 iq(184219, 62821);					-- Treatise on Sinstone Fragment Acquisition
 iq(184222, 62822);					-- Lemet's Requisition Orders
 iq(184220, 62821);					-- Encyclopedia of Sinstone Fragment Recovery
-iq(182618, 62085);					-- Reclaimed Vessel
 iq(183517, 62372);					-- Page 76 of the Necronom-i-nom
 iq(187923, 65039);					-- Aurelid Lure
 --- NYI ---
 iq(181443, 61459);					-- The Party Herald's Party Hat
 iq(183957, 62657);					-- Invitation: Grandmaster Vole
 iq(183956, 62656);					-- Invitation: Choofa
-iq(182975, 62223);					-- Ascension Calling: Mikanikos
 
 -----------------
 -- PATCH 9.0.5 --
@@ -245,7 +244,6 @@ iq(185353, 63643);					-- Rune Codex Page: Binding
 -----------------
 -- PATCH 9.1.0 --
 -----------------
-iq(186727, 62679);					-- Seal Breaker Key
 iq(186453, 64061);					-- Vault Anima Tracker
 iq(186722, 64027);					-- Treatise: The Study of Anima and Harnessing Every Drop
 iq(186721, 64366);					-- Treatise: Relics Abound in the Shadowlands
@@ -258,6 +256,14 @@ iq(186714, 64339);					-- Research Report: All-Seeing Crystal
 iq(186717, 64300);					-- Research Report: Adaptive Alloys
 iq(185965, 63893);					-- Memories of Sunless Skies
 iq(181442, 61458);					-- Visions of Sire Denathrius
+is(0, 354466);						-- Path of the Ascendant
+is(0, 354462);						-- Path of the Courageous
+is(0, 354464);						-- Path of the Misty Forest
+is(0, 354463);						-- Path of the Plagued
+is(0, 354468);						-- Path of the Scheming Loa
+is(0, 354465);						-- Path of the Sinful Soul
+is(0, 354469);						-- Path of the Stone Warden
+is(0, 354467);						-- Path of the Undefeated
 
 -----------------
 -- PATCH 9.1.5 --
@@ -278,6 +284,30 @@ iq(190640, 65694);					-- Font of Ephemeral Power
 iq(190956, 70705);					-- Decanter of Untapped Potential
 iq(190234, 65617);					-- Enlightened Portal Research
 iq(188793, 65282);					-- Improvised Cypher Analysis Tool
+is(0, 367416);						-- Path of the Streetwise Merchant
+
+-----------------
+-- PATCH 9.2.5 --
+-----------------
+is(0, 373262);						-- Path of the Fallen Guardian
+is(0, 373274);						-- Path of the Scrappy Prince
+is(0, 373192);						-- Path of the First Ones
+is(0, 373190);						-- Path of the Sire
+is(0, 373191);						-- Path of the Tormented Soul
+
+------------------
+-- PATCH 10.0.0 --
+------------------
+is(0, 393279);						-- Path of Arcane Secrets
+is(0, 393764);						-- Path of Proven Worth
+is(0, 393256);						-- Path of the Clutch Defender
+is(0, 393273);						-- Path of the Draconic Diploma
+is(0, 393766);						-- Path of the Grand Magistrix
+is(0, 393276);						-- Path of the Obsidian Hoard
+is(0, 393267);						-- Path of the Rotting Woods
+is(0, 393283);						-- Path of the Titanic Reservoir
+is(0, 393222);						-- Path of the Watcher's Legacy
+is(0, 393262);						-- Path of the Windswept Plains
 
 ------------------
 -- PATCH 10.0.2 --
@@ -388,14 +418,16 @@ iq(205438, 75850);					-- Bartered Enchanting Journal
 iq(205439, 75849);					-- Bartered Blacksmithing Journal
 iq(205440, 75848);					-- Bartered Alchemy Journal
 iq(205451, 75866);					-- Flawless Crystal Scale
+is(0, 410074);						-- Path of Festering Rot
+is(0, 410071);						-- Path of the Freebooter
+is(0, 410078);						-- Path of the Earth-Warder
+is(0, 410080);						-- Path of Wind's Domain
 
 ------------------
 -- PATCH 10.1.5 --
 ------------------
 -- #IF AFTER 10.1.5
 iq(206473, 76307);					-- Makeshift Grappling Hook
-iq(13544, 76250);					-- Spectral Essence
-iq(13544, 76250);					-- Spectral Essence
 -- #ENDIF
 --- Imp ---
 iq(207178, 76743, WARLOCK);			-- Grimoire of the Darkfire Imp
@@ -453,6 +485,12 @@ iq(210728, 78521, DRUID);	-- Moon-Blessed Claw
 iq(210727, 78518, DRUID);	-- Pollenfused Bristlebruin Fur Sample
 iq(210753, 78516, DRUID);	-- Scale of the Prismatic Whiskerfish
 iq(211314, 78842, HUNTER);	-- Cinder of Companionship
+is(0, 424153);				-- Path of Ancient Horrors
+is(0, 424167);				-- Path of Heart's Bane
+is(0, 424187);				-- Path of the Golden Tomb
+is(0, 424163);				-- Path of the Nightmare Lord
+is(0, 424142);				-- Path of the Tidehunter
+is(0, 424197);				-- Path of Twisted Time
 
 ------------------
 -- PATCH 10.2.5 --
@@ -483,6 +521,24 @@ iq(216898, 80085);					-- Mallard Duck Disguise
 iq(216900, 80087);					-- Pink Duck Disguise
 iq(216901, 80088);					-- White Duck Disguise
 iq(216902, 80089);					-- Yellow Duck Disguise
+is(0, 432257);						-- Path of the Bitter Legacy
+is(0, 432254);						-- Path of the Primal Prison
+is(0, 432258);						-- Path of the Scorching Dream
+
+------------------
+-- PATCH 11.0.0 --
+------------------
+is(0, 445416);						-- Path of Nerubian Ascension
+is(0, 445414);						-- Path of the Arathi Flagship
+is(0, 445418);						-- Path of the Besieged Harbor [A]
+is(0, 464256);						-- Path of the Besieged Harbor [H]
+is(0, 445269);						-- Path of the Corrupted Foundry
+is(0, 445443);						-- Path of the Fallen Stormriders
+is(0, 445440);						-- Path of the Flaming Brewery
+is(0, 445444);						-- Path of the Light's Reverence
+is(0, 445417);						-- Path of the Ruined City
+is(0, 445424);						-- Path of the Twilight Fortress
+is(0, 445441);						-- Path of the Warding Candles
 
 ------------------
 -- PATCH 11.0.2 --
@@ -491,8 +547,10 @@ iq(224055, 82614);					-- A Rocky Start
 iq(224036, 82634);					-- And That's A Web-Wrap!
 iq(224553, 82998);					-- Beledar's Attunement
 iq(224052, 82632);					-- Clocks, Gears, Sprockets, and Legs
+iq(228944, 84690);					-- Crypt Lord's Severed Thread
 iq(225237, 83254);					-- Echoing Fragment: Azj-Kahet
 iq(225218, 83249);					-- Echoing Fragment: Hallowfall
+iq(225236, 83252);					-- Echoing Fragment: Isle of Dorn
 iq(225219, 83251);					-- Echoing Fragment: The Ringing Deeps
 iq(224053, 82636);					-- Eight Views on Defense against Hostile Runes
 iq(224054, 82637);					-- Emergent Crystals of the Surface-Dwellers
@@ -507,6 +565,7 @@ iq(227427, 81391);					-- Exceptional Miner's Notes
 iq(227419, 80750);					-- Exceptional Scribe's Runic Drawings
 iq(227428, 84233);					-- Exceptional Skinner's Notes
 iq(227421, 80872);					-- Exceptional Tailor's Diagrams
+iq(228945, 84691);					-- Executor's Severed Thread
 iq(227409, 81146);					-- Faded Alchemist's Research
 iq(227407, 84226);					-- Faded Blacksmith's Diagrams
 iq(227411, 81076);					-- Faded Enchanter's Research
@@ -518,6 +577,7 @@ iq(227416, 81390);					-- Faded Miner's Notes
 iq(227408, 80749);					-- Faded Scribe's Runic Drawings
 iq(227417, 84232);					-- Faded Skinner's Notes
 iq(227410, 80871);					-- Faded Tailor's Diagrams
+iq(210826, 76996);					-- Harvestbot Repair Kit
 iq(224023, 82630);					-- Herbal Embalming Techniques
 iq(224645, 83058);					-- Jewel-Etched Alchemy Notes
 iq(224647, 83059);					-- Jewel-Etched Blacksmithing Notes
@@ -537,13 +597,139 @@ iq(227438, 81392);					-- Pristine Miner's Notes
 iq(227430, 80751);					-- Pristine Scribe's Runic Drawings
 iq(227439, 84234);					-- Pristine Skinner's Notes
 iq(227432, 80873);					-- Pristine Tailor's Diagrams
-iq(226520, 84006);					-- Queen's Pheromone
+iq(229195, 84006);					-- Queen's Pheromone (8.8 Thousand)
 iq(224038, 82631);					-- Smithing After Saronite
+iq(228943, 84689);					-- Spymaster's Severed Thread
 iq(224024, 82633);					-- Theories of Bodily Transmutation, Chapter 8
+is(227710, 460392, MAGE);			-- Tome of Polymorph: Mosswool
 iq(224056, 82626);					-- Uses for Leftover Husks (After You Take Them Apart)
 iq(224007, 82596);					-- Uses for Leftover Husks (How to Take Them Apart)
 iq(224656, 83066);					-- Void-Lit Herbalism Notes
 iq(224655, 83065);					-- Void-Lit Jewelcrafting Notes
 iq(224658, 83068);					-- Void-Lit Leatherworking Notes
 iq(224657, 83067);					-- Void-Lit Skinning Notes
+iq(228946, 84693);					-- Weaver's Lair Profession Table
 iq(224050, 82635);					-- Web Sparkles: Pretty and Powerful
+
+-- Curio
+is(modItemId(225903, nil, 11265), 446835);	-- Amorphous Relic [Rank 1]
+is(modItemId(225903, nil, 11266), 459052);	-- Amorphous Relic [Rank 2]
+is(modItemId(225903, nil, 11267), 459056);	-- Amorphous Relic [Rank 3]
+is(modItemId(225903, nil, 11268), 459061);	-- Amorphous Relic [Rank 4]
+is(modItemId(225897, nil, 11235), 456498);	-- Brute Force Idol [Rank 1]
+is(modItemId(225897, nil, 11236), 458464);	-- Brute Force Idol [Rank 2]
+is(modItemId(225897, nil, 11237), 458469);	-- Brute Force Idol [Rank 3]
+is(modItemId(225897, nil, 11238), 458474);	-- Brute Force Idol [Rank 4]
+is(modItemId(225902, nil, 11260), 432842);	-- Idol of Final Will [Rank 1]
+is(modItemId(225902, nil, 11261), 459029);	-- Idol of Final Will [Rank 2]
+is(modItemId(225902, nil, 11262), 459034);	-- Idol of Final Will [Rank 3]
+is(modItemId(225902, nil, 11263), 459039);	-- Idol of Final Will [Rank 4]
+is(modItemId(225898, nil, 11240), 439668);	-- Idol of the Earthmother [Rank 1]
+is(modItemId(225898, nil, 11241), 458919);	-- Idol of the Earthmother [Rank 2]
+is(modItemId(225898, nil, 11242), 458924);	-- Idol of the Earthmother [Rank 3]
+is(modItemId(225898, nil, 11243), 458928);	-- Idol of the Earthmother [Rank 4]
+is(modItemId(225906, nil, 11280), 455512);	-- Lifeless Necrotic Relic [Rank 1]
+is(modItemId(225906, nil, 11281), 459096);	-- Lifeless Necrotic Relic [Rank 2]
+is(modItemId(225906, nil, 11282), 459101);	-- Lifeless Necrotic Relic [Rank 3]
+is(modItemId(225906, nil, 11283), 459106);	-- Lifeless Necrotic Relic [Rank 4]
+is(modItemId(225900, nil, 11250), 439674);	-- Light-Touched Idol [Rank 1]
+is(modItemId(225900, nil, 11251), 458968);	-- Light-Touched Idol [Rank 2]
+is(modItemId(225900, nil, 11252), 458971);	-- Light-Touched Idol [Rank 3]
+is(modItemId(225900, nil, 11253), 458974);	-- Light-Touched Idol [Rank 4]
+is(modItemId(225905, nil, 11275), 439690);	-- Olden Seeker Relic [Rank 1]
+is(modItemId(225905, nil, 11276), 459087);	-- Olden Seeker Relic [Rank 2]
+is(modItemId(225905, nil, 11277), 459089);	-- Olden Seeker Relic [Rank 3]
+is(modItemId(225905, nil, 11278), 459091);	-- Olden Seeker Relic [Rank 4]
+is(modItemId(218129, nil, 11230), 445260);	-- Porcelain Arrowhead Idol [Rank 1]
+is(modItemId(218129, nil, 11231), 458443);	-- Porcelain Arrowhead Idol [Rank 2]
+is(modItemId(218129, nil, 11232), 458447);	-- Porcelain Arrowhead Idol [Rank 3]
+is(modItemId(218129, nil, 11233), 458450);	-- Porcelain Arrowhead Idol [Rank 4]
+is(modItemId(229353, nil, 12008), 464662);	-- Rage-Filled Idol [Rank 1]
+is(modItemId(229353, nil, 12009), 464693);	-- Rage-Filled Idol [Rank 2]
+is(modItemId(229353, nil, 12010), 464694);	-- Rage-Filled Idol [Rank 3]
+is(modItemId(229353, nil, 12011), 464695);	-- Rage-Filled Idol [Rank 4]
+is(modItemId(225907, nil, 11285), 455602);	-- Relic of Sentience [Rank 1]
+is(modItemId(225907, nil, 11286), 459108);	-- Relic of Sentience [Rank 2]
+is(modItemId(225907, nil, 11287), 459112);	-- Relic of Sentience [Rank 3]
+is(modItemId(225907, nil, 11288), 459116);	-- Relic of Sentience [Rank 4]
+is(modItemId(225908, nil, 11290), 455601);	-- Relicblood of Zekvir [Rank 1]
+is(modItemId(225908, nil, 11291), 459138);	-- Relicblood of Zekvir [Rank 2]
+is(modItemId(225908, nil, 11292), 459144);	-- Relicblood of Zekvir [Rank 3]
+is(modItemId(225908, nil, 11293), 459150);	-- Relicblood of Zekvir [Rank 4]
+is(modItemId(225901, nil, 11255), 439688);	-- Streamlined Relic [Rank 1]
+is(modItemId(225901, nil, 11256), 459124);	-- Streamlined Relic [Rank 2]
+is(modItemId(225901, nil, 11257), 459128);	-- Streamlined Relic [Rank 3]
+is(modItemId(225901, nil, 11258), 459132);	-- Streamlined Relic [Rank 4]
+is(modItemId(225904, nil, 11270), 455597);	-- Time Lost Relic [Rank 1]
+is(modItemId(225904, nil, 11271), 459068);	-- Time Lost Relic [Rank 2]
+is(modItemId(225904, nil, 11272), 459072);	-- Time Lost Relic [Rank 3]
+is(modItemId(225904, nil, 11273), 459076);	-- Time Lost Relic [Rank 4]
+is(modItemId(225899, nil, 11245), 439669);	-- Unbreakable Iron Idol [Rank 1]
+is(modItemId(225899, nil, 11246), 458943);	-- Unbreakable Iron Idol [Rank 2]
+is(modItemId(225899, nil, 11247), 458949);	-- Unbreakable Iron Idol [Rank 3]
+is(modItemId(225899, nil, 11248), 458955);	-- Unbreakable Iron Idol [Rank 4]
+
+------------------
+-- PATCH 11.0.5 --
+------------------
+iq(230264, 85224);	-- Bronze Celebration Titles: Broken Isles Enthusiast
+iq(230261, 85221);	-- Bronze Celebration Titles: Cataclysm Enthusiast
+iq(230258, 85218);	-- Bronze Celebration Titles: Classic Enthusiast
+iq(230263, 85223);	-- Bronze Celebration Titles: Draenor Enthusiast
+iq(230268, 85228);	-- Bronze Celebration Titles: Dragon Isles Enthusiast
+iq(229826, 85015);	-- Bronze Celebration Titles: Grizzly Hills Hiker
+iq(231833, 85517);	-- Bronze Celebration Titles: Karazhan Graduate
+iq(230266, 85226);	-- Bronze Celebration Titles: Kul Tiras Enthusiast
+iq(231832, 85516);	-- Bronze Celebration Titles: Molten Core Prospector
+iq(230260, 85220);	-- Bronze Celebration Titles: Northrend Enthusiast
+iq(230259, 85219);	-- Bronze Celebration Titles: Outland Enthusiast
+iq(230262, 85222);	-- Bronze Celebration Titles: Pandaria Enthusiast
+iq(229827, 85014);	-- Bronze Celebration Titles: Plaguelands Survivor
+iq(230267, 85227);	-- Bronze Celebration Titles: Shadowlands Enthusiast
+iq(230265, 85225);	-- Bronze Celebration Titles: Zuldazar Enthusiast
+
+------------------
+-- PATCH 11.0.7 --
+------------------
+iq(233500, 86379);	-- Crimson Snapdragon Treat
+iq(233495, 86375);	-- Inky Snapdragon Treat
+iq(233497, 86376);	-- Kaja'Cola-braised Snapdragon Treat
+iq(233494, 86374);	-- Muddy Snapdragon Treat
+iq(233499, 86378);	-- Royal Snapdragon Treat
+iq(233501, 86380);	-- Sandy Snapdragon Treat
+iq(233498, 86377);	-- Storminfused Snapdragon Treat
+iq(219291, 81619);	-- Puntable Baby Greench
+iq(219286, 81617);	-- Puntable Globe Yeti
+iq(234127, 86423);	-- Puntable Grumpling
+iq(219255, 81616);	-- Puntable Rotten Little Helper
+iq(219289, 81618);	-- Puntable Tiny Snowman
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+--iq(234745, XXX);	-- Bilgewater's Trove (Honored)
+--iq(235258, XXX);	-- Bilgewater's Trove (Revered)
+--iq(235259, XXX);	-- Bilgewater's Trove (Exalted)
+iq(234744, 86750);	-- Blackwater's Trove (Honored)
+--iq(235260, 86751?);	-- Blackwater's Trove (Revered)
+--iq(235261, 86752?);	-- Blackwater's Trove (Exalted)
+is(0, 467553);	-- Path of the Azerite Refinery [A?H?]
+is(0, 467555);	-- Path of the Azerite Refinery [A?H?]
+is(0, 1216786);	-- Path of the Circuit Breaker
+--iq(235262, XXX);	-- Steamwheedle's Trove (Honored)
+--iq(234743, XXX);	-- Steamwheedle's Trove (Revered)
+--iq(235263, XXX);	-- Steamwheedle's Trove (Exalted)
+iq(232499, 85734);	-- Undermine Treatise on Alchemy
+iq(232500, 85735);	-- Undermine Treatise on Blacksmithing
+iq(232501, 85736);	-- Undermine Treatise on Enchanting
+iq(232507, 85737);	-- Undermine Treatise on Engineering
+iq(232503, 85738);	-- Undermine Treatise on Herbalism
+iq(232508, 85739);	-- Undermine Treatise on Inscription
+iq(232504, 85740);	-- Undermine Treatise on Jewelcrafting
+iq(232505, 85741);	-- Undermine Treatise on Leatherworking
+iq(232509, 85742);	-- Undermine Treatise on Mining
+iq(232506, 85744);	-- Undermine Treatise on Skinning
+iq(232502, 85745);	-- Undermine Treatise on Tailoring
+iq(234746, 86755);	-- Venture Co.'s Trove (Honored)
+iq(235264, 86756);	-- Venture Co.'s Trove (Revered)
+--iq(235265, 86757?);	-- Venture Co.'s Trove (Exalted)

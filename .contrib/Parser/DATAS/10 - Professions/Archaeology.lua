@@ -76,6 +76,9 @@ ARCHAEOLOGY_ZANDALARI = createHeader({
 	},
 });
 local RESTORED_ARTIFACT = 87399;
+local function CurrencySym(currencyID)
+	return {{"select","currencyID",currencyID}}
+end
 root(ROOTS.Professions, prof(ARCHAEOLOGY, bubbleDownSelf({
 	["requireSkill"] = ARCHAEOLOGY,
 	["timeline"] = { ADDED_4_0_3_LAUNCH },
@@ -259,31 +262,31 @@ root(ROOTS.Professions, prof(ARCHAEOLOGY, bubbleDownSelf({
 				["cost"] = {{"i", RESTORED_ARTIFACT, 1}},
 			}, {
 				i(87534, {	-- Crate of Draenei Archaeology Fragments
-					currency(ARCH_CURRENCY_DRAENEI),
+					["sym"] = CurrencySym(ARCH_CURRENCY_DRAENEI)
 				}),
 				i(87533, {	-- Crate of Dwarven Archaeology Fragments
-					currency(ARCH_CURRENCY_DWARF),
+					["sym"] = CurrencySym(ARCH_CURRENCY_DWARF),
 				}),
 				i(87535, {	-- Crate of Fossil Archaeology Fragments
-					currency(ARCH_CURRENCY_FOSSIL),
+					["sym"] = CurrencySym(ARCH_CURRENCY_FOSSIL),
 				}),
 				i(87536, {	-- Crate of Night Elf Archaeology Fragments
-					currency(ARCH_CURRENCY_NIGHTELF),
+					["sym"] = CurrencySym(ARCH_CURRENCY_NIGHTELF),
 				}),
 				i(87537, {	-- Crate of Nerubian Archaeology Fragments
-					currency(ARCH_CURRENCY_NERUBIAN),
+					["sym"] = CurrencySym(ARCH_CURRENCY_NERUBIAN),
 				}),
 				i(87538, {	-- Crate of Orc Archaeology Fragments
-					currency(ARCH_CURRENCY_ORC),
+					["sym"] = CurrencySym(ARCH_CURRENCY_ORC),
 				}),
 				i(87539, {	-- Crate of Tol'vir Archaeology Fragments
-					currency(ARCH_CURRENCY_TOLVIR),
+					["sym"] = CurrencySym(ARCH_CURRENCY_TOLVIR),
 				}),
 				i(87540, {	-- Crate of Troll Archaeology Fragments
-					currency(ARCH_CURRENCY_TROLL),
+					["sym"] = CurrencySym(ARCH_CURRENCY_TROLL),
 				}),
 				i(87541, {	-- Crate of Vrykul Archaeology Fragments
-					currency(ARCH_CURRENCY_VRYKUL),
+					["sym"] = CurrencySym(ARCH_CURRENCY_VRYKUL),
 				}),
 			}),
 		})),
@@ -764,13 +767,13 @@ root(ROOTS.Professions, prof(ARCHAEOLOGY, bubbleDownSelf({
 				["cost"] = {{"i", RESTORED_ARTIFACT, 1}},
 			}, {
 				i(117388, {	-- Crate of Mantid Archaeology Fragments
-					currency(ARCH_CURRENCY_MANTID),
+					["sym"] = CurrencySym(ARCH_CURRENCY_MANTID),
 				}),
 				i(117387, {	-- Crate of Mogu Archaeology Fragments
-					currency(ARCH_CURRENCY_MOGU),
+					["sym"] = CurrencySym(ARCH_CURRENCY_MOGU),
 				}),
 				i(117386, {	-- Crate of Pandaren Archaeology Fragments
-					currency(ARCH_CURRENCY_PANDAREN),
+					["sym"] = CurrencySym(ARCH_CURRENCY_PANDAREN),
 				}),
 			}),
 		})),
@@ -1289,13 +1292,13 @@ root(ROOTS.Professions, prof(ARCHAEOLOGY, bubbleDownSelf({
 				["cost"] = {{"i", RESTORED_ARTIFACT, 1}},
 			}, {
 				i(142113, {	-- Crate of Arakkoa Archaeology Fragments
-					currency(ARCH_CURRENCY_ARAKKOA),
+					["sym"] = CurrencySym(ARCH_CURRENCY_ARAKKOA),
 				}),
 				i(142114, {	-- Crate of Draenor Clans Archaeology Fragments
-					currency(ARCH_CURRENCY_DRAENORCLANS),
+					["sym"] = CurrencySym(ARCH_CURRENCY_DRAENORCLANS),
 				}),
 				i(142115, {	-- Crate of Ogre Archaeology Fragments
-					currency(ARCH_CURRENCY_OGRE),
+					["sym"] = CurrencySym(ARCH_CURRENCY_OGRE),
 				}),
 			}),
 		})),
@@ -1779,13 +1782,13 @@ root(ROOTS.Professions, prof(ARCHAEOLOGY, bubbleDownSelf({
 				["cost"] = {{"i", RESTORED_ARTIFACT, 1}},
 			}, {
 				i(164625, {	-- Crate of Demon Archaeology Fragments
-					currency(ARCH_CURRENCY_DEMONIC),
+					["sym"] = CurrencySym(ARCH_CURRENCY_DEMONIC),
 				}),
 				i(164626, {	-- Crate of Highborne Archaeology Fragments
-					currency(ARCH_CURRENCY_HIGHBORNE),
+					["sym"] = CurrencySym(ARCH_CURRENCY_HIGHBORNE),
 				}),
 				i(164627, {	-- Crate of Highmountain Tauren Archaeology Fragments
-					currency(ARCH_CURRENCY_HIGHMOUNTAIN),
+					["sym"] = CurrencySym(ARCH_CURRENCY_HIGHMOUNTAIN),
 				}),
 			}),
 		})),
@@ -1893,14 +1896,18 @@ root(ROOTS.Professions, prof(ARCHAEOLOGY, bubbleDownSelf({
 })));
 
 root(ROOTS.HiddenQuestTriggers, {
-	n(PROFESSIONS, {
-		prof(ARCHAEOLOGY, {
-			expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
+	expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
+		n(PROFESSIONS, {
+			prof(ARCHAEOLOGY, {
 				q(33823),	-- Tracking Quest - Archaeology - Frostfire - Dig Map #1
 				q(33824),	-- Tracking Quest - Archaeology - Frostfire - Dig Map #2
 				q(33825),	-- Tracking Quest - Archaeology - Frostfire - Dig Map #3
-			})),
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
+			}),
+		}),
+	})),
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
+		n(PROFESSIONS, {
+			prof(ARCHAEOLOGY, {
 				q(41867),	-- FLAG - Brann Week 1
 				q(41868),	-- FLAG - Brann Week 2
 				q(41869),	-- FLAG - Brann Week 3
@@ -1908,7 +1915,7 @@ root(ROOTS.HiddenQuestTriggers, {
 				q(41871),	-- FLAG - Brann Week 5
 				q(41805),	-- Key of Kalyndras
 				q(45775),	-- Completion of 'Sifting Through the Rubble' [41176] for A Keen Eye [10603] - Crown Jewels of Suramar
-			})),
+			}),
 		}),
-	}),
+	})),
 });

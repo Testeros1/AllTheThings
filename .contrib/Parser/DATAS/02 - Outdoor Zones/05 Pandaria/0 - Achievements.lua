@@ -94,14 +94,18 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 			}),
 			o(214439, {		-- Barrel of Banana Infused Rum
 				["questID"] = 31411,	-- Barrel of Banana Infused Rum Quest Tracker
-				["coord"] = { 54.0, 88.0, KRASARANG_WILDS },
+				["coords"] = {
+					-- coords vary due to zone phasing
+					{ 52.3, 88.7, KRASARANG_WILDS },
+					{ 54.0, 88.0, KRASARANG_WILDS },
+				},
 				["g"] = {
 					i(87266),	-- Recipe: Banana-Infused Rum (RECIPE!)
 				},
 			}),
 			o(213651, {	-- Equipment Locker
 				["coord"] = { 43.7, 92.3, KRASARANG_WILDS },
-				["icon"] = "Interface\\Icons\\INV_Plate_BlackrockClan_B_01Chest",
+				["icon"] = 985959,
 				["questID"] = 31410,
 				["description"] = "On the bottom level of the ship. You will have to go down two sets of stairs.\nThis chest may follow the personal loot rule and be based on your current spec, NOT your Loot Spec.",
 				["g"] = {
@@ -497,6 +501,9 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 			o(213771, {	-- Statue of Xuen
 				["questID"] = 31416,	-- Statue of Xuen
 				["coord"] = { 72.0, 33.9, KUN_LAI_SUMMIT },
+				["g"] = {
+					i(86422),	-- Statue of Xuen
+				},
 			}),
 			o(213770, {	-- Stolen Sprite Treasure
 				["description"] = "Entrance is at |cFFFFD70059.5 52.9|r.",
@@ -535,7 +542,7 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 			o(213362, {	-- Ship's Locker
 				["questID"] = 31396, -- Ship's Locker
 				["description"] = "Located underwater in a boat.",
-				["coord"] = { 51.28, 100.54, THE_JADE_FOREST }, -- Can't use Uncharted Sea MapID, plots the point incorrectly.
+				["coord"] = { 51.28, 100.54, THE_JADE_FOREST },	-- Can't use Uncharted Sea MapID, plots the point incorrectly.
 			}),
 			o(214325, {	-- Forgotten Lockbox
 				["questID"] = 31867, -- Forgotten Lockbox
@@ -596,7 +603,7 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 				},
 			}),
 		}),
-		petbattle(ach(6606,  {	-- Taming Pandaria
+		petbattle(ach(6606, {	-- Taming Pandaria
 			crit(21853),	-- Hyuna of the Shrines [The Jade Forest)
 			crit(21854),	-- Farmer Nishi [Valley of the Four Winds)
 			crit(21871),	-- Mo'ruk [Krasarang Wilds)
@@ -610,19 +617,19 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 		ach(6855),	-- The Seven Burdens of Shaohao (automated)
 		ach(6847),	-- The Song of the Yaungol (automated)
 		ach(6350, {	-- To All the Squirrels I Once Caressed?
-			crit(20817,  {	-- Amethyst Spiderling
+			crit(20817, {	-- Amethyst Spiderling
 				["provider"] = { "n", 64798 },	-- Amethyst Spiderling
 				["maps"] = { KRASARANG_WILDS },
 			}),
-			crit(20812,  {	-- Bandicoon
+			crit(20812, {	-- Bandicoon
 				["provider"] = { "n", 64782 },	-- Bandicoon
 				["maps"] = { VALLEY_OF_THE_FOUR_WINDS },
 			}),
-			crit(20821,  {	-- Clouded Hedgehog
+			crit(20821, {	-- Clouded Hedgehog
 				["provider"] = { "n", 64803 },	-- Clouded Hedgehog
 				["maps"] = { DREAD_WASTES },
 			}),
-			crit(20811,  {	-- Coral Adder
+			crit(20811, {	-- Coral Adder
 				["provider"] = { "n", 59356 },	-- Coral Adder
 				["maps"] = { THE_JADE_FOREST },
 			}),
@@ -630,7 +637,7 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 				["provider"] = { "n", 65209 },	-- Dancing Water Skimmer
 				["maps"] = { VALE_OF_ETERNAL_BLOSSOMS },
 			}),
-			crit(20822,  {	-- Emperor Crab
+			crit(20822, {	-- Emperor Crab
 				["provider"] = { "n", 63329 },	-- Emperor Crab
 				["maps"] = { DREAD_WASTES },
 			}),
@@ -642,7 +649,7 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 				["provider"] = { "n", 65206 },	-- Golden Civet
 				["maps"] = { VALE_OF_ETERNAL_BLOSSOMS },
 			}),
-			crit(20824,  {	-- Leopard Tree Frog
+			crit(20824, {	-- Leopard Tree Frog
 				["provider"] = { "n", 64774 },	-- Leopard Tree Frog
 				["maps"] = { THE_JADE_FOREST },
 			}),
@@ -694,7 +701,7 @@ root(ROOTS.Zones, m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["ti
 				["sourceQuests"] = { 30968 },	-- The Sha of Hatred
 			}),
 			crit(19136, {	-- Sha of Anger
-				["_encounter"] = { 691 },
+				["_encounter"] = { 691, WORLD_BOSSES },
 			}),
 			crit(19913, {	-- Sha of Fear
 				["_encounter"] = { 709, DIFFICULTY.LEGACY_RAID.MULTI.NORMAL_HEROIC },

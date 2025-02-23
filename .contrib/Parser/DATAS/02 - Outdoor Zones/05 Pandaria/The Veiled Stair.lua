@@ -5,7 +5,7 @@
 root(ROOTS.Zones, {
 	m(PANDARIA, {
 		m(THE_VEILED_STAIR, {
-			["icon"] = "Interface\\Icons\\inv_legendary_theblackprince",
+			["icon"] = 656543,
 			["groups"] = {
 				battlepets({
 					["sym"] = {{"select","speciesID",
@@ -15,6 +15,8 @@ root(ROOTS.Zones, {
 					}},
 				}),
 				explorationHeader({
+					visit_exploration(6377,{coord={55.7,55.4,THE_VEILED_STAIR}}),	-- Hatescale Burrow
+					visit_exploration(6382,{coord={69.4,78.6,THE_VEILED_STAIR}}),	-- Mason's Folly
 					exploration(6380),	-- Path of a Hundred Steps
 					exploration(6375),	-- Tavern in the Mists
 					exploration(6373),	-- The Secret Aerie
@@ -33,6 +35,9 @@ root(ROOTS.Zones, {
 					q(31286, {	-- Robbing Robbers of Robbers
 						["provider"] = { "n", 63484 },	-- Len the Whisperer
 						["coord"] = { 53.51, 65.75, THE_VEILED_STAIR },
+						["g"] = {
+							i(85981),	-- Black Market Merchandise (QI!)
+						},
 					}),
 					q(31611, {	-- The Kun-Lai Kicker
 						["description"] = "If you don't see questgiver in The Veiled Stair, look in the Binan Village to the north.",

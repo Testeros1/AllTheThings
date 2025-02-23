@@ -92,7 +92,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 							{ "i", ASPECTS_TOKEN_OF_MERIT_S2, 2 },
 							-- #endif
 						},
-						["timeline"] = { ADDED_10_1_0, REMOVED_SEASON_MYTHIC },
+						["timeline"] = { ADDED_10_1_0, REMOVED_TWW_LAUNCH },
 					}),
 					i(204195, {	-- Drake's Shadowflame Crest
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S2, 1 }},
@@ -100,7 +100,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 					i(218114, {	-- Eye of Awakening
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S4, 3 }},
-						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC }
+						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 					}),
 					i(210756, {	-- Gleaming Satchel of Drake's Dreaming Crests
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S3, 1 }},
@@ -108,7 +108,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 					i(211950, {	-- Lively Clutch of Wyrm's Awakened Crests
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S4, 2 }},
-						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC }
+						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 					}),
 					i(210436, {	-- Nature's Cradle
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S3, 6 }},
@@ -122,7 +122,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					})),
 					i(212384, {	-- Restless Satchel of Drake's Awakened Crests
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S4, 1 }},
-						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC }
+						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 					}),
 					i(206037, {	-- Ruby Flightstone
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S2, 1 }},
@@ -134,7 +134,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 					i(217382, {	-- Ruby Flightstone
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S4, 1 }},
-						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC }
+						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 					}),
 					i(210762, {	-- Shimmering Clutch of Wyrm's Dreaming Crests
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S3, 2 }},
@@ -142,7 +142,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 					i(211515, {	-- Splintered Spark of Awakening
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S4, 6 }},
-						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC }
+						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 					}),
 					i(208396, {	-- Splintered Spark of Dreams
 						["cost"] = {{ "i", ASPECTS_TOKEN_OF_MERIT_S3, 6 }},
@@ -191,7 +191,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 				},
 			}),
-			n(216231, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Iszinormi <Dream Distribtuion>
+			n(216231, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Iszinormi <Dream Distribtuion>
 				["coord"] = { 73.7, 47.4, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 2 }},
@@ -237,7 +237,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					i(207789),	-- Volcoross's Barbed Fang
 				}),
 			})),
-			n(216226, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Iszinormi <Scale Associate>
+			n(216226, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Iszinormi <Scale Associate>
 				["coord"] = { 73.7, 47.1, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 2 }},
@@ -283,7 +283,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					i(202555),	-- Zskarn's Autopsy Scalpel
 				}),
 			})),
-			n(216224, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Iszy <Vault Vendor>
+			n(216224, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Iszy <Vault Vendor>
 				["coord"] = { 73.8, 46.7, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 2 }},
@@ -331,6 +331,15 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					i(201327),	-- Emerald Dreamtime
 				},
 			}),
+			n(187647, {	-- Libergo <Head Librarian>
+				["coord"] = { 33.8, 27.7, VALDRAKKEN },
+				["g"] = {
+					i(232521, {	-- Glyph of Arcane Familiar
+						["cost"] = 5000000,	-- 500g
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+				},
+			}),
 			n(197711, {	-- Lindormi
 				["coord"] = { 53.2, 56.0, VALDRAKKEN },
 				["g"] = {
@@ -338,7 +347,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						["timeline"] = { ADDED_10_2_5, REMOVED_10_2_6_SEASON_FOUR },
 					}),
 					i(217241, {	-- Awakened Equipment Chest
-						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC },
+						["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 					}),
 				},
 			}),
@@ -353,11 +362,11 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			-------------
 			---- LFR ----
 			-------------
-			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mirioszin <Infinite Importer>
+			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mirioszin <Infinite Importer>
 				["coord"] = { 73.8, 45.6, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 1 }},
-					["description"] = "Shared Transmog with |cFFAEF359Looking for Raid|r.",
+					["sharedDescription"] = "Shared Transmog with |cFFAEF359Looking for Raid|r.",
 				}, {
 					i(217601),	-- Crucible Raider's Bronzed Beacon
 					i(217555),	-- Crucible Raider's Bronzed Cannon
@@ -422,11 +431,11 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			-------------
 			---- NORMAL ----
 			-------------
-			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mirioszin <Infinite Importer>
+			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mirioszin <Infinite Importer>
 				["coord"] = { 73.8, 45.6, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 1 }},
-					["description"] = "Shared Transmog with |cFFFFFFFFNormal|r.",
+					["sharedDescription"] = "Shared Transmog with |cFFFFFFFFNormal|r.",
 				}, {
 					i(217602),	-- Crucible Raider's Shadowed Beacon
 					i(217556),	-- Crucible Raider's Shadowed Cannon
@@ -490,11 +499,11 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			-------------
 			---- HEROIC ----
 			-------------
-			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mirioszin <Infinite Importer>
+			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mirioszin <Infinite Importer>
 				["coord"] = { 73.8, 45.6, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 1 }},
-					["description"] = "Shared Transmog with |cFFA330C9Heroic|r.",
+					["sharedDescription"] = "Shared Transmog with |cFFA330C9Heroic|r.",
 				}, {
 					i(217603),	-- Crucible Raider's Molten Beacon
 					i(217557),	-- Crucible Raider's Molten Cannon
@@ -558,11 +567,11 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			-------------
 			---- MYTHIC ----
 			-------------
-			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mirioszin <Infinite Importer>
+			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mirioszin <Infinite Importer>
 				["coord"] = { 73.8, 45.6, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 1 }},
-					["description"] = "Shared Transmog with |cFFED7014Mythic|r.",
+					["sharedDescription"] = "Shared Transmog with |cFFED7014Mythic|r.",
 				}, {
 					i(217604),	-- Crucible Raider's Corrupted Beacon
 					i(217558),	-- Crucible Raider's Corrupted Cannon
@@ -623,7 +632,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					i(217427),	-- Vault Raider's Storming Thumper
 				}),
 			})),
-			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mirioszin <Infinite Importer>
+			n(216236, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mirioszin <Infinite Importer>
 				["coord"] = { 73.8, 45.6, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{ "i", ANTIQUE_BRONZE, 1 }},
@@ -637,15 +646,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			})),
 			n(189644, {	-- Ms. Xiulan <Madam Goya's Assistant>
 				["coord"] = { 19.0, 50.2, VALDRAKKEN },
-				["g"] = bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }, {
-					i(211300, {	-- Arsenal: Whispering Temple Blades
+				["g"] = bubbleDown({ ["timeline"] = { ADDED_10_2_0, REMOVED_11_0_2 } }, {	-- Think it was technically 1 week after 11.0.2 released but who cares
+					iensemble(211300, {	-- Arsenal: Whispering Temple Blades
 						["cost"] = 2000000000, -- 200,000g
-						["groups"] = {
-							i(211299, {	-- Gleaming Whispering Temple Blade
-							}),
-							i(211298, {	-- Whispering Temple Blade
-							}),
-						},
 					}),
 					i(211097, {	-- Gilded Crown Splitter
 						["cost"] = 900000000, -- 90,000g
@@ -702,7 +705,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					i(200099),	-- M.R.E.
 				},
 			}),
-			n(216449, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_MYTHIC } }, {	-- Vaskarn
+			n(216449, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Vaskarn
 				["coord"] = { 45.5, 55.9, VALDRAKKEN },
 				["g"] = {
 					-- Trade Up
@@ -759,8 +762,3 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		}),
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(VALDRAKKEN, {
-		q(78840),	-- After using Arsenal: Whispering Temple Blades (ID 211300)
-	}),
-}));

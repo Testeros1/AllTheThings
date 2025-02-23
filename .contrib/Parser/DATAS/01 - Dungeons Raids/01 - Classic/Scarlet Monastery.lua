@@ -3,7 +3,7 @@
 -----------------------------------------------------
 SCARLET_MONASTERY_GRAVEYARD = createHeader({
 	readable = "Graveyard",
-	icon = "Interface\\Icons\\Inv_misc_bone_humanskull_01",
+	icon = 133730,
 	text = {
 		en = "Graveyard",
 		de = "Friedhof",
@@ -14,7 +14,7 @@ SCARLET_MONASTERY_GRAVEYARD = createHeader({
 });
 SCARLET_MONASTERY_LIBRARY = createHeader({
 	readable = "Library",
-	icon = "Interface\\Icons\\INV_Misc_Book_13",
+	icon = 133745,
 	text = {
 		en = "Library",
 		de = "Bibliothek",
@@ -25,7 +25,7 @@ SCARLET_MONASTERY_LIBRARY = createHeader({
 });
 SCARLET_MONASTERY_ARMORY = createHeader({
 	readable = "Armory",
-	icon = "Interface\\Icons\\inv_helmet_25",
+	icon = 133127,
 	text = {
 		en = "Armory",
 		de = "Waffenkammer",
@@ -36,7 +36,7 @@ SCARLET_MONASTERY_ARMORY = createHeader({
 });
 SCARLET_MONASTERY_CATHEDRAL = createHeader({
 	readable = "Cathedral",
-	icon = "Interface\\Icons\\inv_helmet_12",
+	icon = 133101,
 	text = {
 		en = "Cathedral",
 		de = "Kathedrale",
@@ -289,7 +289,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				n(ZONE_DROPS, {
 					-- #if SEASON_OF_DISCOVERY
 					applyclassicphase(SOD_PHASE_TWO, i(215374, {	-- Ancestral Sword
-						["timeline"] = { "added 1.15.1" },
+						["timeline"] = { ADDED_1_15_1 },
 					})),
 					-- #endif
 					i(7759),	-- Archon Chestpiece
@@ -299,7 +299,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					i(7730),	-- Cobalt Crusher
 					-- #if SEASON_OF_DISCOVERY
 					applyclassicphase(SOD_PHASE_TWO, i(215376, {	-- Crusader's Mace
-						["timeline"] = { "added 1.15.1" },
+						["timeline"] = { ADDED_1_15_1 },
 					})),
 					-- #endif
 					i(7752),	-- Dreamslayer
@@ -318,7 +318,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					i(10333),	-- Scarlet Wristguards
 					-- #if SEASON_OF_DISCOVERY
 					applyclassicphase(SOD_PHASE_TWO, i(215373, {	-- Silver Hand Training Hammer
-						["timeline"] = { "added 1.15.1" },
+						["timeline"] = { ADDED_1_15_1 },
 					})),
 					-- #endif
 					i(5756),	-- Sliverblade
@@ -327,7 +327,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					i(1992),	-- Swampchill Fetish
 					-- #if SEASON_OF_DISCOVERY
 					applyclassicphase(SOD_PHASE_TWO, i(215375, {	-- Tactician's Staff
-						["timeline"] = { "added 1.15.1" },
+						["timeline"] = { ADDED_1_15_1 },
 					})),
 					-- #endif
 					i(8225),	-- Tainted Pierce
@@ -453,7 +453,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 									-- #if SEASON_OF_DISCOVERY
 									applyclassicphase(SOD_PHASE_TWO, i(217294)),	-- Embalmed Shroud
 									i(7691, {	-- Embalmed Shroud
-										["timeline"] = { "removed 1.15.1" },
+										["timeline"] = { REMOVED_1_15_1 },
 									}),
 									-- #else
 									i(7691, {	-- Embalmed Shroud
@@ -475,10 +475,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 									applyclassicphase(SOD_PHASE_TWO, i(217296)),	-- Ghostshard Talisman
 									applyclassicphase(SOD_PHASE_TWO, i(217295)),	-- Necrotic Wand
 									i(7731, {	-- Ghostshard Talisman
-										["timeline"] = { "removed 1.15.1" },
+										["timeline"] = { REMOVED_1_15_1 },
 									}),
 									i(7708, {	-- Necrotic Wand
-										["timeline"] = { "removed 1.15.1" },
+										["timeline"] = { REMOVED_1_15_1 },
 									}),
 									-- #else
 									i(7731, {	-- Ghostshard Talisman
@@ -716,13 +716,13 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 								applyclassicphase(SOD_PHASE_TWO, i(217298)),	-- Mantle of Doan
 								applyclassicphase(SOD_PHASE_TWO, i(217297)),	-- Robe of Doan
 								i(7713, {	-- Illusionary Rod
-									["timeline"] = { "removed 1.15.1" },
+									["timeline"] = { REMOVED_1_15_1 },
 								}),
 								i(7712, {	-- Mantle of Doan
-									["timeline"] = { "removed 1.15.1" },
+									["timeline"] = { REMOVED_1_15_1 },
 								}),
 								i(7711, {	-- Robe of Doan
-									["timeline"] = { "removed 1.15.1" },
+									["timeline"] = { REMOVED_1_15_1 },
 								}),
 								-- #else
 								i(7713, {	-- Illusionary Rod
@@ -1003,7 +1003,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 								-- #if SEASON_OF_DISCOVERY
 								applyclassicphase(SOD_PHASE_TWO, i(217302)),	-- Mograine's Might
 								i(7723, {	-- Mograine's Might
-									["timeline"] = { "removed 1.15.1" },
+									["timeline"] = { REMOVED_1_15_1 },
 								}),
 								-- #else
 								i(7723, {	-- Mograine's Might
@@ -1024,10 +1024,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							applyclassicphase(SOD_PHASE_TWO, i(217301)),	-- Triune Amulet
 							applyclassicphase(SOD_PHASE_TWO, i(217300)),	-- Whitemane's Chapeau
 							i(7722, {	-- Triune Amulet
-								["timeline"] = { "removed 1.15.1" },
+								["timeline"] = { REMOVED_1_15_1 },
 							}),
 							i(7720, {	-- Whitemane's Chapeau
-								["timeline"] = { "removed 1.15.1" },
+								["timeline"] = { REMOVED_1_15_1 },
 							}),
 							-- #else
 							i(7722, {	-- Triune Amulet
@@ -1288,19 +1288,20 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		},
 	}),
 }));
--- #if AFTER MOP
+
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.MOP, {
-		q(31637),	-- Scarlet Monastery Challenge Mode - Bronze Addition (Nth)
-		q(31629),	-- Scarlet Monastery Challenge Mode - Consolation (Nth)
-		q(31651),	-- Scarlet Monastery Challenge Mode - Gold Addition (Nth)
-		q(31644),	-- Scarlet Monastery Challenge Mode - Silver Addition (Nth)
-	}),
-	-- #if AFTER WOD
-	expansion(EXPANSION.WOD, {
-		q(35612),	-- Scarlet Monastery Reward Quest - Normal completion
-		q(35613),	-- Scarlet Monastery Reward Quest - Heroic completion
-	}),
-	-- #endif
+	expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
+		inst(316, {
+			q(31637),	-- Scarlet Monastery Challenge Mode - Bronze Addition (Nth)
+			q(31629),	-- Scarlet Monastery Challenge Mode - Consolation (Nth)
+			q(31651),	-- Scarlet Monastery Challenge Mode - Gold Addition (Nth)
+			q(31644),	-- Scarlet Monastery Challenge Mode - Silver Addition (Nth)
+		}),
+	})),
+	expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+		inst(316, {
+			q(35612),	-- Scarlet Monastery Reward Quest - Normal completion
+			q(35613),	-- Scarlet Monastery Reward Quest - Heroic completion
+		}),
+	})),
 });
--- #endif

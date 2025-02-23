@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 
 namespace ATT.DB.Types
 {
@@ -25,6 +27,8 @@ namespace ATT.DB.Types
         public long Shares_criteria { get; set; }
         public long CovenantID { get; set; }
 
+        private TypeFlags _flags => (TypeFlags)Flags;
+
         public IDictionary<string, object> AsData()
         {
             return new Dictionary<string, object>
@@ -33,6 +37,7 @@ namespace ATT.DB.Types
                 { "icon", IconFileID },
                 { "parentCategoryID", Category },
                 { "criteriaTreeID", Criteria_tree },
+                { "isGuild", _flags.HasFlag(TypeFlags.IsGuild) }
             };
         }
     }

@@ -63,7 +63,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						-- #endif
 					},
 				}),
-				q(2968,  {	-- A Future Task [Horde]
+				q(2968, {	-- A Future Task [Horde]
 					["qg"] = 3978,	-- Sage Truthseeker
 					["sourceQuest"] = 2967,	-- Return to Thunder Bluff
 					["coord"] = { 34.4, 46.9, THUNDER_BLUFF },
@@ -572,7 +572,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, i(223537)),	-- Skullplate Bracers
 				i(9432, {	-- Skullplate Bracers
-					["timeline"] = { "removed 1.15.2" },
+					["timeline"] = { REMOVED_1_15_2 },
 				}),
 				-- #else
 				i(9432),	-- Skullplate Bracers
@@ -600,10 +600,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					-- #elseif AFTER 10.1.7
 					["description"] = "This guy spawns outside of the instance, inside the halls or cave ends surrounding Dig One. All locations can be reached with '/tar Digmaster Shovelphlange' from the cave leading in to the North Common Hall.",
 					["coords"] = {
-						{ 62.0, 51.5, 16 }, -- Spur cave
-						{ 51.8, 68.5, 16 }, -- The Sealed Hall
-						{ 34.0, 84.5, 16 }, -- North Common Hall
-						{ 32.4, 62.4, 16 }, -- South Common Hall
+						{ 62.0, 51.5, 16 },	-- Spur cave
+						{ 51.8, 68.5, 16 },	-- The Sealed Hall
+						{ 34.0, 84.5, 16 },	-- North Common Hall
+						{ 32.4, 62.4, 16 },	-- South Common Hall
 					},
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3, ADDED_10_1_7 },	-- ATT Discord 07.09.2023
@@ -720,16 +720,16 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					applyclassicphase(SOD_PHASE_TWO, i(217304)),	-- Revelosh's Gloves
 					applyclassicphase(SOD_PHASE_TWO, i(217306)),	-- Revelosh's Boots
 					i(9389, {	-- Revelosh's Spaulders
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					i(9388, {	-- Revelosh's Armguards
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					i(9390, {	-- Revelosh's Gloves
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					i(9387, {	-- Revelosh's Boots
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					-- #else
 					i(9389),	-- Revelosh's Spaulders
@@ -749,7 +749,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					-- #if SEASON_OF_DISCOVERY
 					applyclassicphase(SOD_PHASE_TWO, i(217704)),	-- Ironshod Bludgeon
 					i(9408, {	-- Ironshod Bludgeon
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					-- #else
 					i(9408),	-- Ironshod Bludgeon
@@ -764,7 +764,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					-- #if SEASON_OF_DISCOVERY
 					applyclassicphase(SOD_PHASE_TWO, i(217303)),	-- Stoneweaver Leggings
 					i(9407, {	-- Stoneweaver Leggings
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					-- #else
 					i(9407),	-- Stoneweaver Leggings
@@ -831,10 +831,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					applyclassicphase(SOD_PHASE_TWO, i(223536)),	-- Grimlock's Charge
 					applyclassicphase(SOD_PHASE_TWO, i(223535)),	-- Grimlock's Tribal Vestments
 					i(9416, {	-- Grimlock's Charge
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					i(9415, {	-- Grimlock's Tribal Vestments
-						["timeline"] = { "removed 1.15.1" },
+						["timeline"] = { REMOVED_1_15_1 },
 					}),
 					-- #else
 					i(9416),	-- Grimlock's Charge
@@ -887,11 +887,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		},
 	}),
 }));
--- #if AFTER 6.0.1
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(239, {
 		q(35605),	-- Uldaman Reward Quest - Normal completion
 		q(35610),	-- Uldaman Bonus Reward
 	}),
-});
--- #endif
+})));

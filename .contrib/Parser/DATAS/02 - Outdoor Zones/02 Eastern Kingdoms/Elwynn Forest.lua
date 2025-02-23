@@ -4,9 +4,7 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(ELWYNN_FOREST, {
 		["lore"] = "Elwynn Forest is the starting zone for Human characters. It is a lush valley with farmers and loggers, with Stormwind City at its center. The mines are infested by kobolds and the farmlands have been taken over by the Defias.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_elwynnforest",
-		-- #endif
+		["icon"] = 236761,
 		-- #if AFTER CATA
 		["maps"] = {
 			38,	-- Fargodeep Mine Lv1
@@ -17,11 +15,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		["groups"] = {
 			m(NORTHSHIRE_VALLEY, {
 				["lore"] = "Northshire was the pride of Stormwind's vineyards until recently when Defias bandits drove off the farmers and occupied the farm and fields. This is where the human starting area is located, though the serene valley is visited by adventurers from all over the world.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Human_Female",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Human_Female")]],
-				-- #endif
+				["icon"] = 236447,
 				-- #if BEFORE MOP
 				["zone-text-areas"] = {
 					9,	-- Northshire Valley
@@ -242,7 +236,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["sourceQuests"] = {
 								28819,	-- The Rear is Clear (human paladin)
 								28822,	-- The Rear is Clear (human warlock)
+								-- #if AFTER 5.0.4
 								31145,	-- The Rear is Clear (human monk)
+								-- #endif
 								28821,	-- The Rear is Clear (human rogue)
 								28817,	-- The Rear is Clear (human hunter)
 								28823,	-- The Rear is Clear (human warrior)
@@ -489,7 +485,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["sourceQuests"] = {
 								28819,	-- The Rear is Clear (human paladin)
 								28822,	-- The Rear is Clear (human warlock)
+								-- #if AFTER 5.0.4
 								31145,	-- The Rear is Clear (human monk)
+								-- #endif
 								28821,	-- The Rear is Clear (human rogue)
 								28817,	-- The Rear is Clear (human hunter)
 								28823,	-- The Rear is Clear (human warrior)
@@ -1327,6 +1325,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["coord"] = { 45.6, 47.8, ELWYNN_FOREST },
 							-- #endif
 							["timeline"] = { REMOVED_6_0_2 },
+							-- #if AFTER 6.0.2
+							["description"] = "This quest gets marked as completed when you complete the quest 'Rest and Relaxation' (37112).",
+							-- #endif
 							["races"] = ALLIANCE_ONLY,
 							["groups"] = {
 								i(57395, {	-- Lion's Pride Bracer
@@ -1336,7 +1337,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 									["timeline"] = { ADDED_4_0_3 },
 								}),
 								i(132094, {	-- Proprietor's Mitts
-									["timeline"] = { ADDED_7_0_3 },
+									-- this is the only source, but it's added to a quest after the quest was removed?? what
+									-- ["timeline"] = { ADDED_7_0_3 },
 								}),
 								i(57397, {	-- Goldshire Iron Bracer
 									["timeline"] = { ADDED_4_0_3 },
@@ -1346,7 +1348,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						q(37112, {	-- Rest and Relaxation
 							["qg"] = 6774,	-- Falkhaan Isenstrider
 							-- #if AFTER MOP
-							["coord"] = { 24.2, 73.4, NORTHSHIRE_VALLEY },
+							["coord"] = { 45.4, 49.0, ELWYNN_FOREST },
 							-- #else
 							["coord"] = { 45.6, 47.8, ELWYNN_FOREST },
 							-- #endif
@@ -1896,6 +1898,69 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					}),
 					-- #endif
+					n(VENDORS, {
+						n(190, {	-- Dermot Johns <Cloth & Leather Armor Merchant>
+							["coords"] = {
+								-- #if AFTER MOP
+								{ 31.3, 50.6, NORTHSHIRE_VALLEY },
+								-- #else
+								{ 47.6, 41.4, ELWYNN_FOREST },	-- WoWhead data
+								-- #endif
+							},
+							["sym"] = {{"select","itemID",
+								2122,	-- Cracked Leather Belt
+								2123,	-- Cracked Leather Boots
+								2124,	-- Cracked Leather Bracers
+								2125,	-- Cracked Leather Gloves
+								2126,	-- Cracked Leather Pants
+								2127,	-- Cracked Leather Vest
+								2121,	-- Thin Cloth Armor
+								3599,	-- Thin Cloth Belt
+								3600,	-- Thin Cloth Bracers
+								2119,	-- Thin Cloth Gloves
+								2120,	-- Thin Cloth Pants
+								2117,	-- Thin Cloth Shoes
+							}},
+						}),
+						n(1213, {	-- Godric Rothgar <Armorer & Shieldcrafter>
+							["coords"] = {
+								-- #if AFTER MOP
+								{ 31.7, 50.7, NORTHSHIRE_VALLEY },
+								-- #else
+								{ 47.6, 41.4, ELWYNN_FOREST },	-- WoWhead data
+								-- #endif
+							},
+							["sym"] = {{"select","itemID",
+								2129,	-- Large Round Shield
+								17184,	-- Small Shield
+								2380,	-- Tarnished Chain Belt
+								2383,	-- Tarnished Chain Boots
+								2384,	-- Tarnished Chain Bracers
+								2385,	-- Tarnished Chain Gloves
+								2381,	-- Tarnished Chain Leggings
+								2379,	-- Tarnished Chain Vest
+							}},
+						}),
+						n(78, {	-- Janos Hammerknuckle <Weaponsmith>
+							["coords"] = {
+								-- #if AFTER MOP
+								{ 30.1, 52.4, NORTHSHIRE_VALLEY },
+								-- #else
+								{ 47.2, 41.8, ELWYNN_FOREST },	-- WoWhead data
+								-- #endif
+							},
+							["sym"] = {{"select","itemID",
+								1194,	-- Bastard Sword
+								2479,	-- Broad Axe
+								2130,	-- Club
+								2139,	-- Dirk
+								2134,	-- Hand Axe
+								2480,	-- Large Club
+								2131,	-- Shortsword
+								2132,	-- Short Staff
+							}},
+						}),
+					}),
 					-- #if SEASON_OF_DISCOVERY
 					n(TREASURES, {
 						applyclassicphase(SOD_PHASE_ONE, o(387477, {	-- Defias Stashbox
@@ -1942,11 +2007,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				},
 			}),
 			n(ACHIEVEMENTS, {
-				explorationAch(776, {	-- Explore Elwynn Forest
-					-- #if BEFORE WRATH
-					["description"] = "Explore Elwynn Forest, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(776),	-- Explore Elwynn Forest
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -1966,7 +2027,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			explorationHeader({
 				exploration(62),	-- Brackwell Pumpkin Patch
-				exploration(18),	-- Crystal Lake
+				visit_exploration(18,{coord={47.4,62.2,ELWYNN_FOREST}}),	-- Crystal Lake
 				exploration(88),	-- Eastvale Logging Camp
 				exploration(57),	-- Fargodeep Mine
 				exploration(60),	-- Forest's Edge
@@ -1974,12 +2035,18 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if AFTER CATA
 				exploration(5176),	-- Goldtooth's Den
 				-- #endif
+				visit_exploration(56, {coord={74.5,54.0,ELWYNN_FOREST}}),	-- Heroes' Vigil
+				visit_exploration(5174,{coord={24.9,94.2,ELWYNN_FOREST}}),	-- Hogger Hill
 				exploration(54),	-- Jasperlode Mine
 				exploration(797),	-- Jerod's Landing
-				exploration(9),		-- Northshire Valley
+				visit_exploration(5637,{coord={42.9,65.6,ELWYNN_FOREST}}),	-- Lion's Pride Inn
+				visit_exploration(92, {coord={32.1,58.2,ELWYNN_FOREST}}),	-- Mirror Lake
+				visit_exploration(89, {coord={31.6,64.8,ELWYNN_FOREST}}),	-- Mirror Lake Orchard
+				visit_exploration(9,   {coord={45.5,48.7,ELWYNN_FOREST}}),	-- Northshire Valley
 				exploration(798),	-- Ridgepoint Tower
 				exploration(86),	-- Stone Cairn Lake
 				exploration(1519),	-- Stormwind City
+				visit_exploration(7486,{coord={33.7,50.8,ELWYNN_FOREST}}),	-- Stormwind Gate
 				exploration(64),	-- The Maclure Vineyards
 				exploration(63),	-- The Stonefield Farm
 				exploration(91),	-- Tower of Azora
@@ -2409,11 +2476,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["groups"] = {
 						objective(1, {	-- 0/1 Bernice's Necklace
 							["provider"] = { "i", 981 },	-- Bernice's Necklace
-							-- #if AFTER CATA
-							["coord"] = { 40.2, 80.8, ELWYNN_FOREST },
-							-- #else
-							["coord"] = { 41.6, 78.8, ELWYNN_FOREST },
-							-- #endif
+							["coords"] = {
+								-- #if AFTER CATA
+								{ 40.2, 80.8, ELWYNN_FOREST },
+								-- #else
+								{ 41.6, 78.8, ELWYNN_FOREST },
+								-- #endif
+							},
 							["cr"] = 327,	-- Goldtooth
 						}),
 						i(1359),	-- Lion-stamped Gloves
@@ -2563,11 +2632,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["groups"] = {
 						objective(1, {	-- 0/1 Brass Collar
 							["provider"] = { "i", 1006 },	-- Brass Collar
-							-- #if AFTER CATA
-							["coord"] = { 33.6, 85.6, ELWYNN_FOREST },
-							-- #else
-							["coord"] = { 69.8, 79.4, ELWYNN_FOREST },
-							-- #endif
+							["coords"] = {
+								-- #if AFTER CATA
+								{ 33.6, 85.6, ELWYNN_FOREST },
+								-- #else
+								{ 69.8, 79.4, ELWYNN_FOREST },
+								-- #endif
+							},
 							["cr"] = 330,	-- Princess
 						}),
 						i(1173),	-- Weather-worn Boots
@@ -2922,8 +2993,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				-- #endif
 				n(472, {	-- Fedfennel
-					-- #if AFTER CATA
 					["coords"] = {
+						-- #if AFTER CATA
 						{ 66.4, 40.4, ELWYNN_FOREST },
 						{ 66.8, 41.6, ELWYNN_FOREST },
 						{ 67.0, 39.2, ELWYNN_FOREST },
@@ -2932,10 +3003,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 68.0, 44.4, ELWYNN_FOREST },
 						{ 69.2, 38.6, ELWYNN_FOREST },
 						{ 70.2, 40.0, ELWYNN_FOREST },
+						-- #else
+						{ 68.0, 40.6, ELWYNN_FOREST },
+						-- #endif
 					},
-					-- #else
-					["coord"] = { 68.0, 40.6, ELWYNN_FOREST },
-					-- #endif
 					["groups"] = {
 						i(3233),	-- Gnoll Hide Sack
 						i(5744, {	-- Pale Skinner
@@ -2968,14 +3039,16 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_5_1_0 },
 				}),
 				n(100, {	-- Gruff Swiftbite
-					-- #if AFTER CATA
-					["coord"] = { 25.9, 92.0, ELWYNN_FOREST },
-					-- #else
-					["coord"] = { 27.6, 88.4, ELWYNN_FOREST },
-					-- #endif
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 25.9, 92.0, ELWYNN_FOREST },
+						-- #else
+						{ 27.6, 88.4, ELWYNN_FOREST },
+						-- #endif
+					},
 					["groups"] = {
 						i(38513, {	-- Boarhide Leggings
-							["timeline"] = { ADDED_3_0_2 },
+							["timeline"] = { ADDED_3_0_2, REMOVED_4_0_3, ADDED_8_0_1 },
 						}),
 					},
 				}),
@@ -2984,11 +3057,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_5_1_0 },
 				}),
 				n(99, {	-- Morgaine the Sly
-					-- #if AFTER CATA
-					["coord"] = { 30.8, 64.6, ELWYNN_FOREST },
-					-- #else
-					["coord"] = { 31.8, 65.6, ELWYNN_FOREST },
-					-- #endif
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 30.8, 64.6, ELWYNN_FOREST },
+						-- #else
+						{ 31.8, 65.6, ELWYNN_FOREST },
+						-- #endif
+					},
 					["groups"] = {
 						i(1917, {	-- Jeweled Dagger
 							["timeline"] = { REMOVED_4_0_1, ADDED_8_0_1 },
@@ -3002,11 +3077,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				n(471, {	-- Mother Fang
-					-- #if AFTER CATA
-					["coord"] = { 54.3, 31.1, 40 },
-					-- #else
-					["coord"] = { 61.8, 47.8, ELWYNN_FOREST },
-					-- #endif
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 54.3, 31.1, 40 },
+						-- #else
+						{ 61.8, 47.8, ELWYNN_FOREST },
+						-- #endif
+					},
 					["groups"] = {
 						i(3000, {	-- Brood Mother Carapace
 							["timeline"] = { REMOVED_4_0_1, ADDED_8_0_1 },
@@ -3017,11 +3094,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				n(79, {	-- Narg the Taskmaster
-					-- #if AFTER CATA
-					["coord"] = { 38.1, 83.3, ELWYNN_FOREST },
-					-- #else
-					["coord"] = { 41.2, 78.8, ELWYNN_FOREST },
-					-- #endif
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 38.1, 83.3, ELWYNN_FOREST },
+						-- #else
+						{ 41.2, 78.8, ELWYNN_FOREST },
+						-- #endif
+					},
 					["groups"] = {
 						i(6147, {	-- Ratty Old Belt
 							["timeline"] = { REMOVED_4_0_1, ADDED_10_1_7 },	-- ATT Discord 05.09.2023
@@ -3101,7 +3180,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 
 					-- Available to Humans without faction requirements.
-					["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+					["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. HUMAN .. [[ then
 							t.minReputation = nil;
@@ -3207,10 +3286,24 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			-- #endif
 			n(VENDORS, {
+				n(2046, {	-- Andrew Krighton <Armorer & Shieldcrafter>
+					["coord"] = { 41.7, 65.9, ELWYNN_FOREST },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						1201,	-- Dull Heater Shield
+						2392,	-- Light Mail Armor
+						2393,	-- Light Mail Belt
+						2395,	-- Light Mail Boots
+						2396,	-- Light Mail Bracers
+						2397,	-- Light Mail Gloves
+						2394,	-- Light Mail Leggings
+						17186,	-- Small Targe
+					}},
+				}),
 				n(844, {	-- Antonio Perelli <Traveling Salesman>
 					["description"] = "This vendor travels in a big circuit from Elwynn Forest (stopping in Goldshire) to Westfall (stopping in Sentinel Hill) to Duskwood (stopping in Darkshire) to Redridge Mountains (stopping in Lakeshire) and then back to Elwynn Forest.  If you cannot find him in this zone, check one of the other three.",
-					-- #if AFTER CATA
 					["coords"] = {
+						-- #if AFTER CATA
 						{ 74.4, 41.2, DUSKWOOD },
 						{ 75.0, 46.4, DUSKWOOD },
 						{ 19.6, 60.6, DUSKWOOD },
@@ -3218,9 +3311,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 75.0, 72.4, ELWYNN_FOREST },
 						{ 27.8, 43.6, REDRIDGE_MOUNTAINS },
 						{ 57.4, 52.2, WESTFALL },
-					},
-					-- #else
-					["coords"] = {
+						-- #else
 						{ 19.6, 60.6, DUSKWOOD },
 						{ 50.8, 66.6, DUSKWOOD },
 						{ 75.0, 46.4, DUSKWOOD },
@@ -3230,8 +3321,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 29.1, 47.4, REDRIDGE_MOUNTAINS },
 						{ 57.4, 52.2, WESTFALL },
 						{ 57.8, 65.0, WESTFALL },
+						-- #endif
 					},
-					-- #endif
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						-- #if BEFORE 4.0.3
@@ -3268,6 +3359,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(1939),	-- Skin of Sweet Rum
 					},
 				}),
+				n(54, {	-- Corina Steele <Weaponsmith>
+					["coord"] = { 41.4, 65.8, ELWYNN_FOREST },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						2492,	-- Cudgel
+						2488,	-- Gladius
+						2491,	-- Large Axe
+						2494,	-- Stiletto
+						2490,	-- Tomahawk
+						2489,	-- Two-Handed Sword
+						2495,	-- Walking Stick
+						2493,	-- Wooden Mallet
+					}},
+				}),
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_ONE, n(201854, {	-- Cutty
 					["coord"] = { 49.8, 52.0, ELWYNN_FOREST },
@@ -3294,7 +3399,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				n(1250, {	-- Drake Lindgren <General & Trade Supplies>
-					["coord"] = { 83.2, 66.6, ELWYNN_FOREST },
+					["coord"] = { 83.2, 66.7, ELWYNN_FOREST },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(6272, {	-- Pattern: Blue Linen Robe
@@ -3316,9 +3421,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(384, {	-- Katie Hunter <Horse Breeder>
 					["coord"] = { 84.0, 65.4, ELWYNN_FOREST },
-
 					-- Available to Humans without faction requirements.
-					["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+					["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. HUMAN .. [[ then
 							t.minReputation = nil;
@@ -3335,6 +3439,24 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(18778),	-- Swift White Steed (MOUNT!)
 					},
 				}),
+				n(74, {	-- Kurran Steele <Cloth & Leather Armor Merchant>
+					["coord"] = { 41.4, 65.6, ELWYNN_FOREST },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						3602,	-- Knitted Belt
+						3603,	-- Knitted Bracers
+						793,	-- Knitted Gloves
+						794,	-- Knitted Pants
+						792,	-- Knitted Sandals
+						795,	-- Knitted Tunic
+						1839,	-- Rough Leather Belt
+						796,	-- Rough Leather Boots
+						1840,	-- Rough Leather Bracers
+						797,	-- Rough Leather Gloves
+						798,	-- Rough Leather Pants
+						799,	-- Rough Leather Vest
+					}},
+				}),
 				-- #if SEASON_OF_DISCOVERY
 				n(906, {	-- Maximillian Crowe <Warlock Trainer>
 					["coord"] = { 44.4, 66.0, ELWYNN_FOREST },
@@ -3347,6 +3469,18 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				-- #endif
+				n(959, {	-- Morley Eberlein <Clothier>
+					["coord"] = { 64.7, 69.5, ELWYNN_FOREST },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						3602,	-- Knitted Belt
+						3603,	-- Knitted Bracers
+						793,	-- Knitted Gloves
+						794,	-- Knitted Pants
+						792,	-- Knitted Sandals
+						795,	-- Knitted Tunic
+					}},
+				}),
 				n(1198, {	-- Rallic Finn <Bowyer>
 					["coord"] = { 83.2, 66.0, ELWYNN_FOREST },
 					["races"] = ALLIANCE_ONLY,
@@ -3422,7 +3556,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						478,	-- Riverpaw Outrunner
 						97,		-- Riverpaw Runt
 						-- #ELSE
-						13159,  -- James Clark
+						13159,	-- James Clark
 						-- #ENDIF
 					},
 					--[[["timeline"] = { REMOVED_4_0_3, ADDED_10_1_7 },	-- ATT Discord 05.09.2023

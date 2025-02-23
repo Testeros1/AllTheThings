@@ -1057,6 +1057,7 @@ i(0, 4532);			-- Pinchy the Plunderer (WOTLK)
 -- #if SEASON_OF_DISCOVERY
 i(220620, 446105);	-- Skeletal Wind Serpent (SOD) [Sunken Temple]
 -- #endif
+i(224002, 4585);	-- Swoopy (Cata)
 -- #endif
 
 -----------------
@@ -3049,7 +3050,6 @@ i(0, 2499);			-- Sludge Disposal Unit
 i(0, 2497);			-- Ultra Safe Napalm Carrier
 --- NYI ---
 i(166791, 0);		-- Corlain Falcon
-i(166358, 2541);	-- Proper Parrot
 i(164629, 2480);	-- Test Pet
 i(0, 2481);			-- Unknown
 
@@ -3676,14 +3676,12 @@ i(0, 3175);			-- Murkastrasza
 i(0, 3339);			-- Black Dragon Whelp
 i(0, 3340);			-- Blue Dragon Whelp
 i(0, 3343);			-- Bronze Dragon Whelp
-i(0, 3361);			-- Diamond Crab
 i(0, 3341);			-- Red Dragon Whelp
 i(0, 3364);			-- Striped Snakebiter
 i(0, 3257);			-- Test Beetle
 i(0, 3308);			-- Time-Lost Duckling
 i(0, 3363);			-- Truesilver Crab
 i(193614, 3314);	-- Groundshaker
-i(191946, 3265);	-- Mister Muskoxeles
 i(193380, 3298);	-- Pink Salamanther
 i(193587, 3312);	-- Time-Lost Duck
 i(193620, 3267);	-- Time-Lost Slyvern
@@ -3944,7 +3942,6 @@ i(0, 3573);			-- Swole
 i(0, 3567);			-- Talons
 i(0, 3569);			-- Tempe
 --- NYI ---
-i(0, 3525);			-- Abyssal Lurker
 i(205004, 3513);	-- Azure Swoglet
 i(205054, 3532);	-- Amador
 i(205011, 3517);	-- Bronze Swoglet
@@ -3953,8 +3950,6 @@ i(205008, 3514);	-- Emerald Swoglet
 i(205018, 3520);	-- Jade Skitterbug
 i(205116, 3534);	-- Jerrie
 i(205166, 3556);	-- Kromos
-i(205013, 3518);	-- Lettuce
-i(205153, 3547);	-- Mikah
 i(205149, 3543);	-- Ravenous Shalewing
 i(205122, 3539);	-- Roseshell
 i(205053, 3531);	-- Rusty
@@ -3962,10 +3957,10 @@ i(205023, 3522);	-- Savage Lobstrok
 i(205164, 3554);	-- Senega
 i(205150, 3544);	-- Shalewing Devourer
 i(205035, 3526);	-- Snapjaw Lurker
-i(205148, 3542);	-- Soot-Stained Shalewing
-i(205157, 3550);	-- Undermoth
 i(205037, 3527);	-- Void Lurker
 i(205032, 0);		-- Bestial Lurker
+i(205153, 0);		-- Mikah
+i(205157, 0);		-- Undermoth
 
 ------------------
 -- PATCH 10.1.5 --
@@ -4074,10 +4069,14 @@ i(208446, 4264);	-- Fyrn
 ------------------
 i(210409, 4286);	-- Aura
 i(206174, 3582);	-- Blub
+-- #if BEFORE 11.0.7
 i(0, 4426);			-- Bubbles
+-- #endif
 i(0, 4437);			-- Fathom
+-- #if BEFORE 11.0.7
 i(0, 4425);			-- Glamrok
 i(0, 4435);			-- Happy
+-- #endif
 i(217043, 4436);	-- Pokee
 
 ------------------
@@ -4088,9 +4087,8 @@ i(223145, 4548);	-- Marrlok
 i(221817, 4579);	-- Muskpaw Calf
 i(223339, 4565);	-- Trishi
 i(223474, 4566);	-- Worgli the Apprehensive
---- UNSORTED ---
-i(223498, 4568);	-- Charismatic Courier
 --- NYI ---
+i(223498, 4568);	-- Charismatic Courier
 i(223499, 4569);	-- Lil' Manny
 
 ------------------
@@ -4099,19 +4097,36 @@ i(223499, 4569);	-- Lil' Manny
 i(218245, 4451);	-- Remembered Construct
 i(218086, 4450);	-- Remembered Riverpaw
 i(218246, 4452);	-- Remembered Spawn
---- UNSORTED ---
+--- NYI ---
+i(0, 4478);			-- Caustic Oozeling
+i(0, 4528);			-- Cobalt Mosswool
+i(0, 4583);			-- Green Stagshell
+i(0, 4502);			-- Kaheti Bull Worm
+i(0, 4493);			-- Redthroat Skipling
+i(0, 4509);			-- Sporbit [Blue]
+i(0, 4505);			-- Sporbit [Orange]
+i(0, 4504);			-- Sporbit [Red]
+i(0, 4503);			-- Sporbit [Teal]
+i(0, 4508);			-- Sporbit [Yellow]
+i(0, 4584);			-- Tan Stagshell
 i(222969, 4474);	-- Anub'Rekyute
 i(221851, 4466);	-- Argos
 i(221764, 4519);	-- Burntram
-i(226104, 4602);	-- Claudius
 i(222979, 4545);	-- Clay Stonecharger
 i(221762, 4484);	-- Frenzied Bloodtick
-i(222970, 4490);	-- Fuzzy
 i(221195, 4458);	-- Illskitter
 i(221492, 4459);	-- Moss Skipper
 i(221759, 4512);	-- Sceaduthax
 i(221495, 4497);	-- Waddles
 i(222967, 4475);	-- Webbers
+i(221493, 0);		-- Admiral
+i(223803, 0);		-- Blue Stagshell
+i(221022, 0);		-- Cowboy Bee[DNT]
+i(223626, 0);		-- Embersting
+i(228097, 0);		-- Pinkskin Burrower
+i(228098, 0);		-- Troglofrog
+i(222975, 0);		-- Umbral Amalgam [DNT]
+i(228096, 0);		-- Vibrant Firefly
 
 ------------------
 -- PATCH 11.0.2 --
@@ -4124,6 +4139,7 @@ i(222971, 4489);	-- Bouncer
 i(224101, 4586);	-- Brown Leafbug
 i(221820, 4537);	-- Chester
 i(223625, 4570);	-- Cinderwold Sizzlestinger
+i(226104, 4602);	-- Claudius
 i(224646, 4598);	-- Coppers
 i(224549, 4594);	-- Dalaran Sewer Turtle
 i(224766, 4596);	-- Faithful Dog
@@ -4132,6 +4148,7 @@ i(224259, 4590);	-- Flash
 i(222973, 4492);	-- Fringe
 i(224261, 4589);	-- Gale
 i(223623, 4576);	-- Guacamole
+i(228765, 4616);	-- Gummi
 i(220771, 4467);	-- Hallowed Glowfly
 i(222968, 4476);	-- Itchbite
 i(222972, 4491);	-- Jump Jump
@@ -4142,6 +4159,7 @@ i(222965, 4530);	-- Loamy
 i(225544, 4599);	-- Mind Slurp
 i(221546, 4534);	-- Nightfarm Growthling
 i(224439, 4470);	-- Oop'lajax
+i(228758, 4615);	-- Parrlok
 i(221760, 4513);	-- Pillarnest Bonedrinker
 i(223802, 4581);	-- Purple Stagshell
 i(225935, 4582);	-- Rak-Ush Battleshell
@@ -4153,6 +4171,7 @@ i(222974, 4543);	-- Sir Shady Mrrgglton Junior
 i(221494, 4495);	-- Skippy
 i(222980, 4542);	-- Slim
 i(223624, 4575);	-- Sneef
+i(205148, 3542);	-- Soot-Stained Shalewing
 i(222966, 4473);	-- Spinner
 i(221811, 4524);	-- Starkstripe Hopper
 i(220782, 4462);	-- Thunder
@@ -4167,6 +4186,7 @@ i(224760, 4597);	-- Wobbles
 i(221496, 4496);	-- Wriggle
 i(223487, 4482);	-- Writhing Transmutagen
 --- NPC ---
+n(204271, 3525);	-- Abyssal Lurker
 n(223092, 4540);	-- Alabaster Stonecharger
 n(222066, 4456);	-- Arachnoid Hatchling
 n(222195, 4460);	-- Arathi Chicken
@@ -4177,8 +4197,9 @@ n(222071, 4457);	-- Chitin Burrower
 n(223698, 4577);	-- Cinderhoney Emberstinger
 n(223094, 4538);	-- Cobalt Ramolith
 n(222584, 4499);	-- Common Ploughworm
+n(192363, 3361);	-- Diamond Crab
 n(222582, 4498);	-- Ebon Ploughworm
-n(219267, 4514);	-- Fallowspark Glowfly
+n(222613, 4514);	-- Fallowspark Glowfly
 n(222774, 4525);	-- Fragrant Stonelamb
 n(222877, 4535);	-- Ghostcap Menace
 n(223093, 4539);	-- Granite Ramolith
@@ -4186,6 +4207,8 @@ n(222194, 4461);	-- Greenlands Chicken
 n(222535, 4488);	-- Haywire Servobot
 n(222713, 4518);	-- Magmashell Crawler
 n(222875, 4533);	-- Meek Bloodlasher
+n(204354, 3547);	-- Mikah
+n(222499, 4485);	-- Mossy Snail
 n(223706, 4571);	-- Pinkskin Burrower
 n(222775, 4526);	-- Sandstone Mosswool
 n(222351, 4480);	-- Shadowy Oozeling
@@ -4195,6 +4218,7 @@ n(223715, 4574);	-- Snuffling
 n(222736, 4521);	-- Subterranean Dartswog
 n(222739, 4522);	-- Troglofrog
 n(223136, 4544);	-- Umbral Amalgam
+n(204361, 3550);	-- Undermoth
 n(222344, 4477);	-- Verdant Scootlefish
 n(222615, 4516);	-- Vibrant Glowfly
 n(222421, 4483);	-- Vile Bloodtick
@@ -4217,6 +4241,126 @@ i(0, 4553);			-- Takey-Take
 i(0, 4556);			-- Tickler
 i(0, 4549);			-- Tiny Cragling
 i(0, 4560);			-- Zaedu
+
+------------------
+-- PATCH 11.0.5 --
+------------------
+--- ITEM ---
+i(229993, 4669);	-- Bluedoo
+i(229366, 4629);	-- Brrrgl
+i(228793, 4618);	-- Chillbot 9000
+i(224410, 4593);	-- Craggles
+i(222970, 4490);	-- Fuzzy
+i(229368, 4630);	-- Gill'el
+i(228740, 4614);	-- Gizmo the Pure
+i(231365, 4689);	-- Karazhan Syphoner
+i(228781, 4678);	-- Lil'Doomy
+i(230011, 4679);	-- Lil'Kaz
+i(191946, 3265);	-- Mister Muskoxeles
+i(224406, 4592);	-- Misty
+i(231294, 4682);	-- Reven
+i(231356, 4686);	-- Specter
+i(228790, 4617);	-- Thrillbot 9000
+
+------------------
+-- PATCH 11.0.7 --
+------------------
+--- ITEM ---
+i(233251, 4426);	-- Bubbles
+i(234379, 4726);	-- Crackleroar
+i(234397, 4729);	-- Fullbelly Rollingpaw
+i(233248, 4425);	-- Glamrok
+i(232531, 4691);	-- Grunch
+i(233252, 4435);	-- Happy
+i(232923, 4704);	-- Living Rose
+i(233056, 4708);	-- Marmaduke
+i(235358, 4733);	-- Merriment
+i(235989, 4695);	-- Parley
+i(232653, 4694);	-- Portentous Present
+i(166358, 2541);	-- Proper Parrot
+i(232519, 4690);	-- Razeshi B.
+i(234395, 4727);	-- Skitterbite
+i(233247, 4692);	-- Sparklesnap
+i(234396, 4728);	-- Teatuft Tamer
+i(231310, 4684);	-- Timbered Sky Snakelet
+i(233366, 4719);	-- Wind-Up Woofer
+i(233361, 4718);	-- Wind-Up Wuffi
+--- NPC ---
+n(234734, 4724);	-- Battleboar Piglet
+n(234101, 4703);	-- Cave Kroling
+n(234710, 4723);	-- Cliffreach Cub
+n(234367, 4710);	-- Pillaged Parrot
+n(234097, 4702);	-- Rusty Kroling
+n(236041, 4732);	-- Scavenging Snapdragon
+n(234369, 4711);	-- Snapdragon Pup
+n(236040, 4731);	-- Storminfused Snapdragon
+n(230394, 4628);	-- Tidal Kroling
 --- UNSORTED ---
-i(228765, 4616);	-- Gummi
-i(228758, 4615);	-- Parrlok
+i(234905, 4730);	-- Mech-Friend Maya
+i(233057, 4709);	-- Rock Hound Mica
+i(233190, 4717);	-- Wanderer Liu
+--- NYI? ---
+--i(???, 4725);	-- Titan Orb
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+--- ITEM ---
+i(232845, 4645);	-- Bilgewater Junkhauler
+i(232850, 4649);	-- Blackwater Kegmover
+i(236768, 4759);	-- Craboom
+i(232842, 4638);	-- Crimson Mechasaur
+i(232858, 4655);	-- Cruncher
+i(232853, 4632);	-- Eepy
+i(232855, 4631);	-- Foreman
+i(232843, 4642);	-- Gorillion
+i(232859, 4653);	-- Lab Rat
+i(205013, 3518);	-- Lettuce
+i(232840, 4661);	-- Mechagopher
+i(232841, 4644);	-- Professor Punch
+i(232851, 4641);	-- Rocketfist
+i(232895, 4701);	-- Spotty
+i(232846, 4648);	-- Steamwheedle Flunkie
+i(238261, 4762);	-- Tock the Clocker Spaniel
+i(232849, 4650);	-- Venture Companyman
+i(232839, 4637);	-- Wavebreaker Mechasaur
+--- NPC ---
+n(231470, 4652);	-- Acid-Drenched Rat
+n(231728, 4693);	-- Alchemical Runoff
+n(231550, 4656);	-- Bombshell Crab
+n(231570, 4658);	-- Cave Crab
+n(222420, 4484);	-- Frenzied Bloodtick
+n(222592, 4507);	-- Hemospore
+n(231572, 4659);	-- Kaja Crab
+n(231574, 4660);	-- Paleshell Crab
+n(231616, 4666);	-- Tropical Frog
+n(231686, 4668);	-- Ultrahopper EX
+n(231481, 4654);	-- Underroach
+n(231577, 4662);	-- Varmint MK II
+n(231567, 4657);	-- Venture Bombshell
+n(231477, 4651);	-- Wily Rat
+--- UNSORTED ---
+--i(???, 4739);	-- Fancier Rat
+i(232844, 4640);	-- Fuz-Size Flarendo
+i(235909, 4755);	-- Gleam
+i(232857, 4635);	-- Goggles
+i(232854, 4634);	-- Grinner
+--i(???, 4740);	-- Handbag Hyena
+i(232807, 4664);	-- Iron Chick
+i(232848, 4647);	-- Mr. DELVER
+i(232852, 4636);	-- Mutt
+i(232847, 4646);	-- Personal-Use Sapper
+i(232856, 4633);	-- Scruff
+--i(???, 4738);	-- Status Symbol
+i(232806, 4643);	-- Tiny Torq
+i(232838, 4639);	-- Viridian Mechasaur
+--- UNSORTED WILD ---
+n(237713, 4741);	-- Cannoneer
+n(231579, 4663);	-- Lime Roboclucker
+n(237714, 4742);	-- Lookout
+n(237720, 4744);	-- Muddy Croach
+n(237701, 4737);	-- Precision Powerdrill
+n(237721, 4745);	-- Rusty Croach
+n(237719, 4746);	-- Sooty Croach
+n(231684, 4667);	-- Spring-Loaded Ribbitron
+n(237715, 4743);	-- Swabbie

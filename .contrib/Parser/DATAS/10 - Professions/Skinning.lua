@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --       P R O F E S S I O N S   M O D U L E       --
 -----------------------------------------------------
-local DF_SKINNING_KNOWLEDGE = 2033;	-- CHECK!
+local DF_SKINNING_KNOWLEDGE = 2033;
 local TWW_SKINNING_KNOWLEDGE = 2794;
 -- Skinning - Skill ID 393 / Spell ID 8613
 root(ROOTS.Professions, prof(SKINNING, {
@@ -33,7 +33,9 @@ root(ROOTS.Professions, prof(SKINNING, {
 				["provider"] = { "i", 139893 },	-- Skinning Technique: Unbroken Tooth
 			}),
 		}),
-		ach(18831, {	-- Elusive Beasts of the Dragon Isles (15)
+		ach(18831, sharedData({	-- Elusive Beasts of the Dragon Isles (15)
+			["cost"] = {{"i",193906,1}},	-- Elusive Creature Bait
+		},{
 			crit(61435, {	-- Elusive Salamanther
 				["crs"] = { 193854 },	-- Elusive Salamanther
 			}),
@@ -142,48 +144,62 @@ root(ROOTS.Professions, prof(SKINNING, {
 			crit(61472, {	-- Elusive Colossal Sulfurstrider
 				["crs"] = { 204841 },	-- Elusive Colossal Sulfurstrider
 			}),
-		}),
+		})),
 		ach(18832, {	-- Elusive Legend of the Dragon Isles (1)
 			["sym"] = {{"partial_achievement",18833}},	-- Elusive Legends of the Dragon Isles
 		}),
-		ach(18833, {	-- Elusive Legends of the Dragon Isles
+		ach(18833, sharedData({	-- Elusive Legends of the Dragon Isles
+			["cost"] = {{"i",193906,1}},	-- Elusive Creature Bait
+		},{
 			crit(61473, {	-- Elusive Elder Drake
 				["crs"] = { 194489 },	-- Elusive Elder Drake
+				["coord"] = { 23.2, 33.8, THE_AZURE_SPAN },
 			}),
 			crit(61474, {	--  Elusive Elder Frigidpelt
 				["crs"] = { 194491 },	-- Elusive Elder Frigidpelt
+				["coord"] = { 64.7, 30.7, THE_AZURE_SPAN },
 			}),
 			crit(61475, {	-- Elusive Tempest Lizard
 				["crs"] = { 195465 },	-- Elusive Tempest Lizard
+				["coord"] = { 55.0, 55.2, OHNAHRAN_PLAINS },
 			}),
 			crit(61476, {	-- Elusive Ferocious Titanfang
 				["crs"] = { 195472 },	-- Elusive Ferocious Titanfang
+				["coord"] = { 48.2, 50.7, THALDRASZUS },
 			}),
 			crit(61477, {	-- Elusive Deepwater Salamanther
 				["crs"] = { 195492 },	-- Elusive Deepwater Salamanther
+				["coord"] = { 54.7, 58.8, THE_WAKING_SHORES },
 			}),
 			crit(61478, {	-- Elusive Proto Skyterror
 				["crs"] = { 195509 },	-- Elusive Proto Skyterror
+				["coord"] = { 44.8, 78.2, THE_WAKING_SHORES },
 			}),
 			crit(61479, {	-- Elusive Cliffdweller Vorquin
 				["crs"] = { 195518 },	-- Elusive Cliffdweller Vorquin
+				["coord"] = { 56.2, 70.6, THALDRASZUS },
 			}),
 			crit(61480, {	-- Elusive Flourishing Quillbloom
 				["crs"] = { 195541 },	-- Elusive Flourishing Quillbloom
+				["coord"] = { 24.7, 58.7, OHNAHRAN_PLAINS },
 			}),
 			crit(61481, {	-- Elusive Frenzied Amberfur
 				["crs"] = { 202436 },	-- Elusive Frenzied Amberfur
+				["coord"] = { 40.8, 60.7, THE_FORBIDDEN_REACH },
 			}),
 			crit(61482, {	-- Elusive Auric Argali
 				["crs"] = { 202441 },	-- Elusive Auric Argali
+				["coord"] = { 44.7, 40.0, THE_FORBIDDEN_REACH },
 			}),
 			crit(61483, {	-- Elusive Crystalscale Stonecleaver
 				["crs"] = { 204821 },	-- Elusive Crystalscale Stonecleaver
+				["coord"] = { 59.6, 39.5, ZARALEK_CAVERN },
 			}),
 			crit(61484, {	-- Elusive Magma Cobra
 				["crs"] = { 204831 },	-- Elusive Magma Cobra
+				["coord"] = { 43.8, 48.0, ZARALEK_CAVERN },
 			}),
-		}),
+		})),
 		ach(18835, {	-- Fourth War Skinning Techniques
 			crit(61493, {	-- Cragscale
 				["sourceQuests"] = {
@@ -210,16 +226,6 @@ root(ROOTS.Professions, prof(SKINNING, {
 			}),
 		}),
 	})),
-	--[[
-	["maps"] = {
-		DRUSTVAR,
-		TIRAGARDE_SOUND,
-		STORMSONG_VALLEY,
-		VOLDUN,
-		ZULDAZAR,
-		NAZMIR,
-	},
-	--]]
 	q(52213, {	-- Ancient Skinning Knife
 		["provider"] = { "i", 161431 },	-- Ancient Skinning Knife
 		["sourceQuest"] = 51575,	-- Lost But Not Forgotten
@@ -240,7 +246,132 @@ root(ROOTS.Professions, prof(SKINNING, {
 			recipe(257148),	-- Skinning Technique: Leather Gathering (Rank 3)
 		},
 	}),
-	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2 }, ["requireSkill"] = SKINNING }, {
+		n(QUESTS, {
+			q(70363, {	-- Dragon Isles Skinning
+				["description"] = "Do NOT skin any Dragon Isles creatures. This quest can only be picked up PRIOR to learning Dragon Isles Skinning.",
+				["sourceQuests"] = {
+					67700,	-- To the Dragon Isles! [A]
+					65444,	-- To the Dragon Isles! [H]
+				},
+				["provider"] = { "n", 192558 },	-- Toninaar
+				["coord"] = { 76.7, 34.8, THE_WAKING_SHORES },
+				["lockCriteria"] = { 1, "spellID", 366263},	-- Dragon Isles Skinning
+			}),
+			q(70034, {	-- Artisan's Supply: Salamanther Scale
+				["provider"] = { "n", 192558 },	-- Toninaar
+				["coord"] = { 76.6, 34.8, THE_WAKING_SHORES },
+				["cost"] = { { "i", 193252, 3 }, },	-- 3x Salamanther Scales
+				["_drop"] = { "g" },
+			}),
+			q(70259, {	-- Hidden Profession Master Skinning
+				["name"] = "Hidden Profession Master: Skinning",
+				["provider"] = { "n", 194844 },	-- Zenzi
+				["coord"] = { 73.3, 69.7, THE_WAKING_SHORES },
+			}),
+			q(70193, {	-- Specialized Secrets: Skinning
+				["sourceQuests"] = { 69979 },	-- A Worthy Hunt
+				["provider"] = { "n", 193110 },	-- Khadin
+				["coord"] = { 51.8, 33.0, OHNAHRAN_PLAINS },
+				["cost"] = { { "i", 191784, 1 }, },	-- Dragon Shard of Knowledge
+				["isRepeatable"] = true,
+				["g"] = {
+					i(190456),	-- Artisan's Mettle
+				},
+			}),
+		}),
+		n(QUESTS, sharedData({
+			["sharedDescription"] = "Requires 25 Skill.",
+			["provider"] = { "n", 193846 },	-- Ralathor the Rugged
+			["coord"] = { 28.8, 60.4, VALDRAKKEN },
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["isWeekly"] = true,
+			["g"] = {
+				i(199128),	-- Skinning Field Notes
+			},
+		},{
+			q(72158),	-- A Dense Delivery
+			q(70619),	-- A Study of Leather
+			q(72159),	-- Scaling Down
+			q(70620),	-- Scaling Up
+		})),
+		filter(RECIPES, {
+			["description"] = "These are learned by specialization.",
+			["g"] = sharedData({ ["cost"] = { { "c", DF_SKINNING_KNOWLEDGE, 1 } }, }, {
+				r(383090),	-- Aileron Seamoth Lure
+				r(383128),	-- Bottled Pheromones
+				r(375787),	-- Cerulean Spinefish Lure
+				r(383132),	-- Elusive Creature Bait
+				r(385984),	-- Infusion: Decay
+				r(385982),	-- Infusion: Earth
+				r(385972),	-- Infusion: Frost
+				r(385985),	-- Infusion: Titan
+				r(383094),	-- Islefin Dorado Lure
+				r(375731),	-- Refine Hides++
+				r(375763),	-- Refine Hides+++
+				r(376611),	-- Refine Leather++
+				r(376612),	-- Refine Leather+++
+				r(376613),	-- Refine Scales++
+				r(376614),	-- Refine Scales+++
+				r(375773),	-- Scalebelly Mackerel Lure
+				r(375786),	-- Temporal Dragonhead Lure
+				r(375782),	-- Thousandbite Piranha Lure
+			}),
+		}),
+		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
+			["isWeekly"] = true,
+			["g"] = {
+				currency(DF_SKINNING_KNOWLEDGE),
+			},
+		},{
+			i(199128),	-- Skinning Field Notes
+			q(74114, {	-- DF Inscription Order: Skinning
+				["name"] = "DF Inscription Order: Skinning",
+				["description"] = "Requires a crafting order from Inscription.",
+				["provider"] = { "i", 201023 },	-- Draconic Treatise on Skinning
+			}),
+			q(70381, {	-- DF Weekly Skinning Knowledgepoint #1
+				["name"] = "DF Weekly Skinning Knowledgepoint #1",
+				["provider"] = { "i", 198837 },	-- Curious Hide Scraps
+			}),
+			q(70383, {	-- DF Weekly Skinning Knowledgepoint #2
+				["name"] = "DF Weekly Skinning Knowledgepoint #2",
+				["provider"] = { "i", 198837 },	-- Curious Hide Scraps
+			}),
+			q(70384, {	-- DF Weekly Skinning Knowledgepoint #3
+				["name"] = "DF Weekly Skinning Knowledgepoint #3",
+				["provider"] = { "i", 198837 },	-- Curious Hide Scraps
+			}),
+			q(70385, {	-- DF Weekly Skinning Knowledgepoint #4
+				["name"] = "DF Weekly Skinning Knowledgepoint #4",
+				["provider"] = { "i", 198837 },	-- Curious Hide Scraps
+			}),
+			q(70386, {	-- DF Weekly Skinning Knowledgepoint #5
+				["name"] = "DF Weekly Skinning Knowledgepoint #5",
+				["provider"] = { "i", 198837 },	-- Curious Hide Scraps
+			}),
+			q(70389, {	-- DF Weekly Skinning Knowledgepoint #6
+				["name"] = "DF Weekly Skinning Knowledgepoint #6",
+				["provider"] = { "i", 198841 },	-- Large Sample of Curious Hide
+			}),
+		})),
+	})),
+	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 }, ["requireSkill"] = SKINNING }, {
+		n(QUESTS, sharedData({
+			--["description"] = "Requires 50 Skill.",
+			["provider"] = { "n", 219083 },	-- Ginnad <Skinning Trainer>
+			["coord"] = { 54.5, 57.6, DORNOGAL },
+			["isWeekly"] = true,
+			["g"] = {
+				i(224807),	-- Algari Skinner's Notes
+			},
+		},{
+			q(83097),	-- Cinder and Storm
+			q(83100),	-- Cracking the Shell
+			q(82993),	-- From Shadows
+			q(83098),	-- Snap and Crackle
+			q(82992),	-- Stormcharged Goods
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_SKINNING_KNOWLEDGE, 1 }} }, {
@@ -270,42 +401,56 @@ root(ROOTS.Professions, prof(SKINNING, {
 				["coord"] = { 42.2, 53.9, HALLOWFALL },
 				["questID"] = 83919,
 				["g"] = {
-					i(226345), -- Arathi Craftsman's Spokeshave
+					i(226345),	-- Arathi Craftsman's Spokeshave
+				},
+			}),
+			o(455949, {	-- Arathi Tanning Agent
+				["coord"] = { 49.3, 62.1, HALLOWFALL },
+				["questID"] = 83918,
+				["g"] = {
+					i(226344),	-- Arathi Tanning Agent
 				},
 			}),
 			o(455951, {	-- Artisan's Drawing Knife
 				["coord"] = { 47.3, 28.3, THE_RINGING_DEEPS },
 				["questID"] = 83916,
 				["g"] = {
-					i(226342), -- Artisan's Drawing Knife
+					i(226342),	-- Artisan's Drawing Knife
 				},
 			}),
 			o(455946, {	-- Carapace Shiner
-				["coord"] = { 57.1, 58.7, AZJ_KAHET },
+				["coord"] = { 56.5, 55.2, AZJ_KAHET },
 				["questID"] = 83921,
 				["g"] = {
-					i(226347), -- Carapace Shiner
+					i(226347),	-- Carapace Shiner
 				},
 			}),
 			o(455953, {	-- Dornogal Carving Knife
-				["coord"] = { 54.3, 57.3, DORNOGAL },
+				["coord"] = { 28.7, 51.7, DORNOGAL },
 				["questID"] = 83914,
 				["g"] = {
-					i(226340), -- Dornogal Carving Knife
+					i(226340),	-- Dornogal Carving Knife
 				},
 			}),
 			o(455952, {	-- Earthen Worker's Beam
 				["coord"] = { 60.0, 28.0, ISLE_OF_DORN },
 				["questID"] = 83915,
 				["g"] = {
-					i(226341), -- Earthen Worker's Beams
+					i(226341),	-- Earthen Worker's Beams
 				},
 			}),
 			o(455950, {	-- Fungarian's Rich Tannin
-				["coord"] = { 65.7, 61.9, ISLE_OF_DORN },
-				--["questID"] = x,	-- TODO: re-check
+				["coord"] = { 65.7, 61.9, THE_RINGING_DEEPS },
+				["questID"] = 83917,
 				["g"] = {
-					i(226343), -- Fungarian's Rich Tannin
+					i(226343),	-- Fungarian's Rich Tannin
+				},
+			}),
+			o(455947, {	-- Nerubian's Slicking Iron
+				["coord"] = { 45.5, 49.4, NERUBAR },
+				["questID"] = 83920,
+				["g"] = {
+					i(226346),	-- Nerubian's Slicking Iron
 				},
 			}),
 		}),
@@ -315,34 +460,28 @@ root(ROOTS.Professions, prof(SKINNING, {
 				currency(TWW_SKINNING_KNOWLEDGE),
 			},
 		},{
-			--i(xx),	-- new skinning weekly item
-			q(83734, {	-- Inscription Order: Skinning
-				["name"] = "Inscription Order: Skinning",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222649 },	-- Algari Treatise on Skinning
-			}),
-			q(81459, {	-- Weekly Skinning Knowledgepoint #1
-				["name"] = "Weekly Skinning Knowledgepoint #1",
+			q(81459, {	-- TWW Weekly Skinning Knowledgepoint #1
+				["name"] = "TWW Weekly Skinning Knowledgepoint #1",
 				["provider"] = { "i", 224780 },	-- Toughened Thunderous Hide
 			}),
-			q(81460, {	-- Weekly Skinning Knowledgepoint #2
-				["name"] = "Weekly Skinning Knowledgepoint #2",
+			q(81460, {	-- TWW Weekly Skinning Knowledgepoint #2
+				["name"] = "TWW Weekly Skinning Knowledgepoint #2",
 				["provider"] = { "i", 224780 },	-- Toughened Thunderous Hide
 			}),
-			q(81461, {	-- Weekly Skinning Knowledgepoint #3
-				["name"] = "Weekly Skinning Knowledgepoint #3",
+			q(81461, {	-- TWW Weekly Skinning Knowledgepoint #3
+				["name"] = "TWW Weekly Skinning Knowledgepoint #3",
 				["provider"] = { "i", 224780 },	-- Toughened Thunderous Hide
 			}),
-			q(81462, {	-- Weekly Skinning Knowledgepoint #4
-				["name"] = "Weekly Skinning Knowledgepoint #4",
+			q(81462, {	-- TWW Weekly Skinning Knowledgepoint #4
+				["name"] = "TWW Weekly Skinning Knowledgepoint #4",
 				["provider"] = { "i", 224780 },	-- Toughened Thunderous Hide
 			}),
-			q(81463, {	-- Weekly Skinning Knowledgepoint #5
-				["name"] = "Weekly Skinning Knowledgepoint #5",
+			q(81463, {	-- TWW Weekly Skinning Knowledgepoint #5
+				["name"] = "TWW Weekly Skinning Knowledgepoint #5",
 				["provider"] = { "i", 224780 },	-- Toughened Thunderous Hide
 			}),
-			q(81464, {	-- Weekly Skinning Knowledgepoint #6
-				["name"] = "Weekly Skinning Knowledgepoint #6",
+			q(81464, {	-- TWW Weekly Skinning Knowledgepoint #6
+				["name"] = "TWW Weekly Skinning Knowledgepoint #6",
 				["provider"] = { "i", 224781 },	-- Abyssal Fur
 			}),
 		})),
@@ -353,7 +492,6 @@ profession(SKINNING, {
 	-- TODO: This is not timelined
 	n(DROPS, {
 		i(111351, {		-- A Guide to Skinning in Draenor
-			["filterID"] = MISC,
 			["description"] = "This can drop from any Warlords of Draenor mob after skinning it.",
 		}),
 		n(103675, {	-- Felhide Gargantuan

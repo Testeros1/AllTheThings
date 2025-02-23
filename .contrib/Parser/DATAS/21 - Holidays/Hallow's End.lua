@@ -32,7 +32,6 @@ local CANDY_AND_TOY_VENDOR_GROUPS = {
 		["cost"] = { { "i", 33226, 450 } },	-- 450x Tricky Treat
 		["sym"] = { { "fill" } },	-- simply fill this item
 	}),
-	-- This wasn't showing on WoWHead, might not be there yet?
 	i(187997, {	-- Eternal Heirloom Armor Casing
 		["timeline"] = { ADDED_9_1_5 },
 		["cost"] = { { "i", 33226, 450 } },	-- 450x Tricky Treat
@@ -103,6 +102,10 @@ local CANDY_AND_TOY_VENDOR_GROUPS = {
 	i(37585, {	-- Chewy Fel Taffy
 		["cost"] = { { "i", 33226, 2 }, },	-- 2x Tricky Treat
 	}),
+	iensemble(230173, {	-- Ensemble: Prowler's Faded Headgear
+		["timeline"] = { ADDED_11_0_5 },
+		["cost"] = { { "i", 33226, 150 }, },	-- 150x Tricky Treat
+	}),
 	i(128643, {	-- Exquisite Costume Set: "Deathwing"
 		["timeline"] = { ADDED_6_2_2 },
 		["cost"] = { { "i", 33226, 200 }, },	-- 200x Tricky Treat
@@ -139,11 +142,27 @@ local CANDY_AND_TOY_VENDOR_GROUPS = {
 	}),
 	i(70722, {	-- Little Wickerman (TOY!)
 		["timeline"] = { ADDED_4_2_0 },
+		-- #if BEFORE 11.0.5
 		["cost"] = { { "i", 33226, 150 }, },	-- 150x Tricky Treat
+		-- #else
+		["cost"] = { { "i", 33226, 100 }, },	-- 100x Tricky Treat
+		-- #endif
 	}),
 	i(37011, {	-- Magic Broom (MOUNT!)
 		["cost"] = { { "i", 33226, 150 }, },	-- 150x Tricky Treat
 		["collectible"] = false,
+	}),
+	i(226427, {	-- Patched Harvester's Claw
+		["timeline"] = { ADDED_11_0_5 },
+		["cost"] = { { "i", 33226, 100 }, },	-- 100x Tricky Treat
+	}),
+	i(226453, {	-- Patched Harvest Golem's Post
+		["timeline"] = { ADDED_11_0_5 },
+		["cost"] = { { "i", 33226, 100 }, },	-- 100x Tricky Treat
+	}),
+	i(230042, {	-- Prowler's Faded Shoulder Cape
+		["timeline"] = { ADDED_11_0_5 },
+		["cost"] = { { "i", 33226, 50 }, },	-- 50x Tricky Treat
 	}),
 	i(37582, {	-- Pyroblast Cinnamon Ball
 		["cost"] = { { "i", 33226, 2 }, },	-- 2x Tricky Treat
@@ -401,6 +420,43 @@ local SPECTRAL_GROG = i(104316, {	-- Spectral Grog
 	},
 });
 
+-- CRIEVE NOTE: Use this function for candy buckets. :)
+local CANDY_BUCKET_OBJECT_DATA = {
+	readable = "Candy Bucket",
+	consolidate = true,	-- This tells parser that we need to export this as a group to clean up duplicated data.
+	dynamic = true,	-- This tells parser to not include it in the export of ObjectDB when it consolidates it.
+	model = 200946,
+	text = {
+		en = "Candy Bucket",
+		es = "Cubo de caramelos",
+		de = "Eimer mit Süßigkeiten",
+		fr = "Seau de bonbons",
+		it = "Secchio delle Caramelle",
+		pt = "Balde de Balas",
+		ru = "Кулек конфет",
+		ko = "사탕 바구니",
+		cn = "糖罐",
+		tw = "糖果桶",
+	},
+};
+local ObjectDB = ObjectDB;
+function candybucket(questID, t)
+	t = q(questID, t);
+	t._drop = { "g" };
+	t.isYearly = true;
+	t.g = { i(33226, { ["races"] = IGNORED_VALUE }) };	-- Tricky Treat
+	if t.provider and t.provider[1] == "o" then
+		ObjectDB[t.provider[2]] = CANDY_BUCKET_OBJECT_DATA;
+	elseif t.providers then
+		for i,provider in ipairs(t.providers) do
+			if provider and provider[1] == "o" then
+				ObjectDB[provider[2]] = CANDY_BUCKET_OBJECT_DATA;
+			end
+		end
+	end
+	return t;
+end
+
 root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 	-- #if AFTER 2.0.1
 	n(ACHIEVEMENTS, {
@@ -653,7 +709,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 				{ "i", 33292 },	-- Hallowed Helm
 			},
 			["AllProvidersRequiredForAchievement"] = true,
-			["description"] = "Obtain a Sinister Squashling pet and Hallowed Helm.",
 			["timeline"] = { ADDED_2_0_1 },
 			-- #else
 			crit(5783, {	-- Sinister Squashling
@@ -704,21 +759,21 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 		ach(971, {	-- Tricks and Treats of Azeroth (H) / Tricks and Treats of Azeroth [MOP+]
 			-- Meta Achievement should symlink the contained Achievements from Source
 			["sym"] = {{"meta_achievement",
-				-- #if AFTER 4.2.0
+				-- #if AFTER MOP
 				966,	-- Tricks and Treats of Eastern Kingdoms (A)
 				-- #endif
 				967,	-- Tricks and Treats of Eastern Kingdoms (H)
-				-- #if AFTER 4.2.0
+				-- #if AFTER MOP
 				963,	-- Tricks and Treats of Kalimdor (A)
 				-- #endif
 				965,	-- Tricks and Treats of Kalimdor (H)
-				-- #if AFTER 4.2.0
+				-- #if AFTER MOP
 				969,	-- Tricks and Treats of Outlands (A)
 				-- #endif
 				968,	-- Tricks and Treats of Outlands (H)
 			}},
 			["timeline"] = { ADDED_3_0_2 },
-			-- #if BEFORE 4.2.0
+			-- #if BEFORE MOP
 			["races"] = HORDE_ONLY,
 			-- #endif
 		}),
@@ -729,1270 +784,62 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 				963,	-- Tricks and Treats of Kalimdor (A)
 				969,	-- Tricks and Treats of Outlands (A)
 			}},
-			["timeline"] = { ADDED_3_0_2, REMOVED_4_2_0 },
+			["timeline"] = { ADDED_3_0_2, REMOVED_5_0_4 },
 			["races"] = ALLIANCE_ONLY,
 		}),
 		ach(5837, {	-- Tricks and Treats of Cataclysm (A)
 			["timeline"] = { ADDED_4_2_0 },
-			["sym"] = {{ "achievement_criteria" }},
 			["races"] = ALLIANCE_ONLY,
-			--[[
-			["groups"] = {
-				crit(17682, {	-- Deepholm, Temple of Earth
-					["coord"] = { 47.4, 51.7, DEEPHOLM },
-				}),
-				crit(17683, {	-- Mount Hyjal, Grove of Aessina
-					["coord"] = { 18.7, 37.3, MOUNT_HYJAL },
-				}),
-				crit(17684, {	-- Mount Hyjal, Nordrassil
-					["coord"] = { 63.0, 24.1, MOUNT_HYJAL },
-				}),
-				crit(17685, {	-- Mount Hyjal, Shrine of Aviana
-					["coord"] = { 42.7, 45.6, MOUNT_HYJAL },
-				}),
-				crit(17686, {	-- Twilight Highlands, Firebeard's Patrol
-					["coord"] = { 60.4, 58.2, TWILIGHT_HIGHLANDS },
-				}),
-				crit(17687, {	-- Twilight Highlands, Highbank
-					["coord"] = { 79.5, 78.5, TWILIGHT_HIGHLANDS },
-				}),
-				crit(17688, {	-- Twilight Highlands, Thundermar
-					["coord"] = { 49.6, 30.4, TWILIGHT_HIGHLANDS },
-				}),
-				crit(17689, {	-- Twilight Highlands, Victor's Point
-					["coord"] = { 43.6, 57.3, TWILIGHT_HIGHLANDS },
-				}),
-				crit(17690, {	-- Uldum, Oasis of Vir'sar
-					["coord"] = { 26.6, 7.30, ULDUM },
-				}),
-				crit(17691, {	-- Uldum, Ramkahen
-					["coord"] = { 54.7, 33.0, ULDUM },
-				}),
-				crit(17692, {	-- Vashj'ir, Darkbreak Cove
-					["coord"] = { 54.7, 72.2, VASHJIR },
-				}),
-				crit(17693, {	-- Vashj'ir, Deepmist Grotto
-					["coord"] = { 63.4, 60.2, VASHJIR },
-				}),
-				crit(17694, {	-- Vashj'ir, Silver Tide Hollow
-					["coord"] = { 49.2, 41.9, VASHJIR },
-				}),
-				crit(17695, {	-- Vashj'ir, Tranquil Wash
-					["coord"] = { 49.7, 57.4, VASHJIR },
-				}),
-			},
-			]]--
 		}),
 		ach(5838, {	-- Tricks and Treats of Cataclysm (H)
 			["timeline"] = { ADDED_4_2_0 },
-			["sym"] = {{ "achievement_criteria" }},
 			["races"] = HORDE_ONLY,
-			--[[
-			["groups"] = {
-				crit(17704, {	-- Deepholm, Temple of Earth
-					["coord"] = { 51.2, 50.0, DEEPHOLM },
-				}),
-				crit(17683, {	-- Mount Hyjal, Grove of Aessina
-					["coord"] = { 18.7, 37.3, MOUNT_HYJAL },
-				}),
-				crit(17684, {	-- Mount Hyjal, Nordrassil
-					["coord"] = { 63.0, 24.1, MOUNT_HYJAL },
-				}),
-				crit(17685, {	-- Mount Hyjal, Shrine of Aviana
-					["coord"] = { 42.7, 45.6, MOUNT_HYJAL },
-				}),
-				crit(17708, {	-- Twilight Highlands, Bloodgulch
-					["coord"] = { 53.4, 42.9,TWILIGHT_HIGHLANDS },
-				}),
-				crit(17709, {	-- Twilight Highlands, Crushblow
-					["coord"] = { 45.1, 76.7,TWILIGHT_HIGHLANDS },
-				}),
-				crit(17711, {	-- Twilight Highlands, The Krazzworks
-					["coord"] = { 75.4, 16.5,TWILIGHT_HIGHLANDS },
-				}),
-				crit(17690, {	-- Uldum, Oasis of Vir'sar
-					["coord"] = { 26.6, 7.30, ULDUM },
-				}),
-				crit(17691, {	-- Uldum, Ramkahen
-					["coord"] = { 54.7, 33.0, ULDUM },
-				}),
-				crit(17693, {	-- Vashj'ir, Deepmist Grotto
-					["coord"] = { 63.4, 60.2, VASHJIR },
-				}),
-				crit(17714, {	-- Vashj'ir, Legion's Rest
-					["coord"] = { 51.5, 62.5, VASHJIR },
-				}),
-				crit(17694, {	-- Vashj'ir, Silver Tide Hollow
-					["coord"] = { 49.2, 41.9, VASHJIR },
-				}),
-				crit(17717, {	-- Vashj'ir, Tenebrous Cavern
-					["coord"] = { 51.3, 60.6, VASHJIR },
-				}),
-			},
-			]]--
 		}),
 		ach(966, {	-- Tricks and Treats of Eastern Kingdoms (A)
-			["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = ALLIANCE_ONLY,
-			--[[
-			["groups"] = {
-				crit(18418, {	-- Arathi Highlands, Refuge Point
-					["coord"] = { 40.1, 49.0, ARATHI_HIGHLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18419, {	-- Badlands, Dragon's Mouth
-					["coord"] = { 20.9, 56.2, BADLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18429, {	-- Badlands, Fuselight
-					["coord"] = { 65.9, 35.8, BADLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18420, {	-- Blasted Lands, Nethergarde Keep
-					["coord"] = { 60.7, 14.2, BLASTED_LANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18421, {	-- Blasted Lands, Surwich
-					["coord"] = { 44.4, 87.7, BLASTED_LANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2144, {	-- The Cape of Stranglethorn, Booty Bay
-					["coord"] = { 40.9, 73.8, THE_CAPE_OF_STRANGLETHORN },
-				}),
-				-- #endif
-				crit(2132, {	-- Dun Morogh, Kharanos
-					-- #if AFTER CATA
-					["coord"] = { 54.5, 50.7, DUN_MOROGH },
-					-- #else
-					["coord"] = { 47.38, 52.44, DUN_MOROGH },
-					-- #endif
-				}),
-				crit(2133, {	-- Duskwood, Darkshire
-					["coord"] = { 73.9, 44.4, DUSKWOOD },
-				}),
-				-- #if AFTER CATA
-				crit(2143, {	-- Eastern Plaguelands, Light's Hope Chapel
-					["coord"] = { 75.6, 52.4, EASTERN_PLAGUELANDS },
-				}),
-				-- #else
-				crit(2145, {	-- Eastern Plaguelands, Light's Hope Chapel
-					["coord"] = { 75.6, 52.4, EASTERN_PLAGUELANDS },
-				}),
-				-- #endif
-				crit(2134, {	-- Elwynn Forest, Goldshire
-					["coord"] = { 43.7, 66.0, ELWYNN_FOREST },
-				}),
-				-- #if BEFORE CATA
-				crit(2135, {	-- Hillsbrad Foothills, Southshore
-					["coord"] = { 51.1, 59.0, HILLSBRAD_FOOTHILLS },
-				}),
-				-- #endif
-				crit(2136, {	-- The Hinterlands, Aerie Peak
-					-- #if AFTER CATA
-					["coord"] = { 14.2, 44.7, THE_HINTERLANDS },
-					-- #else
-					["coord"] = { 14.1, 41.5, THE_HINTERLANDS },
-					-- #endif
-				}),
-				crit(18422, {	-- The Hinterlands, Stormfeather Outpost
-					["coord"] = { 66.2, 44.4, THE_HINTERLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2137, {	-- Ironforge, The Commons
-					["coord"] = { 18.6, 51.3, IRONFORGE },
-				}),
-				crit(18422, {	-- Loch Modan, Farstrider's Lodge
-					["coord"] = { 82.9, 63.6, LOCH_MODAN },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2138, {	-- Loch Modan, Thelsamar
-					["coord"] = { 35.5, 48.4, LOCH_MODAN },
-				}),
-				crit(18423, {	-- Northern Stranglethorn, Fort Livingston
-					["coord"] = { 53.1, 66.9, NORTHERN_STRANGLETHORN },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2139, {	-- Redridge Mountains, Lakeshire
-					-- #if AFTER CATA
-					["coord"] = { 26.4, 41.6, REDRIDGE_MOUNTAINS },
-					-- #else
-					["coord"] = { 27.0, 44.9, REDRIDGE_MOUNTAINS },
-					-- #endif
-				}),
-				crit(18430, {	-- Searing Gorge, Iron Summit
-					["coord"] = { 39.4, 66.1, SEARING_GORGE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2140, {	-- Stormwind, The Trade District
-					-- #if AFTER CATA
-					["coord"] = { 60.5, 75.2, STORMWIND_CITY },
-					-- #else
-					["coord"] = { 52.77, 65.77, STORMWIND_CITY },
-					-- #endif
-				}),
-				-- #if BEFORE CATA
-				crit(2146, {	-- Stranglethorn Vale, Booty Bay
-					["coord"] = { 27.1, 77.3, STRANGLETHORN_VALE },
-				}),
-				-- #endif
-				crit(18431, {	-- Swamp of Sorrows, Bogpaddle
-					["coord"] = { 71.7, 14.0, SWAMP_OF_SORROWS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18424, {	-- Swamp of Sorrows, The Harborage
-					["coord"] = { 29.0, 32.6, SWAMP_OF_SORROWS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18426, {	-- Western Plaguelands, Chillwind Camp
-					["coord"] = { 43.4, 84.5, WESTERN_PLAGUELANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2142, {	-- Wetlands, Menethil Harbor
-					["coord"] = { 10.8, 60.9, WETLANDS },
-				}),
-				crit(18428, {	-- Wetlands, Swiftgear Station
-					["coord"] = { 26.1, 25.9, WETLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2141, {	-- Westfall, Sentinel Hill
-					["coord"] = { 52.9, 53.6, WESTFALL },
-				}),
-				crit(18427, {	-- Wetlands, Greenwarden's Grove
-					["coord"] = { 58.1, 39.2, WETLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-			},
-			]]--
 		}),
 		ach(967, {	-- Tricks and Treats of Eastern Kingdoms (H)
-			["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = HORDE_ONLY,
-			--[[
-			["groups"] = {
-				crit(2147, {	-- Arathi Highlands, Hammerfall
-					["coord"] = { 69.0, 33.4, ARATHI_HIGHLANDS },
-				}),
-				crit(18429, {	-- Badlands, Fuselight
-					["coord"] = { 65.9, 35.8, BADLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17626, {	-- Badlands, New Kargath
-					["coord"] = { 18.3, 42.8, BADLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17627, {	-- Blasted Lands, Dreadmaul Hold
-					["coord"] = { 40.5, 11.4, BLASTED_LANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2144, {	-- The Cape of Stranglethorn, Booty Bay
-					["coord"] = { 40.9, 73.8, THE_CAPE_OF_STRANGLETHORN },
-				}),
-				-- #endif
-				crit(17633, {	-- The Cape of Stranglethorn, Hardwrench Hideaway
-					["coord"] = { 35.1, 27.2, THE_CAPE_OF_STRANGLETHORN },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2143, {	-- Eastern Plaguelands, Light's Hope Chapel
-					["coord"] = { 75.6, 52.4, EASTERN_PLAGUELANDS },
-				}),
-				-- #else
-				crit(2145, {	-- Eastern Plaguelands, Light's Hope Chapel
-					["coord"] = { 75.6, 52.4, EASTERN_PLAGUELANDS },
-				}),
-				-- #endif
-				crit(2149, {	-- Eversong Woods, Fairbreeze Village
-					["coord"] = { 43.7, 71.1, EVERSONG_WOODS },
-				}),
-				crit(2150, {	-- Eversong Woods, Falconwing Square
-					["coord"] = { 48.1, 47.8, EVERSONG_WOODS },
-				}),
-				crit(2151, {	-- Ghostlands, Tranquillien
-					["coord"] = { 48.6, 32.0, GHOSTLANDS },
-				}),
-				crit(17628, {	-- Hillsbrad Foothills, Eastpoint Tower
-					["coord"] = { 60.3, 63.8, HILLSBRAD_FOOTHILLS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2152, {	-- Hillsbrad Foothills, Tarren Mill
-					["coord"] = { 57.9, 47.3, HILLSBRAD_FOOTHILLS },
-				}),
-				crit(17629, {	-- The Hinterlands, Hiri'watha Research Station
-					["coord"] = { 31.9, 57.9, THE_HINTERLANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2153, {	-- The Hinterlands, Revantusk Village
-					["coord"] = { 78.2, 81.4, THE_HINTERLANDS },
-				}),
-				crit(2157, {	-- Northern Stranglethorn, Grom'gol Base Camp
-					["coord"] = { 37.3, 51.7, NORTHERN_STRANGLETHORN },
-				}),
-				crit(18430, {	-- Searing Gorge, Iron Summit
-					["coord"] = { 39.4, 66.1, SEARING_GORGE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2154, {	-- Silvermoon City, The Bazaar
-					["coord"] = { 67.6, 73.2, SILVERMOON_CITY },
-				}),
-				crit(2155, {	-- Silvermoon City, The Royal Exchange
-					["coord"] = { 79.6, 57.9, SILVERMOON_CITY },
-				}),
-				crit(17631, {	-- Silverpine Forest, Forsaken Rear Guard
-					["coord"] = { 44.3, 20.4, SILVERPINE_FOREST },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2156, {	-- Silverpine Forest, The Sepulcher
-					["coord"] = { 46.4, 42.8, SILVERPINE_FOREST },
-				}),
-				-- #if BEFORE CATA
-				crit(2146, {	-- Stranglethorn Vale, Booty Bay
-					["coord"] = { 27.1, 77.3, STRANGLETHORN_VALE },
-				}),
-				-- #endif
-				crit(18431, {	-- Swamp of Sorrows, Bogpaddle
-					["coord"] = { 71.7, 14.0, SWAMP_OF_SORROWS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2158, {	-- Swamp of Sorrows, Stonard
-					["coord"] = { 46.9, 56.7, SWAMP_OF_SORROWS },
-				}),
-				crit(2159, {	-- Tirisfal Glades, Brill
-					["coord"] = { 60.9, 51.5, TIRISFAL_GLADES },
-				}),
-				crit(17634, {	-- Tirisfal Glades, The Bulwark
-					["coord"] = { 83.0, 72.0, TIRISFAL_GLADES },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2160, {	-- Undercity, The Trade Quarter
-					["coord"] = { 67.7, 37.9, UNDERCITY },
-				}),
-				crit(17635, {	-- Western Plaguelands, Andorhal
-					["coord"] = { 48.2, 63.7, WESTERN_PLAGUELANDS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-			},
-			]]--
 		}),
 		ach(963, {	-- Tricks and Treats of Kalimdor (A)
-			["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = ALLIANCE_ONLY,
-			--[[
-			["groups"] = {
-				crit(2071, {	-- Ashenvale, Astranaar
-					["coord"] = { 37.0, 49.3, ASHENVALE },
-				}),
-				crit(2073, {	-- Azuremyst Isle, Azure Watch
-					["coord"] = { 48.5, 49.1, AZUREMYST_ISLE },
-				}),
-				-- #if BEFORE CATA
-				crit(2099, {	-- Barrens, Ratchet
-					["coord"] = { 62.1, 39.4, THE_BARRENS },
-				}),
-				-- #endif
-				crit(2074, {	-- Bloodmyst Isle, Blood Watch
-					["coord"] = { 55.7, 59.9, BLOODMYST_ISLE },
-				}),
-				crit(2075, {	-- Darkshore, Lor'danel
-					["coord"] = { 50.8, 18.8, DARKSHORE },
-				}),
-				crit(2076, {	-- Darnassus, Craftsmen's Terrace
-					-- #if AFTER CATA
-					["coord"] = { 62.2, 33.0, DARNASSUS },
-					-- #else
-					["coord"] = { 67.43, 16.0, DARNASSUS },
-					-- #endif
-				}),
-				crit(18396, {	-- Desolace, Karnum's Glade
-					["coord"] = { 56.8, 50.0, DESOLACE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2077, {	-- Desolace, Nijel's Point
-					["coord"] = { 66.3, 6.70, DESOLACE },
-				}),
-				-- #if AFTER CATA
-				crit(2084, {	-- Dustwallow Marsh, Mudsprocket
-					["coord"] = { 41.0, 73.0, DUSTWALLOW_MARSH },
-				}),
-				-- #else
-				crit(2100, {	-- Dustwallow Marsh, Mudsprocket
-					["coord"] = { 41.86, 74.1, DUSTWALLOW_MARSH },
-				}),
-				-- #endif
-				crit(2079, {	-- Exodar, Seat of the Naaru
-					["coord"] = { 59.3, 19.2, THE_EXODAR },
-				}),
-				crit(18398, {	-- Felwood - Talonbranch Glade
-					["coord"] = { 61.8, 26.7, FELWOOD },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18397, {	-- Felwood - Whisperwind Grove
-					["coord"] = { 44.6, 28.9, FELWOOD },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18399, {	-- Feralas, Dreamer's Rest
-					["coord"] = { 51.1, 17.8, FERALAS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2080, {	-- Feralas, Feathermoon Stronghold
-					-- #if AFTER CATA
-					["coord"] = { 46.3, 45.2, FERALAS },
-					-- #else
-					["coord"] = { 30.9, 43.5, FERALAS },
-					-- #endif
-				}),
-				-- #if AFTER CATA
-				crit(2083, {	-- Northern Barrens, Ratchet
-					-- #if AFTER CATA
-					["coord"] = { 67.3, 74.7, NORTHERN_BARRENS },
-					-- #else
-					["coord"] = { 62.1, 39.4, THE_BARRENS },
-					-- #endif
-				}),
-				crit(2085, {	-- Silithus, Cenarion Hold
-					["coord"] = { 55.5, 36.7, SILITHUS },
-				}),
-				-- #else
-				crit(2101, {	-- Silithus, Cenarion Hold
-					["coord"] = { 51.8, 39.2, SILITHUS },
-				}),
-				-- #endif
-				crit(18400, {	-- Southern Barrens, Fort Triumph
-					["coord"] = { 49.1, 68.5, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18401, {	-- Southern Barrens, Honor's Stand
-					["coord"] = { 39.0, 11.0, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18402, {	-- Southern Barrens, Northwatch Hold
-					["coord"] = { 65.6, 46.6, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18403, {	-- Stonetalon Mountains, Farwatcher's Glen
-					["coord"] = { 31.5, 60.7, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18412, {	-- Stonetalon Mountains, Northwatch Expedition Base
-					["coord"] = { 71.0, 79.1, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2081, {	-- Stonetalon Mountains, Thal'darah Overlook [CATA+] / Stonetalon Peak
-					-- #if AFTER CATA
-					["coord"] = { 39.5, 32.8, STONETALON_MOUNTAINS },
-					-- #else
-					["coord"] = { 35.53, 6.4, STONETALON_MOUNTAINS },
-					-- #endif
-				}),
-				crit(18413, {	-- Stonetalon Mountains, Windshear Hold
-					["coord"] = { 59.1, 56.3, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(18415, {	-- Tanaris, Bootlegger Outpost
-					["coord"] = { 55.7, 60.9, TANARIS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2086, {	-- Tanaris, Gadgetzan
-					["coord"] = { 52.6, 27.1, TANARIS },
-				}),
-				-- #else
-				crit(2102, {	-- Tanaris, Gadgetzan
-					["coord"] = { 52.45, 27.88, TANARIS },
-				}),
-				-- #endif
-				crit(2082, {	-- Teldrassil, Dolanaar
-					-- #if AFTER CATA
-					["coord"] = { 55.4, 52.3, TELDRASSIL },
-					-- #else
-					["coord"] = { 55.6, 59.85, TELDRASSIL },
-					-- #endif
-				}),
-				crit(18417, {	-- Un'Goro Crater, Marshal's Stand
-					["coord"] = { 55.2, 62.1, UNGORO_CRATER },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2087, {	-- Winterspring, Everlook
-					["coord"] = { 59.8, 51.2, WINTERSPRING },
-				}),
-				-- #else
-				crit(2103, {	-- Winterspring, Everlook
-					["coord"] = { 61.33, 38.86, WINTERSPRING },
-				}),
-				-- #endif
-			},
-			]]--
 		}),
 		ach(965, {	-- Tricks and Treats of Kalimdor (H)
-			["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = HORDE_ONLY,
-			--[[
-			["groups"] = {
-				crit(17610, {	-- Ashenvale, Hellscream's Watch
-					["coord"] = { 38.6, 42.4, ASHENVALE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17611, {	-- Ashenvale, Silverwind Refuge
-					["coord"] = { 50.2, 67.2, ASHENVALE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2105, {	-- Ashenvale, Splintertree Post
-					["coord"] = { 73.9, 60.7, ASHENVALE },
-				}),
-				crit(17612, {	-- Ashenvale, Zoram'gar Outpost
-					["coord"] = { 13.0, 34.1, ASHENVALE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17613, {	-- Azshara, Bilgewater Harbor
-					["coord"] = { 57.1, 50.2, AZSHARA },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if BEFORE CATA
-				crit(2106, {	-- Barrens, Camp Taurajo
-					["coord"] = { 45.6, 59.1, THE_BARRENS },
-				}),
-				crit(2099, {	-- Barrens, Ratchet
-					["coord"] = { 62.1, 39.4, THE_BARRENS },
-				}),
-				crit(2107, {	-- Barrens, The Crossroads
-					["coord"] = { 52.0, 29.9, THE_BARRENS },
-				}),
-				-- #endif
-				crit(18396, {	-- Desolace, Karnum's Glade
-					["coord"] = { 56.8, 50.0, DESOLACE },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2108, {	-- Desolace, Shadowprey Village
-					["coord"] = { 24.1, 68.3, DESOLACE },
-				}),
-				crit(2109, {	-- Durotar, Razor Hill
-					["coord"] = { 51.6, 41.7, DUROTAR },
-				}),
-				crit(2110, {	-- Dustwallow Marsh, Brackenwall Village
-					["coord"] = { 36.8, 32.4, DUSTWALLOW_MARSH },
-				}),
-				-- #if AFTER CATA
-				crit(2084, {	-- Dustwallow Marsh, Mudsprocket
-					["coord"] = { 41.0, 73.0, DUSTWALLOW_MARSH },
-				}),
-				-- #else
-				crit(2100, {	-- Dustwallow Marsh, Mudsprocket
-					["coord"] = { 41.86, 74.1, DUSTWALLOW_MARSH },
-				}),
-				-- #endif
-				crit(18397, {	-- Felwood, Whisperwind Grove
-					["coord"] = { 44.6, 28.9, FELWOOD },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17616, {	-- Feralas, Camp Ataya
-					["coord"] = { 41.4, 15.6, FERALAS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2111, {	-- Feralas, Camp Mojache
-					["coord"] = { 74.8, 45.1, FERALAS },
-				}),
-				crit(17617, {	-- Feralas, Stonemaul Hold
-					["coord"] = { 52.0, 47.7, FERALAS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2112, {	-- Mulgore, Bloodhoof Village
-					["coord"] = { 46.8, 60.4, MULGORE },
-				}),
-				-- #if AFTER CATA
-				crit(2107, {	-- Northern Barrens, The Crossroads
-					["coord"] = { 49.5, 58.0, NORTHERN_BARRENS },
-				}),
-				crit(17618, {	-- Northern Barrens, Grol'dom Farm
-					["coord"] = { 56.3, 40.1, NORTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17619, {	-- Northern Barrens, Nozzlepot's Outpost
-					["coord"] = { 62.5, 16.6, NORTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2083, {	-- Northern Barrens, Ratchet
-					-- #if AFTER CATA
-					["coord"] = { 67.3, 74.7, NORTHERN_BARRENS },
-					-- #else
-					["coord"] = { 62.1, 39.4, THE_BARRENS },
-					-- #endif
-				}),
-				-- #endif
-				crit(2113, {	-- Orgrimmar, Valley of Strength
-					["coord"] = { 53.8, 78.8, ORGRIMMAR },
-				}),
-				-- #if AFTER CATA
-				crit(2085, {	-- Silithus, Cenarion Hold
-					["coord"] = { 55.5, 36.7, SILITHUS },
-				}),
-				-- #else
-				crit(2101, {	-- Silithus, Cenarion Hold
-					["coord"] = { 51.8, 39.2, SILITHUS },
-				}),
-				-- #endif
-				crit(17620, {	-- Southern Barrens, Desolation Hold
-					["coord"] = { 40.7, 69.3, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17621, {	-- Southern Barrens, Hunter's Hill
-					["coord"] = { 39.3, 20.1, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(17622, {	-- Stonetalon Mountains, Krom'gar Fortress
-					["coord"] = { 66.5, 64.2, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				crit(2114, {	-- Stonetalon Mountains, Sun Rock Retreat
-					["coord"] = { 50.4, 63.8, STONETALON_MOUNTAINS },
-				}),
-				crit(18415, {	-- Tanaris, Bootlegger Outpost
-					["coord"] = { 55.7, 60.9, TANARIS },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2086, {	-- Tanaris, Gadgetzan
-					["coord"] = { 52.6, 27.1, TANARIS },
-				}),
-				-- #else
-				crit(2102, {	-- Tanaris, Gadgetzan
-					["coord"] = { 52.45, 27.88, TANARIS },
-				}),
-				crit(2161, {	-- Thousand Needles, Freewind Post
-					["coord"] = { 46.1, 51.4, THOUSAND_NEEDLES },
-				}),
-				-- #endif
-				crit(2115, {	-- Thunder Bluff, Lower Rise
-					["coord"] = { 45.7, 64.5, THUNDER_BLUFF },
-				}),
-				crit(18417, {	-- Un'Goro Crater, Marshal's Stand
-					["coord"] = { 55.2, 62.1, UNGORO_CRATER },
-					["timeline"] = { ADDED_4_2_0 },
-				}),
-				-- #if AFTER CATA
-				crit(2087, {	-- Winterspring, Everlook
-					["coord"] = { 59.8, 51.2, WINTERSPRING },
-				}),
-				-- #else
-				crit(2103, {	-- Winterspring, Everlook
-					["coord"] = { 61.33, 38.86, WINTERSPRING },
-				}),
-				-- #endif
-			},
-			]]--
 		}),
 		ach(5836, {	-- Tricks and Treats of Northrend (A)
 			["timeline"] = { ADDED_4_2_0 },
-			["sym"] = {{ "achievement_criteria" }},
 			["races"] = ALLIANCE_ONLY,
-			--[[
-			["groups"] = {
-				crit(17660, {	-- Borean Tundra, Fizzcrank Airstrip
-					["coord"] = { 57.1, 18.8, BOREAN_TUNDRA },
-				}),
-				crit(17661, {	-- Borean Tundra, Unu'pe
-					["coord"] = { 78.4, 49.2, BOREAN_TUNDRA },
-				}),
-				crit(17662, {	-- Borean Tundra, Valiance Keep
-					["coord"] = { 58.5, 67.9, BOREAN_TUNDRA },
-				}),
-				crit(17663, {	-- Dalaran, The Legerdemain Lounge
-					["coord"] = { 48.3, 40.8, NORTHREND_DALARAN },
-				}),
-				crit(17664, {	-- Dalaran, Silver Enclave
-					["coord"] = { 42.5, 63.5, NORTHREND_DALARAN },
-				}),
-				crit(17665, {	-- Dalaran, The Underbelly
-					["coord"] = { 27.2, 41.4, NORTHREND_THE_UNDERBELLY },
-					["maps"] = { NORTHREND_DALARAN },
-				}),
-				crit(17666, {	-- Dragonblight, Moa'ki Harbor
-					["coord"] = { 48.2, 74.7, DRAGONBLIGHT },
-				}),
-				crit(17667, {	-- Dragonblight, Stars' Rest
-					["coord"] = { 29.0, 56.2, DRAGONBLIGHT },
-				}),
-				crit(17668, {	-- Dragonblight, Wintergarde Keep
-					["coord"] = { 77.5, 51.3, DRAGONBLIGHT },
-				}),
-				crit(17669, {	-- Dragonblight, Wyrmrest Temple
-					["coord"] = { 60.1, 53.5, DRAGONBLIGHT },
-				}),
-				crit(17670, {	-- Grizzly Hills, Amberpine Lodge
-					["coord"] = { 32.0, 60.2, GRIZZLY_HILLS },
-				}),
-				crit(17671, {	-- Grizzly Hills, Westfall Brigade
-					["coord"] = { 59.6, 26.4, GRIZZLY_HILLS },
-				}),
-				crit(17672, {	-- Howling Fjord, Fort Wildevar
-					["coord"] = { 60.5, 15.9, HOWLING_FJORD },
-				}),
-				crit(17673, {	-- Howling Fjord, Kamagua
-					["coord"] = { 25.4, 59.8, HOWLING_FJORD },
-				}),
-				crit(17674, {	-- Howling Fjord, Valgarde
-					["coord"] = { 58.4, 62.8, HOWLING_FJORD },
-				}),
-				crit(17675, {	-- Howling Fjord, Westguard Keep
-					["coord"] = { 30.8, 41.5, HOWLING_FJORD },
-				}),
-				crit(17681, {	-- Sholazar Basin, Nesingwary Base Camp
-					["coord"] = { 26.7, 59.2, SHOLAZAR_BASIN },
-				}),
-				crit(17676, {	-- Storm Peaks, Bouldercrag's Refuge
-					["coord"] = { 30.9, 37.2, THE_STORM_PEAKS },
-				}),
-				crit(17677, {	-- Storm Peaks, Frosthold
-					["coord"] = { 28.7, 74.3, THE_STORM_PEAKS },
-				}),
-				crit(17678, {	-- Storm Peaks, K3
-					["coord"] = { 41.1, 85.9, THE_STORM_PEAKS },
-				}),
-				crit(17679, {	-- Zul'Drak, The Argent Stand
-					["coord"] = { 40.8, 66.0, ZULDRAK },
-				}),
-				crit(17680, {	-- Zul'Drak, Zim'Torga
-					["coord"] = { 59.3, 57.2, ZULDRAK },
-				}),
-			},
-			]]--
 		}),
 		ach(5835, {	-- Tricks and Treats of Northrend (H)
 			["timeline"] = { ADDED_4_2_0 },
-			["sym"] = {{ "achievement_criteria" }},
 			["races"] = HORDE_ONLY,
-			--[[
-			["groups"] = {
-				crit(17636, {	-- Borean Tundra, Bor'gorok Outpost
-					["coord"] = { 49.7, 10.0, BOREAN_TUNDRA },
-				}),
-				crit(17636, {	-- Borean Tundra, Taunka'le Village
-					["coord"] = { 76.7, 37.4, BOREAN_TUNDRA },
-				}),
-				crit(17631, {	-- Borean Tundra, Unu'pe
-					["coord"] = { 78.4, 49.2, BOREAN_TUNDRA },
-				}),
-				crit(17639, {	-- Borean Tundra, Warsong Hold
-					["coord"] = { 41.8, 54.4, BOREAN_TUNDRA },
-				}),
-				crit(17663, {	-- Dalaran, The Legerdemain Lounge
-					["coord"] = { 48.3, 40.8, NORTHREND_DALARAN },
-				}),
-				crit(17641, {	-- Dalaran, Sunreaver's Sanctuary
-					["coord"] = { 66.6, 30.1, NORTHREND_DALARAN },
-				}),
-				crit(17665, {	-- Dalaran, The Underbelly
-					["coord"] = { 27.2, 41.4, NORTHREND_THE_UNDERBELLY },
-					["maps"] = { NORTHREND_DALARAN },
-				}),
-				crit(17643, {	-- Dragonblight, Agmar's Hammer
-					["coord"] = { 37.8, 46.4, DRAGONBLIGHT },
-				}),
-				crit(17666, {	-- Dragonblight, Moa'ki Harbor
-					["coord"] = { 48.2, 74.7, DRAGONBLIGHT },
-				}),
-				crit(17645, {	-- Dragonblight, Venomspite
-					["coord"] = { 76.8, 63.2, DRAGONBLIGHT },
-				}),
-				crit(17669, {	-- Dragonblight, Wyrmrest Temple
-					["coord"] = { 60.1, 53.5, DRAGONBLIGHT },
-				}),
-				crit(17647, {	-- Grizzly Hills, Camp Oneqwah
-					["coord"] = { 65.4, 47.0, GRIZZLY_HILLS },
-				}),
-				crit(17648, {	-- Grizzly Hills, Conquest Hold
-					["coord"] = { 20.9, 64.7, GRIZZLY_HILLS },
-				}),
-				crit(17649, {	-- Howling Fjord, Camp Winterhoof
-					["coord"] = { 49.5, 10.8, HOWLING_FJORD },
-				}),
-				crit(17673, {	-- Howling Fjord, Kamagua
-					["coord"] = { 25.4, 59.8, HOWLING_FJORD },
-				}),
-				crit(17651, {	-- Howling Fjord, New Agamand
-					["coord"] = { 52.1, 66.2, HOWLING_FJORD },
-				}),
-				crit(17652, {	-- Howling Fjord, Vengeance Landing
-					["coord"] = { 79.2, 30.6, HOWLING_FJORD },
-				}),
-				crit(17681, {	-- Sholazar Basin, Nesingwary Base Camp
-					["coord"] = { 26.7, 59.2, SHOLAZAR_BASIN },
-				}),
-				crit(17676, {	-- Storm Peaks, Bouldercrag's Refuge
-					["coord"] = { 30.9, 37.2, THE_STORM_PEAKS },
-				}),
-				crit(17655, {	-- Storm Peaks, Camp Tunka'lo
-					["coord"] = { 67.6, 50.6, THE_STORM_PEAKS },
-				}),
-				crit(17656, {	-- Storm Peaks, Grom'arsh Crash Site
-					["coord"] = { 37.1, 49.6, THE_STORM_PEAKS },
-				}),
-				crit(17678, {	-- Storm Peaks, K3
-					["coord"] = { 41.1, 85.9, THE_STORM_PEAKS },
-				}),
-				crit(17679, {	-- Zul'Drak, The Argent Stand
-					["coord"] = { 40.8, 66.0, ZULDRAK },
-				}),
-				crit(17680, {	-- Zul'Drak, Zim'Torga
-					["coord"] = { 59.3, 57.2, ZULDRAK },
-				}),
-			},
-			]]--
 		}),
 		ach(969, {	-- Tricks and Treats of Outlands (A)
-			["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = ALLIANCE_ONLY,
-			--[[
-			["groups"] = {
-				crit(2204, {	-- Blade's Edge Mountains, Evergrove
-					["coord"] = { 62.9, 38.3, BLADES_EDGE_MOUNTAINS },
-				}),
-				crit(2195, {	-- Blade's Edge Mountains, Sylvanaar
-					["coord"] = { 35.8, 63.8, BLADES_EDGE_MOUNTAINS },
-				}),
-				crit(2196, {	-- Blade's Edge Mountains, Toshley's Station
-					["coord"] = { 61.0, 68.1, BLADES_EDGE_MOUNTAINS },
-				}),
-				crit(2197, {	-- Hellfire Peninsula, Honor Hold
-					["coord"] = { 54.3, 63.6, HELLFIRE_PENINSULA },
-				}),
-				crit(2198, {	-- Hellfire Peninsula, Temple of Telhamat
-					["coord"] = { 23.4, 36.5, HELLFIRE_PENINSULA },
-				}),
-				crit(2199, {	-- Nagrand, Telaar
-					["coord"] = { 54.2, 75.8, NAGRAND },
-				}),
-				crit(2205, {	-- Netherstorm, Area 52
-					["coord"] = { 32.0, 64.4, NETHERSTORM },
-				}),
-				crit(2206, {	-- Netherstorm, The Stormspire
-					["coord"] = { 43.4, 36.1, NETHERSTORM },
-				}),
-				crit(2210, {	-- Shadowmoon Valley, Altar of Sha'tar or Sanctum of the Stars
-					["coords"] = {
-						{ 30.3, 27.8, SHADOWMOON_VALLEY },	-- Scryer
-						{ 61.0, 28.2, SHADOWMOON_VALLEY },	-- Aldor
-					},
-				}),
-				crit(2200, {	-- Shadowmoon Valley, Wildhammer Stronghold
-					["coord"] = { 37.1, 58.2, SHADOWMOON_VALLEY },
-				}),
-				crit(2207, {	-- Shattrath City, Aldor Rise or Scryer's Tier
-					["coords"] = {
-						{ 56.2, 81.8, SHATTRATH_CITY },	-- Scryer
-						{ 28.1, 49.0, SHATTRATH_CITY },	-- Aldor
-					},
-				}),
-				crit(2201, {	-- Terokkar Forest, Allerian Stronghold
-					["coord"] = { 56.6, 53.2, TEROKKAR_FOREST },
-				}),
-				crit(2209, {	-- Zangarmarsh, Cenarion Refuge
-					["coord"] = { 78.5, 62.9, ZANGARMARSH },
-				}),
-				crit(2202, {	-- Zangarmarsh, Orebor Harborage
-					["coord"] = { 41.9, 26.2, ZANGARMARSH },
-				}),
-				crit(2203, {	-- Zangarmarsh, Telredor
-					["coord"] = { 67.2, 49.0, ZANGARMARSH },
-				}),
-			},
-			]]--
 		}),
 		ach(968, {	-- Tricks and Treats of Outlands (H)
-			["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = HORDE_ONLY,
-			--[[
-			["groups"] = {
-				crit(2204, {	-- Blade's Edge Mountains, Evergrove
-					["coord"] = { 62.9, 38.3, BLADES_EDGE_MOUNTAINS },
-				}),
-				crit(2217, {	-- Blade's Edge Mountains, Mok'Nathal Village
-					["coord"] = { 76.2, 60.4, BLADES_EDGE_MOUNTAINS },
-				}),
-				crit(2218, {	-- Blade's Edge Mountains, Thunderlord Stronghold
-					["coord"] = { 53.4, 55.5, BLADES_EDGE_MOUNTAINS },
-				}),
-				crit(2219, {	-- Hellfire Peninsula, Falcon Watch
-					["coord"] = { 26.9, 59.6, HELLFIRE_PENINSULA },
-				}),
-				crit(2221, {	-- Hellfire Peninsula, Thrallmar
-					["coord"] = { 56.8, 37.5, HELLFIRE_PENINSULA },
-				}),
-				crit(2220, {	-- Nagrand, Garadar
-					["coord"] = { 56.7, 34.6, NAGRAND },
-				}),
-				crit(2205, {	-- Netherstorm, Area 52
-					["coord"] = { 32.0, 64.4, NETHERSTORM },
-				}),
-				crit(2206, {	-- Netherstorm, The Stormspire
-					["coord"] = { 43.4, 36.1, NETHERSTORM },
-				}),
-				crit(2210, {	-- Shadowmoon Valley, Altar of Sha'tar or Sanctum of the Stars
-					["coords"] = {
-						{ 30.3, 27.8, SHADOWMOON_VALLEY },	-- Scryer
-						{ 61.0, 28.2, SHADOWMOON_VALLEY },	-- Aldor
-					},
-				}),
-				crit(2222, {	-- Shadowmoon Valley, Shadowmoon Village
-					["coord"] = { 30.3, 27.8, SHADOWMOON_VALLEY },
-				}),
-				crit(2207, {	-- Shattrath City, Aldor Rise or Scryer's Tier
-					["coords"] = {
-						{ 56.2, 81.8, SHATTRATH_CITY },	-- Scryer
-						{ 28.1, 49.0, SHATTRATH_CITY },	-- Aldor
-					},
-				}),
-				crit(2223, {	-- Terokkar Forest, Stonebreaker Hold
-					["coord"] = { 48.8, 45.2, TEROKKAR_FOREST },
-				}),
-				crit(2224, {	-- Zangarmarsh, Zabra'jin
-					["coord"] = { 30.7, 50.9, ZANGARMARSH },
-				}),
-				crit(2209, {	-- Zangarmarsh, Cenarion Refuge
-					["coord"] = { 78.5, 62.9, ZANGARMARSH },
-				}),
-			},
-			]]--
 		}),
 		ach(7601, {	-- Tricks and Treats of Pandaria (A)
 			["timeline"] = { ADDED_5_0_4 },
-			["sym"] = {{ "achievement_criteria" }},
 			["races"] = ALLIANCE_ONLY,
-			--[[
-			["groups"] = {
-				crit(21927, {	-- Dread Wastes, Klaxi'vess
-					["coord"] = { 55.9, 32.3, DREAD_WASTES },
-				}),
-				crit(21928, {	-- Dread Wastes, Soggy's Gamble
-					["coord"] = { 55.2, 71.1, DREAD_WASTES },
-				}),
-				crit(21929, {	-- Jade Forest, Dawn's Blossom
-					["coord"] = { 45.7, 43.6, THE_JADE_FOREST },
-				}),
-				crit(21930, {	-- Jade Forest, Greenstone Village
-					["coord"] = { 48.0, 34.6, THE_JADE_FOREST },
-				}),
-				crit(21931, {	-- Jade Forest, Jade Temple Grounds
-					["coord"] = { 54.6, 63.3, THE_JADE_FOREST },
-				}),
-				crit(21923, {	-- Jade Forest, Paw'don Village
-					["coord"] = { 44.8, 84.4, THE_JADE_FOREST },
-				}),
-				crit(21924, {	-- Jade Forest, Pearlfin Village
-					["coord"] = { 59.6, 83.2, THE_JADE_FOREST },
-				}),
-				crit(21932, {	-- Jade Forest, Sri-La Village
-					["coord"] = { 55.7, 24.4, THE_JADE_FOREST },
-				}),
-				crit(21933, {	-- Jade Forest, Tian Monastery
-					["coord"] = { 41.6, 23.1, THE_JADE_FOREST },
-				}),
-				crit(21934, {	-- Krasarang Wilds, Marista
-					["coord"] = { 53.4, 76.5, KRASARANG_WILDS },
-				}),
-				crit(21935, {	-- Krasarang Wilds, Zhu's Watch
-					["coord"] = { 79.8, 0.71, KRASARANG_WILDS },
-				}),
-				crit(21936, {	-- Kun-Lai Summit, Binan Village
-					["coord"] = { 72.7, 92.2, KUN_LAI_SUMMIT },
-				}),
-				crit(21938, {	-- Kun-Lai Summit, The Grummle Bazaar
-					["coord"] = { 57.4, 59.9, KUN_LAI_SUMMIT },
-				}),
-				crit(21937, {	-- Kun-Lai Summit, One Keg
-					["coord"] = { 64.2, 61.2, KUN_LAI_SUMMIT },
-				}),
-				crit(21925, {	-- Kun-Lai Summit, Westwind Rest
-					["coord"] = { 54.1, 82.8, KUN_LAI_SUMMIT },
-				}),
-				crit(21939, {	-- Kun-Lai Summit, Zouchin Village
-					["coord"] = { 62.3, 29.0, KUN_LAI_SUMMIT },
-				}),
-				crit(21940, {	-- The Veiled Stair, Tavern in the Mists
-					["coord"] = { 54.9, 72.3, THE_VEILED_STAIR },
-				}),
-				crit(21941, {	-- Townlong Steppes, Longying Outpost
-					["coord"] = { 71.1, 57.8, TOWNLONG_STEPPES },
-				}),
-				crit(21942, {	-- Vale of Eternal Blossoms, Mistfall Village
-					["coord"] = { 35.1, 77.7, VALE_OF_ETERNAL_BLOSSOMS },
-				}),
-				crit(21943, {	-- Vale of Eternal Blossoms, Shrine of Seven Stars
-					["coord"] = { 37.7, 66.1, 393 },
-				}),
-				crit(21943, {	-- Valley of the Four Winds, Pang's Stead
-					["coord"] = { 83.6, 20.3, VALLEY_OF_THE_FOUR_WINDS },
-				}),
-				crit(21945, {	-- Valley of the Four Winds, Stoneplow
-					["coord"] = { 19.8, 55.7, VALLEY_OF_THE_FOUR_WINDS },
-				}),
-			},
-			]]--
 		}),
 		ach(7602, {	-- Tricks and Treats of Pandaria (H)
 			["timeline"] = { ADDED_5_0_4 },
-			["sym"] = {{ "achievement_criteria" }},
 			["races"] = HORDE_ONLY,
-			--[[
-			["groups"] = {
-				crit(21927, {	-- Dread Wastes, Klaxxi'vess
-					["coord"] = { 55.9, 32.3, DREAD_WASTES },
-				}),
-				crit(21928, {	-- Dread Wastes, Soggy's Gamble
-					["coord"] = { 55.2, 71.1, DREAD_WASTES },
-				}),
-				crit(21929, {	-- Jade Forest, Dawn's Blossom
-					["coord"] = { 45.7, 43.6, THE_JADE_FOREST },
-				}),
-				crit(21930, {	-- Jade Forest, Greenstone Village
-					["coord"] = { 48.0, 34.6, THE_JADE_FOREST },
-				}),
-				crit(21946, {	-- Jade Forest, Grookin, Hill
-					["coord"] = { 28.0, 47.4, THE_JADE_FOREST },
-				}),
-				crit(21947, {	-- Jade Forest, Honeydew Village
-					["coord"] = { 28.5, 13.3, THE_JADE_FOREST },
-				}),
-				crit(21931, {	-- Jade Forest, Jade Temple Grounds
-					["coord"] = { 54.6, 63.3, THE_JADE_FOREST },
-				}),
-				crit(21932, {	-- Jade Forest, Sri-La Village
-					["coord"] = { 55.7, 24.4, THE_JADE_FOREST },
-				}),
-				crit(21933, {	-- Jade Forest, Tian Monastery
-					["coord"] = { 41.6, 23.1, THE_JADE_FOREST },
-				}),
-				crit(21948, {	-- Krasarang Wilds, Dawnchaser Retreat
-					["coord"] = { 28.5, 47.9, KRASARANG_WILDS },
-				}),
-				crit(21934, {	-- Krasarang Wilds, Marista
-					["coord"] = { 53.4, 76.5, KRASARANG_WILDS },
-				}),
-				crit(21951, {	-- Krasarang Wilds, Thunder Cleft
-					["coord"] = { 63.8, 20.4, KRASARANG_WILDS },
-				}),
-				crit(21935, {	-- Krasarang Wilds, Zhu's Watch
-					["coord"] = { 79.8, 0.71, KRASARANG_WILDS },
-				}),
-				crit(21936, {	-- Kun-Lai Summit, Binan Village
-					["coord"] = { 72.7, 92.2, KUN_LAI_SUMMIT },
-				}),
-				crit(21949, {	-- Kun-Lai Summit, Eastwind Rest
-					["coord"] = { 62.7, 80.5, KUN_LAI_SUMMIT },
-				}),
-				crit(21938, {	-- Kun-Lai Summit, The Grummle Bazaar
-					["coord"] = { 57.4, 59.9, KUN_LAI_SUMMIT },
-				}),
-				crit(21937, {	-- Kun-Lai Summit, One Keg
-					["coord"] = { 64.2, 61.2, KUN_LAI_SUMMIT },
-				}),
-				crit(21939, {	-- Kun-Lai Summit, Zouchin Village
-					["coord"] = { 62.3, 29.0, KUN_LAI_SUMMIT },
-				}),
-				crit(21940, {	-- The Veiled Stair, Tavern in the Mists
-					["coord"] = { 54.9, 72.3, THE_VEILED_STAIR },
-				}),
-				crit(21941, {	-- Townlong Steppes, Longying Outpost
-					["coord"] = { 71.1, 57.8, TOWNLONG_STEPPES },
-				}),
-				crit(21942, {	-- Vale of Eternal Blossoms, Mistfall Village
-					["coord"] = { 35.1, 77.7, VALE_OF_ETERNAL_BLOSSOMS },
-				}),
-				crit(21950, {	-- Vale of Eternal Blossoms, Shrine of Two Moons
-					["coord"] = { 61.9, 16.1, 391 },
-				}),
-				crit(21943, {	-- Valley of the Four Winds, Pang's Stead
-					["coord"] = { 83.6, 20.3, VALLEY_OF_THE_FOUR_WINDS },
-				}),
-				crit(21945, {	-- Valley of the Four Winds, Stoneplow
-					["coord"] = { 19.8, 55.7, VALLEY_OF_THE_FOUR_WINDS },
-				}),
-			},
-			]]--
 		}),
-		ach(18360, {	-- Tricks and Treats of the Dragon Isles
+		ach(18360, {	-- Tricks and Treats of the Dragon Isles (automated)
 			["timeline"] = { ADDED_10_1_5 },
-			["g"] = {
-				crit(59979, {	-- Ohn'ahran Plains, Broadhoof Outpost
-					["_quests"] = { 75684 },	-- Candy Bucket — Ohn'ahran Plains, Broadhoof Outpost
-				}),
-				crit(59988, {	-- Ohn'ahran Plains, Emberwatch
-					["_quests"] = { 75693 },	-- Candy Bucket — Ohn'ahran Plains, Emberwatch
-				}),
-				crit(59987, {	-- Ohn'ahran Plains, Forkriver Crossing
-					["_quests"] = { 75692 },	-- Candy Bucket — Ohn'ahran Plains, Forkriver Crossing
-				}),
-				crit(59980, {	-- Ohn'ahran Plains, Maruukai
-					["_quests"] = { 75685 },	-- Candy Bucket — Ohn'ahran Plains, Maruukai
-				}),
-				crit(59982, {	-- Ohn'ahran Plains, Ohn'iri Springs
-					["_quests"] = { 75687 },	-- Candy Bucket — Ohn'ahran Plains, Ohn'iri Springs
-				}),
-				crit(59983, {	-- Ohn'ahran Plains, Pinewood Post
-					["_quests"] = { 75688 },	-- Candy Bucket — Ohn'ahran Plains, Pinewood Post
-				}),
-				crit(59984, {	-- Ohn'ahran Plains, Rusza'thar Reach
-					["_quests"] = { 75689 },	-- Candy Bucket — Ohn'ahran Plains, Rusza'thar Reach
-				}),
-				crit(59981, {	-- Ohn'ahran Plains, Shady Sanctuary
-					["_quests"] = { 75686 },	-- Candy Bucket — Ohn'ahran Plains, Shady Sanctuary
-				}),
-				crit(59986, {	-- Ohn'ahran Plains, Teerakai
-					["_quests"] = { 75691 },	-- Candy Bucket — Ohn'ahran Plains, Teerakai
-				}),
-				crit(59985, {	-- Ohn'ahran Plains, Timberstep Outpost
-					["_quests"] = { 75690 },	-- Candy Bucket — Ohn'ahran Plains, Timberstep Outpost
-				}),
-				crit(59992, {	-- Thaldraszus, Algeth'era Court
-					["_quests"] = { 75698 },	-- Candy Bucket — Thaldraszus, Algeth'era Court
-				}),
-				crit(59990, {	-- Thaldraszus, Garden Shrine
-					["_quests"] = { 75696 },	-- Candy Bucket — Thaldraszus, Garden Shrine
-				}),
-				crit(59991, {	-- Thaldraszus, Gelikyr Post
-					["_quests"] = { 75697 },	-- Candy Bucket — Thaldraszus, Gelikyr Post
-				}),
-				crit(59989, {	-- Thaldraszus, Temporal Conflux
-					["_quests"] = { 75695 },	-- Candy Bucket — Thaldraszus, Temporal Conflux
-				}),
-				crit(59994, {	-- Thaldraszus, Valdrakken (The Parting Glass)
-					["_quests"] = { 75700 },	-- Candy Bucket — Thaldraszus, Valdrakken (The Parting Glass)
-				}),
-				crit(59993, {	-- Thaldraszus, Valdrakken (The Roasted Ram)
-					["_quests"] = { 75699 },	-- Candy Bucket — Thaldraszus, Valdrakken (The Roasted Ram)
-				}),
-				crit(59995, {	-- Thaldraszus, Valdrakken (Weyrnrest)
-					["_quests"] = { 75701 },	-- Candy Bucket — Thaldraszus, Valdrakken (Weyrnrest)
-				}),
-				crit(59963, {	-- The Azure Span, Camp Antonidas
-					["_quests"] = { 75667 },	-- Candy Bucket — The Azure Span, Camp Antonidas
-				}),
-				crit(59964, {	-- The Azure Span, Camp Nowhere
-					["_quests"] = { 75668 },	-- Candy Bucket — The Azure Span, Camp Nowhere
-				}),
-				crit(59965, {	-- The Azure Span, Iskaara
-					["_quests"] = { 75669 },	-- Candy Bucket — The Azure Span, Iskaara
-				}),
-				crit(59966, {	-- The Azure Span, Theron's Watch
-					["_quests"] = { 75670 },	-- Candy Bucket — The Azure Span, Theron's Watch
-				}),
-				crit(59967, {	-- The Azure Span, Three-Falls Lookout
-					["_quests"] = { 75671 },	-- Candy Bucket — The Azure Span, Three-Falls Lookout
-				}),
-				crit(59996, {	-- The Forbidden Reach, Morqut Village
-					["_quests"] = { 75702 },	-- Candy Bucket — The Forbidden Reach, Morqut Village
-				}),
-				crit(59968, {	-- The Waking Shores, Apex Observatory
-					["_quests"] = { 75672 },	-- Candy Bucket — The Waking Shores, Apex Observatory
-				}),
-				crit(59969, {	-- The Waking Shores, Dragonscale Basecamp
-					["_quests"] = { 75673 },	-- Candy Bucket — The Waking Shores, Dragonscale Basecamp
-				}),
-				crit(59971, {	-- The Waking Shores, Life Vault Ruins
-					["_quests"] = { 75675 },	-- Candy Bucket — The Waking Shores, Life Vault Ruins
-				}),
-				crit(61332, {	-- The Waking Shores, Obsidian Bulwark
-					["_quests"] = { 77698 },	-- Candy Bucket — The Waking Shores, Obsidian Bulwark
-				}),
-				crit(59972, {	-- The Waking Shores, Obsidian Throne
-					["_quests"] = { 75676 },	-- Candy Bucket — The Waking Shores, Obsidian Throne
-				}),
-				crit(59970, {	-- The Waking Shores, Ruby Lifeshrine
-					["_quests"] = { 75674 },	-- Candy Bucket —  The Waking Shores, Ruby Lifeshrine
-				}),
-				crit(59973, {	-- The Waking Shores, Skytop Observatory
-					["_quests"] = { 75677 },	-- Candy Bucket — The Waking Shores, Skytop Observatory
-				}),
-				crit(59974, {	-- The Waking Shores, Uktulut Backwater
-					["_quests"] = { 75678 },	-- Candy Bucket —  The Waking Shores, Uktulut Backwater
-				}),
-				crit(59975, {	-- The Waking Shores, Uktulut Pier
-					["_quests"] = { 75679 },	-- Candy Bucket —  The Waking Shores, Uktulut Pier
-				}),
-				crit(59976, {	-- The Waking Shores, Wild Coast (A)
-					["_quests"] = { 75681 },	-- Candy Bucket — The Waking Shores, Wild Coast (A)
-				}),
-				crit(59977, {	-- The Waking Shores, Wild Coast (H)
-					["_quests"] = { 75682 },	-- Candy Bucket — The Waking Shores, Wild Coast (H)
-				}),
-				crit(59978, {	-- The Waking Shores, Wingrest Embassy
-					["_quests"] = { 75683 },	-- Candy Bucket —  The Waking Shores, Wingrest Embassy
-				}),
-				crit(59998, {	-- Zaralek Cavern, Loamm
-					["_quests"] = { 75704 },	-- Candy Bucket — Zaralek Cavern, Loamm
-				}),
-				crit(59997, {	-- Zaralek Cavern, Obsidian Rest
-					["_quests"] = { 75703 },	-- Candy Bucket — Zaralek Cavern, Obsidian Rest
-				}),
-			}
 		}),
-		ach(40862, {	-- Tricks and Treats of Khaz Algar
+		ach(40862, {	-- Tricks and Treats of Khaz Algar (automated)
 			["timeline"] = { ADDED_11_0_2 },
-			["g"] = {
-				-- TODO: Uncomment _quests when quests are put in place (they already exist so someone can already source them).
-				-- INFO: Could technically also work via automation, these criteria don't need to be written out, but they do require the quests to be sourced for that + the Wago file to be updated.
-				crit(69826, {	-- Azj-Kahet, Faerin's Advance
-					--["_quests"] = { 84579 },	-- Candy Bucket — Azj-Kahet, Faerin's Advance
-				}),
-				crit(69827, {	-- Azj-Kahet, Mmarl
-					--["_quests"] = { 84580 },	-- Candy Bucket — Azj-Kahet, Mmarl
-				}),
-				crit(69829, {	-- Azj-Kahet, Weaver's Lair
-					--["_quests"] = { 84582 },	-- Candy Bucket — Azj-Kahet, Weaver's Lair
-				}),
-				crit(69828, {	-- Azj-Kahet, Wildcamp Ul'ar
-					--["_quests"] = { 84581 },	-- Candy Bucket — Azj-Kahet, Wildcamp Ul'ar
-				}),
-				crit(69823, {	-- City of Threads, High Hollows
-					--["_quests"] = { 84576 },	-- Candy Bucket — City of Threads, High Hollows
-				}),
-				crit(69825, {	-- City of Threads, Umbral Bazzar
-					--["_quests"] = { 84578 },	-- Candy Bucket — City of Threads, Umbral Bazzar
-				}),
-				crit(69824, {	-- City of Threads - Lower, The Burrows
-					--["_quests"] = { 84577 },	-- Candy Bucket — City of Threads - Lower, The Burrows
-				}),
-				crit(69819, {	-- Hallowfall, Dunelle's Kindness
-					--["_quests"] = { 84572 },	-- Candy Bucket — Hallowfall, Dunelle's Kindness
-				}),
-				crit(69821, {	-- Hallowfall, Light's Redoubt
-					--["_quests"] = { 84574 },	-- Candy Bucket — Hallowfall, Light's Redoubt
-				}),
-				crit(69820, {	-- Hallowfall, Lorel's Crossing
-					--["_quests"] = { 84573 },	-- Candy Bucket — Hallowfall, Lorel's Crossing
-				}),
-				crit(69822, {	-- Hallowfall, Mereldar
-					--["_quests"] = { 84575 },	-- Candy Bucket — Hallowfall, Mereldar
-				}),
-				crit(69812, {	-- Isle of Dorn, Dornogal
-					--["_quests"] = { 84564 },	-- Candy Bucket — Isle of Dorn, Dornogal
-				}),
-				crit(69813, {	-- Isle of Dorn, Freywold Village
-					--["_quests"] = { 84566 },	-- Candy Bucket — Isle of Dorn, Freywold Village
-				}),
-				crit(69814, {	-- Isle of Dorn, Rambleshire
-					--["_quests"] = { 84567 },	-- Candy Bucket — Isle of Dorn, Rambleshire
-				}),
-				crit(69815, {	-- The Ringing Deeps, Camp Murroch
-					--["_quests"] = { 84568 },	-- Candy Bucket — The Ringing Deeps, Camp Murroch
-				}),
-				crit(69816, {	-- The Ringing Deeps, Gundargaz
-					--["_quests"] = { 84569 },	-- Candy Bucket — The Ringing Deeps, Gundargaz
-				}),
-				crit(69817, {	-- The Ringing Deeps, Opportunity Point
-					--["_quests"] = { 84570 },	-- Candy Bucket — The Ringing Deeps, Opportunity Point
-				}),
-				crit(69818, {	-- The Ringing Deeps, Shadowvein Point
-					--["_quests"] = { 84571 },	-- Candy Bucket — The Ringing Deeps, Shadowvein Point
-				}),
-			},
 		}),
 	}),
 	-- #endif
@@ -2081,9 +928,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 					-- #if BEFORE 10.1.7
 					ach(980, {	-- The Horseman's Reins
 						["provider"] = { "i", 37012 },	-- The Horseman's Reins
-						-- #if BEFORE WRATH
-						["description"] = "Obtain The Horseman's Reins from The Headless Horseman in the Scarlet Monastery during Hallow's End.",
-						-- #endif
 						["timeline"] = { ADDED_2_0_1 },
 						["filterID"] = MOUNTS,
 					}),
@@ -2111,7 +955,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			}),
 			i(209024, {	-- Loot-Filled Pumpkin (Epic Bag after 10.1.7 Rework)
 				["timeline"] = { ADDED_10_1_7 },
-				["description"] = "You can loot the Loot-Stuffed Filled Pumpkin once a day per character by queueing for the encounter in the Dungeon Finder.\nThe first Loot-Stuffed Filled Pumpkin you get per day per |CFFFF0000account|r has a vastly increased chance to contain collectables such as manuscripts, mounts, pets, and toys.\n\nThis bag has a higher chance of dropping The Horseman's Reins with more curses applied, as confirmed in a blue post on October 18, 2023.\nThe effect on other items' drop rates remains unknown.",
 				["sym"] = {
 					{ "selectparent", 2 },	-- Select the holiday root.
 					{ "pop" },	-- Get the Rewards.
@@ -2120,12 +963,10 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 					{ "contains", "itemID", 33226, unpack(MASK_IDS) },	-- Tricky Treat & All the Masks
 					{ "exclude", "itemID", 69187, 69188, 69189, 69190, 69192, 69193, 69194, 69195 },	-- Exclude Murloc, Naga, Ogre, Vrykul Masks
 				},
+				["description"] = "Your first attempt of the day has an increased chance at the mount, pet, and manuscript. Enabling the curses increases the chances for the mount, at least. Subsequent attempts scan still drop these items, but at a significantly lower rate (as far as we know).",	-- Manual override for src\Settings\Pages\Interface - Information.lua
 				["groups"] = {
 					ach(980, {	-- The Horseman's Reins
 						["provider"] = { "i", 37012 },	-- The Horseman's Reins
-						-- #if BEFORE WRATH
-						["description"] = "Obtain The Horseman's Reins from The Headless Horseman in the Scarlet Monastery during Hallow's End.",
-						-- #endif
 						["timeline"] = { ADDED_2_0_1 },
 						["filterID"] = MOUNTS,
 					}),
@@ -2146,6 +987,27 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 						["timeline"] = { ADDED_2_4_3 },
 						["collectible"] = false,
 					}),
+					i(226461, {	-- Patched Harvest Golem's Belt
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+					i(226458, {	-- Patched Harvest Golem's Boots
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+					i(226457, {	-- Patched Harvest Golem's Chest
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+					i(226456, {	-- Patched Harvest Golem's Gloves
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+					i(226690, {	-- Patched Harvest Golem's Head
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+					i(226455, {	-- Patched Harvest Golem's Pants
+						["timeline"] = { ADDED_11_0_5 },
+					}),
+					i(226454, {	-- Patched Harvest Golem's Pauldrons
+						["timeline"] = { ADDED_11_0_5 },
+					}),
 					i(33154, {	-- Sinister Squashling (PET!)
 						["timeline"] = { ADDED_2_2_2 },
 					}),
@@ -2158,7 +1020,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 					i(208485, {	-- The Scarlet Key
 						["timeline"] = { ADDED_10_1_7 },
 					}),
-					i(208680, {	-- Windborne Velocidrake: Hallow's End Armor (DM!)
+					i(208680, {	-- Windborne Velocidrake: Hallow's End Armor (MM!)
 						["timeline"] = { ADDED_10_1_7 },
 					}),
 				},
@@ -2243,9 +1105,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 					-- #if BEFORE 6.0.1
 					ach(980, {	-- The Horseman's Reins
 						["provider"] = { "i", 37012 },	-- The Horseman's Reins
-						-- #if BEFORE WRATH
-						["description"] = "Obtain The Horseman's Reins from The Headless Horseman in the Scarlet Monastery during Hallow's End.",
-						-- #endif
 						["timeline"] = { ADDED_2_0_1 },
 						["filterID"] = MOUNTS,
 					}),
@@ -2304,9 +1163,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			-- #if BEFORE WRATH
 			ach(980, {	-- The Horseman's Reins
 				["provider"] = { "i", 37012 },	-- The Horseman's Reins
-				-- #if BEFORE WRATH
-				["description"] = "Obtain The Horseman's Reins from The Headless Horseman in the Scarlet Monastery during Hallow's End.",
-				-- #endif
 				["timeline"] = { ADDED_2_0_1 },
 				["filterID"] = MOUNTS,
 			}),
@@ -2426,7 +1282,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			}),
 			-- #endif
 			-- #endif
-			i(33226, {	-- Tricky Treats
+			i(33226, {	-- Tricky Treat
 				["timeline"] = { ADDED_2_4_3 },
 			}),
 			i(34068, {	-- Weighted Jack-o'-Lantern
@@ -2450,6 +1306,1518 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			pet(1730),	-- Spectral Spinner (PET!)
 		},
 	})),
+	header(HEADERS.Quest, 12406, {	-- Candy Bucket Quests
+		n(FACTION_HEADER_NEUTRAL, {
+			["timeline"] = { ADDED_2_0_1 },
+			["groups"] = {
+				candybucket(28955, {	-- Candy Bucket — Badlands, Fuselight, Neutral
+					["provider"] = { "o", 208137 },	-- Candy Bucket, Badlands
+					["coord"] = { 65.9, 35.8, BADLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12406, {	-- Candy Bucket — Blade's Edge Mountains, Evergrove, Neutral
+					["provider"] = { "o", 190112 },	-- Candy Bucket, Blade's Edge Mountains
+					["coord"] = { 62.9, 38.3, BLADES_EDGE_MOUNTAINS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(13460, {	-- Candy Bucket — Borean Tundra, Unu'pe, Neutral
+					["provider"] = { "o", 194068 },	-- Candy Bucket, Borean Tundra
+					["coord"] = { 78.4, 49.2, BOREAN_TUNDRA },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(43055, {	-- Candy Bucket — Dalaran : Broken Shores, Legerdemain Lounge, Neutral
+					["provider"] = { "o", 251670 },	-- Candy Bucket, Dalaran
+					["coord"] = { 48.1, 41.3, LEGION_DALARAN },
+					["timeline"] = { ADDED_7_0_3 },
+				}),
+				candybucket(13463, {	-- Candy Bucket — Dalaran : Northrend, Legerdemain Lounge, Neutral
+					["provider"] = { "o", 194071 },	-- Candy Bucket, Dalaran
+					["coord"] = { 48.3, 40.8, NORTHREND_DALARAN },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13472, {	-- Candy Bucket — Dalaran : Northrend, Underbelly, Neutral
+					["provider"] = { "o", 194072 },	-- Candy Bucket, Dalaran
+					["coord"] = { 38.0, 59.9, NORTHREND_THE_UNDERBELLY },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(28993, {	-- Candy Bucket — Desolace, Karnum's Glade, Neutral
+					["provider"] = { "o", 208157 },	-- Candy Bucket, Desolace
+					["coord"] = { 56.8, 50.0, DESOLACE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(39657, {	-- Candy Bucket — Draenor Garrison (Frostwall or Lunarfall), Neutral
+					-- TODO: While it might seem weird, having this have coordinates at least will plot it on the map so folks don't forget.
+					-- Perhaps investigate a programatic solution? The garrison has different map IDs at different stages of creation.
+					["provider"] = { "o", 243912 },	-- Candy Bucket, Draenor Garrison
+					["timeline"] = { ADDED_6_0_2 },
+					["maps"] = {
+						FROSTWALL,
+						LUNARFALL,
+					},
+				}),
+				candybucket(13459, {	-- Candy Bucket — Dragonblight, Moa'ki Harbor, Neutral
+					["provider"] = { "o", 194067 },	-- Candy Bucket, Dragonblight
+					["coord"] = { 48.2, 74.7, DRAGONBLIGHT },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13456, {	-- Candy Bucket — Dragonblight, Wyrmrest Temple, Neutral
+					["provider"] = { "o", 194066 },	-- Candy Bucket, Dragonblight
+					["coord"] = { 60.1, 53.5, DRAGONBLIGHT },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(32024, {	-- Candy Bucket — Dread Wastes, Klaxxi'vess, Neutral
+					["provider"] = { "o", 215877 },	-- Candy Bucket, Dread Wastes
+					["coord"] = { 55.9, 32.3, DREAD_WASTES },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32023, {	-- Candy Bucket — Dread Wastes, Soggy's Gamble, Neutral
+					["provider"] = { "o", 215876 },	-- Candy Bucket, Dread Wastes
+					["coord"] = { 55.2, 71.1, DREAD_WASTES },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(12398, {	-- Candy Bucket — Dustwallow Marsh, Mudsprocket, Neutral
+					["provider"] = { "o", 190104 },	-- Candy Bucket, Dustwallow Marsh
+					["coord"] = { 41.86, 74.1, DUSTWALLOW_MARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12402, {	-- Candy Bucket — Eastern Plaguelands, Light's Hope Chapel, Neutral
+					["provider"] = { "o", 190108 },	-- Candy Bucket, Eastern Plaguelands
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 75.6, 52.4, EASTERN_PLAGUELANDS },
+						-- #else
+						{ 81.7, 58.1, EASTERN_PLAGUELANDS },
+						-- #endif
+						-- #if AFTER LEGION
+						{ 41.3, 90.4, LIGHTS_HOPE_CHAPEL },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28994, {	-- Candy Bucket — Felwood, Whisperwind Grove, Neutral
+					["provider"] = { "o", 208158 },	-- Candy Bucket, Felwood
+					["coord"] = { 44.6, 28.9, FELWOOD },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(13452, {	-- Candy Bucket — Howling Fjord, Kamagua, Neutral
+					["provider"] = { "o", 194065 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 25.4, 59.8, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(32034, {	-- Candy Bucket — Krasarang Wilds, Marista, Neutral
+					["provider"] = { "o", 215892 },	-- Candy Bucket, Krasarang Wilds
+					["coord"] = { 51.4, 77.29, KRASARANG_WILDS },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32036, {	-- Candy Bucket — Krasarang Wilds, Zhu's Watch, Neutral
+					["provider"] = { "o", 215894 },	-- Candy Bucket, Krasarang Wilds
+					["coord"] = { 75.94, 6.91, KRASARANG_WILDS },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32039, {	-- Candy Bucket — Kun-Lai Summit, Binan Village, Neutral
+					["provider"] = { "o", 215897 },	-- Candy Bucket, Kun-Lai Summit
+					["coord"] = { 72.7, 92.2, KUN_LAI_SUMMIT },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32041, {	-- Candy Bucket — Kun-Lai Summit, Grummle Bazaar, Neutral
+					["provider"] = { "o", 215899 },	-- Candy Bucket, Kun-Lai Summit
+					["coord"] = { 64.2, 61.2, KUN_LAI_SUMMIT },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32037, {	-- Candy Bucket — Kun-Lai Summit, One Keg, Neutral
+					["provider"] = { "o", 215895 },	-- Candy Bucket, Kun-Lai Summit
+					["coord"] = { 57.4, 59.9, KUN_LAI_SUMMIT },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32051, {	-- Candy Bucket — Kun-Lai Summit, Zouchin Village, Neutral
+					["provider"] = { "o", 215914 },	-- Candy Bucket, Kun-Lai Summit
+					["coord"] = { 62.3, 29.0, KUN_LAI_SUMMIT },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(29000, {	-- Candy Bucket — Mount Hyjal, Grove of Aessina, Neutral
+					["provider"] = { "o", 208163 },	-- Candy Bucket, Mount Hyjal
+					["coord"] = { 18.7, 37.3, MOUNT_HYJAL },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28999, {	-- Candy Bucket — Mount Hyjal, Nordrassil, Neutral
+					["provider"] = { "o", 208162 },	-- Candy Bucket, Mount Hyjal
+					["coord"] = { 63.0, 24.1, MOUNT_HYJAL },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29001, {	-- Candy Bucket — Mount Hyjal, Shrine of Aviana, Neutral
+					["provider"] = { "o", 208164 },	-- Candy Bucket, Mount Hyjal
+					["coord"] = { 42.7, 45.6, MOUNT_HYJAL },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12407, {	-- Candy Bucket — Netherstorm, Area 52, Neutral
+					["provider"] = { "o", 190113 },	-- Candy Bucket, Netherstorm
+					["coord"] = { 32.0, 64.4, NETHERSTORM },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12408, {	-- Candy Bucket — Netherstorm, The Stormspire, Neutral
+					["provider"] = { "o", 190114 },	-- Candy Bucket, Netherstorm
+					["coord"] = { 43.4, 36.1, NETHERSTORM },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12396, {	-- Candy Bucket — Northern Barrens, Ratchet, Neutral
+					["provider"] = { "o", 190102 },	-- Candy Bucket, Northern Barrens
+					["timeline"] = { ADDED_2_0_1 },
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 67.3, 74.7, NORTHERN_BARRENS },
+						-- #else
+						{ 62.1, 39.4, THE_BARRENS },
+						-- #endif
+					},
+				}),
+				candybucket(28965, {	-- Candy Bucket — Searing Gorge, Iron Summit, Neutral
+					["provider"] = { "o", 208138 },	-- Candy Bucket, Searing Gorge
+					["coord"] = { 39.4, 66.1, SEARING_GORGE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12409, {	-- Candy Bucket — Shadowmoon Valley, Altar of Sha'tar or Sanctum of the Stars, Neutral
+					["providers"] = {
+						{ "o", 190115 },	-- Candy Bucket, Shadowmoon Valley [Altar of Sha'tar]
+						{ "o", 190116 },	-- Candy Bucket, Shadowmoon Valley [Sanctum of the Stars]
+					},
+					["coords"] = {
+						{ 61.0, 28.2, SHADOWMOON_VALLEY },	-- Aldor
+						{ 56.4, 59.8, SHADOWMOON_VALLEY },	-- Scryer
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12404, {	-- Candy Bucket — Shattrath City, Aldor Rise or Scryer's Tier, Neutral
+					["providers"] = {
+						{ "o", 190110 },	-- Candy Bucket, Shattrath City [Aldor Rise]
+						{ "o", 190111 },	-- Candy Bucket, Shattrath City [Scryer's Tier]
+					},
+					["coords"] = {
+						{ 56.2, 81.8, SHATTRATH_CITY },	-- Scryer
+						{ 28.1, 49.0, SHATTRATH_CITY },	-- Aldor
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12950, {	-- Candy Bucket — Sholazar, Nesingwary Base Camp, Neutral
+					["provider"] = { "o", 192018 },	-- Candy Bucket, Sholazar Basin
+					["coord"] = { 26.7, 59.2, SHOLAZAR_BASIN },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12401, {	-- Candy Bucket — Silithus, Cenarion Hold, Neutral
+					["provider"] = { "o", 190107 },	-- Candy Bucket, Silithus
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 55.5, 36.7, SILITHUS },
+						-- #else
+						{ 51.8, 39.2, SILITHUS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28967, {	-- Candy Bucket — Swamp of Sorrows, Bogpaddle, Neutral
+					["provider"] = { "o", 208139 },	-- Candy Bucket, Swamp of Sorrows
+					["coord"] = { 71.7, 14.0, SWAMP_OF_SORROWS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29014, {	-- Candy Bucket — Tanaris, Bootlegger Outpost, Neutral
+					["provider"] = { "o", 208177 },	-- Candy Bucket, Tanaris
+					["coord"] = { 55.7, 60.9, TANARIS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12399, {	-- Candy Bucket — Tanaris, Gadgetzan, Neutral
+					["provider"] = { "o", 190105 },	-- Candy Bucket, Tanaris
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 52.6, 27.1, TANARIS },
+						-- #else
+						{ 52.45, 27.88, TANARIS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12397, {	-- Candy Bucket — The Cape of Stranglethorn, Booty Bay, Neutral
+					["provider"] = { "o", 190103 },	-- Candy Bucket, Stranglethorn Vale
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 40.9, 73.8, THE_CAPE_OF_STRANGLETHORN },
+						-- #else
+						{ 27.1, 77.3, STRANGLETHORN_VALE },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(32027, {	-- Candy Bucket — The Jade Forest, Dawn's Blossom, Neutral
+					["provider"] = { "o", 215880 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 45.7, 43.6, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32029, {	-- Candy Bucket — The Jade Forest, Greenstone Village, Neutral
+					["provider"] = { "o", 215884 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 48.0, 34.6, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32032, {	-- Candy Bucket — The Jade Forest, Jade Temple Grounds, Neutral
+					["provider"] = { "o", 215889 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 54.6, 63.3, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32031, {	-- Candy Bucket — The Jade Forest, Sri-La Village, Neutral
+					["provider"] = { "o", 215886 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 55.7, 24.4, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32021, {	-- Candy Bucket — The Jade Forest, Tian Monastery, Neutral
+					["provider"] = { "o", 215874 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 41.6, 23.1, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(13462, {	-- Candy Bucket — The Storm Peaks, Bouldercrag's Refuge, Neutral
+					["provider"] = { "o", 194070 },	-- Candy Bucket, The Storm Peaks
+					["coord"] = { 30.9, 37.2, THE_STORM_PEAKS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13461, {	-- Candy Bucket — The Storm Peaks, K3, Neutral
+					["provider"] = { "o", 194069 },	-- Candy Bucket, The Storm Peaks
+					["coord"] = { 41.1, 85.9, THE_STORM_PEAKS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(32026, {	-- Candy Bucket — The Veiled Stair, Tavern in the Mists, Neutral
+					["provider"] = { "o", 215879 },	-- Candy Bucket, The Veiled Stair
+					["coord"] = { 54.9, 72.3, THE_VEILED_STAIR },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32043, {	-- Candy Bucket — Townlong Steppes, Longying Outpost, Neutral
+					["provider"] = { "o", 215902 },	-- Candy Bucket, Townlong Steppes
+					["coord"] = { 71.1, 57.8, TOWNLONG_STEPPES },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(29016, {	-- Candy Bucket — Uldum, Oasis of Vir'sar, Neutral
+					["provider"] = { "o", 208178 },	-- Candy Bucket, Uldum
+					["coords"] = {
+						{ 26.6, 7.30, ULDUM },
+						-- #if AFTER 8.3.0
+						{ 26.6, 7.30, NZOTH_ASSAULT_ULDUM },
+						-- #endif
+					},
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29017, {	-- Candy Bucket — Uldum, Ramkahen, Neutral
+					["provider"] = { "o", 208179 },	-- Candy Bucket, Uldum
+					["coord"] = { 54.7, 33.0, ULDUM },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29018, {	-- Candy Bucket — Un'Goro Crater, Marshal's Stand, Neutral
+					["provider"] = { "o", 208180 },	-- Candy Bucket, Un'Goro Crater
+					["coord"] = { 55.2, 62.1, UNGORO_CRATER },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(32044, {	-- Candy Bucket — Vale of Eternal Blossoms, Mistfall Village, Neutral
+					["provider"] = { "o", 215903 },	-- Candy Bucket, Vale of Eternal Blossoms
+					["coords"] = {
+						{ 35.1, 77.7, VALE_OF_ETERNAL_BLOSSOMS },
+						-- #if AFTER 8.3.0
+						{ 35.1, 77.7, NZOTH_ASSAULT_VALE_OF_ETERNAL_BLOSSOMS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32048, {	-- Candy Bucket — Valley of the Four Winds, Pang's Stead, Neutral
+					["provider"] = { "o", 215905 },	-- Candy Bucket, Valley of the Four Winds
+					["coord"] = { 83.6, 20.3, VALLEY_OF_THE_FOUR_WINDS },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32046, {	-- Candy Bucket — Valley of the Four Winds, Stoneplow, Neutral
+					["provider"] = { "o", 215906 },	-- Candy Bucket, Valley of the Four Winds
+					["coord"] = { 19.8, 55.7, VALLEY_OF_THE_FOUR_WINDS },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(28981, {	-- Candy Bucket — Vashj'ir, Deepmist Grotto, Neutral
+					["provider"] = { "o", 208141 },	-- Candy Bucket, Kelp'thar Forest
+					["coord"] = { 63.4, 60.2, VASHJIR_KELPTHAR_FOREST },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28982, {	-- Candy Bucket — Vashj'ir, Silver Tide Hollow, Neutral
+					["provider"] = { "o", 208142 },	-- Candy Bucket, Shimmering Expanse
+					["coord"] = { 49.2, 41.9, VASHJIR_SHIMMERING_EXPANSE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12400, {	-- Candy Bucket — Winterspring, Everlook, Neutral
+					["provider"] = { "o", 190106 },	-- Candy Bucket, Winterspring
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 59.8, 51.2, WINTERSPRING },
+						-- #else
+						{ 61.33, 38.86, WINTERSPRING },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12403, {	-- Candy Bucket — Zangarmarsh, Cenarion Refuge, Neutral
+					["provider"] = { "o", 190109 },	-- Candy Bucket, Zangarmarsh
+					["coord"] = { 78.5, 62.9, ZANGARMARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12941, {	-- Candy Bucket — Zul'Drak, The Argent Stand, Neutral
+					["provider"] = { "o", 191879 },	-- Candy Bucket, Zul'Drak
+					["coord"] = { 40.8, 66.0, ZULDRAK },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12940, {	-- Candy Bucket — Zul'Drak, Zim'Torga, Neutral
+					["provider"] = { "o", 191878 },	-- Candy Bucket, Zul'Drak
+					["coord"] = { 59.3, 57.2, ZULDRAK },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+
+				-- Dragonflight
+				candybucket(75684, {	-- Candy Bucket - Ohn'ahran Plains, Broadhoof Outpost
+					["provider"] = { "o", 401738 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 46.2, 40.6, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75693, {	-- Candy Bucket - Ohn'ahran Plains, Emberwatch
+					["provider"] = { "o", 401747 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 66.3, 24.5, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75692, {	-- Candy Bucket - Ohn'ahran Plains, Forkriver Crossing
+					["provider"] = { "o", 401746 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 72.1, 80.4, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75685, {	-- Candy Bucket - Ohn'ahran Plains, Maruukai
+					["provider"] = { "o", 401739 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 62.9, 40.6, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75687, {	-- Candy Bucket - Ohn'ahran Plains, Ohn'iri Springs
+					["provider"] = { "o", 401741 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 57.1, 76.7, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75688, {	-- Candy Bucket - Ohn'ahran Plains, Pinewood Post
+					["provider"] = { "o", 401742 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 81.3, 59.2, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75689, {	-- Candy Bucket - Ohn'ahran Plains, Rusza'thar Reach
+					["provider"] = { "o", 401743 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 85.9, 35.4, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75686, {	-- Candy Bucket - Ohn'ahran Plains, Shady Sanctuary
+					["provider"] = { "o", 401740 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 28.6, 60.6, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75691, {	-- Candy Bucket - Ohn'ahran Plains, Teerakai
+					["provider"] = { "o", 401745 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 41.9, 60.4, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75690, {	-- Candy Bucket - Ohn'ahran Plains, Timberstep Outpost
+					["provider"] = { "o", 401744 },	-- Candy Bucket, Ohn'ahran Plains
+					["coord"] = { 85.0, 26.0, OHNAHRAN_PLAINS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75698, {	-- Candy Bucket - Thaldraszus, Algeth'era Court
+					["provider"] = { "o", 401751 },	-- Candy Bucket, Thaldraszus
+					["coord"] = { 50.1, 42.7, THALDRASZUS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75696, {	-- Candy Bucket - Thaldraszus, Garden Shrine
+					["provider"] = { "o", 401749 },	-- Candy Bucket, Thaldraszus
+					["coord"] = { 35.1, 79.2, THALDRASZUS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75697, {	-- Candy Bucket - Thaldraszus, Gelikyr Post
+					["provider"] = { "o", 401750 },	-- Candy Bucket, Thaldraszus
+					["coord"] = { 52.4, 69.8, THALDRASZUS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75695, {	-- Candy Bucket - Thaldraszus, Temporal Conflux
+					["provider"] = { "o", 401748 },	-- Candy Bucket, Thaldraszus
+					["coord"] = { 59.9, 82.7, THALDRASZUS },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75700, {	-- Candy Bucket - Thaldraszus, Valdrakken (The Parting Glass)
+					["provider"] = { "o", 401753 },	-- Candy Bucket, Valdrakken
+					["coord"] = { 72.4, 46.7, VALDRAKKEN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75699, {	-- Candy Bucket - Thaldraszus, Valdrakken (The Roasted Ram)
+					["provider"] = { "o", 401752 },	-- Candy Bucket, Valdrakken
+					["coord"] = { 47.2, 45.5, VALDRAKKEN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75701, {	-- Candy Bucket - Thaldraszus, Valdrakken (Weyrnrest)
+					["provider"] = { "o", 401754 },	-- Candy Bucket, Valdrakken
+					["coord"] = { 22.4, 30.9, VALDRAKKEN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75667, {	-- Candy Bucket - The Azure Span, Camp Antonidas
+					["provider"] = { "o", 401714 },	-- Candy Bucket, The Azure Span
+					["coord"] = { 47.0, 40.3, THE_AZURE_SPAN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75668, {	-- Candy Bucket - The Azure Span, Camp Nowhere
+					["provider"] = { "o", 401723 },	-- Candy Bucket, The Azure Span
+					["coord"] = { 62.8, 57.7, THE_AZURE_SPAN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75669, {	-- Candy Bucket - The Azure Span, Iskaara
+					["provider"] = { "o", 401724 },	-- Candy Bucket, The Azure Span
+					["coord"] = { 12.4, 49.4, THE_AZURE_SPAN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75670, {	-- Candy Bucket - The Azure Span, Theron's Watch
+					["provider"] = { "o", 401725 },	-- Candy Bucket, The Azure Span
+					["coord"] = { 65.5, 16.3, THE_AZURE_SPAN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75671, {	-- Candy Bucket - The Azure Span, Three-Falls Lookout
+					["provider"] = { "o", 401726 },	-- Candy Bucket, The Azure Span
+					["coord"] = { 18.8, 24.6, THE_AZURE_SPAN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75702, {	-- Candy Bucket - The Forbidden Reach, Morqut Village
+					["provider"] = { "o", 401755 },	-- Candy Bucket, The Forbidden Reach
+					["coord"] = { 33.9, 58.8, THE_FORBIDDEN_REACH },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75672, {	-- Candy Bucket - The Waking Shores, Apex Observatory
+					["provider"] = { "o", 401727 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 24.5, 82.1, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75673, {	-- Candy Bucket - The Waking Shores, Dragonscale Basecamp
+					["provider"] = { "o", 401728 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 47.7, 83.3, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75675, {	-- Candy Bucket - The Waking Shores, Life Vault Ruins
+					["provider"] = { "o", 401730 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 65.2, 57.9, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75676, {	-- Candy Bucket - The Waking Shores, Obsidian Throne
+					["provider"] = { "o", 401731 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 25.8, 55.2, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(77698, {	-- Candy Bucket - The Waking Shores, Obsidian Bulwark
+					["provider"] = { "o", 407048 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 43.1, 66.7, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75674, {	-- Candy Bucket - The Waking Shores, Ruby Lifeshrine
+					["provider"] = { "o", 401729 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 58.0, 67.3, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75677, {	-- Candy Bucket - The Waking Shores, Skytop Observatory
+					["provider"] = { "o", 401732 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 76.1, 54.8, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75678, {	-- Candy Bucket - The Waking Shores, Uktulut Backwater
+					["provider"] = { "o", 401733 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 53.9, 39.0, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75679, {	-- Candy Bucket - The Waking Shores, Uktulut Pier
+					["provider"] = { "o", 401734 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 46.4, 27.4, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75683, {	-- Candy Bucket - The Waking Shores, Wingrest Embassy
+					["provider"] = { "o", 401737 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 76.2, 35.4, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75704, {	-- Candy Bucket - Zaralek Cavern, Loamm
+					["provider"] = { "o", 401757 },	-- Candy Bucket, Zaralek Cavern
+					["coord"] = { 56.4, 56.4, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(75703, {	-- Candy Bucket - Zaralek Cavern, Obsidian Rest
+					["provider"] = { "o", 401756 },	-- Candy Bucket, Zaralek Cavern
+					["coord"] = { 52.1, 26.5, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+
+				-- The War within
+				candybucket(84579, {	-- Candy Bucket — Azj-Kahet, Faerin's Advance
+					["provider"] = { "o", 464926 },	-- Candy Bucket
+					["coord"] = { 59, 18.6, AZJ_KAHET },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84580, {	-- Candy Bucket — Azj-Kahet, Mmarl
+					["provider"] = { "o", 464927 },	-- Candy Bucket
+					["coord"] = { 78, 62.8, AZJ_KAHET },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84582, {	-- Candy Bucket — Azj-Kahet, Weaver's Lair
+					["provider"] = { "o", 464929 },	-- Candy Bucket
+					["coord"] = { 56.9, 39, AZJ_KAHET },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84581, {	-- Candy Bucket — Azj-Kahet, Wildcamp Ul'ar
+					["provider"] = { "o", 464928 },	-- Candy Bucket
+					["coord"] = { 44.8, 66.3, AZJ_KAHET },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84576, {	-- Candy Bucket — City of Threads, High Hollows
+					["provider"] = { "o", 464923 },	-- Candy Bucket
+					["coord"] = { 62, 41.4, NERUBAR },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84578, {	-- Candy Bucket — City of Threads, Umbral Bazzar
+					["provider"] = { "o", 464925 },	-- Candy Bucket
+					["coord"] = { 49.7, 22.3, NERUBAR },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84577, {	-- Candy Bucket — City of Threads - Lower, The Burrows
+					["provider"] = { "o", 464924 },	-- Candy Bucket
+					["coord"] = { 57.4, 38.5, NERUBAR_LOWER },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84572, {	-- Candy Bucket — Hallowfall, Dunelle's Kindness
+					["provider"] = { "o", 464919 },	-- Candy Bucket
+					["coord"] = { 69.1, 45.7, HALLOWFALL },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84574, {	-- Candy Bucket — Hallowfall, Light's Redoubt
+					["provider"] = { "o", 464921 },	-- Candy Bucket
+					["coord"] = { 40.6, 68, HALLOWFALL },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84573, {	-- Candy Bucket — Hallowfall, Lorel's Crossing
+					["provider"] = { "o", 464920 },	-- Candy Bucket
+					["coord"] = { 49.1, 39.5, HALLOWFALL },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84575, {	-- Candy Bucket — Hallowfall, Mereldar
+					["provider"] = { "o", 464922 },	-- Candy Bucket
+					["coord"] = { 42.8, 55.7, HALLOWFALL },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84564, {	-- Candy Bucket — Isle of Dorn, Dornogal
+					["provider"] = { "o", 464911 },	-- Candy Bucket
+					["coord"] = { 45, 47.3, DORNOGAL },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84566, {	-- Candy Bucket — Isle of Dorn, Freywold Village
+					["provider"] = { "o", 464913 },	-- Candy Bucket
+					["coord"] = { 42, 74.4, ISLE_OF_DORN },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84567, {	-- Candy Bucket — Isle of Dorn, Rambleshire
+					["provider"] = { "o", 464914 },	-- Candy Bucket
+					["coord"] = { 58.2, 27.1, ISLE_OF_DORN },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84568, {	-- Candy Bucket — The Ringing Deeps, Camp Murroch
+					["provider"] = { "o", 464915 },	-- Candy Bucket
+					["coord"] = { 59.5, 64.1, THE_RINGING_DEEPS },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84569, {	-- Candy Bucket — The Ringing Deeps, Gundargaz
+					["provider"] = { "o", 464916 },	-- Candy Bucket
+					["coord"] = { 47.9, 32.1, THE_RINGING_DEEPS },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84570, {	-- Candy Bucket — The Ringing Deeps, Opportunity Point
+					["provider"] = { "o", 464917 },	-- Candy Bucket
+					["coord"] = { 63.4, 79, THE_RINGING_DEEPS },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+				candybucket(84571, {	-- Candy Bucket — The Ringing Deeps, Shadowvein Point
+					["provider"] = { "o", 464918 },	-- Candy Bucket
+					["coord"] = { 61.9, 46.3, THE_RINGING_DEEPS },
+					["timeline"] = { ADDED_11_0_2 },
+				}),
+			},
+		}),
+		n(FACTION_HEADER_ALLIANCE, bubbleDownSelf({ ["races"] = ALLIANCE_ONLY }, {
+			["timeline"] = { ADDED_2_0_1 },
+			["groups"] = {
+				candybucket(28954, {	-- Candy Bucket — Arathi Highlands, Refuge Point, Alliance
+					["provider"] = { "o", 208120 },	-- Candy Bucket, Arathi Highlands
+					["coord"] = { 40.1, 49, ARATHI_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12345, {	-- Candy Bucket — Ashenvale, Astranaar, Alliance
+					["provider"] = { "o", 190035 },	-- Candy Bucket, Ashenvale
+					["coord"] = { 37.0, 49.3, ASHENVALE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12333, {	-- Candy Bucket — Azuremyst Isle, Azure Watch, Alliance
+					["provider"] = { "o", 190037 },	-- Candy Bucket, Azuremyst Isle
+					["coord"] = { 48.5, 49.1, AZUREMYST_ISLE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28956, {	-- Candy Bucket — Badlands, Dragon's Mouth, Alliance
+					["provider"] = { "o", 208121 },	-- Candy Bucket, Badlands
+					["coord"] = { 20.9, 56.2, BADLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12358, {	-- Candy Bucket — Blade's Edge Mountains, Sylvanaar, Alliance
+					["provider"] = { "o", 190061 },	-- Candy Bucket, Blade's Edge Mountains
+					["coord"] = { 35.8, 63.8, BLADES_EDGE_MOUNTAINS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12359, {	-- Candy Bucket — Blade's Edge Mountains, Toshley's Station, Alliance
+					["provider"] = { "o", 190062 },	-- Candy Bucket, Blade's Edge Mountains
+					["coord"] = { 61.0, 68.1, BLADES_EDGE_MOUNTAINS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28960, {	-- Candy Bucket — Blasted Lands, Nethergarde Keep, Alliance
+					["provider"] = { "o", 208122 },	-- Candy Bucket, Blasted Lands
+					["coord"] = { 60.7, 14.2, BLASTED_LANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28961, {	-- Candy Bucket — Blasted Lands, Surwich, Alliance
+					["provider"] = { "o", 208123 },	-- Candy Bucket, Blasted Lands
+					["coord"] = { 44.4, 87.7, BLASTED_LANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12341, {	-- Candy Bucket — Bloodmyst Isle, Blood Watch, Alliance
+					["provider"] = { "o", 190045 },	-- Candy Bucket, Bloodmyst Isle
+					["coord"] = { 55.7, 59.9, BLOODMYST_ISLE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(13437, {	-- Candy Bucket — Borean Tundra, Fizzcrank Airstrip, Alliance
+					["provider"] = { "o", 194060 },	-- Candy Bucket, Borean Tundra
+					["coord"] = { 57.1, 18.8, BOREAN_TUNDRA },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13436, {	-- Candy Bucket — Borean Tundra, Valiance Keep, Alliance
+					["provider"] = { "o", 194059 },	-- Candy Bucket, Borean Tundra
+					["coord"] = { 58.5, 67.9, BOREAN_TUNDRA },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(43056, {	-- Candy Bucket — Dalaran : Broken Shores, Silver Enclave, Alliance
+					["provider"] = { "o", 251671 },	-- Candy Bucket, Dalaran
+					["coord"] = { 41.8, 64.1, LEGION_DALARAN },
+					["timeline"] = { ADDED_7_0_3 },
+				}),
+				candybucket(13473, {	-- Candy Bucket — Dalaran : Northrend, Silver Enclave, Alliance
+					["provider"] = { "o", 194064 },	-- Candy Bucket, Dalaran
+					["coord"] = { 42.5, 63.5, NORTHREND_DALARAN },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12338, {	-- Candy Bucket — Darkshore, Auberdine, Alliance
+					["provider"] = { "o", 190042 },	-- Candy Bucket, Auberdine
+					["coord"] = { 37.0, 44.0, DARKSHORE },
+					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
+				}),
+				candybucket(28951, {	-- Candy Bucket — Darkshore, Lor'danel, Alliance
+					["provider"] = { "o", 208115 },	-- Candy Bucket, Darkshore
+					["coord"] = { 50.8, 18.8, DARKSHORE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12334, {	-- Candy Bucket — Darnassus, Craftsmen's Terrace, Alliance
+					["provider"] = { "o", 190038 },	-- Candy Bucket, Darnassus
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 62.2, 33.0, DARNASSUS },
+						-- #else
+						{ 67.43, 16.0, DARNASSUS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(29020, {	-- Candy Bucket — Deepholm, Temple of Earth, Alliance
+					["provider"] = { "o", 208183 },	-- Candy Bucket, Deepholm
+					["coord"] = { 47.4, 51.7, DEEPHOLM },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12348, {	-- Candy Bucket — Desolace, Nijel's Point, Alliance
+					["provider"] = { "o", 190051 },	-- Candy Bucket, Desolace
+					["coord"] = { 66.3, 6.70, DESOLACE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(13438, {	-- Candy Bucket — Dragonblight, Stars' Rest, Alliance
+					["provider"] = { "o", 194061 },	-- Candy Bucket, Dragonblight
+					["coord"] = { 29.0, 56.2, DRAGONBLIGHT },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13439, {	-- Candy Bucket — Dragonblight, Wintergarde Keep, Alliance
+					["provider"] = { "o", 194062 },	-- Candy Bucket, Dragonblight
+					["coord"] = { 77.5, 51.3, DRAGONBLIGHT },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12332, {	-- Candy Bucket — Dun Morogh, Kharanos, Alliance
+					["provider"] = { "o", 190036 },	-- Candy Bucket, Dun Morogh
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 54.5, 50.7, DUN_MOROGH },
+						-- #else
+						{ 47.38, 52.44, DUN_MOROGH },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12344, {	-- Candy Bucket — Duskwood, Darkshire, Alliance
+					["provider"] = { "o", 190048 },	-- Candy Bucket, Duskwood
+					["coord"] = { 73.9, 44.4, DUSKWOOD },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12349, {	-- Candy Bucket — Dustwallow Marsh, Theramore, Alliance
+					["provider"] = { "o", 190052 },	-- Candy Bucket, Dustwallow Marsh
+					["coord"] = { 66.6, 45.3, DUSTWALLOW_MARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12286, {	-- Candy Bucket — Elwynn Forest, Goldshire, Alliance
+					["provider"] = { "o", 189303 },	-- Candy Bucket, Elwynn Forest
+					["coord"] = { 43.7, 66.0, ELWYNN_FOREST },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28995, {	-- Candy Bucket — Felwood, Talonbranch Glade, Alliance
+					["provider"] = { "o", 208159 },	-- Candy Bucket, Felwood
+					["coord"] = { 61.8, 26.7, FELWOOD },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28952, {	-- Candy Bucket — Feralas, Dreamer's Rest, Alliance
+					["provider"] = { "o", 208116 },	-- Candy Bucket, Feralas
+					["coord"] = { 51.1, 17.8, FERALAS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12350, {	-- Candy Bucket — Feralas, Feathermoon Stronghold, Alliance
+					["provider"] = { "o", 190053 },	-- Candy Bucket, Feralas
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 46.3, 45.2, FERALAS },
+						-- #else
+						{ 30.9, 43.5, FERALAS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12944, {	-- Candy Bucket — Grizzly Hills, Amberpine Lodge, Alliance
+					["provider"] = { "o", 191882 },	-- Candy Bucket, Grizzly Hills
+					["coord"] = { 32.0, 60.2, GRIZZLY_HILLS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12945, {	-- Candy Bucket — Grizzly Hills, Westfall Brigade, Alliance
+					["provider"] = { "o", 191883 },	-- Candy Bucket, Grizzly Hills
+					["coord"] = { 59.6, 26.4, GRIZZLY_HILLS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12352, {	-- Candy Bucket — Hellfire Peninsula, Honor Hold, Alliance
+					["provider"] = { "o", 190055 },	-- Candy Bucket, Hellfire Peninsula
+					["coord"] = { 54.3, 63.6, HELLFIRE_PENINSULA },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12353, {	-- Candy Bucket — Hellfire Peninsula, Temple of Telhamat, Alliance
+					["provider"] = { "o", 190056 },	-- Candy Bucket, Hellfire Peninsula
+					["coord"] = { 23.4, 36.5, HELLFIRE_PENINSULA },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12346, {	-- Candy Bucket — Hillsbrad Foothills, Southshore, Alliance
+					["provider"] = { "o", 190049 },	-- Candy Bucket, Hillsbrad Foothills
+					["coord"] = { 51.1, 59.0, HILLSBRAD_FOOTHILLS },
+					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
+				}),
+				candybucket(13435, {	-- Candy Bucket — Howling Fjord, Fort Wildervar, Alliance
+					["provider"] = { "o", 194058 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 60.5, 15.9, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13433, {	-- Candy Bucket — Howling Fjord, Valgarde, Alliance
+					["provider"] = { "o", 194056 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 58.4, 62.8, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13434, {	-- Candy Bucket — Howling Fjord, Westguard Keep, Alliance
+					["provider"] = { "o", 194057 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 30.8, 41.5, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12335, {	-- Candy Bucket — Ironforge, The Commons, Alliance
+					["provider"] = { "o", 190039 },	-- Candy Bucket, Ironforge
+					["coord"] = { 18.6, 51.3, IRONFORGE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(32042, {	-- Candy Bucket — Kun-Lai Summit, Westwind Rest, Alliance
+					["provider"] = { "o", 215900 },	-- Candy Bucket, Kun-Lai Summit
+					["coord"] = { 54.1, 82.8, KUN_LAI_SUMMIT },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(28963, {	-- Candy Bucket — Loch Modan, Farstrider Lodge, Alliance
+					["provider"] = { "o", 208124 },	-- Candy Bucket, Loch Modan
+					["coord"] = { 82.9, 63.6, LOCH_MODAN },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12339, {	-- Candy Bucket — Loch Modan, Thelsamar, Alliance
+					["provider"] = { "o", 190043 },	-- Candy Bucket, Loch Modan
+					["coord"] = { 35.5, 48.4, LOCH_MODAN },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12357, {	-- Candy Bucket — Nagrand, Telaar, Alliance
+					["provider"] = { "o", 190060 },	-- Candy Bucket, Nagrand
+					["coord"] = { 54.2, 75.8, NAGRAND },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28964, {	-- Candy Bucket — Northern Stranglethorn, Fort Livingston, Alliance
+					["provider"] = { "o", 208125 },	-- Candy Bucket, Northern Stranglethorn
+					["coord"] = { 53.1, 66.9, NORTHERN_STRANGLETHORN },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12342, {	-- Candy Bucket — Redridge Mountains, Lakeshire, Alliance
+					["provider"] = { "o", 190046 },	-- Candy Bucket, Redridge Mountains
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 26.4, 41.6, REDRIDGE_MOUNTAINS },
+						-- #else
+						{ 27.0, 44.9, REDRIDGE_MOUNTAINS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12360, {	-- Candy Bucket — Shadowmoon Valley, Wildhammer Stronghold, Alliance
+					["provider"] = { "o", 190063 },	-- Candy Bucket, Shadowmoon Valley
+					["coord"] = { 37.1, 58.2, SHADOWMOON_VALLEY },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(29008, {	-- Candy Bucket — Southern Barrens, Fort Triumph, Alliance
+					["provider"] = { "o", 208171 },	-- Candy Bucket, Southern Barrens
+					["coord"] = { 49.1, 68.5, SOUTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29006, {	-- Candy Bucket — Southern Barrens, Honor's Stand, Alliance
+					["provider"] = { "o", 208169 },	-- Candy Bucket, Southern Barrens
+					["coord"] = { 39.0, 11.0, SOUTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29007, {	-- Candy Bucket — Southern Barrens, Northwatch Hold, Alliance
+					["provider"] = { "o", 208170 },	-- Candy Bucket, Southern Barrens
+					["coord"] = { 65.6, 46.6, SOUTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29013, {	-- Candy Bucket — Stonetalon Mountains, Farwatcher's Glen, Alliance
+					["provider"] = { "o", 208176 },	-- Candy Bucket, Stonetalon Mountains
+					["coord"] = { 31.5, 60.7, STONETALON_MOUNTAINS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29010, {	-- Candy Bucket — Stonetalon Mountains, Northwatch Expedition Base, Alliance
+					["provider"] = { "o", 208173 },	-- Candy Bucket, Stonetalon Mountains
+					["coord"] = { 71.0, 79.1, STONETALON_MOUNTAINS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12347, {	-- Candy Bucket — Stonetalon Mountains, Stonetalon Peak, Alliance
+					["provider"] = { "o", 190050 },	-- Candy Bucket, Stonetalon Mountains
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 40.6, 17.7, STONETALON_MOUNTAINS },
+						-- #else
+						{ 35.53, 6.4, STONETALON_MOUNTAINS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(29012, {	-- Candy Bucket — Stonetalon Mountains, Thal'darah Overlook, Alliance
+					["provider"] = { "o", 208175 },	-- Candy Bucket, Stonetalon Mountains
+					["coord"] = { 39.5, 32.8, STONETALON_MOUNTAINS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29011, {	-- Candy Bucket — Stonetalon Mountains, Windshear Hold, Alliance
+					["provider"] = { "o", 208174 },	-- Candy Bucket, Stonetalon Mountains
+					["coord"] = { 59.1, 56.3, STONETALON_MOUNTAINS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12336, {	-- Candy Bucket — Stormwind, The Trade District, Alliance
+					["provider"] = { "o", 190040 },	-- Candy Bucket, Stormwind City
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 60.5, 75.2, STORMWIND_CITY },
+						-- #else
+						{ 52.77, 65.77, STORMWIND_CITY },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28968, {	-- Candy Bucket — Swamp of Sorrows, The Harborage, Alliance
+					["provider"] = { "o", 208126 },	-- Candy Bucket, Swamp of Sorrows
+					["coord"] = { 29.0, 32.6, SWAMP_OF_SORROWS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12331, {	-- Candy Bucket — Teldrassil, Dolanaar, Alliance
+					["provider"] = { "o", 190034 },	-- Candy Bucket, Teldrassil
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 55.4, 52.3, TELDRASSIL },
+						-- #else
+						{ 55.6, 59.85, TELDRASSIL },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12356, {	-- Candy Bucket — Terokkar Forest, Allerian Stronghold, Alliance
+					["provider"] = { "o", 190059 },	-- Candy Bucket, Terokkar Forest
+					["coord"] = { 56.6, 53.2, TEROKKAR_FOREST },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12337, {	-- Candy Bucket — The Exodar, Seat of the Naaru, Alliance
+					["provider"] = { "o", 190041 },	-- Candy Bucket, The Exodar
+					["coord"] = { 59.3, 19.2, THE_EXODAR },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12351, {	-- Candy Bucket — The Hinterlands, Aerie Peak, Alliance
+					["provider"] = { "o", 190054 },	-- Candy Bucket, The Hinterlands
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 14.2, 44.7, THE_HINTERLANDS },
+						-- #else
+						{ 14.1, 41.5, THE_HINTERLANDS },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28970, {	-- Candy Bucket — The Hinterlands, Stormfeather Outpost, Alliance
+					["provider"] = { "o", 208127 },	-- Candy Bucket, The Hinterlands
+					["coord"] = { 66.2, 44.4, THE_HINTERLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(32049, {	-- Candy Bucket — The Jade Forest, Paw'don Village, Alliance
+					["provider"] = { "o", 215907 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 44.8, 84.4, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32033, {	-- Candy Bucket — The Jade Forest, Pearlfin Village, Alliance
+					["provider"] = { "o", 215891 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 59.6, 83.2, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(13448, {	-- Candy Bucket — The Storm Peaks, Frosthold, Alliance
+					["provider"] = { "o", 194063 },	-- Candy Bucket, The Storm Peaks
+					["coord"] = { 28.7, 74.3, THE_STORM_PEAKS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(75681, {	-- Candy Bucket — The Waking Shores, Wild Coast
+					["provider"] = { "o", 401735 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 81.3, 32.0, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(54710, {	-- Candy Bucket — Tiragarde Sound, Boralus, Alliance
+					["provider"] = { "o", 316755 },	-- Candy Bucket, Boralus
+					["coord"] = { 73.7, 12.4, BORALUS },
+					["timeline"] = { ADDED_8_0_1 },
+				}),
+				candybucket(28977, {	-- Candy Bucket — Twilight Highlands, Firebeard's Patrol, Alliance
+					["provider"] = { "o", 208128 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 60.4, 58.2, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28980, {	-- Candy Bucket — Twilight Highlands, Highbank, Alliance
+					["provider"] = { "o", 208129 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 79.5, 78.5, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28978, {	-- Candy Bucket — Twilight Highlands, Thundermar, Alliance
+					["provider"] = { "o", 208130 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 49.6, 30.4, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28979, {	-- Candy Bucket — Twilight Highlands, Victor's Point, Alliance
+					["provider"] = { "o", 208131 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 43.6, 57.3, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(32052, {	-- Candy Bucket — Vale of Eternal Blossoms, Shrine of Seven Stars, Alliance
+					["provider"] = { "o", 215915 },	-- Candy Bucket, Shrine of Seven Stars
+					["coords"] = {
+						{ 87.0, 68.8, VALE_OF_ETERNAL_BLOSSOMS },
+						{ 37.7, 67.0, 393 },	-- Shrine of Seven Stars
+					},
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(28985, {	-- Candy Bucket — Vashj'ir, Darkbreak Cove, Alliance
+					["provider"] = { "o", 208132 },	-- Candy Bucket, Abyssal Depths
+					["coord"] = { 54.7, 72.2, VASHJIR_ABYSSAL_DEPTHS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28983, {	-- Candy Bucket — Vashj'ir, Tranquil Wash, Alliance
+					["provider"] = { "o", 208133 },	-- Candy Bucket, Shimmering Expanse
+					["coord"] = { 49.7, 57.4, VASHJIR_SHIMMERING_EXPANSE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28988, {	-- Candy Bucket — Western Plaguelands, Chillwind Camp, Alliance
+					["provider"] = { "o", 208134 },	-- Candy Bucket, Western Plaguelands
+					["coord"] = { 43.4, 84.5, WESTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12340, {	-- Candy Bucket — Westfall, Sentinel Hill, Alliance
+					-- #if BEFORE CATA
+					["description"] = "The candy bucket will relocate to Sentinel Tower if the area is phased post Defias attack.",
+					-- #endif
+					["provider"] = { "o", 190047 },	-- Candy Bucket, Westfall
+					["coords"] = {
+						{ 52.9, 53.6, WESTFALL },
+						-- #if AFTER CATA
+						{ 56.8, 47.3, WESTFALL },
+						-- #endif
+					},
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28991, {	-- Candy Bucket — Wetlands, Greenwarden's Grove, Alliance
+					["provider"] = { "o", 208135 },	-- Candy Bucket, Wetlands
+					["coord"] = { 58.1, 39.2, WETLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12343, {	-- Candy Bucket — Wetlands, Menethil Harbor, Alliance
+					["provider"] = { "o", 190044 },	-- Candy Bucket, Wetlands
+					["coord"] = { 10.8, 60.9, WETLANDS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28990, {	-- Candy Bucket — Wetlands, Swiftgear Station, Alliance
+					["provider"] = { "o", 208136 },	-- Candy Bucket, Wetlands
+					["coord"] = { 26.1, 25.9, WETLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12355, {	-- Candy Bucket — Zangarmarsh, Orebor Harborage, Alliance
+					["provider"] = { "o", 190058 },	-- Candy Bucket, Zangarmarsh
+					["coord"] = { 41.9, 26.2, ZANGARMARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12354, {	-- Candy Bucket — Zangarmarsh, Telredor, Alliance
+					["provider"] = { "o", 190057 },	-- Candy Bucket, Zangarmarsh
+					["coord"] = { 67.2, 49.0, ZANGARMARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+			},
+		})),
+		n(FACTION_HEADER_HORDE, bubbleDownSelf({ ["races"] = HORDE_ONLY }, {
+			["timeline"] = { ADDED_2_0_1 },
+			["groups"] = {
+				candybucket(12380, {	-- Candy Bucket — Arathi Highlands, Hammerfall, Horde
+					["provider"] = { "o", 190082 },	-- Candy Bucket, Arathi Highlands
+					["coord"] = { 69.0, 33.4, ARATHI_HIGHLANDS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28958, {	-- Candy Bucket — Ashenvale, Hellscream's Watch, Horde
+					["provider"] = { "o", 208118 },	-- Candy Bucket, Ashenvale
+					["coord"] = { 38.6, 42.4, ASHENVALE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28953, {	-- Candy Bucket — Ashenvale, Silverwind Refuge, Horde
+					["provider"] = { "o", 208117 },	-- Candy Bucket, Ashenvale
+					["coord"] = { 50.2, 67.2, ASHENVALE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12377, {	-- Candy Bucket — Ashenvale, Splintertree Post, Horde
+					["provider"] = { "o", 190079 },	-- Candy Bucket, Ashenvale
+					["coord"] = { 73.9, 60.7, ASHENVALE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28989, {	-- Candy Bucket — Ashenvale, Zoram'gar Outpost, Horde
+					["provider"] = { "o", 208119 },	-- Candy Bucket, Ashenvale
+					["coord"] = { 13.0, 34.1, ASHENVALE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28992, {	-- Candy Bucket — Azshara, Bilgewater Harbor, Horde
+					["provider"] = { "o", 208140 },	-- Candy Bucket, Azshara
+					["coord"] = { 57.1, 50.2, AZSHARA },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12385, {	-- Candy Bucket — Badlands, Kargath, Horde (removed)
+					["provider"] = { "o", 190087 },	-- Candy Bucket, Badlands
+					["coord"] = { 2.8, 46.0, BADLANDS },
+					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
+				}),
+				candybucket(28957, {	-- Candy Bucket — Badlands, New Kargath, Horde
+					["provider"] = { "o", 208143 },	-- Candy Bucket, Badlands
+					["coord"] = { 18.3, 42.8, BADLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12394, {	-- Candy Bucket — Blade's Edge Mountains, Mok'Nathal Village, Horde
+					["provider"] = { "o", 190100 },	-- Candy Bucket, Blade's Edge Mountains
+					["coord"] = { 76.2, 60.4, BLADES_EDGE_MOUNTAINS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12393, {	-- Candy Bucket — Blade's Edge Mountains, Thunderlord Stronghold, Horde
+					["provider"] = { "o", 190099 },	-- Candy Bucket, Blade's Edge Mountains
+					["coord"] = { 53.4, 55.5, BLADES_EDGE_MOUNTAINS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28959, {	-- Candy Bucket — Blasted Lands, Dreadmaul Hold, Horde
+					["provider"] = { "o", 208144 },	-- Candy Bucket, Blasted Lands
+					["coord"] = { 40.5, 11.4, BLASTED_LANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(13501, {	-- Candy Bucket — Borean Tundra, Bor'gorok Outpost, Horde
+					["provider"] = { "o", 194084 },	-- Candy Bucket, Borean Tundra
+					["coord"] = { 49.7, 10.0, BOREAN_TUNDRA },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13467, {	-- Candy Bucket — Borean Tundra, Taunka'le Village, Horde
+					["provider"] = { "o", 194076 },	-- Candy Bucket, Borean Tundra
+					["coord"] = { 76.7, 37.4, BOREAN_TUNDRA },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13468, {	-- Candy Bucket — Borean Tundra, Warsong Hold, Horde
+					["provider"] = { "o", 194077 },	-- Candy Bucket, Borean Tundra
+					["coord"] = { 41.8, 54.4, BOREAN_TUNDRA },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(43057, {	-- Candy Bucket — Dalaran : Broken Shores, Sunreaver's Sanctuary, Horde
+					["provider"] = { "o", 251672 },	-- Candy Bucket, Dalaran
+					["coord"] = { 66.7, 30.1, LEGION_DALARAN },
+					["timeline"] = { ADDED_7_0_3 },
+				}),
+				candybucket(13474, {	-- Candy Bucket — Dalaran : Northrend, Sunreaver's Sanctuary, Horde
+					["provider"] = { "o", 194081 },	-- Candy Bucket, Dalaran
+					["coord"] = { 66.6, 30.1, NORTHREND_DALARAN },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(29019, {	-- Candy Bucket — Deepholm, Temple of Earth, Horde
+					["provider"] = { "o", 208181 },	-- Candy Bucket, Deepholm
+					["coord"] = { 51.2, 50.0, DEEPHOLM },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12381, {	-- Candy Bucket — Desolace, Shadowprey Village, Horde
+					["provider"] = { "o", 190083 },	-- Candy Bucket, Desolace
+					["coord"] = { 24.1, 68.3, DESOLACE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(13469, {	-- Candy Bucket — Dragonblight, Agmar's Hammer, Horde
+					["provider"] = { "o", 194078 },	-- Candy Bucket, Dragonblight
+					["coord"] = { 37.8, 46.4, DRAGONBLIGHT },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13470, {	-- Candy Bucket — Dragonblight, Venomspite, Horde
+					["provider"] = { "o", 194079 },	-- Candy Bucket, Dragonblight
+					["coord"] = { 76.8, 63.2, DRAGONBLIGHT },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12361, {	-- Candy Bucket — Durotar, Razor Hill, Horde
+					["provider"] = { "o", 190064 },	-- Candy Bucket, Durotar
+					["coord"] = { 51.6, 41.7, DUROTAR },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12383, {	-- Candy Bucket — Dustwallow Marsh, Brackenwall Village, Horde
+					["provider"] = { "o", 190085 },	-- Candy Bucket, Dustwallow Marsh
+					["coord"] = { 36.8, 32.4, DUSTWALLOW_MARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12365, {	-- Candy Bucket — Eversong Woods, Fairbreeze Village, Horde
+					["provider"] = { "o", 190068 },	-- Candy Bucket, Eversong Woods
+					["coord"] = { 43.7, 71.1, EVERSONG_WOODS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12364, {	-- Candy Bucket — Eversong Woods, Falconwing Square, Horde
+					["provider"] = { "o", 190067 },	-- Candy Bucket, Eversong Woods
+					["coord"] = { 48.1, 47.8, EVERSONG_WOODS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28996, {	-- Candy Bucket — Feralas, Camp Ataya, Horde
+					["provider"] = { "o", 208160 },	-- Candy Bucket, Feralas
+					["coord"] = { 41.4, 15.6, FERALAS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12386, {	-- Candy Bucket — Feralas, Camp Mojache, Horde
+					["provider"] = { "o", 190088 },	-- Candy Bucket, Feralas
+					["coord"] = { 74.8, 45.1, FERALAS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28998, {	-- Candy Bucket — Feralas, Stonemaul Hold, Horde
+					["provider"] = { "o", 208161 },	-- Candy Bucket, Feralas
+					["coord"] = { 52.0, 47.7, FERALAS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12373, {	-- Candy Bucket — Ghostlands, Tranquillien, Horde
+					["provider"] = { "o", 190075 },	-- Candy Bucket, Ghostlands
+					["coord"] = { 48.7, 31.9, GHOSTLANDS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12947, {	-- Candy Bucket — Grizzly Hills, Camp Oneqwah, Horde
+					["provider"] = { "o", 191881 },	-- Candy Bucket, Grizzly Hills
+					["coord"] = { 65.4, 47.0, GRIZZLY_HILLS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12946, {	-- Candy Bucket — Grizzly Hills, Conquest Hold, Horde
+					["provider"] = { "o", 191880 },	-- Candy Bucket, Grizzly Hills
+					["coord"] = { 20.9, 64.7, GRIZZLY_HILLS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(12389, {	-- Candy Bucket — Hellfire Peninsula, Falcon Watch, Horde
+					["provider"] = { "o", 190091 },	-- Candy Bucket, Hellfire Peninsula
+					["coord"] = { 26.9, 59.6, HELLFIRE_PENINSULA },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12388, {	-- Candy Bucket — Hellfire Peninsula, Thrallmar, Horde
+					["provider"] = { "o", 190090 },	-- Candy Bucket, Hellfire Peninsula
+					["coord"] = { 56.8, 37.5, HELLFIRE_PENINSULA },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28962, {	-- Candy Bucket — Hillsbrad Foothills, Eastpoint Tower, Horde
+					["provider"] = { "o", 208145 },	-- Candy Bucket, Hillsbrad Foothills
+					["coord"] = { 60.3, 63.8, HILLSBRAD_FOOTHILLS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12376, {	-- Candy Bucket — Hillsbrad Foothills, Tarren Hill, Horde
+					["provider"] = { "o", 190078 },	-- Candy Bucket, Hillsbrad Foothills
+					["coord"] = { 57.9, 47.3, HILLSBRAD_FOOTHILLS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(13464, {	-- Candy Bucket — Howling Fjord, Camp Winterhoof, Horde
+					["provider"] = { "o", 194073 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 49.5, 10.8, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13465, {	-- Candy Bucket — Howling Fjord, New Agamand, Horde
+					["provider"] = { "o", 194074 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 52.1, 66.2, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13466, {	-- Candy Bucket — Howling Fjord, Vengeance Landing, Horde
+					["provider"] = { "o", 194075 },	-- Candy Bucket, Howling Fjord
+					["coord"] = { 79.2, 30.6, HOWLING_FJORD },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(32020, {	-- Candy Bucket — Krasarang Wilds, Dawnchaser Retreat, Horde
+					["provider"] = { "o", 215873 },	-- Candy Bucket, Krasarang Wilds
+					["coord"] = { 28.3, 50.7, KRASARANG_WILDS },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32047, {	-- Candy Bucket — Krasarang Wilds, Thunder Cleft, Horde
+					["provider"] = { "o", 215904 },	-- Candy Bucket, Krasarang Wilds
+					["coord"] = { 61.0, 25.1, KRASARANG_WILDS },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32040, {	-- Candy Bucket — Kun-Lai Summit, Eastwind Rest, Horde
+					["provider"] = { "o", 215898 },	-- Candy Bucket, Kun-Lai Summit
+					["coord"] = { 62.7, 80.5, KUN_LAI_SUMMIT },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(12362, {	-- Candy Bucket — Mulgore, Bloodhoof Village, Horde
+					["provider"] = { "o", 190065 },	-- Candy Bucket, Mulgore
+					["coord"] = { 46.8, 60.4, MULGORE },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12392, {	-- Candy Bucket — Nagrand, Garadar, Horde
+					["provider"] = { "o", 190098 },	-- Candy Bucket, Nagrand
+					["coord"] = { 56.7, 34.6, NAGRAND },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12374, {	-- Candy Bucket — Northern Barrens, Crossroads, Horde
+					["provider"] = { "o", 190076 },	-- Candy Bucket, Northern Barrens
+					["timeline"] = { ADDED_2_0_1 },
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 49.5, 58.0, NORTHERN_BARRENS },
+						-- #else
+						{ 52.0, 29.9, THE_BARRENS },
+						-- #endif
+					},
+				}),
+				candybucket(29002, {	-- Candy Bucket — Northern Barrens, Grol'dom Farm, Horde
+					["provider"] = { "o", 208165 },	-- Candy Bucket, Northern Barrens
+					["coord"] = { 56.3, 40.1, NORTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29003, {	-- Candy Bucket — Northern Barrens, Nozzlepot's Outpost, Horde
+					["provider"] = { "o", 208166 },	-- Candy Bucket, Northern Barrens
+					["coord"] = { 62.5, 16.6, NORTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12382, {	-- Candy Bucket — Northern Stranglethorn, Grom'gol Base Camp, Horde
+					["provider"] = { "o", 190084 },	-- Candy Bucket, Northern Stranglethorn
+					["coord"] = { 37.3, 51.7, NORTHERN_STRANGLETHORN },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12366, {	-- Candy Bucket — Orgrimmar, Valley of Strength, Horde
+					["provider"] = { "o", 190069 },	-- Candy Bucket, Orgrimmar
+					["coord"] = { 53.8, 78.8, ORGRIMMAR },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12395, {	-- Candy Bucket — Shadowmoon Valley, Shadowmoon Village, Horde
+					["provider"] = { "o", 190101 },	-- Candy Bucket, Shadowmoon Valley
+					["coord"] = { 30.3, 27.8, SHADOWMOON_VALLEY },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12370, {	-- Candy Bucket — Silvermoon City, The Bazaar, Horde
+					["provider"] = { "o", 190073 },	-- Candy Bucket, Silvermoon City
+					["coord"] = { 67.6, 73.2, SILVERMOON_CITY },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12369, {	-- Candy Bucket — Silvermoon City, The Royal Exchange, Horde
+					["provider"] = { "o", 190072 },	-- Candy Bucket, Silvermoon City
+					["coord"] = { 79.6, 57.9, SILVERMOON_CITY },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28966, {	-- Candy Bucket — Silverpine Forest, Forsaken Rear Guard, Horde
+					["provider"] = { "o", 208146 },	-- Candy Bucket, Silverpine Forest
+					["coord"] = { 44.3, 20.4, SILVERPINE_FOREST },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12371, {	-- Candy Bucket — Silverpine Forest, The Sepulcher, Horde
+					["provider"] = { "o", 190074 },	-- Candy Bucket, Silverpine Forest
+					["coord"] = { 46.4, 42.8, SILVERPINE_FOREST },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12375, {	-- Candy Bucket — Southern Barrens, Camp Taurajo, Horde
+					["provider"] = { "o", 190077 },	-- Candy Bucket, Camp Taurajo
+					-- #if BEFORE CATA
+					["coord"] = { 45.6, 59.1, THE_BARRENS },
+					-- #endif
+					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
+				}),
+				candybucket(29005, {	-- Candy Bucket — Southern Barrens, Desolation Hold, Horde
+					["provider"] = { "o", 208168 },	-- Candy Bucket, Southern Barrens
+					["coord"] = { 40.7, 69.3, SOUTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29004, {	-- Candy Bucket — Southern Barrens, Hunter's Hill, Horde
+					["provider"] = { "o", 208167 },	-- Candy Bucket, Southern Barrens
+					["coord"] = { 39.3, 20.1, SOUTHERN_BARRENS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(29009, {	-- Candy Bucket — Stonetalon Mountains, Krom'gar Fortress, Horde
+					["provider"] = { "o", 208172 },	-- Candy Bucket, Stonetalon Mountains
+					["coord"] = { 66.5, 64.2, STONETALON_MOUNTAINS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12378, {	-- Candy Bucket — Stonetalon Mountains, Sun Rock Retreat, Horde
+					["provider"] = { "o", 190080 },	-- Candy Bucket, Stonetalon Mountains
+					["coord"] = { 50.4, 63.8, STONETALON_MOUNTAINS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12384, {	-- Candy Bucket — Swamp of Sorrows, Stonard, Horde
+					["provider"] = { "o", 190086 },	-- Candy Bucket, Swamp of Sorrows
+					["coord"] = { 46.9, 56.7, SWAMP_OF_SORROWS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12391, {	-- Candy Bucket — Terokkar Forest, Stonebreaker Hold, Horde
+					["provider"] = { "o", 190097 },	-- Candy Bucket, Terokkar Forest
+					["coord"] = { 48.8, 45.2, TEROKKAR_FOREST },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28969, {	-- Candy Bucket — The Cape of Stranglethorn, Hardwrench Hideaway, Horde
+					["provider"] = { "o", 208147 },	-- Candy Bucket, The Cape of Stranglethorn
+					["coord"] = { 35.1, 27.2, THE_CAPE_OF_STRANGLETHORN },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28971, {	-- Candy Bucket — The Hinterlands, Hiri'watha Research Station, Horde
+					["provider"] = { "o", 208148 },	-- Candy Bucket, The Hinterlands
+					["coord"] = { 31.9, 57.9, THE_HINTERLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12387, {	-- Candy Bucket — The Hinterlands, Revantusk Village, Horde
+					["provider"] = { "o", 190089 },	-- Candy Bucket, The Hinterlands
+					["coord"] = { 78.2, 81.4, THE_HINTERLANDS },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(32028, {	-- Candy Bucket — The Jade Forest, Grookin Hill, Horde
+					["provider"] = { "o", 215881 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 28.0, 47.4, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(32050, {	-- Candy Bucket — The Jade Forest, Honeydew Village, Horde
+					["provider"] = { "o", 215908 },	-- Candy Bucket, The Jade Forest
+					["coord"] = { 28.5, 13.3, THE_JADE_FOREST },
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(13471, {	-- Candy Bucket — The Storm Peaks, Camp Tunka'lo, Horde
+					["provider"] = { "o", 194080 },	-- Candy Bucket, The Storm Peaks
+					["coord"] = { 67.6, 50.6, THE_STORM_PEAKS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(13548, {	-- Candy Bucket — The Storm Peaks, Grom'arsh Crash Site, Horde
+					["provider"] = { "o", 194119 },	-- Candy Bucket, The Storm Peaks
+					["coord"] = { 37.1, 49.6, THE_STORM_PEAKS },
+					["timeline"] = { ADDED_3_0_2 },
+				}),
+				candybucket(75682, {	-- Candy Bucket — The Waking Shores, Wild Coast
+					["provider"] = { "o", 401736 },	-- Candy Bucket, The Waking Shores
+					["coord"] = { 80.4, 27.9, THE_WAKING_SHORES },
+					["timeline"] = { ADDED_10_1_5 },
+				}),
+				candybucket(12379, {	-- Candy Bucket — Thousand Needles, Freewind Post, Horde (removed)
+					["provider"] = { "o", 190081 },	-- Candy Bucket, Thousand Needles
+					["coord"] = { 46.1, 51.4, THOUSAND_NEEDLES },
+					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
+				}),
+				candybucket(12367, {	-- Candy Bucket — Thunder Bluff, Lower Rise, Horde
+					["provider"] = { "o", 190070 },	-- Candy Bucket, Thunder Bluff
+					["coord"] = { 45.7, 64.5, THUNDER_BLUFF },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(12363, {	-- Candy Bucket — Tirisfal Glades, Brill, Horde
+					["provider"] = { "o", 190066 },	-- Candy Bucket, Tirisfal Glades
+					["coord"] = { 60.9, 51.5, TIRISFAL_GLADES },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(28972, {	-- Candy Bucket — Tirisfal Glades, The Bulwark, Horde
+					["provider"] = { "o", 208149 },	-- Candy Bucket, Tirisfal Glades
+					["coord"] = { 83.0, 72.0, TIRISFAL_GLADES },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28973, {	-- Candy Bucket — Twilight Highlands, Bloodgulch, Horde
+					["provider"] = { "o", 208150 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 53.4, 42.9, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28974, {	-- Candy Bucket — Twilight Highlands, Crushblow, Horde
+					["provider"] = { "o", 208151 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 45.1, 76.7, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28975, {	-- Candy Bucket — Twilight Highlands, Dragonmaw Post, Horde
+					["provider"] = { "o", 208152 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 75.3, 54.8, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28976, {	-- Candy Bucket — Twilight Highlands, Krazzworks, Horde
+					["provider"] = { "o", 208153 },	-- Candy Bucket, Twilight Highlands
+					["coord"] = { 75.4, 16.5, TWILIGHT_HIGHLANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12368, {	-- Candy Bucket — Undercity, The Trade Quarter, Horde
+					["provider"] = { "o", 190071 },	-- Candy Bucket, Undercity
+					["coord"] = { 67.7, 37.9, UNDERCITY },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(32022, {	-- Candy Bucket — Vale of Eternal Blossoms, Shrine of Two Moons, Horde
+					["provider"] = { "o", 215875 },	-- Candy Bucket, Vale of Eternal Blossoms
+					["coord"] = { 61.9, 16.1, VALE_OF_ETERNAL_BLOSSOMS },
+					["coords"] = {
+						{ 61.9, 16.1, VALE_OF_ETERNAL_BLOSSOMS },
+						--{ x, y, 391 },	-- Shrine of Two Moons
+					},
+					["timeline"] = { ADDED_5_0_4 },
+				}),
+				candybucket(28984, {	-- Candy Bucket — Vashj'ir, Legion's Rest, Horde
+					["provider"] = { "o", 208154 },	-- Candy Bucket, Shimmering Expanse
+					["coord"] = { 51.5, 62.5, VASHJIR_SHIMMERING_EXPANSE },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28986, {	-- Candy Bucket — Vashj'ir, Tenebrous Cavern, Horde
+					["provider"] = { "o", 208155 },	-- Candy Bucket, Abyssal Depths
+					["coord"] = { 51.3, 60.6, VASHJIR_ABYSSAL_DEPTHS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(28987, {	-- Candy Bucket — Western Plaguelands, Andorhal, Horde
+					["provider"] = { "o", 208156 },	-- Candy Bucket, Western Plaguelands
+					["coord"] = { 48.2, 63.7, WESTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_1_0 },
+				}),
+				candybucket(12390, {	-- Candy Bucket — Zangarmarsh, Zabra'jin, Horde
+					["provider"] = { "o", 190096 },	-- Candy Bucket, Zangarmarsh
+					["coord"] = { 30.7, 50.9, ZANGARMARSH },
+					["timeline"] = { ADDED_2_0_1 },
+				}),
+				candybucket(54709, {	-- Candy Bucket — Zuldazar, Dazar'alor, Horde
+					["provider"] = { "o", 316754 },	-- Candy Bucket, The Great Seal
+					["coord"] = { 49.6, 82.3, THE_GREAT_SEAL },
+					["timeline"] = { ADDED_8_0_1 },
+					["maps"] = {
+						HALL_OF_CHRONICLERS,
+						DAZARALOR,
+					},
+				}),
+			},
+		})),
+	}),
 	n(QUESTS, {
 		q(12135, {	-- "Let the Fires Come!" (Alliance)
 			["qg"] = 24519,	-- Costumed Orphan Matron
@@ -2684,26 +3052,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["lvl"] = 65,
 			-- #endif
 		}),
-		q(8353, {	-- Chicken Clucking for a Mint (Alliance)
-			["qg"] = 5111,	-- Innkeeper Firebrew <Innkeeper>
-			["coord"] = { 18.6, 51.4, IRONFORGE },
-			["races"] = ALLIANCE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20490),	-- Ironforge Mint
-			},
-		}),
-		q(8354, {	-- Chicken Clucking for a Mint (Horde)
-			["qg"] = 6741,	-- Innkeeper Norman <Innkeeper>
-			["coord"] = { 67.8, 38.6, UNDERCITY },
-			["races"] = HORDE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20491),	-- Undercity Mint
-			},
-		}),
 		q(29144, {	-- Clean Up in Stormwind
 			["qg"] = 51934,	-- Gretchen Fenlow
 			["coord"] = { 32.2, 50.8, ELWYNN_FOREST },
@@ -2809,32 +3157,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 					},
 				}),
 				i(128658),	-- Spooky Supplies
-			},
-		}),
-		q(8357, {	-- Dancing for Marzipan (Alliance)
-			["qg"] = 6735,	-- Innkeeper Saelienne <Innkeeper>
-			["coords"] = {
-				-- #if AFTER CATA
-				{ 62.4, 32.8, DARNASSUS },
-				-- #else
-				{ 67.2, 15.8, DARNASSUS },
-				-- #endif
-			},
-			["races"] = ALLIANCE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20496),	-- Darnassus Marzipan
-			},
-		}),
-		q(8360, {	-- Dancing for Marzipan (Horde)
-			["qg"] = 6746,	-- Innkeeper Pala <Innkeeper>
-			["coord"] = { 45.8, 64.4, THUNDER_BLUFF },
-			["races"] = HORDE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20497),	-- Thunder Bluff Marzipan
 			},
 		}),
 		q(29398, {	-- Fencing the Goods (Alliance)
@@ -2980,40 +3302,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 				-- #endif
 			},
 		}),
-		q(8356, {	-- Flexing for Nougat (Alliance)
-			["qg"] = 6740,	-- Innkeeper Allison <Innkeeper>
-			["coords"] = {
-				-- #if AFTER WRATH
-				{ 60.4, 75.3, STORMWIND_CITY },
-				-- #else
-				{ 52.6, 65.6, STORMWIND_CITY },
-				-- #endif
-			},
-			["races"] = ALLIANCE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20492),	-- Stormwind Nougat
-			},
-		}),
-		q(8359, {	-- Flexing for Nougat (Horde)
-			["qg"] = 6929,	-- Innkeeper Gryshka <Innkeeper>
-			["coords"] = {
-				-- #if AFTER LEGION
-				{ 53.6, 78.8, ORGRIMMAR },
-				-- #elseif AFTER CATA
-				{ 54.2, 68.4, ORGRIMMAR },
-				-- #else
-				{ 54.2, 68.4, ORGRIMMAR },
-				-- #endif
-			},
-			["races"] = HORDE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20493),	-- Orgrimmar Nougat
-			},
-		}),
 		q(39720, {	-- Foul Fertilizer
 			["qg"] = 96705,	-- Orukan
 			["timeline"] = { ADDED_6_0_2 },
@@ -3067,17 +3355,65 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["isYearly"] = true,
 			["lvl"] = lvlsquish(10, 10, 1),
 			["groups"] = {
-				objective(1, {	-- 0/1 Stormwind Nougat
-					["provider"] = { "i", 20492 },	-- Stormwind Nougat
+				q(8356, {	-- Flexing for Nougat (Alliance)
+					["qg"] = 6740,	-- Innkeeper Allison <Innkeeper>
+					["coords"] = {
+						-- #if AFTER WRATH
+						{ 60.4, 75.3, STORMWIND_CITY },
+						-- #else
+						{ 52.6, 65.6, STORMWIND_CITY },
+						-- #endif
+					},
+					["races"] = ALLIANCE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(1, {	-- 0/1 Stormwind Nougat
+							["questID"] = 8311,	-- Hallow's End Treats for Jesper!
+							["provider"] = { "i", 20492 },	-- Stormwind Nougat
+						}),
+					},
 				}),
-				objective(2, {	-- 0/1 Gnomeregan Gumdrop
-					["provider"] = { "i", 20494 },	-- Gnomeregan Gumdrop
+				q(8355, {	-- Incoming Gumdrop (Alliance)
+					["qg"] = 6826,	-- Talvash del Kissel
+					["coord"] = { 36, 4, IRONFORGE },
+					["races"] = ALLIANCE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(2, {	-- 0/1 Gnomeregan Gumdrop
+							["questID"] = 8311,	-- Hallow's End Treats for Jesper!
+							["provider"] = { "i", 20494 },	-- Gnomeregan Gumdrop
+						}),
+					},
 				}),
-				objective(3, {	-- 0/1 Ironforge Mint
-					["provider"] = { "i", 20490 },	-- Ironforge Mint
+				q(8353, {	-- Chicken Clucking for a Mint (Alliance)
+					["qg"] = 5111,	-- Innkeeper Firebrew <Innkeeper>
+					["coord"] = { 18.6, 51.4, IRONFORGE },
+					["races"] = ALLIANCE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(3, {	-- 0/1 Ironforge Mint
+							["questID"] = 8311,	-- Hallow's End Treats for Jesper!
+							["provider"] = { "i", 20490 },	-- Ironforge Mint
+						}),
+					},
 				}),
-				objective(4, {	-- 0/1 Darnassus Marzipan
-					["provider"] = { "i", 20496 },	-- Darnassus Marzipan
+				q(8357, {	-- Dancing for Marzipan (Alliance)
+					["qg"] = 6735,	-- Innkeeper Saelienne <Innkeeper>
+					["coords"] = {
+						-- #if AFTER CATA
+						{ 62.4, 32.8, DARNASSUS },
+						-- #else
+						{ 67.2, 15.8, DARNASSUS },
+						-- #endif
+					},
+					["races"] = ALLIANCE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(4, {	-- 0/1 Darnassus Marzipan
+							["questID"] = 8311,	-- Hallow's End Treats for Jesper!
+							["provider"] = { "i", 20496 },	-- Darnassus Marzipan
+						}),
+					},
 				}),
 				-- #if AFTER CATA
 				i(33226),	-- Tricky Treat
@@ -3101,51 +3437,75 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["isYearly"] = true,
 			["lvl"] = lvlsquish(10, 10, 1),
 			["groups"] = {
-				objective(1, {	-- 0/1 Orgrimmar Nougat
-					["provider"] = { "i", 20493 },	-- Orgrimmar Nougat
+				q(8359, {	-- Flexing for Nougat (Horde)
+					["qg"] = 6929,	-- Innkeeper Gryshka <Innkeeper>
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 53.6, 78.8, ORGRIMMAR },
+						-- #elseif AFTER CATA
+						{ 54.2, 68.4, ORGRIMMAR },
+						-- #else
+						{ 54.2, 68.4, ORGRIMMAR },
+						-- #endif
+					},
+					["races"] = HORDE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(1, {	-- 0/1 Orgrimmar Nougat
+							["questID"] = 8312,	-- Hallow's End Treats for Spoops!
+							["provider"] = { "i", 20493 },	-- Orgrimmar Nougat
+						}),
+					},
 				}),
-				objective(2, {	-- 0/1 Darkspear Gumdrop
-					["provider"] = { "i", 20495 },	-- Darkspear Gumdrop
+				q(8358, {	-- Incoming Gumdrop (Horde)
+					["qg"] = 11814,	-- Kali Remik
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 32.6, 65, ORGRIMMAR },
+						-- #elseif AFTER CATA
+						{ 33.5, 64.9, ORGRIMMAR },
+						-- #else
+						{ 56.2, 74.2, DUROTAR },
+						-- #endif
+					},
+					["races"] = HORDE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(2, {	-- 0/1 Darkspear Gumdrop
+							["questID"] = 8312,	-- Hallow's End Treats for Spoops!
+							["provider"] = { "i", 20495 },	-- Darkspear Gumdrop
+						}),
+					},
 				}),
-				objective(3, {	-- 0/1 Undercity Mint
-					["provider"] = { "i", 20491 },	-- Undercity Mint
+				q(8354, {	-- Chicken Clucking for a Mint (Horde)
+					["qg"] = 6741,	-- Innkeeper Norman <Innkeeper>
+					["coord"] = { 67.8, 38.6, UNDERCITY },
+					["races"] = HORDE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(3, {	-- 0/1 Undercity Mint
+							["questID"] = 8312,	-- Hallow's End Treats for Spoops!
+							["provider"] = { "i", 20491 },	-- Undercity Mint
+						}),
+					},
 				}),
-				objective(4, {	-- 0/1 Thunder Bluff Marzipan
-					["provider"] = { "i", 20497 },	-- Thunder Bluff Marzipan
+				q(8360, {	-- Dancing for Marzipan (Horde)
+					["qg"] = 6746,	-- Innkeeper Pala <Innkeeper>
+					["coord"] = { 45.8, 64.4, THUNDER_BLUFF },
+					["races"] = HORDE_ONLY,
+					["repeatable"] = true,
+					["groups"] = {
+						objective(4, {	-- 0/1 Thunder Bluff Marzipan
+							["questID"] = 8312,	-- Hallow's End Treats for Spoops!
+							["provider"] = { "i", 20497 },	-- Thunder Bluff Marzipan
+						}),
+					},
 				}),
 				-- #if AFTER CATA
 				i(33226),	-- Tricky Treat
 				-- #else
 				i(20557),	-- Hallow's End Pumpkin Treat
 				-- #endif
-			},
-		}),
-		q(8355, {	-- Incoming Gumdrop (Alliance)
-			["qg"] = 6826,	-- Talvash del Kissel
-			["coord"] = { 36, 4, IRONFORGE },
-			["races"] = ALLIANCE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20494),	-- Gnomeregan Gumdrop
-			},
-		}),
-		q(8358, {	-- Incoming Gumdrop (Horde)
-			["qg"] = 11814,	-- Kali Remik
-			["coords"] = {
-				-- #if AFTER LEGION
-				{ 32.6, 65, ORGRIMMAR },
-				-- #elseif AFTER CATA
-				{ 33.5, 64.9, ORGRIMMAR },
-				-- #else
-				{ 56.2, 74.2, DUROTAR },
-				-- #endif
-			},
-			["races"] = HORDE_ONLY,
-			["repeatable"] = true,
-			["lvl"] = lvlsquish(10, 10, 1),
-			["groups"] = {
-				i(20495),	-- Darkspear Gumdrop
 			},
 		}),
 		q(11357, {	-- Masked Orphan Matron
@@ -3349,6 +3709,10 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["isDaily"] = true,
 			["lvl"] = lvlsquish(10, 10, 10),	-- TODO: Confirm level requirement.
 			["groups"] = {
+				objective(1, {	-- 0/25 Bombs Dropped
+					["provider"] = { "n", 52548 },	-- Gertrude Fenlow
+					["coord"] = { 32.2, 50.6, ELWYNN_FOREST },
+				}),
 				i(33226),	-- Tricky Treat
 			},
 		}),
@@ -3368,6 +3732,10 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["isDaily"] = true,
 			["lvl"] = lvlsquish(10, 10, 10),	-- TODO: Confirm level requirement.
 			["groups"] = {
+				objective(1, {	-- 0/25 Bombs Dropped
+					["provider"] = { "n", 53764 },	-- Crina Fenlow
+					["coord"] = { 62.2, 67.0, TIRISFAL_GLADES },
+				}),
 				i(33226),	-- Tricky Treat
 			},
 		}),
@@ -3427,14 +3795,27 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["races"] = ALLIANCE_ONLY,
 			["lvl"] = lvlsquish(10, 10, 1),
 			["groups"] = {
+				-- #if AFTER 5.0.4
 				objective(1, {	-- 0/2 Strange Dust
 					["provider"] = { "i", 10940 },	-- Strange Dust
 				}),
 				objective(2, {	-- 0/5 Crystal Vial
 					["provider"] = { "i", 3371 },	-- Crystal Vial
 				}),
+				-- #else
+				objective(1, {	-- 0/5 Crystal Vial
+					["provider"] = { "i", 3371 },	-- Crystal Vial
+				}),
+				objective(2, {	-- 0/5 Arcane Powder
+					["provider"] = { "i", 17020 },	-- Arcane Powder
+				}),
+				-- #endif
 				objective(3, {	-- 0/5 Blood Nettle
-					["provider"] = { "i", 71035 },	-- Blood Nettle
+					["providers"] = {
+						{ "i",  71035 },	-- Blood Nettle
+						{ "o", 209059 },	-- Blood Nettle
+					},
+					["coord"] = { 51.5, 10.0, STORMWIND_CITY },
 				}),
 			},
 		}),
@@ -3446,14 +3827,27 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["races"] = HORDE_ONLY,
 			["lvl"] = lvlsquish(10, 10, 1),
 			["groups"] = {
+				-- #if AFTER 5.0.4
+				objective(1, {	-- 0/2 Strange Dust
+					["provider"] = { "i", 10940 },	-- Strange Dust
+				}),
+				objective(2, {	-- 0/5 Crystal Vial
+					["provider"] = { "i", 3371 },	-- Crystal Vial
+				}),
+				-- #else
 				objective(1, {	-- 0/5 Crystal Vial
 					["provider"] = { "i", 3371 },	-- Crystal Vial
 				}),
 				objective(2, {	-- 0/5 Arcane Powder
 					["provider"] = { "i", 17020 },	-- Arcane Powder
 				}),
+				-- #endif
 				objective(3, {	-- 0/5 Blood Nettle
-					["provider"] = { "i", 71035 },	-- Blood Nettle
+					["providers"] = {
+						{ "i",  71035 },	-- Blood Nettle
+						{ "o", 209059 },	-- Blood Nettle
+					},
+					["coord"] = { 45.9, 49.5, ORGRIMMAR },
 				}),
 			},
 		}),
@@ -3652,7 +4046,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			},
 		}),
 		q(76072, {	-- Shades of Scarlet
-			["provider"] = { "n", 211008 },	-- Sir Thomas
+			["provider"] = { "n", 206158 },	-- Sir Thomas
 			["sourceQuest"] = 76075,	-- A Ghostly Message
 			["timeline"] = { ADDED_10_1_7 },
 			["coord"] = { 81.2, 44.6, TIRISFAL_GLADES },
@@ -3661,7 +4055,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			},
 		}),
 		q(76073, {	-- No Laughing Matter
-			["provider"] = { "n", 211008 },	-- Sir Thomas
+			["provider"] = { "n", 205473 },	-- Sir Thomas
 			["sourceQuest"] = 76072,	-- Shades of Scarlet
 			["timeline"] = { ADDED_10_1_7 },
 			["coord"] = { 82.4, 32.7, TIRISFAL_GLADES },
@@ -3686,1150 +4080,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 			["groups"] = {
 				i(208769),	-- Tome of Thomas Thomson
 			},
-		}),
-		-- Candy Bucket Quests
-		n(FACTION_HEADER_NEUTRAL, {
-			["timeline"] = { ADDED_2_0_1 },
-			["groups"] = bubbleDown({ ["isYearly"] = true, ["_drop"] = { "g" } }, {
-				q(28955, {	-- Candy Bucket — Badlands, Fuselight, Neutral
-					["coord"] = { 65.9, 35.8, BADLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12406, {	-- Candy Bucket — Blade's Edge Mountains, Evergrove, Neutral
-					["coord"] = { 62.9, 38.3, BLADES_EDGE_MOUNTAINS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(13460, {	-- Candy Bucket — Borean Tundra, Unu'pe, Neutral
-					["coord"] = { 78.4, 49.2, BOREAN_TUNDRA },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12397, {	-- Candy Bucket — Cape of Stranglethorn, Booty Bay, Neutral
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 40.9, 73.8, THE_CAPE_OF_STRANGLETHORN },
-						-- #else
-						{ 27.1, 77.3, STRANGLETHORN_VALE },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(43055, {	-- Candy Bucket — Dalaran : Broken Shores, Legerdemain Lounge, Neutral
-					["coord"] = { 48.1, 41.3, LEGION_DALARAN },
-					["timeline"] = { ADDED_7_0_3 },
-				}),
-				q(13463, {	-- Candy Bucket — Dalaran : Northrend, Legerdemain Lounge, Neutral
-					["coord"] = { 48.3, 40.8, NORTHREND_DALARAN },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13472, {	-- Candy Bucket — Dalaran : Northrend, Underbelly, Neutral
-					["coord"] = { 27.2, 41.4, NORTHREND_THE_UNDERBELLY },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(28993, {	-- Candy Bucket — Desolace, Karnum's Glade, Neutral
-					["coord"] = { 56.8, 50.0, DESOLACE },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(39657, {	-- Candy Bucket — Draenor Garrison (Frostwall or Lunarfall), Neutral
-					-- TODO: While it might seem weird, having this have coordinates at least will plot it on the map so folks don't forget.
-					-- Perhaps investigate a programatic solution? The garrison has different map IDs at different stages of creation.
-					["timeline"] = { ADDED_6_0_2 },
-					["maps"] = {
-						FROSTWALL,
-						LUNARFALL,
-					},
-				}),
-				q(13459, {	-- Candy Bucket — Dragonblight, Moa'ki Harbor, Neutral
-					["coord"] = { 48.2, 74.7, DRAGONBLIGHT },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13456, {	-- Candy Bucket — Dragonblight, Wyrmrest Temple, Neutral
-					["coord"] = { 60.1, 53.5, DRAGONBLIGHT },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(32024, {	-- Candy Bucket — Dread Wastes, Klaxxi'vess, Neutral
-					["coord"] = { 55.9, 32.3, DREAD_WASTES },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32023, {	-- Candy Bucket — Dread Wastes, Soggy's Gamble, Neutral
-					["coord"] = { 55.2, 71.1, DREAD_WASTES },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(12398, {	-- Candy Bucket — Dustwallow Marsh, Mudsprocket, Neutral
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 41.0, 73.0, DUSTWALLOW_MARSH },
-						-- #else
-						{ 41.86, 74.1, DUSTWALLOW_MARSH },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12402, {	-- Candy Bucket — Eastern Plaguelands, Light's Hope Chapel, Neutral
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 75.6, 52.4, EASTERN_PLAGUELANDS },
-						-- #else
-						{ 81.7, 58.1, EASTERN_PLAGUELANDS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28994, {	-- Candy Bucket — Felwood, Whisperwind Grove, Neutral
-					["coord"] = { 44.6, 28.9, FELWOOD },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(13452, {	-- Candy Bucket — Howling Fjord, Kamagua, Neutral
-					["coord"] = { 25.4, 59.8, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(32027, {	-- Candy Bucket — Jade Forest, Dawn's Blossom, Neutral
-					["coord"] = { 45.7, 43.6, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32029, {	-- Candy Bucket — Jade Forest, Greenstone Village, Neutral
-					["coord"] = { 48.0, 34.6, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32032, {	-- Candy Bucket — Jade Forest, Jade Temple Grounds, Neutral
-					["coord"] = { 54.6, 63.3, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32031, {	-- Candy Bucket — Jade Forest, Sri-La Village, Neutral
-					["coord"] = { 55.7, 24.4, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32021, {	-- Candy Bucket — Jade Forest, Tian Monastery, Neutral
-					["coord"] = { 41.6, 23.1, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32034, {	-- Candy Bucket — Krasarang Wilds, Marista, Neutral
-					["coord"] = { 51.4, 77.29, KRASARANG_WILDS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32036, {	-- Candy Bucket — Krasarang Wilds, Zhu's Watch, Neutral
-					["coord"] = { 75.94, 6.91, KRASARANG_WILDS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32039, {	-- Candy Bucket — Kun-Lai Summit, Binan Village, Neutral
-					["coord"] = { 72.7, 92.2, KUN_LAI_SUMMIT },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32041, {	-- Candy Bucket — Kun-Lai Summit, Grummle Bazaar, Neutral
-					["coord"] = { 64.2, 61.2, KUN_LAI_SUMMIT },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32037, {	-- Candy Bucket — Kun-Lai Summit, One Keg, Neutral
-					["coord"] = { 57.4, 59.9, KUN_LAI_SUMMIT },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32051, {	-- Candy Bucket — Kun-Lai Summit, Zouchin Village, Neutral
-					["coord"] = { 62.3, 29.0, KUN_LAI_SUMMIT },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(29000, {	-- Candy Bucket — Mount Hyjal, Grove of Aessina, Neutral
-					["coord"] = { 18.7, 37.3, MOUNT_HYJAL },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28999, {	-- Candy Bucket — Mount Hyjal, Nordrassil, Neutral
-					["coord"] = { 63.0, 24.1, MOUNT_HYJAL },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29001, {	-- Candy Bucket — Mount Hyjal, Shrine of Aviana, Neutral
-					["coord"] = { 42.7, 45.6, MOUNT_HYJAL },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12407, {	-- Candy Bucket — Netherstorm, Area 52, Neutral
-					["coord"] = { 32.0, 64.4, NETHERSTORM },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12408, {	-- Candy Bucket — Netherstorm, The Stormspire, Neutral
-					["coord"] = { 43.4, 36.1, NETHERSTORM },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12396, {	-- Candy Bucket — Northern Barrens, Ratchet, Neutral
-					["timeline"] = { ADDED_2_0_1 },
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 67.3, 74.7, NORTHERN_BARRENS },
-						-- #else
-						{ 62.1, 39.4, THE_BARRENS },
-						-- #endif
-					},
-				}),
-				q(28965, {	-- Candy Bucket — Searing Gorge, Iron Summit, Neutral
-					["coord"] = { 39.4, 66.1, SEARING_GORGE },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12409, {	-- Candy Bucket — Shadowmoon Valley, Altar of Sha'tar or Sanctum of the Stars, Neutral
-					["coords"] = {
-						{ 61.0, 28.2, SHADOWMOON_VALLEY },	-- Aldor
-						{ 56.4, 59.8, SHADOWMOON_VALLEY },	-- Scryer
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12404, {	-- Candy Bucket — Shattrath City, Aldor Rise or Scryer's Tier, Neutral
-					["coords"] = {
-						{ 56.2, 81.8, SHATTRATH_CITY },	-- Scryer
-						{ 28.1, 49.0, SHATTRATH_CITY },	-- Aldor
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12950, {	-- Candy Bucket — Sholazar, Nesingwary Base Camp, Neutral
-					["coord"] = { 26.7, 59.2, SHOLAZAR_BASIN },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12401, {	-- Candy Bucket — Silithus, Cenarion Hold, Neutral
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 55.5, 36.7, SILITHUS },
-						-- #else
-						{ 51.8, 39.2, SILITHUS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(13462, {	-- Candy Bucket — Storm Peaks, Bouldercrag's Refuge, Neutral
-					["coord"] = { 30.9, 37.2, THE_STORM_PEAKS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13461, {	-- Candy Bucket — Storm Peaks, K3, Neutral
-					["coord"] = { 41.1, 85.9, THE_STORM_PEAKS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(28967, {	-- Candy Bucket — Swamp of Sorrows, Bogpaddle, Neutral
-					["coord"] = { 71.7, 14.0, SWAMP_OF_SORROWS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29014, {	-- Candy Bucket — Tanaris, Bootlegger Outpost, Neutral
-					["coord"] = { 55.7, 60.9, TANARIS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12399, {	-- Candy Bucket — Tanaris, Gadgetzan, Neutral
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 52.6, 27.1, TANARIS },
-						-- #else
-						{ 52.45, 27.88, TANARIS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(32026, {	-- Candy Bucket — The Veiled Stair, Tavern in the Mists, Neutral
-					["coord"] = { 54.9, 72.3, THE_VEILED_STAIR },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32043, {	-- Candy Bucket — Townlong Steppes, Longying Outpost, Neutral
-					["coord"] = { 71.1, 57.8, TOWNLONG_STEPPES },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(29016, {	-- Candy Bucket — Uldum, Oasis of Vir'sar, Neutral
-					["coord"] = { 26.6, 7.30, ULDUM },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29017, {	-- Candy Bucket — Uldum, Ramkahen, Neutral
-					["coord"] = { 54.7, 33.0, ULDUM },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29018, {	-- Candy Bucket — Un'Goro Crater, Marshal's Stand, Neutral
-					["coord"] = { 55.2, 62.1, UNGORO_CRATER },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(32044, {	-- Candy Bucket — Vale of Eternal Blossoms, Mistfall Village, Neutral
-					["coord"] = { 35.1, 77.7, VALE_OF_ETERNAL_BLOSSOMS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32048, {	-- Candy Bucket — Valley of the Four Winds, Pang's Stead, Neutral
-					["coord"] = { 83.6, 20.3, VALLEY_OF_THE_FOUR_WINDS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32046, {	-- Candy Bucket — Valley of the Four Winds, Stoneplow, Neutral
-					["coord"] = { 19.8, 55.7, VALLEY_OF_THE_FOUR_WINDS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(28981, {	-- Candy Bucket — Vashj'ir, Deepmist Grotto, Neutral
-					["coord"] = { 63.4, 60.2, VASHJIR },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28982, {	-- Candy Bucket — Vashj'ir, Silver Tide Hollow, Neutral
-					["coord"] = { 49.2, 41.9, VASHJIR },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12400, {	-- Candy Bucket — Winterspring, Everlook, Neutral
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 59.8, 51.2, WINTERSPRING },
-						-- #else
-						{ 61.33, 38.86, WINTERSPRING },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12403, {	-- Candy Bucket — Zangarmarsh, Cenarion Refuge, Neutral
-					["coord"] = { 78.5, 62.9, ZANGARMARSH },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12941, {	-- Candy Bucket — Zul'Drak, The Argent Stand, Neutral
-					["coord"] = { 40.8, 66.0, ZULDRAK },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12940, {	-- Candy Bucket — Zul'Drak, Zim'Torga, Neutral
-					["coord"] = { 59.3, 57.2, ZULDRAK },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-
-				-- Dragonflight
-				q(75684, {	-- Candy Bucket - Ohn'ahran Plains, Broadhoof Outpost
-					["coord"] = { 46.2, 40.6, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75693, {	-- Candy Bucket - Ohn'ahran Plains, Emberwatch
-					["coord"] = { 66.3, 24.5, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75692, {	-- Candy Bucket - Ohn'ahran Plains, Forkriver Crossing
-					["coord"] = { 72.1, 80.4, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75685, {	-- Candy Bucket - Ohn'ahran Plains, Maruukai
-					["coord"] = { 62.9, 40.6, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75687, {	-- Candy Bucket - Ohn'ahran Plains, Ohn'iri Springs
-					["coord"] = { 57.1, 76.7, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75688, {	-- Candy Bucket - Ohn'ahran Plains, Pinewood Post
-					["coord"] = { 81.3, 59.2, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75689, {	-- Candy Bucket - Ohn'ahran Plains, Rusza'thar Reach
-					["coord"] = { 85.9, 35.4, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75686, {	-- Candy Bucket - Ohn'ahran Plains, Shady Sanctuary
-					["coord"] = { 28.6, 60.6, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75691, {	-- Candy Bucket - Ohn'ahran Plains, Teerakai
-					["coord"] = { 41.9, 60.4, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75690, {	-- Candy Bucket - Ohn'ahran Plains, Timberstep Outpost
-					["coord"] = { 85.0, 26.0, OHNAHRAN_PLAINS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75698, {	-- Candy Bucket - Thaldraszus, Algeth'era Court
-					["coord"] = { 50.1, 42.7, THALDRASZUS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75696, {	-- Candy Bucket - Thaldraszus, Garden Shrine
-					["coord"] = { 35.1, 79.2, THALDRASZUS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75697, {	-- Candy Bucket - Thaldraszus, Gelikyr Post
-					["coord"] = { 52.4, 69.8, THALDRASZUS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75695, {	-- Candy Bucket - Thaldraszus, Temporal Conflux
-					["coord"] = { 59.9, 82.7, THALDRASZUS },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75700, {	-- Candy Bucket - Thaldraszus, Valdrakken (The Parting Glass)
-					["coord"] = { 72.4, 46.7, VALDRAKKEN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75699, {	-- Candy Bucket - Thaldraszus, Valdrakken (The Roasted Ram)
-					["coord"] = { 47.2, 45.5, VALDRAKKEN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75701, {	-- Candy Bucket - Thaldraszus, Valdrakken (Weyrnrest)
-					["coord"] = { 22.4, 30.9, VALDRAKKEN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75667, {	-- Candy Bucket - The Azure Span, Camp Antonidas
-					["coord"] = { 47.0, 40.3, THE_AZURE_SPAN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75668, {	-- Candy Bucket - The Azure Span, Camp Nowhere
-					["coord"] = { 62.8, 57.7, THE_AZURE_SPAN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75669, {	-- Candy Bucket - The Azure Span, Iskaara
-					["coord"] = { 12.4, 49.4, THE_AZURE_SPAN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75670, {	-- Candy Bucket - The Azure Span, Theron's Watch
-					["coord"] = { 65.5, 16.3, THE_AZURE_SPAN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75671, {	-- Candy Bucket - The Azure Span, Three-Falls Lookout
-					["coord"] = { 18.8, 24.6, THE_AZURE_SPAN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75702, {	-- Candy Bucket - The Forbidden Reach, Morqut Village
-					["coord"] = { 33.9, 58.8, THE_FORBIDDEN_REACH },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75672, {	-- Candy Bucket - The Waking Shores, Apex Observatory
-					["coord"] = { 24.5, 82.1, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75673, {	-- Candy Bucket - The Waking Shores, Dragonscale Basecamp
-					["coord"] = { 47.7, 83.3, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75675, {	-- Candy Bucket - The Waking Shores, Life Vault Ruins
-					["coord"] = { 65.2, 57.9, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75676, {	-- Candy Bucket - The Waking Shores, Obsidian Throne
-					["coord"] = { 25.8, 55.2, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(77698, {	-- Candy Bucket - The Waking Shores, Obsidian Bulwark
-					["coord"] = { 43.1, 66.7, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75674, {	-- Candy Bucket - The Waking Shores, Ruby Lifeshrine
-					["coord"] = { 58.0, 67.3, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75677, {	-- Candy Bucket - The Waking Shores, Skytop Observatory
-					["coord"] = { 76.1, 54.8, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75678, {	-- Candy Bucket - The Waking Shores, Uktulut Backwater
-					["coord"] = { 53.9, 39.0, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75679, {	-- Candy Bucket - The Waking Shores, Uktulut Pier
-					["coord"] = { 46.4, 27.4, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75683, {	-- Candy Bucket - The Waking Shores, Wingrest Embassy
-					["coord"] = { 76.2, 35.4, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75704, {	-- Candy Bucket - Zaralek Cavern, Loamm
-					["coord"] = { 56.4, 56.4, ZARALEK_CAVERN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-				q(75703, {	-- Candy Bucket - Zaralek Cavern, Obsidian Rest
-					["coord"] = { 52.1, 26.5, ZARALEK_CAVERN },
-					["timeline"] = { ADDED_10_1_5 },
-				}),
-			}),
-		}),
-		n(FACTION_HEADER_ALLIANCE, {
-			["timeline"] = { ADDED_2_0_1 },
-			["races"] = ALLIANCE_ONLY,
-			["groups"] = bubbleDown({ ["isYearly"] = true, ["races"] = ALLIANCE_ONLY, ["_drop"] = { "g" } }, {
-				q(28954, {	-- Candy Bucket — Arathi Highlands, Refuge Point, Alliance
-					["coord"] = { 40.1, 49, ARATHI_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12345, {	-- Candy Bucket — Ashenvale, Astranaar, Alliance
-					["coord"] = { 37.0, 49.3, ASHENVALE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12333, {	-- Candy Bucket — Azuremyst Isle, Azure Watch, Alliance
-					["coord"] = { 48.5, 49.1, AZUREMYST_ISLE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28956, {	-- Candy Bucket — Badlands, Dragon's Mouth, Alliance
-					["coord"] = { 20.9, 56.2, BADLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12358, {	-- Candy Bucket — Blade's Edge Mountains, Sylvanaar, Alliance
-					["coord"] = { 35.8, 63.8, BLADES_EDGE_MOUNTAINS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12359, {	-- Candy Bucket — Blade's Edge Mountains, Toshley's Station, Alliance
-					["coord"] = { 61.0, 68.1, BLADES_EDGE_MOUNTAINS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28960, {	-- Candy Bucket — Blasted Lands, Nethergarde Keep, Alliance
-					["coord"] = { 60.7, 14.2, BLASTED_LANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28961, {	-- Candy Bucket — Blasted Lands, Surwich, Alliance
-					["coord"] = { 44.4, 87.7, BLASTED_LANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12341, {	-- Candy Bucket — Bloodmyst Isle, Blood Watch, Alliance
-					["coord"] = { 55.7, 59.9, BLOODMYST_ISLE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(13437, {	-- Candy Bucket — Borean Tundra, Fizzcrank Airstrip, Alliance
-					["coord"] = { 57.1, 18.8, BOREAN_TUNDRA },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13436, {	-- Candy Bucket — Borean Tundra, Valiance Keep, Alliance
-					["coord"] = { 58.5, 67.9, BOREAN_TUNDRA },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(43056, {	-- Candy Bucket — Dalaran : Broken Shores, Silver Enclave, Alliance
-					["coord"] = { 41.8, 64.1, LEGION_DALARAN },
-					["timeline"] = { ADDED_7_0_3 },
-				}),
-				q(13473, {	-- Candy Bucket — Dalaran : Northrend, Silver Enclave, Alliance
-					["coord"] = { 42.5, 63.5, NORTHREND_DALARAN },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12338, {	-- Candy Bucket — Darkshore, Auberdine, Alliance
-					["coord"] = { 37.0, 44.0, DARKSHORE },
-					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
-				}),
-				q(28951, {	-- Candy Bucket — Darkshore, Lor'danel, Alliance
-					["coord"] = { 50.8, 18.8, DARKSHORE },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12334, {	-- Candy Bucket — Darnassus, Craftsmen's Terrace, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 62.2, 33.0, DARNASSUS },
-						-- #else
-						{ 67.43, 16.0, DARNASSUS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(29020, {	-- Candy Bucket — Deepholm, Temple of Earth, Alliance
-					["coord"] = { 47.4, 51.7, DEEPHOLM },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12348, {	-- Candy Bucket — Desolace, Nijel's Point, Alliance
-					["coord"] = { 66.3, 6.70, DESOLACE },
-					["timeline"] = { ADDED_2_0_1 },
-					["races"] = ALLIANCE_ONLY,
-				}),
-				q(13438, {	-- Candy Bucket — Dragonblight, Stars' Rest, Alliance
-					["coord"] = { 29.0, 56.2, DRAGONBLIGHT },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13439, {	-- Candy Bucket — Dragonblight, Wintergarde Keep, Alliance
-					["coord"] = { 77.5, 51.3, DRAGONBLIGHT },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12332, {	-- Candy Bucket — Dun Morogh, Kharanos, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 54.5, 50.7, DUN_MOROGH },
-						-- #else
-						{ 47.38, 52.44, DUN_MOROGH },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12344, {	-- Candy Bucket — Duskwood, Darkshire, Alliance
-					["coord"] = { 73.9, 44.4, DUSKWOOD },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12349, {	-- Candy Bucket — Dustwallow Marsh, Theramore, Alliance
-					["coord"] = { 66.6, 45.3, DUSTWALLOW_MARSH },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12286, {	-- Candy Bucket — Elwynn Forest, Goldshire, Alliance
-					["coord"] = { 43.7, 66.0, ELWYNN_FOREST },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12337, {	-- Candy Bucket — Exodar, Seat of the Naaru, Alliance
-					["coord"] = { 59.3, 19.2, THE_EXODAR },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28995, {	-- Candy Bucket — Felwood, Talonbranch Glade, Alliance
-					["coord"] = { 61.8, 26.7, FELWOOD },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28952, {	-- Candy Bucket — Feralas, Dreamer's Rest, Alliance
-					["coord"] = { 51.1, 17.8, FERALAS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12350, {	-- Candy Bucket — Feralas, Feathermoon Stronghold, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 46.3, 45.2, FERALAS },
-						-- #else
-						{ 30.9, 43.5, FERALAS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12944, {	-- Candy Bucket — Grizzly Hills, Amberpine Lodge, Alliance
-					["coord"] = { 32.0, 60.2, GRIZZLY_HILLS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12945, {	-- Candy Bucket — Grizzly Hills, Westfall Brigade, Alliance
-					["coord"] = { 59.6, 26.4, GRIZZLY_HILLS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12352, {	-- Candy Bucket — Hellfire Peninsula, Honor Hold, Alliance
-					["coord"] = { 54.3, 63.6, HELLFIRE_PENINSULA },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12353, {	-- Candy Bucket — Hellfire Peninsula, Temple of Telhamat, Alliance
-					["coord"] = { 23.4, 36.5, HELLFIRE_PENINSULA },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12346, {	-- Candy Bucket — Hillsbrad Foothills, Southshore, Alliance
-					["coord"] = { 51.1, 59.0, HILLSBRAD_FOOTHILLS },
-					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
-				}),
-				q(12351, {	-- Candy Bucket — Hinterlands, Aerie Peak, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 14.2, 44.7, THE_HINTERLANDS },
-						-- #else
-						{ 14.1, 41.5, THE_HINTERLANDS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28970, {	-- Candy Bucket — Hinterlands, Stormfeather Outpost, Alliance
-					["coord"] = { 66.2, 44.4, THE_HINTERLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(13435, {	-- Candy Bucket — Howling Fjord, Fort Wildervar, Alliance
-					["coord"] = { 60.5, 15.9, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13433, {	-- Candy Bucket — Howling Fjord, Valgarde, Alliance
-					["coord"] = { 58.4, 62.8, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13434, {	-- Candy Bucket — Howling Fjord, Westguard Keep, Alliance
-					["coord"] = { 30.8, 41.5, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12335, {	-- Candy Bucket — Ironforge, The Commons, Alliance
-					["coord"] = { 18.6, 51.3, IRONFORGE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(32049, {	-- Candy Bucket — Jade Forest, Paw'don Village, Alliance
-					["coord"] = { 44.8, 84.4, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32033, {	-- Candy Bucket — Jade Forest, Pearlfin Village, Alliance
-					["coord"] = { 59.6, 83.2, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32042, {	-- Candy Bucket — Kun-Lai Summit, Westwind Rest, Alliance
-					["coord"] = { 54.1, 82.8, KUN_LAI_SUMMIT },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(28963, {	-- Candy Bucket — Loch Modan, Farstrider Lodge, Alliance
-					["coord"] = { 82.9, 63.6, LOCH_MODAN },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12339, {	-- Candy Bucket — Loch Modan, Thelsamar, Alliance
-					["coord"] = { 35.5, 48.4, LOCH_MODAN },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12357, {	-- Candy Bucket — Nagrand, Telaar, Alliance
-					["coord"] = { 54.2, 75.8, NAGRAND },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28964, {	-- Candy Bucket — Northern Stranglethorn, Fort Livingston, Alliance
-					["coord"] = { 53.1, 66.9, NORTHERN_STRANGLETHORN },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12342, {	-- Candy Bucket — Redridge Mountains, Lakeshire, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 26.4, 41.6, REDRIDGE_MOUNTAINS },
-						-- #else
-						{ 27.0, 44.9, REDRIDGE_MOUNTAINS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12360, {	-- Candy Bucket — Shadowmoon Valley, Wildhammer Stronghold, Alliance
-					["coord"] = { 37.1, 58.2, SHADOWMOON_VALLEY },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(29008, {	-- Candy Bucket — Southern Barrens, Fort Triumph, Alliance
-					["coord"] = { 49.1, 68.5, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29006, {	-- Candy Bucket — Southern Barrens, Honor's Stand, Alliance
-					["coord"] = { 39.0, 11.0, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29007, {	-- Candy Bucket — Southern Barrens, Northwatch Hold, Alliance
-					["coord"] = { 65.6, 46.6, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29013, {	-- Candy Bucket — Stonetalon Mountains, Farwatcher's Glen, Alliance
-					["coord"] = { 31.5, 60.7, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29010, {	-- Candy Bucket — Stonetalon Mountains, Northwatch Expedition Base, Alliance
-					["coord"] = { 71.0, 79.1, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12347, {	-- Candy Bucket — Stonetalon Mountains, Stonetalon Peak, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 40.6, 17.7, STONETALON_MOUNTAINS },
-						-- #else
-						{ 35.53, 6.4, STONETALON_MOUNTAINS },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(29012, {	-- Candy Bucket — Stonetalon Mountains, Thal'darah Overlook, Alliance
-					["coord"] = { 39.5, 32.8, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29011, {	-- Candy Bucket — Stonetalon Mountains, Windshear Hold, Alliance
-					["coord"] = { 59.1, 56.3, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(13448, {	-- Candy Bucket — Storm Peaks, Frosthold, Alliance
-					["coord"] = { 28.7, 74.3, THE_STORM_PEAKS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12336, {	-- Candy Bucket — Stormwind, The Trade District, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 60.5, 75.2, STORMWIND_CITY },
-						-- #else
-						{ 52.77, 65.77, STORMWIND_CITY },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28968, {	-- Candy Bucket — Swamp of Sorrows, The Harborage, Alliance
-					["coord"] = { 29.0, 32.6, SWAMP_OF_SORROWS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12331, {	-- Candy Bucket — Teldrassil, Dolanaar, Alliance
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 55.4, 52.3, TELDRASSIL },
-						-- #else
-						{ 55.6, 59.85, TELDRASSIL },
-						-- #endif
-					},
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12356, {	-- Candy Bucket — Terokkar Forest, Allerian Stronghold, Alliance
-					["coord"] = { 56.6, 53.2, TEROKKAR_FOREST },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(54710, {	-- Candy Bucket — Tiragarde Sound, Boralus, Alliance
-					["coord"] = { 73.7, 12.4, BORALUS },
-					["timeline"] = { ADDED_8_0_1 },
-				}),
-				q(28977, {	-- Candy Bucket — Twilight Highlands, Firebeard's Patrol, Alliance
-					["coord"] = { 60.4, 58.2,TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28980, {	-- Candy Bucket — Twilight Highlands, Highbank, Alliance
-					["coord"] = { 79.5, 78.5,TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28978, {	-- Candy Bucket — Twilight Highlands, Thundermar, Alliance
-					["coord"] = { 49.6, 30.4,TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28979, {	-- Candy Bucket — Twilight Highlands, Victor's Point, Alliance
-					["coord"] = { 43.6, 57.3,TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(32052, {	-- Candy Bucket — Vale of Eternal Blossoms, Shrine of Seven Stars, Alliance
-					["coord"] = { 87.0, 68.8, VALE_OF_ETERNAL_BLOSSOMS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(28985, {	-- Candy Bucket — Vashj'ir, Darkbreak Cove, Alliance
-					["coord"] = { 54.7, 72.2, VASHJIR },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28983, {	-- Candy Bucket — Vashj'ir, Tranquil Wash, Alliance
-					["coord"] = { 49.7, 57.4, VASHJIR },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28988, {	-- Candy Bucket — Western Plaguelands, Chillwind Camp, Alliance
-					["coord"] = { 43.4, 84.5, WESTERN_PLAGUELANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12343, {	-- Candy Bucket — Wetlands, Menethil Harbor, Alliance
-					["coord"] = { 10.8, 60.9, WETLANDS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28990, {	-- Candy Bucket — Wetlands, Swiftgear Station, Alliance
-					["coord"] = { 26.1, 25.9, WETLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12340, {	-- Candy Bucket — Westfall, Sentinel Hill, Alliance
-					["coord"] = { 52.9, 53.6, WESTFALL },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28991, {	-- Candy Bucket — Wetlands, Greenwarden's Grove, Alliance
-					["coord"] = { 58.1, 39.2, WETLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12355, {	-- Candy Bucket — Zangarmarsh, Orebor Harborage, Alliance
-					["coord"] = { 41.9, 26.2, ZANGARMARSH },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12354, {	-- Candy Bucket — Zangarmarsh, Telredor, Alliance
-					["coord"] = { 67.2, 49.0, ZANGARMARSH },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(75681, {	-- Candy Bucket — The Waking Shores, Wild Coast
-					["coord"] = { 81.3, 32.0, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-					["races"] = ALLIANCE_ONLY,
-				}),
-			}),
-		}),
-		n(FACTION_HEADER_HORDE, {
-			["timeline"] = { ADDED_2_0_1 },
-			["races"] = HORDE_ONLY,
-			["groups"] = bubbleDown({ ["isYearly"] = true, ["races"] = HORDE_ONLY, ["_drop"] = { "g" } }, {
-				q(12380, {	-- Candy Bucket — Arathi Highlands, Hammerfall, Horde
-					["coord"] = { 69.0, 33.4, ARATHI_HIGHLANDS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28958, {	-- Candy Bucket — Ashenvale, Hellscream's Watch, Horde
-					["coord"] = { 38.6, 42.4, ASHENVALE },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28953, {	-- Candy Bucket — Ashenvale, Silverwind Refuge, Horde
-					["coord"] = { 50.2, 67.2, ASHENVALE },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12377, {	-- Candy Bucket — Ashenvale, Splintertree Post, Horde
-					["coord"] = { 73.9, 60.7, ASHENVALE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28989, {	-- Candy Bucket — Ashenvale, Zoram'gar Outpost, Horde
-					["coord"] = { 13.0, 34.1, ASHENVALE },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28992, {	-- Candy Bucket — Azshara, Bilgewater Harbor, Horde
-					["coord"] = { 57.1, 50.2, AZSHARA },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12385, {	-- Candy Bucket — Badlands, Kargath, Horde (removed)
-					["coord"] = { 2.8, 46.0, BADLANDS },
-					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
-				}),
-				q(28957, {	-- Candy Bucket — Badlands, New Kargath, Horde
-					["coord"] = { 18.3, 42.8, BADLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12394, {	-- Candy Bucket — Blade's Edge Mountains, Mok'Nathal Village, Horde
-					["coord"] = { 76.2, 60.4, BLADES_EDGE_MOUNTAINS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12393, {	-- Candy Bucket — Blade's Edge Mountains, Thunderlord Stronghold, Horde
-					["coord"] = { 53.4, 55.5, BLADES_EDGE_MOUNTAINS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28959, {	-- Candy Bucket — Blasted Lands, Dreadmaul Hold, Horde
-					["coord"] = { 40.5, 11.4, BLASTED_LANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(13501, {	-- Candy Bucket — Borean Tundra, Bor'gorok Outpost, Horde
-					["coord"] = { 49.7, 10.0, BOREAN_TUNDRA },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13467, {	-- Candy Bucket — Borean Tundra, Taunka'le Village, Horde
-					["coord"] = { 76.7, 37.4, BOREAN_TUNDRA },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13468, {	-- Candy Bucket — Borean Tundra, Warsong Hold, Horde
-					["coord"] = { 41.8, 54.4, BOREAN_TUNDRA },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(28969, {	-- Candy Bucket — Cape of Stranglethorn, Hardwrench Hideaway, Horde
-					["coord"] = { 35.1, 27.2, THE_CAPE_OF_STRANGLETHORN },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(43057, {	-- Candy Bucket — Dalaran : Broken Shores, Sunreaver's Sanctuary, Horde
-					["coord"] = { 66.7, 30.1, LEGION_DALARAN },
-					["timeline"] = { ADDED_7_0_3 },
-				}),
-				q(13474, {	-- Candy Bucket — Dalaran : Northrend, Sunreaver's Sanctuary, Horde
-					["coord"] = { 66.6, 30.1, NORTHREND_DALARAN },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(29019, {	-- Candy Bucket — Deepholm, Temple of Earth, Horde
-					["coord"] = { 51.2, 50.0, DEEPHOLM },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12381, {	-- Candy Bucket — Desolace, Shadowprey Village, Horde
-					["coord"] = { 24.1, 68.3, DESOLACE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(13469, {	-- Candy Bucket — Dragonblight, Agmar's Hammer, Horde
-					["coord"] = { 37.8, 46.4, DRAGONBLIGHT },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13470, {	-- Candy Bucket — Dragonblight, Venomspite, Horde
-					["coord"] = { 76.8, 63.2, DRAGONBLIGHT },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12361, {	-- Candy Bucket — Durotar, Razor Hill, Horde
-					["coord"] = { 51.6, 41.7, DUROTAR },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12383, {	-- Candy Bucket — Dustwallow Marsh, Brackenwall Village, Horde
-					["coord"] = { 36.8, 32.4, DUSTWALLOW_MARSH },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12365, {	-- Candy Bucket — Eversong Woods, Fairbreeze Village, Horde
-					["coord"] = { 43.7, 71.1, EVERSONG_WOODS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12364, {	-- Candy Bucket — Eversong Woods, Falconwing Square, Horde
-					["coord"] = { 48.1, 47.8, EVERSONG_WOODS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28996, {	-- Candy Bucket — Feralas, Camp Ataya, Horde
-					["coord"] = { 41.4, 15.6, FERALAS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12386, {	-- Candy Bucket — Feralas, Camp Mojache, Horde
-					["coord"] = { 74.8, 45.1, FERALAS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28998, {	-- Candy Bucket — Feralas, Stonemaul Hold, Horde
-					["coord"] = { 52.0, 47.7, FERALAS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12373, {	-- Candy Bucket — Ghostlands, Tranquillien, Horde
-					["coord"] = { 48.7, 31.9, GHOSTLANDS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12947, {	-- Candy Bucket — Grizzly Hills, Camp Oneqwah, Horde
-					["coord"] = { 65.4, 47.0, GRIZZLY_HILLS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12946, {	-- Candy Bucket — Grizzly Hills, Conquest Hold, Horde
-					["coord"] = { 20.9, 64.7, GRIZZLY_HILLS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12389, {	-- Candy Bucket — Hellfire Peninsula, Falcon Watch, Horde
-					["coord"] = { 26.9, 59.6, HELLFIRE_PENINSULA },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12388, {	-- Candy Bucket — Hellfire Peninsula, Thrallmar, Horde
-					["coord"] = { 56.8, 37.5, HELLFIRE_PENINSULA },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28962, {	-- Candy Bucket — Hillsbrad Foothills, Eastpoint Tower, Horde
-					["coord"] = { 60.3, 63.8, HILLSBRAD_FOOTHILLS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12376, {	-- Candy Bucket — Hillsbrad Foothills, Tarren Hill, Horde
-					["coord"] = { 57.9, 47.3, HILLSBRAD_FOOTHILLS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28971, {	-- Candy Bucket — Hinterlands, Hiri'watha Research Station, Horde
-					["coord"] = { 31.9, 57.9, THE_HINTERLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12387, {	-- Candy Bucket — Hinterlands, Revantusk Village, Horde
-					["coord"] = { 78.2, 81.4, THE_HINTERLANDS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(13464, {	-- Candy Bucket — Howling Fjord, Camp Winterhoof, Horde
-					["coord"] = { 49.5, 10.8, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13465, {	-- Candy Bucket — Howling Fjord, New Agamand, Horde
-					["coord"] = { 52.1, 66.2, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13466, {	-- Candy Bucket — Howling Fjord, Vengeance Landing, Horde
-					["coord"] = { 79.2, 30.6, HOWLING_FJORD },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(32028, {	-- Candy Bucket — Jade Forest, Grookin Hill, Horde
-					["coord"] = { 28.0, 47.4, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32050, {	-- Candy Bucket — Jade Forest, Honeydew Village, Horde
-					["coord"] = { 28.5, 13.3, THE_JADE_FOREST },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32020, {	-- Candy Bucket — Krasarang Wilds, Dawnchaser Retreat, Horde
-					["coord"] = { 28.3, 50.7, KRASARANG_WILDS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32047, {	-- Candy Bucket — Krasarang Wilds, Thunder Cleft, Horde
-					["coord"] = { 61.0, 25.1, KRASARANG_WILDS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(32040, {	-- Candy Bucket — Kun-Lai Summit, Eastwind Rest, Horde
-					["coord"] = { 62.7, 80.5, KUN_LAI_SUMMIT },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(12362, {	-- Candy Bucket — Mulgore, Bloodhoof Village, Horde
-					["coord"] = { 46.8, 60.4, MULGORE },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12392, {	-- Candy Bucket — Nagrand, Garadar, Horde
-					["coord"] = { 56.7, 34.6, NAGRAND },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12374, {	-- Candy Bucket — Northern Barrens, Crossroads, Horde
-					["timeline"] = { ADDED_2_0_1 },
-					["coords"] = {
-						-- #if AFTER CATA
-						{ 49.5, 58.0, NORTHERN_BARRENS },
-						-- #else
-						{ 52.0, 29.9, THE_BARRENS },
-						-- #endif
-					},
-				}),
-				q(29002, {	-- Candy Bucket — Northern Barrens, Grol'dom Farm, Horde
-					["coord"] = { 56.3, 40.1, NORTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29003, {	-- Candy Bucket — Northern Barrens, Nozzlepot's Outpost, Horde
-					["coord"] = { 62.5, 16.6, NORTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12382, {	-- Candy Bucket — Northern Stranglethorn, Grom'gol Base Camp, Horde
-					["coord"] = { 37.3, 51.7, NORTHERN_STRANGLETHORN },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12366, {	-- Candy Bucket — Orgrimmar, Valley of Strength, Horde
-					["coord"] = { 53.8, 78.8, ORGRIMMAR },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12395, {	-- Candy Bucket — Shadowmoon Valley, Shadowmoon Village, Horde
-					["coord"] = { 30.3, 27.8, SHADOWMOON_VALLEY },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12370, {	-- Candy Bucket — Silvermoon City, The Bazaar, Horde
-					["coord"] = { 67.6, 73.2, SILVERMOON_CITY },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12369, {	-- Candy Bucket — Silvermoon City, The Royal Exchange, Horde
-					["coord"] = { 79.6, 57.9, SILVERMOON_CITY },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28966, {	-- Candy Bucket — Silverpine Forest, Forsaken Rear Guard, Horde
-					["coord"] = { 44.3, 20.4, SILVERPINE_FOREST },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12371, {	-- Candy Bucket — Silverpine Forest, The Sepulcher, Horde
-					["coord"] = { 46.4, 42.8, SILVERPINE_FOREST },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12375, {	-- Candy Bucket — Southern Barrens, Camp Tarajo, Horde
-					-- #if BEFORE CATA
-					["coord"] = { 45.6, 59.1, THE_BARRENS },
-					-- #endif
-					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
-				}),
-				q(29005, {	-- Candy Bucket — Southern Barrens, Desolation Hold, Horde
-					["coord"] = { 40.7, 69.3, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29004, {	-- Candy Bucket — Southern Barrens, Hunter's Hill, Horde
-					["coord"] = { 39.3, 20.1, SOUTHERN_BARRENS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(29009, {	-- Candy Bucket — Stonetalon Mountains, Krom'gar Fortress, Horde
-					["coord"] = { 66.5, 64.2, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12378, {	-- Candy Bucket — Stonetalon Mountains, Sun Rock Retreat, Horde
-					["coord"] = { 50.4, 63.8, STONETALON_MOUNTAINS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(13471, {	-- Candy Bucket — Storm Peaks, Camp Tunka'lo, Horde
-					["coord"] = { 67.6, 50.6, THE_STORM_PEAKS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(13548, {	-- Candy Bucket — Storm Peaks, Grom'arsh Crash Site, Horde
-					["coord"] = { 37.1, 49.6, THE_STORM_PEAKS },
-					["timeline"] = { ADDED_3_0_2 },
-				}),
-				q(12384, {	-- Candy Bucket — Swamp of Sorrows, Stonard, Horde
-					["coord"] = { 46.9, 56.7, SWAMP_OF_SORROWS },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12391, {	-- Candy Bucket — Terokkar Forest, Stonebreaker Hold, Horde
-					["coord"] = { 48.8, 45.2, TEROKKAR_FOREST },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12379, {	-- Candy Bucket — Thousand Needles, Freewind Post, Horde (removed)
-					["coord"] = { 46.1, 51.4, THOUSAND_NEEDLES },
-					["timeline"] = { ADDED_2_0_1, REMOVED_4_0_1 },
-				}),
-				q(12367, {	-- Candy Bucket — Thunder Bluff, Lower Rise, Horde
-					["coord"] = { 45.7, 64.5, THUNDER_BLUFF },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(12363, {	-- Candy Bucket — Tirisfal Glades, Brill, Horde
-					["coord"] = { 60.9, 51.5, TIRISFAL_GLADES },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(28972, {	-- Candy Bucket — Tirisfal Glades, The Bulwark, Horde
-					["coord"] = { 83.0, 72.0, TIRISFAL_GLADES },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28973, {	-- Candy Bucket — Twilight Highlands, Bloodgulch, Horde
-					["coord"] = { 53.4, 42.9, TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28974, {	-- Candy Bucket — Twilight Highlands, Crushblow, Horde
-					["coord"] = { 45.1, 76.7, TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28975, {	-- Candy Bucket — Twilight Highlands, Dragonmaw Post, Horde
-					["coord"] = { 75.3, 54.8, TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28976, {	-- Candy Bucket — Twilight Highlands, Krazzworks, Horde
-					["coord"] = { 75.4, 16.5, TWILIGHT_HIGHLANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12368, {	-- Candy Bucket — Undercity, The Trade Quarter, Horde
-					["coord"] = { 67.7, 37.9, UNDERCITY },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(32022, {	-- Candy Bucket — Vale of Eternal Blossoms, Shrine of Two Moons, Horde
-					["coord"] = { 61.9, 16.1, VALE_OF_ETERNAL_BLOSSOMS },
-					["timeline"] = { ADDED_5_0_4 },
-				}),
-				q(28984, {	-- Candy Bucket — Vashj'ir, Legion's Rest, Horde
-					["coord"] = { 51.5, 62.5, VASHJIR },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28986, {	-- Candy Bucket — Vashj'ir, Tenebrous Cavern, Horde
-					["coord"] = { 51.3, 60.6, VASHJIR },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(28987, {	-- Candy Bucket — Western Plaguelands, Andorhal, Horde
-					["coord"] = { 48.2, 63.7, WESTERN_PLAGUELANDS },
-					["timeline"] = { ADDED_4_1_0 },
-				}),
-				q(12390, {	-- Candy Bucket — Zangarmarsh, Zabra'jin, Horde
-					["coord"] = { 30.7, 50.9, ZANGARMARSH },
-					["timeline"] = { ADDED_2_0_1 },
-				}),
-				q(54709, {	-- Candy Bucket — Zuldazar, Dazar'alor, Horde
-					["coord"] = { 49.6, 82.3, THE_GREAT_SEAL },
-					["timeline"] = { ADDED_8_0_1 },
-					["maps"] = {
-						HALL_OF_CHRONICLERS,
-						DAZARALOR,
-					},
-				}),
-				q(75682, {	-- Candy Bucket — The Waking Shores, Wild Coast
-					["coord"] = { 80.4, 27.9, THE_WAKING_SHORES },
-					["timeline"] = { ADDED_10_1_5 },
-					["races"] = HORDE_ONLY,
-				}),
-			}),
 		}),
 	}),
 	n(RARES, {
@@ -4963,7 +4213,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 		i(37604, {	-- Tooth Pick
 			["timeline"] = { ADDED_2_4_3 },
 		}),
-		i(33226, {	-- Tricky Treats
+		i(33226, {	-- Tricky Treat
 			["timeline"] = { ADDED_2_4_3 },
 		}),
 	}))),
@@ -5089,13 +4339,11 @@ root(ROOTS.Holidays, applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 -- Remove the holiday flag.
 SPECTRAL_GROG.u = nil;
 
--- #if AFTER 10.1.5
-root(ROOTS.HiddenQuestTriggers, {
-	n(HALLOWS_END_HEADER, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_1_5 } }, {
+	applyevent(EVENTS.HALLOWS_END, n(HALLOWS_END_HEADER, {
 		q(77221),	-- Obtain The Scarlet Key (ID 208485)
 		q(78474),	-- Killing Headless Horseman (needs more details)
 		q(78478),	-- Killing Headless Horseman (needs more details)
 		q(78826),	-- Killing Headless Horseman (needs more details)
-	}),
-});
--- #endif
+	})),
+})));

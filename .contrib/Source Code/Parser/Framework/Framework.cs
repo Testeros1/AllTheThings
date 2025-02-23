@@ -1,4 +1,4 @@
-﻿using ATT.DB;
+using ATT.DB;
 using ATT.FieldTypes;
 using System;
 using System.Collections.Concurrent;
@@ -7,9 +7,12 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using static ATT.Export;
+using static ATT.Framework;
 
 namespace ATT
 {
@@ -102,7 +105,7 @@ namespace ATT
         /// <summary>
         /// Represents the function to use when performing a processing pass against the data
         /// </summary>
-        private static Func<IDictionary<string, object>, bool> ProcessingFunction { get; set; }
+        private static Func<IDictionary<string, object>, IDictionary<string, object>, bool> ProcessingFunction { get; set; }
 
         public static string CURRENT_RELEASE_PHASE_NAME = "UNKNOWN";
 
@@ -144,7 +147,7 @@ namespace ATT
                 //{ "itemID", new Dictionary<long, bool>() },
                 //{ "headerID", new Dictionary<long, bool>() },
                 //{ "factionID", new Dictionary<long, bool>() },
-                //{ "flightPathID", new Dictionary<long, bool>() },
+                //{ "flightpathID", new Dictionary<long, bool>() },
                 //{ "npcID", new Dictionary<long, bool>() },
                 //{ "objectID", new Dictionary<long, bool>() },
                 //{ "questID", new Dictionary<long, bool>() },
@@ -157,7 +160,10 @@ namespace ATT
             { "itemID", new Dictionary<long, List<IDictionary<string, object>>>() },
             { "headerID", new Dictionary<long, List<IDictionary<string, object>>>() },
             { "factionID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "flightPathID", new Dictionary<long, List<IDictionary<string, object>>>() },
+            { "flightpathID", new Dictionary<long, List<IDictionary<string, object>>>() },
+            { "followerID", new Dictionary<long, List<IDictionary<string, object>>>() },
+            { "missionID", new Dictionary<long, List<IDictionary<string, object>>>() },
+            { "mountID", new Dictionary<long, List<IDictionary<string, object>>>() },
             { "npcID", new Dictionary<long, List<IDictionary<string, object>>>() },
             { "objectID", new Dictionary<long, List<IDictionary<string, object>>>() },
             { "questID", new Dictionary<long, List<IDictionary<string, object>>>() },
@@ -203,9 +209,24 @@ namespace ATT
         private static IDictionary<long, bool> OBJECTS_WITH_REFERENCES = new Dictionary<long, bool>();
 
         /// <summary>
+        /// All of thePhase Constants listed by their constant name and id value.
+        /// </summary>
+        private static Dictionary<string, long> PHASE_CONSTANTS = new Dictionary<string, long>();
+
+        /// <summary>
+        /// All of the Phase IDs that have been referenced somewhere in the database.
+        /// </summary>
+        private static Dictionary<long, bool> PHASES_WITH_REFERENCES = new Dictionary<long, bool>();
+
+        /// <summary>
         /// All of the Quest IDs that have been referenced somewhere in the database.
         /// </summary>
         private static IDictionary<long, bool> QUESTS_WITH_REFERENCES = new Dictionary<long, bool>();
+
+        /// <summary>
+        /// All of the Quest IDs that have been referenced somewhere in the database.
+        /// </summary>
+        private static IDictionary<string, List<string>> EXPORTDATA_WITH_REFERENCES = new Dictionary<string, List<string>>();
 
         /// <summary>
         /// All of the species that have been parsed sorted by Species ID.
@@ -248,6 +269,11 @@ namespace ATT
         private static long NestedDifficultyID { get; set; }
 
         /// <summary>
+        /// Represents the nested HeaderID currently being processed
+        /// </summary>
+        private static long NestedHeaderID { get; set; }
+
+        /// <summary>
         /// Represents the nested ModID currently being processed
         /// </summary>
         private static long NestedModID { get; set; }
@@ -257,52 +283,27 @@ namespace ATT
         /// </summary>
         private static long NestedMinLvl { get; set; } = 1;
 
-        private static Dictionary<string, int> _heirarchicalFieldAdjustments;
-        /// <summary>
-        /// Represents the allowed adjustments for hierarchical fields
-        /// </summary>
-        private static IDictionary<string, int> HierarchicalFieldAdjustments
+        private static HashSet<string> _inhertingFields;
+        private static HashSet<string> InheritingFields
         {
             get
             {
-                if (_heirarchicalFieldAdjustments != null)
+                if (_inhertingFields != null)
                 {
-                    return _heirarchicalFieldAdjustments;
+                    return _inhertingFields;
                 }
 
-                _heirarchicalFieldAdjustments = new Dictionary<string, int>();
-                string[] fields = Config["HierarchicalConsolidationFields"] ?? Array.Empty<string>();
-                foreach (string consolidateField in fields)
-                {
-                    if (!_heirarchicalFieldAdjustments.ContainsKey(consolidateField))
-                    {
-                        _heirarchicalFieldAdjustments.Add(consolidateField, -1);
-                    }
-                }
-                fields = Config["HierarchicalPropagationFields"] ?? Array.Empty<string>();
-                foreach (string propagateField in fields)
-                {
-                    if (!_heirarchicalFieldAdjustments.ContainsKey(propagateField))
-                    {
-                        _heirarchicalFieldAdjustments.Add(propagateField, 1);
-                    }
-                }
-                fields = Config["HierarchicalNonRepeatFields"] ?? Array.Empty<string>();
-                foreach (string propagateField in fields)
-                {
-                    if (!_heirarchicalFieldAdjustments.ContainsKey(propagateField))
-                    {
-                        _heirarchicalFieldAdjustments.Add(propagateField, 0);
-                    }
-                }
-
-                return _heirarchicalFieldAdjustments;
+                string[] fields = Config["InheritingFields"] ?? Array.Empty<string>();
+                _inhertingFields = new HashSet<string>(fields);
+                return _inhertingFields;
             }
         }
 
         private static IDictionary<string, IDictionary<long, IDBType>> TypeDB { get; } = new Dictionary<string, IDictionary<long, IDBType>>();
 
         private static IDictionary<string, object> Exports { get; } = new Dictionary<string, object>();
+
+        private static IDictionary<string, object> IncorporationReferences { get; } = new Dictionary<string, object>();
 
         /// <summary>
         /// Assign the custom headers to the Framework's internal reference.
@@ -358,6 +359,64 @@ namespace ATT
             if (CUSTOM_HEADER_CONSTANTS.TryGetValue(headerConstant, out long headerID))
             {
                 CUSTOM_HEADERS_WITH_REFERENCES[headerID] = true;
+            }
+        }
+
+        /// <summary>
+        /// Assign the phases to the Framework's internal reference.
+        /// </summary>
+        /// <param name="phases">The phases.</param>
+        public static void AssignPhases(Dictionary<long, object> phases)
+        {
+            Phases = phases;
+            Trace.WriteLine($"Found {phases.Count} Phases...");
+            foreach (var pair in phases)
+            {
+                if (pair.Value is IDictionary<string, object> phase)
+                {
+                    if (phase.TryGetValue("constant", out object value))
+                    {
+                        var constant = value.ToString();
+                        PHASE_CONSTANTS[constant] = pair.Key;
+                        if (phase.TryGetValue("export", out value) && (bool)value)
+                        {
+                            MarkPhaseAsRequired(constant);
+                        }
+                    }
+                    else if (phase.TryGetValue("export", out value) && (bool)value)
+                    {
+                        MarkPhaseAsRequired(pair.Key);
+                    }
+                    if (phase.TryGetValue("readable", out value) && !phase.ContainsKey("temporary"))
+                    {
+                        PhaseIDsByKey[value.ToString()] = pair.Key;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Mark the Phase as Required.
+        /// This will force it to be included in the export if it exists as a constant.
+        /// NOTE: Only phases with a constant defined can be explicitly marked.
+        /// </summary>
+        /// <param name="phaseID">The phase ID.</param>
+        public static void MarkPhaseAsRequired(long phaseID)
+        {
+            PHASES_WITH_REFERENCES[phaseID] = true;
+        }
+
+        /// <summary>
+        /// Mark the Phase as Required.
+        /// This will force it to be included in the export if it exists as a constant.
+        /// NOTE: Only phases with a constant defined can be explicitly marked.
+        /// </summary>
+        /// <param name="phaseConstant">The phase constant.</param>
+        public static void MarkPhaseAsRequired(string phaseConstant)
+        {
+            if (PHASE_CONSTANTS.TryGetValue(phaseConstant, out long phaseID))
+            {
+                PHASES_WITH_REFERENCES[phaseID] = true;
             }
         }
 
@@ -499,8 +558,21 @@ namespace ATT
         /// </summary>
         public static Dictionary<string, string> LogFormats = new Dictionary<string, string>
         {
-            { "ItemRecipeFormat", "Add to ItemRecipes.lua: i({0}, {1}); -- {2}" },
+            { "ItemRecipeFormat", "WARN: Add to ItemRecipes.lua: i({0}, {1}); -- {2} (Guessed via {3})" },
         };
+
+        /// <summary>
+        /// All of the achievement data that has been loaded into the database.
+        /// NOTE: This is used only for Pre-Wrath Builds of LocalizationDB.
+        /// </summary>
+        internal static Dictionary<long, Dictionary<string, object>> AchievementData { get; private set; } = new Dictionary<long, Dictionary<string, object>>();
+
+
+        /// <summary>
+        /// All of the achievement category data that has been loaded into the database.
+        /// NOTE: This is used only for Pre-Wrath Builds of LocalizationDB.
+        /// </summary>
+        internal static Dictionary<long, Dictionary<string, object>> AchievementCategoryData { get; private set; } = new Dictionary<long, Dictionary<string, object>>();
 
         /// <summary>
         /// All of the categories that have been loaded into the database.
@@ -537,9 +609,24 @@ namespace ATT
         internal static Dictionary<long, Dictionary<string, object>> FlightPathDB { get; private set; } = new Dictionary<long, Dictionary<string, object>>();
 
         /// <summary>
+        /// All of the glyphs that have been loaded into the database.
+        /// </summary>
+        internal static Dictionary<long, long> GlyphDB { get; private set; } = new Dictionary<long, long>();
+
+        /// <summary>
         /// All of the objects that have been loaded into the database.
         /// </summary>
         internal static Dictionary<long, Dictionary<string, object>> ObjectDB { get; private set; } = new Dictionary<long, Dictionary<string, object>>();
+
+        /// <summary>
+        /// The Phases table from main.lua that is used to generate custom headers.
+        /// </summary>
+        internal static Dictionary<long, object> Phases { get; private set; }
+
+        /// <summary>
+        /// This contains all of the explicitly assigned phaseIDs to readable
+        /// </summary>
+        internal static Dictionary<string, long> PhaseIDsByKey { get; } = new Dictionary<string, long>();
 
         /// <summary>
         /// Contains two Keys for sets of field names relating to a 'trackable' nature within ATT
@@ -551,11 +638,11 @@ namespace ATT
             { "Provided", new HashSet<string>
             {
                 "achID",
-                "azeriteEssenceID",
+                "azeriteessenceID",
                 "conduitID",
                 "difficultyID",
                 "factionID",
-                "flightPathID",
+                "flightpathID",
                 "followerID",
                 "instanceID",
                 "heirloomUnlockID",
@@ -563,7 +650,7 @@ namespace ATT
                 "questID",
                 "questIDA",
                 "questIDH",
-                "runeforgePowerID",
+                "runeforgepowerID",
                 "spellID",
                 "titleID",
             } },
@@ -602,11 +689,13 @@ namespace ATT
             {
                 Log($"Using config: {filepath}");
                 Config = new CustomConfiguration(filepath);
+                Console.Title = $"ATT Parser: {filepath}";
             }
             else
             {
                 Log($"Added config: {filepath}");
                 Config.ApplyFile(filepath);
+                Console.Title += $" + {filepath}";
             }
         }
 
@@ -672,6 +761,35 @@ namespace ATT
                 }
             }
         }
+        private static void TrackIncorporationData(IDictionary<string, object> root, string field, object data)
+        {
+            if (ObjectData.TryGetMostSignificantObjectType(root, out ObjectData objectData, out var id))
+            {
+                id.TryConvert(out long idval);
+                TrackIncorporationData(objectData.ObjectType, idval, field, data);
+            }
+        }
+
+        private static void TrackIncorporationData(string idtype, long id, string field, object data)
+        {
+            if (!(IncorporationReferences.TryGetValue(idtype, out object fieldreferencesObj) && fieldreferencesObj is IDictionary<long, object> fieldreferences))
+            {
+                IncorporationReferences[idtype] = fieldreferences = new Dictionary<long, object>();
+            }
+
+            if (!(fieldreferences.TryGetValue(id, out object idreferenceObj) && idreferenceObj is IDictionary<string, object> idreference))
+            {
+                fieldreferences[id] = idreference = new Dictionary<string, object> { { idtype, id } };
+                if (idtype == "itemID")
+                {
+                    Items.TryGetName(idreference, out string name);
+                    idreference.Remove("_modItemID");
+                    Objects.Merge(idreference, "name", name);
+                }
+            }
+
+            Objects.Merge(idreference, field, data);
+        }
 
         /// <summary>
         /// Checks the data for any list-based content and attempts to order that content in a consistent way so that output remains identical for identical data
@@ -696,7 +814,6 @@ namespace ATT
                     case "maps":
                     case "qgs":
                     case "crs":
-                    case "providers":
                     case "coords":
                         // is it a list of objects?
                         if (entry.Value is List<object> valList)
@@ -1255,8 +1372,11 @@ namespace ATT
                 case "races_display":
                     return "races_disp";
 
+                case "autoname":
+                    return "an";
+
                 // tags which are accurate already
-                case "azeriteEssenceID":
+                case "azeriteessenceID":
                 case "buildingID":
                 case "class":
                 case "classID":
@@ -1276,7 +1396,7 @@ namespace ATT
                 case "eventID":
                 case "expansionID":
                 case "factionID":
-                case "flightPathID":
+                case "flightpathID":
                 case "followerID":
                 case "heirloomID":
                 case "hideText":
@@ -1320,7 +1440,7 @@ namespace ATT
                 case "qgs":
                 case "r": // horde/alliance faction
                 case "races":
-                case "runeforgePowerID":
+                case "runeforgepowerID":
                 case "raceID":
                 case "conduitID":
                 case "customCollect":
@@ -1366,6 +1486,40 @@ namespace ATT
                 // Probably not a known tag? will get mentioned in the object/item merge method
                 default:
                     return field;
+            }
+        }
+
+        /// <summary>
+        /// Sort the supported locale keys in the list.
+        /// </summary>
+        /// <param name="supportedLocales">The list of supported locales.</param>
+        public static void SortSupportedLocales(List<string> supportedLocales)
+        {
+            supportedLocales.Sort(Framework.Compare);
+            if (supportedLocales.Contains("es"))
+            {
+                supportedLocales.Remove("es");
+                supportedLocales.Insert(0, "es");
+            }
+            if (supportedLocales.Contains("ko"))
+            {
+                supportedLocales.Remove("ko");
+                supportedLocales.Add("ko");
+            }
+            if (supportedLocales.Contains("cn"))
+            {
+                supportedLocales.Remove("cn");
+                supportedLocales.Add("cn");
+            }
+            if (supportedLocales.Contains("tw"))
+            {
+                supportedLocales.Remove("tw");
+                supportedLocales.Add("tw");
+            }
+            if (supportedLocales.Contains("en"))
+            {
+                supportedLocales.Remove("en");
+                supportedLocales.Insert(0, "en");
             }
         }
         #endregion
@@ -1423,6 +1577,25 @@ namespace ATT
         }
         #endregion
         #region Lua Conversion
+        static StringBuilder ExportIconValue(StringBuilder builder, object iconValue)
+        {
+            string icon = iconValue.ToString().ToLower().Replace("\\", "/");
+            if (long.TryParse(icon, out long iconID) && iconID.ToString() == icon) builder.Append(icon);
+            else
+            {
+                if (!(icon.StartsWith("_") || icon.StartsWith("~"))) Trace.WriteLine(icon);
+                ExportStringValue(builder, icon);
+            }
+            return builder;
+        }
+
+        static StringBuilder ExportIconKeyValue(StringBuilder builder, object key, object iconValue)
+        {
+            builder.Append("\t[").Append(key).Append("] = ");
+            ExportIconValue(builder, iconValue);
+            return builder.Append(",");
+        }
+
 
         static StringBuilder ExportObjectKeyValue(StringBuilder builder, object key, object value)
         {
@@ -1671,6 +1844,53 @@ namespace ATT
 #endif
         }
 
+        private static void CleanLocalizedField(long key, string field, IDictionary<string, object> data, Dictionary<string, Dictionary<long, string>> localizationData)
+        {
+            if (data.TryGetValue(field, out var value))
+            {
+                if (!(value is IDictionary<string, object> localeData))
+                {
+                    localeData = new Dictionary<string, object>
+                    {
+                        ["en"] = value
+                    };
+                }
+                TryColorizeDictionary(localeData);
+                if (localeData.TryGetValue("en", out string englishValue))
+                {
+                    if (!localizationData.TryGetValue("en", out Dictionary<long, string> sublocale))
+                    {
+                        localizationData["en"] = sublocale = new Dictionary<long, string>();
+                    }
+                    sublocale[key] = englishValue;
+
+                    // Clean up inherited values. (mx inherits from es and tw inherits from cn
+                    if (localeData.TryGetValue("mx", out string mxValue) && localeData.TryGetValue("es", out string esValue) && mxValue == esValue)
+                    {
+                        localeData.Remove("mx");
+                    }
+                    if (localeData.TryGetValue("tw", out string twValue) && localeData.TryGetValue("cn", out string cnValue) && twValue == cnValue)
+                    {
+                        localeData.Remove("tw");
+                    }
+                    foreach (var locale in localeData)
+                    {
+                        if (locale.Key == "en") continue;
+
+                        string localizedValue = locale.Value.ToString();
+                        if (!localizedValue.Contains(englishValue))
+                        {
+                            if (!localizationData.TryGetValue(locale.Key, out sublocale))
+                            {
+                                localizationData[locale.Key] = sublocale = new Dictionary<long, string>();
+                            }
+                            sublocale[key] = localizedValue;
+                        }
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Export the database.
         /// This also exports for debugging as well.
@@ -1750,27 +1970,7 @@ namespace ATT
                                 {
                                     // Sort and then ensure es comes after en, to match previous convention.
                                     var supportedLocales = textLocales.Keys.ToList();
-                                    supportedLocales.Sort();
-                                    if (supportedLocales.Contains("es"))
-                                    {
-                                        supportedLocales.Remove("es");
-                                        supportedLocales.Insert(0, "es");
-                                    }
-                                    if (supportedLocales.Contains("en"))
-                                    {
-                                        supportedLocales.Remove("en");
-                                        supportedLocales.Insert(0, "en");
-                                    }
-                                    if (supportedLocales.Contains("ko"))
-                                    {
-                                        supportedLocales.Remove("ko");
-                                        supportedLocales.Add("ko");
-                                    }
-                                    if (supportedLocales.Contains("cn"))
-                                    {
-                                        supportedLocales.Remove("cn");
-                                        supportedLocales.Add("cn");
-                                    }
+                                    SortSupportedLocales(supportedLocales);
 
                                     builder.AppendLine("\t\ttext = {");
                                     foreach (var localeKey in supportedLocales)
@@ -1793,7 +1993,6 @@ namespace ATT
                             var builder = new StringBuilder("-------------------------------------------------------\n--   C U S T O M   H E A D E R S   M O D U L E   --\n-------------------------------------------------------\n")
                                 .AppendLine("local headers = CustomHeaders or {};");
                             var subbuilder = new StringBuilder();
-                            var keys = new List<long>();
                             var icons = new Dictionary<long, string>();
                             var constants = new Dictionary<long, string>();
                             var localizationForText = new Dictionary<string, Dictionary<long, string>>();
@@ -1803,7 +2002,6 @@ namespace ATT
                             {
                                 if (CustomHeaders.TryGetValue(key, out object o) && o is IDictionary<string, object> header)
                                 {
-                                    keys.Add(key);
                                     subbuilder.Clear();
                                     string readable = null, filepath = null, icon = null, constant = null;
                                     if (header.TryGetValue("readable", out object value))
@@ -1829,9 +2027,7 @@ namespace ATT
                                     }
                                     else
                                     {
-                                        subbuilder.Append("headers");
-                                        ExportStringKeyFieldValue(subbuilder, key, ".icon", "Interface/Icons/inv_misc_questionmark");
-                                        subbuilder.Append(";");
+                                        subbuilder.Append("headers[").Append(key).Append("].icon = 134400;");
                                         ExportReadableConstantComment(subbuilder, readable, constant).AppendLine();
                                     }
                                     if (header.TryGetValue("text", out value))
@@ -1938,7 +2134,6 @@ namespace ATT
                                     }
                                 }
                             }
-                            keys.Sort(new Comparison<long>((i1, i2) => i2.CompareTo(i1)));
 
                             WriteIfDifferent(Path.Combine(debugFolder.FullName, "Custom Headers.lua"), builder.ToString());
                         }
@@ -1976,7 +2171,7 @@ namespace ATT
                                 if (filterData.TryGetValue("icon", out string icon))
                                 {
                                     builder.Append("\t\ticon = ");
-                                    ExportStringValue(builder, icon.Replace("\\", "/")).AppendLine(",");
+                                    ExportIconValue(builder, icon).AppendLine(",");
                                 }
 
                                 // Export the complex "text" locales field.
@@ -1984,27 +2179,7 @@ namespace ATT
                                 {
                                     // Sort and then ensure es comes after en, to match previous convention.
                                     var supportedLocales = textLocales.Keys.ToList();
-                                    supportedLocales.Sort(Framework.Compare);
-                                    if (supportedLocales.Contains("es"))
-                                    {
-                                        supportedLocales.Remove("es");
-                                        supportedLocales.Insert(0, "es");
-                                    }
-                                    if (supportedLocales.Contains("en"))
-                                    {
-                                        supportedLocales.Remove("en");
-                                        supportedLocales.Insert(0, "en");
-                                    }
-                                    if (supportedLocales.Contains("ko"))
-                                    {
-                                        supportedLocales.Remove("ko");
-                                        supportedLocales.Add("ko");
-                                    }
-                                    if (supportedLocales.Contains("cn"))
-                                    {
-                                        supportedLocales.Remove("cn");
-                                        supportedLocales.Add("cn");
-                                    }
+                                    SortSupportedLocales(supportedLocales);
 
                                     builder.AppendLine("\t\ttext = {");
                                     foreach (var localeKey in supportedLocales)
@@ -2042,27 +2217,7 @@ namespace ATT
                                 {
                                     // Sort and then ensure es comes after en, to match previous convention.
                                     var supportedLocales = textLocales.Keys.ToList();
-                                    supportedLocales.Sort(Framework.Compare);
-                                    if (supportedLocales.Contains("es"))
-                                    {
-                                        supportedLocales.Remove("es");
-                                        supportedLocales.Insert(0, "es");
-                                    }
-                                    if (supportedLocales.Contains("en"))
-                                    {
-                                        supportedLocales.Remove("en");
-                                        supportedLocales.Insert(0, "en");
-                                    }
-                                    if (supportedLocales.Contains("ko"))
-                                    {
-                                        supportedLocales.Remove("ko");
-                                        supportedLocales.Add("ko");
-                                    }
-                                    if (supportedLocales.Contains("cn"))
-                                    {
-                                        supportedLocales.Remove("cn");
-                                        supportedLocales.Add("cn");
-                                    }
+                                    SortSupportedLocales(supportedLocales);
 
                                     builder.AppendLine("\t\ttext = {");
                                     foreach (var localeKey in supportedLocales)
@@ -2082,13 +2237,16 @@ namespace ATT
                         if (ObjectDB.Any())
                         {
                             // Export the new format.
-                            var builder = new StringBuilder("-----------------------------------------------------\n--   O B J E C T   D A T A B A S E   M O D U L E   --\n-----------------------------------------------------\n");
+                            var dbbuilder = new StringBuilder("-----------------------------------------------------\n--   O B J E C T   D A T A B A S E   M O D U L E   --\n-----------------------------------------------------\n");
                             var keys = ObjectDB.Keys.ToList();
                             keys.Sort();
-                            builder.Append("local ObjectDB = ObjectDB; for objectID,objectData in pairs({").AppendLine();
+                            dbbuilder.Append("local ObjectDB = ObjectDB; for objectID,objectData in pairs({").AppendLine();
+                            var dynamicbuilder = new StringBuilder(dbbuilder.ToString());
                             foreach (var key in keys)
                             {
+                                // We export dynamic object data to a different file.
                                 Dictionary<string, object> objectData = ObjectDB[key];
+                                var builder = objectData.TryGetValue("dynamic", out bool isDynamic) && isDynamic ? dynamicbuilder : dbbuilder;
                                 builder.Append("\t[").Append(key).AppendLine("] = {");
 
                                 // Attempt to get the text locale data object.
@@ -2111,7 +2269,7 @@ namespace ATT
                                 if (objectData.TryGetValue("icon", out string icon))
                                 {
                                     builder.Append("\t\ticon = ");
-                                    ExportStringValue(builder, icon.Replace("\\", "/")).AppendLine(",");
+                                    ExportIconValue(builder, icon).AppendLine(",");
                                 }
 
                                 // Export the "model" field.
@@ -2125,40 +2283,161 @@ namespace ATT
                                 {
                                     // Sort and then ensure es comes after en, to match previous convention.
                                     var supportedLocales = textLocales.Keys.ToList();
-                                    supportedLocales.Sort(Framework.Compare);
-                                    if (supportedLocales.Contains("es"))
-                                    {
-                                        supportedLocales.Remove("es");
-                                        supportedLocales.Insert(0, "es");
-                                    }
-                                    if (supportedLocales.Contains("en"))
-                                    {
-                                        supportedLocales.Remove("en");
-                                        supportedLocales.Insert(0, "en");
-                                    }
-                                    if (supportedLocales.Contains("ko"))
-                                    {
-                                        supportedLocales.Remove("ko");
-                                        supportedLocales.Add("ko");
-                                    }
-                                    if (supportedLocales.Contains("cn"))
-                                    {
-                                        supportedLocales.Remove("cn");
-                                        supportedLocales.Add("cn");
-                                    }
+                                    SortSupportedLocales(supportedLocales);
 
                                     builder.AppendLine("\t\ttext = {");
-                                    foreach (var localeKey in supportedLocales)
+
+                                    // Mark sure we don't have any placeholder english values.
+                                    if (textLocales.TryGetValue("en", out string enValue))
                                     {
-                                        builder.Append("\t\t\t").Append(localeKey).Append(" = ");
-                                        ExportStringValue(builder, textLocales[localeKey].ToString()).AppendLine(",");
+                                        supportedLocales.Remove("en");
+                                        builder.Append("\t\t\ten = ");
+                                        ExportStringValue(builder, enValue).AppendLine(",");
+
+                                        // Also don't write identical es/mx or cn/tw values.
+                                        if (textLocales.TryGetValue("es", out string esValue) && textLocales.TryGetValue("mx", out string mxValue) && esValue == mxValue)
+                                        {
+                                            supportedLocales.Remove("tw");
+                                        }
+                                        if (textLocales.TryGetValue("cn", out string cnValue) && textLocales.TryGetValue("tw", out string twValue) && cnValue == twValue)
+                                        {
+                                            supportedLocales.Remove("tw");
+                                        }
+
+                                        foreach (var localeKey in supportedLocales)
+                                        {
+                                            var localizedValue = textLocales[localeKey].ToString();
+                                            if (enValue == localizedValue || (localizedValue[0] == '[' && enValue == localizedValue.Substring(1, localizedValue.Length - 2))) continue;
+                                            builder.Append("\t\t\t").Append(localeKey).Append(" = ");
+                                            ExportStringValue(builder, localizedValue).AppendLine(",");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Trace.WriteLine(MiniJSON.Json.Serialize(objectData));
+                                        Trace.WriteLine("Uhhh, you missing an english locale here");
+                                        Console.ReadLine();
+                                        foreach (var localeKey in supportedLocales)
+                                        {
+                                            builder.Append("\t\t\t").Append(localeKey).Append(" = ");
+                                            ExportStringValue(builder, textLocales[localeKey].ToString()).AppendLine(",");
+                                        }
                                     }
                                     builder.AppendLine("\t\t},");
                                 }
                                 builder.AppendLine("\t},");
                             }
-                            builder.AppendLine("})").AppendLine("do ObjectDB[objectID] = objectData; end");
-                            File.WriteAllText(Path.Combine(debugFolder.FullName, "ObjectDB.lua"), builder.ToString(), Encoding.UTF8);
+                            dbbuilder.AppendLine("})").AppendLine("do ObjectDB[objectID] = objectData; end");
+                            dynamicbuilder.AppendLine("})").AppendLine("do ObjectDB[objectID] = objectData; end");
+                            File.WriteAllText(Path.Combine(debugFolder.FullName, "ObjectDB.lua"), dbbuilder.ToString(), Encoding.UTF8);
+                            File.WriteAllText(Path.Combine(debugFolder.FullName, "ObjectDB (Dynamic).lua"), dynamicbuilder.ToString(), Encoding.UTF8);
+                        }
+
+                        // Export the Phases file.
+                        if (Phases != null && Phases.Any())
+                        {
+                            var builder = new StringBuilder("-----------------------------------------------------\n--   P H A S E   D A T A B A S E   M O D U L E   --\n-----------------------------------------------------\n");
+                            var keys = Phases.Keys.ToList();
+                            keys.Sort();
+                            builder.Append("local Phases = Phases; for phaseID,phaseData in pairs({").AppendLine();
+                            foreach (var key in keys)
+                            {
+                                if (Phases.TryGetValue(key, out object o) && o is IDictionary<string, object> phaseData)
+                                {
+                                    builder.Append("\t[").Append(key).AppendLine("] = {");
+
+                                    // Attempt to get the text locale data object.
+                                    phaseData.TryGetValue("text", out object textLocaleObject);
+                                    Dictionary<string, object> textLocales = textLocaleObject as Dictionary<string, object>;
+
+                                    // Export the "readable" field. (database only, not exported to game)
+                                    if (phaseData.TryGetValue("readable", out string treadable))
+                                    {
+                                        builder.Append("\t\treadable = ");
+                                        ExportStringValue(builder, treadable).AppendLine(",");
+                                    }
+                                    else if (textLocales != null && textLocales.TryGetValue("en", out string name))
+                                    {
+                                        builder.Append("\t\treadable = ");
+                                        ExportStringValue(builder, name).AppendLine(",");
+                                    }
+                                    if (phaseData.TryGetValue("minimumBuildVersion", out var minimumBuildVersion))
+                                    {
+                                        builder.Append("\t\tminimumBuildVersion = ").Append(minimumBuildVersion).AppendLine(",");
+                                    }
+                                    if (phaseData.TryGetValue("buildVersion", out var buildVersion))
+                                    {
+                                        builder.Append("\t\tbuildVersion = ").Append(buildVersion).AppendLine(",");
+                                    }
+                                    if (key >= 11) builder.Append("\t\tphaseID = ").Append(key).AppendLine(",");
+
+                                    // Export the "icon" field.
+                                    if (phaseData.TryGetValue("icon", out string icon))
+                                    {
+                                        builder.Append("\t\ticon = ");
+                                        ExportIconValue(builder, icon).AppendLine(",");
+                                    }
+
+                                    // Export the "model" field.
+                                    if (phaseData.TryGetValue("model", out long model))
+                                    {
+                                        builder.Append("\t\tmodel = ").Append(model).AppendLine(",");
+                                    }
+
+                                    // Export the complex "text" locales field.
+                                    if (textLocales != null)
+                                    {
+                                        // Sort and then ensure es comes after en, to match previous convention.
+                                        var supportedLocales = textLocales.Keys.ToList();
+                                        SortSupportedLocales(supportedLocales);
+
+                                        builder.AppendLine("\t\ttext = {");
+                                        foreach (var localeKey in supportedLocales)
+                                        {
+                                            builder.Append("\t\t\t").Append(localeKey).Append(" = ");
+                                            ExportStringValue(builder, textLocales[localeKey].ToString()).AppendLine(",");
+                                        }
+                                        builder.AppendLine("\t\t},");
+                                    }
+
+                                    // Export the complex "description" locales field.
+                                    if (phaseData.TryGetValue("description", out object descriptionLocaleObject)
+                                        && descriptionLocaleObject is Dictionary<string, object> descriptionLocales)
+                                    {
+                                        // Sort and then ensure es comes after en, to match previous convention.
+                                        var supportedLocales = descriptionLocales.Keys.ToList();
+                                        SortSupportedLocales(supportedLocales);
+
+                                        builder.AppendLine("\t\tdescription = {");
+                                        foreach (var localeKey in supportedLocales)
+                                        {
+                                            builder.Append("\t\t\t").Append(localeKey).Append(" = ");
+                                            ExportStringValue(builder, descriptionLocales[localeKey].ToString()).AppendLine(",");
+                                        }
+                                        builder.AppendLine("\t\t},");
+                                    }
+
+                                    // Export the complex "lore" locales field.
+                                    if (phaseData.TryGetValue("lore", out object loreLocaleObject)
+                                        && loreLocaleObject is Dictionary<string, object> loreLocales)
+                                    {
+                                        // Sort and then ensure es comes after en, to match previous convention.
+                                        var supportedLocales = loreLocales.Keys.ToList();
+                                        SortSupportedLocales(supportedLocales);
+
+                                        builder.AppendLine("\t\tlore = {");
+                                        foreach (var localeKey in supportedLocales)
+                                        {
+                                            builder.Append("\t\t\t").Append(localeKey).Append(" = ");
+                                            ExportStringValue(builder, loreLocales[localeKey].ToString()).AppendLine(",");
+                                        }
+                                        builder.AppendLine("\t\t},");
+                                    }
+                                    builder.AppendLine("\t},");
+                                }
+                            }
+                            builder.AppendLine("})").AppendLine("do Phases[phaseID] = phaseData; end");
+                            File.WriteAllText(Path.Combine(debugFolder.FullName, "Phases.lua"), builder.ToString(), Encoding.UTF8);
                         }
 
                         // Export the Mount DB file.
@@ -2207,9 +2486,9 @@ namespace ATT
                 Dictionary<string, StringBuilder> localizationByLocale = new Dictionary<string, StringBuilder>();
                 foreach (var language in new List<string>
                 {
-                    // 8 non-english locales, 9 supported in all. (English is written right away and acts as the default)
-                    "es", "de", "fr", "it",
-                    "pt", "ru", "ko", "zh", // NOTE: "cn" is not valid, it's actually "zh"!
+                    // 10 non-english locales, 11 supported in all. (English is written right away and acts as the default)
+                    "es", "mx", "de", "fr", "it",
+                    "pt", "ru", "ko", "cn", "tw"
                 })
                 {
                     // Generate a string builder for each language. (an empty builder at the end will not be exported)
@@ -2241,60 +2520,11 @@ namespace ATT
                         {
                             icons[key] = value.ToString().Replace("\\", "/");
                         }
-                        if (categoryData.TryGetValue("text", out value))
-                        {
-                            if (!(value is IDictionary<string, object> localeData))
-                            {
-                                localeData = new Dictionary<string, object>
-                                {
-                                    ["en"] = value
-                                };
-                            }
-                            if (localeData.TryGetValue("en", out string englishValue))
-                            {
-                                if (!localizationForText.TryGetValue("en", out Dictionary<long, string> sublocale))
-                                {
-                                    localizationForText["en"] = sublocale = new Dictionary<long, string>();
-                                }
-                                sublocale[key] = englishValue;
-
-                                foreach (var locale in localeData)
-                                {
-                                    if (locale.Key == "en") continue;
-
-                                    string localizedValue = locale.Value.ToString();
-                                    if (!localizedValue.Contains(englishValue))
-                                    {
-                                        if (!localizationForText.TryGetValue(locale.Key, out sublocale))
-                                        {
-                                            localizationForText[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = localizedValue;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Convert all "cn" into "zh" dictionaries, it makes the comparison later easier.
-                    if (localizationForText.TryGetValue("cn", out Dictionary<long, string> data))
-                    {
-                        localizationForText.Remove("cn");
-                        if (!localizationForText.TryGetValue("zh", out Dictionary<long, string> zh))
-                        {
-                            localizationForText["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
-                            {
-                                zh[pair.Key] = pair.Value;
-                            }
-                        }
+                        CleanLocalizedField(key, "text", categoryData, localizationForText);
                     }
 
                     // Get all of the english translations and always write them to the file.
-                    if (localizationForText.TryGetValue("en", out data))
+                    if (localizationForText.TryGetValue("en", out var data))
                     {
                         localizationForText.Remove("en");
                         builder.AppendLine("_.CategoryNames = {");
@@ -2332,7 +2562,7 @@ namespace ATT
                     {
                         if (icons.TryGetValue(key, out string icon))
                         {
-                            ExportStringKeyValue(builder, key, icon).AppendLine();
+                            ExportIconKeyValue(builder, key, icon).AppendLine();
                         }
                     }
                     builder.AppendLine("}");
@@ -2416,63 +2646,9 @@ namespace ATT
                                 {
                                     constants[value.ToString()] = key;
                                 }
-                                if (header.TryGetValue("text", out value))
-                                {
-                                    if (!(value is IDictionary<string, object> localeData))
-                                    {
-                                        localeData = new Dictionary<string, object>
-                                        {
-                                            ["en"] = value
-                                        };
-                                    }
-                                    TryColorizeDictionary(localeData);
-                                    foreach (var locale in localeData)
-                                    {
-                                        if (!localizationForText.TryGetValue(locale.Key, out Dictionary<long, string> sublocale))
-                                        {
-                                            localizationForText[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = locale.Value.ToString();
-                                    }
-                                }
-                                if (header.TryGetValue("description", out value))
-                                {
-                                    if (!(value is IDictionary<string, object> localeData))
-                                    {
-                                        localeData = new Dictionary<string, object>
-                                        {
-                                            ["en"] = value
-                                        };
-                                    }
-                                    TryColorizeDictionary(localeData);
-                                    foreach (var locale in localeData)
-                                    {
-                                        if (!localizationForDescriptions.TryGetValue(locale.Key, out Dictionary<long, string> sublocale))
-                                        {
-                                            localizationForDescriptions[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = locale.Value.ToString();
-                                    }
-                                }
-                                if (header.TryGetValue("lore", out value))
-                                {
-                                    if (!(value is IDictionary<string, object> localeData))
-                                    {
-                                        localeData = new Dictionary<string, object>
-                                        {
-                                            ["en"] = value
-                                        };
-                                    }
-                                    TryColorizeDictionary(localeData);
-                                    foreach (var locale in localeData)
-                                    {
-                                        if (!localizationForLore.TryGetValue(locale.Key, out Dictionary<long, string> sublocale))
-                                        {
-                                            localizationForLore[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = locale.Value.ToString();
-                                    }
-                                }
+                                CleanLocalizedField(key, "text", header, localizationForText);
+                                CleanLocalizedField(key, "description", header, localizationForDescriptions);
+                                CleanLocalizedField(key, "lore", header, localizationForLore);
 
                                 if (header.TryGetValue("minilist_ignore", out value))
                                 {
@@ -2514,55 +2690,8 @@ namespace ATT
                     }
                     builder.AppendLine("};");
 
-                    // Convert all "cn" into "zh" dictionaries, it makes the comparison later easier.
-                    if (localizationForText.TryGetValue("cn", out Dictionary<long, string> data))
-                    {
-                        localizationForText.Remove("cn");
-                        if (!localizationForText.TryGetValue("zh", out Dictionary<long, string> zh))
-                        {
-                            localizationForText["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
-                            {
-                                zh[pair.Key] = pair.Value;
-                            }
-                        }
-                    }
-                    if (localizationForDescriptions.TryGetValue("cn", out data))
-                    {
-                        localizationForDescriptions.Remove("cn");
-                        if (!localizationForDescriptions.TryGetValue("zh", out Dictionary<long, string> zh))
-                        {
-                            localizationForDescriptions["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
-                            {
-                                zh[pair.Key] = pair.Value;
-                            }
-                        }
-                    }
-                    if (localizationForLore.TryGetValue("cn", out data))
-                    {
-                        localizationForLore.Remove("cn");
-                        if (!localizationForLore.TryGetValue("zh", out Dictionary<long, string> zh))
-                        {
-                            localizationForLore["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
-                            {
-                                zh[pair.Key] = pair.Value;
-                            }
-                        }
-                    }
-
                     // Get all of the english translations and always write them to the file.
-                    if (localizationForText.TryGetValue("en", out data))
+                    if (localizationForText.TryGetValue("en", out var data))
                     {
                         localizationForText.Remove("en");
                         builder.AppendLine("localize(L.HEADER_NAMES, {");
@@ -2608,7 +2737,7 @@ namespace ATT
                     {
                         if (icons.TryGetValue(key, out string icon))
                         {
-                            ExportStringKeyValue(builder, key, icon).AppendLine();
+                            ExportIconKeyValue(builder, key, icon).AppendLine();
                         }
                     }
                     builder.AppendLine("});");
@@ -2662,7 +2791,7 @@ namespace ATT
                             localeBuilder.AppendLine("localize(L.HEADER_NAMES, {");
                             foreach (var key in keys)
                             {
-                                if (localePair.Value.TryGetValue(key, out string name))
+                                if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
                                 {
                                     ExportStringKeyValue(localeBuilder, key, name).AppendLine();
                                 }
@@ -2678,7 +2807,7 @@ namespace ATT
                             localeBuilder.AppendLine("localize(L.HEADER_DESCRIPTIONS, {");
                             foreach (var key in keys)
                             {
-                                if (localePair.Value.TryGetValue(key, out string name))
+                                if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
                                 {
                                     ExportStringKeyValue(localeBuilder, key, name).AppendLine();
                                 }
@@ -2694,7 +2823,7 @@ namespace ATT
                             localeBuilder.AppendLine("localize(L.HEADER_LORE, {");
                             foreach (var key in keys)
                             {
-                                if (localePair.Value.TryGetValue(key, out string name))
+                                if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
                                 {
                                     ExportStringKeyValue(localeBuilder, key, name).AppendLine();
                                 }
@@ -2730,45 +2859,13 @@ namespace ATT
                             Console.WriteLine(key);
                             continue;
                         }
-                        if (dataEntry.TryGetValue("text", out object value))
-                        {
-                            if (!(value is IDictionary<string, object> localeData))
-                            {
-                                localeData = new Dictionary<string, object>
-                                {
-                                    ["en"] = value
-                                };
-                            }
-                            if (localeData.TryGetValue("en", out string englishValue))
-                            {
-                                if (!localizationForText.TryGetValue("en", out Dictionary<long, string> sublocale))
-                                {
-                                    localizationForText["en"] = sublocale = new Dictionary<long, string>();
-                                }
-                                sublocale[key] = englishValue;
-
-                                foreach (var locale in localeData)
-                                {
-                                    if (locale.Key == "en") continue;
-
-                                    string localizedValue = locale.Value.ToString();
-                                    if (!localizedValue.Contains(englishValue))
-                                    {
-                                        if (!localizationForText.TryGetValue(locale.Key, out sublocale))
-                                        {
-                                            localizationForText[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = localizedValue;
-                                    }
-                                }
-                            }
-                        }
+                        CleanLocalizedField(key, "text", dataEntry, localizationForText);
                         if (dataEntry.TryGetValue("icon", out object icon))
                         {
                             icons[key] = icon.ToString().Replace("\\", "/");
                         }
 
-                        if (dataEntry.TryGetValue("constant", out value))
+                        if (dataEntry.TryGetValue("constant", out var value))
                         {
                             constants[value.ToString()] = key;
                         }
@@ -2787,25 +2884,8 @@ namespace ATT
                         builder.AppendLine("};");
                     }
 
-                    // Convert all "cn" into "zh" dictionaries, it makes the comparison later easier.
-                    if (localizationForText.TryGetValue("cn", out Dictionary<long, string> data))
-                    {
-                        localizationForText.Remove("cn");
-                        if (!localizationForText.TryGetValue("zh", out Dictionary<long, string> zh))
-                        {
-                            localizationForText["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
-                            {
-                                zh[pair.Key] = pair.Value;
-                            }
-                        }
-                    }
-
                     // Get all of the english translations and always write them to the file.
-                    if (localizationForText.TryGetValue("en", out data))
+                    if (localizationForText.TryGetValue("en", out var data))
                     {
                         localizationForText.Remove("en");
                         builder.AppendLine("L.FILTER_ID_TYPES = {");
@@ -2845,7 +2925,7 @@ namespace ATT
                         {
                             if (icons.TryGetValue(key, out string icon))
                             {
-                                ExportStringKeyValue(builder, key, icon).AppendLine();
+                                ExportIconKeyValue(builder, key, icon).AppendLine();
                             }
                         }
                         builder.AppendLine("}");
@@ -2861,12 +2941,11 @@ namespace ATT
                     CurrentParseStage = ParseStage.ExportFlightPathDB;
                     var builder = new StringBuilder("-- Flight Path Database Module").AppendLine();
 
-                    var localizationForText = new Dictionary<string, Dictionary<long, string>>();
-
                     // Include Only Referenced Flight Paths!
                     var keys = FLIGHTPATHS_WITH_REFERENCES.Keys.ToList();
                     keys.Sort();
                     bool isRetail = ((string[])Config["PreProcessorTags"]).Contains("RETAIL");
+                    var localizationForText = new Dictionary<string, Dictionary<long, string>>();
                     foreach (var key in keys)
                     {
                         // Check to see if FlightPathDB has any information on our flight path.
@@ -2883,60 +2962,11 @@ namespace ATT
                             }
                             continue;
                         }
-                        if (flightPathData.TryGetValue("text", out object value))
-                        {
-                            if (!(value is IDictionary<string, object> localeData))
-                            {
-                                localeData = new Dictionary<string, object>
-                                {
-                                    ["en"] = value
-                                };
-                            }
-                            if (localeData.TryGetValue("en", out string englishValue))
-                            {
-                                if (!localizationForText.TryGetValue("en", out Dictionary<long, string> sublocale))
-                                {
-                                    localizationForText["en"] = sublocale = new Dictionary<long, string>();
-                                }
-                                sublocale[key] = englishValue;
-
-                                foreach (var locale in localeData)
-                                {
-                                    if (locale.Key == "en") continue;
-
-                                    string localizedValue = locale.Value.ToString();
-                                    if (!localizedValue.Contains(englishValue))
-                                    {
-                                        if (!localizationForText.TryGetValue(locale.Key, out sublocale))
-                                        {
-                                            localizationForText[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = localizedValue;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Convert all "cn" into "zh" dictionaries, it makes the comparison later easier.
-                    if (localizationForText.TryGetValue("cn", out Dictionary<long, string> data))
-                    {
-                        localizationForText.Remove("cn");
-                        if (!localizationForText.TryGetValue("zh", out Dictionary<long, string> zh))
-                        {
-                            localizationForText["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
-                            {
-                                zh[pair.Key] = pair.Value;
-                            }
-                        }
+                        CleanLocalizedField(key, "text", flightPathData, localizationForText);
                     }
 
                     // Get all of the english translations and always write them to the file.
-                    if (localizationForText.TryGetValue("en", out data))
+                    if (localizationForText.TryGetValue("en", out var data))
                     {
                         localizationForText.Remove("en");
                         builder.AppendLine("_.FlightPathNames = {");
@@ -2956,7 +2986,7 @@ namespace ATT
                         if (localePair.Value.Any())
                         {
                             var localeBuilder = localizationByLocale[localePair.Key];
-                            localeBuilder.AppendLine("localize(L.FlightPathNames, {");
+                            localeBuilder.AppendLine("localize(_.FlightPathNames, {");
                             foreach (var key in keys)
                             {
                                 if (localePair.Value.TryGetValue(key, out string name))
@@ -2972,6 +3002,28 @@ namespace ATT
                     localizationDatabase.AppendLine(builder.ToString());
                 }
 
+                // Export the Glyph DB file.
+                if (GlyphDB.Any())
+                {
+                    var builder = new StringBuilder("-- Glyphs Database Module").AppendLine();
+
+                    // Sort the list by glyphID...
+                    var keys = GlyphDB.Keys.ToList();
+                    keys.Sort();
+                    builder.AppendLine("_.GlyphDB = {");
+                    foreach (var key in keys)
+                    {
+                        if (GlyphDB.TryGetValue(key, out var spellID))
+                        {
+                            ExportObjectKeyValue(builder, key, spellID).AppendLine();
+                        }
+                    }
+                    builder.AppendLine("}");
+
+                    // Append the file content to our localization database.
+                    localizationDatabase.AppendLine(builder.ToString());
+                }
+
                 // Export the Object DB file.
                 if (OBJECTS_WITH_REFERENCES.Any())
                 {
@@ -2980,6 +3032,7 @@ namespace ATT
 
                     var icons = new Dictionary<long, string>();
                     var modelIDs = new Dictionary<long, long>();
+                    var consolidatedKeys = new Dictionary<string, List<long>>();
                     var localizationForText = new Dictionary<string, Dictionary<long, string>>();
 
                     // Include Only Referenced Objects!
@@ -3003,7 +3056,17 @@ namespace ATT
                             ObjectHarvester.UpdateInformationFromWoWHead(key, objectData);
                         }
 #endif
-
+                        if (objectData.TryGetValue("consolidate", out bool consolidate) && consolidate)
+                        {
+                            if (objectData.TryGetValue("readable", out string readable))
+                            {
+                                if (!consolidatedKeys.TryGetValue(readable, out var listing))
+                                {
+                                    consolidatedKeys[readable] = listing = new List<long>();
+                                }
+                                listing.Add(key);
+                            }
+                        }
                         if (objectData.TryGetValue("icon", out object value))
                         {
                             icons[key] = value.ToString().Replace("\\", "/");
@@ -3012,71 +3075,40 @@ namespace ATT
                         {
                             modelIDs[key] = Convert.ToInt64(value);
                         }
-                        if (objectData.TryGetValue("text", out value))
-                        {
-                            if (!(value is IDictionary<string, object> localeData))
-                            {
-                                localeData = new Dictionary<string, object>
-                                {
-                                    ["en"] = value
-                                };
-                            }
-                            if (localeData.TryGetValue("en", out string englishValue))
-                            {
-                                if (!localizationForText.TryGetValue("en", out Dictionary<long, string> sublocale))
-                                {
-                                    localizationForText["en"] = sublocale = new Dictionary<long, string>();
-                                }
-                                sublocale[key] = englishValue;
-
-                                foreach (var locale in localeData)
-                                {
-                                    if (locale.Key == "en") continue;
-
-                                    string localizedValue = locale.Value.ToString();
-                                    if (!localizedValue.Contains(englishValue))
-                                    {
-                                        if (!localizationForText.TryGetValue(locale.Key, out sublocale))
-                                        {
-                                            localizationForText[locale.Key] = sublocale = new Dictionary<long, string>();
-                                        }
-                                        sublocale[key] = localizedValue;
-                                    }
-                                }
-                            }
-                        }
+                        CleanLocalizedField(key, "text", objectData, localizationForText);
                     }
 
-                    // Convert all "cn" into "zh" dictionaries, it makes the comparison later easier.
-                    if (localizationForText.TryGetValue("cn", out Dictionary<long, string> data))
+                    // Sort any consolidated keys and export them as a constant.
+                    var tupledConsolidatedKeys = new List<Tuple<string, List<long>>>();
+                    if (consolidatedKeys.Any())
                     {
-                        localizationForText.Remove("cn");
-                        if (!localizationForText.TryGetValue("zh", out Dictionary<long, string> zh))
+                        var names = consolidatedKeys.Keys.ToList();
+                        names.Sort(Framework.Compare);
+                        foreach (var name in names)
                         {
-                            localizationForText["zh"] = data;
-                        }
-                        else
-                        {
-                            foreach (var pair in data)
+                            var sortedKeys = consolidatedKeys[name];
+                            if (sortedKeys.Any())
                             {
-                                zh[pair.Key] = pair.Value;
+                                sortedKeys.Sort();
+                                foreach (var sortedKey in sortedKeys) keys.Remove(sortedKey);
+                                tupledConsolidatedKeys.Add(new Tuple<string, List<long>>(name.ToUpperInvariant().Replace(' ', '_') + "S", sortedKeys));
                             }
                         }
                     }
 
                     // Get all of the english translations and always write them to the file.
-                    if (localizationForText.TryGetValue("en", out data))
+                    if (localizationForText.TryGetValue("en", out var enObjectData))
                     {
                         localizationForText.Remove("en");
-                        builder.AppendLine("_.ObjectNames = {");
+                        builder.AppendLine("local ObjectNames = {");
                         foreach (var key in keys)
                         {
-                            if (data.TryGetValue(key, out string name))
+                            if (enObjectData.TryGetValue(key, out string name))
                             {
                                 ExportStringKeyValue(builder, key, name).AppendLine();
                             }
                         }
-                        builder.AppendLine("}");
+                        builder.AppendLine("}; _.ObjectNames = ObjectNames;");
                     }
 
                     // Now grab the non-english localizations and conditionally write them to the file.
@@ -3085,31 +3117,54 @@ namespace ATT
                         if (localePair.Value.Any())
                         {
                             var localeBuilder = localizationByLocale[localePair.Key];
-                            localeBuilder.AppendLine("localize(_.ObjectNames, {");
+                            var nameTuple = new List<Tuple<long, string>>();
                             foreach (var key in keys)
                             {
                                 if (localePair.Value.TryGetValue(key, out string name))
                                 {
-                                    ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                    nameTuple.Add(new Tuple<long, string>(key, name));
                                 }
                             }
-                            localeBuilder.AppendLine("});");
+                            if (nameTuple.Any())
+                            {
+                                localeBuilder.AppendLine("localize(ObjectNames, {");
+                                foreach (var tuple in nameTuple)
+                                {
+                                    ExportStringKeyValue(localeBuilder, tuple.Item1, tuple.Item2).AppendLine();
+                                }
+                                localeBuilder.AppendLine("});");
+                            }
+                            if (tupledConsolidatedKeys.Any())
+                            {
+                                foreach (var tuple in tupledConsolidatedKeys)
+                                {
+                                    if (tuple.Item2.Any())
+                                    {
+                                        if (localePair.Value.TryGetValue(tuple.Item2[0], out string name))
+                                        {
+                                            localeBuilder.Append("for i,objectID in ipairs(").Append(tuple.Item1).Append(") do ObjectNames[objectID] = ");
+                                            ExportStringValue(localeBuilder, name);
+                                            localeBuilder.AppendLine("; end");
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
 
                     // Now write the icons after the text.
-                    builder.AppendLine("_.ObjectIcons = {");
+                    builder.AppendLine("local ObjectIcons = {");
                     foreach (var key in keys)
                     {
                         if (icons.TryGetValue(key, out string icon))
                         {
-                            ExportStringKeyValue(builder, key, icon).AppendLine();
+                            ExportIconKeyValue(builder, key, icon).AppendLine();
                         }
                     }
-                    builder.AppendLine("}");
+                    builder.AppendLine("}; _.ObjectIcons = ObjectIcons;");
 
                     // Write the model information last.
-                    builder.AppendLine("_.ObjectModels = {");
+                    builder.AppendLine("local ObjectModels = {");
                     foreach (var key in keys)
                     {
                         if (modelIDs.TryGetValue(key, out long modelID))
@@ -3117,17 +3172,483 @@ namespace ATT
                             ExportObjectKeyValue(builder, key, modelID).AppendLine();
                         }
                     }
-                    builder.AppendLine("}");
+                    builder.AppendLine("}; _.ObjectModels = ObjectModels;");
+                    if (tupledConsolidatedKeys.Any())
+                    {
+                        builder.AppendLine().AppendLine("-- Consolidated Object Data");
+                        foreach (var tuple in tupledConsolidatedKeys)
+                        {
+                            if (tuple.Item2.Any()) builder.Append("local ").Append(tuple.Item1).Append(" = { ").Append(string.Join(",", tuple.Item2)).AppendLine(" };");
+                        }
+                        foreach (var tuple in tupledConsolidatedKeys)
+                        {
+                            if (tuple.Item2.Any())
+                            {
+                                var firstObjectID = tuple.Item2[0];
+                                builder.Append("for i,objectID in ipairs(").Append(tuple.Item1).AppendLine(") do");
+                                if (enObjectData.TryGetValue(firstObjectID, out string name))
+                                {
+                                    builder.Append("\tObjectNames[objectID] = ");
+                                    ExportStringValue(builder, name).AppendLine(";");
+                                }
+                                if (icons.TryGetValue(firstObjectID, out string icon))
+                                {
+                                    builder.Append("\tObjectIcons[objectID] = ");
+                                    ExportIconValue(builder, icon).AppendLine(";");
+                                }
+                                if (modelIDs.TryGetValue(firstObjectID, out long modelID))
+                                {
+                                    builder.Append("\tObjectModels[objectID] = ").Append(modelID).AppendLine(";");
+                                }
+                                builder.AppendLine("end");
+                            }
+                        }
+                    }
 
                     // Append the file content to our localization database.
                     localizationDatabase.AppendLine(builder.ToString());
                 }
 
+                // Export the Phases file.
+                if (Phases != null && Phases.Any())
+                {
+                    CurrentParseStage = ParseStage.ExportPhases;
+
+                    // Now export it based on what we know.
+                    var builder = new StringBuilder("-- Phase Database Module").AppendLine();
+                    var keys = new List<long>();
+                    var icons = new Dictionary<long, string>();
+                    var constants = new Dictionary<string, long>();
+                    var localizationForText = new Dictionary<string, Dictionary<long, string>>();
+                    var localizationForLore = new Dictionary<string, Dictionary<long, string>>();
+                    var localizationForDescriptions = new Dictionary<string, Dictionary<long, string>>();
+                    foreach (var key in Phases.Keys)
+                    {
+                        // Include Only Referenced Phases!
+                        if (PHASES_WITH_REFERENCES.ContainsKey(key))
+                        {
+                            if (Phases.TryGetValue(key, out object o) && o is IDictionary<string, object> phase)
+                            {
+                                keys.Add(key);
+                                if (phase.TryGetValue("icon", out object value))
+                                {
+                                    icons[key] = value.ToString().Replace("\\", "/");
+                                }
+                                if (phase.TryGetValue("constant", out value))
+                                {
+                                    constants[value.ToString()] = key;
+                                }
+                                CleanLocalizedField(key, "text", phase, localizationForText);
+                                CleanLocalizedField(key, "description", phase, localizationForDescriptions);
+                                CleanLocalizedField(key, "lore", phase, localizationForLore);
+                            }
+                        }
+                    }
+                    keys.Sort(delegate (long a, long b)
+                    {
+                        // Sort the Normal Phases by number.
+                        if (a < 11 || b < 11)
+                        {
+                            return a.CompareTo(b);
+                        }
+
+                        // Classic Phases should be sorted by the number alphabetically... for now.
+                        return a.ToString().CompareTo(b.ToString());
+                    });
+
+                    // Write the header constants!
+                    builder.AppendLine("_.PhaseConstants = {");
+                    var phaseKeys = constants.Keys.ToList();
+                    phaseKeys.Sort(Framework.Compare);
+                    foreach (var key in phaseKeys)
+                    {
+                        builder.Append("\t").Append(key).Append(" = ").Append(constants[key]).AppendLine(",");
+                    }
+                    builder.AppendLine("};");
+
+                    // Get all of the english translations and always write them to the file.
+                    builder.AppendLine("local phases = {");
+                    localizationForText.TryGetValue("en", out var localizationForTextByKey);
+                    localizationForText.Remove("en");
+                    localizationForDescriptions.TryGetValue("en", out var localizationForDescriptionsByKey);
+                    localizationForDescriptions.Remove("en");
+                    localizationForLore.TryGetValue("en", out var localizationForLoreByKey);
+                    localizationForLore.Remove("en");
+                    foreach (var key in keys)
+                    {
+                        if (Phases.TryGetValue(key, out object o) && o is IDictionary<string, object> phase)
+                        {
+                            builder.Append("\t[").Append(key).AppendLine("] = {");
+                            if (localizationForTextByKey.TryGetValue(key, out string name))
+                            {
+                                builder.Append("\t\tname = ");
+                                ExportStringValue(builder, name).AppendLine(",");
+                            }
+                            if (localizationForDescriptionsByKey.TryGetValue(key, out name))
+                            {
+                                builder.Append("\t\tdescription = ");
+                                ExportStringValue(builder, name).AppendLine(",");
+                            }
+                            if (localizationForLoreByKey.TryGetValue(key, out name))
+                            {
+                                builder.Append("\t\tlore = ");
+                                ExportStringValue(builder, name).AppendLine(",");
+                            }
+
+                            if (phase.TryGetValue("minimumBuildVersion", out var minimumBuildVersion))
+                            {
+                                builder.Append("\t\tminimumBuildVersion = ").Append(minimumBuildVersion).AppendLine(",");
+                            }
+                            if (phase.TryGetValue("buildVersion", out var buildVersion))
+                            {
+                                builder.Append("\t\tbuildVersion = ").Append(buildVersion).AppendLine(",");
+                            }
+
+                            // Write the state last. [NOTE: This is an ID number from 1-4]
+                            builder.Append("\t\tstate = ");
+                            if (phase.TryGetValue("state", out var state))
+                            {
+                                builder.Append(state);
+                            }
+                            else builder.Append(2); // Default is 'Medium'
+                            builder.AppendLine(",").AppendLine("\t},");
+                        }
+                    }
+                    builder.AppendLine("};\nL.PHASES = phases;");
+
+                    // Now grab the non-english localizations and conditionally write them to the file.
+                    foreach (var localePair in localizationForText)
+                    {
+                        if (localePair.Value.Any())
+                        {
+                            var localeBuilder = localizationByLocale[localePair.Key];
+                            localeBuilder.AppendLine("for key,value in pairs({");
+                            foreach (var key in keys)
+                            {
+                                if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                {
+                                    ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                }
+                            }
+                            localeBuilder.AppendLine("})\ndo phases[key].name = value; end");
+                        }
+                    }
+                    foreach (var localePair in localizationForDescriptions)
+                    {
+                        if (localePair.Value.Any())
+                        {
+                            var localeBuilder = localizationByLocale[localePair.Key];
+                            localeBuilder.AppendLine("for key,value in pairs({");
+                            foreach (var key in keys)
+                            {
+                                if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                {
+                                    ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                }
+                            }
+                            localeBuilder.AppendLine("})\ndo phases[key].description = value; end");
+                        }
+                    }
+                    foreach (var localePair in localizationForLore)
+                    {
+                        if (localePair.Value.Any())
+                        {
+                            var localeBuilder = localizationByLocale[localePair.Key];
+                            localeBuilder.AppendLine("for key,value in pairs({");
+                            foreach (var key in keys)
+                            {
+                                if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                {
+                                    ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                }
+                            }
+                            localeBuilder.AppendLine("})\ndo phases[key].lore = value; end");
+                        }
+                    }
+
+                    // Append the file content to our localization database.
+                    localizationDatabase.AppendLine(builder.ToString());
+                }
+
+
+
+                // Export the Achievement Data and Criteria DB file.
+                if (SOURCED.TryGetValue("achID", out var referencedAchievementData) && referencedAchievementData.Any())
+                {
+                    CurrentParseStage = ParseStage.ExportAchievementData;
+                    var allAchievementKeys = AchievementData.Keys.ToList();
+                    if (allAchievementKeys.Any())
+                    {
+                        var builder = new StringBuilder("-- Achievement Data Module").AppendLine();
+                        var keys = new List<long>();
+                        var localizationForText = new Dictionary<string, Dictionary<long, string>>();
+                        var localizationForDescriptions = new Dictionary<string, Dictionary<long, string>>();
+                        var localizationForLore = new Dictionary<string, Dictionary<long, string>>();
+                        var referencedCategoryIDs = new Dictionary<long, bool>();
+                        allAchievementKeys.Sort();
+                        foreach (var key in allAchievementKeys)
+                        {
+                            // Include Only Referenced Achievements!
+                            if (referencedAchievementData.ContainsKey(key))
+                            {
+                                if (AchievementData.TryGetValue(key, out var achievement))
+                                {
+                                    keys.Add(key);
+                                    CleanLocalizedField(key, "text", achievement, localizationForText);
+                                    CleanLocalizedField(key, "description", achievement, localizationForDescriptions);
+                                    CleanLocalizedField(key, "lore", achievement, localizationForLore);
+                                }
+                            }
+                        }
+
+                        // Get all of the english translations and always write them to the file.
+                        builder.AppendLine("local achievements = {");
+                        localizationForText.TryGetValue("en", out var localizationForTextByKey);
+                        localizationForText.Remove("en");
+                        if (localizationForDescriptions.TryGetValue("en", out var localizationForDescriptionsByKey)) localizationForDescriptions.Remove("en");
+                        else localizationForDescriptionsByKey = new Dictionary<long, string>();
+                        if (localizationForLore.TryGetValue("en", out var localizationForLoreByKey)) localizationForLore.Remove("en");
+                        else localizationForLoreByKey = new Dictionary<long, string>();
+                        foreach (var key in keys)
+                        {
+                            if (AchievementData.TryGetValue(key, out var achievement))
+                            {
+                                builder.Append("\t[").Append(key).AppendLine("] = {");
+                                if (localizationForTextByKey.TryGetValue(key, out string name))
+                                {
+                                    builder.Append("\t\tname = ");
+                                    ExportStringValue(builder, name).AppendLine(",");
+                                }
+                                if (localizationForDescriptionsByKey.TryGetValue(key, out name))
+                                {
+                                    builder.Append("\t\tdescription = ");
+                                    ExportStringValue(builder, name).AppendLine(",");
+                                }
+                                if (localizationForLoreByKey.TryGetValue(key, out name))
+                                {
+                                    builder.Append("\t\tlore = ");
+                                    ExportStringValue(builder, name).AppendLine(",");
+                                }
+                                if (achievement.TryGetValue("icon", out var icon))
+                                {
+                                    builder.Append("\t\ticon = ");
+                                    if (icon is string iconString) ExportStringValue(builder, iconString);
+                                    else builder.Append(icon);
+                                    builder.AppendLine(",");
+                                }
+                                builder.Append("\t\tcategory = ");
+                                if (achievement.TryGetValue("category", out var category))
+                                {
+                                    referencedCategoryIDs[(long)category] = true;
+                                    builder.Append(category);
+                                }
+                                else builder.Append(-1);
+                                builder.AppendLine(",").AppendLine("\t},");
+                            }
+                        }
+                        builder.AppendLine("};\nL.ACHIEVEMENT_DATA = achievements;");
+
+                        // Now grab the non-english localizations and conditionally write them to the file.
+                        foreach (var localePair in localizationForText)
+                        {
+                            if (localePair.Value.Any())
+                            {
+                                var localeBuilder = localizationByLocale[localePair.Key];
+                                localeBuilder.AppendLine("for key,value in pairs({");
+                                foreach (var key in keys)
+                                {
+                                    if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                    {
+                                        ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                    }
+                                }
+                                localeBuilder.AppendLine("})\ndo achievements[key].name = value; end");
+                            }
+                        }
+                        foreach (var localePair in localizationForDescriptions)
+                        {
+                            if (localePair.Value.Any())
+                            {
+                                var localeBuilder = localizationByLocale[localePair.Key];
+                                localeBuilder.AppendLine("for key,value in pairs({");
+                                foreach (var key in keys)
+                                {
+                                    if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                    {
+                                        ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                    }
+                                }
+                                localeBuilder.AppendLine("})\ndo achievements[key].description = value; end");
+                            }
+                        }
+                        foreach (var localePair in localizationForLore)
+                        {
+                            if (localePair.Value.Any())
+                            {
+                                var localeBuilder = localizationByLocale[localePair.Key];
+                                localeBuilder.AppendLine("for key,value in pairs({");
+                                foreach (var key in keys)
+                                {
+                                    if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                    {
+                                        ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                    }
+                                }
+                                localeBuilder.AppendLine("})\ndo achievements[key].lore = value; end");
+                            }
+                        }
+
+                        // Append the file content to our localization database.
+                        localizationDatabase.AppendLine(builder.ToString());
+
+
+                        // Achievement Criteria
+                        builder.Clear();
+                        keys.Clear();
+                        localizationForText.Clear();
+                        localizationForDescriptions.Clear();
+                        allAchievementKeys = AchievementCategoryData.Keys.ToList();
+                        allAchievementKeys.Sort();
+                        foreach (var categoryID in referencedCategoryIDs.Keys.ToList())
+                        {
+                            var parentCategoryID = categoryID;
+                            while (AchievementCategoryData.TryGetValue(parentCategoryID, out var critData))
+                            {
+                                if (critData.TryGetValue("parent", out var parentCriteria))
+                                {
+                                    parentCategoryID = (long)parentCriteria;
+                                    referencedCategoryIDs[parentCategoryID] = true;
+                                    if (parentCategoryID == -1) break;
+                                }
+                            }
+                        }
+                        foreach (var key in allAchievementKeys)
+                        {
+                            // Include Only Referenced Achievements!
+                            if (referencedCategoryIDs.ContainsKey(key))
+                            {
+                                if (AchievementCategoryData.TryGetValue(key, out var achievement))
+                                {
+                                    keys.Add(key);
+                                    if (achievement.TryGetValue("text", out var value))
+                                    {
+                                        if (!(value is IDictionary<string, object> localeData))
+                                        {
+                                            localeData = new Dictionary<string, object>
+                                            {
+                                                ["en"] = value
+                                            };
+                                        }
+                                        TryColorizeDictionary(localeData);
+                                        foreach (var locale in localeData)
+                                        {
+                                            if (!localizationForText.TryGetValue(locale.Key, out Dictionary<long, string> sublocale))
+                                            {
+                                                localizationForText[locale.Key] = sublocale = new Dictionary<long, string>();
+                                            }
+                                            sublocale[key] = locale.Value.ToString();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Get all of the english translations and always write them to the file.
+                        builder.AppendLine("local achievementCategories = {");
+                        localizationForText.TryGetValue("en", out localizationForTextByKey);
+                        localizationForText.Remove("en");
+                        foreach (var key in keys)
+                        {
+                            if (AchievementCategoryData.TryGetValue(key, out var achievement))
+                            {
+                                builder.Append("\t[").Append(key).AppendLine("] = {");
+                                if (localizationForTextByKey.TryGetValue(key, out string name))
+                                {
+                                    builder.Append("\t\tname = ");
+                                    ExportStringValue(builder, name).AppendLine(",");
+                                }
+                                builder.Append("\t\tparent = ");
+                                if (achievement.TryGetValue("parent", out var parent))
+                                {
+                                    builder.Append(parent);
+                                }
+                                else builder.Append(-1);
+                                builder.AppendLine(",").AppendLine("\t},");
+                            }
+                        }
+                        builder.AppendLine("};\nL.ACHIEVEMENT_CATEGORY_DATA = achievementCategories;");
+
+                        // Now grab the non-english localizations and conditionally write them to the file.
+                        foreach (var localePair in localizationForText)
+                        {
+                            if (localePair.Value.Any())
+                            {
+                                var localeBuilder = localizationByLocale[localePair.Key];
+                                localeBuilder.AppendLine("for key,value in pairs({");
+                                foreach (var key in keys)
+                                {
+                                    if (localePair.Value.TryGetValue(key, out string name) && !string.IsNullOrWhiteSpace(name))
+                                    {
+                                        ExportStringKeyValue(localeBuilder, key, name).AppendLine();
+                                    }
+                                }
+                                localeBuilder.AppendLine("})\ndo achievementCategories[key].name = value; end");
+                            }
+                        }
+
+                        // Append the file content to our localization database.
+                        localizationDatabase.AppendLine(builder.ToString());
+                    }
+                }
+
+                // Export the Automatic Localizations (previously en_auto.lua)
+                // CRIEVE NOTE: I don't fully grasp what this accomplishes that a custom header doesn't already, but I'll leave it alone for now.
+                if (NAMES_BY_TYPE.Any())
+                {
+                    var AllLocaleTypes = new SortedDictionary<string, SortedDictionary<long, string>>();
+                    foreach (var localeKey in NAMES_BY_TYPE)
+                    {
+                        if (AutoLocalizeType(localeKey.Key))
+                        {
+                            AllLocaleTypes.Add(localeKey.Key,
+                                new SortedDictionary<long, string>(localeKey.Value));
+                        }
+                    }
+
+                    if (AllLocaleTypes.Any())
+                    {
+                        bool hasRequirements = !string.IsNullOrEmpty(DATA_REQUIREMENTS);
+                        StringBuilder builder = new StringBuilder(10000);
+                        builder.AppendLine("-- Automatic Types");
+                        if (hasRequirements) builder.AppendLine($"if ({DATA_REQUIREMENTS}) then");
+                        foreach (var localeTypePair in AllLocaleTypes)
+                        {
+                            builder.Append("L.").Append(localeTypePair.Key.ToUpper().Replace("ID", string.Empty) + "_NAMES").AppendLine(" = {");
+                            foreach (var localePair in localeTypePair.Value)
+                            {
+
+                                ExportStringKeyValue(builder, localePair.Key, localePair.Value).AppendLine();
+                            }
+                            builder.AppendLine("}");
+                        }
+                        if (hasRequirements) builder.AppendLine("end");
+
+                        // Append the file content to our localization database.
+                        localizationDatabase.AppendLine(builder.ToString());
+                    }
+                }
+
                 // Now write the localization for each locale to the localization database builder.
                 var localeKeys = localizationByLocale.Keys.ToList();
-                localeKeys.Sort(Framework.Compare);
+                SortSupportedLocales(localeKeys);
                 localizationDatabase.AppendLine("-- Supported Locales")
                     .AppendLine("local simplifiedLocale = GetLocale():sub(1,2);");
+                bool containsES = localizationByLocale.TryGetValue("es", out StringBuilder esBuilder) && esBuilder.Length > 0;
+                bool containsMX = localizationByLocale.TryGetValue("mx", out StringBuilder mxBuilder) && mxBuilder.Length > 0;
+                localeKeys.Remove("es"); localeKeys.Remove("mx");
+                bool containsCN = localizationByLocale.TryGetValue("cn", out StringBuilder cnBuilder) && cnBuilder.Length > 0;
+                bool containsTW = localizationByLocale.TryGetValue("tw", out StringBuilder twBuilder) && twBuilder.Length > 0;
+                localeKeys.Remove("cn"); localeKeys.Remove("tw");
                 foreach (var localeKey in localeKeys)
                 {
                     if (localizationByLocale.TryGetValue(localeKey, out StringBuilder builder) && builder.Length > 0)
@@ -3137,6 +3658,51 @@ namespace ATT
                         localizationDatabase.AppendLine("end");
                     }
                 }
+                if (containsES || containsMX)
+                {
+                    // If both are supported, we need to export it nested so that MX inherits the values from ES, but can still override the exported localization data.
+                    localizationDatabase.AppendLine("if simplifiedLocale == \"es\" then");
+                    if (containsES) localizationDatabase.Append(esBuilder.ToString());
+                    if (containsMX)
+                    {
+                        localizationDatabase.AppendLine("if GetLocale():sub(3,4):lower() == \"mx\" then");
+                        localizationDatabase.Append(mxBuilder.ToString());
+                        localizationDatabase.AppendLine("end");
+                    }
+                    localizationDatabase.AppendLine("end");
+                }
+                if (containsCN || containsTW)
+                {
+                    // If both are supported, we need to export it nested so that TW inherits the values from CN, but can still override the exported localization data.
+                    localizationDatabase.AppendLine("if simplifiedLocale == \"zh\" then");
+                    if (containsCN) localizationDatabase.Append(cnBuilder.ToString());
+                    if (containsTW)
+                    {
+                        localizationDatabase.AppendLine("if GetLocale():sub(3,4):lower() == \"tw\" then");
+                        localizationDatabase.Append(twBuilder.ToString());
+                        localizationDatabase.AppendLine("end");
+                    }
+                    localizationDatabase.AppendLine("end");
+                }
+
+                // Localization header constant debugger
+                localizationDatabase.AppendLine(@"
+
+-- Add a Header & Filter debugger
+setmetatable(_.FilterConstants, {
+	__index = function(t, key)
+		_.print(""MISSING FilterConstant:"", key);
+		rawset(t, key, -9999999999);
+		return -9999999999;
+	end
+});
+setmetatable(_.HeaderConstants, {
+	__index = function(t, key)
+		_.print(""MISSING HeaderConstant:"", key);
+		rawset(t, key, -9999999999);
+		return -9999999999;
+	end
+});");
 
                 // Check to make sure the content is different since Diff tools are dumb as hell.
                 var filename = Path.Combine(addonRootFolder, $"db/{dbRootFolder}LocalizationDB.lua");
@@ -3144,12 +3710,92 @@ namespace ATT
                 WriteIfDifferent(filename, localizationDatabaseContent);
 
                 // General ExportDBs
-                foreach (var exportDB in Exports)
+                var referenceDB = AutoGeneratedTag(new StringBuilder());
+                referenceDB.AppendLine("local appName, _ = ...");
+                var referenceDBFilename = Path.Combine(addonRootFolder, $"db/{dbRootFolder}ReferenceDB.lua");
+                Exports.TryGetValue("_Compressed", out IDictionary<string, object> compressedDBs);
+                foreach (var exportDB in new SortedDictionary<string, object>(Exports))
                 {
-                    var exportFilename = Path.Combine(addonRootFolder, $"db/{exportDB.Key}.lua");
-                    var exportContent = AutoGeneratedTag(ExportPureLua(exportDB.Value)
-                        .Insert(0, $"select(2, ...).{exportDB.Key}=\n")).ToString();
-                    WriteIfDifferent(exportFilename, exportContent);
+                    IncludePureNewlines = !compressedDBs?.ContainsKey(exportDB.Key) ?? true;
+
+                    // some export DBs can filter unreferenced keys from data
+                    switch (exportDB.Key)
+                    {
+                        case "OnTooltipDB":
+                            {
+                                if (EXPORTDATA_WITH_REFERENCES.TryGetValue("OnTooltip", out List<string> names))
+                                {
+                                    Dictionary<string, object> exports = exportDB.Value as Dictionary<string, object>;
+                                    CleanupExportDictionaryValue(exports, names);
+                                    referenceDB.Append(ExportPureLua(exports).Insert(0, $"_.{exportDB.Key}=\n").ToString()).AppendLine();
+                                }
+                            }
+                            break;
+                        case "OnUpdateDB":
+                            {
+                                if (EXPORTDATA_WITH_REFERENCES.TryGetValue("OnUpdate", out List<string> names))
+                                {
+                                    Dictionary<string, object> exports = exportDB.Value as Dictionary<string, object>;
+                                    CleanupExportDictionaryValue(exports, names);
+                                    referenceDB.Append(ExportPureLua(exports).Insert(0, $"_.{exportDB.Key}=\n").ToString()).AppendLine();
+                                }
+                            }
+                            break;
+                        case "OnInitDB":
+                            {
+                                if (EXPORTDATA_WITH_REFERENCES.TryGetValue("OnInit", out List<string> names))
+                                {
+                                    Dictionary<string, object> exports = exportDB.Value as Dictionary<string, object>;
+                                    CleanupExportDictionaryValue(exports, names);
+                                    referenceDB.Append(ExportPureLua(exports).Insert(0, $"_.{exportDB.Key}=\n").ToString()).AppendLine();
+                                }
+                            }
+                            break;
+                        case "OnClickDB":
+                            {
+                                if (EXPORTDATA_WITH_REFERENCES.TryGetValue("OnClick", out List<string> names))
+                                {
+                                    Dictionary<string, object> exports = exportDB.Value as Dictionary<string, object>;
+                                    CleanupExportDictionaryValue(exports, names);
+                                    referenceDB.Append(ExportPureLua(exports).Insert(0, $"_.{exportDB.Key}=\n").ToString()).AppendLine();
+                                }
+                            }
+                            break;
+                        default:
+                            {
+                                if (exportDB.Key.StartsWith("_"))
+                                    continue;
+
+                                if (exportDB.Value is Dictionary<string, object> exports)
+                                {
+                                    CleanupExportDictionaryValue(exports);
+                                    referenceDB.Append(ExportPureLua(exports).Insert(0, $"_.{exportDB.Key}=\n").ToString()).AppendLine();
+                                }
+                                else
+                                {
+                                    referenceDB.Append(ExportPureLua(exportDB.Value).Insert(0, $"_.{exportDB.Key}=\n").ToString()).AppendLine();
+                                }
+                            }
+                            break;
+                    }
+                }
+                IncludePureNewlines = true;
+                WriteIfDifferent(referenceDBFilename, referenceDB.ToString());
+
+                // General Incorporation data references
+                var incorporationFolder = Path.Combine(addonRootFolder, $".contrib/Debugging/IncorporationRefs", dbRootFolder);
+                Directory.CreateDirectory(incorporationFolder);
+                foreach (var incorporationData in IncorporationReferences)
+                {
+                    var incorporationDB = new StringBuilder();
+                    incorporationDB.AppendLine("-- For reference only! Not used for Parsing! Contains information which was Incorporated from external DBs or other sources");
+                    if (incorporationData.Key.StartsWith("_"))
+                        continue;
+
+                    incorporationDB.Append("_=").Append(ExportPureLua(incorporationData.Value));
+
+                    var incorporationDBFilename = Path.Combine(incorporationFolder, $"{incorporationData.Key}.lua");
+                    WriteIfDifferent(incorporationDBFilename, incorporationDB.ToString());
                 }
 
                 CurrentParseStage = ParseStage.ExportAddonData;
@@ -3159,29 +3805,39 @@ namespace ATT
 
                 CurrentParseStage = ParseStage.ExportAutoSources;
                 Objects.ExportAutoItemSources(Config["root-data"] ?? "./DATAS");
-                CurrentParseStage = ParseStage.ExportAutoLocale;
-                Objects.ExportAutoLocale(Path.Combine(addonRootFolder, $"db/{dbRootFolder}en_auto.lua"));
 
                 // Attempt to find some dirty objects and write them to a dynamic file.
-                var dirtyObjectsFilePath = Path.Combine(Config["root-data"] ?? "./DATAS", "00 - DB/Dynamic/", $"DynamicObjectDB_{DateTime.UtcNow.Ticks}.lua");
-                /*
-                // This is the bulk harvester. It grabs aaaaaalll of them!
-                for (int objectID = 111911; objectID > 163; --objectID)
+                ObjectHarvester.ExportDirtyObjectsToFilePath($"./DATAS/00 - DB/Dynamic/DynamicObjectDB_{DateTime.UtcNow.Ticks}.lua");
+            }
+        }
+
+        private static void CleanupExportDictionaryValue(Dictionary<string, object> exports, IEnumerable<string> allowedKeys = null)
+        {
+            string[] allKeys = exports.Keys.ToArray();
+            // remove unreferenced keys
+            if (allowedKeys != null)
+            {
+                foreach (string key in allKeys)
                 {
-                    if (!ObjectDB.TryGetValue(objectID, out Dictionary<string, object> objectData))
+                    if (!allowedKeys.Contains(key))
                     {
-                        // If not, get new object information from WoWHead.
-                        objectData = new Dictionary<string, object>();
-                        ObjectHarvester.UpdateInformationFromWoWHead(objectID, objectData);
-                        if (!objectData.Any()) continue;
-                        ObjectDB[objectID] = objectData;
-                        ObjectHarvester.ExportDirtyObjectsToFilePath(dirtyObjectsFilePath);
+                        exports.Remove(key);
                     }
                 }
-                */
+                allKeys = exports.Keys.ToArray();
+            }
 
-                // Check to see if we need to export any dirty objects.
-                ObjectHarvester.ExportDirtyObjectsToFilePath(dirtyObjectsFilePath);
+            // convert each individual key to simplified Lua
+            foreach (string key in allKeys)
+            {
+                if (exports[key] is Dictionary<string, object> subTable)
+                {
+                    CleanupExportDictionaryValue(subTable);
+                }
+                else if (exports[key] is string exportedString)
+                {
+                    exports[key] = SimplifyLuaBody(exportedString);
+                }
             }
         }
 
@@ -3197,6 +3853,19 @@ namespace ATT
         {
             builder.Insert(0, "-- This file is dynamically generated by Parser! DO NOT MODIFIY IT MANUALLY!\n");
             return builder;
+        }
+
+        /// <summary>
+        /// Allows making easily-customized break points based on specific field data, since for whatever reason using 'real' conditional
+        /// break points in VS is garbage awful slow horrible...
+        /// </summary>
+        public static void DataBreakPoint<T>(this IDictionary<string, object> data, string field, T fieldVal = default)
+        {
+            if (data == null) return;
+            if (data.TryGetValue(field, out object dataObj) && dataObj.TryConvert(out T dataVal) && (Equals(default(T), fieldVal) || Equals(dataVal, fieldVal)))
+            {
+
+            }
         }
     }
 }

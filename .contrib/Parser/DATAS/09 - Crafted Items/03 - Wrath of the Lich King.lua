@@ -1,6 +1,12 @@
 ---------------------------------------------
 --    C R A F T A B L E S   M O D U L E    --
 ---------------------------------------------
+local function ClassicCost(cost)
+	-- This data is provided by ReagentsDB in Retail
+	-- #IF ANYCLASSIC
+	return cost
+	-- #ENDIF
+end
 root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_ONE, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_3 } }, {
 	i(180055, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past I
 	i(180057, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past II
@@ -85,12 +91,12 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 			applyclassicphase(WRATH_PHASE_THREE, i(36919, {["timeline"] = {ADDED_3_2_0}})),	-- Cardinal Ruby
 			applyclassicphase(WRATH_PHASE_THREE, i(36928, {["timeline"] = {ADDED_3_2_0}})),	-- Dreadstone
 			applyclassicphase(WRATH_PHASE_THREE, i(41334, {["timeline"] = {ADDED_3_2_0}})),	-- Earthsiege Diamond
-			i(35623),	-- Eternal Air
-			i(35624),	-- Eternal Earth
-			i(36860),	-- Eternal Fire
-			i(35625),	-- Eternal Life
-			i(35627),	-- Eternal Shadow
-			i(35622),	-- Eternal Water
+			convertItem(35623, 37700, 10, 1),	-- Eternal Air / Crystallized Air
+			convertItem(35624, 37701, 10, 1),	-- Eternal Earth / Crystallized Earth
+			convertItem(36860, 37702, 10, 1),	-- Eternal Fire / Crystallized Fire
+			convertItem(35625, 37704, 10, 1),	-- Eternal Life / Crystallized Life
+			convertItem(35627, 37703, 10, 1),	-- Eternal Shadow / Crystallized Shadow
+			convertItem(35622, 37705, 10, 1),	-- Eternal Water / Crystallized Water
 			i(44958, {["timeline"] = {ADDED_3_0_8}}),	-- Ethereal Oil
 			applyclassicphase(WRATH_PHASE_THREE, i(36934, {["timeline"] = {ADDED_3_2_0}})),	-- Eye of Zul
 			applyclassicphase(WRATH_PHASE_THREE, i(36922, {["timeline"] = {ADDED_3_2_0}})),	-- King's Amber
@@ -112,7 +118,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 			["provider"] = { "o", 203078 },	-- Nerubian Archaeology Find
 			["maps"] = {
 				BOREAN_TUNDRA,
-				DRAGONFLIGHT,
+				DRAGONBLIGHT,
 				EASTERN_PLAGUELANDS,
 				ICECROWN,
 				ZULDRAK,
@@ -552,9 +558,6 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 					{ "i", 44413 },	-- Mekgineer's Chopper
 					{ "i", 41508 },	-- Mechano-hog
 				},
-				-- #if ANYCLASSIC
-				["f"] = 100,
-				-- #endif
 			}),
 			i(41508),	-- Mechano-Hog (MOUNT!)
 			i(44413),	-- Mekgineer's Chopper (MOUNT!)
@@ -770,20 +773,23 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 			i(44210),	-- Faces of Doom
 			i(38322),	-- Iron-Bound Tome
 			i(45854, {	-- Rituals of the New Moon
-				["description"] = "This specific version appears to have never been added to the game.",
-				["timeline"] = { CREATED_3_1_0 },
+				["description"] = "This version of the off-hand is a placeholder for the four available versions of it, and crafting it gives you a random one of the four. The four available versions of the off-hands have the same stats, but offer a different coloured giant wholf.",
+				["timeline"] = { ADDED_3_1_0 },
+				["collectible"] = false,
+				["groups"] = {
+					i(45850),	-- Rituals of the New Moon (red wolf)
+					i(45851),	-- Rituals of the New Moon (white wolf)
+					i(45852),	-- Rituals of the New Moon (grey wolf)
+					i(45853),	-- Rituals of the New Moon (black wolf)
+				},
 			}),
-			i(45850),	-- Rituals of the New Moon
-			i(45851),	-- Rituals of the New Moon
-			i(45852),	-- Rituals of the New Moon
-			i(45853),	-- Rituals of the New Moon
 			i(45849),	-- Twilight Tome
 		}),
 	}),
 	prof(JEWELCRAFTING, {
 		category(168, {	-- Materials
 			applyclassicphase(WRATH_PHASE_THREE, i(46849, {	-- Titanium Powder
-				["cost"] = {{ "i", 36910, 5 }},	-- Titanium Ore
+				["cost"] = ClassicCost({{ "i", 36910, 5 }}),	-- Titanium Ore
 			})),
 		}),
 		filter(NECK_F, {
@@ -1025,30 +1031,22 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 		}),
 		spell(2656, {	-- Smelting
 			i(36916, {	-- Cobalt Bar
-				["cost"] = { { "i", 36909, 1 } },	-- Cobalt Ore
+				["cost"] = ClassicCost({ { "i", 36909, 1 } }),	-- Cobalt Ore
 			}),
 			i(36913, {	-- Saronite Bar
-				["cost"] = { { "i", 36912, 2 } },	-- Saronite Ore
+				["cost"] = ClassicCost({ { "i", 36912, 2 } }),	-- Saronite Ore
 			}),
 			i(41163, {	-- Titanium Bar
-				["cost"] = { { "i", 36910, 2 } },	-- Titanium Ore
+				["cost"] = ClassicCost({ { "i", 36910, 2 } }),	-- Titanium Ore
 			}),
 			i(37663, {	-- Titansteel Bar
-				["cost"] = {
+				["cost"] = ClassicCost({
 					{ "i", 41163, 3 },	-- Titanium Bar
 					{ "i", 35624, 1 },	-- Eternal Earth
 					{ "i", 36860, 1 },	-- Eternal Fire
 					{ "i", 35627, 1 },	-- Eternal Shadow
-				},
-				["OnTooltip"] = [[function(t, tooltipInfo)
-					if _.CurrentCharacter.Spells[55208] then
-						if ]] .. WOWAPI_GetSpellCooldown(55208) .. [[ > 0 then
-							tinsert(tooltipInfo, { left = "Your Titansteel cooldown is unavailable." });
-						else
-							tinsert(tooltipInfo, { left = "Your Titansteel cooldown is available." });
-						end
-					end
-				end]]
+				}),
+				["OnTooltip"] = FUNCTION_TEMPLATES.GenerateOnTooltipSpellOnCooldown(55208)
 			}),
 		}),
 	}),

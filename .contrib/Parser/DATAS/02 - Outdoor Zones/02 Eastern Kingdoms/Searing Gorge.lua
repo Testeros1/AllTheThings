@@ -4,16 +4,10 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(SEARING_GORGE, {
 		["lore"] = "Just as Blackrock orcs and their allies dominate Burning Steppes, so Dark Iron dwarves dominate the Searing Gorge. A large population of Dark Iron dwarves, War Golems, and Elementals resides in this dark, mountainous area.\n\nThe climate is very similar to Burning Steppes, as it was the same catastrophe that blackened both: the summoning of Ragnaros. The Searing Gorge is a part of Khaz Modan. Before being shattered by the summoning it was a mountainous region, part of the Redridge Mountains.\n\nLarge mining operations take place in The Cauldron, a giant excavation site forming a huge rift in the middle of the Searing Gorge. The Slag Pit lies within The Cauldron and is an underground mining site rich with multiple types of ore. The mining work is mainly done by slave labor, which consists for the most part of captured enemies.\n\nEver since the Dark Iron dwarves' capital, Thaurissan, was destroyed by the summoning of Ragnaros, they have searched for a landmass to control for their filthy, industrious works. The Searing Gorge was the obvious choice due to a low military presence, scarce population, few settlements, and high vulnerability. The dwarven garrisons were soon overrun by a massive Dark Iron invasion which forced them to retreat to Loch Modan and seal the passage.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_searinggorge_01",
-		-- #endif
+		["icon"] = 236815,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(774, {	-- Explore Searing Gorge
-					-- #if BEFORE WRATH
-					["description"] = "Explore Searing Gorge, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(774),	-- Explore Searing Gorge
 				ach(4910, {	-- Searing Gorge Quests
 					["timeline"] = { ADDED_4_0_1 },
 					-- #if AFTER MOP
@@ -61,28 +55,30 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				icon = 237588,
 				text = {
 					en = "Blackrock Eruption",
-					--[[
-					es = "",
-					de = "",
-					fr = "",
-					it = "",
-					pt = "",
-					ru = "",
-					ko = "",
-					cn = "",
-					]]--
+					es = "Erupción de Roca Negra",
+					mx = "Erupción de Roca Negra",
+					de = "Ausbruch des Schwarzfels",
+					fr = "Éruption de Blackrock",
+					-- it = "",
+					pt = "Erupção da Rocha Negra",
+					ru = "Извержение Черной горы",
+					ko = "검은바위 분출",
+					cn = "黑石大爆发",
+					tw = "黑石爆發",
 				},
 				description = {
 					en = "This event occurs every 2 hours from Midnight and lasts 60 minutes. While this event is active, Daily Quests will be available in Searing Gorge for the Thorium Brotherhood. Traditionally Thorium Brotherhood can be quite a grind to achieve reputation with so this addition of a Daily Quest Hub will be very welcome.\nWhen the event is active, new NPCs will spawn and some environmental changes will occur to the outside area of Searing Gorge.",
 				},
-			}), bubbleDownSelf({ ["timeline"] = { "added 1.15.3" } }, {
-				n(QUESTS, {
+			}),
+			bubbleDownSelf({ ["timeline"] = { ADDED_1_15_3 } }, {
+				n(QUESTS, sharedData({
+						["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, EXALTED },	-- Thorium Brotherhood, Exalted.
+						["isDaily"] = true,
+						["lvl"] = 53,
+				}, {
 					q(84360, {	-- Firefighting
 						["qg"] = 14625,	-- Overseer Oilfist <The Thorium Brotherhood>
 						["coord"] = { 38.2, 27.0, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/10 Firelands Invader slain
 								["provider"] = { "n", 228718 },	-- Firelands Invader
@@ -94,9 +90,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84350, {	-- Grinding Them Down
 						["qg"] = 14628,	-- Evonice Sootsmoker <The Thorium Brotherhood>
 						["coord"] = { 38.2, 27.8, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/10 Obsidian Reaver slain
 								["provider"] = { "n", 228723 },	-- Obsidian Reaver
@@ -107,9 +100,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84372, {	-- Lava Diving
 						["qg"] = 14627,	-- Hansel Heavyhands <The Thorium Brotherhood>
 						["coord"] = { 38.6, 27.8, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/1 Shimmering Molten Mineral
 								["providers"] = {
@@ -124,9 +114,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84355, {	-- More Like Lame-bringers!
 						["qg"] = 14626,	-- Taskmaster Scrange <The Thorium Brotherhood>
 						["coord"] = { 38.8, 27.6, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/4 Flamebringer Defender slain
 								["provider"] = { "n", 228727 },	-- Flamebringer Defender
@@ -140,9 +127,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84356, {	-- Oh, Shiny!
 						["qg"] = 14624,	-- Master Smith Burninate <The Thorium Brotherhood>
 						["coord"] = { 38.6, 28.6, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/8 Flamestone Cluster
 								["provider"] = { "i", 227767 },	-- Flamestone Cluster
@@ -158,9 +142,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84349, {	-- Priority Target: Duke Searbrand
 						["qg"] = 14634,	-- Lookout Captain Lolo Longstriker <The Thorium Brotherhood>
 						["coord"] = { 37.6, 26.6, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/1 Duke Searbrand slain
 								["provider"] = { "n", 228720 },	-- Duke Searbrand
@@ -172,9 +153,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84348, {	-- Priority Target: Duke Tectonis
 						["qg"] = 14627,	-- Hansel Heavyhands <The Thorium Brotherhood>
 						["coord"] = { 38.6, 27.8, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/1 Duke Tectonis slain
 								["provider"] = { "n", 228729 },	-- Duke Tectonis
@@ -186,9 +164,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84359, {	-- Sleepless Nights
 						["qg"] = 14628,	-- Evonice Sootsmoker <The Thorium Brotherhood>
 						["coord"] = { 38.2, 27.8, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/5 Flamebringer Stalker slain
 								["providers"] = {
@@ -202,9 +177,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					q(84351, {	-- Work Smarter, Not Harder
 						["qg"] = 14626,	-- Taskmaster Scrange <The Thorium Brotherhood>
 						["coord"] = { 38.8, 27.6, SEARING_GORGE },
-						["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
-						["isDaily"] = true,
-						["lvl"] = 53,
 						["groups"] = {
 							objective(1, {	-- 0/6 Obsidian Power Core
 								["provider"] = { "i", 227743 },	-- Obsidian Power Core
@@ -214,7 +186,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							i(227801),	-- Firelands Ember
 						},
 					}),
-				}),
+				})),
 				n(RARES, {
 					n(228970, {	-- Galenges
 						["description"] = "This is a rare that may not always be present. Seems to have a high drop rate for world drop epics and recipes. Kill it on sight during the invasion!",
@@ -306,7 +278,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				exploration(1442),	-- Firewatch Ridge
 				exploration(247),	-- Grimesilt Dig Site
 				-- #if AFTER CATA
-				exploration(5615),	-- Pyrox Flats
+				visit_exploration(5615,{coord={44.4,41.0,SEARING_GORGE}}),	-- Pyrox Flats
 				-- #endif
 				-- #if BEFORE CATA
 				exploration(1958),	-- Tanner Camp
@@ -618,11 +590,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 38.8, 28.5, SEARING_GORGE },
 					["timeline"] = { ADDED_3_3_0 },
 					-- #if AFTER CATA
-					["minReputation"] = { 59, REVERED },	-- Thorium Brotherhood, Revered.
-					["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, REVERED },	-- Thorium Brotherhood, Revered.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, EXALTED },	-- Thorium Brotherhood, Exalted.
 					-- #else
-					["minReputation"] = { 59, FRIENDLY },	-- Thorium Brotherhood, Friendly.
-					["maxReputation"] = { 59, HONORED },	-- Thorium Brotherhood, Honored.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, FRIENDLY },	-- Thorium Brotherhood, Friendly.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, HONORED },	-- Thorium Brotherhood, Honored.
 					-- #endif
 					["cost"] = { { "i", 18945, 4 } },	-- Dark Iron Residue
 					["repeatable"] = true,
@@ -637,11 +609,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 					["coord"] = { 38.8, 28.5, SEARING_GORGE },
 					-- #if AFTER CATA
-					["minReputation"] = { 59, REVERED },	-- Thorium Brotherhood, Revered.
-					["maxReputation"] = { 59, EXALTED },	-- Thorium Brotherhood, Exalted.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, REVERED },	-- Thorium Brotherhood, Revered.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, EXALTED },	-- Thorium Brotherhood, Exalted.
 					-- #else
-					["minReputation"] = { 59, FRIENDLY },	-- Thorium Brotherhood, Friendly.
-					["maxReputation"] = { 59, HONORED },	-- Thorium Brotherhood, Honored.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, FRIENDLY },	-- Thorium Brotherhood, Friendly.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, HONORED },	-- Thorium Brotherhood, Honored.
 					-- #endif
 					-- #if AFTER WRATH
 					["cost"] = { { "i", 18945, 100 } },	-- Dark Iron Residue
@@ -843,15 +815,15 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(27957, {	-- Lunk No Kill
-					["qg"] = 47429,	-- Lunk
+					["qg"] = 47269,	-- Lunk
 					["sourceQuest"] = 27956,	-- Lunk's Task
 					["coord"] = { 68.9, 53.2, SEARING_GORGE },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(27983, {	-- Lunk's Adventure: Cranky Little Dwarfs
-					["qg"] = 47429,	-- Lunk
+					["qg"] = 47332,	-- Lunk
 					["sourceQuest"] = 27965, -- Thorium Point: The Seat of the Brotherhood
-					["description"] = "Must be on |cFFFFD700Recon Essentials|r to get this quest.",
+					["description"] = "Must be on |cFFFFD700Recon Essentials|r to get this quest. Lunk will appear when you kill a Dark Iron Dwarf.\n\nHigh-level players must unequip their weapons, hit the Dwarf once with auto-attack and stop after 1 hit.",
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/7 Dark Iron Steamsmiths put to sleep
@@ -871,9 +843,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(27959, {	-- Lunk's Adventure: Spider Rider
-					["qg"] = 47429,	-- Lunk
+					["qg"] = 47280,	-- Lunk
 					["sourceQuest"] = 27957,	-- Lunk No Kill
-					["description"] = "Must be on |cFFFFD700A Proper Antivenom|r to get this quest.",
+					["description"] = "Must be on |cFFFFD700A Proper Antivenom|r to get this quest. Lunk will appear when you kill a Glassweb Spider.",
+					-- #if AFTER 7.0.3
+					["description"] = "Must be on |cFFFFD700A Proper Antivenom|r to get this quest. Lunk will appear when you kill a Glassweb Spider.\n\nHigh-level players may require |cff0070ddSoft Foam Sword|r to lower creature health to 10%.",
+					-- #endif
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/7 Spiders riden
@@ -882,7 +857,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(27956, {	-- Lunk's Task
-					["qg"] = 47429,	-- Lunk
+					["qg"] = 47269,	-- Lunk
 					["coord"] = { 68.9, 53.2, SEARING_GORGE },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
@@ -915,6 +890,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(28514, {	-- Mouton Flamestar (A)
 					["qg"] = 14625,	-- Overseer Oilfist
 					["coord"] = { 38.1, 27.0, SEARING_GORGE },
+					["maps"] = { BURNING_STEPPES },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isBreadcrumb"] = true,
@@ -922,6 +898,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(28515, {	-- Mouton Flamestar (H)
 					["qg"] = 14625,	-- Overseer Oilfist
 					["coord"] = { 38.1, 27.0, SEARING_GORGE },
+					["maps"] = { BURNING_STEPPES },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
 					["isBreadcrumb"] = true,
@@ -1093,8 +1070,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 14624,	-- Master Smith Burninate
 					["sourceQuest"] = 7722,	-- What the Flux?
 					["coord"] = { 38.8, 28.5, SEARING_GORGE },
-					["minReputation"] = { 59, NEUTRAL },	-- Thorium Brotherhood, Neutral.
-					["maxReputation"] = { 59, FRIENDLY },	-- Thorium Brotherhood, Friendly.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, NEUTRAL },	-- Thorium Brotherhood, Neutral.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, FRIENDLY },	-- Thorium Brotherhood, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 18944, 2 },	-- Incendosaur Scale
@@ -1108,8 +1085,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 14624,	-- Master Smith Burninate
 					["sourceQuest"] = 7722,	-- What the Flux?
 					["coord"] = { 38.8, 28.5, SEARING_GORGE },
-					["minReputation"] = { 59, NEUTRAL },	-- Thorium Brotherhood, Neutral.
-					["maxReputation"] = { 59, FRIENDLY },	-- Thorium Brotherhood, Friendly.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, NEUTRAL },	-- Thorium Brotherhood, Neutral.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, FRIENDLY },	-- Thorium Brotherhood, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 18944, 2 },	-- Incendosaur Scale
@@ -1123,8 +1100,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 14624,	-- Master Smith Burninate
 					["sourceQuest"] = 7722,	-- What the Flux?
 					["coord"] = { 38.8, 28.5, SEARING_GORGE },
-					["minReputation"] = { 59, NEUTRAL },	-- Thorium Brotherhood, Neutral.
-					["maxReputation"] = { 59, FRIENDLY },	-- Thorium Brotherhood, Friendly.
+					["minReputation"] = { FACTION_THORIUM_BROTHERHOOD, NEUTRAL },	-- Thorium Brotherhood, Neutral.
+					["maxReputation"] = { FACTION_THORIUM_BROTHERHOOD, FRIENDLY },	-- Thorium Brotherhood, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 18944, 2 },	-- Incendosaur Scale
@@ -1743,57 +1720,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 66.8, 43.8, SEARING_GORGE },
 					},
 				}),
-				o(207496, {	-- Dark Iron Treasure Chest
-					["timeline"] = { ADDED_4_0_3 },
-					["modelScale"] = 1.5,
-					["coords"] = {
-						{ 73.6, 82.2, SEARING_GORGE },
-						{ 63.6, 60.5, SEARING_GORGE },
-						{ 49.0, 55.5, SEARING_GORGE },
-						{ 49.4, 39.5, SEARING_GORGE },
-						{ 44.0, 33.5, SEARING_GORGE },
-						{ 37.9, 37.4, SEARING_GORGE },
-						{ 40.4, 50.5, SEARING_GORGE },
-						{ 38.9, 66.3, SEARING_GORGE },
-						{ 36.9, 60.0, SEARING_GORGE },
-						{ 33.2, 54.0, SEARING_GORGE },
-						{ 17.8, 38.3, SEARING_GORGE },
-						{ 14.5, 37.0, SEARING_GORGE },
-					},
-					["groups"] = {
-						i(1718),	-- Basilisk Hide Pants
-						i(13109),	-- Blackflame Cape
-						i(13043),	-- Blade of the Titans
-						i(13102),	-- Cassandra's Grace
-						i(13199),	-- Crushridge Bindings
-						i(9434),	-- Elemental Raiment
-						i(13125),	-- Elven Chain Boots
-						i(13018),	-- Executioner's Cleaver
-						i(9433),	-- Forgotten Wraps
-						i(13100),	-- Furen's Boots
-						i(13074),	-- Golem Shard Leggings
-						i(13139),	-- Guttbuster
-						i(13026),	-- Heaven's Light
-						i(13128),	-- High Bergg Helm
-						i(13064),	-- Jaina's Firestarter
-						i(13082),	-- Mountainside Buckler
-						i(4090),	-- Mug O' Hurt
-						i(13068),	-- Obsidian Greaves
-						i(13071),	-- Plated Fist of Hakoo
-						i(1715),	-- Polished Jazeraint Armor
-						i(13115),	-- Sheepshear Mantle
-						i(754),	-- Shortsword of Vengeance
-						i(13132),	-- Skeletal Shoulders
-						i(13039),	-- Skull Splitting Crossbow
-						i(13042),	-- Sword of the Magistrate
-						i(1720),	-- Tanglewood Staff
-						i(13138),	-- The Silencer
-						i(13065),	-- Wand of Allistarj
-						i(4091),	-- Widowmaker
-						i(13112),	-- Winged Helm
-						i(13051),	-- Witchfury
-					},
-				}),
 				n(8279, {	-- Faulty War Golem
 					-- #if AFTER CATA
 					["coords"] = {
@@ -1917,6 +1843,77 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 35.0, 52.0, SEARING_GORGE },
 				}),
 			}),
+			n(TREASURES, {
+				o(207496, {	-- Dark Iron Treasure Chest
+					["timeline"] = { ADDED_4_0_3 },
+					["modelScale"] = 1.5,
+					["coords"] = {
+						{ 73.6, 82.2, SEARING_GORGE },
+						{ 63.6, 60.5, SEARING_GORGE },
+						{ 49.0, 55.5, SEARING_GORGE },
+						{ 49.4, 39.5, SEARING_GORGE },
+						{ 44.0, 33.5, SEARING_GORGE },
+						{ 37.9, 37.4, SEARING_GORGE },
+						{ 40.4, 50.5, SEARING_GORGE },
+						{ 38.9, 66.3, SEARING_GORGE },
+						{ 36.9, 60.0, SEARING_GORGE },
+						{ 33.2, 54.0, SEARING_GORGE },
+						{ 17.8, 38.3, SEARING_GORGE },
+						{ 14.5, 37.0, SEARING_GORGE },
+					},
+					["groups"] = {
+						i(1718),	-- Basilisk Hide Pants
+						i(13109),	-- Blackflame Cape
+						i(13043),	-- Blade of the Titans
+						i(13102),	-- Cassandra's Grace
+						i(13199),	-- Crushridge Bindings
+						i(9434),	-- Elemental Raiment
+						i(13125),	-- Elven Chain Boots
+						i(13018),	-- Executioner's Cleaver
+						i(9433),	-- Forgotten Wraps
+						i(13100),	-- Furen's Boots
+						i(13074),	-- Golem Shard Leggings
+						i(13139),	-- Guttbuster
+						i(13026),	-- Heaven's Light
+						i(13128),	-- High Bergg Helm
+						i(13064),	-- Jaina's Firestarter
+						i(13082),	-- Mountainside Buckler
+						i(4090),	-- Mug O' Hurt
+						i(13068),	-- Obsidian Greaves
+						i(13071),	-- Plated Fist of Hakoo
+						i(1715),	-- Polished Jazeraint Armor
+						i(13115),	-- Sheepshear Mantle
+						i(754),	-- Shortsword of Vengeance
+						i(13132),	-- Skeletal Shoulders
+						i(13039),	-- Skull Splitting Crossbow
+						i(13042),	-- Sword of the Magistrate
+						i(1720),	-- Tanglewood Staff
+						i(13138),	-- The Silencer
+						i(13065),	-- Wand of Allistarj
+						i(4091),	-- Widowmaker
+						i(13112),	-- Winged Helm
+						i(13051),	-- Witchfury
+					},
+				}),
+				o(207500, {	-- Dark Iron Treasure Chest
+					["coords"] = {	-- As opposed to 207496, this one spawns exclusively in Searing Gorge
+						{ 73.6, 82.2, SEARING_GORGE },
+						{ 63.6, 60.5, SEARING_GORGE },
+						{ 49.0, 55.5, SEARING_GORGE },
+						{ 49.4, 39.5, SEARING_GORGE },
+						{ 44.0, 33.5, SEARING_GORGE },
+						{ 37.9, 37.4, SEARING_GORGE },
+						{ 40.4, 50.5, SEARING_GORGE },
+						{ 38.9, 66.3, SEARING_GORGE },
+						{ 36.9, 60.0, SEARING_GORGE },
+						{ 33.2, 54.0, SEARING_GORGE },
+						{ 17.8, 38.3, SEARING_GORGE },
+						{ 14.5, 37.0, SEARING_GORGE },
+					},
+					["timeline"] = { ADDED_4_0_3 },
+					["sym"] = {{ "select", "objectID", 207496 }, {"pop"}},
+				}),
+			}),
 			-- #if AFTER 7.1.5.23360
 			n(TREASURES, {
 				o(266289, {	-- Time Lost Chest
@@ -1936,7 +1933,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226414, {	-- Rune of Fire Specialization
 					["provider"] = { "o", 457097 },	-- Elements for Dummies Volume II: Fire
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 40.5, 35.5, SEARING_GORGE },
 					["classes"] = { HUNTER, SHAMAN, MAGE, WARLOCK },
 					["groups"] = {
@@ -2007,7 +2004,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				i(2274, {	-- Sapper's Gloves
 					["timeline"] = { ADDED_10_1_7 },
-					["cr"] = 5840,  -- Dark Iron Steamsmith
+					["cr"] = 5840,	-- Dark Iron Steamsmith
 					["coords"] = {
 						{ 42.8, 51.6, SEARING_GORGE },
 						{ 38.0, 49.8, SEARING_GORGE },

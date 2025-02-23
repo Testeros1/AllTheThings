@@ -10,11 +10,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["maps"] = { STORMWIND_CITY },
 					["races"] = ALLIANCE_ONLY,
 					["isBreadcrumb"] = true,
+					["timeline"] = { ADDED_10_0_2_LAUNCH, REMOVED_TWW_LAUNCH },
 				}),
 				q(70198, {	-- The Call of the Isles [H]
 					["maps"] = { ORGRIMMAR },
 					["races"] = HORDE_ONLY,
 					["isBreadcrumb"] = true,
+					["timeline"] = { ADDED_10_0_2_LAUNCH, REMOVED_TWW_LAUNCH },
 				}),
 				q(67700, {	-- To The Dragon Isles! [A]
 					["sourceQuests"] = {
@@ -287,8 +289,8 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 193359 },	-- Lord Andestrasz
 					["coord"] = { 75.2, 55.0, THE_WAKING_SHORES },
 					["g"] = {
-						i(197380),	-- Renewed Proto-Drake: Curved Horns (DM!)
-						i(197365),	-- Renewed Proto-Drake: Finned Crest (DM!)
+						i(197380),	-- Renewed Proto-Drake: Curved Horns (MM!)
+						i(197365),	-- Renewed Proto-Drake: Finned Crest (MM!)
 					},
 				}),
 				q(68798, {	-- Dragon Glyphs and You
@@ -317,7 +319,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 194174 },	-- Amella
 					["coord"] = { 62.2, 70.5, THE_WAKING_SHORES },
 					["g"] = {
-						i(197406),	-- Renewed Proto-Drake: Spined Tail (DM!)
+						i(197406),	-- Renewed Proto-Drake: Spined Tail (MM!)
 					},
 				}),
 				q(66931, {	-- Who Brought the Ruckus?
@@ -377,7 +379,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 191895 },	-- Majordomo Selistra
 					["coord"] = { 53.7, 80.2, THE_WAKING_SHORES },
 					["g"] = {
-						i(197378),	-- Renewed Proto-Drake: Subtle Horns (DM!)
+						i(197378),	-- Renewed Proto-Drake: Subtle Horns (MM!)
 					},
 				}),
 				------ Chapter 3 ------
@@ -772,7 +774,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 191011 },	-- Keshki
 					["coord"] = { 65.3, 63.7, THE_WAKING_SHORES },
 					["g"] = {
-						i(197399),	-- Renewed Proto-Drake: Razor Snout (DM!)
+						i(197399),	-- Renewed Proto-Drake: Razor Snout (MM!)
 					},
 				}),
 				q(66879, {	-- Hornstrider Havoc
@@ -887,7 +889,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(65690, {	-- A Cultist's Misgivings
 					["sourceQuests"] = {
 						65444,	-- To the Dragon Isles! (H)
-						67700,  -- To the Dragon Isles! (A)
+						67700,	-- To the Dragon Isles! (A)
 						DF_ACCOUNT_CAMPAIGN_QUEST,
 					},
 					["sourceQuestNumRequired"] = 1,
@@ -905,7 +907,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(65687, {	-- Punching Up
 					["sourceQuests"] = {
 						65444,	-- To the Dragon Isles! (H)
-						67700,  -- To the Dragon Isles! (A)
+						67700,	-- To the Dragon Isles! (A)
 						DF_ACCOUNT_CAMPAIGN_QUEST,
 					},
 					["sourceQuestNumRequired"] = 1,
@@ -1029,7 +1031,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 194076 },	-- Veritistrasz
 					["coord"] = { 57.8, 66.7, THE_WAKING_SHORES },
 					["g"] = {
-						i(197361),	-- Renewed Proto-Drake: Spiked Crest (DM!)
+						i(197361),	-- Renewed Proto-Drake: Spiked Crest (MM!)
 						i(198979),	-- Time Capsule Letter
 						i(198430),	-- Time Capsule (QI!)
 					},
@@ -1264,7 +1266,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["races"] = { DRACTHYR_ALLIANCE, DRACTHYR_HORDE },
 			}),
 			q(70159, {	-- A Taste of Home
-				["provider"] = { "n", 194462 },	 -- Talon Scaralesh
+				["provider"] = { "n", 194462 },	-- Talon Scaralesh
 				["coord"] = { 47.1, 82.9, THE_WAKING_SHORES },
 				["classes"] = { EVOKER },
 				["races"] = { DRACTHYR_HORDE },
@@ -1497,116 +1499,121 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-	m(THE_WAKING_SHORES, {
-		q(66898),	-- triggered during 'The Shadow of His Wings' (65691)
-		q(70872),	-- Quack Weekly Trigger (spellID 390284)
-		q(70262),	-- triggered with 'Memories Revived' (70268)
-		q(72353),	-- triggeres during 'Adventuring in the Dragon Isles' (72293) when any zone is chosen by player (spellID 394163)
-		q(70767),	-- triggers when 'Tale of the Outsider' becomes available for Tarjin the Blind
-		q(70768),	-- triggers when 'Tale of the Outsider' completes (spellID 388144)
-		q(70770),	-- triggers when 'Tale of the Elders' becomes available for Tarjin the Blind
-		q(70769),	-- triggers when 'Tale of the Elders' completes (spellID 388145)
-		q(70772),	-- triggers when 'Tale of the Warlord' becomes available for Tarjin the Blind
-		q(70771),	-- triggers when 'Tale of the Warlord' completes (spellID 388146)
-		q(70776),	-- triggers when 'Tale of the Magma Pact' becomes available for Tarjin the Blind
-		q(70775),	-- triggers when 'Tale of the Magma Pact' completes (spellID 388148)
-		q(70774),	-- triggers when 'Tale of the Slumbering' becomes available for Tarjin the Blind
-		q(70773),	-- triggers when 'Tale of the Slumbering' completes (spellID 388147)
-		q(70778),	-- triggers when 'Tale of the Weakling' becomes available for Tarjin the Blind
-		q(70777),	-- triggers when 'Tale of the Weakling' completes (spellID 388149)
-		q(72804),	-- Flag Weekly Tracking Quest [DNT] (spellID 397184) [triggers when 'Tale of the Phoenix' completes]
-		q(70218),	-- Dialogue before you can pick up the quest "A Dragon's Day Off"
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(THE_WAKING_SHORES, {
+			n(QUESTS, {
+				q(66898),	-- triggered during 'The Shadow of His Wings' (65691)
+				q(70872),	-- Quack Weekly Trigger (spellID 390284)
+				q(70262),	-- triggered with 'Memories Revived' (70268)
+				q(72353),	-- triggeres during 'Adventuring in the Dragon Isles' (72293) when any zone is chosen by player (spellID 394163)
+				q(70767),	-- triggers when 'Tale of the Outsider' becomes available for Tarjin the Blind
+				q(70768),	-- triggers when 'Tale of the Outsider' completes (spellID 388144)
+				q(70770),	-- triggers when 'Tale of the Elders' becomes available for Tarjin the Blind
+				q(70769),	-- triggers when 'Tale of the Elders' completes (spellID 388145)
+				q(70772),	-- triggers when 'Tale of the Warlord' becomes available for Tarjin the Blind
+				q(70771),	-- triggers when 'Tale of the Warlord' completes (spellID 388146)
+				q(70776),	-- triggers when 'Tale of the Magma Pact' becomes available for Tarjin the Blind
+				q(70775),	-- triggers when 'Tale of the Magma Pact' completes (spellID 388148)
+				q(70774),	-- triggers when 'Tale of the Slumbering' becomes available for Tarjin the Blind
+				q(70773),	-- triggers when 'Tale of the Slumbering' completes (spellID 388147)
+				q(70778),	-- triggers when 'Tale of the Weakling' becomes available for Tarjin the Blind
+				q(70777),	-- triggers when 'Tale of the Weakling' completes (spellID 388149)
+				q(72804),	-- Flag Weekly Tracking Quest [DNT] (spellID 397184) [triggers when 'Tale of the Phoenix' completes]
+				q(70218),	-- Dialogue before you can pick up the quest "A Dragon's Day Off"
 
-		-- TODO: how do we sort these types of things going forward? Also, is Skytop an actual quest or should this be a NYI/Never Implemented?
-		q(72178, {	-- Theory in Practice: Baron von Swoopenbite
-			["name"] = "Theory in Practice: Baron von Swoopenbite",
-			["sourceQuests"] = {
-				69901,	-- Bring In the Expert
-				69900,	-- Identifying the Source
-			},
-			["provider"] = { "n", 192298 },	-- Tyrgon
-			["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
-			["altQuests"] = {
-				-- 72178,	-- Theory in Practice: Baron von Swoopenbite
-				72174,	-- Theory in Practice: Bob
-				72179,	-- Theory in Practice: Lord Firegiggle
-				72177,	-- Theory in Practice: Mr.Nibbles
-				72176,	-- Theory in Practice: Toughscale
-			},
-		}),
-		q(72174, {	-- Theory in Practice: Bob
-			["name"] = "Theory in Practice: Bob",
-			["sourceQuests"] = {
-				69901,	-- Bring In the Expert
-				69900,	-- Identifying the Source
-			},
-			["provider"] = { "n", 192298 },	-- Tyrgon
-			["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
-			["altQuests"] = {
-				72178,	-- Theory in Practice: Baron von Swoopenbite
-				-- 72174,	-- Theory in Practice: Bob
-				72179,	-- Theory in Practice: Lord Firegiggle
-				72177,	-- Theory in Practice: Mr.Nibbles
-				72176,	-- Theory in Practice: Toughscale
-			},
-		}),
-		q(72179, {	-- Theory in Practice: Lord Firegiggle
-			["name"] = "Theory in Practice: Lord Firegiggle",
-			["sourceQuests"] = {
-				69901,	-- Bring In the Expert
-				69900,	-- Identifying the Source
-			},
-			["provider"] = { "n", 192298 },	-- Tyrgon
-			["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
-			["altQuests"] = {
-				72178,	-- Theory in Practice: Baron von Swoopenbite
-				72174,	-- Theory in Practice: Bob
-				-- 72179,	-- Theory in Practice: Lord Firegiggle
-				72177,	-- Theory in Practice: Mr.Nibbles
-				72176,	-- Theory in Practice: Toughscale
-			},
-		}),
-		q(72177, {	-- Theory in Practice: Mr.Nibbles
-			["name"] = "Theory in Practice: Mr.Nibbles",
-			["sourceQuests"] = {
-				69901,	-- Bring In the Expert
-				69900,	-- Identifying the Source
-			},
-			["provider"] = { "n", 192298 },	-- Tyrgon
-			["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
-			["altQuests"] = {
-				72178,	-- Theory in Practice: Baron von Swoopenbite
-				72174,	-- Theory in Practice: Bob
-				72179,	-- Theory in Practice: Lord Firegiggle
-				-- 72177,	-- Theory in Practice: Mr.Nibbles
-				72176,	-- Theory in Practice: Toughscale
-			},
-		}),
-		q(72176, {	-- Theory in Practice: Toughscale
-			["name"] = "Theory in Practice: Toughscale",
-			["sourceQuests"] = {
-				69901,	-- Bring In the Expert
-				69900,	-- Identifying the Source
-			},
-			["provider"] = { "n", 192298 },	-- Tyrgon
-			["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
-			["altQuests"] = {
-				72178,	-- Theory in Practice: Baron von Swoopenbite
-				72174,	-- Theory in Practice: Bob
-				72179,	-- Theory in Practice: Lord Firegiggle
-				72177,	-- Theory in Practice: Mr.Nibbles
-				-- 72176,	-- Theory in Practice: Toughscale
-			},
-		}),
-		q(72089, {	-- To Skytop Observatory
-			["name"] = "To Skytop Observatory",
-			["provider"] = { "n", 193287 },	-- Lord Andestrasz
-			["coord"] = { 57.7, 66.9, THE_WAKING_SHORES },
-		}),
-		o(404260, {	-- Riddle Solved!
-			["questID"] = 76451,
-			["coord"] = { 67.1, 56.8, THE_WAKING_SHORES},
+				-- TODO: how do we sort these types of things going forward? Also, is Skytop an actual quest or should this be a NYI/Never Implemented?
+				q(72178, {	-- Theory in Practice: Baron von Swoopenbite
+					["name"] = "Theory in Practice: Baron von Swoopenbite",
+					["sourceQuests"] = {
+						69901,	-- Bring In the Expert
+						69900,	-- Identifying the Source
+					},
+					["provider"] = { "n", 192298 },	-- Tyrgon
+					["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
+					["altQuests"] = {
+						-- 72178,	-- Theory in Practice: Baron von Swoopenbite
+						72174,	-- Theory in Practice: Bob
+						72179,	-- Theory in Practice: Lord Firegiggle
+						72177,	-- Theory in Practice: Mr.Nibbles
+						72176,	-- Theory in Practice: Toughscale
+					},
+				}),
+				q(72174, {	-- Theory in Practice: Bob
+					["name"] = "Theory in Practice: Bob",
+					["sourceQuests"] = {
+						69901,	-- Bring In the Expert
+						69900,	-- Identifying the Source
+					},
+					["provider"] = { "n", 192298 },	-- Tyrgon
+					["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
+					["altQuests"] = {
+						72178,	-- Theory in Practice: Baron von Swoopenbite
+						-- 72174,	-- Theory in Practice: Bob
+						72179,	-- Theory in Practice: Lord Firegiggle
+						72177,	-- Theory in Practice: Mr.Nibbles
+						72176,	-- Theory in Practice: Toughscale
+					},
+				}),
+				q(72179, {	-- Theory in Practice: Lord Firegiggle
+					["name"] = "Theory in Practice: Lord Firegiggle",
+					["sourceQuests"] = {
+						69901,	-- Bring In the Expert
+						69900,	-- Identifying the Source
+					},
+					["provider"] = { "n", 192298 },	-- Tyrgon
+					["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
+					["altQuests"] = {
+						72178,	-- Theory in Practice: Baron von Swoopenbite
+						72174,	-- Theory in Practice: Bob
+						-- 72179,	-- Theory in Practice: Lord Firegiggle
+						72177,	-- Theory in Practice: Mr.Nibbles
+						72176,	-- Theory in Practice: Toughscale
+					},
+				}),
+				q(72177, {	-- Theory in Practice: Mr.Nibbles
+					["name"] = "Theory in Practice: Mr.Nibbles",
+					["sourceQuests"] = {
+						69901,	-- Bring In the Expert
+						69900,	-- Identifying the Source
+					},
+					["provider"] = { "n", 192298 },	-- Tyrgon
+					["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
+					["altQuests"] = {
+						72178,	-- Theory in Practice: Baron von Swoopenbite
+						72174,	-- Theory in Practice: Bob
+						72179,	-- Theory in Practice: Lord Firegiggle
+						-- 72177,	-- Theory in Practice: Mr.Nibbles
+						72176,	-- Theory in Practice: Toughscale
+					},
+				}),
+				q(72176, {	-- Theory in Practice: Toughscale
+					["name"] = "Theory in Practice: Toughscale",
+					["sourceQuests"] = {
+						69901,	-- Bring In the Expert
+						69900,	-- Identifying the Source
+					},
+					["provider"] = { "n", 192298 },	-- Tyrgon
+					["coord"] = { 46.0, 81.5, THE_WAKING_SHORES },
+					["altQuests"] = {
+						72178,	-- Theory in Practice: Baron von Swoopenbite
+						72174,	-- Theory in Practice: Bob
+						72179,	-- Theory in Practice: Lord Firegiggle
+						72177,	-- Theory in Practice: Mr.Nibbles
+						-- 72176,	-- Theory in Practice: Toughscale
+					},
+				}),
+				q(72089, {	-- To Skytop Observatory
+					["name"] = "To Skytop Observatory",
+					["provider"] = { "n", 193287 },	-- Lord Andestrasz
+					["coord"] = { 57.7, 66.9, THE_WAKING_SHORES },
+				}),
+				o(404260, {	-- Riddle Solved!
+					["timeline"] = { ADDED_10_1_5 },
+					["questID"] = 76451,
+					["coord"] = { 67.1, 56.8, THE_WAKING_SHORES},
+				}),
+			}),
 		}),
 	}),
 })));

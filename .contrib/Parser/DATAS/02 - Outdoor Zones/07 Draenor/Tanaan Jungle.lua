@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(TANAAN_JUNGLE, {
 			["lore"] = "Tanaan Jungle is a zone in eastern Draenor. It is seat of the Iron Horde's dominion over Draenor and home to the Bleeding Hollow clan, as well as the recently constructed Dark Portal that serves as a time-space gateway between Draenor and Azeroth. The Azerothian expedition mounts a counter-offensive against Iron Horde's operations in their homeworld in a desperate bid to shut down the gateway, with heavy losses that force the remnants to escape elsewhere in order to find allies.",
-			["icon"] = "Interface\\Icons\\achievement_zone_tanaanjungle",
+			["icon"] = 1048305,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
 					a(ach(10068, {	-- Draenor's Last Stand (Tanaan Jungle) [A]
@@ -91,166 +91,166 @@ root(ROOTS.Zones, {
 					}},
 					["groups"] = {
 						ach(10052, {	-- Tiny Terrors in Tanaan
-						n(94601, {	-- Felsworn Sentry
-							["questID"] = 39157,
-							["isDaily"] = true,
-							["coord"] = { 26.0, 31.6, TANAAN_JUNGLE },
+							n(94601, {	-- Felsworn Sentry
+								["questID"] = 39157,
+								["isDaily"] = true,
+								["coord"] = { 26.0, 31.6, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94637, {	-- Corrupted Thundertail
+								["questID"] = 39160,
+								["isDaily"] = true,
+								["coord"] = { 53.0, 65.2, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94638, {	-- Chaos Pup
+								["questID"] = 39161,
+								["isDaily"] = true,
+								["coord"] = { 25.0, 76.2, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94639, {	-- Cursed Spirit
+								["questID"] = 39162,
+								["isDaily"] = true,
+								["coord"] = { 31.4, 38.0, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94640, {	-- Felfly
+								["questID"] = 39163,
+								["isDaily"] = true,
+								["coord"] = { 55.8, 80.8, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94641, {	-- Tainted Maulclaw
+								["questID"] = 39164,
+								["isDaily"] = true,
+								["coord"] = { 43.4, 84.6, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94642, {	-- Direflame
+								["questID"] = 39165,
+								["isDaily"] = true,
+								["coord"] = { 57.8, 37.2, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94643, {	-- Mirecroak
+								["questID"] = 39166,
+								["isDaily"] = true,
+								["coord"] = { 42.2, 71.6, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94644, {	-- Dark Gazer
+								["questID"] = 39167,
+								["isDaily"] = true,
+								["coord"] = { 54.0, 29.8, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94645, {	-- Bleakclaw
+								["questID"] = 39168,
+								["isDaily"] = true,
+								["coord"] = { 15.8, 44.6, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94646, {	-- Vile Blood of Draenor
+								["questID"] = 39169,
+								["isDaily"] = true,
+								["coord"] = { 44.0, 45.8, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94647, {	-- Dreadwalker
+								["questID"] = 39170,
+								["isDaily"] = true,
+								["coord"] = { 47.2, 52.6, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94648, {	-- Netherfist
+								["questID"] = 39171,
+								["isDaily"] = true,
+								["coord"] = { 48.4, 35.6, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94649, {	-- Skrillix
+								["questID"] = 39172,
+								["isDaily"] = true,
+								["coord"] = { 48.4, 31.2, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+							n(94650, {	-- Defiled Earth
+								["questID"] = 39173,
+								["isDaily"] = true,
+								["coord"] = { 75.4, 37.4, TANAAN_JUNGLE },
+								["g"] = {
+									i(127751, {	-- Fel-Touched Pet Supplies
+										["sym"] = { { "fill" } },
+									}),
+								},
+							}),
+						}),
+						i(127751, {	-- Fel-Touched Pet Supplies
+							["description"] = "Fel-Touched Pet Supplies is the reward for defeating any of the Tiny Terrors in Tanaan. You can defeat each Tiny Terror once per character per day.|r",
 							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
+								i(127753),	-- Nightmare Bell (PET!)
+								i(127754),	-- Periwinkle Calf (PET!)
+								i(118105),	-- Seaborne Spore (PET!)
+								i(118101),	-- Zangar Spore (PET!)
 							},
 						}),
-						n(94637, {	-- Corrupted Thundertail
-							["questID"] = 39160,
-							["isDaily"] = true,
-							["coord"] = { 53.0, 65.2, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94638, {	-- Chaos Pup
-							["questID"] = 39161,
-							["isDaily"] = true,
-							["coord"] = { 25.0, 76.2, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94639, {	-- Cursed Spirit
-							["questID"] = 39162,
-							["isDaily"] = true,
-							["coord"] = { 31.4, 38.0, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94640, {	-- Felfly
-							["questID"] = 39163,
-							["isDaily"] = true,
-							["coord"] = { 55.8, 80.8, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94641, {	-- Tainted Maulclaw
-							["questID"] = 39164,
-							["isDaily"] = true,
-							["coord"] = { 43.4, 84.6, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94642, {	-- Direflame
-							["questID"] = 39165,
-							["isDaily"] = true,
-							["coord"] = { 57.8, 37.2, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94643, {	-- Mirecroak
-							["questID"] = 39166,
-							["isDaily"] = true,
-							["coord"] = { 42.2, 71.6, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94644, {	-- Dark Gazer
-							["questID"] = 39167,
-							["isDaily"] = true,
-							["coord"] = { 54.0, 29.8, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94645, {	-- Bleakclaw
-							["questID"] = 39168,
-							["isDaily"] = true,
-							["coord"] = { 15.8, 44.6, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94646, {	-- Vile Blood of Draenor
-							["questID"] = 39169,
-							["isDaily"] = true,
-							["coord"] = { 44.0, 45.8, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94647, {	-- Dreadwalker
-							["questID"] = 39170,
-							["isDaily"] = true,
-							["coord"] = { 47.2, 52.6, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94648, {	-- Netherfist
-							["questID"] = 39171,
-							["isDaily"] = true,
-							["coord"] = { 48.4, 35.6, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94649, {	-- Skrillix
-							["questID"] = 39172,
-							["isDaily"] = true,
-							["coord"] = { 48.4, 31.2, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-						n(94650, {	-- Defiled Earth
-							["questID"] = 39173,
-							["isDaily"] = true,
-							["coord"] = { 75.4, 37.4, TANAAN_JUNGLE },
-							["g"] = {
-								i(127751, {	-- Fel-Touched Pet Supplies
-									["sym"] = { { "fill" } },
-								}),
-							},
-						}),
-					}),
-					i(127751, {	-- Fel-Touched Pet Supplies
-						["description"] = "Fel-Touched Pet Supplies is the reward for defeating any of the Tiny Terrors in Tanaan. You can defeat each Tiny Terror once per character per day.|r",
-						["g"] = {
-							i(127753),	-- Nightmare Bell (PET!)
-							i(127754),	-- Periwinkle Calf (PET!)
-							i(118105),	-- Seaborne Spore (PET!)
-							i(118101),	-- Zangar Spore (PET!)
-						},
-					}),
 						pet(1468),	--  Bloodbeak (PET!)
 						pet(1586),	--  Cerulean Moth (PET!)
 						pet(1581, {	--  Fen Crab (PET!)
@@ -267,15 +267,21 @@ root(ROOTS.Zones, {
 					exploration(7716),	-- Hellfire Citadel
 					exploration(7723),	-- Ironhold Approach
 					exploration(7515),	-- Ironhold Harbor
+					visit_exploration(7632,{coord={38.4,44.3,TANAAN_JUNGLE}}),	-- Ironmonger's Hold
 					exploration(7522),	-- Lion's Watch
 					exploration(7655),	-- Rangari Refuge
 					exploration(7524),	-- Ruins of Kra'nak
 					exploration(7718),	-- Scuttler's Coast
+					visit_exploration(7654,{coord={44.8,77.7,TANAAN_JUNGLE}}),	-- Stygana Cavern
+					visit_exploration(7265,{coord={29.3,91.9,TANAAN_JUNGLE}}),	-- Tanaan Channel
+					visit_exploration(7025,{coord={61.1,46.1,TANAAN_JUNGLE}}),	-- Tanaan Jungle
+					visit_exploration(6682,{coord={62.4,32.6,TANAAN_JUNGLE}}),	-- Tanaan Jungle
 					exploration(7526),	-- Temple of Sha'naar
 					exploration(7722),	-- The Broken Rampart
 					exploration(7615),	-- The Fel Forge
 					exploration(7719),	-- The Felblight
 					exploration(7527),	-- The Iron Front
+					visit_exploration(7639,{coord={56.2,67.0,TANAAN_JUNGLE}}),	-- Thornmire
 					exploration(7538),	-- Throne of Kil'jaeden
 					exploration(7721),	-- Thundertail Wallow
 					exploration(7523),	-- Vol'mar
@@ -285,10 +291,10 @@ root(ROOTS.Zones, {
 					exploration(7604),	-- Zorammarsh
 				}),
 				n(FACTIONS, {
-					faction(1847, {["races"] = ALLIANCE_ONLY}),	-- Hand of The Prophet
-					faction(1849),	-- Order of the Awakened
-					faction(1850),	-- The Saberstalkers
-					faction(1848, {["races"] = HORDE_ONLY}),	-- Vol'jin's Headhunters
+					faction(FACTION_HAND_OF_THE_PROPHET, {["races"] = ALLIANCE_ONLY}),	-- Hand of The Prophet
+					faction(FACTION_ORDER_OF_THE_AWAKENED),	-- Order of the Awakened
+					faction(FACTION_THE_SABERSTALKERS),	-- The Saberstalkers
+					faction(FACTION_VOLJINS_HEADHUNTERS, {["races"] = HORDE_ONLY}),	-- Vol'jin's Headhunters
 				}),
 				n(FLIGHT_PATHS, {
 					fp(1643, {	-- Aktar's Post, Tanaan Jungle
@@ -1971,42 +1977,48 @@ root(ROOTS.Zones, {
 							{ 60.4, 46.6, TANAAN_JUNGLE },	-- Horde accessible
 							{ 57.8, 59.4, TANAAN_JUNGLE },	-- Alliance accessible
 						},
-						["g"] = {
-							i(128478, {	-- Blazing Firehawk (PET!)
-								["cost"] = { { "c", 823, 2000 }, },	-- 2,000x Apexis Crystal
-							}),
-							i(128441, {	-- Contract: Solar Priest Vayx
-								["cost"] = { { "c", 823, 1000 }, },	-- 1,000x Apexis Crystal
-								["g"] = {
-									follower(582),	-- Solar Priest Vayx
-								},
-							}),
-							-- currency(1191, {	-- Valor
-							un(REMOVED_FROM_GAME, i(127785)),	-- Crystallized Fel
-							-- }),
-							i(128502, {	-- Hunter's Seeking Crystal
-								["cost"] = 10000000,	-- 1,000g
-							}),
-							i(128503, {	-- Master Hunter's Seeking Crystal
-								["cost"] = {
-									{ "g", 50000000 },	-- 5,000g
-									{ "i", 128502, 1 },	-- Hunter's Seeking Crystal
-								},
-							}),
-							i(128450),	-- Order of the Awakened Tabard
-							i(123974, {	-- Corrupted Dreadwing (MOUNT!)
-								["cost"] = { { "c", 823, 150000 }, },	-- 150,000x Apexis Crystal
-							}),
-							i(122283, {	-- Rukhmar's Sacred Memory (TOY!)
-								["cost"] = { { "c", 823, 50000 }, },	-- 50,000x Apexis Crystal
-							}),
-							i(128487, {	-- Ship: The Awakener
-								["races"] = ALLIANCE_ONLY,
-							}),
-							i(128488, {	-- Ship: The Awakener
-								["races"] = HORDE_ONLY,
-							}),
-						},
+						["g"] = bubbleDownClassicRep(FACTION_ORDER_OF_THE_AWAKENED, {
+							{		-- Neutral
+								-- currency(1191, {	-- Valor
+								un(REMOVED_FROM_GAME, i(127785)),	-- Crystallized Fel
+								-- }),
+							}, {	-- Friendly
+								i(123974, {	-- Reins of the Corrupted Dreadwing (MOUNT!)
+									["cost"] = { { "c", 823, 150000 }, },	-- 150,000x Apexis Crystal
+								}),
+							}, {	-- Honored
+								i(128441, {	-- Contract: Solar Priest Vayx
+									["cost"] = { { "c", 823, 1000 }, },	-- 1,000x Apexis Crystal
+									["g"] = {
+										follower(582),	-- Solar Priest Vayx
+									},
+								}),
+								i(128502, {	-- Hunter's Seeking Crystal
+									["cost"] = 10000000,	-- 1,000g
+								}),
+							}, {	-- Revered
+								i(128503, {	-- Master Hunter's Seeking Crystal
+									["cost"] = {
+										{ "g", 50000000 },	-- 5,000g
+										{ "i", 128502, 1 },	-- Hunter's Seeking Crystal
+									},
+								}),
+								i(122283, {	-- Rukhmar's Sacred Memory (TOY!)
+									["cost"] = { { "c", 823, 50000 }, },	-- 50,000x Apexis Crystal
+								}),
+							}, {	-- Exalted
+								i(128478, {	-- Blazing Firehawk (PET!)
+									["cost"] = { { "c", 823, 2000 }, },	-- 2,000x Apexis Crystal
+								}),
+								i(128450),	-- Order of the Awakened Tabard
+								i(128487, {	-- Ship: The Awakener
+									["races"] = ALLIANCE_ONLY,
+								}),
+								i(128488, {	-- Ship: The Awakener
+									["races"] = HORDE_ONLY,
+								}),
+							},
+						}),
 					}),
 					n(96130, {	-- Ravenspeaker Thelnaas <Order of the Awakened>
 						["coords"] = {
@@ -2074,56 +2086,55 @@ root(ROOTS.Zones, {
 					n(96014, {	-- Shadow Hunter Denjai <Vol'jin's Headhunters>
 						["coord"] = { 61.6, 45.6, TANAAN_JUNGLE },
 						["races"] = HORDE_ONLY,
-						["g"] = {
-							i(128490, {	-- Blueprint: Oil Rig
-								["questID"] = 39561,
-								["cost"] = 12000000,	-- 1,200g
-							}),
-							i(128440, {	-- Contract: Dowser Bigspark
-								["cost"] = 6000000,	-- 600g
-								["g"] = {
-									follower(581),	-- Dowser Goodwell
-								},
-							}),
-							i(128526, {	-- Deathtusk Felboar (H) (MOUNT!)
-								["cost"] = 25000000,	-- 2,500g
-							}),
-							i(128475, {	-- Empowered Augment Rune
-								["cost"] = 60000000,	-- 6,000g
-							}),
-							i(128472, {	-- Ensemble: Battlegear of the Frostwolves
-								["cost"] = 5000000,	-- 500g
-								["g"] = {
-									i(128455),	-- Frostwolf Spaulders
-									i(128456),	-- Frostwolf Tunic
-									i(128461),	-- Frostwolf Bracers
-									i(128457),	-- Frostwolf Mitts
-									i(128458),	-- Frostwolf Belt
-									i(128459),	-- Frostwolf Leggings
-									i(128460),	-- Frostwolf Snowstalkers
-								},
-							}),
-							i(128251, {	-- Equipment Blueprint: Tuskarr Fishing Net
-								["questID"] = 39359,	-- Equipment Blueprint: Tuskarr Fishing Net
-							}),
-							i(128489, {	-- Equipment Blueprint: Unsinkable
-								["questID"] = 39358,	-- Equipment Blueprint: Unsinkable
-								["cost"] = 9000000,	-- 900g
-							}),
-							i(128471),	-- Frostwolf Grint's Battlegear (TOY!)
-							i(127269, {	-- Ship Blueprint: Battleship
-								["cost"] = 5500000,	-- 550g
-								["sourceQuest"] = 39604,	-- I Sunk Your Battleship
-							}),
-							i(128294, {	-- Trade Agreement: Arakkoa Outcasts
-								["questID"] = 37485,
-								["cost"] = 25000000,	-- 2,500g
-							}),
-							i(113212, {	-- Treasure Map: Tanaan Jungle
-								["questID"] = 39463,
-								["cost"] = 6000000,	-- 600g
-							}),
-						},
+						["g"] = bubbleDownClassicRep(FACTION_VOLJINS_HEADHUNTERS, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(127269, {	-- Ship Blueprint: Battleship
+									["cost"] = 5500000,	-- 550g
+									["sourceQuest"] = 39604,	-- I Sunk Your Battleship
+								}),
+								i(128451),	-- Vol'jin's Headhunters Battle Standard
+							}, {	-- Honored
+								i(128440, {	-- Contract: Dowser Bigspark
+									["cost"] = 6000000,	-- 600g
+									["g"] = {
+										follower(581),	-- Dowser Goodwell
+									},
+								}),
+								i(128251, {	-- Equipment Blueprint: Tuskarr Fishing Net
+									["questID"] = 39359,	-- Equipment Blueprint: Tuskarr Fishing Net
+								}),
+								i(113212, {	-- Treasure Map: Tanaan Jungle
+									["questID"] = 39463,
+									["cost"] = 6000000,	-- 600g
+								}),
+							}, {	-- Revered
+								i(128490, {	-- Blueprint: Oil Rig
+									["questID"] = 39561,
+									["cost"] = 12000000,	-- 1,200g
+								}),
+								iensemble(128472, {	-- Ensemble: Battlegear of the Frostwolves
+									["classes"] = LEATHER_CLASSES,
+									["cost"] = 5000000,	-- 500g
+								}),
+								i(128489, {	-- Equipment Blueprint: Unsinkable
+									["questID"] = 39358,	-- Equipment Blueprint: Unsinkable
+									["cost"] = 9000000,	-- 900g
+								}),
+								i(128471),	-- Frostwolf Grunt's Battlegear (TOY!)
+								i(128294, {	-- Trade Agreement: Arakkoa Outcasts
+									["questID"] = 37485,
+									["cost"] = 25000000,	-- 2,500g
+								}),
+							}, {	-- Exalted
+								i(128526, {	-- Deathtusk Felboar (H) (MOUNT!)
+									["cost"] = 25000000,	-- 2,500g
+								}),
+								i(128475, {	-- Empowered Augment Rune
+									["cost"] = 60000000,	-- 6,000g
+								}),
+							},
+						}),
 					}),
 					n(95650, {	-- Skoller
 						["description"] = "Talk to him and you will receive the toy.",
@@ -2135,87 +2146,93 @@ root(ROOTS.Zones, {
 					n(90974, {	-- Vindicator Krethos <Hand of the Prophet>
 						["coord"] = { 58.4, 60.4, TANAAN_JUNGLE },
 						["races"] = ALLIANCE_ONLY,
-						["g"] = {
-							i(128444, {	-- Blueprint: Oil Rig
-								["questID"] = 39561,
-								["cost"] = 12000000,	-- 1,200g
-							}),
-							i(128445, {	-- Contract: Dowser Bigspark
-								["cost"] = 6000000,	-- 600g
-								["g"] = {
-									follower(581),	-- Dowser Bigspark
-								},
-							}),
-							i(128527, {	-- Deathtusk Felboar (A) (MOUNT!)
-								["cost"] = 25000000,	-- 2,500g
-							}),
-							i(128482, {	-- Empowered Augment Rune
-								["cost"] = 60000000,	-- 6,000g
-							}),
-							i(128473, {	-- Ensemble: Ceremonial Karabor Finery
-								["cost"] = 5000000,	-- 500g
-								["g"] = {
-									i(128469),	-- Ceremonial Bracers of Karabor
-									i(128468),	-- Ceremonial Crown of Karabor
-									i(128466),	-- Ceremonial Gloves of Karabor
-									i(128470),	-- Ceremonial Leggings of Karabor
-									i(128464),	-- Ceremonial Robe of Karabor
-									i(128467),	-- Ceremonial Sash of Karabor
-									i(128463),	-- Ceremonial Shoulderpads of Karabor
-									i(128465),	-- Ceremonial Slippers of Karabor
-								},
-							}),
-							i(128491, {	-- Equipment Blueprint: Tuskarr Fishing Net
-								["questID"] = 39359,	-- Equipment Blueprint: Tuskarr Fishing Net
-							}),
-							i(128250, {	-- Equipment Blueprint: Unsinkable
-								["questID"] = 39358,	-- Equipment Blueprint: Unsinkable
-								["cost"] = 9000000,	-- 900g
-							}),
-							i(128462),	-- Karabor Councilor's Attire (TOY!)
-							i(128492, {	-- Ship Blueprint: Battleship
-								["cost"] = 5500000,	-- 550g
-								["sourceQuest"] = 39601,	-- I Sunk Your Battleship
-							}),
-							i(128294, {	-- Trade Agreement: Arakkoa Outcasts
-								["questID"] = 37485,
-								["cost"] = 25000000,	-- 2,500g
-							}),
-							i(128474, {	-- Treasure Map: Tanaan Jungle
-								["questID"] = 39463,
-								["cost"] = 6000000,	-- 600g
-							}),
-						},
+						["g"] = bubbleDownClassicRep(FACTION_HAND_OF_THE_PROPHET, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(128452),	-- Hand of the Prophet Battle Standard
+								i(128492, {	-- Ship Blueprint: Battleship
+									["cost"] = 5500000,	-- 550g
+									["sourceQuest"] = 39601,	-- I Sunk Your Battleship
+								}),
+							}, {	-- Honored
+								i(128445, {	-- Contract: Dowser Bigspark
+									["cost"] = 6000000,	-- 600g
+									["g"] = {
+										follower(581),	-- Dowser Bigspark
+									},
+								}),
+								i(128491, {	-- Equipment Blueprint: Tuskarr Fishing Net
+									["questID"] = 39359,	-- Equipment Blueprint: Tuskarr Fishing Net
+								}),
+								i(128474, {	-- Treasure Map: Tanaan Jungle
+									["questID"] = 39463,
+									["cost"] = 6000000,	-- 600g
+								}),
+							}, {	-- Revered
+								i(128444, {	-- Blueprint: Oil Rig
+									["questID"] = 39561,
+									["cost"] = 12000000,	-- 1,200g
+								}),
+								iensemble(128473, {	-- Ensemble: Ceremonial Karabor Finery
+									["classes"] = CLOTH_CLASSES,
+									["cost"] = 5000000,	-- 500g
+								}),
+								i(128250, {	-- Equipment Blueprint: Unsinkable
+									["questID"] = 39358,	-- Equipment Blueprint: Unsinkable
+									["cost"] = 9000000,	-- 900g
+								}),
+								i(128462),	-- Karabor Councilor's Attire (TOY!)
+								i(128294, {	-- Trade Agreement: Arakkoa Outcasts
+									["questID"] = 37485,
+									["cost"] = 25000000,	-- 2,500g
+								}),
+							}, {	-- Exalted
+								i(128527, {	-- Deathtusk Felboar (A) (MOUNT!)
+									["cost"] = 25000000,	-- 2,500g
+								}),
+								i(128482, {	-- Empowered Augment Rune
+									["cost"] = 60000000,	-- 6,000g
+								}),
+							},
+						}),
 					}),
 					n(92805, {	-- Z'tenga the Walker <Saberstalker Quartermaster>
 						["coord"] = { 55.2, 74.8, TANAAN_JUNGLE },
-						["g"] = {
-							i(128481, {	-- Bristling Hellboar (MOUNT!)
-								["cost"] = { { "i", 124099, 5000 }, },	-- 5,000x Blackfang Claw
-							}),
-							i(128439, {	-- Contract: Pallas
-								["cost"] = { { "i", 124099, 100 }, },	-- 100x Blackfang Claw
-								["g"] = {
-									follower(580),	-- Pallas
-								},
-							}),
-							i(124094, {	-- Major Blackfang Challenge Totem
-								["description"] = "\nUsed to summon Rendarr.\n\n",
-							}),
-							i(124093, {	-- Minor Blackfang Challenge Totem
-								["description"] = "\nUsed to summon Akrrilo.\n\n",
-							}),
-							i(124095, {	-- Prime Blackfang Challenge Totem
-								["description"] = "\nUsed to summon Eyepiercer.\n\n",
-							}),
-							i(128449),	-- Saberstalkers Tabard
-							i(128477, {	-- Savage Cub (PET!)
-								["cost"] = { { "i", 124099, 1500 }, },	-- 1,500x Blackfang Claw
-							}),
-							i(116671, {	-- Wild Goretusk (MOUNT!)
-								["cost"] = { { "i", 124099, 1000 }, },	-- 1,000x Blackfang Claw
-							}),
-						},
+						["g"] = bubbleDownClassicRep(FACTION_THE_SABERSTALKERS, {
+							{		-- Neutral
+								i(124094, {	-- Major Blackfang Challenge Totem
+									["description"] = "\nUsed to summon Rendarr.\n\n",
+								}),
+								i(124093, {	-- Minor Blackfang Challenge Totem
+									["description"] = "\nUsed to summon Akrrilo.\n\n",
+								}),
+								i(124095, {	-- Prime Blackfang Challenge Totem
+									["description"] = "\nUsed to summon Eyepiercer.\n\n",
+								}),
+							}, {	-- Friendly
+								i(128453),	-- Saberstalkers Battle Standard
+							}, {	-- Honored
+								i(128439, {	-- Contract: Pallas
+									["cost"] = { { "i", 124099, 100 }, },	-- 100x Blackfang Claw
+									["g"] = {
+										follower(580),	-- Pallas
+									},
+								}),
+								i(116671, {	-- Wild Goretusk (MOUNT!)
+									["cost"] = { { "i", 124099, 1000 }, },	-- 1,000x Blackfang Claw
+								}),
+							}, {	-- Revered
+								i(128446),	-- Saberstalker Teachings: Trailblazer
+								i(128477, {	-- Savage Cub (PET!)
+									["cost"] = { { "i", 124099, 1500 }, },	-- 1,500x Blackfang Claw
+								}),
+							}, {	-- Exalted
+								i(128481, {	-- Bristling Hellboar (MOUNT!)
+									["cost"] = { { "i", 124099, 5000 }, },	-- 5,000x Blackfang Claw
+								}),
+								i(128449),	-- Saberstalkers Tabard
+							},
+						}),
 					}),
 				}),
 				n(ZONE_DROPS, {
@@ -2336,48 +2353,56 @@ root(ROOTS.Zones, {
 });
 
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(38836),	-- Aktar's Post - Aktar's Post visited
-		q(39306),	-- Call to Arms - chosen during "Bring the Reinforcements"
-		q(39183),	-- FLAG - Immaculate Critical Strike Taladite - learning Immaculate Critical Strike Taladite at an Apexis Gemcutter
-		q(39184),	-- FLAG - Immaculate Haste Taladite - learning Immaculate Haste Taladite at an Apexis Gemcutter
-		q(39185),	-- FLAG - Immaculate Mastery Taladite - learning Immaculate Mastery Taladite at an Apexis Gemcutter
-		q(39186),	-- FLAG - Immaculate Multistrike Taladite - learning Immaculate Multistrike Taladite at an Apexis Gemcutter
-		q(39187),	-- FLAG - Immaculate Stamina Taladite - learning Immaculate Stamina Taladite at an Apexis Gemcutter
-		q(37886),	-- Max-level Choice Tracker: Tanaan 6.2 - Ironhold (A)
-		q(37946),	-- Max-level Choice Tracker: Tanaan 6.2 - Ironhold (H)
-		q(38583),	-- Max-Level Choice Tracker: Tanaan 6.2 - Group - Throne of Kil'jaeden (A)
-		q(38584),	-- Max-level Choice Tracker: Tanaan 6.2 - Group - Throne of Kil'jaeden (H)
-		q(37939),	-- Max-level Choice Tracker: Tanaan 6.2 - Ruins of Kra'nak (A)
-		q(38010),	-- Max-level Choice Tracker: Tanaan 6.2 - Ruins of Kra'nak (H)
-		q(37967),	-- Max-level Choice Tracker: Tanaan 6.2 - Temple of Sha'naar (A)
-		q(38021),	-- Max-level Choice Tracker: Tanaan 6.2 - Temple of Sha'naar (H)
-		q(38438),	-- Max-level Choice Tracker: Tanaan 6.2 - The Fel Forge (A)
-		q(38437),	-- Max-level Choice Tracker: Tanaan 6.2 - The Fel Forge (H)
-		q(38039),	-- Max-level CHoice Tracker: Tanaan 6.2 - The Iron Front (A)
-		q(38038),	-- Max-level Choice Tracker: Tanaan 6.2 - The Iron Front (H)
-		q(38042),	-- Max-level Choice Tracker: Tanaan 6.2 - Zeth'Gol (A)
-		q(38041),	-- Max-level Choice Tracker: Tanaan 6.2 - Zeth'Gol (H)
-		q(39375, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #1
-		q(39376, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #2
-		q(39377, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #3
-		q(39378, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #4
-		q(39434),	-- Short-Supply Reward - triggers on the first rare kill (Baleful Spaulders itemID 128348)
-		q(39416),	-- Skoller's Bag o' Squirrel Treats - triggers after talking to Skoller and getting his toy (Skoller's Bag of Squirrel Treats)
-		q(37887),	-- Tanaan Garrison Max-level Choice Tracker: ANY CHOICE MADE (A)
-		q(37892),	-- Tanaan Garrison Max-level Choice Tracker: ANY CHOICE MADE (H)
-		q(37969),	-- Tanaan Jungle - Tracking Quest - Vol'mar Built - JMC
-		q(38433),	-- Tanaan Jungle - Tracking Quest - Lion's Watch Built - JMC
-		q(38234),	-- Tracking Event: Inscribed Ruin Found - triggers during quest "Get a Clue" (questID 38213), clue #3
-		q(38236),	-- Tracking Event: Note Found - triggers during quest "Get a Clue" (questID 38213), clue #1
-		q(38231),	-- Tracking Event: Shrine Found - triggers during quest "Get a Clue" (questID 38213), clue #2
-		q(39564),	-- Vignette: Murktide Alpha - learning Saberstalker's Teachings: Trailblazer
-	}),
-	expansion(EXPANSION.LEGION, {
-		q(47285),	-- Triggers together with obtaining Equipment Blueprint: Tuskarr Fishing Net
-	}),
-	expansion(EXPANSION.BFA, {
-		q(50678),	-- learning Ensemble: Battlegear of the Frostwolves
-		q(50680),	-- learning Ensemble: Ceremonial Karabor Finery
-	}),
+	expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_2_0 } }, {
+		m(DRAENOR, {
+			m(TANAAN_JUNGLE, {
+				n(QUESTS, {
+					q(38836),	-- Aktar's Post - Aktar's Post visited
+					q(39306),	-- Call to Arms - chosen during "Bring the Reinforcements"
+					q(39183),	-- FLAG - Immaculate Critical Strike Taladite - learning Immaculate Critical Strike Taladite at an Apexis Gemcutter
+					q(39184),	-- FLAG - Immaculate Haste Taladite - learning Immaculate Haste Taladite at an Apexis Gemcutter
+					q(39185),	-- FLAG - Immaculate Mastery Taladite - learning Immaculate Mastery Taladite at an Apexis Gemcutter
+					q(39186),	-- FLAG - Immaculate Multistrike Taladite - learning Immaculate Multistrike Taladite at an Apexis Gemcutter
+					q(39187),	-- FLAG - Immaculate Stamina Taladite - learning Immaculate Stamina Taladite at an Apexis Gemcutter
+					q(37886),	-- Max-level Choice Tracker: Tanaan 6.2 - Ironhold (A)
+					q(37946),	-- Max-level Choice Tracker: Tanaan 6.2 - Ironhold (H)
+					q(38583),	-- Max-Level Choice Tracker: Tanaan 6.2 - Group - Throne of Kil'jaeden (A)
+					q(38584),	-- Max-level Choice Tracker: Tanaan 6.2 - Group - Throne of Kil'jaeden (H)
+					q(37939),	-- Max-level Choice Tracker: Tanaan 6.2 - Ruins of Kra'nak (A)
+					q(38010),	-- Max-level Choice Tracker: Tanaan 6.2 - Ruins of Kra'nak (H)
+					q(37967),	-- Max-level Choice Tracker: Tanaan 6.2 - Temple of Sha'naar (A)
+					q(38021),	-- Max-level Choice Tracker: Tanaan 6.2 - Temple of Sha'naar (H)
+					q(38438),	-- Max-level Choice Tracker: Tanaan 6.2 - The Fel Forge (A)
+					q(38437),	-- Max-level Choice Tracker: Tanaan 6.2 - The Fel Forge (H)
+					q(38039),	-- Max-level CHoice Tracker: Tanaan 6.2 - The Iron Front (A)
+					q(38038),	-- Max-level Choice Tracker: Tanaan 6.2 - The Iron Front (H)
+					q(38042),	-- Max-level Choice Tracker: Tanaan 6.2 - Zeth'Gol (A)
+					q(38041),	-- Max-level Choice Tracker: Tanaan 6.2 - Zeth'Gol (H)
+					q(39375, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #1
+					q(39376, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #2
+					q(39377, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #3
+					q(39378, {["isDaily"]=true}),	-- Short-Supply Reward - Daily Rare/Treasure #4
+					q(39434),	-- Short-Supply Reward - triggers on the first rare kill (Baleful Spaulders itemID 128348)
+					q(39416),	-- Skoller's Bag o' Squirrel Treats - triggers after talking to Skoller and getting his toy (Skoller's Bag of Squirrel Treats)
+					q(37887),	-- Tanaan Garrison Max-level Choice Tracker: ANY CHOICE MADE (A)
+					q(37892),	-- Tanaan Garrison Max-level Choice Tracker: ANY CHOICE MADE (H)
+					q(37969),	-- Tanaan Jungle - Tracking Quest - Vol'mar Built - JMC
+					q(38433),	-- Tanaan Jungle - Tracking Quest - Lion's Watch Built - JMC
+					q(38234),	-- Tracking Event: Inscribed Ruin Found - triggers during quest "Get a Clue" (questID 38213), clue #3
+					q(38236),	-- Tracking Event: Note Found - triggers during quest "Get a Clue" (questID 38213), clue #1
+					q(38231),	-- Tracking Event: Shrine Found - triggers during quest "Get a Clue" (questID 38213), clue #2
+					-- q(39564),	-- Vignette: Murktide Alpha - learning Saberstalker's Teachings: Trailblazer (automated)
+				}),
+			}),
+		}),
+	})),
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+		m(DRAENOR, {
+			m(TANAAN_JUNGLE, {
+				n(QUESTS, {
+					q(47285),	-- Triggers together with obtaining Equipment Blueprint: Tuskarr Fishing Net
+				}),
+			}),
+		}),
+	})),
 });

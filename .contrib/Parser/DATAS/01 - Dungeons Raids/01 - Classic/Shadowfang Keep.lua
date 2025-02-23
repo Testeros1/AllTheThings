@@ -300,7 +300,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					},
 				}),
 				q(27435, {	-- A Seer's Staff [Tauren]
-					["providers"] = {	
+					["providers"] = {
 						-- #if AFTER SHADOWLANDS
 						{ "n", 168621 },	-- Martin Goodchilde <Priest Trainer>
 						-- #else
@@ -633,7 +633,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						-- #endif
 					},
 					["sourceQuest"] = 27280,	-- The Dreamseeker Calls [CATA] / The Earthbreaker Calls [MOP] / The Riverspeaker Calls [SL+]
-					["coords"] = {	
+					["coords"] = {
 						-- #if AFTER SHADOWLANDS
 						{ 73.6, 43.4, ORGRIMMAR },
 						-- #elseif AFTER MOP
@@ -2000,9 +2000,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						i(132568, {	-- Shadowfang Pauldrons
 							["timeline"] = { ADDED_7_0_3 },
 						}),
-						-- #if AFTER 4.0.3
-						i(5943),	-- Rift Bracers
-						-- #endif
+						i(5943, {	-- Rift Bracers
+							["timeline"] = { ADDED_7_1_5 },
+						}),
 						i(132567, {	-- Blindwatcher's Chain
 							["timeline"] = { ADDED_7_0_3 },
 						}),
@@ -2048,7 +2048,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				})),
 				-- #endif
 				n(3872, {	-- Deathsworn Captain
-					["description"] = "This is a rare that is not always present.",
+					["description"] = "This is a rare that is not always present. Can be found in place of a Tormented Officer patrolling the outdoor wall section just after the boss Commander Springvale, and is targetable from the dungeon entrance.",
 					["groups"] = {
 						i(6641),	-- Haunting Blade
 						i(6642),	-- Phantom Armor
@@ -2100,11 +2100,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				}),
 				n(4627, {	-- Arugal's Voidwalker
 					["timeline"] = { REMOVED_4_0_3 },
-					-- #if BEFORE 4.0.3
 					["groups"] = {
-						i(5943),	-- Rift Bracers
+						i(5943, {	-- Rift Bracers
+							["timeline"] = { REMOVED_4_0_3 },
+						}),
 					},
-					-- #endif
 				}),
 				n(3927, {	-- Wolf Master Nandos
 					["timeline"] = { REMOVED_4_0_3 },
@@ -2229,20 +2229,39 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							}),
 							i(63457),	-- Shackles of Undeath
 							i(63464),	-- Greaves of the Misguided
+							-- #if BEFORE MOP
+							i(63460, {	-- Relic of Arathor
+								["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+							}),
+							-- #endif
 						},
 					}),
 				},
 			}),
+			-- #if ANYCLASSIC
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(PROTOCOL_INFERNO, {
+				["OnInit"] = FUNCTION_TEMPLATES.OnInit.GenerateShouldExcludeFromTooltipForBuffs(470595),
+				["timeline"] = { ADDED_4_0_3 },
+				["lvl"] = 85,
+				["groups"] = {
+					e(100, {	-- Lord Godfrey
+						["creatureID"] = 46964,
+						["groups"] = {
+							ach(41147),	-- Protocol Inferno: Shadowfang Keep
+						},
+					}),
+				},
+			})),
+			-- #endif
 		},
 	}),
 }));
--- #if AFTER 6.0.1
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(64, {
 		q(35304),	-- Shadowfang Keep Reward Quest - Normal completion
 		q(35309),	-- Shadowfang Keep Reward Quest - Heroic completion
 		q(35311),	-- Commander Springvale Reward Quest
 		q(35305),	-- Defeat Baron Silverlaine Reward
 	}),
-});
--- #endif
+})));

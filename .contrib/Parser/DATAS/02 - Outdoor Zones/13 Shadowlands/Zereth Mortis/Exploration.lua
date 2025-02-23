@@ -8,14 +8,17 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 			exploration(13896),	-- Antecedent Isle
 			exploration(13758),	-- Arrangement Index
 			exploration(13791),	-- Catalyst Gardens
+			visit_exploration(13935,{coord={47.1,62.5,ZERETH_MORTIS}}),	-- Circle of Thought
 			exploration(13759),	-- Deserted Overlook
 			exploration(13897),	-- Dimensional Falls
 			exploration(13927),	-- Droning Precipice
 			exploration(13757),	-- Endless Sands
+			visit_exploration(13694,{coord={34.3,48.0,ZERETH_MORTIS}}),	-- Exile's Hollow
 			exploration(13690),	-- Faith's Repose
 			exploration(13938),	-- Fissured Breach
 			exploration(13842),	-- Genesis Vestibule
 			exploration(13948),	-- Genesis Fields
+			visit_exploration(13632,{coord={35.1,64.7,ZERETH_MORTIS}}),	-- Haven
 			exploration(13805),	-- Lexical Glade
 			exploration(13841),	-- Path of Inception
 			exploration(13658),	-- Pilgrim's Grace

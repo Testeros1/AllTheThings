@@ -787,7 +787,7 @@ root(ROOTS.Zones, m(BROKEN_ISLES, {
 			}),
 			n(BONUS_OBJECTIVES, sharedData({
 				["lockCriteria"] = { 1, "lvl", 45 },
-				["description"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
+				["sharedDescription"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
 			},{
 				-- TODO: Check SQ, also probably can't do after a certain level
 				q(37965),	-- A Tainted Vintage
@@ -813,17 +813,26 @@ root(ROOTS.Zones, m(BROKEN_ISLES, {
 	}),
 }));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(37526),	-- Farondis Murder Flag - triggers between turning in "The Tidestone: Shattered" (questID 37469) and starting "Save Yourself" (questID 37530)
-		q(40584),	-- FLAG - Witnessed Drake Lift Crystal - triggers shortly after arriving in Azurewing Repose when turning in "Journey to the Repose" (questID 38443)
-		q(43815),	-- Karthax
-		q(45492),	-- Marlblub the Massive - triggered during WQ (questID 43098)
-		q(45496),	-- The Whisperer
-		q(42569),	-- Shaman Shrine - Azsuna Earth 01
-		q(42570),	-- Shaman Shrine - Azsuna Earth 02
-		q(42595),	-- Shaman Shrine - Azsuna Water 01 - DGK
-		q(42577),	-- Shaman Shrine - Azsuna Wind 01
-		q(45515),	-- Valakar the Thirsty
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(BROKEN_ISLES, {
+		m(AZSUNA, {
+			n(FACTIONS, {
+				n(EMISSARY_QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+					q(46794),	-- Paragon of the Court
+					q(46800),	-- Paragon of the Wardens
+				})),
+			}),
+			n(QUESTS, {
+				q(37526),	-- Farondis Murder Flag - triggers between turning in "The Tidestone: Shattered" (questID 37469) and starting "Save Yourself" (questID 37530)
+				q(40584),	-- FLAG - Witnessed Drake Lift Crystal - triggers shortly after arriving in Azurewing Repose when turning in "Journey to the Repose" (questID 38443)
+				q(43815),	-- Karthax
+				q(45496),	-- The Whisperer
+				q(42569),	-- Shaman Shrine - Azsuna Earth 01
+				q(42570),	-- Shaman Shrine - Azsuna Earth 02
+				q(42595),	-- Shaman Shrine - Azsuna Water 01 - DGK
+				q(42577),	-- Shaman Shrine - Azsuna Wind 01
+				q(45515),	-- Valakar the Thirsty
+			}),
+		}),
 	}),
-});
+})));

@@ -16,6 +16,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["coord"] = { 59.2, 28.6, ISLE_OF_DORN },
 				["cr"] = 217543,	-- Tordrin
 			}),
+			fp(2970, {	-- Tranquil Strand, Isle of Dorn
+				["sourceQuests"] = { 83539 },	-- -- Feeling Blue
+				["coord"] = { 29.7, 58.3, ISLE_OF_DORN },
+				["cr"] = 227029,	-- Flying Carpet
+				["timeline"] = { ADDED_11_0_7 },
+			}),
 		}),
 	}),
 })));

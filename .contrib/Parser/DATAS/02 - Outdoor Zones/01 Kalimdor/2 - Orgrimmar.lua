@@ -1,13 +1,6 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local COOKING_AWARD_GROUPS = {
-	-- #if AFTER 5.0.4
-	currency(81),	-- Epicurean's Award
-	-- #else
-	currency(402),	-- Ironpaw Token // Pre 5.0.4 named Chef's Award
-	-- #endif
-};
 local JEWELCRAFTING_AWARD_GROUPS = {
 	currency(361),	-- Illustrious Jewelcrafter's Token
 };
@@ -28,16 +21,14 @@ local PVP_MOUNT_COST = {
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(ORGRIMMAR, {
 		["lore"] = "Named in honor of the legendary Orgrim Doomhammer, Orgrimmar was founded as the capital city of the orcs' new homeland. Built within a huge, winding canyon in the harsh land of Durotar, Orgrimmar stands as one of the mightiest warrior cities in the world. Behind Orgrimmar's immense walls, elderly shaman pass their knowledge on to the Horde's newest generation of leaders, while warriors spar in the gladiatorial arena, honing their skills in preparation for the trials that await them in this dangerous land.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Inv_misc_tournaments_symbol_orc",
-		-- #endif
+		["icon"] = 255142,
 		-- #if AFTER CATA
 		["maps"] = { 86 },		-- The Drag
 		-- #endif
 		["isRaid"] = true,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				ach(5477, {	-- Fish or Cut Bait: Orgrimmar
+				applyclassicphase(CATA_PHASE_ONE, ach(5477, {	-- Fish or Cut Bait: Orgrimmar
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = FISHING,
 					["races"] = HORDE_ONLY,
@@ -58,8 +49,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["_quests"] = { 26572 },
 						}),
 					},
-				}),
-				ach(5475, {	-- Let's Do Lunch: Orgrimmar
+				})),
+				applyclassicphase(CATA_PHASE_ONE, ach(5475, {	-- Let's Do Lunch: Orgrimmar
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
@@ -80,12 +71,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["_quests"] = { 26233, 26234 },
 						}),
 					},
-				}),
+				})),
 				applyclassicphase(TBC_PHASE_ONE, ach(1836, {	-- Old Crafty
 					["provider"] = { "i", 34486 },	-- Old Crafty
-					-- #if BEFORE WRATH
-					["description"] = "Fish up Old Crafty in Orgrimmar.",
-					-- #endif
 					["requireSkill"] = FISHING,
 				})),
 			}),
@@ -99,30 +87,32 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}},
 			}),
 			n(FACTIONS, {
-				faction(1133, {	-- Bilgewater Cartel
+				faction(FACTION_BILGEWATER_CARTEL, {	-- Bilgewater Cartel
+					["provider"] = { "i", 64884 },	-- Bilgewater Cartel Tabard
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
 				}),
-				faction(530, {	-- Darkspear Trolls
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Troll_Male",
+				faction(FACTION_DARKSPEAR_TROLLS, {	-- Darkspear Trolls
+					-- #if AFTER CATA
+					["provider"] = { "i", 45582 },	-- Darkspear Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Troll_Male")]],
+					["icon"] = 236456,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = HORDE_ONLY,
 				}),
-				faction(1352, {	-- Huojin Pandaren
+				faction(FACTION_HUOJIN_PANDAREN, {	-- Huojin Pandaren
+					["provider"] = { "i", 83080 },	-- Huojin Tabard
 					["timeline"] = { ADDED_5_0_4 },
 					["races"] = HORDE_ONLY,
 				}),
 				faction(FACTION_ORGRIMMAR, {
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Orc_Male",
+					-- #if AFTER CATA
+					["provider"] = { "i", 45581 },	-- Orgrimmar Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Orc_Male")]],
+					["icon"] = 236452,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = HORDE_ONLY,
 				}),
 			}),
@@ -538,7 +528,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 7824,	-- A Donation of Runecloth
 					["coord"] = { 63.4, 51.0, ORGRIMMAR },
 					["timeline"] = { REMOVED_4_0_3 },
-					["maxReputation"] = { 530, EXALTED },	-- Darkspear Trolls, Exalted.
+					["maxReputation"] = { FACTION_DARKSPEAR_TROLLS, EXALTED },	-- Darkspear Trolls, Exalted.
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
 					["races"] = HORDE_ONLY,
 					["repeatable"] = true,
@@ -549,7 +539,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 7836,	-- A Donation of Runecloth
 					["coord"] = { 37.8, 87.6, ORGRIMMAR },
 					["timeline"] = { REMOVED_4_0_3 },
-					["maxReputation"] = { 76, EXALTED },	-- Orgrimmar, Exalted.
+					["maxReputation"] = { FACTION_ORGRIMMAR, EXALTED },	-- Orgrimmar, Exalted.
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
 					["races"] = HORDE_ONLY,
 					["repeatable"] = true,
@@ -631,6 +621,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(51443, {	-- Battle For Azeroth: Mission Statement (BfA version)
 					-- available to a level 47, pre-9.0 character during patch 9.0
 					["providers"] = {
+						{ "n", 121210 },	-- Nathanos Blightcaller
 						{ "n", 140176 },	-- Nathanos Blightcaller
 						{ "n", 49750 },	-- Warchief's Herald
 					},
@@ -641,6 +632,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						52428,	-- Infusing the Heart
 					},	--]]
 					["coords"] = {
+						{ 58.0, 62.8, DAZARALOR },	-- Nathanos Blightcaller
 						{ 48.9, 91.4, ORGRIMMAR },	-- Nathanos Blightcaller
 						{ 49.4, 76.6, ORGRIMMAR },	-- Warchief's Herald
 					},
@@ -792,7 +784,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(26543, {	-- Clammy Hands
 					["qg"] = 43239,	-- Razgar
@@ -813,7 +807,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(1501, {	-- Creature of the Void [Orgrimmar]
 					["qg"] = 5875,	-- Gan'rul Bloodeye
@@ -843,6 +839,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["collectible"] = false,
 					["races"] = HORDE_ONLY,
 					["groups"] = {
+						i(155832),	-- Pristine Crystal Shard (QI!)
 						i(122661, {	-- S.E.L.F.I.E. Lens Upgrade Kit
 							["timeline"] = { ADDED_6_1_0 },
 							["groups"] = {
@@ -960,7 +957,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(26220, {	-- Everything Is Better with Bacon
 					["qg"] = 42506,	-- Marogg
@@ -969,7 +968,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(31014, {	-- Hellscream's Gift
 					["qg"] = 62092,	-- Garrosh Hellscream
@@ -1573,7 +1574,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = exclude(TROLL, HORDE_ONLY),
 					["timeline"] = { ADDED_4_0_3 },
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(26234, {	-- Stealing From Our Own (Troll)
 					["qg"] = 42506,	-- Marogg
@@ -1582,7 +1585,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["requireSkill"] = COOKING,
 					["races"] = { TROLL },
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(66253, {	-- Stolen Shipments
 					["qg"] = 187758,	-- Zaa'je
@@ -1713,6 +1718,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["timeline"] = { ADDED_8_1_0 },
 					["races"] = HORDE_ONLY,
 					["lvl"] = lvlsquish(120, 120, 50),
+				}),
+				q(75519, {	-- The Long Hunt
+					["sourceQuests"] = {
+						57376,	-- The Hidden Need
+						72867,	-- I Am Forsaken
+						57152,	-- Most Loyal
+					},
+					["sourceQuestNumRequired"] = 1,
+					["provider"] = { "n", 204250 },	-- Lilian Voss / Dori'thur
+					["coords"] = {
+						{ 63.0, 68.4, TIRISFAL_GLADES },
+						{ 48.6, 48.6, ORGRIMMAR },
+					},
+					["timeline"] = { ADDED_10_1_7 },
+					["races"] = HORDE_ONLY,
+					["description"] = "Probably, Undead need to complete The Hidden Need and I Am Forsaken, while non-Undead only need to complete Most Loyal. Undead are offered this quest in Undercity, while non-Undead are offered this quest in Orgrimmar.",
 				}),
 				q(2756, {	-- The Old Ways
 					["qg"] = 7792,	-- Aturk the Anvil
@@ -1949,6 +1970,12 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #if BEFORE 7.3.5
 					-- Cataclysm: Minimum is level 84. (TODO: Confirm this.)
 					["lvl"] = 84,
+					-- #elseif AFTER 9.0.3
+					["groups"] = {
+						n(14720, { -- High Overlord Saurfang
+							["description"] = "Saurfang will not give you any quests after turning in 'Warchied's Command: Twilight Highlands!'. You can get the proper beginning of the Twilight Highland intro questline from Eitrigg in the same room, with the quest 'Machines of War'.\n\nThe same applies for the quest 'Saurfang Will be Pleased', where the continuation yet again is obtained from Eitrigg with the quest 'Traitor's Bait'.",
+						}),
+					},
 					-- #endif
 				})),
 				q(60968, {	-- Warlords of Draenor: Onward to Adventure in Draenor
@@ -2124,22 +2151,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["lvl"] = 16,
 				}),
 			}),
-			q(75519, {	-- The Long Hunt
-				["sourceQuests"] = {
-					57376,	-- The Hidden Need
-					72867,	-- I Am Forsaken
-					57152,	-- Most Loyal
-				},
-				["sourceQuestNumRequired"] = 1,
-				["provider"] = { "n", 204250 },	-- Lilian Voss / Dori'thur
-				["coords"] = {
-					{ 63.0, 68.4, TIRISFAL_GLADES },
-					{ 48.6, 48.6, ORGRIMMAR },
-				},
-				["timeline"] = { ADDED_10_1_7 },
-				["races"] = HORDE_ONLY,
-				["description"] = "Probably, Undead need to complete The Hidden Need and I Am Forsaken, while non-Undead only need to complete Most Loyal. Undead are offered this quest in Undercity, while non-Undead are offered this quest in Orgrimmar.",
-			}),
 			-- #if AFTER 7.0.3.22248
 			n(RARES, {
 				n(130911, {	-- Charles Gastly
@@ -2161,7 +2172,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = { ORC, TROLL, UNDEAD },
 
 					-- Available to Orcs without faction requirements.
-					["minReputation"] = { 76, EXALTED },	-- Orgrimmar, Exalted.
+					["minReputation"] = { FACTION_ORGRIMMAR, EXALTED },	-- Orgrimmar, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. ORC .. [[ then
 							t.minReputation = nil;
@@ -2195,12 +2206,18 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			}),
 			-- #endif
 			n(VENDORS, {
+				n(171691, { -- Alpheus Cain <Shady Dealer>
+					["coord"] = { 75.35, 45.8, ORGRIMMAR },
+					["timeline"] = { ADDED_9_0_1 },
+					["races"] = HORDE_ONLY,
+					["sym"] = {{"select","npcID",99863},{"pop"}},    -- Jenri <Spymaster>
+				}),
 				n(149806, {	-- A. Shady
 					["coord"] = { 76.7, 35.6, ORGRIMMAR },
 					["timeline"] = { ADDED_8_1_5 },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
-						i(166805, {	-- Blood-Soaked Invitation (QI)
+						i(166805, {	-- Blood-Soaked Invitation (QI!)
 							["timeline"] = { ADDED_8_1_5 },
 						}),
 					},
@@ -2334,6 +2351,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				n(12793, {	-- Brave Stonehide <Officer Accessories Quartermaster>
 					["description"] = "Found within the Champion's Hall in Orgrimmar.",
 					["maps"] = { ORGRIMMAR },
+					["races"] = HORDE_ONLY,
 					["groups"] = {
 						i(18607),	-- Horde Battle Standard
 						i(15199),	-- Stone Guard's Herald
@@ -2375,19 +2393,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64912, {	-- Darkspear Cape
-							["minReputation"] = { 530, EXALTED },	-- Darkspear Trolls, Exalted.
+							["minReputation"] = { FACTION_DARKSPEAR_TROLLS, EXALTED },	-- Darkspear Trolls, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64911, {	-- Darkspear Mantle
-							["minReputation"] = { 530, EXALTED },	-- Darkspear Trolls, Exalted.
+							["minReputation"] = { FACTION_DARKSPEAR_TROLLS, EXALTED },	-- Darkspear Trolls, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64913, {	-- Darkspear Shroud
-							["minReputation"] = { 530, EXALTED },	-- Darkspear Trolls, Exalted.
+							["minReputation"] = { FACTION_DARKSPEAR_TROLLS, EXALTED },	-- Darkspear Trolls, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67536, {	-- Darkspear Satchel
-							["minReputation"] = { 530, REVERED },	-- Darkspear Trolls, Revered.
+							["minReputation"] = { FACTION_DARKSPEAR_TROLLS, REVERED },	-- Darkspear Trolls, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -2401,7 +2419,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["timeline"] = { ADDED_5_0_4 },
 						}),
 						i(92070, {	-- Houjin Satchel
-							["minReputation"] = { 1352, REVERED },	-- Huojin Pandaren, Revered.
+							["minReputation"] = { FACTION_HUOJIN_PANDAREN, REVERED },	-- Huojin Pandaren, Revered.
 							["timeline"] = { ADDED_5_1_0 },
 						}),
 					},
@@ -2450,12 +2468,12 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(SOD_PHASE_FOUR, n(3144, {	-- Eitrigg
 					["sourceQuest"] = 6602,	-- Blood of the Black Dragon Champion
 					["coord"] = { 34.6, 38.6, ORGRIMMAR },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						i(226500),	-- Chipped Drakefire Amulet
 						i(228222, {	-- Handbook of Valor of Azeroth
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 							["spellID"] = 461475,	-- Valor of Azeroth
 							["f"] = RECIPES,
 						}),
@@ -2632,19 +2650,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64906, {	-- Bilgewater Cape
-							["minReputation"] = { 1133, EXALTED },	-- Bilgewater Cartel, Exalted.
+							["minReputation"] = { FACTION_BILGEWATER_CARTEL, EXALTED },	-- Bilgewater Cartel, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64905, {	-- Bilgewater Shroud
-							["minReputation"] = { 1133, EXALTED },	-- Bilgewater Cartel, Exalted.
+							["minReputation"] = { FACTION_BILGEWATER_CARTEL, EXALTED },	-- Bilgewater Cartel, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64907, {	-- Bilgewater Mantle
-							["minReputation"] = { 1133, EXALTED },	-- Bilgewater Cartel, Exalted.
+							["minReputation"] = { FACTION_BILGEWATER_CARTEL, EXALTED },	-- Bilgewater Cartel, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67525, {	-- Bilgewater Satchel
-							["minReputation"] = { 1133, REVERED },	-- Bilgewater Cartel, Revered.
+							["minReputation"] = { FACTION_BILGEWATER_CARTEL, REVERED },	-- Bilgewater Cartel, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -2713,6 +2731,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 76.0, 37.2, ORGRIMMAR },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
+						i(2361, {	-- Battleworn Bludgeon
+							["timeline"] = { ADDED_11_0_5 },
+						}),
 						i(23346, {	-- Battleworn Claymore
 							["timeline"] = { ADDED_10_1_7 },
 						}),
@@ -2793,6 +2814,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["timeline"] = { ADDED_4_0_1 },
 					["races"] = HORDE_ONLY,
 					["groups"] = TIER_TWELVE_GROUPS,
+					-- #if AFTER 4.2.0
+					["description"] = "Sells gear related to Cataclysm raid tier 12 (Firelands) as well as Baradin Hold.",
+					-- #endif
 				}),
 				n(3335, {	-- Hagrus <Reagents>
 					["coords"] = {
@@ -2873,16 +2897,15 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 36.6, 74.6, ORGRIMMAR },
 					["timeline"] = { ADDED_7_1_0 },
 					["races"] = HORDE_ONLY,
-					["sym"] = {
-						{"select", "npcID", 158061},					-- Select Historian Ma'di
-						{"pop"},										-- Discard Header and aquire their children
-					},
 				})),
 				n(46556, {	-- Jamus'Vaz <Valor Quartermaster>
 					["coord"] = { 48.6, 71.4, ORGRIMMAR },
 					["timeline"] = { ADDED_4_0_1 },
 					["races"] = HORDE_ONLY,
 					["groups"] = TIER_THIRTEEN_GROUPS,
+					-- #if AFTER 4.3.0
+					["description"] = "Sells gear related to Cataclysm raid tier 13 (Dragon Soul).",
+					-- #endif
 				}),
 				n(3410, {	-- Jin'sora <Bow Merchant>
 					["coord"] = { 77.8, 38.6, ORGRIMMAR },
@@ -2927,7 +2950,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				n(48510, {	-- Kall Worthaton <Trike Dealer>
 					["coord"] = { 36.2, 86.6, ORGRIMMAR },
 					-- Available to Goblins without faction requirements.
-					["minReputation"] = { 1133, EXALTED },	-- Bilgewater Cartel, Exalted.
+					["minReputation"] = { FACTION_BILGEWATER_CARTEL, EXALTED },	-- Bilgewater Cartel, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. GOBLIN .. [[ then
 							t.minReputation = nil;
@@ -4226,6 +4249,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["timeline"] = { ADDED_4_3_0 },
 					["races"] = HORDE_ONLY,
 					["groups"] = TIER_ELEVEN_GROUPS,
+					["description"] = "Sells gear related to Cataclysm raid tier 11 (Throne of the Four Winds, Blackwing Descent, and Bastion of Twilight) as well as Baradin Hold.",
 				}),
 				-- #if AFTER 10.0.5
 				n(3319, {	-- Sana <Mail Armor Merchant>
@@ -4278,9 +4302,11 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				-- #endif
 				-- #if ANYCLASSIC
+				-- #if BEFORE CATA
 				-- TODO: Finish this part.
 				n(12799, {	-- Sergeant Ba'sha <Accessories Quartermaster>
 					["coord"] = { 41.6, 68.6, ORGRIMMAR },
+					["races"] = HORDE_ONLY,
 					["groups"] = {
 						i(15197),	-- Scout's Tabard
 						i(18834, {	-- Insignia of the Horde
@@ -4314,7 +4340,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						i(18428),	-- Senior Sergeant's Insignia (45)
 						i(15200),	-- Senior Sergeant's Insignia (30)
 						i(16486, {	-- First Sergeant's Silk Cuffs (58)
-							["classes"] = { MAGE, PRIEST, WARLOCK },
+							["classes"] = CLOTH_CLASSES,
 						}),
 						i(18434, {	-- First Sergeant's Dragonhide Armguards (58)
 							["classes"] = { DRUID },
@@ -4323,19 +4349,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["classes"] = { WARRIOR },
 						}),
 						i(16532, {	-- First Sergeant's Mail Wristguards (58)
-							["classes"] = { HUNTER, SHAMAN },
+							["classes"] = MAIL_CLASSES,
 						}),
 						i(16497, {	-- First Sergeant's Leather Armguards (58)
 							["classes"] = { ROGUE },
 						}),
 						i(18437, {	-- First Sergeant's Silk Cuffs (45)
-							["classes"] = { MAGE, PRIEST, WARLOCK },
+							["classes"] = CLOTH_CLASSES,
 						}),
 						i(18430, {	-- First Sergeant's Plate Bracers (45)
 							["classes"] = { WARRIOR },
 						}),
 						i(18432, {	-- First Sergeant's Mail Wristguards (45)
-							["classes"] = { HUNTER, SHAMAN },
+							["classes"] = MAIL_CLASSES,
 						}),
 						i(18436, {	-- First Sergeant's Dragonhide Armguards (45)
 							["classes"] = { DRUID },
@@ -4347,6 +4373,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				n(14581, {	-- Sergeant Thunderhorn <Weapons Quartermaster>
 					["description"] = "Found within the Champion's Hall in Orgrimmar.",
+					["races"] = HORDE_ONLY,
 					["groups"] = {
 						i(18831),	-- High Warlord's Battle Axe
 						i(23464),	-- High Warlord's Battle Mace
@@ -4371,6 +4398,17 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						i(18874),	-- High Warlord's War Staff
 					},
 				}),
+				-- #else
+				n(52549, {	-- Sergeant Thunderhorn <Conquest Quartermaster>
+					["coord"] = { 38.8, 70.0, ORGRIMMAR },
+					["timeline"] = { ADDED_4_2_0 },
+					["races"] = HORDE_ONLY,
+					["sym"] = {
+						{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_GLADIATOR },{"merge"},	-- Subroutines are automatically finalized
+						{"pop"},	-- Discard the Set header and acquire the children.
+					},
+				}),
+				-- #endif
 				-- #endif
 				n(26396, {	-- Sergeant Thunderhorn Warlord Vendor Edition
 					["timeline"] = { ADDED_2_4_2 },
@@ -5035,7 +5073,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				n(66022, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 }, }, {	-- Turtlemaster Odai <Dragon Turtle Breeder>
 					["coord"] = { 69.8, 41.0, ORGRIMMAR },
 					-- Available to Huojin Pandaren without faction requirements.
-					["minReputation"] = { 1352, EXALTED },	-- Huojin Pandaren, Exalted.
+					["minReputation"] = { FACTION_HUOJIN_PANDAREN, EXALTED },	-- Huojin Pandaren, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. PANDAREN_HORDE .. [[ then
 							t.minReputation = nil;
@@ -5271,23 +5309,20 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = WARCHIEFS_COMMAND_BOARD_SYMLINK,
 				["races"] = HORDE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 		},
 	}),
 }));
 
--- #if AFTER 8.0.1.27291
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
 	m(KALIMDOR, {
 		m(ORGRIMMAR, {
+			q(51766),	-- cinematic during Horde BFA intro scenario quest
 			q(54948, {	-- something in orgrimmar on lvl 60 necrolord goblin warlock
 				["timeline"] = { ADDED_8_2_0 },
 			}),
-			q(51766, {	-- cinematic during Horde BFA intro scenario quest
-				["timeline"] = { ADDED_8_0_1 },
-			}),
 		}),
 	}),
-});
--- #endif
+})));

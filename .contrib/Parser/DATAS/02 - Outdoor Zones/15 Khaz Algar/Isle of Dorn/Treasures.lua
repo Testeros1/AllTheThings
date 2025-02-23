@@ -11,6 +11,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					{ 70.0, 53.8, ISLE_OF_DORN },
 				},
 			}),
+			o(444066, {	-- Keeper's Stash
+				["coords"] = {
+					{ 62.4, 38.3, ISLE_OF_DORN },
+					{ 38.8, 25.0, ISLE_OF_DORN },
+				},
+			}),
 			--
 			o(442814, {	-- Boskroot Cap
 				["coords"] = {
@@ -22,14 +28,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					{ 52.5, 65.7, ISLE_OF_DORN },
 					{ 52.8, 65.4, ISLE_OF_DORN },
 					{ 53.7, 66.9, ISLE_OF_DORN },
+					{ 52.6, 67.1, ISLE_OF_DORN },
 				},
 				["g"] = {
 					i(221550),	-- Boskroot Cap
 				},
 			}),
 			n(212928, {	-- Dalaran Sewer Turtle
-				["coord"] = { 38.0, 79.5, ISLE_OF_DORN },
-				--["questID"] = ,
+				["description"] = "5 min wait after turnin of the Dornish Pike until the Goldengill Trout is available. You will be able to loot the battle pet in Dornogal.",
+				["coord"] = { 40.9, 73.8, ISLE_OF_DORN },
+				["questID"] = 79586,
 				["cost"] = {
 					{"i", 220143, 5},	-- 5x Dornish Pike
 					{"i", 222533, 1},	-- 1x Goldengill Trout
@@ -42,21 +50,61 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			n(222940, {	-- Freysworn Letitia
-				["description"] = "Find 6 Pearlescent Shellcrab around Isle of Dorn",
+				["description"] = "Find 6 Pearlescent Shellcrab around Isle of Dorn.",
 				["coord"] = { 48.6, 30.0, ISLE_OF_DORN },
 				["g"] = {
 					i(224185),	-- Crab-Guiding Branch
-					n(222941, {	-- Pearlescent Shellcrab
-						["coords"] = {
-							{ 50.7, 70.6, ISLE_OF_DORN },
-							{ 74.9, 49.4, ISLE_OF_DORN },
-							{ 70.8, 20.0, ISLE_OF_DORN },
-							{ 41.9, 27.0, ISLE_OF_DORN },
-							{ 19.7, 58.4, ISLE_OF_DORN },
-							{ 38.3, 42.0, ISLE_OF_DORN },
+					q(82751, {	-- First Crab
+						["name"] = "First Crab",
+						["providers"] = {
+							{ "n", 224548 },	-- Pearlescent Shellcrab
+							{ "i", 224185 },	-- Crab-Guiding Branch
 						},
+						["coord"] = { 50.7, 70.6, ISLE_OF_DORN },
+					}),
+					q(82752, {	-- Second Crab
+						["name"] = "Second Crab",
+						["providers"] = {
+							{ "n", 224548 },	-- Pearlescent Shellcrab
+							{ "i", 224185 },	-- Crab-Guiding Branch
+						},
+						["coord"] = { 74.9, 49.4, ISLE_OF_DORN },
+					}),
+					q(82753, {	-- Third Crab
+						["name"] = "Third Crab",
+						["providers"] = {
+							{ "n", 224548 },	-- Pearlescent Shellcrab
+							{ "i", 224185 },	-- Crab-Guiding Branch
+						},
+						["coord"] = { 70.8, 20.0, ISLE_OF_DORN },
+					}),
+					q(82754, {	-- Fourth Crab
+						["name"] = "Fourth Crab",
+						["providers"] = {
+							{ "n", 224548 },	-- Pearlescent Shellcrab
+							{ "i", 224185 },	-- Crab-Guiding Branch
+						},
+						["coord"] = { 41.9, 27.0, ISLE_OF_DORN },
+					}),
+					q(82755, {	-- Fifth Crab
+						["name"] = "Fifth Crab",
+						["providers"] = {
+							{ "n", 224548 },	-- Pearlescent Shellcrab
+							{ "i", 224185 },	-- Crab-Guiding Branch
+						},
+						["coord"] = { 19.7, 58.4, ISLE_OF_DORN },
+					}),
+					q(82756, {	-- Sixth Crab
+						["name"] = "Sixth Crab",
+						["description"] = "On tree branch.",
+						["providers"] = {
+							{ "n", 224548 },	-- Pearlescent Shellcrab
+							{ "i", 224185 },	-- Crab-Guiding Branch
+						},
+						["coord"] = { 38.3, 42.0, ISLE_OF_DORN },
 					}),
 					o(443318, {	-- Tree's Treasure
+						["sourceQuests"] = { 82751, 82752, 82753, 82754, 82755, 82756 },
 						["questID"] = 83242,
 						["g"] = {
 							i(224585),	-- Hanna's Locket (TOY!)
@@ -67,6 +115,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			o(441183, {	-- Galan's Edict
 				["coord"] = { 37.3, 52.5, ISLE_OF_DORN },
 				["questID"] = 82038,
+				-- #if AFTER 11.0.2.56313
+				-- #if BEFORE 11.0.7
+				["description"] = "This object for its achievement is currently disabled by Blizzard and will be readded in a future patch.",
+				-- #endif
+				-- #endif
+				["timeline"] = { ADDED_11_0_2, "removed 11.0.2.56313", ADDED_11_0_7 },
 			}),
 			o(446473, {	-- Infused Fire-Honey Milk
 				["coord"] = { 56.2, 60.9, ISLE_OF_DORN },
@@ -90,12 +144,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			n(223104, {	-- Lionel
-				["crs"] = { 223104 },	-- Lionel (223143)
+				["description"] = "After you kick Lionel back into water, find 5 |cff888888Plump Snapcrabs|r on the shore and feed him.",
+				["crs"] = { 223159 },	-- Plump Snapcrab
 				["coord"] = { 40.6, 59.9, ISLE_OF_DORN },
 				["questID"] = 82212,	-- Weak Lionfish
 				["cost"] = {{"i", 222906, 5}},	-- 5x Plump Snapcrab
 				["g"] = {
 					o(444022, {	-- Magical Treasure Chest
+						["coord"] = { 40.7, 59.7, ISLE_OF_DORN },
 						["questID"] = 83243,
 						["g"] = {
 							i(224579),	-- Sapphire Crab (PET!)
@@ -104,7 +160,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			o(443638, {	-- Mosswool Flower
-				["description"] = "Interact with Lost Mosswool 3 times to spawn this treasure. Treasure appears with some delay.",
+				["description"] = "Interact with Lost Mosswool 3 times to spawn this treasure.",
 				["questID"] = 83246,
 				["coord"] = { 59.7, 28.7, ISLE_OF_DORN },
 				["g"] = {
@@ -127,13 +183,27 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			o(444894, {	-- Shimmering Opal Lily
-				["description"] = "In pit of this shaft",
+				["description"] = "At the bottom of the cave.\nDespawns after being looted by someone. You may need to wait for it to respawn.",
 				["coord"] = { 48.9, 60.9, ISLE_OF_DORN },
 				["questID"] = 82326,
+			}),
+			o(423854, {	-- Soulwell
+				["description"] = "Can be obtained only during the Introductory quest chain.",
+				["coord"] = { 31.5, 54.2, ISLE_OF_DORN },
+				["questID"] = 84494,
+				["groups"] = {
+					i(228417),	-- Emergency Healthstone
+				},
 			}),
 			o(441223, {	-- Stone of The Unbound
 				["coord"] = { 44.1, 30.1, ISLE_OF_DORN },
 				["questID"] = 82046,
+				-- #if AFTER 11.0.2.56313
+				-- #if BEFORE 11.0.7
+				["description"] = "This object for its achievement is currently disabled by Blizzard and will be readded in a future patch.",
+				-- #endif
+				-- #endif
+				["timeline"] = { ADDED_11_0_2, "removed 11.0.2.56313", ADDED_11_0_7 },
 			}),
 			n(223227, {	-- One-Eyed Thak
 				["crs"] = { 223247 },	-- One-Eyed Thak
@@ -152,8 +222,15 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			o(441231, {	-- Titan Console
 				["coord"] = { 78.1, 27.9, ISLE_OF_DORN },
 				["questID"] = 82045,
+				-- #if AFTER 11.0.2.56313
+				-- #if BEFORE 11.0.7
+				["description"] = "This object for its achievement is currently disabled by Blizzard and will be readded in a future patch.",
+				-- #endif
+				-- #endif
+				["timeline"] = { ADDED_11_0_2, "removed 11.0.2.56313", ADDED_11_0_7 },
 			}),
 			n(222894, {	-- U'llort the Self-Exiled
+				["description"] = "Talk to U'llort then bring it |cff888888Boskroot Cap|r from the woods nearby.",
 				["coord"] = { 55.0, 65.6, ISLE_OF_DORN },
 				["questID"] = 82142,
 				["cost"] = {{"i", 221550, 1}},	-- 1x Boskroot Cap
@@ -163,13 +240,31 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					}),
 				},
 			}),
+			o(441797, {	-- Void-Scarred Stormhammer
+				["coord"] = { 29.0, 36.2, ISLE_OF_DORN },
+				["g"] = {
+					i(220770),	-- Void-Scarred Stormhammer
+				},
+			}),
 			o(441284, {	-- Watcher of the North
 				["coord"] = { 57.2, 20.0, ISLE_OF_DORN },
 				["questID"] = 82047,
+				-- #if AFTER 11.0.2.56313
+				-- #if BEFORE 11.0.7
+				["description"] = "This object for its achievement is currently disabled by Blizzard and will be readded in a future patch.",
+				-- #endif
+				-- #endif
+				["timeline"] = { ADDED_11_0_2, "removed 11.0.2.56313", ADDED_11_0_7 },
 			}),
 			o(441278, {	-- Watcher of the South
 				["coord"] = { 42.1, 80.2, ISLE_OF_DORN },
 				["questID"] = 82048,
+				-- #if AFTER 11.0.2.56313
+				-- #if BEFORE 11.0.7
+				["description"] = "This object for its achievement is currently disabled by Blizzard and will be readded in a future patch.",
+				-- #endif
+				-- #endif
+				["timeline"] = { ADDED_11_0_2, "removed 11.0.2.56313", ADDED_11_0_7 },
 			}),
 			n(222847, {	-- Weary Water Elemental
 				["coord"] = { 54.1, 19.0, ISLE_OF_DORN },
@@ -195,10 +290,17 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(KHAZ_ALGAR, {
-	m(ISLE_OF_DORN, {
-		q(82227),	-- Extra HQT: Magical Treasure Chest
-		q(82253),	-- Extra HQT: Mushroom Cap
-		q(82251),	-- Extra HQT: Mosswool Flower
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	m(KHAZ_ALGAR, {
+		m(ISLE_OF_DORN, {
+			n(TREASURES, {
+				q(82227),	-- Extra HQT: Magical Treasure Chest
+				q(82253),	-- Extra HQT: Mushroom Cap
+				q(82251),	-- Extra HQT: Mosswool Flower
+				q(82252),	-- Completed with Quest 83244 (Mysterious Orb)
+				q(79585),	-- Dalaran Sewer Turtle: Needs more time
+				q(82160),	-- Gathered all the Pearlescent Shellcrab.
+			}),
+		}),
 	}),
-}));
+})));

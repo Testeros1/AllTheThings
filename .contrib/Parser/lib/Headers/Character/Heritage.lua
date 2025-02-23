@@ -1,6 +1,6 @@
 HERITAGE = createHeader({
 	readable = "Heritage",
-	icon = "Interface\\Icons\\vas_guildfactionchange",
+	icon = 2437241,
 	text = {
 		en = "Heritage",
 		es = "Armadura dinástica",
@@ -11,5 +11,6 @@ HERITAGE = createHeader({
 		ru = "Традиционные доспехи",
 		ko = "유산 방어구",
 		cn = "传承护甲",
+		tw = "傳承護甲",
 	},
 });

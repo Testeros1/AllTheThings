@@ -6,7 +6,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #if AFTER 8.3.0
 		["icon"] = 462338,
 		-- #else
-		["icon"] = "Interface\\Icons\\achievement_battleground_battleforgilneas",
+		["icon"] = 462671,
 		-- #endif
 		["timeline"] = { ADDED_4_0_3 },
 		["groups"] = {
@@ -314,7 +314,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						78183,	-- Scarlet Blood
 						78184,	-- Smokepowder and Mirrors
 					},
-					-- ["coord"] = { 57, 53, RUINS_OF_GILNEAS }, -- Spawns with you.
+					-- ["coord"] = { 57, 53, RUINS_OF_GILNEAS },	-- Spawns with you.
 				}),
 				q(78186, {	-- Crushing the Crusade
 					["qg"] = 210964,	-- Lillian Voss
@@ -408,8 +408,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		},
 	}),
 }));
-root(ROOTS.HiddenQuestTriggers, bubbleDown({ ["timeline"] = { ADDED_10_2_5 } }, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_5 } }, {
 	m(RUINS_OF_GILNEAS, {
 		q(80080),	-- Ensemble: Gilnean Noble's Suit
+		q(78903, {	-- Ask Greymane Seneschal by Cathedral or Manor to leave for the day
+			["isDaily"] = true,
+		}),
 	}),
-}));
+})));

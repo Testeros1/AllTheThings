@@ -77,22 +77,22 @@ root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(SPIRES_OF_ARAK, {
 			["lore"] = "Spires of Arak is a zone in southern Draenor. Previously known only as Arak, it once contained a single massive spire that dominated the forested landscape, before it was sundered by the destruction of the Apexis' Breath of Rukhmar. It is the homeland of arakkoa, who rule over the land from the Skyreach, a majestic palace situated atop the largest spire in the area. Their society, however underwent a great schism between the winged arakkoa and the wingless, who are considered lesser beings by their winged brethren. Many of the wingless arakkoa flee the Spires and pour into Talador, while the Iron Horde's Shattered Hand clan strengthens their presence. Many Azerothians also have built their bases along the coast, such as the Steamwheedle Cartel or the Alliance expedition led by Admiral Taylor.",
-			["icon"] = "Interface\\Icons\\achievement_zone_spiresofarak",
+			["icon"] = 1060981,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
-					ach(9605,  {	-- Arak Star
+					ach(9605, {	-- Arak Star
 						["sym"] = {{ "achievement_criteria" }},
 					}),
 					ach(9433),		-- A-VOID-ance
 					ach(9469),		-- Arakkoa Outcasts
-					ach(8925,  {	-- Between Arak and a Hard Place (Alliance)
+					ach(8925, {	-- Between Arak and a Hard Place (Alliance)
 						["races"] = ALLIANCE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 						["g"] = {
 							follower(218),	-- Talonpriest Ishaal
 						},
 					}),
-					ach(8926,  {	-- Between Arak and a Hard Place (Horde)
+					ach(8926, {	-- Between Arak and a Hard Place (Horde)
 						["races"] = HORDE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 						["g"] = {
@@ -105,7 +105,7 @@ root(ROOTS.Zones, {
 					ach(9601, {		-- King of the Monsters (Lost Veil Anzu)
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(9072,  {	-- Mantle of the Talon King
+					ach(9072, {	-- Mantle of the Talon King
 						["sourceQuest"] = 37177,	-- Call of the Talon King
 						["g"] = {
 							--title_gendered(278, 279),	-- Talon King / Talon Queen
@@ -117,7 +117,7 @@ root(ROOTS.Zones, {
 					ach(9600, {		-- Monster Mash (Lost Veil Anzu)
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(9564,  {	-- Securing Draenor (Alliance)
+					ach(9564, {	-- Securing Draenor (Alliance)
 						["collectible"] = false,	-- We want to hide the achievement after the finished the criteria for the zone since they can't earn anything more here
 						["races"] = ALLIANCE_ONLY,
 						["g"] = {
@@ -125,7 +125,7 @@ root(ROOTS.Zones, {
 							crit(26256),	-- Assault on Pillars of Fate
 						},
 					}),
-					ach(9562,  {	-- Securing Draenor (Horde)
+					ach(9562, {	-- Securing Draenor (Horde)
 						["collectible"] = false,	-- We want to hide the achievement after the finished the criteria for the zone since they can't earn anything more here
 						["races"] = HORDE_ONLY,
 						["g"] = {
@@ -170,6 +170,7 @@ root(ROOTS.Zones, {
 					},
 				})),
 				explorationHeader({
+					visit_exploration(7222,{coord={36.4,56.7,SPIRES_OF_ARAK}}),	-- Admiral Taylor's Farm
 					exploration(6999),	-- Admiral Taylor's Garrison
 					exploration(7199),	-- Apexis Excavation
 					exploration(7197),	-- Axefall
@@ -177,7 +178,9 @@ root(ROOTS.Zones, {
 					exploration(7277),	-- Bloodmane Pridelands
 					exploration(7140),	-- Bloodmane Valley
 					exploration(7126),	-- Camp Thornscar
+					visit_exploration(7111,{coord={51.7,31.2,SPIRES_OF_ARAK}}),	-- Crow's Crook
 					exploration(7034),	-- Dreadtalon Peak
+					visit_exploration(7440,{coord={72.4,53.1,SPIRES_OF_ARAK}}),	-- Echidnean Shelf
 					exploration(7276, {	-- Forlorn Delta
 						-- CRIEVE NOTE: I was initially able to collect this, but if you collect Pinchwhistle Gearworks, it gets masked behind it.
 						["collectible"] = false,
@@ -190,25 +193,33 @@ root(ROOTS.Zones, {
 					exploration(7163),	-- Pinchwhistle Point
 					exploration(7035),	-- Ravenskar
 					exploration(7145),	-- Sethekk Hollow
+					visit_exploration(7302,{coord={54.7,21.8,SPIRES_OF_ARAK}}),	-- Shadow's Vigil
 					exploration(7125),	-- Shadowglade
 					exploration(7031),	-- Skettis
 					exploration(7316),	-- Skettis
 					exploration(7198),	-- Southport
+					visit_exploration(7016,{coord={52.0,18.6,SPIRES_OF_ARAK}}),	-- Spires of Arak
 					exploration(7182),	-- Talon Altar
+					visit_exploration(7180,{coord={62.0,42.5,SPIRES_OF_ARAK}}),	-- Talon Watch
+					visit_exploration(7093,{coord={39.8,20.3,SPIRES_OF_ARAK}}),	-- Terokkar Pass
 					exploration(7305),	-- Terrace of Dawn
 					exploration(7147),	-- The Broken Spire
+					visit_exploration(7445,{coord={66.8,61.6,SPIRES_OF_ARAK}}),	-- The Evanescent Sea
 					exploration(7270),	-- The Howling Crag
+					visit_exploration(7449,{coord={30.0,32.7,SPIRES_OF_ARAK}}),	-- The Thorn Pits
 					exploration(7110),	-- The Undergrowth
 					exploration(7202),	-- The Writhing Mire
 					exploration(7127),	-- Veil Akraz
+					visit_exploration(7036,{coord={46.6,45.5,SPIRES_OF_ARAK}}),	-- Veil Terokk
 					exploration(7274, {	-- Veil Zekk
 						-- CRIEVE NOTE: I was initially able to collect this, but if you collect Bloodmane Valley, it gets masked behind it.
 						["collectible"] = false,
 					}),
 					exploration(7306),	-- Windswept Terrace
+					visit_exploration(7164,{coord={60.6,79.8,SPIRES_OF_ARAK}}),	-- Wreck of the Mother Lode
 				}),
 				n(FACTIONS, {
-					faction(1515),	-- Arakkoa Outcasts
+					faction(FACTION_ARAKKOA_OUTCASTS),	-- Arakkoa Outcasts
 				}),
 				n(FLIGHT_PATHS, {
 					fp(1513, {	-- Apexis Excavation, Spires of Arak
@@ -262,7 +273,7 @@ root(ROOTS.Zones, {
 								["races"] = ALLIANCE_ONLY,
 								["provider"] = { "n", 81929 },	-- Lieutenant Willem
 							}),
-							q(37287,  {  -- Cleaning House
+							q(37287, {  -- Cleaning House
 								["sourceQuests"] = { 36165 },	-- No Time to Waste
 								["coord"] = { 39.5, 61.7, SPIRES_OF_ARAK },
 								["races"] = ALLIANCE_ONLY,
@@ -692,7 +703,7 @@ root(ROOTS.Zones, {
 					q(37177, {	-- Call of the Talon King
 						["provider"] = { "n", 84122 },	-- Shade of Terokk
 						["coord"] = { 46.6, 46.7, SPIRES_OF_ARAK },
-						["minReputation"] = { 1515, EXALTED },
+						["minReputation"] = { FACTION_ARAKKOA_OUTCASTS, EXALTED },
 						["description"] = "Granted automatically. If you're in the zone when you hit exalted, leave the zone and return.",
 					}),
 					q(35081, {	-- Clearing Out Before Cleaning Up
@@ -857,7 +868,7 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = { 35261 },	-- Shot Caller
 						["provider"] = {"o",232353},	-- Overseer's Chair
 						["coord"] = { 35.5, 32.1, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\ability_skyreach_shielded",
+						["icon"] = 1029590,
 						["g"] = {
 							i(114727),	-- Cragplate Legguards
 							i(114729),	-- Ravenchain Leggings
@@ -1224,8 +1235,8 @@ root(ROOTS.Zones, {
 					}),
 					q(37144, {	-- Talon Guard Kurekk
 						["provider"] = { "n", 80758 },	-- Talon Guard Kurekk
-						["coord"] = { 62.2, 42.6, SPIRES_OF_ARAK },
-						["minReputation"] = { 1515, EXALTED },
+						["coord"] = { 46.7, 46.4, SPIRES_OF_ARAK },
+						["minReputation"] = { FACTION_ARAKKOA_OUTCASTS, EXALTED },
 						["g"] = {
 							follower(224),	-- Talon Guard Kurekk
 						},
@@ -1396,37 +1407,37 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = { 35286 },	-- Orders, Commander?
 						["coord"] = { 39.6, 61.3, SPIRES_OF_ARAK },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 					}),
 					q(35669, {	-- Wanted: Keeho's Severed Paw (Horde)
 						["sourceQuests"] = { 35277 },	-- Orders, Commander?
 						["coord"] = { 40.1, 43.0, SPIRES_OF_ARAK },
 						["races"] = HORDE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 					}),
 					q(35675, {	-- Wanted: Spineslicer's Husk (Alliance)
 						["sourceQuests"] = { 35286 },	-- Orders, Commander?
 						["coord"] = { 39.6, 61.3, SPIRES_OF_ARAK },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 					}),
 					q(35670, {	-- Wanted: Spineslicer's Husk (Horde)
 						["sourceQuests"] = { 35277 },	-- Orders, Commander?
 						["coord"] = { 40.1, 43.0, SPIRES_OF_ARAK },
 						["races"] = HORDE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 					}),
 					q(35676, {	-- Wanted: Venombarb (Alliance)
 						["sourceQuests"] = { 35286 },	-- Orders, Commander?
 						["coord"] = { 39.6, 61.3, SPIRES_OF_ARAK },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 					}),
 					q(35672, {	-- Wanted: Venombarb (Horde)
 						["sourceQuests"] = { 35277 },	-- Orders, Commander?
 						["coord"] = { 40.1, 43.0, SPIRES_OF_ARAK },
 						["races"] = HORDE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 					}),
 					warchiefscommand(q(49548, {	-- Warchief's Command: Spires of Arak!
 						["timeline"] = { ADDED_7_3_5 },
@@ -1809,7 +1820,7 @@ root(ROOTS.Zones, {
 						["repeatable"] = true,
 						["questID"] = 36397,
 						["coord"] = { 43.8, 24.7, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(115463),	-- Elixir of Shadow Sight
 						},
@@ -1818,7 +1829,7 @@ root(ROOTS.Zones, {
 						["repeatable"] = true,
 						["questID"] = 36401,
 						["coord"] = { 53.1, 84.5, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(115463),	-- Elixir of Shadow Sight
 						},
@@ -1827,7 +1838,7 @@ root(ROOTS.Zones, {
 						["repeatable"] = true,
 						["questID"] = 36398,
 						["coord"] = { 69.2, 43.5, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(115463),	-- Elixir of Shadow Sight
 						},
@@ -1836,7 +1847,7 @@ root(ROOTS.Zones, {
 						["repeatable"] = true,
 						["questID"] = 36395,
 						["coord"] = { 43.9, 15.0, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(115463),	-- Elixir of Shadow Sight
 						},
@@ -1845,7 +1856,7 @@ root(ROOTS.Zones, {
 						["repeatable"] = true,
 						["questID"] = 36400,
 						["coord"] = { 55.6, 22.1, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(115463),	-- Elixir of Shadow Sight
 						},
@@ -1854,7 +1865,7 @@ root(ROOTS.Zones, {
 						["repeatable"] = true,
 						["questID"] = 36399,
 						["coord"] = { 48.9, 62.5, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(115463),	-- Elixir of Shadow Sight
 						},
@@ -1862,7 +1873,7 @@ root(ROOTS.Zones, {
 					o(235097, {	-- Ephial's Dark Grimoire
 						["questID"] = 36418,
 						["coord"] = { 36.5, 57.9, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv_potion_122",
+						["icon"] = 134746,
 						["g"] = {
 							i(116914),	-- Ephial's Grimoire
 						},
@@ -1891,6 +1902,7 @@ root(ROOTS.Zones, {
 					}),
 					o(234618, {	-- Gift of Anzu
 						["description"] = "Drink an Elixir of Shadow Sight near the Shrine to get the Gift of Anzu.",
+						["cost"] = {{"i",115463,1}},	-- Elixir of Shadow Sight
 						["questID"] = 36381,
 						["coord"] = { 61.1, 55.3, SPIRES_OF_ARAK },
 						["modelScale"] = 0.4,
@@ -1898,47 +1910,52 @@ root(ROOTS.Zones, {
 							i(118240),	-- Anzu's Scything Talon
 						},
 					}),
-					n(86961,  {	-- Gift of Anzu
+					n(86961, {	-- Gift of Anzu
 						["description"] = "Drink an Elixir of Shadow Sight near the Shrine to get the Gift of Anzu.",
+						["cost"] = {{"i",115463,1}},	-- Elixir of Shadow Sight
 						["questID"] = 36386,
 						["coord"] = { 48.6, 44.4, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv-mount_raven_54",	-- TODO: not working
+						["icon"] = 132372,	-- TODO: not working
 						["g"] = {
 							i(118237),	-- Anzu's Malice
 						},
 					}),
-					n(86941,  {	-- Gift of Anzu
+					n(86941, {	-- Gift of Anzu
 						["description"] = "Drink an Elixir of Shadow Sight near the Shrine to get the Gift of Anzu.",
+						["cost"] = {{"i",115463,1}},	-- Elixir of Shadow Sight
 						["questID"] = 36388,
 						["coord"] = { 42.42, 26.69, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv-mount_raven_54",	-- TODO: not working
+						["icon"] = 132372,	-- TODO: not working
 						["g"] = {
 							i(118242),	-- Anzu's Scorn
 						},
 					}),
-					n(86962,  {	-- Gift of Anzu
+					n(86962, {	-- Gift of Anzu
 						["description"] = "Drink an Elixir of Shadow Sight near the Shrine to get the Gift of Anzu.",
+						["cost"] = {{"i",115463,1}},	-- Elixir of Shadow Sight
 						["questID"] = 36389,
 						["coord"] = { 46.9, 40.46, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv-mount_raven_54",	-- TODO: not working
+						["icon"] = 132372,	-- TODO: not working
 						["g"] = {
 							i(118238),	-- Anzu's Reach
 						},
 					}),
-					n(86953,  {	-- Gift of Anzu
+					n(86953, {	-- Gift of Anzu
 						["description"] = "Drink an Elixir of Shadow Sight near the Shrine to get the Gift of Anzu.",
+						["cost"] = {{"i",115463,1}},	-- Elixir of Shadow Sight
 						["questID"] = 36390,
 						["coord"] = { 57.01, 78.93, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv-mount_raven_54",	-- TODO: not working
+						["icon"] = 132372,	-- TODO: not working
 						["g"] = {
 							i(118241),	-- Anzu's Piercing Talon
 						},
 					}),
-					n(86956,  {	-- Gift of Anzu
+					n(86956, {	-- Gift of Anzu
 						["description"] = "Drink an Elixir of Shadow Sight near the Shrine to get the Gift of Anzu.",
+						["cost"] = {{"i",115463,1}},	-- Elixir of Shadow Sight
 						["questID"] = 36392,
 						["coord"] = { 52.0, 19.7, SPIRES_OF_ARAK },
-						["icon"] = "Interface\\Icons\\inv-mount_raven_54",	-- TODO: not working
+						["icon"] = 132372,	-- TODO: not working
 						["g"] = {
 							i(118239),	-- Anzu's Stoicism
 						},
@@ -1970,7 +1987,7 @@ root(ROOTS.Zones, {
 					}),
 					o(234154, {	-- Misplaced Scrolls
 						["questID"] = 36244,
-						["icon"] = "Interface\\Icons\\trade_archaeology_silverscrollcase",
+						["icon"] = 454060,
 						["coord"] = { 42.7, 18.3, SPIRES_OF_ARAK },
 						["g"] = {
 							i(109585),	-- Arakkoa Cipher
@@ -2053,37 +2070,37 @@ root(ROOTS.Zones, {
 					}),
 					o(234449, {	-- Relics of the Outcasts
 						["questID"] = 36355,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 43.2, 27.2, SPIRES_OF_ARAK },
 						["description"] = "Must have archaeology.",
 					}),
 					o(234454, {	-- Relics of the Outcasts
 						["questID"] = 36359,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 60.2, 53.8, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
 					o(234446, {	-- Relics of the Outcasts
 						["questID"] = 36354,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 45.9, 44.2, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
 					o(234451, {	-- Relics of the Outcasts
 						["questID"] = 36356,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 67.5, 39.9, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
 					o(234455, {	-- Relics of the Outcasts
 						["questID"] = 36360,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 51.8, 48.9, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
 					o(234155, {	-- Relics of the Outcasts
 						["questID"] = 36245,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 43.0, 16.5, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
@@ -2153,7 +2170,7 @@ root(ROOTS.Zones, {
 					}),
 					o(235135, {	-- Smuggled Apexis Artifacts
 						["questID"] = 36433,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 56.3, 45.3, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
@@ -2170,13 +2187,13 @@ root(ROOTS.Zones, {
 					}),
 					o(235104, {	-- Sun-Touched Cache
 						["questID"] = 36421,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 34.1, 27.5, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
 					o(235105, {	-- Sun-Touched Cache
 						["questID"] = 36422,
-						["icon"] = "Interface\\Icons\\achievement_dungeon_arakkoaspires",
+						["icon"] = 1002596,
 						["coord"] = { 33.3, 27.3, SPIRES_OF_ARAK },
 						["description"] = "Requires archaeology.",
 					}),
@@ -2319,28 +2336,34 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(35874),	-- Apparatus - triggers after finishing "The Ebon Hunter" (questID 35835 & 35797)
-		q(35290),	-- Inn - Inn selected (A)
-		q(37315),	-- Inn - Inn selected (A)
-		q(35283),	-- Inn - Inn selected (H)
-		q(37313),	-- Inn - Inn selected (H)
-		q(37417),	-- Feast of the Spires - put down by the barkeep if you have the brewery (A)
-		q(37416),	-- Feast of the Spires - put down by the barkeep if you have the brewery (H)
-		q(36111),	-- Flight Home
-		q(36112),	-- Flight Home
-		q(36577),	-- Flying Machine Completed - triggers after landing during "Flame On" (questID 35298)
-		q(35028),	-- Krikka and Vakora Tracking - triggers during "The Bloodmane" (questID 34923) and "Words of the Raven Mother" (questID 34922)
-		q(35201),	-- Krixel
-		q(36184),	-- Mother Lode - triggers when you accept "The Mother Lode" quest and the crash happens (questID 35080)
-		q(36885),	-- Ogre Waygate
-		q(36724),	-- Reshad Tracking - triggers after turning in "Call of the Raven Mother" (questID 35009)
-		q(36798),	-- Rooby Roo - fed 3x to reveal the treasure
-		q(37317),	-- Talon King Ikiss - killed during "The False Talon King" (questID 35011)
-		q(35291),	-- Trading Post - Trading Post selected (A)
-		q(37316),	-- Trading Post - Trading Post selected (A)
-		q(35284),	-- Trading Post - Trading Post selected (H)
-		q(37314),	-- Trading Post - Trading Post selected (H)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	m(DRAENOR, {
+		m(SPIRES_OF_ARAK, {
+			n(QUESTS, {
+				q(35874),	-- Apparatus - triggers after finishing "The Ebon Hunter" (questID 35835 & 35797)
+				q(35290),	-- Inn - Inn selected (A)
+				q(37315),	-- Inn - Inn selected (A)
+				q(35283),	-- Inn - Inn selected (H)
+				q(37313),	-- Inn - Inn selected (H)
+				q(37417),	-- Feast of the Spires - put down by the barkeep if you have the brewery (A)
+				q(37416),	-- Feast of the Spires - put down by the barkeep if you have the brewery (H)
+				q(36111),	-- Flight Home
+				q(36112),	-- Flight Home
+				q(36577),	-- Flying Machine Completed - triggers after landing during "Flame On" (questID 35298)
+				q(35028),	-- Krikka and Vakora Tracking - triggers during "The Bloodmane" (questID 34923) and "Words of the Raven Mother" (questID 34922)
+				q(35201),	-- Krixel
+				q(36184),	-- Mother Lode - triggers when you accept "The Mother Lode" quest and the crash happens (questID 35080)
+				q(36885),	-- Ogre Waygate
+				q(36724),	-- Reshad Tracking - triggers after turning in "Call of the Raven Mother" (questID 35009)
+				q(37317),	-- Talon King Ikiss - killed during "The False Talon King" (questID 35011)
+				q(35291),	-- Trading Post - Trading Post selected (A)
+				q(37316),	-- Trading Post - Trading Post selected (A)
+				q(35284),	-- Trading Post - Trading Post selected (H)
+				q(37314),	-- Trading Post - Trading Post selected (H)
+			}),
+			n(TREASURES, {
+				q(36798),	-- Rooby Roo - fed 3x to reveal the treasure
+			}),
+		}),
 	}),
-});
+})));

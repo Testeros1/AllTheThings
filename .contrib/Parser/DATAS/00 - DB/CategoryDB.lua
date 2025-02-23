@@ -4,7 +4,7 @@
 local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	[1] = {
 		readable = "Bullets",
-		icon = "Interface/Icons/INV_Ammo_Bullet_01",
+		icon = 132383,
 		text = {
 			en = "Bullets",
 			ko = "투사체",
@@ -12,7 +12,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[2] = {
 		readable = "Consumable",
-		icon = "Interface/Icons/ability_creature_poison_06",
+		icon = 132108,
 		text = {
 			en = "Consumable",
 			ko = "소모품",
@@ -20,14 +20,15 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[3] = {
 		readable = "Tarot Decks",
-		icon = "Interface/Icons/Inv_misc_ticket_tarot_portal_01",
+		icon = 134492,
 		text = {
 			en = "Tarot Decks",
+			cn = "塔罗牌",
 		},
 	},
 	[58] = {
 		readable = "Holiday Cooking",
-		icon = "Interface/Icons/INV_Misc_Food_62",
+		icon = 134018,
 		text = {
 			en = "Holiday Cooking",
 			ko = "축제 요리",
@@ -35,7 +36,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[63] = {
 		readable = "Everyday Cooking",
-		icon = "Interface/Icons/INV_Misc_Food_12",
+		icon = 133968,
 		text = {
 			en = "Everyday Cooking",
 			ko = "일반 요리",
@@ -43,49 +44,49 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[64] = {
 		readable = "Way of the Grill",
-		icon = "Interface/Icons/achievement_cooking_masterofthegrill",
+		icon = 629054,
 		text = {
 			en = WOWAPI_GetSpellName(124694),
 		},
 	},
 	[65] = {
 		readable = "Way of the Wok",
-		icon = "Interface/Icons/achievement_cooking_masterofthewok",
+		icon = 629059,
 		text = {
 			en = WOWAPI_GetSpellName(125584),
 		},
 	},
 	[66] = {
 		readable = "Way of the Pot",
-		icon = "Interface/Icons/achievement_cooking_masterofthepot",
+		icon = 629056,
 		text = {
 			en = WOWAPI_GetSpellName(125586),
 		},
 	},
 	[67] = {
 		readable = "Way of the Steamer",
-		icon = "Interface/Icons/achievement_cooking_masterofthesteamer",
+		icon = 629057,
 		text = {
 			en = WOWAPI_GetSpellName(125587),
 		},
 	},
 	[68] = {
 		readable = "Way of the Oven",
-		icon = "Interface/Icons/achievement_cooking_masteroftheoven",
+		icon = 629055,
 		text = {
 			en = WOWAPI_GetSpellName(125588),
 		},
 	},
 	[69] = {
 		readable = "Way of the Brew",
-		icon = "Interface/Icons/achievement_cooking_masterofthestill",
+		icon = 629058,
 		text = {
 			en = WOWAPI_GetSpellName(125589),
 		},
 	},
 	[70] = {
 		readable = "Unusual Delights",
-		icon = "Interface/Icons/INV_Helmet_66",
+		icon = 133168,
 		text = {
 			en = "Unusual Delights",
 			ko = "특별한 별미",
@@ -93,7 +94,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[71] = {
 		readable = "Weapon Skills",
-		icon = "Interface/Icons/INV_Weapon_Halberd_10",
+		icon = 135580,
 		text = {
 			en = "Weapon Skills",
 		},
@@ -106,7 +107,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[73] = {
 		readable = "Outlandish Dishes",
-		icon = "Interface/Icons/inv_misc_ticket_tarot_stack_01",
+		icon = 134493,
 		text = {
 			en = "Outlandish Dishes",
 		},
@@ -131,7 +132,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[91] = {
 		readable = "Glyphs",
-		icon = "Interface/Icons/inv_glyph_minordruid",
+		icon = 254299,
 		text = {
 			en = "Glyphs",
 		},
@@ -144,7 +145,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[104] = {
 		readable = "Ink",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Ink",
 		},
@@ -157,21 +158,22 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[106] = {
 		readable = "Card",
-		icon = "Interface/Icons/Inv_misc_ticket_tarot_portal_01",
+		icon = 134492,
 		text = {
 			en = "Card",
+			tw = "卡片",
 		},
 	},
 	[107] = {
 		readable = "Scrolls",
-		icon = "Interface/Icons/inv_scroll_03",
+		icon = 134939,
 		text = {
 			en = "Scrolls",
 		},
 	},
 	[108] = {
 		readable = "Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Research",
 		},
@@ -192,14 +194,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[165] = {
 		readable = "Fist Weapons",
-		icon = "Interface/Icons/inv_weapon_hand_08",
+		icon = 135599,
 		text = {
 			en = "Fist Weapons",
 		},
 	},
 	[167] = {
 		readable = "Crowns",
-		icon = "Interface/Icons/inv_crown_13",
+		icon = 132769,
 		text = {
 			en = "Crowns",
 			ko = "머리",
@@ -207,7 +209,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[168] = {
 		readable = "Materials",
-		icon = "Interface/Icons/inv_jewelcrafting_bronzesetting",
+		icon = 133237,
 		text = {
 			en = "Materials",
 			ko = "재료",
@@ -215,7 +217,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[171] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -223,7 +225,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[176] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -231,14 +233,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[178] = {
 		readable = "Statues",
-		icon = "Interface/Icons/inv_misc_statue_09",
+		icon = 134451,
 		text = {
 			en = "Statues",
 		},
 	},
 	[180] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -246,7 +248,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[183] = {
 		readable = "Parts",
-		icon = "Interface/Icons/INV_Gizmo_BronzeFramework_01",
+		icon = 133006,
 		text = {
 			en = "Parts",
 			ko = "부품",
@@ -254,7 +256,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[184] = {
 		readable = "Explosives",
-		icon = "Interface/Icons/INV_Misc_Bomb_03",
+		icon = 133711,
 		text = {
 			en = "Explosives",
 			ko = "폭발물",
@@ -262,7 +264,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[185] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/INV_Helmet_47",
+		icon = 133149,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -270,7 +272,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[188] = {
 		readable = "Devices",
-		icon = "Interface/Icons/INV_Crate_06",
+		icon = 132766,
 		text = {
 			en = "Devices",
 			ko = "장치",
@@ -278,7 +280,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[189] = {
 		readable = "Guns & Bows",
-		icon = "Interface/Icons/INV_Weapon_Rifle_03",
+		icon = 135612,
 		text = {
 			en = "Guns & Bows",
 			ko = "총과 활",
@@ -286,7 +288,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[190] = {
 		readable = "Scopes",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes",
 			ko = "조준경",
@@ -294,7 +296,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[191] = {
 		readable = "Tools",
-		icon = "Interface/Icons/INV_Misc_Wrench_01",
+		icon = 134520,
 		text = {
 			en = "Tools",
 			ko = "장비",
@@ -302,7 +304,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[194] = {
 		readable = "Fireworks",
-		icon = "Interface/Icons/Spell_Fire_Flare",
+		icon = 135815,
 		text = {
 			en = "Fireworks",
 			ko = "폭죽",
@@ -310,7 +312,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[215] = {
 		readable = "Materials",
-		icon = "Interface/Icons/inv_stone_grindingstone_05",
+		icon = 135247,
 		text = {
 			en = "Materials",
 			ko = "재료",
@@ -318,21 +320,21 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[216] = {
 		readable = "Weapon Mods",
-		icon = "Interface/Icons/inv_stone_sharpeningstone_03",
+		icon = 135250,
 		text = {
 			en = "Weapon Mods",
 		},
 	},
 	[217] = {
 		readable = "Armor Mods",
-		icon = "Interface/Icons/Inv_misc_armorkit_02",
+		icon = 133597,
 		text = {
 			en = "Armor Mods",
 		},
 	},
 	[218] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_25",
+		icon = 133127,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -340,7 +342,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[219] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_22",
+		icon = 135053,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -348,7 +350,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[220] = {
 		readable = "Chest",
-		icon = "Interface/Icons/INV_Chest_Chain",
+		icon = 132624,
 		text = {
 			en = "Chest",
 			ko = "가슴",
@@ -356,7 +358,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[221] = {
 		readable = "Gauntlets",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Gauntlets",
 			ko = "손",
@@ -364,7 +366,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[222] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -372,7 +374,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[223] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_27",
+		icon = 132516,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -380,7 +382,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[224] = {
 		readable = "Legs",
-		icon = "Interface/Icons/INV_Pants_04",
+		icon = 134584,
 		text = {
 			en = "Legs",
 			ko = "다리",
@@ -388,7 +390,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[225] = {
 		readable = "Boots",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -396,7 +398,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[226] = {
 		readable = "Shields",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shields",
 			ko = "방패",
@@ -404,15 +406,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[227] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/INV_Weapon_Halberd_10",
+		icon = 135580,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[228] = {
 		readable = "Skeleton Keys",
-		icon = "Interface/Icons/INV_Misc_Key_11",
+		icon = 134245,
 		text = {
 			en = "Skeleton Keys",
 			ko = "해골 열쇠",
@@ -420,7 +423,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[230] = {
 		readable = "Materials",
-		icon = "Interface/Icons/inv_fabric_silk_03",
+		icon = 132907,
 		text = {
 			en = "Materials",
 			ko = "재료",
@@ -428,15 +431,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[233] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_19",
+		icon = 133652,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[234] = {
 		readable = "Hats & Hoods",
-		icon = "Interface/Icons/inv_helmet_31",
+		icon = 133133,
 		text = {
 			en = "Hats & Hoods",
 			ko = "머리",
@@ -444,7 +448,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[235] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/inv_shoulder_02",
+		icon = 135033,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -452,7 +456,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[236] = {
 		readable = "Robes & Tunics",
-		icon = "Interface/Icons/inv_chest_cloth_18",
+		icon = 132659,
 		text = {
 			en = "Robes & Tunics",
 			ko = "가슴",
@@ -460,7 +464,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[237] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/inv_bracer_07",
+		icon = 132606,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -468,7 +472,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[238] = {
 		readable = "Belts",
-		icon = "Interface/Icons/inv_belt_14",
+		icon = 132503,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -476,7 +480,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[239] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/inv_gauntlets_06",
+		icon = 132940,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -484,7 +488,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[240] = {
 		readable = "Pants",
-		icon = "Interface/Icons/inv_pants_06",
+		icon = 134586,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -492,7 +496,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[241] = {
 		readable = "Boots",
-		icon = "Interface/Icons/inv_boots_05",
+		icon = 132539,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -500,7 +504,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[242] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/inv_misc_cape_16",
+		icon = 133768,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -508,7 +512,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[243] = {
 		readable = "Shirts",
-		icon = "Interface/Icons/inv_shirt_red_01",
+		icon = 135029,
 		text = {
 			en = "Shirts",
 			ko = "속옷",
@@ -522,7 +526,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[247] = {
 		readable = "Materials",
-		icon = "Interface/Icons/INV_Misc_LeatherScrap_03",
+		icon = 134252,
 		text = {
 			en = "Materials",
 			ko = "재료",
@@ -530,7 +534,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[249] = {
 		readable = "Armor Kits",
-		icon = "Interface/Icons/INV_Misc_ArmorKit_17",
+		icon = 133611,
 		text = {
 			en = "Armor Kits",
 			ko = "방어구 키트",
@@ -538,15 +542,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[250] = {
 		readable = "Bags",
-		icon = "Interface/Icons/INV_Misc_Bag_07",
+		icon = 133628,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[251] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_08",
+		icon = 133076,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -554,7 +559,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[252] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_01",
+		icon = 135032,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -562,7 +567,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[253] = {
 		readable = "Chest",
-		icon = "Interface/Icons/INV_Chest_Chain_13",
+		icon = 132635,
 		text = {
 			en = "Chest",
 			ko = "가슴",
@@ -570,7 +575,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[254] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_08",
+		icon = 132607,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -578,7 +583,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[255] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/INV_Gauntlets_05",
+		icon = 132939,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -586,7 +591,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[256] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_24",
+		icon = 132513,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -594,7 +599,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[257] = {
 		readable = "Pants",
-		icon = "Interface/Icons/INV_Pants_12",
+		icon = 134592,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -602,7 +607,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[258] = {
 		readable = "Boots",
-		icon = "Interface/Icons/INV_Boots_Chain_01",
+		icon = 132544,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -610,7 +615,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[259] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_03",
+		icon = 133755,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -642,7 +647,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[333] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -650,7 +655,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[334] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -658,7 +663,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[335] = {
 		readable = "Potions and Elixirs",
-		icon = "Interface/Icons/INV_Potion_51",
+		icon = 134831,
 		text = {
 			en = "Potions and Elixirs",
 			ko = "물약과 엘릭서",
@@ -666,7 +671,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[336] = {
 		readable = "Trinkets and Trinket Upgrades",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets and Trinket Upgrades",
 			ko = "장비",
@@ -716,7 +721,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[349] = {
 		readable = "Cloak",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloak",
 			ko = "등",
@@ -724,7 +729,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[350] = {
 		readable = "Neck",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Neck",
 			ko = "목",
@@ -732,7 +737,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[351] = {
 		readable = "Ring",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Ring",
 			ko = "손가락",
@@ -740,7 +745,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[352] = {
 		readable = "Weapon",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon",
 		},
@@ -778,7 +783,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[366] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -811,7 +816,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[374] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -856,7 +861,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[381] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 		},
@@ -881,7 +886,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[385] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -889,10 +894,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[386] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[388] = {
@@ -910,7 +916,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[390] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -930,7 +936,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[393] = {
 		readable = "Weapons and Shields",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons and Shields",
 			ko = "무기 & 방패",
@@ -945,7 +951,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[399] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
@@ -976,7 +982,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[407] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -984,7 +990,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[409] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_enchanting_wod_crystal",
+		icon = 1003586,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -1007,6 +1013,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 		readable = "Card",
 		text = {
 			en = "Card",
+			tw = "卡片",
 		},
 	},
 	[413] = {
@@ -1017,7 +1024,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[414] = {
 		readable = "Reagents and Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Reagents and Research",
 			ko = "재료 & 연구",
@@ -1031,7 +1038,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[416] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -1065,7 +1072,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[423] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -1073,7 +1080,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[424] = {
 		readable = "Training",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Training",
 		},
@@ -1118,7 +1125,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[431] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -1126,7 +1133,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[432] = {
 		readable = "Training",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Training",
 		},
@@ -1146,7 +1153,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[435] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -1154,7 +1161,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[436] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -1169,7 +1176,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[438] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -1195,14 +1202,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[444] = {
 		readable = "Neck Enchantments",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Neck Enchantments",
 		},
 	},
 	[445] = {
 		readable = "Ring Enchantments",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Ring Enchantments",
 			ko = "손가락 마법부여",
@@ -1210,7 +1217,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[446] = {
 		readable = "Cloak Enchantments",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloak Enchantments",
 			ko = "망토 마법부여",
@@ -1225,7 +1232,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[448] = {
 		readable = "Glove Enchantments",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Glove Enchantments",
 			ko = "장갑 마법부여",
@@ -1251,14 +1258,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[453] = {
 		readable = "Vantus Runes",
-		icon = "Interface/Icons/70_inscription_vantus_rune_suramar",
+		icon = 1392953,
 		text = {
 			en = "Vantus Runes",
 		},
 	},
 	[454] = {
 		readable = "Books & Scrolls",
-		icon = "Interface/Icons/inv_scroll_03",
+		icon = 134939,
 		text = {
 			en = "Books & Scrolls",
 		},
@@ -1308,7 +1315,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[465] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -1329,7 +1336,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[468] = {
 		readable = "Training",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Training",
 		},
@@ -1342,7 +1349,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[470] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -1430,28 +1437,28 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[488] = {
 		readable = "Relics",
-		icon = "Interface/Icons/inv_enchanting_wod_essence3",
+		icon = 1003601,
 		text = {
 			en = "Relics",
 		},
 	},
 	[489] = {
 		readable = "Relics",
-		icon = "Interface/Icons/inv_enchanting_wod_essence3",
+		icon = 1003601,
 		text = {
 			en = "Relics",
 		},
 	},
 	[490] = {
 		readable = "Relics",
-		icon = "Interface/Icons/inv_enchanting_wod_essence3",
+		icon = 1003601,
 		text = {
 			en = "Relics",
 		},
 	},
 	[491] = {
 		readable = "Relics",
-		icon = "Interface/Icons/inv_enchanting_wod_essence3",
+		icon = 1003601,
 		text = {
 			en = "Relics",
 		},
@@ -1496,7 +1503,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[507] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -1504,7 +1511,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[535] = {
 		readable = "Crowns",
-		icon = "Interface/Icons/inv_crown_01",
+		icon = 132767,
 		text = {
 			en = "Crowns",
 			ko = "머리",
@@ -1512,7 +1519,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[536] = {
 		readable = "Training",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Training",
 		},
@@ -1531,10 +1538,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[548] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[549] = {
@@ -1558,7 +1566,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[554] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_08",
+		icon = 133076,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -1566,7 +1574,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[555] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_01",
+		icon = 135032,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -1587,7 +1595,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[559] = {
 		readable = "Chest",
-		icon = "Interface/Icons/INV_Chest_Chain_13",
+		icon = 132635,
 		text = {
 			en = "Chest",
 			ko = "가슴",
@@ -1595,7 +1603,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[560] = {
 		readable = "Gauntlets",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Gauntlets",
 			ko = "손",
@@ -1603,7 +1611,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[561] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_08",
+		icon = 132607,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -1611,7 +1619,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[562] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_24",
+		icon = 132513,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -1619,7 +1627,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[563] = {
 		readable = "Legs",
-		icon = "Interface/Icons/INV_Pants_04",
+		icon = 134584,
 		text = {
 			en = "Legs",
 			ko = "다리",
@@ -1627,7 +1635,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[564] = {
 		readable = "Boots",
-		icon = "Interface/Icons/inv_boots_05",
+		icon = 132539,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -1635,7 +1643,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[565] = {
 		readable = "Shields",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shields",
 			ko = "방패",
@@ -1643,15 +1651,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[566] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[567] = {
 		readable = "Skeleton Keys",
-		icon = "Interface/Icons/INV_Misc_Key_11",
+		icon = 134245,
 		text = {
 			en = "Skeleton Keys",
 			ko = "해골 열쇠",
@@ -1671,10 +1680,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[571] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[572] = {
@@ -1686,7 +1696,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[573] = {
 		readable = "Shields",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shields",
 			ko = "방패",
@@ -1700,7 +1710,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[575] = {
 		readable = "Skeleton Keys",
-		icon = "Interface/Icons/INV_Misc_Key_11",
+		icon = 134245,
 		text = {
 			en = "Skeleton Keys",
 			ko = "해골 열쇠",
@@ -1726,7 +1736,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[580] = {
 		readable = "Shields",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shields",
 			ko = "방패",
@@ -1734,15 +1744,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[581] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[582] = {
 		readable = "Skeleton Keys",
-		icon = "Interface/Icons/INV_Misc_Key_11",
+		icon = 134245,
 		text = {
 			en = "Skeleton Keys",
 			ko = "해골 열쇠",
@@ -1768,10 +1779,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[588] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[590] = {
@@ -1832,7 +1844,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[607] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -1840,7 +1852,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[608] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -1848,7 +1860,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[609] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -1862,7 +1874,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[611] = {
 		readable = "Potions",
-		icon = "Interface/Icons/INV_Potion_51",
+		icon = 134831,
 		text = {
 			en = "Potions",
 			ko = "물약",
@@ -1870,7 +1882,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[612] = {
 		readable = "Elixirs",
-		icon = "Interface/Icons/INV_Potion_56",
+		icon = 134836,
 		text = {
 			en = "Elixirs",
 			ko = "비약",
@@ -1878,7 +1890,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[613] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -1886,7 +1898,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[614] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -1894,7 +1906,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[615] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -1902,7 +1914,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[616] = {
 		readable = "Oils",
-		icon = "Interface/Icons/inv_potion_101",
+		icon = 134723,
 		text = {
 			en = "Oils",
 			ko = "오일",
@@ -1916,7 +1928,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[618] = {
 		readable = "Potions",
-		icon = "Interface/Icons/INV_Potion_51",
+		icon = 134831,
 		text = {
 			en = "Potions",
 			ko = "물약",
@@ -1924,7 +1936,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[619] = {
 		readable = "Elixirs",
-		icon = "Interface/Icons/INV_Potion_56",
+		icon = 134836,
 		text = {
 			en = "Elixirs",
 			ko = "비약",
@@ -1932,7 +1944,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[620] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -1940,7 +1952,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[621] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -1948,7 +1960,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[622] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -1956,7 +1968,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[623] = {
 		readable = "Oils",
-		icon = "Interface/Icons/inv_potion_101",
+		icon = 134723,
 		text = {
 			en = "Oils",
 			ko = "오일",
@@ -1964,21 +1976,21 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[624] = {
 		readable = "Mounts",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts",
 		},
 	},
 	[625] = {
 		readable = "Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Research",
 		},
 	},
 	[626] = {
 		readable = "Potions",
-		icon = "Interface/Icons/INV_Potion_51",
+		icon = 134831,
 		text = {
 			en = "Potions",
 			ko = "물약",
@@ -1986,7 +1998,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[627] = {
 		readable = "Elixirs",
-		icon = "Interface/Icons/INV_Potion_56",
+		icon = 134836,
 		text = {
 			en = "Elixirs",
 			ko = "비약",
@@ -1994,7 +2006,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[628] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -2002,7 +2014,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[629] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -2010,7 +2022,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[630] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -2018,7 +2030,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[631] = {
 		readable = "Oils",
-		icon = "Interface/Icons/inv_potion_101",
+		icon = 134723,
 		text = {
 			en = "Oils",
 			ko = "오일",
@@ -2032,7 +2044,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[633] = {
 		readable = "Potions",
-		icon = "Interface/Icons/INV_Potion_51",
+		icon = 134831,
 		text = {
 			en = "Potions",
 			ko = "물약",
@@ -2040,7 +2052,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[634] = {
 		readable = "Elixirs",
-		icon = "Interface/Icons/INV_Potion_56",
+		icon = 134836,
 		text = {
 			en = "Elixirs",
 			ko = "비약",
@@ -2048,7 +2060,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[635] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -2056,7 +2068,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[636] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -2064,7 +2076,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[637] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -2072,7 +2084,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[638] = {
 		readable = "Potions",
-		icon = "Interface/Icons/INV_Potion_51",
+		icon = 134831,
 		text = {
 			en = "Potions",
 			ko = "물약",
@@ -2080,7 +2092,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[639] = {
 		readable = "Elixirs",
-		icon = "Interface/Icons/INV_Potion_56",
+		icon = 134836,
 		text = {
 			en = "Elixirs",
 			ko = "비약",
@@ -2088,7 +2100,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[640] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -2096,7 +2108,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[641] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -2104,7 +2116,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[642] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Misc_Orb_01",
+		icon = 134333,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -2112,7 +2124,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[643] = {
 		readable = "Oils",
-		icon = "Interface/Icons/INV_Drink_12",
+		icon = 132799,
 		text = {
 			en = "Oils",
 			ko = "오일",
@@ -2120,7 +2132,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[644] = {
 		readable = "Materials",
-		icon = "Interface/Icons/INV_Cask_02",
+		icon = 132621,
 		text = {
 			en = "Materials",
 			ko = "재료",
@@ -2140,7 +2152,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[650] = {
 		readable = "Glove Enchantments",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Glove Enchantments",
 			ko = "장갑 마법부여",
@@ -2148,7 +2160,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[651] = {
 		readable = "Ring Enchantments",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Ring Enchantments",
 			ko = "손가락 마법부여",
@@ -2156,7 +2168,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[652] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -2164,14 +2176,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[653] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
 	},
 	[654] = {
 		readable = "Reagents",
-		icon = "Interface/Icons/inv_misc_crystalepic2",
+		icon = 463518,
 		text = {
 			en = "Reagents",
 			ko = "재료",
@@ -2191,7 +2203,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[658] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -2199,7 +2211,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[659] = {
 		readable = "Shield and Off-Hand Enchantments",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shield and Off-Hand Enchantments",
 		},
@@ -2236,7 +2248,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[669] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -2244,7 +2256,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[670] = {
 		readable = "Shield and Off-Hand Enchantments",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shield and Off-Hand Enchantments",
 		},
@@ -2257,7 +2269,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[672] = {
 		readable = "Reagents",
-		icon = "Interface/Icons/inv_enchant_abysscrystal",
+		icon = 237013,
 		text = {
 			en = "Reagents",
 			ko = "재료",
@@ -2265,7 +2277,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[673] = {
 		readable = "Boot Enchantments",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boot Enchantments",
 			ko = "장화 마법부여",
@@ -2273,7 +2285,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[674] = {
 		readable = "Glove Enchantments",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Glove Enchantments",
 			ko = "장갑 마법부여",
@@ -2281,7 +2293,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[675] = {
 		readable = "Chest Enchantments",
-		icon = "Interface/Icons/INV_Chest_Chain",
+		icon = 132624,
 		text = {
 			en = "Chest Enchantments",
 			ko = "가슴 마법부여",
@@ -2289,7 +2301,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[676] = {
 		readable = "Cloak Enchantments",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloak Enchantments",
 			ko = "망토 마법부여",
@@ -2297,7 +2309,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[677] = {
 		readable = "Bracer Enchantments",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracer Enchantments",
 			ko = "손목 마법부여",
@@ -2305,7 +2317,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[678] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -2313,7 +2325,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[679] = {
 		readable = "Shield Enchantments",
-		icon = "Interface/Icons/INV_Shield_05",
+		icon = 134951,
 		text = {
 			en = "Shield Enchantments",
 			ko = "방패 마법부여",
@@ -2321,7 +2333,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[680] = {
 		readable = "Reagents",
-		icon = "Interface/Icons/inv_enchant_shardprismaticlarge",
+		icon = 132881,
 		text = {
 			en = "Reagents",
 			ko = "재료",
@@ -2329,7 +2341,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[681] = {
 		readable = "Boot Enchantments",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boot Enchantments",
 			ko = "장화 마법부여",
@@ -2337,7 +2349,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[682] = {
 		readable = "Bracer Enchantments",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracer Enchantments",
 			ko = "손목 마법부여",
@@ -2345,7 +2357,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[683] = {
 		readable = "Chest Enchantments",
-		icon = "Interface/Icons/INV_Chest_Chain",
+		icon = 132624,
 		text = {
 			en = "Chest Enchantments",
 			ko = "가슴 마법부여",
@@ -2353,7 +2365,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[684] = {
 		readable = "Cloak Enchantments",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloak Enchantments",
 			ko = "망토 마법부여",
@@ -2361,7 +2373,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[685] = {
 		readable = "Glove Enchantments",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Glove Enchantments",
 			ko = "장갑 마법부여",
@@ -2369,7 +2381,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[686] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -2377,7 +2389,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[687] = {
 		readable = "Shield Enchantments",
-		icon = "Interface/Icons/INV_Shield_05",
+		icon = 134951,
 		text = {
 			en = "Shield Enchantments",
 			ko = "방패 마법부여",
@@ -2385,7 +2397,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[688] = {
 		readable = "Oils",
-		icon = "Interface/Icons/inv_potion_101",
+		icon = 134723,
 		text = {
 			en = "Oils",
 			ko = "오일",
@@ -2393,7 +2405,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[689] = {
 		readable = "Other",
-		icon = "Interface/Icons/inv_enchant_voidsphere",
+		icon = 132886,
 		text = {
 			en = "Other",
 			ko = "다른",
@@ -2401,7 +2413,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[690] = {
 		readable = "Boot Enchantments",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boot Enchantments",
 			ko = "장화 마법부여",
@@ -2409,7 +2421,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[691] = {
 		readable = "Bracer Enchantments",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracer Enchantments",
 			ko = "손목 마법부여",
@@ -2417,7 +2429,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[692] = {
 		readable = "Chest Enchantments",
-		icon = "Interface/Icons/INV_Chest_Chain",
+		icon = 132624,
 		text = {
 			en = "Chest Enchantments",
 			ko = "가슴 마법부여",
@@ -2425,7 +2437,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[693] = {
 		readable = "Cloak Enchantments",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloak Enchantments",
 			ko = "망토 마법부여",
@@ -2433,7 +2445,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[694] = {
 		readable = "Glove Enchantments",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Glove Enchantments",
 			ko = "장갑 마법부여",
@@ -2441,7 +2453,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[695] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -2449,7 +2461,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[696] = {
 		readable = "Shield Enchantments",
-		icon = "Interface/Icons/INV_Shield_05",
+		icon = 134951,
 		text = {
 			en = "Shield Enchantments",
 			ko = "방패 마법부여",
@@ -2457,7 +2469,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[697] = {
 		readable = "Rods",
-		icon = "Interface/Icons/INV_Staff_01",
+		icon = 135138,
 		text = {
 			en = "Rods",
 			ko = "장비",
@@ -2465,7 +2477,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[698] = {
 		readable = "Wands",
-		icon = "Interface/Icons/INV_Wand_06",
+		icon = 135468,
 		text = {
 			en = "Wands",
 			ko = "마법봉",
@@ -2473,7 +2485,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[699] = {
 		readable = "Oils",
-		icon = "Interface/Icons/Inv_poison_mindnumbing",
+		icon = 134711,
 		text = {
 			en = "Oils",
 			ko = "오일",
@@ -2481,7 +2493,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[700] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/inv_misc_gem_bloodstone_01",
+		icon = 134084,
 		text = {
 			en = "Trinkets",
 			ko = "장신구",
@@ -2489,7 +2501,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[701] = {
 		readable = "Reagents",
-		icon = "Interface/Icons/Inv_ingot_eternium",
+		icon = 133229,
 		text = {
 			en = "Reagents",
 			ko = "재료",
@@ -2497,42 +2509,42 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[702] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
 	},
 	[703] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
 	},
 	[704] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
 	},
 	[705] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
 	},
 	[706] = {
 		readable = "Illusions",
-		icon = "Interface/Icons/inv_inscription_weaponscroll03",
+		icon = 237174,
 		text = {
 			en = "Illusions",
 		},
 	},
 	[707] = {
 		readable = "Reagents",
-		icon = "Interface/Icons/inv_misc_crystalepic",
+		icon = 463517,
 		text = {
 			en = "Reagents",
 			ko = "재료",
@@ -2583,22 +2595,23 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[723] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[724] = {
 		readable = "Mounts & Pets",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts & Pets",
 		},
 	},
 	[725] = {
 		readable = "Fireworks",
-		icon = "Interface/Icons/Spell_Fire_Flare",
+		icon = 135815,
 		text = {
 			en = "Fireworks",
 			ko = "폭죽",
@@ -2606,7 +2619,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[726] = {
 		readable = "Explosives",
-		icon = "Interface/Icons/INV_Misc_Bomb_03",
+		icon = 133711,
 		text = {
 			en = "Explosives",
 			ko = "폭발물",
@@ -2614,7 +2627,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[727] = {
 		readable = "Fireworks",
-		icon = "Interface/Icons/Spell_Fire_Flare",
+		icon = 135815,
 		text = {
 			en = "Fireworks",
 			ko = "폭죽",
@@ -2636,7 +2649,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[730] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -2644,7 +2657,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[731] = {
 		readable = "Guns",
-		icon = "Interface/Icons/INV_Weapon_Rifle_03",
+		icon = 135612,
 		text = {
 			en = "Guns",
 			ko = "총",
@@ -2652,7 +2665,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[732] = {
 		readable = "Scopes",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes",
 			ko = "조준경",
@@ -2660,7 +2673,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[733] = {
 		readable = "Mounts",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts",
 		},
@@ -2686,7 +2699,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[737] = {
 		readable = "Explosives",
-		icon = "Interface/Icons/INV_Misc_Bomb_03",
+		icon = 133711,
 		text = {
 			en = "Explosives",
 			ko = "폭발물",
@@ -2694,7 +2707,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[738] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -2709,15 +2722,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[740] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[741] = {
 		readable = "Scopes",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes",
 			ko = "조준경",
@@ -2738,7 +2752,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[744] = {
 		readable = "Explosives",
-		icon = "Interface/Icons/INV_Misc_Bomb_03",
+		icon = 133711,
 		text = {
 			en = "Explosives",
 			ko = "폭발물",
@@ -2746,7 +2760,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[745] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -2761,15 +2775,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[747] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[748] = {
 		readable = "Scopes",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes",
 			ko = "조준경",
@@ -2777,7 +2792,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[749] = {
 		readable = "Mounts",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts",
 		},
@@ -2791,7 +2806,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[751] = {
 		readable = "Explosives",
-		icon = "Interface/Icons/INV_Misc_Bomb_03",
+		icon = 133711,
 		text = {
 			en = "Explosives",
 			ko = "폭발물",
@@ -2799,7 +2814,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[752] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -2814,15 +2829,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[754] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[755] = {
 		readable = "Scopes",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes",
 			ko = "조준경",
@@ -2830,14 +2846,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[756] = {
 		readable = "Mounts",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts",
 		},
 	},
 	[757] = {
 		readable = "Fireworks",
-		icon = "Interface/Icons/Spell_Fire_Flare",
+		icon = 135815,
 		text = {
 			en = "Fireworks",
 			ko = "폭죽",
@@ -2875,7 +2891,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[771] = {
 		readable = "Books & Scrolls",
-		icon = "Interface/Icons/inv_scroll_03",
+		icon = 134939,
 		text = {
 			en = "Books & Scrolls",
 		},
@@ -2888,7 +2904,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[773] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/inv_misc_ticket_tarot_twistingnether_01",
+		icon = 134495,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -2908,7 +2924,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[776] = {
 		readable = "Vantus Runes",
-		icon = "Interface/Icons/70_inscription_vantus_rune_suramar",
+		icon = 1392953,
 		text = {
 			en = "Vantus Runes",
 		},
@@ -2927,7 +2943,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[779] = {
 		readable = "Inks",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Inks",
 		},
@@ -2940,7 +2956,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[781] = {
 		readable = "Scrolls & Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Scrolls & Research",
 		},
@@ -2959,7 +2975,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[784] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -2967,7 +2983,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[785] = {
 		readable = "Inks",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Inks",
 		},
@@ -2980,7 +2996,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[787] = {
 		readable = "Scrolls & Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Scrolls & Research",
 		},
@@ -3000,7 +3016,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[790] = {
 		readable = "Weapons & Off-Hands",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons & Off-Hands",
 			ko = "무기",
@@ -3020,7 +3036,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[793] = {
 		readable = "Inks",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Inks",
 		},
@@ -3033,7 +3049,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[795] = {
 		readable = "Scrolls & Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Scrolls & Research",
 		},
@@ -3059,7 +3075,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[799] = {
 		readable = "Inks",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Inks",
 		},
@@ -3078,7 +3094,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[802] = {
 		readable = "Scrolls & Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Scrolls & Research",
 		},
@@ -3133,7 +3149,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[819] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -3141,57 +3157,58 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[820] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[821] = {
 		readable = "Blue Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_empyreansapphire_01",
+		icon = 133244,
 		text = {
 			en = "Blue Gems",
 		},
 	},
 	[822] = {
 		readable = "Green Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_seasprayemerald_01",
+		icon = 133263,
 		text = {
 			en = "Green Gems",
 		},
 	},
 	[823] = {
 		readable = "Orange Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_pyrestone_01",
+		icon = 133260,
 		text = {
 			en = "Orange Gems",
 		},
 	},
 	[824] = {
 		readable = "Purple Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_shadowsongamethyst_01",
+		icon = 133265,
 		text = {
 			en = "Purple Gems",
 		},
 	},
 	[825] = {
 		readable = "Red Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_crimsonspinel_01",
+		icon = 133238,
 		text = {
 			en = "Red Gems",
 		},
 	},
 	[827] = {
 		readable = "Meta Gems",
-		icon = "Interface/Icons/inv_misc_gem_diamond_05",
+		icon = 134098,
 		text = {
 			en = "Meta Gems",
 		},
 	},
 	[828] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -3199,7 +3216,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[829] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -3207,84 +3224,84 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[830] = {
 		readable = "Mounts",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts",
 		},
 	},
 	[831] = {
 		readable = "Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Research",
 		},
 	},
 	[832] = {
 		readable = "Toys & Pets",
-		icon = "Interface/Icons/inv_jewelcrafting_jadeowl",
+		icon = 133247,
 		text = {
 			en = "Toys & Pets",
 		},
 	},
 	[833] = {
 		readable = "Yellow Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_lionseye_01",
+		icon = 133248,
 		text = {
 			en = "Yellow Gems",
 		},
 	},
 	[834] = {
 		readable = "Blue Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_empyreansapphire_01",
+		icon = 133244,
 		text = {
 			en = "Blue Gems",
 		},
 	},
 	[835] = {
 		readable = "Green Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_seasprayemerald_01",
+		icon = 133263,
 		text = {
 			en = "Green Gems",
 		},
 	},
 	[836] = {
 		readable = "Orange Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_pyrestone_01",
+		icon = 133260,
 		text = {
 			en = "Orange Gems",
 		},
 	},
 	[837] = {
 		readable = "Purple Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_shadowsongamethyst_01",
+		icon = 133265,
 		text = {
 			en = "Purple Gems",
 		},
 	},
 	[838] = {
 		readable = "Red Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_crimsonspinel_01",
+		icon = 133238,
 		text = {
 			en = "Red Gems",
 		},
 	},
 	[839] = {
 		readable = "Yellow Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_lionseye_01",
+		icon = 133248,
 		text = {
 			en = "Yellow Gems",
 		},
 	},
 	[840] = {
 		readable = "Meta Gems",
-		icon = "Interface/Icons/inv_misc_gem_diamond_05",
+		icon = 134098,
 		text = {
 			en = "Meta Gems",
 		},
 	},
 	[841] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -3292,7 +3309,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[842] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -3300,7 +3317,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[843] = {
 		readable = "Crowns",
-		icon = "Interface/Icons/inv_crown_01",
+		icon = 132767,
 		text = {
 			en = "Crowns",
 			ko = "머리",
@@ -3308,70 +3325,70 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[844] = {
 		readable = "Fist Weapons",
-		icon = "Interface/Icons/inv_weapon_hand_08",
+		icon = 135599,
 		text = {
 			en = "Fist Weapons",
 		},
 	},
 	[845] = {
 		readable = "Toys & Prisms",
-		icon = "Interface/Icons/inv_misc_gem_ruby_01",
+		icon = 134128,
 		text = {
 			en = "Toys & Prisms",
 		},
 	},
 	[846] = {
 		readable = "Blue Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_empyreansapphire_01",
+		icon = 133244,
 		text = {
 			en = "Blue Gems",
 		},
 	},
 	[847] = {
 		readable = "Green Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_seasprayemerald_01",
+		icon = 133263,
 		text = {
 			en = "Green Gems",
 		},
 	},
 	[848] = {
 		readable = "Orange Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_pyrestone_01",
+		icon = 133260,
 		text = {
 			en = "Orange Gems",
 		},
 	},
 	[849] = {
 		readable = "Purple Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_shadowsongamethyst_01",
+		icon = 133265,
 		text = {
 			en = "Purple Gems",
 		},
 	},
 	[850] = {
 		readable = "Red Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_crimsonspinel_01",
+		icon = 133238,
 		text = {
 			en = "Red Gems",
 		},
 	},
 	[851] = {
 		readable = "Yellow Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_lionseye_01",
+		icon = 133248,
 		text = {
 			en = "Yellow Gems",
 		},
 	},
 	[852] = {
 		readable = "Meta Gems",
-		icon = "Interface/Icons/inv_misc_gem_diamond_05",
+		icon = 134098,
 		text = {
 			en = "Meta Gems",
 		},
 	},
 	[853] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -3379,7 +3396,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[854] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -3387,70 +3404,70 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[855] = {
 		readable = "Prismatic Gems",
-		icon = "Interface/Icons/inv_misc_gem_pearl_12",
+		icon = 237370,
 		text = {
 			en = "Prismatic Gems",
 		},
 	},
 	[856] = {
 		readable = "Pets and Projects",
-		icon = "Interface/Icons/inv_misc_gem_diamond_02",
+		icon = 134095,
 		text = {
 			en = "Pets and Projects",
 		},
 	},
 	[857] = {
 		readable = "Blue Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_empyreansapphire_01",
+		icon = 133244,
 		text = {
 			en = "Blue Gems",
 		},
 	},
 	[858] = {
 		readable = "Green Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_seasprayemerald_01",
+		icon = 133263,
 		text = {
 			en = "Green Gems",
 		},
 	},
 	[859] = {
 		readable = "Orange Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_pyrestone_01",
+		icon = 133260,
 		text = {
 			en = "Orange Gems",
 		},
 	},
 	[860] = {
 		readable = "Purple Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_shadowsongamethyst_01",
+		icon = 133265,
 		text = {
 			en = "Purple Gems",
 		},
 	},
 	[861] = {
 		readable = "Red Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_crimsonspinel_01",
+		icon = 133238,
 		text = {
 			en = "Red Gems",
 		},
 	},
 	[862] = {
 		readable = "Yellow Gems",
-		icon = "Interface/Icons/inv_jewelcrafting_lionseye_01",
+		icon = 133248,
 		text = {
 			en = "Yellow Gems",
 		},
 	},
 	[863] = {
 		readable = "Meta Gems",
-		icon = "Interface/Icons/inv_misc_gem_diamond_05",
+		icon = 134098,
 		text = {
 			en = "Meta Gems",
 		},
 	},
 	[864] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -3458,7 +3475,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[865] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -3466,7 +3483,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[866] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -3474,14 +3491,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[867] = {
 		readable = "Prisms & Statues",
-		icon = "Interface/Icons/inv_misc_gem_diamond_03",
+		icon = 134096,
 		text = {
 			en = "Prisms & Statues",
 		},
 	},
 	[868] = {
 		readable = "Reagents",
-		icon = "Interface/Icons/spell_arcane_arcanepotency",
+		icon = 135732,
 		text = {
 			en = "Reagents",
 			ko = "재료",
@@ -3489,7 +3506,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[869] = {
 		readable = "Crowns",
-		icon = "Interface/Icons/inv_crown_01",
+		icon = 132767,
 		text = {
 			en = "Crowns",
 			ko = "머리",
@@ -3539,10 +3556,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[885] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[886] = {
@@ -3567,7 +3585,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[889] = {
 		readable = "Armor Kits",
-		icon = "Interface/Icons/INV_Misc_ArmorKit_17",
+		icon = 133611,
 		text = {
 			en = "Armor Kits",
 			ko = "방어구 키트",
@@ -3575,15 +3593,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[890] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[891] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_08",
+		icon = 133076,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -3591,7 +3610,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[892] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_01",
+		icon = 135032,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -3599,7 +3618,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[893] = {
 		readable = "Chest",
-		icon = "Interface/Icons/INV_Chest_Chain_13",
+		icon = 132635,
 		text = {
 			en = "Chest",
 			ko = "가슴",
@@ -3607,7 +3626,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[894] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_08",
+		icon = 132607,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -3615,7 +3634,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[895] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/INV_Gauntlets_05",
+		icon = 132939,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -3623,7 +3642,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[896] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_24",
+		icon = 132513,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -3631,7 +3650,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[897] = {
 		readable = "Pants",
-		icon = "Interface/Icons/INV_Pants_12",
+		icon = 134592,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -3639,7 +3658,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[898] = {
 		readable = "Boots",
-		icon = "Interface/Icons/inv_boots_05",
+		icon = 132539,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -3647,7 +3666,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[899] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -3655,14 +3674,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[900] = {
 		readable = "Drums",
-		icon = "Interface/Icons/inv_misc_drum_01",
+		icon = 133841,
 		text = {
 			en = "Drums",
 		},
 	},
 	[901] = {
 		readable = "Research",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Research",
 		},
@@ -3676,7 +3695,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[903] = {
 		readable = "Armor Kits",
-		icon = "Interface/Icons/INV_Misc_ArmorKit_17",
+		icon = 133611,
 		text = {
 			en = "Armor Kits",
 			ko = "방어구 키트",
@@ -3684,15 +3703,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[904] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[905] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_08",
+		icon = 133076,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -3700,7 +3720,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[906] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_01",
+		icon = 135032,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -3708,7 +3728,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[907] = {
 		readable = "Chest",
-		icon = "Interface/Icons/INV_Chest_Chain_13",
+		icon = 132635,
 		text = {
 			en = "Chest",
 			ko = "가슴",
@@ -3716,7 +3736,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[908] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_08",
+		icon = 132607,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -3724,7 +3744,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[909] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/INV_Gauntlets_05",
+		icon = 132939,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -3732,7 +3752,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[910] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_24",
+		icon = 132513,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -3740,7 +3760,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[911] = {
 		readable = "Pants",
-		icon = "Interface/Icons/INV_Pants_12",
+		icon = 134592,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -3748,7 +3768,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[912] = {
 		readable = "Boots",
-		icon = "Interface/Icons/inv_boots_05",
+		icon = 132539,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -3756,7 +3776,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[913] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -3771,7 +3791,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[915] = {
 		readable = "Armor Kits",
-		icon = "Interface/Icons/INV_Misc_ArmorKit_17",
+		icon = 133611,
 		text = {
 			en = "Armor Kits",
 			ko = "방어구 키트",
@@ -3779,15 +3799,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[916] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[917] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_08",
+		icon = 133076,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -3795,7 +3816,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[918] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_01",
+		icon = 135032,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -3810,7 +3831,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[920] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_08",
+		icon = 132607,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -3818,7 +3839,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[921] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/INV_Gauntlets_05",
+		icon = 132939,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -3826,7 +3847,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[922] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_24",
+		icon = 132513,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -3834,7 +3855,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[923] = {
 		readable = "Pants",
-		icon = "Interface/Icons/INV_Pants_12",
+		icon = 134592,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -3842,7 +3863,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[924] = {
 		readable = "Boots",
-		icon = "Interface/Icons/inv_boots_05",
+		icon = 132539,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -3850,7 +3871,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[925] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -3858,7 +3879,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[926] = {
 		readable = "Drums",
-		icon = "Interface/Icons/inv_misc_drum_01",
+		icon = 133841,
 		text = {
 			en = "Drums",
 		},
@@ -3872,7 +3893,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[928] = {
 		readable = "Armor Kits",
-		icon = "Interface/Icons/INV_Misc_ArmorKit_17",
+		icon = 133611,
 		text = {
 			en = "Armor Kits",
 			ko = "방어구 키트",
@@ -3880,15 +3901,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[929] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[930] = {
 		readable = "Helms",
-		icon = "Interface/Icons/INV_Helmet_08",
+		icon = 133076,
 		text = {
 			en = "Helms",
 			ko = "머리",
@@ -3896,7 +3918,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[931] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/INV_Shoulder_01",
+		icon = 135032,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -3904,7 +3926,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[932] = {
 		readable = "Chest",
-		icon = "Interface/Icons/INV_Chest_Chain_13",
+		icon = 132635,
 		text = {
 			en = "Chest",
 			ko = "가슴",
@@ -3912,7 +3934,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[933] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_08",
+		icon = 132607,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -3920,7 +3942,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[934] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/INV_Gauntlets_05",
+		icon = 132939,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -3928,7 +3950,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[935] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_24",
+		icon = 132513,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -3936,7 +3958,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[936] = {
 		readable = "Pants",
-		icon = "Interface/Icons/INV_Pants_12",
+		icon = 134592,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -3944,7 +3966,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[937] = {
 		readable = "Boots",
-		icon = "Interface/Icons/inv_boots_05",
+		icon = 132539,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -3952,7 +3974,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[938] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -3966,7 +3988,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[940] = {
 		readable = "Drums",
-		icon = "Interface/Icons/inv_misc_drum_01",
+		icon = 133841,
 		text = {
 			en = "Drums",
 		},
@@ -3979,10 +4001,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[943] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[944] = {
@@ -4049,15 +4072,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[961] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[962] = {
 		readable = "Hats & Hoods",
-		icon = "Interface/Icons/inv_helmet_31",
+		icon = 133133,
 		text = {
 			en = "Hats & Hoods",
 			ko = "머리",
@@ -4065,7 +4089,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[963] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/inv_shoulder_02",
+		icon = 135033,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -4073,7 +4097,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[964] = {
 		readable = "Robes & Tunics",
-		icon = "Interface/Icons/inv_chest_cloth_18",
+		icon = 132659,
 		text = {
 			en = "Robes & Tunics",
 			ko = "가슴",
@@ -4081,7 +4105,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[965] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -4089,7 +4113,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[966] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_27",
+		icon = 132516,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -4097,7 +4121,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[967] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/inv_gauntlets_06",
+		icon = 132940,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -4105,7 +4129,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[968] = {
 		readable = "Pants",
-		icon = "Interface/Icons/inv_pants_06",
+		icon = 134586,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -4113,7 +4137,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[969] = {
 		readable = "Boots",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -4121,7 +4145,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[970] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -4142,15 +4166,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[974] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[975] = {
 		readable = "Hats & Hoods",
-		icon = "Interface/Icons/inv_helmet_31",
+		icon = 133133,
 		text = {
 			en = "Hats & Hoods",
 			ko = "머리",
@@ -4158,7 +4183,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[976] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/inv_shoulder_02",
+		icon = 135033,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -4166,7 +4191,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[977] = {
 		readable = "Robes & Tunics",
-		icon = "Interface/Icons/inv_chest_cloth_18",
+		icon = 132659,
 		text = {
 			en = "Robes & Tunics",
 			ko = "가슴",
@@ -4174,7 +4199,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[978] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -4182,7 +4207,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[979] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_27",
+		icon = 132516,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -4190,7 +4215,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[980] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/inv_gauntlets_06",
+		icon = 132940,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -4198,7 +4223,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[981] = {
 		readable = "Pants",
-		icon = "Interface/Icons/inv_pants_06",
+		icon = 134586,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -4206,7 +4231,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[982] = {
 		readable = "Boots",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -4214,7 +4239,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[983] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -4241,15 +4266,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[987] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[988] = {
 		readable = "Hats & Hoods",
-		icon = "Interface/Icons/inv_helmet_31",
+		icon = 133133,
 		text = {
 			en = "Hats & Hoods",
 			ko = "머리",
@@ -4257,7 +4283,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[989] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/inv_shoulder_02",
+		icon = 135033,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -4265,7 +4291,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[990] = {
 		readable = "Robes & Tunics",
-		icon = "Interface/Icons/inv_chest_cloth_18",
+		icon = 132659,
 		text = {
 			en = "Robes & Tunics",
 			ko = "가슴",
@@ -4273,7 +4299,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[991] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -4281,7 +4307,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[992] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_27",
+		icon = 132516,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -4289,7 +4315,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[993] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/inv_gauntlets_06",
+		icon = 132940,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -4297,7 +4323,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[994] = {
 		readable = "Pants",
-		icon = "Interface/Icons/inv_pants_06",
+		icon = 134586,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -4305,7 +4331,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[995] = {
 		readable = "Boots",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -4313,7 +4339,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[996] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -4328,7 +4354,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[998] = {
 		readable = "Mounts",
-		icon = "Interface/Icons/inv_jewelcrafting_blackpearlpanther",
+		icon = 133236,
 		text = {
 			en = "Mounts",
 		},
@@ -4354,15 +4380,16 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1002] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 	[1003] = {
 		readable = "Hats & Hoods",
-		icon = "Interface/Icons/inv_helmet_31",
+		icon = 133133,
 		text = {
 			en = "Hats & Hoods",
 			ko = "머리",
@@ -4370,7 +4397,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1004] = {
 		readable = "Shoulders",
-		icon = "Interface/Icons/inv_shoulder_02",
+		icon = 135033,
 		text = {
 			en = "Shoulders",
 			ko = "어깨",
@@ -4378,7 +4405,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1005] = {
 		readable = "Robes & Tunics",
-		icon = "Interface/Icons/inv_chest_cloth_18",
+		icon = 132659,
 		text = {
 			en = "Robes & Tunics",
 			ko = "가슴",
@@ -4386,7 +4413,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1006] = {
 		readable = "Bracers",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracers",
 			ko = "손목",
@@ -4394,7 +4421,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1007] = {
 		readable = "Belts",
-		icon = "Interface/Icons/INV_Belt_27",
+		icon = 132516,
 		text = {
 			en = "Belts",
 			ko = "허리",
@@ -4402,7 +4429,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1008] = {
 		readable = "Gloves",
-		icon = "Interface/Icons/inv_gauntlets_06",
+		icon = 132940,
 		text = {
 			en = "Gloves",
 			ko = "손",
@@ -4410,7 +4437,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1009] = {
 		readable = "Pants",
-		icon = "Interface/Icons/inv_pants_06",
+		icon = 134586,
 		text = {
 			en = "Pants",
 			ko = "다리",
@@ -4418,7 +4445,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1010] = {
 		readable = "Boots",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boots",
 			ko = "발",
@@ -4426,7 +4453,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1011] = {
 		readable = "Cloaks",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloaks",
 			ko = "등",
@@ -4446,7 +4473,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1020] = {
 		readable = "Everyday Cooking",
-		icon = "Interface/Icons/INV_Misc_Food_12",
+		icon = 133968,
 		text = {
 			en = "Everyday Cooking",
 			ko = "일반 요리",
@@ -4460,7 +4487,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1022] = {
 		readable = "Lures",
-		icon = "Interface/Icons/INV_Fishing_Lure_Worm",
+		icon = 970852,
 		text = {
 			en = "Lures",
 			es = "Señuelos",
@@ -4475,7 +4502,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1023] = {
 		readable = "Everyday Cooking",
-		icon = "Interface/Icons/INV_Misc_Food_12",
+		icon = 133968,
 		text = {
 			en = "Everyday Cooking",
 			ko = "일반 요리",
@@ -4483,7 +4510,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1024] = {
 		readable = "Everyday Cooking",
-		icon = "Interface/Icons/INV_Misc_Food_12",
+		icon = 133968,
 		text = {
 			en = "Everyday Cooking",
 			ko = "일반 요리",
@@ -4491,7 +4518,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1025] = {
 		readable = "Everyday Cooking",
-		icon = "Interface/Icons/INV_Misc_Food_12",
+		icon = 133968,
 		text = {
 			en = "Everyday Cooking",
 			ko = "일반 요리",
@@ -4499,14 +4526,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1026] = {
 		readable = "Inks",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Inks",
 		},
 	},
 	[1027] = {
 		readable = "Scopes & Ammo",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes & Ammo",
 			ko = "범위 및 탄약",
@@ -4706,7 +4733,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1086] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
@@ -4725,35 +4752,35 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1089] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
 	},
 	[1090] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
 	},
 	[1091] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
 	},
 	[1092] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
 	},
 	[1093] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
@@ -4767,7 +4794,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1097] = {
 		readable = "Wands",
-		icon = "Interface/Icons/INV_Wand_06",
+		icon = 135468,
 		text = {
 			en = "Wands",
 			ko = "마법봉",
@@ -4775,7 +4802,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1098] = {
 		readable = "Wrist Enchantments",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Wrist Enchantments",
 			ko = "손목 마법부여",
@@ -4831,7 +4858,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1115] = {
 		readable = "Cloth Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Cloth Goggles",
 			ko = "천 고글",
@@ -5013,7 +5040,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1246] = {
 		readable = "Leather Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Leather Goggles",
 			ko = "가죽 고글",
@@ -5021,7 +5048,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1247] = {
 		readable = "Mail Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Mail Goggles",
 			ko = "메일 고글",
@@ -5029,7 +5056,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1248] = {
 		readable = "Plate Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Plate Goggles",
 			ko = "플레이트 고글",
@@ -5043,7 +5070,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1250] = {
 		readable = "Training",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Training",
 		},
@@ -5062,14 +5089,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1255] = {
 		readable = "Training",
-		icon = "Interface/Icons/inv_misc_note_05",
+		icon = 134331,
 		text = {
 			en = "Training",
 		},
 	},
 	[1256] = {
 		readable = "Explosives",
-		icon = "Interface/Icons/INV_Misc_Bomb_03",
+		icon = 133711,
 		text = {
 			en = "Explosives",
 			ko = "폭발물",
@@ -5206,7 +5233,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1298] = {
 		readable = "Flasks",
-		icon = "Interface/Icons/INV_Potion_41",
+		icon = 134821,
 		text = {
 			en = "Flasks",
 			ko = "영약",
@@ -5221,7 +5248,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1300] = {
 		readable = "Transmutation",
-		icon = "Interface/Icons/Spell_Fire_Volcano",
+		icon = 135830,
 		text = {
 			en = "Transmutation",
 			ko = "변환식",
@@ -5229,7 +5256,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1301] = {
 		readable = "Trinkets",
-		icon = "Interface/Icons/INV_Trinket_Naxxramas05",
+		icon = 135443,
 		text = {
 			en = "Trinkets",
 			ko = "장비",
@@ -5311,10 +5338,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1315] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[1316] = {
@@ -5388,10 +5416,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1337] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[1338] = {
@@ -5415,7 +5444,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1365] = {
 		readable = "Boot Enchantments",
-		icon = "Interface/Icons/INV_Boots_01",
+		icon = 132535,
 		text = {
 			en = "Boot Enchantments",
 			ko = "장화 마법부여",
@@ -5423,7 +5452,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1366] = {
 		readable = "Chest Enchantments",
-		icon = "Interface/Icons/INV_Chest_Chain",
+		icon = 132624,
 		text = {
 			en = "Chest Enchantments",
 			ko = "가슴 마법부여",
@@ -5431,7 +5460,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1367] = {
 		readable = "Cloak Enchantments",
-		icon = "Interface/Icons/INV_Misc_Cape_18",
+		icon = 133770,
 		text = {
 			en = "Cloak Enchantments",
 			ko = "망토 마법부여",
@@ -5439,7 +5468,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1368] = {
 		readable = "Glove Enchantments",
-		icon = "Interface/Icons/INV_Gauntlets_04",
+		icon = 132938,
 		text = {
 			en = "Glove Enchantments",
 			ko = "장갑 마법부여",
@@ -5454,7 +5483,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1370] = {
 		readable = "Bracer Enchantments",
-		icon = "Interface/Icons/INV_Bracer_17",
+		icon = 132616,
 		text = {
 			en = "Bracer Enchantments",
 			ko = "손목 마법부여",
@@ -5469,7 +5498,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1372] = {
 		readable = "Ring Enchantments",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Ring Enchantments",
 			ko = "손가락 마법부여",
@@ -5483,7 +5512,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1374] = {
 		readable = "Wands",
-		icon = "Interface/Icons/INV_Wand_06",
+		icon = 135468,
 		text = {
 			en = "Wands",
 			ko = "마법봉",
@@ -5491,7 +5520,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1375] = {
 		readable = "Weapon Enchantments",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapon Enchantments",
 			ko = "무기 마법부여",
@@ -5525,7 +5554,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1385] = {
 		readable = "Goggles",
-		icon = "Interface/Icons/inv_gizmo_newgoggles",
+		icon = 133023,
 		text = {
 			en = "Goggles",
 			ko = "고글",
@@ -5547,7 +5576,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1388] = {
 		readable = "Scopes",
-		icon = "Interface/Icons/INV_Misc_Spyglass_03",
+		icon = 134442,
 		text = {
 			en = "Scopes",
 			ko = "조준경",
@@ -5555,10 +5584,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1389] = {
 		readable = "Weapons",
-		icon = "Interface/Icons/Spell_Fire_EnchantWeapon",
+		icon = 135792,
 		text = {
 			en = "Weapons",
 			ko = "무기",
+			tw = "武器",
 		},
 	},
 	[1395] = {
@@ -5582,7 +5612,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1403] = {
 		readable = "Bandages",
-		icon = "Interface/Icons/inv_misc_bandage_20",
+		icon = 133690,
 		text = {
 			en = "Bandages",
 		},
@@ -5601,14 +5631,14 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1408] = {
 		readable = "Ink",
-		icon = "Interface/Icons/inv_inscription_inkpurple01",
+		icon = 237070,
 		text = {
 			en = "Ink",
 		},
 	},
 	[1409] = {
 		readable = "Books & Scrolls",
-		icon = "Interface/Icons/inv_scroll_03",
+		icon = 134939,
 		text = {
 			en = "Books & Scrolls",
 		},
@@ -5639,7 +5669,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1416] = {
 		readable = "Vantus Runes",
-		icon = "Interface/Icons/70_inscription_vantus_rune_suramar",
+		icon = 1392953,
 		text = {
 			en = "Vantus Runes",
 		},
@@ -5671,7 +5701,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1422] = {
 		readable = "Necklaces",
-		icon = "Interface/Icons/inv_jewelry_necklace_07",
+		icon = 133294,
 		text = {
 			en = "Necklaces",
 			ko = "목",
@@ -5679,7 +5709,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1424] = {
 		readable = "Rings",
-		icon = "Interface/Icons/inv_jewelry_ring_55",
+		icon = 133397,
 		text = {
 			en = "Rings",
 			ko = "손가락",
@@ -5693,7 +5723,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1471] = {
 		readable = "Armor Kits",
-		icon = "Interface/Icons/INV_Misc_ArmorKit_17",
+		icon = 133611,
 		text = {
 			en = "Armor Kits",
 			ko = "방어구 키트",
@@ -5726,7 +5756,7 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1487] = {
 		readable = "Shields",
-		icon = "Interface/Icons/INV_Shield_06",
+		icon = 134952,
 		text = {
 			en = "Shields",
 			ko = "방패",
@@ -6005,10 +6035,11 @@ local CategoryDB = CategoryDB; for categoryID,categoryData in pairs({
 	},
 	[1538] = {
 		readable = "Bags",
-		icon = "Interface/Icons/inv_misc_bag_13",
+		icon = 133646,
 		text = {
 			en = "Bags",
 			ko = "가방",
+			tw = "背包",
 		},
 	},
 })

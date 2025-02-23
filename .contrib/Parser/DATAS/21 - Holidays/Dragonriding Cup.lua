@@ -9,16 +9,20 @@ DRAGONRIDING_CUP_ROOT = createHeader({
 	text = {
 		en = "Dragonriding Cup",
 		ru = "Кубок полётов на драконе",
+		cn = "驭龙术杯赛",
+		tw = "飛龍騎術競速",
 	},
 });
 BROKEN_ISLES_CUP_HEADER = createHeader({
 	readable = "Broken Isles Cup",
 	constant = "BROKEN_ISLES_HEADER",
- 	icon = [[~_.asset("Holiday_BrokenCup")]],
+	icon = [[~_.asset("Holiday_BrokenCup")]],
 	eventID = EVENTS.BROKEN_ISLES_CUP,
 	text = {
 		en = "Broken Isles Cup",
 		ru = "Кубок Расколотых островов",
+		cn = "破碎群岛杯",
+		tw = "破碎群島杯",
 	},
 });
 EASTERN_KINGDOMS_CUP_HEADER = createHeader({
@@ -30,6 +34,8 @@ EASTERN_KINGDOMS_CUP_HEADER = createHeader({
 		en = "Eastern Kingdoms Cup",
 		de = "Der Pokal der Östlichen Königreiche",
 		ru = "Кубок Восточных королевств",
+		cn = "东部王国杯",
+		tw = "東部王國杯",
 	},
 });
 KALIMDOR_CUP_HEADER = createHeader({
@@ -41,6 +47,8 @@ KALIMDOR_CUP_HEADER = createHeader({
 		en = "Kalimdor Cup",
 		de = "Kalimdorpokal",
 		ru = "Кубок Калимдора",
+		cn = "卡利姆多杯",
+		tw = "卡林多杯",
 	},
 });
 NORTHREND_CUP_HEADER = createHeader({
@@ -51,6 +59,8 @@ NORTHREND_CUP_HEADER = createHeader({
 	text = {
 		en = "Northrend Cup",
 		ru = "Кубок Нордскола",
+		cn = "诺森德杯",
+		tw = "北裂境杯",
 	},
 });
 OUTLAND_CUP_HEADER = createHeader({
@@ -61,6 +71,8 @@ OUTLAND_CUP_HEADER = createHeader({
 	text = {
 		en = "Outland Cup",
 		ru = "Кубок Запределья",
+		cn = "外域杯",
+		tw = "外域杯",
 	},
 });
 PANDARIA_CUP_HEADER = createHeader({
@@ -71,6 +83,8 @@ PANDARIA_CUP_HEADER = createHeader({
 	text = {
 		en = "Pandaria Cup",
 		ru = "Кубок Пандарии",
+		cn = "潘达利亚杯",
+		tw = "潘達利亞杯",
 	},
 });
 -- These actually don't require any DF content
@@ -292,17 +306,20 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 					["provider"] = { "n", 199261 },	-- Holiday Enthusiast
 					["coord"] = { 55.0, 37.7, VALDRAKKEN },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 				}),
 				q(78880, {	-- The Eastern Kingdoms Cup Begins
 					["provider"] = { "n", 214031 },	-- Holiday Enthusiast
 					["coord"] = { 62.3, 74.4, STORMWIND_CITY },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(78881, {	-- The Eastern Kingdoms Cup Begins
 					["provider"] = { "n", 213769 },	-- Holiday Enthusiast
 					["coord"] = { 52.7, 79.4, ORGRIMMAR },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 					["races"] = HORDE_ONLY,
 				}),
 				q(77839, {	-- The Eastern Kingdoms Cup Introduction
@@ -314,6 +331,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 					["sourceQuestNumRequired"] = 1,
 					["provider"] = { "n", 206737 },	-- Lord Andestrasz
 					["coord"] = { 27.1, 47.1, VALDRAKKEN },
+					["repeatable"] = true,
 					["g"] = {
 						currency(RIDERS_OF_AZEROTH_BADGE),
 					},
@@ -701,13 +719,13 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 				n(206744, {	-- Maztha <Riders of Azeroth>
 					["coord"] = { 27.2, 47.2, VALDRAKKEN },
 					["g"] = {
-						i(203322, {	-- Winding Slitherdrake: Blonde Hair (DM!)
+						i(203322, {	-- Winding Slitherdrake: Blonde Hair (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203349, {	-- Winding Slitherdrake: Curved Nose Horn (DM!)
+						i(203349, {	-- Winding Slitherdrake: Curved Nose Horn (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197615, {	-- Windborne Velocidrake: Teal Scales (DM!)
+						i(197615, {	-- Windborne Velocidrake: Teal Scales (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 50 } },
 						}),
 
@@ -960,11 +978,35 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 					["provider"] = { "n", 199261 },	-- Holiday Enthusiast
 					["coord"] = { 55.0, 37.7, VALDRAKKEN },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
+				}),
+				q(79125, {	-- The Kalimdor Cup Begins
+					["provider"] = { "n", 214031 },	-- Racing Enthusiast
+					["coord"] = {61.8, 75.1, STORMWIND_CITY },
+					["isBreadcrumb"] = true,
+					["repeatable"] = true,
+					["races"] = ALLIANCE_ONLY,
+					["timeline"] = { ADDED_10_2_5 }
+				}),
+				q(79126, {	-- The Kalimdor Cup Begins
+					["provider"] = { "n", 213769 },	-- Racing Enthusiast
+					["coord"] = { 52.8, 79.5, ORGRIMMAR },
+					["isBreadcrumb"] = true,
+					["repeatable"] = true,
+					["races"] = HORDE_ONLY,
+					["timeline"] = { ADDED_10_2_5 }
 				}),
 				q(76426, {	-- The Kalimdor Cup's Introduction
-					["sourceQuests"] = { 76429 },	-- The Kalimdor Cup Begins
+					["sourceQuests"] = {
+						-- #if BEFORE 10.2.5
+						76429,	-- The Kalimdor Cup Begins
+						-- #else
+						76429, 79125, 79126	-- The Kalimdor Cup Begins
+						-- #endif
+					},
 					["provider"] = { "n", 206737 },	-- Lord Andestrasz
 					["coord"] = { 27.1, 47.1, VALDRAKKEN },
+					["repeatable"] = true,
 					["g"] = {
 						currency(RIDERS_OF_AZEROTH_BADGE),
 					},
@@ -1696,37 +1738,37 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 				n(206744, {	-- Maztha <Riders of Azeroth>
 					["coord"] = { 27.2, 47.2, VALDRAKKEN },
 					["g"] = {
-						i(196979, {	-- Cliffside Wylderdrake: Curled Head Horns (DM!)
+						i(196979, {	-- Cliffside Wylderdrake: Curled Head Horns (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197128, {	-- Highland Drake: Curled Back Horns (DM!)
+						i(197128, {	-- Highland Drake: Curled Back Horns (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(202280, {	-- Renewed Proto-Drake: Pronged Tail (DM!)
+						i(202280, {	-- Renewed Proto-Drake: Pronged Tail (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203322, {	-- Winding Slitherdrake: Blonde Hair (DM!)
+						i(203322, {	-- Winding Slitherdrake: Blonde Hair (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203349, {	-- Winding Slitherdrake: Curved Nose Horn (DM!)
+						i(203349, {	-- Winding Slitherdrake: Curved Nose Horn (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203306, {	-- Winding Slitherdrake: Horned Brow (DM!)
+						i(203306, {	-- Winding Slitherdrake: Horned Brow (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203336, {	-- Winding Slitherdrake: Paired Horns (DM!)
+						i(203336, {	-- Winding Slitherdrake: Paired Horns (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203359, {	-- Winding Slitherdrake: Shark Finned Tail (DM!)
+						i(203359, {	-- Winding Slitherdrake: Shark Finned Tail (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203355, {	-- Winding Slitherdrake: Yellow Scales (DM!)
+						i(203355, {	-- Winding Slitherdrake: Yellow Scales (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 50 } },
 						}),
-						i(197619, {	-- Windborne Velocidrake: Hooked Snout (DM!)
+						i(197619, {	-- Windborne Velocidrake: Hooked Snout (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197615, {	-- Windborne Velocidrake: Teal Scales (DM!)
+						i(197615, {	-- Windborne Velocidrake: Teal Scales (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 50 } },
 						}),
 
@@ -1953,17 +1995,20 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 					["provider"] = { "n", 199261 },	-- Holiday Enthusiast
 					["coord"] = { 31.5, 67.1, VALDRAKKEN },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 				}),
 				q(79127, {	-- The Outland Cup Begins
 					["provider"] = { "n", 214031 },	-- Racing Enthusiast
 					["coord"] = {61.8, 75.1, STORMWIND_CITY },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(79128, {	-- The Outland Cup Begins
 					["provider"] = { "n", 213769 },	-- Racing Enthusiast
 					["coord"] = { 52.8, 79.5, ORGRIMMAR },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 					["races"] = HORDE_ONLY,
 				}),
 				q(78047, {	-- The Outland Cup Circuit
@@ -2358,19 +2403,19 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 15 } },
 						}),
 
-						i(197017, {	-- Cliffside Wylderdrake: Large Tail Spikes (DM!)
+						i(197017, {	-- Cliffside Wylderdrake: Large Tail Spikes (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197113, {	-- Highland Drake: Swept Spiked Head (DM!)
+						i(197113, {	-- Highland Drake: Swept Spiked Head (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
 						i(212518, {	-- Vial of Endless Daconic Scales (TOY!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 50 } },
 						}),
-						i(197366, {	-- Renewed Proto-Drake: Dual Horned Crest (DM!)
+						i(197366, {	-- Renewed Proto-Drake: Dual Horned Crest (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197605, {	-- Windborne Velocidrake: Curled Horns (DM!)
+						i(197605, {	-- Windborne Velocidrake: Curled Horns (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
 					},
@@ -2566,17 +2611,20 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 					["provider"] = { "n", 199261 },	-- Holiday Enthusiast
 					["coord"] = { 31.5, 67.1, VALDRAKKEN },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 				}),
 				q(79132, {	-- The Northrend Cup Begins
 					["provider"] = { "n", 214031 },	-- Racing Enthusiast
 					["coord"] = { 61.8, 75.1, STORMWIND_CITY },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(79133, {	-- The Northrend Cup Begins
 					["provider"] = { "n", 213769 },	-- Racing Enthusiast
 					["coord"] = { 52.8, 79.5, ORGRIMMAR },
 					["isBreadcrumb"] = true,
+					["repeatable"] = true,
 					["races"] = HORDE_ONLY,
 				}),
 				q(79130, {	-- The Northrend Cup Circuit
@@ -2943,38 +2991,38 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 						i(213592, {	-- Icy Drake Racer's Helmet
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 15 } },
 						}),
-						i(197017, {	-- Cliffside Wylderdrake: Large Tail Spikes (DM!)
+						i(197017, {	-- Cliffside Wylderdrake: Large Tail Spikes (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197113, {	-- Highland Drake: Swept Spiked Head (DM!)
+						i(197113, {	-- Highland Drake: Swept Spiked Head (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
 						i(212518, {	-- Vial of Endless Daconic Scales (TOY!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 50 } },
 						}),
-						i(197366, {	-- Renewed Proto-Drake: Dual Horned Crest (DM!)
+						i(197366, {	-- Renewed Proto-Drake: Dual Horned Crest (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197605, {	-- Windborne Velocidrake: Curled Horns (DM!)
+						i(197605, {	-- Windborne Velocidrake: Curled Horns (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
 						-- These were never mentioned in the Blizzard articles but also exist on the vendor
-						i(197002, {	-- Cliffside Wylderdrake: Flared Cheek (DM!)
+						i(197002, {	-- Cliffside Wylderdrake: Flared Cheek (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(207768, {	-- Grotto Netherwing Drake: Volatile Pattern (DM!)
+						i(207768, {	-- Grotto Netherwing Drake: Volatile Pattern (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197124, {	-- Highland Drake: Swept Horns (DM!)
+						i(197124, {	-- Highland Drake: Swept Horns (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(202274, {	-- Renewed Proto-Drake: Plated Brow (DM!)
+						i(202274, {	-- Renewed Proto-Drake: Plated Brow (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(197594, {	-- Windborne Velocidrake: Small Ears (DM!)
+						i(197594, {	-- Windborne Velocidrake: Small Ears (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
-						i(203348, {	-- Winding Slitherdrake: Pointed Nose (DM!)
+						i(203348, {	-- Winding Slitherdrake: Pointed Nose (MM!)
 							["cost"] = { { "c", RIDERS_OF_AZEROTH_BADGE, 25 } },
 						}),
 					},
@@ -2989,11 +3037,11 @@ root(ROOTS.Holidays, applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT
 	},
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.DF, {
-		q(79142, {["timeline"] = { ADDED_10_2_5 }, }),	-- Triggers with 'Outland Racing Completionist: Gold' (achievementID 19107)
-		q(80201, {["timeline"] = { ADDED_10_2_5 }, }),	-- Triggers with when using 'Endless Possibility'
-		q(79142, {["timeline"] = { ADDED_10_2_5 }, }),	-- Ensemble: Ruby Riders of Azeroth Tabard
-		q(79702, {["timeline"] = { ADDED_10_2_6 }, }),	-- Ensemble: Frosted Riders of Azeroth Tabard
-	}),
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_5 } }, {
+	applyevent(EVENTS.DRAGONRIDING_CUP, n(DRAGONRIDING_CUP_ROOT, {
+		q(79142),	-- Triggers with 'Outland Racing Completionist: Gold' (achievementID 19107)
+		q(80201),	-- Triggers with when using 'Endless Possibility'
+		q(79142),	-- Ensemble: Ruby Riders of Azeroth Tabard
+		q(79702),	-- Ensemble: Frosted Riders of Azeroth Tabard
+	})),
+})));

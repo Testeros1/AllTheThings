@@ -206,7 +206,11 @@ i(0, 12718, nil, GOBLIN_ENGINEERING);	-- Goblin Construction Helmet
 i(0, 12908, nil, GOBLIN_ENGINEERING);	-- Goblin Dragon Gun
 i(0, 12717, nil, GOBLIN_ENGINEERING);	-- Goblin Mining Helmet
 i(0, 12716, nil, GOBLIN_ENGINEERING);	-- Goblin Mortar
+-- #if BEFORE 3.0.2
+i(7192, 8895, nil, GOBLIN_ENGINEERING);	-- Goblin Rocket Boots
+-- #else
 i(0, 8895, nil, GOBLIN_ENGINEERING);	-- Goblin Rocket Boots
+-- #endif
 i(0, 12715, nil, GOBLIN_ENGINEERING);	-- Goblin Rocket Fuel Recipe
 i(0, 12758, nil, GOBLIN_ENGINEERING);	-- Goblin Rocket Helmet
 i(0, 12760, nil, GOBLIN_ENGINEERING);	-- Goblin Sapper Charge
@@ -666,6 +670,7 @@ i(0, 198985);		-- Reaves Module: Failure Detection Mode
 i(0, 198987);		-- Reaves Module: Fireworks Display Mode
 i(0, 198990);		-- Reaves Module: Piloted Combat Mode
 i(0, 198984);		-- Reaves Module: Repair Mode
+i(137694, 198984);	-- Schematic: Reaves Module: Repair Mode
 i(0, 198988);		-- Reaves Module: Snack Distribution Mode
 i(0, 200466);		-- Sonic Environment Enhancer
 i(0, 198965);		-- Tactical Headgun [Rank 1]
@@ -1281,6 +1286,17 @@ i(211618, 430095);	-- Draconic Combatant's Mail Goggles
 i(211619, 430096);	-- Draconic Combatant's Plate Goggles
 
 ------------------
+-- PATCH 11.0.0 --
+------------------
+--- NYI ---
+i(0, 447347);		-- Explosive Mine
+i(0, 447346);		-- Gravity Mine
+i(0, 447359);		-- Overclocked Circuit Board
+i(0, 447345);		-- Stasis Mine
+i(0, 447348);		-- Tinker: Lightning Tether
+i(0, 447349);		-- Tinker: Overclocked S.E.L.F.I.E. Camera
+
+------------------
 -- PATCH 11.0.2 --
 ------------------
 --- TRAINER ---
@@ -1364,10 +1380,9 @@ i(0, 447355);		-- Impeccable Cogwheel
 i(0, 447354);		-- Overclocked Cogwheel
 i(0, 447352);		-- P.0.W. x2
 i(0, 447353);		-- Serrated Cogwheel
---- NYI ---
-i(0, 447347);		-- Explosive Mine
-i(0, 447346);		-- Gravity Mine
-i(0, 447359);		-- Overclocked Circuit Board
-i(0, 447345);		-- Stasis Mine
-i(0, 447348);		-- Tinker: Lightning Tether
-i(0, 447349);		-- Tinker: Overclocked S.E.L.F.I.E. Camera
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+--- ITEM ---
+i(234274, 1213620);	-- 22H Slicks

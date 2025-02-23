@@ -1,7 +1,7 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local OnTooltipForFrenzyheart = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForFrenzyheart = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 0 then
 		local champion = t.champion;
@@ -50,7 +50,7 @@ local OnTooltipForFrenzyheart = [[function(t, tooltipInfo)
 		_.Modules.FactionData.AddReputationTooltipInfo(tooltipInfo, reputation, "Complete Dailies Everyday", chickenRep + rejekRep + vekgarRep, 42000);
 	end
 end]];
-local OnTooltipForOracles = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForOracles = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 0 then
 		local hand = t.hand;
@@ -103,11 +103,11 @@ root(ROOTS.Zones, {
 	m(NORTHREND, applyclassicphase(WRATH_PHASE_ONE, {
 		m(SHOLAZAR_BASIN, {
 			["lore"] = "Sholazar Basin is a lush tropical forest in western Northrend. It owes its warm climate to the pylons around the zone, which are maintained by the Titans and also ward off the Scourge. It is a great zone for gathering max-Northrend level items like herbs and ore. There's also some rare beasts hunters like taming for pets, like Loque'nahak. Players will revisit Hemet Nesingwary and prove their hunting prowess for him, become an unwitting ambassador in a faction war between the Oracles and the Frenzyheart tribes, and learn about the power of the pylons.",
-			["icon"] = "Interface\\Icons\\achievement_zone_sholazar_01",
+			["icon"] = 236817,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
 					explorationAch(1268),	-- Explore Sholazar Basin
-					achWithRep(950, 1104),	-- Frenzyheart Tribe
+					achWithRep(950, FACTION_FRENZYHEART_TRIBE),	-- Frenzyheart Tribe
 					ach(961, {	-- Honorary Frenzyheart
 						["sourceQuest"] = 12692,	-- Return of the Lich Hunter
 						["groups"] = {
@@ -211,13 +211,12 @@ root(ROOTS.Zones, {
 							}),
 						},
 					}),
-					achWithRep(951, 1105),	-- The Oracles
+					achWithRep(951, FACTION_THE_ORACLES),	-- The Oracles
 				}),
 				battlepets({
 					["sym"] = {{"select","speciesID",
 						387,	-- Snake (PET!)
 						379,	-- Squirrel (PET!)
-						1238,	-- Unborn Val'kyr (PET!)
 					}},
 					["groups"] = {
 						pet(649, {	-- Biletoad (PET!)
@@ -236,10 +235,16 @@ root(ROOTS.Zones, {
 					},
 				}),
 				explorationHeader({
+					visit_exploration(4385,{coord={38.7,38.5,SHOLAZAR_BASIN}}),	-- Bittertide Lake
+					visit_exploration(4393,{coord={55.2,45.0,SHOLAZAR_BASIN}}),	-- Death's Hand Encampment
 					exploration(4369),	-- Dorian's Outpost
-					exploration(4292),	-- Frenzyheart Hill
+					visit_exploration(4292,{coord={55.6,68.7,SHOLAZAR_BASIN}}),	-- Frenzyheart Hill
+					visit_exploration(10191,{coord={64.5,68.7,SHOLAZAR_BASIN}}),	-- Frenzyheart River
+					visit_exploration(10186,{coord={66.5,75.1,SHOLAZAR_BASIN}}),	-- Hardknuckle Clearing
 					exploration(4287),	-- Kartak's Hold
+					visit_exploration(4383,{coord={49.9,61.5,SHOLAZAR_BASIN}}),	-- Lakeside Landing
 					exploration(4306),	-- Mistwhisper Refuge
+					visit_exploration(10184,{coord={76.1,50.5,SHOLAZAR_BASIN}}),	-- Mosswalker Village
 					exploration(4284),	-- Nesingwary Base Camp
 					exploration(4291),	-- Rainspeaker Canopy
 					exploration(4386),	-- Rainspeaker Rapids
@@ -249,7 +254,9 @@ root(ROOTS.Zones, {
 					exploration(4308),	-- Spearborn Encampment
 					exploration(4391),	-- Swindlegrin's Dig
 					exploration(4282),	-- The Avalanche
+					visit_exploration(4367,{coord={63.4,47.6,SHOLAZAR_BASIN}}),	-- The Blight Line
 					exploration(4368),	-- The Bonefields
+					visit_exploration(4286,{coord={26.4,68.5,SHOLAZAR_BASIN}}),	-- The Bones of Nozronn
 					exploration(4307),	-- The Glimmering Pillar
 					exploration(4296),	-- The Lifeblood Pillar
 					exploration(4283),	-- The Lost Lands
@@ -257,41 +264,39 @@ root(ROOTS.Zones, {
 					exploration(4412),	-- The Makers' Overlook
 					exploration(4413),	-- The Makers' Perch
 					exploration(4400),	-- The Mosslight Pillar
+					visit_exploration(4289,{coord={24.6,53.3,SHOLAZAR_BASIN}}),	-- The Path of the Lifewarden
 					exploration(4376),	-- The Savage Thicket
+					visit_exploration(4285,{coord={20.3,60.8,SHOLAZAR_BASIN}}),	-- The Seabreach Flow
 					exploration(4302),	-- The Skyreach Pillar
 					exploration(4392),	-- The Stormwright's Shelf
+					visit_exploration(10182,{coord={70.7,58.6,SHOLAZAR_BASIN}}),	-- The Sundered Shard
 					exploration(4389),	-- The Suntouched Pillar
 					exploration(4300),	-- Waygate
 					exploration(4293),	-- Wildgrowth Mangal
+					visit_exploration(10181,{coord={44.1,57.9,SHOLAZAR_BASIN}}),	-- Wildgrowth Mangal
+					visit_exploration(10192,{coord={47.4,72.9,SHOLAZAR_BASIN}}),	-- Wintergrasp River
 				}),
 				n(FACTIONS, {
 					faction(1117, {	-- Sholazar Basin
 						["description"] = "This is a hidden reputation. It might not count towards reputation achievements.",
 						["collectible"] = false,
 					}),
-					faction(1104, {	-- Frenzyheart Tribe
-						["maxReputation"] = { 1105, NEUTRAL },	-- The Oracles, Neutral.
-						["OnTooltip"] = OnTooltipForFrenzyheart,
+					faction(FACTION_FRENZYHEART_TRIBE, {	-- Frenzyheart Tribe
+						["maxReputation"] = { FACTION_THE_ORACLES, NEUTRAL },	-- The Oracles, Neutral.
+						["OnTooltip"] = [[_.OnTooltipDB.ForFrenzyheart]],
 					}),
-					faction(1105, {	-- The Oracles
-						["maxReputation"] = { 1104, NEUTRAL },	-- Frenzyheart Tribe, Neutral.
-						["OnTooltip"] = OnTooltipForOracles,
+					faction(FACTION_THE_ORACLES, {	-- The Oracles
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, NEUTRAL },	-- Frenzyheart Tribe, Neutral.
+						["OnTooltip"] = [[_.OnTooltipDB.ForOracles]],
 					}),
 				}),
 				prof(FISHING, {
-					-- #if ANYCLASSIC
-					ach(1517, {	-- Northrend Angler
-						["provider"] = { "o", 192057 },	-- Nettlefish School
-						["criteriaID"] = 5287,	-- Nettlefish School
-						["requireSkill"] = FISHING,
-					}),
-					-- #else
 					o(192057, {	-- Nettlefish School
 						["requireSkill"] = FISHING,
 					}),
-					-- #endif
 					i(45902, {	-- Phantom Ghostfish
 						["description"] = "Eat this before it despawns!",
+						["_noautomation"] = true,
 					}),
 				}),
 				n(FLIGHT_PATHS, {
@@ -317,16 +322,16 @@ root(ROOTS.Zones, {
 							12732,	-- The Heartblood's Strength
 						},
 						["coord"] = { 55.7, 69.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12702, {	-- Chicken Party!
 						["qg"] = 28138,	-- Elder Harkek
 						["sourceQuest"] = 12692,	-- Return of the Lich Hunter
 						["coord"] = { 55.5, 69.6, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12582, {	-- Frenzyheart Champion
@@ -339,8 +344,8 @@ root(ROOTS.Zones, {
 						["qg"] = 29146,	-- Vekgar
 						["sourceQuest"] = 12692,	-- Return of the Lich Hunter
 						["coord"] = { 55.5, 68.6, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12734, {	-- Rejek: First Blood
@@ -353,8 +358,8 @@ root(ROOTS.Zones, {
 							12732,	-- The Heartblood's Strength
 						},
 						["coord"] = { 55.7, 69.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12692, {	-- Return of the Lich Hunter
@@ -366,8 +371,8 @@ root(ROOTS.Zones, {
 						["qg"] = 29146,	-- Vekgar
 						["sourceQuest"] = 12692,	-- Return of the Lich Hunter
 						["coord"] = { 55.5, 68.6, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12741, {	-- Strength of the Tempest
@@ -380,8 +385,8 @@ root(ROOTS.Zones, {
 							12732,	-- The Heartblood's Strength
 						},
 						["coord"] = { 55.7, 69.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12732, {	-- The Heartblood's Strength
@@ -394,16 +399,16 @@ root(ROOTS.Zones, {
 							-- 12732,	-- The Heartblood's Strength
 						},
 						["coord"] = { 55.7, 69.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12759, {	-- Tools of War
 						["qg"] = 29146,	-- Vekgar
 						["sourceQuest"] = 12692,	-- Return of the Lich Hunter
 						["coord"] = { 55.5, 68.6, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1104, EXALTED },	-- Frenzyheart Tribe, Exalted.
-						["minReputation"] = { 1104, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
+						["maxReputation"] = { FACTION_FRENZYHEART_TRIBE, EXALTED },	-- Frenzyheart Tribe, Exalted.
+						["minReputation"] = { FACTION_FRENZYHEART_TRIBE, FRIENDLY },	-- Frenzyheart Tribe, Friendly.
 						["isDaily"] = true,
 					}),
 
@@ -418,8 +423,8 @@ root(ROOTS.Zones, {
 							12726,	-- Song of Wind and Water
 						},
 						["coord"] = { 53.3, 56.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12704, {	-- Appeasing the Great Rain Stone
@@ -429,8 +434,8 @@ root(ROOTS.Zones, {
 						},
 						["sourceQuest"] = 12695,	-- Return of the Friendly Dryskin
 						["coord"] = { 54.6, 56.3, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 						["groups"] = {
 							objective(1, {	-- 0/6 Shiny Treasures
@@ -455,8 +460,8 @@ root(ROOTS.Zones, {
 						["qg"] = 29149,	-- Oracle Soo-dow
 						["sourceQuest"] = 12695,	-- Return of the Friendly Dryskin
 						["coord"] = { 54.2, 53.8, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 						["groups"] = {
 							objective(1, {	-- 0/50 Frenzyheart Attacker slain
@@ -474,8 +479,8 @@ root(ROOTS.Zones, {
 						["qg"] = 29149,	-- Oracle Soo-dow
 						["sourceQuest"] = 12695,	-- Return of the Friendly Dryskin
 						["coord"] = { 54.2, 53.8, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12695, {	-- Return of the Friendly Dryskin
@@ -493,8 +498,8 @@ root(ROOTS.Zones, {
 							12726,	-- Song of Wind and Water
 						},
 						["coord"] = { 53.3, 56.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 						["groups"] = {
 							objective(1, {	-- 0/8 Song of Fedundity played
@@ -515,8 +520,8 @@ root(ROOTS.Zones, {
 							12726,	-- Song of Wind and Water
 						},
 						["coord"] = { 53.3, 56.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12726, {	-- Song of Wind and Water
@@ -529,16 +534,16 @@ root(ROOTS.Zones, {
 							-- 12726,	-- Song of Wind and Water
 						},
 						["coord"] = { 53.3, 56.4, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 					}),
 					q(12705, {	-- Will of the Titans
 						["qg"] = 29149,	-- Oracle Soo-dow
 						["sourceQuest"] = 12695,	-- Return of the Friendly Dryskin
 						["coord"] = { 54.2, 53.8, SHOLAZAR_BASIN },
-						["maxReputation"] = { 1105, EXALTED },	-- The Oracles, Exalted.
-						["minReputation"] = { 1105, FRIENDLY },	-- The Oracles, Friendly.
+						["maxReputation"] = { FACTION_THE_ORACLES, EXALTED },	-- The Oracles, Exalted.
+						["minReputation"] = { FACTION_THE_ORACLES, FRIENDLY },	-- The Oracles, Friendly.
 						["isDaily"] = true,
 					}),
 
@@ -1287,31 +1292,39 @@ root(ROOTS.Zones, {
 				n(VENDORS, {
 					n(31910, {	-- Geen <Oracles Quartermaster>
 						["coord"] = { 54.6, 56.1, SHOLAZAR_BASIN },
-						["groups"] = {
-							i(41724),	-- Design: Misty Forest Emerald [CATA+] / Design: Sundered Forest Emerald [WRATH]
-							i(41567),	-- Design: Nimble Dark Jade [CATA+] / Design: Vivid Dark Jade [WRATH]
-							i(44104),	-- Fishy Cinch
-							i(44112),	-- Glimmershell Shoulder Protectors
-							i(44106),	-- Glitterscale Wrap
-							i(44111),	-- Gold Star Spaulders
-							i(39878, {	-- Mysterious Egg
-								["provider"] = { "i", 39883 },	-- Cracked Egg
-								["groups"] = {
-									i(44707),	-- Green Proto-Drake (MOUNT!)
-									i(39898, {	-- Cobra Hatchling (PET!)
-										["timeline"] = { ADDED_3_0_3 },
-									}),
-									i(44721),	-- Proto-Drake Whelp (PET!)
-									i(39896),	-- Tickbird Hatchling (PET!)
-									i(39899),	-- White Tickbird Hatchling (PET!)
-									i(44722),	-- Aged Yolk
-								},
-							}),
-							i(44074),	-- Oracle Talisman of Ablution
-							i(44110),	-- Sharkjaw Cap
-							i(44108),	-- Shinygem Rod
-							i(44109),	-- Toothslice Helm
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_THE_ORACLES, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(41567),	-- Design: Nimble Dark Jade [CATA+] / Design: Vivid Dark Jade [WRATH]
+								i(44065),	-- Oracle Secret Solution
+							}, {	-- Honored
+								i(44071),	-- Slow-Roasted Eel
+							}, {	-- Revered
+								i(41724),	-- Design: Misty Forest Emerald [CATA+] / Design: Sundered Forest Emerald [WRATH] (RECIPE!)
+								i(44104),	-- Fishy Cinch
+								i(44112),	-- Glimmershell Shoulder Protectors
+								i(44106),	-- Glitterscale Wrap
+								i(44111),	-- Gold Star Spaulders
+								i(39878, {	-- Mysterious Egg
+									["provider"] = { "i", 39883 },	-- Cracked Egg
+									["groups"] = {
+										i(44707),	-- Green Proto-Drake (MOUNT!)
+										i(39898, {	-- Cobra Hatchling (PET!)
+											["timeline"] = { ADDED_3_0_3 },
+										}),
+										i(44721),	-- Proto-Drake Whelp (PET!)
+										i(39896),	-- Tickbird Hatchling (PET!)
+										i(39899),	-- White Tickbird Hatchling (PET!)
+										i(44722),	-- Aged Yolk
+									},
+								}),
+								i(44110),	-- Sharkjaw Cap
+								i(44108),	-- Shinygem Rod
+								i(44109),	-- Toothslice Helm
+							}, {	-- Exalted
+								i(44074),	-- Oracle Talisman of Ablution
+							},
+						}),
 					}),
 					n(29014, {	-- Grakjek <Bowyer>
 						["coord"] = { 55.8, 70.2, SHOLAZAR_BASIN },
@@ -1334,26 +1347,34 @@ root(ROOTS.Zones, {
 					}),
 					n(31911, {	-- Tanak <Frenzyheart Quartermaster>
 						["coord"] = { 55.1, 69.0, SHOLAZAR_BASIN },
-						["groups"] = {
-							i(44117),	-- Azure Strappy Pants
-							i(41723),	-- Design: Jagged Forest Emerald
-							i(41561),	-- Design: Reckless Huge Citrine
-							i(44123),	-- Discarded Titanium Legplates
-							i(44717, {	-- Disgusting Jar
-								["provider"] = { "i", 44718 },	-- Ripe Disgusting Jar
-								["groups"] = {
-									i(44719),	-- Frenzyheart Brew (TOY!)
-								},
-							}),
-							i(44073),	-- Frenzyheart Insignia of Fury
-							i(44120),	-- Giant-Sized Gauntlets
-							i(44116),	-- Muddied Crimson Gloves
-							i(44122),	-- Scavenged Feathery Leggings
-							i(44121),	-- Sparkly Shiny Gloves
-							i(44118, {	-- Stolen Vrykul Harpoon
-								["timeline"] = { REMOVED_5_0_4 },
-							}),
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_FRENZYHEART_TRIBE, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(41561),	-- Design: Reckless Huge Citrine (RECIPE!)
+								i(44064),	-- Nepeta Leaf
+								i(44072),	-- Roasted Mystery Beast
+							}, {	-- Honored
+							}, {	-- Revered
+								i(44117),	-- Azure Strappy Pants
+								i(41723),	-- Design: Jagged Forest Emerald (RECIPE!)
+								i(44123),	-- Discarded Titanium Legplates
+								i(44717, {	-- Disgusting Jar
+									["provider"] = { "i", 44718 },	-- Ripe Disgusting Jar
+									["groups"] = {
+										i(44719),	-- Frenzyheart Brew (TOY!)
+									},
+								}),
+								i(44120),	-- Giant-Sized Gauntlets
+								i(44116),	-- Muddied Crimson Gloves
+								i(44122),	-- Scavenged Feathery Leggings
+								i(44121),	-- Sparkly Shiny Gloves
+								i(44118, {	-- Stolen Vrykul Harpoon
+									["timeline"] = { REMOVED_5_0_4 },
+								}),
+							}, {	-- Exalted
+								i(44073),	-- Frenzyheart Insignia of Fury
+							},
+						}),
 					}),
 				}),
 				n(ZONE_DROPS, {

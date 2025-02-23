@@ -1,7 +1,7 @@
 -----------------------------------------------
 --      P L A Y E R   V S   P L A Y E R      --
 -----------------------------------------------
-local OnTooltipForArathiBasin = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForArathiBasin = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation >= 0 and reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -20,15 +20,13 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 		-- #else
 		["lore"] = "Arathi Basin is a 15v15 battleground located in Arathi Highlands. Players fight over five bases (Stables, Mines, Blacksmith, Lumber Mill, and Farm) which reward teams with resources. The more bases a team controls, the faster they accumulate resources. A team with all five bases captured will gain 30 resources per second.\n\nThe game is won when one team reaches 2000 resources. The most common way of winning is to hold three bases and defend, with the Blacksmith being a key base.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Achievement_bg_winab",
+		["icon"] = 236385,
 		["maps"] = {
 			837,	-- Arathi Basin
 			844,	-- Arathi Basin
 			1383,	-- Arathi Basin
 			1366,	-- Arathi Basin (BG)
 		},
-		-- #endif
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(1169, {	-- Master of Arathi Basin (Alliance - before 4.3.0)
@@ -129,43 +127,29 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 					["timeline"] = { ADDED_3_0_2 },
 					["_noautomation"] = true,	-- Doesn't show any criteria ingame but they exist so we hide them ourselves
 				}),
-				applyclassicphase(PHASE_TWO, achWithRep(711, 509, {	-- Knight of Arathor
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with The League of Arathor to Exalted.",
-					-- #endif
+				applyclassicphase(PHASE_TWO, achWithRep(711, FACTION_THE_LEAGUE_OF_ARATHOR, {	-- Knight of Arathor
 					["races"] = ALLIANCE_ONLY,
 				})),
-				applyclassicphase(PHASE_TWO, achWithRep(710, 510, {	-- The Defiler
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with The Defilers to Exalted.",
-					-- #endif
+				applyclassicphase(PHASE_TWO, achWithRep(710, FACTION_THE_DEFILERS, {	-- The Defiler
 					["races"] = HORDE_ONLY,
 				})),
 			}),
 			n(FACTIONS, {
-				faction(510, {	-- The Defilers
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\spell_shadow_psychichorrors",
-					-- #else
-					["icon"] = "Interface\\Icons\\Ability_Sap",
-					-- #endif
-					["OnTooltip"] = OnTooltipForArathiBasin,
+				faction(FACTION_THE_DEFILERS, {	-- The Defilers
+					["icon"] = 237568,
+					["OnTooltip"] = [[_.OnTooltipDB.ForArathiBasin]],
 					["races"] = HORDE_ONLY,
 				}),
-				faction(509, {	-- The League of Arathor
-					-- #if AFTER TBC
-					["icon"] = "Interface\\Icons\\ability_warrior_rallyingcry",
-					-- #else
-					["icon"] = "Interface\\Icons\\Ability_warrior_battleshout",
-					-- #endif
-					["OnTooltip"] = OnTooltipForArathiBasin,
+				faction(FACTION_THE_LEAGUE_OF_ARATHOR, {	-- The League of Arathor
+					["icon"] = 132351,
+					["OnTooltip"] = [[_.OnTooltipDB.ForArathiBasin]],
 					["races"] = ALLIANCE_ONLY,
 				}),
 			}),
 			n(QUESTS, {
 				q(8262, {	-- Arathor Advanced Care Package
 					["qg"] = 15127,	-- Samuel Hawke
-					["minReputation"] = { 509, FRIENDLY },	-- The League of Arathor, Friendly.
+					["minReputation"] = { FACTION_THE_LEAGUE_OF_ARATHOR, FRIENDLY },	-- The League of Arathor, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.2, 46.4, ARATHI_HIGHLANDS },
@@ -184,7 +168,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(8260, {	-- Arathor Basic Care Package
 					["qg"] = 15127,	-- Samuel Hawke
-					["minReputation"] = { 509, FRIENDLY },	-- The League of Arathor, Friendly.
+					["minReputation"] = { FACTION_THE_LEAGUE_OF_ARATHOR, FRIENDLY },	-- The League of Arathor, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.2, 46.4, ARATHI_HIGHLANDS },
@@ -203,7 +187,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(8261, {	-- Arathor Standard Care Package
 					["qg"] = 15127,	-- Samuel Hawke
-					["minReputation"] = { 509, FRIENDLY },	-- The League of Arathor, Friendly.
+					["minReputation"] = { FACTION_THE_LEAGUE_OF_ARATHOR, FRIENDLY },	-- The League of Arathor, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.2, 46.4, ARATHI_HIGHLANDS },
@@ -763,7 +747,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				q(8115, {	-- Control Five Bases (Alliance)
 					["qg"] = 14983,	-- Field Marshal Oslight
 					["sourceQuest"] = 8114,	-- Control Four Bases (Alliance)
-					["minReputation"] = { 509, EXALTED },	-- The League of Arathor, Exalted.
+					["minReputation"] = { FACTION_THE_LEAGUE_OF_ARATHOR, EXALTED },	-- The League of Arathor, Exalted.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.0, 46.7, ARATHI_HIGHLANDS },
@@ -790,7 +774,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						8105,	-- The Battle for Arathi Basin! [Level 50]
 					},
 					-- #endif
-					["minReputation"] = { 509, FRIENDLY },	-- The League of Arathor, Friendly.
+					["minReputation"] = { FACTION_THE_LEAGUE_OF_ARATHOR, FRIENDLY },	-- The League of Arathor, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.0, 46.7, ARATHI_HIGHLANDS },
@@ -804,7 +788,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(8265, {	-- Defiler's Advanced Care Package
 					["qg"] = 15126,	-- Rutherford Twing
-					["minReputation"] = { 510, FRIENDLY },	-- The Defilers, Friendly.
+					["minReputation"] = { FACTION_THE_DEFILERS, FRIENDLY },	-- The Defilers, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 68.5, 30.4, ARATHI_HIGHLANDS },
@@ -823,7 +807,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(8263, {	-- Defiler's Basic Care Package
 					["qg"] = 15126,	-- Rutherford Twing
-					["minReputation"] = { 510, FRIENDLY },	-- The Defilers, Friendly.
+					["minReputation"] = { FACTION_THE_DEFILERS, FRIENDLY },	-- The Defilers, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 68.5, 30.4, ARATHI_HIGHLANDS },
@@ -842,7 +826,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(8264, {	-- Defiler's Standard Care Package
 					["qg"] = 15126,	-- Rutherford Twing
-					["minReputation"] = { 510, FRIENDLY },	-- The Defilers, Friendly.
+					["minReputation"] = { FACTION_THE_DEFILERS, FRIENDLY },	-- The Defilers, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 68.5, 30.4, ARATHI_HIGHLANDS },
@@ -863,7 +847,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				applyclassicphase(SOD_PHASE_TWO, q(79990, {	-- Stranglethorn Lumber (A)
 					["qg"] = 14984,	-- Sergeant Maclear
 					["coord"] = { 45.8, 45.4, ARATHI_HIGHLANDS },
-					["maxReputation"] = { 509, EXALTED },	-- The League of Arathor, Exalted.
+					["maxReputation"] = { FACTION_THE_LEAGUE_OF_ARATHOR, EXALTED },	-- The League of Arathor, Exalted.
 					["cost"] = { { "i", 216491, 1 } },	-- 1x Shipment of Stranglethorn Lumber
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -872,7 +856,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				applyclassicphase(SOD_PHASE_TWO, q(79991, {	-- Stranglethorn Lumber (H)
 					["qg"] = 15022,	-- Deathstalker Mortis
 					["coord"] = { 73.6, 29.8, ARATHI_HIGHLANDS },
-					["maxReputation"] = { 510, EXALTED },	-- The Defilers, Exalted.
+					["maxReputation"] = { FACTION_THE_DEFILERS, EXALTED },	-- The Defilers, Exalted.
 					["cost"] = { { "i", 216491, 1 } },	-- 1x Shipment of Stranglethorn Lumber
 					["races"] = HORDE_ONLY,
 					["repeatable"] = true,
@@ -882,7 +866,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				q(8122, {	-- Take Five Bases (Horde)
 					["qg"] = 15021,	-- Deathmaster Dwire
 					["sourceQuest"] = 8121,	-- Take Four Bases (Horde)
-					["minReputation"] = { 510, EXALTED },	-- The Defilers, Exalted.
+					["minReputation"] = { FACTION_THE_DEFILERS, EXALTED },	-- The Defilers, Exalted.
 					["coord"] = { 73.3, 29.7, ARATHI_HIGHLANDS },
 					["timeline"] = { REMOVED_5_0_4 },
 					["races"] = HORDE_ONLY,
@@ -903,7 +887,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						8120,	-- The Battle for Arathi Basin! [Level 50]
 					},
 					-- #endif
-					["minReputation"] = { 510, FRIENDLY },	-- The Defilers, Friendly.
+					["minReputation"] = { FACTION_THE_DEFILERS, FRIENDLY },	-- The Defilers, Friendly.
 					["coord"] = { 73.3, 29.7, ARATHI_HIGHLANDS },
 					["timeline"] = { REMOVED_5_0_4 },
 					["races"] = HORDE_ONLY,

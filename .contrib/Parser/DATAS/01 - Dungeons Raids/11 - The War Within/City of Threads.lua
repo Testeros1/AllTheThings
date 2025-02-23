@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	inst(1274, {	-- City of Threads
 		["coord"] = { 46.7, 63.4, AZJ_KAHET },
 		["maps"] = {
@@ -12,12 +12,17 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 			n(QUESTS, {
 				q(83164, {	-- City of Threads: Splice the Splicer
 					["provider"] = { "n", 224733 },	-- Tulumun
-					["coord"] = { 56.7, 46.7, AZJ_KAHET },
+					["coord"] = { 56.2, 42.3, AZJ_KAHET },
 				}),
 			}),
-			n(ZONE_DROPS, {
-				-- NOTE: it was looted in follower dungeon, from mobs after Fangs of the Queen boss
-				i(218126),	-- Befouler's Syringe
+			n(VENDORS, {
+				n(227607, {	-- Fliq'ri <Mistress of Minions>
+					["description"] = "Found by the right stairs near the second boss. You may need another player to be caught by the nearby guard to be able to buy from the vendor yourself.",
+					["coord"] = { 74.7, 48.8, 2343 },
+					["g"] = {
+						i(226191),	-- Web Pet Leash (TOY!)
+					},
+				}),
 			}),
 			d(DIFFICULTY.DUNGEON.MULTI.NORMAL_PLUS, {
 				e(2594, {	-- Orator Krix'vizk

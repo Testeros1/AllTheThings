@@ -4,16 +4,10 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(DUSKWOOD, {
 		["lore"] = "Duskwood is a zone in Southern Eastern Kingdoms, warped and cursed due to the Scythe of Elune. Beneath the eternal blanket of darkness which gave Duskwood its current name, the Scythe's effects have transformed what was once a beautiful part of Elwynn Forest into a land covered in gnarled trees and inhabited by the hideous undead and extradimensional Worgen, brought along with the black fog hanging over the woods. Ogres moving in from Deadwind Pass have brought up even more problems.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Achievement_zone_duskwood",
-		-- #endif
+		["icon"] = 236757,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(778, {	-- Explore Duskwood
-					-- #if BEFORE WRATH
-					["description"] = "Explore Duskwood, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(778),	-- Explore Duskwood
 				ach(4907, {	-- Duskwood Quests
 					["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
 					["races"] = ALLIANCE_ONLY,
@@ -128,7 +122,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #else
 						["description"] = "Spawns during the night between 6:30pm to 6:30am PST(US)/CEST(EU)/AEST(OCE), but can be found as a secondary pet all day long.",
 						-- #endif
-					}),	
+					}),
 				},
 			}),
 			explorationHeader({
@@ -181,6 +175,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(26720, {	-- A Curse We Cannot Lift
 					["qg"] = 43730,	-- Oliver Harris
 					["sourceQuest"] = 26719,	-- Delivery to Master Harris
+					-- #if AFTER 7.0.3
+					["description"] = "High-level players may require |cff0070ddSoft Foam Sword|r to lower creature health to 10%.",
+					-- #endif
 					["coord"] = { 18.3, 57.6, DUSKWOOD },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -1935,6 +1932,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 73.5, 46.9, DUSKWOOD },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
+					["sourceQuests"] = {
+						28564,	-- Hero's Call: Duskwood!
+						26728,	-- Hero's Call: Duskwood!
+					},
 					["groups"] = {
 						objective(1, {	-- 0/12 Dire Wolf slain
 							["provider"] = { "n", 43704 },	-- Dire Wolf
@@ -2163,6 +2164,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(91592, {	-- Forlorn Composer
 					["description"] = "Travel to the northeast corner of Raven Hill Cemetery. Getting this music roll requires speaking to Forlorn Composer while you are dead. The easiest way to do this is to fly up very high and dismount (removing armor first will avoid repair charges).",
+					["coord"] = { 23.7, 36.3, DUSKWOOD },
 					["timeline"] = { ADDED_6_1_0 },
 					["groups"] = {
 						i(122223, {	-- Music Roll: Ghost
@@ -2342,7 +2344,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { REMOVED_4_0_3 },
 					["groups"] = {
 						i(6068, {	-- Recipe: Shadow Oil (RECIPE!)
-							["timeline"] = { REMOVED_4_0_3 }, -- Moved to trainers
+							["timeline"] = { REMOVED_4_0_3 },	-- Moved to trainers
 						}),
 					},
 				}),
@@ -2436,7 +2438,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 			}),
 			n(ZONE_DROPS, {
-				i(2794),	-- An Old History Book
+				i(2794, {	-- An Old History Book
+					-- #if AFTER 4.0.3
+					["description"] = "Quest obtained from the book has been made obsolete at the release of Cataclysm expansion. Book is safe to be destroyed but, you will loot another one eventually.\n\nIf you are questing in Duskwood and come upon it, keep it in your inventory until you finish to avoid having to destroy it every time you loot another copy.",
+					-- #endif
+				}),
 				i(885, {	-- Black Metal Axe
 					["cr"] = 3,	-- Flesh Eater
 					["timeline"] = { REMOVED_4_0_3, ADDED_10_1_7 },	-- ATT Discord 05.09.2023
@@ -2825,16 +2831,18 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
--- #if AFTER 4.0.3
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.CATA, {
-		q(26673),	-- REUSE - BREADCRUMB (completed when turning in "Roland's Doom" (26670)
-	}),
-	-- #if AFTER LEGION
-	expansion(EXPANSION.LEGION, {
+	expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3 } }, {
+		m(EASTERN_KINGDOMS, {
+			m(DUSKWOOD, {
+				n(QUESTS, {
+					q(26673),	-- REUSE - BREADCRUMB (completed when turning in "Roland's Doom" (26670)
+				}),
+			}),
+		}),
+	})),
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
 		q(40937),	-- Tracking: Revil Defeated
 		q(41153),	-- Revil Defeated
-	}),
-	-- #endif
+	})),
 });
--- #endif

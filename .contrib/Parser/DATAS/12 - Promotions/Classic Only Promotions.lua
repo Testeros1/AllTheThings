@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --        P R O M O T I O N S   M O D U L E        --
 -----------------------------------------------------
-root(ROOTS.Promotions, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
+root(ROOTS.Promotions, bubbleDown({ ["u"] = REAL_MONEY }, {
 	-- #if ANYCLASSIC
 	expansion(EXPANSION.TBC, {
 		["timeline"] = { ADDED_2_5_1 },
@@ -125,6 +125,10 @@ root(ROOTS.Promotions, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
 				},
 				["u"] = REMOVED_FROM_GAME,
 			}),
+			cnONLY(i(33225, {	-- Reins of the Swift Spectral Tiger
+				["description"] = "Obtained if you paid 267$ to set up a 6 Month WoW Subscription between 25th January 2022 until 25th July 2022.",
+				["u"] = REMOVED_FROM_GAME,
+			})),
 		},
 	}),
 	expansion(EXPANSION.WRATH, {
@@ -206,6 +210,7 @@ root(ROOTS.Promotions, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
 				["groups"] = {
 					i(187794),	-- Flurky
 				},
+				["u"] = REMOVED_FROM_GAME,
 			}),
 			q(75492, {	-- Glub [2023 17th January until 31st July 2023]
 				["qg"] = 17249,	-- Landro Longshot <The Black Flame>
@@ -243,6 +248,7 @@ root(ROOTS.Promotions, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
 						-- Description is under the 6 Months Promo?
 					}),
 				},
+				["u"] = REMOVED_FROM_GAME,
 			}),
 			q(70863, {	-- Hoplet [2023 17th January until 31st July 2023]
 				["qg"] = 17249,	-- Landro Longshot <The Black Flame>
@@ -281,12 +287,56 @@ root(ROOTS.Promotions, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
 					-- ["description"] = "Obtained if you set up a 12 Month WoW Subscription between 11th November 2022 until 15th January 2023 or a 6 Month WoW Subscription between 17th January 2023 until 31st July 2023.",
 					}),
 				},
+				["u"] = REMOVED_FROM_GAME,
 			}),
 			i(207097, {	-- Nightmarish Emerald Drake
 				["description"] = "Obtained if you set up a 12 Month WoW Subscription after 27th October 2023.",
+				["u"] = REMOVED_FROM_GAME,
 			}),
 			i(209877, {	-- Cypress
 				["description"] = "Obtained if you set up a 6 Month WoW Subscription after 10th January 2024.",
+				["u"] = REMOVED_FROM_GAME,
+			}),
+			mount(49290, {	-- Magic Rooster (TW Only)[2023 10th October until 8th January 2024]
+				["description"] = "Obtained if you set up a 3 Month WoW Subscription between 10th October 2022 until 8th January 2024.",
+				["u"] = REMOVED_FROM_GAME,
+			}),
+			i(74269, {	-- Blazing Hippogryph (TW Only)[2024 8th January until 8th April 2024] (Unknown which exact dates)
+				["description"] = "Obtained if you set up a 3 Month WoW Subscription between 8th January 2024 until 8th April 2024.",
+				["u"] = REMOVED_FROM_GAME,
+			}),
+			cnONLY(mount(471440, {	-- Skybound Spectral Tiger
+				["timeline"] = { ADDED_3_4_0, REMOVED_4_0_0 },
+				["description"] = "Can be bought for ¥1888 ($265 USD) or a discounted price of ¥588 ($82 USD) for owners of the original for a limited time in the Ingame Shop.",
+			})),
+			cnONLY(i(235344, {	-- Blazing Royal Fire Hawk (CN Only)
+				["description"] = "Rewarded from the Treasure Workshop.",
+				["timeline"] = { ADDED_3_4_0, REMOVED_4_0_0 },
+			})),
+			cnONLY(i(235378, {	-- Landro's Loot Box (CN Only)
+				["description"] = "Can be bought for ¥200 RMB (~$27 USD) for a limited time in the Ingame Shop.",
+				["timeline"] = { ADDED_3_4_0, REMOVED_4_0_0 },
+				["groups"] = {
+					cnONLY(i(227362)),	-- Golden Ashes of Al'ar (CN Only)
+					cnONLY(i(49284)),	-- Reins of the Swift Spectral Tiger
+					cnONLY(i(49283)),	-- Reins of the Spectral Tiger
+					cnONLY(i(49286)),	-- X-51 Nether-Rocket X-TREME
+					cnONLY(i(49285)),	-- X-51 Nether-Rocket
+					cnONLY(i(45047)),	-- Sandbox Tiger
+					cnONLY(i(35223)),	-- Papa Hummel's Old-Fashioned Pet Biscuit
+					cnONLY(i(46779)),	-- Path of Cenarius
+				},
+			})),
+		},
+	}),
+	expansion(EXPANSION.CATA, {
+		["timeline"] = { ADDED_4_4_0 },
+		["groups"] = {
+			mount(463045, {	-- Lava Drake
+				["description"] = "Obtained if you set up a 12 Month WoW Subscription after 15th October 2024.",
+			}),
+			i(224002, {	-- Swoopy
+				["description"] = "Obtained if you set up a 12 Month WoW Subscription after 15th October 2024.",
 			}),
 		},
 	}),

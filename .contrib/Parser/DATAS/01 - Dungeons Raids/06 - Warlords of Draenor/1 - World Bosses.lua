@@ -56,11 +56,10 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 					ach(9424),	-- Rukhmar Guild Run
 					ach(9425),	-- So Grossly Incandescent
 					i(116771),	-- Solar Spirehawk (MOUNT!)
-					i(127775, {	-- Gemcutter Module: Stamina
+					TempForceMisc(i(127775, {	-- Gemcutter Module: Stamina
 						["requireSkill"] = JEWELCRAFTING,
 						["description"] = "Take this recipe to the \"Apexis Gemcutter\" in Tanaan Jungle to learn.  If you have this recipe already you will need to revisit the vendor to cache the recipe.",
-						["f"] = MISC,
-					}),
+					})),
 					i(115434),	-- Down-Lined Leggings
 					i(115435),	-- Leggings of Flowing Feathers
 					i(115436),	-- Phoenixfire Legplates
@@ -128,11 +127,21 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, {
-	n(WORLD_BOSSES, {
-		q(33069),	-- REUSEME - Supreme Lord Kazzak bonus roll
-		q(37675),	-- Short-Supply Reward - Tarlna the Ageless bonus roll & Drov the Ruiner bonus roll
-		q(37673),	-- Short-Supply Reward - Drov the Ruiner bonus roll
-		q(37672),	-- Short-Supply Reward - Rukhmar bonus roll
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	m(GORGROND, {
+		n(WORLD_BOSSES, {
+			q(37675),	-- Short-Supply Reward - Tarlna the Ageless bonus roll & Drov the Ruiner bonus roll
+			q(37673),	-- Short-Supply Reward - Drov the Ruiner bonus roll
+		}),
 	}),
-}));
+	m(SPIRES_OF_ARAK, {
+		n(WORLD_BOSSES, {
+			q(37672),	-- Short-Supply Reward - Rukhmar bonus roll
+		}),
+	}),
+	m(TANAAN_JUNGLE, bubbleDownSelf({ ["timeline"] = { ADDED_6_2_0 } }, {
+		n(WORLD_BOSSES, {
+			q(33069),	-- REUSEME - Supreme Lord Kazzak bonus roll
+		}),
+	})),
+})));

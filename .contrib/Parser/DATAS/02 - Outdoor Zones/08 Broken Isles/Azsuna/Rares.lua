@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(BROKEN_ISLES, {
 		m(AZSUNA, {
 			n(RARES, {
-				n(SPECIAL, sharedData({["description"] = "Can be made hostile by Demon Hunters using 'Spectral Sight' or Paladins wielding 'Truthguard' allowing anyone to get credit."},{
+				n(SPECIAL, sharedData({["sharedDescription"] = "Can be made hostile by Demon Hunters using 'Spectral Sight' or Paladins wielding 'Truthguard' allowing anyone to get credit."},{
 					n(109028, {	-- Horkus
 						["questID"] = 42825,
 						["coord"] = { 56.2, 59.6, AZSUNA },
@@ -20,7 +20,7 @@ root(ROOTS.Zones, {
 						i(141868),	-- Shal'imanacles
 					},
 				}),
-				n(90244,  {	-- Arcavellus
+				n(90244, {	-- Arcavellus
 					["description"] = "Click on the Unbound Rift in Ley-Ruins of Zarkhenar to start the event. Arcavellus will spawn after a few waves of enemies.",
 					["questID"] = 37932,
 					["coord"] = { 59.8, 11.9, AZSUNA },
@@ -28,7 +28,7 @@ root(ROOTS.Zones, {
 						i(129085),	-- Arcavellus' Unbound Spaulders
 					},
 				}),
-				n(91187,  {	-- Beacher
+				n(91187, {	-- Beacher
 					["description"] = "Due to phasing issues, you will be unable to kill Beacher if a Kvaldir WQ is up in the area it patrols.",
 					["questID"] = 38238,
 					["coord"] = { 32.4, 29.6, AZSUNA },
@@ -50,7 +50,7 @@ root(ROOTS.Zones, {
 						i(129086),	-- Brawlgoth's Choker
 					},
 				}),
-				n(91100,  {	-- Brogozog
+				n(91100, {	-- Brogozog
 					["description"] = "Speak to Tehd to start the encounter.",
 					["questID"] = 38212,
 					["coord"] = { 59.2, 46.3, AZSUNA },
@@ -65,14 +65,14 @@ root(ROOTS.Zones, {
 						i(141869),	-- Broodmother Armor
 					},
 				}),
-				n(91289,  {	-- Cailyn Paledoom
+				n(91289, {	-- Cailyn Paledoom
 					["questID"] = 38268,
 					["coord"] = { 52.4, 22.8, AZSUNA },
 					["g"] = {
 						i(129063),	-- Darkbane Visage
 					},
 				}),
-				n(89846,  {	-- Captain Volo'ren
+				n(89846, {	-- Captain Volo'ren
 					["questID"] = 37821,
 					["coord"] = { 53.4, 43.9, AZSUNA },
 					["g"] = {
@@ -89,9 +89,10 @@ root(ROOTS.Zones, {
 				n(109677, {	-- Chief Treasurer Jabrill
 					["questID"] = 45491,
 					["coord"] = { 58.9, 76.6, AZSUNA },
-				 }),
+				}),
 				n(107266, bubbleDownSelf({	-- Commander Soraax
 					["timeline"] = {
+						ADDED_8_0_1,
 						REMOVED_8_3_0,	-- as of 8.3, no sign of him or his world quest for a very long time
 						ADDED_9_2_0,	-- confirmed on 2022-04-02
 					},
@@ -102,7 +103,7 @@ root(ROOTS.Zones, {
 						i(141871),	-- Soraax's Gauntlets of Command
 					},
 				})),
-				n(90057,  {	-- Daggerbeak
+				n(90057, {	-- Daggerbeak
 					["questID"] = 37869,
 					["coord"] = { 51.1, 31.6, AZSUNA },
 					["g"] = {
@@ -114,7 +115,7 @@ root(ROOTS.Zones, {
 					["coord"] = { 50.5, 52.0, AZSUNA },
 					["crs"] = { 112636 },	-- Sinister Leyrunner
 				}),
-				n(91579,  {	-- Doomlord Kazrok
+				n(91579, {	-- Doomlord Kazrok
 					["description"] = "Speak to Tehd to start the encounter.",
 					["questID"] = 38352,	-- Kazrok
 					["coord"] = { 43.4, 28.2, AZSUNA },
@@ -130,14 +131,14 @@ root(ROOTS.Zones, {
 						i(129087),	-- Smooth Felwing Wraps
 					},
 				}),
-				n(89884,  {	-- Flog the Captain-Eater
+				n(89884, {	-- Flog the Captain-Eater
 					["questID"] = 37824,
 					["coord"] = { 45.1, 57.8, AZSUNA },
 					["g"] = {
 						i(129090),	-- Bosun's Acid-Bleached Cape
 					},
 				}),
-				n(89816,  {	-- Golza the Iron Fin
+				n(89816, {	-- Golza the Iron Fin
 					["questID"] = 37820,
 					["coord"] = { 65.0, 40.0, AZSUNA },
 					["g"] = {
@@ -151,7 +152,7 @@ root(ROOTS.Zones, {
 						i(141873),	-- Felstalker Leash Belt
 					},
 				}),
-				n(90803,  {	-- Infernal Lord
+				n(90803, {	-- Infernal Lord
 					["description"] = "Click Cache of Infernals in Faronaar to start the event. Infernal Lord will spawn after a few waves of small infernals.",
 					["questID"] = 38037,
 					["coord"] = { 35.2, 50.4, AZSUNA },
@@ -170,21 +171,21 @@ root(ROOTS.Zones, {
 					["questID"] = 43956,
 					["coord"] = { 43.4, 89.5, AZSUNA },
 				}),
-				n(89865,  {	-- Mrrgrl the Tide Reaver
+				n(89865, {	-- Mrrgrl the Tide Reaver
 					["questID"] = 37823,
 					["coord"] = { 50.0, 34.6, AZSUNA },
 					["g"] = {
 						i(129072),	-- The Violaceous Pearl
 					},
 				}),
-				n(90217,  {	-- Normantis the Deposed
+				n(90217, {	-- Normantis the Deposed
 					["questID"] = 37928,
 					["coord"] = { 49.6, 8.60, AZSUNA },
 					["g"] = {
 						i(129061),	-- Cowl of Azure Vengeance
 					},
 				}),
-				n(90901,  {	-- Pridelord Meowl
+				n(90901, {	-- Pridelord Meowl
 					["questID"] = 38061,
 					["coord"] = { 56.1, 29.0, AZSUNA },
 					["g"] = {
@@ -198,14 +199,14 @@ root(ROOTS.Zones, {
 						i(129075),	-- Ragemaw's Hide
 					},
 				}),
-				n(89016,  {	-- Ravyn-Drath
+				n(89016, {	-- Ravyn-Drath
 					["questID"] = 37537,
 					["coord"] = { 41.1, 41.7, AZSUNA },
 					["g"] = {
 						i(129080),	-- Alpha Seal Handwraps
 					},
 				}),
-				n(90505,  {	-- Syphonus
+				n(90505, {	-- Syphonus
 					["questID"] = 37989,
 					["coord"] = { 67.2, 51.9, AZSUNA },
 					["g"] = {
@@ -219,21 +220,21 @@ root(ROOTS.Zones, {
 						i(129081),	-- The Heavyweight Belt
 					},
 				}),
-				n(89850,  {	-- The Oracle
+				n(89850, {	-- The Oracle
 					["questID"] = 37822,
 					["coord"] = { 59.6, 55.2, AZSUNA },
 					["g"] = {
 						i(129065),	-- The Shadow Oracle's Leggings
 					},
 				}),
-				n(91113,  {	-- Tide Behemoth
+				n(91113, {	-- Tide Behemoth
 					["questID"] = 38217,
 					["coord"] = { 61.3, 62.0, AZSUNA },
 					["g"] = {
 						i(129062),	-- Scale Helm of the Frigid Depths
 					},
 				}),
-				n(89650,  {	-- Valiyaka the Stormbringer
+				n(89650, {	-- Valiyaka the Stormbringer
 					["questID"] = 37726,
 					["coord"] = { 47.4, 34.4, AZSUNA },
 					["g"] = {
@@ -247,7 +248,7 @@ root(ROOTS.Zones, {
 						i(141875),	-- Hauberk of the Wrathblade
 					},
 				}),
-				n(90164,  {	-- Warbringer Mox'na
+				n(90164, {	-- Warbringer Mox'na
 					["questID"] = 37909,
 					["coords"] = {
 						{ 47.4, 53.0, AZSUNA },

@@ -31,9 +31,7 @@ local TACTICAL_ASSIGNMENT = i(20809, {	-- Tactical Assignment
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(SILITHUS, {
 		["lore"] = "Silithus is a rough desert in the southwest end of Kalimdor. While Silithus today acts as the main working place of the Cenarion Circle, it was once the seat of the Aqiri Empire, known to the world as Ahn'Qiraj. Its gates were sealed off millennia ago by the Night Elves, but the silithid managed to regain some footage over Kalimdor. Today, the Cenarion Circle enlists both the Horde and the Alliance to help with their vigil.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_silithus_01",
-		-- #endif
+		["icon"] = 236829,
 		["maps"] = { 82 },		-- Twilight's Run
 		-- #if AFTER 7.3.5
 		["crs"] = { 128607 },	-- Zidormi
@@ -42,7 +40,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			-- #if AFTER 5.2.0.16634
 			m(AHNQIRAJ_THE_FALLEN_KINGDOM, {
 				["description"] = "This is an outdoor zone, a non-instanced version of Temple of Ahn'Qiraj and Ruins of Ahn'Qiraj.",
-				["icon"] = "Interface\\Icons\\achievement_zone_silithus_01",
+				["icon"] = 236829,
 				["groups"] = {
 					battlepets({
 						["sym"] = {{"select","speciesID",
@@ -76,11 +74,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			}),
 			-- #endif
 			n(ACHIEVEMENTS, {
-				explorationAch(856, {	-- Explore Silithus
-					-- #if BEFORE WRATH
-					["description"] = "Explore Silithus, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(856),	-- Explore Silithus
 				ach(4934, {	-- Silithus Quests
 					["timeline"] = { ADDED_4_0_3 },
 					-- #if AFTER MOP
@@ -184,7 +178,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(PHASE_FIVE_CATCH_UP, q(9248, {	-- A Humble Offering
 					["qg"] = 15282,	-- Aurel Goldleaf
 					["coord"] = { 52.0, 38.2, SILITHUS },
-					["minReputation"] = { 609, HONORED },	-- Cenarion Circle, Honored.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, HONORED },	-- Cenarion Circle, Honored.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 20515, 1 }},	-- Abyssal Scepter
 					["lvl"] = 58,
@@ -268,7 +262,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15306,	-- Bor Wildmane
 					["sourceQuest"] = 8352,	-- Scepter of the Council
 					["coord"] = { 48.6, 37.8, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 20515, 3 }},	-- Abyssal Scepter
 					["repeatable"] = true,
@@ -294,7 +288,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15306,	-- Bor Wildmane
 					["sourceQuest"] = 8348,	-- Signet of the Dukes
 					["coord"] = { 48.6, 37.8, SILITHUS },
-					["minReputation"] = { 609, FRIENDLY },	-- Cenarion Circle, Friendly.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, FRIENDLY },	-- Cenarion Circle, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 20514, 3 }},	-- Abyssal Signet
 					["repeatable"] = true,
@@ -322,7 +316,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(PHASE_FIVE_SILITHUS_FIELD_DUTY_QUESTS, q(9338, {	-- Allegiance to Cenarion Circle
 					["qg"] = 15540,	-- Windcaller Kaldon
 					["coord"] = { 50.0, 36.4, SILITHUS },
-					["maxReputation"] = { 609, EXALTED },	-- Cenarion Circle, Exalted.
+					["maxReputation"] = { FACTION_CENARION_CIRCLE, EXALTED },	-- Cenarion Circle, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 20802, 1 },	-- Cenarion Combat Badge
@@ -517,7 +511,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(8331, {	-- Aurel Goldleaf
 					["qg"] = 15270,	-- Huum Wildmane
 					["coord"] = { 48.7, 37.9, SILITHUS },
-					["minReputation"] = { 609, FRIENDLY },	-- Cenarion Circle, Friendly.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, FRIENDLY },	-- Cenarion Circle, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["isBreadcrumb"] = true,
 					["lvl"] = 54,
@@ -595,7 +589,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15282,	-- Aurel Goldleaf
 					["sourceQuest"] = 8332,	-- Dukes of the Council
 					["coord"] = { 52.0, 38.2, SILITHUS },
-					["minReputation"] = { 609, FRIENDLY },	-- Cenarion Circle, Friendly.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, FRIENDLY },	-- Cenarion Circle, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["isBreadcrumb"] = true,
 					["lvl"] = 54,
@@ -604,7 +598,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15282,	-- Aurel Goldleaf
 					["sourceQuest"] = 8341,	-- Lords of the Council
 					["coord"] = { 52.0, 38.2, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 54,
 				})),
@@ -701,7 +695,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15176,	-- Vargus
 					["sourceQuest"] = 8800,	-- Cenarion Battlegear
 					["coord"] = { 51.2, 38.9, SILITHUS },
-					["minReputation"] = { 609, EXALTED },	-- Cenarion Circle, Exalted.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, EXALTED },	-- Cenarion Circle, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 20802, 15 },	-- Cenarion Combat Badge
@@ -847,7 +841,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15282,	-- Aurel Goldleaf
 					["sourceQuest"] = 8331,	-- Aurel Goldleaf
 					["coord"] = { 52.0, 38.2, SILITHUS },
-					["minReputation"] = { 609, FRIENDLY },	-- Cenarion Circle, Friendly.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, FRIENDLY },	-- Cenarion Circle, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 14344, 1 },	-- Large Brilliant Shard
@@ -881,7 +875,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #else
 					["coord"] = { 48.6, 37.8, SILITHUS },
 					-- #endif
-					["maxReputation"] = { 609, EXALTED },	-- Cenarion Circle, Exalted.
+					["maxReputation"] = { FACTION_CENARION_CIRCLE, EXALTED },	-- Cenarion Circle, Exalted.
 					["cost"] = {{ "i", 20404, 10 }},	-- Encrypted Twilight Texts
 					["repeatable"] = true,
 					["lvl"] = lvlsquish(57, 57, 15),
@@ -1031,7 +1025,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(PHASE_THREE_SILITHUS_EXPEDITION_QUESTS, q(8343, {	-- Goldleaf's Discovery
 					["qg"] = 15270,	-- Huum Wildmane
 					["coord"] = { 48.6, 37.9, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["isBreadcrumb"] = true,
 					["lvl"] = 54,
@@ -1190,7 +1184,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15282,	-- Aurel Goldleaf
 					["sourceQuest"] = 8343,	-- Goldleaf's Discovery
 					["coord"] = { 52.0, 38.2, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 14344, 5 },	-- Large Brilliant Shard
@@ -1295,7 +1289,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15306,	-- Bor Wildmane
 					["sourceQuest"] = 8351,	-- Bor Wishes to Speak
 					["coord"] = { 48.6, 37.8, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 20515, 1 }},	-- Abyssal Scepter
 					["lvl"] = 54,
@@ -1451,7 +1445,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15306,	-- Bor Wildmane
 					["sourceQuest"] = 8349,	-- Bor Wildmane
 					["coord"] = { 48.6, 37.8, SILITHUS },
-					["minReputation"] = { 609, FRIENDLY },	-- Cenarion Circle, Friendly.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, FRIENDLY },	-- Cenarion Circle, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 20514, 1 }},	-- Abyssal Signet
 					["lvl"] = 54,
@@ -1479,7 +1473,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15176,	-- Vargus
 					["sourceQuest"] = 8800,	-- Cenarion Battlegear
 					["coord"] = { 51.2, 38.9, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 20802, 15 },	-- Cenarion Combat Badge
@@ -1958,7 +1952,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15282,	-- Aurel Goldleaf
 					["sourceQuest"] = 8341,	-- Lords of the Council
 					["coord"] = { 52.0, 38.2, SILITHUS },
-					["minReputation"] = { 609, REVERED },	-- Cenarion Circle, Revered.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, REVERED },	-- Cenarion Circle, Revered.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 14344, 5 },	-- Large Brilliant Shard
@@ -2033,7 +2027,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15176,	-- Vargus
 					["sourceQuest"] = 8800,	-- Cenarion Battlegear
 					["coord"] = { 51.2, 38.9, SILITHUS },
-					["minReputation"] = { 609, HONORED },	-- Cenarion Circle, Honored.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, HONORED },	-- Cenarion Circle, Honored.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 20802, 7 },	-- Cenarion Combat Badge
@@ -2058,7 +2052,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15176,	-- Vargus
 					["sourceQuest"] = 8800,	-- Cenarion Battlegear
 					["coord"] = { 51.2, 38.9, SILITHUS },
-					["minReputation"] = { 609, FRIENDLY },	-- Cenarion Circle, Friendly.
+					["minReputation"] = { FACTION_CENARION_CIRCLE, FRIENDLY },	-- Cenarion Circle, Friendly.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {
 						{ "i", 20802, 5 },	-- Cenarion Combat Badge
@@ -2827,7 +2821,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226409, {	-- Rune of Dagger Specialization
 					["provider"] = { "o", 457100 },	-- Renzik's Thoughts on "Fair" Fighting
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 20.0, 85.1, SILITHUS },
 					["classes"] = { WARRIOR, HUNTER, ROGUE, PRIEST, SHAMAN, MAGE, WARLOCK, DRUID },
 					["groups"] = {
@@ -2838,7 +2832,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				})),
 				applyclassicphase(SOD_PHASE_FOUR, i(226411, {	-- Rune of Fist Weapon Specialization
 					["provider"] = { "o", 457096 },	-- Be First: A Brawler's Guide to Boxing
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 38.2, 45.5, SILITHUS },
 					["classes"] = { WARRIOR, HUNTER, SHAMAN, ROGUE, DRUID },
 					["groups"] = {
@@ -2856,18 +2850,24 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #else
 					["coord"] = { 62.6, 49.8, SILITHUS },
 					-- #endif
-					["groups"] = {
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22769)),	-- Pattern: Bramblewood Belt (RECIPE!)
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22770)),	-- Pattern: Bramblewood Boots (RECIPE!)
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22771)),	-- Pattern: Bramblewood Helm (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20382)),	-- Pattern: Dreamscale Breastplate (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20509)),	-- Pattern: Sandstalker Bracers (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20511)),	-- Pattern: Sandstalker Breastplate (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20510)),	-- Pattern: Sandstalker Gauntlets (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20506)),	-- Pattern: Spitfire Bracers (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20508)),	-- Pattern: Spitfire Breastplate (RECIPE!)
-						applyclassicphase(PHASE_FOUR, i(20507)),	-- Pattern: Spitfire Gauntlets (RECIPE!)
-					},
+					["groups"] = bubbleDownClassicRep(FACTION_CENARION_CIRCLE, {
+						{		-- Neutral
+						}, {	-- Friendly
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22769)),	-- Pattern: Bramblewood Belt (RECIPE!)
+							applyclassicphase(PHASE_FOUR, i(20509)),	-- Pattern: Sandstalker Bracers (RECIPE!)
+							applyclassicphase(PHASE_FOUR, i(20506)),	-- Pattern: Spitfire Bracers (RECIPE!)
+						}, {	-- Honored
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22770)),	-- Pattern: Bramblewood Boots (RECIPE!)
+							applyclassicphase(PHASE_FOUR, i(20507)),	-- Pattern: Spitfire Gauntlets (RECIPE!)
+							applyclassicphase(PHASE_FOUR, i(20510)),	-- Pattern: Sandstalker Gauntlets (RECIPE!)
+						}, {	-- Revered
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22771)),	-- Pattern: Bramblewood Helm (RECIPE!)
+							applyclassicphase(PHASE_FOUR, i(20511)),	-- Pattern: Sandstalker Breastplate (RECIPE!)
+							applyclassicphase(PHASE_FOUR, i(20508)),	-- Pattern: Spitfire Breastplate (RECIPE!)
+						}, {	-- Exalted
+							applyclassicphase(PHASE_FOUR, i(20382)),	-- Pattern: Dreamscale Breastplate (RECIPE!)
+						},
+					}),
 				}),
 				n(15174, {	-- Calandrath <Innkeeper>
 					-- #if AFTER CATA
@@ -2913,18 +2913,24 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #else
 					["coord"] = { 49.8, 36.4, SILITHUS },
 					-- #endif
-					["groups"] = {
-						i(21952, {	-- Design: Emerald Crown of Destruction
-							["timeline"] = { ADDED_2_0_1 },
-							["isLimited"] = true,
-						}),
-						applyclassicphase(PHASE_FIVE, i(22310)),	-- Pattern: Cenarion Herb Bag
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22683)),	-- Pattern: Gaea's Embrace
-						applyclassicphase(PHASE_FIVE, i(22312)),	-- Pattern: Satchel of Cenarius
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22773)),	-- Pattern: Sylvan Crown
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22772)),	-- Pattern: Sylvan Shoulders
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22774)),	-- Pattern: Sylvan Vest
-					},
+					["groups"] = bubbleDownClassicRep(FACTION_CENARION_CIRCLE, {
+						{		-- Neutral
+							i(21952, {	-- Design: Emerald Crown of Destruction (RECIPE!)
+								["timeline"] = { ADDED_2_0_1 },
+								["isLimited"] = true,
+							}),
+						}, {	-- Friendly
+							applyclassicphase(PHASE_FIVE, i(22310)),	-- Pattern: Cenarion Herb Bag (RECIPE!)
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22772)),	-- Pattern: Sylvan Shoulders (RECIPE!)
+						}, {	-- Honored
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22773)),	-- Pattern: Sylvan Crown (RECIPE!)
+						}, {	-- Revered
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22683)),	-- Pattern: Gaea's Embrace (RECIPE!)
+							applyclassicphase(PHASE_FIVE, i(22312)),	-- Pattern: Satchel of Cenarius (RECIPE!)
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22774)),	-- Pattern: Sylvan Vest (RECIPE!)
+						}, {	-- Exalted
+						},
+					}),
 				}),
 				n(15176, {	-- Vargus <Blacksmith>
 					-- #if AFTER CATA
@@ -2932,13 +2938,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #else
 					["coord"] = { 51.2, 38.8, SILITHUS },
 					-- #endif
-					["groups"] = {
-						applyclassicphase(PHASE_FIVE, i(22209)),	-- Plans: Heavy Obsidian Belt (RECIPE!)
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22768)),	-- Plans: Ironvine Belt (RECIPE!)
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22766)),	-- Plans: Ironvine Breastplate (RECIPE!)
-						applyclassicphase(PHASE_FIVE_CATCH_UP, i(22767)),	-- Plans: Ironvine Gloves (RECIPE!)
-						applyclassicphase(PHASE_FIVE, i(22214)),	-- Plans: Light Obsidian Belt (RECIPE!)
-					},
+					["groups"] = bubbleDownClassicRep(FACTION_CENARION_CIRCLE, {
+						{		-- Neutral
+						}, {	-- Friendly
+							applyclassicphase(PHASE_FIVE, i(22209)),	-- Plans: Heavy Obsidian Belt (RECIPE!)
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22768)),	-- Plans: Ironvine Belt (RECIPE!)
+						}, {	-- Honored
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22767)),	-- Plans: Ironvine Gloves (RECIPE!)
+							applyclassicphase(PHASE_FIVE, i(22214)),	-- Plans: Light Obsidian Belt (RECIPE!)
+						}, {	-- Revered
+							applyclassicphase(PHASE_FIVE_CATCH_UP, i(22766)),	-- Plans: Ironvine Breastplate (RECIPE!)
+						}, {	-- Exalted
+						},
+					}),
 				}),
 				n(12956, {	-- Zannok Hidepiercer <Leatherworking Supplies>
 					-- #if AFTER CATA
@@ -3007,7 +3019,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				})),
 				i(20408, {	-- Twilight Cultist Cowl
 					-- #if BEFORE 10.0.5
-					["ignoreSource"] = true,
+					-- #if AFTER 4.0.3
+					["description"] = "In order to collect this, you'll need to bind it to you such as by using an enchant / armor kit on a Cloth user and then relog.",
+					-- #endif
 					-- #endif
 					["timeline"] = { REMOVED_7_1_5 },
 					["crs"] = {
@@ -3024,7 +3038,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				i(20406, {	-- Twilight Cultist Mantle
 					-- #if BEFORE 10.0.5
-					["ignoreSource"] = true,
+					-- #if AFTER 4.0.3
+					["description"] = "In order to collect this, you'll need to bind it to you such as by using an enchant / armor kit on a Cloth user and then relog.",
+					-- #endif
 					-- #endif
 					["timeline"] = { REMOVED_7_1_5 },
 					["crs"] = {
@@ -3041,7 +3057,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				i(20407, {	-- Twilight Cultist Robe
 					-- #if BEFORE 10.0.5
-					["ignoreSource"] = true,
+					-- #if AFTER 4.0.3
+					["description"] = "In order to collect this, you'll need to bind it to you such as by using an enchant / armor kit on a Cloth user and then relog.",
+					-- #endif
 					-- #endif
 					["timeline"] = { REMOVED_7_1_5 },
 					["crs"] = {

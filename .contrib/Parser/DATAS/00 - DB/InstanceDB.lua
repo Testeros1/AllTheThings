@@ -1,8 +1,12 @@
+-- the journalInstanceID map file.
+-- the InstanceID used in Database file is the journalInstanceID, as know as ID in the JournalInstance table(https://wago.tools/db2/JournalInstance?build=11.0.7.58238).
+-- this DB file map the journalInstanceID to the real InstanceID, as know as ID in the Map table(https://wago.tools/db2/Map?build=11.0.7.58238).
+
 do
-local oldInst = inst;
-local InstanceDB = {};
-inst = function(journalInstanceID, instanceID)
-	InstanceDB[journalInstanceID] = instanceID;
+local oldInst = inst;	-- Save origin inst function to a temp, old_inst.
+local InstanceDB = {};	-- Declare a local table, InstanceDB, only valid in the InstanceDB.
+inst = function(journalInstanceID, instanceID)	-- Declare a new function, inst.
+	InstanceDB[journalInstanceID] = instanceID;	-- Assign instanceID to journalInstanceID.
 end
 
 -- #if SEASON_OF_DISCOVERY
@@ -10,10 +14,14 @@ end
 inst(2789, 2789);	-- The Tainted Scar
 inst(2791, 2791);	-- Storm Cliffs
 inst(2784, 2784);	-- Demon Fall Canyon
+inst(2804, 2804);	-- The Crystal Vale
+inst(2832, 2832);	-- Nightmare Grove
+inst(2875, 2875);	-- Karazhan Crypts
+
 -- #endif
 
 -- This list was exported using excel manually using data from this url:
--- https://wago.tools/db2/JournalInstance?build=11.0.0.55120
+-- https://wago.tools/db2/JournalInstance?build=11.0.7.58238
 inst(63, 36);	-- Deadmines
 inst(64, 33);	-- Shadowfang Keep
 inst(65, 643);	-- Throne of the Tides
@@ -27,7 +35,11 @@ inst(72, 671);	-- The Bastion of Twilight
 inst(73, 669);	-- Blackwing Descent
 inst(74, 754);	-- Throne of the Four Winds
 inst(75, 757);	-- Baradin Hold
+-- #if BEFORE CATA
+inst(76, 309);	-- Zul'Gurub
+-- #else
 inst(76, 859);	-- Zul'Gurub
+-- #endif
 inst(77, 568);	-- Zul'Aman
 inst(78, 720);	-- Firelands
 inst(184, 938);	-- End Time
@@ -38,18 +50,22 @@ inst(226, 389);	-- Ragefire Chasm
 inst(227, 48);	-- Blackfathom Deeps
 inst(228, 230);	-- Blackrock Depths
 inst(229, 229);	-- Lower Blackrock Spire
-inst(230, 429);	-- Dire Maul
+inst(230, 429);	-- Dire Maul - Capital Gardens
 inst(231, 90);	-- Gnomeregan
 inst(232, 349);	-- Maraudon
 inst(233, 129);	-- Razorfen Downs
 inst(234, 47);	-- Razorfen Kraul
-inst(236, 329);	-- Stratholme
+inst(236, 329);	-- Stratholme - Main Gate
 inst(237, 109);	-- The Temple of Atal'hakkar
 inst(238, 34);	-- The Stockade
 inst(239, 70);	-- Uldaman
 inst(240, 43);	-- Wailing Caverns
 inst(241, 209);	-- Zul'Farrak
+-- #if BEFORE MOP
+inst(246, 289);	-- Scholomance
+-- #else
 inst(246, 1007);	-- Scholomance
+-- #endif
 inst(247, 558);	-- Auchenai Crypts
 inst(248, 543);	-- Hellfire Ramparts
 inst(249, 585);	-- Magisters' Terrace
@@ -87,7 +103,11 @@ inst(303, 962);	-- Gate of the Setting Sun
 inst(311, 1001);	-- Scarlet Halls
 inst(312, 959);	-- Shado-Pan Monastery
 inst(313, 960);	-- Temple of the Jade Serpent
+-- #if BEFORE MOP
+inst(316, 189);	-- Scarlet Monastery
+-- #else
 inst(316, 1004);	-- Scarlet Monastery
+-- #endif
 inst(317, 1008);	-- Mogu'shan Vaults
 inst(320, 996);	-- Terrace of Endless Spring
 inst(321, 994);	-- Mogu'shan Palace
@@ -189,7 +209,7 @@ inst(1202, 2521);	-- Ruby Life Pools
 inst(1203, 2515);	-- The Azure Vault
 inst(1204, 2527);	-- Halls of Infusion
 inst(1205, 2574);	-- Dragon Isles
---inst(1206, 0);	-- The Nokud Offensive
+inst(1206, 0);	-- The Nokud Offensive
 inst(1207, 2549);	-- Amirdrassil, the Dream's Hope
 inst(1208, 2569);	-- Aberrus, the Shadowed Crucible
 inst(1209, 2579);	-- Dawn of the Infinite
@@ -202,6 +222,8 @@ inst(1271, 2660);	-- Ara-Kara, City of Echoes
 inst(1272, 2661);	-- Cinderbrew Meadery
 inst(1273, 2657);	-- Nerub-ar Palace
 inst(1274, 2669);	-- City of Threads
+inst(1276, 429);	-- Dire Maul - Warpwood Quarter
+inst(1277, 429);	-- Dire Maul - Gordok Commons
 inst(1278, 2774);	-- Khaz Algar
 inst(1279, 2664);	-- Fungal Folly
 inst(1280, 2679);	-- Mycomancer Cavern
@@ -216,12 +238,14 @@ inst(1288, 2684);	-- The Dread Pit
 inst(1289, 2685);	-- Skittering Breach
 inst(1290, 2688);	-- The Spiral Weave
 inst(1291, 2682);	-- Zekvir's Lair
+inst(1292, 329);	-- Stratholme - Service Entrance
 inst(1293, 2690);	-- The Underkeep
+inst(1301, 2792);	-- Blackrock Depths
 
 -- Reassign the instance function
-inst = function(id, t)
-	t = oldInst(id, t);
-	t.savedInstanceID = InstanceDB[id];
+inst = function(journalInstanceID, t)
+	t = oldInst(journalInstanceID, t);
+	t.savedInstanceID = InstanceDB[journalInstanceID];
 	return t;
 end
 end

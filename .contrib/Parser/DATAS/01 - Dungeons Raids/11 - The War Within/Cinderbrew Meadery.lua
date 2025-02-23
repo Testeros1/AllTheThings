@@ -1,15 +1,21 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	inst(1272, {	-- Cinderbrew Meadery
 		["coord"] = { 76.6, 43.8, ISLE_OF_DORN },
 		["maps"] = { 2335 },	-- Cinderbrew Meadery
 		["g"] = {
 			n(QUESTS, {
 				q(83099, {	-- Mergers and Acquisitions
-					["provider"] = { "n", 226409 },	-- Wenbrandt
-					["coord"] = { 29.4, 43.4, ISLE_OF_DORN },
+					["providers"] = {
+						{ "n", 216088 },	-- Wenbrandt
+						{ "n", 226409 },	-- Wenbrandt
+					},
+					["coords"] = {
+						{ 50, 50, 2335 },	-- Cinderbrew Meadery
+						{ 75.6, 43.5, ISLE_OF_DORN },
+					},
 				}),
 			}),
 			d(DIFFICULTY.DUNGEON.MULTI.NORMAL_PLUS, {
@@ -72,14 +78,14 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 					},
 				}),
 			}),
-			d(DIFFICULTY.DUNGEON.MYTHIC, {
+			d(DIFFICULTY.DUNGEON.MYTHIC, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_2, ADDED_11_1_0 } }, {
 				e(2589, {	-- Goldie Baronbottom
 					["crs"] = { 218523 },	-- Goldie Baronbottom <BEE.E.O.>
 					["g"] = {
 						ach(40366),	-- Mythic: Cinderbrew Meadery
 					},
 				}),
-			}),
+			})),
 		},
 	})
 })));

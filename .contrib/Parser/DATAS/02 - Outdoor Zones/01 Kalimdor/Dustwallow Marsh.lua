@@ -1,14 +1,43 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
+ALCAZ_ISLAND = createHeader({
+	readable = "Alcaz Island",
+	icon = 132996,
+	text = {
+		en = "Alcaz Island",
+		cn = "奥卡兹岛",
+		tw = "奧卡茲島",
+	},
+	description = {
+		en = "Return to Alcaz Island to get to get to the bottom of Dr. Weavil's insidious plans, and perhaps you will take home a nice souvenir.",
+		cn = "回到奥卡兹岛，揭开维维尔博士邪恶计划最深处的秘密，也许你还能带一些精美的纪念品回家。",
+	},
+});
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(DUSTWALLOW_MARSH, {
 		["lore"] = "A hot, fetid swampland, underground springs feed Dustwallow Marsh and keep it eternally wet and muddy. Mosquitoes buzz in the air. Trees dip fronds into the waters. The climate is home to a variety of predators, including alligators and murlocs.\n\nBlack dragons dwell in the southern end of the swamp, and the creatures lair in such profusion that the area garners the name \"Wyrmbog.\" Dustwallow Marsh abuts the ocean on its east side, and the mixing of the waters makes a wide swath brackish. Off the coast is a rocky island, on which is perched the Alliance stronghold-city of Theramore.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_dustwallowmarsh",
-		-- #endif
+		["icon"] = 236758,
 		["maps"] = { 416 },	-- Dustwallow Marsh
 		["groups"] = {
+			n(ALCAZ_ISLAND, bubbleDownSelf({ ["timeline"] = { ADDED_7_1_0 } }, {
+				["lvl"] = lvlsquish(110, 45, 45),
+				["groups"] = {
+					n(15552, {	-- Dr. Weavil
+						["coord"] = { 77.6, 17.2, DUSTWALLOW_MARSH },
+						["groups"] = {
+							i(142265),	-- Big Red Raygun (TOY!)
+							i(142262),	-- Electrified Key
+						},
+					}),
+					n(ZONE_DROPS, {
+						i(142264),	-- Drudge Fluid
+						i(142262),	-- Electrified Key
+						i(142266),	-- Handful of Gizmos
+						i(142263),	-- Machine Fluid
+					}),
+				},
+			})),
 			n(ACHIEVEMENTS, {
 				ach(4929, {	-- Dustwallow Marsh Quests (Alliance)
 					["timeline"] = { ADDED_4_0_3 },
@@ -131,11 +160,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #endif
 					-- #endif
 				}),
-				explorationAch(850, {	-- Explore Dustwallow Marsh
-					-- #if BEFORE WRATH
-					["description"] = "Explore Dustwallow Marsh, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(850),	-- Explore Dustwallow Marsh
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -156,9 +181,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(501, {["timeline"] = { ADDED_4_0_1 }}),	-- Beezil's Wreck
 				exploration(512, {["timeline"] = { ADDED_2_0_1 }}),	-- Blackhoof Village
 				exploration(498, {["timeline"] = { ADDED_2_0_1 }}),	-- Bloodfen Burrow
-				-- #if BEFORE CATA
-				exploration(507),	-- Bluefen
-				-- #endif
+				visit_exploration(507,{coord={42.2,23.4,DUSTWALLOW_MARSH}}),	-- Bluefen
 				exploration(496),	-- Brackenwall Village
 				exploration(499, {["timeline"] = { ADDED_4_0_1 }}),	-- Darkmist Cavern
 				exploration(4046, {["timeline"] = { ADDED_4_0_1 }}),	-- Direhorn Post
@@ -169,7 +192,11 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(403, {["timeline"] = { ADDED_4_0_1 }}),	-- Shady Rest Inn
 				exploration(508, {["timeline"] = { ADDED_4_0_1 }}),	-- Stonemaul Ruins
 				exploration(497, {["timeline"] = { ADDED_4_0_1 }}),	-- Swamplight Manor
-				exploration(509),	-- The Den of Flame
+				exploration(509, {	-- The Den of Flame
+					-- Runaway note: I don't have this on my Main and based on the current harvested coords (all off the map) I have no idea how
+					-- to even find a subzone with matching name to force collect with new logic
+					["collectible"] = false,
+				}),
 				-- #if BEFORE CATA
 				exploration(2302),	-- The Quagmire
 				-- #endif
@@ -1282,7 +1309,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 1206,	-- Jarl Needs Eyes
 					["coord"] = { 55.4, 26.2, DUSTWALLOW_MARSH },
 					["cost"] = {{ "i", 217281, 1 }},	-- Moonsteel Broadsword
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 30,
 					["groups"] = {
 						i(5016),	-- Artisan's Trousers
@@ -1679,8 +1706,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["description"] = "If you deleted your fishing pole from the old version of the quest, you can get a new one by completing this quest.",
 					["timeline"] = { ADDED_3_1_0 },
 					["OnUpdate"] = [[function(t)
-						if not t.collected and t.collectible then
-							t.collectible = ]] .. WOWAPI_GetItemCount(45858) .. [[ == 0;
+						if not t.collected and t.collectible and ]] .. WOWAPI_GetItemCount(45858) .. [[ == 0 then
+							t.collectible = false;
 						end
 					end]],
 					["requireSkill"] = FISHING,
@@ -3537,19 +3564,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 					},
 				}),
-				-- #if AFTER 7.1.0.22731
-				n(15552, {	-- Dr. Weavil
-					["coord"] = { 77.6, 17.2, DUSTWALLOW_MARSH },
-					["groups"] = {
-						i(142265, {	-- Big Red Raygun (TOY!)
-							["timeline"] = { ADDED_7_1_0 },
-						}),
-						i(142262, {	-- Electrified Key
-							["timeline"] = { ADDED_7_1_0 },
-						}),
-					},
-				}),
-				-- #endif
 				n(14231, {	-- Drogoth the Roamer
 					-- #if AFTER CATA
 					["coords"] = {
@@ -3736,7 +3750,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 65.2, 51.4, DUSTWALLOW_MARSH },
 
 					-- Available to Humans without faction requirements.
-					["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+					["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. HUMAN .. [[ then
 							t.minReputation = nil;

@@ -7,9 +7,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #if BEFORE MOP
 		["zone-text-areaID"] = 25,	-- Blackrock Mountain (mapID doesn't exist for a couple expansions)
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Achievement_Boss_Nefarion",
-		-- #endif
+		["icon"] = 254649,
 		["maps"] = {
 			BLACKROCK_MOUNTAIN_LEVEL2,	-- Blackrock Caverns
 			BLACKROCK_MOUNTAIN_LEVEL3,	-- Blackrock Depths
@@ -51,7 +49,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { REMOVED_1_6_0, ADDED_10_1_7 },	-- 07.09.2023 ATT Discord
 						}),
 						i(18987, {	-- Blackhand's Command
-							["timeline"] = { REMOVED_4_0_3 },	-- 07.09.2023 ATT Discord
+							["timeline"] = { REMOVED_6_0_3 },	-- 07.09.2023 ATT Discord
 						}),
 					},
 				}),
@@ -70,7 +68,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226694, {	-- Rune of Defense Specialization
 					["provider"] = { "o", 457099 },	-- Zirene's Guide to Getting Punched
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["description"] = "1. Head to the South end of Searing Gorge and enter Blackrock Mountain.\n2. As you enter the main chamber, head left down the circular pathway.\n3. When you come to the meeting stone for Lower Blackrock Spire, turn left and head up the hallway.\n4. Watch out for level 54-ish mobs and take the first right in to a small room.\n5. You will see two copies of the book laying on the floor.\n*One is next to a pair of mobs. Another is in a small nook where you may safely loot the book without pulling aggro.",
 					["classes"] = { WARRIOR, PALADIN, ROGUE, SHAMAN, WARLOCK, DRUID },
 					["groups"] = {

@@ -8,9 +8,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "This rocky area stretches along Kalimdor's north coast. Rains, winds and rocky beaches make the place inhospitable. Old night elf ruins stand crumbling on the cliffs, and murlocs and naga lurk within. The night elf village of Auberdine serves as a friendly trading post.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Achievement_zone_darkshore_01",
-		-- #endif
+		["icon"] = 236739,
 		-- #if AFTER 8.1.0
 		["crs"] = { 141489 },	-- Zidormi
 		-- #endif
@@ -57,15 +55,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 					-- #endif
 				}),
-				explorationAch(844, {	-- Explore Darkshore
-					-- #if BEFORE WRATH
-					["description"] = "Explore Darkshore, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(844),	-- Explore Darkshore
 				ach(13251, {	-- In Teldrassil's Shadow
 					["timeline"] = { ADDED_8_1_0 },
 					["races"] = ALLIANCE_ONLY,
-					["_noautomation"] = true,
 				}),
 				ach(5453, {	-- Ghost in the Dark
 					["sourceQuest"] = 28529,	-- Writings of the Void
@@ -120,9 +113,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(454),	-- Wildbend River
 				-- #endif
 			}),
-			prof(FISHING, {
-				i(12238),	-- Darkshore Grouper
-			}),
 			n(FLIGHT_PATHS, {
 				fp(339, {	-- Grove of the Ancients, Darkshore
 					["cr"] = 33253,	-- Delanea <Flight Master>
@@ -142,7 +132,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			}),
 			n(PROFESSIONS, {
 				prof(FISHING, {
-					o(180682, { 	-- Oily Blackmouth School
+					i(12238),	-- Darkshore Grouper
+					o(180682, {	-- Oily Blackmouth School
 						["maps"]= {
 							DARKSHORE,
 							AZSHARA,
@@ -3214,10 +3205,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 	}),
 }));
 
--- #if AFTER 8.0.1.27404
-root(ROOTS.HiddenQuestTriggers, {
-	q(52759, {	-- Talked to Zom in Darkshore, which normally has 1 option. But this time had 2 "see past" options.
-		["timeline"] = { ADDED_8_0_1_LAUNCH },
-	}),
-});
--- #endif
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
+	m(KALIMDOR, {
+		m(DARKSHORE, {
+			q(52759),	-- Talked to Zom in Darkshore, which normally has 1 option. But this time had 2 "see past" options.
+		}),
+	})
+})));

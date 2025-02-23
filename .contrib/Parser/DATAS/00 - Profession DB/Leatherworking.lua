@@ -996,6 +996,15 @@ i(72033, 10570);	-- Tough Scorpid Helm [New Version]
 i(72030, 10568);	-- Tough Scorpid Leggings [New Version]
 i(72027, 10564);	-- Tough Scorpid Shoulders [New Version]
 
+-- #if ANYCLASSIC
+-----------------
+-- PATCH 4.4.1 --
+-----------------
+--- TRAINER ---
+i(0, 1216335);	-- Bloodthirsty Fur Cloak
+i(0, 1216336);	-- Bloodthirsty Hide Cloak
+-- #endif
+
 -----------------
 -- PATCH 5.0.4 --
 -----------------
@@ -2393,7 +2402,6 @@ i(0, 444105);		-- Apothecary's Cap
 i(0, 444075);		-- Carapace-Backed Hide
 i(0, 444086);		-- Chitin Armor Banding
 i(0, 444076);		-- Crystalfused Hide
-i(0, 444085);		-- Deepfury Hide
 i(0, 444104);		-- Dual Layered Armor Kit
 i(0, 444112);		-- Gardener's Basket
 i(0, 444114);		-- Gemcutter's Apron
@@ -2479,3 +2487,11 @@ i(0, 441057);		-- Rune-Branded Waistband
 i(0, 443961);		-- Smoldering Pollen Hauberk
 i(0, 443951);		-- Weathered Stormfront Vest
 i(0, 441461);		-- Writhing Armor Banding
+--- NYI ---
+i(0, 444085);		-- Deepfury Hide
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+--- ITEM ---
+i(235338, 1216520); -- Charged Armor Kit

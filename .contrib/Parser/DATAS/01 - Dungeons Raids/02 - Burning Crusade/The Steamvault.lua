@@ -114,8 +114,11 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					-- #endif
 				}),
 				i(24487, {	-- Second Key Fragment
+					["providers"] = {
+						{ "o", 182197 },	-- Arcane Container
+						{ "n",  22891 },	-- Second Fragment Guardian
+					},
 					["coord"] = { 59.0, 24.8, COILFANG_RESERVOIR_STEAMVAULT },
-					["cr"] = 22891,	-- Second Fragment Guardian
 				}),
 			}),
 			d(DIFFICULTY.DUNGEON.NORMAL, {
@@ -306,11 +309,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 		},
 	})),
 })));
--- #if AFTER WOD
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(261, {
 		q(35533),	-- The Steamvault Reward Quest - Normal completion
 		q(35534),	-- The Steamvault Reward Quest - Heroic completion
 	}),
-});
--- #endif
+})));

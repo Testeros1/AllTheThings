@@ -324,8 +324,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				}),
 				q(65840, {	-- Same as the Old Boss
 					["sourceQuest"] = 66362,	-- First Completion of 'Unlocking our Past' (Igys the Believer)
-					["provider"] = { "n", 191310 },	-- Doventhal the Chosen
+					["provider"] = { "n", 191304 },	-- Aizir the Inflamed
 					["coord"] = { 32.0, 52.4, THE_WAKING_SHORES },
+					["crs"] = { 186163 },	-- Doventhal the Chosen
 					["isWeekly"] = true,
 					["g"] = {
 						i(202173),	-- Magmote
@@ -333,8 +334,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				}),
 				q(66894, {	-- Same as the Old Boss
 					["sourceQuest"] = 66362,	-- First Completion of 'Unlocking our Past' (Igys the Believer)
-					["provider"] = { "n", 191310 },	-- Doventhal the Chosen
+					["provider"] = { "n", 191307 },	-- Vyzos the Prophet
 					["coord"] = { 32.0, 52.4, THE_WAKING_SHORES },
+					["crs"] = { 191306 },	-- Aizir the Inflamed
 					["isWeekly"] = true,
 					["g"] = {
 						i(202173),	-- Magmote
@@ -343,6 +345,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(66895, {	-- Same as the Old Boss
 					["provider"] = { "n", 191310 },	-- Doventhal the Chosen
 					["coord"] = { 32.0, 52.4, THE_WAKING_SHORES },
+					["crs"] = { 191308 },	-- Vyzos the Prophet
 					["isWeekly"] = true,
 					["g"] = {
 						i(202173),	-- Magmote
@@ -409,7 +412,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						["repeatable"] = true,
 					}),
 					q(67015, {	-- Forging the Answer
-						--["provider"] = { "n",  },	--
+						["provider"] = { "n", 187272 },	-- Forgemaster Bazentus
 						["coord"] = { 27.4, 60.8, THE_WAKING_SHORES },
 						["repeatable"] = true,
 					}),
@@ -578,32 +581,12 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									{ "i", WILDERCLOTH, 20 },
 								},
 							}),
-							i(200952, {	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
+							iensemble(200952, {	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
 								["description"] = "To see this select All in filter",
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", AWAKENED_FIRE, 4 },
 									{ "i", AWAKENED_EARTH, 4 },
-								},
-								["g"] = {
-									i(195885),	-- Black Dragon's Scale Cloak
-									i(191802),	-- Obsidian Dracthyr Battlegear Belt
-									i(191803),	-- Obsidian Dracthyr Battlegear Bracers
-									i(191804),	-- Obsidian Dracthyr Battlegear Cover
-									i(191798),	-- Obsidian Dracthyr Battlegear Grips
-									i(191797),	-- Obsidian Dracthyr Battlegear Hauberk
-									i(191799),	-- Obsidian Dracthyr Battlegear Helm
-									i(191800),	-- Obsidian Dracthyr Battlegear Leggings
-									i(191801),	-- Obsidian Dracthyr Battlegear Monnion
-									i(191818),	-- Sandshaped Dracthyr Battlegear Belt
-									i(191819),	-- Sandshaped Dracthyr Battlegear Bracers
-									i(191820),	-- Sandshaped Dracthyr Battlegear Cover
-									i(191814),	-- Sandshaped Dracthyr Battlegear Grips
-									i(191813),	-- Sandshaped Dracthyr Battlegear Hauberk
-									i(191815),	-- Sandshaped Dracthyr Battlegear Helm
-									i(191816),	-- Sandshaped Dracthyr Battlegear Leggings
-									i(191817),	-- Sandshaped Dracthyr Battlegear Monnion
-									i(200968),	-- Sandshaped Winglord's Drape
 								},
 							}),
 						}, {	-- Ally --
@@ -665,14 +648,14 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								},
 							}),
 						}, {	-- Friend --
-							i(196964, {	-- Cliffside Wylderdrake: Gold and Black Armor (DM!)
+							i(196964, {	-- Cliffside Wylderdrake: Gold and Black Armor (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", PRIMAL_BEAR_SPINE, 6 },
 									{ "i", DRACONIUM_ORE, 20 },
 								},
 							}),
-							i(197090, {	-- Highland Drake: Gold and Black Armor (DM!)
+							i(197090, {	-- Highland Drake: Gold and Black Armor (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", PRIMAL_BEAR_SPINE, 6 },
@@ -684,7 +667,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									{ "c", DRAGON_SUPPLIES, 150 },
 								},
 							}),
-							i(197346, {	-- Renewed Proto-Drake: Gold and Black Armor (DM!)
+							i(197346, {	-- Renewed Proto-Drake: Gold and Black Armor (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", PRIMAL_BEAR_SPINE, 6 },
@@ -692,13 +675,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								},
 							}),
 						}, {	-- True Friend --
-							i(197013, {	-- Cliffside Wylderdrake: Black Scales (DM!)
+							i(197013, {	-- Cliffside Wylderdrake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
 								},
 							}),
-							i(197142, {	-- Highland Drake: Black Scales (DM!)
+							i(197142, {	-- Highland Drake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
@@ -709,13 +692,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									{ "c", DRAGON_SUPPLIES, 150 },
 								},
 							}),
-							i(197392, {	-- Renewed Proto-Drake: Black Scales (DM!)
+							i(197392, {	-- Renewed Proto-Drake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
 								},
 							}),
-							i(197611, {	-- Windborne Velocidrake: Black Scales (DM!)
+							i(197611, {	-- Windborne Velocidrake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
@@ -742,32 +725,12 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["g"] = bubbleDownRep(FACTION_SABELLIAN, {
 						{		-- Acquaintance --
 						}, {	-- Cohort --
-							i(200952, {	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
+							iensemble(200952, {	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
 								["description"] = "To see this select All in filter",
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", AWAKENED_FIRE, 4 },
 									{ "i", AWAKENED_EARTH, 4 },
-								},
-								["g"] = {
-									i(195885),	-- Black Dragon's Scale Cloak
-									i(191802),	-- Obsidian Dracthyr Battlegear Belt
-									i(191803),	-- Obsidian Dracthyr Battlegear Bracers
-									i(191804),	-- Obsidian Dracthyr Battlegear Cover
-									i(191798),	-- Obsidian Dracthyr Battlegear Grips
-									i(191797),	-- Obsidian Dracthyr Battlegear Hauberk
-									i(191799),	-- Obsidian Dracthyr Battlegear Helm
-									i(191800),	-- Obsidian Dracthyr Battlegear Leggings
-									i(191801),	-- Obsidian Dracthyr Battlegear Monnion
-									i(191818),	-- Sandshaped Dracthyr Battlegear Belt
-									i(191819),	-- Sandshaped Dracthyr Battlegear Bracers
-									i(191820),	-- Sandshaped Dracthyr Battlegear Cover
-									i(191814),	-- Sandshaped Dracthyr Battlegear Grips
-									i(191813),	-- Sandshaped Dracthyr Battlegear Hauberk
-									i(191815),	-- Sandshaped Dracthyr Battlegear Helm
-									i(191816),	-- Sandshaped Dracthyr Battlegear Leggings
-									i(191817),	-- Sandshaped Dracthyr Battlegear Monnion
-									i(200968),	-- Sandshaped Winglord's Drape
 								},
 							}),
 							i(200640, {	-- Obsidian Egg Clutch (TOY!)
@@ -778,20 +741,10 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								},
 							}),
 						}, {	-- Ally --
-							i(200963, {	-- Ensemble: Sabellian's Battlegear Cloth Armor
+							iensemble(200963, {	-- Ensemble: Sabellian's Battlegear Cloth Armor
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", WILDERCLOTH, 40 },
-								},
-								["g"] = {
-									i(200954),	-- Sabellian's Robes
-									i(200955),	-- Sabellian's Mantle
-									i(200956),	-- Sabellian's Sash
-									i(200957),	-- Sabellian's Leggings
-									i(200958),	-- Sabellian's Boots
-									i(200959),	-- Sabellian's Gloves
-									i(200961),	-- Sabellian's Cloak
-									i(200962),	-- Sabellian's Tunic
 								},
 							}),
 						}, {	-- Fang --
@@ -845,14 +798,14 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								},
 							}),
 						}, {	-- Friend --
-							i(196964, {	-- Cliffside Wylderdrake: Gold and Black Armor (DM!)
+							i(196964, {	-- Cliffside Wylderdrake: Gold and Black Armor (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", PRIMAL_BEAR_SPINE, 6 },
 									{ "i", DRACONIUM_ORE, 20 },
 								},
 							}),
-							i(197090, {	-- Highland Drake: Gold and Black Armor (DM!)
+							i(197090, {	-- Highland Drake: Gold and Black Armor (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", PRIMAL_BEAR_SPINE, 6 },
@@ -864,7 +817,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									{ "c", DRAGON_SUPPLIES, 150 },
 								},
 							}),
-							i(197346, {	-- Renewed Proto-Drake: Gold and Black Armor (DM!)
+							i(197346, {	-- Renewed Proto-Drake: Gold and Black Armor (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 750 },
 									{ "i", PRIMAL_BEAR_SPINE, 6 },
@@ -872,13 +825,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								},
 							}),
 						}, {	-- True Friend --
-							i(197013, {	-- Cliffside Wylderdrake: Black Scales (DM!)
+							i(197013, {	-- Cliffside Wylderdrake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
 								},
 							}),
-							i(197142, {	-- Highland Drake: Black Scales (DM!)
+							i(197142, {	-- Highland Drake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
@@ -889,13 +842,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									{ "c", DRAGON_SUPPLIES, 150 },
 								},
 							}),
-							i(197392, {	-- Renewed Proto-Drake: Black Scales (DM!)
+							i(197392, {	-- Renewed Proto-Drake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
 								},
 							}),
-							i(197611, {	-- Windborne Velocidrake: Black Scales (DM!)
+							i(197611, {	-- Windborne Velocidrake: Black Scales (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 									{ "i", AWAKENED_EARTH, 1 },
@@ -1027,18 +980,17 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-	m(THE_WAKING_SHORES, {
-		n(-1102, {	-- Wrathion & Sabellian
-			q(64277),	-- Triggered when choosing anyone in Allegiance To One (66419) -- triggered for both in 2 weeks
-			q(66808),	-- Triggered when choosing Seballian in Allegiance To One (66419) -- triggered for Seballian only
-			q(66802),	-- Triggered when choosing Wrathion in Allegiance To One (66419) -- triggered for Wrathion only
-			q(67168),	-- Triggered with completion of 'Dragon Eyes' (questID67051) (spellID 377997)
-			q(72378),	-- Triggered when refusing to activate the Wrathion and Sabellian skip for alts
-
-			-- Ensembles
-			q(72112),	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
-			q(72115),	-- Ensemble: Sabellian's Battlegear Cloth Armor
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(THE_WAKING_SHORES, {
+			n(-1102, {	-- Wrathion & Sabellian
+				q(64277),	-- Triggered when choosing anyone in Allegiance To One (66419) -- triggered for both in 2 weeks
+				q(66808),	-- Triggered when choosing Seballian in Allegiance To One (66419) -- triggered for Seballian only
+				q(66802),	-- Triggered when choosing Wrathion in Allegiance To One (66419) -- triggered for Wrathion only
+				q(67168),	-- Triggered with completion of 'Dragon Eyes' (questID67051) (spellID 377997)
+				q(72378, {["timeline"] = {ADDED_10_0_5}}),	-- Triggered when refusing to activate the Wrathion and Sabellian skip for alts
+				q(72112),	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
+			}),
 		}),
 	}),
 })));

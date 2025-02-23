@@ -147,7 +147,7 @@ def add_latest_build(build: str) -> list[str]:
                 break
         if version.parse(build) > version.parse(build_lines[-1]):
             build_lines.append(build + "\n")
-            next_builds = list(build)
+            next_builds.append(build + "\n")
     with open("Builds.txt", "w") as build_list:
         build_list.writelines(build_lines)
     return next_builds
@@ -565,7 +565,7 @@ def create_missing_files() -> None:
 """Step 2b: If new items has been detected. They will be in FastItem.txt please add them to unsorted."""
 
 """How to generate Missing Files"""
-"""Step 1: Delete itemDB.json and questDB.json in DATAS/00 - Item Database folder"""
+"""Step 1: Delete questDB.json in DATAS/00 - Item Database folder"""
 """Step 2: Parse Retail with Debug Mode. Change parser config to a PTR patch if you want to account for PTR things."""
 """Step 3: Run create_missing_files() and (you have to uncomment it)"""
 # create_missing_files()

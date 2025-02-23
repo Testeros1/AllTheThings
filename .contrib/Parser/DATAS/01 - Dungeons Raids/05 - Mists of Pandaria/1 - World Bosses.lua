@@ -419,7 +419,7 @@ root(ROOTS.Instances, expansion(EXPANSION.MOP, bubbleDown({ ["timeline"] = { ADD
 				},
 			})),
 			e(861, bubbleDownSelf({	-- Ordos, Fire-God of the Yaungol
-				["u"] = 38,	-- Legendary Cloak Filter
+				["u"] = TEMP_MOP_LEGENDARY_CLOAK_PHASE,	-- Legendary Cloak Filter
 				["timeline"] = { ADDED_5_4_0 },
 			}, {
 				["sourceQuests"] = { 33104 },	-- A Pandaren Legend
@@ -891,16 +891,16 @@ root(ROOTS.Instances, expansion(EXPANSION.MOP, bubbleDown({ ["timeline"] = { ADD
 				["g"] = {
 					ach(8535, {	-- Celestial Challenge
 						crit(23743, {	-- Chi-Ji slain
-							["_encounter"] =  { 857 },
+							["_encounter"] =  { 857, WORLD_BOSSES },
 						}),
 						crit(23745, {	-- Niuzao slain
-							["_encounter"] =  { 859 },
+							["_encounter"] =  { 859, WORLD_BOSSES },
 						}),
 						crit(23746, {	-- Xuen slain
-							["_encounter"] =  { 860 },
+							["_encounter"] =  { 860, WORLD_BOSSES },
 						}),
 						crit(23744, {	-- Yu'lon slain
-							["_encounter"] =  { 858 },
+							["_encounter"] =  { 858, WORLD_BOSSES },
 						}),
 					}),
 					ach(8789),	-- Celestial Challenge Guild Run
@@ -1231,14 +1231,34 @@ root(ROOTS.Instances, expansion(EXPANSION.MOP, bubbleDown({ ["timeline"] = { ADD
 		}),
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers,{
-	expansion(EXPANSION.MOP, {
-		q(33226),	-- Short-Supply Reward - Celestials bonus roll
-		q(32923),	-- Short-Supply Reward - Galleon bonus roll
-		q(32919),	-- Short-Supply Reward - Nalak bonus roll
-		q(33109),	-- Short-Supply Reward - Nalak secondary killID
-		q(32922),	-- Short-Supply Reward - Oondasta bonus roll
-		q(33225),	-- Short-Supply Reward - Ordos bonus roll
-		q(32924),	-- Short-Supply Reward - Sha of Anger bonus roll
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_4_0 } }, {
+	m(PANDARIA, {
+		m(ISLE_OF_GIANTS, {
+			n(WORLD_BOSSES, {
+				q(32922),	-- Short-Supply Reward - Oondasta bonus roll
+			}),
+		}),
+		m(ISLE_OF_THUNDER, {
+			n(WORLD_BOSSES, {
+				q(32919),	-- Short-Supply Reward - Nalak bonus roll
+				q(33109),	-- Short-Supply Reward - Nalak secondary killID
+			}),
+		}),
+		m(KUN_LAI_SUMMIT, {
+			n(WORLD_BOSSES, {
+				q(32924),	-- Short-Supply Reward - Sha of Anger bonus roll
+			}),
+		}),
+		m(TIMELESS_ISLE, {
+			n(WORLD_BOSSES, {
+				q(33226),	-- Short-Supply Reward - Celestials bonus roll
+				q(33225),	-- Short-Supply Reward - Ordos bonus roll
+			}),
+		}),
+		m(VALLEY_OF_THE_FOUR_WINDS, {
+			n(WORLD_BOSSES, {
+				q(32923),	-- Short-Supply Reward - Galleon bonus roll
+			}),
+		}),
 	}),
-});
+})));

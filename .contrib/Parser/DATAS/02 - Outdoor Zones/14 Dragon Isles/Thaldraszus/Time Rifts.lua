@@ -3,7 +3,7 @@
 ---------------------------------------------------
 TIME_RIFTS = createHeader({
 	readable = "Time Rift",
-	icon = "Interface\\Icons\\inv_belt_armor_waistoftime_d_01",
+	icon = 2026009,
 	text = {
 		en = WOWAPI_GetSpellName(408633),
 	},
@@ -115,7 +115,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					ach(18635),	-- Verified Rifter
 				}),
 				n(BOSSES, bubbleDownFiltered({
-					["description"] = "Can drop any Time Rift Vendor Item.",
+					["sharedDescription"] = "Can drop any Time Rift Vendor Item.",
 				}, FILTERFUNC_npcID,{
 					-- testing out organizing with raw NPCs for bosses and nesting under the respective maps where they spawn
 					-- this will allow the achievement criteria to move under the proper bosses instead of being listed separately in lists
@@ -268,14 +268,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								["coord"] = { 51.0, 57.0, THALDRASZUS },
 								["minReputation"] = { FACTION_SORIDORMI, 3 },
 								["g"] = {
-									i(207020, {	-- Ensemble: Rift-Mender's Vestments
-										--["questID"] = 76581,
-										["g"] = {
-											i(207017),	-- Rift-Mender's Cape
-											i(207018),	-- Rift-Mender's Spaulders
-											i(207016),	-- Rift-Mender's Tabard
-										},
-									}),
+									iensemble(207020),	-- Ensemble: Rift-Mender's Vestments
 								},
 							}),
 							q(77249, {	-- One of Us
@@ -343,7 +336,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 					q(76404, {	-- Cogs in a Machine
 						["provider"] = { "i", 206602 },	-- Mechanical Cog (QI!)
-						["coord"] = { 57.7, 64.2, 2199 }, 	-- Tyrhold Reservoir (Scenario Map)
+						["coord"] = { 57.7, 64.2, 2199 },	-- Tyrhold Reservoir (Scenario Map)
 					}),
 					q(76533, {	-- Dangerous Documentation
 						["provider"] = { "n", 207525 },	-- Watcher's Log
@@ -404,7 +397,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
 								}),
 								i(224298, {	-- Dilated Eon Canister (DF:S4)
-									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED },
+									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 								}),
 								i(207002),	-- Encapsulated Destiny
 								i(207027),	-- Greater Encapsulated Destiny
@@ -413,7 +406,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 								}),
 								i(208952),	-- Soridormi's Letter of Commendation
 								i(215363, {	-- Cache of Embers
-									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED },
+									["timeline"] = { ADDED_10_2_6_SEASON_FOUR },
 									-- probably need symlink
 								}),
 							}),
@@ -443,7 +436,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					}),
 					o(403919,{	-- Mechanical Cog
 						["coords"] = {
-							{ 57.7, 64.2, 2199 }, 	-- Tyrhold Reservoir (Scenario Map)
+							{ 57.7, 64.2, 2199 },	-- Tyrhold Reservoir (Scenario Map)
 							{ 58.1, 63.9, 2199 },	-- Tyrhold Reservoir (Scenario Map)
 							{ 38.1, 52.3, 2199 },	-- Tyrhold Reservoir (Scenario Map)
 						},
@@ -452,8 +445,8 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						},
 					}),
 					o(404480,{	-- Ragged Mantid Sword
-					 	["coord"] = { 63.5, 65.4, 2199 },	-- Tyrhold Reservoir (Scenario Map)
-					 	["g"] = {
+						["coord"] = { 63.5, 65.4, 2199 },	-- Tyrhold Reservoir (Scenario Map)
+						["g"] = {
 							i(206998),	-- Amber Sword (QI!)
 						},
 					}),
@@ -715,71 +708,21 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 							i(208012, {	-- Briarhorn Hatchling (PET!)
 								["cost"] = {{ "c", PARACAUSAL_FLAKES, 2750 }},
 							}),
-							i(207049, {	-- Ensemble: Decorous Garments
-							--	["questID"] = 76583,
+							iensemble(207049, {	-- Ensemble: Decorous Garments
 								["classes"] = CLOTH_CLASSES,
 								["cost"] = {{ "c", PARACAUSAL_FLAKES, 2500 }},
-								["g"] = {
-									i(206891),	-- Decorous Guise
-									i(206890),	-- Decorous Handwraps
-									i(206893),	-- Decorous Mantle
-									i(206896),	-- Decorous Robe
-									i(206894),	-- Decorous Sash
-									i(206888),	-- Decorous Shawl
-									i(206889),	-- Decorous Slippers
-									i(206892),	-- Decorous Trousers
-									i(206895),	-- Decorous Wraps
-								},
 							}),
-							i(207048, {	-- Ensemble: Lifegiver's Garms
-							--	["questID"] = 76584,
+							iensemble(207048, {	-- Ensemble: Lifegiver's Garms
 								["classes"] = LEATHER_CLASSES,
 								["cost"] = {{ "c", PARACAUSAL_FLAKES, 2500 }},
-								["g"] = {
-									i(206905),	-- Lifegiver's Bindings
-									i(206897),	-- Lifegiver's Drape
-									i(206904),	-- Lifegiver's Girdle
-									i(206899),	-- Lifegiver's Grips
-									i(206906),	-- Lifegiver's Jerkin
-									i(206901),	-- Lifegiver's Legwraps
-									i(206902),	-- Lifegiver's Robe
-									i(206898),	-- Lifegiver's Sollerets
-									i(206903),	-- Lifegiver's Spaulders
-									i(206900),	-- Lifegiver's Vision
-								},
 							}),
-							i(207047, {	-- Ensemble: Hauberk of Discipline
-							--	["questID"] = 76585,
+							iensemble(207047, {	-- Ensemble: Hauberk of Discipline
 								["classes"] = MAIL_CLASSES,
 								["cost"] = {{ "c", PARACAUSAL_FLAKES, 2500 }},
-								["g"] = {
-									i(206916),	-- Chain Vest of Discipline
-									i(206912),	-- Chausses of Discipline
-									i(206914),	-- Cinch of Discipline
-									i(206907),	-- Cloak of Discipline
-									i(206915),	-- Cuffs of Discipline
-									i(206910),	-- Gloves of Discipline
-									i(206911),	-- Horns of Discipline
-									i(206908),	-- Robe of Discipline
-									i(206913),	-- Shoulderguards of Discipline
-									i(206909),	-- Stompers of Discipline
-								},
 							}),
-							i(207046, {	-- Ensemble: Valhalas Ceremonial Armor
-							--	["questID"] = 76582,
+							iensemble(207046, {	-- Ensemble: Valhalas Ceremonial Armor
 								["classes"] = PLATE_CLASSES,
 								["cost"] = {{ "c", PARACAUSAL_FLAKES, 2500 }},
-								["g"] = {
-									i(206924),	-- Valhalas Bracelets
-									i(206917),	-- Valhalas Cape
-									i(206925),	-- Valhalas Chestguard
-									i(206921),	-- Valhalas Greaves
-									i(206919),	-- Valhalas Handguards
-									i(206920),	-- Valhalas Helm
-									i(206922),	-- Valhalas Pauldrons
-									i(206918),	-- Valhalas Sabatons
-									i(206923),	-- Valhalas Waistguard
-								},
 							}),
 							i(206794, {	-- Hand of Order
 								["cost"] = {{ "c", PARACAUSAL_FLAKES, 1000 }},
@@ -1111,140 +1054,136 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		})),
 	}),
 })));
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5} }, {
+	m(DRAGON_ISLES, {
+		m(THALDRASZUS, {
+			n(TIME_RIFTS, {
+				-- Alternates between these two questIDs when completing tasks
+				-- Sequence experienced on live: 85 > 83 > 84 > 86
+				q(76983,{["repeatable"]=true}),
+				q(76984,{["repeatable"]=true}),
+				q(76985,{["repeatable"]=true}),
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-	m(THALDRASZUS, { n(TIME_RIFTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {
-		-- Alternates between these two questIDs when completing tasks
-		-- Sequence experienced on live: 85 > 83 > 84 > 86
-		q(76983,{["repeatable"]=true}),
-		q(76984,{["repeatable"]=true}),
-		q(76985,{["repeatable"]=true}),
+				q(77680),	-- picked up 'When Time Needs Mending' (questID 77236); after questID 77679?
 
-		q(77680),	-- picked up 'When Time Needs Mending' (questID 77236); after questID 77679?
+				q(77836),	-- 1st weekly rift (itemID 207030 as reward)
+				q(76986),	-- some kind of unlock for time rift on alts (start popup on login after participate in time rift event at least once on account)
 
-		q(77836),	-- 1st weekly rift (itemID 207030 as reward)
-		q(76986),	-- some kind of unlock for time rift on alts (start popup on login after participate in time rift event at least once on account)
+				q(76695),	-- after buying/loot 'Blighted Greatbow' (itemID 206784) (spellID 418958)
+				q(76691),	-- after buying/loot 'Bonegale Greataxe' (itemID 206783) (spellID 418957)
+				q(76616),	-- after buying/loot 'Branded Greatmaul' (itemID 206791) (spellID 418956)
+				q(76711),	-- after buying/loot 'Briarhorn Hatchling' (itemID 208012) (spellID 418955)
+				q(76679),	-- after buying/loot 'Clockwork Mallet' (itemID 206804) (spellID 418448)
+				q(76607),	-- after buying/loot 'Consuming Claws' (itemID 206770) (spellID 418954)
+				q(76690),	-- after buying/loot 'Cursed Blade of the Scourge' (itemID 206803) (spellID 418953)
+				q(76683),	-- after buying/loot 'Defect Retirement Tool' (itemID 206785) (spellID 418952)
+				q(76615),	-- after buying/loot 'Demonic Bone-Crusher' (itemID 206781) (spellID 418951)
+				q(76713),	-- after buying/loot 'Doomrubble' (itemID 208008) (spellID 418950)
+				q(76678),	-- after buying/loot 'Energetic Power Knife' (itemID 206796) (spellID 418949)
+				q(76681),	-- after buying/loot 'Energy Projection Regulator' (itemID 206777) (spellID 418948)
+				q(76617),	-- after buying/loot 'Fel-Infused Polearm' (itemID 206764) (spellID 418943)
+				q(76614),	-- after buying/loot 'Fel-Ridden Divider' (itemID 206790) (spellID 418942)
+				q(76621),	-- after buying/loot 'Felstorm Dragon' (itemID 206676) (spellID 418941)
+				q(76693),	-- after buying/loot 'Frostspire' (itemID 206797) (spellID 418940)
+				q(76714),	-- after buying/loot 'Gill'dan' (itemID 208009) (spellID 418939)
+				q(76703),	-- after buying/loot 'Gold-Toed Albatross' (itemID 206675) (spellID 418938)
+				q(76699),	-- after buying/loot 'Hand of Order' (itemID 206794) (spellID 418937)
+				q(76619),	-- after buying/loot 'Heart-Slicer' (itemID 206789) (spellID 418936)
+				q(76608),	-- after buying/loot 'Heretical Gavel' (itemID 206776) (spellID 418935)
+				q(76676),	-- after buying/loot 'Horn of the White War Wolf' (itemID 206673) (spellID 418934)
+				q(76618),	-- after buying/loot 'Inferna Rod' (itemID 206801) (spellID 418933)
+				q(76610),	-- after buying/loot 'Its Focused Gaze' (itemID 206765) (spellID 418932)
+				q(76613),	-- after buying/loot 'Jagged Treason' (itemID 206766) (spellID 418454)
+				q(76709),	-- after buying/loot 'Jeepers' (itemID 208010) (spellID 418931)
+				q(76655),	-- after buying/loot 'Jingoist's Breastplate' (itemID 206878) (spellID 418930)
+				q(76651),	-- after buying/loot 'Jingoist's Casque' (itemID 206865) (spellID 418929)
+				q(76623),	-- after buying/loot 'Jingoist's Cloth Armor Bag' (itemID 207082) (spellID 418928)
+				q(76622),	-- after buying/loot 'Jingoist's Cloth Equipment Bag' (itemID 207072) (spellID 418927)
+				q(76624),	-- after buying/loot 'Jingoist's Cloth Gear Bag' (itemID 207071) (spellID 418926)
+				q(76645),	-- after buying/loot 'Jingoist's Cuirass' (itemID 206839) (spellID 418925)
+				q(76657),	-- after buying/loot 'Jingoist's Greathelm' (itemID 206873) (spellID 418924)
+				q(76646),	-- after buying/loot 'Jingoist's Headcover' (itemID 206834) (spellID 418923)
+				q(76639),	-- after buying/loot 'Jingoist's Hood' (itemID 206826) (spellID 418922)
+				q(76626),	-- after buying/loot 'Jingoist's Leather Armor Bag' (itemID 207080) (spellID 418921)
+				q(76625),	-- after buying/loot 'Jingoist's Leather Equipment Bag' (itemID 207068) (spellID 418920)
+				q(76627),	-- after buying/loot 'Jingoist's Leather Gear Bag' (itemID 207067) (spellID 418919)
+				q(76641),	-- after buying/loot 'Jingoist's Leggings' (itemID 206825) (spellID 418918)
+				q(76653),	-- after buying/loot 'Jingoist's Legguards' (itemID 206864) (spellID 418917)
+				q(76659),	-- after buying/loot 'Jingoist's Legplates' (itemID 206874) (spellID 418916)
+				q(76630),	-- after buying/loot 'Jingoist's Mail Armor Bag' (itemID 207078) (spellID 418915)
+				q(76629),	-- after buying/loot 'Jingoist's Mail Equipment Bag' (itemID 207063) (spellID 418914)
+				q(76631),	-- after buying/loot 'Jingoist's Mail Gear Bag' (itemID 207064) (spellID 418913)
+				q(76628),	-- after buying/loot 'Jingoist's Mail Suit Bag' (itemID 207093) (spellID 418912)
+				q(76648),	-- after buying/loot 'Jingoist's Pantaloons' (itemID ) (spellID 418911)
+				q(76633),	-- after buying/loot 'Jingoist's Plate Armor Bag' (itemID 207075) (spellID 418910)
+				q(76632),	-- after buying/loot 'Jingoist's Plate Equipment Bag' (itemID 207052) (spellID 418909)
+				q(76634),	-- after buying/loot 'Jingoist's Plate Gear Bag' (itemID 207053) (spellID 418908)
+				q(76643),	-- after buying/loot 'Jingoist's Robe' (itemID 206821) (spellID 418907)
+				q(76635),	-- after buying/loot 'Jingoist's Slicer' (itemID 207014) (spellID 418905)
+				q(76712),	-- after buying/loot 'Killbot 9000' (itemID 208013) (spellID 418905)
+				q(76715),	-- after buying/loot 'N'Ruby' (itemID 208138) (spellID 418904)
+				q(76692),	-- after buying/loot 'Northern Ballista' (itemID 206778) (spellID 418903)
+				q(76710),	-- after buying/loot 'Obsidian Warwhelp' (itemID 208011) (spellID 418902)
+				q(76680),	-- after buying/loot 'Order-Powered Mechblade' (itemID 206807) (spellID 418901)
+				q(76682),	-- after buying/loot 'Overclocked Hand Cannon' (itemID 206780) (spellID 418900)
+				q(76620),	-- after buying/loot 'Paracausal Fragment of Azzinoth' (itemID 206972) (spellID 418899)
+				q(76677),	-- after buying/loot 'Paracausal Fragment of Doomhammer' (itemID 206964) (spellID 418898)
+				q(76696),	-- after buying/loot 'Paracausal Fragment of Frostmourne' (itemID 206983) (spellID 418897)
+				q(76704),	-- after buying/loot 'Paracausal Fragment of Seschenal' (itemID 206475) (spellID 418896)
+				q(76638),	-- after buying/loot 'Paracausal Fragment of Shalamayne' (itemID 207024) (spellID 418895)
+				q(76612),	-- after buying/loot 'Paracausal Fragment of Sulfuras' (itemID 206956) (spellID 418894)
+				q(76603),	-- after buying/loot 'Paracausal Fragment of Thunderfin, Humid Blade of the Tideseeker' (itemID 207005) (spellID 418893)
+				q(76686),	-- after buying/loot 'Paracausal Fragment of Val'anyr' (itemID 206958) (spellID 418892)
+				q(76605),	-- after buying/loot 'Pauldrons of the Fire Lord' (itemID 206799) (spellID 418891)
+				q(76685),	-- after buying/loot 'Perfected Juggernaut' (itemID 206679) (spellID 418890)
+				q(76694),	-- after buying/loot 'Plague-Touched Stave' (itemID 206802) (spellID 418889)
+				q(76637),	-- after buying/loot 'Reins of the Ravenous Black Gryphon' (itemID 206674) (spellID 418888)
+				q(76687),	-- after buying/loot 'Reins of the Scourgebound Vanquisher' (itemID 206680) (spellID 418887)
+				q(76606),	-- after buying/loot 'Serrated Parasite' (itemID 206768) (spellID 418886)
+				q(76684),	-- after buying/loot 'Steel-Lined Locking System' (itemID 206779) (spellID 418885)
+				q(76611),	-- after buying/loot 'Subjugator's Shield' (itemID 206792) (spellID 418884)
+				q(76604),	-- after buying/loot 'Sulfur Hound's Leash' (itemID 206678) (spellID 418883)
+				q(76700),	-- after buying/loot 'Titan Watcher's Shortblade' (itemID 206795) (spellID 418882)
+				q(76702),	-- after buying/loot 'Titanic Hourglass' (itemID 206782) (spellID 418881)
+				q(76609),	-- after buying/loot 'Unknown Horror's Arm' (itemID 206769) (spellID 418880)
+				q(76689),	-- after buying/loot 'Upraised Headstone' (itemID 206793) (spellID 418879)
+				q(76697),	-- after buying/loot 'Utopian Tabard' (itemID 206788) (spellID 418878)
+				q(76701),	-- after buying/loot 'Valhalas Heartstriker' (itemID 206798) (spellID 418877)
+				q(76698),	-- after buying/loot 'Valhalas Peacekeeper' (itemID 206767) (spellID 418876)
+				q(76688),	-- after buying/loot 'Scourge Victorious Tabard' (itemID 206786) (spellID 418875)
+				q(76656),	-- after buying/loot 'Warmonger's Breastplate' (itemID 206879) (spellID 418874)
+				q(76652),	-- after buying/loot 'Warmonger's Casque' (itemID 206853) (spellID 418872)
+				q(76650),	-- after buying/loot 'Warmonger's Chainmail' (itemID 206858) (spellID 418871)
+				q(76662),	-- after buying/loot 'Warmonger's Cloth Armor Bag' (itemID 207081) (spellID 418870)
+				q(76663),	-- after buying/loot 'Warmonger's Cloth Equipment Bag' (itemID 207073) (spellID 418869)
+				q(76661),	-- after buying/loot 'Warmonger's Cloth Gear Bag' (itemID 207074) (spellID 418868)
+				q(76658),	-- after buying/loot 'Warmonger's Greathelm' (itemID 206884) (spellID 418867)
+				q(76647),	-- after buying/loot 'Warmonger's Headcover' (itemID 206846) (spellID 418866)
+				q(76666),	-- after buying/loot 'Warmonger's Leather Armor Bag' (itemID 207079) (spellID 418865)
+				q(76667),	-- after buying/loot 'Warmonger's Leather Equipment Bag' (itemID 207069) (spellID 418864)
+				q(76664),	-- after buying/loot 'Warmonger's Leather Gear Bag' (itemID 207070) (spellID 418863)
+				q(76665),	-- after buying/loot 'Warmonger's Leather Suit Bag' (itemID 207094) (spellID 418862)
+				q(76642),	-- after buying/loot 'Warmonger's Leggings' (itemID 206814) (spellID 418861)
+				q(76654),	-- after buying/loot 'Warmonger's Legguards' (itemID 206854) (spellID 418860)
+				q(76660),	-- after buying/loot 'Warmonger's Legplates' (itemID 206883) (spellID 418859)
+				q(76669),	-- after buying/loot 'Warmonger's Mail Armor Bag' (itemID 207077) (spellID 418858)
+				q(76670),	-- after buying/loot 'Warmonger's Mail Equipment Bag' (itemID 207066) (spellID 418856)
+				q(76668),	-- after buying/loot 'Warmonger's Mail Gear Bag' (itemID 207065) (spellID 418855)
+				q(76649),	-- after buying/loot 'Warmonger's Pantaloons' (itemID 206845) (spellID 418854)
+				q(76672),	-- after buying/loot 'Warmonger's Plate Armor Bag' (itemID 207076) (spellID 418853)
+				q(76673),	-- after buying/loot 'Warmonger's Plate Equipment Bag' (itemID 207051) (spellID 418852)
+				q(76671),	-- after buying/loot 'Warmonger's Plate Gear Bag' (itemID 207050) (spellID 418851)
+				q(76674),	-- after buying/loot 'Warmonger's Ripper' (itemID 207015) (spellID 418850)
+				q(76644),	-- after buying/loot 'Warmonger's Robe' (itemID 206808) (spellID 418849)
+				q(76640),	-- after buying/loot 'Warmonger's Skullcap' (itemID 206816) (spellID 418848)
 
+				q(76705),	-- after buying/loot Ensemble: Decorous Garments (itemID 207049) (spellID 418947)
+				q(76707),	-- after buying/loot Ensemble: Haukbert of Discipline (itemID 207047) (spellID 418946)
+				q(76706),	-- after buying/loot Ensemble: Lifegiver's Garms (itemID 207048) (spellID 418945)
+				q(76708),	-- after buying/loot Ensemble: Valhalas Ceremonial Armor (itemID 207046) (spellID 418944)
 
-		q(76582),	-- Ensemble: Valhalas Ceremonial Armor
-		q(76585),	-- Ensemble: Hauberk of Discipline
-		q(76584),	-- Ensemble: Lifegiver's Garms
-		q(76583),	-- Ensemble: Decorous Garments
-		q(76581),	-- Ensemble: Rift-Mender's Vestments
-
-		q(76695),	-- after buying/loot 'Blighted Greatbow' (itemID 206784) (spellID 418958)
-		q(76691),	-- after buying/loot 'Bonegale Greataxe' (itemID 206783) (spellID 418957)
-		q(76616),	-- after buying/loot 'Branded Greatmaul' (itemID 206791) (spellID 418956)
-		q(76711),	-- after buying/loot 'Briarhorn Hatchling' (itemID 208012) (spellID 418955)
-		q(76679),	-- after buying/loot 'Clockwork Mallet' (itemID 206804) (spellID 418448)
-		q(76607),	-- after buying/loot 'Consuming Claws' (itemID 206770) (spellID 418954)
-		q(76690),	-- after buying/loot 'Cursed Blade of the Scourge' (itemID 206803) (spellID 418953)
-		q(76683),	-- after buying/loot 'Defect Retirement Tool' (itemID 206785) (spellID 418952)
-		q(76615),	-- after buying/loot 'Demonic Bone-Crusher' (itemID 206781) (spellID 418951)
-		q(76713),	-- after buying/loot 'Doomrubble' (itemID 208008) (spellID 418950)
-		q(76678),	-- after buying/loot 'Energetic Power Knife' (itemID 206796) (spellID 418949)
-		q(76681),	-- after buying/loot 'Energy Projection Regulator' (itemID 206777) (spellID 418948)
-		q(76617),	-- after buying/loot 'Fel-Infused Polearm' (itemID 206764) (spellID 418943)
-		q(76614),	-- after buying/loot 'Fel-Ridden Divider' (itemID 206790) (spellID 418942)
-		q(76621),	-- after buying/loot 'Felstorm Dragon' (itemID 206676) (spellID 418941)
-		q(76693),	-- after buying/loot 'Frostspire' (itemID 206797) (spellID 418940)
-		q(76714),	-- after buying/loot 'Gill'dan' (itemID 208009) (spellID 418939)
-		q(76703),	-- after buying/loot 'Gold-Toed Albatross' (itemID 206675) (spellID 418938)
-		q(76699),	-- after buying/loot 'Hand of Order' (itemID 206794) (spellID 418937)
-		q(76619),	-- after buying/loot 'Heart-Slicer' (itemID 206789) (spellID 418936)
-		q(76608),	-- after buying/loot 'Heretical Gavel' (itemID 206776) (spellID 418935)
-		q(76676),	-- after buying/loot 'Horn of the White War Wolf' (itemID 206673) (spellID 418934)
-		q(76618),	-- after buying/loot 'Inferna Rod' (itemID 206801) (spellID 418933)
-		q(76610),	-- after buying/loot 'Its Focused Gaze' (itemID 206765) (spellID 418932)
-		q(76613),	-- after buying/loot 'Jagged Treason' (itemID 206766) (spellID 418454)
-		q(76709),	-- after buying/loot 'Jeepers' (itemID 208010) (spellID 418931)
-		q(76655),	-- after buying/loot 'Jingoist's Breastplate' (itemID 206878) (spellID 418930)
-		q(76651),	-- after buying/loot 'Jingoist's Casque' (itemID 206865) (spellID 418929)
-		q(76623),	-- after buying/loot 'Jingoist's Cloth Armor Bag' (itemID 207082) (spellID 418928)
-		q(76622),	-- after buying/loot 'Jingoist's Cloth Equipment Bag' (itemID 207072) (spellID 418927)
-		q(76624),	-- after buying/loot 'Jingoist's Cloth Gear Bag' (itemID 207071) (spellID 418926)
-		q(76645),	-- after buying/loot 'Jingoist's Cuirass' (itemID 206839) (spellID 418925)
-		q(76657),	-- after buying/loot 'Jingoist's Greathelm' (itemID 206873) (spellID 418924)
-		q(76646),	-- after buying/loot 'Jingoist's Headcover' (itemID 206834) (spellID 418923)
-		q(76639),	-- after buying/loot 'Jingoist's Hood' (itemID 206826) (spellID 418922)
-		q(76626),	-- after buying/loot 'Jingoist's Leather Armor Bag' (itemID 207080) (spellID 418921)
-		q(76625),	-- after buying/loot 'Jingoist's Leather Equipment Bag' (itemID 207068) (spellID 418920)
-		q(76627),	-- after buying/loot 'Jingoist's Leather Gear Bag' (itemID 207067) (spellID 418919)
-		q(76641),	-- after buying/loot 'Jingoist's Leggings' (itemID 206825) (spellID 418918)
-		q(76653),	-- after buying/loot 'Jingoist's Legguards' (itemID 206864) (spellID 418917)
-		q(76659),	-- after buying/loot 'Jingoist's Legplates' (itemID 206874) (spellID 418916)
-		q(76630),	-- after buying/loot 'Jingoist's Mail Armor Bag' (itemID 207078) (spellID 418915)
-		q(76629),	-- after buying/loot 'Jingoist's Mail Equipment Bag' (itemID 207063) (spellID 418914)
-		q(76631),	-- after buying/loot 'Jingoist's Mail Gear Bag' (itemID 207064) (spellID 418913)
-		q(76628),	-- after buying/loot 'Jingoist's Mail Suit Bag' (itemID 207093) (spellID 418912)
-		q(76648),	-- after buying/loot 'Jingoist's Pantaloons' (itemID ) (spellID 418911)
-		q(76633),	-- after buying/loot 'Jingoist's Plate Armor Bag' (itemID 207075) (spellID 418910)
-		q(76632),	-- after buying/loot 'Jingoist's Plate Equipment Bag' (itemID 207052) (spellID 418909)
-		q(76634),	-- after buying/loot 'Jingoist's Plate Gear Bag' (itemID 207053) (spellID 418908)
-		q(76643),	-- after buying/loot 'Jingoist's Robe' (itemID 206821) (spellID 418907)
-		q(76635),	-- after buying/loot 'Jingoist's Slicer' (itemID 207014) (spellID 418905)
-		q(76712),	-- after buying/loot 'Killbot 9000' (itemID 208013) (spellID 418905)
-		q(76715),	-- after buying/loot 'N'Ruby' (itemID 208138) (spellID 418904)
-		q(76692),	-- after buying/loot 'Northern Ballista' (itemID 206778) (spellID 418903)
-		q(76710),	-- after buying/loot 'Obsidian Warwhelp' (itemID 208011) (spellID 418902)
-		q(76680),	-- after buying/loot 'Order-Powered Mechblade' (itemID 206807) (spellID 418901)
-		q(76682),	-- after buying/loot 'Overclocked Hand Cannon' (itemID 206780) (spellID 418900)
-		q(76620),	-- after buying/loot 'Paracausal Fragment of Azzinoth' (itemID 206972) (spellID 418899)
-		q(76677),	-- after buying/loot 'Paracausal Fragment of Doomhammer' (itemID 206964) (spellID 418898)
-		q(76696),	-- after buying/loot 'Paracausal Fragment of Frostmourne' (itemID 206983) (spellID 418897)
-		q(76704),	-- after buying/loot 'Paracausal Fragment of Seschenal' (itemID 206475) (spellID 418896)
-		q(76638),	-- after buying/loot 'Paracausal Fragment of Shalamayne' (itemID 207024) (spellID 418895)
-		q(76612),	-- after buying/loot 'Paracausal Fragment of Sulfuras' (itemID 206956) (spellID 418894)
-		q(76603),	-- after buying/loot 'Paracausal Fragment of Thunderfin, Humid Blade of the Tideseeker' (itemID 207005) (spellID 418893)
-		q(76686),	-- after buying/loot 'Paracausal Fragment of Val'anyr' (itemID 206958) (spellID 418892)
-		q(76605),	-- after buying/loot 'Pauldrons of the Fire Lord' (itemID 206799) (spellID 418891)
-		q(76685),	-- after buying/loot 'Perfected Juggernaut' (itemID 206679) (spellID 418890)
-		q(76694),	-- after buying/loot 'Plague-Touched Stave' (itemID 206802) (spellID 418889)
-		q(76637),	-- after buying/loot 'Reins of the Ravenous Black Gryphon' (itemID 206674) (spellID 418888)
-		q(76687),	-- after buying/loot 'Reins of the Scourgebound Vanquisher' (itemID 206680) (spellID 418887)
-		q(76606),	-- after buying/loot 'Serrated Parasite' (itemID 206768) (spellID 418886)
-		q(76684),	-- after buying/loot 'Steel-Lined Locking System' (itemID 206779) (spellID 418885)
-		q(76611),	-- after buying/loot 'Subjugator's Shield' (itemID 206792) (spellID 418884)
-		q(76604),	-- after buying/loot 'Sulfur Hound's Leash' (itemID 206678) (spellID 418883)
-		q(76700),	-- after buying/loot 'Titan Watcher's Shortblade' (itemID 206795) (spellID 418882)
-		q(76702),	-- after buying/loot 'Titanic Hourglass' (itemID 206782) (spellID 418881)
-		q(76609),	-- after buying/loot 'Unknown Horror's Arm' (itemID 206769) (spellID 418880)
-		q(76689),	-- after buying/loot 'Upraised Headstone' (itemID 206793) (spellID 418879)
-		q(76697),	-- after buying/loot 'Utopian Tabard' (itemID 206788) (spellID 418878)
-		q(76701),	-- after buying/loot 'Valhalas Heartstriker' (itemID 206798) (spellID 418877)
-		q(76698),	-- after buying/loot 'Valhalas Peacekeeper' (itemID 206767) (spellID 418876)
-		q(76688),	-- after buying/loot 'Scourge Victorious Tabard' (itemID 206786) (spellID 418875)
-		q(76656),	-- after buying/loot 'Warmonger's Breastplate' (itemID 206879) (spellID 418874)
-		q(76652),	-- after buying/loot 'Warmonger's Casque' (itemID 206853) (spellID 418872)
-		q(76650),	-- after buying/loot 'Warmonger's Chainmail' (itemID 206858) (spellID 418871)
-		q(76662),	-- after buying/loot 'Warmonger's Cloth Armor Bag' (itemID 207081) (spellID 418870)
-		q(76663),	-- after buying/loot 'Warmonger's Cloth Equipment Bag' (itemID 207073) (spellID 418869)
-		q(76661),	-- after buying/loot 'Warmonger's Cloth Gear Bag' (itemID 207074) (spellID 418868)
-		q(76658),	-- after buying/loot 'Warmonger's Greathelm' (itemID 206884) (spellID 418867)
-		q(76647),	-- after buying/loot 'Warmonger's Headcover' (itemID 206846) (spellID 418866)
-		q(76666),	-- after buying/loot 'Warmonger's Leather Armor Bag' (itemID 207079) (spellID 418865)
-		q(76667),	-- after buying/loot 'Warmonger's Leather Equipment Bag' (itemID 207069) (spellID 418864)
-		q(76664),	-- after buying/loot 'Warmonger's Leather Gear Bag' (itemID 207070) (spellID 418863)
-		q(76665),	-- after buying/loot 'Warmonger's Leather Suit Bag' (itemID 207094) (spellID 418862)
-		q(76642),	-- after buying/loot 'Warmonger's Leggings' (itemID 206814) (spellID 418861)
-		q(76654),	-- after buying/loot 'Warmonger's Legguards' (itemID 206854) (spellID 418860)
-		q(76660),	-- after buying/loot 'Warmonger's Legplates' (itemID 206883) (spellID 418859)
-		q(76669),	-- after buying/loot 'Warmonger's Mail Armor Bag' (itemID 207077) (spellID 418858)
-		q(76670),	-- after buying/loot 'Warmonger's Mail Equipment Bag' (itemID 207066) (spellID 418856)
-		q(76668),	-- after buying/loot 'Warmonger's Mail Gear Bag' (itemID 207065) (spellID 418855)
-		q(76649),	-- after buying/loot 'Warmonger's Pantaloons' (itemID 206845) (spellID 418854)
-		q(76672),	-- after buying/loot 'Warmonger's Plate Armor Bag' (itemID 207076) (spellID 418853)
-		q(76673),	-- after buying/loot 'Warmonger's Plate Equipment Bag' (itemID 207051) (spellID 418852)
-		q(76671),	-- after buying/loot 'Warmonger's Plate Gear Bag' (itemID 207050) (spellID 418851)
-		q(76674),	-- after buying/loot 'Warmonger's Ripper' (itemID 207015) (spellID 418850)
-		q(76644),	-- after buying/loot 'Warmonger's Robe' (itemID 206808) (spellID 418849)
-		q(76640),	-- after buying/loot 'Warmonger's Skullcap' (itemID 206816) (spellID 418848)
-
-		q(76705),	-- after buying/loot Ensemble: Decorous Garments (itemID 207049) (spellID 418947)
-		q(76707),	-- after buying/loot Ensemble: Haukbert of Discipline (itemID 207047) (spellID 418946)
-		q(76706),	-- after buying/loot Ensemble: Lifegiver's Garms (itemID 207048) (spellID 418945)
-		q(76708),	-- after buying/loot Ensemble: Valhalas Ceremonial Armor (itemID 207046) (spellID 418944)
-
-		q(77179),	-- Unlock the title Unparalleled on your account (spellID 417360) (after questID 77250)
-	}))}),
+				q(77179),	-- Unlock the title Unparalleled on your account (spellID 417360) (after questID 77250)
+			}),
+		}),
+	}),
 })));

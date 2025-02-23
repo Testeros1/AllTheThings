@@ -5,7 +5,7 @@
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(SOUTHERN_BARRENS, {
 		["lore"] = "Southern Barrens is a war-torn land after the Shattering. Camp Taurajo has been razed as the Alliance retaliate for the Horde's offensive in Ashenvale, plowing through to link Theramore to their northern bases. Naralex, formerly sleeping in Wailing Caverns, is rescued and has created a wild mutant jungle in this zone as well.",
-		["icon"] = "Interface\\Icons\\achievement_zone_barrens_01",
+		["icon"] = 236717,
 		["timeline"] = { ADDED_4_0_3 },
 		["groups"] = {
 			n(ACHIEVEMENTS, {
@@ -1078,7 +1078,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				heroscall(q(28550, {	-- Hero's Call: Southern Barrens!
 					-- #if NOT ANYCLASSIC
-					["description"] = "This quest needs to be accepted from the 'Adventure Guide' and not the 'Hero's Call Board'.",
+					["description"] = "This quest can only be accepted from the 'Adventure Guide' by a character in Chromie timeline: Cataclysm.",
 					-- #endif
 					["maps"] = { DARNASSUS, THE_EXODAR },	-- Only found in Darnassus & The Exodar in Cataclysm.
 					["timeline"] = { ADDED_4_0_3 },
@@ -1570,7 +1570,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["lvl"] = 14,
 				}),
 				q(26687, {	-- Reinforcements From Theramore
-					["qg"] = 39119,	-- General Twinbraid
+					["qg"] = 39118,	-- General Twinbraid
 					["sourceQuest"] = 25182,	-- Kill 'em All!
 					["coord"] = { 43.5, 78.3, SOUTHERN_BARRENS },
 					["timeline"] = { ADDED_4_0_3 },
@@ -2127,7 +2127,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							},
 						}),
 					},
-					
+
 				}),
 				q(857, {	-- The Tear of the Moons
 					["qg"] = 3421,	-- Feegly the Exiled

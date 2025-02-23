@@ -6,5 +6,7 @@ WORLD_BOSSES = createHeader({
 	text = {
 		en = [[~WORLD.." "..RAID_BOSSES]],
 		ru = "Мировые Боссы",
+		cn = "世界首领",
+		tw = "世界首領",
 	},
 });

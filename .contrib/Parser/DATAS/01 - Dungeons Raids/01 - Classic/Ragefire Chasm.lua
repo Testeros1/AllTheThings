@@ -73,11 +73,16 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					["coord"] = { 48.1, 70.5, ORGRIMMAR },
 					["timeline"] = { ADDED_4_0_1, REMOVED_5_0_4 },
 					["races"] = HORDE_ONLY,
-					["u"] = REMOVED_FROM_GAME,
 				}),
 				q(31034, {	-- Enemies Below [Orgrimmar]
-					["qg"] = 14720,	-- High Overlord Saurfang
-					["coord"] = { 48.6, 71.0, ORGRIMMAR },
+					["qgs"] = {
+						14720,	-- High Overlord Saurfang
+						3144,	-- Eitrigg
+					},
+					["coords"] = {
+						{ 48.6, 71.0, ORGRIMMAR },
+						{ 14.1, 73.8, ORGRIMMAR },
+					},
 					["timeline"] = { ADDED_5_0_4 },
 					["races"] = HORDE_ONLY,
 				}),
@@ -547,10 +552,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		},
 	}),
 }));
--- #if AFTER 6.0.1
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(226, {
 		q(35287),	-- Ragefire Chasm Reward Quest - Normal completion
 	}),
-});
--- #endif
+})));

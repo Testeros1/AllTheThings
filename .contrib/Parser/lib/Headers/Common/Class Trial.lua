@@ -1,9 +1,9 @@
 CLASS_TRIAL = createHeader({
 	readable = "Class Trial",
 	-- #if AFTER LEGION
-	icon = "Interface\\Icons\\ability_bossmagistrix_timewarp1",
+	icon = 1391675,
 	-- #else
-	icon = "Interface\\Icons\\Inv_misc_head_elf_02",
+	icon = 134162,
 	-- #endif
 	text = {
 		en = "Class Trial",
@@ -15,5 +15,6 @@ CLASS_TRIAL = createHeader({
 		ru = "Испытание класса",
 		ko = "학급 재판",
 		cn = "职业试玩",
+		tw = "職業試玩",
 	},
 });

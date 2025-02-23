@@ -5,7 +5,7 @@
 root(ROOTS.WorldEvents, m(503, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Brawlgar Arena
 	["races"] = HORDE_ONLY,
 	["lvl"] = 120,
-	["icon"] = "Interface\\Icons\\INV_MISC_HEAD_ORC2_BRN",
+	["icon"] = 970888,
 	["groups"] = {
 		n(ACHIEVEMENTS, {
 			ach(7944, {		-- Bottle Service (Season 2)
@@ -149,16 +149,16 @@ root(ROOTS.WorldEvents, m(503, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Br
 		n(FACTIONS, sharedData({
 			["races"] = HORDE_ONLY,
 		},{
-			faction(1374, {	-- Brawl'gar Arena (Season 1)
+			faction(FACTION_BRAWLGAR_SEASON_1, {	-- Brawl'gar Arena (Season 1)
 				["timeline"] = { ADDED_5_1_0, REMOVED_6_0_2 },
 			}),
-			faction(1690, {	-- Brawl'gar Arena (Season 2)
+			faction(FACTION_BRAWLGAR_SEASON_2, {	-- Brawl'gar Arena (Season 2)
 				["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_7_0_3_LAUNCH },
 			}),
-			faction(2010, {	-- Brawl'gar Arena (Season 3)
+			faction(FACTION_BRAWLGAR_SEASON_3, {	-- Brawl'gar Arena (Season 3)
 				["timeline"] = { ADDED_7_2_0, REMOVED_8_0_1_LAUNCH },
 			}),
-			faction(2372, {	-- Brawl'gar Arena
+			faction(FACTION_BRAWLGAR_SEASON_4, {	-- Brawl'gar Arena
 				["timeline"] = { ADDED_8_1_5, REMOVED_9_0_2_LAUNCH },
 			}),
 		})),
@@ -387,25 +387,12 @@ root(ROOTS.WorldEvents, m(503, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Br
 					i(98085),	-- Brucehide Jersey
 					i(93025),	-- Clock'em (PET!)
 					i(98092),	-- Digmaster's Bodysleeve
-					i(167892, {	-- Ensemble: Brawlers Garb
-						["ignoreBonus"] = true,
-						["groups"] = {
-							i(167829),	-- Brawler's Bracer Chains
-							i(167823),	-- Brawler's Footpads
-							i(167824),	-- Brawler's Gloves
-							i(167822),	-- Brawler's Harness
-							i(167825),	-- Brawler's Headgear
-							i(167828),	-- Brawler's Heavy Belt
-							i(167826),	-- Brawler's Leggings
-							i(167827),	-- Brawler's Shoulderpads
-						},
-					}),
+					iensemble(167892),	-- Ensemble: Brawlers Garb
 					i(98079),	-- Floot-Tooter's Tunic
-					i(127773, {	-- Gemcutter Module: Mastery
+					TempForceMisc(i(127773, {	-- Gemcutter Module: Mastery
 						["description"] = "Take this recipe to the \"Apexis Gemcutter\" in Tanaan Jungle to learn.  If you have this recipe already you will need to revisit the vendor to cache the recipe.",
 						["requireSkill"] = JEWELCRAFTING,
-						["f"] = MISC,
-					}),
+					})),
 					i(98080),	-- Gorgeous Blouse
 					i(98091),	-- Last Season's Shirt
 					i(98084),	-- Ooze-Soaked Shirt

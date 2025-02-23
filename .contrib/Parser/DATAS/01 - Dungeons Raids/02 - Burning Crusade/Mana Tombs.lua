@@ -45,8 +45,8 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["qg"] = 22919,	-- Image of Commander Ameer
 					["sourceQuest"] = 10977,	-- Stasis Chambers of the Mana-Tombs
 					["coord"] = { 52.8, 15.0, BLADES_EDGE_MOUNTAINS },
-					["minReputation"] = { 933, REVERED },	-- The Consortium, Revered.
-					["maxReputation"] = { 933, EXALTED },	-- The Consortium, Exalted.
+					["minReputation"] = { FACTION_THE_CONSORTIUM, REVERED },	-- The Consortium, Revered.
+					["maxReputation"] = { FACTION_THE_CONSORTIUM, EXALTED },	-- The Consortium, Exalted.
 					["cost"] = {
 						{ "i", 31941, 1 },	-- Mark of the Nexus-King
 					},
@@ -56,7 +56,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						i(32079),	-- Shaffar's Stasis Chamber Key
 					},
 				}),
-				q(10216,  {	-- Safety is Job One
+				q(10216, {	-- Safety is Job One
 					["providers"] = {
 						{ "n",  19670 },	-- Artificer Morphalius
 						{ "o", 183877 },	-- Ethereal Transporter Control Panel
@@ -120,7 +120,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["lvl"] = lvlsquish(70, 70, 25),
 					["groups"] = {
 						objective(1, {	--	Mana-Tombs Stasis Chamber Investigated
-							["provider"] = { "i", 32069 },	-- Mana-Tombs Stasis Chamber Key
+							["providers"] = {
+								{ "i",  32069 },	-- Mana-Tombs Stasis Chamber Key
+								{ "o", 185519 },	-- Mana-Tombs Stasis Chamber
+							},
 							["description"] = "Stasis Chamber is in the room to the left after the first boss.\n\nThis can only be completed on Heroic difficulty.",
 						}),
 					},
@@ -129,7 +132,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["qg"] = 22919,	-- Image of Commander Ameer
 					["sourceQuest"] = 10977,	-- Stasis Chambers of the Mana-Tombs
 					["coord"] = { 52.8, 15.0, BLADES_EDGE_MOUNTAINS },
-					["minReputation"] = { 933, EXALTED },	-- The Consortium, Exalted.
+					["minReputation"] = { FACTION_THE_CONSORTIUM, EXALTED },	-- The Consortium, Exalted.
 					["lvl"] = lvlsquish(70, 70, 25),
 					["groups"] = {
 						i(32092),	-- The Eye of Haramad
@@ -370,10 +373,13 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						},
 					}),
 					e(536, {	-- Yor
+						["providers"] = {
+							{ "o", 185522 },	-- Shaffar's Stasis Chamber
+							{ "i", 32092 },	-- The Eye of Haramad
+						},
 						["description"] = "Requires one of two keys unlocked via a quest chain in Blades Edge to open.\n\nOnly one member of your group needs the key.",
 						["cost"] = {
 							{ "i", 32079, 1 },	-- Shaffar's Stasis Chamber Key
-							{ "i", 32092, 1 },	-- The Eye of Haramad
 						},
 						["creatureID"] = 22927,
 						["groups"] = {
@@ -442,12 +448,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 	})),
 })));
 
--- #if AFTER WOD
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(250, {
 		q(35546),	-- Mana Tombs Reward Quest - Normal completion
 		q(35547),	-- Mana Tombs Reward Quest - Heroic completion
 		q(35548),	-- Mana-Tombs Bonus Objective - kill Yor
 	}),
-});
--- #endif
+})));

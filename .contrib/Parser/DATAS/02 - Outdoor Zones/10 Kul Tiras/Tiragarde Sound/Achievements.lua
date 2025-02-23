@@ -105,181 +105,6 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				}),
 			}),
 			explorationAch(12556),	-- Explore Tiragarde Sound
-			petbattle(ach(13279, {	-- Family Battler
-				["collectible"] = false,
-				["g"] = {
-					ach(13280, {	-- Hobbyist Aquarist
-						["collectible"] = false,
-						["g"] = {
-							crit(43598, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43599, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43600, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13270, {	-- Beast Mode
-						["collectible"] = false,
-						["g"] = {
-							crit(43618, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43619, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43620, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13271, {	-- Critters with Huge Teeth
-						["collectible"] = false,
-						["g"] = {
-							crit(43639, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43640, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43641, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13272, {	-- Dragons Make Everything Better
-						["collectible"] = false,
-						["g"] = {
-							crit(43659, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43660, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43661, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13273, {	-- Element of Success
-						["collectible"] = false,
-						["g"] = {
-							crit(43678, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43679, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43689, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13274, {	-- Fun With Flying
-						["collectible"] = false,
-						["g"] = {
-							crit(43706, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43707, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43708, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13281, {	-- Human Resources
-						["collectible"] = false,
-						["g"] = {
-							crit(43728, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43729, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43730, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13275, {	-- Magician's Secrets
-						["collectible"] = false,
-						["g"] = {
-							crit(43747, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43748, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43749, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13277, {	-- Machine Learning
-						["collectible"] = false,
-						["g"] = {
-							crit(43766, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43767, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43768, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-					ach(13278, {	-- Not Quite Dead Yet
-						["collectible"] = false,
-						["g"] = {
-							crit(43785, {	-- Kwint
-								["cr"] = 141077,	-- Kwint
-								["coord"] = { 86.2, 38.6, TIRAGARDE_SOUND },
-							}),
-							crit(43786, {	-- Delia Hanako
-								["cr"] = 141292,	-- Delia Hanako
-								["coord"] = { 59.6, 33.2, TIRAGARDE_SOUND },
-							}),
-							crit(43787, {	-- Burly
-								["cr"] = 141479,	-- Burly
-								["coord"] = { 67.6, 12.8, TIRAGARDE_SOUND },
-							}),
-						},
-					}),
-				},
-			})),
 			a(ach(13060, {	-- Kul Runnings
 				crit(41764, {		-- Sliding with Style
 					["_quests"] = { 49994 },	-- Sliding with Style
@@ -296,6 +121,19 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			ach(12951, {	-- Proudmoore Admiralty
 				["races"] = ALLIANCE_ONLY,
+			}),
+			ach(41205, {	-- Sound Off
+				["timeline"] = { ADDED_11_0_7 },
+				-- Meta Achievement
+				["sym"] = {{"meta_achievement",
+					12939,	-- Adventurer of Tiragarde Sound
+					13050,	-- Bless the Rains Down in Freehold
+					13058,	-- Kul Tiran Up the Dance Floor
+					13049,	-- The Long Con
+					12852,	-- Treasures of Tiragarde Sound
+					13061,	-- Three Sheets to the Wind
+					13057,	-- Sailed in Sea Minor
+				}},
 			}),
 			a(ach(13049, {	-- The Long Con
 				crit(41668),	-- Aged to Perfection
@@ -337,26 +175,6 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					["_quests"] = { 52845 },	-- Singed Treasure Map
 				}),
 			}),
-			a(achraw(13285, {	-- Upright Citizens
-				i(166247),		-- Citizens Brigade Whistle (TOY!)
-				crit(43718, {		-- Russel the Bard recruited
-					["_quests"] = { 53704 },	-- Not Too Sober Citizens Brigade (Faction Assault WQ)
-					["coord"] = { 72.4, 68.9, BORALUS },
-				}),
-				crit(43719, {		-- Flynn Fairwind recruited
-					["_quests"] = { 53704 },	-- Not Too Sober Citizens Brigade (Faction Assault WQ)
-					["coord"] = { 72.0, 61.6, BORALUS },
-				}),
-				crit(43720, {		-- Leeroy Jenkins recruited
-					["_quests"] = { 53704 },	-- Not Too Sober Citizens Brigade (Faction Assault WQ)
-					["coord"] = { 66.8, 64.0, BORALUS },
-				}),
-			})),
 		}),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, {
-	q(54400),	-- Russel The Bard Recruited for Upright Citizens
-	q(54401),	-- Flynn Fairwind recruited for Upright Citizens
-});

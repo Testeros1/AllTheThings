@@ -308,6 +308,17 @@
 446902@@@Polly Roger
 3.4.3.54948
 440915@@@Auspicious Arborwyrm
+3.4.3.57082
+463045@@@Lava Drake
+3.4.3.57269
+466948@@@Chaos-Born Dreadwing
+466977@@@Chaos-Born Wind Rider
+466980@@@Chaos-Born Hippogryph
+466983@@@Chaos-Born Gryphon
+471440@@@Skybound Spectral Tiger
+3.4.3.58528
+473478@@@Sha-Touched Riding Tiger
+473487@@@Sha-Touched Cloud Serpent
 4.4.0.53627
 10790@@@Tiger
 13819@@@Summon Warhorse
@@ -1988,3 +1999,96 @@
 448979@@@Dauntless Imperial Lynx
 11.0.2.55789
 463025@@@Gigantic Grrloc
+11.0.2.56380
+448850@@@Kah, Legend of the Deep
+11.0.2.56625
+457485@@@Grizzly Hills Packmaster
+11.0.5.56487
+428013@@@Incognitro, the Indecipherable Felcycle
+428067@@@Hateforged Blazecycle
+431359@@@Soaring Sky Fox
+452643@@@Frayfeather Hippogryph
+452645@@@Amani Hunting Bear
+463133@@@Coldflame Tempest
+468353@@@Enchanted Spellweave Carpet
+11.0.5.57147
+449132@@@Blackrock Warsaber
+449142@@@Kaldorei War Wolf
+454682@@@Startouched Furline
+11.0.5.57292
+465235@@@Trader's Gilded Brutosaur
+466811@@@Chaos-Forged Gryphon
+466812@@@Chaos-Forged Hippogryph
+466838@@@Chaos-Forged Dreadwing
+466845@@@Chaos-Forged Wind Rider
+11.0.7.57361
+432562@@@Brilliant Sunburst Peafowl
+448934@@@Shadow of Doubt
+471538@@@Timely Buzzbee
+471562@@@Thrayir, Eyes of the Siren
+471696@@@Hooktalon
+472253@@@Lunar Launcher
+472479@@@Love Witch's Sweeper
+472487@@@[PH]
+472488@@@Twilight Witch's Sweeper
+472489@@@Sky Witch's Sweeper
+472752@@@The Breaker's Song
+473137@@@[PH] red surfboard
+473472@@@Jani's Trashpile
+473861@@@Savage Alabaster Battle Turtle
+474086@@@Prismatic Snapdragon
+11.0.7.57409
+472487@@@Silvermoon Sweeper
+473137@@@Soweezi's Vintage Waveshredder
+1214920@@@Nightfall Skyreaver
+1214940@@@Ur'zul Fleshripper
+1214946@@@Broodling of Sinestra
+1214974@@@Copper-Maned Quilen
+11.0.7.57641
+303767@@@Honeyback Hivemother
+11.0.7.58608
+459784@@@Golden Ashes of Al'ar
+468205@@@Timbered Sky Snake
+1216542@@@Blazing Royal Fire Hawk
+11.1.0.58221
+465999@@@Crimson Armored Growler
+466002@@@Violet Armored Growler
+466013@@@Ocher Delivery Rocket
+466016@@@The Topskimmer Special
+466019@@@Blackwater Shredder Deluxe Mk 2
+466020@@@Personalized Goblin S.C.R.A.Per
+466026@@@Salvaged Goblin Gazillionaire's Flying Machine
+466028@@@Mean Green Flying Machine
+466133@@@Delver's Gob-Trotter
+466144@@@Prized Gladiator's Fel Bat
+466145@@@Vicious Electro Eel
+466146@@@Vicious Electro Eel
+466423@@@Unstable Rocket
+466464@@@Unstable Rocket
+468068@@@Junkmaestro's Magnetomech
+473188@@@Bronze Goblin Wave Shredder
+1217235@@@Crimson Shreddertank
+1217340@@@Midnight Darkmoon Charger
+1217341@@@Lively Darkmoon Charger
+1217342@@@Violet Darkmoon Charger
+1217343@@@Snowy Darkmoon Charger
+1217760@@@The Big G
+1217965@@@Shimmermist Free Runner
+1217994@@@Pearlescent Butterfly
+1218012@@@Ruby Butterfly
+1218013@@@Spring Butterfly
+1218014@@@Midnight Butterfly
+1218069@@@Emerald Snail
+1221155@@@Prototype A.S.M.R.
+11.1.0.58626
+466001@@@Blackwater Bonecrusher
+466014@@@Steamwheedle Supplier
+466017@@@Innovation Investigator
+466018@@@Darkfuse Demolisher
+466021@@@Violet Goblin Shredder
+466022@@@Venture Co-ordinator
+466023@@@Asset Advocator
+466024@@@Bilgewater Bombardier
+466025@@@Margin Manipulator
+473188@@@Bronze Goblin Waveshredder
+1221694@@@Enterprising Shreddertank

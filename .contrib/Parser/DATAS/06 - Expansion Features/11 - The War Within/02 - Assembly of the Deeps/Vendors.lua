@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 --      E X P A N S I O N   F E A T U R E S    M O D U L E       --
 -------------------------------------------------------------------
-root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(THE_ASSEMBLY_OF_THE_DEEPS, {
 		n(VENDORS, {
 			n(221390, {	-- Waxmonger Squick <Quatermaster>
@@ -24,7 +24,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 						}),
 					}, {	-- RENOWN 4 --
 						i(224418, {	-- Recipe: Everything Stew (RECIPE!)
-							["cost"] = {{"i", ARTISANS_ACUITY, 150}},
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 1000}},
 						}),
 					}, {	-- RENOWN 5 --
 					}, {	-- RENOWN 6 --
@@ -36,7 +36,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 						i(223294, {	-- Noncandescent Smithing Hood
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
-						i(223295, {	-- Slag Accruing Mask
+						i(223295, {	-- Slag-Accruing Mask
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
 						i(223293, {	-- Unmelting Ironworker Helmet
@@ -82,7 +82,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 						i(223305, {	-- Noncandescent Smithing Cord
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
 						}),
-						i(223304, {	-- Slag Accruing Waistguard
+						i(223304, {	-- Slag-Accruing Waistguard
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
 						}),
 						i(223307, {	-- Unmelting Ironworker Clasp

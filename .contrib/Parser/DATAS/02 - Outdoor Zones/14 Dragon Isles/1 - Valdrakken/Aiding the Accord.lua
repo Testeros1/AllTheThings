@@ -47,40 +47,31 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(78446, {	-- Aiding the Accord: Superbloom
 					["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
 				}),
-				q(80388, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR } }, {	-- Last Hurrah: Emerald Dream
+				q(80388, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Last Hurrah: Emerald Dream
 					i(217111),	-- Cache of Awakened Dreams
-					i(218269, {	-- Draconic Tome of Awakening (RECIPE!)
-						["f"] = MISC,
-						["groups"] = {
-							r(429947),	-- Enchanted Aspect's Awakened Crest (RECIPE!)
-							r(429948),	-- Enchanted Whelpling's Awakened Crest (RECIPE!)
-							r(429945),	-- Enchanted Wyrm's Awakened Crest (RECIPE!)
-						},
-					}),
+					TempForceMisc(i(218269, {	-- Draconic Tome of Awakening (RECIPE!)
+						r(429947),	-- Enchanted Aspect's Awakened Crest (RECIPE!)
+						r(429948),	-- Enchanted Whelpling's Awakened Crest (RECIPE!)
+						r(429945),	-- Enchanted Wyrm's Awakened Crest (RECIPE!)
+					})),
 					i(211515),	-- Splintered Spark of Awakening
 				})),
-				q(80386, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR } }, {	-- Last Hurrah: Zaralek Caverns and Time Rifts
+				q(80386, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Last Hurrah: Zaralek Caverns and Time Rifts
 					i(217110),	-- Cache of Awakened Embers
-					i(218269, {	-- Draconic Tome of Awakening (RECIPE!)
-						["f"] = MISC,
-						["groups"] = {
-							r(429947),	-- Enchanted Aspect's Awakened Crest (RECIPE!)
-							r(429948),	-- Enchanted Whelpling's Awakened Crest (RECIPE!)
-							r(429945),	-- Enchanted Wyrm's Awakened Crest (RECIPE!)
-						},
-					}),
+					TempForceMisc(i(218269, {	-- Draconic Tome of Awakening (RECIPE!)
+						r(429947),	-- Enchanted Aspect's Awakened Crest (RECIPE!)
+						r(429948),	-- Enchanted Whelpling's Awakened Crest (RECIPE!)
+						r(429945),	-- Enchanted Wyrm's Awakened Crest (RECIPE!)
+					})),
 					i(211515),	-- Splintered Spark of Awakening
 				})),
-				q(80385, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR } }, {	-- Last Hurrah: Dragon Isles
+				q(80385, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Last Hurrah: Dragon Isles
 					i(217109),	-- Cache of Awakened Storms
-					i(218269, {	-- Draconic Tome of Awakening (RECIPE!)
-						["f"] = MISC,
-						["groups"] = {
-							r(429947),	-- Enchanted Aspect's Awakened Crest (RECIPE!)
-							r(429948),	-- Enchanted Whelpling's Awakened Crest (RECIPE!)
-							r(429945),	-- Enchanted Wyrm's Awakened Crest (RECIPE!)
-						},
-					}),
+					TempForceMisc(i(218269, {	-- Draconic Tome of Awakening (RECIPE!)
+						r(429947),	-- Enchanted Aspect's Awakened Crest (RECIPE!)
+						r(429948),	-- Enchanted Whelpling's Awakened Crest (RECIPE!)
+						r(429945),	-- Enchanted Wyrm's Awakened Crest (RECIPE!)
+					})),
 					i(211515),	-- Splintered Spark of Awakening
 				})),
 			})),
@@ -107,7 +98,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						},
 						{"select", "mapID",
 							DRAGON_ISLES,
-						--	THE_WAKING_SHORES,	-- Does not Reward Citadel Crusher/Obsidian Cosmetic Items 	March 2024
+						--	THE_WAKING_SHORES,	-- Does not Reward Citadel Crusher/Obsidian Cosmetic Items	March 2024
 						--	OHNAHRAN_PLAINS,	-- Does not Reward Nokhud Cosmetic Items					March 2024
 						--	THE_AZURE_SPAN,		-- Does not Reward Brackenhide Cosmetic Items				March 2024
 						--	THALDRASZUS,		-- Does Reward Tyrhold Cosmetic Items, manually added above.March 2024
@@ -148,21 +139,24 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(VALDRAKKEN, {
-		q(71243),	-- Weekly Quest?
-		q(72892),	-- After "Aiding the Accord" series
-		q(75260),	-- After "Aiding the Accord" series
-		q(75862),	-- Aiding the Accord - Researchers - Quest Complete (spellID 410069)
-		q(75864),	-- Aiding the Accord - Suffusion - Quest Complete (spellID 410068)
-		q(75863),	-- Aiding the Accord - Cave - Quest Complete (spellID 410067)
-		q(77253),	-- Aiding the Accord - Time Rifts - Quest Complete (spellID 417862)
-		q(77979),	-- Aiding the Accord - Dreamsurge - Quest Complete (spellID 421947)
-		q(78450),	-- Aiding the Accord - Emerald Bounty - Quest Complete (spellID 426078)
-		q(78861),	-- Aiding the Accord - Emerald Bounty
-		q(78449),	-- Aiding the Accord - Superbloom - Quest Complete (spellID 426077)
-		
-		q(80389),	-- (probably) upon completion "Last Hurrah" series
-		q(79073),	-- Triggers with QuestID 80389 and the other "Last Hurrah" quests
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(VALDRAKKEN, {
+			n(QUESTS, {
+				q(71243),	-- Weekly Quest?
+				q(72892),	-- After "Aiding the Accord" series
+				q(75260),	-- After "Aiding the Accord" series
+				q(75862, {["timeline"] = {ADDED_10_1_0}}),	-- Aiding the Accord - Researchers - Quest Complete (spellID 410069)
+				q(75864, {["timeline"] = {ADDED_10_1_0}}),	-- Aiding the Accord - Suffusion - Quest Complete (spellID 410068)
+				q(75863, {["timeline"] = {ADDED_10_1_0}}),	-- Aiding the Accord - Cave - Quest Complete (spellID 410067)
+				q(77253, {["timeline"] = {ADDED_10_1_5}}),	-- Aiding the Accord - Time Rifts - Quest Complete (spellID 417862)
+				q(77979, {["timeline"] = {ADDED_10_1_7}}),	-- Aiding the Accord - Dreamsurge - Quest Complete (spellID 421947)
+				q(78450, {["timeline"] = {ADDED_10_2_0}}),	-- Aiding the Accord - Emerald Bounty - Quest Complete (spellID 426078)
+				q(78861, {["timeline"] = {ADDED_10_2_0}}),	-- Aiding the Accord - Emerald Bounty
+				q(78449, {["timeline"] = {ADDED_10_2_0}}),	-- Aiding the Accord - Superbloom - Quest Complete (spellID 426077)
+				q(80389, {["timeline"] = {ADDED_10_2_6_SEASON_FOUR}}),	-- (probably) upon completion "Last Hurrah" series
+				q(79073, {["timeline"] = {ADDED_10_2_6_SEASON_FOUR}}),	-- Triggers with QuestID 80389 and the other "Last Hurrah" quests
+			}),
+		}),
 	}),
-}));
+})));

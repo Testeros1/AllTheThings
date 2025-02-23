@@ -90,7 +90,6 @@ root("Achievements", {
 				940,	-- The Green Hills of Stranglethorn
 			}},
 			-- #else
-			["description"] = "Complete the Green Hills of Stranglethorn, Hills Like White Elekk and Snows of Northrend achievements.",
 			["OnClick"] = [[_.CommonAchievementHandlers.META_OnClick]],
 			["OnTooltip"] = [[_.CommonAchievementHandlers.META_OnTooltip]],
 			["OnUpdate"] = [[function(t) return _.CommonAchievementHandlers.META_OnUpdate(t, 939, 938, 940); end]],
@@ -244,7 +243,6 @@ root("Achievements", {
 				841,	-- Explore Wetlands
 			}},
 			-- #else
-			["description"] = "Explore the regions of Eastern Kingdoms.",
 			["OnClick"] = [[_.CommonAchievementHandlers.META_OnClick]],
 			["OnTooltip"] = [[_.CommonAchievementHandlers.META_OnTooltip]],
 			["OnUpdate"] = [[function(t) return _.CommonAchievementHandlers.META_ACHCAT_OnUpdate(t, ]] .. ACHIEVEMENT_CATEGORY_EASTERN_KINGDOMS_EXP .. [[); end]],
@@ -284,7 +282,6 @@ root("Achievements", {
 				857,	-- Explore Winterspring
 			}},
 			-- #else
-			["description"] = "Explore the regions of Kalimdor.",
 			["OnClick"] = [[_.CommonAchievementHandlers.META_OnClick]],
 			["OnTooltip"] = [[_.CommonAchievementHandlers.META_OnTooltip]],
 			["OnUpdate"] = [[function(t) return _.CommonAchievementHandlers.META_ACHCAT_OnUpdate(t, ]] .. ACHIEVEMENT_CATEGORY_KALIMDOR_EXP .. [[); end]],
@@ -321,7 +318,6 @@ root("Achievements", {
 				863,	-- Explore Zangarmarsh
 			}},
 			-- #else
-			["description"] = "Explore the regions of Outland.",
 			["OnClick"] = [[_.CommonAchievementHandlers.META_OnClick]],
 			["OnTooltip"] = [[_.CommonAchievementHandlers.META_OnTooltip]],
 			["OnUpdate"] = [[function(t) return _.CommonAchievementHandlers.META_ACHCAT_OnUpdate(t, ]] .. ACHIEVEMENT_CATEGORY_OUTLAND_EXP .. [[); end]],
@@ -425,9 +421,6 @@ root("Achievements", {
 		})),
 	})),
 	achcat(ACHIEVEMENT_CATEGORY_DUNGEONS_AND_RAIDS, {
-		applyclassicphase(WRATH_PHASE_ONE, ach(1658, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_2 } }, {	-- Champion of the Frozen Wastes
-			title(97),	-- , Champion of the Frozen Wastes
-		}))),
 		ach(1283, {	-- Classic Dungeonmaster
 			-- Meta Achievement
 			["sym"] = {{"meta_achievement",
@@ -463,116 +456,6 @@ root("Achievements", {
 			}},
 			["timeline"] = { ADDED_3_0_2 },
 		}),
-		-- #if ANYCLASSIC
-		applyclassicphase(WRATH_PHASE_TWO, ach(17304, {	-- Defense Protocol Alpha: Terminated
-			-- Meta Achievement
-			["sym"] = {{"meta_achievement",
-				17291,	-- Defense Protocol Alpha: Ahn'kahet: The Old Kingdom
-				17285,	-- Defense Protocol Alpha: Azjol-Nerub
-				17292,	-- Defense Protocol Alpha: Drak'Tharon Keep
-				17295,	-- Defense Protocol Alpha: Gundrak
-				17299,	-- Defense Protocol Alpha: Halls of Lightning
-				17297,	-- Defense Protocol Alpha: Halls of Stone
-				17302,	-- Defense Protocol Alpha: The Culling of Stratholme
-				17283,	-- Defense Protocol Alpha: The Nexus
-				17300,	-- Defense Protocol Alpha: The Oculus
-				17293,	-- Defense Protocol Alpha: The Violet Hold
-				17213,	-- Defense Protocol Alpha: Utgarde Keep
-				17301,	-- Defense Protocol Alpha: Utgarde Pinnacle
-			}},
-			["timeline"] = { ADDED_3_0_2 },
-		})),
-		applyclassicphase(WRATH_PHASE_THREE, ach(18614, {	-- Defense Protocol Beta: Terminated (A)
-			-- Meta Achievement
-			["sym"] = {{"meta_achievement",
-				18593,	-- Defense Protocol Beta: Ahn'kahet: The Old Kingdom
-				18592,	-- Defense Protocol Beta: Azjol-Nerub
-				18594,	-- Defense Protocol Beta: Drak'Tharon Keep
-				18596,	-- Defense Protocol Beta: Gundrak
-				18598,	-- Defense Protocol Beta: Halls of Lightning
-				18597,	-- Defense Protocol Beta: Halls of Stone
-				18601,	-- Defense Protocol Beta: The Culling of Stratholme
-				18591,	-- Defense Protocol Beta: The Nexus
-				18599,	-- Defense Protocol Beta: The Oculus
-				18595,	-- Defense Protocol Beta: The Violet Hold
-				18677,	-- Defense Protocol Beta: Trial of the Champion (A)
-				18590,	-- Defense Protocol Beta: Utgarde Keep
-				18600,	-- Defense Protocol Beta: Utgarde Pinnacle
-			}},
-			["timeline"] = { ADDED_3_0_2 },
-			["races"] = ALLIANCE_ONLY,
-		})),
-		applyclassicphase(WRATH_PHASE_THREE, ach(18688, {	-- Defense Protocol Beta: Terminated (H)
-			-- Meta Achievement
-			["sym"] = {{"meta_achievement",
-				18593,	-- Defense Protocol Beta: Ahn'kahet: The Old Kingdom
-				18592,	-- Defense Protocol Beta: Azjol-Nerub
-				18594,	-- Defense Protocol Beta: Drak'Tharon Keep
-				18596,	-- Defense Protocol Beta: Gundrak
-				18598,	-- Defense Protocol Beta: Halls of Lightning
-				18597,	-- Defense Protocol Beta: Halls of Stone
-				18601,	-- Defense Protocol Beta: The Culling of Stratholme
-				18591,	-- Defense Protocol Beta: The Nexus
-				18599,	-- Defense Protocol Beta: The Oculus
-				18595,	-- Defense Protocol Beta: The Violet Hold
-				18678,	-- Defense Protocol Beta: Trial of the Champion (H)
-				18590,	-- Defense Protocol Beta: Utgarde Keep
-				18600,	-- Defense Protocol Beta: Utgarde Pinnacle
-			}},
-			["timeline"] = { ADDED_3_0_2 },
-			["races"] = HORDE_ONLY,
-		})),
-		applyclassicphase(WRATH_PHASE_FOUR, ach(19439, {	-- Defense Protocol Gamma: Terminated (A)
-			-- Meta Achievement
-			["sym"] = {{"meta_achievement",
-				19430,	-- Defense Protocol Gamma: Ahn'kahet: The Old Kingdom
-				19429,	-- Defense Protocol Gamma: Azjol-Nerub
-				19431,	-- Defense Protocol Gamma: Drak'Tharon Keep
-				19433,	-- Defense Protocol Gamma: Gundrak
-				19435,	-- Defense Protocol Gamma: Halls of Lightning
-				19434,	-- Defense Protocol Gamma: Halls of Stone
-				19438,	-- Defense Protocol Gamma: The Culling of Stratholme
-				19428,	-- Defense Protocol Gamma: The Nexus
-				19436,	-- Defense Protocol Gamma: The Oculus
-				19432,	-- Defense Protocol Gamma: The Violet Hold
-				19426,	-- Defense Protocol Gamma: Trial of the Champion (A)
-				19427,	-- Defense Protocol Gamma: Utgarde Keep
-				19437,	-- Defense Protocol Gamma: Utgarde Pinnacle
-			}},
-			["timeline"] = { ADDED_3_0_2 },
-			["races"] = ALLIANCE_ONLY,
-			["groups"] = {
-				i(211082, {	-- Arfus
-					["timeline"] = { ADDED_3_4_3 },
-				}),
-			},
-		})),
-		applyclassicphase(WRATH_PHASE_FOUR, ach(19440, {	-- Defense Protocol Gamma: Terminated (H)
-			-- Meta Achievement
-			["sym"] = {{"meta_achievement",
-				19430,	-- Defense Protocol Gamma: Ahn'kahet: The Old Kingdom
-				19429,	-- Defense Protocol Gamma: Azjol-Nerub
-				19431,	-- Defense Protocol Gamma: Drak'Tharon Keep
-				19433,	-- Defense Protocol Gamma: Gundrak
-				19435,	-- Defense Protocol Gamma: Halls of Lightning
-				19434,	-- Defense Protocol Gamma: Halls of Stone
-				19438,	-- Defense Protocol Gamma: The Culling of Stratholme
-				19428,	-- Defense Protocol Gamma: The Nexus
-				19436,	-- Defense Protocol Gamma: The Oculus
-				19432,	-- Defense Protocol Gamma: The Violet Hold
-				19425,	-- Defense Protocol Gamma: Trial of the Champion (H)
-				19427,	-- Defense Protocol Gamma: Utgarde Keep
-				19437,	-- Defense Protocol Gamma: Utgarde Pinnacle
-			}},
-			["timeline"] = { ADDED_3_0_2 },
-			["races"] = HORDE_ONLY,
-			["groups"] = {
-				i(211082, {	-- Arfus
-					["timeline"] = { ADDED_3_4_3 },
-				}),
-			},
-		})),
-		-- #endif
 		applyclassicphase(WRATH_PHASE_ONE, ach(2136, {	-- Glory of the Hero
 			-- Meta Achievement
 			["sym"] = {{"meta_achievement",
@@ -1009,6 +892,18 @@ root("Achievements", {
 		}),
 	}),
 	-- #if AFTER 4.2.0
+	-- #if ANYCLASSIC
+	achcat(ACHIEVEMENT_CATEGORY_CHARACTER, {
+		petbattle(ach(5875, {	-- Littlest Pet Shop (150)
+			["timeline"] = { ADDED_4_4_0 },
+			["groups"] = {
+				i(54810, {	-- Celestial Dragon (PET!)
+					["timeline"] = { CREATED_3_4_0, ADDED_4_4_0 },
+				}),
+			},
+		})),
+	}),
+	-- #else
 	achcat(ACHIEVEMENT_CATEGORY_PET_BATTLES, {
 		petbattle(ach(5875, {	-- Littlest Pet Shop (150)
 			["timeline"] = { ADDED_4_2_0 },
@@ -1019,6 +914,7 @@ root("Achievements", {
 			},
 		})),
 	}),
+	-- #endif 
 	-- #endif
 });
 

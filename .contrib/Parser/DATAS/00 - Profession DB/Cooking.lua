@@ -849,6 +849,17 @@ i(210242, 416001);	-- Slumbering Peacebloom Tea
 i(210496, 0);		-- Slumbering Peacebloom Tea
 
 ------------------
+-- PATCH 11.0.0 --
+------------------
+--- NYI ---
+i(0, 445478);		-- Blessing Blossom Tea
+i(0, 445477);		-- Luminous Lemonade
+i(0, 445481);		-- Tasty Pocket Tart
+i(0, 445114);		-- Village Potluck
+i(224419, 0);		-- Recipe: Jester's Board
+i(223959, 0);		-- Recipe: Secret Sauce
+
+------------------
 -- PATCH 11.0.2 --
 ------------------
 --- TRAINER ---
@@ -874,7 +885,6 @@ i(0, 445086);		-- Pan-Seared Mycobloom
 i(0, 445118);		-- Portioned Steak
 i(0, 445091);		-- Rib Stickers
 i(0, 445085);		-- Roasted Mycobloom
-i(0, 445482);		-- Rockslide Shake
 i(0, 445102);		-- Salt Baked Seafood
 i(0, 445097);		-- Salty Dog
 i(0, 445083);		-- Simple Stew
@@ -893,7 +903,7 @@ i(223961, 447875);	-- Azj-Kahet Special
 i(225894, 445108);	-- Beledar's Bounty
 i(228424, 445479);	-- Cinder Nectar
 i(224152, 445109);	-- Empress' Farewell
-i(223956, 447870);	-- Everything-On-A-Stick
+i(223956, 447870);	-- Everything-on-a-Stick
 i(224418, 445115);	-- Everything Stew
 i(225639, 455424);	-- Exquisitely Eviscerated Muscle
 i(227283, 445112);	-- Feast of the Divine Day
@@ -905,15 +915,8 @@ i(228421, 445484);	-- Melted Candlebar
 i(226177, 445111);	-- Outsider's Provisions
 i(228423, 445480);	-- Pep-In-Your-Step
 i(223957, 447871);	-- Protein Slurp
+i(225892, 445482);	-- Rockslide Shake
 i(223958, 447872);	-- Spongey Scramble
 i(226190, 445483);	-- Sticky Sweet Treat
 --- DISCOVERY ---
 i(0, 447873);		-- Secret Sauce
---- Unsorted ---
-i(0, 445481);		-- Tasty Pocket Tart
---- NYI ---
-i(0, 445478);		-- Blessing Blossom Tea
-i(0, 445477);		-- Luminous Lemonade
-i(0, 445114);		-- Village Potluck
-i(224419, 0);		-- Recipe: Jester's Board
-i(223959, 0);		-- Recipe: Secret Sauce

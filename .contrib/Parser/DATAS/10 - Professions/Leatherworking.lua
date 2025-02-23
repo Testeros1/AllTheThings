@@ -19,8 +19,8 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 			crit(61204, {	-- Stitch a Magnificent Hide Pack
 				["provider"] = { "i", 95536 },	-- Stitch a Magnificent Hide Pack
 			}),
-			crit(61207, {	-- 	Eat Dirge's Kickin' Chimaerok Chops
-				["provider"] = { "i", 21023 },	-- 	Eat Dirge's Kickin' Chimaerok Chops
+			crit(61207, {	-- Eat Dirge's Kickin' Chimaerok Chops
+				["provider"] = { "i", 21023 },	-- Eat Dirge's Kickin' Chimaerok Chops
 			}),
 			crit(61205),	-- Fish in any school of fish
 			crit(61206, {	-- Take a S.E.L.F.I.E.
@@ -87,7 +87,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				crit(61658, {	-- Gordok Ogre Suit shamelessly crafted
 					["provider"] = { "i", 18258 },	-- Gordok Ogre Suit
 				}),
-				crit(61659, {	-- 	Gordok Ogre Suit donned
+				crit(61659, {	-- Gordok Ogre Suit donned
 					["provider"] = { "i", 18258 },	-- Gordok Ogre Suit
 				}),
 			})),
@@ -253,7 +253,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 	})),
 	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 		n(QUESTS, {
-			q(39958,  {	-- Skin Deep
+			q(39958, {	-- Skin Deep
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
 				["_drop"] = { "g" },
@@ -274,7 +274,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					r(330215, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past V [Legion]
 				},
 			}),
-			q(40183,  {	-- Over Your Head
+			q(40183, {	-- Over Your Head
 				["sourceQuests"] = { 39958 },	-- Skin Deep
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -295,18 +295,18 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(130870),	-- Tanned Stonehide Leather (QI!)
 				},
 			}),
-			q(40196,  {	-- Adventuring Anxieties
+			q(40196, {	-- Adventuring Anxieties
 				["sourceQuests"] = { 40183 },	-- Over Your Head
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
 			}),
-			q(40197,  {	-- The Necessary Materials
+			q(40197, {	-- The Necessary Materials
 				["sourceQuests"] = { 40196 },	-- Adventuring Anxieties
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
 				["cost"] = {{"i", 124113, 100 }},	-- 100x Stonehide Leather
 			}),
-			q(41889,  {	-- Dazed of the Past
+			q(41889, {	-- Dazed of the Past
 				["sourceQuests"] = { 40197 },	-- The Necessary Materials
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -338,7 +338,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
 				["races"] = HORDE_ONLY,
 			}),
-			q(40201,  {	-- Playthings
+			q(40201, {	-- Playthings
 				["sourceQuests"] = {
 					40200,	-- Battle Bonds [A]
 					40241,	-- Battle Bonds [H]
@@ -359,7 +359,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(130870),	-- Tanned Stonehide Leather (QI!)
 				},
 			}),
-			q(40180,  {	-- Mail Men
+			q(40180, {	-- Mail Men
 				["sourceQuests"] = { 40183 },	-- Over Your Head
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -369,7 +369,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
 			}),
-			q(40179,  {	-- Stormheim Savagery
+			q(40179, {	-- Stormheim Savagery
 				["sourceQuests"] = { 40177 },	-- Leather Lady
 				["provider"] = { "n", 93522 },	-- Diane Cannings
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -379,7 +379,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(129972),	-- Vrykul Leather Binding (QI!)
 				},
 			}),
-			q(40178,  {	-- Vestment Opportunity
+			q(40178, {	-- Vestment Opportunity
 				["sourceQuests"] = { 40177 },	-- Leather Lady
 				["provider"] = { "n", 93522 },	-- Diane Cannings
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -388,7 +388,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(129971),	-- Hideshaper's Vestment (QI!)
 				},
 			}),
-			q(40181,  {	-- Black Rook Bandit
+			q(40181, {	-- Black Rook Bandit
 				["sourceQuests"] = { 40180 },	-- Mail Men
 				["provider"] = { "n", 98931 },	-- Thanid Glowergold
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -398,7 +398,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(129973),	-- Black Rook Armor (QI!)
 				},
 			}),
-			q(40182,  {	-- Too Good To Pass Up
+			q(40182, {	-- Too Good To Pass Up
 				["sourceQuests"] = { 40180 },	-- Mail Men
 				["provider"] = { "n", 98931 },	-- Thanid Glowergold
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -407,11 +407,11 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(129974),	-- Black Rook Hauberk (QI!)
 				},
 			}),
-			q(40176,  {	-- From Head to Toe
+			q(40176, {	-- From Head to Toe
 				["sourceQuests"] = {
 					40179,	-- Stormheim Savagery
-					40181,  -- Black Rook Bandit
-					40182,  -- Too Good To Pass Up
+					40181,	-- Black Rook Bandit
+					40182,	-- Too Good To Pass Up
 				},
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -430,12 +430,12 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(130870),	-- Tanned Stonehide Leather (QI!)
 				},
 			}),
-			q(40187,  {	-- Links in the Chain
+			q(40187, {	-- Links in the Chain
 				["sourceQuests"] = { 40176 },	-- From Head to Toe
 				["provider"] = { "n", 98931 },	-- Thanid Glowergold
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
 			}),
-			q(40184,  {	-- Tauren Tanning
+			q(40184, {	-- Tauren Tanning
 				["sourceQuests"] = { 40176 },	-- From Head to Toe
 				["provider"] = { "n", 93522 },	-- Diane Cannings
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -458,10 +458,10 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(129976),	-- Lohrumn's Shoulderguard (QI!)
 				},
 			}),
-			q(40190,  {	-- Hardening the Hide
+			q(40190, {	-- Hardening the Hide
 				["sourceQuests"] = {
-					40185,  -- Shoulder the Burden
-					40186,  -- Drogbar Durability
+					40185,	-- Shoulder the Burden
+					40186,	-- Drogbar Durability
 				},
 				["provider"] = { "n", 93522 },	-- Diane Cannings
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -503,7 +503,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(129980),	-- Naga Shoulderguard (QI!)
 				},
 			}),
-			q(40193,  {	-- Getting the Kinks Out
+			q(40193, {	-- Getting the Kinks Out
 				["sourceQuests"] = { 40189 },	-- Naga Know-How
 				["provider"] = { "n", 98931 },	-- Thanid Glowergold
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -549,7 +549,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(130078),	-- Leatherworking Pattern Scrap (QI!)
 				},
 			}),
-			q(40199,  {	-- Leather Legwork
+			q(40199, {	-- Leather Legwork
 				["sourceQuests"] = { 40198 },	-- Rats!
 				["provider"] = { "n", 98931 },	-- Thanid Glowergold
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -560,7 +560,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(130081),	-- Crowbar (QI!)
 				},
 			}),
-			q(40202,  {	-- The Final Lessons
+			q(40202, {	-- The Final Lessons
 				["sourceQuests"] = { 40199 },	-- Leather Legwork
 				["provider"] = { "n", 93522 },	-- Diane Cannings
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -600,7 +600,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["provider"] = { "n", 98948 },	-- Hrul Sharphoof
 				["coord"] = { 36.8, 78.2, 750 },
 			}),
-			q(40206,  {	-- A Debt Paid
+			q(40206, {	-- A Debt Paid
 				["sourceQuests"] = { 40199 },	-- Leather Legwork
 				["provider"] = { "n", 98931 },	-- Thanid Glowergold
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -642,7 +642,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["provider"] = { "n", 98964 },	-- Celea
 				["coord"] = { 47.4, 44.2, AZSUNA },
 			}),
-			q(40211,  {	-- Demon Flesh
+			q(40211, {	-- Demon Flesh
 				["sourceQuests"] = {
 					40415,	-- Well Spent Time
 					40210,	-- Time Well Spent
@@ -681,7 +681,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					i(130879),	-- Tanned Fel Leather (QI!)
 				},
 			}),
-			q(40215,  {	-- Mounting Made Easy
+			q(40215, {	-- Mounting Made Easy
 				["sourceQuests"] = { 40214 },	-- Fel Tanning
 				["provider"] = { "n", 93523 },	-- Namha Moonwater
 				["coord"] = { 35.4, 29.6, LEGION_DALARAN },
@@ -704,6 +704,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["repeatable"] = true,
 				["g"] = {
 					i(146693),	-- Ancient Dreadleather (QI!)
+					i(146692),	-- Ancient Dreadleather Armor (QI!)
 				},
 			})),
 			q(46687, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- The Wisp and the Nightmare
@@ -714,6 +715,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["repeatable"] = true,
 				["g"] = {
 					i(146691),	-- Immaculate Spellsash (QI!)
+					i(146690);	-- Xavius' Torn Spellsash (QI!)
 				},
 			})),
 			q(46686, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- The Wisp and the Sea
@@ -724,6 +726,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["repeatable"] = true,
 				["g"] = {
 					i(146689),	-- Oiled Handmaiden's Gloves (QI!)
+					i(146688),	-- Waterlogged Handmaiden's Gloves (QI!)
 				},
 			})),
 			q(46685, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- The Wisp and the Shadow
@@ -733,6 +736,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["maps"] = { 733 },	-- Darkheart Thicket
 				["repeatable"] = true,
 				["g"] = {
+					i(146686),	-- Colorless Shroud of Xavius (QI!)
 					i(146687),	-- Dyed Shroud of Xavius (QI!)
 				},
 			})),
@@ -747,9 +751,9 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["coord"] = { 41.1, 59.3, BROKEN_SHORE },
 				["repeatable"] = true,
 				["g"] = {
-					i(146712),	-- Wisp-Touched Elderhide
 					i(147438),	-- Bag of Wisp-Touched Elderhide (QI!)
 					i(146977),	-- Legendary Tanner's Kit (QI!)
+					i(146712),	-- Wisp-Touched Elderhide
 				},
 			})),
 			-- Vigilance Perch Questline
@@ -759,6 +763,10 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["coord"] = { 41.2, 59.4, BROKEN_SHORE },
 				["repeatable"] = true,
 				["timeline"] = { ADDED_7_2_0 },
+				["g"] = {
+					i(147116),	-- Captured Spirit of the Father of Owls (QI!)
+					i(147075),	-- Spirit Net (QI!)
+				}
 			}),
 			q(46694, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- Mail of the Ancients
 				["sourceQuests"] = { 46690 },	-- The Legend of the Wardenscale
@@ -767,6 +775,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["repeatable"] = true,
 				["g"] = {
 					i(146701),	-- Ancient Gravenscale (QI!)
+					i(146700),	-- Ancient Gravenscale Armor (QI!)
 				},
 			})),
 			q(46692, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- The Owl and the Dreadlord
@@ -777,6 +786,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["repeatable"] = true,
 				["g"] = {
 					i(146697),	-- Refinished Legplates of Mephistroth (QI!)
+					i(146696),	-- Rusted Legplates of Mephistroth (QI!)
 				},
 			})),
 			q(46693, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- The Owl and the Observer
@@ -787,6 +797,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["repeatable"] = true,
 				["g"] = {
 					i(146699),	-- Gleaming Bracers of the First War (QI!)
+					i(146698),	-- Torn Bracers of the First War (QI!)
 				},
 			})),
 			q(46691, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {	-- The Owl and the Traitor
@@ -796,6 +807,7 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["maps"] = { 710, 711, 712, },	-- Vault of the Wardens
 				["repeatable"] = true,
 				["g"] = {
+					i(146694),	-- Chipped Felsong Mantle (QI!)
 					i(146695),	-- Immaculate Felsong Mantle (QI!)
 				},
 			})),
@@ -810,9 +822,9 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				["coord"] = { 41.1, 59.3, BROKEN_SHORE },
 				["repeatable"] = true,
 				["g"] = {
-					i(146713),	-- Prime Wardenscale
 					i(147439),	-- Box of Completed Prime Wardenscale (QI!)
 					i(147209),	-- Legendary Wardenscale Supplies (QI!)
+					i(146713),	-- Prime Wardenscale
 				},
 			})),
 			-- 7.3.0
@@ -825,10 +837,10 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					{ "i", 151567, 12 },	-- 12x Lightweave Cloth
 				},
 				["g"] = {
+					i(151880),	-- Enstraa's Tanning Oil (QI!)
 					i(151740),	-- Pattern: Fiendish Shoulderguards [Rank 1] (RECIPE!)
 					i(151743),	-- Pattern: Fiendish Spaulders [Rank 1] (RECIPE!)
-					i(151880),	-- Enstraa's Tanning Oil
-					i(151879),	-- Purified Fiendish Leather
+					i(151879),	-- Purified Fiendish Leather (QI!)
 				},
 			})),
 		}),
@@ -1301,21 +1313,21 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 			},
 		},{
 			i(198613),	-- Leatherworking Designs
-			q(74113, {	-- Inscription Order: Leatherworking
-				["name"] = "Inscription Order: Leatherworking",
+			q(74113, {	-- DF Inscription Order: Leatherworking
+				["name"] = "DF Inscription Order: Leatherworking",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194700 },	-- Draconic Treatise on Leatherworking
 			}),
-			q(66384, {	-- Weekly Leatherworking Knowledgepoint #1
-				["name"] = "Leatherworking Treasure #1",
+			q(66384, {	-- DF Weekly Leatherworking Knowledgepoint #1
+				["name"] = "DF Leatherworking Treasure #1",
 				["provider"] = { "i", 193910 },		-- Molten Dragon Scales
 			}),
-			q(66385, {	-- Weekly Leatherworking Knowledgepoint #2
-				["name"] = "Leatherworking Treasure #2",
+			q(66385, {	-- DF Weekly Leatherworking Knowledgepoint #2
+				["name"] = "DF Leatherworking Treasure #2",
 				["provider"] = { "i", 193913 },		-- Preserved Animal Parts
 			}),
-			q(70522, {	-- Weekly Leatherworking Knowledgepoint #3
-				["name"] = "Leatherworking Drop #1: Proto Drake",
+			q(70522, {	-- DF Weekly Leatherworking Knowledgepoint #3
+				["name"] = "DF Leatherworking Drop #1: Proto Drake",
 				["description"] = "Drops from any Proto Drake.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					196420,	-- Cavern Hunter (Thaldraszus)
@@ -1327,8 +1339,8 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 					{ 79.4, 32.5, THE_WAKING_SHORES },
 				},
 			}),
-			q(70523, {	-- Weekly Leatherworking Knowledgepoint #4
-				["name"] = "Leatherworking Drop #2: Sylvern&Vorquin",
+			q(70523, {	-- DF Weekly Leatherworking Knowledgepoint #4
+				["name"] = "DF Leatherworking Drop #2: Sylvern&Vorquin",
 				["description"] = "Drops from any Sylvern or Vorquin.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					188277,	-- Garden Herdmare
@@ -1346,6 +1358,18 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(228778),	-- Algari Leatherworker's Journal
+			},
+		},{
+			q(84131, {	-- Leatherworking Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
+			}),
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_LEATHERWORKING_KNOWLEDGE, 1 }} }, {
@@ -1387,28 +1411,28 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 				},
 			}),
 			o(455962, {	-- Curved Nerubian Skinning Knife
-				["coord"] = { 60.2, 57.5, AZJ_KAHET },
+				["coord"] = { 59.9, 54.0, AZJ_KAHET },
 				["questID"] = 83905,
 				["g"] = {
 					i(226331),	-- Curved Nerubian Skinning Knife
 				},
 			}),
 			o(455968, {	-- Dornogal Craftsman's Flat Knife
-				["coord"] = { 47.3, 28.3, THE_RINGING_DEEPS },
+				["coord"] = { 58.6, 30.7, ISLE_OF_DORN },
 				["questID"] = 83899,
 				["g"] = {
 					i(226325),	-- Dornogal Craftsman's Flat Knife
 				},
 			}),
 			o(455966, {	-- Earthen Awl
-				["coord"] = { 64.3, 66.3, THE_RINGING_DEEPS },
+				["coord"] = { 64.3, 65.2, THE_RINGING_DEEPS },
 				["questID"] = 83901,
 				["g"] = {
 					i(226327),	-- Earthen Awl
 				},
 			}),
 			o(455969, {	-- Earthen Lacing Tools
-				["coord"] = { 54.3, 59.6, DORNOGAL },
+				["coord"] = { 68.2, 23.3, DORNOGAL },	-- TODO: re-check mapID
 				["questID"] = 83898,
 				["g"] = {
 					i(226324),	-- Earthen Lacing Tools
@@ -1436,17 +1460,12 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 			},
 		},{
 			--i(),	-- Leatherworking Designs
-			q(83732, {	-- Inscription Order: Leatherworking
-				["name"] = "Inscription Order: Leatherworking",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222549 },	-- Algari Treatise on Leatherworking
-			}),
-			q(83267, {	-- Weekly Leatherworking Knowledgepoint #1
-				["name"] = "TWW: Leatherworking Treasure #1",
+			q(83267, {	-- TWW Weekly Leatherworking Knowledgepoint #1
+				["name"] = "TWW Weekly Leatherworking Treasure #1",
 				["provider"] = { "i", 225223 },		-- Sturdy Nerubian Carapace
 			}),
-			q(83268, {	-- Weekly Leatherworking Knowledgepoint #2
-				["name"] = "TWW: Leatherworking Treasure #2",
+			q(83268, {	-- TWW Weekly Leatherworking Knowledgepoint #2
+				["name"] = "TWW Weekly Leatherworking Treasure #2",
 				["provider"] = { "i", 225222 },		-- Studded Leather Band
 			}),
 		})),
@@ -1454,17 +1473,21 @@ root(ROOTS.Professions, prof(LEATHERWORKING, bubbleDownSelf({ ["requireSkill"] =
 })));
 
 root(ROOTS.HiddenQuestTriggers, {
-	n(PROFESSIONS, {
-		prof(LEATHERWORKING, {
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+		n(PROFESSIONS, {
+			prof(LEATHERWORKING, {
 				q(47094),	-- Broken Shore - Choice: Leatherworking (L) - triggers when you choose to craft the leather legendary at Eliezer Hammerbeard (Nether Disruptor)
 				q(47095),	-- Broken Shore - Choice: Leatherworking (M) - triggers when you choose to craft the mail legendary at Eliezer Hammerbeard (Nether Disruptor)
-			})),
-			expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {
-				q(55628),	-- Tracking Quest - 15 minutes timer for recieving 'Spirit of the Bested' from other rare kill again (itemID 168138) (resets every 00,15,30,45 minut of hour)
-			}))
+			}),
 		}),
-	}),
+	})),
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {
+		n(PROFESSIONS, {
+			prof(LEATHERWORKING, {
+				q(55628),	-- Tracking Quest - 15 minutes timer for recieving 'Spirit of the Bested' from other rare kill again (itemID 168138) (resets every 00,15,30,45 minut of hour)
+			}),
+		}),
+	})),
 });
 
 -- #if ANYCLASSIC
@@ -1474,6 +1497,67 @@ local applytraining = function(g)
 	bubbleDown({ ["u"] = TRAINING }, g);	-- Training Recipes / Unlearnable
 	-- #endif
 	return g;
+end
+
+-- Bloodied Crafted Gear was added with Cataclysm and then removed from the game after Firelands was released.
+-- #if ANYCLASSIC
+local BLOODIED_ONUPDATE = [[function(t)
+	if _.Settings:GetUnobtainableFilter(]] .. CATA_PHASE_RAGE_OF_THE_FIRELANDS .. [[) then
+		t.u = ]] .. REMOVED_FROM_GAME .. [[;
+		t.rwp = nil;
+	else
+		t.u = ]] .. CATA_PHASE_ONE .. [[;
+		t.rwp = 40200;
+	end
+end]];
+-- #endif
+local function bloodied(t)
+	-- #if CATA
+	t.timeline = { ADDED_4_0_3_LAUNCH, REMOVED_5_0_4 };
+		-- #if ANYCLASSIC
+		t.OnUpdate = BLOODIED_ONUPDATE;
+		-- #endif
+	-- #else
+	t.timeline = { ADDED_4_0_3_LAUNCH, REMOVED_4_2_0 };
+	-- #endif
+	return t;
+end
+
+-- Bloodthirsty Crafted Gear was added with Firelands and then removed from the game after Dragon Soul was released.
+-- #if ANYCLASSIC
+local BLOODTHIRSTY_ONUPDATE = [[function(t)
+	if _.Settings:GetUnobtainableFilter(]] .. CATA_PHASE_HOUR_OF_TWILIGHT .. [[) then
+		t.u = ]] .. REMOVED_FROM_GAME .. [[;
+		t.rwp = nil;
+	else
+		t.u = ]] .. CATA_PHASE_RAGE_OF_THE_FIRELANDS .. [[;
+		t.rwp = 40300;
+	end
+end]];
+-- #endif
+local function bloodthirsty(t)
+	-- #if CATA
+	t.timeline = { ADDED_4_2_0, REMOVED_5_0_4 };
+		-- #if ANYCLASSIC
+		t.OnUpdate = BLOODTHIRSTY_ONUPDATE;
+		-- #endif
+	-- #else
+	t.timeline = { ADDED_4_2_0, REMOVED_4_3_0 };
+	-- #endif
+	return applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, t);
+end
+
+local function moltenfront(t)
+	t.timeline = { ADDED_4_2_0 };
+	return applyclassicphase(CATA_PHASE_MOLTEN_FRONT, t);
+end
+local function firelands(t)
+	t.timeline = { ADDED_4_2_0 };
+	return applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, t);
+end
+local function dragonsoul(t)
+	t.timeline = { ADDED_4_3_0 };
+	return applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, t);
 end
 
 profession(LEATHERWORKING, {
@@ -1864,7 +1948,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Black Dragonscale Shoulders",
 					["recipeID"] = 19094,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				-- #endif
@@ -1882,7 +1966,7 @@ profession(LEATHERWORKING, {
 				-- #endif
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(446186, {	-- Cacophonous Chain Shoulderguards
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				{
@@ -1912,7 +1996,7 @@ profession(LEATHERWORKING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Hardened Black Dragonscale Shoulders",
 					["recipeID"] = 461659,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				-- #endif
@@ -1937,14 +2021,14 @@ profession(LEATHERWORKING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Masterwork Volcanic Shoulders",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461663,
 				}),
 				-- #endif
 				-- #endif
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(446192, {	-- Membrane of Dark Neurosis
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				{
@@ -1953,7 +2037,7 @@ profession(LEATHERWORKING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(446183, {	-- Paranoia Mantle
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				{
@@ -1962,13 +2046,13 @@ profession(LEATHERWORKING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(451706, {	-- Screaming Chain Pauldrons
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				applyclassicphase(SOD_PHASE_THREE, recipe(446189, {	-- Shoulderpads of Obsession
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				applyclassicphase(SOD_PHASE_THREE, recipe(446185, {	-- Shrieking Spaulders
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				{
@@ -1992,13 +2076,13 @@ profession(LEATHERWORKING, {
 					["name"] = "Volcanic Shoulders",
 					["recipeID"] = 19101,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				-- #endif
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(446190, {	-- Wailing Chain Mantle
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				{
@@ -2025,7 +2109,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Black Dragonscale Breastplate",
 					["recipeID"] = 19085,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				-- #endif
@@ -2127,7 +2211,7 @@ profession(LEATHERWORKING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Hardened Black Dragonscale Breastplate",
 					["recipeID"] = 461655,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				-- #endif
@@ -2171,7 +2255,7 @@ profession(LEATHERWORKING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Masterwork Volcanic Breastplate",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461661,
 				}),
 				-- #endif
@@ -2260,7 +2344,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Volcanic Breastplate",
 					["recipeID"] = 19076,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				{
@@ -2374,7 +2458,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Swift Flight Bracers",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3, ADDED_10_1_5,
 						-- #endif
@@ -2384,7 +2468,7 @@ profession(LEATHERWORKING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Swift Flight Vambraces",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461706,
 				}),
 				-- #endif
@@ -2649,7 +2733,7 @@ profession(LEATHERWORKING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Girdle of Arcane Insight",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461754,
 				}),
 				-- #endif
@@ -2657,7 +2741,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Girdle of Insight",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						ADDED_10_1_5,
@@ -2750,7 +2834,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Black Dragonscale Leggings",
 					["recipeID"] = 19107,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				-- #endif
@@ -2834,7 +2918,7 @@ profession(LEATHERWORKING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Hardened Black Dragonscale Leggings",
 					["recipeID"] = 461657,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				-- #endif
@@ -2867,7 +2951,7 @@ profession(LEATHERWORKING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Masterwork Volcanic Leggings",
 					["recipeID"] = 461665,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				-- #endif
@@ -2907,7 +2991,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Volcanic Leggings",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3, ADDED_10_1_7,
 						-- #endif
@@ -3062,7 +3146,7 @@ profession(LEATHERWORKING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Brilliant Chromatic Cloak",
 					["recipeID"] = 461653,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				applyclassicphase(PHASE_ONE_DIREMAUL, {
@@ -3070,7 +3154,7 @@ profession(LEATHERWORKING, {
 					["recipeID"] = 22926,
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						ADDED_10_1_5,
@@ -3122,7 +3206,7 @@ profession(LEATHERWORKING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Mastercrafted Shifting Cloak",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461690,
 				}),
 				-- #endif
@@ -3141,7 +3225,7 @@ profession(LEATHERWORKING, {
 					["name"] = "Shifting Cloak",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3, ADDED_10_1_5,
 						-- #endif
@@ -3291,7 +3375,7 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Magister's Armor Kit",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 32458,
 				},
 				{
@@ -3314,7 +3398,7 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Vindicator's Armor Kit",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 32457,
 				},
 			},
@@ -3539,12 +3623,12 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Enchanted Clefthoof Gloves",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 35533,
 				},
 				{
 					["name"] = "Enchanted Felscale Gloves",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 35526,
 				},
 				{
@@ -3619,7 +3703,7 @@ profession(LEATHERWORKING, {
 				}),
 				{
 					["name"] = "Blastguard Belt",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 35537,
 				},
 				{
@@ -3628,7 +3712,7 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Flamescale Belt",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 35531,
 				},
 				applyclassicphase(TBC_PHASE_TWO, {
@@ -3655,17 +3739,17 @@ profession(LEATHERWORKING, {
 			["groups"] = {
 				{
 					["name"] = "Blastguard Pants",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 35535,
 				},
 				{
 					["name"] = "Enchanted Clefthoof Leggings",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 35532,
 				},
 				{
 					["name"] = "Enchanted Felscale Leggings",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 35525,
 				},
 				{
@@ -3678,7 +3762,7 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Flamescale Leggings",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 35529,
 				},
 				applyclassicphase(TBC_PHASE_THREE, {
@@ -3717,7 +3801,7 @@ profession(LEATHERWORKING, {
 			["groups"] = {
 				{
 					["name"] = "Blastguard Boots",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 35536,
 				},
 				applyclassicphase(TBC_PHASE_TWO, {
@@ -3742,12 +3826,12 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Enchanted Clefthoof Boots",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 35534,
 				},
 				{
 					["name"] = "Enchanted Felscale Boots",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 35527,
 				},
 				{
@@ -3760,7 +3844,7 @@ profession(LEATHERWORKING, {
 				},
 				{
 					["name"] = "Flamescale Boots",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 35528,
 				},
 				{
@@ -4134,11 +4218,11 @@ profession(LEATHERWORKING, {
 					["recipeID"] = 50944,
 				},
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Crusader's Dragonscale Breastplate [Alliance]
-					["recipeID"] = 67082,  -- Crusader's Dragonscale Breastplate
+					["recipeID"] = 67082,	-- Crusader's Dragonscale Breastplate
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Crusader's Dragonscale Breastplate [Horde]
-					["recipeID"] = 67138,  -- Crusader's Dragonscale Breastplate
+					["recipeID"] = 67138,	-- Crusader's Dragonscale Breastplate
 					["races"] = HORDE_ONLY,
 				}),
 				{
@@ -4158,11 +4242,11 @@ profession(LEATHERWORKING, {
 					["recipeID"] = 60629,
 				},
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Ensorcelled Nerubian Breastplate [Alliance]
-					["recipeID"] = 67080,  -- Ensorcelled Nerubian Breastplate
+					["recipeID"] = 67080,	-- Ensorcelled Nerubian Breastplate
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Ensorcelled Nerubian Breastplate [Horde]
-					["recipeID"] = 67136,  -- Ensorcelled Nerubian Breastplate
+					["recipeID"] = 67136,	-- Ensorcelled Nerubian Breastplate
 					["races"] = HORDE_ONLY,
 				}),
 				{
@@ -4182,19 +4266,19 @@ profession(LEATHERWORKING, {
 					["recipeID"] = 60999,
 				},
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Knightbane Carapace [Alliance]
-					["recipeID"] = 67086,  -- Knightbane Carapace
+					["recipeID"] = 67086,	-- Knightbane Carapace
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Knightbane Carapace [Horde]
-					["recipeID"] = 67142,  -- Knightbane Carapace
+					["recipeID"] = 67142,	-- Knightbane Carapace
 					["races"] = HORDE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Lunar Eclipse Robes [Alliance]
-					["recipeID"] = 67084,  -- Lunar Eclipse Robes
+					["recipeID"] = 67084,	-- Lunar Eclipse Robes
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Lunar Eclipse Robes [Horde]
-					["recipeID"] = 67140,  -- Lunar Eclipse Robes
+					["recipeID"] = 67140,	-- Lunar Eclipse Robes
 					["races"] = HORDE_ONLY,
 				}),
 				{
@@ -4240,27 +4324,27 @@ profession(LEATHERWORKING, {
 					["recipeID"] = 51571,
 				},
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Black Chitin Bracers [Alliance]
-					["recipeID"] = 67081,  -- Black Chitin Bracers
+					["recipeID"] = 67081,	-- Black Chitin Bracers
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Black Chitin Bracers [Horde]
-					["recipeID"] = 67137,  -- Black Chitin Bracers
+					["recipeID"] = 67137,	-- Black Chitin Bracers
 					["races"] = HORDE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Bracers of Swift Death [Alliance]
-					["recipeID"] = 67087,  -- Bracers of Swift Death
+					["recipeID"] = 67087,	-- Bracers of Swift Death
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Bracers of Swift Death [Horde]
-					["recipeID"] = 67139,  -- Bracers of Swift Death
+					["recipeID"] = 67139,	-- Bracers of Swift Death
 					["races"] = HORDE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Crusader's Dragonscale Bracers [Alliance]
-					["recipeID"] = 67083,  -- Crusader's Dragonscale Bracers
+					["recipeID"] = 67083,	-- Crusader's Dragonscale Bracers
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Crusader's Dragonscale Bracers [Horde]
-					["recipeID"] = 67143,  -- Crusader's Dragonscale Bracers
+					["recipeID"] = 67143,	-- Crusader's Dragonscale Bracers
 					["races"] = HORDE_ONLY,
 				}),
 				{
@@ -4284,11 +4368,11 @@ profession(LEATHERWORKING, {
 					["recipeID"] = 60607,
 				},
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Moonshadow Armguards [Alliance]
-					["recipeID"] = 67085,  -- Moonshadow Armguards
+					["recipeID"] = 67085,	-- Moonshadow Armguards
 					["races"] = ALLIANCE_ONLY,
 				}),
 				applyclassicphase(WRATH_PHASE_THREE, {	-- Moonshadow Armguards [Horde]
-					["recipeID"] = 67141,  -- Moonshadow Armguards
+					["recipeID"] = 67141,	-- Moonshadow Armguards
 					["races"] = HORDE_ONLY,
 				}),
 				{
@@ -4745,14 +4829,16 @@ profession(LEATHERWORKING, {
 			["name"] = "Bags",
 			["categoryID"] = 904,
 			["groups"] = {
-				{
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Royal Scribe's Satchel",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 100583,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Triple-Reinforced Mining Bag",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 100586,
-				},
+				}),
 			},
 		},
 		{
@@ -4865,26 +4951,30 @@ profession(LEATHERWORKING, {
 			["name"] = "Bracers",
 			["categoryID"] = 908,
 			["groups"] = {
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bladeshadow Wristguards",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101940,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bracers of Flowing Serenity",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101937,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bracers of the Hunter-Killer",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101941,
-				},
+				}),
 				{
 					["name"] = "Darkbrand Bracers",
 					["recipeID"] = 78398,
 				},
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Thundering Deathscale Wristguards",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101939,
-				},
+				}),
 				{
 					["name"] = "Tsunami Bracers",
 					["recipeID"] = 78388,
@@ -4911,26 +5001,30 @@ profession(LEATHERWORKING, {
 			["name"] = "Gloves",
 			["categoryID"] = 909,
 			["groups"] = {
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Clutches of Evil",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99446,
-				},
+				}),
 				{
 					["name"] = "Darkbrand Gloves",
 					["recipeID"] = 78399,
 				},
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Dragonfire Gloves",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99443,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Gloves of Unforgiving Flame",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99445,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Heavenly Gloves of the Moon",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99447,
-				},
+				}),
 				{
 					["name"] = "Tsunami Gloves",
 					["recipeID"] = 78406,
@@ -5003,26 +5097,30 @@ profession(LEATHERWORKING, {
 			["name"] = "Pants",
 			["categoryID"] = 911,
 			["groups"] = {
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bladeshadow Leggings",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101935,
-				},
+				}),
 				{
 					["name"] = "Darkbrand Leggings",
 					["recipeID"] = 78433,
 				},
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Deathscale Leggings",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101934,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Leggings of Nature's Champion",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101933,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Rended Earth Leggings",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101936,
-				},
+				}),
 				{
 					["name"] = "Tsunami Leggings",
 					["recipeID"] = 78427,
@@ -5053,22 +5151,26 @@ profession(LEATHERWORKING, {
 					["name"] = "Darkbrand Boots",
 					["recipeID"] = 78407,
 				},
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Earthen Scale Sabatons",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99455,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Ethereal Footfalls",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99458,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Footwraps of Quenched Fire",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99456,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Treads of the Craft",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99457,
-				},
+				}),
 				{
 					["name"] = "Tsunami Boots",
 					["recipeID"] = 78410,
@@ -5095,6 +5197,34 @@ profession(LEATHERWORKING, {
 			["name"] = "Cloaks",
 			["categoryID"] = 913,
 			["groups"] = {
+				-- #if ANYCLASSIC
+				-- Crieve NOTE: These cloaks were available with Firelands. We'll see if they get removed later.
+				-- Also notice the massive unique spellID... BLIZZARD.
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
+					["name"] = "Bloodthirsty Fur Cloak",
+					["recipeID"] = 1216335,
+					["timeline"] = {
+						ADDED_4_2_0,
+						-- #if CATA
+						REMOVED_5_0_4,
+						-- #else
+						REMOVED_4_3_0,
+						-- #endif
+					},
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {	-- Bloodthirsty Hide Cloak
+					["name"] = "Bloodthirsty Hide Cloak",
+					["recipeID"] = 1216336,
+					["timeline"] = {
+						ADDED_4_2_0,
+						-- #if CATA
+						REMOVED_5_0_4,
+						-- #else
+						REMOVED_4_3_0,
+						-- #endif
+					},
+				}),
+				-- #endif
 				{
 					["name"] = "Cloak of Beasts",
 					["recipeID"] = 78438,
@@ -5119,14 +5249,26 @@ profession(LEATHERWORKING, {
 					["name"] = "Twilight Dragonscale Cloak",
 					["recipeID"] = 78476,
 				},
-				{
+				-- #if ANYCLASSIC
+				--[[
+				dragonsoul({
+					["name"] = "Vicious Fur Cloak",
+					["recipeID"] = 99536,	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				dragonsoul({
+					["name"] = "Vicious Hide Cloak",
+					["recipeID"] = 99535,	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				]]--
+				-- #endif
+				bloodied({
 					["name"] = "Vicious Fur Cloak",
 					["recipeID"] = 99536,
-				},
-				{
+				}),
+				bloodied({
 					["name"] = "Vicious Hide Cloak",
 					["recipeID"] = 99535,
-				},
+				}),
 			},
 		},
 	})),

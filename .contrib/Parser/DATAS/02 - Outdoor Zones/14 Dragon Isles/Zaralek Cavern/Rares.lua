@@ -18,22 +18,30 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					203660,	-- Flowfy
 					203592,	-- General Zskorro
 					203477,	-- Goopal
-					203611,	-- Hadexia <Ember of Twilight>
+					-- 203611,	-- Hadexia <Ember of Twilight>
 					203627,	-- Invohq
 					203625,	-- Karokta
 					203466,	-- Kapraku
 					203618,	-- Klakatak
 					203462,	-- Kob'rok
-					203642,	-- Kronkapace
-					203630,	-- Lavermix
+					-- 203642,	-- Kronkapace
+					-- 203630,	-- Lavermix
 					200111,	-- Magtembo
 					203521,	-- Professor Gastrinax
-					204096,	-- Shadowforge Mole Machine
+					-- 204096,	-- Shadowforge Mole Machine
 					203643,	-- Skornak
 					203480,	-- Spinmarrow
 					203662,	-- Subterrax
 					203593,	-- Underlight Queen
 					201029,	-- Viridian King
+					-- Researchers Rares
+					202270,	-- Animated Contaminant
+					203355,	-- Captain Reykal
+					202309,	-- Cavern Flayer Matriarch
+					203834,	-- Contaminated Titan Watcher
+					203846,	-- Elder Magma Serpent
+					204214,	-- Monstrous Magmaclaw Snapper
+					202318,	-- Response Team Watcher
 				},
 				["g"] = {
 					n(BACK, {
@@ -91,12 +99,20 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 						i(205081),	-- Zaralek Surveyor's Sabatons
 					}),
 					filter(TRINKET_F, {
-						i(204714),	-- Satchel of Healing Spores
-						i(204728),	-- Friendship Censer
-						i(204797),	-- Djaradin Boasting Tablets
-						i(204805),	-- Suspended Sulfuric Droplet
 						i(204810),	-- Drogbar Rocks
 						i(204811),	-- Drogbar Stones
+						i(205194),	-- Fractured Crystalspine Quill
+						i(204728),	-- Friendship Censer
+						i(204797),	-- Djaradin Boasting Tablets
+						i(205195),	-- Drakeforged Magma Charm
+						i(204714),	-- Satchel of Healing Spores
+						i(205201),	-- Smoldering Howler Horn
+						i(205200),	-- Stirring Twilight Ember
+						i(205193),	-- Sturdy Deepflayer Scute
+						i(204805),	-- Suspended Sulfuric Droplet
+						i(205191),	-- Underlight Globe
+						i(205192),	-- Volatile Crystal Shard
+						i(205196),	-- Zaqali Hand Cauldron
 					}),
 					n(WEAPONS, {
 						i(205090),	-- Zaralek Surveyor's Barrier
@@ -128,7 +144,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75284,	-- Old QuestID: 75550
 				["g"] = {
 					bo(75285, true),
-					i(203307),	-- Winding Slitherdrake: Plated Brow (DM!)
+					i(203307),	-- Winding Slitherdrake: Plated Brow (MM!)
 					i(205318),	-- Guardian Golem's Legplates
 					i(205309),	-- Loyal Attendant's Gaze
 				},
@@ -149,13 +165,16 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["g"] = {
 					bo(75326, true),
 					o(398828, {	-- Chest of Massive Gains
-						i(205114, {	-- Brul (PET!)
-							["description"] = "After defeating Brullo, eat Rocks on the Rocks to transform then open the chest.",
-							["cost"] = { { "i", 204845, 1 } },	-- 1x Rocks on the Rocks
-						}),
-						i(204847),	-- Recipe: Rocks on the Rocks (RECIPE!)
-						i(205313),	-- Brullo's Wristbraces
-						i(205320),	-- Greatbelt of the Stronk
+						["coord"] = { 41.5, 86.2, ZARALEK_CAVERN },
+						["g"] = {
+							i(205114, {	-- Brul (PET!)
+								["description"] = "After defeating Brullo, eat Rocks on the Rocks to transform then open the chest.",
+								["cost"] = { { "i", 204845, 1 } },	-- 1x Rocks on the Rocks
+							}),
+							i(204847),	-- Recipe: Rocks on the Rocks (RECIPE!)
+							i(205313),	-- Brullo's Wristbraces
+							i(205320),	-- Greatbelt of the Stronk
+						},
 					}),
 				},
 			}),
@@ -164,7 +183,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75475,	-- Old QuestID: 75572
 				["g"] = {
 					bo(75476, true),
-					i(197364),	-- Renewed Proto-Drake: Short Spiked Crest (DM!)
+					i(197364),	-- Renewed Proto-Drake: Short Spiked Crest (MM!)
 					i(205315),	-- Colossian Cuirass
 					i(205332),	-- Fist of the Demolisher
 					i(205330),	-- Signet of Colossal Mastery
@@ -176,11 +195,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["g"] = {
 					bo(75353, true),
 					i(205419),	-- Dinn's Drum (TOY!)
-					i(203320),	-- Winding Slitherdrake: Ears (DM!)
-					i(205195),	-- Drakeforged Magma Charm
+					i(203320),	-- Winding Slitherdrake: Ears (MM!)
 					i(205299),	-- Rudiment Cuffs
 					i(205304),	-- Snareguard Sash
-					i(205200),	-- Stirring Twilight Ember
 				},
 			}),
 			n(203664, {	-- Emberdusk
@@ -188,11 +205,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75361,	-- Old QuestID: 75567
 				["g"] = {
 					bo(75364, true),
-					i(203363),	-- Winding Slitherdrake: Large Finned Throat (DM!)
+					i(203363),	-- Winding Slitherdrake: Large Finned Throat (MM!)
 					i(205293),	-- Emberdusk's Embrace
-					i(205201),	-- Smoldering Howler Horn
 					i(205335),	-- Talisman of the Dusk
-					i(205196),	-- Zaqali Hand Cauldron
 				},
 			}),
 			n(203660, {	-- Flowfy
@@ -200,7 +215,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75357,	-- Old QuestID: 75565
 				["g"] = {
 					bo(75358, true),
-					i(197109),	-- Highland Drake: Spiked Head (DM!)
+					i(197109),	-- Highland Drake: Spiked Head (MM!)
 					i(205334),	-- Flowfy's Smoldering Chain
 					i(205303),	-- Leggings of Flowing Flame
 				},
@@ -210,7 +225,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75295,	-- Old QuestID: 75552
 				["g"] = {
 					bo(75296, true),
-					i(203334),	-- Winding Slitherdrake: Curled Horns (DM!)
+					i(203334),	-- Winding Slitherdrake: Curled Horns (MM!)
 					i(205321),	-- Brimstone Bracers
 					i(205291),	-- Garrison General's Cape
 					i(205331),	-- Zskorran Cleaver
@@ -221,18 +236,18 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75273,	-- Old QuestID: 75548
 				["g"] = {
 					bo(75274, true),
-					i(203309),	-- Winding Slitherdrake: Long Chin Horn (DM!)
+					i(203309),	-- Winding Slitherdrake: Long Chin Horn (MM!)
 					i(205317),	-- Crystalpod Gauntlets
 					i(205296),	-- Goopal's Visage
 				},
 			}),
-			n(203611, {	-- Hadexia <Ember of Twilight>
+			-- n(203611, {	-- Hadexia <Ember of Twilight>
 				--["coord"] = { , , ZARALEK_CAVERN },
 				--["questID"] = ,	-- Old QuestID:
 				--["g"] = {
 				--	bo(, true),
 				--},
-			}),
+			-- }),
 			n(203627, {	-- Invohq
 				["coord"] = { 46.0, 33.3, ZARALEK_CAVERN },
 				["questID"] = 75335,	-- Old QuestID: 75558
@@ -242,7 +257,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					--	["description"] = "This toy is bugged for some accounts and simply does not drop. Nobody knows why.",
 					--	Fixed 4 months into the patch (and 4 days after the note was added to ATT).
 					}),
-					i(203328),	-- Winding Slitherdrake: White Horns (DM!)
+					i(203328),	-- Winding Slitherdrake: White Horns (MM!)
 					i(205297),	-- Flamewielder's Trousers
 					i(205329),	-- Loop of Burning Invocation
 				},
@@ -254,10 +269,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					bo(75334, true),
 					i(205203),	-- Cobalt Shalewing (MOUNT!)
 					i(205147),	-- Ridged Shalewing	(PET!)
-					i(203358),	-- Winding Slitherdrake: Small Finned Tail (DM!)
+					i(203358),	-- Winding Slitherdrake: Small Finned Tail (MM!)
 					i(205298),	-- Belt of Floating Stone
 					i(205292),	-- Karokta's Mane
-					i(205192),	-- Volatile Crystal Shard
 				},
 			}),
 			n(203466, {	-- Kapraku
@@ -265,7 +279,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75268,	-- Old QuestID: 75546
 				["g"] = {
 					bo(75269, true),
-					i(205341),	-- Winding Slitherdrake: Heavy Scales (DM!)
+					i(205341),	-- Winding Slitherdrake: Heavy Scales (MM!)
 					i(205319),	-- Deepflayer Shoulderguards
 					i(205310),	-- Leggings of Kaprachu
 				},
@@ -286,32 +300,32 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["g"] = {
 					bo(75267, true),
 					i(205152),	-- Skaarn (PET!)
-					i(197021),	-- Cliffside Wylderdrake: Spiked Club Tail (DM!)
+					i(197021),	-- Cliffside Wylderdrake: Spiked Club Tail (MM!)
 					i(205307),	-- Kob'rok's Scale Sabatons
 					i(205323),	-- Rock-Lined Pauldrons
 					i(206021),	-- Kob'rok's Luminescent Scale
 				},
 			}),
-			n(203642, {	-- Kronkapace
+			-- n(203642, {	-- Kronkapace
 				--["coord"] = { , , ZARALEK_CAVERN },
 				--["questID"] = ,	-- Old QuestID:
 				--["g"] = {
 				--	bo(, true),
 				--},
-			}),
-			n(203630, {	-- Lavermix
+			-- }),
+			-- n(203630, {	-- Lavermix
 				--["coord"] = { , , ZARALEK_CAVERN },
 				--["questID"] = ,	-- Old QuestID:
 				--["g"] = {
 				--	bo(, true),
 				--},
-			}),
+			-- }),
 			n(200111, {	-- Magtembo
 				["coord"] = { 41.1, 37.7, ZARALEK_CAVERN },
 				["questID"] = 75339,	-- Old QuestID: 75561
 				["g"] = {
 					bo(75340, true),
-					i(203339),	-- Winding Slitherdrake: Impaler Horns (DM!)
+					i(203339),	-- Winding Slitherdrake: Impaler Horns (MM!)
 					i(205300),	-- Magma Waders
 					i(205311),	-- Magmascale Pauldrons
 				},
@@ -321,24 +335,24 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75291,	-- Old QuestID: 75551
 				["g"] = {
 					bo(75292, true),
-					i(203331),	-- Winding Slitherdrake: Cluster Horns (DM!)
+					i(203331),	-- Winding Slitherdrake: Cluster Horns (MM!)
 					i(205322),	-- Algeth'ar Exile's Frock
 					i(205333),	-- Obsidian Amulet of Transmutation
 				},
 			}),
-			n(204096, {	-- Shadowforge Mole Machine
+			-- n(204096, {	-- Shadowforge Mole Machine
 				--["coord"] = { , , ZARALEK_CAVERN },
 				--["questID"] = ,	-- Old QuestID:
 				--["g"] = {
 				--	bo(, true),
 				--},
-			}),
+			-- }),
 			n(203643, {	-- Skornak
 				["coord"] = { 36.3, 52.9, ZARALEK_CAVERN },
 				["questID"] = 75348,	-- Old QuestID: 75563
 				["g"] = {
 					bo(75349, true),
-					i(203321),	-- Winding Slitherdrake: Curled Cheek Horn (DM!)
+					i(203321),	-- Winding Slitherdrake: Curled Cheek Horn (MM!)
 					i(205301),	-- Hardened Lava Handwraps
 					i(205294),	-- Sandals of Molten Scorn
 				},
@@ -348,10 +362,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75275,	-- Old QuestID: 75549
 				["g"] = {
 					bo(75276, true),
-					i(203318),	-- Winding Slitherdrake: Hairy Chest (DM!)
+					i(203318),	-- Winding Slitherdrake: Hairy Chest (MM!)
 					i(205326),	-- Crystalweb Chelicera
 					i(205290),	-- Greatcloak of Spun Marrow
-					i(205191),	-- Underlight Globe
 					i(205305),	-- Zaralek Arachnid Armbands
 				},
 			}),
@@ -360,7 +373,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75359,	-- Old QuestID: 75566
 				["g"] = {
 					bo(75360, true),
-					i(203338),	-- Winding Slitherdrake: Antler Horns (DM!)
+					i(203338),	-- Winding Slitherdrake: Antler Horns (MM!)
 					i(205328),	-- Earthen Emissary's Edge
 					i(205314),	-- Greathelm of the Emissary
 					i(205312),	-- Subterrax's Stout Waistguard
@@ -382,7 +395,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 75365,	-- Old QuestID: 75570
 				["g"] = {
 					bo(75366, true),
-					i(203345),	-- Winding Slitherdrake: Split Jaw Horns (DM!)
+					i(203345),	-- Winding Slitherdrake: Split Jaw Horns (MM!)
 					i(205316),	-- Crystal Stompers
 					i(205336),	-- Glowing Veridian Necklace
 					i(205327),	-- Shard of the Veridian King

@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 --      E X P A N S I O N   F E A T U R E S    M O D U L E       --
 -------------------------------------------------------------------
-root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(COUNCIL_OF_DORNOGAL, {
 		n(VENDORS, {
 			n(223728, {	-- Auditor Balwurz <Keeper of Renown>
@@ -32,7 +32,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 						i(223290, {	-- Chiseled Boulder Pauldrons
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
-						i(223292, {	-- Gem Waded Shoulderpads
+						i(223292, {	-- Gem-Waded Shoulderpads
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
 						i(223289, {	-- Mineral-Sparkled Mantle
@@ -78,7 +78,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 						i(223301, {	-- Chiseled Boulder Crushers
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
 						}),
-						i(223303, {	-- Gem Waded Footwraps
+						i(223303, {	-- Gem-Waded Footwraps
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
 						}),
 						i(223300, {	-- Mineral-Sparkled Sandals

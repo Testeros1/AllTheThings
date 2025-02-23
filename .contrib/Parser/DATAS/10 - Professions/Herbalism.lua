@@ -384,24 +384,24 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
 		n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
 			ach(18838, {	-- Fourth War Herbalism Techniques
-				crit(61510, {	-- 	Akunda's Bite
+				crit(61510, {	-- Akunda's Bite
 					["sourceQuests"] = { 51404 },	-- What Happens Next
 				}),
-				crit(61514, {	-- 	Anchor Weed
+				crit(61514, {	-- Anchor Weed
 					["sourceQuests"] = {
 						51361,	-- More Anchor Pods [A]
 						51481,	-- More Anchor Pods [H]
 					},
 					["sourceQuestNumRequired"] = 1,
 				}),
-				crit(61508, {	-- 	Riverbud
+				crit(61508, {	-- Riverbud
 					["sourceQuests"] = {
 						48754,	-- Breaking the Food Chain [A]
 						51243,	-- Breaking the Food Chain [H]
 					},
 					["sourceQuestNumRequired"] = 1,
 				}),
-				crit(61513, {	-- 	Sea Stalk
+				crit(61513, {	-- Sea Stalk
 					["sourceQuests"] = {
 						48769,	-- Gathering Mementos [A]
 						51503,	-- Gathering Mementos [H]
@@ -421,7 +421,7 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 					},
 					["sourceQuestNumRequired"] = 1,
 				}),
-				crit(61511, {	-- 	Winter's Kiss
+				crit(61511, {	-- Winter's Kiss
 					["sourceQuests"] = { 48763 },	-- The Frigid Boon
 				}),
 				crit(61515, {	-- Zin'anthid
@@ -532,6 +532,9 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 					["sourceQuests"] = { 51482 },	-- Seeking More Knowledge [H]
 					["provider"] = { "i", 160035 },	-- Enormous Anchor Pod
 					["races"] = HORDE_ONLY,
+					["g"] = {
+						i(160550),	-- Enormous Anchor Pod (QI!)
+					},
 				}),
 				q(51361, {	-- More Anchor Pods [A]
 					["description"] = "Requires 150 Kul Tiran Herbalism.",
@@ -668,8 +671,7 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						r(252423),	-- Sea Stalk [Rank 3]
-						i(160314),	-- Sailor's Necklace
-
+						i(160314),	-- Sailor's Necklace (QI!)
 					},
 				}),
 			},
@@ -813,7 +815,7 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						r(252410),	-- Star Moss [Rank 3]
-						i(160299),	-- Smoldering Bundle of Star Moss (QI)
+						i(160299),	-- Smoldering Bundle of Star Moss (QI!)
 					},
 				}),
 			},
@@ -1352,7 +1354,7 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 			}),
 		}),
 		n(QUESTS, sharedData({
-			["description"] = "Requires 25 Skill.",
+			["sharedDescription"] = "Requires 25 Skill.",
 			["provider"] = { "n", 185549 },	-- Agrikus
 			["coord"] = { 38.2, 68.6, VALDRAKKEN },
 			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
@@ -1381,41 +1383,41 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 			},
 		},{
 			i(199115),	-- Herbalism Field Notes
-			q(74107, {	-- Inscription Order: Herbalism
-				["name"] = "Inscription Order: Herbalism",
+			q(74107, {	-- DF Inscription Order: Herbalism
+				["name"] = "DF Inscription Order: Herbalism",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194704 },	-- Draconic Treatise on Herbalism
 			}),
-			q(71857, {	-- Weekly Herbalism Knowledgepoint #1
-				["name"] = "Weekly Herbalism Knowledgepoint #1",
+			q(71857, {	-- DF Weekly Herbalism Knowledgepoint #1
+				["name"] = "DF Weekly Herbalism Knowledgepoint #1",
 				["provider"] = { "i", 200677 },	-- Dreambloom Petal
 			}),
-			q(71858, {	-- Weekly Herbalism Knowledgepoint #2
-				["name"] = "Weekly Herbalism Knowledgepoint #2",
+			q(71858, {	-- DF Weekly Herbalism Knowledgepoint #2
+				["name"] = "DF Weekly Herbalism Knowledgepoint #2",
 				["provider"] = { "i", 200677 },	-- Dreambloom Petal
 			}),
-			q(71859, {	-- Weekly Herbalism Knowledgepoint #3
-				["name"] = "Weekly Herbalism Knowledgepoint #3",
+			q(71859, {	-- DF Weekly Herbalism Knowledgepoint #3
+				["name"] = "DF Weekly Herbalism Knowledgepoint #3",
 				["provider"] = { "i", 200677 },	-- Dreambloom Petal
 			}),
-			q(71860, {	-- Weekly Herbalism Knowledgepoint #4
-				["name"] = "Weekly Herbalism Knowledgepoint #4",
+			q(71860, {	-- DF Weekly Herbalism Knowledgepoint #4
+				["name"] = "DF Weekly Herbalism Knowledgepoint #4",
 				["provider"] = { "i", 200677 },	-- Dreambloom Petal
 			}),
-			q(71861, {	-- Weekly Herbalism Knowledgepoint #5
-				["name"] = "Weekly Herbalism Knowledgepoint #5",
+			q(71861, {	-- DF Weekly Herbalism Knowledgepoint #5
+				["name"] = "DF Weekly Herbalism Knowledgepoint #5",
 				["provider"] = { "i", 200677 },	-- Dreambloom Petal
 			}),
-			q(71864, {	-- Weekly Herbalism Knowledgepoint #6
-				["name"] = "Weekly Herbalism Knowledgepoint #6",
+			q(71864, {	-- DF Weekly Herbalism Knowledgepoint #6
+				["name"] = "DF Weekly Herbalism Knowledgepoint #6",
 				["provider"] = { "i", 200678 },	-- Dreambloom
 			}),
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 		n(QUESTS, sharedData({
-			["description"] = "Requires 25 Skill.",
-			["provider"] = { "n", 219101 },	-- Akdan
+			["sharedDescription"] = "Requires 25 Skill.",
+			["provider"] = { "n", 219101 },	-- Akdan <Herbalism Trainer>
 			["coord"] = { 44.8, 69.3, DORNOGAL },
 			["isWeekly"] = true,
 			["g"] = {
@@ -1430,10 +1432,25 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_HERBALISM_KNOWLEDGE, 1 }} }, {
+				r(442990),	-- Empowered Mulch
+				r(442989),	-- Imbued Mulch
+				r(442988),	-- Magical Mulch
 				r(438811),	-- Refine Herbs++
 				r(438812),	-- Refine Herbs+++
 			}),
 		}),
+		n(QUESTS, sharedData({
+			["provider"] = { "n", 219101 },	-- Akdan <Herbalism Trainer>
+			["coord"] = { 44.8, 69.4, DORNOGAL },
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(224817),	-- Algari Herbalist's Notes
+			},
+		},{
+			q(82965),	-- Light and Shadow
+			q(82958),	-- Little Blessings
+		})),
 		n(TREASURES, {
 			o(455993, {	-- Ancient Flower
 				["coord"] = { 57.5, 61.5, ISLE_OF_DORN },
@@ -1499,33 +1516,28 @@ root(ROOTS.Professions, prof(HERBALISM, bubbleDownSelf({ ["requireSkill"] = HERB
 			},
 		},{
 			i(224817),	-- Algari Herbalism Notes
-			q(83729, {	-- Inscription Order: Herbalism
-				["name"] = "Inscription Order: Herbalism",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222552 },	-- Algari Treatise on Herbalism
-			}),
-			q(81416, {	-- Weekly Herbalism Knowledgepoint #1
-				["name"] = "Weekly Herbalism Knowledgepoint #1",
+			q(81416, {	-- TWW Weekly Herbalism Knowledgepoint #1
+				["name"] = "TWW Weekly Herbalism Knowledgepoint #1",
 				["provider"] = { "i", 224264 },	-- Deepgrove Petal
 			}),
-			q(81417, {	-- Weekly Herbalism Knowledgepoint #2
-				["name"] = "Weekly Herbalism Knowledgepoint #2",
+			q(81417, {	-- TWW Weekly Herbalism Knowledgepoint #2
+				["name"] = "TWW Weekly Herbalism Knowledgepoint #2",
 				["provider"] = { "i", 224264 },	-- Deepgrove Petal
 			}),
-			q(81418, {	-- Weekly Herbalism Knowledgepoint #3
-				["name"] = "Weekly Herbalism Knowledgepoint #3",
+			q(81418, {	-- TWW Weekly Herbalism Knowledgepoint #3
+				["name"] = "TWW Weekly Herbalism Knowledgepoint #3",
 				["provider"] = { "i", 224264 },	-- Deepgrove Petal
 			}),
-			q(81419, {	-- Weekly Herbalism Knowledgepoint #4
-				["name"] = "Weekly Herbalism Knowledgepoint #4",
+			q(81419, {	-- TWW Weekly Herbalism Knowledgepoint #4
+				["name"] = "TWW Weekly Herbalism Knowledgepoint #4",
 				["provider"] = { "i", 224264 },	-- Deepgrove Petal
 			}),
-			q(81420, {	-- Weekly Herbalism Knowledgepoint #5
-				["name"] = "Weekly Herbalism Knowledgepoint #5",
+			q(81420, {	-- TWW Weekly Herbalism Knowledgepoint #5
+				["name"] = "TWW Weekly Herbalism Knowledgepoint #5",
 				["provider"] = { "i", 224264 },	-- Deepgrove Petal
 			}),
-			q(81421, {	-- Weekly Herbalism Knowledgepoint #6
-				["name"] = "Weekly Herbalism Knowledgepoint #6",
+			q(81421, {	-- TWW Weekly Herbalism Knowledgepoint #6
+				["name"] = "TWW Weekly Herbalism Knowledgepoint #6",
 				["provider"] = { "i", 224265 },	-- Deepgrove Rose
 			}),
 		})),

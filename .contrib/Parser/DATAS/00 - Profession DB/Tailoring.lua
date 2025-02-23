@@ -155,7 +155,7 @@ i("Runed Stygian Leggings", 20546, 24901);
 i("Runed Stygian Boots", 20547, 24903);
 i("Runed Stygian Belt", 20548, 24902);
 
-i("Enchanted Runecloth Bag", 22308, 27659);
+i("Enchanted Runecloth Bag", 22308, 27659, PHASE_FIVE);
 i("Big Bag of Enchantment", 22309, 27660);
 i("Cenarion Herb Bag", 22310, 27724);
 i("Satchel of Cenarius", 22312, 27725);
@@ -452,6 +452,13 @@ i(42188, 56011);	-- Sapphire Spellthread
 --- TRAINER ---
 i(0, 60969);	-- Flying Carpet
 i(0, 60971);	-- Magnificent Flying Carpet
+i(0, 56016);	-- Wispcloak
+
+-------------------
+--- PATCH 3.0.8 ---
+-------------------
+i(44917, 26407); -- Pattern: Festival Suit (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(44916, 26403); -- Pattern: Festival Dress (Guessed via Duplicate SpellID Match with Sourced RecipeID)
 
 -------------------
 --- PATCH 3.1.0 ---
@@ -472,13 +479,13 @@ i(45103, 63204);	-- Spellslinger's Slippers
 -------------------
 --- ITEM ---
 i(47654, 67079);	-- Bejeweled Wizard's Bracers [A]
-i(47639, 67145);	   -- Bejeweled Wizard's Bracers [H]
+i(47639, 67145);	-- Bejeweled Wizard's Bracers [H]
 i(47655, 67066);	-- Merlin's Robe [A]
-i(47638, 67146);	   -- Merlin's Robe [H]
+i(47638, 67146);	-- Merlin's Robe [H]
 i(47656, 67065);	-- Royal Moonshroud Bracers [A]
-i(47637, 67147);	   -- Royal Moonshroud Bracers [H]
+i(47637, 67147);	-- Royal Moonshroud Bracers [H]
 i(47657, 67064);	-- Royal Moonshroud Robe [A]
-i(47636, 67144);	   -- Royal Moonshroud Robe [H]
+i(47636, 67144);	-- Royal Moonshroud Robe [H]
 
 -------------------
 --- PATCH 3.3.0 ---
@@ -773,8 +780,8 @@ i(114870, 168854);	-- Sumptuous Leggings
 i(114869, 168853);	-- Sumptuous Robes
 --- NYI ---
 i(0, 169669);	-- Hexweave Cloth
-i(0, 168851);	-- Miniature Flying Carpet
-i(0, 173415);	-- Murloc Chew Toy
+i(114867, 168851); -- Pattern: Miniature Flying Carpet - NYI
+i(118098, 173415); -- Pattern: Murloc Chew Toy
 
 -------------------
 --- PATCH 6.1.0 ---
@@ -885,6 +892,8 @@ i(0, 187059);	-- Silkweave Hood: Outer Layer
 i(0, 185921);	-- Silkweave Pantaloons [Rank 1]
 i(0, 185925);	-- Silkweave Robe [Rank 1]
 i(0, 185924);	-- Silkweave Slippers [Rank 1]
+--- NYI ---
+i(137981, 186088); -- Pattern: Silkweave Cloak (Guessed via Filter Recipe with SpellID)
 
 -----------------
 -- PATCH 7.1.0 --
@@ -907,9 +916,10 @@ i(0, 239412);	-- Celumbra, the Night's Dichotomy
 -- PATCH 7.3.0 --
 -----------------
 --- ITEM ---
-i(151746, 247807);	-- Lightweave Breeches [Rank 1]
 i(151747, 247808);	-- Lightweave Breeches [Rank 2]
 i(151748, 247809);	-- Lightweave Breeches [Rank 3]
+--- QUEST ---
+i(0, 247807);	-- Lightweave Breeches [Rank 1]
 
 -----------------
 -- PATCH 8.0.1 --
@@ -1033,6 +1043,17 @@ i(165653, 285094);	-- Tempered Deep Sea Gloves
 -----------------
 --- ITEM ---
 i(168029, 292946);	-- Synchronous Thread
+i(167880, 6692); -- Pattern: Robes of Arcana (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167888, 18436); -- Pattern: Robe of Winter Night (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167885, 22869); -- Pattern: Mooncloth Gloves (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167884, 22868); -- Pattern: Inferno Gloves (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167890, 3862); -- Pattern: Icy Cloak (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167883, 22867); -- Pattern: Felcloth Gloves (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167882, 22870); -- Pattern: Cloak of Warding (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167886, 18408); -- Pattern: Cindercloth Vest (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167887, 18412); -- Pattern: Cindercloth Gloves (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167881, 22866); -- Pattern: Belt of the Archmage (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(167889, 8786); -- Pattern: Azure Silk Cloak (Guessed via Duplicate SpellID Match with Sourced RecipeID)
 
 -----------------
 -- PATCH 8.2.0 --
@@ -1502,7 +1523,6 @@ i(0, 446966);		-- Weavercloth Enchanter's Hat
 i(0, 446965);		-- Weavercloth Fishing Cap
 i(0, 446964);		-- Weavercloth Gardening Hat
 i(0, 446978);		-- Weavercloth Reagent Bag
-i(0, 446999);		-- Weavercloth Spellthread
 i(0, 446967);		-- Weavercloth Tailor's Coat
 --- ITEM ---
 i(225437, 438892);	-- Algari Competitor's Cloth Bands
@@ -1556,6 +1576,7 @@ i(0, 454431);		-- The Severed Satchel
 i(0, 446931);		-- Treads of the Woven Dawn
 i(0, 446934);		-- Warm Sunrise Bracers
 i(0, 446997);		-- Weavercloth Embroidery Thread
+i(0, 446999);		-- Weavercloth Spellthread
 
 ------------------
 -- PATCH 11.0.0 --

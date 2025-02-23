@@ -1,14 +1,12 @@
 UNIQUE_APPEARANCE = createHeader({
 	readable = "Unique Appearance",
 	constant = "UNIQUE_APPEARANCE",
-	-- #if AFTER CATA
 	export = true,
-	-- #endif
 	-- #if ANYCLASSIC
-	icon = "Interface\\Icons\\INV_Enchant_ShardBrilliantLarge",
+	icon = 132873,
 	-- #else
 	-- This icon became available in 5.4.2, technically
-	icon = "Interface\\Icons\\ACHIEVEMENT_GUILDPERK_EVERYONES A HERO",
+	icon = 413576,
 	-- #endif
 	text = {
 		en = "Unique Appearance",
@@ -20,6 +18,7 @@ UNIQUE_APPEARANCE = createHeader({
 		ru = "Уникальный Облик",
 		ko = "독특한 외관",
 		cn = "独特外观",
+		tw = "獨特外觀",
 	},
 	description = {
 		en = "This item has a Unique Appearance. You must collect this item specifically to earn the appearance.",

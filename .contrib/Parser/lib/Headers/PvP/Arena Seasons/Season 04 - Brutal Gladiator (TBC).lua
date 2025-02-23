@@ -1,10 +1,6 @@
 SEASON_BRUTAL = createHeader({
 	readable = "Brutal Gladiator",
-	-- #if BEFORE WRATH
-	icon = [[~_.asset("achievement_featsofstrength_gladiator_04")]],
-	-- #else
-	icon = "Interface\\Icons\\achievement_featsofstrength_gladiator_04",
-	-- #endif
+	icon = 236537,
 	text = {
 		-- #if BEFORE WRATH
 		en = "Brutal Gladiator: Season 4",
@@ -15,12 +11,14 @@ SEASON_BRUTAL = createHeader({
 		pt = "Gladiador Brutal: Season 4",
 		ru = "Жестокий гладиатор: Сезон 4",
 		ko = "야만적인 검투사: Season 4",
-		cn = "野蛮角斗士：第3赛季",
+		cn = "野蛮角斗士：第4赛季",
+		tw = "野蠻鬥士：第4賽季",
 		-- #else
 		en = WOWAPI_GetAchievementName(420).. [[..": Season 4"]],
 		fr = WOWAPI_GetAchievementName(420).. [[..": Saison 4"]],
 		ru = WOWAPI_GetAchievementName(420).. [[..": Сезон 4"]],
 		cn = WOWAPI_GetAchievementName(420).. [[.."：第4赛季"]],
+		tw = WOWAPI_GetAchievementName(420).. [[.."：第4賽季"]],
 		-- #endif
 	},
 });

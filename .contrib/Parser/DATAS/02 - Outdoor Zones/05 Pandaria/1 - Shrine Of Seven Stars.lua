@@ -6,7 +6,7 @@ root(ROOTS.Zones, m(PANDARIA, {
 		["lore"] = "The Shrine of Seven Stars is an ancient mogu structure located south of Mogu'shan Palace in the eastern part of the Vale of Eternal Blossoms. It has been claimed by the Alliance and serves as the main hub of the faction in the continent of Pandaria, as opposed to the sanctuary cities serving as main hubs for both factions in previous expansions.",
 		["isRaid"] = true,
 		["races"] = ALLIANCE_ONLY,
-		["icon"] = "Interface\\Icons\\achievement_doublejeopardyally",
+		["icon"] = 462673,
 		["maps"] = {
 		--	393,	-- The Emperor's Step
 			394,	-- The Imperial Exchange
@@ -884,7 +884,7 @@ root(ROOTS.Zones, m(PANDARIA, {
 						i(21099),	-- Recipe: Smoked Sagefish (RECIPE!)
 					},
 				}),
-				n(66678, {	-- Krystel
+				n(66678, {	-- Krystel <Spirit of Harmony Vendor>
 					["coord"] = { 84.6, 60.4, VALE_OF_ETERNAL_BLOSSOMS },
 					["races"] = IGNORED_VALUE,	-- technically available both factions
 					["groups"] = sharedData({

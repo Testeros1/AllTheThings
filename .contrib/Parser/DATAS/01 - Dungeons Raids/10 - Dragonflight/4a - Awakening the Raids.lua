@@ -24,7 +24,7 @@ local TINDRAL = 2565;
 ------ SlotToCRS ------
 local SlotToCRS = {
 	HEAD = {
-		[RASZAGETH] = { 193909, 189492 }, -- Raszageth the Storm-Eater
+		[RASZAGETH] = { 193909, 189492 },	-- Raszageth the Storm-Eater
 		[MAGMORAX] = { 201579 },	-- Magmorax
 		[TINDRAL] = { 210601, 209090 },	-- Tindral Sageswift <Seer of Flame>
 	},
@@ -35,7 +35,7 @@ local SlotToCRS = {
 	},
 	CHEST = {
 		[KUROG] = { 181378 },	-- Kurog Grimtotem
-		[ZSKARN] = { 202637, 202375 }, -- Zskarn <the Vigilant Steward>
+		[ZSKARN] = { 202637, 202375 },	-- Zskarn <the Vigilant Steward>
 		[NYMUE] = { 206172 },	-- Nymue <Weaver of the Cycle>
 	},
 	HANDS = {
@@ -185,12 +185,18 @@ local Tokens = {
 
 ------ Helper Functions ------
 local UpgradeMapping = {
+	-- #IF BEFORE 11.0.2
 	[DIFFICULTY.RAID.LFR] = 3,
 	[DIFFICULTY.RAID.NORMAL] = 5,
 	[DIFFICULTY.RAID.HEROIC] = 6,
+	-- #ELSE
+	[DIFFICULTY.RAID.LFR] = IGNORED_VALUE,
+	[DIFFICULTY.RAID.NORMAL] = IGNORED_VALUE,
+	[DIFFICULTY.RAID.HEROIC] = IGNORED_VALUE,
+	-- #ENDIF
 }
 
-local BUBBLEDATA = { ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }
+local BUBBLEDATA = { ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }
 
 local TIER_SLOTS = {
 	"HEAD",

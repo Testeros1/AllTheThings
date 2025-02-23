@@ -13,6 +13,9 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sourceQuests"] = { 46938 },	-- Alone in the Abyss
 				["provider"] = { "n", 126239 },	-- Chieftain Hatuun
 				["coord"] = { 58.8, 78.4, KROKUUN },
+				["g"] = {
+					i(152472),	-- Chieftain's Salve (QI!)
+				},
 			}),
 			q(46842, {	-- A Strike at the Heart
 				["sourceQuests"] = {
@@ -30,6 +33,9 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				},
 				["provider"] = { "n", 124975 },	-- Image of Grand Artificer Romuul
 				["coord"] = { 60.7, 47.2, KROKUUN },
+				["g"] = {
+					i(151851),	-- Immaculate Felcore (QI!)
+				},
 			}),
 			q(47526, {	-- Bringing the Big Guns
 				["sourceQuests"] = { 47771 },	-- Locating the Longshot
@@ -45,6 +51,9 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sourceQuests"] = { 47431 },	-- Gathering Light
 				["provider"] = { "n", 121519 },	-- Captain Fareeya
 				["coord"] = { 40.5, 63.5, KROKUUN },
+				["g"] = {
+					i(150942),	-- Argunite Crystal (QI!)
+				},
 			}),
 			q(47991, {	-- Dark Machinations
 				["sourceQuests"] = {
@@ -102,7 +111,11 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sourceQuests"] = { 47102 },	-- The Mysterious Missive
 				["provider"] = { "n", 121519 },	-- Captain Fareeya
 				["coord"] = { 40.5, 63.6, KROKUUN },
-				["lvl"] = 110,
+				["lvl"] = 45,
+				["g"] = {
+					i(150993),	-- Army of the Light Code Book (QI!)
+					i(150995),	-- Enigmatic Legion Orders (QI!)
+				},
 			}),
 			q(48440, {	-- Into the Night
 				["sourceQuests"] = { 47224 },	-- The Vidicaar
@@ -165,6 +178,9 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sourceQuests"] = { 47892 },	-- Storming the Citadel
 				["provider"] = { "n", 124974 },	-- Prophet Velen
 				["coord"] = { 61.1, 47.7, KROKUUN },
+				["g"] = {
+					i(152110),	-- Talisman of the Prophet (QI!)
+				},
 			}),
 			q(46840, {	-- Prisoners No More
 				["sourceQuests"] = { 46839 },	-- From Darkness
@@ -198,6 +214,11 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sourceQuests"] = { 47892 },	-- Storming the Citadel
 				["provider"] = { "n", 124975 },	-- Image of Grand Artificer Romuul
 				["coord"] = { 60.8, 47.3, KROKUUN },
+				["g"] = {
+					i(151837),	-- Invocation Array (QI!)
+					i(151838),	-- Judgment Core (QI!)
+					i(151839),	-- Vindicator Plating (QI!)
+				},
 			}),
 			q(47641, {	-- Signs of Resistance
 				["sourceQuests"] = { 47627 },	-- Vengeance
@@ -225,7 +246,10 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sourceQuests"] = { 47994 },	-- Forming a Bond
 				["provider"] = { "n", 121260 },	-- Lightforged Courier
 				["coord"] = { 40.6, 70.0, KROKUUN },
-				["lvl"] = 110,
+				["lvl"] = 45,
+				["g"] = {
+					i(147491),	-- Sealed Missive (QI!)
+				},
 			}),
 			q(46732, {	-- The Prophet's Gambit
 				["sourceQuests"] = { 47641 },	-- Signs of Resistance
@@ -309,9 +333,11 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 			q(48442, {	-- Nath'raxas Hold: Preparations
 				["provider"] = { "n", 119388 },	-- Chieftain Hatuun
 				["sourceQuests"] = { 48441 },	-- Remnants of Darkfall Ridge
+				["coord"] = { 56.6, 67.6, KROKUUN },
 			}),
 			q(48910, {	-- Supplying Krokuun
 				["provider"] = { "n", 119388 },	-- Chieftain Hatuun
+				["coord"] = { 56.6, 67.6, KROKUUN },
 				["isWeekly"] = true,
 				["sourceQuests"] = { 48442 },	-- Nath'raxas Hold: Preparations
 				["groups"] = {
@@ -330,9 +356,11 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 			q(48443, {	-- Nath'raxas Hold: Rescue Mission
 				["provider"] = { "n", 119388 },	-- Chieftain Hatuun
 				["sourceQuests"] = { 48910 },	-- Supplying Krokuun
+				["coord"] = { 56.6, 67.6, KROKUUN },
 			}),
 			q(48634, {	-- Further Supplying Krokuun
 				["provider"] = { "n", 119388 },	-- Chieftain Hatuun
+				["coord"] = { 56.6, 67.6, KROKUUN },
 				["repeatable"] = true,
 				["sourceQuests"] = {
 					48443,	-- Nath'raxas Hold: Rescue Mission
@@ -355,8 +383,12 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(48281),	-- Tracking Quest - getting into the Lightforged Warframe during "Dawn of Justice" (questID 47992)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {
+	m(ARGUS, {
+		m(KROKUUN, {
+			n(QUESTS, {
+				q(48281),	-- Tracking Quest - getting into the Lightforged Warframe during "Dawn of Justice" (questID 47992)
+			}),
+		}),
 	}),
-});
+})));

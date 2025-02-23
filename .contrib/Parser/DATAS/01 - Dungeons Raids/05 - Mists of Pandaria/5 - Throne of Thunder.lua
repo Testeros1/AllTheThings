@@ -106,7 +106,7 @@ root(ROOTS.Instances, expansion(EXPANSION.MOP, bubbleDown({ ["timeline"] = { ADD
 				i(94594),	-- Titan Runestone
 			})),
 			n(FACTIONS, {
-				faction(1435),	-- Shado-Pan Assault
+				faction(FACTION_SHADO_PAN_ASSAULT),	-- Shado-Pan Assault
 			}),
 			n(QUESTS, sharedData({
 				["isWeekly"] = true,
@@ -706,81 +706,80 @@ root(ROOTS.Instances, expansion(EXPANSION.MOP, bubbleDown({ ["timeline"] = { ADD
 					},
 					["g"] = {
 						ach(8081, {	-- Ritualist Who?
-								crit(22765, {	-- Aridian
-									["cr"] = 69726,
-								}),
-								crit(22766, {	-- Auton
-									["cr"] = 69718,
-								}),
-								crit(22767, {	-- Bandril
-									["cr"] = 69728,
-								}),
-								crit(22768, {	-- Drahvin
-									["cr"] = 69727,
-								}),
-								crit(22769, {	-- Drashig
-									["cr"] = 69731,
-								}),
-								crit(22770, {	-- Fendahl
-									["cr"] = 69734,
-								}),
-								crit(22771, {	-- Gond
-									["cr"] = 69729,
-								}),
-								crit(22772, {	-- Jagaroth
-									["cr"] = 69721,
-								}),
-								crit(22773, {	-- Kroll
-									["cr"] = 69710,
-								}),
-								crit(22774, {	-- Kitling
-									["cr"] = 69716,
-								}),
-								crit(22775, {	-- Malus
-									["cr"] = 69733,
-								}),
-								crit(22776, {	-- Mandrel
-									["cr"] = 69737,
-								}),
-								crit(22777, {	-- Megara
-									["cr"] = 69719,
-								}),
-								crit(22778, {	-- Morok
-									["cr"] = 69722,
-								}),
-								crit(22779, {	-- Ogri
-									["cr"] = 69735,
-								}),
-								crit(22780, {	-- Ogron
-									["cr"] = 69730,
-								}),
-								crit(22781, {	-- Rill
-									["cr"] = 69725,
-								}),
-								crit(22782, {	-- Rutan
-									["cr"] = 69736,
-								}),
-								crit(22783, {	-- Sirian
-									["cr"] = 69720,
-								}),
-								crit(22784, {	-- Tetrap
-									["cr"] = 69738,
-								}),
-								crit(22785, {	-- Thal
-									["cr"] = 69709,
-								}),
-								crit(22786, {	-- Voord
-									["cr"] = 69723,
-								}),
-								crit(22787, {	-- Wirrn
-									["cr"] = 69732,
-								}),
-								crit(22789, {	-- Xeron
-									["cr"] = 69724,
-								}),
+							crit(22765, {	-- Aridian
+								["cr"] = 69726,
 							}),
-						i(94152, {	-- Son of Animus (PET!)
+							crit(22766, {	-- Auton
+								["cr"] = 69718,
+							}),
+							crit(22767, {	-- Bandril
+								["cr"] = 69728,
+							}),
+							crit(22768, {	-- Drahvin
+								["cr"] = 69727,
+							}),
+							crit(22769, {	-- Drashig
+								["cr"] = 69731,
+							}),
+							crit(22770, {	-- Fendahl
+								["cr"] = 69734,
+							}),
+							crit(22771, {	-- Gond
+								["cr"] = 69729,
+							}),
+							crit(22772, {	-- Jagaroth
+								["cr"] = 69721,
+							}),
+							crit(22773, {	-- Kroll
+								["cr"] = 69710,
+							}),
+							crit(22774, {	-- Kitling
+								["cr"] = 69716,
+							}),
+							crit(22775, {	-- Malus
+								["cr"] = 69733,
+							}),
+							crit(22776, {	-- Mandrel
+								["cr"] = 69737,
+							}),
+							crit(22777, {	-- Megara
+								["cr"] = 69719,
+							}),
+							crit(22778, {	-- Morok
+								["cr"] = 69722,
+							}),
+							crit(22779, {	-- Ogri
+								["cr"] = 69735,
+							}),
+							crit(22780, {	-- Ogron
+								["cr"] = 69730,
+							}),
+							crit(22781, {	-- Rill
+								["cr"] = 69725,
+							}),
+							crit(22782, {	-- Rutan
+								["cr"] = 69736,
+							}),
+							crit(22783, {	-- Sirian
+								["cr"] = 69720,
+							}),
+							crit(22784, {	-- Tetrap
+								["cr"] = 69738,
+							}),
+							crit(22785, {	-- Thal
+								["cr"] = 69709,
+							}),
+							crit(22786, {	-- Voord
+								["cr"] = 69723,
+							}),
+							crit(22787, {	-- Wirrn
+								["cr"] = 69732,
+							}),
+							crit(22788, {	-- Xeron
+								["cr"] = 69724,
+							}),
 						}),
+						i(94152),	-- Son of Animus (PET!)
 					},
 				}),
 				e(817, {	-- Iron Qon
@@ -2119,20 +2118,20 @@ root(ROOTS.Instances, expansion(EXPANSION.MOP, bubbleDown({ ["timeline"] = { ADD
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.MOP, {
-		q(32752),	-- Dark Animus Dead - triggers on the first kill of the week
-		q(32750),	-- Durumu Dead - triggers on the first kill of the week
-		q(32755),	-- Empyreal Queens Dead - triggers on the first kill of the week
-		q(32745),	-- Horridon Dead - triggers on the first kill of the week
-		q(32754),	-- Iron Qon Dead - triggers on the first kill of the week
-		q(32749),	-- Ji'kun Dead - triggers on the first kill of the week
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_2_0 } }, {
+	inst(362, {
 		q(32744),	-- Jin'rokh Dead - triggers on the first kill of the week
-		q(32756),	-- Lei Shen Dead - triggers on the first kill of the week
-		q(32748),	-- Maegaera Dead - triggers on the first kill of the week
-		q(32751),	-- Primordious Dead - triggers on the first kill of the week
-		q(32753),	-- Ra-den Dead - triggers on the first kill of the week
-		q(32747),	-- Tortos Dead - triggers on the first kill of the week
+		q(32745),	-- Horridon Dead - triggers on the first kill of the week
 		q(32746),	-- Zandalari Council Dead - triggers on the first kill of the week
+		q(32747),	-- Tortos Dead - triggers on the first kill of the week
+		q(32748),	-- Maegaera Dead - triggers on the first kill of the week
+		q(32749),	-- Ji'kun Dead - triggers on the first kill of the week
+		q(32750),	-- Durumu Dead - triggers on the first kill of the week
+		q(32751),	-- Primordious Dead - triggers on the first kill of the week
+		q(32752),	-- Dark Animus Dead - triggers on the first kill of the week
+		q(32754),	-- Iron Qon Dead - triggers on the first kill of the week
+		q(32755),	-- Empyreal Queens Dead - triggers on the first kill of the week
+		q(32756),	-- Lei Shen Dead - triggers on the first kill of the week
+		q(32753),	-- Ra-den Dead - triggers on the first kill of the week
 	}),
-});
+})));

@@ -24,14 +24,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_THREE
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(11748, {["timeline"] = {ADDED_7_2_0}}),	-- Black is the New Black (Black Temple)
-				achWithRep(958, 1012, {	-- Sworn to the Deathsworn
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with the Ashtongue Deathsworn to Exalted.",
-					-- #endif
-				}),
+				achWithRep(958, FACTION_ASHTONGUE_DEATHSWORN),	-- Sworn to the Deathsworn
 			}),
 			n(FACTIONS, {
-				faction(1012),	-- Ashtongue Deathsworn
+				faction(FACTION_ASHTONGUE_DEATHSWORN),	-- Ashtongue Deathsworn
 			}),
 			n(QUESTS, {
 				q(10985, {	-- A Distraction for Akama (legacy version)
@@ -116,51 +112,59 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_THREE
 			}),
 			n(VENDORS, {
 				n(23159, {	-- Okuno <Ashtongue Deathsworn Quartermaster>
-					i(32429),	-- Pattern: Boots of Shackled Souls (RECIPE!)
-					i(32430, {	-- Pattern: Bracers of Shackled Souls (RECIPE!)
-						r(40000, {["timeline"] = {ADDED_2_1_0, REMOVED_3_0_3}}),
-					}),
-					i(32431),	-- Pattern: Greaves of Shackled Souls (RECIPE!)
-					i(32447),	-- Pattern: Night's End
-					i(32436),	-- Pattern: Redeemed Soul Cinch (RECIPE!)
-					i(32435),	-- Pattern: Redeemed Soul Legguards (RECIPE!)
-					i(32433),	-- Pattern: Redeemed Soul Moccasins (RECIPE!)
-					i(32434),	-- Pattern: Redeemed Soul Wristguards (RECIPE!)
-					i(32438),	-- Pattern: Soulguard Bracers
-					i(32440),	-- Pattern: Soulguard Girdle
-					i(32439),	-- Pattern: Soulguard Leggings
-					i(32437),	-- Pattern: Soulguard Slippers
-					i(32432),	-- Pattern: Waistguard of Shackled Souls (RECIPE!)
-					i(32442),	-- Plans: Shadesteel Bracers (RECIPE!)
-					i(32444),	-- Plans: Shadesteel Girdle (RECIPE!)
-					i(32443),	-- Plans: Shadesteel Greaves (RECIPE!)
-					i(32441),	-- Plans: Shadesteel Sabots (RECIPE!)
-					i(32490, {	-- Ashtongue Talisman of Acumen
-						["classes"] = { PRIEST },
-					}),
-					i(32486, {	-- Ashtongue Talisman of Equilibrium
-						["classes"] = { DRUID },
-					}),
-					i(32488, {	-- Ashtongue Talisman of Insight
-						["classes"] = { MAGE },
-					}),
-					i(32492, {	-- Ashtongue Talisman of Lethality
-						["classes"] = { ROGUE },
-					}),
-					i(32493, {	-- Ashtongue Talisman of Shadows
-						["classes"] = { WARLOCK },
-					}),
-					i(32487, {	-- Ashtongue Talisman of Swiftness
-						["classes"] = { HUNTER },
-					}),
-					i(32485, {	-- Ashtongue Talisman of Valor
-						["classes"] = { WARRIOR },
-					}),
-					i(32491, {	-- Ashtongue Talisman of Vision
-						["classes"] = { SHAMAN },
-					}),
-					i(32489, {	-- Ashtongue Talisman of Zeal
-						["classes"] = { PALADIN },
+					["groups"] = bubbleDownClassicRep(FACTION_ASHTONGUE_DEATHSWORN, {
+						{		-- Neutral
+						}, {	-- Friendly
+							i(32429),	-- Pattern: Boots of Shackled Souls (RECIPE!)
+							i(32430, {	-- Pattern: Bracers of Shackled Souls (RECIPE!)
+								r(40000, {["timeline"] = {ADDED_2_1_0, REMOVED_3_0_3}}),
+							}),
+							i(32436),	-- Pattern: Redeemed Soul Cinch (RECIPE!)
+							i(32435),	-- Pattern: Redeemed Soul Legguards (RECIPE!)
+							i(32438),	-- Pattern: Soulguard Bracers (RECIPE!)
+							i(32440),	-- Pattern: Soulguard Girdle (RECIPE!)
+							i(32442),	-- Plans: Shadesteel Bracers (RECIPE!)
+							i(32444),	-- Plans: Shadesteel Girdle (RECIPE!)
+						}, {	-- Honored
+							i(32431),	-- Pattern: Greaves of Shackled Souls (RECIPE!)
+							i(32447),	-- Pattern: Night's End (RECIPE!)
+							i(32433),	-- Pattern: Redeemed Soul Moccasins (RECIPE!)
+							i(32434),	-- Pattern: Redeemed Soul Wristguards (RECIPE!)
+							i(32439),	-- Pattern: Soulguard Leggings (RECIPE!)
+							i(32437),	-- Pattern: Soulguard Slippers (RECIPE!)
+							i(32432),	-- Pattern: Waistguard of Shackled Souls (RECIPE!)
+							i(32443),	-- Plans: Shadesteel Greaves (RECIPE!)
+							i(32441),	-- Plans: Shadesteel Sabots (RECIPE!)
+						}, {	-- Revered
+						}, {	-- Exalted
+							i(32490, {	-- Ashtongue Talisman of Acumen
+								["classes"] = { PRIEST },
+							}),
+							i(32486, {	-- Ashtongue Talisman of Equilibrium
+								["classes"] = { DRUID },
+							}),
+							i(32488, {	-- Ashtongue Talisman of Insight
+								["classes"] = { MAGE },
+							}),
+							i(32492, {	-- Ashtongue Talisman of Lethality
+								["classes"] = { ROGUE },
+							}),
+							i(32493, {	-- Ashtongue Talisman of Shadows
+								["classes"] = { WARLOCK },
+							}),
+							i(32487, {	-- Ashtongue Talisman of Swiftness
+								["classes"] = { HUNTER },
+							}),
+							i(32485, {	-- Ashtongue Talisman of Valor
+								["classes"] = { WARRIOR },
+							}),
+							i(32491, {	-- Ashtongue Talisman of Vision
+								["classes"] = { SHAMAN },
+							}),
+							i(32489, {	-- Ashtongue Talisman of Zeal
+								["classes"] = { PALADIN },
+							}),
+						},
 					}),
 				}),
 			}),
@@ -204,7 +208,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_THREE
 			-- #if AFTER 7.2.5.23910
 			d(DIFFICULTY.RAID.NORMAL, {
 				["lvl"] = 68,
-				["ignoreBonus"] = 1,
+				["ignoreBonus"] = true,
 				["groups"] = {
 			-- #endif
 					e(1582, {	-- High Warlord Naj'entus
@@ -414,7 +418,6 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_THREE
 								},
 								["classes"] = { DEATHKNIGHT, DEMONHUNTER, MONK, ROGUE, WARRIOR },
 								-- #if BEFORE WRATH
-								["description"] = "Wielder of a set of Warglaives of Azzinoth.",
 								["OnUpdate"] = [[function(t)
 									local collected = true;
 									for i,provider in ipairs(t.providers) do

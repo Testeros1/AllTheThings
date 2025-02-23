@@ -28,11 +28,12 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_7 } }
 			}),
 			o(384763, {	-- Forbidden Hoard
 				["coords"] = {
+					{ 45.9, 16.0, THE_FORBIDDEN_REACH },
 					{ 55.5, 93.6, THE_FORBIDDEN_REACH },
 					{ 53.6, 76.7, THE_FORBIDDEN_REACH },
 				},
 				["g"] = {
-					i(197000),	-- Cliffside Wylderdrake: Coiled Horns (DM!)
+					i(197000),	-- Cliffside Wylderdrake: Coiled Horns (MM!)
 				},
 			}),
 			o(385834, {	-- Journal Entry: Experiments
@@ -109,36 +110,37 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_7 } }
 })));
 
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_7 } }, {
-	m(THE_FORBIDDEN_REACH, {
-		n(TREASURES, {
-			header(HEADERS.Item, 202667, {	-- Sealed Artifact Scroll
-				q(73200),
-				q(73201),
-				q(73202),
-				q(73203),
-				q(73204),
-				q(73205),
-			}),
-			header(HEADERS.Item, 202669, {	-- Sealed Fish Scroll
-				q(73210),
-				q(73211),
-				q(73212),
-				q(73213),
-				q(73214),
-			}),
-			header(HEADERS.Item, 202670, {	-- Sealed Knowledge Scroll
-				q(73215),
-				q(73216),
-				q(73217),
-				q(73218),
-				q(73219),
-				-- q(73220),	-- guessed
-			}),
-			header(HEADERS.Item, 202668, {	-- Sealed Spirit Scroll
-				q(73206),
-				q(73207),
-				q(73208),
-				q(73209),
+	m(DRAGON_ISLES, {
+		m(THE_FORBIDDEN_REACH, {
+			n(TREASURES, {
+				header(HEADERS.Item, 202667, {	-- Sealed Artifact Scroll
+					q(73200),
+					q(73201),
+					q(73202),
+					q(73203),
+					q(73204),
+					q(73205),
+				}),
+				header(HEADERS.Item, 202669, {	-- Sealed Fish Scroll
+					q(73210),
+					q(73211),
+					q(73212),
+					q(73213),
+					q(73214),
+				}),
+				header(HEADERS.Item, 202670, {	-- Sealed Knowledge Scroll
+					q(73215),
+					q(73216),
+					q(73217),
+					q(73218),
+					q(73219),
+				}),
+				header(HEADERS.Item, 202668, {	-- Sealed Spirit Scroll
+					q(73206),
+					q(73207),
+					q(73208),
+					q(73209),
+				}),
 			}),
 		}),
 	}),

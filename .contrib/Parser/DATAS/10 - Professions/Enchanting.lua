@@ -761,28 +761,28 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 			},
 		},{
 			i(198610),	-- Enchanter's Script
-			q(74110, {	-- Inscription Order: Enchanting
-				["name"] = "Inscription Order: Enchanting",
+			q(74110, {	-- DF Inscription Order: Enchanting
+				["name"] = "DF Inscription Order: Enchanting",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194702 },	-- Draconic Treatise on Enchanting
 			}),
-			q(66377, {	-- Weekly Enchanting Knowledgepoint #1
-				["name"] = "Enchanting Treasure #1",
+			q(66377, {	-- DF Weekly Enchanting Knowledgepoint #1
+				["name"] = "DF Enchanting Treasure #1",
 				["provider"] = { "i", 193900 },	-- Prismatic Focusing Shard
 			}),
-			q(66378, {	-- Weekly Enchanting Knowledgepoint #2
-				["name"] = "Enchanting Treasure #2",
+			q(66378, {	-- DF Weekly Enchanting Knowledgepoint #2
+				["name"] = "DF Enchanting Treasure #2",
 				["provider"] = { "i", 193901 },	-- Primal Dust
 			}),
-			q(70515, {	-- Weekly Enchanting Knowledgepoint #3
-				["name"] = "Enchanting Drop #1: Primalist",
+			q(70515, {	-- DF Weekly Enchanting Knowledgepoint #3
+				["name"] = "DF Enchanting Drop #1: Primalist",
 				["description"] = "Drops from any mob with Primalist in the name.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = { 194656 },	-- Primalist Surgecrusher
 				["provider"] = { "i", 198968 },	-- Primalist Charm
 				["coord"] = { 53.4, 56.2, THALDRASZUS },
 			}),
-			q(70514, {	-- Weekly Enchanting Knowledgepoint #4
-				["name"] = "Enchanting Drop #2: Arcane Elemental",
+			q(70514, {	-- DF Weekly Enchanting Knowledgepoint #4
+				["name"] = "DF Enchanting Drop #2: Arcane Elemental",
 				["description"] = "Drops from any Arcane Elemental.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = { 181536 },	-- Destabilized Elemental
 				["provider"] = { "i", 198967 },	-- Primordial Aether
@@ -791,6 +791,18 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(QUESTS, sharedData({
+			["provider"] = { "n", 219085 },	-- Nagad <Enchanting Trainer>
+			["coord"] = { 52.7, 71.1, DORNOGAL },
+			["isWeekly"] = true,
+			["g"] = {
+				i(227667),	-- Algari Enchanter's Folio
+			},
+		},{
+			q(84086),	-- A Rare Necessity
+			q(84084),	-- Just a Pinch
+			q(84085),	-- The Power of Potential
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_ENCHANTING_KNOWLEDGE, 1 }} }, {
@@ -859,8 +871,15 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 					i(226288),	-- Essence of Holy Fire
 				},
 			}),
+			o(456009, {	-- Grinded Earthen Gem
+				["coord"] = { 57.6, 61.5, ISLE_OF_DORN },
+				["questID"] = 83856,
+				["g"] = {
+					i(226284),	-- Grinded Earthen Gem
+				},
+			}),
 			o(456008, {	-- Silver Dornogal Rod
-				["coord"] = { 59.4, 66.5, DORNOGAL },
+				["coord"] = { 58.0, 56.9, DORNOGAL },
 				["questID"] = 83859,
 				["g"] = {
 					i(226285),	-- Silver Dornogal Rod
@@ -874,7 +893,7 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 				},
 			}),
 			o(456002, {	-- Void Shard
-				["coord"] = { 57.4, 44.1, NERUBAR },
+				["coord"] = { 57.3, 44.0, AZJ_KAHET },
 				["questID"] = 83865,
 				["g"] = {
 					i(226291),	-- Void Shard
@@ -886,15 +905,44 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 			["g"] = {
 				currency(TWW_ENCHANTING_KNOWLEDGE),
 			},
-		},{
-			q(83727, {	-- Inscription Order: Enchanting
-				["name"] = "Inscription Order: Enchanting",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222550 },	-- Algari Treatise on Enchanting
-			}),
-			q(83258, {	-- Weekly Enchanting Knowledgepoint #1
-				["name"] = "TWW: Enchanting Treasure #1",
+		},{i(225230),
+			q(83258, {	-- TWW Weekly Enchanting Knowledgepoint #1
+				["name"] = "TWW Weekly Enchanting Treasure #1",
 				["provider"] =  { "i", 225231 },	-- Powdered Fulgurance
+			}),
+			q(83259, {	-- TWW Weekly Enchanting Knowledgepoint #2
+				["name"] = "TWW Weekly Enchanting Treasure #2",
+				["provider"] =  { "i", 225230 },	-- Crystalline Repository
+			}),
+			q(84290, {	-- TWW Weekly Enchanting Knowledgepoint #3
+				["name"] = "TWW Weekly Enchanting Disenchant #1",
+				["description"] = "Rewarded when disenchanting items.",
+				["provider"] =  { "i", 227659 },	-- Fleeting Arcane Manifestation
+			}),
+			q(84291, {	-- TWW Weekly Enchanting Knowledgepoint #4
+				["name"] = "TWW Weekly Enchanting Disenchant #2",
+				["description"] = "Rewarded when disenchanting items.",
+				["provider"] =  { "i", 227659 },	-- Fleeting Arcane Manifestation
+			}),
+			q(84292, {	-- TWW Weekly Enchanting Knowledgepoint #5
+				["name"] = "TWW Weekly Enchanting Disenchant #3",
+				["description"] = "Rewarded when disenchanting items.",
+				["provider"] =  { "i", 227659 },	-- Fleeting Arcane Manifestation
+			}),
+			q(84293, {	-- TWW Weekly Enchanting Knowledgepoint #6
+				["name"] = "TWW Weekly Enchanting Disenchant #4",
+				["description"] = "Rewarded when disenchanting items.",
+				["provider"] =  { "i", 227659 },	-- Fleeting Arcane Manifestation
+			}),
+			q(84294, {	-- TWW Weekly Enchanting Knowledgepoint #7
+				["name"] = "TWW Weekly Enchanting Disenchant #5",
+				["description"] = "Rewarded when disenchanting items.",
+				["provider"] =  { "i", 227659 },	-- Fleeting Arcane Manifestation
+			}),
+			q(84295, {	-- TWW Weekly Enchanting Knowledgepoint #8
+				["name"] = "TWW Weekly Enchanting Disenchant #6",
+				["description"] = "Rewarded when disenchanting items.",
+				["provider"] =  { "i", 227661 },	-- Gleaming Telluric Crystal
 			}),
 		})),
 	})),
@@ -1083,7 +1131,7 @@ profession(ENCHANTING, sharedData({["sourceIgnored"]=true},{
 			applyclassicphase(PHASE_FIVE, r(25129, {["timeline"]={REMOVED_4_0_3}})),	-- Brilliant Wizard Oil
 			-- #if SEASON_OF_DISCOVERY
 			applyclassicphase(SOD_PHASE_FOUR, r(463869, {	-- Conductive Shield Coating
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 			})),
 			-- #endif
 			applyclassicphase(PHASE_FIVE_RECIPES, r(25127)),	-- Lesser Mana Oil
@@ -1109,7 +1157,7 @@ profession(ENCHANTING, sharedData({["sourceIgnored"]=true},{
 			r(13905),	-- Greater Versatility / CLASSIC: Greater Spirit
 			-- #if SEASON_OF_DISCOVERY
 			applyclassicphase(SOD_PHASE_FOUR, r(463871, {	-- Law of Nature
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 			})),
 			-- #endif
 			r(13689),	-- Lesser Parry / CLASSIC: Lesser Block

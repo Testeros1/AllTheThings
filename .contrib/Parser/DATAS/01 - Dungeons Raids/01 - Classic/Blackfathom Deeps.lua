@@ -45,7 +45,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 			}),
 			-- #if SEASON_OF_DISCOVERY
 			-- In Season of Discovery, this version of the instance has been deprecated and removed in favor of the raid.
-			d(DIFFICULTY.DUNGEON.NORMAL, bubbleDownTimelineEventSelf("removed 1.15.0", {
+			d(DIFFICULTY.DUNGEON.NORMAL, bubbleDownTimelineEventSelf(REMOVED_1_15_0, {
 			-- #endif
 			n(QUESTS, {
 				q(6564, {	-- Allegiance to the Old Gods (1/2)
@@ -76,7 +76,17 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						}),
 					},
 				}),
-				-- #if BEFORE CATA
+				q(26891, {	-- Amongst the Ruins
+					["qg"] = 12736,	-- Je'neu Sancrea <The Earthen Ring>
+					["timeline"] = { ADDED_4_0_3, REMOVED_6_0_2 },
+					["races"] = HORDE_ONLY,
+					["lvl"] = 20,
+					["groups"] = {
+						objective(1, {	-- 0/1 Fathom Core
+							["provider"] = { "i", 16762 },	-- Fathom Core
+						}),
+					},
+				}),
 				q(6921, {	-- Amongst the Ruins
 					["qg"] = 12736,	-- Je'neu Sancrea <The Earthen Ring>
 					["coord"] = { 11.6, 34.3, ASHENVALE },
@@ -89,19 +99,6 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						}),
 					},
 				}),
-				-- #else
-				q(6921, {	-- Amongst the Ruins [CATA]
-					["qg"] = 12736,	-- Je'neu Sancrea <The Earthen Ring>
-					["timeline"] = { ADDED_4_0_3, REMOVED_6_0_2 },
-					["races"] = HORDE_ONLY,
-					["lvl"] = 20,
-					["groups"] = {
-						objective(1, {	-- 0/1 Fathom Core
-							["provider"] = { "i", 16762 },	-- Fathom Core
-						}),
-					},
-				}),
-				-- #endif
 				q(6922, {	-- Baron Aquanis
 					["provider"] = { "i", 16782 },	-- Strange Water Globe
 					["timeline"] = { REMOVED_6_0_2 },
@@ -357,7 +354,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				}),
 				-- #if NOT SEASON_OF_DISCOVERY
 				q(3765, {	-- The Corruption Abroad
-					["qg"] = 4984,  -- Argos Nightwhisper
+					["qg"] = 4984,	-- Argos Nightwhisper
 					["coords"] = {
 						-- #if AFTER WRATH
 						{ 36.2, 67.6, STORMWIND_CITY },
@@ -515,7 +512,13 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 			}),
 			o(177964, {	-- Fathom Stone
 				["description"] = "In the water below the Twilight bridge.\n\nWARNING: Spawns Baron Aquanis.",
-				["sourceQuest"] = 6921,	-- Amongst the Ruins
+				["sourceQuests"] = {
+					-- #if AFTER 4.0.3
+					26891,	-- Amongst the Ruins
+					-- #else
+					6921,	-- Amongst the Ruins
+					-- #endif
+				},
 				["timeline"] = { REMOVED_6_0_2 },
 				["races"] = HORDE_ONLY,
 				["groups"] = {
@@ -703,7 +706,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 			}),
 			-- #if SEASON_OF_DISCOVERY
 			})),
-			applyclassicphase(SOD_PHASE_ONE, d(DIFFICULTY.SOD.PLAYER10, bubbleDownSelf({ ["timeline"] = { "added 1.15.0", REMOVED_2_0_1 }, }, {
+			applyclassicphase(SOD_PHASE_ONE, d(DIFFICULTY.SOD.PLAYER10, bubbleDownSelf({ ["timeline"] = { ADDED_1_15_0, REMOVED_2_0_1 }, }, {
 				["description"] = "This instance was converted from a normal difficulty dungeon into a 10-player raid instance.",
 				["lvl"] = 25,
 				["groups"] = {
@@ -826,7 +829,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							},
 						}),
 						q(3765, {	-- The Corruption Abroad
-							["qg"] = 4984,  -- Argos Nightwhisper
+							["qg"] = 4984,	-- Argos Nightwhisper
 							["coords"] = {
 								-- #if AFTER WRATH
 								{ 36.2, 67.6, STORMWIND_CITY },
@@ -1071,11 +1074,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		},
 	}),
 }));
--- #if AFTER 6.0.1
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(227, {
 		q(35929),	-- Blackfathom Deeps Reward Quest - Normal completion
 		q(35930),	-- Blackfathom Deeps (Bonus) Reward Quest
 	}),
-});
--- #endif
+})));

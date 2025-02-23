@@ -298,7 +298,7 @@ root(ROOTS.Zones, {
 					["sourceQuests"] = { 39855 },	-- Paid in Lifeblood
 					["races"] = ALLIANCE_ONLY,
 					["coord"] = { 72.3, 61.0, STORMHEIM },
-					["icon"] = "Interface\\Icons\\inv_misc_map_01",
+					["icon"] = 134269,
 					["g"] = {
 						i(129252),	-- Lorna's Bracelet
 						i(129255),	-- Worgen Kings Wraps
@@ -520,6 +520,7 @@ root(ROOTS.Zones, {
 					["coord"] = { 36.1, 27.4, STORMHEIM },
 					["provider"] = { "n", 91590 },	-- Apothecary Withers
 					["g"] = {
+						i(122702),	-- Containment Unit (QI!)
 						i(134554),	-- Runespeaker's Gloves
 						i(134555),	-- Runesworn Grips
 						i(134556),	-- Stormborn Gloves
@@ -801,7 +802,7 @@ root(ROOTS.Zones, {
 						39791,	-- Lay Them to Rest
 					},
 					["coord"] = { 69.8, 45.6, STORMHEIM },
-					["icon"] = "Interface\\Icons\\INV_Archaeology_Ogres_Pictogram_Tablet",
+					["icon"] = 1017867,
 				}),
 				q(39788, {	-- The Runewood's Revenge
 					["sourceQuests"] = { 39796 },	-- To Haustvald
@@ -1035,7 +1036,7 @@ root(ROOTS.Zones, {
 				}),
 				n(BONUS_OBJECTIVES, sharedData({
 					["lockCriteria"] = { 1, "lvl", 45 },
-					["description"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
+					["sharedDescription"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
 				},{
 					-- TODO: Check SQ, also probably can't do after a certain level
 					q(38442, {	-- A Worthy Challenger
@@ -1068,15 +1069,24 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(39607),	-- God-King Scene (Vault) - triggers when turning in "Ahead of the Game" (questID 39590)
-		q(43713),	-- Tracking - Statue Climbed - triggers at the top of Nashal the Watcher
-		q(38420),	-- Triggered when turning in "Cry Thunder!" (questID 38624)
-		q(43350),	-- Triggered when turning in "Halls of Valor: Securing the Aegis" (questID 40072)
-		q(42573),	-- Shaman Shrine - Stormheim Earth 01
-		q(42574),	-- Shaman Shrine - Stormheim Earth 02
-		q(40398),	-- Shaman Shrine - Stormheim Water 01 - DGK
-		q(42580),	-- Shaman Shrine - Stormheim Wind 01
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(BROKEN_ISLES, {
+		m(STORMHEIM, {
+			n(FACTIONS, {
+				n(EMISSARY_QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+					q(46798),	-- Paragon of the Valarjar
+				})),
+			}),
+			n(QUESTS, {
+				q(39607),	-- God-King Scene (Vault) - triggers when turning in "Ahead of the Game" (questID 39590)
+				q(38420),	-- Triggered when turning in "Cry Thunder!" (questID 38624)
+				q(43350),	-- Triggered when turning in "Halls of Valor: Securing the Aegis" (questID 40072)
+				q(42573),	-- Shaman Shrine - Stormheim Earth 01
+				q(42574),	-- Shaman Shrine - Stormheim Earth 02
+				q(40398),	-- Shaman Shrine - Stormheim Water 01 - DGK
+				q(42580),	-- Shaman Shrine - Stormheim Wind 01
+			}),
+		}),
 	}),
-});
+})));

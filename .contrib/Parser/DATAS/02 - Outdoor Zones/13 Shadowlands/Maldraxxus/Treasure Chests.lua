@@ -51,10 +51,11 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["isDaily"] = true,
 			}),
 			o(353231, {		-- Bonebound Chest
-				["description"] = "There are 2 versions of this chest. One is at the cave entrance at |cFFFFFFFF37.9, 76.3|r. One is at the Unyielding Assembly at building entrance |cFFFFFFFF35.9, 80.2|r.",
 				["coords"] = {
+					{ 30.4, 77.7, MALDRAXXUS },
+					{ 33.3, 81.6, MALDRAXXUS },
+					{ 33.8, 76.4, MALDRAXXUS },
 					{ 36.2, 81.6, MALDRAXXUS },
-					{ 61.1, 22.6, 1651 },	-- Molten Forge
 				},
 				["questID"] = 60662,	-- same quest triggers for both versions of chest
 				["isDaily"] = true,
@@ -93,7 +94,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				},
 			}),
 			o(364483, {		-- Empty Nightcap Cask
-				["description"] = "Coordinates are to the entrance of Molten Forge. The cask is found at 50.3, 17.4 once you enter the Molten Forge.",
+				["description"] = "Requires |cFF40bf40Necrolord Covenant|r with Abomination Factory Rank 3. Coordinates are to the entrance of Molten Forge. The cask is found at 50.3, 17.4 once you enter the Molten Forge.",
 				["coords"] = {
 					{ 37.9, 76.3, MALDRAXXUS },
 					{ 50.3, 17.4, 1651 },	-- Molten Forge
@@ -330,6 +331,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["coords"] = {
 						{ 45.0, 35.5, MALDRAXXUS },
 						{ 46.8, 31.7, MALDRAXXUS },
+						{ 40.3, 31.7, MALDRAXXUS },
 					},
 					["questID"] = 61089,
 					["isDaily"] = true,
@@ -339,6 +341,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 						{ 73.5, 49.7, MALDRAXXUS },
 						{ 75.6, 45.5, MALDRAXXUS },
 						{ 76.0, 49.4, MALDRAXXUS },
+						{ 68.8, 47.2, MALDRAXXUS },
 					},
 					["questID"] = 61090,
 					["isDaily"] = true,
@@ -350,6 +353,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 						{ 38.6, 47.0, MALDRAXXUS },
 						{ 40.0, 43.9, MALDRAXXUS },
 						{ 40.9, 47.1, MALDRAXXUS },
+						{ 36.7, 42.5, MALDRAXXUS },
 					},
 					["questID"] = 60556,
 					["isDaily"] = true,
@@ -360,9 +364,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["coord"] = { 65.6, 50.8, MALDRAXXUS },
 				["questID"] = 61451,
 				["g"] = {
-					i(182618, {	-- Reclaimed Vessel
-						["questID"] = 62085,	-- ...Why Me?
-					}),
+					i(182618),	-- Reclaimed Vessel (QS!)
 				},
 			}),
 			o(348521, {		-- Strange Growth
@@ -406,10 +408,19 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 		}),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, {
---	Treasures of Maldraxxus achievement
-	q(58709),	-- Forgotten Mementos - clicking the chain
-	q(59245),	-- Misplaced Supplies (daily trigger)
-	q(62582),	-- Using Cache of Spare Weapons
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_2_LAUNCH } }, {
+	m(SHADOWLANDS, {
+		m(MALDRAXXUS, {
+			n(TREASURES, {
+				--	Treasures of Maldraxxus achievement
+				q(58709),	-- Forgotten Mementos - clicking the chain
+				q(59245),	-- Misplaced Supplies (daily trigger)
+				q(62582),	-- Using Cache of Spare Weapons
+				--
+				q(62248),	-- interacting with the Box of Torments
+				q(61127),	-- Triggered after getting Oonar's Arm
+				q(61128),	-- Triggered after getting Sorrowbane
+			}),
+		}),
+	}),
+})));

@@ -2,6 +2,7 @@
 using KeraLua;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,8 +18,10 @@ namespace ATT
         /// </summary>
         public static bool AddTableNewLines { get; set; } = false;
 
-        private static List<string[]> RegexFunctionReplacements = new List<string[]>
+        private static readonly List<string[]> RegexLuaReplacements = new List<string[]>
         {
+            new [] { @"\n|\r", "\t" },
+            new [] { @"\t[\t]+", "\t" },
             new [] { @";[\s]*", @";" },
             new [] { @",[\s]*", @"," },
             new [] { @"[\s]+=[\s]+", @"=" },
@@ -27,8 +30,12 @@ namespace ATT
             new [] { @"[\s]+<=[\s]+", @"<=" },
             new [] { @"[\s]+>[\s]+", @">" },
             new [] { @"[\s]+<[\s]+", @"<" },
-            new [] { @"\t[\t]+", "\t" },
             new [] { @",\}", "}" },
+            new [] { @"[\s]*=[\s]*", "=" },
+            new [] { @"[\s]*\{[\s]*", "{" },
+            new [] { @"[\s]*\}[\s]*", "}" },
+            new [] { @"[\s]*\([\s]*", "(" },
+            new [] { @"[\s]*\)[\s]*", ")" },
         };
 
         /// <summary>
@@ -177,7 +184,7 @@ namespace ATT
             {
                 fields.Remove("OnInit");
                 fields.Remove("OnSourceInit");
-                var onInitBody = SimplifyFunctionBody(OnInitRef);
+                var onInitBody = SimplifyLuaBody(OnInitRef);
                 if (!onInitBody.Contains("return"))
                 {
                     Console.WriteLine("Missing a return within an OnInit function body.");
@@ -229,7 +236,7 @@ namespace ATT
                         }
                         else if (field == "OnClick" || field == "OnUpdate" || field == "OnTooltip")
                         {
-                            var functionBody = SimplifyFunctionBody(data[field]);
+                            var functionBody = SimplifyLuaBody(data[field]);
                             if (functionBody.StartsWith("function("))
                             {
                                 // Attempt to validate the format of the function.
@@ -429,7 +436,19 @@ namespace ATT
             builder.AppendLine("};");
 
             // Simplify the structure of the string and then export to the builder.
-            if (!((string[])Framework.Config["PreProcessorTags"]).Contains("NOSIMPLIFY")) SimplifyStructureForLua(builder);
+            if (!((string[])Framework.Config["PreProcessorTags"]).Contains("NOSIMPLIFY"))
+            {
+                var simplifyConfig = Framework.Config["SimplifyStructures"];
+                if (simplifyConfig.Defined)
+                {
+                    int[] simplify = simplifyConfig;
+                    SimplifyStructureForLua(builder, simplify[0], simplify[1]);
+                }
+                else
+                {
+                    SimplifyStructureForLua(builder);
+                }
+            }
             ExportLocalVariablesForLua(builder);
             ExportCategoriesHeaderForLua(builder);
             STRUCTURE_COUNTS.Clear();
@@ -477,14 +496,35 @@ namespace ATT
         /// </summary>
         /// <param name="value">The body of the function.</param>
         /// <returns>The simplified body of the function.</returns>
-        public static string SimplifyFunctionBody(object value)
+        public static string SimplifyLuaBody(object value)
         {
-            string functionBody = Convert.ToString(value).Replace("\n", "\t").Replace("\r", "\t");
+            string functionBody = Convert.ToString(value);
+            // extract any verbatim strings so they are not impacted by Lua regex compression
+            Dictionary<string, string> verbatimStringReplacements = new Dictionary<string, string>();
+            const string VerbatimStringReplacment = @"""(?:[^""]|[\w\s])*""";
+            int replacementID = 1;
+            bool tryReplace = true;
+            while (tryReplace)
+            {
+                Match verbatimMatch = Regex.Match(functionBody, VerbatimStringReplacment);
+                if (verbatimMatch.Success)
+                {
+                    string verbatimReplacement = $@"[=[{replacementID}]=]";
+                    verbatimStringReplacements.Add(verbatimReplacement, verbatimMatch.Value);
+                    functionBody = functionBody.Replace(verbatimMatch.Value, verbatimReplacement);
+                    replacementID++;
+                }
+                else
+                {
+                    tryReplace = false;
+                }
+            }
+
             int functionBodyLength = functionBody.Length;
             while (true)
             {
                 string shortenedFunctionBody = null;
-                foreach (string[] replacements in RegexFunctionReplacements)
+                foreach (string[] replacements in RegexLuaReplacements)
                 {
                     shortenedFunctionBody = Regex.Replace(shortenedFunctionBody ?? functionBody, replacements[0], replacements[1]);
                 }
@@ -502,6 +542,13 @@ namespace ATT
                 // Remove any sort of silly string escape used to encapsulate the function body.
                 functionBody = functionBody.Substring(1, functionBody.Length - 2);
             }
+
+            // replace the extract verbatim strings
+            foreach(var verbatimSwap in verbatimStringReplacements)
+            {
+                functionBody = functionBody.Replace(verbatimSwap.Key, verbatimSwap.Value);
+            }
+
             return functionBody;
         }
     }

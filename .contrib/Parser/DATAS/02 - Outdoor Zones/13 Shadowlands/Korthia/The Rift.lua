@@ -10,7 +10,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 					q(64522, {	-- Stolen Korthian Supplies
 						["provider"] = { "i", 187276 },	-- Stolen Korthian Supplies
 						["isWeekly"] = true,
-						["minReputation"] = { 2472, 3 },	-- Tier 3
+						["minReputation"] = { FACTION_THE_ARCHIVISTS_CODEX, 3 },	-- Tier 3
 						["g"] = {
 							i(187551),	-- Small Korthian Supply Chest
 						},
@@ -107,6 +107,12 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	q(64704),	-- triggered when looting 48-research item Half-Completed Runeforge Pattern from Observer Yorik
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_1_0 } }, {
+	m(SHADOWLANDS, {
+		m(KORTHIA, {
+			header(HEADERS.Spell, 354778, {	-- The Rift
+				q(64704),	-- triggered when looting 48-research item Half-Completed Runeforge Pattern from Observer Yorik
+			}),
+		}),
+	}),
+})));

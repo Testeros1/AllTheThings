@@ -60,15 +60,20 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						}),
 					}),
 					n(VENDORS, {
+						-- #if BEFORE 4.1.0
 						n(52915, {	-- Harald
 							["cost"] = {
 								{ "i", 33865, 1 },	-- Amani Hex Stick
 							},
 							["groups"] = {
 								i(33926, {	-- Sealed Scroll Case
-									["description"] = "Can contain profession recipes."
+									["description"] = "Can contain profession recipes." -- Only applies for the TBC version of Zul'Aman.
 								})
 							},
+						}),
+						-- #endif
+						n(52924, {	-- Vol'jin (Not a Vendor, but a placeholder for information.)
+							["description"] = "To open the gates you have to tell Vol'jin you are ready to open the gates, and then click ONCE on the gong when it becomes interactable. Your character will keep auto-hitting it, and Vol'jin will open the gates.",
 						}),
 					}),
 					n(ZONE_DROPS, {
@@ -121,9 +126,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(69802),	-- Band of the Gurubashi Berserker
 						i(69803, {	-- Gurubashi Punisher
 							["crs"] = {
-								130241,	 -- Zandalari Archon
-								130243,	 -- Zandalari Hierophant
-								130245,	 -- Zandalari Juggernaut
+								130241,	-- Zandalari Archon
+								130243,	-- Zandalari Hierophant
+								130245,	-- Zandalari Juggernaut
 							},
 						}),
 						i(69798, {	-- Knotted Handwraps
@@ -151,7 +156,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(69799),	-- Quickfinger Ring
 					}),
 					n(24396, {	-- Forest Frog
-						["description"] = "Use an Amani Hex Stick on a Forest Frog for a chance to have Mojo spawn and hop into your bags.",
+						["description"] = "Use an Amani Hex Stick on a Forest Frog for a chance to get vendors and bags of gold, as well as have Mojo spawn and hop into your bags.",
 						["cost"] = {
 							{ "i", 33865, 1 },	-- Amani Hex Stick
 						},
@@ -159,6 +164,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 							i(33993, {	-- Mojo (PET!)
 								["timeline"] = { ADDED_2_3_0 },
 							}),
+							i(33931),	-- Amani Charm of Mighty Mojo
+							i(33930),	-- Amani Charm of the Bloodletter
+							i(33933),	-- Amani Charm of the Raging Defender
+							i(33932),	-- Amani Charm of the Witch Doctor
 							ach(5761, {	-- Hex Mix
 								crit(16836, {	-- Rosa saved.
 									["provider"] = { "n", 52905 },	-- Rosa
@@ -200,7 +209,8 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						},
 					}),
 					n(ZULAMAN_TIMED_EVENT, {
-						["description"] = "Enter the instance and talk to Vol'Jin to start the event and open the doors. You will now have 15 minutes to defeat the first animal-boss of your choice. Any of the loa spirit bosses will do and there is no required order, but two of them will add extra time to the timer.\n\n    Killing Nalorakk (bear) will add 5 minutes to your timer.\n    Killing Akil'zon (eagle) will add 5 minutes to your timer.\n    Other bosses will not grant additional time.\n\nThe loot from the event is dependent on the number of hostages you rescue.",
+						["description"] = "Enter the instance and talk to Vol'Jin to start the event and open the doors. You will now have 15 minutes to defeat the first animal-boss of your choice. Any of the loa spirit bosses will do and there is no required order, but two of them will add extra time to the timer.\n\nKilling Nalorakk (bear) will add 5 minutes to your timer.\nKilling Akil'zon (eagle) will add 5 minutes to your timer.\nOther bosses will not grant additional time.\n\nThe loot from the event is dependent on the number of hostages you rescue, and spawns in containers near the hostage's cage upon release.",
+						["nomerge"] = true,
 						["groups"] = {
 							n(ZULAMAN_CHEST_1, {
 								i(69886),	-- Bag of Coins
@@ -228,56 +238,65 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 							}),
 						},
 					}),
+					n(ZULAMAN_TIMED_EVENT, {
+						["sharedDescription"] = "Stay with the captives after their release to get additional loot.",
+						["groups"] = {
+							n(52941),	-- Bakkal'zu
+							n(52939),	-- Hazlek
+							n(52945),	-- Kasha
+							n(52943),	-- Norkani
+						},
+					}),
 					e(186, {	-- Akil'zon
 						["crs"] = { 23574 },	-- Akil'zon
 						["groups"] = {
-							i(69552), -- Bracers of Hidden Purpose
-							i(69551), -- Feathers of Akil'zon
-							i(69550), -- Leggings of Ancient Magics
-							i(69553), -- Talonguard Band
-							i(69549), -- Wristguards of the Predator
+							i(69552),	-- Bracers of Hidden Purpose
+							i(69551),	-- Feathers of Akil'zon
+							i(69550),	-- Leggings of Ancient Magics
+							i(69553),	-- Talonguard Band
+							i(69549),	-- Wristguards of the Predator
 						},
 					}),
 					e(187, {	-- Nalorakk
 						["crs"] = { 23576 },	-- Nalorakk
 						["groups"] = {
-							i(69556), -- Armbands of the Bear Spirit
-							i(69555), -- Boots of the Ursine
-							i(69557), -- Jungle Striders
-							i(69554), -- Pauldrons of Nalorakk
-							i(69558), -- Spiritshield Mask
+							i(69556),	-- Armbands of the Bear Spirit
+							i(69555),	-- Boots of the Ursine
+							i(69557),	-- Jungle Striders
+							i(69554),	-- Pauldrons of Nalorakk
+							i(69558),	-- Spiritshield Mask
 						},
 					}),
 					e(188, {	-- Jan'alai
 						["crs"] = { 23578 },	-- Jan'alai
 						["groups"] = {
-							i(69559), -- Amani'shi Bracers
-							i(69562), -- Boots of Bad Mojo
-							i(69561), -- Hawkscale Waistguard
-							i(69560), -- Jan'alai's Spaulders
-							i(69563), -- Ring of the Numberless Brood
+							i(69559),	-- Amani'shi Bracers
+							i(69562),	-- Boots of Bad Mojo
+							i(69561),	-- Hawkscale Waistguard
+							i(69560),	-- Jan'alai's Spaulders
+							i(69563),	-- Ring of the Numberless Brood
 						},
 					}),
 					e(189, {	-- Halazzi
 						["crs"] = { 23577 },	-- Halazzi
 						["groups"] = {
 							ach(5750),	-- Tunnel Vision
-							i(69565), -- Breastplate of Primal Fury
-							i(69568), -- Shadowmender Wristguards
-							i(69566), -- Shimmerclaw Band
-							i(69564), -- The Savager's Mask
-							i(69567), -- Wristwraps of Departed Spirits
+							i(69565),	-- Breastplate of Primal Fury
+							i(69568),	-- Shadowmender Wristguards
+							i(69566),	-- Shimmerclaw Band
+							i(69564),	-- The Savager's Mask
+							i(69567),	-- Wristwraps of Departed Spirits
 						},
 					}),
 					e(190, {	-- Hex Lord Malacrass
 						["crs"] = { 24239 },	-- Hex Lord Malacrass
 						["groups"] = {
-							i(69572), -- Hex Lord's Bloody Cloak
-							i(69573), -- Pauldrons of Sacrifice
-							i(70080), -- Reforged Heartless
-							i(69569), -- Shadowtooth Trollskin Breastplate
-							i(69571), -- Soul Drain Signet
-							i(69570), -- Waistband of Hexes
+							i(69572),	-- Hex Lord's Bloody Cloak
+							i(69573),	-- Pauldrons of Sacrifice
+							i(70080),	-- Reforged Heartless
+							i(69569),	-- Shadowtooth Trollskin Breastplate
+							i(69571),	-- Soul Drain Signet
+							i(69570),	-- Waistband of Hexes
 						},
 					}),
 					e(191, {	-- Daakara
@@ -286,16 +305,16 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 							ach(5769),	-- Heroic: Zul'Aman
 							ach(5771),	-- Heroic: Zul'Aman Guild Run
 							ach(5760),	-- Ring Out!
-							i(69579), -- Amani Headdress
-							i(69581), -- Amani Scepter of Rites
-							i(69577), -- Collar of Bones
-							i(69576), -- Headdress of Sharpened Vision
-							i(69578), -- Hexing Robes
-							i(69583), -- Legguards of the Unforgiving
-							i(69575), -- Mace of the Sacrificed
-							i(69580), -- Mask of Restless Spirits
-							i(69582), -- Skullpiercer Pauldrons
-							i(69574), -- Tusked Shoulderpads
+							i(69579),	-- Amani Headdress
+							i(69581),	-- Amani Scepter of Rites
+							i(69577),	-- Collar of Bones
+							i(69576),	-- Headdress of Sharpened Vision
+							i(69578),	-- Hexing Robes
+							i(69583),	-- Legguards of the Unforgiving
+							i(69575),	-- Mace of the Sacrificed
+							i(69580),	-- Mask of Restless Spirits
+							i(69582),	-- Skullpiercer Pauldrons
+							i(69574),	-- Tusked Shoulderpads
 						},
 					}),
 				},
@@ -304,8 +323,8 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(77, {
 		q(35443),	-- Zul'Aman Reward Quest - Heroic completion
 	}),
-});
+})));

@@ -26,7 +26,6 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			n(QUESTS, {
 				q(74376, {	-- Coalesced Storm Remnants
 					["provider"] = { "i", 203469 },	-- Coalesced Storm Remnants
-					["isWeekly"] = true,
 					["g"] = {
 						i(ESSENCE_OF_THE_STORM),
 					}
@@ -38,7 +37,6 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(74437, {	-- Resisting the Storm
 					["provider"] = { "n", 183860 },	-- Soridormi
 					["coord"] = { 61.1, 50.9, THE_PRIMALIST_FUTURE },
-					--["isWeekly"] = true,
 				}),
 				n(BONUS_OBJECTIVES, sharedData({
 					["isDaily"] = true,
@@ -227,10 +225,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		})),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(THE_PRIMALIST_FUTURE, {
-		q(73162),	-- Killing Nimbulatus/Seismodor
-		q(74552),	-- flagged when 74378 "The Storm's Fury" unflagged first time
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_5} }, {
+	m(DRAGON_ISLES, {
+		m(THALDRASZUS, {
+			m(THE_PRIMALIST_FUTURE, {
+				q(73162),	-- Killing Nimbulatus/Seismodor
+				q(74552),	-- flagged when 74378 "The Storm's Fury" unflagged first time
+			}),
+		}),
 	}),
-}));
+})));

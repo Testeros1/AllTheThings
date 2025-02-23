@@ -3,7 +3,7 @@
 -----------------------------------------------------
 STORMING_THE_CITADEL = createHeader({
 	readable = "Storming the Citadel",
-	icon = "Interface\\Icons\\achievement_dungeon_icecrown_icecrownentrance",
+	icon = 343640,
 	text = {
 		en = "Storming the Citadel",
 		es = "Asaltar la Ciudadela",
@@ -18,7 +18,7 @@ STORMING_THE_CITADEL = createHeader({
 });
 THE_PLAGUEWORKS = createHeader({
 	readable = "The Plagueworks",
-	icon = "Interface\\Icons\\achievement_dungeon_plaguewing",
+	icon = 342919,
 	text = {
 		en = "The Plagueworks",
 		es = "Los Talleres de la Peste",
@@ -33,14 +33,14 @@ THE_PLAGUEWORKS = createHeader({
 });
 THE_CRIMSON_HALLS = createHeader({
 	readable = "The Crimson Halls",
-	icon = "Interface\\Icons\\achievement_dungeon_crimsonhall",
+	icon = 341981,
 	text = {
 		en = [[~C_Map.GetAreaInfo(4892)]],
 	},
 });
 THE_FROSTWING_HALLS = createHeader({
 	readable = "The Frostwing Halls",
-	icon = "Interface\\Icons\\achievement_dungeon_icecrown_frostwinghalls",
+	icon = 343638,
 	text = {
 		-- #if AFTER BFA
 		en = [[~C_Map.GetAreaInfo(7932)]],
@@ -74,6 +74,172 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 		["isRaid"] = true,
 		["lvl"] = 80,
 		["groups"] = {
+			applyclassicphase(WRATH_PHASE_FOUR_SHADOWMOURNE,
+			header(HEADERS.Item, 49623, {	-- Shadowmourne
+				["description"] = "These quests can only be completed on 25-Man Normal or Heroic difficulty.",
+				["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
+				["isRaid"] = true,
+				["lvl"] = 80,
+				["groups"] = {
+					q(24545, {	-- The Sacred and the Corrupt
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["minReputation"] = { FACTION_THE_ASHEN_VERDICT, FRIENDLY },	-- The Ashen Verdict
+						["maps"] = { DRAGONBLIGHT },
+						["groups"] = {
+							objective(1, {	-- 0/1 Light's Vengeance
+								["providers"] = {
+									{ "i",  49869 },	-- Light's Vengeance
+									{ "o", 201937 },	-- Light's Vengeance
+								},
+								["coord"] = { 75.9, 20.8, DRAGONBLIGHT },
+							}),
+							objective(2, {	-- 0/25 Primordial Saronite
+								["provider"] = { "i", 49908 },	-- Primordial Saronite
+							}),
+							objective(3, {	-- 0/1 Festergut's Acidic Blood
+								["provider"] = { "i", 50226 },	-- Festergut's Acidic Blood
+							}),
+							objective(4, {	-- 0/1 Rotface's Acidic Blood
+								["provider"] = { "i", 50231 },	-- Rotface's Acidic Blood
+							}),
+						},
+					}),
+					q(24743, {	-- Shadow's Edge
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24545,	-- The Sacred and the Corrupt
+						["groups"] = {
+							i(49888),	-- Shadow's Edge
+						},
+					}),
+					q(24547, {	-- A Feast of Souls
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24743,	-- Shadow's Edge
+						["groups"] = {
+							objective(1, {	-- 0/50 Souls fed to Shadow's Edge
+								["provider"] = { "i", 49888 },	-- Shadow's Edge
+							}),
+						},
+					}),
+					q(24749, {	-- Unholy Infusion
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24547,	-- A Feast of Souls
+						["groups"] = {
+							objective(1, {	-- Infuse Shadow's Edge with Unholy power then slay Putricide.
+								["providers"] = {
+									{ "i", 49888 },	-- Shadow's Edge
+									{ "n", 36678 },	-- Professor Putricide
+								},
+							}),
+						},
+					}),
+					q(24756, {	-- Blood Infusion
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24749,	-- Unholy Infusion
+						["groups"] = {
+							objective(1, {	-- Infuse Shadow's Edge with Blood then defeat Lana'thel.
+								["providers"] = {
+									{ "i", 49888 },	-- Shadow's Edge
+									{ "n", 37955 },	-- Blood-Queen Lana'thel
+								},
+							}),
+						},
+					}),
+					q(24757, {	-- Frost Infusion
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24756,	-- Blood Infusion
+						["groups"] = {
+							objective(1, {	-- Infuse Shadow's Edge with Frost then slay Sindragosa.
+								["providers"] = {
+									{ "i", 49888 },	-- Shadow's Edge
+									{ "n", 36853 },	-- Sindragosa
+								},
+							}),
+						},
+					}),
+					q(24548, {	-- The Splintered Throne
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24757,	-- Frost Infusion
+						["description"] = "These can drop from any of the bosses on 25-Man Normal or Heroic. You need 50 of these, so this quest will take you several weeks to finish.",
+						["groups"] = {
+							objective(1, {	-- 0/50 Shadowfrost Shard
+								["provider"] = { "i", 50274 },	-- Shadowfrost Shard
+							}),
+						},
+					}),
+					q(24912, {	-- Empowerment
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24548,	-- The Splintered Throne
+					}),
+					q(24549, {	-- Shadowmourne...
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24548,	-- The Splintered Throne
+						["groups"] = {
+							i(49623),	-- Shadowmourne
+							ach(4623),	-- Shadowmourne
+						},
+					}),
+					q(24748, {	-- The Lich King's Last Stand
+						["qg"] = 37120,	-- Highlord Darion Mograine
+						["sourceQuest"] = 24549,	-- Shadowmourne...
+						["groups"] = {
+							objective(1, {	-- Lich King Defeated
+								["provider"] = { "n", 36597 },	-- The Lich King
+							}),
+						},
+					}),
+					i(51315, {	-- Sealed Chest
+						["qg"] = 36597,	-- The Lich King
+						["questID"] = 24914,	-- Personal Property
+						["sourceQuest"] = 24549,	-- Shadowmourne...
+						["provider"] = { "i", 51316 },	-- Unsealed Chest
+						["description"] = "Dropped by the Lich King on 25-Man difficulty while on the quest |cFFefc400The Lich King's Last Stand|r. Only your first kill will trigger the item to drop. You do NOT need to have Shadowmourne equipped.\n\nThis item contains a lot of BoE cosmetic items that sell very well. During its time, this was used to reward other members of the raid for assisting the guild master (more than likely) with Shadowmourne for the many months it took to complete the quest chain.\n\nIn addition to being very rewarding, these quests were some of the most treasured throughout World of Warcraft's long history.",
+						["groups"] = {
+							i(51317, {	-- Alexandros' Soul Shard
+								["description"] = "Alexandros: Darion, my son. At last I am able to lay my eyes upon you again. The Lich King tormented me without end, Darion. Endlessly he sought to break my will, to force me to serve him, to bind me to his blade. Finally, when events demanded his full attention, he left me. The one memory I clung to Darion, the one thought that kept me from giving in, it was your sacrifice, my son. That again saved me from eternal peril.\n\nDarion: Father, father, I… I feared for your sanity, father, for you, I would give my life a thousand times.",
+								["questID"] = 24915,	-- Mograine's Reunion
+								["groups"] = {
+									i(52200, {	-- Crimson Deathcharger (MOUNT!)
+										["b"] = 2,	-- Mounts don't inherently assign themselves as BoE, so the Ignore Filters for BoEs trigger wasn't picking this up.
+									}),
+								},
+							}),
+							i(51319, {	-- Arthas' Training Sword
+								["description"] = "Muradin: Oh lad, how I missed those endless days in Lordaeron, sharpening your skill with this dull blade. Forging you into a weapon meant to withstand the demands of a great destiny. Heh… You sure put them skills to use, didn't you lad?\n\nIf only I'd been able to stop you that day, how different things migha' been. If only I'da never discovered that accursed blade. Farewell, Arthas, my brother.",
+								["questID"] = 24917,	-- Muradin's Lament
+								["groups"] = {
+									i(52201)	-- Muradin's Favor (TOY!)
+								},
+							}),
+							i(51320, {	-- Badge of the Silver Hand
+								["description"] = "Uther: Arthas... Alas, hero of Azeroth. You give me a greater gift than you know. Long have I struggled to forgive the prince for his terrible transgressions. My soul has been wracked with unbearable anxiety, dark thoughts, distancing me from the light.\n\nI recall clearly... the gleam of pride in his eye as he stood before me, eager to defeat the enemies of the light... eager to defend his people, no matter the cost. It is this memory of Arthas that I choose to keep in my heart.\n\nI shall always be in your debt, friend. Thank you.",
+								["questID"] = 24919,	-- The Lightbringer's Redemption
+								["groups"] = {
+									i(52252)	-- Tabard of the Lightbringer
+								},
+							}),
+							i(51321, {	-- Blood of Sylvanas
+								["description"] = "Sylvanas: So, it is done. I had not dared to trust my senses. Too many times has the Lich King made me to be a fool. Finally, he has been made to pay for the atrocities he imposed upon my people.\n\nMay Azeroth never fail to remember the horrible price we paid for our weakness, for our pride. But what now, Hero? What of those freed from his grasp but still shackled to their mortal coils?\n\nLeave me. I have much to ponder.",
+								["questID"] = 24918,	-- Sylvanas' Vengeance
+								["groups"] = {
+									i(52253)	-- Sylvanas' Music Box (TOY!)
+								},
+							}),
+							i(51318, {	-- Jaina's Locket
+								["description"] = "Jaina: What's this?\nHe... he kept it.. all this time he kept it!\n<Cries> I knew!\n<Cries> I sensed a part of him still alive... trapped... struggling. Oh Arthas!\nPerhaps he might someday remember from what he once was...\nBy the Light may he at last find rest, free from the icy grip of that terrible blade!",
+								["questID"] = 24916,	-- Jaina's Locket
+								["groups"] = {
+									i(52251, {	-- Jaina's Locket
+										-- #if NOT ANYCLASSIC
+										["ignoreSource"] = true,
+										["collectible"] = false
+										-- #endif
+									})
+								},
+							}),
+						},
+					}),
+				},
+			})),
 			n(ACHIEVEMENTS, {
 				applyclassicphase(WRATH_PHASE_FOUR, ach(4602, {	-- Glory of the Icecrown Raider (10 player)
 					-- Meta Achievement
@@ -166,7 +332,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 						4584,	-- The Light of Dawn
 					}},
 				}),
-				achWithRep(4598, 1156, {	-- The Ashen Verdict
+				achWithRep(4598, FACTION_THE_ASHEN_VERDICT, {	-- The Ashen Verdict
 					title(141),	-- <Name> of the Ashen Verdict
 				}),
 				ach(11753, {["timeline"] = {ADDED_7_2_0}}),	-- Winter Catalog (Icecrown Citadel)
@@ -175,160 +341,19 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				}),
 			}),
 			n(FACTIONS, {
-				faction(1156),	-- The Ashen Verdict
+				faction(FACTION_THE_ASHEN_VERDICT),	-- The Ashen Verdict
 			}),
-			applyclassicphase(WRATH_PHASE_FOUR_SHADOWMOURNE, n(QUALITY_LEGENDARY, {
-				["description"] = "These quests can only be completed on 25-Man Normal or Heroic difficulty.",
-				["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
-				["title"] = "Shadowmourne",
-				["icon"] = "Interface\\Icons\\INV_Axe_113",
-				["isRaid"] = true,
-				["lvl"] = 80,
-				["groups"] = {
-					q(24545, {	-- The Sacred and the Corrupt
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["minReputation"] = { 1156, FRIENDLY },	-- The Ashen Verdict
-						["groups"] = {
-							i(49869, {	-- Light's Vengeance
-								["description"] = "Fly out to Dragonblight and collect this item from a cave after some short RP.",
-							}),
-							i(50226, {	-- Festergut's Acidic Blood
-								["description"] = "This can drop from Festergut on 25-Man Normal or Heroic.",
-								["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
-							}),
-							i(50231, {	-- Rotface's Acidic Blood
-								["description"] = "This can drop from Rotface on 25-Man Normal or Heroic.",
-								["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
-							}),
-						},
-					}),
-					q(24743, {	-- Shadow's Edge
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24545,	-- The Sacred and the Corrupt
-						["groups"] = {
-							i(49888),	-- Shadow's Edge
-						},
-					}),
-					q(24547, {	-- A Feast of Souls
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24743,	-- Shadow's Edge
-					}),
-					q(24749, {	-- Unholy Infusion
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24547,	-- A Feast of Souls
-					}),
-					q(24756, {	-- Blood Infusion
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24749,	-- Unholy Infusion
-					}),
-					q(24757, {	-- Frost Infusion
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24756,	-- Blood Infusion
-					}),
-					q(24548, {	-- The Splintered Throne
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24757,	-- Frost Infusion
-						["groups"] = {
-							i(50274, {	-- Shadowfrost Shard
-								["description"] = "These can drop from any of the bosses on 25-Man Normal or Heroic. You need 50 of these, so this quest will take you several weeks to finish.",
-								["crs"] = {
-									36612,	-- Lord Marrowgar
-									36855,	-- Lady Deathwhisper
-									36939,	-- High Overlord Saurfang
-									36948,	-- Muradin Bronzebeard
-									37813,	-- Deathbringer Saurfang
-									36626,	-- Festergut
-									36627,	-- Rotface
-									36678,	-- Professor Putricide
-									37970,	-- Blood Prince Council
-									37955,	-- Blood-Queen Lana'thel
-									36789,	-- Valithria Dreamwalker
-									36853,	-- Sindragosa
-									36597,	-- The Lich King
-								},
-							}),
-						},
-					}),
-					q(24912, {	-- Empowerment
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24548,	-- The Splintered Throne
-					}),
-					q(24549, {	-- Shadowmourne...
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24548,	-- The Splintered Throne
-						["groups"] = {
-							i(49623),	-- Shadowmourne
-							ach(4623),	-- Shadowmourne
-						},
-					}),
-					q(24748, {	-- The Lich King's Last Stand
-						["qg"] = 37120,	-- Highlord Darion Mograine
-						["sourceQuest"] = 24549,	-- Shadowmourne...
-					}),
-					i(51315, {	-- Sealed Chest
-						["qg"] = 36597,	-- The Lich King
-						["questID"] = 24914,	-- Personal Property
-						["sourceQuest"] = 24549,	-- Shadowmourne...
-						["provider"] = { "i", 51316 },	-- Unsealed Chest
-						["description"] = "Dropped by the Lich King on 25-Man difficulty while on the quest |cFFefc400The Lich King's Last Stand|r. Only your first kill will trigger the item to drop. You do NOT need to have Shadowmourne equipped.\n\nThis item contains a lot of BoE cosmetic items that sell very well. During its time, this was used to reward other members of the raid for assisting the guild master (more than likely) with Shadowmourne for the many months it took to complete the quest chain.\n\nIn addition to being very rewarding, these quests were some of the most treasured throughout World of Warcraft's long history.",
-						["groups"] = {
-							i(51317, {	-- Alexandros' Soul Shard
-								["description"] = "Alexandros: Darion, my son. At last I am able to lay my eyes upon you again. The Lich King tormented me without end, Darion. Endlessly he sought to break my will, to force me to serve him, to bind me to his blade. Finally, when events demanded his full attention, he left me. The one memory I clung to Darion, the one thought that kept me from giving in, it was your sacrifice, my son. That again saved me from eternal peril.\n\nDarion: Father, father, I… I feared for your sanity, father, for you, I would give my life a thousand times.",
-								["questID"] = 24915,	-- Mograine's Reunion
-								["groups"] = {
-									i(52200, {	-- Crimson Deathcharger (MOUNT!)
-										["b"] = 2,	-- Mounts don't inherently assign themselves as BoE, so the Ignore Filters for BoEs trigger wasn't picking this up.
-									}),
-								},
-							}),
-							i(51319, {	-- Arthas' Training Sword
-								["description"] = "Muradin: Oh lad, how I missed those endless days in Lordaeron, sharpening your skill with this dull blade. Forging you into a weapon meant to withstand the demands of a great destiny. Heh… You sure put them skills to use, didn't you lad?\n\nIf only I'd been able to stop you that day, how different things migha' been. If only I'da never discovered that accursed blade. Farewell, Arthas, my brother.",
-								["questID"] = 24917,	-- Muradin's Lament
-								["groups"] = {
-									i(52201)	-- Muradin's Favor (TOY!)
-								},
-							}),
-							i(51320, {	-- Badge of the Silver Hand
-								["description"] = "Uther: Arthas... Alas, hero of Azeroth. You give me a greater gift than you know. Long have I struggled to forgive the prince for his terrible transgressions. My soul has been wracked with unbearable anxiety, dark thoughts, distancing me from the light.\n\nI recall clearly... the gleam of pride in his eye as he stood before me, eager to defeat the enemies of the light... eager to defend his people, no matter the cost. It is this memory of Arthas that I choose to keep in my heart.\n\nI shall always be in your debt, friend. Thank you.",
-								["questID"] = 24919,	-- The Lightbringer's Redemption
-								["groups"] = {
-									i(52252)	-- Tabard of the Lightbringer
-								},
-							}),
-							i(51321, {	-- Blood of Sylvanas
-								["description"] = "Sylvanas: So, it is done. I had not dared to trust my senses. Too many times has the Lich King made me to be a fool. Finally, he has been made to pay for the atrocities he imposed upon my people.\n\nMay Azeroth never fail to remember the horrible price we paid for our weakness, for our pride. But what now, Hero? What of those freed from his grasp but still shackled to their mortal coils?\n\nLeave me. I have much to ponder.",
-								["questID"] = 24918,	-- Sylvanas' Vengeance
-								["groups"] = {
-									i(52253)	-- Sylvanas' Music Box (TOY!)
-								},
-							}),
-							i(51318, {	-- Jaina's Locket
-								["description"] = "Jaina: What's this?\nHe... he kept it.. all this time he kept it!\n<Cries> I knew!\n<Cries> I sensed a part of him still alive... trapped... struggling. Oh Arthas!\nPerhaps he might someday remember from what he once was...\nBy the Light may he at last find rest, free from the icy grip of that terrible blade!",
-								["questID"] = 24916,	-- Jaina's Locket
-								["groups"] = {
-									i(52251, {	-- Jaina's Locket
-										-- #if NOT ANYCLASSIC
-										["ignoreSource"] = true,
-										["collectible"] = false
-										-- #endif
-									})
-								},
-							}),
-						},
-					}),
-				},
-			})),
 			n(QUESTS, {
 				q(24815, {	-- Choose Your Path
 					["qg"] = 38316,	-- Ormus the Penitent
-					["minReputation"] = { 1156, FRIENDLY },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, FRIENDLY },	-- The Ashen Verdict
 					["description"] = "If the quest does not appear when you hit Friendly, you may have to relog.",
 					["groups"] = {
 						i(50375, {	-- Ashen Band of Courage
 							["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 						}),
 						i(50377, {	-- Ashen Band of Destruction
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 						i(52569, {	-- Ashen Band of Might
 							["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
@@ -337,7 +362,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 							["classes"] = { DRUID, HUNTER, ROGUE, SHAMAN, MONK, DEMONHUNTER },
 						}),
 						i(50378, {	-- Ashen Band of Wisdom
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
@@ -345,7 +370,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24827, {	-- Path of Courage (Honored)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24815,	-- Choose Your Path
-					["minReputation"] = { 1156, HONORED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, HONORED },	-- The Ashen Verdict
 					["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 					["groups"] = {
 						i(50388, {	-- Ashen Band of Greater Courage
@@ -356,7 +381,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24834, {	-- Path of Courage (Revered)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24827,	-- Path of Courage (Honored)
-					["minReputation"] = { 1156, REVERED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, REVERED },	-- The Ashen Verdict
 					["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 					["groups"] = {
 						i(50403, {	-- Ashen Band of Unmatched Courage
@@ -367,7 +392,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24835, {	-- Path of Courage (Exalted)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24834,	-- Path of Courage (Revered)
-					["minReputation"] = { 1156, EXALTED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, EXALTED },	-- The Ashen Verdict
 					["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 					["groups"] = {
 						i(50404, {	-- Ashen Band of Endless Courage
@@ -379,33 +404,33 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24828, {	-- Path of Destruction (Honored)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24815,	-- Choose Your Path
-					["minReputation"] = { 1156, HONORED },	-- The Ashen Verdict
-					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, HONORED },	-- The Ashen Verdict
+					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 					["groups"] = {
 						i(50384, {	-- Ashen Band of Greater Destruction
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
 				q(24823, {	-- Path of Destruction (Revered)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24828,	-- Path of Destruction [Honored]
-					["minReputation"] = { 1156, REVERED },	-- The Ashen Verdict
-					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, REVERED },	-- The Ashen Verdict
+					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 					["groups"] = {
 						i(50397, {	-- Ashen Band of Unmatched Destruction
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
 				q(24829, {	-- Path of Destruction (Exalted)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24823,	-- Path of Destruction (Revered)
-					["minReputation"] = { 1156, EXALTED },	-- The Ashen Verdict
-					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, EXALTED },	-- The Ashen Verdict
+					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 					["groups"] = {
 						i(50398, {	-- Ashen Band of Endless Destruction
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
@@ -413,7 +438,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(25239, {	-- Path of Might (Honored)
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24815,	-- Choose Your Path
-					["minReputation"] = { 1156, HONORED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, HONORED },	-- The Ashen Verdict
 					["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 					["groups"] = {
 						i(52570, {	-- Ashen Band of Greater Might
@@ -424,7 +449,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(25240, {	-- Path of Might [Revered]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 25239,	-- Path of Might [Honored]
-					["minReputation"] = { 1156, REVERED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, REVERED },	-- The Ashen Verdict
 					["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 					["groups"] = {
 						i(52571, {	-- Ashen Band of Unmatched Might
@@ -435,7 +460,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(25242, {	-- Path of Might [Exalted]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 25240,	-- Path of Might [Revered]
-					["minReputation"] = { 1156, EXALTED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, EXALTED },	-- The Ashen Verdict
 					["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 					["groups"] = {
 						i(52572, {	-- Ashen Band of Endless Might
@@ -447,7 +472,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24826, {	-- Path of Vengeance [Honored]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24815,	-- Choose Your Path
-					["minReputation"] = { 1156, HONORED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, HONORED },	-- The Ashen Verdict
 					["classes"] = { DRUID, HUNTER, ROGUE, SHAMAN, MONK, DEMONHUNTER },
 					["groups"] = {
 						i(50387, {	-- Ashen Band of Greater Vengeance
@@ -458,7 +483,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24832, {	-- Path of Vengeance [Revered]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24826,	-- Path of Vengeance [Honored]
-					["minReputation"] = { 1156, REVERED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, REVERED },	-- The Ashen Verdict
 					["classes"] = { DRUID, HUNTER, ROGUE, SHAMAN, MONK, DEMONHUNTER },
 					["groups"] = {
 						i(50401, {	-- Ashen Band of Unmatched Vengeance
@@ -469,7 +494,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24833, {	-- Path of Vengeance [Exalted]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24832,	-- Path of Vengeance [Revered]
-					["minReputation"] = { 1156, EXALTED },	-- The Ashen Verdict
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, EXALTED },	-- The Ashen Verdict
 					["classes"] = { DRUID, HUNTER, ROGUE, SHAMAN, MONK, DEMONHUNTER },
 					["groups"] = {
 						i(50402, {	-- Ashen Band of Endless Vengeance
@@ -481,33 +506,33 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				q(24825, {	-- Path of Wisdom [Honored]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24815,	-- Choose Your Path
-					["minReputation"] = { 1156, HONORED },	-- The Ashen Verdict
-					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, HONORED },	-- The Ashen Verdict
+					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 					["groups"] = {
 						i(50386, {	-- Ashen Band of Greater Wisdom
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
 				q(24830, {	-- Path of Wisdom [Revered]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24825,	-- Path of Wisdom [Honored]
-					["minReputation"] = { 1156, REVERED },	-- The Ashen Verdict
-					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, REVERED },	-- The Ashen Verdict
+					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 					["groups"] = {
 						i(50399, {	-- Ashen Band of Unmatched Wisdom
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
 				q(24831, {	-- Path of Wisdom [Exalted]
 					["qg"] = 38316,	-- Ormus the Penitent
 					["sourceQuest"] = 24830,	-- Path of Wisdom [Revered]
-					["minReputation"] = { 1156, EXALTED },	-- The Ashen Verdict
-					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+					["minReputation"] = { FACTION_THE_ASHEN_VERDICT, EXALTED },	-- The Ashen Verdict
+					["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 					["groups"] = {
 						i(50400, {	-- Ashen Band of Endless Wisdom
-							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK },
+							["classes"] = { PALADIN, MAGE, DRUID, PRIEST, SHAMAN, WARLOCK, MONK, EVOKER },
 						}),
 					},
 				}),
@@ -1767,6 +1792,26 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				}),
 			}),
 			d(DIFFICULTY.LEGACY_RAID.PLAYER25_NORMAL, {
+				n(COMMON_BOSS_DROPS, {
+					["crs"] = {
+						36612,	-- Lord Marrowgar
+						36855,	-- Lady Deathwhisper
+						36939,	-- High Overlord Saurfang
+						36948,	-- Muradin Bronzebeard
+						37813,	-- Deathbringer Saurfang
+						36626,	-- Festergut
+						36627,	-- Rotface
+						36678,	-- Professor Putricide
+						37970,	-- Blood Prince Council
+						37955,	-- Blood-Queen Lana'thel
+						36789,	-- Valithria Dreamwalker
+						36853,	-- Sindragosa
+						36597,	-- The Lich King
+					},
+					["groups"] = {
+						i(50274),	-- Shadowfrost Shard
+					},
+				}),
 				n(STORMING_THE_CITADEL, {
 					ach(4604, {	-- Storming the Citadel (25 player)
 						crit(12945, {	-- Lord Marrowgar
@@ -2114,6 +2159,26 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 				}),
 			}),
 			d(DIFFICULTY.LEGACY_RAID.PLAYER25_HEROIC, {
+				n(COMMON_BOSS_DROPS, {
+					["crs"] = {
+						36612,	-- Lord Marrowgar
+						36855,	-- Lady Deathwhisper
+						36939,	-- High Overlord Saurfang
+						36948,	-- Muradin Bronzebeard
+						37813,	-- Deathbringer Saurfang
+						36626,	-- Festergut
+						36627,	-- Rotface
+						36678,	-- Professor Putricide
+						37970,	-- Blood Prince Council
+						37955,	-- Blood-Queen Lana'thel
+						36789,	-- Valithria Dreamwalker
+						36853,	-- Sindragosa
+						36597,	-- The Lich King
+					},
+					["groups"] = {
+						i(50274),	-- Shadowfrost Shard
+					},
+				}),
 				n(STORMING_THE_CITADEL, {
 					ach(4632, {	-- Heroic: Storming the Citadel (25 player)
 						crit(13091, {	-- Lord Marrowgar
@@ -2487,14 +2552,12 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_F
 	}),
 }))));
 
--- #if AFTER WRATH
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WRATH, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WRATH, bubbleDownSelf({ ["timeline"] = { ADDED_3_3_0 } }, {
+	inst(758, {
 		q(24808),	-- Tank Ring Flag - doing "A Change of Heart" in ICC and choosing strength ring
 		q(24809),	-- Healer Ring Flag - doing "A Change of Heart" in ICC and choosing intellect haste/versa ring
 		q(24810),	-- Melee Ring Flag - doing "A Change of Heart" in ICC and choosing agility ring
 		q(24811),	-- Caster Ring Flag - doing "Choose Your Path" in ICC and choosing intellect crit/haste ring
 		q(25238),	-- Strength Ring Flag - doing "A Change of Heart" in ICC and choosing strength ring
 	}),
-});
--- #endif
+})));

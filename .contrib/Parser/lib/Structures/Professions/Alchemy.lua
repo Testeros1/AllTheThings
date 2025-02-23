@@ -42,7 +42,7 @@ APPRENTICE_JOURNEYMAN_ALCHEMY = {
 		r(3170),	-- Weak Troll's Blood Elixir / Weak Troll's Blood Potion
 	}),
 	filter(REAGENTS, {
-		r(7836), 	-- Blackmouth Oil
+		r(7836),	-- Blackmouth Oil
 		r(7837),	-- Fire Oil
 	}),
 };
@@ -272,7 +272,6 @@ MOP_ALCHEMY = applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["timeline"] = { ADD
 }));
 DRAENOR_ALCHEMY = applyclassicphase(WOD_PHASE_ONE, i(109558, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
 	["description"] = "This is a reward for completing the introductory Alchemy questline that can drop from any Draenor mob.",
-	["filterID"] = MISC,
 	["g"] = {
 		r(156606, {	-- Alchemy (Draenor Master)
 			["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_8_0_1_LAUNCH },
@@ -524,6 +523,8 @@ TWW_ALCHEMY = bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 		r(425137),	-- Recraft Equipment
 	}),
 	filter(REAGENTS, {
+		r(462121),	-- Bubbling Mycobloom Culture
 		r(427214),	-- Neutralize Concoctions
+		r(462122),	-- Petal Powder
 	}),
 });

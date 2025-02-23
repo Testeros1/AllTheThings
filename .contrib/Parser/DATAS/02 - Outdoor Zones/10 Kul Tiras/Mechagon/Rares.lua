@@ -78,7 +78,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 						["g"] = {
 							i(167846),	-- Blueprint: Mechano-Treat
 							i(169691),    -- Vinyl: Depths of Ulduar
-							i(170466),  -- Junkyard Motivator
+							i(170466),	-- Junkyard Motivator
 						},
 					}),
 					n(152113, {	-- The Kleptoboss
@@ -117,9 +117,11 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 					{ 53.2, 49.7, MECHAGON },
 				},
 				["g"] = {
-					i(167843),	-- Blueprint: Vaultbot Key
-					i(167796),	-- Paint Vial: Mechagon Gold
-					i(170072),	-- Armored Vaultbot (PET!)
+					o(322020, {	-- Pile of Coins
+						i(167843),	-- Blueprint: Vaultbot Key
+						i(167796),	-- Paint Vial: Mechagon Gold
+						i(170072),	-- Armored Vaultbot (PET!)
+					}),
 				},
 			}),
 			n(151308, {	-- Boggac Skullbash
@@ -152,9 +154,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 					i(169674),	-- Green Paint Filled Bladder
 					i(167792),	-- Paint Vial: Fel Mint Green
 					i(169169),	-- Blueprint: Blue Spraybot
-					i(169168),  -- Blueprint: Green Spraybot
+					i(169168),	-- Blueprint: Green Spraybot
 					i(169167),	-- Blueprint: Orange Spraybot
-					i(167793),  -- Paint Vial: Overload Orange
+					i(167793),	-- Paint Vial: Overload Orange
 				},
 			}),
 			n(151569, {	-- Deepwater Maw
@@ -205,7 +207,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 				["crs"] = { 135497 },	-- Mushroom that spawns the rare
 				["g"] = {
 					i(169379),	-- Snowsoft Nibbler
-					i(167793),  -- Paint Vial: Overload Orange
+					i(167793),	-- Paint Vial: Overload Orange
 				},
 			}),
 			n(153228, {	-- Gear Checker Cogstar -- possibly 154184?
@@ -436,14 +438,49 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 	}),
 })));
 
--- TODO: someone go out to mechagon and test stuff :P
--- root(ROOTS.HiddenQuestTriggers, {
--- 	m(KUL_TIRAS, {
--- 		m(MECHAGON, {
--- 			n(RARES, {
--- 				q(55907),	-- killing scrapclaw on Alliance?
--- 				q(56307),	-- killing scrapclaw on Horde?
--- 			}),
--- 		}),
--- 	}),
--- });
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } }, {
+	m(KUL_TIRAS, {
+		m(MECHAGON, {
+			n(RARES, {
+				-- First rare kill
+				q(55913),	-- Arachnoid Harvester
+				q(56996),	-- Armored Vaultbot
+				q(56997),	-- Armored Vaultbot (Alternate timeline)
+				-- q(TODO),	-- Boilburn (maybe no ID)
+				q(55920),	-- Boggac Skullbash
+				q(55919),	-- Bonepicker
+				-- q(TODO),	-- Caustic Mechaslime
+				q(55927),	-- Crazed Trogg
+				q(55917),	-- Deepwater Maw
+				-- q(55544),	-- Doppel Ganger
+				q(55932),	-- Earthbreaker Gulroc
+				q(56994),	-- Enforcer KX-T57
+				q(55916),	-- Foul Manifestation
+				q(55915),	-- Fungarian Furor
+				q(55934),	-- Gear Checker Cogstar
+				q(55929),	-- Gemicide
+				-- q(TODO),	-- Gorged Gear-Cruncher
+				q(55910),	-- Jawbreaker
+				q(55914),	-- Killsaw
+				q(55926),	-- Malfunctioning Beastbot
+				q(55907),	-- Mechagonian Nullifier
+				q(55909),	-- Mecharantula
+				q(55935),	-- Mr. Fixthis
+				q(55928),	-- Ol' Big Tusk
+				q(55918),	-- OOX-Avenger/MG
+				q(55936),	-- Oxidized Leachbest
+				q(55911),	-- Paol Pondwader
+				q(55912),	-- Rumblerocks
+				q(55924),	-- Rustfeather
+				q(57084),	-- Scrapclaw
+				q(55922),	-- Seaspit
+				q(55923),	-- Sparkqueen P'Emp
+				q(55933),	-- Steel Singer Freza
+				q(55931),	-- The Kleptoboss
+				q(56995),	-- The Rusty Prince
+				q(55908),	-- The Scrap King
+				q(55921),	-- Uncle T'Rogg
+			}),
+		}),
+	}),
+})));

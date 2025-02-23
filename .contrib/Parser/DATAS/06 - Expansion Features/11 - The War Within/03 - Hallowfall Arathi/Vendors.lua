@@ -1,11 +1,14 @@
 -------------------------------------------------------------------
 --      E X P A N S I O N   F E A T U R E S    M O D U L E       --
 -------------------------------------------------------------------
-root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(HALLOWFALL_ARATHI, {
 		n(VENDORS, {
 			n(213145, {	-- Auralia Steelstrike <Arathi Quartermaster>
-				["coord"] = { 41.2, 53.0, HALLOWFALL },
+				["coords"] = {
+					{ 42.4, 55.0, HALLOWFALL },
+					{ 41.3, 53.1, HALLOWFALL },
+				},
 				["g"] = bubbleDownRep(FACTION_HALLOWFALL_ARATHI, {
 					{		-- RENOWN 1 --
 					}, {	-- RENOWN 2 --
@@ -27,6 +30,9 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 					}, {	-- RENOWN 3 --
 					}, {	-- RENOWN 4 --
 						i(223114, {	-- Formula: Enchant Boots - Scout's March (RECIPE!)
+							["cost"] = {{"i", ARTISANS_ACUITY, 150}},
+						}),
+						i(223038, {	-- Plans: Charged Claymore (RECIPE!)	-- Doesn't show on vendor unless you have the profession on the current character
 							["cost"] = {{"i", ARTISANS_ACUITY, 150}},
 						}),
 						i(223064, {	-- Technique: Contract: Hallowfall Arathi (RECIPE!)
@@ -82,29 +88,32 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 						i(228707, {	-- Trial of Burning Light (TOY!)
 							["cost"] = {{"c", RESONANCE_CRYSTALS, 5000}},
 						}),
-						i(223317, {	-- Vermillion Imperial Lynx (MOUNT!)
-							["cost"] = {{"c", RESONANCE_CRYSTALS, 8125}},
-						}),
 					}, {	-- RENOWN 18 --
 						i(223311, {	-- Armguards of Dimming Fluorescence
-							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
 						i(223309, {	-- Bindings of Irradiating Imprisonment
-							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
 						i(223308, {	-- Bracers of Depleting Brilliance
-							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
 						i(223310, {	-- Wristwraps of Fading Luminescence
-							["cost"] = {{"c", RESONANCE_CRYSTALS, 2600}},
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 3900}},
 						}),
 					}, {	-- RENOWN 19 --
 					}, {	-- RENOWN 20 --
 					}, {	-- RENOWN 21 --
+						i(223317, {	-- Vermillion Imperial Lynx (MOUNT!)
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 8125}},
+						}),
 					}, {	-- RENOWN 22 --
 					}, {	-- RENOWN 23 --
 						i(223314, {	-- Shackled Shadow (MOUNT!)
-							["cost"] = {{"c", RESONANCE_CRYSTALS, 8125}},
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 11375}},
+						}),
+						i(224553, {	-- Beledar's Attunement (CI!)
+							["cost"] = {{"c", RESONANCE_CRYSTALS, 1000}},
 						}),
 					}, {	-- RENOWN 24 --
 					}, {	-- RENOWN 25 --

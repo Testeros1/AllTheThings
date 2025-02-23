@@ -3,19 +3,25 @@
 -------------------------------------------------------------------
 local GARRISON_CAMPAIGN = createHeader({
 	readable = "Garrison Campaign",
-	icon = "Interface\\Icons\\achievement_zone_draenor_01",
+	icon = 1032149,
 	text = {
 		en = "Garrison Campaign",
-		cn = "要塞战役",
 		de = "Garnisonskampagne",
 		ru = "Гарнизонная кампания",
+		cn = "要塞战役",
+		tw = "要塞戰役",
 	},
 })
+
+local WOD_CHROMIE_TIME_DESCRIPTION
+-- #IF AFTER 9.0.1
+WOD_CHROMIE_TIME_DESCRIPTION = "If you don't see a Command Board or a Bulletin Board in your garrison, check whether you can obtain the quest from your Adventure Guide while in WoD Chromie time. If you can't find it there either, your level may be too low or high. Check the zone's minimum level requirements."
+-- #ENDIF
 
 root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 	n(GARRISONS, sharedData({["maps"] = { LUNARFALL, FROSTWALL } },	{
 		n(QUESTS, {
-			n(GARRISON_CAMPAIGN,  {	-- Garrison Campaign
+			n(GARRISON_CAMPAIGN, {	-- Garrison Campaign
 			-- A Stolen Heart
 				q(36160, {	-- Garrison Campaign: Every Rose Has Its Thorn
 					["provider"] = { "n", 77209 },	-- Baros Alexston
@@ -540,7 +546,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 					["sourceQuest"] = 38421,	-- Garrison Campaign: Onslaught at Auchindoun (A)
 					["g"] = {
 						i(124552, {	-- Baleful Treads
-							i(124573),  -- Axeclaw Boots
+							i(124573),	-- Axeclaw Boots
 							i(124572),	-- Bladefang Boots
 							i(124574),	-- Felbane Greaves
 							i(124571),	-- Felcast Sandals
@@ -554,7 +560,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 					["sourceQuest"] = 38415,	-- Garrison Campaign: Onslaught at Auchindoun (H)
 					["g"] = {
 						i(124552, {	-- Baleful Treads
-							i(124573),  -- Axeclaw Boots
+							i(124573),	-- Axeclaw Boots
 							i(124572),	-- Bladefang Boots
 							i(124574),	-- Felbane Greaves
 							i(124571),	-- Felcast Sandals
@@ -784,6 +790,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 			-- The Ring of Blood
 				q(36219, {	-- Garrison Campaign: The Ring of Blood
 					["description"] = "Offered if you have NOT completed |cFFFFD700The Ring of Trials|r in Nagrand or the |cFFFFD700Stonemaul Arena|r bonus objective in Gorgrond.",
+					["providers"] = {
+						{ "o", 234243 },	-- Overly Gaudy Note [H Tier 2]
+					},
+					["coords"] = {
+						{ 42.9, 50.2, FROSTWALL },	-- [H Tier 2]
+					},
 				}),
 				q(36280, {	-- Garrison Campaign: The Ring of Blood
 					["description"] = "Offered if you complete |cFFFFD700The Ring of Trials|r in Nagrand.",
@@ -1203,234 +1215,199 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 						i(122190),	-- Ring of Blood Invitation
 					},
 				}),
-				n(89763, {	-- Muradin Bronzebeard
+				header(HEADERS.NPC,	89763, {	-- Muradin Bronzebeard
 					["description"] = "Muradin Bronzebeard has a chance to spawn in your garrison daily, or you can find someone with him spawned and join their garrison. He starts a weekly raid quest which will either have Greater Bounty Spoils or Apexis Crystals as a reward.",
 					["crs"] = { 91196 },	-- Muradin Bronzebeard
-					["coord"] = { 34.1, 32.6, LUNARFALL },
 					["races"] = ALLIANCE_ONLY,
-					["g"] = {
+					["g"] = bubbleDownFiltered({ ["coord"] = { 34.1, 32.6, LUNARFALL }, ["races"] = ALLIANCE_ONLY, ["qgs"] = { 91196, 89763 }},FILTERFUNC_questID,{
 						i(123975, {	-- Greater Bounty Spoils
 							["sym"] = { { "fill" } },	-- simply fill this item
 						}),
 						q(39255, {	-- Amphitheater of the Eternal
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(37767, {	-- Arcane Sanctum: Ko'ragh
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37796, {	-- Auchindoun
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(37772, {	-- Blackhand's Crucible: Blackhand
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37795, {	-- Bloodmaul Slag Mines
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(39251, {	-- Court of Blood
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39252, {	-- Deadeye's Vision
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39259, {	-- Destructor's Rise
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(823),	-- Apexis Crystal (1,000)
 							},
 						}),
 						q(37794, {	-- Grimrail Depot
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(39257, {	-- Grommash's Torment
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39248, {	-- Hellfire Assault
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(37768, {	-- Imperator's Rise: Imperator Mar'gok
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37771, {	-- Iron Assembly: Admiral Gar'an
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37793, {	-- Iron Docks
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(39254, {	-- Iskar's Clutch
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39253, {	-- Maw of Souls
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(823),	-- Apexis Crystal (1,000)
 							},
 						}),
 						q(39250, {	-- Pits of Mannoroth
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(823),	-- Apexis Crystal (1,000)
 							},
 						}),
 						q(37792, {	-- Shadowmoon Burial Grounds
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(37791, {	-- Skyreach
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(37769, {	-- Slagworks: Heart of the Mountain
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(39256, {	-- Temple of Tyranny
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(823),	-- Apexis Crystal (1,000)
 							},
 						}),
 						q(37770, {	-- The Black Forge: Kromog
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(39260, {	-- The Black Gate
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(823),	-- Apexis Crystal (1,000)
 							},
 						}),
 						q(37790, {	-- The Everbloom
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(39258, {	-- The Felborne Breach
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39249, {	-- The Iron Bulwark
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(37789, {	-- Upper Blackrock Spire
 							["isDaily"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								currency(824),	-- Garrison Resources (175)
 							},
 						}),
 						q(37766, {	-- Walled City: Brackenspore
 							["isWeekly"] = true,
-							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
-					},
+					}),
 				}),
-				n(89753, {	-- High Overlord Saurfang
+				header(HEADERS.NPC, 89753, {	-- High Overlord Saurfang
 					["description"] = "High Overlord Saurfang has a chance to spawn in your garrison daily, or you can find someone with him spawned and join their garrison. He starts a weekly raid quest which will either have Greater Bounty Spoils or Apexis Crystals as a reward.",
 					["crs"] = { 91195 },	-- High Overlord Saurfang
-					["coord"] = { 40.2, 56.7, FROSTWALL },
 					["races"] = HORDE_ONLY,
-					["g"] = {
+					["g"] = bubbleDownFiltered({ ["coord"] = { 40.2, 56.7, FROSTWALL }, ["races"] = HORDE_ONLY, ["qg"] = 91195 },FILTERFUNC_questID,{
 						i(123975, {	-- Greater Bounty Spoils
 							["sym"] = { { "fill" } },	-- simply fill this item
 						}),
 						q(39227, {	-- Amphitheater of the Eternal
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(37757, {	-- Arcane Sanctum: Ko'ragh
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37780, {	-- Auchindoun
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
 							},
 						}),
 						q(37765, {	-- Blackhand's Crucible: Blackhand
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37781, {	-- Bloodmaul Slag Mines
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
@@ -1438,23 +1415,19 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 						}),
 						q(39222, {	-- Court of Blood
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39223, {	-- Deadeye's Vision
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39231, {	-- Destructor's Rise
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								currency(823),	-- Apexis Crystal x1000
 							},
 						}),
 						q(37782, {	-- Grimrail Depot
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
@@ -1462,30 +1435,25 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 						}),
 						q(39229, {	-- Grommash's Torment
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39193, {	-- Hellfire Assault
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(37758, {	-- Imperator's Rise: Imperator Mar'gok
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37764, {	-- Iron Assembly: Admiral Gar'an
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(37783, {	-- Iron Docks
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
@@ -1493,67 +1461,57 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 						}),
 						q(39226, {	-- Iskar's Clutch
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39225, {	-- Maw of Souls
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(823),	-- Apexis Crystal x1000
 							},
 						}),
 						q(39221, {	-- Pits of Mannoroth
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(823),	-- Apexis Crystal x1000
 							},
 						}),
 						q(37784, {	-- Shadowmoon Burial Grounds
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
 							},
 						}),
 						q(37785, {	-- Skyreach
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
 							},
 						}),
 						q(37762, {	-- Slagworks: Heart of the Mountain
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(39228, {	-- Temple of Tyranny
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(823),	-- Apexis Crystal x1000
 							},
 						}),
 						q(37763, {	-- The Black Forge: Kromog
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
 						q(39232, {	-- The Black Gate
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(823),	-- Apexis Crystal x1000
 							},
 						}),
 						q(37786, {	-- The Everbloom
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
@@ -1561,29 +1519,25 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 						}),
 						q(39230, {	-- The Felborne Breach
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(39219, {	-- The Iron Bulwark
 							["isWeekly"] = true,
-							["races"] = HORDE_ONLY,
 							["u"] = REMOVED_FROM_GAME,
 						}),
 						q(37787, {	-- Upper Blackrock Spire
-							["races"] = HORDE_ONLY,
 							["isDaily"] = true,
 							["g"] = {
 								currency(824),	-- Garrison Resources x175
 							},
 						}),
 						q(37756, {	-- Walled City: Brackenspore
-							["races"] = HORDE_ONLY,
 							["isWeekly"] = true,
 							["g"] = {
 								i(123975),	-- Greater Bounty Spoils
 							},
 						}),
-					},
+					}),
 				}),
 			}),
 			q(38243, {	-- A Bit of Ore
@@ -1704,12 +1658,17 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				},
 			}),
 			q(36951, {	-- Arakkoa Exodus
+				["description"] = WOD_CHROMIE_TIME_DESCRIPTION,
 				["sourceQuests"] = { 35554 },	-- News from Spires of Arak
 				["isBreadcrumb"] = true,
 				["coords"] = { { 49.3, 41.3, FROSTWALL }, { 42.8, 45.2, LUNARFALL } },
 				["providers"] = {
-					{ "o", 232416 },	-- Bulletin Board
+					{ "o", 232397 },	-- Bulletin Board
+					{ "o", 232398 },	-- Bounty Board
 					{ "o", 232400 },	-- Bulletin Board
+					{ "o", 232416 },	-- Command Board lvl 1
+					{ "o", 233291 },	-- Command Board lvl 2
+					{ "o", 237022 },	-- Command Board lvl 3
 				},
 			}),
 			q(36624, {	-- Ashran Appearance
@@ -2648,7 +2607,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 					{ "o", 230865 },	-- List of Ingredients
 					{ "n", 79966 },	-- Lost Packmule
 				},
-				-- ["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+				-- ["icon"] = 632821,
 				["sourceQuests"] = {
 					33081,	-- Escape from Shaz'gul
 					33059,	-- The Fate of Karabor
@@ -2975,8 +2934,14 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				["races"] = ALLIANCE_ONLY,
 			}),
 			q(34733, {    -- Services of Dagg
-				--["sourceQuests"] = { TODO },	-- You need to open 2 cages in Frostfire Ridge at 39.52, 28.06 and 65.85, 60.84., probably 2 HQT there.
-				["coords"] = { { 48.6, 17.2, FROSTWALL }, { 61.6, 74.8, LUNARFALL } },
+				["sourceQuests"] = { 34651 },	-- Dagg
+				["provider"] = { "n", 79492 },	-- Dagg
+				["aqd"] = {
+					["coord"] = { 61.6, 74.8, LUNARFALL },
+				},
+				["hqd"] = {
+					["coord"] = { 48.6, 17.2, FROSTWALL },
+				},
 				["g"] = {
 					follower(32),    -- Follower: Dagg
 				},
@@ -3043,19 +3008,26 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				["cost"] = { { "i", 111557, 50 } },	-- 50x Sumptuous Fur
 			}),
 			q(34674, {	-- Taking the Fight to Nagrand
-				["provider"] = { "o", 232397 },	-- Bulletin Board
+				["description"] = WOD_CHROMIE_TIME_DESCRIPTION,
+				["providers"] = {
+					{ "o", 232397 },	-- Bulletin Board
+					{ "o", 232398 },	-- Bounty Board
+					{ "o", 232400 },	-- Bulletin Board
+				},
 				["coord"] = { 42.8, 45.2, LUNARFALL },
 				["races"] = ALLIANCE_ONLY,
 				["isBreadcrumb"] = true,
 			}),
 			q(36952, {	-- Taking the Fight to Nagrand
-				["races"] = HORDE_ONLY,
-				["isBreadcrumb"] = true,
+				["description"] = WOD_CHROMIE_TIME_DESCRIPTION,
 				["providers"] = {
 					{ "o", 232416 },	-- Command Board lvl 1
 					{ "o", 233291 },	-- Command Board lvl 2
 					{ "o", 237022 },	-- Command Board lvl 3
 				},
+				["coord"] = { 49.8, 41.7, FROSTWALL },
+				["races"] = HORDE_ONLY,
+				["isBreadcrumb"] = true,
 			}),
 			q(37184, {	-- Taking the Fight to Nagrand
 				["provider"] = { "n", 81492 },	-- Bodrick Grey
@@ -3083,7 +3055,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				["u"] = REMOVED_FROM_GAME,
 			}),
 			q(34676, {	-- The Critical Path
-				["provider"] = { "o", 232397 },	-- Bulletin Board
+				["description"] = WOD_CHROMIE_TIME_DESCRIPTION,
+				["providers"] = {
+					{ "o", 232397 },	-- Bulletin Board
+					{ "o", 232398 },	-- Bounty Board
+					{ "o", 232400 },	-- Bulletin Board
+				},
 				["coord"] = { 42.8, 45.2, LUNARFALL },
 				["races"] = ALLIANCE_ONLY,
 				["isBreadcrumb"] = true,
@@ -3111,6 +3088,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				},
 			}),
 			q(35557, {	-- The Secrets of Gorgrond
+				["description"] = WOD_CHROMIE_TIME_DESCRIPTION,
 				["races"] = HORDE_ONLY,
 				["isBreadcrumb"] = true,
 				["providers"] = {
@@ -3167,7 +3145,11 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				["races"] = ALLIANCE_ONLY,
 				["u"] = REMOVED_FROM_GAME, -- There is no Bulletin Board anymore, only heroes calls
 				["isBreadcrumb"] = true,
-				["provider"] = { "o", 232397 },	-- Bulletin Board
+				["providers"] = {
+					{ "o", 232397 },	-- Bulletin Board
+					{ "o", 232398 },	-- Bounty Board
+					{ "o", 232400 },	-- Bulletin Board
+				},
 			}),
 			q(39033, {	-- The Time to Strike
 				["provider"] = { "n", 94870 },	-- Seer Kazal
@@ -3446,67 +3428,37 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 	})),
 }));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
 	n(GARRISONS, {
-		q(38276),	-- 6.1 Garrison - World Boss Invasion Loot - killing Commander Dro'gan
-		q(38315),	-- DEPRECATED - triggered when turning in "Bringing the Bass" on alliance
-		q(38401),	-- DEPRECATED - triggered when turning in "Bringing the Bass" on alliance
-		q(37311),	-- Drafting Table Interact
-		q(46952),	-- Flag Garrison Dog Quest
-		q(36640),	-- Followers Obtained
-		q(36530),	-- Garrison Max-level Choice Tracker: Frostfire Iron Siegeworks
-		q(36550),	-- Garrison Max-level Choice Tracker: Frostfire Iron Siegeworks
-		q(36529),	-- Garrison Max-level Choice Tracker: Frostfire Magnarok
-		q(36551),	-- Garrison Max-level Choice Tracker: Frostfire Magnarok
-		q(36538),	-- Garrison Max-level Choice Tracker: Spires Upper Skettis
-		q(36559),	-- Garrison Max-level Choice Tracker: Spires Upper Skettis
-		q(36560),	-- Garrison Max-level Choice Tracker: Talador Shattrath City, East
-		q(36561),	-- Garrison Max-level Choice Tracker: Talador Shattrath City, East
-		q(37198),	-- Garrison Visitor: Sappy - triggered during Goren invasion in Garrison
-		q(37199),	-- Garrison Visitor: Sappy - triggered during Goren invasion in Garrison
-		q(36799),	-- Garrison Nodes - Tracking Quest - triggers after unlocking the mine, picking herbs
-		q(36492),	-- Garrison Pet Battle — discord report, "for today's EU garrison menagerie fight, the Blingtron/protectron one"
-		q(35914),	-- Internal: Default Invasion Reward - triggers during the first garrison invasion as part of Draenor's base intro
-		q(36894),	-- Nemesis Flag, Draenei/Blood Elf — burning effigy in the Gladiator Sanctum
-		q(36891),	-- Nemesis Flag, Dwarf/Forsaken — burning effigy in the Gladiator Sanctum
-		q(36892),	-- Nemesis Flag, Gnome/Tauren — burning effigy in the Gladiator Sanctum
-		q(36956),	-- Nemesis Flag, Human — burning effigy in the Gladiator Sanctum
-		q(36890),	-- Nemesis Flag, Human/Orc — burning effigy in the Gladiator Sanctum
-		q(36893),	-- Nemesis Flag, Night Elf/Troll — burning effigy in the Gladiator Sanctum
-		q(36896),	-- Nemesis Flag, Pandaren (A/H) — burning effigy in the Gladiator Sanctum
-		q(36895),	-- Nemesis Flag, Worgen/Goblin — burning effigy in the Gladiator Sanctum
-		q(36294),	-- Phylarch the Evergreen A - Lumber Mill first attack
-		q(36295),	-- Phylarch the Evergreen B - Lumber Mill second attack
-		q(36058),	-- Seal of Tempered Fate: Armory
-		q(37197),	-- See Rexxar Quest Giver 002 - Garrison Campaign for Darktide Roost
-		q(39829),	-- Sleigh and Guards Shared Criteria - Winter Veil
-		q(39406),	-- Tracking Quest - related to weekly naval mission in the shipyard
-		q(39407),	-- Tracking Quest - related to weekly naval mission in the shipyard
-		q(39408),	-- Tracking Quest - interact with the mission table.
-		q(39409),	-- Tracking Quest - after completing the WoD mission "Ghost Wrangler" (mission ID: 305), although not sure why that would be tracked.
-		q(39410),	-- Tracking Quest - first interaction with the Garrison Mission Table this week. Completed a bunch of mission + one of the followers leveled up
-		q(39411),	-- Tracking Quest - related to weekly naval mission in the shipyard
-		q(39412),	-- Tracking Quest - something having to do with Naval Missions most likely (triggered with 39414)
-		q(39413),	-- Tracking Quest - Garrison/Shipyard Mission Table
-		q(39414),	-- Tracking Quest - Gladiator's Sanctum - Triggers on construction of the gladiator's sanctum (Lunarfall)
-		q(39415),	-- Tracking Quest - Garrison/Shipyard Mission Table
-		q(37647),	-- Tracking Quest - Hide Old Baros / Thorn / Brightstone - after picking up the rose quest item during quest "Garrison Campaign: Every Rose Has Its Thorn" (questID 36160)
-		q(39709),	-- Tracking Quest - first time this quest popped in WoD Garrison after opening some salvage crates. Then it unflagged on fresh toon, after I walked a little it got completed again
-		q(39710),	-- Tracking Quest - related to the Garrison/Shipyard Mission Table
-		q(39711),	-- Tracking Quest - related to the Garrison/Shipyard Mission Table
-		q(39723),	-- Tracking Quest - related to rare naval missions in the shipyard
-		q(39724),	-- Tracking Quest - related to rare naval missions in the shipyard
-		q(39725),	-- Tracking Quest - related to rare naval missions in the shipyard
-		q(39748),	-- Tracking Quest - related to (rare?) mission table in the Garrison
-		q(39749),	-- Tracking Quest - related to (rare?) mission table in the Garrison
-		q(39750),	-- Tracking Quest - related to rare naval missions in the shipyard
-		q(36902),	-- Tracking Quest: Aeda Brightdawn — assigned Aeda Brightdawn as bodyguard
-		q(36898),	-- Tracking Quest: Delvar Ironfist - assigned Delvar Ironfist as a bodyguard/wingman
-		q(36877),	-- Tracking Quest: Tormmok — assigned Tormmok as a bodyguard/wingman
-		q(36901),	-- Tracking Quest: Vivianne — assigned Vivianne as bodyguard
-		q(38348),	-- Unlock "Silvermoon" - triggers when using "Music Roll: Silvermoon" or "Music Roll: Exodar", appears to be a duplicate ID
-		q(39609),	-- Hallow's End decorations active
-		q(39610),	-- Winter Veil decorations active
-		q(37670),	-- [Deprecated] Tracking Quest - Hide Old Baros / Thorn / Brightstone - after picking up the rose quest item during quest "Garrison Campaign: Every Rose Has Its Thorn" (questID 36160)
+		n(QUESTS, {
+			n(GARRISON_CAMPAIGN, {
+				q(37647),	-- Tracking Quest - Hide Old Baros / Thorn / Brightstone - after picking up the rose quest item during quest "Garrison Campaign: Every Rose Has Its Thorn" (questID 36160)
+				q(37670),	-- [Deprecated] Tracking Quest - Hide Old Baros / Thorn / Brightstone - after picking up the rose quest item during quest "Garrison Campaign: Every Rose Has Its Thorn" (questID 36160)
+				q(37197),	-- See Rexxar Quest Giver 002 - Garrison Campaign for Darktide Roost
+			}),
+			q(38315, { ["timeline"] = { ADDED_6_1_0 } }),	-- DEPRECATED - triggered when turning in "Bringing the Bass" on alliance
+			q(38401, { ["timeline"] = { ADDED_6_1_0 } }),	-- DEPRECATED - triggered when turning in "Bringing the Bass" on alliance
+			q(38348, { ["timeline"] = { ADDED_6_1_0 } }),	-- Unlock "Silvermoon" - triggers when using "Music Roll: Silvermoon" or "Music Roll: Exodar", appears to be a duplicate ID
+			q(37311),	-- Drafting Table Interact
+			q(36640),	-- Followers Obtained
+			q(36530),	-- Garrison Max-level Choice Tracker: Frostfire Iron Siegeworks
+			q(36550),	-- Garrison Max-level Choice Tracker: Frostfire Iron Siegeworks
+			q(36529),	-- Garrison Max-level Choice Tracker: Frostfire Magnarok
+			q(36551),	-- Garrison Max-level Choice Tracker: Frostfire Magnarok
+			q(36538),	-- Garrison Max-level Choice Tracker: Spires Upper Skettis
+			q(36559),	-- Garrison Max-level Choice Tracker: Spires Upper Skettis
+			q(36560),	-- Garrison Max-level Choice Tracker: Talador Shattrath City, East
+			q(36561),	-- Garrison Max-level Choice Tracker: Talador Shattrath City, East
+			q(36799),	-- Garrison Nodes - Tracking Quest - triggers after unlocking the mine, picking herbs
+			q(36492),	-- Garrison Pet Battle — discord report, "for today's EU garrison menagerie fight, the Blingtron/protectron one"
+			q(39408, { ["timeline"] = { ADDED_6_2_0 } }),	-- Tracking Quest - interact with the mission table.
+			q(39409, { ["timeline"] = { ADDED_6_2_0 } }),	-- Tracking Quest - after completing the WoD mission "Ghost Wrangler" (mission ID: 305), although not sure why that would be tracked.
+			q(39410, { ["timeline"] = { ADDED_6_2_0 } }),	-- Tracking Quest - first interaction with the Garrison Mission Table this week. Completed a bunch of mission + one of the followers leveled up
+			q(39709, { ["timeline"] = { ADDED_6_2_0 } }),	-- Tracking Quest - first time this quest popped in WoD Garrison after opening some salvage crates. Then it unflagged on fresh toon, after I walked a little it got completed again
+			q(39609, { ["timeline"] = { ADDED_6_2_2 } }),	-- Hallow's End Active
+			q(39828, { ["timeline"] = { ADDED_6_2_2 } }),	-- Horseman and Guards Shared Criteria - Hallow's End
+			q(39610, { ["timeline"] = { ADDED_6_2_2 } }),	-- Winter Veil Active
+			q(39829, { ["timeline"] = { ADDED_6_2_2 } }),	-- Sleigh and Guards Shared Criteria - Winter Veil
+		}),
 	}),
-}));
+})));

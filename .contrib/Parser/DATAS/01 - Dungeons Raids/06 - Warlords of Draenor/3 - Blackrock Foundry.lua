@@ -36,7 +36,7 @@ local EncounterToCRS = {
 };
 
 ------ Common Symlinks -----
-local SYM_CONQ_HELM = 	{{"select","itemID",
+local SYM_CONQ_HELM =	{{"select","itemID",
 						115568,	-- Helmet of Guiding Light
 						115586,	-- Shadow Council's Hood
 						115563,	-- Soul Priest's Hood
@@ -61,7 +61,7 @@ local SYM_CONQ_LEGS =	{{"select","itemID",
 						115587,	-- Shadow Council's Leggings
 						115564,	-- Soul Priest's Leggings
 						},{"whereMyModID"}}
-local SYM_PROT_HELM = 	{{"select","itemID",
+local SYM_PROT_HELM =	{{"select","itemID",
 						115584,	-- Blackhand's Faceguard
 						115556,	-- Helm of the Somber Gaze
 						115545,	-- Rylakstalker's Headguard
@@ -126,7 +126,7 @@ local function SymModID(sym, modID)
 	return symmodid
 end
 
------- EnconterToLoot ------
+------ EncounterToLoot ------
 local EncounterToLoot = {
 	[OREGORGER] = {
 		i(119448),	-- Head-Lopper Skullscythe
@@ -727,6 +727,11 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 							37030,	-- Sigil of the Black Hand (Heroic)
 							37031,	-- Sigil of the Black Hand (Mythic)
 						},
+						["g"] = {
+							i(118382),	-- Ember of the Mountain (QI!)
+							i(118383),	-- Heart of Stone (QI!)
+							i(118384),	-- Sliver of Iron (QI!)
+						},
 					}),
 					q(37553, {	-- Essence of the Iron Conqueror
 						["provider"] = { "i", 120277 },	-- Essence of the Iron Conqueror
@@ -906,6 +911,11 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 						["description"] = "The questgiver is hidden behind a load of boxes and crates to the right of the Iron Maidens.\n\nFinishing this quest will grant you immediate access to Blackhand on Heroic difficulty each week.\n\n|cfffd1818This quest becomes unobtainable if you complete the Mythic version first.|r\n",
 						["altQuests"] = { 37031 },	-- Sigil of the Black Hand (Mythic)
 						["provider"] = { "n", 87225 },	-- Goraluk Anvilcrack
+						["g"] = {
+							i(118387),	-- Ember of the Mountain (QI!)
+							i(118386),	-- Heart of Stone (QI!)
+							i(118385),	-- Sliver of Iron (QI!)
+						},
 					}),
 					q(37557, {	-- Essence of the Iron Conqueror
 						["provider"] = { "i", 120280 },	-- Essence of the Iron Conqueror
@@ -1089,6 +1099,11 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 					q(37031, {	-- Sigil of the Black Hand (Mythic)
 						["provider"] = { "n", 87225 },	-- Goraluk Anvilcrack
 						["description"] = "The questgiver is hidden behind a load of boxes and crates to the right of the Iron Maidens.\n\nFinishing this quest will grant you immediate access to Blackhand on Mythic difficulty each week.",
+						["g"] = {
+							i(118390),	-- Ember of the Mountain (QI!)
+							i(118389),	-- Heart of Stone (QI!)
+							i(118388),	-- Sliver of Iron (QI!)
+						},
 					}),
 					q(37560, {	-- Essence of the Iron Conqueror
 						["provider"] = { "i", 120283 },	-- Essence of the Iron Conqueror
@@ -1295,13 +1310,20 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 						["races"] = HORDE_ONLY,
 					}),
 				})),
-			})
+			}),
+			n(TREASURES, {
+				o(237452, {	-- Iron Horde Chest
+					["coord"] = { 51.8, 44.9, 599 },	-- Iron Assembly
+					["questID"] = 34405,
+					["isWeekly"] = true,
+				}),
+			}),
 		},
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(34405),	-- DEPRECATED - REUSE - triggers after looting Blackrock Ore chest after Operator Thogar in LFR Blackrock Foundry
-	}),
-});
+-- root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+-- 	inst(457, {
+--		q(34405),	-- DEPRECATED - REUSE - triggers after looting Blackrock Ore chest after Operator Thogar in LFR Blackrock Foundry
+--	}),
+-- })));

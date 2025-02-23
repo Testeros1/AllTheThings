@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(PANDARIA, applyclassicphase(MOP_PHASE_ONE, {
 		["lore"] = "Pandaria is the homeland of the pandaren and birthplace of their ancient empire. Located in the southern part of Azeroth, Pandaria was shrouded by a magical mist by its last emperor after the Great Sundering ten thousand years ago, and thus disappeared into myth and legend. Only those pandaren who left their homeland on the back of the great turtle Shen-zin Su, including the renowned pandaren brewmasters, have been seen outside of their homeland since; some even came to the aid of the other races during the Third War.",
 		["zone-text-continent"] = true,
-		["icon"] = "Interface\\Icons\\ExpansionIcon_MistsofPandaria",
+		["icon"] = 630786,
 		["timeline"] = { ADDED_5_0_4 },
 		["groups"] = {
 			prof(FISHING, {
@@ -43,6 +43,9 @@ root(ROOTS.Zones, {
 				q(31055, {    -- Between a Saurok and a Hard Place
 					["provider"] = { "i", 83769 },    -- Between a Saurok and a Hard Place
 					["description"] = "This will be mailed to you upon completion of Between a Saurok and a Hard Place achievement.",
+					["g"] = {
+						i(83076),	-- Between a Saurok and a Hard Place (QI!)
+					},
 				}),
 				q(31094, {    -- Fish Tales
 					["provider"] = { "i", 83771 },    -- Fish Tales

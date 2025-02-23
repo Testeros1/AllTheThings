@@ -1,7 +1,16 @@
 local i = GetRecipeHelperForProfession(SKINNING);
 
 -- Legion
+i(139893, 194170);	-- Skinning Technique: Unbroken Tooth (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(139894, 194171);	-- Skinning Technique: Unbroken Claw (Guessed via Duplicate SpellID Match with Sourced RecipeID)
 i(139895, 194173);	-- Skinning Technique: Legion Butchery
+i(139896, 194203);	-- Skinning Technique: Legion Gutting (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+
+------------------
+-- PATCH 8.2.0 --
+------------------
+i(170066, 302010);	-- Skinning Technique: Dredged Leather (Guessed via Duplicate SpellID Match with Sourced RecipeID)
+i(170067, 302015);	-- Skinning Technique: Cragscale (Guessed via Duplicate SpellID Match with Sourced RecipeID)
 
 ------------------
 -- PATCH 10.0.0 --
@@ -67,3 +76,9 @@ i(0, 442648);	-- Roaring Anglerseeker Lure
 i(0, 440977);	-- Sharpen Your Knife
 i(0, 442644);	-- Specular Rainbowfish Lure
 i(0, 442655);	-- Supreme Beast Lure
+
+------------------
+-- PATCH 11.0.5 --
+------------------
+--- TRAINER ---
+i(0, 469989);   -- Toughened Tempest Pelt

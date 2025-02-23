@@ -35,10 +35,6 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					["questID"] = 75946,
 					["groups"] = {
 						ach(18174),	-- Contaminant Cleaner
-						i(205195),	-- Drakeforged Magma Charm
-						i(205200),	-- Stirring Twilight Ember
-						i(205201),	-- Smoldering Howler Horn
-						i(205196),	-- Zaqali Hand Cauldron
 					},
 				}),
 				n(203355, {	-- Captain Reykal
@@ -46,10 +42,6 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					["questID"] = 75943,
 					["groups"] = {
 						ach(18209),	-- Nothing Stops the Research
-						i(205195),	-- Drakeforged Magma Charm
-						i(205200),	-- Stirring Twilight Ember
-						i(205201),	-- Smoldering Howler Horn
-						i(205196),	-- Zaqali Hand Cauldron
 					},
 				}),
 				n(202309, {	-- Cavern Flayer Matriarch
@@ -57,7 +49,6 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					["questID"] = 75948,
 					["groups"] = {
 						i(205276),	-- Deepflayer Lure
-						i(205193),	-- Sturdy Deepflayer Scute
 					},
 				}),
 				n(203834, {	-- Contaminated Titan Watcher
@@ -65,10 +56,6 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					["questID"] = 75944,
 					["groups"] = {
 						ach(18201),	-- Lockdown Mystery
-						i(205194),	-- Fractured Crystalspine Quill
-						i(205193),	-- Sturdy Deepflayer Scute
-						i(205191),	-- Underlight Globe
-						i(205192),	-- Volatile Crystal Shard
 					},
 				}),
 				n(203846, {	-- Elder Magma Serpent
@@ -86,24 +73,16 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					["groups"] = {
 						ach(18204),	-- Research Mishap
 						i(205262),	-- Magmaclaw Lure
-						i(205200),	-- Stirring Twilight Ember
-						i(205196),	-- Zaqali Hand Cauldron
 					},
 				}),
 				n(202318, {	-- Response Team Watcher
 					["coord"] = { 47.8, 63.8, ZARALEK_CAVERN },
 					["questID"] = 75945,
-					["groups"] = {
-						i(205194),	-- Fractured Crystalspine Quill
-						i(205193),	-- Sturdy Deepflayer Scute
-						i(205191),	-- Underlight Globe
-						i(205192),	-- Volatile Crystal Shard
-					},
 				}),
 			})),
 			n(EVENT_COMPLETION, {
 				i(215363, {	-- Cache of Embers (TODO: I'm not sure if it is require any specific bags for it)
-					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED },
+					["timeline"] = { ADDED_10_2_6_SEASON_FOUR },
 					-- probably need symlink
 				}),
 				i(205204),	-- Cataloged Shalewing (MOUNT!)
@@ -158,17 +137,19 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(ZARALEK_CAVERN, {
-		header(HEADERS.Quest, 74906, {	-- Researchers Under Fire
-			q(75627),	-- Researchers Under Fire Tier 1 Weekly Reward Tracker
-			q(75628),	-- Researchers Under Fire Tier 2 Weekly Reward Tracker
-			q(75629),	-- Researchers Under Fire Tier 3 Weekly Reward Tracker
-			q(75630),	-- Researchers Under Fire Tier 4 Weekly Reward Tracker
-			q(75666),	-- Weekly trigger
-			q(74905),	-- At the end of event 'Titan Lockdown', unflagged after bag hqt
-			q(74906),	-- Probably Zaqali Event
-			q(75947),	-- 'Zaqali Ritual Buster' completed (maybe something prior during combat of stages...)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_0 } }, {
+	m(DRAGON_ISLES, {
+		m(ZARALEK_CAVERN, {
+			header(HEADERS.Quest, 74906, {	-- Researchers Under Fire
+				q(75627),	-- Researchers Under Fire Tier 1 Weekly Reward Tracker
+				q(75628),	-- Researchers Under Fire Tier 2 Weekly Reward Tracker
+				q(75629),	-- Researchers Under Fire Tier 3 Weekly Reward Tracker
+				q(75630),	-- Researchers Under Fire Tier 4 Weekly Reward Tracker
+				q(75666),	-- Weekly trigger
+				q(74905),	-- At the end of event 'Titan Lockdown', unflagged after bag hqt
+				q(74906),	-- Probably Zaqali Event
+				q(75947),	-- 'Zaqali Ritual Buster' completed (maybe something prior during combat of stages...)
+			}),
 		}),
 	}),
-}));
+})));

@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(PANDARIA, {
 		m(KUN_LAI_SUMMIT, {
 			["lore"] = "Kun-Lai Summit is a zone in northern Pandaria, surrounded by the Vale of Eternal Blossoms to the south, the Townlong Steppes to the west, and the Jade Forest to the east. It is a vast area with majestic mountains, autumnal plains, and a lush coastal area. High atop the frigid northern peaks looms the Temple of the White Tiger, an ancient training ground protected by an elite force of martial priests, along with the spirit of the White Tiger itself, Xuen. Deeper into the mountains is the hideout of the Shado-pan clan: a mysterious order charged with protecting Pandaria from the dark things buried beneath its surface. When the isolated people of Kun-Lai are threatened by marauders from the west and a Zandalari troll menace invading its northern shores, they turn to the Alliance and Horde for help.",
-			["icon"] = "Interface\\Icons\\achievement_zone_kunlaisummit",
+			["icon"] = 617832,
 			["timeline"] = { ADDED_5_0_4 },
 			["maps"] = {
 				380,	-- Howlingwind Cavern
@@ -29,6 +29,7 @@ root(ROOTS.Zones, {
 						n(QUESTS, {
 							q(31834, {	-- Begin Your Training: Master Cheng
 								["sourceQuest"] = 31856,	-- The Peak of Serenity - Begin Your Training
+								["coord"] = { 48.6, 42.7, KUN_LAI_SUMMIT },
 								["g"] = {
 									i(89551),	-- Aspirant's Staff of Harmony
 									i(89553),	-- Aspirant's Staff of Grace
@@ -238,6 +239,12 @@ root(ROOTS.Zones, {
 									i(89575),	-- Handwraps of Serenity
 								},
 							}),
+							n(64978, {	-- Number Nine Jia <Monk Trainer - Master Crane>
+								["coord"] = { 45.2, 43.2, KUN_LAI_SUMMIT },
+								["g"] = {
+									i(232491, { ["timeline"] = { ADDED_11_0_5 } }),	-- Glyph of Jab
+								},
+							}),
 						}),
 					},
 				})),
@@ -293,41 +300,67 @@ root(ROOTS.Zones, {
 				explorationHeader({
 					exploration(6076),	-- Auburn Bluffs
 					exploration(6059),	-- Binan Village
+					visit_exploration(6086,{coord={48.4,72.1,KUN_LAI_SUMMIT}}),	-- Broketooth Outpost
 					exploration(6098),	-- Chow Farmstead
 					exploration(6094),	-- Eastwind Rest
+					visit_exploration(6124,{coord={47.4,80.1,KUN_LAI_SUMMIT}}),	-- Fire Camp Ordo
 					exploration(6121),	-- Fire Camp Ruqin
 					exploration(6152),	-- Fire Camp Yongqi
 					exploration(6129),	-- Firebough Nook
+					visit_exploration(6617,{coord={60.0,55.8,KUN_LAI_SUMMIT}}),	-- Garrosh'ar Advance
 					exploration(6498),	-- Gate of the August Celestials
+					visit_exploration(6389,{coord={59.4,53.0,KUN_LAI_SUMMIT}}),	-- Howlingwind Cavern
+					visit_exploration(6469,{coord={58.7,54.1,KUN_LAI_SUMMIT}}),	-- Howlingwind Trail
+					visit_exploration(6427,{coord={71.3,87.4,KUN_LAI_SUMMIT}}),	-- Inkgill Mere
 					exploration(6406),	-- Isle of Reckoning
+					visit_exploration(6088,{coord={50.8,61.9,KUN_LAI_SUMMIT}}),	-- Knucklethump Hole
 					exploration(6157),	-- Kota Basecamp
 					exploration(6156),	-- Kota Peak
 					exploration(6062),	-- Kun-Lai Pass
+					visit_exploration(6467,{coord={59.8,39.1,KUN_LAI_SUMMIT}}),	-- Mogu'shan Terrace
 					exploration(6114),	-- Mogujia
 					exploration(6185),	-- Mount Neverest
 					exploration(6100),	-- Muskpaw Ranch
+					visit_exploration(6180,{coord={44.7,52.2,KUN_LAI_SUMMIT}}),	-- Neverest Pinnacle
 					exploration(6085),	-- One Keg
 					exploration(6081),	-- Peak of Serenity
+					visit_exploration(6099,{coord={73.2,73.6,KUN_LAI_SUMMIT}}),	-- Pranksters' Hollow
+					visit_exploration(6530,{coord={44.6,89.3,KUN_LAI_SUMMIT}}),	-- Serpent's Spine
 					exploration(6294),	-- Shado-Li Basin
 					exploration(6128),	-- Shado-Pan Fallback
 					exploration(6173),	-- Shado-Pan Monastery
+					visit_exploration(6202,{coord={51.2,46.1,KUN_LAI_SUMMIT}}),	-- Shrine of the Merciless One
 					exploration(6174),	-- Temple of the White Tiger
+					visit_exploration(6527,{coord={51.2,38.0,KUN_LAI_SUMMIT}}),	-- Terrace of the Tiger
+					visit_exploration(6073,{coord={70.5,75.6,KUN_LAI_SUMMIT}}),	-- The Autumn Plains
 					exploration(6090),	-- The Burlap Trail
 					exploration(6087),	-- The Dooker Dome
+					visit_exploration(6468,{coord={57.1,35.5,KUN_LAI_SUMMIT}}),	-- The Emperor's Reach
+					visit_exploration(6079,{coord={65.8,61.8,KUN_LAI_SUMMIT}}),	-- The Grummle Bazaar
+					visit_exploration(6415,{coord={64.3,50.7,KUN_LAI_SUMMIT}}),	-- The Yaungol Advance
 					exploration(6207),	-- The Zandalari Vanguard
+					visit_exploration(6201,{coord={53.1,46.3,KUN_LAI_SUMMIT}}),	-- Tomb of Conquerors
+					visit_exploration(6200,{coord={53.2,49.6,KUN_LAI_SUMMIT}}),	-- Tomb of Secrets
+					visit_exploration(6199,{coord={56.1,45.8,KUN_LAI_SUMMIT}}),	-- Tomb of Shadows
+					visit_exploration(6526,{coord={47.5,39.5,KUN_LAI_SUMMIT}}),	-- Training Grounds
 					exploration(6198, {	-- Valley of Emperors
 						-- CRIEVE NOTE: This appears to be unavailable after Legion, someone let me know if you RECENTLY collect this.
 						["collectible"] = false,
 					}),
+					visit_exploration(6181,{coord={71.3,80.5,KUN_LAI_SUMMIT}}),	-- Waterspeaker's Sanctuary
 					exploration(6095),	-- Westwind Rest
+					visit_exploration(6206,{coord={62.8,41.1,KUN_LAI_SUMMIT}}),	-- Whispercloud Rise
+					visit_exploration(6383,{coord={35.2,59.4,KUN_LAI_SUMMIT}}),	-- Winter's Blossom
 					exploration(6154),	-- Yinying Village
+					visit_exploration(6405,{coord={62.8,36.5,KUN_LAI_SUMMIT}}),	-- Zouchin Province
+					visit_exploration(6168,{coord={57.7,20.4,KUN_LAI_SUMMIT}}),	-- Zouchin Strand
 					exploration(6169),	-- Zouchin Village
 				}),
 				n(FACTIONS, {
-					faction(1341, {	-- The August Celestials
+					faction(FACTION_THE_AUGUST_CELESTIALS, {	-- The August Celestials
 						["description"] = "Each day, the August Celestials require your aid at one of their temples.  Speak to the representative in your faction's Vale of Eternal Blossoms shrine to find out where your help is needed (|cff3f48ccSage Whiteheart for Alliance|r and |cff880015Sage Lotusbloom for Horde|r).\n\nThe dailies will be in one of these locations:\nJade Forest - Temple of the Jade Serpent\nKrasarang Wilds - Cradle of Chi-Ji\nKun-Lai Summit - Temple of the White Tiger\nTownlong Steppes - Niuzao Temple\n\n",
 						["collectible"] = false,
-						["icon"] = "Interface\\Icons\\achievement_faction_celestials",
+						["icon"] = 645203,
 						["g"] = {
 							n(QUESTS, {
 								q(31394, {	-- A Celestial Experience (A)
@@ -487,6 +520,7 @@ root(ROOTS.Zones, {
 							o(211023, {	-- Cast Iron Pot
 								i(80230),	-- Cast Iron Pot (QI!)
 							}),
+							i(88398),	-- Root Veggie Stew
 						},
 					}),
 					q(30746, {	-- A Fair Trade
@@ -736,6 +770,9 @@ root(ROOTS.Zones, {
 							30599,	-- A Monkey Idol
 							30604,	-- Breaking Broketooth
 							30600,	-- No Pack Left Behind
+						},
+						["g"] = {
+							i(88379),	-- Grummlecake
 						},
 					}),
 					q(30807, {	-- By the Falls, For the Fallen
@@ -1238,6 +1275,7 @@ root(ROOTS.Zones, {
 						},
 						["groups"] = {
 							i(80307),	-- Grummlepack (QI!)
+							i(88397),	-- Grummlepack
 						},
 					}),
 					q(30750, {	-- Off the Wall!
@@ -1592,6 +1630,9 @@ root(ROOTS.Zones, {
 					q(30592, {	-- The Burlap Trail: To Burlap Waystation
 						["coord"] = { 58.0, 61.4, KUN_LAI_SUMMIT },
 						["provider"] = { "n", 59701 },	-- Brother Lintpocket
+						["g"] = {
+							i(88384),	-- Burlap Ritual Bag
+						},
 					}),
 					q(30692, {	-- The Burlap Trail: To Kota Basecamp
 						["coord"] = { 51.6, 67.8, KUN_LAI_SUMMIT },
@@ -1650,6 +1691,9 @@ root(ROOTS.Zones, {
 						["cr"] = 59335,	-- Burilgi Despoiler
 						["coord"] = { 70.3, 71.9, KUN_LAI_SUMMIT },
 						["provider"] = { "i", 80241 },	-- Muskpaw's Keepsake
+						["g"] = {
+							i(80241),	-- Muskpaw's Keepsake (QI!)
+						},
 					}),
 					q(30612, {	-- The Leader Hozen
 						["coord"] = { 45.9, 64.0, KUN_LAI_SUMMIT },
@@ -1824,6 +1868,10 @@ root(ROOTS.Zones, {
 						["coord"] = { 60.6, 21.3, KUN_LAI_SUMMIT },
 						["provider"] = { "n", 60785 },	-- Sage Liao
 						["sourceQuest"] = 30794,	-- Emergency Care
+						["g"] = {
+							i(80907),	-- Opalescent Blue Crab Shell (QI!)
+							i(81261),	-- Stolen Pandaren Spices (QI!)
+						},
 					}),
 					q(30281, {	-- The Silent Approach
 						["coord"] = { 55.2, 92.0, KUN_LAI_SUMMIT },
@@ -2147,7 +2195,7 @@ root(ROOTS.Zones, {
 					}),
 					n(70323, {	-- Krakkanon
 						q(31664, {	-- An Angler's Quest
-							["icon"] = "Interface\\Icons\\inv_misc_book_11",
+							["icon"] = 133743,
 							["provider"] = { "i", 88563 },	-- Nat's Fishing Journal
 							["repeatable"] = true,
 							["collectible"] = false,
@@ -2165,6 +2213,9 @@ root(ROOTS.Zones, {
 							{ 44.8, 63.6, KUN_LAI_SUMMIT },
 							{ 47.2, 63.0, KUN_LAI_SUMMIT },
 							{ 46.2, 61.5, KUN_LAI_SUMMIT },
+						},
+						["g"] = {
+							i(86592),	-- Hozen Peace Pipe
 						},
 					}),
 					n(50733, {	-- Ski'thik
@@ -6331,21 +6382,25 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers,{
-	expansion(EXPANSION.MOP, {
-		q(30453),	-- Binan Village Intro Event Tracking Event - triggeres when flying into Binan village through the Ancient Passage on mount
-		q(31310),	-- Interrogation Tracking - triggers during "Revelations" (questID 30946)
-		q(30854),	-- Lha-Po Tracking Quest - triggers after turning in "One Traveler's Misfortune" (questID 30683)
-		q(31205),	-- Lorewalker Cho Tracking Quest - triggers after turning in "Fisherman's Tale" (questID 30935)
-		q(31300),	-- Shomi Beach Tracking - triggeres shortly after killing Captain Ripflesh during "Justice" (questID 30805)
-		q(31299),	-- Shomi Ruins Tracking - triggers when you walk into the Zandalari Vanguard Ruins / Zouchin Village
-		q(31301),	-- Shomi Strand Tracking - triggers when you find Sage Liao in Zouchin Strand
-		q(31463),	-- Spirit of Anger Defeated - triggers after second test during "A Celestial Experience" (questID 31394 & 31395)
-		q(31462),	-- Spirit of Violence Defeated - triggers after first test during "A Celestial Experience" (questID 31394 & 31395)
-		q(31461),	-- Spoke to Xuen - triggers during "A Celestial Experience" (questID 31394 & 31395)
-		q(31464),	-- Opposing Faction Leader Defeated - triggers after third test during "A Celestial Experience" (questID 31394 & 31395)
-		q(30647),	-- Tracking Quest: Opened the Golden Valley - triggers when the gates to the Vale of Eternal Blossom are opened
-		q(31807),	-- Tracking Quest: Opened the Golden Valley II - triggers after the dialog finishes with the 4 celestials at the gates
-		q(31298),	-- Zouchin Village - Intro Tracking
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
+	m(PANDARIA, {
+		m(KUN_LAI_SUMMIT, {
+			n(QUESTS, {
+				q(30453),	-- Binan Village Intro Event Tracking Event - triggeres when flying into Binan village through the Ancient Passage on mount
+				q(31310),	-- Interrogation Tracking - triggers during "Revelations" (questID 30946)
+				q(30854),	-- Lha-Po Tracking Quest - triggers after turning in "One Traveler's Misfortune" (questID 30683)
+				q(31205),	-- Lorewalker Cho Tracking Quest - triggers after turning in "Fisherman's Tale" (questID 30935)
+				q(31300),	-- Shomi Beach Tracking - triggeres shortly after killing Captain Ripflesh during "Justice" (questID 30805)
+				q(31299),	-- Shomi Ruins Tracking - triggers when you walk into the Zandalari Vanguard Ruins / Zouchin Village
+				q(31301),	-- Shomi Strand Tracking - triggers when you find Sage Liao in Zouchin Strand
+				q(31463),	-- Spirit of Anger Defeated - triggers after second test during "A Celestial Experience" (questID 31394 & 31395)
+				q(31462),	-- Spirit of Violence Defeated - triggers after first test during "A Celestial Experience" (questID 31394 & 31395)
+				q(31461),	-- Spoke to Xuen - triggers during "A Celestial Experience" (questID 31394 & 31395)
+				q(31464),	-- Opposing Faction Leader Defeated - triggers after third test during "A Celestial Experience" (questID 31394 & 31395)
+				q(30647),	-- Tracking Quest: Opened the Golden Valley - triggers when the gates to the Vale of Eternal Blossom are opened
+				q(31807),	-- Tracking Quest: Opened the Golden Valley II - triggers after the dialog finishes with the 4 celestials at the gates
+				q(31298),	-- Zouchin Village - Intro Tracking
+			}),
+		}),
 	}),
-});
+})));

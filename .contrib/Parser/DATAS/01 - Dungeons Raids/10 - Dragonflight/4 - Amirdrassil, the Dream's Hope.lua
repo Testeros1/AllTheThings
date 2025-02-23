@@ -22,8 +22,8 @@ end
 local EncounterToCRS = {
 	[GNARLROOT] = { 209333 },	-- Gnarlroot
 	[IGIRA] = {
-		206689, 	-- Igira the Cruel <Zaqali Elder>
-		200926, 	-- Igira the Cruel <Zaqali Elder>
+		206689,	-- Igira the Cruel <Zaqali Elder>
+		200926,	-- Igira the Cruel <Zaqali Elder>
 	},
 	[VOLCOROSS] = { 208478 },	-- Volcoross
 	[COUNCIL_OF_DREAMS] = {
@@ -36,13 +36,13 @@ local EncounterToCRS = {
 	[NYMUE] = { 206172 },	-- Nymue <Weaver of the Cycle>
 	[SMOLDERON] = { 200927 },	-- Smolderon <The Firelord>
 	[TINDRAL] = {
-		210601, 	-- Tindral Sageswift <Seer of Flame>
-		209090,		-- Tindral Sageswift <Seer of Flame> (You fight this ID)
+		210601,	-- Tindral Sageswift <Seer of Flame>
+		209090,	-- Tindral Sageswift <Seer of Flame> (You fight this ID)
 	},
 	[FYRAKK] = { 204931 },	-- Fyrakk <The Blazing>
 };
 
------- EnconterToLoot ------
+------ EncounterToLoot ------
 local EncounterToLoot = {
 	[GNARLROOT] = {
 		i(207142),	-- Ancient Haubark
@@ -316,7 +316,7 @@ InstanceHelper.ExtraLoots = {
 					item.skipFill = true
 					item.up = IGNORED_VALUE
 					item.sym = {{"select","itemID",modItemId(item.itemID,symModID)},{"groupfill",true},{"pop"}}	-- Base Version & Fill
-					item.timeline = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED }
+					item.timeline = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 					item.nomerge = true
 				end
 				encounter.groups = appendAllGroups(encounter.groups, g)
@@ -365,7 +365,7 @@ InstanceHelper.ExtraLoots = {
 				item.modID = TokenModID[difficulty]
 				item.up = IGNORED_VALUE
 				item.sym = GET_SYM_DF_S4_TIER_TOKENS(TokenSymModID[difficulty])
-				item.timeline = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED }
+				item.timeline = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH }
 				encounter.groups = appendAllGroups(encounter.groups, {item});
 				return encounter
 			end
@@ -602,9 +602,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						--["maps"] = { 2211 },	-- Aberrus, the Shadowed Crucible
 						-- It seems this subzone is still in The Waking Shores (mapID 2022)
 						["g"] = {
-							i(206448, {	-- Fyr'alath the Dreamrender
-								ach(19450),	-- Fyr'alath the Dreamrender
-							}),
+							i(206448),	-- Fyr'alath the Dreamrender
+							ach(19450),	-- Fyr'alath the Dreamrender
 						},
 					}),
 				})),
@@ -735,7 +734,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					},
 				}),
 				-- Awakened
-				ach(19570, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Awakened Flames
+				ach(19570, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Awakened Flames
 					crit(64986, {	-- Gnarlroot
 						["_encounter"] = { GNARLROOT, DIFFICULTY.RAID.MULTI.NORMAL_PLUS },
 					}),
@@ -764,7 +763,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						["_encounter"] = { FYRAKK, DIFFICULTY.RAID.MULTI.NORMAL_PLUS },
 					}),
 				})),
-				ach(19571, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Heroic: Awakened Flames
+				ach(19571, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Heroic: Awakened Flames
 					crit(64995, {	-- Gnarlroot
 						["_encounter"] = { GNARLROOT, DIFFICULTY.RAID.MULTI.HEROIC_PLUS },
 					}),
@@ -793,7 +792,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						["_encounter"] = { FYRAKK, DIFFICULTY.RAID.MULTI.HEROIC_PLUS },
 					}),
 				})),
-				ach(19572, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mythic: Awakened Flames
+				ach(19572, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mythic: Awakened Flames
 					crit(65004, {	-- Gnarlroot
 						["_encounter"] = { GNARLROOT, DIFFICULTY.RAID.MYTHIC },
 					}),
@@ -846,6 +845,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				}),
 			}),
 			-- #if AFTER 10.2.7
+			-- #if BEFORE 11.0.0
 			n(VENDORS, {
 				n(213285, {	-- Theozhaklos the Curious <Novice Explorer>
 					["coord"] = { 36.7, 33.3, EMERALD_DREAM },
@@ -948,6 +948,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				}),
 			}),
 			-- #endif
+			-- #endif
 			Difficulty(DIFFICULTY.RAID.MULTI.ALL).AddGroups({
 				CommonBossDrops({
 					i(210780),	-- Lesser Ember of Fyr'alath
@@ -993,13 +994,10 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				BossOnly(IGIRA, {
 					i(210148, {	-- Overflowing Satchel of Pilfered Recipes
 						i(194642),	-- Design: Choker of Shielding (RECIPE!)
-						i(201740, {	-- Elemental Codex of Ultimate Power
-							["collectible"] = false,
-							["g"] = {
-								r(370543),	-- Elemental Potion of Ultimate Power (RECIPE!)
-								r(370672),	-- Potion Cauldron of Ultimate Power (RECIPE!)
-							},
-						}),
+						TempForceMisc(ig(201740, {	-- Elemental Codex of Ultimate Power
+							r(370543),	-- Elemental Potion of Ultimate Power (RECIPE!)
+							r(370672),	-- Potion Cauldron of Ultimate Power (RECIPE!)
+						})),
 						i(204975),	-- Formula: Enchant Weapon - Shadowflame Wreathe (RECIPE!)
 						i(194259),	-- Pattern: Allied Cinch of Time Dilation (RECIPE!)
 						i(194266),	-- Pattern: Bronzed Grip Wrappings (RECIPE!)
@@ -1038,7 +1036,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				}),
 				BossOnly(FYRAKK, {
 					i(210871),	-- Greater Ember of Fyr'alath
-					i(210536),	-- Renewed Proto-Drake: Embodiment of the Blazing (DM!)
+					i(210536),	-- Renewed Proto-Drake: Embodiment of the Blazing (MM!)
 					i(207728, {	-- Fyr'alath the Dreamrender
 						["classes"] = { WARRIOR, PALADIN, DEATHKNIGHT },
 						["g"] = {
@@ -1055,9 +1053,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
 					}),
 				}),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- LFR	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Emerald Dream Items & LFR Mode Non-set items from the Amirdrassil Raid into your class' LFR Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- LFR --
+					["description"] = "The Revival Catalyst is a system that lets you convert Emerald Dream's Zone Weekly Event Items (Superbloom, Dreamseeds, A Worthy Ally: Dream) & LFR Mode Non-set items from the Amirdrassil Raid into your class' LFR Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = bubbleDown({ ["modID"] = 4 }, {
@@ -1179,7 +1177,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					}),
-				}),--]]
+				}),
+				-- #endif
 				header(HEADERS.Achievement, 19344, {	-- Incarnate's Wake
 					Boss(GNARLROOT),
 					Boss(IGIRA),
@@ -1250,9 +1249,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						},
 					}),
 				}),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- NORMAL	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Normal Mode Non-set items from the Amirdrassil Raid into your class' Normal Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- NORMAL --
+					["description"] = "The Revival Catalyst is a system that lets you convert Normal Mode Non-set items from the Amirdrassil Raid into your class' Normal Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = {
@@ -1374,7 +1373,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					},
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 				}),
 				Boss(GNARLROOT),
@@ -1394,10 +1394,10 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 			}),
 			Difficulty(DIFFICULTY.RAID.MULTI.HEROIC_PLUS).AddGroups({
 				n(QUESTS, {
-					q(78876, bubbleDownSelf({["timeline"] = { ADDED_10_2_0, REMOVED_11_0_2 } }, {	-- A Glowing Memento
+					q(78876, bubbleDownSelf({["timeline"] = { ADDED_10_2_0, REMOVED_TWW_LAUNCH } }, {	-- A Glowing Memento
 						["provider"] = { "i", 211375 },	-- Everglowing Ember
 						["g"] = {
-							i(210537),	-- Renewed Proto-Drake: Embodiment of Shadowflame (DM!)
+							i(210537),	-- Renewed Proto-Drake: Embodiment of Shadowflame (MM!)
 						},
 					})),
 				}),
@@ -1428,9 +1428,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						},
 					}),
 				}),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- HEROIC	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Heroic Mode Non-set items from the Amirdrassil Raid into your class' Heroic Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- HEROIC --
+					["description"] = "The Revival Catalyst is a system that lets you convert Heroic Mode Non-set items from the Amirdrassil Raid into your class' Heroic Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = bubbleDown({ ["modID"] = 5 }, {
@@ -1552,7 +1552,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					}),
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 				}),
 				Boss(GNARLROOT),
@@ -1584,9 +1585,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						},
 					}),
 				}),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- MYTHIC	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Mythic Mode Non-set items from the Amirdrassil Raid into your class' Mythic Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- MYTHIC --
+					["description"] = "The Revival Catalyst is a system that lets you convert Mythic Mode Non-set items from the Amirdrassil Raid into your class' Mythic Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = bubbleDown({ ["modID"] = 6 }, {
@@ -1708,7 +1709,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					}),
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 				}),
 				n(ZONE_DROPS, sharedData({	-- First 2 week BoP version drops
@@ -1771,7 +1773,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_0 } }, {
 	inst(1207, {	-- Amirdrassil, the Dream's Hope
 		-- Normal
 		q(78311),	-- Gnalroot

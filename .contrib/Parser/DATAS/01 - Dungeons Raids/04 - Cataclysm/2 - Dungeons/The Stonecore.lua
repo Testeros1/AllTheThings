@@ -98,6 +98,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(55797),	-- Hematite Plate Gloves
 						i(55801),	-- Quicksilver Blade
 						i(55799),	-- Rose Quartz Band
+						-- #if BEFORE MOP
+						i(55800, {	-- Stalagmite Dragon
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				e(112, {	-- Ozruk
@@ -116,15 +121,20 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						-- #if BEFORE 7.3.5
 						ach(4846),	-- The Stonecore
 						-- #endif
-						i(55818), -- Cowl of the Unseen World
-						i(55815), -- Darkling Staff
-						i(55813), -- Elementium Fang
-						i(55812), -- Helm of Numberless Shadow
-						i(55816), -- Leaden Despair
-						i(55814), -- Magnetite Mirror
-						i(55820), -- Prophet Scepter
-						i(55817), -- Slippers of the Twilight Prophet
-						i(55819), -- Tear of Blood
+						i(55818),	-- Cowl of the Unseen World
+						i(55815),	-- Darkling Staff
+						i(55813),	-- Elementium Fang
+						i(55812),	-- Helm of Numberless Shadow
+						i(55816),	-- Leaden Despair
+						i(55814),	-- Magnetite Mirror
+						i(55820),	-- Prophet Scepter
+						i(55817),	-- Slippers of the Twilight Prophet
+						i(55819),	-- Tear of Blood
+						-- #if BEFORE MOP
+						i(55821, {	-- Book of Dark Prophecies
+							["timeline"] = { REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 			})),
@@ -148,6 +158,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(56336),	-- Hematite Plate Gloves
 						i(56335),	-- Quicksilver Blade
 						i(56333),	-- Rose Quartz Band
+						-- #if BEFORE MOP
+						i(56337, {	-- Stalagmite Dragon
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				e(112, {	-- Ozruk
@@ -175,6 +190,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(56349),	-- Prophet Scepter
 						i(56348),	-- Slippers of the Twilight Prophet
 						i(56351),	-- Tear of Blood
+						-- #if BEFORE MOP
+						i(56350, {	-- Book of Dark Prophecies
+							["timeline"] = { REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 			}),
@@ -255,13 +275,26 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 				}),
 			}),
 			-- #endif
+			-- #if ANYCLASSIC
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(PROTOCOL_INFERNO, {
+				["OnInit"] = FUNCTION_TEMPLATES.OnInit.GenerateShouldExcludeFromTooltipForBuffs(470595),
+				["groups"] = {
+					e(113, {	-- High Priestess Azil
+						["crs"] = { 42333 },	-- High Priestess Azil
+						["groups"] = {
+							ach(41141),	-- Protocol Inferno: The Stonecore
+						},
+					}),
+				},
+			})),
+			-- #endif
 		},
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(67, {
 		q(35911),	-- Stonecore Reward Quest - Normal completion
 		q(35913),	-- Stonecore (Heroic) Reward Quest - Heroic completion
 	}),
-});
+})));

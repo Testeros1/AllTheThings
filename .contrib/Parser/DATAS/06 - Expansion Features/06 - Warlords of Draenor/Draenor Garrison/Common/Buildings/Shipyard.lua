@@ -157,13 +157,13 @@ root(ROOTS.ExpansionFeatures,
 								["provider"] = { "i", 127989 },	-- Waterlogged Manifest
 							}),
 							q(39665, {	-- A True Naval Commander
-								["provider"] = { "n", 93812 },	-- Salty Jorren
+								["provider"] = { "n", 93812 },	-- Salty Jorren <Naval Equipment Specialist>
 								["coord"] = { 28.6, 10.8, DRAENOR_SHADOWMOON_VALLEY },
 								["races"] = ALLIANCE_ONLY,
 								["sourceQuest"] = 39666,	-- Equipping Our Fleet
 							}),
 							q(39676, {	-- A True Naval Commander
-								["provider"] = { "n", 94801 },	-- Kronk Rustspark
+								["provider"] = { "n", 94801 },	-- Kronk Rustspark <Naval Equipment Specialist>
 								["coord"] = { 40.0, 72.2, FROSTFIRE_RIDGE },
 								["races"] = HORDE_ONLY,
 								["sourceQuest"] = 39675,	-- Equipping Our Fleet
@@ -313,9 +313,72 @@ root(ROOTS.ExpansionFeatures,
 								["sourceQuest"] = 39676,	-- A True Naval Commander
 							}),
 						}),
+						n(VENDORS, {
+							n(94801, {	-- Kronk Rustspark <Naval Equipment Specialist>
+								["coord"] = { 40.0, 72.2, FROSTFIRE_RIDGE },
+								["races"] = HORDE_ONLY,
+								["g"] = sharedData({ ["cost"] = {{ "c", 824, 500 }} }, {	-- Garrison Resources
+									i(125787),	-- Bilge Pump
+									i(127882),	-- Blast Furnace
+									i(127884),	-- Felsmoke Launcher
+									i(127895, {	-- Ghostly Spyglass
+										["cost"] = {{ "c", 824, 1000 }},
+									}),
+									i(127881),	-- Gyroscopic Internal Stabilizer
+									i(127662),	-- High Intensity Fog Lights
+									i(127880),	-- Ice Cutter
+									i(127663),	-- Trained Shark Tank
+									i(127883),	-- True Iron Rudder
+									i(127894),	-- Tuskarr Fishing Net
+									i(127886),	-- Unsinkable
+								}),
+							}),
+							n(93812, {	-- Salty Jorren <Naval Equipment Specialist>
+								["coord"] = { 28.6, 10.8, DRAENOR_SHADOWMOON_VALLEY },
+								["races"] = ALLIANCE_ONLY,
+								["g"] = sharedData({ ["cost"] = {{ "c", 824, 500 }} }, {	-- Garrison Resources
+									i(125787),	-- Bilge Pump
+									i(127882),	-- Blast Furnace
+									i(127884),	-- Felsmoke Launcher
+									i(127895, {	-- Ghostly Spyglass
+										["cost"] = {{ "c", 824, 1000 }},
+									}),
+									i(127881),	-- Gyroscopic Internal Stabilizer
+									i(127662),	-- High Intensity Fog Lights
+									i(127880),	-- Ice Cutter
+									i(127663),	-- Trained Shark Tank
+									i(127883),	-- True Iron Rudder
+									i(127894),	-- Tuskarr Fishing Net
+									i(127886),	-- Unsinkable
+								}),
+							}),
+						}),
 					},
 				}),
 			}),
 		})),
 	})
 );
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_2_0 } }, {
+	n(GARRISONS, {
+		n(BUILDINGS, {	-- Buildings
+			garrisonBuilding(207, {	-- Shipyard
+				q(39413),	-- Tracking Quest - Garrison/Shipyard Mission Table
+				q(39415),	-- Tracking Quest - Garrison/Shipyard Mission Table
+				q(39710),	-- Tracking Quest - Garrison/Shipyard Mission Table
+				q(39711),	-- Tracking Quest - Garrison/Shipyard Mission Table
+				q(39406),	-- Tracking Quest - related to weekly naval mission in the shipyard
+				q(39407),	-- Tracking Quest - related to weekly naval mission in the shipyard
+				q(39411),	-- Tracking Quest - related to weekly naval mission in the shipyard
+				q(39723),	-- Tracking Quest - related to rare naval missions in the shipyard
+				q(39724),	-- Tracking Quest - related to rare naval missions in the shipyard
+				q(39725),	-- Tracking Quest - related to rare naval missions in the shipyard
+				q(39750),	-- Tracking Quest - related to rare naval missions in the shipyard
+				q(39748),	-- Tracking Quest - related to (rare?) mission table in the Garrison
+				q(39749),	-- Tracking Quest - related to (rare?) mission table in the Garrison
+				q(39412),	-- Tracking Quest - something having to do with Naval Missions most likely (triggered with 39414)
+			}),
+		}),
+	}),
+})));

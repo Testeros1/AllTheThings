@@ -1,7 +1,7 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local OnTooltipForConsortium = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForConsortium = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -19,7 +19,7 @@ local OnTooltipForConsortium = [[function(t, tooltipInfo)
 		_.Modules.FactionData.AddReputationTooltipInfoWithMultiplier(tooltipInfo, reputation, "Total Obsidian Warbeads", 500, 42000, 10);
 	end
 end]];
-local OnTooltipForKurenai = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForKurenai = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 0 then
 		tinsert(tooltipInfo, { left = "Complete Quests in Orebor Harborage, Zangarmarsh.", r = 1, g = 1, b = 1 });
@@ -30,7 +30,7 @@ local OnTooltipForKurenai = [[function(t, tooltipInfo)
 		_.Modules.FactionData.AddReputationTooltipInfoWithMultiplier(tooltipInfo, reputation, "Total Obsidian Warbeads", 500, 42000, 10);
 	end
 end]];
-local OnTooltipForMaghar = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForMaghar = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 0 then
 		tinsert(tooltipInfo, { left = "Complete Quests in Mag'har Post, Hellfire Peninsula.", r = 1, g = 1, b = 1 });
@@ -45,31 +45,15 @@ root(ROOTS.Zones, {
 	m(OUTLAND, applyclassicphase(TBC_PHASE_ONE, {
 		m(NAGRAND, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
 			["lore"] = "Nagrand is a peaceful lush zone in Outland with grassy areas and floating islands in the sky. It is home to the Kurenai and Mag'har factions. The Horde especially have an interesting time because the final questchain covers Thrall and his true identity. Other sidequests involve slaughtering more animals for Hemet Nesingwary and learning about demon hunters and fel dangers.",
-			-- #if AFTER WRATH
-			["icon"] = "Interface\\Icons\\achievement_zone_nagrand_01",
-			-- #endif
+			["icon"] = 236810,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
-					achWithRep(902, 933, {	-- Chief Exalted Officer
-						-- #if BEFORE WRATH
-						["description"] = "Raise your reputation with The Consortium to Exalted.",
-						-- #endif
-					}),
-					explorationAch(866, {	-- Explore Nagrand
-						-- #if BEFORE WRATH
-						["description"] = "Explore Nagrand, revealing the covered areas of the world map.",
-						-- #endif
-					}),
+					achWithRep(902, FACTION_THE_CONSORTIUM),	-- Chief Exalted Officer
+					explorationAch(866),	-- Explore Nagrand
 					ach(939, {	-- Hills Like White Elekk
 						["sourceQuest"] = 9852,	-- The Ultimate Bloodsport
-						-- #if BEFORE WRATH
-						["description"] = "Complete all of Hemet Nesingwary quests in Nagrand up to and including The Ultimate Bloodsport.",
-						-- #endif
 					}),
-					achWithRep(901, 941, {	-- Mag'har of Draenor
-						-- #if BEFORE WRATH
-						["description"] = "Raise your reputation with the Mag'har to Exalted.",
-						-- #endif
+					achWithRep(901, FACTION_THE_MAGHAR, {	-- Mag'har of Draenor
 						["races"] = HORDE_ONLY,
 					}),
 					ach(1273, {	-- Nagrand Slam (Horde)
@@ -114,9 +98,6 @@ root(ROOTS.Zones, {
 							9925,	-- Matters of Security
 						},
 						-- #else
-						-- #if BEFORE WRATH
-						["description"] = "Complete 87 quests in Nagrand.",
-						-- #endif
 						["OnClick"] = [[_.CommonAchievementHandlers.LOREMASTER_OnClick]],
 						["OnTooltip"] = [[_.CommonAchievementHandlers.LOREMASTER_OnTooltip]],
 						["OnUpdate"] = [[_.CommonAchievementHandlers.LOREMASTER_OnUpdate]],
@@ -212,9 +193,6 @@ root(ROOTS.Zones, {
 							9925,	-- Matters of Security
 						},
 						-- #else
-						-- #if BEFORE WRATH
-						["description"] = "Complete 75 quests in Nagrand.",
-						-- #endif
 						["OnClick"] = [[_.CommonAchievementHandlers.LOREMASTER_OnClick]],
 						["OnTooltip"] = [[_.CommonAchievementHandlers.LOREMASTER_OnTooltip]],
 						["OnUpdate"] = [[_.CommonAchievementHandlers.LOREMASTER_OnUpdate]],
@@ -266,10 +244,7 @@ root(ROOTS.Zones, {
 						-- },
 						-- #endif
 					}),
-					achWithRep(899, 978, {	-- Oh My, Kurenai
-						-- #if BEFORE WRATH
-						["description"] = "Raise your reputation with the Kurenai to Exalted.",
-						-- #endif
+					achWithRep(899, FACTION_KURENAI, {	-- Oh My, Kurenai
 						["races"] = ALLIANCE_ONLY,
 					}),
 				}),
@@ -286,9 +261,11 @@ root(ROOTS.Zones, {
 					},
 				}),
 				explorationHeader({
-					exploration(3839),	-- Abandoned Armory
+					visit_exploration(3839,{coord={52.0,57.5,NAGRAND}}),	-- Abandoned Armory
+					visit_exploration(3623,{coord={30.3,58.9,NAGRAND}}),	-- Aeris Landing
+					visit_exploration(3633,{coord={26.1,60.0,NAGRAND}}),	-- Ancestral Grounds
 					exploration(3610),	-- Burning Blade Ruins
-					exploration(3611),	-- Clan Watch
+					visit_exploration(3611,{coord={62.9,65.0,NAGRAND}}),	-- Clan Watch
 					exploration(3636),	-- Elemental Plateau
 					exploration(3624),	-- Forge Camp: Fear
 					exploration(3625),	-- Forge Camp: Hate
@@ -303,14 +280,17 @@ root(ROOTS.Zones, {
 					exploration(3673),	-- Nesingwary Safari
 					exploration(3627),	-- Northwind Cleft
 					exploration(3630),	-- Oshu'gun
+					visit_exploration(7273,{coord={74.6,37.9,NAGRAND}}),	-- Silence Pond
 					exploration(3614),	-- Skysong Lake
-					exploration(3629),	-- Southwind Cleft
+					visit_exploration(3629,{coord={48.1,54.8,NAGRAND}}),	-- Southwind Cleft
 					-- #if AFTER CATA
 					exploration(3631),	-- Spirit Fields (Wrath Classic: Can't be collected)
 					-- #endif
 					exploration(3622),	-- Sunspring Post
-					exploration(3626),	-- Telaar
+					visit_exploration(3626,{coord={53.8,74.8,NAGRAND}}),	-- Telaar
+					visit_exploration(3705,{coord={52.2,68.7,NAGRAND}}),	-- Telaari Basin
 					exploration(3760),	-- The Barrier Hills
+					visit_exploration(3761,{coord={76.9,56.0,NAGRAND}}),	-- The High Path
 					exploration(3788),	-- The Low Path
 					exploration(3700),	-- The Ring of Blood
 					exploration(3638),	-- The Ring of Trials
@@ -319,46 +299,32 @@ root(ROOTS.Zones, {
 					exploration(3617),	-- Warmaul Hill
 					exploration(3762),	-- Windyreed Pass
 					exploration(3634),	-- Windyreed Village
-					exploration(3763),	-- Zangar Ridge
+					visit_exploration(3763,{coord={35.9,17.0,NAGRAND}}),	-- Zangar Ridge
 				}),
 				n(FACTIONS, {
-					faction(978, {	-- Kurenai
-						["OnTooltip"] = OnTooltipForKurenai,
+					faction(FACTION_KURENAI, {	-- Kurenai
+						["OnTooltip"] = [[_.OnTooltipDB.ForKurenai]],
 						["races"] = ALLIANCE_ONLY,
 					}),
-					faction(933, {	-- The Consortium
+					faction(FACTION_THE_CONSORTIUM, {	-- The Consortium
 						["maps"] = { NETHERSTORM, AUCHINDOUN_MANA_TOMBS },
-						["OnTooltip"] = OnTooltipForConsortium,
+						["OnTooltip"] = [[_.OnTooltipDB.ForConsortium]],
 					}),
-					faction(941, {	-- The Mag'har
-						["OnTooltip"] = OnTooltipForMaghar,
+					faction(FACTION_THE_MAGHAR, {	-- The Mag'har
+						["OnTooltip"] = [[_.OnTooltipDB.ForMaghar]],
 						["races"] = HORDE_ONLY,
 					}),
 				}),
 				prof(FISHING, {
-					-- #if ANYCLASSIC
-					ach(1225, {	-- Outland Angler
-						["provider"] = { "o", 182959 },	-- Bluefish School
-						["criteriaID"] = 3866,	-- Bluefish School
-						["timeline"] = { ADDED_3_0_2 },
-						["requireSkill"] = FISHING,
-					}),
-					ach(1225, {	-- Outland Angler
-						["provider"] = { "o", 182958 },	-- Mudfish School
-						["criteriaID"] = 3867,	-- Mudfish School
-						["timeline"] = { ADDED_3_0_2 },
-						["requireSkill"] = FISHING,
-					}),
-					-- #else
 					o(182959, {	-- Bluefish School
-						["timeline"] = { ADDED_3_0_2 },
 						["requireSkill"] = FISHING,
 					}),
 					o(182958, {	-- Mudfish School
-						["timeline"] = { ADDED_3_0_2 },
 						["requireSkill"] = FISHING,
 					}),
-					-- #endif
+					o(182951, {	-- Pure Water (fishing school)
+						["requireSkill"] = FISHING,
+					}),
 					i(34868),	-- World's Largest Mudfish
 				}),
 				n(FLIGHT_PATHS, {
@@ -979,8 +945,8 @@ root(ROOTS.Zones, {
 					q(9914, {	-- A Head Full of Ivory
 						["qg"] = 18333,	-- Shadrek
 						["coord"] = { 31.8, 56.8, NAGRAND },
-						["maxReputation"] = { 933, FRIENDLY },	-- The Consortium, Friendly.
-						["minReputation"] = { 933, NEUTRAL },	-- The Consortium, Neutral.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },	-- The Consortium, Friendly.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, NEUTRAL },	-- The Consortium, Neutral.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already.
 						["lockCriteria"] = { 1, "factionID", 933.5 },	-- Consortium, Friendly
@@ -989,8 +955,8 @@ root(ROOTS.Zones, {
 					q(9886, {	-- Membership Benefits
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["maxReputation"] = { 933, FRIENDLY },	-- The Consortium, Friendly.
-						["minReputation"] = { 933, NEUTRAL },	-- The Consortium, Neutral.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },	-- The Consortium, Friendly.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, NEUTRAL },	-- The Consortium, Neutral.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 933.5 },	-- Consortium, Friendly
@@ -1003,8 +969,8 @@ root(ROOTS.Zones, {
 					q(9884, {	-- Membership Benefits
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["maxReputation"] = { 933, HONORED },	-- The Consortium, Honored.
-						["minReputation"] = { 933, FRIENDLY },	-- The Consortium, Friendly.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, HONORED },	-- The Consortium, Honored.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },	-- The Consortium, Friendly.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 933.6 },	-- Consortium, Honored
@@ -1028,7 +994,7 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 10476,	-- Fierce Enemies
 						["coord"] = { 54.8, 70.8, NAGRAND },
 						["cost"] = { { "i", 25433, 10 }, },	-- Obsidian Warbeads
-						["maxReputation"] = { 978, EXALTED },	-- Kurenai, Exalted.
+						["maxReputation"] = { FACTION_KURENAI, EXALTED },	-- Kurenai, Exalted.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 978.8 },	-- Kurenai, Exalted
@@ -1039,8 +1005,8 @@ root(ROOTS.Zones, {
 					q(9885, {	-- Membership Benefits
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["maxReputation"] = { 933, REVERED },	-- The Consortium, Revered.
-						["minReputation"] = { 933, HONORED },	-- The Consortium, Honored.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, REVERED },	-- The Consortium, Revered.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, HONORED },	-- The Consortium, Honored.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 933.7 },	-- Consortium, Revered
@@ -1053,7 +1019,7 @@ root(ROOTS.Zones, {
 					q(9887, {	-- Membership Benefits
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["minReputation"] = { 933, REVERED },
+						["minReputation"] = { FACTION_THE_CONSORTIUM, REVERED },
 						["isMonthly"] = true,
 						["groups"] = {
 							i(25423),	-- Bag of Premium Gems
@@ -1063,8 +1029,8 @@ root(ROOTS.Zones, {
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["sourceQuest"] = 9882,	-- Stealing from Thieves
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["maxReputation"] = { 933, FRIENDLY },	-- The Consortium, Friendly.
-						["minReputation"] = { 933, NEUTRAL },	-- The Consortium, Neutral.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },	-- The Consortium, Friendly.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, NEUTRAL },	-- The Consortium, Neutral.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 933.5 },	-- Consortium, Friendly
@@ -1075,8 +1041,8 @@ root(ROOTS.Zones, {
 						["qg"] = 18333,	-- Shadrek
 						["sourceQuest"] = 9914,	-- A Head Full of Ivory
 						["coord"] = { 31.8, 56.8, NAGRAND },
-						["maxReputation"] = { 933, FRIENDLY },	-- The Consortium, Friendly.
-						["minReputation"] = { 933, NEUTRAL },	-- The Consortium, Neutral.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },	-- The Consortium, Friendly.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, NEUTRAL },	-- The Consortium, Neutral.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 933.5 },	-- Consortium, Friendly
@@ -1088,8 +1054,8 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 9893,	-- Obsidian Warbeads
 						["coord"] = { 31.4, 57.8, NAGRAND },
 						["cost"] = { { "i", 25433, 10 }, },	-- Obsidian Warbeads
-						["maxReputation"] = { 933, EXALTED },	-- The Consortium, Exalted.
-						["minReputation"] = { 933, FRIENDLY },	-- The Consortium, Friendly.
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, EXALTED },	-- The Consortium, Exalted.
+						["minReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },	-- The Consortium, Friendly.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 933.8 },	-- The Consortium, Exalted
@@ -1101,7 +1067,7 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 10479,	-- Proving Your Strength
 						["coord"] = { 55.8, 37.8, NAGRAND },
 						["cost"] = { { "i", 25433, 10 }, },	-- Obsidian Warbeads
-						["maxReputation"] = { 941, EXALTED },	-- The Maghar, Exalted.
+						["maxReputation"] = { FACTION_THE_MAGHAR, EXALTED },	-- The Maghar, Exalted.
 						-- #if NOT ANYCLASSIC
 						-- TODO: Investigate if this is necessary, we have maxReputation already for this since it's a repeatable quest.
 						["lockCriteria"] = { 1, "factionID", 941.8 },	-- The Maghar, Exalted
@@ -1118,14 +1084,14 @@ root(ROOTS.Zones, {
 					q(9893, {	-- Obsidian Warbeads
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["minReputation"] = { 933, FRIENDLY },
+						["minReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },
 						["cost"] = { { "i", 25433, 10 }, },	-- Obsidian Warbeads
 					}),
 					q(9882, {	-- Stealing from Thieves
 						["qg"] = 18265,	-- Gezhe <The Consortium>
 						["coord"] = { 31.4, 57.8, NAGRAND },
-						["minReputation"] = { 933, NEUTRAL },
-						["maxReputation"] = { 933, FRIENDLY },
+						["minReputation"] = { FACTION_THE_CONSORTIUM, NEUTRAL },
+						["maxReputation"] = { FACTION_THE_CONSORTIUM, FRIENDLY },
 						["lockCriteria"] = { 1, "factionID", 933.5 },	-- Consortium, Friendly
 					}),
 					q(9906, {	-- Message in a Battle
@@ -1215,10 +1181,25 @@ root(ROOTS.Zones, {
 					{
 						["allianceQuestData"] = q(9871, {	-- Murkblood Invaders (A)
 							["provider"] = { "i", 24559 },	-- Murkblood Invasion Plans (QI!)
+							-- #IF BEFORE 11.0.7
+							-- Alliance version reported as being available normally even on max lvl @ Honored
+							["lockCriteria"] = { 1, "factionID", FACTION_KURENAI + 0.7 },	-- Revered Kurenai (guessed)
+							-- #ENDIF
 						}),
 						["hordeQuestData"] = q(9872, {	-- Murkblood Invaders (H)
 							["provider"] = { "i", 24558 },	-- Murkblood Invasion Plans (QI!)
+							-- #IF BEFORE 11.0.7
+							["lockCriteria"] = { 1,
+								"factionID", FACTION_THE_MAGHAR + 0.6,	-- Honored Mag'har (guessed)
+								"lvl", 50,	-- Level 50 character (guessed)
+							},
+							-- Runaway - N-A: L70/HONORED | L80/NEUTRAL | L70/NEUTRAL | L55/NEUTRAL
+							-- Runaway - A  : L30/UNFRIENDLY | L76/NEUTRAL (20250216)
+							-- Discord - A  : L80/EXALTED (20250215)
+							-- #ENDIF
 						}),
+						["isBreadcrumb"] = true,
+						["DisablePartySync"] = true,
 						["coord"] = { 33.9, 58.0, NAGRAND },
 						["crs"] = { 18238 },	-- Murkblood Invader
 						-- #if AFTER 9.0.2
@@ -1234,7 +1215,7 @@ root(ROOTS.Zones, {
 						["qg"] = 18068,	-- Farseer Margadesh <The Lightning Sons>
 						["coord"] = { 54.6, 39.8, NAGRAND },
 						["description"] = "Completing [9888] 'The Impotent Leader' will grant Neutral with The Mag'har.",
-						["minReputation"] = { 941, NEUTRAL },	-- The Mag'har, Neutral
+						["minReputation"] = { FACTION_THE_MAGHAR, NEUTRAL },	-- The Mag'har, Neutral
 						["races"] = HORDE_ONLY,
 						["groups"] = {
 							objective(1, {	-- 0/1 Head of Ortor of Murkblood
@@ -1363,7 +1344,7 @@ root(ROOTS.Zones, {
 					q(10650, {	-- Return to the Aldor
 						["qg"] = 18417,	-- Altruis the Sufferer
 						["sourceQuest"] = 10649,	-- The Book of Fel Names
-						["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+						["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					}),
 					q(10170, {	-- Return to the Greatmother
 						["qg"] = 18687,	-- Mother Kashur
@@ -1375,7 +1356,7 @@ root(ROOTS.Zones, {
 						["qg"] = 18417,	-- Altruis
 						["sourceQuest"] = 10649,	-- The Book of Fel Names
 						["coord"] = { 27.3, 43.0, NAGRAND },
-						["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+						["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					}),
 					q(9931, {	-- Returning the Favor
 						["qg"] = 18261,	-- Lantresor of the Blade
@@ -1559,7 +1540,7 @@ root(ROOTS.Zones, {
 						["qg"] = 18067,	-- Farseer Corhuk <The Lightning Sons>
 						["coord"] = { 54.8, 39.8, NAGRAND },
 						["description"] = "Completing [9888] 'The Impotent Leader' will grant Neutral with The Mag'har.",
-						["minReputation"] = { 941, NEUTRAL },	-- The Mag'har, Neutral
+						["minReputation"] = { FACTION_THE_MAGHAR, NEUTRAL },	-- The Mag'har, Neutral
 						["races"] = HORDE_ONLY,
 					}),
 					q(10113, {	-- The Nesingwary Safari (A)
@@ -1806,7 +1787,7 @@ root(ROOTS.Zones, {
 						["qg"] = 18066,	-- Farseer Kurkush <The Lightning Sons>
 						["coord"] = { 54.8, 39.4, NAGRAND },
 						["description"] = "Completing [9888] 'The Impotent Leader' will grant Neutral with The Mag'har.",
-						["minReputation"] = { 941, NEUTRAL },	-- The Mag'har, Neutral
+						["minReputation"] = { FACTION_THE_MAGHAR, NEUTRAL },	-- The Mag'har, Neutral
 						["races"] = HORDE_ONLY,
 						["groups"] = {
 							objective(1, {	-- 0/10 Murkblood Idol
@@ -2242,90 +2223,52 @@ root(ROOTS.Zones, {
 					}),
 					n(23007, {	-- Paulsta'ats <Consortium Quartermaster>
 						["coord"] = { 30.5, 56.9, NAGRAND },
-						["groups"] = {
-							i(29115),	-- Consortium Blaster
-							i(31776),	-- Consortium Tabard
-							i(33156),	-- Design: Crimson Sun
-							i(23134),	-- Design: Delicate Blood Garnet
-							i(33305),	-- Design: Don Julio's Heart
-							-- #if BEFORE CATA
-							i(23136),	-- Design: Luminous Flame Spessarite [TBC] / Design: Reckless Flame Spessarite [Cata+]
-							i(23155),	-- Design: Lustrous Azure Moonstone [TBC] / Design: Sparkling Azure Moonstone [Cata+]
-							-- #endif
-							i(24178),	-- Design: Pendant of the Null Rune
-							-- #if AFTER CATA
-							i(23136),	-- Design: Reckless Flame Spessarite [Cata+] / Design: Luminous Flame Spessarite [TBC]
-							-- #endif
-							i(33622),	-- Design: Relentless Earthstorm Diamond
-							i(23146),	-- Design: Shifting Shadow Draenite
-							-- #if AFTER CATA
-							i(23155),	-- Design: Sparkling Azure Moonstone [Cata+] / Design: Lustrous Azure Moonstone [TBC]
-							i(23150),	-- Design: Subtle Golden Draenite [Cata+] / Design: Thick Golden Draenite [TBC]
-							-- #endif
-							i(25908),	-- Design: Swift Skyfire Diamond
-							-- #if BEFORE CATA
-							i(23150),	-- Design: Thick Golden Draenite [TBC] / Design: Subtle Golden Draenite [Cata+]
-							-- #endif
-							i(28274),	-- Formula: Enchant Cloak - PvP Power / TBC: Formula: Enchant Cloak - Spell Penetration (RECIPE!)
-							applyclassicphase(TBC_PHASE_THREE, i(22552, {["timeline"]={ADDED_2_1_0}})),	-- Formula: Enchant Weapon - Major Striking (RECIPE!)
-							i(29456),	-- Gift of the Ethereal
-							i(29121),	-- Guile of Khoraazi
-							i(29119),	-- Haramad's Bargain
-							i(138796, {	-- Illusion: Executioner (ILLUSION!)
-								["timeline"] = { ADDED_7_0_3 },
-							}),
-							i(29122),	-- Nether Runner's Cowl
-							i(29457),	-- Nethershard
-							i(29116),	-- Nomad's Leggings
-							i(24314),	-- Pattern: Bag of Jewels (RECIPE!)
-							i(25733),	-- Pattern: Fel Leather Boots (RECIPE!)
-							i(25732),	-- Pattern: Fel Leather Gloves (RECIPE!)
-							i(25734),	-- Pattern: Fel Leather Leggings (RECIPE!)
-							i(23874),	-- Schematic: Elemental Seaforium Charge (RECIPE!)
-							i(29118, {	-- Smuggler's Ammo Pouch
-								["timeline"] = { REMOVED_4_0_1 },
-							}),
-							i(29117),	-- Stormspire Vest
-						},
+						["sym"] = {{"sub","common_vendor",20242}},	-- Karaaz <Consortium Quartermaster>
 					}),
 					n(20241, {	-- Provisioner Nasela <Mag'har Quartermaster>
 						["coord"] = { 53.8, 36.8, NAGRAND },
 						["races"] = HORDE_ONLY,
-						["groups"] = {
-							i(29145),	-- Band of Ancestral Spirits
-							i(29139),	-- Ceremonial Cover
-							i(29143, {	-- Clefthoof Hide Quiver
-								["timeline"] = { REMOVED_4_0_1 },
-							}),
-							i(29135),	-- Earthcaller's Headdress
-							i(29137),	-- Hellscream's Will
-							i(31773),	-- Mag'har Tabard
-							i(34174, {	-- Pattern: Drums of Restoration [H] (RECIPE!)
-								["timeline"] = { ADDED_2_3_0 },
-							}),
-							i(34172, {	-- Pattern: Drums of Speed [H] (RECIPE!)
-								["timeline"] = { ADDED_2_3_0 },
-							}),
-							-- #if ANYCLASSIC
-							applyclassicphase(TBC_PHASE_FOUR, i(185924)),	-- Pattern: Greater Drums of Restoration (RECIPE!)
-							applyclassicphase(TBC_PHASE_FOUR, i(185923)),	-- Pattern: Greater Drums of Speed (RECIPE!)
-							-- #endif
-							i(25741),	-- Pattern: Netherfury Belt [H] (RECIPE!)
-							i(25743),	-- Pattern: Netherfury Boots [H] (RECIPE!)
-							i(25742),	-- Pattern: Netherfury Leggings [H] (RECIPE!)
-							i(29664),	-- Pattern: Reinforced Mining Bag
-							i(22917),	-- Recipe: Transmute Primal Fire to Earth (RECIPE!)
-							i(31829),	-- Cobalt Riding Talbuk (H) (MOUNT!)
-							i(29102),	-- Cobalt War Talbuk (H) (MOUNT!)
-							i(31831),	-- Silver Riding Talbuk (H) (MOUNT!)
-							i(29104),	-- Silver War Talbuk (H) (MOUNT!)
-							i(31833),	-- Tan Riding Talbuk (H) (MOUNT!)
-							i(29105),	-- Tan War Talbuk (H) (MOUNT!)
-							i(31835),	-- White Riding Talbuk (H) (MOUNT!)
-							i(29103),	-- White War Talbuk (H) (MOUNT!)
-							i(29147),	-- Talbuk Hide Spaulders
-							i(29141),	-- Tempest Leggings
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_THE_MAGHAR, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(25741),	-- Pattern: Netherfury Belt [H] (RECIPE!)
+							}, {	-- Honored
+								i(29143, {	-- Clefthoof Hide Quiver
+									["timeline"] = { REMOVED_4_0_1 },
+								}),
+								i(34174, {	-- Pattern: Drums of Restoration [H] (RECIPE!)
+									["timeline"] = { ADDED_2_3_0 },
+								}),
+								i(34172, {	-- Pattern: Drums of Speed [H] (RECIPE!)
+									["timeline"] = { ADDED_2_3_0 },
+								}),
+								-- #if ANYCLASSIC
+								applyclassicphase(TBC_PHASE_FOUR, i(185924)),	-- Pattern: Greater Drums of Restoration (RECIPE!)
+								applyclassicphase(TBC_PHASE_FOUR, i(185923)),	-- Pattern: Greater Drums of Speed (RECIPE!)
+								-- #endif
+								i(25742),	-- Pattern: Netherfury Leggings [H] (RECIPE!)
+								i(29664),	-- Pattern: Reinforced Mining Bag
+							}, {	-- Revered
+								i(29145),	-- Band of Ancestral Spirits
+								i(25743),	-- Pattern: Netherfury Boots [H] (RECIPE!)
+								i(22917),	-- Recipe: Transmute Primal Fire to Earth (RECIPE!)
+								i(29147),	-- Talbuk Hide Spaulders
+								i(29141),	-- Tempest Leggings
+							}, {	-- Exalted
+								i(29139),	-- Ceremonial Cover
+								i(29135),	-- Earthcaller's Headdress
+								i(29137),	-- Hellscream's Will
+								i(31773),	-- Mag'har Tabard
+								i(31829),	-- Cobalt Riding Talbuk (H) (MOUNT!)
+								i(29102),	-- Cobalt War Talbuk (H) (MOUNT!)
+								i(31831),	-- Silver Riding Talbuk (H) (MOUNT!)
+								i(29104),	-- Silver War Talbuk (H) (MOUNT!)
+								i(31833),	-- Tan Riding Talbuk (H) (MOUNT!)
+								i(29105),	-- Tan War Talbuk (H) (MOUNT!)
+								i(31835),	-- White Riding Talbuk (H) (MOUNT!)
+								i(29103),	-- White War Talbuk (H) (MOUNT!)
+							},
+						}),
 					}),
 					n(18822, {	-- Quartermaster Davian Vaclav
 						["description"] = "This NPC is only accessible when the Alliance controls Halaa.",
@@ -2546,41 +2489,47 @@ root(ROOTS.Zones, {
 					n(20240, {	-- Trader Narasu <Kurenai Quartermaster>
 						["coord"] = { 54.5, 75.1, NAGRAND },
 						["races"] = ALLIANCE_ONLY,
-						["groups"] = {
-							i(29138),	-- Arechron's Gift
-							i(29146),	-- Band of Elemental Spirits
-							i(29148),	-- Blackened Leather Spaulders
-							i(29140),	-- Cloak of the Ancient Spirit
-							i(29136),	-- Far Seer's Helm
-							i(29142),	-- Kurenai Kilt
-							i(31774),	-- Kurenai Tabard
-							i(34175, {	-- Pattern: Drums of Restoration [A] (RECIPE!)
-								["timeline"] = { ADDED_2_3_0 },
-							}),
-							i(34173, {	-- Pattern: Drums of Speed [A] (RECIPE!)
-								["timeline"] = { ADDED_2_3_0 },
-							}),
-							-- #if ANYCLASSIC
-							applyclassicphase(TBC_PHASE_FOUR, i(187048)),	-- Pattern: Greater Drums of Restoration (RECIPE!)
-							applyclassicphase(TBC_PHASE_FOUR, i(187049)),	-- Pattern: Greater Drums of Speed (RECIPE!)
-							-- #endif
-							i(29217),	-- Pattern: Netherfury Belt [A] (RECIPE!)
-							i(29218),	-- Pattern: Netherfury Boots [A] (RECIPE!)
-							i(29219),	-- Pattern: Netherfury Leggings [A] (RECIPE!)
-							i(30444),	-- Pattern: Reinforced Mining Bag (RECIPE!)
-							i(30443),	-- Recipe: Transmute Primal Fire to Earth (RECIPE!)
-							i(31830),	-- Cobalt Riding Talbuk (A) (MOUNT!)
-							i(29227),	-- Cobalt War Talbuk (A) (MOUNT!)
-							i(31832),	-- Silver Riding Talbuk (A) (MOUNT!)
-							i(29229),	-- Silver War Talbuk (A) (MOUNT!)
-							i(31834),	-- Tan Riding Talbuk (A) (MOUNT!)
-							i(29230),	-- Tan War Talbuk (A) (MOUNT!)
-							i(31836),	-- White Riding Talbuk (A) (MOUNT!)
-							i(29231),	-- White War Talbuk (A) (MOUNT!)
-							i(29144, {	-- Worg Hide Quiver
-								["timeline"] = { REMOVED_4_0_1 },
-							}),
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_KURENAI, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(29217),	-- Pattern: Netherfury Belt [A] (RECIPE!)
+							}, {	-- Honored
+								i(34175, {	-- Pattern: Drums of Restoration [A] (RECIPE!)
+									["timeline"] = { ADDED_2_3_0 },
+								}),
+								i(34173, {	-- Pattern: Drums of Speed [A] (RECIPE!)
+									["timeline"] = { ADDED_2_3_0 },
+								}),
+								-- #if ANYCLASSIC
+								applyclassicphase(TBC_PHASE_FOUR, i(187048)),	-- Pattern: Greater Drums of Restoration (RECIPE!)
+								applyclassicphase(TBC_PHASE_FOUR, i(187049)),	-- Pattern: Greater Drums of Speed (RECIPE!)
+								-- #endif
+								i(29219),	-- Pattern: Netherfury Leggings [A] (RECIPE!)
+								i(30444),	-- Pattern: Reinforced Mining Bag (RECIPE!)
+								i(29144, {	-- Worg Hide Quiver
+									["timeline"] = { REMOVED_4_0_1 },
+								}),
+							}, {	-- Revered
+								i(29146),	-- Band of Elemental Spirits
+								i(29148),	-- Blackened Leather Spaulders
+								i(29142),	-- Kurenai Kilt
+								i(29218),	-- Pattern: Netherfury Boots [A] (RECIPE!)
+								i(30443),	-- Recipe: Transmute Primal Fire to Earth (RECIPE!)
+							}, {	-- Exalted
+								i(29138),	-- Arechron's Gift
+								i(29140),	-- Cloak of the Ancient Spirit
+								i(29136),	-- Far Seer's Helm
+								i(31774),	-- Kurenai Tabard
+								i(31830),	-- Cobalt Riding Talbuk (A) (MOUNT!)
+								i(29227),	-- Cobalt War Talbuk (A) (MOUNT!)
+								i(31832),	-- Silver Riding Talbuk (A) (MOUNT!)
+								i(29229),	-- Silver War Talbuk (A) (MOUNT!)
+								i(31834),	-- Tan Riding Talbuk (A) (MOUNT!)
+								i(29230),	-- Tan War Talbuk (A) (MOUNT!)
+								i(31836),	-- White Riding Talbuk (A) (MOUNT!)
+								i(29231),	-- White War Talbuk (A) (MOUNT!)
+							},
+						}),
 					}),
 					n(20096, {	-- Uriku <Cooking Supplies>
 						["coord"] = { 56.2, 73.2, NAGRAND },

@@ -4,7 +4,7 @@
 root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(WARSPEAR, {
-			["icon"] = "Interface\\FriendsFrame\\PlusManz-Horde",
+			["icon"] = 374221,
 			["isRaid"] = true,
 			["races"] = HORDE_ONLY,
 			["g"] = {
@@ -310,39 +310,45 @@ root(ROOTS.Zones, {
 					["g"] = {
 						n(86036, {	-- Beska Redtusk <Frostwolf Orcs Quartermaster>
 							["coord"] = { 53.9, 62.6, WARSPEAR },
-							["g"] = {
-								i(118662, {	-- Bladespire Relic
-									["cost"] = 25000000,	-- 2,500g
-								}),
-								i(119161, {	-- Contract: Karg Bloodfury
-									["cost"] = 50000000,	-- 5,000g
-									["g"] = {
-										follower(459),	-- Karg Bloodfury
-									},
-								}),
-								i(118664, {	-- Frostwolf Elixir
-									["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
-								}),
-								i(119141, {	-- Frostwolf Pup (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-								i(119133),	-- Frostwolf Tabard
-								i(118677, {	-- Howl of the Frostwolf
-									["cost"] = 5000000,	-- 500g
-								}),
-								i(115468, {	-- Permanent Frost Essence (TOY!)
-									["cost"] = 10000000,	-- 1,000g
-								}),
-								i(116785, {	-- Swift Frostwolf (MOUNT!)
-									["cost"] = {
-										{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
-										{ "g", 50000000 },	-- 5,000g
-									},
-								}),
-							},
+							["g"] = bubbleDownClassicRep(FACTION_FROSTWOLF_ORCS, {
+								{		-- Neutral
+								}, {	-- Friendly
+									i(118664, {	-- Frostwolf Elixir
+										["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
+									}),
+								}, {	-- Honored
+									i(118677, {	-- Howl of the Frostwolf
+										["cost"] = 5000000,	-- 500g
+									}),
+									i(115468, {	-- Permanent Frost Essence (TOY!)
+										["cost"] = 10000000,	-- 1,000g
+									}),
+								}, {	-- Revered
+									i(118662, {	-- Bladespire Relic
+										["cost"] = 25000000,	-- 2,500g
+									}),
+									i(119161, {	-- Contract: Karg Bloodfury
+										["cost"] = 50000000,	-- 5,000g
+										["g"] = {
+											follower(459),	-- Karg Bloodfury
+										},
+									}),
+									i(119141, {	-- Frostwolf Pup (PET!)
+										["cost"] = {
+											{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
+											{ "g", 10000000 },	-- 1,000g
+										},
+									}),
+								}, {	-- Exalted
+									i(119133),	-- Frostwolf Tabard
+									i(116785, {	-- Swift Frostwolf (MOUNT!)
+										["cost"] = {
+											{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
+											{ "g", 50000000 },	-- 5,000g
+										},
+									}),
+								},
+							}),
 						}),
 						n(88569, {	-- Blood Guard Axelash <Primal Gladiator>
 							["coord"] = { 48.5, 57.6, WARSPEAR },
@@ -2250,17 +2256,22 @@ root(ROOTS.Zones, {
 						}),
 						n(128759, {	-- Dazzerian <Warspear Quartermaster>
 							["coord"] = { 49.2, 55.0, WARSPEAR },
-							["minReputation"] = { 1681, 5 },	-- Vol'jin's Spear, Friendly
-							["g"] = {
-								i(116775, {	-- Breezestrider Stallion (MOUNT!)
-									["cost"] = {
-										{ "g", 50000000 },		-- 5,000g
-										{ "i", 137642, 100 },	-- 100x Mark of Honor
-									},
-								}),
-								i(115500),	-- Disposable Pocket Flying Machine
-								i(115518),	-- Vol'jin's Spear Tabard
-							},
+							["g"] = bubbleDownClassicRep(FACTION_VOLJINS_SPEAR, {
+								{		-- Neutral
+								}, {	-- Friendly
+									i(115500),	-- Disposable Pocket Flying Machine
+								}, {	-- Honored
+								}, {	-- Revered
+								}, {	-- Exalted
+									i(116775, {	-- Breezestrider Stallion (MOUNT!)
+										["cost"] = {
+											{ "g", 50000000 },		-- 5,000g
+											{ "i", 137642, 100 },	-- 100x Mark of Honor
+										},
+									}),
+									i(115518),	-- Vol'jin's Spear Tabard
+								},
+							}),
 						}),
 						n(93908, {	-- Fobbly Kickfix <Wild Combatant>
 							["coord"] = { 49.1, 56.4, WARSPEAR },
@@ -2760,87 +2771,7 @@ root(ROOTS.Zones, {
 						}),
 						n(87548, {	-- Kaevan Highwit <Jewelcrafting Designs>
 							["coord"] = { 60.4, 40.7, WARSPEAR },
-							["g"] = {
-								i(115359, {	-- Draenor Jewelcrafting
-									["filterID"] = MISC,
-									["g"] = {
-										i(120131, {	-- Recipe: Secrets of Draenor Jewelcrafting **Teaches glowing blackrock band, glowing iron band, glowing iron choker, shifting iron band, shifting iron choker, shifting blackrock band, whispering blackrock band, whispering iron band, whispering iron choker, taladite crystal, secrets of draenor jewelcrafting.
-											i(116087),	-- Design: Glowing Blackrock Band
-											i(116081),	-- Design: Glowing Iron Band
-											i(116084),	-- Design: Glowing Iron Choker
-											i(116088),	-- Design: Shifting Blackrock Band
-											i(116082),	-- Design: Shifting Iron Band
-											i(116085),	-- Design: Shifting Iron Choker
-											i(116089),	-- Design: Whispering Blackrock Band
-											i(116083),	-- Design: Whispering Iron Band
-											i(116086),	-- Design: Whispering Iron Choker
-											recipe(170700),	-- Taladite Crystal
-										}),
-									},
-								}),
-								i(116096, {	-- Design: Critical Strike Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116093, {	-- Design: Glowing Taladite Pendant
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116090, {	-- Design: Glowing Taladite Ring
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116102, {	-- Design: Greater Critical Strike Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116103, {	-- Design: Greater Haste Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116104, {	-- Design: Greater Mastery Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116107, {	-- Design: Greater Stamina Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116106, {	-- Design: Greater Versatility Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116097, {	-- Design: Haste Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116098, {	-- Design: Mastery Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116109, {	-- Design: Prismatic Focusing Lens
-									["cost"] = { { "i", 118723, 3 }, },	-- 3x Secret of Draenor Jewelcrafting
-								}),
-								i(116108, {	-- Design: Reflecting Prism
-									["cost"] = { { "i", 118723, 3 }, },	-- 3x Secret of Draenor Jewelcrafting
-								}),
-								i(116094, {	-- Design: Shifting Taladite Pendant
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116091, {	-- Design: Shifting Taladite Ring
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116101, {	-- Design: Stamina Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116079, {	-- Design: Taladite Amplifier
-									["collectible"] = false,
-									["description"] = "The item is still in game but you can't learn the recipe from it anymore (recipe removed in 9.0.1)",
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116078, {	-- Design: Taladite Recrystalizer
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116100, {	-- Design: Versatility Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116095, {	-- Design: Whispering Taladite Pendant
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116092, {	-- Design: Whispering Taladite Ring
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-							},
+							["sym"] = {{"select","npcID",77356},{"pop"}},	-- Costan Highwall <Jewelcrafter>
 						}),
 						n(93917, {	-- Malukah Lightsong <Warmongering Gladiator>
 							["races"] = HORDE_ONLY,	-- to hide it in Mark of Honor list
@@ -3523,21 +3454,14 @@ root(ROOTS.Zones, {
 							["coord"] = { 75.3, 47.6, WARSPEAR },
 							["g"] = {
 								i(111923, {	-- Secret of Draenor Inscription **Teaches laughing tarot, ocean tarot, savage tarot, war paints, card of omens, research warbinders ink, secrets of draenor inscription, Warbinder's ink
-									["filterID"] = MISC,
-									["g"] = {
-										i(120136),		-- Recipe: Secrets of Draenor Inscription
-										recipe(169081),	-- War Paints
-										recipe(167950, {	-- Research: Warbinder's Ink
-											i(113992, {	-- Scribe's Research Notes
-												["filterID"] = MISC,
-											}),
-										}),
-										recipe(175390),	-- Laughing Tarot
-										recipe(175389),	-- Ocean Tarot
-										recipe(175392),	-- Savage Tarot
-										recipe(166669),	-- Card of Omens
-										recipe(178497),	-- Warbinder's Ink
-									},
+									i(120136),		-- Recipe: Secrets of Draenor Inscription
+									recipe(169081),	-- War Paints
+									recipe(167950),	-- Research: Warbinder's Ink
+									recipe(175390),	-- Laughing Tarot
+									recipe(175389),	-- Ocean Tarot
+									recipe(175392),	-- Savage Tarot
+									recipe(166669),	-- Card of Omens
+									recipe(178497),	-- Warbinder's Ink
 								}),
 								i(118605, {	-- Technique: Crystalfire Spellstaff
 									["cost"] = { { "i", 119297, 1 }, },	-- 1x Secret of Draenor Inscription
@@ -3584,38 +3508,7 @@ root(ROOTS.Zones, {
 						}),
 						n(88493, {	-- Mimi Wizzlebub <Steamwheedle Quartermaster>
 							["coord"] = { 54.2, 60.7, WARSPEAR },
-							["g"] = {
-								i(119149, {	-- Forest Sproutling (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-								i(119165, {	-- Contract: Professor Felblast
-									["cost"] = 50000000,	-- 5,000g
-									["g"] = {
-										follower(460),	-- Professor Felblast
-									},
-								}),
-								i(116672, {	-- Domesticated Razorback (MOUNT!)
-									["cost"] = {
-										{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
-										{ "g", 50000000 },	-- 5,000g
-									},
-								}),
-								i(110426),	-- Goblin Hot Potato
-								i(119148, {	-- Albino River Calf (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-								i(118683, {	-- Portable Goon Squad
-									["cost"] = 5000000,	-- 500g
-								}),
-								i(119137),	-- Steamwheedle "Preservation" Society Tabard
-								i(118667),	-- Steamwheedle Elixir
-							},
+							["sym"] = {{"sub","common_vendor",87394}},	-- Kwilax Fuseshiv <Reputation Vendor>
 						}),
 						n(87543, {	-- Petir Starocean <Tailoring Patterns>
 							["coord"] = { 59.0, 42.8, WARSPEAR },
@@ -3683,29 +3576,35 @@ root(ROOTS.Zones, {
 						}),
 						n(86037, {	-- Ravenspeaker Skeega <Arakkoa Outcasts Quartermaster>
 							["coord"] = { 53.4, 59.8, WARSPEAR },
-							["g"] = {
-								i(118666, {	-- Arakkoa Elixir
-									["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
-								}),
-								i(119136),	-- Arakkoa Outcasts Tabard
-								i(118682, {	-- Saberon Protector
-									["cost"] = 5000000,	-- 500g
-								}),
-								i(116772, {	-- Shadowmane Charger (MOUNT!)
-									["cost"] = {
-										{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
-										{ "g", 50000000 },	-- 5,000g
-									},
-								}),
-								i(119143, {	-- Son of Sethe (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-							},
+							["g"] = bubbleDownClassicRep(FACTION_ARAKKOA_OUTCASTS, {
+								{		-- Neutral
+								}, {	-- Friendly
+									i(118666, {	-- Arakkoa Elixir
+										["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
+									}),
+								}, {	-- Honored
+									i(118682, {	-- Saberon Protector
+										["cost"] = 5000000,	-- 500g
+									}),
+								}, {	-- Revered
+									i(119143, {	-- Son of Sethe (PET!)
+										["cost"] = {
+											{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
+											{ "g", 10000000 },	-- 1,000g
+										},
+									}),
+								}, {	-- Exalted
+									i(119136),	-- Arakkoa Outcasts Tabard
+									i(116772, {	-- Shadowmane Charger (MOUNT!)
+										["cost"] = {
+											{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
+											{ "g", 50000000 },	-- 5,000g
+										},
+									}),
+								},
+							}),
 						}),
-						n(88253, {	-- Srikka <Archaeology>
+						n(88253, {	-- Srikka <Archaeology Fragments>
 							["coord"] = { 74.4, 31.6, WARSPEAR },
 							["g"] = {
 								i(122606, {	-- Explorer's Notebook

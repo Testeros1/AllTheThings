@@ -4,12 +4,13 @@ PVP_GLADIATOR = createHeader({
 	-- #if NOT ANYCLASSIC
 	export = true,	-- Referenced in AllTheThings.lua, in a symlink. TODO: Move it.
 	-- #endif
-	icon = "Interface\\Worldmap\\GlowSkull_64Purple",
+	icon = 311231,
 	text = {
 		en = "Gladiator Gear",
 		de = "Gladiatoren Rüstung",
 		fr = "Équipement Gladiateur",
 		ru = "Доспехи Гладиатора",
-		cn = "角斗士套装",
+		cn = "角斗士装备",
+		tw = "鬥士裝備",
 	},
 });

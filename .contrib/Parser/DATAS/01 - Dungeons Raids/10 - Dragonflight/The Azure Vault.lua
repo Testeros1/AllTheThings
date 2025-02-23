@@ -14,12 +14,12 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 		["g"] = {
 			n(QUESTS, {
 				q(71155, {	-- The Azure Vaults
-					--["sourceQuests"] = { }, -- TODO
+					--["sourceQuests"] = { },	-- TODO
 					["provider"] = { "n", 186188 },	-- Sindragosa
 					["coord"] = { 39.5, 63.1, THE_AZURE_SPAN },
 				}),
 				q(75388, {	-- The Azure Vaults
-					--["sourceQuests"] = { }, -- TODO
+					--["sourceQuests"] = { },	-- TODO
 					["provider"] = { "n", 186188 },	-- Sindragosa
 					["coord"] = { 39.5, 63.1, THE_AZURE_SPAN },
 					["timeline"] = { ADDED_10_1_0 }
@@ -83,8 +83,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						i(212684, {	-- Umbrelskul's Fractured Heart
 							["timeline"] = { ADDED_10_2_6 },
 						}),
-						i(197127),	-- Highland Drake: Grand Thorn Horns (DM!)
-						i(197140),	-- Highland Drake: Small Spotted Pattern (DM!)
+						i(197127),	-- Highland Drake: Grand Thorn Horns (MM!)
+						i(197140),	-- Highland Drake: Small Spotted Pattern (MM!)
 					},
 				}),
 			}),

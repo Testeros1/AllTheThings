@@ -8,9 +8,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "Once the home of the savage quilboar, the Horde arrived on Kalimdor's shore and, in the aftermath of the Third War, drove the quilboar from the land and established this region as its own. Warchief Thrall named the new nation after his father, Durotan, and rules ably. Horde settlements are scattered throughout the rocky land, which is only marginally more fertile than the Barrens.\n\nThe Horde's greatest city is Orgrimmar, a warrior city that symbolizes the greatness of the orcs and their allies. Much of Durotar remains wild, and the orcs continually fend off centaur and quilboar as they attempt to tame the land.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_durotar",
-		-- #endif
+		["icon"] = 236756,
 		["maps"] = {
 			3,	-- Tiragarde Keep
 			4,	-- Tiragarde Keep
@@ -20,11 +18,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		["groups"] = {
 			m(ECHO_ISLES, {
 				["lore"] = "The Echoes Isles are the ancestral home of the Darkspear Trolls. Vol'jin, the leader of the trolls, has relocated here after tensions between Hellscream and the trolls.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Troll_Male",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Troll_Male")]],
-				-- #endif
+				["icon"] = 236456,
 				["timeline"] = { ADDED_4_0_3 },
 				-- #if BEFORE 6.0.0
 				-- CRIEVE NOTE: I actually have no idea when they added the proper mapID for this subzone.
@@ -423,9 +417,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(24812, {	-- No More Mercy
 							["qg"] = 38442,	-- Morakki
 							["sourceQuest"] = 25035,	-- Breaking the Line
-							-- if AFTER MOP
+							-- #if AFTER MOP
 							["coord"] = { 58.9, 23.1, ECHO_ISLES },
-							-- endif
+							-- #endif
 							["classes"] = exclude({
 								PALADIN,
 								DEATHKNIGHT,
@@ -901,11 +895,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					365,	-- Burning Blade Coven
 				},
 				-- #endif
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Orc_Male",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Orc_Male")]],
-				-- #endif
+				["icon"] = 236452,
 				["maps"] = { 2 },	-- Burning Blade Coven
 				["groups"] = {
 					n(QUESTS, {
@@ -1078,7 +1068,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 						q(1516, {	-- Call of Earth (1/3)
 							["qg"] = 5887,	-- Canaga Earthcaller
-							["altQuests"] = { 1519 }, -- Call to Earth (1/3 Mulgore)
+							["altQuests"] = { 1519 },	-- Call to Earth (1/3 Mulgore)
 							["coord"] = { 42.4, 69.0, DUROTAR },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -1097,7 +1087,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								{ "i", 6635 },	-- Earth Sapta
 							},
 							["sourceQuest"] = 1516,	-- Call of Earth (1/3)
-							["altQuests"] = { 1520 }, -- Call to Earth (2/3 Mulgore)
+							["altQuests"] = { 1520 },	-- Call to Earth (2/3 Mulgore)
 							["coord"] = { 42.4, 69.0, DUROTAR },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -1111,7 +1101,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								{ "i", 6656 },	-- Rough Quartz
 							},
 							["sourceQuest"] = 1517,	-- Call of Earth (2/3)
-							["altQuests"] = { 1521 }, -- Call to Earth (3/3 Mulgore)
+							["altQuests"] = { 1521 },	-- Call to Earth (3/3 Mulgore)
 							["coord"] = { 44.0, 76.0, DUROTAR },
 							["timeline"] = { REMOVED_4_0_3 },
 							["races"] = HORDE_ONLY,
@@ -1169,7 +1159,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["races"] = HORDE_ONLY,
 							["groups"] = {
 								objective(1, {	-- 0/10 (8 in Wrath) Mottled Boar
-									["provider"] = { "n", 3098 }, -- Mottled Boar
+									["provider"] = { "n", 3098 },	-- Mottled Boar
 								}),
 								i(4915, {	-- Soft Wool Boots
 									["timeline"] = { REMOVED_4_0_3 },
@@ -1654,7 +1644,14 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 						q(25135, {	-- Thazz'ril's Pick
 							["qg"] = 11378,	-- Foreman Thazz'ril
-							["sourceQuest"] = 37446,	-- Lazy Peons
+							["sourceQuests"] = {
+								-- #if AFTER WOD
+								-- TODO: Confirm the conditions.
+								37446,	-- Lazy Peons
+								-- #else
+								25131,	-- Vile Familiars
+								-- #endif 
+							},
 							["coords"] = {
 								-- #if AFTER MOP
 								{ 46, 63.4, VALLEY_OF_TRIALS },
@@ -1869,11 +1866,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				},
 			}),
 			n(ACHIEVEMENTS, {
-				explorationAch(728, {	-- Explore Durotar
-					-- #if BEFORE WRATH
-					["description"] = "Explore Durotar, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(728),	-- Explore Durotar
 			}),
 			battlepets({
 				pet(635),	-- Adder (PET!)
@@ -1887,20 +1880,29 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			explorationHeader({
 				-- #if AFTER CATA
 				exploration(374),	-- Bladefist Bay
+				visit_exploration(365,{coord={54.50,19.20,VALLEY_OF_TRIALS}}),	-- Burning Blade Coven
+				visit_exploration(393,{coord={61.20,65.50,DUROTAR}}),	-- Darkspear Strand
 				exploration(4865),	-- Darkspear Training Grounds
-				exploration(375),	-- Deadeye Shore
+				visit_exploration(375,{coord={58.70,25.40,DUROTAR}}),	-- Deadeye Shore
 				exploration(370),	-- Drygulch Ravine
 				exploration(6453),	-- Echo Isles
 				exploration(368),	-- Echo Isles
+				visit_exploration(1297,{coord={50.40,19.00,DUROTAR}}),	-- Jaggedswine Farm
 				exploration(366),	-- Northwatch Foothold
 				exploration(1637),	-- Orgrimmar
 				exploration(362),	-- Razor Hill
+				visit_exploration(6747,{coord={52.50,45.50,DUROTAR}}),	-- Razor Hill Outskirts
+				visit_exploration(6750,{coord={50.30,39.50,DUROTAR}}),	-- Razor Hill Watchtower
 				exploration(816),	-- Razormane Grounds
 				exploration(410),	-- Razorwind Canyon
+				visit_exploration(1296,{coord={43.20,16.20,DUROTAR}}),	-- Rocktusk Farm
+				visit_exploration(373,{coord={60.60,61.10,DUROTAR}}),	-- Scuttle Coast
 				exploration(367),	-- Sen'jin Village
+				visit_exploration(6748,{coord={59.20,72.00,DUROTAR}}),	-- Sen'jin Village Outskirts
 				exploration(817),	-- Skull Rock
+				visit_exploration(879,{coord={37.80,20.70,DUROTAR}}),	-- Southfury River
 				exploration(4981),	-- Southfury Watershed
-				exploration(4982),	-- The Dranosh'ar Blockade
+				visit_exploration(4982),    -- The Dranosh'ar Blockade
 				exploration(369),	-- Thunder Ridge
 				exploration(372),	-- Tiragarde Keep
 				exploration(2979),	-- Tor'kren Farm
@@ -2178,7 +2180,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						objective(1, {	-- 0/5 Crawler Mucus
-							["provider"] = { "i", 4888 }, -- Crawler Mucus
+							["provider"] = { "i", 4888 },	-- Crawler Mucus
 							["crs"] = {
 								3107,	-- Mature Surf Crawler
 								3108,	-- Encrusted Surf Crawler
@@ -3792,7 +3794,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = { ORC, TROLL, UNDEAD },
 
 					-- Available to Trolls without faction requirements.
-					["minReputation"] = { 530, EXALTED },	-- Darkspear Trolls, Exalted.
+					["minReputation"] = { FACTION_DARKSPEAR_TROLLS, EXALTED },	-- Darkspear Trolls, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. TROLL .. [[ then
 							t.minReputation = nil;
@@ -3969,7 +3971,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				n(7952, {	-- Zjolnir <Raptor Handler>
 					["coord"] = { 55.2, 75.6, DUROTAR },
 					-- Available to Trolls without faction requirements.
-					["minReputation"] = { 530, EXALTED },	-- Darkspear Trolls, Exalted.
+					["minReputation"] = { FACTION_DARKSPEAR_TROLLS, EXALTED },	-- Darkspear Trolls, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. TROLL .. [[ then
 							t.minReputation = nil;

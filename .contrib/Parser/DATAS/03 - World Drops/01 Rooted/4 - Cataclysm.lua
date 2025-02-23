@@ -590,6 +590,7 @@ root(ROOTS.WorldDrops, applyclassicphase(CATA_PHASE_ONE, expansion(EXPANSION.CAT
 		filter(ONE_HANDED_SWORDS, {
 			i(55454),	-- Angerfang Sword
 			i(55458),	-- Bladefist Sword
+			i(62071),	-- Corroded Blade
 			i(66916),	-- Delicate Blade of Meaning
 			i(66960),	-- Dirk's Command
 			i(55459),	-- Irontree Sword
@@ -603,7 +604,6 @@ root(ROOTS.WorldDrops, applyclassicphase(CATA_PHASE_ONE, expansion(EXPANSION.CAT
 		filter(TWO_HANDED_SWORDS, {
 			i(55463),	-- Angerfang Greatsword
 			i(55467),	-- Bladefist Greatsword
-			i(62071),	-- Corroded Blade
 			i(55468),	-- Irontree Greatsword
 			i(55466),	-- Mardenholde Greatsword
 			i(55464),	-- Nethergarde Greatsword
@@ -701,6 +701,7 @@ root(ROOTS.WorldDrops, applyclassicphase(CATA_PHASE_ONE, expansion(EXPANSION.CAT
 		i(66987),	-- Band of the Virtuous
 		i(67139),	-- Blauvelt's Family Crest
 		i(67136),	-- Gilnean Ring of Ruination
+		i(67116),	-- Heartbinder Ring
 		i(66942),	-- Immaculate Br'etc Signet
 		i(55419),	-- Mirkfallon Ring
 		i(55416),	-- Moonbrook Ring
@@ -721,6 +722,23 @@ root(ROOTS.WorldDrops, applyclassicphase(CATA_PHASE_ONE, expansion(EXPANSION.CAT
 	}),
 	filter(MISC, {
 		i(68729),	-- Elementium Lockbox
+		-- #if BEFORE MOP
+		i(66988, {	-- Ashes of Youth
+			["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+		}),
+		i(66912, {	-- Fetish of the Fiery Sands
+			["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+		}),
+		i(67110, {	-- Goblin Surgeon's Kit
+			["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+		}),
+		i(67059, {	-- Halted Clock
+			["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+		}),
+		i(66961, {	-- Mindbender Bloom
+			["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+		}),
+		-- #endif
 	}),
 	filter(RECIPES, {
 		prof(ENCHANTING, {

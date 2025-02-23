@@ -4,9 +4,7 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(BLASTED_LANDS, {
 		["lore"] = "The Blasted Lands bear that name for a reason: they were twisted by the magic that brought the Dark Portal into being, spewing the rampaging Horde into Azeroth.\n\nThis wasted desert of red clay is home to the original Dark Portal. The portal still stands, and leads to Outland — the remains of the orcs' sundered homeworld, Draenor. Nethergarde Keep, a Stormwind fortress of dour mages and paladins, keeps watch over the portal and the demons and ogres that would abuse its power.\n\nNow, the wretched land hosts few inhabitants and no significant settlements. Magic that leaked through the Dark Portal warped the Blasted Lands, leaving an infertile desert landscape. Hardy desert species like Basilisks, Scorpions and Hyenas have since colonized the area. The red rocks of the region do not come by their color naturally. The original tan color was transmuted into the unearthly crimson by searing heat and chaotic energies when the Dark Portal was destroyed.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_blastedlands_01",
-		-- #endif
+		["icon"] = 236720,
 		-- #if AFTER 6.0.1
 		["crs"] = { 88206 },	-- Zidormi
 		-- #endif
@@ -48,11 +46,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 					-- #endif
 				}),
-				explorationAch(766, {	-- Explore Blasted Lands
-					-- #if BEFORE WRATH
-					["description"] = "Explore Blasted Lands, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(766),	-- Explore Blasted Lands
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -1835,7 +1829,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			-- #if AFTER 10.2.5
 			n(TREASURES, {
 				i(212983, {	-- Grimoire of the Blasted Observer (CI!)
-					--["provider"] = { "o", xxxxx },	-- Carved Eye
+					["provider"] = { "o", 421154 },	-- Carved Eye
 					["coord"] = { 55.6, 53.1, BLASTED_LANDS },
 					["timeline"] = { ADDED_10_2_5 },
 				}),
@@ -1845,7 +1839,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226417, {	-- Rune of Shadow Specialization
 					["provider"] = { "o", 457089 },	-- The Shadow Connection
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 33.6, 48.7, BLASTED_LANDS },
 					["classes"] = { PRIEST, WARLOCK },
 					["groups"] = {

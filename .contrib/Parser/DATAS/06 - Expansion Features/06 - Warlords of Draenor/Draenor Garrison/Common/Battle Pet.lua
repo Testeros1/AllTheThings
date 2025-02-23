@@ -15,11 +15,14 @@ root(ROOTS.ExpansionFeatures,
 							["isDaily"] = true,
 							["sourceQuest"] = 36423,	-- Pets Versus Pests
 							["provider"] = { "n", 85418 },	-- Lio the Lioness
-							["coord"] = { 28.3, 38.8, LUNARFALL },
+							["coords"] = {
+								{ 28.4, 39.92, LUNARFALL },
+								{ 29.2, 40.4, LUNARFALL },
+							},
 							["races"] = ALLIANCE_ONLY,
 							["_drop"] = { "g" },	-- Drop Shiny Pet Charm
 						}),
-						q(40329,  {	-- Battle Pet Tamers: Warlords
+						q(40329, {	-- Battle Pet Tamers: Warlords
 							["isWeekly"] = true,
 							["sourceQuests"] = {
 								36592,	-- Bigger is Better [A]
@@ -37,7 +40,7 @@ root(ROOTS.ExpansionFeatures,
 						}),
 						q(38299,  bubbleDownSelf({ ["timeline"] = { ADDED_6_1_0 } }, {	-- Critters of Draenor
 							["isDaily"] = true,
-							["coord"] = { 28.8, 39.2, LUNARFALL },
+							["coord"] = { 28.8, 40.3, LUNARFALL },
 							["races"] = ALLIANCE_ONLY,
 							["providers"] = {
 								{ "n", 90675 },	-- Erris the Collector
@@ -75,10 +78,14 @@ root(ROOTS.ExpansionFeatures,
 							},
 							["_drop"] = { "g" },	-- Drop Flawless Battle-Training Stone
 						})),
-						q(37644,  {	-- Mastering the Menagerie (A)
+						q(37644, {	-- Mastering the Menagerie (A)
 							["isDaily"] = true,
 							["provider"] = { "n", 85418 },	-- Lio the Lioness
-							["coord"] = { 29.0, 40.4, LUNARFALL },
+							["coords"] = {
+								{ 28.4, 39.9, LUNARFALL },
+								{ 29.2, 40.4, LUNARFALL },
+								{ 29.2, 39.0, LUNARFALL },
+							},
 							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(118697, {	-- Big Bag of Pet Supplies
@@ -112,7 +119,10 @@ root(ROOTS.ExpansionFeatures,
 						q(36423, {	-- Pets Versus Pests
 							["sourceQuest"] = 38241,	-- Unearthed Magic
 							["provider"] = { "n", 85418 },	-- Lio the Lioness
-							["coord"] = { 28.2, 38.8, LUNARFALL },
+							["coords"] = {
+								{ 28.4, 39.92, LUNARFALL },
+								{ 29.2, 40.4, LUNARFALL },
+							},
 							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								garrisonBuilding(42),	-- Menagerie
@@ -138,7 +148,10 @@ root(ROOTS.ExpansionFeatures,
 						q(38241, {	-- Unearthed Magic
 							["sourceQuests"] = { 36615 },	-- My Very Own Castle
 							["provider"] = { "n", 85418 },	-- Lio the Lioness
-							["coord"] = { 28.2, 38.8, LUNARFALL },
+							["coords"] = {
+								{ 28.4, 39.92, LUNARFALL },
+								{ 29.2, 40.4, LUNARFALL },
+							},
 							["races"] = ALLIANCE_ONLY,
 							["g"] = {
 								i(122457),	-- Ultimate Battle-Training Stone

@@ -3,7 +3,7 @@
 ---------------------------------------------------
 local COLLECTOR_DYNA = {
 	["crs"] = { 223446 },
-	["coord"] = { 34.9, 85.6, ISLE_OF_DORN },
+	["coord"] = { 38.2, 78.8, ISLE_OF_DORN },
 };
 local FRIENDHAVER_GERM = {
 	["crs"] = { 223444 },
@@ -11,138 +11,241 @@ local FRIENDHAVER_GERM = {
 };
 local KYRIE = {
 	["crs"] = { 223442 },
-	["coord"] = { 57.4, 62.8, HALLOWFALL },
+	["coord"] = { 52.5, 62.8, HALLOWFALL },
 };
 local ZIRIAK = {
 	["crs"] = { 223443 },
-	--["coord"] = { X, Y, MAP },
+	["coord"] = { 61.4, 36.8, NERUBAR_LOWER },
 };
 root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(ACHIEVEMENTS, {
-		petbattle(ach(40154, {	-- Aquatic Battler of Khaz Algar
-			crit(67139, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67140,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67141,	-- Kyrie
-				KYRIE
-			),
-			crit(67142,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(achraw(40153, {	-- Battle on Khaz Algar
-			crit(67131, {	-- Awakened Custodian
-				["_quests"] = { 82291 },
-			}),
-			crit(67132, {	-- Haywire Servobot
-				["_quests"] = { 82300 },
-			}),
-			crit(67133, {	-- Guttergunk
-				["_quests"] = { 82298 },
-			}),
-			crit(67135, {	-- Collector Dyna
-				["_quests"] = { 82292 },
-			}),
-			crit(67134, {	-- Zaedu
-				["_quests"] = { 82297 },
-			}),
-			crit(67136, {	-- Friendhaver Grem
-				["_quests"] = { 82293 },
-			}),
-			crit(67137, {	-- Kyrie
-				["_quests"] = { 82294 },
-			}),
-			crit(67138, {	-- Ziriak
-				["_quests"] = { 82295 },
-			}),
-		})),
-		petbattle(ach(40155, {	-- Beast Battler of Khaz Algar
-			crit(67143, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67144,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67145,	-- Kyrie
-				KYRIE
-			),
-			crit(67146,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(ach(40156, {	-- Critter Battler of Khaz Algar
-			crit(67147, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67148,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67149,	-- Kyrie
-				KYRIE
-			),
-			crit(67150,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(ach(40157, {	-- Dragonkin Battler of Khaz Algar
-			crit(67151, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67152,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67153,	-- Kyrie
-				KYRIE
-			),
-			crit(67154,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(ach(40158, {	-- Elemental Battler of Khaz Algar
-			crit(67155, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67156,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67157,	-- Kyrie
-				KYRIE
-			),
-			crit(67158,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(ach(40161, {	-- Flying Battler of Khaz Algar
-			crit(67159, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67160,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67161,	-- Kyrie
-				KYRIE
-			),
-			crit(67162,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(ach(40162, {	-- Humanoid Battler of Khaz Algar
-			crit(67163, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67160,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67164,	-- Kyrie
-				KYRIE
-			),
-			crit(67165,	-- Ziriak
-				ZIRIAK
-			),
-		})),
+		ach(41555, {	-- All That Khaz
+			["timeline"] = { ADDED_11_1_0 },
+			-- Meta Achievement
+			["sym"] = {{"meta_achievement",
+				40307,	-- Allied Races: Earthen
+				40430,	-- Khaz Algar Flight Master
+				40702,	-- Khaz Algar Glyph Hunter
+				40762,	-- Khaz Algar Lore Hunter
+				20596,	-- Loremaster of Khaz Algar
+			}},
+		}),
+		-- #IF BEFORE 11.0.5
+		n(FAMILY_BATTLER, {
+		-- #else
+		header(HEADERS.Achievement, 40980, {	-- Family Battler of Khaz Algar
+		-- #endif
+			petbattle(ach(40980, {	-- Family Battler of Khaz Algar
+				-- Meta Achievement
+				["sym"] = {{"meta_achievement",
+					40154,	-- Aquatic Battler of Khaz Algar
+					40155,	-- Beast Battler of Khaz Algar
+					40156,	-- Critter Battler of Khaz Algar
+					40157,	-- Dragonkin Battler of Khaz Algar
+					40158,	-- Elemental Battler of Khaz Algar
+					40161,	-- Flying Battler of Khaz Algar
+					40162,	-- Humanoid Battler of Khaz Algar
+					40163,	-- Magic Battler of Khaz Algar
+					40164,	-- Mechanical Battler of Khaz Algar
+					40165,	-- Undead Battler of Khaz Algar
+				}},
+				["timeline"] = { ADDED_11_0_5 },
+				["g"] = {
+					i(222970),	-- Fuzzy (PET!)
+				},
+			})),
+			petbattle(ach(40154, {	-- Aquatic Battler of Khaz Algar
+				crit(67139, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67140, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67141, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67142, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40155, {	-- Beast Battler of Khaz Algar
+				crit(67143, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67144, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67145, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67146, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40156, {	-- Critter Battler of Khaz Algar
+				crit(67147, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67148, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67149, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67150, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40157, {	-- Dragonkin Battler of Khaz Algar
+				crit(67151, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67152, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67153, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67154, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40158, {	-- Elemental Battler of Khaz Algar
+				crit(67155, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67156, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67157, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67158, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40161, {	-- Flying Battler of Khaz Algar
+				crit(67159, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67160, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67161, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67162, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40162, {	-- Humanoid Battler of Khaz Algar
+				crit(67163, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67160, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67164, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67165, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40163, {	-- Magic Battler of Khaz Algar
+				crit(67166, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67167, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67168, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67169, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40164, {	-- Mechanical Battler of Khaz Algar
+				crit(67170, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67171, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67172, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67173, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+			petbattle(ach(40165, {	-- Undead Battler of Khaz Algar
+				crit(67174, {	-- Collector Dyna
+					["crs"] = COLLECTOR_DYNA.crs,
+					["coord"] = COLLECTOR_DYNA.coord,
+				}),
+				crit(67175, {	-- Friendhaver Grem
+					["crs"] = FRIENDHAVER_GERM.crs,
+					["coord"] = FRIENDHAVER_GERM.coord,
+				}),
+				crit(67176, {	-- Kyrie
+					["crs"] = KYRIE.crs,
+					["coord"] = KYRIE.coord,
+				}),
+				crit(67177, {	-- Ziriak
+					["crs"] = ZIRIAK.crs,
+					["coord"] = ZIRIAK.coord,
+				}),
+			})),
+		-- #IF BEFORE 11.0.5
+		}),
+		-- #else
+		}),
+		-- #endif
+		petbattle(ach(40153)),	-- Battle on Khaz Algar (automated)
+		ach(40791, {	-- Fate of the Kirin Tor (automated)
+			["timeline"] = { ADDED_11_0_7 },
+			["g"] = {
+				title(569),	-- <Name>, Witness of the Kirin Tor
+			},
+		}),
 		ach(40352, {	-- Khaz Algar Completionist: Bronze
 			-- Meta Achievement
 			["sym"] = {{"meta_achievement",
@@ -193,6 +296,11 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				40330,	-- The Ringing Deeps Advanced: Gold
 				40333,	-- The Ringing Deeps Reverse: Gold
 			}},
+			["g"] = {
+				title(594,	{	-- Khaz Algar Racer
+					["timeline"] = { ADDED_11_0_5 },
+				}),
+			},
 		}),
 		ach(40790, {	-- Khaz Algar Explorer
 			-- Meta Achievement
@@ -207,16 +315,23 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 		ach(40702, {	-- Khaz Algar Glyph Hunter
 			-- Meta Achievement
 			["sym"] = {{"meta_achievement",
-				40705, 	-- Azj-Kahet Glyph Hunter
-				40704, 	-- Hallowfall Glyph Hunter
-				40166, 	-- Isle of Dorn Glyph Hunter
-				40703, 	-- The Ringing Deeps Glyph Hunter
+				40705,	-- Azj-Kahet Glyph Hunter
+				40704,	-- Hallowfall Glyph Hunter
+				40166,	-- Isle of Dorn Glyph Hunter
+				40703,	-- The Ringing Deeps Glyph Hunter
 			}},
 			["g"] = {
 				i(223267),	-- Swarmite Skyhunter (MOUNT!)
 			}
 		}),
-		ach(40762),		-- Khaz Algar Lore Hunter (automated)
+		ach(40762, {	-- Khaz Algar Lore Hunter (automated)
+			-- #if AFTER 11.0.2.56313
+			-- #if BEFORE 11.0.7
+			["description"] = "This achievement is currently disabled by Blizzard and will be readded in a future patch.",
+			-- #endif
+			-- #endif
+			["timeline"] = { ADDED_11_0_2, "removed 11.0.2.56313", ADDED_11_0_7 },
+		}),
 		petbattle(ach(40194, {	-- Khaz Algar Safari (automated)
 			i(221821),	-- Waxwick (PET!)
 		})),
@@ -228,40 +343,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				20598,	-- Hallowfall
 				19559,	-- Azj-Kahet
 				20595,	-- Sojourner of Isle of Dorn
+				40799,	-- Sojourner of The Ringing Deeps
+				40844,	-- Sojourner of Hallowfall
+				40636,	-- Sojourner of Azj-Kahet
 			}},
 			["g"] = {
 				iensemble(219132),	-- Crimson Cartographer's Orientation
 			},
 		}),
-		petbattle(ach(40163, {	-- Magic Battler of Khaz Algar
-			crit(67166, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67167,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67168,	-- Kyrie
-				KYRIE
-			),
-			crit(67169,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		petbattle(ach(40164, {	-- Mechanical Battler of Khaz Algar
-			crit(67170, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67171,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67172,	-- Kyrie
-				KYRIE
-			),
-			crit(67173,	-- Ziriak
-				ZIRIAK
-			),
-		})),
-		-- TODO: missing questid 83503, currently not sourced
 		ach(20597),		-- The War Within (automated)
 		ach(40231, {	-- The War Within Pathfinder
 			-- Meta Achievement
@@ -273,19 +362,5 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				19560,	-- The Ringing Deeps
 			}},
 		}),
-		petbattle(ach(40165, {	-- Undead Battler of Khaz Algar
-			crit(67174, -- Collector Dyna
-				COLLECTOR_DYNA
-			),
-			crit(67175,	-- Friendhaver Grem
-				FRIENDHAVER_GERM
-			),
-			crit(67176,	-- Kyrie
-				KYRIE
-			),
-			crit(67177,	-- Ziriak
-				ZIRIAK
-			),
-		})),
 	}),
 })));

@@ -50,13 +50,13 @@ root(ROOTS.Professions, prof(FISHING, bubbleDownSelf({ ["requireSkill"] = FISHIN
 		ach(1243, {	-- Fish Don't Leave Footprints
 			-- #if BEFORE WRATH
 			["timeline"] = { ADDED_2_3_0 },
-			["description"] = "Learn the ability to find fish.",
 			["spellID"] = 43308,	-- Find Fish
 			-- #else
 			["timeline"] = { ADDED_3_0_2 },
 			-- #endif
 		}),
-		ach(878, {	-- One That Didn't Get Away
+		ach(878, {	-- One That Didn't Get Away (automated)
+			-- #IF ANYCLASSIC
 			["providers"] = {
 				{ "i", 6295 },	-- 15 Pound Mud Snapper
 				{ "i", 13913 },	-- 22 Pound Lobster
@@ -71,17 +71,15 @@ root(ROOTS.Professions, prof(FISHING, bubbleDownSelf({ ["requireSkill"] = FISHIN
 				{ "i", 19808 },	-- Rockhide Strongfish
 				{ "i", 6360 },	-- Steelscale Crushfish
 			},
-			-- #if BEFORE WRATH
-			["description"] = "Catch one of the rare fish in the list below.\n\nKeep one in your inventory somewhere to keep credit for this.",
-			-- #endif
+			-- #ENDIF
 			["timeline"] = { ADDED_3_0_2 },	-- NOTE: Players didn't actually get credit for this... Sigh.
 		}),
 		ach(5478, {	-- The Limnologist
-			["sym"] = {{ "achievement_criteria" }},
+			--["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_4_0_3_LAUNCH },
 		}),
 		ach(5479, {	-- The Oceanographer
-			["sym"] = {{ "achievement_criteria" }},
+			--["sym"] = {{ "achievement_criteria" }},
 			["timeline"] = { ADDED_4_0_3_LAUNCH },
 		}),
 		ach(153, {	-- The Old Gnome and the Sea
@@ -276,7 +274,7 @@ root(ROOTS.Professions, prof(FISHING, bubbleDownSelf({ ["requireSkill"] = FISHIN
 		ach(7614, {	-- Locking Down the Docks
 			["sym"] = {{ "achievement_criteria" }},
 		}),
-		ach(7611,  {	-- Pandarian Angler
+		ach(7611, {	-- Pandarian Angler
 			["sym"] = {{ "achievement_criteria" }},
 		}),
 	})),
@@ -300,78 +298,81 @@ root(ROOTS.Professions, prof(FISHING, bubbleDownSelf({ ["requireSkill"] = FISHIN
 				["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
 			}),
 			ach(10596, {	-- Bigger Fish to Fry
-				crit(29912, {	-- Ancient Black Barracuda
-					["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
-					["provider"] = { "i", 133742 },
-				}),
-				crit(29909, {	-- Ancient Highmountain Salmon
-					["maps"] = { HIGHMOUNTAIN },
-					["provider"] = { "i", 133733 },
-				}),
-				crit(29921, {	-- Ancient Mossgill
-					["maps"] = { VALSHARAH },
-					["provider"] = { "i", 133730 },
-				}),
-				crit(29910, {	-- Axefish
-					["maps"] = { AZSUNA },
-					["provider"] = { "i", 133740 },
-				}),
-				crit(29908, {	-- Coldriver Carp
-					["maps"] = { HIGHMOUNTAIN },
-					["provider"] = { "i", 133732 },
-				}),
-				crit(29905, {	-- Ghostly Queenfish
-					["maps"] = { AZSUNA },
-					["provider"] = { "i", 133727 },
-				}),
-				crit(29914, {	-- Graybelly Lobster
-					["maps"] = { STORMHEIM },
-					["provider"] = { "i", 133735 },
-				}),
-				crit(29903, {	-- Leyshimmer Blenny
-					["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
-					["provider"] = { "i", 133725 },
-				}),
-				crit(29916, {	-- Magic-Eater Frog
-					["maps"] = { SURAMAR },
-					["provider"] = { "i", 133737 },
-				}),
-				crit(29907, {	-- Mountain Puffer
-					["maps"] = { HIGHMOUNTAIN },
-					["provider"] = { "i", 133731 },
-				}),
-				crit(29904, {	-- Nar'thalas Hermit
-					["maps"] = { AZSUNA },
-					["provider"] = { "i", 133726 },
-				}),
-				crit(29913, {	-- Oodelfjisk
-					["maps"] = { STORMHEIM },
-					["provider"] = { "i", 133734 },
-				}),
-				crit(29911, {	-- Seabottom Squid
-					["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
-					["provider"] = { "i", 133741 },
-				}),
-				crit(29918, {	-- Tainted Runescale Koi
-					["maps"] = { SURAMAR },
-					["provider"] = { "i", 133739 },
-				}),
-				crit(29915, {	-- Thundering Stormray
-					["maps"] = { STORMHEIM },
-					["provider"] = { "i", 133736 },
-				}),
-				crit(29917, {	-- Seerspine Puffer
-					["maps"] = { SURAMAR },
-					["provider"] = { "i", 133738 },
-				}),
-				crit(29919, {	-- Terrorfin
-					["maps"] = { VALSHARAH },
-					["provider"] = { "i", 133728 },
-				}),
-				crit(29920, {	-- Thorned Flounder
-					["maps"] = { VALSHARAH },
-					["provider"] = { "i", 133729 },
-				}),
+				["_noautomation"] = true,
+				["g"] = {
+					crit(29912, {	-- Ancient Black Barracuda
+						["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
+						["provider"] = { "i", 133742 },
+					}),
+					crit(29909, {	-- Ancient Highmountain Salmon
+						["maps"] = { HIGHMOUNTAIN },
+						["provider"] = { "i", 133733 },
+					}),
+					crit(29921, {	-- Ancient Mossgill
+						["maps"] = { VALSHARAH },
+						["provider"] = { "i", 133730 },
+					}),
+					crit(29910, {	-- Axefish
+						["maps"] = { AZSUNA },
+						["provider"] = { "i", 133740 },
+					}),
+					crit(29908, {	-- Coldriver Carp
+						["maps"] = { HIGHMOUNTAIN },
+						["provider"] = { "i", 133732 },
+					}),
+					crit(29905, {	-- Ghostly Queenfish
+						["maps"] = { AZSUNA },
+						["provider"] = { "i", 133727 },
+					}),
+					crit(29914, {	-- Graybelly Lobster
+						["maps"] = { STORMHEIM },
+						["provider"] = { "i", 133735 },
+					}),
+					crit(29903, {	-- Leyshimmer Blenny
+						["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
+						["provider"] = { "i", 133725 },
+					}),
+					crit(29916, {	-- Magic-Eater Frog
+						["maps"] = { SURAMAR },
+						["provider"] = { "i", 133737 },
+					}),
+					crit(29907, {	-- Mountain Puffer
+						["maps"] = { HIGHMOUNTAIN },
+						["provider"] = { "i", 133731 },
+					}),
+					crit(29904, {	-- Nar'thalas Hermit
+						["maps"] = { AZSUNA },
+						["provider"] = { "i", 133726 },
+					}),
+					crit(29913, {	-- Oodelfjisk
+						["maps"] = { STORMHEIM },
+						["provider"] = { "i", 133734 },
+					}),
+					crit(29911, {	-- Seabottom Squid
+						["maps"] = { AZSUNA, VALSHARAH, HIGHMOUNTAIN, STORMHEIM, BROKEN_SHORE, SURAMAR, BROKEN_ISLES },
+						["provider"] = { "i", 133741 },
+					}),
+					crit(29918, {	-- Tainted Runescale Koi
+						["maps"] = { SURAMAR },
+						["provider"] = { "i", 133739 },
+					}),
+					crit(29915, {	-- Thundering Stormray
+						["maps"] = { STORMHEIM },
+						["provider"] = { "i", 133736 },
+					}),
+					crit(29917, {	-- Seerspine Puffer
+						["maps"] = { SURAMAR },
+						["provider"] = { "i", 133738 },
+					}),
+					crit(29919, {	-- Terrorfin
+						["maps"] = { VALSHARAH },
+						["provider"] = { "i", 133728 },
+					}),
+					crit(29920, {	-- Thorned Flounder
+						["maps"] = { VALSHARAH },
+						["provider"] = { "i", 133729 },
+					}),
+				},
 			}),
 			ach(11725, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {	-- Fisherfriend of the Isles
 				["description"] = "The Fishing Masters are on a daily rotation, so only one is up at a time.  The order is:\n\n1. Sha'leth\n2. Impus\n3. Ilyssia of the Waters\n4. Keeper Raynae\n5. Akule Riverhorn\n6. Corbyn\n\nMake sure you're close enough to the Fishing Master to get the |cFFFFD700Something's Fishy|r buff, or you won't be able to fish up the items (the buff may not show up until you dismount).\n\nThe quickest way to reach Best Friend is to fish in a group.\n",
@@ -397,81 +398,8 @@ root(ROOTS.Professions, prof(FISHING, bubbleDownSelf({ ["requireSkill"] = FISHIN
 					}),
 				},
 			})),
-			ach(10598, {	-- Fishing 'Round the Isles
-				crit(29956, {		-- Huge Mossgill Perch
-					["_quests"] = { 41612, 41613, 41270 },
-				}),
-				crit(29931, {		-- Work Order: Cursed Queenfish
-					["_quests"] = { 41267 },
-				}),
-				crit(31285, {		-- Lively Runescale Koi
-					["_quests"] = { 41279, 41605, 41604 },
-				}),
-				crit(31274, {		-- Lively Cursed Queenfish
-					["_quests"] = { 41598, 41599, 41264 },
-				}),
-				crit(29929, {		-- Queen Queenfish
-					["_quests"] = { 41268 },
-				}),
-				crit(29932, {		-- Wild Northern Barracuda
-					["_quests"] = { 41252 },
-				}),
-				crit(29945, {		-- Huge Cursed Queenfish
-					["_quests"] = { 41611, 41265, 41610 },
-				}),
-				crit(29953, {		-- Huge Runescale Koi
-					["_quests"] = { 41280, 41616, 41617 },
-				}),
-				crit(31279, {		-- Lively Highmountain Salmon
-					["_quests"] = { 41596, 41244, 41597 },
-				}),
-				crit(31281, {		-- Lively Stormrays
-					["_quests"] = { 41602, 41274, 41603 },
-				}),
-				crit(29949, {		-- Huge Highmountain Salmon
-					["_quests"] = { 41609, 41243 },
-				}),
-				crit(29942, {		-- Buoy Fishing
-					["_quests"] = { 41273 },
-				}),
-				crit(29930, {		-- Raft Fishing
-					["_quests"] = { 41266 },
-				}),
-				crit(29950, {		-- Huge Stormrays
-					["_quests"] = { 41614, 41275, 41615 },
-				}),
-				crit(29935, {		-- Slippery Stormrays
-					["_quests"] = { 41278 },
-				}),
-				crit(29941, {		-- Cave Fishing
-					["_quests"] = { 41271 },	-- Into the Whirlpool
-				}),
-				crit(29937, {		-- Work Order: Stormrays
-					["_quests"] = { 41277 },
-				}),
-				crit(29934, {		-- Work Order: Highmountain Salmon
-					["_quests"] = { 41240 },
-				}),
-				crit(31287, {		-- Lively Mossgill Perch
-					["_quests"] = { 41601, 41600, 41269 },
-				}),
-				crit(29933, {		-- Migrating Highmountain Salmon
-					["_quests"] = { 41253 },
-				}),
-				crit(29936, {		-- Rocket Boot Fishing
-					["_quests"] = { 41276 },
-				}),
-				crit(29943, {		-- Work Order: Mossgill Perch
-					["_quests"] = { 41272 },
-				}),
-				crit(29940, {		-- Work Order: Runescale Koi
-					["_quests"] = { 41282 },
-				}),
-				crit(29938, {		-- The Angler Mangler
-					["_quests"] = { 41283 },
-				}),
-			}),
-			ach(10597),		-- Legion Aquaculture
+			ach(10598),	-- Fishing 'Round the Isles (automated)
+			ach(10597),	-- Legion Aquaculture
 		}),
 		filter(MISC, {
 			i(133715, {	-- Ancient Vrykul Ring
@@ -949,13 +877,25 @@ root(ROOTS.Professions, prof(FISHING, bubbleDownSelf({ ["requireSkill"] = FISHIN
 				["cost"] = {{"i", 224752, 20}},	-- 20x Soaked Journal Entry
 			}),
 		}),
-		n(REWARDS, {
-			-- Shore Treasure
-			i(225768),	-- Crusty Darkmoon Card
+		filter(COSMETIC, {
 			i(225759),	-- Coreway Engineer's Forceps (COSMETIC!)
 			i(225762),	-- Coreway Engineer's Screwdriver (COSMETIC!)
-			-- Whispers of the Deep
+			i(225757),	-- Coreway Pickaxe (COSMETIC!)
+			i(225756),	-- Coreway Shovel (COSMETIC!)
+			i(225755),	-- Coreway Sledgehammer (COSMETIC!)
+			i(225752),	-- Dornogal Defender (COSMETIC!)
+			i(225754),	-- Dornogal Guard's Hammer (COSMETIC!)
+			i(225753),	-- Dornogal Guard's Splitter (COSMETIC!)
+			i(225760),	-- Dornogal Spear (COSMETIC!)
+			i(225884),	-- Extra Large Leek (COSMETIC!)
+			i(225763),	-- Fallen Dalaran Defender (COSMETIC!)
+			i(225758),	-- Hallowfall Harvester's Pitchfork (COSMETIC!)
+			i(225761),	-- Jeweler's Careful Crusher (COSMETIC!)
+			i(226385),	-- Oxidized Wrench	(COSMETIC!)
+		}),
+		filter(MISC, {
 			i(226392),	-- Careless Dasher's Treasure
+			i(225768),	-- Crusty Darkmoon Card
 		}),
 	})),
 })));

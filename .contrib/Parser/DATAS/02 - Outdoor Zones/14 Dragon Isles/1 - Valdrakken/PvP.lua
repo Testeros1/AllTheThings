@@ -9,6 +9,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 196191 },	-- Malicia
 					["coord"] = { 43.4, 42.5, VALDRAKKEN },
 					["isWeekly"] = true,
+					["timeline"] = { ADDED_10_0_2_LAUNCH, REMOVED_TWW_LAUNCH },
 				}),
 				q(71026, {	-- Against Overwhelming Odds
 					["provider"] = { "n", 196191 },	-- Malicia
@@ -36,7 +37,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						i(212538),	-- Greater Verdant Trophy of Conquest
 					},
 				})),
-				q(79074, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP } }, {	-- Summoning All Soldiers!
+				q(79074, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Summoning All Soldiers!
 					["provider"] = { "i", 211690 },	-- Artisan's Consortium Brochure (QI!)
 					["g"] = {
 						i(211685),	-- Draconic Trophy of Conquest
@@ -48,9 +49,10 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["provider"] = { "n", 196191 },	-- Malicia
 				["coord"] = { 43.4, 42.5, VALDRAKKEN },
 				["isWeekly"] = true,
+				["timeline"] = { REMOVED_TWW_LAUNCH },
 				["g"] = {
 					i(206271, {	-- Malicia's Hoard
-						["timeline"] = { ADDED_10_1_0 },
+						["timeline"] = { ADDED_10_1_0, REMOVED_TWW_LAUNCH },
 						["g"] = {
 							i(204717),	-- Splintered Spark of Shadowflame
 						},
@@ -71,6 +73,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			n(QUESTS, sharedData({
 				["coord"] = { 42.2, 40.7, VALDRAKKEN },
 				["isWeekly"] = true,
+				["timeline"] = { REMOVED_TWW_LAUNCH },
 				["g"] = {
 					currency(2797, {	-- Trophy of Strife
 						["timeline"] = { ADDED_10_2_0 },
@@ -151,16 +154,16 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 
 						------ Season 4 ------
 						conquest(375, i(217018, {	-- Draconic Equipment Chest
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 						conquest(875, i(211686, {	-- Greater Draconic Trophy of Conquest
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 						conquest(700, i(211685, {	-- Draconic Trophy of Conquest
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 						conquest(525, i(211684, {	-- Lesser Draconic Trophy of Conquest
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 					},
 				}),
@@ -207,10 +210,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 44.7, 37.0, VALDRAKKEN },
 					["g"] = {
 						i(185834, {	-- Orboreal Distinguishment
-							["cost"] = {{"c", HONOR, 2000}},
+							["cost"] = { { "c", HONOR, 2000 } },
+							-- #if BEFORE 11.0.2
 							["g"] = {
+							-- Lets display it only in the latest Expansion
 								i(137642),	-- Mark of Honor
 							},
+							-- #endif
 						}),
 						i(201250, {	-- Victorious Contender's Strongbox
 							["cost"] = {{"c", HONOR, 5000}},
@@ -247,13 +253,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 
 								------ Season 4 ------
 								i(211690, {	-- Artisan's Consortium Brochure (QS!)
-									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 								}),
 								i(211770, {	-- Cracked Medal of Honor [A]
-									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 								}),
 								i(211771, {	-- Cracked Medal of Honor [H]
-									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+									["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 								}),
 							},
 						}),
@@ -324,16 +330,16 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 
 						------ Season 4 ------
 						honor(875, i(211689, {	-- Greater Draconic Crest of Honor
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 						honor(700, i(211688, {	-- Draconic Crest of Honor
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 						honor(525, i(211687, {	-- Lesser Draconic Crest of Honor
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 						honor(2500, i(211772, {	-- Cracked Medal of Honor
-							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+							["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 						})),
 					},
 				}),

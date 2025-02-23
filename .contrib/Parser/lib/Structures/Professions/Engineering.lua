@@ -426,10 +426,10 @@ WRATH_ENGINEERING = applyclassicphase(WRATH_PHASE_ONE, bubbleDown({ ["timeline"]
 	}),
 }));
 WRATH_GNOMISH_ENGINEERING = applyclassicphase(TBC_PHASE_ONE, sharedData({ ["timeline"] = { ADDED_3_0_3 } }, {
-	r(56473), -- Gnomish X-Ray Specs
+	r(56473),	-- Gnomish X-Ray Specs
 }));
 WRATH_GOBLIN_ENGINEERING = applyclassicphase(TBC_PHASE_ONE, sharedData({ ["timeline"] = { ADDED_3_0_3 } }, {
-	r(56514), -- Global Thermal Sapper Charge
+	r(56514),	-- Global Thermal Sapper Charge
 }));
 ALL_GNOMISH_ENGINEERING = appendGroups(CLASSIC_TBC_GNOMISH_ENGINEERING,
 -- #if AFTER 3.0.3
@@ -609,7 +609,6 @@ MOP_ENGINEERING = applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["timeline"] = {
 local SECRET_OF_DRAENOR_ENGINEERING = 119299;
 DRAENOR_ENGINEERING = applyclassicphase(WOD_PHASE_ONE, i(111921, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
 	["description"] = "This is a reward for completing the introductory Engineering questline that can drop from any Draenor mob. Also sold at The Forge for 100 gold.",
-	["filterID"] = MISC,
 	["g"] = {
 		r(158739, {	-- Engineering (Draenor Master)
 			["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_8_0_1_LAUNCH },
@@ -883,7 +882,7 @@ DF_ENGINEERING = applyclassicphase(DF_PHASE_ONE, bubbleDown({ ["timeline"] = { A
 		r(382387),	-- P.E.W. x2
 	}),
 }));
-TWW_ENGINEERING = bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+TWW_ENGINEERING = bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 	r(423335),	-- Khaz Algar Engineering
 	r(425139),	-- Recraft Equipment
 	r(447311),	-- Pilfer Through Parts

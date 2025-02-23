@@ -3,61 +3,12 @@
 -----------------------------------------------------
 root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
 	m(KRASARANG_WILDS, {
-		["icon"] = "Interface\\Icons\\achievement_zone_krasarangwilds",
+		["icon"] = 623769,
 		["g"] = {
 			n(ACHIEVEMENTS, {
-				ach(19885, {	-- Campaign: Krasarang Wilds [A]
-					["races"] = ALLIANCE_ONLY,
-					["g"] = {
-						crit(67238),	-- Zhu's Watch
-						crit(67239),	-- The Incursion
-						crit(67240),	-- Temple of the Red Crane
-						crit(67241),	-- The Waters of Youth
-						crit(67242, {	-- Nayeli Lagoon
-							["_noautomation"] = true,
-							["_quests"] = { 30674 },	-- Balance Without Violence
-						}),
-						crit(67243, {	-- Nayeli Lagoon
-							["_noautomation"] = true,
-							["_quests"] = { 30675 },	-- Buried Hozen Treasure
-						}),
-						crit(67244, {	-- Nayeli Lagoon
-							["_noautomation"] = true,
-							["_quests"] = { 30672 },	-- Balance
-						}),
-					}
-				}),
-				ach(19886, {	-- Campaign: Krasarang Wilds [H]
-					["races"] = HORDE_ONLY,
-					["g"] = {
-						crit(67245),	-- Thunder Cleft
-						crit(67246),	-- Dawnchaser Retreat
-						crit(67238),	-- Zhu's Watch
-						crit(67240),	-- Temple of the Red Crane
-						crit(67242, {	-- Nayeli Lagoon
-							["_noautomation"] = true,
-							["_quests"] = { 30674 },	-- Balance Without Violence
-						}),
-						crit(67243, {	-- Nayeli Lagoon
-							["_noautomation"] = true,
-							["_quests"] = { 30675 },	-- Buried Hozen Treasure
-						}),
-						crit(67244, {	-- Nayeli Lagoon
-							["_noautomation"] = true,
-							["_quests"] = { 30672 },	-- Balance
-						}),
-					}
-				}),
-				ach(19891, {		-- Campaign: Landfall
-					crit(65829, {
-						["_noautomation"] = true,
-						["_quests"] = { 32401 },	-- Breath of Darkest Shadow (A)
-					}),
-					crit(65830, {
-						["_noautomation"] = true,
-						["_quests"] = { 32399 },	-- Breath of Darkest Shadow (H)
-					}),
-				}),
+				ach(19885),	-- Campaign: Krasarang Wilds [A] (automated)
+				ach(19886),	-- Campaign: Krasarang Wilds [H] (automated)
+				ach(19891),	-- Campaign: Landfall (automated)
 				ach(19918, {	-- Dominance Offensive [H]
 					["races"] = HORDE_ONLY,
 				}),
@@ -164,37 +115,37 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 					["sym"] = {{"meta_achievement",
 						19995,	-- Elusive Foes: Krasarang Wilds
 						20028,	-- Explore Krasarang Wilds
-						19979,  -- Hidden Treasures: Krasarang Wilds
+						19979,	-- Hidden Treasures: Krasarang Wilds
 					}},
 				}),
 			}),
 			n(QUESTS, {
 				q(80438, {	-- Aid the Horde [H]
-					["sourceQuest"] = 32108,  -- Domination Point [H]
+					["sourceQuest"] = 32108,	-- Domination Point [H]
 					["provider"] = { "n", 67939 },	-- General Nazgrim
 					["coord"] = { 10.3, 53.7, KRASARANG_WILDS },
 					["races"] = HORDE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(80439, {	-- Aid the Alliance [A]
-					["sourceQuest"] = 32109,  -- Lion's Landing [A]
+					["sourceQuest"] = 32109,	-- Lion's Landing [A]
 					["provider"] = { "n", 67940 },	-- Admiral Taylor
 					["coord"] = { 89.5, 32.5, KRASARANG_WILDS },
 					["races"] = ALLIANCE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(80433, {  -- Aid the August Celestials
 					["provider"] = { "n", 60506 },	-- Thelonius
 					["coord"] = { 31.2, 63.4, KRASARANG_WILDS },
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(80444, {  -- Aid the Anglers
 					["provider"] = { "n", 63721 },	-- Nat Pagle
 					["coord"] = { 68.4, 43.4, KRASARANG_WILDS },
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 			}),
@@ -286,6 +237,9 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 		},
 	}),
 }))));
-root(ROOTS.HiddenQuestTriggers,  applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
-	q(81666),	-- Triggered on first completion of questID 80444 Aid the Anglers
-}))));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
+	applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, {
+		q(81666),	-- Triggered on first completion of questID 80444 Aid the Anglers
+	})),
+})));

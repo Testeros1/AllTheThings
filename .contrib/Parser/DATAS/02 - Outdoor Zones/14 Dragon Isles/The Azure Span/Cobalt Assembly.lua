@@ -4,7 +4,6 @@
 local function bo(questID, isDaily)
     return { ["questID"] = questID, ["isDaily"] = isDaily };
 end
-
 local ADAMANT_SCALES = 193214;
 local AWAKENED_FROST = 190329;
 local DRACONIUM_ORE = 188658;
@@ -22,7 +21,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			}),
 			n(QUESTS, {
 				q(71094, {	-- Help Is Our Way!
-					["sourceQuests"] = { 72435 },	-- Welcome to the Assembly
+					["sourceQuests"] = { 70550 },	-- Welcome to the Assembly
 					["provider"] = { "n", 197100 },	-- Heleth the Wise
 					["coord"] = { 46.4, 25.6, THE_AZURE_SPAN },
 					["g"] = {
@@ -108,30 +107,30 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 49.4, 22.6, THE_AZURE_SPAN },
 					["g"] = bubbleDownRep(FACTION_COBALT_ASSEMBLY, {
 						{		-- Empty --
-							i(197584, {	-- Windborne Velocidrake: Finned Back (DM!)
+							i(197584, {	-- Windborne Velocidrake: Finned Back (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 50 },
 								},
 							}),
 						}, {	-- Low --
-							i(196969, {	-- Cliffside Wylderdrake: Finned Back (DM!)
+							i(196969, {	-- Cliffside Wylderdrake: Finned Back (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 100 },
 								},
 							}),
-							i(197355, {	-- Renewed Proto-Drake: Thick Spined Jaw (DM!)
+							i(197355, {	-- Renewed Proto-Drake: Thick Spined Jaw (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 100 },
 								},
 							}),
 						}, {	-- Medium --
-							i(197620, {	-- Windborne Velocidrake: Beaked Snout (DM!)
+							i(197620, {	-- Windborne Velocidrake: Beaked Snout (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 200 },
 								},
 							}),
 						}, {	-- High --
-							i(197018, {	-- Cliffside Wylderdrake: Finned Tail (DM!)
+							i(197018, {	-- Cliffside Wylderdrake: Finned Tail (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 								},
@@ -184,13 +183,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 									{ "i", AWAKENED_FROST, 1 },
 								},
 							}),
-							i(197148, {	-- Highland Drake: Vertical Finned Tail (DM!)
+							i(197148, {	-- Highland Drake: Vertical Finned Tail (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 400 },
 								},
 							}),
 						}, {	-- Maximum --
-							i(197368, {	-- Renewed Proto-Drake: Blue Hair (DM!)
+							i(197368, {	-- Renewed Proto-Drake: Blue Hair (MM!)
 								["cost"] = {
 									{ "c", DRAGON_SUPPLIES, 600 },
 								},
@@ -352,8 +351,3 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		}),
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(THE_AZURE_SPAN, {
-		q(72091),	-- triggers with 'Cobalt Enthusiast' (achievementID 16569) (spellID 392588)
-	}),
-}));

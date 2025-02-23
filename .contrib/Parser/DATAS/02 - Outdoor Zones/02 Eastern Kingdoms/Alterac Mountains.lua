@@ -6,15 +6,10 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(ALTERAC_MOUNTAINS, {
 		["lore"] = "Alterac Mountains is the location of the former nation of Alterac and the city-state of Dalaran, and its chief settlements included Alterac City, Dalaran and Strahnbrad. The central mountains have been overrun by ogres, while the organization called the Syndicate controls Strahnbrad and other areas. Dalaran was enclosed within an impregnable magic shell before the city was lifted in the air and moved to Northrend. A high, wooded region, the Alterac Mountains see much rainfall and its skies are constantly overcast. Crushridge ogres and the Syndicate, a wicked group of rogues led by fallen human nobles, clash repeatedly for control of this land.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_alteracmountains_01",
-		-- #endif
+		["icon"] = 236711,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				explorationAch(760, {	-- Explore Alterac Mountains
-					-- #if BEFORE WRATH
-					["description"] = "Explore Alterac Mountains, revealing the covered areas of the world map.",
-					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
 			}),
@@ -38,14 +33,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				exploration(284),	-- The Uplands
 			}),
 			n(FACTIONS, {
-				faction(349, {	-- Ravenholdt
-					["icon"] = "Interface\\Icons\\Ability_Rogue_Eviscerate",
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.Ravenholdt,
+				faction(FACTION_RAVENHOLDT, {	-- Ravenholdt
+					["icon"] = 132292,
+					["OnTooltip"] = [[_.OnTooltipDB.Ravenholdt]],
 				}),
-				faction(70, {	-- Syndicate
+				faction(FACTION_SYNDICATE, {	-- Syndicate
 					["description"] = "Neutral is the highest you can currently reach with the Syndicate.\n\nDoing this on will tank your Ravenholdt rep, they're mutually exclusive. Get this done on an alt if you want to.",
-					["minReputation"] = { 70, NEUTRAL - 1 },	-- Syndicate, Neutral. (-1)
-					["maxReputation"] = { 70, NEUTRAL },	-- Syndicate, Neutral.
+					["minReputation"] = { FACTION_SYNDICATE, NEUTRAL - 1 },	-- Syndicate, Neutral. (-1)
+					["maxReputation"] = { FACTION_SYNDICATE, NEUTRAL },	-- Syndicate, Neutral.
 				}),
 			}),
 			n(PROFESSIONS, {
@@ -131,7 +126,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["sourceQuest"] = 80411,	-- The Talisman of Kazdor
 					["coord"] = { 84.4, 80.2, ALTERAC_MOUNTAINS },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["classes"] = { ROGUE },
 					["lvl"] = 45,
 				})),
@@ -139,7 +134,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["provider"] = { "o", 410369 },	-- Dead Drop
 					["sourceQuest"] = 80454,	-- One Last Drop
 					["coord"] = { 47.1, 71.1, SILVERPINE_FOREST },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["maps"] = { ALTERAC_MOUNTAINS },
 					["classes"] = { ROGUE },
 					["lvl"] = 45,
@@ -346,7 +341,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				applyclassicphase(SOD_PHASE_THREE, q(80526, {	-- Fool Me Twice
 					["qg"] = 6707,	-- Fahrad <Grand Master Rogue>
 					["coord"] = { 84.4, 80.2, ALTERAC_MOUNTAINS },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["classes"] = { ROGUE },
 					["lvl"] = 45,
 				})),
@@ -417,7 +412,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 6707,	-- Fahrad <Grand Master Rogue>
 					["coord"] = { 84.4, 80.3, ALTERAC_MOUNTAINS },
 					-- #endif
-					["maxReputation"] = { 349, EXALTED },	-- Ravenholdt, Exalted.
+					["maxReputation"] = { FACTION_RAVENHOLDT, EXALTED },	-- Ravenholdt, Exalted.
 					["cost"] = { { "i", 16885, 5 } },	-- Heavy Junkbox
 					["repeatable"] = true,
 					["lvl"] = lvlsquish(50, 50, 20),
@@ -488,7 +483,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["sourceQuest"] = 80453,	-- Best Laid Plans
 					["coord"] = { 86, 80, ALTERAC_MOUNTAINS },
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["maps"] = { SILVERPINE_FOREST },
 					["classes"] = { ROGUE },
 					["lvl"] = 45,
@@ -577,7 +572,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 6766,	-- Ravenholdt Guard <Assassin's League>
 					["sourceQuest"] = 6681,	-- The Manor, Ravenholdt
 					["coord"] = { 85.2, 79.4, ALTERAC_MOUNTAINS },
-					["maxReputation"] = { 349, FRIENDLY },	-- Ravenholdt, Friendly.
+					["maxReputation"] = { FACTION_RAVENHOLDT, FRIENDLY },	-- Ravenholdt, Friendly.
 					["cost"] = { { "i", 17124, 1 } },	-- Syndicate Emblem
 					["timeline"] = { REMOVED_4_0_3 },
 					["classes"] = { ROGUE },
@@ -728,7 +723,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sourceQuest"] = 80526,	-- Fool Me Twice
 					["coord"] = { 84.4, 80.2, ALTERAC_MOUNTAINS },
 					["description"] = "You'll need to find 2 Vile Concoctions and the Hollow Emblem.\n\n- The Hollow Emblem is on the second from the left upper hut on the right wall if you're facing the pyramid. You can climb the hill to the right of the pyramid to get there.\n\n- 1 Vile Concoction is inside the hut closest to the pyramid and the other is inside a hut on the corner of the left path after the first fork of the dungeon(that left path that no group ever takes).\n\n- Use one Vile Concoction on the cauldron of Witch Doctor Zum'rah (it doesn't break stealth) to kill him and loot the satchel beside him to loot a trinket. Equip the trinket to see which grave contains the Offering of Blood.\n\n- Use the other Vile Concoction on the cauldron of Antu'sul and loot the Offering of Bone beside him.\n\n- Combine both offerings, then use the Hollow Emblem to make the Emblem of Blood Magic Emblem of Blood Magic. This is the key to open the chest on the top of the pyramid to finally get the Talisman for the quest.",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["maps"] = { ZULFARRAK },
 					["classes"] = { ROGUE },
 					["lvl"] = 45,
@@ -860,7 +855,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["provider"] = { "o", 423841 },	-- Frozen Remains
 					["coord"] = { 39.7, 60.8, ALTERAC_MOUNTAINS },
 					["description"] = "Once you have this rune in your inventory, use Divine Intervention on a healer friend. Have them resurrect you to receive the rune upon resurrection.",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {

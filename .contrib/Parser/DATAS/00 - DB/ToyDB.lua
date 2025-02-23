@@ -1082,7 +1082,7 @@ i(190238);	-- Xy'rath's Booby-Trapped Cache
 -----------------
 -- PATCH 9.2.5 --
 -----------------
-i(192099);	 -- Earpieces of Tranquil Focus
+i(192099);	-- Earpieces of Tranquil Focus
 i(192485);	-- Stored Wisdom Device
 i(193588);	-- Timewalker's Hearthstone
 i(187958);	-- Shrouded Banner of the Opportune
@@ -1269,13 +1269,13 @@ i(209944);	-- Friendsurge Defenders
 i(208658);	-- Mirror of Humility
 i(206195);	-- Path of the Naaru
 i(208883);	-- Sandbox Storm Gryphon
-i(201931);  -- Warcraft Rumble Toy: Maiev
-i(202862);  -- Warcraft Rumble Toy: Murloc
-i(202851);  -- Warcraft Rumble Toy: Night Elf Huntress
-i(202261);  -- Warcraft Rumble Toy: Sneed
-i(202856);  -- Warcraft Rumble Toy: Stonehoof Tauren
-i(202859);  -- Warcraft Rumble Toy: Undead Ghoul
-i(202865);  -- Warcraft Rumble Toy: Whelp Egg
+i(201931);	-- Warcraft Rumble Toy: Maiev
+i(202862);	-- Warcraft Rumble Toy: Murloc
+i(202851);	-- Warcraft Rumble Toy: Night Elf Huntress
+i(202261);	-- Warcraft Rumble Toy: Sneed
+i(202856);	-- Warcraft Rumble Toy: Stonehoof Tauren
+i(202859);	-- Warcraft Rumble Toy: Undead Ghoul
+i(202865);	-- Warcraft Rumble Toy: Whelp Egg
 --- NYI ---
 i(208880);	-- Brewhahat
 i(208229);	-- Honor of the Forsaken
@@ -1283,6 +1283,7 @@ i(208229);	-- Honor of the Forsaken
 ------------------
 -- PATCH 10.2.0 --
 ------------------
+i(211424);	-- Dreaming Banner of the Aspects
 i(210411);	-- Fast Growing Seed
 i(209035);	-- Hearthstone of the Flame
 i(210864);	-- Improvised Leafbed
@@ -1295,7 +1296,6 @@ i(210497);	-- Verdant Legend's Pennant
 i(209859);	-- Festive Trans-Dimensional Bird Whistle
 i(210656);	-- Winter Veil Socks
 --- NYI ---
-i(211424);	-- Dreaming Banner of the Aspects
 i(208087);	-- Unknown
 
 ------------------
@@ -1345,10 +1345,9 @@ i(220692);	-- X-treme Water Blaster Display
 i(204405);	-- Stuffed Bear
 -- #endif
 i(212174);	-- The Warband Map to Everywhere All At Once
---- UNSORTED ---
-i(218310);	-- Box of Puntables
+--- NYI ---
 i(224809);	-- Earthen Plumber's Pipe
-i(225347);	-- Web-Vandal's Spinning Wheel
+i(216665);	-- Warband Bank Distance Inhibitor
 i(216887);	-- Unknown
 
 ------------------
@@ -1373,6 +1372,7 @@ i(225641);	-- Illusive Kobyss Lure
 i(226810);	-- Infiltrator's Shroud
 i(228413);	-- Lampyridae Lure
 i(224251);	-- Memory Chord
+i(228940);	-- Notorious Thread's Hearthstone
 i(224643);	-- Pet-Sized Candle
 i(225910);	-- Pileus Delight
 i(215145);	-- Remembrance Stone
@@ -1385,6 +1385,68 @@ i(228707);	-- Trial of Burning Light
 i(223312);	-- Trusty Hat
 i(227538);	-- Unbound Legend's Pennant
 i(227539);	-- Unbound Strategist's Pennant
-i(216665);	-- Warband Bank Distance Inhibitor
 i(226191);	-- Web Pet Leash
+i(225347);	-- Web-Vandal's Spinning Wheel
 i(221966);	-- Wormhole Generator: Khaz Algar
+
+------------------
+-- PATCH 11.0.5 --
+------------------
+i(229828);	-- 20th Anniversary Balloon Chest
+i(228789);	-- Coldflame Ring
+i(232305);	-- Forged Champion's Prestigious Banner
+i(224192);	-- Practice Ravager
+i(232301);	-- Tempered Banner of the Algari
+--- UNSORTED ---
+i(232302);	-- Unknown
+i(232303);	-- Unknown
+i(232304);	-- Unknown
+i(232306);	-- Unknown
+i(232307);	-- Unknown
+i(232308);	-- Unknown
+
+------------------
+-- PATCH 11.0.7 --
+------------------
+i(235015);	-- Awakened Supply Crate
+i(218310);	-- Box of Puntables
+i(235041);	-- Cyrce's Circlet
+i(235017);	-- Glittering Vault Shard
+i(233486);	-- Hallowfall Supply Cache
+i(235288);	-- Sha-Warped Tea Set
+i(234473);	-- Soweezi's Comfy Lawn Chair
+i(218308);	-- Winter Veil Cracker
+--- NYI ---
+i(235016);	-- Redeployment Module
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+i(235670);	-- Bilgewater Cartel Banner
+i(235671);	-- Blackwater Cartel Banner
+i(230850);	-- Delve-O-Bot 7001
+i(235050);	-- Desk-In-A-Box
+i(226373);	-- Everlasting Noggenfogger Elixir
+i(236687);	-- Explosive Hearthstone
+i(230727);	-- Explosive Victory
+i(235220);	-- Fireworks Hat
+i(233202);	-- G.O.L.E.M Jr.
+i(236769);	-- Gallagio Pipeline Rerouter
+i(235801);	-- Personal Fishing Barge
+i(235519);	-- Prized Legend's Pennant
+i(230924);	-- Spotlight Materializer 1000
+i(235669);	-- Steamwheedle Cartel Banner
+i(235807);	-- Storefront-in-a-Box
+i(231064);	-- Throwaway Gangster Disguise
+i(235799);	-- Throwin' Sawblade
+i(234951);	-- Uncracked Cold Ones
+i(237382);	-- Undermine Supply Crate
+i(235672);	-- Venture Co. Banner
+--- UNSORTED ---
+i(237346);	-- Artisan Beverage Goblet Bobber
+i(234950);	-- Atomic Regoblinator
+i(237345);	-- Limited Edition Rocket Bobber
+i(237347);	-- Organically-Sourced Wellington Bobber
+i(235519);	-- Prized Legend's Pennant
+i(236751);	-- Take-Home Flarendo
+i(236749);	-- Take-Home Torq

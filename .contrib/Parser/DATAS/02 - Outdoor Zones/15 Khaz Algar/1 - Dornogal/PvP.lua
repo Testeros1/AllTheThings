@@ -5,7 +5,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 	m(DORNOGAL, {
 		pvp(n(PVP, {
 			n(QUESTS, {
-				q(83711, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 } }, {	-- Weapons of Conquest
+				q(83489, {	-- Gathering All Gladiators!
+					["provider"] = { "i", 225772 },	-- Artisan's Consortium Advertisement
+				}),
+				q(83711, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2, REMOVED_11_0_2 } }, {	-- Weapons of Conquest
 					["provider"] = { "n", 219222 },	-- Lalandi <Conquest Quartermaster>
 					["coord"] = { 55.0, 76.1, DORNOGAL },
 				})),
@@ -14,9 +17,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["provider"] = { "n", 219260 },	-- Ruffious
 				["coord"] = { 58.9, 75.3, DORNOGAL },
 				["isWeekly"] = true,
-				["g"] = {
-					--
-				},
 			}, {
 				q(80188),	-- Preserving in Arenas
 				q(80184),	-- Preserving in Battle
@@ -36,10 +36,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(81794, {	-- Sparks of War: The Ringing Deeps
 					i(219934),	-- Spark of War (QI!)
 				}),
+				q(86853, {	-- Sparks of War: Undermine
+					["timeline"] = { ADDED_11_1_0 },
+				}),
 			})),
 			n(VENDORS, {
 				n(219215, {	-- Hotharn <Competitor's Recipes>
-					["coord"] = { 55.4, 70.0, DORNOGAL },
+					["coord"] = { 55.5, 77.1, DORNOGAL },
 					["g"] = sharedData({ ["cost"] = {{"c", HONOR, 7500}} }, {
 						i(225433),	-- Design: Algari Competitor's Amulet (RECIPIE!)
 						i(225432),	-- Design: Algari Competitor's Signet (RECIPIE!)
@@ -89,7 +92,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						i(225489),	-- Plans: Algari Competitor's Sword (RECIPE!)
 						i(224018),	-- Recipe: Vicious Flask of Classical Spirits (RECIPE!)
 						i(224017),	-- Recipe: Vicious Flask of Honor (RECIPE!)
-						i(224019),	-- Recipe: Vicious Flask of Manifested Fury (RECIPE!)
 						i(224020),	-- Recipe: Vicious Flask of the Wrecking Ball (RECIPE!)
 						i(225471),	-- Schematic: Algari Competitor's Cloth Bracers (RECIPE!)
 						i(225467),	-- Schematic: Algari Competitor's Cloth Goggles (RECIPE!)
@@ -108,12 +110,19 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						i(225481),	-- Technique: Algari Competitor's Staff (RECIPE!)
 						--
 						filter(MISC, {
-							i(213778, {	-- Vicious Jeweler's Setting
+							i(213778, {	-- Forged Jeweler's Setting
 								["cost"] = {
-									{"i", 215236, 2},	-- Vicious Bloodstone x2
-									{"c", HONOR, 9750},
+									{"i", 215236, 3},	-- Vicious Bloodstone x3
+									{"c", HONOR, 5000},
 								},
 								["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+							}),
+							i(230425, {	-- Prized Jeweler's Setting
+								["cost"] = {
+									{"i", 215236, 3},	-- Vicious Bloodstone x3
+									{"c", HONOR, 5000},
+								},
+								["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
 							}),
 						}),
 						filter(REAGENTS, {
@@ -128,6 +137,18 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 							i(210233, {	-- Forged Gladiator's Heraldry
 								["cost"] = {{"c", CONQUEST, 175}},
 								["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+							}),
+							i(229389, {	-- Prized Aspirant's Heraldry
+								["cost"] = {{"c", HONOR, 175}},
+								["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
+							}),
+							i(229388, {	-- Prized Combatant's Heraldry
+								["cost"] = {{"c", HONOR, 350}},
+								["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
+							}),
+							i(229390, {	-- Prized Gladiator's Heraldry
+								["cost"] = {{"c", CONQUEST, 175}},
+								["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
 							}),
 							i(215236, {	-- Vicious Bloodstone
 								["cost"] = {{"c", HONOR, 2500}},
@@ -163,7 +184,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 							},
 						}),
 						i(224556, {	-- Glorious Contender's Strongbox
-							["cost"] = {{"c", HONOR, 5000}},
+							["cost"] = {{"c", HONOR, 3500}},
 							["g"] = {
 								--
 							},

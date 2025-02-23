@@ -32,7 +32,7 @@ namespace ATT
                         {
                             if (pair.Value is IDictionary<string, object> exportDB)
                             {
-                                foreach(var kvp in exportDB)
+                                foreach (var kvp in exportDB)
                                 {
                                     Exports[kvp.Key] = kvp.Value;
                                 }
@@ -184,6 +184,134 @@ namespace ATT
                         {
                             LogError("ItemToyDB not supported. Please use 'ItemDBConditional' and parser.config to assign Toy objects.");
                             Log(CurrentFileName);
+                            break;
+                        }
+                    case "AchievementData":
+                        {
+                            // The format of the Achievement Data DB is a dictionary of Achievement Data ID <-> Achievement pairs.
+                            if (pair.Value is Dictionary<long, object> db)
+                            {
+                                foreach (var keyValuePair in db)
+                                {
+                                    if (keyValuePair.Value is Dictionary<string, object> data)
+                                    {
+                                        if (!AchievementData.TryGetValue(keyValuePair.Key, out Dictionary<string, object> dataEntry))
+                                        {
+                                            AchievementData[keyValuePair.Key] = dataEntry = new Dictionary<string, object>();
+                                        }
+
+                                        // Merge over the complex text data.
+                                        if (data.TryGetValue("text", out object textObject))
+                                        {
+                                            data.Remove("text");
+                                            if (textObject is Dictionary<string, object> textLocales)
+                                            {
+                                                if (dataEntry.TryGetValue("text", out textObject) && textObject is Dictionary<string, object> currentTextLocales)
+                                                {
+                                                    foreach (var textObjectPair in textLocales)
+                                                    {
+                                                        currentTextLocales[textObjectPair.Key] = textObjectPair.Value;
+                                                    }
+                                                }
+                                                else dataEntry["text"] = textLocales;
+                                            }
+                                            else
+                                            {
+                                                dataEntry["text"] = new Dictionary<string, object>
+                                                {
+                                                    { "en", textObject }
+                                                };
+                                            }
+                                        }
+
+                                        // Merge over the complex text data.
+                                        if (data.TryGetValue("description", out textObject))
+                                        {
+                                            data.Remove("description");
+                                            if (textObject is Dictionary<string, object> textLocales)
+                                            {
+                                                if (dataEntry.TryGetValue("description", out textObject) && textObject is Dictionary<string, object> currentTextLocales)
+                                                {
+                                                    foreach (var textObjectPair in textLocales)
+                                                    {
+                                                        currentTextLocales[textObjectPair.Key] = textObjectPair.Value;
+                                                    }
+                                                }
+                                                else dataEntry["description"] = textLocales;
+                                            }
+                                            else
+                                            {
+                                                dataEntry["description"] = new Dictionary<string, object>
+                                                {
+                                                    { "en", textObject }
+                                                };
+                                            }
+                                        }
+
+                                        // Merge over simple data. (a simple replace is fine)
+                                        foreach (var dataPair in data)
+                                        {
+                                            dataEntry[dataPair.Key] = dataPair.Value;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        ThrowBadFormatDB("AchievementData", keyValuePair);
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                    case "AchievementCategoryData":
+                        {
+                            // The format of the Achievement Category Data DB is a dictionary of Achievement Category Data ID <-> Achievement Category pairs.
+                            if (pair.Value is Dictionary<long, object> db)
+                            {
+                                foreach (var keyValuePair in db)
+                                {
+                                    if (keyValuePair.Value is Dictionary<string, object> data)
+                                    {
+                                        if (!AchievementCategoryData.TryGetValue(keyValuePair.Key, out Dictionary<string, object> dataEntry))
+                                        {
+                                            AchievementCategoryData[keyValuePair.Key] = dataEntry = new Dictionary<string, object>();
+                                        }
+
+                                        // Merge over the complex text data.
+                                        if (data.TryGetValue("text", out object textObject))
+                                        {
+                                            data.Remove("text");
+                                            if (textObject is Dictionary<string, object> textLocales)
+                                            {
+                                                if (dataEntry.TryGetValue("text", out textObject) && textObject is Dictionary<string, object> currentTextLocales)
+                                                {
+                                                    foreach (var textObjectPair in textLocales)
+                                                    {
+                                                        currentTextLocales[textObjectPair.Key] = textObjectPair.Value;
+                                                    }
+                                                }
+                                                else dataEntry["text"] = textLocales;
+                                            }
+                                            else
+                                            {
+                                                dataEntry["text"] = new Dictionary<string, object>
+                                                {
+                                                    { "en", textObject }
+                                                };
+                                            }
+                                        }
+
+                                        // Merge over simple data. (a simple replace is fine)
+                                        foreach (var dataPair in data)
+                                        {
+                                            dataEntry[dataPair.Key] = dataPair.Value;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        ThrowBadFormatDB("AchievementCategoryData", keyValuePair);
+                                    }
+                                }
+                            }
                             break;
                         }
                     case "Artifacts":
@@ -461,6 +589,18 @@ namespace ATT
                             else
                             {
                                 ThrowBadFormatDB("FlightPathDB");
+                            }
+                            break;
+                        }
+                    case "GlyphDB":
+                        {
+                            // The format of the Glyph DB is a dictionary of Glyph ID <-> Spell ID pairs.
+                            if (pair.Value is Dictionary<long, object> db)
+                            {
+                                foreach (var keyValuePair in db)
+                                {
+                                    GlyphDB[keyValuePair.Key] = Convert.ToInt64(keyValuePair.Value);
+                                }
                             }
                             break;
                         }
@@ -789,6 +929,16 @@ namespace ATT
             {
                 CollectObjectsByValue<CriteriaTree>(type, (se) => se.Parent);
             }
+            // ItemEffect creates SpellID mapping one-time
+            if (type == nameof(ItemEffect))
+            {
+                CollectObjectsByValue<ItemEffect>(type, (se) => se.SpellID);
+            }
+            // ItemXItemEffect creates ItemID mapping one-time
+            if (type == nameof(ItemXItemEffect))
+            {
+                CollectObjectsByValue<ItemXItemEffect>(type, (se) => se.ItemID);
+            }
             // ModifierTree creates parent mapping one-time
             if (type == nameof(ModifierTree))
             {
@@ -798,6 +948,11 @@ namespace ATT
             if (type == nameof(SpellEffect))
             {
                 CollectObjectsByValue<SpellEffect>(type, (se) => se.SpellID);
+            }
+            // TransmogSet creates QuestID mapping one-time
+            if (type == nameof(TransmogSet))
+            {
+                CollectObjectsByValue<TransmogSet>(type, (se) => se.TrackingQuestID);
             }
             // TransmogSetItem creates TransmogSetID mapping one-time
             if (type == nameof(TransmogSetItem))
@@ -983,27 +1138,30 @@ namespace ATT
             if (dataList == null)
             {
                 ThrowBadFormatDB("AchievementDB");
+                return;
             }
-            else
+
+            foreach (var achieveInfo in dataList)
             {
-                foreach (var achieveInfo in dataList)
+                // KEY: Achievement ID, VALUE: Dictionary
+                if (achieveInfo is IDictionary<string, object> info && (info.TryGetValue("achID", out long achID) || info.TryGetValue("achievementID", out achID)))
                 {
-                    // KEY: Achievement ID, VALUE: Dictionary
-                    if (achieveInfo is IDictionary<string, object> info && info.TryGetValue("achID", out long achID))
+                    // if (achID == 9713)
+                    // {
+
+                    // }
+                    if (ACHIEVEMENTS.TryGetValue(achID, out IDictionary<string, object> existingData))
                     {
-                        if (ACHIEVEMENTS.TryGetValue(achID, out IDictionary<string, object> existingData))
+                        if (onlyNew)
                         {
-                            if (onlyNew)
-                            {
-                                foreach (var pair2 in info) if (!existingData.ContainsKey(pair2.Key)) Objects.Merge(existingData, pair2.Key, pair2.Value);
-                            }
-                            else
-                            {
-                                foreach (var pair2 in info) Objects.Merge(existingData, pair2.Key, pair2.Value);
-                            }
+                            foreach (var pair2 in info) if (!existingData.ContainsKey(pair2.Key)) Objects.Merge(existingData, pair2.Key, pair2.Value);
                         }
-                        else ACHIEVEMENTS[achID] = info;
+                        else
+                        {
+                            foreach (var pair2 in info) Objects.Merge(existingData, pair2.Key, pair2.Value);
+                        }
                     }
+                    else ACHIEVEMENTS[achID] = info;
                 }
             }
         }
@@ -1024,6 +1182,14 @@ namespace ATT
             DBMerge(rawDb, "spellID");
         }
 
+        /// <summary>
+        /// Merges some enumerable set of data, where each piece is an <see cref="IDictionary"/> containing an 'itemID'[long] key value
+        /// </summary>
+        public static void MergeItemDB(object rawDb)
+        {
+            DBMerge(rawDb, "itemID");
+        }
+
         private static void DBMerge(object rawDb, string keyID)
         {
             // The format of a typical DB is a dictionary of ID -> Values.
@@ -1031,14 +1197,14 @@ namespace ATT
             {
                 DBMerge(db, keyID);
             }
-            // We also support a raw List of objects which are Dictionaries.
-            else if (rawDb is List<object> dbList)
+            // We also support a raw set of objects which are Dictionaries.
+            else if (rawDb is IEnumerable<object> dbList)
             {
                 DBMerge(dbList, keyID);
             }
             else
             {
-                ThrowBadFormatDB("AchievementDB", rawDb);
+                ThrowBadFormatDB(keyID + "DB", rawDb);
             }
         }
 
@@ -1053,12 +1219,12 @@ namespace ATT
                 }
                 else
                 {
-                    ThrowBadFormatDB("AchievementDB", dbEntry);
+                    ThrowBadFormatDB(keyID + "DB", dbEntry);
                 }
             }
         }
 
-        private static void DBMerge(List<object> dbList, string keyID)
+        private static void DBMerge(IEnumerable<object> dbList, string keyID)
         {
             foreach (var o in dbList)
             {
@@ -1068,11 +1234,12 @@ namespace ATT
                     {
                         data[keyID] = id;
                         Objects.MergeFromDB(keyID, data);
+                        Items.MergeFromDB(data);
                     }
                 }
                 else
                 {
-                    ThrowBadFormatDB("AchievementDB", o);
+                    ThrowBadFormatDB(keyID + "DB", o);
                 }
             }
         }

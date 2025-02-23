@@ -84,7 +84,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 				}),
 			},
 		}),
-		achraw(6942, {	-- Hero of the Alliance
+		ach(6942, {	-- Hero of the Alliance
 			["races"] = ALLIANCE_ONLY,
 			["g"] = {
 				title(182, {	-- Hero of the Alliance
@@ -92,7 +92,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 				}),
 			},
 		}),
-		achraw(6941, {	-- Hero of the Horde
+		ach(6941, {	-- Hero of the Horde
 			["races"] = HORDE_ONLY,
 			["g"] = {
 				title(183, {	-- Hero of the Horde
@@ -262,7 +262,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 				title(145, {	-- Warbound
 					["races"] = ALLIANCE_ONLY,
 				}),
-				ach(5823,  {	-- Veteran of the Alliance II
+				ach(5823, {	-- Veteran of the Alliance II
 					["races"] = ALLIANCE_ONLY,
 					["g"] = {
 						i(70909, {	-- Vicious War Steed (MOUNT!)
@@ -270,7 +270,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 						}),
 					},
 				}),
-				ach(5328,  {	-- Veteran of the Alliance
+				ach(5328, {	-- Veteran of the Alliance
 					["races"] = ALLIANCE_ONLY,
 					["g"] = {
 						i(70909, {	-- Vicious War Steed (MOUNT!)
@@ -295,7 +295,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 					["races"] = HORDE_ONLY,
 				}),
 				-- #endif
-				ach(5824,  {	-- Veteran of the Horde II
+				ach(5824, {	-- Veteran of the Horde II
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						i(70910, {	-- Vicious War Wolf (MOUNT!)
@@ -303,7 +303,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 						}),
 					},
 				}),
-				ach(5325,  {	-- Veteran of the Horde
+				ach(5325, {	-- Veteran of the Horde
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						i(70910, {	-- Vicious War Wolf (MOUNT!)
@@ -344,10 +344,16 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 		i(123950),	-- Plans: Demonsteel Pauldrons [Rank 3] (RECIPE!)
 	})),
 	i(103533, {	-- Vicious Saddle
-		-- #if AFTER 10.0.2
-		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win (3 round wins or more for Solo Shuffle) above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n50 points in Solo Shuffle (2.08%)\n60 points in RBG (2.5%)",
-		-- #else
+		-- #if BEFORE 10.0.2
 		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n60 points in RBG (2.5%)",
+		-- #endif
+		-- #if AFTER 10.0.2
+		-- #if BEFORE 11.0.0
+		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win (3 round wins or more for Solo Shuffle) above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n50 points in Solo Shuffle (2.08%)\n60 points in RBG (2.5%)",
+		-- #endif
+		-- #endif
+		-- #if AFTER 11.0.0
+		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win (3 round wins or more for Solo Shuffle) above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n50 points in Solo Shuffle (2.08%)\n50 points in BGBlitz (2.08%)\n60 points in RBG (2.5%)",
 		-- #endif
 	}),
 	i(165717),	-- Steel Strong Box, 2v2/3v3/RBG sometimes on Lose, contains only BFA Mats - Ally
@@ -361,6 +367,8 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, pvp(n(-240, {	-- Rated
-	q(70714),	-- completion of a Rated 'Solo Shuffle'
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	pvp(n(-240, {	-- Rated
+		q(70714),	-- completion of a Rated 'Solo Shuffle'
+	})),
 })));

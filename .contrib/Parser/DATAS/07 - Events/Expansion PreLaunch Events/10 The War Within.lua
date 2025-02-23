@@ -2,7 +2,7 @@
 --     W O R L D   E V E N T S   M O D U L E       --
 -----------------------------------------------------
 local RESIDUAL_MEMORIES = 3089;
-root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADDED_11_0_0, REMOVED_PREPATCH_END } }, {
+root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADDED_11_0_0, REMOVED_TWW_LAUNCH } }, {
 	expansion(EXPANSION.TWW, {
 		n(ACHIEVEMENTS, {
 			ach(40796),	-- This Takes Me Back
@@ -524,10 +524,14 @@ root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADD
 		}),
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_11_0_0 } }, {
-		q(82687),	-- Triggered after 'Only Darkness' (questID 82689)
-		q(82688),	-- Triggered after 'Only Darkness' (questID 82689)
-		q(84083),	-- First Radiant 'boss' (of the week?) rewarding a Champion piece per character
-	})),
-});
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_0 } }, {
+	n(EXPANSION_PRELAUNCH, {
+		n(QUESTS, {
+			q(82687),	-- Triggered after 'Only Darkness' (questID 82689)
+			q(82688),	-- Triggered after 'Only Darkness' (questID 82689)
+			q(84083),	-- First Radiant 'boss' (of the week?) rewarding a Champion piece per character
+		}),
+		q(82416),	-- Summoning Remembered Riverpaw for the first time
+	}),
+})));

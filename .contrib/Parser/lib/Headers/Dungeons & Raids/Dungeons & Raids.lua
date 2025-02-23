@@ -2,7 +2,7 @@ DUNGEONS_AND_RAIDS = createHeader({
 	readable = "Dungeons & Raids",
 	icon = [[~_.asset("Category_D&R")]],
 	text = {
-		en = "Dungeons & Raids",
+		en = [[~GROUP_FINDER]],
 	},
 });
 DUNGEONS = createHeader({
@@ -11,7 +11,7 @@ DUNGEONS = createHeader({
 	minilist_ignore = true,
 	icon = [[~_.asset("Category_D&R")]],
 	text = {
-		en = "Dungeons",
+		en = [[~DUNGEONS]],
 	},
 });
 RAIDS = createHeader({
@@ -20,6 +20,6 @@ RAIDS = createHeader({
 	minilist_ignore = true,
 	icon = [[~_.asset("Category_D&R")]],
 	text = {
-		en = "Raids",
+		en = [[~RAIDS]],
 	},
 });

@@ -377,7 +377,7 @@ root(ROOTS.Zones, {
 					},
 				}),
 				n(113857, {	-- Light's Heart
-					["icon"] = "Interface\\Icons\\achievement_boss_illidan",
+					["icon"] = 236415,
 					["lore"] = "Light's Heart is the sentience core of the naaru prime Xe'ra sent as a last resort by High Exarch Turalyon who battles on Argus, to be handed to Prophet Velen. It fell from the Felstorm along the coast of Suramar, in the Broken Isles.\n\nThe Order of the Silver Hand witnessed the event and informed Archmage Khadgar, who then tasked order leaders with recovering it before the Burning Legion did. It has since been kept safe in a class order hall.\n\nUnlocked by the Tear of Elune, Xe'ra communicates through it with the order leader in order to provide insight into the history of Illidan Stormrage. She revealed that Light's Heart was to serve as the vessel for Illidan Stormrage's rebirth. After Illidan's soul was put into a prism to keep it safe, it was brought to Light's Heart where the prism was \"seemingly consumed\". Light's Heart, with Illidan's soul inside, is then brought to Khadgar with instructions to call forth the vessel's power when Gul'dan attempts to summon Sargeras, thus releasing Illidan's soul into his body before Sargeras can possess his empty shell.",
 					["maps"] = CLASS_HALL_MAPS,
 					["g"] = {
@@ -388,7 +388,7 @@ root(ROOTS.Zones, {
 							["coord"] = { 28.9, 48.4, LEGION_DALARAN },
 						}),
 						q(44257, {	-- A Falling Star (Paladin)
-							["sourceQuests"] = { 42866 }, -- A Sign From The Sky
+							["sourceQuests"] = { 42866 },	-- A Sign From The Sky
 							["provider"] = { "n", 90417 },	-- Archmage Khadgar
 							["classes"] = { PALADIN },
 							["coord"] = { 28.9, 48.4, LEGION_DALARAN },
@@ -627,13 +627,17 @@ root(ROOTS.Zones, {
 						["coord"] = { 38.6, 40.8, LEGION_DALARAN },
 						["maps"] = { 701 },	-- Icecrown Citadel (scenario version)
 						["g"] = {
-							i(134857),	-- Invincible's Reins
+							i(134857),	-- Invincible's Reins (QI!)
 						},
 					}),
 					q(41394, {	-- Service with a Smile
 						["sourceQuests"] = { 41367 },	-- Priority Delivery
 						["provider"] = { "n", 52562 },	-- Johnny Awesome
 						["coord"] = { 68.6, 73.1, FERALAS },
+						["g"] = {
+							i(135464),	-- Bulging Sack of Gold (QI!)
+							i(135463),	-- Invincible's Reins (QI!)
+						},
 					}),
 					q(41395, {	-- Due Reward
 						["sourceQuests"] = { 41394 },	-- Service with a Smile

@@ -194,7 +194,6 @@ WAY_OF_THE_WOK = applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["timeline"] = { 
 }));
 DRAENOR_COOKING = applyclassicphase(WOD_PHASE_ONE, i(111387, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
 	["description"] = "This can drop from any Warlords of Draenor mob if you don't already have it learned.",
-	["filterID"] = MISC,
 	["g"] = {
 		r(158765, {	-- Cooking (Draenor Master)
 			["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_8_0_1_LAUNCH },
@@ -315,7 +314,6 @@ TWW_COOKING = bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 	r(445118),	-- Portioned Steak
 	r(445091),	-- Rib Stickers
 	r(445085),	-- Roasted Mycobloom
-	r(445482),	-- Rockslide Shake
 	r(445102),	-- Salt Baked Seafood
 	r(445097),	-- Salty Dog
 	r(445083),	-- Simple Stew

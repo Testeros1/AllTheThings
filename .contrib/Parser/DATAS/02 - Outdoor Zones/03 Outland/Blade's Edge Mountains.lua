@@ -1,7 +1,7 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local OnTooltipForOgrila = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForOgrila = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		tinsert(tooltipInfo, { left = "Daily Quests:" });
@@ -38,21 +38,11 @@ root(ROOTS.Zones, {
 	m(OUTLAND, applyclassicphase(TBC_PHASE_ONE, {
 		m(BLADES_EDGE_MOUNTAINS, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
 			["lore"] = "Blade's Edge is a level 20-30 questing zone in Outland, filled with splintered mountain peaks, plunging lush valleys, and dusty canyons. Players learn about the presence of the Burning Legion through a mysterious Fel Mask, as well as how Blade's Edge was the original home of the Ogres. Ogri'la is a faction of friendly ogres that players with flying mounts can gain reputation with.",
-			-- #if AFTER WRATH
-			["icon"] = "Interface\\Icons\\achievement_zone_bladesedgemtns_01",
-			-- #endif
+			["icon"] = 236719,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
-					applyclassicphase(TBC_PHASE_TWO_OGRILA, achWithRep(896, 1038, {	-- A Quest a Day Keeps the Ogres at Bay
-						-- #if BEFORE WRATH
-						["description"] = "Raise your reputation with Ogri'la to Exalted.",
-						-- #endif
-					})),
-					explorationAch(865, {	-- Explore Blade's Edge Mountains
-						-- #if BEFORE WRATH
-						["description"] = "Explore Blade's Edge Mountains, revealing the covered areas of the world map.",
-						-- #endif
-					}),
+					applyclassicphase(TBC_PHASE_TWO_OGRILA, achWithRep(896, FACTION_ORGILA)),	-- A Quest a Day Keeps the Ogres at Bay
+					explorationAch(865),	-- Explore Blade's Edge Mountains
 					ach(1193, {	-- On the Blade's Edge
 						-- #if ANYCLASSIC
 						-- #if AFTER CATA
@@ -82,9 +72,6 @@ root(ROOTS.Zones, {
 							10748,	-- Maxnar Must Die!
 						},
 						-- #else
-						-- #if BEFORE WRATH
-						["description"] = "Complete 86 quests in Blade's Edge Mountains.",
-						-- #endif
 						["OnClick"] = [[_.CommonAchievementHandlers.LOREMASTER_OnClick]],
 						["OnTooltip"] = [[_.CommonAchievementHandlers.LOREMASTER_OnTooltip]],
 						["OnUpdate"] = [[_.CommonAchievementHandlers.LOREMASTER_OnUpdate]],
@@ -156,47 +143,66 @@ root(ROOTS.Zones, {
 					-- #if AFTER CATA
 					exploration(3867),	-- Bladed Gulch (Wrath Classic: Can't be collected)
 					-- #endif
+					visit_exploration(3660,{coord={53.0,98.0,BLADES_EDGE_MOUNTAINS}}),	-- Blades' Run
+					visit_exploration(3931,{coord={44.6,58.3,BLADES_EDGE_MOUNTAINS}}),	-- Bladespire Grounds
 					exploration(3773),	-- Bladespire Hold
 					exploration(3777),	-- Bloodmaul Camp
 					exploration(3776),	-- Bloodmaul Outpost
+					visit_exploration(3824,{coord={42.0,81.1,BLADES_EDGE_MOUNTAINS}}),	-- Bloodmaul Ravine
+					visit_exploration(3903,{coord={31.0,24.0,BLADES_EDGE_MOUNTAINS}}),	-- Boulder'mok
 					-- #if AFTER CATA
 					exploration(3863),	-- Broken Wilds (Wrath Classic: Can't be collected)
 					-- #endif
+					visit_exploration(3862,{coord={49.6,42.8,BLADES_EDGE_MOUNTAINS}}),	-- Churning Gulch
 					exploration(3775),	-- Circle of Blood
 					exploration(3865),	-- Crystal Spine
+					visit_exploration(3904,{coord={60.8,46.5,BLADES_EDGE_MOUNTAINS}}),	-- Cursed Hollow
+					visit_exploration(3826,{coord={52.2,39.1,BLADES_EDGE_MOUNTAINS}}),	-- Daggermaw Canyon
 					exploration(3831),	-- Death's Door
 					exploration(3778),	-- Draenethyst Mine
-					exploration(3951),	-- Evergrove
+					visit_exploration(3825,{coord={56.9,47.6,BLADES_EDGE_MOUNTAINS}}),	-- Dragons' End
+					visit_exploration(3963,{coord={46.4,30.8,BLADES_EDGE_MOUNTAINS}}),	-- Dragonspine Ridge
+					visit_exploration(3951,{coord={62.6,37.9,BLADES_EDGE_MOUNTAINS}}),	-- Evergrove
 					exploration(3787),	-- Forge Camp: Anger
 					exploration(3784),	-- Forge Camp: Terror
 					exploration(3785),	-- Forge Camp: Wrath
+					visit_exploration(3972,{coord={65.8,13.3,BLADES_EDGE_MOUNTAINS}}),	-- Furywing's Perch
 					exploration(3781),	-- Grishnath
 					exploration(3774),	-- Gruul's Lair
-					-- #if AFTER CATA
-					exploration(3768),	-- Jagged Ridge (Wrath Classic: Can't be collected)
-					-- #endif
+					visit_exploration(3971,{coord={62.4,8.40,BLADES_EDGE_MOUNTAINS}}),	-- Insidion's Perch
+					visit_exploration(3768,{coord={53.7,67.7,BLADES_EDGE_MOUNTAINS}}),	-- Jagged Ridge
 					exploration(3844),	-- Mok'Nathal Village
+					visit_exploration(3970,{coord={34.1,54.4,BLADES_EDGE_MOUNTAINS}}),	-- Obsidia's Perch
 					exploration(3786),	-- Ogri'la
 					exploration(3830),	-- Raven's Wood
 					exploration(3833),	-- Razor Ridge
-					exploration(3828),	-- Ruuan Weald
-					exploration(3919),	-- Singing Ridge
+					visit_exploration(3969,{coord={26.9,65.0,BLADES_EDGE_MOUNTAINS}}),	-- Rivendark's Perch
+					visit_exploration(3828,{coord={60.4,31.9,BLADES_EDGE_MOUNTAINS}}),	-- Ruuan Weald
+					visit_exploration(3953,{coord={66.7,66.9,BLADES_EDGE_MOUNTAINS}}),	-- Scalewing Shelf
+					visit_exploration(4008,{coord={32.2,47.7,BLADES_EDGE_MOUNTAINS}}),	-- Shartuul's Transporter
+					visit_exploration(3919,{coord={61.6,80.3,BLADES_EDGE_MOUNTAINS}}),	-- Singing Ridge
 					-- #if AFTER CATA
 					exploration(3866),	-- Skald (Wrath Classic: Can't be collected)
 					-- #endif
 					exploration(3964),	-- Skyguard Outpost
-					exploration(3772),	-- Sylvanaar
-					exploration(3771),	-- The Living Grove
-					exploration(3769),	-- Thunderlord Stronghold
-					exploration(3918),	-- Toshley's Station
-					exploration(3782),	-- Veil Lashh
-					exploration(3829),	-- Veil Ruuan
+					visit_exploration(3960,{coord={60.4,23.2,BLADES_EDGE_MOUNTAINS}}),	-- Soulgrinder's Barrow
+					visit_exploration(3772,{coord={37.0,66.7,BLADES_EDGE_MOUNTAINS}}),	-- Sylvanaar
+					visit_exploration(3771,{coord={37.3,70.2,BLADES_EDGE_MOUNTAINS}}),	-- The Living Grove
+					visit_exploration(3769,{coord={52.3,56.1,BLADES_EDGE_MOUNTAINS}}),	-- Thunderlord Stronghold
+					visit_exploration(3918,{coord={60.4,66.3,BLADES_EDGE_MOUNTAINS}}),	-- Toshley's Station
+					visit_exploration(3779,{coord={71.9,73.9,BLADES_EDGE_MOUNTAINS}}),	-- Trogma's Claim
+					visit_exploration(3782,{coord={37.3,77.4,BLADES_EDGE_MOUNTAINS}}),	-- Veil Lashh
+					visit_exploration(3829,{coord={65.3,33.8,BLADES_EDGE_MOUNTAINS}}),	-- Veil Ruuan
+					visit_exploration(3783,{coord={78.4,75.7,BLADES_EDGE_MOUNTAINS}}),	-- Veil Vekh
 					exploration(3827),	-- Vekhaar Stand
+					visit_exploration(3962,{coord={78.3,27.7,BLADES_EDGE_MOUNTAINS}}),	-- Vim'gol's Circle
 					exploration(3832),	-- Vortex Pinnacle / Vortex Summit [CATA+]
+					visit_exploration(3952,{coord={54.4,38.3,BLADES_EDGE_MOUNTAINS}}),	-- Wyrmskull Bridge
+					visit_exploration(3954,{coord={43.6,30.7,BLADES_EDGE_MOUNTAINS}}),	-- Wyrmskull Tunnel
 				}),
 				n(FACTIONS, {
-					applyclassicphase(TBC_PHASE_TWO_OGRILA, faction(1038, {	-- Ogri'la
-						["OnTooltip"] = OnTooltipForOgrila,
+					applyclassicphase(TBC_PHASE_TWO_OGRILA, faction(FACTION_ORGILA, {	-- Ogri'la
+						["OnTooltip"] = [[_.OnTooltipDB.ForOgrila]],
 					})),
 				}),
 				n(FLIGHT_PATHS, {
@@ -261,7 +267,7 @@ root(ROOTS.Zones, {
 					applyclassicphase(TBC_PHASE_TWO_OGRILA, q(11060, {	-- A Crystalforged Darkrune
 						["qg"] = 23300,	-- Gahk
 						["coord"] = { 28.4, 58, BLADES_EDGE_MOUNTAINS },
-						["minReputation"] = { 1038, HONORED },	-- Ogri'la, Honored.
+						["minReputation"] = { FACTION_ORGILA, HONORED },	-- Ogri'la, Honored.
 						["isDaily"] = true,
 						["timeline"] = {
 							ADDED_3_3_0,
@@ -358,7 +364,7 @@ root(ROOTS.Zones, {
 						["qg"] = 23233,	-- Chu'a'lor
 						["sourceQuest"] = 11059,	-- Guardian of the Monument
 						["coord"] = { 28.8, 57.4, BLADES_EDGE_MOUNTAINS },
-						["minReputation"] = { 1038, FRIENDLY },	-- Ogri'la, Friendly.
+						["minReputation"] = { FACTION_ORGILA, FRIENDLY },	-- Ogri'la, Friendly.
 						["lvl"] = lvlsquish(70, 70, 20),
 					})),
 					q(10682, {	-- A Time for Negotiation...
@@ -387,7 +393,7 @@ root(ROOTS.Zones, {
 						["qg"] = 23253,	-- Kronk
 						["sourceQuest"] = 11026,	-- Banish the Demons
 						["coord"] = { 28.8, 57.8, BLADES_EDGE_MOUNTAINS },
-						["minReputation"] = { 1038, HONORED },	-- Ogri'la, Honored.
+						["minReputation"] = { FACTION_ORGILA, HONORED },	-- Ogri'la, Honored.
 						["cost"] = {
 							{ "i", 32696, 1 },	-- Banishing Crystal
 						},
@@ -401,7 +407,7 @@ root(ROOTS.Zones, {
 					applyclassicphase(TBC_PHASE_TWO_OGRILA, q(11026, {	-- Banish the Demons
 						["qg"] = 23253,	-- Kronk
 						["coord"] = { 28.8, 57.8, BLADES_EDGE_MOUNTAINS },
-						["minReputation"] = { 1038, HONORED },	-- Ogri'la, Honored.
+						["minReputation"] = { FACTION_ORGILA, HONORED },	-- Ogri'la, Honored.
 						["cost"] = {
 							{ "i", 32696, 1 },	-- Banishing Crystal
 						},
@@ -2193,7 +2199,7 @@ root(ROOTS.Zones, {
 						["qg"] = 23300,	-- Gahk
 						["sourceQuest"] = 11060,	-- A Crystalforged Darkrune
 						["coord"] = { 28.4, 58, BLADES_EDGE_MOUNTAINS },
-						["minReputation"] = { 1038, HONORED },	-- Ogri'la, Honored.
+						["minReputation"] = { FACTION_ORGILA, HONORED },	-- Ogri'la, Honored.
 						["isDaily"] = true,
 						["timeline"] = {
 							ADDED_3_3_0,
@@ -2388,7 +2394,7 @@ root(ROOTS.Zones, {
 							REMOVED_4_1_0,
 						},
 						["cost"] = {
-							 { "i", 33784, 5 },	-- Darkrune Fragment
+							{ "i", 33784, 5 },	-- Darkrune Fragment
 						},
 					}),
 					i(32777, {	-- Kronk's Grab Bag
@@ -2403,7 +2409,7 @@ root(ROOTS.Zones, {
 					i(32601, {	-- Unstable Flask of the Sorcerer
 						["coord"] = { 54, 11, BLADES_EDGE_MOUNTAINS },
 						["cost"] = {
-							 { "i", 32569, 10 },	-- Apexis Shard
+							{ "i", 32569, 10 },	-- Apexis Shard
 						},
 					}),
 				}),
@@ -2519,59 +2525,69 @@ root(ROOTS.Zones, {
 					}),
 					applyclassicphase(TBC_PHASE_TWO_OGRILA, n(23428, {	-- Jho'nass <Ogri'la Quartermaster>
 						["coord"] = { 28.0, 58.6, BLADES_EDGE_MOUNTAINS },
-						["groups"] = {
-							i(32653, {	-- Apexis Cloak
-								["cost"] = {
-									{ "i", 32572, 1 },	-- 1x Apexis Crystal
-									{ "i", 32569, 50 },	-- 50x Apexis Shard
-								},
-							}),
-							i(32650, {	-- Cerulean Crystal Rod
-								["cost"] = {
-									{ "i", 32572, 1 },	-- 1x Apexis Crystal
-									{ "i", 32569, 50 },	-- 50x Apexis Shard
-								},
-							}),
-							i(32651, {	-- Crystal Orb of Enlightenment
-								["cost"] = {
-									{ "i", 32572, 4 },		-- 4x Apexis Crystal
-									{ "i", 32569, 100 },	-- 100x Apexis Shard
-								},
-							}),
-							i(32654, {	-- Crystalforged Trinket
-								["cost"] = {
-									{ "i", 32572, 1 },	-- 1x Apexis Crystal
-									{ "i", 32569, 50 },	-- 50x Apexis Shard
-								},
-							}),
-							i(32645, {	-- Crystalline Crossbow
-								["cost"] = {
-									{ "i", 32572, 4 },		-- 4x Apexis Crystal
-									{ "i", 32569, 100 },	-- 100x Apexis Shard
-								},
-							}),
-							i(32652, {	-- Ogri'la Aegis
-								["cost"] = {
-									{ "i", 32572, 1 },	-- 1x Apexis Crystal
-									{ "i", 32569, 50 },	-- 50x Apexis Shard
-								},
-							}),
-							i(32828, {	-- Ogri'la Tabard
-								["cost"] = { { "i", 32569, 10 }, },	-- 10x Apexis Shard
-							}),
-							i(32647, {	-- Shard-Bound Bracers
-								["cost"] = {
-									{ "i", 32572, 4 },		-- 4x Apexis Crystal
-									{ "i", 32569, 100 },	-- 100x Apexis Shard
-								},
-							}),
-							i(32648, {	-- Vortex Walking Boots
-								["cost"] = {
-									{ "i", 32572, 4 },		-- 4x Apexis Crystal
-									{ "i", 32569, 100 },	-- 100x Apexis Shard
-								},
-							}),
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_ORGILA, {
+							{		-- Neutral
+								i(33934),	-- Crystal Healing Potion
+								i(33935),	-- Crystal Mana Potion
+							}, {	-- Friendly
+							}, {	-- Honored
+								i(32783),	-- Blue Ogre Brew
+								i(32784),	-- Red Ogre Brew
+							}, {	-- Revered
+								i(32653, {	-- Apexis Cloak
+									["cost"] = {
+										{ "i", 32572, 1 },	-- 1x Apexis Crystal
+										{ "i", 32569, 50 },	-- 50x Apexis Shard
+									},
+								}),
+								i(32650, {	-- Cerulean Crystal Rod
+									["cost"] = {
+										{ "i", 32572, 1 },	-- 1x Apexis Crystal
+										{ "i", 32569, 50 },	-- 50x Apexis Shard
+									},
+								}),
+								i(32654, {	-- Crystalforged Trinket
+									["cost"] = {
+										{ "i", 32572, 1 },	-- 1x Apexis Crystal
+										{ "i", 32569, 50 },	-- 50x Apexis Shard
+									},
+								}),
+								i(32652, {	-- Ogri'la Aegis
+									["cost"] = {
+										{ "i", 32572, 1 },	-- 1x Apexis Crystal
+										{ "i", 32569, 50 },	-- 50x Apexis Shard
+									},
+								}),
+							}, {	-- Exalted
+								i(32651, {	-- Crystal Orb of Enlightenment
+									["cost"] = {
+										{ "i", 32572, 4 },		-- 4x Apexis Crystal
+										{ "i", 32569, 100 },	-- 100x Apexis Shard
+									},
+								}),
+								i(32645, {	-- Crystalline Crossbow
+									["cost"] = {
+										{ "i", 32572, 4 },		-- 4x Apexis Crystal
+										{ "i", 32569, 100 },	-- 100x Apexis Shard
+									},
+								}),
+								i(32828, {	-- Ogri'la Tabard
+									["cost"] = { { "i", 32569, 10 }, },	-- 10x Apexis Shard
+								}),
+								i(32647, {	-- Shard-Bound Bracers
+									["cost"] = {
+										{ "i", 32572, 4 },		-- 4x Apexis Crystal
+										{ "i", 32569, 100 },	-- 100x Apexis Shard
+									},
+								}),
+								i(32648, {	-- Vortex Walking Boots
+									["cost"] = {
+										{ "i", 32572, 4 },		-- 4x Apexis Crystal
+										{ "i", 32569, 100 },	-- 100x Apexis Shard
+									},
+								}),
+							},
+						}),
 					})),
 					n(19473, {	-- Raiza
 						["coord"] = { 53.0, 59.0, BLADES_EDGE_MOUNTAINS },
@@ -3069,7 +3085,7 @@ root(ROOTS.Zones, {
 						},
 					})),
 					n(20889, {	-- Ethereum Prisoner (Group Energy Ball)
-						["description"] = "You can use either of the keys listed below to open an Ethereum Stasis Chamber.",
+						["description"] = "You can use either of the listed keys to open an Ethereum Stasis Chamber.",
 						["coords"] = {
 							{ 51.2, 11.6, BLADES_EDGE_MOUNTAINS },	-- Ethereum Prisoner (Group Energy Ball)
 							{ 49.6, 15.8, BLADES_EDGE_MOUNTAINS },	-- Ethereum Prisoner (Group Energy Ball)

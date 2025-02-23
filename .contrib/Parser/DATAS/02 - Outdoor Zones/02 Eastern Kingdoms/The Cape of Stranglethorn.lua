@@ -5,7 +5,7 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(THE_CAPE_OF_STRANGLETHORN, {
 		["lore"] = "The Cape of Stranglethorn is the southern part of Stranglethorn Vale, now split from the Shattering. It traces the escalating conflict between the goblin pirates of Booty Bay and their rivals, the Bloodsail Buccaneers. The rest of the zone is dotted with troll ruins and sandy beaches.",
-		["icon"] = "Interface\\Icons\\achievement_zone_stranglethorn_01",
+		["icon"] = 236844,
 		-- #if ANYCLASSIC
 		-- CRIEVE NOTE: This is super weird. In Cata Classic they used the retail mapID for STV as the combined STV map.
 		-- The only way to get it on the mini list is to fly south from blasted lands or to use the world map button.
@@ -102,25 +102,26 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			explorationHeader({
 				exploration(35),	-- Booty Bay
+				visit_exploration(1577,{coord={54.6,23.8,THE_CAPE_OF_STRANGLETHORN}}),	-- Cape of Stranglethorn
 				exploration(310),	-- Crystalvein Mine
 				exploration(1741),	-- Gurubashi Arena
 				exploration(1739),	-- Hardwrench Hideaway
 				exploration(297),	-- Jaguero Isle
-				exploration(312),	-- Janeiro's Point
+				visit_exploration(312,{coord={34.9,62.2,THE_CAPE_OF_STRANGLETHORN}}),	-- Janeiro's Point
 				exploration(1737),	-- Mistvale Valley
 				exploration(1738),	-- Nek'mani Wellspring
 				exploration(311),	-- Ruins of Aboraz
 				exploration(477),	-- Ruins of Jubuwal
-				exploration(1578),	-- Southern Savage Coast
+				visit_exploration(1578,{coord={38.6,56.9,THE_CAPE_OF_STRANGLETHORN}}),	-- Southern Savage Coast
 				exploration(5318),	-- The Sundering
 				exploration(43),	-- Wild Shore
 			}),
 			n(FACTIONS, {
-				faction(87, {	-- Bloodsail Buccaneers
-					["icon"] = "Interface\\Icons\\INV_Misc_Bandana_03",
+				faction(FACTION_BLOODSAIL_BUCCANEERS, {	-- Bloodsail Buccaneers
+					["icon"] = 133694,
 				}),
-				faction(21, {	-- Booty Bay
-					["icon"] = "Interface\\Icons\\INV_Misc_Coin_01",
+				faction(FACTION_BOOTY_BAY, {	-- Booty Bay
+					["icon"] = 133784,
 				}),
 			}),
 			n(FLIGHT_PATHS, {
@@ -214,6 +215,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 44082 },	-- Bronwyn Hewstrike
 						{ "i", 58490 },	-- Opened Mosh'Ogg Bounty
 					},
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12I'm A Huge Liar and a Fraud|r' (26435) is handed in.",
 					["sourceQuest"] = 26824,	-- Results: Inconclusive
 					["coord"] = { 55.2, 42.3, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -248,8 +250,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26819, {	-- Akiris by the Bundle (A)
 					["qg"] = 44083,	-- Linzi Hewstrike
+					["description"] = "This quest gets marked as completed when one its Horde counterparts is handed in:\n- '|cffe50d12Akiris by the Bundle|r' (26487);\n- '|cffe50d12It's You!!|r' (26489).",
 					["sourceQuest"] = 26823,	-- Too Big For His Britches
-					["coord"] = { 55.3, 42.1, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.4, 42.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -261,6 +264,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26487, {	-- Akiris by the Bundle (H)
 					["qg"] = 43095,	-- Sassy Hardwrench
+					["description"] = "This quest gets marked as completed when one of the following quests is handed in:\n- '|cff4a54e8Akiris by the Bundle|r' (26819);\n- '|cffe50d12It's You!!|r' (26489).",
 					["sourceQuest"] = 28704,	-- Warchief's Command: The Cape of Stranglethorn!
 					["coord"] = { 34.6, 29.5, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -334,7 +338,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(4621, {	-- Avast Ye, Admiral!
 					["qg"] = 2546,	-- Fleet Master Firallon
 					["sourceQuest"] = 1036,	-- Avast Ye, Scallywag
-					["minReputation"] = { 87, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
 					["description"] = "This quest also requires you to be hated or lower with Booty Bay.",
 					["coord"] = { 46.7, 95.2, THE_CAPE_OF_STRANGLETHORN },
 					["lvl"] = lvlsquish(55, 55, 10),
@@ -350,19 +354,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(1036, {	-- Avast Ye, Scallywag
 					["qg"] = 43454,	-- "Good-Boy" Bruce
-					["minReputation"] = { 87, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
 					["coord"] = { 41.6, 61.2, THE_CAPE_OF_STRANGLETHORN },
 					["isBreadcrumb"] = true,
 					["lvl"] = lvlsquish(55, 55, 10),
 				}),
 				q(26809, {	-- Backdoor Dealings (A)
 					["qg"] = 44084,	-- Maywiki
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Backdoor Dealings|r' (26550) is handed in.",
 					["sourceQuest"] = 26808,	-- Maywiki
 					["coord"] = { 55.6, 42.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
-						objective(1, {	-- 	Place incense in front of Totem of Hir'eek
+						objective(1, {	-- Place incense in front of Totem of Hir'eek
 							["providers"] = {
 								{ "i",  58963 },	-- Gurubashi Incense
 								{ "o", 204361 },	-- Totem of Hir'eek
@@ -388,12 +393,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26550, {	-- Backdoor Dealings (H)
 					["qg"] = 43098,	-- Chabal
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Backdoor Dealings|r' (26809) is handed in.",
 					["sourceQuest"] = 26495,	-- Chabal
 					["coord"] = { 34.5, 27.9, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
-						objective(1, {	-- 	Place incense in front of Totem of Hir'eek
+						objective(1, {	-- Place incense in front of Totem of Hir'eek
 							["providers"] = {
 								{ "i",  58963 },	-- Gurubashi Incense
 								{ "o", 204361 },	-- Totem of Hir'eek
@@ -485,6 +491,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 43095 },	-- Sassy Hardwrench
 						{ "i", 58883 },	-- Sassy's Largesse
 					},
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Maywiki|r' (26808) is handed in.",
 					["sourceQuest"] = 26493,	-- There's Somebody Out There Who Wants It
 					["coord"] = { 34.6, 29.5, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -554,7 +561,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 58490 },	-- Opened Mosh'Ogg Bounty
 					},
 					["sourceQuest"] = 28702,	-- Hero's Call: The Cape of Stranglethorn
-					["description"] = "This quest is only available if you DID NOT complete |cFFFFD700The Source of the Corruption|r and |cFFFFD700The Mosh'Ogg Bounty|r in Northern Stranglethorn.",
+					["description"] = "This quest is only available if you DID NOT complete |cff4a54e8The Source of the Corruption|r and |cff4a54e8The Mosh'Ogg Bounty|r in Northern Stranglethorn.\n\nAlso, it gets marked as completed when '|cff4a54e8Dask 'The Flask' Gobfizzle|r' (26825) is handed in.",
 					["coord"] = { 55.2, 42.3, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -565,8 +572,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 58490 },	-- Opened Mosh'Ogg Bounty
 					},
 					["sourceQuest"] = 28702,	-- Hero's Call: The Cape of Stranglethorn
-					["description"] = "This quest is only available if you DID complete |cFFFFD700The Source of the Corruption|r and |cFFFFD700The Mosh'Ogg Bounty|r in Northern Stranglethorn.",
-					["coord"] = { 55.2, 42.3, THE_CAPE_OF_STRANGLETHORN },
+					["description"] = "This quest is only available if you DID complete |cff4a54e8The Source of the Corruption|r and |cff4a54e8The Mosh'Ogg Bounty|r in Northern Stranglethorn.\n\nAlso, it gets marked as completed when '|cff4a54e8Dask 'The Flask' Gobfizzle|r' (26826) is handed in.",
+					["coord"] = { 55.2, 42.5, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -669,7 +676,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(9272, {	-- Dressing the Part
 					["qg"] = 2546,	-- Fleet Master Firallon
-					["minReputation"] = { 87, NEUTRAL },	-- Bloodsail Buccaneers, Neutral.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, NEUTRAL },	-- Bloodsail Buccaneers, Neutral.
 					["coord"] = { 46.6, 95.2, THE_CAPE_OF_STRANGLETHORN },
 					["lvl"] = lvlsquish(49, 49, 10),
 					["groups"] = {
@@ -712,6 +719,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 60374 },	-- Maywiki's Fetish
 						{ "n", 44084 },	-- Maywiki
 					},
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Eliminate the Outcast|r' (26551) is handed in.",
 					["sourceQuest"] = 26809,	-- Backdoor Dealings
 					["coord"] = { 55.7, 42.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -728,6 +736,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 58964 },	-- Chabal's Fetish
 						{ "n", 43098 },	-- Chabal
 					},
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Eliminate the Outcast|r' (26810) is handed in.",
 					["sourceQuest"] = 26550,	-- Backdoor Dealings
 					["coord"] = { 34.5, 27.9, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -758,7 +767,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(8554, {	-- Facing Negolash
 					["qg"] = 2594,	-- Sprogger
 					["sourceQuest"] = 8553,	-- The Captain's Cutlass
-					["altQuests"] = { 618 },	-- Facing Negolash
+					["altQuests"] = { 618 },	-- Facing Negolash [Old]
 					["coord"] = { 26.7, 73.6, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 35,
@@ -769,7 +778,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								{ "i", 4457, 10 },	-- Barbecued Buzzard Wing
 								{ "i", 4595, 5 },	-- Junglevine Wine
 							},
+							-- #if AFTER CATA
+							["coord"] = { 49.7, 81.2, STRANGLETHORN_VALE },
+							-- #endif
+							-- #if AFTER CATA
+							["description"] = "Although marked as removed, this Quest is used as a Hidden Trigger for the quest '|cFFFFD700A Dish Best Served Huge|r' (26602).",
+							-- #else
 							["description"] = "This quest is repeatable, but can only be completed while you have the quest \"Facing Negolash\" in your quest log.",
+							-- #endif
 							["timeline"] = { REMOVED_4_0_3 },
 							["repeatable"] = true,
 							["groups"] = {
@@ -826,6 +842,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26822, {	-- Good-Fer-Nothin' Slither-Dogs
 					["qg"] = 44100,	-- Goris
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12There's Somebody Out There Who Wants It|r' (26493) is handed in.",
 					["coord"] = { 55.0, 41.8, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -932,12 +949,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							{ "n", 44084 },	-- Maywiki
 						},
 						["sourceQuest"] = 26811,	-- Through the Troll Hole (A)
+						["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12High Priestess Jeklik|r' (26553) is handed in.",
 					}),
 					["hordeQuestData"] = q(26553, {	-- High Priestess Jeklik (H)
 						["providers"] = {
 							{ "i", 58964 },	-- Chabal's Fetish
 							{ "n", 43098 },	-- Chabal
 						},
+						["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8High Priestess Jeklik|r' (26812) is handed in.",
 						["sourceQuest"] = 26552,	-- Through the Troll Hole (H)
 					}),
 					["coord"] = { 78.5, 35.6, NORTHERN_STRANGLETHORN },
@@ -958,6 +977,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 60374 },	-- Maywiki's Fetish
 						{ "n", 44084 },	-- Maywiki
 					},
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12High Priest Venoxis|r' (26555) is handed in.",
 					["sourceQuest"] = 26813,	-- Plunging Into Zul'Gurub
 					["coord"] = { 82.1, 35.3, NORTHERN_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -989,6 +1009,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 58964 },	-- Chabal's Fetish
 						{ "n", 43098 },	-- Chabal
 					},
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8High Priest Venoxis|r' (26814) is handed in.",
 					["sourceQuest"] = 26554,	-- Plunging Into Zul'Gurub
 					["coord"] = { 82.1, 35.3, NORTHERN_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1035,6 +1056,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 43096 },	-- Flem Gizzix
 						{ "i", 58490 },	-- Opened Mosh'Ogg Bounty
 					},
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Airwyn Bentamflax|r' (26821) is handed in.",
 					["sourceQuests"] = {
 						26592,	-- Diffractory Chromascope
 						26434,	-- Primal Reagents of Power
@@ -1045,8 +1067,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26820, {	-- If They're Just Going to Leave Them Lying Around... (A)
 					["qg"] = 44083,	-- Linzi Hewstrike
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12If They're Just Going to Leave Them Lying Around...|r' (26450) is handed in.",
 					["sourceQuest"] = 26823,	-- Too Big For His Britches
-					["coord"] = { 55.3, 42.1, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.4, 42.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -1067,6 +1090,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26450, {	-- If They're Just Going to Leave Them Lying Around... (H)
 					["qg"] = 43095,	-- Sassy Hardwrench
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8If They're Just Going to Leave Them Lying Around...|r' (26820) is handed in.",
 					["sourceQuest"] = 26404,	-- Above My Pay Grade
 					["coord"] = { 34.6, 29.5, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1107,6 +1131,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26489, {	-- It's You!!
 					["qg"] = 43095,	-- Sassy Hardwrench
+					["description"] = "This quest gets marked as completed when one of the following quests is handed in:\n- '|cffe50d12Akiris by the Bundle|r' (26487);\n- '|cff4a54e8Akiris by the Bundle|r' (26819).",
 					["sourceQuest"] = 28704,	-- Warchief's Command: The Cape of Stranglethorn!
 					["coord"] = { 34.8, 29.4, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1286,8 +1311,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 44083 },	-- Linzi Hewstrike
 						{ "i", 60373 },	-- Linzi's Gift
 					},
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Chabal|r' (26495) is handed in.",
 					["sourceQuest"] = 26819,	-- Akiris by the Bundle
-					["coord"] = { 55.3, 42.1, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.4, 42.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -1318,10 +1344,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26603, {	-- Message in a Bottle
 					["provider"] = { "o", 204406 },	-- Half-Buried Bottle
-					["coords"] = {
-						{ 50.2, 76.0, THE_CAPE_OF_STRANGLETHORN },
-						{ 62.4, 46.7, THE_CAPE_OF_STRANGLETHORN },
+					["coords"] = {	-- All possible spawn locations, from the top to the bottom of the map
+						{ 62.4, 46.8, THE_CAPE_OF_STRANGLETHORN },
 						{ 57.0, 54.5, THE_CAPE_OF_STRANGLETHORN },
+						{ 54.3, 65.4, THE_CAPE_OF_STRANGLETHORN },
+						{ 50.2, 76.0, THE_CAPE_OF_STRANGLETHORN },
+						{ 48.5, 81.0, THE_CAPE_OF_STRANGLETHORN },
 					},
 					["timeline"] = { ADDED_4_0_3 },
 				}),
@@ -1432,8 +1460,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26817, {	-- Perfectly Pure
 					["qg"] = 44099,	-- Dask "The Flask" Gobfizzle
+					["description"] = "This quest gets marked as completed when one of the following quests is handed in:\n- '|cffe50d12The Holy Water of Clarity|r' (26433);\n- '|cffe50d12The Holy Water of Clarity|r' (26590).",
 					["sourceQuest"] = 26823,	-- Too Big For His Britches
-					["coord"] = { 55.2, 42.0, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.3, 41.9, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -1452,6 +1481,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n",  44084 },	-- Maywiki
 						{ "o", 204386 },	-- Zanzil's Portal
 					},
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Plunging Into Zul'Gurub|r' (26554) is handed in.",
 					["sourceQuest"] = 26812,	-- High Priestess Jeklik
 					["coord"] = { 77.9, 44.1, NORTHERN_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1463,6 +1493,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n",  43098 },	-- Chabal
 						{ "o", 204386 },	-- Zanzil's Portal
 					},
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Plunging Into Zul'Gurub|r' (26813) is handed in.",
 					["sourceQuest"] = 26553,	-- High Priestess Jeklik
 					["coord"] = { 78.0, 44.2, NORTHERN_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1470,8 +1501,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26818, {	-- Plush Pelts
 					["qg"] = 44083,	-- Linzi Hewstrike
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Primal Reagents of Power|r' (26434) is handed in.",
 					["sourceQuest"] = 26823,	-- Too Big For His Britches
-					["coord"] = { 55.3, 42.1, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.4, 42.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -1520,6 +1552,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26434, {	-- Primal Reagents of Power
 					["qg"] = 43096,	-- Flem Gizzix
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Plush Pelts|r' (26818) is handed in.",
 					["sourceQuest"] = 26433,	-- The Holy Water of Clarity
 					["coord"] = { 33.6, 29.1, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1560,6 +1593,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26816, {	-- Recipe for Disaster (A)
 					["qg"] = 44099,	-- Dask "The Flask" Gobfizzle
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Recipe for Disaster|r' (26535) is handed in.",
 					["sourceQuest"] = 26815,	-- Zanzil's Secret
 					["coord"] = { 55.2, 42.0, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1585,6 +1619,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26535, {	-- Recipe for Disaster (H) (probably used as a sourcequest with High Priest Venoxiss)
 					["qg"] = 43097,	-- Mixmaster Jasper
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Recipe for Disaster|r' (26816) is handed in.",
 					["sourceQuest"] = 26534,	-- Let's See What You've Got, Zanzil
 					["coord"] = { 35.1, 27.4, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1714,10 +1749,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 7406,	-- Oglethorpe Obnoticus <Master Gnome Engineer>
 					["sourceQuest"] = 3642,	-- The Pledge of Secrecy
 					["altQuests"] = { 3639, 3641 },	-- The Pledge of Secrecy
-					["description"] = "Requires 200 Engineering to start this quest.",
 					["coord"] = { 28.2, 76.2, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_3_0_2 },	-- Originally supposed to be removed in 4.0.3, but Wrath Classic was weird.
 					["requireSkill"] = ENGINEERING,
+					["learnedAt"] = 200,
 					["races"] = HORDE_ONLY,
 					["cost"] = {
 						{ "i", 4392, 2 },	-- Advanced Target Dummy
@@ -2038,8 +2073,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["provider"] = { "n", 43659 },	-- Long John Copper <The Brashtide Crew>
 							["coord"] = { 51.2, 91.4, THE_CAPE_OF_STRANGLETHORN },
 						}),
-						objective(2, {	-- 	Speak with Enormous Shawn Stooker
-							["provider"] = { "n", 43660 },	-- 	Enormous Shawn Stooker <The Brashtide Crew>
+						objective(2, {	-- Speak with Enormous Shawn Stooker
+							["provider"] = { "n", 43660 },	-- Enormous Shawn Stooker <The Brashtide Crew>
 							["coord"] = { 46.8, 94.2, THE_CAPE_OF_STRANGLETHORN },
 						}),
 						objective(3, {	-- Speak with Wailing Mary Smitts
@@ -2095,7 +2130,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(8553, {	-- The Captain's Cutlass
 					["qg"] = 2500,	-- Captain Hecklebury Smotts
 					["sourceQuest"] = 8552,	-- The Monogrammed Sash
-					["altQuests"] = { 615 },	-- The Captain's Cutlass
+					["altQuests"] = { 615 },	-- The Captain's Cutlass [Old]
 					["coord"] = { 26.6, 73.6, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 35,
@@ -2184,6 +2219,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26433, {	-- The Holy Water of Clarity
 					["qg"] = 43096,	-- Flem Gizzix
+					["description"] = "This quest gets marked as completed when one of the following quests is handed in:\n- '|cffe50d12The Holy Water of Clarity|r' (26590);\n- '|cff4a54e8Perfectly Pure|r' (26817).",
 					["sourceQuests"] = {
 						26487,	-- Akiris by the Bundle
 						26450,	-- If They're Just Going to Leave Them Lying Around...
@@ -2208,7 +2244,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						26487,	-- Akiris by the Bundle
 						26450,	-- If They're Just Going to Leave Them Lying Around...
 					},
-					["description"] = "This version of the quest is given to players that completed Mok'thardin's Enchantment prior to the Cataclysm.",
+					["description"] = "This version of the quest is given to players that completed '|cffe50d12Mok'thardin's Enchantment|r' quest chain prior to the Cataclysm.\n\nAlso, it gets marked as completed when one of the following quests is handed in:\n- '|cffe50d12The Holy Water of Clarity|r' (26433);\n- '|cff4a54e8Perfectly Pure|r' (26817).",
 					["coord"] = { 33.6, 29.1, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
@@ -2239,7 +2275,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(8552, {	-- The Monogrammed Sash
 					["provider"] = { "i", 3985 },	-- Monogrammed Sash
-					["altQuests"] = { 620 },	-- The Monogrammed Sash
+					["altQuests"] = { 620 },	-- The Monogrammed Sash [Old]
 					["coord"] = { 23.0, 71.4, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["cr"] = 1493,	-- Mok'rash
@@ -2252,10 +2288,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						3637,	-- Gnome Engineering
 					},
 					["altQuests"] = { 3638, 3640 },	-- The Pledge of Secrecy
-					["description"] = "Requires 200 Engineering to start this quest.",
 					["coord"] = { 28.2, 76.2, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_3_0_2 },	-- Originally supposed to be removed in 4.0.3, but Wrath Classic was weird.
 					["requireSkill"] = ENGINEERING,
+					["learnedAt"] = 200,
 					["races"] = HORDE_ONLY,
 					["lvl"] = 30,
 					["groups"] = {
@@ -2280,6 +2316,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26493, {	-- There's Somebody Out There Who Wants It
 					["qg"] = 43095,	-- Sassy Hardwrench
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Good-Fer-Nothin' Slither-Dogs|r' (26822) is handed in.",
 					["sourceQuests"] = {
 						26487,	-- Akiris by the Bundle
 						26450,	-- If They're Just Going to Leave Them Lying Around...
@@ -2309,6 +2346,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n",  44084 },	-- Maywiki
 						{ "o", 204372 },	-- Zanzil's Portal
 					},
+					["description"] = "If you abandon this quest, talk to |cFFFFD700Maywiki|r at |cFFFFD700Explorers' League Digsite|r.\n\nThis quest gets marked as completed when its Horde counterpart '|cffe50d12Through the Troll Hole|r' (26552) is handed in.",
 					["sourceQuest"] = 26810,	-- Eliminate the Outcast
 					["coord"] = { 61.2, 44.3, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -2321,7 +2359,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "o", 204372 },	-- Zanzil's Portal
 					},
 					["sourceQuest"] = 26551,	-- Eliminate the Outcast
-					["description"] = "If you abandon this quest, talk to |cFFFFD700Chabal|r in |cFFFFD700Hardwrench Hideaway|r.",
+					["description"] = "If you abandon this quest, talk to |cFFFFD700Chabal|r in |cFFFFD700Hardwrench Hideaway|r.\n\nThis quest gets marked as completed when its Alliance counterpart '|cff4a54e8Through the Troll Hole|r' (26811) is handed in.",
 					["coord"] = { 61.1, 44.2, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
@@ -2329,7 +2367,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(26823, {	-- Too Big For His Britches
 					["qg"] = 44099,	-- Dask "The Flask" Gobfizzle
 					["sourceQuests"] = { 26825, 26826 },	-- Dask "The Flask" Gobfizzle (two different versions)
-					["coord"] = { 55.2, 42.0, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.3, 41.9, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -2343,7 +2381,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(9259, {	-- Traitor to the Bloodsail
 					["qg"] = 16399,	-- Bloodsail Traitor
 					["coord"] = { 48.4, 63.2, THE_CAPE_OF_STRANGLETHORN },
-					["maxReputation"] = { 21, NEUTRAL },	-- Booty Bay, must be less than Neutral
+					["maxReputation"] = { FACTION_BOOTY_BAY, NEUTRAL },	-- Booty Bay, must be less than Neutral
 					["cost"] = {
 						{ "i", 4306, 40 },	-- Silk Cloth
 						{ "i", 2604, 4 },	-- Red Dye
@@ -2574,8 +2612,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26815, {	-- Zanzil's Secret (A)
 					["qg"] = 44099,	-- Dask "The Flask" Gobfizzle
+					["description"] = "This quest gets marked as completed when its Horde counterpart '|cffe50d12Zanzil's Secret|r' (26533) is handed in.",
 					["sourceQuest"] = 26817,	-- Perfectly Pure
-					["coord"] = { 55.2, 41.9, THE_CAPE_OF_STRANGLETHORN },
+					["coord"] = { 55.3, 41.9, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -2598,6 +2637,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26533, {	-- Zanzil's Secret (H)
 					["qg"] = 43097,	-- Mixmaster Jasper
+					["description"] = "This quest gets marked as completed when its Alliance counterpart '|cff4a54e8Zanzil's Secret|r' (26815) is handed in.",
 					["sourceQuest"] = 26494,	-- Mixmaster Jasper
 					["coord"] = { 35.1, 27.4, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
@@ -2689,6 +2729,17 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(2845, {	-- Fargon Mortalak <Superior Armorer>
 					["coord"] = { 44.1, 70.0, THE_CAPE_OF_STRANGLETHORN },
+					["sym"] = {{"select","itemID",
+						2419,	-- Augmented Chain Belt
+						2420,	-- Augmented Chain Boots
+						2421,	-- Augmented Chain Bracers
+						2422,	-- Augmented Chain Gloves
+						3891,	-- Augmented Chain Helm
+						2418,	-- Augmented Chain Leggings
+						2417,	-- Augmented Chain Vest
+						2448,	-- Heavy Pavise
+						17189,	-- Metal Buckler
+					}},
 					["groups"] = {
 						i(12257, {	-- Heavy Notched Belt
 							["isLimited"] = true,
@@ -2708,6 +2759,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(2839, {	-- Haren Kanmae <Superior Bowyer>
 					["coord"] = { 42.9, 69.3, THE_CAPE_OF_STRANGLETHORN },
+					["sym"] = {{"select","itemID",
+						3027,	-- Heavy Recurve Bow
+						3026,	-- Reinforced Bow
+					}},
 					["groups"] = {
 						i(11305, {	-- Dense Shortbow
 							["isLimited"] = true,
@@ -2716,7 +2771,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(44179, {	-- Harry No-Hooks <Birds and Rum>
 					["description"] = "If you don't have the required reputation with Bloodsail Buccaneers, these pets are also sold in Booty Bay by Narkk.",
-					["minReputation"] = { 87, FRIENDLY },	-- Bloodsail Buccaneers
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, FRIENDLY },	-- Bloodsail Buccaneers
 					["coord"] = { 46.6, 93.6, THE_CAPE_OF_STRANGLETHORN },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
@@ -2726,6 +2781,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(2843, {	-- Jutak <Blade Trader>
 					["coord"] = { 41.6, 74.1, THE_CAPE_OF_STRANGLETHORN },
+					["sym"] = {{"select","itemID",
+						2520,	-- Broadsword
+						2528,	-- Falchion
+						2521,	-- Flamberge
+						2526,	-- Main Gauche
+						2534,	-- Rondel
+						2529,	-- Zweihander
+					}},
 					["groups"] = {
 						i(12248, {	-- Daring Dirk
 							["isLimited"] = true,
@@ -2750,6 +2813,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(2840, {	-- Kizz Bluntstrike <Macecrafter>
 					["coord"] = { 42.9, 70.4, THE_CAPE_OF_STRANGLETHORN },
+					["sym"] = {{"select","itemID",
+						1197,	-- Giant Mace
+						852,	-- Mace
+					}},
 					["groups"] = {
 						i(4778, {	-- Heavy Spiked Mace
 							["isLimited"] = true,
@@ -2758,6 +2825,27 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["isLimited"] = true,
 						}),
 					},
+				}),
+				n(44083, {	-- Linzi Hewstrike
+					["coord"] = { 55.4, 42.2, THE_CAPE_OF_STRANGLETHORN },
+					["timeline"] = { ADDED_4_0_1 },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						2471,	-- Reinforced Leather Belt
+						2473,	-- Reinforced Leather Boots
+						2474,	-- Reinforced Leather Bracers
+						3893,	-- Reinforced Leather Cap
+						2475,	-- Reinforced Leather Gloves
+						2472,	-- Reinforced Leather Pants
+						2470,	-- Reinforced Leather Vest
+						2464,	-- Studded Belt
+						2467,	-- Studded Boots
+						2468,	-- Studded Bracers
+						2463,	-- Studded Doublet
+						2469,	-- Studded Gloves
+						3890,	-- Studded Hat
+						2465,	-- Studded Pants
+					}},
 				}),
 				n(2685, {	-- Mazk Snipeshot <Engineering Supplies>
 					["coord"] = { 43.2, 70.2, THE_CAPE_OF_STRANGLETHORN },
@@ -2808,6 +2896,37 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
+				n(2849, {	-- Qixdi Goodstitch <Cloth Armor & Accessories>
+					["coord"] = { 42.7, 74.2, THE_CAPE_OF_STRANGLETHORN },
+					["sym"] = {{"select","itemID",
+						2435,	-- Embroidered Armor
+						3587,	-- Embroidered Belt
+						2438,	-- Embroidered Boots
+						3588,	-- Embroidered Bracers
+						2440,	-- Embroidered Gloves
+						3892,	-- Embroidered Hat
+						2437,	-- Embroidered Pants
+						2160,	-- Padded Armor
+						3591,	-- Padded Belt
+						2156,	-- Padded Boots
+						3592,	-- Padded Bracers
+						2158,	-- Padded Gloves
+						2159,	-- Padded Pants
+						3593,	-- Russet Belt
+						2432,	-- Russet Boots
+						3594,	-- Russet Bracers
+						2434,	-- Russet Gloves
+						3889,	-- Russet Hat
+						2431,	-- Russet Pants
+						2429,	-- Russet Vest
+						3597,	-- Thick Cloth Belt
+						3598,	-- Thick Cloth Bracers
+						203,	-- Thick Cloth Gloves
+						201,	-- Thick Cloth Pants
+						202,	-- Thick Cloth Shoes
+						200,	-- Thick Cloth Vest
+					}},
+				}),
 				n(2699, {	-- Rikqiz <Leatherworking Supplies>
 					["coord"] = { 43.2, 71.7, THE_CAPE_OF_STRANGLETHORN },
 					["g"] = {
@@ -2847,7 +2966,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				n(105637, {	-- Scowling Rosa <Texts and Specialty Goods>
-					["description"] = "These are completely useless as far as we know. I bought one of each and they're sitting in my bank just in case Blizzard ever removes the vendor.\b - Crieve",
+					["description"] = "These are completely useless as far as we know. I bought one of each and they're sitting in my bank just in case Blizzard ever removes the vendor.\n - Crieve",
 					["timeline"] = { ADDED_7_1_0 },
 					["groups"] = {
 						i(140101, {	-- A Hypothetical Examination of the Legion's Weaknesses
@@ -2890,13 +3009,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_TWO, i(217258, {	-- Pattern: Enchanter's Cowl
-							["timeline"] = { "added 1.15.1" },
+							["timeline"] = { ADDED_1_15_1 },
 							["isLimited"] = true,
 						})),
 						-- #endif
 						i(14630, {	-- Pattern: Enchanter's Cowl
 							-- #if SEASON_OF_DISCOVERY
-							["timeline"] = { "removed 1.15.1" },
+							["timeline"] = { REMOVED_1_15_1 },
 							-- #endif
 							["isLimited"] = true,
 						}),
@@ -2904,6 +3023,16 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(2482, {	-- Zarena Cromwind <Superior Weaponsmith>
 					["coord"] = { 43.0, 70.8, THE_CAPE_OF_STRANGLETHORN },
+					["sym"] = {{"select","itemID",
+						2527,	-- Battle Staff
+						2520,	-- Broadsword
+						2523,	-- Bullova
+						2522,	-- Crescent Axe
+						2521,	-- Flamberge
+						2526,	-- Main Gauche
+						2524,	-- Truncheon
+						2525,	-- War Hammer
+					}},
 					["groups"] = {
 						i(12251, {	-- Big Stick
 							["isLimited"] = true,
@@ -2952,9 +3081,15 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
-root(ROOTS.HiddenQuestTriggers, m(EASTERN_KINGDOMS, {
-	m(THE_CAPE_OF_STRANGLETHORN, {
-		q(7908),	-- triggered when completing 7810 'Arena Master'
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CLASSIC, bubbleDownSelf({ ["timeline"] = { ADDED_1_11_1 } }, {
+	m(EASTERN_KINGDOMS, {
+		m(THE_CAPE_OF_STRANGLETHORN, {
+			q(7908, {["timeline"] = { ADDED_1_12_1 }}),	-- Arena Master [Old] - completed with quest 7810
+			q(618),		-- Facing Negolash [Old] - completed with quest 8554
+			q(614),		-- The Captain's Chest [Old] - completed with quest 8551
+			q(615, {["timeline"] = { ADDED_1_12_1 }}),		-- The Captain's Cutlass [Old] - completed with quest 8553
+			q(620, {["timeline"] = { ADDED_1_12_1 }}),		-- The Monogrammed Sash [Old] - completed with quest 8552
+		}),
 	}),
-}));
+})));
 -- #endif

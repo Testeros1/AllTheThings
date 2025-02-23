@@ -34,6 +34,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 					["qg"] = 49444,	-- Pip Quickwit
 					["coord"] = { 42.6, 28.1, MOUNT_HYJAL },
 					["isBreadcrumb"] = true,
+					["groups"] = {
+						objective(1, {	-- Arrive at Blackrock Caverns.
+							["provider"] = { "o", 207327 },	-- Pip's Mole Machine
+						}),
+					},
 				}),
 				q(28735, {	-- To the Chamber of Incineration!
 					["qg"] = 49476,	-- Pip Quickwit
@@ -173,6 +178,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(55780),	-- Twitching Shadows
 						i(55785),	-- Willowy Crown
 						i(55787),	-- Witching Hourglass
+						-- #if BEFORE MOP
+						i(55783, {	-- Sandshift Relic
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 			})),
@@ -236,6 +246,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 						i(56315),	-- Twitching Shadows
 						i(56321),	-- Willowy Crown
 						i(56320),	-- Witching Hourglass
+						-- #if BEFORE MOP
+						i(56316, {	-- Sandshift Relic
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 			}),
@@ -335,15 +350,28 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 				}),
 			}),
 			-- #endif
+			-- #if ANYCLASSIC
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(PROTOCOL_INFERNO, {
+				["OnInit"] = FUNCTION_TEMPLATES.OnInit.GenerateShouldExcludeFromTooltipForBuffs(470595),
+				["groups"] = {
+					e(109, {  -- Ascendent Lord Obsidius
+						["crs"] = { 39705 },	-- Ascendent Lord Obsidius
+						["groups"] = {
+							ach(41139),	-- Protocol Inferno: Blackrock Caverns
+						},
+					}),
+				},
+			})),
+			-- #endif
 		},
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(66, {
 		q(35348),	-- Blackrock Caverns Reward Quest
 		q(35351),	-- Blackrock Caverns Reward Quest
 		q(35349),	-- Blackrock Caverns Bonus Reward
 		q(35352),	-- Blackrock Caverns Bonus Reward - killing Beauty
 	}),
-});
+})));

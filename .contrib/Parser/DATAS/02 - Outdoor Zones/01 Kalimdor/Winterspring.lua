@@ -1,7 +1,7 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local OnTooltipForEverlook = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForEverlook = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -40,9 +40,7 @@ end]];
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(WINTERSPRING, {
 		["lore"] = "Winterspring is a frosty valley in northern Kalimdor. This frigid zone is littered with night elven ruins, and serves as the primary home of the Blue Dragonflight in Kalimdor. The only settlement in Winterspring is Everlook, a Steamwheedle Cartel town that is neutral to both Horde and Alliance.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Achievement_zone_winterspring",
-		-- #endif
+		["icon"] = 236854,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(5443, {		-- E'ko Madness
@@ -127,17 +125,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 					},
 				}),
-				explorationAch(857, {	-- Explore Winterspring
-					-- #if BEFORE WRATH
-					["description"] = "Explore Winterspring, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(857),	-- Explore Winterspring
 				-- #if AFTER CATA
 				ach(3356, {	-- Winterspring Frostsaber
 					["provider"] = { "i", 13086 },	-- Reins of the Winterspring Frostsaber
-					-- #if BEFORE WRATH
-					["description"] = "Obtain a Winterspring Frosaber.",
-					-- #endif
 					["races"] = ALLIANCE_ONLY,
 					["f"] = MOUNTS,
 				}),
@@ -240,13 +231,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(2244),	-- Winterfall Village
 			}),
 			n(FACTIONS, {
-				faction(577, {	-- Everlook
-					["icon"] = "Interface\\Icons\\INV_Misc_Coin_01",
-					["OnTooltip"] = OnTooltipForEverlook,
+				faction(FACTION_EVERLOOK, {	-- Everlook
+					["icon"] = 133784,
+					["OnTooltip"] = [[_.OnTooltipDB.ForEverlook]],
 					["maps"] = { TANARIS, THE_BARRENS },
 				}),
-				faction(589, {	-- Wintersaber Trainers
-					["icon"] = "Interface\\Icons\\ability_mount_pinktiger",
+				faction(FACTION_WINTERSABER_TRAINERS, {	-- Wintersaber Trainers
+					["icon"] = 132252,
 					-- #if BEFORE CATA
 					["OnTooltip"] = OnTooltipForWintersaberTrainers,
 					-- #endif
@@ -279,7 +270,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ "i", 68646 },	-- Winterspring Cub
 						{ "n", 51677 },	-- Winterspring Cub
 					},
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
@@ -324,7 +315,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ "i", 68646 },	-- Winterspring Cub
 						{ "n", 51677 },	-- Winterspring Cub
 					},
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
@@ -647,7 +638,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ "i", 68646 },	-- Winterspring Cub
 						{ "n", 51677 },	-- Winterspring Cub
 					},
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
@@ -884,8 +875,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(4970, {	-- Frostsaber Provisions
 					["qg"] = 10618,	-- Rivern Frostwind
 					["coord"] = { 49.8, 9.8, WINTERSPRING },
-					["minReputation"] = { 589, NEUTRAL },	-- Wintersaber Trainers, Neutral.
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["minReputation"] = { FACTION_WINTERSABER_TRAINERS, NEUTRAL },	-- Wintersaber Trainers, Neutral.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -1002,7 +993,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ "i", 68646 },	-- Winterspring Cub
 						{ "n", 51677 },	-- Winterspring Cub
 					},
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
@@ -1124,7 +1115,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					-- #else
 					["coord"] = { 59.8, 39.7, WINTERSPRING },
 					-- #endif
-					["maxReputation"] = { 577, NEUTRAL },	-- Everlook, must be less than Neutral
+					["maxReputation"] = { FACTION_EVERLOOK, NEUTRAL },	-- Everlook, must be less than Neutral
 					["cost"] = {
 						{ "i", 14047, 40 },	-- Runecloth
 						{ "i", 3857, 4 },	-- Coal
@@ -1252,8 +1243,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(5981, {	-- Rampaging Giants
 					["qg"] = 10618,	-- Rivern Frostwind
 					["coord"] = { 49.8, 9.8, WINTERSPRING },
-					["minReputation"] = { 589, HONORED },	-- Wintersaber Trainers, Honored.
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["minReputation"] = { FACTION_WINTERSABER_TRAINERS, HONORED },	-- Wintersaber Trainers, Honored.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -1571,7 +1562,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["description"] = "Upon finishing this quest, you will become a Master Hammersmith and be locked out of becoming a Master Axesmith and Master Swordsmith.",
 					-- #endif
 					["coord"] = { 61.2, 37.2, WINTERSPRING },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["maps"] = { STRATHOLME },
 					-- #if BEFORE TBC
 					["requireSkill"] = 9787,	-- Weaponsmith
@@ -1586,7 +1577,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["cr"] = 11120,	-- Crimson Hammersmith
 						}),
 						i(228311, {	-- Plans: Finely-Enchanted Battlehammer (RECIPE!)
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 						}),
 					},
 				})),
@@ -1605,7 +1596,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 61.2, 37.2, WINTERSPRING },
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -1626,7 +1617,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						i(12824, {	-- Plans: Enchanted Battlehammer (RECIPE!)
 							["timeline"] = {
 								-- #if SEASON_OF_DISCOVERY
-								"removed 1.15.3",
+								REMOVED_1_15_3,
 								-- #else
 								REMOVED_4_0_3,
 								-- #endif
@@ -2046,8 +2037,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(5201, {	-- Winterfall Intrusion
 					["qg"] = 10618,	-- Rivern Frostwind
 					["coord"] = { 49.8, 9.8, WINTERSPRING },
-					["minReputation"] = { 589, NEUTRAL + 1500 },	-- Wintersaber Trainers, Neutral + 1500.
-					["maxReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["minReputation"] = { FACTION_WINTERSABER_TRAINERS, NEUTRAL + 1500 },	-- Wintersaber Trainers, Neutral + 1500.
+					["maxReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -2420,7 +2411,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226419, {	-- Rune of Feral Combat Specialization
 					["provider"] = { "o", 457098 },	-- Finding Your Inner Feline: A Guide to Modern Druidism
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 49.6, 8.8, WINTERSPRING },
 					["classes"] = { DRUID },
 					["groups"] = {
@@ -2431,7 +2422,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				})),
 				applyclassicphase(SOD_PHASE_FOUR, i(226415, {	-- Rune of Frost Specialization
 					["provider"] = { "o", 457095 },	-- Elements for Dummies Volume I: Frost
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 58.9, 59.9, WINTERSPRING },
 					["classes"] = { HUNTER, SHAMAN, MAGE },
 					["groups"] = {
@@ -2516,7 +2507,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				}),
 				n(10618, {	-- Rivern Frostwind <Wintersaber Trainer>
-					["minReputation"] = { 589, EXALTED },	-- Wintersaber Trainers, Exalted.
+					["minReputation"] = { FACTION_WINTERSABER_TRAINERS, EXALTED },	-- Wintersaber Trainers, Exalted.
 					-- #if AFTER CATA
 					["coord"] = { 46.6, 17.6, WINTERSPRING },
 					-- #else
@@ -2527,9 +2518,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						-- #if BEFORE CATA
 						ach(3356, {	-- Winterspring Frostsaber
 							["provider"] = { "i", 13086 },	-- Reins of the Winterspring Frostsaber
-							-- #if BEFORE WRATH
-							["description"] = "Obtain a Winterspring Frosaber.",
-							-- #endif
 							["races"] = ALLIANCE_ONLY,
 							["f"] = MOUNTS,
 						}),
@@ -2685,7 +2673,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				i(4191, {	-- Owlbeast Leggings
 					["timeline"] = { ADDED_10_1_7 },	-- ATT Discord 10.09.2023
 					["crs"] = {
-						50788, 	-- Quetzl (Rare)
+						50788,	-- Quetzl (Rare)
 						7452,	-- Crazed Owlbeast
 						7453,	-- Moontouched Owlbeast
 					},

@@ -19,13 +19,13 @@ namespace ATT
 
     class Program
     {
-        const string API_CALL_ITEM = "/data/wow/item/{0}?namespace=static-us&locale=en_US&access_token=";
-        const string API_CALL_QUEST = "/data/wow/quest/{0}?namespace=static-us&locale=en_US&access_token=";
+        const string API_CALL_ITEM = "/data/wow/item/{0}?namespace=static-us&locale=en_US";
+        const string API_CALL_QUEST = "/data/wow/quest/{0}?namespace=static-us&locale=en_US";
         /// <summary>
         /// Examples of search
-        /// https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&locale=en_US&inventory_type.name.en_US=Off&_page=1&_pageSize=1000&orderby=id:asc&access_token=
+        /// https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&locale=en_US&inventory_type.name.en_US=Off&_page=1&_pageSize=1000&orderby=id:asc
         /// </summary>
-        const string API_CALL_SEARCH = "/data/wow/search/{0}?namespace=static-us&locale=en_US&_page={1}&_pageSize=1000&access_token=";
+        const string API_CALL_SEARCH = "/data/wow/search/{0}?namespace=static-us&locale=en_US&_page={1}&_pageSize=1000";
 
         static string API_KEY = null;
         private static HttpClient _client;
@@ -108,6 +108,7 @@ namespace ATT
                         ProcessObjects[parseType] = true;
                     }
                 }
+                Console.WriteLine();
             }
             else
             {
@@ -228,7 +229,7 @@ namespace ATT
             var availableItems = new HashSet<int>();
             while (moreItems)
             {
-                string url = string.Format(API_CALL_SEARCH, objStr, page.ToString()) + API_KEY;
+                string url = string.Format(API_CALL_SEARCH, objStr, page.ToString());
                 Console.WriteLine("Search URL: " + url);
                 HttpResponseMessage response = QueueAPIRequest(url).Result;
                 if (response.IsSuccessStatusCode)
@@ -499,15 +500,20 @@ namespace ATT
             WaitForData = true;
             while (WaitForData || DataResults.Count > 0)
             {
-                if (DataResults.TryDequeue(out string data))
+                string[] dataToStore = new string[DataResults.Count];
+                int i = 0;
+                while (i < dataToStore.Length)
                 {
-                    File.AppendAllText(string.Format(RawDirectoryFormat, "DATA"), data + Environment.NewLine);
+                    // more data shows up while we dequeue, so that will process on next SaveFiles loop
+                    DataResults.TryDequeue(out var s);
+                    dataToStore[i++] = s;
                 }
-                else
-                {
-                    // wait for more data to show up
-                    Thread.Sleep(1000);
-                }
+                string rawStorage = string.Join(Environment.NewLine, dataToStore);
+                if (!string.IsNullOrEmpty(rawStorage))
+                    File.AppendAllText(string.Format(RawDirectoryFormat, "DATA"), rawStorage + Environment.NewLine);
+
+                // wait for more data to show up
+                Thread.Sleep(10000);
             }
         }
 
@@ -515,7 +521,7 @@ namespace ATT
         {
             MaxItemID = ScanExistingData(MaxItemID);
             InitClient();
-            RawAPICallFormat = API_CALL_ITEM + API_KEY;
+            RawAPICallFormat = API_CALL_ITEM;
             int i = MaxItemID;
             while (i >= MinItemID)
             {
@@ -539,7 +545,7 @@ namespace ATT
         {
             MaxQuestID = ScanExistingData(MaxQuestID);
             InitClient();
-            RawAPICallFormat = API_CALL_QUEST + API_KEY;
+            RawAPICallFormat = API_CALL_QUEST;
             int i = MaxQuestID;
             while (i >= MinQuestID)
             {
@@ -599,6 +605,7 @@ namespace ATT
             };
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", API_KEY);
 
             return client;
         }

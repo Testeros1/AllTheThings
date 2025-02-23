@@ -72,7 +72,7 @@ root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(TALADOR, {
 			["lore"] = "Talador is the sanctuary of the draenei people. At its heart rests Shattrath City, the great metropolis, and the spiritual well of Auchindoun, where the souls of departed draenei reside. Bathed in a perpetual autumn hue, its beautiful olemba forests, gardens and settlements are at risk of decimation by the Iron Horde and the Burning Legion.",
-			["icon"] = "Interface\\Icons\\achievement_zone_talador",
+			["icon"] = 1060985,
 			["maps"] = {
 				536,	-- Tomb of Lights
 				537,	-- Tomb of Souls
@@ -93,11 +93,11 @@ root(ROOTS.Zones, {
 						crit(26579),		-- Legion Vanguard
 						crit(26580),		-- Xothear, the Destroyer
 					}),
-					ach(8920,  {	-- Don't Let the Tala-door Hit You on the Way Out (A) (unlocks ability to buy Talador Treasure Map from Grakis in Stormshield)
+					ach(8920, {	-- Don't Let the Tala-door Hit You on the Way Out (A) (unlocks ability to buy Talador Treasure Map from Grakis in Stormshield)
 						["races"] = ALLIANCE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(8919,  {	-- Don't Let the Tala-door Hit You on the Way Out (H) (unlocks ability to buy Gorgrond Treasure Map from Srikka in Warspear)
+					ach(8919, {	-- Don't Let the Tala-door Hit You on the Way Out (H) (unlocks ability to buy Gorgrond Treasure Map from Srikka in Warspear)
 						["races"] = HORDE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 					}),
@@ -106,18 +106,18 @@ root(ROOTS.Zones, {
 					ach(9638, {		-- Heralds of the Legion (Shattrath City)
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(9674,  {	-- I Want More Talador
+					ach(9674, {	-- I Want More Talador
 						["sym"] = {{ "achievement_criteria" }},
 					}),
 					ach(9637),		-- Poor Communication
-					ach(9564,  {	-- Securing Draenor (A)
+					ach(9564, {	-- Securing Draenor (A)
 						["collectible"] = false,
 						["races"] = ALLIANCE_ONLY,
 						["g"] = {
 							crit(26258),	-- Assault on Shattrath Harbor
 						},
 					}),
-					ach(9562,  {	-- Securing Draenor (Horde)
+					ach(9562, {	-- Securing Draenor (Horde)
 						["collectible"] = false,
 						["races"] = HORDE_ONLY,
 						["g"] = {
@@ -189,28 +189,51 @@ root(ROOTS.Zones, {
 				})),
 				explorationHeader({
 					exploration(6925),	-- Anchorite's Sojourn
+					visit_exploration(6997,{coord={41.7,85.9,TALADOR}}),	-- Ango'rosh Ruins
+					visit_exploration(7141,{coord={52.7,37.8,TALADOR}}),	-- Arch of Sha'tar
 					exploration(6948),	-- Archenon Siegeyard
 					exploration(6924),	-- Aruuna
 					exploration(7084),	-- Aruuna's Desolation
 					exploration(7200),	-- Auchindoun
+					visit_exploration(7419,{coord={35.4,16.0,TALADOR}}),	-- Beacon of Sha'tar
 					exploration(7389),	-- Bladefury's Command
 					exploration(6916),	-- Court of Souls
 					exploration(6918),	-- Deathweb Hollow
 					exploration(6927),	-- Duskfall Island
+					visit_exploration(7029,{coord={55.6,69.2,TALADOR}}),	-- Exarch's Refuge
 					exploration(7097),	-- Fort Wrynn
 					exploration(7112),	-- Frostwolf Overlook
 					exploration(7176),	-- Gordal Foothills
 					exploration(7131),	-- Gordal Fortress
 					exploration(6761),	-- Gul'rok
+					visit_exploration(6986,{coord={50.1,53.8,TALADOR}}),	-- Jorune Mine
+					visit_exploration(7157,{coord={84.7,30.9,TALADOR}}),	-- Khadgar's Tower
+					visit_exploration(6917,{coord={45.3,54.7,TALADOR}}),	-- Liadrin's Watch
 					exploration(6950),	-- Mor'gran Logworks
 					exploration(7251),	-- Orunai Bay
 					exploration(6947),	-- Orunai Coast
+					visit_exploration(7500,{coord={63.6,4.20,TALADOR}}),	-- Orunai Delta
+					visit_exploration(7020,{coord={43.9,75.9,TALADOR}}),	-- Retribution Point
+					visit_exploration(7000,{coord={31.8,74.3,TALADOR}}),	-- Seat of Depravity
+					visit_exploration(7453,{coord={41.4,46.5,TALADOR}}),	-- Sha'tar Way Station
+					visit_exploration(7417,{coord={43.5,14.3,TALADOR}}),	-- Sha'tari Anchorage
+					visit_exploration(7422,{coord={45.5,43.4,TALADOR}}),	-- Sha'tari Market District
+					visit_exploration(6937,{coord={71.6,18.6,TALADOR}}),	-- Sharptusk Lake
+					visit_exploration(7420,{coord={48.4,31.1,TALADOR}}),	-- Shattrath City
 					exploration(6762),	-- Shattrath City Center
 					exploration(7421),	-- Shattrath Commons
+					visit_exploration(7480,{coord={30.8,29.6,TALADOR}}),	-- Shattrath Overlook
 					exploration(7418),	-- Shattrath Port Authority
 					exploration(7455),	-- Shattrath Residential District
+					visit_exploration(7269,{coord={51.7,44.9,TALADOR}}),	-- Spire of Light
+					visit_exploration(7001,{coord={60.5,72.2,TALADOR}}),	-- Sunsworn Camp
+					visit_exploration(7191,{coord={40.8,77.3,TALADOR}}),	-- Talador
 					exploration(6920),	-- Telmor
+					visit_exploration(6933,{coord={70.5,56.9,TALADOR}}),	-- Terokkar Refuge
+					visit_exploration(7021,{coord={54.4,61.8,TALADOR}}),	-- The Burning Front
 					exploration(7391),	-- The Path of Glory
+					visit_exploration(7179,{coord={64.5,81.6,TALADOR}}),	-- Throne of the Witch Lord
+					visit_exploration(6949,{coord={62.1,41.5,TALADOR}}),	-- Tuurem
 					exploration(6926),	-- Veil Shadar
 					exploration(7098),	-- Vol'jin's Pride
 					exploration(7115),	-- Zangarra
@@ -731,7 +754,7 @@ root(ROOTS.Zones, {
 					}),
 					q(33944, {	-- And the Elekk Too?!
 						["coord"] = { 30.9, 70.8, TALADOR },
-						["icon"] = "Interface\\Icons\\inv_pet_baby_elekk_blue",
+						["icon"] = 656597,
 					}),
 					q(33967, {	-- Antivenin
 						["provider"] = { "n", 78028 },	-- Soulbinder Tuulani
@@ -810,7 +833,7 @@ root(ROOTS.Zones, {
 					}),
 					q(33761, {	-- Barum's Notes
 						["provider"] = {"o",225778},	-- Barum's Notes
-						["icon"] = "Interface\\Icons\\trade_archaeology_draenei_tome",
+						["icon"] = 442732,
 						["coord"] = { 76.2, 42.7, TALADOR },
 						["sourceQuests"] = {
 							34566,	-- At Your Command
@@ -896,7 +919,7 @@ root(ROOTS.Zones, {
 					q(34091, {	-- Decommissioned Mission
 						["coord"] = { 61.7, 27.5, TALADOR },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\ability_mount_shreddermount",
+						["icon"] = 894222,
 						["provider"] = {"o",225726},	-- Iron Shredder Decommission Orders
 						["sourceQuests"] = {
 							34947,	-- Shredder Manual
@@ -906,7 +929,7 @@ root(ROOTS.Zones, {
 					q(33720, {	-- Decommissioned Mission
 						["coord"] = { 59.9, 16.4, TALADOR },
 						["races"] = HORDE_ONLY,
-						["icon"] = "Interface\\Icons\\ability_mount_shreddermount",
+						["icon"] = 894222,
 						["provider"] = {"o",225726},	-- Iron Shredder Decommission Orders
 						["sourceQuests"] = {
 							34948,	-- Shredder Manual
@@ -1033,8 +1056,10 @@ root(ROOTS.Zones, {
 					}),
 					q(34400, {	-- Frenzied Manafeeders
 						["provider"] = { "n", 78534 },	-- Ageilaa
-						["description"] = "High-level players may require |cff0000ffSoft Foam Sword|r to lower creature health to 10%.",
-						["crs"] = { 78390 }, -- Frenzied Manafeeder NPC
+						-- #if AFTER 7.0.3
+						["description"] = "High-level players may require |cff0070ddSoft Foam Sword|r to lower creature health to 10%.",
+						-- #endif
+						["crs"] = { 78390 },	-- Frenzied Manafeeder NPC
 						["coord"] = { 49.8, 56.1, TALADOR },
 					}),
 					q(34777, {	-- Gatekeepers of Auchindoun
@@ -1141,7 +1166,7 @@ root(ROOTS.Zones, {
 					}),
 					q(33988, {	-- Invasion of the Soul Eaters
 						["provider"] = {"o",227069},	-- Hastily Written Note
-						["icon"] = "Interface\\Icons\\trade_archaeology_silverscrollcase",
+						["icon"] = 454060,
 						["coord"] = { 49.1, 88.0, TALADOR },
 						["sourceQuests"] = {
 							34240,	-- Scheduled Pickup (Alliance)
@@ -1233,7 +1258,7 @@ root(ROOTS.Zones, {
 					}),
 					q(34465, {	-- Mystical Hat
 						["coord"] = { 45.2, 37.0, TALADOR },
-						["icon"] = "Interface\\Icons\\inv_helmet_65",
+						["icon"] = 133167,
 						["provider"] = {"o",229331},	-- A Mystical hat
 					}),
 					q(34013, {	-- Never Forget
@@ -1667,6 +1692,7 @@ root(ROOTS.Zones, {
 					}),
 					q(36843, {	-- They Came From Above
 						["sourceQuests"] = { 34579 },	-- Gas Guzzlers
+						["lockCriteria"] = { 1, "questID", 33740 },	-- Burning Sky
 						["provider"] = { "n", 86522 },	-- Akhan
 						["coord"] = { 67.4, 42.2, TALADOR },
 						["isBreadcrumb"] = true,
@@ -2390,8 +2416,8 @@ root(ROOTS.Zones, {
 						["description"] = "Inside Aruuna Crystal Mine.",
 						["questID"] = 34260,
 						["coords"] = {
-							{ 78.1, 35.6, TALADOR }, -- Aruuna Crystal Mine Entrance
-							{ 81.8, 34.9, TALADOR }, -- Aruuna Mining Cart
+							{ 78.1, 35.6, TALADOR },	-- Aruuna Crystal Mine Entrance
+							{ 81.8, 34.9, TALADOR },	-- Aruuna Mining Cart
 						},
 						["g"] = {
 							--i(109118),	-- Blackrock Ore
@@ -2486,7 +2512,7 @@ root(ROOTS.Zones, {
 							i(117571),	-- Gordunni Skullthumper
 						},
 					}),
-					n(75644,  {	-- Iron Scout
+					n(75644, {	-- Iron Scout
 						["questID"] = 33649,
 						["coord"] = { 75.1, 36.1, TALADOR },
 						["g"] = {
@@ -2811,64 +2837,68 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(34935),	-- After Wall Greeting - triggers during "Dropping In" after taking the portal (questID 34913 & 34879)
-		q(34560),	-- Armory
-		q(34568),	-- Armory
-		q(37301),	-- Armory
-		q(37304),	-- Armory
-		q(34793),	-- Auchenai Defenders Greeting
-		q(35044),	-- Cordana Summon - triggers if you build the Arcane Sanctum and approach Khadgar at the entrance of Zangarra
-		q(34920),	-- Destroy Ward - triggers when interacting with the first orb during "Orbs of Power" (questID 34911 & 34889)
-		q(33927),	-- Draenei Camp Explosion Tracker - triggers when approaching the area for Deceptia's Smoldering Boots
-		q(37300),	-- Drafting Table Interact - triggers when you switch buildings in Talador
-		q(34895),	-- Dropping Bombs Tracking
-		q(34983),	-- Dropping Bombs Tracking
-		q(35047),	-- Dropping Bombs Tracking
-		q(34835),	-- Gather Energy - triggers when interacting with an energy orb in Zangarra during "Gathering the Spark" (questID 34619 & 34636)
-		q(34834),	-- General Commentary - triggers when you interact with the second ancient during "Forming the Scroll" (questID 34612 & 34635)
-		q(33727),	-- Heal Up
-		q(34934),	-- Initial Defenders - triggers when approaching the gate at Gordal Fortress
-		q(34821),	-- Khadgar Summon - triggers when you take the portal to Khadgar's Tower during "Making Acquaintances" (questID 34815 & 34814)
-		q(34906),	-- Krelas Summoned - triggers when Krelas is summoned while approaching the arcane gate during "Dropping In" (questID 34913 & 34879)
-		q(34561),	-- Mage Tower
-		q(34567),	-- Mage Tower
-		q(37302),	-- Mage Tower
-		q(37303),	-- Mage Tower
-		q(35051),	-- Mage Tower Complete - triggers when obtaining your follower after "Due Cause to Celebrate"
-		q(34772),	-- Morkeths Cage
-		q(34946),	-- Morkurk Greeting
-		q(36905),	-- Ogre Waygate
-		q(34904),	-- Portal Vision - triggers when the portal is summoned to get on the wall during "Dropping In" (questID 34913 & 34879)
-		q(34833),	-- Prune Ancient - triggers when you interact with the first ancient during "Forming the Scroll" (questID 34612 & 34635)
-		q(33732),	-- Sabotage Siege Weapons
-		q(35192),	-- See Reinforcements Teleport - triggers when Lord Morkurk is killed during "The Final Step" (questID 34912 & 34890)
-		q(34969),	-- Serena Summoned - triggers when approaching Gordal Fortress and Serena ports in
-		q(34503),	-- Screaming Telmor Citizen - triggers in Telmor
-		q(36942),	-- Soulbinder Aedraa - triggers when approaching Exarch Maladar during "Light's Rest" (questID 34452)
-		q(33931),	-- This Is Not a Quest - triggers when you loot Deceptia's Smoldering Boots
-		q(34857),	-- Tracking Flag: Orcs Kicked Out of Cave - triggers when going to turn in "Old Friends, New Enemies" (questID 35226)
-		q(35491),	-- Tracking Flag - Underseer Bloodmane Vignette - secondary quest trigger for Underseer Bloodmane rare
-		q(33645),	-- Tracking Quest - Iskar's Hired Hand
-		q(34760),	-- Treasure: Warchest of Kull'krosh - secondary quest trigger for Rusted Lockbox treasure
-		q(34562),	-- Trigger Teron'gor Defense Spawns - triggers in a cave with Soulbind Nyami at Gul'Rok
-		q(34047),	-- Tuurem Explosion Tracker
-		q(34574),	-- Unused - triggeres when choosing the Arcane Sanctum building
-		q(34184),	-- Vignette: Aarkos - Killed Boss — first quest that triggers before looting Aarko's Family Treasure in Talador (we have the loot quest attached to the treasure)
-		q(34199),	-- Vignette: Anchorite's Sojourn
-		q(34101),	-- Vignette: Aruumel's Worn Mace - triggers when looting "Lightbearer"
-		q(34220),	-- Vignette: Echo of Murmur - triggers when killed, but not yet looted
-		q(34114),	-- Vignette: Four Friends Found - triggers when all 4 citizens are freed from deathweb cocoons, making the Deathweb Toxin Vial treasure lootable (A)
-		q(34115),	-- Vignette: Four Friends Found - triggers when all 4 citizens are freed from deathweb cocoons, making the Deathweb Toxin Vial treasure lootable (H)
-		q(34110),	-- Vignette: Girl 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
-		q(34116),	-- Vignette: Girl 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
-		q(34111),	-- Vignette: Girl 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
-		q(34117),	-- Vignette: Girl 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
-		q(34112),	-- Vignette: Guy 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
-		q(34118),	-- Vignette: Guy 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
-		q(34113),	-- Vignette: Guy 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
-		q(34119),	-- Vignette: Guy 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
-		q(34523),	-- Warlock Speaking to Gul'dan - triggers near Gul'Rok
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	m(DRAENOR, {
+		m(TALADOR, {
+			n(QUESTS, {
+				q(34935),	-- After Wall Greeting - triggers during "Dropping In" after taking the portal (questID 34913 & 34879)
+				q(34560),	-- Armory
+				q(34568),	-- Armory
+				q(37301),	-- Armory
+				q(37304),	-- Armory
+				q(34793),	-- Auchenai Defenders Greeting
+				q(35044),	-- Cordana Summon - triggers if you build the Arcane Sanctum and approach Khadgar at the entrance of Zangarra
+				q(34920),	-- Destroy Ward - triggers when interacting with the first orb during "Orbs of Power" (questID 34911 & 34889)
+				q(33927),	-- Draenei Camp Explosion Tracker - triggers when approaching the area for Deceptia's Smoldering Boots
+				q(37300),	-- Drafting Table Interact - triggers when you switch buildings in Talador
+				q(34895),	-- Dropping Bombs Tracking
+				q(34983),	-- Dropping Bombs Tracking
+				q(35047),	-- Dropping Bombs Tracking
+				q(34835),	-- Gather Energy - triggers when interacting with an energy orb in Zangarra during "Gathering the Spark" (questID 34619 & 34636)
+				q(34834),	-- General Commentary - triggers when you interact with the second ancient during "Forming the Scroll" (questID 34612 & 34635)
+				q(33727),	-- Heal Up
+				q(34934),	-- Initial Defenders - triggers when approaching the gate at Gordal Fortress
+				q(34821),	-- Khadgar Summon - triggers when you take the portal to Khadgar's Tower during "Making Acquaintances" (questID 34815 & 34814)
+				q(34906),	-- Krelas Summoned - triggers when Krelas is summoned while approaching the arcane gate during "Dropping In" (questID 34913 & 34879)
+				q(34561),	-- Mage Tower
+				q(34567),	-- Mage Tower
+				q(37302),	-- Mage Tower
+				q(37303),	-- Mage Tower
+				q(35051),	-- Mage Tower Complete - triggers when obtaining your follower after "Due Cause to Celebrate"
+				q(34772),	-- Morkeths Cage
+				q(34946),	-- Morkurk Greeting
+				q(36905),	-- Ogre Waygate
+				q(34904),	-- Portal Vision - triggers when the portal is summoned to get on the wall during "Dropping In" (questID 34913 & 34879)
+				q(34833),	-- Prune Ancient - triggers when you interact with the first ancient during "Forming the Scroll" (questID 34612 & 34635)
+				q(33732),	-- Sabotage Siege Weapons
+				q(35192),	-- See Reinforcements Teleport - triggers when Lord Morkurk is killed during "The Final Step" (questID 34912 & 34890)
+				q(34969),	-- Serena Summoned - triggers when approaching Gordal Fortress and Serena ports in
+				q(34503),	-- Screaming Telmor Citizen - triggers in Telmor
+				q(36942),	-- Soulbinder Aedraa - triggers when approaching Exarch Maladar during "Light's Rest" (questID 34452)
+				q(33931),	-- This Is Not a Quest - triggers when you loot Deceptia's Smoldering Boots
+				q(34857),	-- Tracking Flag: Orcs Kicked Out of Cave - triggers when going to turn in "Old Friends, New Enemies" (questID 35226)
+				q(35491),	-- Tracking Flag - Underseer Bloodmane Vignette - secondary quest trigger for Underseer Bloodmane rare
+				q(33645),	-- Tracking Quest - Iskar's Hired Hand
+				q(34760),	-- Treasure: Warchest of Kull'krosh - secondary quest trigger for Rusted Lockbox treasure
+				q(34562),	-- Trigger Teron'gor Defense Spawns - triggers in a cave with Soulbind Nyami at Gul'Rok
+				q(34047),	-- Tuurem Explosion Tracker
+				q(34574),	-- Unused - triggeres when choosing the Arcane Sanctum building
+				q(34184),	-- Vignette: Aarkos - Killed Boss — first quest that triggers before looting Aarko's Family Treasure in Talador (we have the loot quest attached to the treasure)
+				q(34199),	-- Vignette: Anchorite's Sojourn
+				q(34101),	-- Vignette: Aruumel's Worn Mace - triggers when looting "Lightbearer"
+				q(34220),	-- Vignette: Echo of Murmur - triggers when killed, but not yet looted
+				q(34114),	-- Vignette: Four Friends Found - triggers when all 4 citizens are freed from deathweb cocoons, making the Deathweb Toxin Vial treasure lootable (A)
+				q(34115),	-- Vignette: Four Friends Found - triggers when all 4 citizens are freed from deathweb cocoons, making the Deathweb Toxin Vial treasure lootable (H)
+				q(34110),	-- Vignette: Girl 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
+				q(34116),	-- Vignette: Girl 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
+				q(34111),	-- Vignette: Girl 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
+				q(34117),	-- Vignette: Girl 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
+				q(34112),	-- Vignette: Guy 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
+				q(34118),	-- Vignette: Guy 1 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
+				q(34113),	-- Vignette: Guy 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (A)
+				q(34119),	-- Vignette: Guy 2 Found - triggers breaking a deathweb cocoon in Deathweb Hollow (H)
+				q(34523),	-- Warlock Speaking to Gul'dan - triggers near Gul'Rok
+			}),
+		}),
 	}),
-});
+})));

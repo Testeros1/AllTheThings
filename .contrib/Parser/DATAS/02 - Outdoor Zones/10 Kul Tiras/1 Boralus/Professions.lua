@@ -130,6 +130,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH 
 					["requireSkill"] = SKINNING,
 					["g"] = {
 						recipe(257153),	-- Skinning Technique: Bone Gathering (Rank 2)
+						i(161427),	-- Immaculate Quill (QI!)
 					},
 				}),
 				q(52228, {	-- Atal'Dazar: An Unbreakable Bone Needle
@@ -140,6 +141,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH 
 					["requireSkill"] = SKINNING,
 					["g"] = {
 						recipe(257154),	-- Skinning Technique: Bone Gathering (Rank 3)
+						i(161429),	-- Rezan's Bone Splinter (QI!)
 					},
 				}),
 				-- Leather Gathering
@@ -163,6 +165,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH 
 					["requireSkill"] = SKINNING,
 					["g"] = {
 						recipe(257150),	-- Skinning Technique: Scale Gathering (Rank 2)
+						i(161425),	-- Pristine Saurlisk Skin (QI!)
 					},
 				}),
 				q(52226, {	-- Turtle Soup
@@ -173,6 +176,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH 
 					["requireSkill"] = SKINNING,
 					["g"] = {
 						recipe(257151),	-- Skinning Technique: Scale Gathering (Rank 3)
+						i(161426),	-- Sulphur Speckled Turtle Skin (QI!)
 					},
 				}),
 			}),
@@ -180,10 +184,16 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH 
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	n(PROFESSIONS, {
-		prof(TAILORING, {
-			q(55236),	-- while closing time rifts during (55214)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(KUL_TIRAS, {
+		m(BORALUS, {
+			n(PROFESSIONS, {
+				prof(TAILORING, {
+					n(QUESTS, {
+						q(55236),	-- while closing time rifts during (55214)
+					}),
+				}),
+			}),
 		}),
 	}),
-});
+})));

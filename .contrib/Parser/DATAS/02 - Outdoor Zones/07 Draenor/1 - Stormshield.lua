@@ -4,7 +4,7 @@
 root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(STORMSHIELD, {
-			["icon"] = "Interface\\FriendsFrame\\PlusManz-Alliance",
+			["icon"] = 374217,
 			["isRaid"] = true,
 			["races"] = ALLIANCE_ONLY,
 			["g"] = {
@@ -310,87 +310,7 @@ root(ROOTS.Zones, {
 					["g"] = {
 						n(87052, {	-- Artificer Harlaan <Jewelcrafting Designs>
 							["coord"] = { 44.2, 37.8, STORMSHIELD },
-							["g"] = {
-								i(115359, {	-- Draenor Jewelcrafting
-									["filterID"] = MISC,
-									["g"] = {
-										i(120131, {	-- Recipe: Secrets of Draenor Jewelcrafting  Secrets of draenor jewelcrafting.
-											i(116087),	-- Design: Glowing Blackrock Band
-											i(116081),	-- Design: Glowing Iron Band
-											i(116084),	-- Design: Glowing Iron Choker
-											i(116088),	-- Design: Shifting Blackrock Band
-											i(116082),	-- Design: Shifting Iron Band
-											i(116085),	-- Design: Shifting Iron Choker
-											i(116089),	-- Design: Whispering Blackrock Band
-											i(116083),	-- Design: Whispering Iron Band
-											i(116086),	-- Design: Whispering Iron Choker
-											recipe(170700),	-- Taladite Crystal
-										}),
-									},
-								}),
-								i(116096, {	-- Design: Critical Strike Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116093, {	-- Design: Glowing Taladite Pendant
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116090, {	-- Design: Glowing Taladite Ring
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116102, {	-- Design: Greater Critical Strike Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116103, {	-- Design: Greater Haste Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116104, {	-- Design: Greater Mastery Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116107, {	-- Design: Greater Stamina Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116106, {	-- Design: Greater Versatility Taladite
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116097, {	-- Design: Haste Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116098, {	-- Design: Mastery Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116109, {	-- Design: Prismatic Focusing Lens
-									["cost"] = { { "i", 118723, 3 }, },	-- 3x Secret of Draenor Jewelcrafting
-								}),
-								i(116108, {	-- Design: Reflecting Prism
-									["cost"] = { { "i", 118723, 3 }, },	-- 3x Secret of Draenor Jewelcrafting
-								}),
-								i(116094, {	-- Design: Shifting Taladite Pendant
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116091, {	-- Design: Shifting Taladite Ring
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116101, {	-- Design: Stamina Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116079, {	-- Design: Taladite Amplifier
-									["collectible"] = false,
-									["description"] = "The item is still in game but you can't learn the recipe from it anymore (recipe removed in 9.0.1)",
-									["cost"] = { { "i", 118723, 5 }, },	-- 5x Secret of Draenor Jewelcrafting
-								}),
-								i(116078, {	-- Design: Taladite Recrystalizer
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116100, {	-- Design: Versatility Taladite
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116095, {	-- Design: Whispering Taladite Pendant
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-								i(116092, {	-- Design: Whispering Taladite Ring
-									["cost"] = { { "i", 118723, 1 }, },	-- 1x Secret of Draenor Jewelcrafting
-								}),
-							},
+							["sym"] = {{"select","npcID",77356},{"pop"}},	-- Costan Highwall <Jewelcrafter>
 						}),
 						n(93907, {	-- Amelia Clarke <Wild Gladiator>
 							["races"] = ALLIANCE_ONLY,	-- to hide it in Mark of Honor list
@@ -1834,19 +1754,24 @@ root(ROOTS.Zones, {
 								})),
 							}),
 						}),
-						n(128756, {	-- Magister Langley
+						n(128756, {	-- Magister Langley <Stormshield Quartermaster>
 							["coord"] = { 54.8, 16.8, STORMSHIELD },
-							["minReputation"] = { 1682, 5 },	-- Wrynn's Vanguard, Friendly
-							["g"] = {
-								i(114126),	-- Disposable Pocket Flying Machine
-								i(116776, {	-- Pale Thorngrazer (MOUNT!)
-									["cost"] = {
-										{ "g", 50000000 },		-- 5,000g
-										{ "i", 137642, 100 },	-- 100x Mark of Honor
-									},
-								}),
-								i(115517),	-- Wrynn's Vanguard Tabard
-							},
+							["g"] = bubbleDownClassicRep(FACTION_WRYNNS_VANGUARD, {
+								{		-- Neutral
+								}, {	-- Friendly
+									i(114126),	-- Disposable Pocket Flying Machine
+								}, {	-- Honored
+								}, {	-- Revered
+								}, {	-- Exalted
+									i(116776, {	-- Pale Thorngrazer (MOUNT!)
+										["cost"] = {
+											{ "g", 50000000 },		-- 5,000g
+											{ "i", 137642, 100 },	-- 100x Mark of Honor
+										},
+									}),
+									i(115517),	-- Wrynn's Vanguard Tabard
+								},
+							}),
 						}),
 						n(92501, {	-- Dawn-Seeker Kasrek <Apexis Belt Trader>
 							["coord"] = { 51.2, 61.8, STORMSHIELD },
@@ -2215,40 +2140,9 @@ root(ROOTS.Zones, {
 						}),
 						n(88482, {	-- Gazrix Gearlock <Steamwheedle "Preservation" Society Quartermaster>
 							["coord"] = { 43.1, 77.7, STORMSHIELD },
-							["g"] = {
-								i(119149, {	-- Forest Sproutling (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-								i(119165, {	-- Contract: Professor Felblast
-									["cost"] = 50000000,	-- 5,000g
-									["g"] = {
-										follower(460),	-- Professor Felblast
-									},
-								}),
-								i(116672, {	-- Domesticated Razorback (MOUNT!)
-									["cost"] = {
-										{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
-										{ "g", 50000000 },	-- 5,000g
-									},
-								}),
-								i(110426),	-- Goblin Hot Potato
-								i(119148, {	-- Albino River Calf (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-								i(118683, {	-- Portable Goon Squad
-									["cost"] = 5000000,	-- 500g
-								}),
-								i(119137),	-- Steamwheedle "Preservation" Society Tabard
-								i(118667),	-- Steamwheedle Elixir
-							},
+							["sym"] = {{"sub","common_vendor",87394}},	-- Kwilax Fuseshiv <Reputation Vendor>
 						}),
-						n(87365, {  -- Grakis
+						n(87365, {  -- Grakis <Archaeology Fragments>
 							["coord"] = { 48.6, 33.5, STORMSHIELD },
 							["g"] = {
 								i(122606, {	-- Explorer's Notebook
@@ -3611,21 +3505,14 @@ root(ROOTS.Zones, {
 							["coord"] = { 62.0, 33.5, STORMSHIELD },
 							["g"] = {
 								i(111923, {	-- Secret of Draenor Inscription **Teaches laughing tarot, ocean tarot, savage tarot, war paints, card of omens, research warbinders ink, secrets of draenor inscription, Warbinder's ink
-									["filterID"] = MISC,
-									["g"] = {
-										i(120136),		-- Recipe: Secrets of Draenor Inscription
-										recipe(169081),	-- War Paints
-										recipe(167950, {	-- Research: Warbinder's Ink
-											i(113992, {	-- Scribe's Research Notes
-												["filterID"] = MISC,
-											}),
-										}),
-										recipe(175390),	-- Laughing Tarot
-										recipe(175389),	-- Ocean Tarot
-										recipe(175392),	-- Savage Tarot
-										recipe(166669),	-- Card of Omens
-										recipe(178497),	-- Warbinder's Ink
-									},
+									i(120136),		-- Recipe: Secrets of Draenor Inscription
+									recipe(169081),	-- War Paints
+									recipe(167950),	-- Research: Warbinder's Ink
+									recipe(175390),	-- Laughing Tarot
+									recipe(175389),	-- Ocean Tarot
+									recipe(175392),	-- Savage Tarot
+									recipe(166669),	-- Card of Omens
+									recipe(178497),	-- Warbinder's Ink
 								}),
 								i(118605, {	-- Technique: Crystalfire Spellstaff
 									["cost"] = { { "i", 119297, 1 }, },	-- 1x Secret of Draenor Inscription
@@ -3662,7 +3549,7 @@ root(ROOTS.Zones, {
 									["collectible"] = false,
 									["description"] = "The item is still in game but you can't learn the recipe from it anymore (recipe removed in 9.0.1)",
 									["cost"] = { { "i", 119297, 5 }, },	-- 5x Secret of Draenor Inscription
-									["timeline"] = { REMOVED_10_0_5 },
+									["timeline"] = { ADDED_6_0_2, REMOVED_10_0_5 },
 								}),
 								i(118608, { ["timeline"] = { CREATED_6_0_2 }}),	-- Technique: Greater Weapon Crystal
 								i(120266, { ["timeline"] = { CREATED_6_0_2 }}),	-- Technique: Greater Ensorcelled Tarot
@@ -3744,7 +3631,7 @@ root(ROOTS.Zones, {
 										["cost"] = { { "i", 137642, 80 } },	-- 80x Mark of Honor
 										["sym"] = {
 											{"sub", "pvp_weapons_faction_ensemble", EXPANSION.WOD, SEASON_WARMONGERING, FACTION_HEADER_ALLIANCE, PVP_COMBATANT },
-										 },
+										},
 									}),
 									i(126065, {	-- Warmongering Combatant's Barrier (A)
 										["cost"] = { { "i", 137642, 2 } },	-- 2x Mark of Honor
@@ -4234,27 +4121,33 @@ root(ROOTS.Zones, {
 						}),
 						n(85946, {	-- Shadow Sage Brakoss <Arakkoa Outcasts Quartermaster>
 							["coord"] = { 44.5, 75.0, STORMSHIELD },
-							["g"] = {
-								i(118666, {	-- Arakkoa Elixir
-									["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
-								}),
-								i(119136),	-- Arakkoa Outcasts Tabard
-								i(118682, {	-- Saberon Protector
-									["cost"] = 5000000,	-- 500g
-								}),
-								i(116772, {	-- Shadowmane Charger (MOUNT!)
-									["cost"] = {
-										{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
-										{ "g", 50000000 },	-- 5,000g
-									},
-								}),
-								i(119143, {	-- Son of Sethe (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-							},
+							["g"] = bubbleDownClassicRep(FACTION_ARAKKOA_OUTCASTS, {
+								{		-- Neutral
+								}, {	-- Friendly
+									i(118666, {	-- Arakkoa Elixir
+										["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
+									}),
+								}, {	-- Honored
+									i(118682, {	-- Saberon Protector
+										["cost"] = 5000000,	-- 500g
+									}),
+								}, {	-- Revered
+									i(119143, {	-- Son of Sethe (PET!)
+										["cost"] = {
+											{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
+											{ "g", 10000000 },	-- 1,000g
+										},
+									}),
+								}, {	-- Exalted
+									i(119136),	-- Arakkoa Outcasts Tabard
+									i(116772, {	-- Shadowmane Charger (MOUNT!)
+										["cost"] = {
+											{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
+											{ "g", 50000000 },	-- 5,000g
+										},
+									}),
+								},
+							}),
 						}),
 						n(93906, {	-- Slugg Spinbolt <Wild Combatant>
 							["coord"] = { 54.6, 17.6, STORMSHIELD },
@@ -4818,39 +4711,45 @@ root(ROOTS.Zones, {
 						}),
 						n(85932, {	-- Vindicator Nuurem <Council of Exarchs Quartermaster>
 							["coord"] = { 46.6, 76.7, STORMSHIELD },
-							["g"] = {
-								i(119162, {	-- Contract: Cleric Maluuf
-									["cost"] = 50000000,	-- 5,000g
-									["g"] = {
-										follower(459),	-- Cleric Maluuf
-									},
-								}),
-								i(119135),	-- Council of Exarchs Tabard
-								i(119142, {	-- Draenei Micro Defender (PET!)
-									["cost"] = {
-										{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
-										{ "g", 10000000 },	-- 1,000g
-									},
-								}),
-								i(116664, {	-- Dusty Rockhide (MOUNT!)
-									["cost"] = {
-										{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
-										{ "g", 50000000 },	-- 5,000g
-									},
-								}),
-								i(118665, {	-- Exarch Elixir
-									["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
-								}),
-								i(115472, {	-- Permanent Time Bubble (TOY!)
-									["cost"] = 10000000,	-- 1,000g
-								}),
-								i(118663, {	-- Relic of Karabor
-									["cost"] = 25000000,	-- 2,500g
-								}),
-								i(118680, {	-- Tranquility of the Exarchs
-									["cost"] = 5000000,	-- 500g
-								}),
-							},
+							["g"] = bubbleDownClassicRep(FACTION_COUNCIL_OF_EXARCHS, {
+								{		-- Neutral
+								}, {	-- Friendly
+									i(118665, {	-- Exarch Elixir
+										["cost"] = { { "c", 823, 1 }, },	-- 1x Apexis Crystal
+									}),
+								}, {	-- Honored
+									i(115472, {	-- Permanent Time Bubble (TOY!)
+										["cost"] = 10000000,	-- 1,000g
+									}),
+									i(118680, {	-- Tranquility of the Exarchs
+										["cost"] = 5000000,	-- 500g
+									}),
+								}, {	-- Revered
+									i(119162, {	-- Contract: Cleric Maluuf
+										["cost"] = 50000000,	-- 5,000g
+										["g"] = {
+											follower(459),	-- Cleric Maluuf
+										},
+									}),
+									i(119142, {	-- Draenei Micro Defender (PET!)
+										["cost"] = {
+											{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
+											{ "g", 10000000 },	-- 1,000g
+										},
+									}),
+									i(118663, {	-- Relic of Karabor
+										["cost"] = 25000000,	-- 2,500g
+									}),
+								}, {	-- Exalted
+									i(119135),	-- Council of Exarchs Tabard
+									i(116664, {	-- Dusty Rockhide (MOUNT!)
+										["cost"] = {
+											{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
+											{ "g", 50000000 },	-- 5,000g
+										},
+									}),
+								},
+							}),
 						}),
 					},
 				}),

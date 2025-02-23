@@ -54,8 +54,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						i(193691),	-- Sky Saddle Cord
 						i(193756),	-- Skyferno Rondel
 						i(193750),	-- Wind Soarer's Breeches
-						i(197401),	-- Renewed Proto-Drake: Beaked Snout (DM!)
-						i(197601),	-- Windborne Velocidrake: Wavy Horns (DM!)
+						i(197401),	-- Renewed Proto-Drake: Beaked Snout (MM!)
+						i(197601),	-- Windborne Velocidrake: Wavy Horns (MM!)
 						i(201742),	-- Technique: Renewed Proto-Drake: Silver and Blue Armor (RECIPE!)
 					},
 				}),
@@ -96,11 +96,6 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					},
 				}),
 			}),
-			n(MYTHIC_PLUS, bubbleDownSelf({
-				["timeline"] = { ADDED_10_0_2_LAUNCH, REMOVED_10_1_0 }
-			},{
-				i(201742),	-- Technique: Renewed Proto-Drake: Silver and Blue Armor (RECIPE!)
-			})),
 		},
 	})
 })));

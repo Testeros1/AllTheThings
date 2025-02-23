@@ -85,7 +85,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = ADDED_10_0_7 }, {
 					["sourceQuests"] = {
 						72589,	-- Honor Their Sacrifice
 						72588,	-- Primalist Pillagers
-					 },
+					},
 					--["minReputation"] = { TODO, TODO },	-- Language Furbolg 25
 					["provider"] = { "n", 201065 },	-- Sonova Snowden
 					["coord"] = { 66.9, 12.7, THE_AZURE_SPAN },
@@ -243,10 +243,10 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = ADDED_10_0_7 }, {
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 15 }},
 							}),
 						}, {	-- Honored
-							i(197006, {	-- Cliffside Wylderdrake: Plated Nose (DM!)
+							i(197006, {	-- Cliffside Wylderdrake: Plated Nose (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 50 }},
 							}),
-							i(197129, {	-- Highland Drake: Sleek Horns (DM!)
+							i(197129, {	-- Highland Drake: Sleek Horns (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 50 }},
 							}),
 							i(204354, {	-- Hollowed Furbolg Food Pack
@@ -258,17 +258,17 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = ADDED_10_0_7 }, {
 							i(202282, {	-- Winterpelt Mending Totem
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 150 }},
 							}),
-							i(202273, {	-- Renewed Proto-Drake: Stubby Snout (DM!)
+							i(202273, {	-- Renewed Proto-Drake: Stubby Snout (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 50 }},
 							}),
-							i(197583, {	-- Windborne Velocidrake: Exposed Finned Back (DM!)
+							i(197583, {	-- Windborne Velocidrake: Exposed Finned Back (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 50 }},
 							}),
 						}, {	-- Revered
-							i(196995, {	-- Cliffside Wylderdrake: Spiked Horns (DM!)
+							i(196995, {	-- Cliffside Wylderdrake: Spiked Horns (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 100 }},
 							}),
-							i(197102, {	-- Highland Drake: Horned Chin (DM!)
+							i(197102, {	-- Highland Drake: Horned Chin (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 100 }},
 							}),
 							i(204355, {	-- Hollowed Winterpelt Food Pack
@@ -280,13 +280,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = ADDED_10_0_7 }, {
 							i(202289, {	-- Recipe: Firewater Sorbet (RECIPE!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 750 }},
 							}),
-							i(202279, {	-- Renewed Proto-Drake: Malevolent Horns (DM!)
+							i(202279, {	-- Renewed Proto-Drake: Malevolent Horns (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 100 }},
 							}),
 							i(203734, {	-- Snow Blanket (TOY!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 200 }},
 							}),
-							i(197629, {	-- Windborne Velocidrake: Spiked Neck (DM!)
+							i(197629, {	-- Windborne Velocidrake: Spiked Neck (MM!)
 								["cost"] = {{ "c", DRAGON_SUPPLIES, 100 }},
 							}),
 						}, {	-- Exalted
@@ -307,17 +307,20 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = ADDED_10_0_7 }, {
 		}),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(THE_AZURE_SPAN, {
-		q(73048),	-- Tell Little Toz 'Make sure to marry Fuzzy Feet immediately' during 'Ancestral Advice' (questID 72941)
-		q(73049),	-- Tell Little Toz 'Make sure to marry Bring Fur immediately' during 'Ancestral Advice' (questID 72941)
-		q(73050),	-- Tell Little Toz 'Make sure to murder Fuzzy Feet immediately' during 'Ancestral Advice' (questID 72941)
-		q(73051),	-- Tell Little Toz 'Make sure to murder Bring Fur immediately' during 'Ancestral Advice' (questID 72941)
-		q(73184),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain riches' during 'Our Path Ahead' (questID 72945)
-		q(73185),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain weapons' during 'Our Path Ahead' (questID 72945)
-		q(73186),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain a new home' during 'Our Path Ahead' (questID 72945)
-		q(73187),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain allies' during 'Our Path Ahead' (questID 72945)
-		q(73547),	-- Let Saza say goodbye to you after summoning the Ancients. Try not to cry like a little girl.
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_7 } }, {
+	m(DRAGON_ISLES, {
+		m(THE_AZURE_SPAN, {
+			header(HEADERS.Faction, FACTION_WINTERPELT_FURBOLG, {
+				q(73048),	-- Tell Little Toz 'Make sure to marry Fuzzy Feet immediately' during 'Ancestral Advice' (questID 72941)
+				q(73049),	-- Tell Little Toz 'Make sure to marry Bring Fur immediately' during 'Ancestral Advice' (questID 72941)
+				q(73050),	-- Tell Little Toz 'Make sure to murder Fuzzy Feet immediately' during 'Ancestral Advice' (questID 72941)
+				q(73051),	-- Tell Little Toz 'Make sure to murder Bring Fur immediately' during 'Ancestral Advice' (questID 72941)
+				q(73184),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain riches' during 'Our Path Ahead' (questID 72945)
+				q(73185),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain weapons' during 'Our Path Ahead' (questID 72945)
+				q(73186),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain a new home' during 'Our Path Ahead' (questID 72945)
+				q(73187),	-- Tell Kranac Sagesnow 'The Winterpelt must obtain allies' during 'Our Path Ahead' (questID 72945)
+				q(73547),	-- Let Saza say goodbye to you after summoning the Ancients. Try not to cry like a little girl.
+			}),
+		}),
 	}),
-}));
+})));

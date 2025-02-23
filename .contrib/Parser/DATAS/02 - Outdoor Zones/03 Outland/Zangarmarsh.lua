@@ -2,7 +2,7 @@
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
 -- CRIEVE NOTE: Dredgers at Honored in Retail? They go to Exalted in TBC Classic. (someone test this on Retail)
-local OnTooltipForSporeggar = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForSporeggar = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -41,16 +41,10 @@ root(ROOTS.Zones, {
 	m(OUTLAND, applyclassicphase(TBC_PHASE_ONE, {
 		m(ZANGARMARSH, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
 			["lore"] = "Zangarmarsh is a leveling zone intended to be completed after Hellfire Peninsula. It is a surreal swamp, with neon giant mushrooms and hostile naga. The Cenarion Circle is investigating why wildlife has been dying, discovering that Lady Vashj is draining Coilfang Reservoir for her nefarious purposes. Players can also gain reputation with Sporeggar, a group of sporelings at war with ogres. Alliance players also further learn about lost ones--Draenei heavily corrupted by shadow magic--and begin gaining reputation with the Kurenai.",
-			-- #if AFTER WRATH
-			["icon"] = "Interface\\Icons\\achievement_zone_zangarmarsh",
-			-- #endif
+			["icon"] = 236855,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
-					explorationAch(863, {	-- Explore Zangarmarsh
-						-- #if BEFORE WRATH
-						["description"] = "Explore Zangarmarsh, revealing the covered areas of the world map.",
-						-- #endif
-					}),
+					explorationAch(863),	-- Explore Zangarmarsh
 					ach(1190, {	-- Mysteries of the Marsh
 						-- #if ANYCLASSIC
 						-- #if AFTER CATA
@@ -111,9 +105,6 @@ root(ROOTS.Zones, {
 							9729,	-- Fhwoor Smash!
 						},
 						-- #else
-						-- #if BEFORE WRATH
-						["description"] = "Complete 54 quests in Zangarmarsh.",
-						-- #endif
 						["OnClick"] = [[_.CommonAchievementHandlers.LOREMASTER_OnClick]],
 						["OnTooltip"] = [[_.CommonAchievementHandlers.LOREMASTER_OnTooltip]],
 						["OnUpdate"] = [[_.CommonAchievementHandlers.LOREMASTER_OnUpdate]],
@@ -197,19 +188,12 @@ root(ROOTS.Zones, {
 						-- }),
 						-- #endif
 					}),
-					applyclassicphase(TBC_PHASE_ONE, achWithReps(953, { 609, 942 }, {	-- Guardian of Cenarius
-						-- #if BEFORE WRATH
-						["description"] = "Raise your reputation with the Cenarion Circle and Cenarion Expedition to Exalted.",
-						-- #endif
-						["groups"] = {
-							-- NOTE: Achievement says it awards 132, but that's wrong.
-							applyclassicphase(WRATH_PHASE_ONE, title(100)),	-- %, Guardian of Cenarius
-						},
+					applyclassicphase(TBC_PHASE_ONE, achWithReps(953, { FACTION_CENARION_CIRCLE, FACTION_CENARION_EXPEDITION }, {	-- Guardian of Cenarius
+						-- NOTE: Achievement says it awards 132, but that's wrong.
+						applyclassicphase(WRATH_PHASE_ONE, title(100)),	-- %, Guardian of Cenarius
 					})),
-					achWithRep(900, 970, {	-- The Czar of Sporeggar
-						-- #if BEFORE WRATH
-						["description"] = "Raise your reputation with Sporeggar to Exalted.",
-						-- #endif
+					achWithRep(900, FACTION_SPOREGGAR, {	-- The Czar of Sporeggar
+						["maps"] = { COILFANG_RESERVOIR_UNDERBOG },
 					}),
 				}),
 				battlepets({
@@ -222,7 +206,7 @@ root(ROOTS.Zones, {
 							["coord"] = { 20.0, 51.6, ZANGARMARSH },
 							-- #if BEFORE 5.3.0
 							["description"] = "Found only in Sporeggar. Requires FRIENDLY reputation with the Sporeggar faction.",
-							["minReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly
+							["minReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly
 							-- #else
 							["description"] = "Found only in Sporeggar.",	-- The reputation requirement got removed in a late MoP patch, but can't find any confirmation on which one. Working assumption is 5.3.0 which brough battle pets to TBC raids.
 							-- #endif
@@ -232,6 +216,7 @@ root(ROOTS.Zones, {
 				explorationHeader({
 					exploration(3650),	-- Ango'rosh Grounds
 					exploration(3651),	-- Ango'rosh Stronghold
+					visit_exploration(3643,{coord={27.2,42.4,ZANGARMARSH}}),	-- Bloodscale Enclave
 					exploration(3818),	-- Bloodscale Grounds
 					exploration(3668),	-- Boha'mu Ruins
 					exploration(3565),	-- Cenarion Refuge
@@ -239,7 +224,7 @@ root(ROOTS.Zones, {
 					exploration(3905),	-- Coilfang Reservoir
 					exploration(3640),	-- Daggerfen Village
 					exploration(3819),	-- Darkcrest Enclave
-					exploration(3841),	-- Darkcrest Shore
+					visit_exploration(3841,{coord={70.1,81.1,ZANGARMARSH}}),	-- Darkcrest Shore
 					exploration(3642),	-- Feralfen Village
 					exploration(3667),	-- Hewn Bog
 					exploration(3656),	-- Marshlight Lake
@@ -257,14 +242,14 @@ root(ROOTS.Zones, {
 					exploration(3720),	-- Twin Spire Ruins
 					exploration(3655),	-- Umbrafen Lake
 					exploration(3641),	-- Umbrafen Village
-					exploration(3645),	-- Zabra'jin
+					visit_exploration(3645,{coord={32.2,50.6,ZANGARMARSH}}),	-- Zabra'jin
 				}),
 				n(FACTIONS, {
-					faction(942, {	-- Cenarion Expedition
+					faction(FACTION_CENARION_EXPEDITION, {	-- Cenarion Expedition
 						["maps"] = { COILFANG_RESERVOIR_SLAVE_PENS, COILFANG_RESERVOIR_STEAMVAULT, COILFANG_RESERVOIR_UNDERBOG },
 					}),
-					faction(970, {	-- Sporeggar
-						["OnTooltip"] = OnTooltipForSporeggar,
+					faction(FACTION_SPOREGGAR, {	-- Sporeggar
+						["OnTooltip"] = [[_.OnTooltipDB.ForSporeggar]],
 						["maps"] = { COILFANG_RESERVOIR_UNDERBOG },
 					}),
 				}),
@@ -296,22 +281,9 @@ root(ROOTS.Zones, {
 						["groups"] = TBC_FISHING,
 					}),
 					prof(FISHING, {
-						i(35313, {	-- Bloated Barbed Gill Trout
-							i(34866),	-- Giant Freshwater Shrimp
-						}),
-						-- #if ANYCLASSIC
-						ach(1225, {	-- Outland Angler
-							["provider"] = { "o", 182954 },	-- Brackish Mixed School
-							["criteriaID"] = 3865,	-- Brackish Mixed School
-							["timeline"] = { ADDED_3_0_2 },
-							["requireSkill"] = FISHING,
-						}),
-						-- #else
 						o(182954, {	-- Brackish Mixed School
-							["timeline"] = { ADDED_3_0_2 },
 							["requireSkill"] = FISHING,
 						}),
-						-- #endif
 						o(182952, {	-- Steam Pump Flotsam
 							i(27481),	-- Heavy Supply Crate
 							i(27516),	-- Enormous Barbed Gill Trout
@@ -319,19 +291,9 @@ root(ROOTS.Zones, {
 								["description"] = "\"Don't pay anybody in advance. And don't ride in anything with a Capissen 38 engine, they fall right out of the sky.\" - Kaylee Fry",
 							}),
 						}),
-						-- #if ANYCLASSIC
-						ach(1225, {	-- Outland Angler
-							["provider"] = { "o", 182953 },	-- Sporefish School
-							["criteriaID"] = 3870,	-- Sporefish School
-							["timeline"] = { ADDED_3_0_2 },
-							["requireSkill"] = FISHING,
-						}),
-						-- #else
 						o(182953, {	-- Sporefish School
-							["timeline"] = { ADDED_3_0_2 },
 							["requireSkill"] = FISHING,
 						}),
-						-- #endif
 					}),
 				}),
 				n(QUESTS, {
@@ -340,8 +302,8 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 9919,	-- Sporeggar
 						["coord"] = { 19.7, 52.1, ZANGARMARSH },
 						["timeline"] = { ADDED_7_3_5 },
-						["minReputation"] = { 970, NEUTRAL },	-- Sporeggar, Neutral.
-						["maxReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["minReputation"] = { FACTION_SPOREGGAR, NEUTRAL },	-- Sporeggar, Neutral.
+						["maxReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["isBreadcrumb"] = true,
 						["lvl"] = lvlsquish(62, 62, 10),
 						-- #if NOT ANYCLASSIC
@@ -356,8 +318,8 @@ root(ROOTS.Zones, {
 						},
 						["coord"] = { 19.0, 63.4, ZANGARMARSH },
 						["timeline"] = { ADDED_7_3_5 },
-						["minReputation"] = { 970, UNFRIENDLY },	-- Sporeggar, Unfriendly.
-						["maxReputation"] = { 970, NEUTRAL },	-- Sporeggar, Neutral.
+						["minReputation"] = { FACTION_SPOREGGAR, UNFRIENDLY },	-- Sporeggar, Unfriendly.
+						["maxReputation"] = { FACTION_SPOREGGAR, NEUTRAL },	-- Sporeggar, Neutral.
 						["isBreadcrumb"] = true,
 						["lvl"] = lvlsquish(62, 62, 10),
 						-- #if NOT ANYCLASSIC
@@ -398,7 +360,7 @@ root(ROOTS.Zones, {
 					}),
 					q(9792, {	-- A Message to Telaar
 						["qg"] = 18008,	-- Ikuti
-						["minReputation"] = { 978, NEUTRAL },	-- Kurenai, Neutral.
+						["minReputation"] = { FACTION_KURENAI, NEUTRAL },	-- Kurenai, Neutral.
 						["races"] = ALLIANCE_ONLY,
 						["lvl"] = lvlsquish(64, 64, 10),
 					}),
@@ -609,7 +571,7 @@ root(ROOTS.Zones, {
 					q(9766, {	-- Coilfang Armaments
 						["qg"] = 17841,	-- Ysiel Windsinger
 						["sourceQuest"] = 9765,	-- Preparing for War
-						["maxReputation"] = { 942, EXALTED },	-- Cenarion Expedition, Exalted.
+						["maxReputation"] = { FACTION_CENARION_EXPEDITION, EXALTED },	-- Cenarion Expedition, Exalted.
 						["timeline"] = { REMOVED_4_3_0 },
 						["cost"] = { { "i", 24368, 1 } },	-- Coilfang Armaments
 						["maps"] = { COILFANG_RESERVOIR_STEAMVAULT },
@@ -713,18 +675,19 @@ root(ROOTS.Zones, {
 					q(9806, {	-- Fertile Spores
 						["qg"] = 17925,	-- Gshaff
 						["coord"] = { 19.1, 49.4, ZANGARMARSH },
-						["minReputation"] = { 970, NEUTRAL },	-- Sporeggar, Neutral.
+						["minReputation"] = { FACTION_SPOREGGAR, NEUTRAL },	-- Sporeggar, Neutral.
 						["cost"] = { { "i", 24449, 6 } },	-- Fertile Spore
 						["lvl"] = lvlsquish(62, 62, 10),
+						["_drop"] = { "g" },	-- Glowcap added from API
 					}),
 					q(9729, {	-- Fhwoor Smash!
 						["qg"] = 17877,	-- Fhwoor
 						["coord"] = { 19.8, 50.8, ZANGARMARSH },
 						-- #if BEFORE CATA
 						-- Not really sure when this changed. It's only available after Exalted in TBC Classic.
-						["minReputation"] = { 970, EXALTED },	-- Sporeggar, Exalted.
+						["minReputation"] = { FACTION_SPOREGGAR, EXALTED },	-- Sporeggar, Exalted.
 						-- #else
-						["minReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["minReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						-- #endif
 						["lvl"] = lvlsquish(63, 63, 10),
 						["groups"] = {
@@ -778,8 +741,8 @@ root(ROOTS.Zones, {
 					q(9808, {	-- Glowcap Mushrooms
 						["qg"] = 17924,	-- Msshi'fn
 						["coord"] = { 19.7, 52.1, ZANGARMARSH },
-						["minReputation"] = { 970, NEUTRAL },	-- Sporeggar, Neutral.
-						["maxReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["minReputation"] = { FACTION_SPOREGGAR, NEUTRAL },	-- Sporeggar, Neutral.
+						["maxReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["cost"] = { { "i", 24245, 10 } },	-- Glowcap
 						["lvl"] = lvlsquish(62, 62, 10),
 						-- #if NOT ANYCLASSIC
@@ -811,7 +774,7 @@ root(ROOTS.Zones, {
 						["qg"] = 17909,	-- Lauranna Thar'well
 						["sourceQuest"] = 9802,	-- Plants of Zangarmarsh
 						["coord"] = { 80.3, 64.2, ZANGARMARSH },
-						["maxReputation"] = { 942, HONORED },	-- Cenarion Expedition, Honored.
+						["maxReputation"] = { FACTION_CENARION_EXPEDITION, HONORED },	-- Cenarion Expedition, Honored.
 						["cost"] = {{ "i", 24401, 10 }},	-- Unidentified Plant Parts
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(60, 60, 10),
@@ -906,7 +869,7 @@ root(ROOTS.Zones, {
 					}),
 					q(9833, {	-- Lines of Communication
 						["qg"] = 18009,	-- Puluu
-						["minReputation"] = { 978, NEUTRAL },	-- Kurenai, Neutral.
+						["minReputation"] = { FACTION_KURENAI, NEUTRAL },	-- Kurenai, Neutral.
 						["coord"] = { 40.8, 28.6, ZANGARMARSH },
 						["races"] = ALLIANCE_ONLY,
 						["lvl"] = lvlsquish(62, 62, 10),
@@ -1002,11 +965,12 @@ root(ROOTS.Zones, {
 						["qg"] = 17925,	-- Gshaff
 						["sourceQuest"] = 9806,	-- Fertile Spores
 						["coord"] = { 19.1, 49.4, ZANGARMARSH },
-						["maxReputation"] = { 970, EXALTED },	-- Sporeggar, Exalted.
-						["minReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["maxReputation"] = { FACTION_SPOREGGAR, EXALTED },	-- Sporeggar, Exalted.
+						["minReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["cost"] = { { "i", 24449, 6 } },	-- Fertile Spore
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(62, 62, 10),
+						["_drop"] = { "g" },	-- Glowcap added from API
 						-- #if NOT ANYCLASSIC
 						["lockCriteria"] = { 1, "factionID", 970.8 },	-- Sporeggar, Exalted
 						-- #endif
@@ -1015,7 +979,7 @@ root(ROOTS.Zones, {
 						["qg"] = 17924,	-- Mshii'fn
 						["sourceQuest"] = 9808,	-- Glowcap Mushrooms
 						["coord"] = { 19.7, 52.1, ZANGARMARSH },
-						["maxReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["maxReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["cost"] = { { "i", 24245, 10 } },	-- Glowcap
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(62, 62, 10),
@@ -1027,7 +991,7 @@ root(ROOTS.Zones, {
 						["qg"] = 17923,	-- Fahssn
 						["sourceQuest"] = 9739,	-- The Sporelings' Plight
 						["coord"] = { 19.0, 63.4, ZANGARMARSH },
-						["maxReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["maxReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(61, 61, 10),
 						-- #if NOT ANYCLASSIC
@@ -1038,7 +1002,7 @@ root(ROOTS.Zones, {
 						["qg"] = 17923,	-- Fahssn
 						["sourceQuest"] = 9743,	-- Natural Enemies
 						["coord"] = { 19.0, 63.4, ZANGARMARSH },
-						["maxReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["maxReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["cost"] = { { "i", 24291, 6 } },	-- Bog Lord Tendril
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(61, 61, 10),
@@ -1049,7 +1013,7 @@ root(ROOTS.Zones, {
 					q(9834, {	-- Natural Armor
 						["qg"] = 18010,	-- Maktu
 						["coord"] = { 41.6, 27.4, ZANGARMARSH },
-						["minReputation"] = { 978, NEUTRAL },	-- Kurenai, Neutral.
+						["minReputation"] = { FACTION_KURENAI, NEUTRAL },	-- Kurenai, Neutral.
 						["races"] = ALLIANCE_ONLY,
 						["lvl"] = lvlsquish(62, 62, 10),
 						["groups"] = {
@@ -1111,7 +1075,7 @@ root(ROOTS.Zones, {
 					q(9726, {	-- Now That We're Friends...
 						["qg"] = 17856,	-- Gzhun'tt
 						["coord"] = { 19.5, 50.0, ZANGARMARSH },
-						["minReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["minReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["lvl"] = lvlsquish(62, 62, 10),
 						["groups"] = {
 							objective(1, {	-- 0/12 Bloodscale Slavedriver slain
@@ -1132,8 +1096,8 @@ root(ROOTS.Zones, {
 						["qg"] = 17856,	-- Gzhun'tt
 						["sourceQuest"] = 9726,	-- Now That We're Friends...
 						["coord"] = { 19.5, 50.0, ZANGARMARSH },
-						["maxReputation"] = { 970, EXALTED },	-- Sporeggar, Exalted.
-						["minReputation"] = { 970, FRIENDLY },	-- Sporeggar, Friendly.
+						["maxReputation"] = { FACTION_SPOREGGAR, EXALTED },	-- Sporeggar, Exalted.
+						["minReputation"] = { FACTION_SPOREGGAR, FRIENDLY },	-- Sporeggar, Friendly.
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(62, 62, 10),
 						-- #if NOT ANYCLASSIC
@@ -1324,7 +1288,7 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 50131,	-- An Outside Perspective
 						-- #endif
 						["coord"] = { 19.0, 63.4, ZANGARMARSH },
-						["minReputation"] = { 970, NEUTRAL },	-- Sporeggar, Neutral.
+						["minReputation"] = { FACTION_SPOREGGAR, NEUTRAL },	-- Sporeggar, Neutral.
 						["lvl"] = lvlsquish(60, 60, 10),
 					}),
 					q(9709, {	-- Stealing Back the Mushrooms
@@ -1357,7 +1321,7 @@ root(ROOTS.Zones, {
 					q(9830, {	-- Stinger Venom
 						["qg"] = 18009,	-- Puluu
 						["coord"] = { 40.8, 28.6, ZANGARMARSH },
-						["minReputation"] = { 978, NEUTRAL },	-- Kurenai, Neutral.
+						["minReputation"] = { FACTION_KURENAI, NEUTRAL },	-- Kurenai, Neutral.
 						["races"] = ALLIANCE_ONLY,
 						["lvl"] = lvlsquish(62, 62, 10),
 						["groups"] = {
@@ -1424,7 +1388,7 @@ root(ROOTS.Zones, {
 						["isBreadcrumb"] = true,
 						["lvl"] = lvlsquish(61, 61, 10),
 					}),
-					q(9911,	 {	-- The Count of the Marshes
+					q(9911,	{	-- The Count of the Marshes
 						["provider"] = { "i", 25459 },	-- "Count" Ungula's Mandible
 						["coord"] = { 32.8, 59.5, ZANGARMARSH },
 						["cr"] = 18285,	-- "Count" Ungula
@@ -1517,7 +1481,7 @@ root(ROOTS.Zones, {
 					q(9902, {	-- The Terror of Marshlight Lake
 						["qg"] = 18009,	-- Puluu
 						["coord"] = { 40.8, 28.6, ZANGARMARSH },
-						["minReputation"] = { 978, NEUTRAL },	-- Kurenai, Neutral.
+						["minReputation"] = { FACTION_KURENAI, NEUTRAL },	-- Kurenai, Neutral.
 						["races"] = ALLIANCE_ONLY,
 						["lvl"] = lvlsquish(62, 62, 10),
 						["groups"] = {
@@ -1682,7 +1646,7 @@ root(ROOTS.Zones, {
 					q(9875, {	-- Uncatalogued Species
 						["provider"] = { "i", 24407 },	-- Uncatalogued Species
 						["sourceQuest"] = 9784,	-- Identify Plant Parts
-						["maxReputation"] = { 942, HONORED },	-- Cenarion Expedition, Honored.
+						["maxReputation"] = { FACTION_CENARION_EXPEDITION, HONORED },	-- Cenarion Expedition, Honored.
 						["repeatable"] = true,
 						["lvl"] = lvlsquish(60, 60, 10),
 						-- #if NOT ANYCLASSIC
@@ -1797,7 +1761,7 @@ root(ROOTS.Zones, {
 						["isBreadcrumb"] = true,	-- for "Observing the Sporelings"
 						["lvl"] = lvlsquish(61, 61, 10),
 					}),
-					q(9827,	 {	-- Withered Basidium [Alliance]
+					q(9827,	{	-- Withered Basidium [Alliance]
 						["provider"] = { "i", 24483 },	-- Withered Basidium
 						["cr"] = 18124,	-- Withered Giant
 						["races"] = ALLIANCE_ONLY,
@@ -1922,6 +1886,11 @@ root(ROOTS.Zones, {
 						},
 					}),
 				}),
+				n(TREASURES, {
+					o(182053, {	-- Glowcap
+						i(24245),	-- Glowcap
+					}),
+				}),
 				n(VENDORS, {
 					n(18581, {	-- Alliance Field Scout
 						["coord"] = { 64.6, 46.4, ZANGARMARSH },
@@ -1986,98 +1955,99 @@ root(ROOTS.Zones, {
 					}),
 					n(17904, {	-- Fedryen Swiftspear <Cenarion Expedition Quartermaster>
 						["coord"] = { 79.3, 63.7, ZANGARMARSH },
-						["groups"] = {
-							i(31804),	-- Cenarion Expedition Tabard
-							ach(893, {	-- Cenarion War Hippogryph
-								["provider"] = { "i", 33999 },	-- Cenarion War Hippogryph
-								-- #if BEFORE WRATH
-								["description"] = "Obtain the Cenarion War Hippogryph from the Cenarion Expedition in Zangarmarsh.",
-								-- #endif
-								["filterID"] = MOUNTS,
-							}),
-							i(33999),	-- Cenarion War Hippogryph (MOUNT!)
-							i(30623, {	-- Reservoir Key [Revered]
-								["timeline"] = { REMOVED_4_2_0 },
-								-- #if BEFORE 4.2.0
-								-- #if ANYCLASSIC
-								-- Blizzard added "Honored" versions of this key for TBC Classic... BLIZZARD.
-								["OnTooltip"] = [[function(t, tooltipInfo)
-									local tooltip = _.ShowItemCompareTooltips(t.otherItemID);
-									if _.Settings:GetUnobtainableFilter(]] .. TBC_PHASE_FOUR .. [[) then
-										tooltip:AddLine("This is now available at Honored reputation.", 0.4, 0.8, 1, 1);
-									else
-										tooltip:AddLine("This will be available at Honored reputation after TBC Phase 4.", 0.4, 0.8, 1, 1);
-									end
-									tooltip:Show();
-								end]],
-								["OnInit"] = [[function(t)
-									t.otherItemID = 185690;
-									t.GetItemCount = function(t) return ]] .. WOWAPI_GetItemCount("t.itemID") .. [[ + ]] .. WOWAPI_GetItemCount("t.otherItemID") .. [[; end
-									return t;
-								end]],
-								-- #endif
-								-- #endif
-							}),
-							i(29192, {	-- Glyph of Ferocity
-								["timeline"] = { REMOVED_5_0_4 },
-							}),
-							i(29194, {	-- Glyph of Nature Warding
-								["timeline"] = { REMOVED_5_0_4 },
-							}),
-							i(24417, {	-- Scout's Arrow
-								["timeline"] = { REMOVED_4_0_1 },
-							}),
-							i(31949, {	-- Warden's Arrow
-								["timeline"] = { REMOVED_4_0_1 },
-							}),
-							i(29172),	-- Ashyen's Gift
-							applyclassicphase(TBC_PHASE_TWO, i(35403)),	-- Crusader's Ornamented Gloves
-							applyclassicphase(TBC_PHASE_TWO, i(35415)),	-- Crusader's Scaled Legguards
-							i(24183),	-- Design: Nightseye Panther
-							i(31402),	-- Design: The Natural Ward
-							applyclassicphase(TBC_PHASE_TWO, i(35358)),	-- Dragonhide Legguards
-							applyclassicphase(TBC_PHASE_TWO, i(35329)),	-- Dreadweave Hood
-							i(29171),	-- Earthwarden
-							applyclassicphase(TBC_PHASE_TWO, i(35347)),	-- Evoker's Silk Trousers
-							i(24429),	-- Expedition Flare
-							i(25835),	-- Explorer's Walking Stick
-							i(33149, {["timeline"]={ADDED_2_2_0}}),	-- Formula: Enchant Cloak - Stealth (RECIPE!)
-							i(28271),	-- Formula: Enchant Gloves - Precise Strikes / TBC: Formula: Enchant Gloves - Spell Strike (RECIPE!)
-							applyclassicphase(TBC_PHASE_TWO, i(35365)),	-- Kodohide Robe
-							applyclassicphase(TBC_PHASE_TWO, i(35336)),	-- Mooncloth Shoulderpads
-							applyclassicphase(TBC_PHASE_TWO, i(35367)),	-- Opportunist's Leather Helm
-							i(29720),	-- Pattern: Clefthide Leg Armor (RECIPE!)
-							i(25737),	-- Pattern: Heavy Clefthoof Boots (RECIPE!)
-							i(25736),	-- Pattern: Heavy Clefthoof Leggings (RECIPE!)
-							i(25735),	-- Pattern: Heavy Clefthoof Vest (RECIPE!)
-							i(29721),	-- Pattern: Nethercleft Leg Armor (RECIPE!)
-							i(23618),	-- Plans: Adamantite Sharpening Stone (RECIPE!)
-							i(28632),	-- Plans: Adamantite Weightstone (RECIPE!)
-							i(25526),	-- Plans: Greater Rune of Warding (RECIPE!)
-							i(31390),	-- Plans: Wildguard Breastplate (RECIPE!)
-							i(31392),	-- Plans: Wildguard Helm (RECIPE!)
-							i(31391),	-- Plans: Wildguard Leggings (RECIPE!)
-							i(25836),	-- Preserver's Cudgel
-							i(32070, {	-- Recipe: Earthen Elixir (RECIPE!)
-								["timeline"] = { ADDED_2_1_0 },
-							}),
-							i(31356),	-- Recipe: Flask of Distilled Wisdom (RECIPE!)
-							i(22922),	-- Recipe: Major Nature Protection Potion (RECIPE!)
-							i(25869),	-- Recipe: Transmute Earthstorm Diamond (RECIPE!)
-							i(22918),	-- Recipe: Transmute Primal Water to Air (RECIPE!)
-							applyclassicphase(TBC_PHASE_TWO, i(35342)),	-- Satin Robe
-							applyclassicphase(TBC_PHASE_TWO, i(35408)),	-- Savage Plate Gauntlets
-							i(23814),	-- Schematic: Green Smoke Flare (RECIPE!)
-							applyclassicphase(TBC_PHASE_TWO, i(35385)),	-- Seer's Linked Spaulders
-							applyclassicphase(TBC_PHASE_TWO, i(35387)),	-- Seer's Mail Gauntlets
-							applyclassicphase(TBC_PHASE_TWO, i(35394)),	-- Seer's Ringmail Legguards
-							applyclassicphase(TBC_PHASE_TWO, i(35379)),	-- Stalker's Chain Leggings
-							i(29173),	-- Strength of the Untamed
-							i(25838),	-- Warden's Hauberk
-							i(29174),	-- Watcher's Cowl
-							i(29170),	-- Windcaller's Orb
-							applyclassicphase(TBC_PHASE_TWO, i(35374)),	-- Wyrmhide Spaulders
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_CENARION_EXPEDITION, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(24429),	-- Expedition Flare
+								i(23814),	-- Schematic: Green Smoke Flare (RECIPE!)
+								i(24417, {	-- Scout's Arrow
+									["timeline"] = { REMOVED_4_0_1 },
+								}),
+								i(25737),	-- Pattern: Heavy Clefthoof Boots (RECIPE!)
+							}, {	-- Honored
+								applyclassicphase(TBC_PHASE_TWO, i(35403)),	-- Crusader's Ornamented Gloves
+								applyclassicphase(TBC_PHASE_TWO, i(35415)),	-- Crusader's Scaled Legguards
+								i(29194, {	-- Glyph of Nature Warding
+									["timeline"] = { REMOVED_5_0_4 },
+								}),
+								applyclassicphase(TBC_PHASE_TWO, i(35358)),	-- Dragonhide Legguards
+								applyclassicphase(TBC_PHASE_TWO, i(35329)),	-- Dreadweave Hood
+								applyclassicphase(TBC_PHASE_TWO, i(35347)),	-- Evoker's Silk Trousers
+								i(25835),	-- Explorer's Walking Stick
+								applyclassicphase(TBC_PHASE_TWO, i(35365)),	-- Kodohide Robe
+								applyclassicphase(TBC_PHASE_TWO, i(35336)),	-- Mooncloth Shoulderpads
+								applyclassicphase(TBC_PHASE_TWO, i(35367)),	-- Opportunist's Leather Helm
+								i(29720),	-- Pattern: Clefthide Leg Armor (RECIPE!)
+								i(25736),	-- Pattern: Heavy Clefthoof Leggings (RECIPE!)
+								i(25735),	-- Pattern: Heavy Clefthoof Vest (RECIPE!)
+								i(23618),	-- Plans: Adamantite Sharpening Stone (RECIPE!)
+								i(28632),	-- Plans: Adamantite Weightstone (RECIPE!)
+								i(25526),	-- Plans: Greater Rune of Warding (RECIPE!)
+								i(25836),	-- Preserver's Cudgel
+								i(32070, {	-- Recipe: Earthen Elixir (RECIPE!)
+									["timeline"] = { ADDED_2_1_0 },
+								}),
+								i(25869),	-- Recipe: Transmute Earthstorm Diamond (RECIPE!)
+								applyclassicphase(TBC_PHASE_TWO, i(35342)),	-- Satin Robe
+								applyclassicphase(TBC_PHASE_TWO, i(35408)),	-- Savage Plate Gauntlets
+								applyclassicphase(TBC_PHASE_TWO, i(35385)),	-- Seer's Linked Spaulders
+								applyclassicphase(TBC_PHASE_TWO, i(35387)),	-- Seer's Mail Gauntlets
+								applyclassicphase(TBC_PHASE_TWO, i(35394)),	-- Seer's Ringmail Legguards
+								applyclassicphase(TBC_PHASE_TWO, i(35379)),	-- Stalker's Chain Leggings
+								i(25838),	-- Warden's Hauberk
+								applyclassicphase(TBC_PHASE_TWO, i(35374)),	-- Wyrmhide Spaulders
+							}, {	-- Revered
+								i(30623, {	-- Reservoir Key [Revered]
+									["timeline"] = { REMOVED_4_2_0 },
+									-- #if ANYCLASSIC
+									-- Blizzard added "Honored" versions of this key for TBC Classic... BLIZZARD.
+									["OnTooltip"] = [[function(t, tooltipInfo)
+										local tooltip = _.ShowItemCompareTooltips(t.otherItemID);
+										if _.Settings:GetUnobtainableFilter(]] .. TBC_PHASE_FOUR .. [[) then
+											tooltip:AddLine("This is now available at Honored reputation.", 0.4, 0.8, 1, 1);
+										else
+											tooltip:AddLine("This will be available at Honored reputation after TBC Phase 4.", 0.4, 0.8, 1, 1);
+										end
+										tooltip:Show();
+									end]],
+									["OnInit"] = [[function(t)
+										t.otherItemID = 185690;
+										t.GetItemCount = function(t) return ]] .. WOWAPI_GetItemCount("t.itemID") .. [[ + ]] .. WOWAPI_GetItemCount("t.otherItemID") .. [[; end
+										return t;
+									end]],
+									-- #endif
+								}),
+								i(29192, {	-- Glyph of Ferocity
+									["timeline"] = { REMOVED_5_0_4 },
+								}),
+								i(31949, {	-- Warden's Arrow
+									["timeline"] = { REMOVED_4_0_1 },
+								}),
+								i(24183),	-- Design: Nightseye Panther (RECIPE!)
+								i(28271),	-- Formula: Enchant Gloves - Precise Strikes / TBC: Formula: Enchant Gloves - Spell Strike (RECIPE!)
+								i(31392),	-- Plans: Wildguard Helm (RECIPE!)
+								i(31391),	-- Plans: Wildguard Leggings (RECIPE!)
+								i(22918),	-- Recipe: Transmute Primal Water to Air (RECIPE!)
+								i(29173),	-- Strength of the Untamed
+								i(29174),	-- Watcher's Cowl
+							}, {	-- Exalted
+								i(29172),	-- Ashyen's Gift
+								i(31804),	-- Cenarion Expedition Tabard
+								ach(893, {	-- Cenarion War Hippogryph
+									["provider"] = { "i", 33999 },	-- Cenarion War Hippogryph
+									["filterID"] = MOUNTS,
+								}),
+								i(33999),	-- Cenarion War Hippogryph (MOUNT!)
+								i(31402),	-- Design: The Natural Ward (RECIPE!)
+								i(29171),	-- Earthwarden
+								i(33149, {["timeline"]={ADDED_2_2_0}}),	-- Formula: Enchant Cloak - Stealth (RECIPE!)
+								i(29721),	-- Pattern: Nethercleft Leg Armor (RECIPE!)
+								i(31390),	-- Plans: Wildguard Breastplate (RECIPE!)
+								i(31356),	-- Recipe: Flask of Distilled Wisdom (RECIPE!)
+								i(22922),	-- Recipe: Major Nature Protection Potion (RECIPE!)
+								i(29170),	-- Windcaller's Orb
+							},
+						}),
 					}),
 					n(18015, {	-- Gambarinka <Tradesman>
 						["coord"] = { 31.6, 49.2, ZANGARMARSH },
@@ -2181,51 +2151,73 @@ root(ROOTS.Zones, {
 					}),
 					n(18382, {	-- Mycah <Sporeggar Quartermaster>
 						["coord"] = { 18.27, 51.12, ZANGARMARSH },
-						["groups"] = {
-							i(34478, {	-- Tiny Sporebat (PET!)
-								["cost"] = { { "i", 24245, 30 }, },	-- 30x Glowcap
-							}),
-							i(31775, {	-- Sporeggar Tabard
-								["cost"] = { { "i", 24245, 10 }, },	-- 10x Glowcap
-							}),
-							i(38229, {	-- Pattern: Mycah's Botanical Bag
-								["cost"] = { { "i", 24245, 25 }, },	-- 25x Glowcap
-							}),
-							i(30156, {	-- Recipe: Clam Bar (RECIPE!)
-								["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
-							}),
-							i(22906, {	-- Recipe: Shrouding Potion (RECIPE!)
-								["cost"] = { { "i", 24245, 30 }, },	-- 30x Glowcap
-							}),
-							i(27689, {	-- Recipe: Sporeling Snack (RECIPE!)
-								["cost"] = { { "i", 24245, 2 }, },	-- 2x Glowcap
-								["timeline"] = { REMOVED_4_2_0 },
-							}),
-							i(22916, {	-- Recipe: Transmute Primal Earth to Water (RECIPE!)
-								["cost"] = { { "i", 24245, 25 }, },	-- 25x Glowcap
-							}),
-							i(29150, {	-- Hardened Stone Shard
-								["cost"] = { { "i", 24245, 45 }, },	-- 45x Glowcap
-							}),
-							i(25828, {	-- Petrified Lichen Guard
-								["cost"] = { { "i", 24245, 15 }, },	-- 15x Glowcap
-							}),
-							i(29149, {	-- Sporeling's Firestick
-								["cost"] = { { "i", 24245, 20 }, },	-- 20x Glowcap
-							}),
-							i(25827, {	-- Muck-Covered Drape
-								["cost"] = { { "i", 24245, 25 }, },	-- 25x Glowcap
-							}),
-							i(24539, {	-- Marsh Lichen
-								["cost"] = { { "i", 24245, 2 }, },	-- 2x Glowcap
-							}),
-							i(25550, {	-- Redcap Toadstool
-								["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
-							}),
-							i(25548, {	-- Tallstalk Mushroom
-								["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
-							}),
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_SPOREGGAR, {
+							{		-- Neutral
+								i(144262, {	-- Fungal Lifestalk
+									["cost"] = { { "i", 24245, 20 }, },	-- 20x Glowcap
+									["timeline"] = { ADDED_7_2_0 },
+								}),
+								i(24539, {	-- Marsh Lichen
+									["cost"] = { { "i", 24245, 2 }, },	-- 2x Glowcap
+								}),
+								i(30156, {	-- Recipe: Clam Bar (RECIPE!)
+									["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
+								}),
+								i(27689, {	-- Recipe: Sporeling Snack (RECIPE!)
+									["cost"] = { { "i", 24245, 2 }, },	-- 2x Glowcap
+									["timeline"] = { REMOVED_4_2_0 },
+								}),
+								i(144265, {	-- Rimecap
+									["cost"] = { { "i", 24245, 20 }, },	-- 20x Glowcap
+									["timeline"] = { ADDED_7_2_0 },
+								}),
+								i(144276, {	-- Sack of Healing Spores
+									["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
+									["timeline"] = { ADDED_7_2_0 },
+								}),
+								i(144261, {	-- Sporeggium
+									["cost"] = { { "i", 24245, 10 }, },	-- 10x Glowcap
+									["timeline"] = { ADDED_7_2_0 },
+								}),
+							}, {	-- Friendly
+								i(25548, {	-- Tallstalk Mushroom
+									["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
+								}),
+							}, {	-- Honored
+								i(25827, {	-- Muck-Covered Drape
+									["cost"] = { { "i", 24245, 25 }, },	-- 25x Glowcap
+								}),
+								i(25828, {	-- Petrified Lichen Guard
+									["cost"] = { { "i", 24245, 15 }, },	-- 15x Glowcap
+								}),
+								i(25550, {	-- Redcap Toadstool
+									["cost"] = { { "i", 24245, 1 }, },	-- 1x Glowcap
+								}),
+							}, {	-- Revered
+								i(29150, {	-- Hardened Stone Shard
+									["cost"] = { { "i", 24245, 45 }, },	-- 45x Glowcap
+								}),
+								i(38229, {	-- Pattern: Mycah's Botanical Bag
+									["cost"] = { { "i", 24245, 25 }, },	-- 25x Glowcap
+								}),
+								i(22916, {	-- Recipe: Transmute Primal Earth to Water (RECIPE!)
+									["cost"] = { { "i", 24245, 25 }, },	-- 25x Glowcap
+								}),
+								i(29149, {	-- Sporeling's Firestick
+									["cost"] = { { "i", 24245, 20 }, },	-- 20x Glowcap
+								}),
+							}, {	-- Exalted
+								i(31775, {	-- Sporeggar Tabard
+									["cost"] = { { "i", 24245, 10 }, },	-- 10x Glowcap
+								}),
+								i(34478, {	-- Tiny Sporebat (PET!)
+									["cost"] = { { "i", 24245, 30 }, },	-- 30x Glowcap
+								}),
+								i(22906, {	-- Recipe: Shrouding Potion (RECIPE!)
+									["cost"] = { { "i", 24245, 30 }, },	-- 30x Glowcap
+								}),
+							},
+						}),
 					}),
 					n(18993, {	-- Naka <Cooking Supplies>
 						["coord"] = { 78.5, 63.0, ZANGARMARSH },
@@ -2294,9 +2286,13 @@ root(ROOTS.Zones, {
 	})),
 });
 
--- #if AFTER TBC
--- These quests trigger after specific events occur in the zone.
-root(ROOTS.HiddenQuestTriggers, {
-	q(9734),	-- Return to the Marsh (NYI) - completed with quest 9732
-	q(9733),	-- Warning the Cenarion Circle (NYI) - completed with quest 9724
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TBC, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
+	m(OUTLAND, {
+		m(ZANGARMARSH, {
+			n(QUESTS, {
+				q(9734),	-- Return to the Marsh (NYI) - completed with quest 9732
+				q(9733),	-- Warning the Cenarion Circle (NYI) - completed with quest 9724
+			}),
+		}),
+	}),
+})));

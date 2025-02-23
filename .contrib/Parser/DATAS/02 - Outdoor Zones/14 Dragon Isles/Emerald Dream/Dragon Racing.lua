@@ -502,6 +502,50 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }
 					}),
 				}),
 			}),
+			n(WORLD_QUESTS, {
+				i(210549,	-- Dream Racer's Purse
+				bubbleDownSelf({ ["timeline"] = { ADDED_10_2_0 } }, {
+					i(207765),	-- Grotto Netherwing Drake: Cluster Spiked Crest (MM!)
+					i(207778),	-- Grotto Netherwing Drake: Double Finned Tail (MM!)
+					i(207758),	-- Grotto Netherwing Drake: Spiked Back (MM!)
+					i(207768),	-- Grotto Netherwing Drake: Volatile Pattern (MM!)
+					i(203343),	-- Winding Slitherdrake: Hairy Jaw (MM!) (discord report from user dumbomb in #error)
+					i(203333),	-- Winding Slitherdrake: Short Horns (MM!) (discord report from user shinshiva in #general)
+					i(203360),	-- Winding Slitherdrake: Large Finned Tail (MM!) (discord report from user nohh in #error)
+					i(203337),	-- Winding Slitherdrake: Thorn Horns (MM!)
+				})),
+			}),
+			n(WORLD_QUESTS, sharedData({
+				["sourceQuests"] = {
+					71232,	-- Renown of the Dragon Isles
+					DF_ACCOUNT_CAMPAIGN_QUEST,
+				},
+				["sourceQuestNumRequired"] = 1,
+				["maxReputation"] = { FACTION_VALDRAKKEN_ACCORD, 30 },
+				["isWorldQuest"] = true,
+				["timeline"] = { ADDED_10_2_0 },
+				["sym"] = {{"select","itemID",210549}},	-- Dream Racer's Purse
+			}, {
+				------ The Emerald Dream EMERALD_DREAM ------
+				q(78438, {	-- Dragonrider Racing - Canopy Concours
+					["coord"] = { 62.8, 88.1, EMERALD_DREAM },
+				}),
+				q(78439, {	-- Dragonrider Racing - Emerald Amble
+					["coord"] = { 32.4, 47.9, EMERALD_DREAM },
+				}),
+				q(78437, {	-- Dragonrider Racing - Shoreline Switchback
+					["coord"] = { 69.4, 52.8, EMERALD_DREAM },
+				}),
+				q(78435, {	-- Dragonrider Racing - Smoldering Sprint
+					["coord"] = { 37.3, 44.0, EMERALD_DREAM },
+				}),
+				q(78436, {	-- Dragonrider Racing - Viridescent Venture
+					["coord"] = { 35.2, 55.2, EMERALD_DREAM },
+				}),
+				q(78434, {	-- Dragonrider Racing - Ysera Invitationa
+					["coord"] = { 59.1, 29.1, EMERALD_DREAM },
+				}),
+			})),
 		}),
 	}),
 })));

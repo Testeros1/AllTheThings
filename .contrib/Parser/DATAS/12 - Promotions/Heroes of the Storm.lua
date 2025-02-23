@@ -3,10 +3,11 @@
 -----------------------------------------------------
 HEROES_OF_THE_STORM = createHeader({
 	readable = "Heroes of the Storm",
-	icon = "Interface\\Icons\\ability_shaman_stormstrike",
+	icon = 132314,
 	text = {
 		en = "Heroes of the Storm",
 		cn = "风暴英雄",
+		tw = "暴雪英霸",
 	},
 });
 root(ROOTS.Promotions, n(HEROES_OF_THE_STORM, {
@@ -17,8 +18,8 @@ root(ROOTS.Promotions, n(HEROES_OF_THE_STORM, {
 			["timeline"] = { ADDED_7_0_3 },
 		}),
 		n(REWARDS, bubbleDown({
-			["u"] = BLIZZARD_BALANCE,
-			["description"] = "Obtained by playing Heroes of the Storm and reaching level 20.",
+			["u"] = REAL_MONEY,
+			["sharedDescription"] = "Obtained by playing Heroes of the Storm and reaching level 20.",
 			["timeline"] = { ADDED_6_1_2 },
 		}, {
 			ach(9926),	-- Hero of the Storm
@@ -26,7 +27,7 @@ root(ROOTS.Promotions, n(HEROES_OF_THE_STORM, {
 		})),
 		n(REWARDS, bubbleDown({
 			["u"] = REMOVED_FROM_GAME,
-			["description"] = "Obtained by winning 15 games of Heroes of the Storm.\n\nSadly, this is no longer available.",
+			["sharedDescription"] = "Obtained by winning 15 games of Heroes of the Storm.\n\nSadly, this is no longer available.",
 			["timeline"] = { ADDED_7_2_0 },
 		}, {
 			ach(11425),	-- Herald of Flames

@@ -3,12 +3,13 @@
 --------------------------------------------
 THE_AHNQIRAJ_WAR_EFFORT = createHeader({
 	readable = "The Ahn'Qiraj War Effort",
-	icon = "Interface\\Icons\\inv_box_01",
+	icon = 132594,
 	text = {
 		en = "The Ahn'Qiraj War Effort",
 		fr = "Effort de guerre d’Ahn'Qiraj",
 		ru = "Война в Ан'Кираже",
 		cn = "安其拉之战捐献",
+		tw = "安其拉之戰捐獻",
 	},
 	description = {
 		-- #if AFTER TBC

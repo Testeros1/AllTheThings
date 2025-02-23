@@ -7,39 +7,88 @@ local i = function(itemID)
 end
 -------------------------------------------------------------------- LOADING DOCK --------------------------------------------------------------------
 -- Put items between these two bars if you dont want to sort them /Braghe
+i(804);		-- Large Blue Sack
+i(805);		-- Small Red Pouch
+i(828);		-- Small Blue Pouch
 i(1725);	-- Large Knapsack
-i(3914);	-- neyman's Backpack \\ Journeyman's Backpack
+i(2657);	-- Red Leather Bag
+i(3914);	-- Journeyman's Backpack
+i(5571);	-- Small Black Pouch
+i(5572);	-- Small Green Pouch
+i(6457);	-- Rusted Engineering Parts
+i(29570);	-- A Gnmome Effigy
+i(35953);	-- Mead-Basted Caribou
+i(44435);	-- Windle's Lighter
+i(73242);	-- Master's Haversack
 i(102144);	-- Kor'kron Cage Key
+i(118067);	-- Old Chain Link
 i(180786);	-- Empty Binding
 -- Legion
-i(147348);	-- Bulky Armor Set \\ y Armor Set
-i(147349);	-- Spiked Armor Set \\ ed Armor Set
+i(138293);	-- Explorer's Pack
+i(139398);	-- Pant Loaf
+i(147348);	-- Bulky Armor Set
+i(147349);	-- Spiked Armor Set
+-- Legion Mission Table Items
+i(139845);	-- Band of Primordial Strength
+i(152442);	-- Impervious Shadoweave Hood \\ rvious Shadowweave Hood \\ rvious Hood
+-- BFA Vendor
+i(162588);	-- Weathered Scrollcase
 -- BFA Minor Visions
 i(169294);	-- Resilient Soul
 i(173888);	-- Shard of Self Sacrifice \\ Lingering Soul
 -- SL
+i(184412);	-- Title Reward: Spirestalker
+i(187499);	-- Sculpted Elethium Orb
+i(187501);	-- Understanding the Purpose
 i(187603);	-- The Mad Duke's Tea
+i(189560);	-- Deflectialic Crystallic Spheroid
+i(189722);	-- Alacrialic Crystallic Spheroid
+i(189723);	-- Absorptialic Crystallic Spheroid
+i(189724);	-- Extractialic Crystallic Spheroid
+i(189725);	-- Flexialic Crystallic Spheroid
+i(189726);	-- Focialic Crystallic Spheroid
+i(189727);	-- Healialic Crystallic Spheroid
+i(189728);	-- Obscurialic Crystallic Spheroid
+i(189729);	-- Osmosialic Crystallic Spheroid
+i(189732);	-- Constialic Crystallic Spheroid
+i(189733);	-- Relialic Crystallic Spheroid
+i(189734);	-- Rigialic Crystallic Spheroid
+i(189735);	-- Velocialic Crystallic Spheroid
+i(189760);	-- Robustialic Crystallic Spheroid
+i(189761);	-- Toxicialic Crystallic Spheroid
+i(189762);	-- Fortialic Crystallic Spheroid
+i(189763);	-- Efficialic Crystallic Spheroid
+i(189764);	-- Reflectialic Crystallic Spheroid
+i(190172);	-- Title Reward: Gauntlet Runner
+i(190658);	-- Resonant Gossamer Fluidic Spheroid
+i(190659);	-- Resonant Carapace Fluidic Spheroid
+i(190660);	-- Resonant Mucus Fluidic Spheroid
+i(190661);	-- Resonant Regrowth Fluidic Spheroid
+
 -- DF
 i(195572);	-- Empty Elixir
 i(194742);	-- Worn Book
-
+i(210438);	-- Wisp Dust
+i(211768);	-- Hastily Scrawled Satyr Ravings
+i(226037);	-- Timeless Neural Silencer
 -------------------------------------------------------------------- LOADING DOCK --------------------------------------------------------------------
 
 -- Dont add anything here /Braghe
 -------------------------------------------------------------------- NOT SORTED --------------------------------------------------------------------
+-- Sorted by QuestDB API
+-- i(143542);	-- Crown Co. "Kure-Everything" Tonic
+-- i(140239);	-- Excavated Highborne Artifact
 i(5956);	-- Blacksmith Hammer
 i(85663);	-- Herbalist's Spade
 i(2901);	-- Mining Pick
 i(7005);	-- Skinning Knife
 i(139786);	-- Ancient Mana Crystal
 i(103644);	-- Blessed Bandage
-i(23123);	-- Blessed Wizard Oil
 i(18595);	-- Blood Opal ("Retrieving Data" in-game)
 i(168124);	-- Cash of War Resources
 i(44626);	-- Cask of Aged Dalaran Red
+i(44629);	-- Cask of Peaked Dalaran Red
 i(13509);	-- Clutch of Foresight
-i(23122);	-- Consecrated Sharpening Stone
-i(143542);	-- Crown Co. "Kure-Everything" Tonic
 i(142264);	-- Drudge Fluid
 i(120257);	-- Drums of Fury
 i(142262);	-- Electrified Key
@@ -79,6 +128,7 @@ i(23796);	-- Permanent Swiftness of Zanza ("Retrieving Data" in-game)
 i(43352);	-- Pet Grooming Kit
 i(33448);	-- Runic Mana Potion
 i(165699);	-- Scarlet Herring Lure
+i(118426);	-- Scroll of Invoke Yu'Lon, the Jade Serpent
 i(116411);	-- Scroll of Protection
 i(116410);	-- Scroll of Speed
 i(141016);	-- Scroll of Town Portal: Faronaar
@@ -86,6 +136,7 @@ i(141015);	-- Scroll of Town Portal: Kal'delar
 i(141013);	-- Scroll of Town Portal: Shala'nir
 i(119449);	-- Shadowberry
 i(141655);	-- Shimmering Ancient Mana Cluster
+i(114846);	-- Sigil of Death Grip
 i(118905);	-- Sinister Spores
 i(169856);	-- Spark-1351
 i(168271);	-- Stolen Ramkahen Banner
@@ -101,80 +152,10 @@ i(128851);	-- Roasted juicycrunch carrots
 -- "Mount Equipment"
 i(141593);	-- Dro's Key
 -- Quest Items
-i(164778);	-- Abyssal Scepter
-i(162579);	-- Abyssal Scepter
-i(146692);	-- Ancient Dreadleather Armor
-i(146700);	-- Ancient Gravenscale Armor
-i(169251);	-- Ancient Insect
-i(168234);	-- Ancient Runestone
-i(147438);	-- Bag of Wisp-Touched Elderhide
-i(146308);	-- Barrel of Storm Brew
-i(169224);	-- Big Red Button
-i(147439);	-- Box of Completed Prime Wardenscale
-i(169248);	-- Broken Sandals
-i(169391);	-- Bubble-eyed Rolly
-i(169292);	-- Charged Scale of the Blue Aspect
-i(146694);	-- Chipped Felsong Mantle
-i(163212);	-- Cleansing Thurible
-i(146686);	-- Colorless Shroud of Xavius
-i(169235);	-- Confusing Spring Box
-i(169250);	-- Crude Eating Utensil
 i(9265);	-- Cuergo's Hidden Treasure
-i(169232);	-- Dud Blast Canister
-i(143656);	-- Echo of Time (N)
-i(143657);	-- Echo of Time (H)
-i(143658);	-- Echo of Time (M)
-i(118382);	-- Ember of the Mountain (N)
-i(118387);	-- Ember of the Mountain (H)
-i(118390);	-- Ember of the Mountain (M)
-i(164731);	-- Enchanted Shroud
-i(169778);	-- Enchanting Crystal
-i(141303);	-- Essence of Clarity (N)
-i(141304);	-- Essence of Clarity (H)
-i(141305);	-- Essence of Clarity (M)
-i(132560);	-- Essence of the Whirlwind
-i(132745);	-- Essence of the Whirlwind
-i(169229);	-- Exhaust Aromatics
-i(169164);	-- Father's Bones
-i(169166);	-- Father's Clothes
-i(169165);	-- Father's Sword
-i(128419);	-- Fel Essence (N)
-i(128420);	-- Fel Essence (H)
-i(128421);	-- Fel Essence (M)
-i(169228);	-- Hazardous Container
-i(118383);	-- Heart of Stone (N)
-i(118386);	-- Heart of Stone (H)
-i(118389);	-- Heart of Stone (M)
-i(168236);	-- Hearthstone Card
-i(169240);	-- Idea Starter
-i(169233);	-- Infinite Loop Spring
-i(169227);	-- Irradiated Bolts
-i(169257);	-- Jagged Rune
-i(169236);	-- Latch-and-Lock Trigger
-i(146952);	-- Legendary Tailor's Materials
-i(146977);	-- Legendary Tanner's Kit
-i(147209);	-- Legendary Wardenscale Supplies
-i(168280);	-- Lost Scale of the Scarlet Broodmother
-i(147582);	-- Mark of the Sentinax
-i(146680);	-- Melandrus' Star-Touched Bracers
 i(122618);	-- Misprinted Draenic Coin
-i(169238);	-- Modified Radio Receiver
-i(169222);	-- Murloc Treasure
-i(168223);	-- Old Parchment
-i(169231);	-- Optical Override Drive
-i(163601);	-- Overgrown Anchor Weed
-i(167830);	-- Petrified Ebony Scale
 i(169325);	-- Petrified Ebony Scale
-i(169237);	-- Pulsating Marble
-i(168184);	-- Rare Metal
 i(160983);	-- Recruitment Orders
-i(169230);	-- Reflective Plating
-i(167875);	-- Reforged Dreamglow Dragonscale
-i(169252);	-- Resonant Pearl
-i(18149);	-- Rune of Recall
-i(146696);	-- Rusted Legplates of Mephistroth
-i(147437);	-- Satchel of Starweave and Shadowcloth
-i(157539);	-- Scroll of Storm Control
 i(17224);	-- Scrying Scope
 i(17364);	-- Scrying Scope
 i(146906);	-- Sentinax Beacon of Carnage
@@ -192,82 +173,33 @@ i(146907);	-- Sentinax Beacon of Warbeasts
 i(147355);	-- Sentinax Beacon of the Bloodstrike
 i(146905);	-- Sentinax Beacon of the Firestorm
 i(146911);	-- Sentinax Beacon of the Greater Firestorm
-i(169249);	-- Shark Tooth Necklace
-i(169253);	-- Shell Horn
-i(168817);	-- Siphoning Crystal
-i(118384);	-- Sliver of Iron (N)
-i(118385);	-- Sliver of Iron (H)
-i(118388);	-- Sliver of Iron (M)
-i(128416);	-- Soul Remnant (N)
-i(128417);	-- Soul Remnant (H)
-i(128418);	-- Soul Remnant (M)
-i(147075);	-- Spirit Net
-i(169246);	-- Strangely Seasoned Meat
-i(146682);	-- Suramari Soul-Wraps
-i(169247);	-- Throwing Rocks
-i(146698);	-- Torn Bracers of the First War
-i(169226);	-- Torn Sheet Music
-i(169255);	-- Tuft of Red Fur
 i(118377);	-- Universal Language Module
-i(169239);	-- Unknowable Cube
-i(169225);	-- Unstoppable Countdown Clock
-i(169867);	-- Visual Holo Sphere
-i(146688);	-- Waterlogged Handmaiden's Gloves
-i(156926);	-- Witchrend
-i(142509);	-- Withered Targeting Orb
-i(164761);	-- Xal'atath, Blade of the Black Empire
-i(146690);	-- Xavius' Torn Spellsash
-i(17384);	-- Zinfizzlex's Portable Shredder Unit
-i(17410);	-- Zinfizzlex's Portable Shredder Unit
-i(135463);	-- Invincible's Reins
-i(136351);	-- Handful of Obliterum Ash
-i(136352);	-- Archmage Karlain's Imbued Silkweave Robe
-i(139037);	-- Thunderfury, Blessed Blade of the Windseeker
 i(139400);	-- [Ancient Magic and How to Wield It Without Destroying the World]
 i(139401);	-- [The Fate of Aegwynn]
 i(139402);	-- [The Fel Tome of Vorgalus Dor]
 i(139671);	-- [Deathglare Iris]
-i(151248);	-- Fragment of the Guardian's Seal (normal)
-i(151249);	-- Fragment of the Guardian's Seal (hc)
-i(151250);	-- Fragment of the Guardian's Seal (mythic)
-i(152902);	-- Rune of Passage (normal)
-i(152908);	-- Sigil of the Dark Titan (normal)
-i(152909);	-- Sigil of the Dark Titan (heroic)
-i(152910);	-- Sigil of the Dark Titan (mythic)
 i(135511);	-- Thick Slab of Bacon. You get it for a split second after completing a bacon wq
-i(137212);	-- Cut Skystone. You get it for a split second after completing the jewelcrafter daily
-i(137214);	-- Cut Deep Amber. You get it for a split second after completing the jewelcrafter daily
-i(137215);	-- Cut Azsunite.  You get it for a split second after completing the jewelcrafter daily
 -- Recipes (Not actual recipes)
 i(168326);	-- Eye of Theras
 -- Mount
-i(37011);	-- Magic Broom
 i(33183);	-- Old Magic Broom
 i(33189);	-- Rickety Magic Broom
 i(33184);	-- Swift Magic Broom
 -- "Toy"
-i(160364);	-- Bunch of Berries
-i(6351);	-- Dented Crate
 i(118265);	-- Echoing Betrayal
 i(2460);	-- Elixir of Tongues
 i(151754);	-- Gold Plated Cage Head Key
-i(13874);	-- Heavy Crate
 i(151757);	-- Limited Run Blight Boar Poster
-i(80914);	-- Mourning Glory
 i(72201);	-- Plump Intestines
 i(79104);	-- Rusty Watering Can
 i(139590);	-- Scroll of Teleport: Ravenholdt
-i(6357);	-- Sealed Crate
 i(88496);	-- Sealed Crate
 i(67495);	-- Strange Bloated Stomach
 i(80513);	-- Vintage Bug Sprayer
-i(6352);	-- Waterlogged Crate
-i(160376);	-- Wilderbew Special
 -- Bfa Consumables
 i(162108);	-- [Rough-hooked Tidespray Linen]
 i(162109);	-- [Storm Silver Spurs]
 i(162110);	-- [Disenchanting Rod]
-i(162111);	-- [Kaleidoscopic Lens]
 i(163826);	-- Raider's Supply Cache
 -- Bfa Quest Items
 i(169473);	-- Dormant Scale of the Blue Aspect
@@ -278,7 +210,6 @@ i(162126);	-- River Clam Meat
 -- Suramar Mana Gems
 i(139890);	-- Ancient Mana Gem
 i(140236);	-- A Mrglrmrl Mlrglr
-i(140239);	-- Excavated Highborne Artifact
 i(140240);	-- Enchanted Moonwell Waters
 -- "Weekly Holidays"
 i(167872);	-- Damaged Diving Helmet
@@ -329,6 +260,7 @@ i(10922);	-- Wound Poison IV
 -----------------
 i(62370);	-- Bear Whisker
 i(60406);	-- Blood-Caked Incisors
+i(56149);	-- Empty Town-In-A-Box
 i(56054);	-- Gleaming Flipper
 i(62770);	-- Infested Feather
 i(54629);	-- Prickly Thorn
@@ -336,6 +268,7 @@ i(60390);	-- Reticulated Tissue
 i(62528);	-- Sharp Crocolisk Tooth
 i(56055);	-- Small Parasitic Fish
 i(60405);	-- Stubby Bear Tail
+i(60335);	-- Thick Hide Pack
 i(56056);	-- Trophy Jaws
 i(62452);	-- Velvet Ear
 
@@ -394,7 +327,6 @@ i(180979);	-- Artisan's Large Satchel
 i(180976);	-- Artisan's Satchel
 i(180983);	-- Artisan's Stuffed Satchel
 i(178924);	-- Ash Clod
-i(180450);	-- Assorted Bolts
 i(184381);	-- Astral Sapwood
 i(176886);	-- Augmented Femur
 i(178217);	-- Azurebloom Tea
@@ -570,7 +502,6 @@ i(176861);	-- Engorged Venom Sac
 i(183945);	-- Enlarged Nerve
 i(182763);	-- Enormous Jade Pendant
 i(178134);	-- Ephemeral Digits
-i(180448);	-- Eroded Heat Sink
 i(184370);	-- Erratic Sparkshield
 i(180622);	-- Essence of Ephemeral Knowledge
 i(184294);	-- Ethereal Ambrosia
@@ -584,7 +515,6 @@ i(180330);	-- Fading Denathrius Pennant
 i(173870);	-- Fading Glimmerdust
 i(178123);	-- Fading Lightspawn Ember
 i(184378);	-- Faeweald Amber
-i(180449);	-- Failed Experiment
 i(180624);	-- Faintly Glowing Vellum
 i(184077);	-- Famous Sinstone Headers
 i(182709);	-- Fancy Half-Leggings
@@ -665,7 +595,6 @@ i(173871);	-- Harrowed Ichor
 i(179376);	-- Hefty Diary Key
 i(184384);	-- Hibernal Sproutling
 i(180510);	-- Hibiscus Tea Bag
-i(180220);	-- Historical Treatise
 i(184391);	-- Hollow Phylactery Shard
 i(181550);	-- Hopebreaker's Field Injector
 i(180307);	-- Horrific Stone Visage
@@ -818,7 +747,6 @@ i(182764);	-- Pulsing Star Amethyst
 i(183109);	-- Pulsing Voidscarred Fragment
 i(174281);	-- Purified Skyspring Water
 i(176866);	-- Putrid Sludge
-i(184379);	-- Queen's Frozen Tear
 i(177043);	-- Reaped Larion Flank
 i(180377);	-- Red Rum
 i(182757);	-- Redelav Silver Set
@@ -1351,6 +1279,10 @@ i(201968);	-- Enormous Grain of Salt
 i(200818);	-- Eternal Flame
 i(192691);	-- Eternal Ice Stalactite
 i(200929);	-- Everglow Nectar
+i(199904);	-- Extraction: Awakened Air
+i(199905);	-- Extraction: Awakened Earth
+i(199901);	-- Extraction: Awakened Fire
+i(199903);	-- Extraction: Awakened Frost
 i(194036);	-- Exquisite Necklace
 i(192692);	-- Faerie Dust
 i(200805);	-- Fallen Watcher Remains
@@ -1789,6 +1721,10 @@ i(212345);	-- Hunted Hakkari Blood
 i(211695);	-- Jagged Crystallized Eye
 i(212352);	-- Mosh'Ogg Totem
 i(211694);	-- Oozing Felfang
+i(224009);	-- Survivalist's Biscuit
+i(224010);	-- Survivalist's Purified Water
+i(224021);	-- Survivalist's Healing Potion
+i(224022);	-- Survivalist's Mana Potion
 i(211692);	-- Tainted Patch of Hide
 i(212341);	-- Twice-Dead Tusk
 i(211798);	-- Un-Raised Bone Fragments
@@ -1815,34 +1751,67 @@ i(225419);	-- Green Hills of Stranglethorn - Page 27
 ------------------
 -- PATCH 11.0.2 --
 ------------------
+i(227299);	-- Acid Braised Beetle
+i(225793);	-- Acid-Etched Pendant
 i(220287);	-- Acid-Filled Sack
+i(227312);	-- Afterglow
+i(227305);	-- Airship Dog on a Bun
+i(225843);	-- Ancient Bronze Hourglass
 i(228398);	-- Angry Rock
 i(217170);	-- Backup Candles
 i(220290);	-- Barbed Pincers
+i(225835);	-- Battered Lantern
 i(213254);	-- Big Gold Nugget
 i(220291);	-- Bioluminescent Thorax
+i(227321);	-- Blessed Brew
 i(225543);	-- Bloodied Idol
 i(228455);	-- Bolt of Bouldercloth
+i(228756);	-- Bonus Snuffling Experience
+i(227335);	-- Borer Blood Pudding
 i(223900);	-- Bottled Darkness
 i(228456);	-- Bouldercloth
 i(228458);	-- Bouldercloth Bag
+i(220484);	-- Bowl of Pulsing Goo
 i(225801);	-- Braided Seaweed Bangle
 i(225716);	-- Brax's Favorite Cog
 i(225709);	-- Brax's Left Shoe
 i(225710);	-- Brax's Other Hat
-i(225715);	-- Brax's To-Do List
 i(225718);	-- Brax's Toothpick
+i(225715);	-- Brax's To-Do List
+i(225826);	-- Broken Elevator Cog
+i(225853);	-- Broken Stirrup
+i(220447);	-- Broken Trident Prong
+i(220156);	-- Bubbling Wax
+i(227308);	-- Butterflied Deepstrider
 i(217171);	-- CANDLE KING DIARY
+i(227274);	-- Candle Rock Candy
 i(220277);	-- Carapace Fragment
 i(228485);	-- Carver's Spare Whittling Knife
+i(220448);	-- Cerulean Orb
+i(227326);	-- Chalcocite Lava Cake
+i(220245);	-- Charged Antennae
 i(220281);	-- Charged Fragments
+i(220274);	-- Chipped Hammer
 i(220249);	-- Chipped Mandible
 i(220254);	-- Chipped Molars
 i(225815);	-- Chipped Opal Signet Ring
+i(225786);	-- Chitin Stress Ball
 i(217168);	-- Chocolate Coins
+i(217896);	-- Cinderbrew Mead
+i(225996);	-- Clam Digger
 i(217169);	-- Cloak of Beards
 i(220256);	-- Clump of Rotting Detritus
+i(228632);	-- Clutch of Wyrm's Awakened Crests
+i(227314);	-- Coffee, Light Ice
+i(220486);	-- Collection of Shiny Shells
+i(228454);	-- Collector's Commemorative Proscenium Playbill
 i(220267);	-- Combustible Gland
+i(229371);	-- Companion Experience
+i(232049);	-- Companion Experience
+i(232371);	-- Companion Experience
+i(225788);	-- Congratulatory Ascension Silk
+i(228392);	-- Corroded Pocket Watch
+i(225848);	-- Cracked Etheric Power Core
 i(228482);	-- Cracked Iridescent Pearl
 i(228496);	-- Cracked Lantern
 i(225827);	-- Cracked Pickaxe
@@ -1850,125 +1819,238 @@ i(228387);	-- Crumbling Bismuth
 i(225804);	-- Crumpled Patrol Assignment
 i(228494);	-- Crunchy Rock Candy
 i(217167);	-- Crusty Chalice
+i(227301);	-- Crystal Tots
 i(220301);	-- Crystallized Honey
+i(225789);	-- Curved Threadripper
+i(225844);	-- Damaged Radial Cog
+i(228388);	-- Damp Doll
 i(220255);	-- Darkened Residue
 i(225813);	-- Darkened Ritual Stone
+i(225799);	-- Dazzling Spanner
+i(228396);	-- Dead Fish
+i(220303);	-- Decayed Flesh
+i(228452);	-- Deepest, Darkest Black Ink
 i(224464);	-- Demonic Healthstone
 i(220280);	-- Dense Five-Pound Stone
 i(225795);	-- Dented Pocketwatch
-i(228452);	-- Deepest, Darkest Black Ink
+i(228624);	-- Depleted Awakened Flightstone
+i(228626);	-- Depleted Blackened Flightstone
+i(228625);	-- Depleted Ruby Flightstone
+i(220443);	-- Desecrated Arathi Tinderbox
 i(228509);	-- Diaphanous Webbing
+i(227311);	-- Digspresso
+i(225251);	-- Disassemble Invention
 i(220229);	-- Dormant Core
 i(220271);	-- Downy Clump
 i(225836);	-- Drained Elemental Mote
 i(228723);	-- Earthen Pet Rock
+i(227316);	-- Eggnog
+i(220235);	-- Electrified Teeth
 i(225792);	-- Elegant Pedipalp Wrappings
 i(220262);	-- Elongated Proboscis
 i(220243);	-- Eloquent Tailfeather
 i(213265);	-- Empty Antidote Vial
 i(220355);	-- Enlarged Ear
 i(220222);	-- Everburning Lump
+i(225841);	-- Ever-Frozen Ice
+i(228453);	-- Extra Large Bag of Popped Pebbles
 i(228489);	-- Fashionable Flask
 i(225814);	-- Feather-on-a-Stick
+i(220250);	-- Filthy Handkerchief
 i(220302);	-- Fractured Casing
+i(225846);	-- Fractured Command Matrix
 i(225829);	-- Fractured Interface Crystal
 i(228490);	-- Fresh Grazing Rocks
 i(228487);	-- Freshly Fallen Sticks
+i(224767);	-- Giant Candle Parts
 i(225677);	-- Gleaming Chaos
+i(225811);	-- Gleaming Deep-Pearl
+i(232492);	-- Gleaming Shatter
+i(227333);	-- Glimmering Delicacy
+i(225831);	-- Glittering Rock
+i(220444);	-- Gnawed Spine
 i(220259);	-- Gob of Mucus
 i(220509);	-- Gossamer Web
+i(227302);	-- Granite Salad
+i(225825);	-- Ground Snacking Stone
+i(220439);	-- Half-Eaten Fish
 i(225790);	-- Half-Painted Pewter Spider
+i(227297);	-- Hallowed Burger
 i(220279);	-- Handful of Polished Scales
 i(220252);	-- Handful of Smooth Pebbles
 i(228400);	-- Happy Rock
+i(220441);	-- Hardened Pearl
+i(228721);	-- Hearty Feast
+i(222693);	-- Hearty Food
+i(222740);	-- Hearty Meals
+i(216708);	-- Holy Candle
+i(227306);	-- Holy Mackerel
+i(227298);	-- Humble Pie
 i(220246);	-- Humming Power Core
+i(220445);	-- Illusionary Charm
+i(220380);	-- Immature Spiderling
 i(220275);	-- Indigo Shard
 i(220253);	-- Inert Dust
+i(225847);	-- Inoperable Keystone
+i(227307);	-- Insects Bowl Mix
+i(225798);	-- Intricately Carved Barter Boulder
+i(220269);	-- Ionized Feather
 i(220224);	-- Iridescent Integument
-i(220380);	-- Immature Spiderling
+i(227273);	-- Iron Poppers
 i(225830);	-- Irreparably Bent Spoon
 i(225791);	-- Jar of Alchemical Solvent
+i(225822);	-- Jar of Cinderbee Honey
 i(225785);	-- Jar of Pickled Insects
 i(220264);	-- Jaw with Barbed Teeth
 i(220238);	-- Keen Fang
+i(220440);	-- Kelp Necklace
+i(217040);	-- Kobold Earwax
+i(227275);	-- Koboldatouille
+i(227319);	-- Koboldchino
 i(225812);	-- Kobyss Teeth-Sharpener
+i(228633);	-- Large Pouch of Whelpling's Awakened Crests
+i(227317);	-- Lava Cola
 i(220234);	-- Leaden Vial
+i(228390);	-- Left Boot
+i(228627);	-- Lively Clutch of Wyrm's Awakened Crests
 i(225849);	-- Long-Forgotten Glove
 i(223898);	-- Loose Bolts
+i(228394);	-- Lost Note
 i(228483);	-- Lovingly Carved Ramolith
 i(225820);	-- Lovingly Worn Chisel
 i(225803);	-- Lynx Tag Collar
+i(227310);	-- Magmalaid
+i(226811);	-- Marinated Maggots
 i(220248);	-- Mass of Melted Wax
+i(220298);	-- Melted Candle Stump
 i(225837);	-- Melted Globs of Glass
 i(223886);	-- Mercurial Herbs
 i(223883);	-- Mercurial Transmutation
 i(225850);	-- Moldy Rations
+i(220285);	-- Moldy Rucksack
+i(227334);	-- Mole Mole
 i(220219);	-- Mound of Night Soil
 i(228430);	-- Mucky Rock
+i(228395);	-- Mud Clump
+i(225854);	-- Muddied Amulet
+i(227304);	-- Mushroom Cake
+i(227323);	-- Mushroom Tea
+i(228720);	-- Nascent Gemstone
 i(217162);	-- Necklace of Kobold Teeth
+i(227324);	-- Nerub'ar Nectar
 i(210829);	-- Neutralize Concoctions
 i(224153);	-- Nibbled Shroomcap
+i(220240);	-- Night's Litany
 i(213258);	-- Odorant Oddity
+i(225809);	-- Oiled Pigment Pouch
 i(225845);	-- Old Explorer's Compass
+i(225817);	-- Ominous Ceremonial Robe
 i(223887);	-- Ominous Herbs
 i(223885);	-- Ominous Transmutation
 i(228608);	-- On the Application of Arathi Technology to Earthen Life
+i(220220);	-- Ornate Pipe
 i(228099);	-- Oversized Chelicera
 i(220244);	-- Oversized Claw
 i(220251);	-- Pale Gills
+i(226524);	-- Partially-Charged Hologem
+i(225796);	-- Particularly Pungent Herbs
 i(225787);	-- Pheromone-Covered Missive
 i(220283);	-- Pileus Puff
+i(225202);	-- Pilfer Through Parts
+i(225834);	-- Pilfered Matchbook
+i(225875);	-- Pitted Armor Plating
+i(222955);	-- Player Experience
+i(227300);	-- Poison Poached Eggs
 i(220247);	-- Polishing Powder
-i(228491);	-- Ramolith Bedding Material
-i(220258);	-- Rotting Bones
-i(225796);	-- Particularly Pungent Herbs
+i(228630);	-- Pouch of Whelpling's Awakened Crests
+i(225794);	-- Preserved Gold-Inlaid Chelicera
 i(220227);	-- Pristine Ventral Fin
+i(225816);	-- Profaned Pendant
 i(220257);	-- Pulsing Pustules
 i(220230);	-- Punctured Intestine
 i(220261);	-- Pungent Mushroom
+i(225937);	-- Putrid Goop
 i(220228);	-- Quartz Growth
+i(227318);	-- Quicksilver Sipper
 i(220288);	-- Quivering Tail
 i(220362);	-- Ragged Rope
+i(228491);	-- Ramolith Bedding Material
 i(220242);	-- Razored Tail-Blade
+i(228429);	-- Reflective Rock
+i(228629);	-- Restless Satchel of Drake's Awakened Crests
+i(228391);	-- Right Boot
 i(228510);	-- Ripped Swarmite Wing
-i(220297);	-- Rock-Encrusted Plates
+i(228431);	-- Rock Buddy
+i(227272);	-- Rock Lobster
 i(228609);	-- Rock Roasting for Dummies
+i(227327);	-- Rocky Road
+i(220297);	-- Rock-Encrusted Plates
+i(220438);	-- Root-Staff Splinter
+i(220258);	-- Rotting Bones
 i(217164);	-- Royal Nailpicker
 i(225807);	-- Rune-Carved Bone
+i(223897);	-- Ruptured Engine
 i(228497);	-- Rusted Airship Cog
 i(228399);	-- Sad Rock
+i(227331);	-- Saints' Delight
+i(227322);	-- Sanctified Sasparilla
+i(225824);	-- Sand Sculpting Comb
 i(220236);	-- Sanguineous Sac
+i(228631);	-- Satchel of Drake's Awakened Crests
 i(220239);	-- Severed Spiraled Tail
 i(223899);	-- Shadowed Appendage
 i(220266);	-- Sharpened Digging Claws
 i(220361);	-- Sharpened Steel Implement
+i(228393);	-- Shattered Lantern
 i(220273);	-- Shed Skin
 i(220237);	-- Shining Amethyst Cluster
+i(227332);	-- Sipping Aether
+i(226681);	-- Sizzling Cinderpollen
 i(220231);	-- Skiatic Vessel
 i(220299);	-- Sleek Beak
 i(220226);	-- Slime-Coated Membrane
+i(220265);	-- Slitted Eye
 i(228711);	-- Small Candle
 i(228488);	-- Small Glass Vase
 i(225832);	-- Smelly Backscratcher
 i(225810);	-- Smoked Visor
+i(225819);	-- Smudged Propaganda
 i(220241);	-- Softly Glowing Shard
 i(228493);	-- Sour Topaz Bites
 i(228492);	-- Spicy Rubies
 i(220268);	-- Spiraled Horn
 i(226692);	-- Splintered Stone
+i(225823);	-- Split Bull-Horn
 i(213262);	-- Stained Glass Fragment
+i(227313);	-- Starfruit Puree
+i(227329);	-- Still-Twitching Gumbo
+i(211481);	-- Stomping Shoes
 i(225800);	-- Stone Singing Bowl
+i(227325);	-- Stone Soup
 i(220294);	-- Strangely Glowing Filament
 i(220363);	-- Straw-Stuffed Hat
 i(220292);	-- Stretched Wing
+i(227336);	-- Sugar Slurry
 i(228507);	-- Swarmite Eggsac
+i(225818);	-- Tainted Incense
+i(220286);	-- Tarnished Medallion
+i(227315);	-- Tarragon Soda
+i(220225);	-- Tattered Standard
 i(225821);	-- Tattered Theater Hood
+i(225797);	-- The Fifty Rules of Commerce, Fourth Edition
 i(225877);	-- The Fifty Rules of Commerce, Fourth Edition
+i(225878);	-- The Fifty Rules of Commerce, Fourth Edition
+i(225879);	-- The Fifty Rules of Commerce, Fourth Edition
 i(225852);	-- The Foolhardy's Guide to Survival
 i(220296);	-- Thickly Webbed Foot
 i(228481);	-- Tiny Fathomclam
+i(227309);	-- Titanshake
 i(220223);	-- Torn Gossamer Scrap
 i(220272);	-- Torn Manuscript Page
+i(222622);	-- Transcribe to Ascension
+i(222625);	-- Transcribe to Radiance
+i(222624);	-- Transcribe to Symbiosis
+i(222623);	-- Transcribe to Vivacity
 i(220300);	-- Translucent Wing
 i(220282);	-- Tuft of Whiskers
 i(213266);	-- Twitching Snack
@@ -1979,54 +2061,105 @@ i(218453);	-- Unusable Fragment
 i(220289);	-- Venomous Stinger
 i(220293);	-- Very Soft Wool
 i(220270);	-- Vile Catalyst
+i(220221);	-- Void Pebble
 i(223884);	-- Volatile Transmutation
-i(220276);	-- Wax-Covered Helmet
+i(227328);	-- Wax Fondue
 i(220263);	-- Wax Miner's Sack
+i(227303);	-- Waxy Cheese Snack
+i(220276);	-- Wax-Covered Helmet
+i(224650);	-- Wax-Sealed Pouch
+i(225833);	-- Weathered Skipping Stone
+i(220442);	-- Weighty Shovel
 i(225802);	-- Well-Worn Darning Needle
-i(217163);	-- Well Worn Doll
+i(217163);	-- Well-Worn Doll
+i(220278);	-- Well-Worn Leather Sole
+i(225842);	-- Whirling Sphere
+i(220491);	-- Wicked Blade Shard
+i(227320);	-- Wicker Wisps
 i(220232);	-- Worm-Eaten Burlap Robe
--- spider stuff
-i(222693);	-- Hearty Food
-i(222740);	-- Hearty Meals
-i(228721);	-- Hearty Feast
--- ?
-i(216708);	-- Holy Candle
-i(225251);	-- Disassemble Invention
-i(225202);	-- Pilfer Through Parts
--- vendor food
-i(227299);	-- Acid Braised Beetle
-i(227305);	-- Airship Dog on a Bun
-i(227321);	-- Blessed Brew
-i(227335);	-- Borer Blood Pudding
-i(227308);	-- Butterflied Deepstrider
-i(227326);	-- Chalcocite Lava Cake
-i(217896);	-- Cinderbrew Mead
-i(227314);	-- Coffee, Light Ice
-i(227301);	-- Crystal Tots
-i(224762);	-- Delver's Waterskin
-i(227316);	-- Eggnog
-i(227333);	-- Glimmering Delicacy
-i(227302);	-- Granite Salad
-i(227297);	-- Hallowed Burger
-i(227306);	-- Holy Mackerel
-i(227298);	-- Humble Pie
-i(227307);	-- Insects Bowl Mix
-i(227273);	-- Iron Poppers
-i(227317);	-- Lava Cola
-i(227310);	-- Magmalaid
-i(226811);	-- Marinated Maggots
-i(227334);	-- Mole Mole
-i(227323);	-- Mushroom Tea
-i(227324);	-- Nerub'ar Nectar
-i(227300);	-- Poison Poached Eggs
-i(227318);	-- Quicksilver Sipper
-i(227272);	-- Rock Lobster
-i(227327);	-- Rocky Road
-i(227331);	-- Saints' Delight
-i(227322);	-- Sanctified Sasparilla
-i(227332);	-- Sipping Aether
-i(227313);	-- Starfruit Puree
-i(227325);	-- Stone Soup
-i(227336);	-- Sugar Slurry
-i(227315);	-- Tarragon Soda
-i(227309);	-- Titanshake
+i(228911);	-- Xalatath's Rusty Coin
+i(228628);	-- Yawning Basket of Aspect's Awakened Crests
+
+------------------
+-- PATCH 11.0.5 --
+------------------
+i(232380);	-- Brivelthwerp's Sassafras Float
+i(232376);	-- Cherry Bombs
+i(229830);	-- Dark Blue Balloon
+i(221485);	-- Defias Gunpowder
+i(232385);	-- Elekk Ear
+i(229831);	-- Gold Balloon
+i(232374);	-- Greasy Links
+i(232378);	-- Jenkins' No Nonsense Fried Chicken
+i(229829);	-- Light Blue Balloon
+i(232375);	-- Moon Bread
+i(232377);	-- Pappy Thunderbrew's Cough Syrup
+
+
+------------------
+-- PATCH 11.0.7 --
+------------------
+i(234718);	-- Ancient Runic Hilt
+i(234733);	-- Ancient Runic Hilt
+i(234735);	-- Battered Vrykul Lantern
+i(234732);	-- Bloodied Medallion
+i(234754);	-- Bloodied Siren Pendant
+i(234722);	-- Carved Stone Fragment
+i(234752);	-- Coral-Pocked Scrying Stone
+i(234753);	-- Cracked Divining Scepter
+i(232637);	-- Cracked Pirate Skull
+i(233800);	-- Decorated Gunpowder Flask
+i(232634);	-- Emptied Turtle Shell
+i(234723);	-- Hollow Sigil
+i(234734);	-- Inscribed Drinking Horn
+i(232638);	-- Loosened Naga Scales
+i(234720);	-- Memoric Residue
+i(234750);	-- Myrmidon's Osminium Bracer
+i(234751);	-- Pearl-Adorned Tailband
+i(232636);	-- Rum-Soaked Hankerchief
+i(232633);	-- Shiny Seaside Clam
+i(232632);	-- Spiral Mollusk Shell
+i(234719);	-- Storm-Etched Vambrace
+i(234736);	-- Tar-Sealed Scroll
+i(232635);	-- Torn Bilgewater Bandage
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+i(234212);	-- "Beaten by the House"
+i(234205);	-- Bent Lever
+i(236638);	-- Bundle of Kaja-Scented Incense
+i(236922);	-- Celebratory Pack of Runed Harbinger Crests
+i(237305);	-- Chalky Shungite
+i(233030);	-- Charged Cables
+i(234203);	-- Clay-Speckled Metal Slug
+i(237335);	-- Collectible Pineappletini Mug
+i(233029);	-- Cracked Core
+i(236636);	-- Cracked Crysoberyl
+i(236640);	-- Cracked Earthen Singing Bowl
+i(235038);	-- Crumpled Schematic
+i(236639);	-- Dented Censer
+i(234204);	-- Depleted Battery
+i(237330);	-- Disposable Hamburger
+i(237331);	-- Disposable Hotdog
+i(228194);	-- Fully Scrapped Scrap
+i(234197);	-- Gilded Screwdriver
+i(236923);	-- Glorious Cluster of Gilded Harbinger Crests
+i(237334);	-- Half-Eaten Takeout
+i(236680);	-- Imitation Crab Meat
+i(233031);	-- Intact Interlock
+i(236634);	-- Itty Bitty Bonsai
+i(235268);	-- Misprinted Card
+i(236637);	-- Not-Quite-Crystal Ball
+i(236926);	-- Pack of Runed Harbinger Crests
+i(236924);	-- Pouch of Weathered Harbinger Crests
+i(236652);	-- Re-Down-Upcycled Salvage
+i(228195);	-- Tattered Goblin Cap
+i(237313);	-- Totally Legit Samophlange
+i(231899);	-- Trash
+i(236921);	-- Triumphant Satchel of Carved Harbinger Crests
+i(237332);	-- Single-Use Grill
+i(236925);	-- Satchel of Carved Harbinger Crests
+i(236635);	-- Uncut Semi-Smoky Quartz
+i(236651);	-- Vince's Old Left Shoe
+i(229809);	-- Weighted Metal Ball

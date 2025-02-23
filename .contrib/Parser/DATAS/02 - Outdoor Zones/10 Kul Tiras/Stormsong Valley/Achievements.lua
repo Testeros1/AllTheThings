@@ -14,184 +14,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = ALLIANCE_ONLY,
 			}),
 			explorationAch(12558),	-- Explore Stormsong Valley
-			ach(13045, {		-- Every Day I'm Truffling
-				["_noautomation"] = true,
-			}),
-			petbattle(ach(13279, {	-- Family Battler
-				["collectible"] = false,
-				["g"] = {
-					ach(13280, {	-- Hobbyist Aquarist
-						["collectible"] = false,
-						["g"] = {
-							crit(43592, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43596, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43597, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13270, {	-- Beast Mode
-						["collectible"] = false,
-						["g"] = {
-							crit(43612, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43616, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43617, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13271, {	-- Critters with Huge Teeth
-						["collectible"] = false,
-						["g"] = {
-							crit(43632, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43636, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43638, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13272, {	-- Dragons Make Everything Better
-						["collectible"] = false,
-						["g"] = {
-							crit(43653, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43657, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43658, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13273, {	-- Element of Success
-						["collectible"] = false,
-						["g"] = {
-							crit(43672, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43676, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43677, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13274, {	-- Fun With Flying
-						["collectible"] = false,
-						["g"] = {
-							crit(43700, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43704, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43705, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13281, {	-- Human Resources
-						["collectible"] = false,
-						["g"] = {
-							crit(43722, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43726, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43727, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13275, {	-- Magician's Secrets
-						["collectible"] = false,
-						["g"] = {
-							crit(43741, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(44012, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43746, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13277, {	-- Machine Learning
-						["collectible"] = false,
-						["g"] = {
-							crit(43760, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43764, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43765, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-					ach(13278, {	-- Not Quite Dead Yet
-						["collectible"] = false,
-						["g"] = {
-							crit(43779, {	-- Eddie Fixit
-								["cr"] = 140315,	-- Eddie Fixit
-								["coord"] = { 36.5, 33.7, STORMSONG_VALLEY },
-							}),
-							crit(43783, {	-- Ellie Vern
-								["cr"] = 141002,	-- Ellie Vern
-								["coord"] = { 65.0, 50.8, STORMSONG_VALLEY },
-							}),
-							crit(43784, {	-- Leana Darkwind
-								["cr"] = 141046,	-- Leana Darkwind
-								["coord"] = { 77.2, 29.0, STORMSONG_VALLEY },
-							}),
-						},
-					}),
-				},
-			})),
+			ach(13045),		-- Every Day I'm Truffling
 			ach(13051),		-- Legends of the Tidesages (automated)
 			ach(13054, {	-- Sabertron Assemble
 				crit(41420, {	-- Red Sabertron slain
@@ -214,6 +37,20 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					["_quests"] = { 51974 },	-- Sabertron (COPPER)
 					["crs"] = { 139359 },
 				}),
+			}),
+			ach(41206, {	-- Songs of Storms
+				["timeline"] = { ADDED_11_0_7 },
+				-- Meta Achievement
+				["sym"] = {{"meta_achievement",
+					12940,	-- Adventurer of Stormsong Valley
+					13047,	-- Clever Use of Mechanical Explosives
+					13053,	-- Deadliest Cache
+					13045,	-- Every Day I'm Truffling
+					13062,	-- Let's Bee Friends
+					13051,	-- Legends of the Tidesages
+					12853,	-- Treasures of Stormsong Valley
+					13046,	-- These Hills Sing
+				}},
 			}),
 			ach(12953, {	-- Storm's Wake
 				["races"] = ALLIANCE_ONLY,
@@ -284,7 +121,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				-- }),
 				o(293350, {	-- Carved Wooden Chest
 					["questID"] = 52429,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 44.44, 73.53, STORMSONG_VALLEY },
 					["g"] = {
 						i(162000),	-- Pig Nose
@@ -292,7 +129,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				}),
 				o(293349, {	-- Discarded Lunchbox
 					["questID"] = 52326,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 58.2, 63.7, STORMSONG_VALLEY },
 					["g"] = {
 						i(160485),	-- An Unforgettable Luncheon
@@ -300,42 +137,42 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				}),
 				o(294174, {	-- Forgotten Chest
 					["questID"] = 52980,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 46.00, 30.69, STORMSONG_VALLEY },
 				}),
 				o(281494, {	-- Frosty Treasure Chest
 					["questID"] = 50526,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 48.96, 84.07, STORMSONG_VALLEY },
 				}),
 				o(284448, {	-- Hidden Scholar's Chest
 					["questID"] = 50937,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 59.9, 39.1, STORMSONG_VALLEY },
 				}),
 				o(280619, {	-- Old Ironbound Chest
 					["questID"] = 50089,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 42.8, 47.2, STORMSONG_VALLEY },
 				}),
 				o(279042, {	-- Smuggler's Stash
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 58.6, 83.8, STORMSONG_VALLEY },
 					["questID"] = 49811,
 				}),
 				o(282153, {	-- Sunken Strongbox
 					["questID"] = 50734,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 67.22, 43.2, STORMSONG_VALLEY },
 				}),
 				o(294173, {	-- Venture Co. Supply Chest
 					["questID"] = 52976,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 36.69, 23.23, STORMSONG_VALLEY },
 				}),
 				o(289647, {	-- Weathered Treasure Chest
 					["questID"] = 51449,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 66.92, 12.03, STORMSONG_VALLEY },
 				}),
 			}),

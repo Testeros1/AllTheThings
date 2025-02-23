@@ -28,7 +28,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["timeline"] = { ADDED_4_3_0 },
 					["lvl"] = lvlsquish(62, 62, 10),
 				}),
-				q(9876,  {	-- Failed Incursion
+				q(9876, {	-- Failed Incursion
 					["qg"] = 17841,	-- Ysiel Windsinger
 					["sourceQuest"] = 9732,	-- Return to the Marsh
 					["coord"] = { 78.4, 62.0, ZANGARMARSH },
@@ -372,16 +372,17 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 		},
 	}),
 })));
--- #if AFTER TBC
+
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.TBC, {
-		q(11115),	-- The Mark of Vashj (FLAG ONLY)
-	}),
-	-- #if AFTER WOD
-	expansion(EXPANSION.WOD, {
-		q(35561),	-- The Slave Pens Reward Quest - Normal completion
-		q(35562),	-- The Slave Pens Reward Quest - Heroic completion
-	}),
-	-- #endif
+	expansion(EXPANSION.TBC, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
+		inst(260, {
+			q(11115),	-- The Mark of Vashj (FLAG ONLY)
+		}),
+	})),
+	expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+		inst(260, {
+			q(35561),	-- The Slave Pens Reward Quest - Normal completion
+			q(35562),	-- The Slave Pens Reward Quest - Heroic completion
+		}),
+	})),
 });
--- #endif

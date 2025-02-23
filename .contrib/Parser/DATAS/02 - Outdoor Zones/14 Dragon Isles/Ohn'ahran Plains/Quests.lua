@@ -70,7 +70,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						65802,	-- Supplies for the Journey
 					},
 					["provider"] = { "n", 181217 },	-- Sansok Khan
-					["coord"] = { 85.7, 25.3, OHNAHRAN_PLAINS },
+					["coord"] = { 84.7, 22.9, OHNAHRAN_PLAINS },
 				}),
 				q(65804, {	-- For Food and Rivalry
 					["sourceQuests"] = { 65803 },	-- Toward the City
@@ -163,7 +163,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						66021,	-- Unwelcome Outsider
 					},
 					["provider"] = { "n", 192724 },	-- Aru
-					["coord"] = { 61.3, 39.5, OHNAHRAN_PLAINS },	-- Follows you coords is middle.
+					["coord"] = { 62.4, 41.6, OHNAHRAN_PLAINS },
 					["g"] = {
 						i(197906),	-- Teerai Locket
 						i(197671),	-- Shikaar Chain
@@ -174,7 +174,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(66948, {	-- The Emissary's Arrival
 					["sourceQuests"] = { 66969 },	-- Clans of the Plains
 					["provider"] = { "n", 194927 },	-- Gemisath
-					["coord"] = { 61.0, 39.2, OHNAHRAN_PLAINS },
+					["coord"] = { 61.0, 40.4, OHNAHRAN_PLAINS },
 					["g"] = {
 						i(197639),	-- Nokhud Reaver Chestplate
 						i(197638),	-- Ohn'ir Initiate Vestments
@@ -185,7 +185,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(66022, {	-- The Khanam Matra
 					["sourceQuests"] = { 66948 },	-- The Emissary's Arrival
 					["provider"] = { "n", 194927 },	-- Gemisath
-					["coord"] = { 61.0, 39.2, OHNAHRAN_PLAINS },
+					["coord"] = { 61.0, 40.4, OHNAHRAN_PLAINS },
 				}),
 				q(66023, {	-- Trucebreakers
 					["sourceQuests"] = { 66022 },	-- The Khanam Matra
@@ -201,7 +201,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 						i(197646),	-- Ohn'ir Initiate Hood
 						i(197647),	-- Shikaar Scout Helm
 						i(197648),	-- Teerai Watcher Hood
-						i(197405),	-- Renewed Proto-Drake: Maned Tail (DM!)
+						i(197405),	-- Renewed Proto-Drake: Maned Tail (MM!)
 					},
 				}),
 				q(66025, {	-- The Nokhud Threat
@@ -371,12 +371,12 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				q(66335, {	-- Deconstruct Additional Pylons
 					["sourceQuests"] = { 66333 },	-- Justice for Solethus
 					["provider"] = { "n", 191494 },	-- Khanam Matra Sares
-					["coord"] = { 25.2, 38.5, OHNAHRAN_PLAINS }, -- Follows You
+					["coord"] = { 25.2, 38.5, OHNAHRAN_PLAINS },	-- Follows You
 				}),
 				q(66784, {	-- Starve the Storm
 					["sourceQuests"] = { 66333 },	-- Justice for Solethus
 					["provider"] = { "n", 191494 },	-- Khanam Matra Sares
-					["coord"] = { 25.2, 38.5, OHNAHRAN_PLAINS }, -- Follows You
+					["coord"] = { 25.2, 38.5, OHNAHRAN_PLAINS },	-- Follows You
 				}),
 				q(66337, {	-- Stormbreaker
 					["sourceQuests"] = {
@@ -397,7 +397,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 22.1, 51.0, OHNAHRAN_PLAINS },
 					["g"] = {
 						i(197672),	-- Emerald Shroud of Loyalty
-						i(197375),	-- Renewed Proto-Drake: Curled Horns (DM!)
+						i(197375),	-- Renewed Proto-Drake: Curled Horns (MM!)
 					},
 				}),
 				------ Continues in Azure Span ------
@@ -883,7 +883,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["coord"] = { 66.3, 24.3, OHNAHRAN_PLAINS },
 					["g"] = {
 						i(200278),	-- Drake Archaeologist's Shawl
-						i(197407),	-- Renewed Proto-Drake: Spiked Throat (DM!)
+						i(197407),	-- Renewed Proto-Drake: Spiked Throat (MM!)
 						i(198354),	-- The Black Locus
 					},
 				}),
@@ -1008,6 +1008,12 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["sourceQuestNumRequired"] = 1,
 					["provider"] = { "n", 186503 },	-- Gracus
 					["coord"] = { 30.7, 58.0, OHNAHRAN_PLAINS },	-- Is Moving
+					["g"] = {
+						--i(198856),	-- Flyspawn Mandibles (QI!) TODO: wasn't able to loot myself from quest but wowhead have looting data
+						i(198847),	-- Flyspawn Chitin (QI!)
+						i(198848),	-- Flyspawn Thorax (QI!)
+						i(198460),	-- Flyspawn Beetle Parts (QI!)
+					},
 				}),
 				q(70069, {	-- Others Call Me Duck Herder
 					["sourceQuests"] = { 70062 },	-- Some Call Me Bug Catcher
@@ -1372,34 +1378,28 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-	m(OHNAHRAN_PLAINS, {
-		q(73701),	-- triggered during 'Unwelcome Outsider' (questID 66021) (spellID 399693)
-		q(71203),	-- daily lockout for 'To Tame A Thunderspine' series
-		q(70724),	-- triggered during 'The Calm Before the Storm' (spellID 419065)
-		q(70749),	-- triggered when looting the talisman off windsage garuman (spellID 387958)
-		q(70505),	-- triggered when talking to Tigari Khan after looting the talisman off windsage garuman (spellID 386172)
-		q(72064),	-- triggered when receiving toy from Yennu
-		q(66887),	-- Choose Trophy from First Hunt (Renewal of Vows 66783)
-		q(66888),	-- Choose Blood (Renewal of Vows 66783)
-		q(66889),	-- Choose Eagle Feather (Renewal of Vows 66783)
-		q(69867),	-- Stay and Listen Merithra 18.7,51.6 (LQ 70928)
-		q(66505),	-- triggered when talking to Ranger Bolor and giving them Batu's Collar (spellID 372100)
-		q(66512),	-- triggered when talking to Hunter Zaya and giving her Sarnai's Collar (spellID 372102)
-		-- Achievement Honor Our Ancestors
-		q(71167),	-- Maruukai Ancestor (spellID 390535)
-		q(71168),	-- Timberstep Outpost Ancestor (spellID 390536)
-		q(71169),	-- Horn of Drusahl Ancestor (spellID 390538)
-		q(71170),	-- Toghusuq Village Ancestor (spellID 390539)
-		q(71171),	-- Shikaar Highlands Ancestor (spellID 390544)
-		q(71172),	-- The Carving Winds Ancestor (spellID 390545)
-		q(71173),	-- Sylvan Glade Ancestor (spellID 390547)
-		q(71174),	-- Ohn'iri Springs Ancestor (spellID 390549)
-		q(71175),	-- Teerakai Ancestor (spellID 390551)
-		q(71176),	-- The Eternal Kurgans Ancestor (spellID 390553)
-		-- q(70141),	-- Triggered when killed Skaara
-		q(73904),	-- Completed after killing Bloodgullet (NPC 193254)
-
-		q(72610, {["timeline"] = {ADDED_10_0_7}}),	-- After getting the achievement "A New Beginning"
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(OHNAHRAN_PLAINS, {
+			n(ACHIEVEMENTS, {
+				q(72610, {["timeline"] = {ADDED_10_0_7}}),	-- After getting the achievement "A New Beginning"
+			}),
+			n(QUESTS, {
+				q(73701),	-- triggered during 'Unwelcome Outsider' (questID 66021) (spellID 399693)
+				q(71203),	-- daily lockout for 'To Tame A Thunderspine' series
+				q(70724),	-- triggered during 'The Calm Before the Storm' (spellID 419065)
+				q(70749),	-- triggered when looting the talisman off windsage garuman (spellID 387958)
+				q(70505),	-- triggered when talking to Tigari Khan after looting the talisman off windsage garuman (spellID 386172)
+				q(72064),	-- triggered when receiving toy from Yennu
+				q(66887),	-- Choose Trophy from First Hunt (Renewal of Vows 66783)
+				q(66888),	-- Choose Blood (Renewal of Vows 66783)
+				q(66889),	-- Choose Eagle Feather (Renewal of Vows 66783)
+				q(69867),	-- Stay and Listen Merithra 18.7,51.6 (LQ 70928)
+				q(66505),	-- triggered when talking to Ranger Bolor and giving them Batu's Collar (spellID 372100)
+				q(66512),	-- triggered when talking to Hunter Zaya and giving her Sarnai's Collar (spellID 372102)
+				-- q(70141),	-- Triggered when killed Skaara
+				q(73904),	-- Completed after killing Bloodgullet (NPC 193254)
+			}),
+		}),
 	}),
-})))
+})));

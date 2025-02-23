@@ -5,16 +5,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(TWILIGHT_HIGHLANDS, {
 		["lore"] = "Twilight Highlands is a new zone in Cataclysm. It is currently home of the Wildhammer dwarves and the Dragonmaw Orcs, both whom inhabited Grim Batol in the recent past. Twilight Cultists have also inhabited the area, sensing the presence of the Old Gods nearby, which is explored in the questline related to Consumed by Nightmare. There's also a Ring of Blood-style quest series that rewards a good weapon: Round Three. Fight!",
 		["timeline"] = { ADDED_4_0_3 },
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_twilighthighlands",
-		-- #endif
+		["icon"] = 409549,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(5451, {	-- Consumed by Nightmare
 					["sourceQuest"] = 27380,	-- Nightmare
 					["timeline"] = { ADDED_4_0_3 },
 				}),
-				achWithRep(4886, 1172, {	-- Dragonmaw Clan
+				achWithRep(4886, FACTION_DRAGONMAW_CLAN, {	-- Dragonmaw Clan
 					["races"] = HORDE_ONLY,
 				}),
 				ach(5482, {	-- Dragonmaw Tour of Duty
@@ -22,43 +20,43 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						crit(15952, {	-- High Shaman MacKilligan slain
-							["cr"] = 46885,
+							["provider"] = { "n", 46885 },	-- High Shaman MacKilligan
 							["coord"] = { 45.8, 33.6, TWILIGHT_HIGHLANDS },
 						}),
 						crit(15953, {	-- Dillan MacHurley slain
-							["cr"] = 46378,
+							["provider"] = { "n", 46378 },	-- Dillan MacHurley
 							["coords"] = {
 								{ 45.0, 37.6, TWILIGHT_HIGHLANDS },
 								{ 46.8, 36.8, TWILIGHT_HIGHLANDS },
 							},
 						}),
 						crit(15954, {	-- Gunwald Greybeard slain
-							["cr"] = 46376,
+							["provider"] = { "n", 46376 },	-- Gunwald Greybeard
 							["coord"] = { 45.2, 42.8, TWILIGHT_HIGHLANDS },
 						}),
 						crit(15955, {	-- Cliff Thundermar slain
-							["cr"] = 46377,
+							["provider"] = { "n", 46377 },	-- Cliff Thundermar
 							["coord"] = { 52.8, 28.2, TWILIGHT_HIGHLANDS },
 						}),
 						crit(15950, {	-- The Black Recluse spider slain
-							["cr"] = 47115,
+							["provider"] = { "n", 47115 },	-- The Black Recluse spider
 							["coord"] = { 45.8, 31.6, TWILIGHT_HIGHLANDS },
 						}),
 						crit(15951, {	-- Korthalon the Black slain
-							["cr"] = 47171,
+							["provider"] = { "n", 47171 },	-- Korthalon the Black
 							["coord"] = { 52.0, 27.6, TWILIGHT_HIGHLANDS },
 						}),
 					},
 				}),
 				explorationAch(4866, {	-- Explore Twilight Highlands
 					["timeline"] = { ADDED_4_0_3 },
-					-- #if BEFORE WRATH
-					["description"] = "Explore Twilight Highlands, revealing the covered areas of the world map.",
-					-- #endif
 				}),
 				ach(4873, {	-- Fading into Twilight (Alliance)
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
+					-- #IF RETAIL
+					["_doautomation"] = true,
+					-- #ENDIF
 					-- #if ANYCLASSIC
 					-- #if AFTER MOP
 					["groups"] = {
@@ -171,30 +169,30 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				achWithRep(4885, 1174, {	-- Wildhammer Clan
+				achWithRep(4885, FACTION_WILDHAMMER_CLAN, {	-- Wildhammer Clan
 					["races"] = ALLIANCE_ONLY,
 				}),
 				ach(5481, {	-- Wildhammer Tour of Duty
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
-						crit(1, {	-- Warlord Halthar slain
-							["cr"] = 46493,
+						crit(15948, {	-- Warlord Halthar slain
+							["provider"] = { "n", 46493 },	-- Warlord Halthar
 							["coord"] = { 49.0, 37.2, TWILIGHT_HIGHLANDS },
 						}),
-						crit(2, {	-- Karkrog the Exterminator slain
-							["cr"] = 46756,
+						crit(15949, {	-- Karkrog the Exterminator slain
+							["provider"] = { "n", 46756 },	-- Karkrog the Exterminator
 							["coords"] = {
 								{ 50.8, 33.8, TWILIGHT_HIGHLANDS },
 								{ 51.6, 33.0, TWILIGHT_HIGHLANDS },
 							},
 						}),
-						crit(3, {	-- The Black Recluse spider slain
-							["cr"] = 47115,
+						crit(15950, {	-- The Black Recluse spider slain
+							["provider"] = { "n", 47115 },	-- The Black Recluse spider
 							["coord"] = { 45.8, 31.6, TWILIGHT_HIGHLANDS },
 						}),
-						crit(4, {	-- Korthalon the Black slain
-							["cr"] = 47171,
+						crit(15951, {	-- Korthalon the Black slain
+							["provider"] = { "n", 47171 },	-- Korthalon the Black
 							["coord"] = { 52.0, 27.6, TWILIGHT_HIGHLANDS },
 						}),
 					},
@@ -211,35 +209,90 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					418,	-- Water Snake (PET!)
 				}},
 				["groups"] = {
-					pet(550),	-- Highlands Mouse (PET!)
-					pet(823),	-- Highlands Skunk (PET!)
-					pet(645, {	-- Highlands Turkey (PET!)
-						["description"] = "Can be found around Vermillion Redoubt.",
-					}),
-					pet(431),	-- Rattlesnake (PET!)
-					pet(552, {	-- Twilight Fiendling (PET!)
+					pet(550, {	-- Highlands Mouse (PET!)
+						["description"] = "Most common as secondary pet in Twilight Highlands. The given coordinates only indicates the wider areas where they can be found as primary pets.",
 						["coords"] = {
-							{ 59.6, 51.0, TWILIGHT_HIGHLANDS },
-							{ 40.2, 47.6, TWILIGHT_HIGHLANDS },
-							{ 58.2, 29.8, TWILIGHT_HIGHLANDS },
+							{ 45.6, 41.3, TWILIGHT_HIGHLANDS },	-- Southwestern Ruins of Thundermar
+							{ 50.6, 32.2, TWILIGHT_HIGHLANDS },	-- Northeastern Ruins of Thundermar
+							{ 38.5, 30.1, TWILIGHT_HIGHLANDS },	-- Glopgut's Hollow
+							{ 19.65, 17.45, TWILIGHT_HIGHLANDS },	-- Northwestern Vermillion Redoubt
+							{ 44.6, 26.0, STORMHEIM },	-- Nastrondir
 						},
-						["description"] = "Found in small areas around these coords."
+					}),
+					pet(823, {	-- Highlands Skunk (PET!)
+						["description"] = "Commonly found in the forests of Twilight Highlands.",
+						["coords"] = {
+							{ 45.6, 41.3, TWILIGHT_HIGHLANDS },	-- Southwestern Ruins of Thundermar
+							{ 50.6, 32.2, TWILIGHT_HIGHLANDS },	-- Northeastern Ruins of Thundermar
+							{ 46.5, 25.1, TWILIGHT_HIGHLANDS },	-- North of Thundermaw
+							{ 65.5, 58.0, TWILIGHT_HIGHLANDS },	-- East of Firebeards Patrol
+							{ 71.6, 66.65, TWILIGHT_HIGHLANDS },	-- West of Beach Head
+							{ 56.6, 71.0, TWILIGHT_HIGHLANDS },	-- East of Dunwald Ruins
+						},
+					}),
+					pet(645, {	-- Highlands Turkey (PET!)
+						["description"] = "Commonly found around Vermillion Redoubt in Twilight Highlands.",
+						["coords"] = {
+							{ 46.5, 25.1, TWILIGHT_HIGHLANDS },	-- North of Thundermaw
+							{ 29.8, 25.13, TWILIGHT_HIGHLANDS },	-- Vermillion Redoubt
+							{ 68.25, 40.0, STORMHEIM },	-- Northern Field of Fallen Kings
+							{ 60.78, 54.4, STORMHEIM },	-- South of Valdisdall
+						},
+					}),
+					pet(431, {	-- Rattlesnake (PET!)
+						["description"] = "Most commonly found thorough the Verall River valley in Twilight Highlands. Can also be found scattered around north of the river valley, as well as around Badlands and Tanaris.",
+						["coords"] = {
+							{ 48.9, 36.55, TANARIS },	-- South of Gadgetzan
+							{ 65.75, 41.0, TWILIGHT_HIGHLANDS },	-- Verall Delta
+							{ 57.0, 38.7, TWILIGHT_HIGHLANDS },	-- Lower Verall River
+							{ 42.85, 53.3, TWILIGHT_HIGHLANDS },	-- Upper Verall River
+						},
+					}),
+					pet(552, {	-- Twilight Fiendling (PET!)
+						["description"] = "Found within the breaches caused by Twilight cultists.",
+						["coords"] = {
+							{ 59.6, 51.0, TWILIGHT_HIGHLANDS },	-- The Devouring Breach
+							{ 40.2, 47.6, TWILIGHT_HIGHLANDS },	-- The Twilight Breach
+							{ 58.2, 29.8, TWILIGHT_HIGHLANDS },	-- The Black Breach
+						},
 					}),
 					pet(470, {	-- Twilight Spider (PET!)
-						["coord"] = { 59.6, 51.0, TWILIGHT_HIGHLANDS },
-						["description"] = "Found most commonly around Firebeard's Patrol.",
+						["description"] = "Commonly found in areas defiled by Twilight cultists or their allies in Twilight Highlands and Deepholm.",
+						["coords"] = {
+							{ 68.5, 16.0, AZSHARA },	-- Sable Ridge
+							{ 40.1, 71.0, DEEPHOLM },	-- Master's Gate
+							{ 60.3, 44.9, DEEPHOLM },	-- Lorthuna's Gate
+							{ 63.0, 33.1, DEEPHOLM },	-- Twilight's Precipice
+							{ 59.6, 51.0, TWILIGHT_HIGHLANDS },	-- The Devouring Breach
+							{ 40.2, 47.6, TWILIGHT_HIGHLANDS },	-- The Twilight Breach
+							{ 58.2, 29.8, TWILIGHT_HIGHLANDS },	-- The Black Breach
+							{ 63.9, 77.0, TWILIGHT_HIGHLANDS },	-- Obsidian Forest
+							{ 36.6, 74.0, TWILIGHT_HIGHLANDS },	-- The Twilight Citadel
+						},
 					}),
 					pet(2677, {	-- Twilight Whelpling (PET!)
-						["coord"] = { 20.6, 57.6, TWILIGHT_HIGHLANDS },
+						["description"] = "Found outside Grim Batol, phasing might require questing through Twilight Highlands. Only spawns as Uncommon pets, if you want a Rare quality pet you have to upgrade with a battlestone.",
+						["coord"] = { 19.5, 58.6, TWILIGHT_HIGHLANDS },	-- Outside Grim Batol
 						["timeline"] = { ADDED_8_2_0 },
 					}),
 					pet(548, {	-- Wildhammer Gryphon Hatchling (PET!)
+						["description"] = "Found in the Alliance villages Kirthaven and Thundermar. Horde players CANNOT interact with the hatchlings to intitiate pet battle due to faction alignment, any attempts will only attack them. If you absolutely want to get this pet with a Horde character, they can appear as secondary pets near the villages.",
 						["coords"] = {
-							{ 56.4, 15.8, TWILIGHT_HIGHLANDS },
-							{ 48.4, 28.6, TWILIGHT_HIGHLANDS },
+							{ 56.4, 15.8, TWILIGHT_HIGHLANDS },	-- Kirthaven
+							{ 48.4, 28.6, TWILIGHT_HIGHLANDS },	-- Thundermar
 						},
 					}),
-					pet(549),	-- Yellow-Bellied Marmot (PET!)
+					pet(549, {	-- Yellow-Bellied Marmot (PET!)
+						["description"] = "Very common pet in the forests of Twilight Highlands.",
+						["coords"] = {
+							{ 45.6, 41.3, TWILIGHT_HIGHLANDS },	-- Southwestern Ruins of Thundermar
+							{ 50.6, 32.2, TWILIGHT_HIGHLANDS },	-- Northeastern Ruins of Thundermar
+							{ 46.5, 25.1, TWILIGHT_HIGHLANDS },	-- North of Thundermaw
+							{ 65.5, 58.0, TWILIGHT_HIGHLANDS },	-- East of Firebeards Patrol
+							{ 71.6, 66.65, TWILIGHT_HIGHLANDS },	-- West of Beach Head
+							{ 56.6, 71.0, TWILIGHT_HIGHLANDS },	-- East of Dunwald Ruins
+						},
+					}),
 				},
 			}),
 			explorationHeader({
@@ -257,6 +310,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				exploration(5594),	-- Highland Forest
 				exploration(5640),	-- Humboldt Conflagration
 				exploration(5143),	-- Kirthaven
+				visit_exploration(5563,{coord={35.2,57.4,TWILIGHT_HIGHLANDS}}),	-- Loch Verrall
 				exploration(5595),	-- Obsidian Forest
 				exploration(5439),	-- Ruins of Drakgor
 				exploration(5479),	-- Slithering Cove
@@ -274,13 +328,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				exploration(5462),	-- Wyrms' Bend
 			}),
 			n(FACTIONS, {
-				faction(1172, {	-- Dragonmaw Clan
-					["icon"] = "Interface\\Icons\\inv_misc_tabard_dragonmawclan",
+				faction(FACTION_DRAGONMAW_CLAN, {	-- Dragonmaw Clan
+					["provider"] = { "i", 65909 },	-- Tabard of the Dragonmaw Clan
 					["races"] = HORDE_ONLY,
 				}),
-				faction(1174, {	-- Wildhammer Clan
-					["icon"] = "Interface\\Icons\\inv_misc_tabard_wildhammerclan",
+				faction(FACTION_WILDHAMMER_CLAN, {	-- Wildhammer Clan
+					["provider"] = { "i", 65908 },	-- Tabard of the Wildhammer Clan
 					["races"] = ALLIANCE_ONLY,
+				}),
+			}),
+			prof(FISHING, {
+				i(68050, {	-- Shatterscale Mightfish
+					["provider"] = { "i", 68049 },	-- Heat-Treated Spinning Lure
+					["description"] = "Can be caught by fishing in lava using a special lure.",
 				}),
 			}),
 			n(FLIGHT_PATHS, {
@@ -656,12 +716,17 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(27509, {	-- Breach in the Defenses
+					["qg"] = 45528,	-- Calen
 					["sourceQuest"] = 27564,	-- In Defense of the Redoubt
 					["coord"] = { 29.3, 26.0, TWILIGHT_HIGHLANDS },
-					["qg"] = 45528,	-- Calen
 					["groups"] = {
 						i(63780),	-- Dragonmender Waistguard
 						i(63775),	-- Helm of Verdant Explosion
+						-- #if BEFORE MOP
+						i(63776, {	-- Exhausted Flashgrowth Mote
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(28875, {	-- Bring Down the High Shaman
@@ -920,6 +985,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["description"] = "You must die for this quest to continue.",
 					["coord"] = { 48.3, 14.5, TWILIGHT_HIGHLANDS },
 					["qg"] = 47991,	-- Earthcaller Yevaa
+					-- #if AFTER 9.0.3
+					["sharedDescription"] = "Welcome to the buggy part of the questline!\n\nYou are supposed to become overwhelmed and die during the quest 'Devoured'. Then you spawn by Thrall in The Maelstrom for a bugged nightmare scenario. Get gaslighted during the whole quest event 'The Worldbreaker', and get stuck there after accepting 'The Terrors of Iso'rath'. Use your hearthstone to leave the place, and return to Twilight Highlands.",
+					["groups"] = {
+						n(47991),	-- Earthcaller Yevaa
+						n(45435),	-- Earthen Ring Gryphon
+					},
+					-- #endif
 				}),
 				q(27688, {	-- Distract Them for Me (A)
 					["sourceQuests"] = {
@@ -1183,10 +1255,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(28244, {	-- Eye Spy (A)
+					["qg"] = 48010,	-- Low Shaman Blundy
 					["sourceQuest"] = 28243,	-- The Eyes Have It
 					["coord"] = { 49.7, 29.1, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
-					["qg"] = 48175,	-- Low Shaman Blundy
 					["groups"] = {
 						i(63797),	-- Eye of Despair
 						i(63796),	-- Dark-Eye Ring
@@ -1556,6 +1628,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["groups"] = {
 						i(63889),	-- Shackle-Shatter Wand
 						i(63890),	-- Ring of Rebellion
+						-- #if BEFORE MOP
+						i(63888, {	-- Blackblood Freedom Standard
+							["timeline"] = { REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(27638, {	-- Just You and Garona
@@ -1642,6 +1719,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						i(63893),	-- Signet of Bloody Sands
 						i(63892),	-- Beach-Sweeper Wand
+						-- #if BEFORE MOP
+						i(63891, {	-- Shore-Cleansing Standard
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(28247, {	-- Last of Her Kind
@@ -2100,6 +2182,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sourceQuests"] = { 27657, 27658 },	-- Help From the Earthcaller (A/H)
 					["coord"] = { 37.5, 88.6, TWILIGHT_HIGHLANDS },
 					["qg"] = 46242,	-- Earthcaller Yevaa
+					["description"] = "Aetharon can be found on a floating island above the ground.",
 					["groups"] = {
 						objective(1, {	-- 0/1 Debilitated Apexar slain
 							["provider"] = { "n", 46273 },	-- Debilitated Apexar
@@ -2132,10 +2215,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(28104, {	-- Precious Goods (A)
+					["qg"] = 47592,	-- Master Mathias Shaw
 					["sourceQuest"] = 28101,	-- Mathias' Command
 					["coord"] = { 26.0, 38.8, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
-					["qg"] = 47592,	-- Master Mathias Shaw
 					["groups"] = {
 						objective(1, {	-- 0/1 Twilight Caravan Cargo Key
 							["provider"] = { "i", 62926 },	-- Twilight Caravan Cargo Key
@@ -2153,13 +2236,18 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						i(63774),	-- Spear-Impaled Leggings
 						i(63773),	-- Gatekeeper's Helm
+						-- #if BEFORE MOP
+						i(63772, {	-- Spearwarden's "Lucky" Charm
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(28090, {	-- Precious Goods (H)
 					["qg"] = 47492,	-- Patch
+					["sourceQuest"] = 27576,	-- Patchwork Command
 					["coord"] = { 27.3, 36.7, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
-					["sourceQuest"] = 27576,	-- Patchwork Command
 					["groups"] = {
 						objective(1, {	-- 0/1 Twilight Caravan Cargo Key
 							["provider"] = { "i", 62926 },	-- Twilight Caravan Cargo Key
@@ -2177,6 +2265,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						i(63771),	-- Crushchest Leggings
 						i(63770),	-- Helm of Durable Hatred
+						-- #if BEFORE MOP
+						i(63769, {	-- Spearwarden's Unlucky Charm
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(28109, {	-- Pressing Forward (A)
@@ -2919,7 +3012,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						107574,	-- Anduin Wrynn
 					},
 					["sourceQuest"] = 28716,	-- Hero's Call: Twilight Highlands!
-					["coord"] = { 85.6, 31.8, STORMWIND_CITY },
+					["coord"] = { 85.9, 32.8, STORMWIND_CITY },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -3185,7 +3278,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 76.8, 49.4, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3346}, -- Kithas <Enchanting Supplies>
+						{"sub", "common_recipes_vendor", 3346},	-- Kithas <Enchanting Supplies>
 						{"select", "itemID", 67312},	-- Formula: Magic Lamp (RECIPE!)
 						{"exclude","itemID",6343},	-- Formula: Enchant Chest - Lesser Mana
 					},
@@ -3194,7 +3287,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 75.3, 50.0, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3364}, -- Borya <Tailoring Supplies>
+						{"sub", "common_recipes_vendor", 3364},	-- Borya <Tailoring Supplies>
 					},
 				}),
 				n(49605, {	-- Brian Terrel <Bowyer>
@@ -3212,46 +3305,91 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 79.0, 76.6, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3356}, -- Sumi <Blacksmithing Supplies>
+						{"sub", "common_recipes_vendor", 3356},	-- Sumi <Blacksmithing Supplies>
 					},
 				}),
+				-- #if BEFORE 6.0.2
+				n(49703, {	-- Casandra Downs <Alchemy & Inscription Supplies>
+					["coord"] = { 78.6, 76.2, TWILIGHT_HIGHLANDS },
+					["races"] = ALLIANCE_ONLY,
+					["groups"] = {
+						i(68810, {	-- Technique: Glyph of Colossus Smash
+							["timeline"] = { ADDED_4_0_3, REMOVED_6_0_2 },
+						}),
+					},
+				}),
+				-- #endif
 				n(49386, {	-- Craw MacGraw <Wildhammer Clan Quartermaster>
 					["coord"] = { 48.6, 30.6, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
-					["groups"] = {
-						i(62427),	-- Band of Singing Grass
-						i(62431),	-- Belt of the Untamed
-						i(62428),	-- Crown of Wings
-						i(62424),	-- Gloves of Aetherial Rumors
-						i(62432),	-- Gryphon Rider's Boots
-						i(62430),	-- Gryphon Talon Gauntlets
-						i(62423),	-- Helm of the Skyborne
-						i(62434),	-- Lightning Flash Pendant
-						i(62426),	-- Mantle of Wild Feathers
-						i(62433),	-- Stormbolt Gloves
-						i(62425),	-- Swiftflight Leggings
-						i(65908),	-- Tabard of the Wildhammer Clan
-						i(62429),	-- Windhome Helm
-					},
+					["groups"] = bubbleDownClassicRep(FACTION_WILDHAMMER_CLAN, {
+						{	-- Neutral
+						},
+						{	-- Friendly
+							i(65908),	-- Tabard of the Wildhammer Clan
+						},
+						{	-- Honored
+							i(62423),	-- Helm of the Skyborne
+							i(62426),	-- Mantle of Wild Feathers
+							i(62424),	-- Gloves of Aetherial Rumors
+							i(62425),	-- Swiftflight Leggings
+						},
+						{	-- Revered
+							i(62428),	-- Crown of Wings
+							i(62429),	-- Windhome Helm
+							i(62430),	-- Gryphon Talon Gauntlets
+							i(62427),	-- Band of Singing Grass
+							i(62422, {	-- Arcanum of the Wildhammer
+								["description"] = "This version is only visible on the vendor when you aren't at the required reputation to purchase it yet on your current character.",
+								["filterID"] = CONSUMABLES,
+							}),
+							i(68767, {	-- Arcanum of the Wildhammer
+								["filterID"] = CONSUMABLES,
+							}),
+						},
+						{	-- Exalted
+							i(62434),	-- Lightning Flash Pendant
+							i(62433),	-- Stormbolt Gloves
+							i(62431),	-- Belt of the Untamed
+							i(62432),	-- Gryphon Rider's Boots
+						},
+					}),
 				}),
 				n(49387, {	-- Grot Deathblow <Dragonmaw Clan Quartermaster>
 					["coord"] = { 53.8, 42.0, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
-					["groups"] = {
-						i(62415),	-- Band of Lamentation
-						i(62406),	-- Bone Fever Gloves
-						i(62418),	-- Boots of Sullen Rock
-						i(62408),	-- Gauntlets of Rattling Bones
-						i(62410),	-- Grinning Fang Helm
-						i(62407),	-- Helm of the Brown Lands
-						i(62405),	-- Leggings of the Impenitent
-						i(62417),	-- Liar's Handwraps
-						i(62409),	-- Snarling Helm
-						i(62404),	-- Spaulders of the Endless Plains
-						i(65909),	-- Tabard of the Dragonmaw Clan
-						i(62420),	-- Withered Dream Belt
-						i(62416),	-- Yellow Smoke Pendant
-					},
+					["groups"] = bubbleDownClassicRep(FACTION_DRAGONMAW_CLAN, {
+						{	-- Neutral
+						},
+						{	-- Friendly
+							i(65909),	-- Tabard of the Dragonmaw Clan
+						},
+						{	-- Honored
+							i(62407),	-- Helm of the Brown Lands
+							i(62404),	-- Spaulders of the Endless Plains
+							i(62406),	-- Bone Fever Gloves
+							i(62405),	-- Leggings of the Impenitent
+						},
+						{	-- Revered
+							i(62416),	-- Yellow Smoke Pendant
+							i(62417),	-- Liar's Handwraps
+							i(62420),	-- Withered Dream Belt
+							i(62418),	-- Boots of Sullen Rock
+							i(62368, {	-- Arcanum of the Dragonmaw
+								["description"] = "This version is only visible on the vendor when you aren't at the required reputation to purchase it yet on your current character.",
+								["filterID"] = CONSUMABLES,
+							}),
+							i(68763, {	-- Arcanum of the Dragonmaw
+								["filterID"] = CONSUMABLES,
+							}),
+						},
+						{	-- Exalted
+							i(62410),	-- Grinning Fang Helm
+							i(62409),	-- Snarling Helm
+							i(62408),	-- Gauntlets of Rattling Bones
+							i(62415),	-- Band of Lamentation
+						},
+					}),
 				}),
 				n(49549, {	-- Jodan <Dragonmaw Armorsmith>
 					["coord"] = { 77.2, 52.8, TWILIGHT_HIGHLANDS },
@@ -3262,32 +3400,32 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 77.2, 53.0, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3356}, -- Sumi <Blacksmithing Supplies>
+						{"sub", "common_recipes_vendor", 3356},	-- Sumi <Blacksmithing Supplies>
 					},
 				}),
 				n(50381, {	-- Misty Merriweather <Hide & Leather Trader>
 					["coord"] = { 78.6, 76.2, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3366}, -- Tamar <Leatherworking Supplies>
+						{"sub", "common_recipes_vendor", 3366},	-- Tamar <Leatherworking Supplies>
 					},
 				}),
 				n(50386, {	-- Sal Ferraga <Cloth Trader>
 					["coord"] = { 78.6, 76.8, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3364}, -- Borya <Tailoring Supplies>
+						{"sub", "common_recipes_vendor", 3364},	-- Borya <Tailoring Supplies>
 					},
 				}),
 				n(50134, {	-- Senthii <Shard Trader>
 					["coord"] = { 78.6, 77.0, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3346}, -- Kithas <Enchanting Supplies>
+						{"sub", "common_recipes_vendor", 3346},	-- Kithas <Enchanting Supplies>
 						{"select", "itemID", 67312},	-- Formula: Magic Lamp (RECIPE!)
 						{"exclude","itemID",
 							6343,	-- Formula: Enchant Chest - Lesser Mana
-						    67308,	-- Formula: Enchanted Lantern (RECIPE!)
+							67308,	-- Formula: Enchanted Lantern (RECIPE!)
 						},
 					},
 				}),
@@ -3295,9 +3433,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 75.2, 50.0, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
 					["sym"] = {
-						{"sub", "common_recipes_vendor", 3366}, -- Tamar <Leatherworking Supplies>
+						{"sub", "common_recipes_vendor", 3366},	-- Tamar <Leatherworking Supplies>
 					},
 				}),
+				-- #if BEFORE 6.0.2
+				n(50248, {	-- Una Kobuna <Alchemy and Inscription Supplies>
+					["coord"] = { 76.6, 49.4, TWILIGHT_HIGHLANDS },
+					["races"] = HORDE_ONLY,
+					["groups"] = {
+						i(68810, {	-- Technique: Glyph of Colossus Smash
+							["timeline"] = { ADDED_4_0_3, REMOVED_6_0_2 },
+						}),
+					},
+				}),
+				-- #endif
 			}),
 			n(ZONE_DROPS, {
 				i(169346, {	-- Young Twilight Scale

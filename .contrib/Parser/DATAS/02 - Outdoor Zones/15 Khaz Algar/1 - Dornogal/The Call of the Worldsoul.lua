@@ -14,6 +14,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["coord"] = { 46.1, 49.6, DORNOGAL },
 				["isWeekly"] = true,
 				["_drop"] = { "g" },
+				["g"] = {
+					i(211297),	-- Fractured Spark of Omens
+				},
 			},{
 				q(82449),	-- The Call of the Worldsoul
 				q(82491),	-- Worldsoul: Ara-Kara, City of Echoes [N]
@@ -29,6 +32,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(82488),	-- Worldsoul: Darkflame Cleft [N]
 				q(82498),	-- Worldsoul: Darkflame Cleft [H]
 				q(82506),	-- Worldsoul: Darkflame Cleft [M]
+				q(87419, {	-- Worldsoul: Delves
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				q(87417, {	-- Worldsoul: Dungeons
+					["timeline"] = { ADDED_11_1_0 },
+				}),
 				q(82453),	-- Worldsoul: Encore!
 				q(82509),	-- Worldsoul: Nerub-ar Palace [LFR]
 				q(82659),	-- Worldsoul: Nerub-ar Palace [N]
@@ -49,15 +58,25 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(82487),	-- Worldsoul: The Stonevault [N]
 				q(82497),	-- Worldsoul: The Stonevault [H]
 				q(82505),	-- Worldsoul: The Stonevault [M]
+				q(87423, {	-- Worldsoul: Undermine Explorer
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				q(87422, {	-- Worldsoul: Undermine World Quests
+					["timeline"] = { ADDED_11_1_0 },
+				}),
 				q(82512),	-- Worldsoul: World Boss
+				q(87424, {	-- Worldsoul: World Bosses
+					["timeline"] = { ADDED_11_1_0 },
+				}),
 				q(82452),	-- Worldsoul: World Quests
-				--[[ Also Fired / Alex: can confirm 82484, 82513, 82514, 82515 too; 82039 seems like related to caches or sparks?
+				-- Also Fired / Alex: can confirm 82484, 82513, 82514, 82515 too;
 				q(82484),	--
 				q(82513),	--
 				q(82514),	--
 				q(82515),	--
-				q(82039),	--
-				--]]
+				-- only for low level alts
+				q(84668),	-- when pick up any Worldsoul quest on <80s character // I got this on level 80 Char
+				--q(85395, {["timeline"] = { ADDED_11_1_0 }}),	-- after world soul weekly, could be fractured spark of fortune
 			})),
 		}),
 	}),

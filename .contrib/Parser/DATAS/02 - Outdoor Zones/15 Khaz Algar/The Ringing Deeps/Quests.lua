@@ -5,7 +5,6 @@ local TEMPORARY_SOURCEQUEST = 80434;
 root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 	m(THE_RINGING_DEEPS, {
 		n(QUESTS, {
-			--q(82200),	-- flagged from quest tauren when dropping you here
 			header(HEADERS.Achievement, 19560, {	-- The Ringing Deeps
 				------ Chapter 1 ------
 				q(80434, {	-- Into the Deeps
@@ -18,7 +17,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 212592 },	-- Speaker Brinthe
 					["coord"] = { 42.1, 28.3, THE_RINGING_DEEPS },
 					["g"] = {
-						i(216720),	-- Valuable Parts (QI!)
+						o(425875, {	-- Priority Transport Crate
+							i(216720),	-- Valuable Parts (QI!)
+						}),
 					},
 				}),
 				q(78557, {	-- Getting Off Track
@@ -28,8 +29,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				q(78837, {	-- Pomp and Dire Circumstance
 					["sourceQuests"] = {
-						78557,	-- 	-- Getting Off Track
-						78555,	-- 	-- Underground and Overhelmed
+						78557,	-- Getting Off Track
+						78555,	-- Underground and Overhelmed
 					},
 					["provider"] = { "n", 212592 },	-- Speaker Brinthe
 					["coord"] = { 42.1, 28.3, THE_RINGING_DEEPS },
@@ -125,8 +126,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 212991 },	-- Skitter
 					["coord"] = { 61.5, 32.0, THE_RINGING_DEEPS },
 					["g"] = {
-						i(217015),	-- Unstable Cinderbrew Barrel (QI!)
-						i(212177),	-- Useful Looking Scrap (QI!)
+						o(428699, {	-- Sizzling Barrel
+							i(217015),	-- Unstable Cinderbrew Barrel (QI!)
+						}),
+						o_repeated({
+							i(212177),	-- Useful Looking Scrap (QI!)
+							o(417136),	-- Intriguing Scrap
+							o(417137),	-- Intriguing Scrap
+							o(417138),	-- Intriguing Scrap
+							o(411878),	-- Intriguing Scrap
+						}),
 					},
 				}),
 				q(78641, {	-- Tackling Torchsnarl
@@ -156,9 +165,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["g"] = {
 						i(210882),	-- Candle Crown (QI!)
 						i(212575),	-- The Candle Keys (QI!)
+						i(219464),	-- Earthen Traveler's Boomstick
 						i(219466),	-- Earthen Traveler's Chopper
 						i(219462),	-- Earthen Traveler's Claymore
+						i(219465),	-- Earthen Traveler's Crossbow
+						i(219458),	-- Earthen Traveler's Dagger
+						i(219467),	-- Earthen Traveler's Fist
 						i(219461),	-- Earthen Traveler's Gavel
+						i(219460),	-- Earthen Traveler's Handaxe
 						i(219463),	-- Earthen Traveler's Javelin
 						i(219457),	-- Earthen Traveler's Saber
 						i(219459),	-- Earthen Traveler's Staff
@@ -191,6 +205,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						i(219373),	-- Earthen Traveler's Breastplate
 					},
 				}),
+				------ Stay awhile and listen ------
+				hqt(84620, {	-- Stay awhile and listen: Magni Bronzebeard
+					["name"] = "Stay awhile and listen: Magni Bronzebeard",
+					["sourceQuests"] = { 78696 },	-- We Don't Go to Taelloch
+					["provider"] = { "n", 213633 },	-- Magni Bronzebeard
+					["coord"] = { 62.3, 58.0, THE_RINGING_DEEPS },
+				}),
+				--
 				q(78697, {	-- Ghost of a Company Town
 					["sourceQuests"] = { 78696 },	-- We Don't Go to Taelloch
 					["provider"] = { "n", 213634 },	-- Dagran Thaurissan II
@@ -222,12 +244,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						78701,	-- The Truth in Chalk
 					},
 					["provider"] = { "n", 214892 },	-- Dagran Thaurissan II
-					--["maps"] = { THE_RINGING_DEEPS },	-- follow player
 				}),
 				q(78704, {	-- Find the Foreman
 					["sourceQuests"] = { 78703 },	-- Buried in Stone
 					["provider"] = { "n", 214890 },	-- Magni Bronzebeard
-					--["maps"] = { THE_RINGING_DEEPS },	-- follow player
 					["g"] = {
 						i(219362),	-- Earthen Traveler's Cuffs
 						i(219366),	-- Earthen Traveler's Bindings
@@ -238,7 +258,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(78705, {	-- What She Saw
 					["sourceQuests"] = { 78704 },	-- Find the Foreman
 					["provider"] = { "n", 214892 },	-- Dagran Thaurissan II
-					--["maps"] = { THE_RINGING_DEEPS },	-- follow player
 				}),
 				q(78706, {	-- The High Speaker's Secret
 					["sourceQuests"] = { 78705 },	-- What She Saw
@@ -251,6 +270,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 212741 },	-- Speaker Brinthe
 					["coord"] = { 47.2, 34.2, THE_RINGING_DEEPS },
 				}),
+				------ Stay awhile and listen ------
+				hqt(84699, {	-- Stay awhile and listen: Moira Thaurissan
+					["name"] = "Stay awhile and listen: Moira Thaurissan",
+					["sourceQuests"] = { 78738 },	-- Absent Speaker
+					["provider"] = { "n", 213763 },	-- Moira Thaurissan
+					["coord"] = { 47.0, 20.7, THE_RINGING_DEEPS },
+				}),
+				--
 				q(78742, {	-- Battle of the Earthenworks
 					["sourceQuests"] = { 78738 },	-- Absent Speaker
 					["provider"] = { "n", 213763 },	-- Moira Thaurissan
@@ -268,12 +295,17 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["coord"] = { 47.1, 20.7, THE_RINGING_DEEPS },
 				}),
 				q(81798, {	-- Return to Moira
-					["sourceQuests"] = { 78741 },	-- Sympathetic Speaker
+					["sourceQuests"] = {
+						78741,	-- Sympathetic Speaker
+						78742,	-- Battle of the Earthenworks
+					},
 					["provider"] = { "n", 213672 },	-- Foreman Uzjax
 					["coord"] = { 49.0, 17.5, THE_RINGING_DEEPS },
+					["isBreadcrumb"] = true,
 				}),
 				q(78760, {	-- Dark Iron from Above
 					["sourceQuests"] = {
+						78741,	-- Sympathetic Speaker
 						78742,	-- Battle of the Earthenworks
 						81798,	-- Return to Moira
 					},
@@ -284,7 +316,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["sourceQuests"] = { 78760 },	-- Dark Iron from Above
 					["provider"] = { "n", 213796 },	-- Moira Thaurissan
 					["coord"] = { 46.7, 10.3, THE_RINGING_DEEPS },
-					--["maps"] = { x },	-- probably will be scenario mapID but it is not here on alpha
+					["maps"] = { 2368 },	-- Hall of Awakening
 					["g"] = {
 						i(219018),	-- Esteemed Earthen Emblem
 					},
@@ -301,104 +333,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["coord"] = { 47.2, 34.1, THE_RINGING_DEEPS },
 				}),
 			}),
-			header(HEADERS.Achievement, 20597, {	-- The War Within
-				------ Chapter 4 ------
-				q(79022, {	-- A Mysterious Signal
-					["sourceQuests"] = { 79244 },	-- News From Below
-					["provider"] = { "n", 223944 },	-- Alleria Windrunner
-					["coord"] = { 31.5, 59.7, DORNOGAL },
-				}),
-				q(79023, {	-- Small Friend, Big Plans
-					["sourceQuests"] = { 79022 },	-- A Mysterious Signal
-					["provider"] = { "n", 214663 },	-- High Speaker Brinthe
-					["coord"] = { 56.3, 74.9, THE_RINGING_DEEPS },
-				}),
-				q(79024, {	-- Factory Recon
-					["sourceQuests"] = { 79023 },	-- Small Friend, Big Plans
-					["provider"] = { "n", 214663 },	-- High Speaker Brinthe
-					["coord"] = { 56.3, 74.9, THE_RINGING_DEEPS },
-					["g"] = {
-						i(223448),	-- Epaulets of the Ringing Deeps
-						i(223452),	-- Grips of the Ringing Deeps
-						i(223436),	-- Light Boots of the Ringing Deeps
-						i(223463),	-- Sabatons of the Ringing Deeps
-					},
-				}),
-				q(79217, {	-- Back to Base
-					["sourceQuests"] = { 79024 },	-- Factory Recon
-					["provider"] = { "n", 214663 },	-- High Speaker Brinthe
-					["coord"] = { 56.3, 74.9, THE_RINGING_DEEPS },
-				}),
-				q(79025, {	-- A Plan Comes Together
-					["sourceQuests"] = { 79217 },	-- Back to Base
-					["provider"] = { "n", 217245 },	-- High Speaker Brinthe
-					["coord"] = { 47.1, 34.2, THE_RINGING_DEEPS },
-				}),
-				q(79324, {	-- To the Waterworks
-					["sourceQuests"] = { 79025 },	-- A Plan Comes Together
-					["provider"] = { "n", 217245 },	-- High Speaker Brinthe
-					["coord"] = { 47.1, 34.2, THE_RINGING_DEEPS },
-				}),
-				q(79026, {	-- Putting the Works in Waterworks
-					["sourceQuests"] = { 79324 },	-- To the Waterworks
-					["provider"] = { "n", 217331 },	-- Dagran Thaurissan II
-					["coord"] = { 47.3, 42.4, THE_RINGING_DEEPS },
-				}),
-				q(79027, {	-- Elemental Trepidation
-					["sourceQuests"] = { 79324 },	-- To the Waterworks
-					["provider"] = { "n", 216137 },	-- ZZ-01-47
-					["coord"] = { 47.3, 42.4, THE_RINGING_DEEPS },
-					["g"] = {
-						i(223435),	-- Element-Attuned Pendant
-					},
-				}),
-				q(79325, {	-- Shadowvein Extraction
-					["sourceQuests"] = {
-						79027,	-- Elemental Trepidation
-						79026,	-- Putting the Works in Waterworks
-					},
-					["provider"] = { "n", 217331 },	-- Dagran Thaurissan II
-					["coord"] = { 47.3, 42.4, THE_RINGING_DEEPS },
-				}),
-				q(79028, {	-- We Require More Minerals
-					["sourceQuests"] = { 79325 },	-- Shadowvein Extraction
-					["provider"] = { "n", 216140 },	-- ZZ-01-47
-					["coord"] = { 55.7, 41.1, THE_RINGING_DEEPS },
-				}),
-				q(80145, {	-- The Motherlode
-					["sourceQuests"] = { 79028 },	-- We Require More Minerals
-					["provider"] = { "n", 218622 },	-- ZZ-01-47
-					--["coord"] = { x, y, THE_RINGING_DEEPS },	-- following player
-				}),
-				q(80517, {	-- Back to Where it Began
-					["sourceQuests"] = { 80145 },	-- The Motherlode
-					["provider"] = { "n", 218622 },	-- ZZ-01-47
-					--["coord"] = { x, y, THE_RINGING_DEEPS },	-- following player
-				}),
-				q(79029, {	-- It's Sabotage
-					["sourceQuests"] = { 80517 },	-- Back to Where it Began
-					["provider"] = { "n", 214663 },	-- High Speaker Brinthe
-					["coord"] = { 56.3, 74.9, THE_RINGING_DEEPS },
-					["g"] = {
-						i(223467),	-- Saboteur's Girdle
-						i(223442),	-- Saboteur's Grips
-						i(223440),	-- Saboteur's Shoulderpads
-						i(223451),	-- Saboteur's Striders
-					},
-				}),
-				q(79030, {	-- The Voice of the Speakers
-					["sourceQuests"] = { 79029 },	-- It's Sabotage
-					["provider"] = { "n", 220928 },	-- High Speaker Brinthe
-					["coord"] = { 56.1, 77.6, THE_RINGING_DEEPS },
-					["g"] = {
-						-- crit 'The Machines March to War'
-					},
-				}),
-			}),
 			header(HEADERS.AchCriteria, 40799.01, {	-- The Caretaker of Brunwin's Terrace
 				q(80392, {	-- The Caretaker of Brunwin's Terrace
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 219784 },	-- Batzvara
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 51.3, 30.2, THE_RINGING_DEEPS },
 				}),
 				q(80408, {	-- Shimmermist Falls
@@ -458,7 +400,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(80407, {	-- Glintwick the Gem Grabber
 					["sourceQuests"] = {
 						80406,	-- Seeking Ausgazur's Gems
-						80405, 	-- Too Much Drip
+						80405,	-- Too Much Drip
 					},
 					["provider"] = { "n", 220784 },	-- Batzvara
 					["coord"] = { 44.1, 40.2, THE_RINGING_DEEPS },
@@ -470,13 +412,23 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.02, {	-- Broken Tools
 				q(78562, {	-- Discarded and Broken
-					["sourceQuests"] = { 78838 },	-- Cogs in the Machine
+					["sourceQuests"] = {
+						78838,	-- Cogs in the Machine
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 212695 },	-- Machinist Kittrin
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 48.2, 33.4, THE_RINGING_DEEPS },
 					["g"] = {
-						i(210732),	-- Machinist's Calipers (QI!)
-						i(210733),	-- Machinist's Gauge (QI!)
-						i(210734),	-- Machinist's Wrench (QI!)
+						o(411622, {	-- Machinist Plinth
+							i(210732),	-- Machinist's Calipers (QI!)
+						}),
+						o(411623, {	-- Machinist Plinth
+							i(210733),	-- Machinist's Gauge (QI!)
+						}),
+						o(411624, {	-- Machinist Plinth
+							i(210734),	-- Machinist's Wrench (QI!)
+						}),
 					},
 				}),
 				q(78563, {	-- The Weight of a World
@@ -498,9 +450,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.03, {	-- Routine Maintenance
 				q(82773, {	-- A Functional Favor
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 224602 },	-- Speaker Danagh
 					["coord"] = { 59.0, 64.2, THE_RINGING_DEEPS },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(224271),	-- Galvanic Gland (QI!)
 					},
@@ -542,7 +498,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						82969,	-- Stone Tracing
 					},
 					["provider"] = { "n", 224618 },	-- Danagh's Cogwalker
-					--["coord"] = { 58.9, 64.1, THE_RINGING_DEEPS },	-- follow player
 					["g"] = {
 						i(224555),	-- Arbauch's Memory Gem (QI!)
 					},
@@ -550,8 +505,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.04, {	-- Dread in the Den
 				q(80508, {	-- Dread in the Den
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 222234 },	-- Scrit
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 62.6, 45.6, THE_RINGING_DEEPS },
 				}),
 				q(80509, {	-- A Suit of Slime
@@ -578,12 +537,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(80512, {	-- Beat the Best
 					["sourceQuests"] = { 80511 },	-- Casing the Camp
 					["provider"] = { "n", 222239 },	-- Scrit
-					--["coord"] = { x, y, THE_RINGING_DEEPS }, -- follow player
 				}),
 				q(80513, {	-- Snouty Sabotage
 					["sourceQuests"] = { 80511 },	-- Casing the Camp
 					["provider"] = { "n", 222239 },	-- Scrit
-					--["coord"] = { x, y, THE_RINGING_DEEPS }, -- follow player
 				}),
 				q(80514, {	-- Break out Berrund!
 					["sourceQuests"] = {
@@ -591,7 +548,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						80513,	-- Snouty Sabotage
 					},
 					["provider"] = { "n", 222239 },	-- Scrit
-					--["coord"] = { x, y, THE_RINGING_DEEPS }, -- follow player
 				}),
 				q(80515, {	-- Put the Shine On
 					["sourceQuests"] = { 80514 },	-- Break out Berrund!
@@ -615,8 +571,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.05, {	-- Envenomed Invasion
 				q(79367, {	-- A Nebb in Need
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 215737 },	-- Nebb
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 65.9, 42.6, THE_RINGING_DEEPS },
 					["g"] = {
 						i(217116),	-- Bundle of Candles (QI!)
@@ -665,7 +625,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(79372, {	-- A Cluth of Hope
-					--["sourceQuests"] = { 79370 },	-- A Poultice for Poison // need to confirm
+					["sourceQuests"] = { 79371 },	-- A Royal Cure
 					["provider"] = { "o", 423581 },	-- Broodmother's Egg
 					["coord"] = { 68.1, 39.0, THE_RINGING_DEEPS },
 					["g"] = {
@@ -739,9 +699,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.07, {	-- Into the Fog
 				q(81556, {	-- Foreign Fog
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 221043 },	-- Noli Marlen
 					["coord"] = { 58.4, 62.3, THE_RINGING_DEEPS },
+					["sourceQuestNumRequired"] = 1,
 				}),
 				q(81557, {	-- Fog Tags
 					["sourceQuests"] = { 81556 },	-- Foreign Fog
@@ -768,49 +732,91 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			header(HEADERS.AchCriteria, 40799.08, {	-- Magma-nificence
 				-- TODO: CHECK THIS QUESTLINE AGAIN...
 				q(83092, {	-- An Igneous End
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 225582 },	-- Foreman Duinth
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 41.1, 21.4, THE_RINGING_DEEPS },
 				}),
 				q(83160, {	-- Cinderbrew Reserve
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 225616 },	-- Cogwin
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 41.4, 22.5, THE_RINGING_DEEPS },
 				}),
 				q(83152, {	-- Magmamagement
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 225582 },	-- Foreman Duinth
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 41.1, 21.4, THE_RINGING_DEEPS },
 				}),
 				q(83153, {	-- Sampling Steam
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 225583 },	-- Machinist Kilton
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 41.1, 21.4, THE_RINGING_DEEPS },
 					["g"] = {
-						-- same loot table as from `New Candle, New Hope` +
+						i(219464),	-- Earthen Traveler's Boomstick
+						i(219466),	-- Earthen Traveler's Chopper
+						i(219462),	-- Earthen Traveler's Claymore
+						i(219465),	-- Earthen Traveler's Crossbow
+						i(219458),	-- Earthen Traveler's Dagger
+						i(219467),	-- Earthen Traveler's Fist
+						i(219461),	-- Earthen Traveler's Gavel
+						i(219460),	-- Earthen Traveler's Handaxe
+						i(219463),	-- Earthen Traveler's Javelin
+						i(219457),	-- Earthen Traveler's Saber
+						i(219456),	-- Earthen Traveler's Scepter
 						i(219455),	-- Earthen Traveler's Shield
+						i(219459),	-- Earthen Traveler's Staff
 					},
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40799.09, {	-- Kobold Candles
 				q(82946, {	-- Rollin' Down In the Deeps
 					["isDaily"] = true,
-					["sourceQuests"] = { 80082 },	-- Back to Gundargaz	// yet I'm unsure
+					["sourceQuests"] = {
+						80082,	-- Back to Gundargaz
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 216164 },	-- Gnawbles
 					["coord"] = { 47.7, 35.3, THE_RINGING_DEEPS },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(227792),	-- Everyday Cache
 					},
 				}),
 				q(79343, {	-- Everyday I'm Snufflin'
 					["isDaily"] = true,
-					["sourceQuests"] = { 80082 },	-- Back to Gundargaz	// renown 2?
+					["sourceQuests"] = {
+						80082,	-- Back to Gundargaz
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 216164 },	-- Gnawbles
 					["coord"] = { 47.7, 35.3, THE_RINGING_DEEPS },
+					["sourceQuestNumRequired"] = 1,
 				}),
 				q(79683, {	-- Home is Where the Candle Is
-					["sourceQuests"] = { 80082 },	-- Back to Gundargaz	// but could be renown?
-					["provider"] = { "n", 222803 },	-- Skitter
+					["sourceQuests"] = {
+						80082,	-- Back to Gundargaz
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
+					["providers"] = {
+						{ "n", 222803 },	-- Skitter
+						{ "n", 213152 },	-- Skitter
+					},
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 47.1, 33.3, THE_RINGING_DEEPS },
 					["g"] = {
 						i(223625),	-- Cinderwold Sizzlestinger (PET!)
@@ -824,15 +830,17 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(79552, {	-- Hot Wax
 					["sourceQuests"] = { 81999 },	-- New Home, New Candle!
 					["provider"] = { "n", 219674 },	-- Janky
-					["coord"] = { 47.8, 35.4, ISLE_OF_DORN },
+					["coord"] = { 72.1, 42.1, ISLE_OF_DORN },
 					["g"] = {
-						i(216670),	-- Fire Bee Wax (QI!)
+						o(430215, {	-- Molten Wax
+							i(216670),	-- Fire Bee Wax (QI!)
+						}),
 					},
 				}),
 				q(79998, {	-- Mite Not Right
 					["sourceQuests"] = { 81999 },	-- New Home, New Candle!
 					["provider"] = { "n", 219674 },	-- Janky
-					["coord"] = { 47.8, 35.4, ISLE_OF_DORN },
+					["coord"] = { 72.1, 42.1, ISLE_OF_DORN },
 				}),
 				q(80000, {	-- Beebiter
 					["sourceQuests"] = {
@@ -840,7 +848,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						79998,	-- Mite Not Right
 					},
 					["provider"] = { "n", 219674 },	-- Janky
-					["coord"] = { 47.8, 35.4, ISLE_OF_DORN },
+					["coord"] = { 72.1, 42.1, ISLE_OF_DORN },
 				}),
 				q(80202, {	-- Hot Pollenate-o
 					["sourceQuests"] = {
@@ -848,7 +856,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						79998,	-- Mite Not Right
 					},
 					["provider"] = { "n", 219674 },	-- Janky
-					["coord"] = { 47.8, 35.4, ISLE_OF_DORN },
+					["coord"] = { 72.1, 42.1, ISLE_OF_DORN },
 				}),
 				q(79565, {	-- Janky Candles
 					["sourceQuests"] = {
@@ -856,13 +864,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						80202,	-- Hot Pollenate-o
 					},
 					["provider"] = { "n", 219674 },	-- Janky
-					["coord"] = { 47.8, 35.4, ISLE_OF_DORN },
+					["coord"] = { 72.1, 42.1, ISLE_OF_DORN },
 					["g"] = {
 						i(224262),	-- Begrudgingly Poured Cinderbrew (QI!)
-						i(224253),	-- Elementally Active Coal (QI!)
+						o(430551, {	-- Coal Shipment
+							i(224253),	-- Elementally Active Coal (QI!)
+						}),
 						i(217395),	-- Freshly Smithed Tools (QI!)
 						i(216681),	-- Merchant Stall Parts (QI!)
-						i(220163),	-- [PH] Cinder Bee (PET!) (TODO: placeholder)
 					},
 				}),
 			}),
@@ -895,19 +904,25 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 217131 },	-- Fourman Grimes
 					["coord"] = { 47.3, 31.9, THE_RINGING_DEEPS },
 					["g"] = {
-						i(220162),	-- [PH] Toy, Pipe Toy (TOY!) (TODO: but not really, atm)
-						--c(2902),	-- The Assembly of the Deeps Commendation, one-time Warband bonus
+						--currency(2902),	-- The Assembly of the Deeps Commendation, one-time Warband bonus
 					},
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40799.11, {	-- Kobold Story Time
 				q(79504, {	-- Dripsy Forgot Her Candle
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 216438 },	-- Granny Scribbles
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 48.0, 35.7, THE_RINGING_DEEPS },
+					-- Instance ID 2601
 					--["maps"] = { x },	-- could be scenario mapID but it is not here?
 					["g"] = {
-						i(217997),	-- Shiny Rock (QI!)
+						o(421525, {	-- Shinies
+							i(217997),	-- Shiny Rock (QI!)
+						}),
 						i(217998),	-- Sweetmeat (QI!)
 					},
 				}),
@@ -915,49 +930,73 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["sourceQuests"] = { 79504 },	-- Dripsy Forgot Her Candle
 					["provider"] = { "n", 216438 },	-- Granny Scribbles
 					["coord"] = { 48.0, 35.7, THE_RINGING_DEEPS },
+					-- Instance ID 2601
 					--["maps"] = { x },	-- could be scenario mapID
 				}),
 				q(79507, {	-- The Day the Stoneheads Came
 					["sourceQuests"] = { 79505 },	-- Chomps and the Cave-In
 					["provider"] = { "n", 216438 },	-- Granny Scribbles
 					["coord"] = { 48.0, 35.7, THE_RINGING_DEEPS },
+					-- Instance ID 2601
 					--["maps"] = { x },	-- could be scenario mapID
 					["g"] = {
-						i(224403),	-- Heirloom Wax (QI!)
-						i(224402),	-- Krafting Tools (QI!)
-						i(224401),	-- Run Far Food (QI!)
-						i(224400),	-- See Where Running Candles (QI!)
-						i(218249),	-- Softsnout's Favorite Shovel (QI!)
+						o(421597, {	-- Village Center
+							i(224403),	-- Heirloom Wax (QI!)
+						}),
+						o(421599, {	-- Local Industry
+							i(224402),	-- Krafting Tools (QI!)
+						}),
+						o(421594, {	-- Gainful Employment
+							i(224401),	-- Run Far Food (QI!)
+						}),
+						o(421592, {	-- Life Savings
+							i(224400),	-- See Where Running Candles (QI!)
+						}),
+						o(436933, {	-- Softsnout's Favourite Shovel
+							i(218249),	-- Softsnout's Favorite Shovel (QI!)
+						}),
 					},
 				}),
 				q(79508, {	-- Mipsy Mole-Rider
 					["sourceQuests"] = { 79507 },	-- The Day the Stoneheads Came
 					["provider"] = { "n", 216438 },	-- Granny Scribbles
 					["coord"] = { 48.0, 35.7, THE_RINGING_DEEPS },
+					-- Instance ID 2601
 					--["maps"] = { x },	-- could be scenario mapID
 				}),
 				q(79510, {	-- The Wickless Candle
 					["sourceQuests"] = { 79508 },	-- Mipsy Mole-Rider
 					["provider"] = { "n", 216438 },	-- Granny Scribbles
 					["coord"] = { 48.0, 35.7, THE_RINGING_DEEPS },
+					-- Instance ID 2601
 					--["maps"] = { x },	-- could be scenario mapID
 					["g"] = {
-						i(219224),	-- Prooftelling Flower (QI!)
+						o(421735, {	-- Prooftelling Flower
+							i(219224),	-- Prooftelling Flower (QI!)
+						}),
 					},
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40799.12, {	-- Rampage at Nibelgaz Mine
 				q(79148, {	-- The Nibelgaz Refinery
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 215208 },	-- Orsenth
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 51.0, 14.9, THE_RINGING_DEEPS },
 					["g"] = {
 						i(218356),	-- Healing Clay (QI!)
 					},
 				}),
 				q(79149, {	-- Rampage in the Refinery
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 215234 },	-- Ferdagor
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 51.4, 14.3, THE_RINGING_DEEPS },
 				}),
 				q(79679, {	-- Muddled Mind in the Mine
@@ -981,7 +1020,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 217474 },	-- Keldaz
 					["coord"] = { 51.1, 14.8, THE_RINGING_DEEPS },
 				}),
-				q(79944, {	-- Raging Rifts	// bugged, can't progress it
+				q(79944, {	-- Raging Rifts
 					["sourceQuests"] = { 79194 },	-- To the Source
 					["provider"] = { "n", 223000 },	-- Keldaz
 					["coord"] = { 55.3, 11.1, THE_RINGING_DEEPS },
@@ -990,15 +1029,19 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(79327, {	-- The Glittering Shard
-					["sourceQuests"] = { 79194 },	-- To the Source (TODO: need to clarify it, not sure)
+					["sourceQuests"] = { 79944 },	-- Raging Rifts
 					["provider"] = { "i", 212595 },	-- Glittering Shard
-					--["maps"] = { THE_RINGING_DEEPS },
+					["coord"] = { 57, 16, THE_RINGING_DEEPS },
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40799.13, {	-- Abysmal Extraction
 				q(83155, {	-- Tired of Tripping
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 225608 },	-- Prospera Cogwall
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 63.7, 79.2, THE_RINGING_DEEPS },
 				}),
 				q(83159, {	-- A Little Off the Top
@@ -1017,8 +1060,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.14, {	-- Revenge in the Rumbling Wastes
 				q(81655, {	-- Juicy Krolusk Meat
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 220417 },	-- Kagfritha
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 62.2, 46.9, THE_RINGING_DEEPS },
 					["g"] = {
 						i(219493),	-- Juicy Krolusk Meat (QI!)
@@ -1043,8 +1090,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.15, {	-- Tired of Rest
 				q(80576, {	-- Listener Lost
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 220600 },	-- Haimaz
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 60.4, 45.7, THE_RINGING_DEEPS },
 				}),
 				q(80676, {	-- Defragmenting Memory
@@ -1069,17 +1120,19 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(82224, {	-- Check on the Compiler
-					-- TODO: I'm unsure if it is specific case for this one or they changed chain
-					-- Specific - I was doing only quests above without pickup next quest that probably still available as was previously
-					-- but just in case - I change requirement
 					["sourceQuests"] = { 80577 },	-- Readying the Recitation
 					["provider"] = { "n", 220600 },	-- Haimaz
-					["coord"] = { 62.0, 45.5, THE_RINGING_DEEPS },
+					["coord"] = { 62.8, 44.2, THE_RINGING_DEEPS },
+					["isBreadcrumb"] = true,
 				}),
 				q(80578, {	-- The Common Costume
-					["sourceQuests"] = { 82224 },	-- Check on the Compiler
+					["sourceQuests"] = {
+						82224,	-- Check on the Compiler
+						81613,	-- Let's Not Worry Her
+					},
 					["provider"] = { "n", 220597 },	-- Brennok
 					["coord"] = { 61.9, 45.5, THE_RINGING_DEEPS },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(221472),	-- Miner's Clothes (QI!)
 					},
@@ -1090,7 +1143,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						--80578,	-- The Common Costume // unsure about this one
 					},
 					["provider"] = { "n", 220600 },	-- Haimaz
-					["coord"] = { 62.8,	44.2, THE_RINGING_DEEPS },
+					["coord"] = { 62.0, 45.5, THE_RINGING_DEEPS },
 					["g"] = {
 						i(221001),	-- Cinderbrew Flask (QI!)
 						i(221000),	-- Nearly-empty Cask (QI!)
@@ -1115,8 +1168,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40799.16, {	-- Frolicking in the Fetid Grotto
 				q(81693, {	-- Desparately Seeking Skorthuz
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 220415 },	-- Hrandaz
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 62.4, 48.0, THE_RINGING_DEEPS },
 				}),
 				q(81712, {	-- Lisky Business
@@ -1136,13 +1193,46 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			header(HEADERS.Item, 221765, {	-- Stonevault Mechsuit
 				q(84020, {	-- A Mech in Need
 					["provider"] = { "i", 226683 },	-- Malfunctioning Mechsuit
+					["coord"] = { 47.0, 32.4, THE_RINGING_DEEPS },
 				}),
-				i(221765),	-- Stonevault Mechsuit (MOUNT!)
+				q(84021, {	-- Machine Without Cogs
+					["sourceQuest"] = 84020,	-- A Mech in Need
+					["provider"] = { "n", 213875  },	-- Speaker Jurlax
+					["coord"] = { 47.0, 32.4, THE_RINGING_DEEPS },
+					["cost"] = { { "i", 219301, 1 }, },	-- 1x Overclocked Gear-a-Rang Launcher
+				}),
+				q(84023, {	-- Orienting Ourselves
+					["sourceQuest"] = 84021,	-- Machine Without Cogs
+					["provider"] = { "n", 213875  },	-- Speaker Jurlax
+					["coord"] = { 47.0, 32.4, THE_RINGING_DEEPS },
+					["cost"] = { { "i", 219299, 1 }, },	-- 1x Synergistic Brewterializer
+				}),
+				q(84024, {	-- Clutching Control
+					["sourceQuest"] = 84023,	-- Orienting Ourselves
+					["provider"] = { "n", 213875  },	-- Speaker Jurlax
+					["coord"] = { 47.0, 32.4, THE_RINGING_DEEPS },
+					["cost"] = { { "i", 219306, 1 }, },	-- 1x Burin of the Candle King
+				}),
+				q(84025, {	-- Repurposed, Restored
+					["sourceQuest"] = 84024,	-- Clutching Control
+					["provider"] = { "n", 213875  },	-- Speaker Jurlax
+					["coord"] = { 47.0, 32.4, THE_RINGING_DEEPS },
+					["g"] = {
+						i(221765, {	-- Stonevault Mechsuit (MOUNT!)
+							-- tagged with cost here so that it shows under the start of the quest chain item as well
+							["cost"] = { { "i", 226683, 1 } },	-- Malfunctioning Mechsuit
+						}),
+					},
+				}),
 			}),
 			-- Area where Janky quest leads (New Home, New Candle)
 			q(82952, {	-- An Opportunity to Relax
-				--["sourceQuests"] = { x },	-- ?
+				["sourceQuests"] = {
+					TEMPORARY_SOURCEQUEST,
+					TWW_ACCOUNT_CAMPAIGN_QUEST,
+				},
 				["provider"] = { "n", 224966 },	-- Mindi Maxlof
+				["sourceQuestNumRequired"] = 1,
 				["coord"] = { 53.8, 43.8, THE_RINGING_DEEPS },
 				["g"] = {
 					i(224417),	-- Stack of Flyers (QI!)
@@ -1157,23 +1247,78 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			q(82195, {	-- Rust and Redemption
-				--["sourceQuests"] = { x },	-- ?
+				["sourceQuests"] = {
+					TEMPORARY_SOURCEQUEST,
+					TWW_ACCOUNT_CAMPAIGN_QUEST,
+				},
 				["provider"] = { "o", 443532 },	-- Rusted Lever
+				["sourceQuestNumRequired"] = 1,
 				["coord"] = { 53.3, 44.6, THE_RINGING_DEEPS },
 				["g"] = {
 					i(221970),	-- Pure Crawler Extract (QI!)
 				},
 			}),
 			-- ?
+			q(83165, {	-- Badly Behaved Bot
+				--["sourceQuests"] = { x },	-- ?
+				["provider"] = { "n", 223759 },	-- Sinruna
+				["coord"] = { 60.2, 57.0, THE_RINGING_DEEPS },
+			}),
+			------ Class Specific ------
+			q(78895, {	-- A Shadow Over Gundargaz
+				["sourceQuests"] = { 78838 },	-- Cogs in the Machine
+				["provider"] = { "n", 213869 },	-- Watcher Toki
+				["coord"] = { 48.0, 34.8, THE_RINGING_DEEPS },
+				["classes"] = { DEMONHUNTER, WARLOCK },
+				["g"] = {
+					i(219919),	-- Blade of Hatred [Demon Hunter]
+					i(219923),	-- Blade of Hatred [Warlock]
+				},
+			}),
 			q(78877, {	-- Bless These Homes
 				--["sourceQuests"] = { x },	-- ?
 				["provider"] = { "n", 213875 },	-- Speaker Jurlax
 				["coord"] = { 47.0, 32.4, THE_RINGING_DEEPS },
+				["classes"] = { PRIEST, PALADIN },
+			}),
+			q(78874, {	-- Conjured Help
+				--["sourceQuests"] = { x },	-- ?
+				["provider"] = { "n", 213840 },	-- Innkeeper Brax <Innkeeper>
+				["coord"] = { 48.0, 32.2, THE_RINGING_DEEPS },
+				["classes"] = { MAGE },
+			}),
+			q(78879, {	-- Evoking the Forge
+				--["sourceQuests"] = { x },	-- ?
+				["provider"] = { "n", 213841 },	-- Foreman Svart
+				["coord"] = { 47.4, 28.4, THE_RINGING_DEEPS },
+				["classes"] = { EVOKER },
+			}),
+			q(78827, {	-- Go Take Candle!
+				--["sourceQuests"] = { x },	-- ?
+				["provider"] = { "o", 413694 },	-- Suspicious Vent
+				["coord"] = { 48.1, 32.0, THE_RINGING_DEEPS },
+				["classes"] = { ROGUE },
+			}),
+			q(78860, {	-- More Candles!
+				["sourceQuests"] = { 78827 },	-- Go Take Candle!
+				["provider"] = { "o", 413694 },	-- Suspicious Vent
+				["coord"] = { 48.1, 32.0, THE_RINGING_DEEPS },
+				["classes"] = { ROGUE },
+			}),
+			q(83326, {	-- The Final Candle
+				["sourceQuests"] = { 78860 },	-- More Candles!
+				["provider"] = { "o", 413694 },	-- Suspicious Vent
+				["coord"] = { 48.1, 32.0, THE_RINGING_DEEPS },
+				["classes"] = { ROGUE },
 			}),
 			------ Miscellaneous ------
 			q(78918, {	-- Brax's Brass Knuckles
-				["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+				["sourceQuests"] = {
+					TEMPORARY_SOURCEQUEST,
+					TWW_ACCOUNT_CAMPAIGN_QUEST,
+				},
 				["provider"] = { "n", 213840 },	-- Inkeeper Brax
+				["sourceQuestNumRequired"] = 1,
 				["coord"] = { 48.0, 32.2, THE_RINGING_DEEPS },
 				["g"] = {
 					i(211493),	-- Brax's Brass Knuckles (QI!)
@@ -1185,13 +1330,21 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["provider"] = { "i", 212178 },	-- Faded Memory Gem
 			}),
 			q(78900, {	-- On Cold, Dark Wings
-				["sourceQuests"] = { 78838 },	-- Cogs in the Machine
+				["sourceQuests"] = {
+					78838,	-- Cogs in the Machine
+					TWW_ACCOUNT_CAMPAIGN_QUEST,
+				},
 				["provider"] = { "n", 213869 },	-- Watcher Toki
+				["sourceQuestNumRequired"] = 1,
 				["coord"] = { 48.0, 34.8, THE_RINGING_DEEPS },
 			}),
 			q(82226, {	-- Papers? Please!
-				["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+				["sourceQuests"] = {
+					TEMPORARY_SOURCEQUEST,
+					TWW_ACCOUNT_CAMPAIGN_QUEST,
+				},
 				["provider"] = { "n", 223184 },	-- Garv Gearwhistle
+				["sourceQuestNumRequired"] = 1,
 				["coord"] = { 64.9, 78.6, THE_RINGING_DEEPS },
 			}),
 			q(83331, {	-- Preserve and Pretend
@@ -1199,7 +1352,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["provider"] = { "n", 226255 },	-- Chive
 				["coord"] = { 58.3, 32.1, THE_RINGING_DEEPS },
 			}),
-			n(BONUS_OBJECTIVES, {
+			n(BONUS_OBJECTIVES, sharedData({
+				["lockCriteria"] = { 1, "lvl", 80 },
+			},{
 				q(82615, {	-- Reclaiming the Waterworks
 					["coord"] = { 44.7, 44.5, THE_RINGING_DEEPS },
 					["g"] = {
@@ -1210,24 +1365,38 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["coord"] = { 54.6, 71.2, THE_RINGING_DEEPS },
 				}),
 				q(81981, {	-- What Army?
+					["sourceQuests"] = {
+						80514,	-- Break out Berrund!
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
+					["sourceQuestNumRequired"] = 1,
 					["coord"] = { 70.7, 39.8, THE_RINGING_DEEPS },
 				}),
-			}),
+			})),
 		}),
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	-- During questing
-	q(83613),	-- [DNT] Zone 2 Bread Crumb Completed Organically (spellID 456929), after turn in questID 80434 (Into the Deeps)
-	q(79635),	-- [DNT] The Assembly of the Deeps Renown Unlock (spellID 448654)
-	q(84699),	-- 'Stay a while and listen' - Moira Thaurissan (n: 213763 @ 47.0, 20.7), after questID 78760 (Dark Iron from Above). Probably.
-	-- Side quests
-	q(82652),	-- 'Stay a while and listen' - Brennok, in the end of whole speach during questID 80682 (One Last Story)
-	-- 80510 or 80509
-	q(81927),	-- interact a things from table (left-ish one), during of this 2 quests (not sure which one exactly)
-	-- ?
-	q(83475),	-- [DNT] Repair Console (spellID 455981) Water Console (o: 226624) @ 45.3, 46.4, THE_RINGING_DEEPS)
-	q(83482),	-- [DNT] Repair Console (spellID 456005) Lost Console (o: 226641 @ 56.4, 22.5, THE_RINGING_DEEPS)
-	--q(82991),	-- when bind hearthstone location to Camp Murroch tavern
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	m(KHAZ_ALGAR, {
+		m(THE_RINGING_DEEPS, {
+			n(QUESTS, {
+				-- During questing
+				q(83613),	-- [DNT] Zone 2 Bread Crumb Completed Organically (spellID 456929), after turn in questID 80434 (Into the Deeps)
+				q(79635),	-- [DNT] The Assembly of the Deeps Renown Unlock (spellID 448654)
+				-- Side quests
+				q(82652),	-- 'Stay a while and listen' - Brennok, in the end of whole speach during questID 80682 (One Last Story)
+				-- A Suit of Slime (80509) Choices
+				q(81927),	-- interact a things from table (left-ish one)
+				q(81925),	-- Choosing Flappy Bits
+				q(81926),	-- Choosing Pokey Bits
+				-- ?
+				q(82991),	-- Talking to Ferno (225018) inside Camp Murrock, When bind hearthstone location to Camp Murroch tavern
+				q(82116),	-- First option selected with ZZ-01-47 during 79023 'Small Friend, Big Plans' (2nd/3rd options have no HQT)
+				hqt(84585, name(HEADERS.Object, 457120, {	-- Rappelling Anchor
+					["coord"] = { 51, 47.6, THE_RINGING_DEEPS },
+				})),
+			}),
+		}),
+	}),
+})));

@@ -7,14 +7,14 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 		n(CRAFTABLES, {
 			expansion(EXPANSION.MOP, {
 				-- 5.2.0
-				expansion(EXPANSION.MOP, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_5_2_0 } }, {
+				expansion(EXPANSION.MOP, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_5_2_0 } }, {
 					i(93440),	-- Crafted Dreadful Gladiator's Endgame
 					i(93450),	-- Crafted Dreadful Gladiator's Reprieve
 				})),
 			}),
 			expansion(EXPANSION.BFA, {
 				-- 8.0.1
-				expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+				expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 					i(161937),	-- Honorable Combatant's Inked Vessel [A]
 					i(159941),	-- Honorable Combatant's Inked Vessel [H]
 					i(161935),	-- Inked Vessel of Robust Regeneration [A]
@@ -25,7 +25,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.SL, {
 				-- 9.0.1
-				expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+				expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 					i(172910),	-- Darkmoon Card of Repose
 					i(173052),	-- Deathbound Codex
 					i(173055),	-- Redeemer's Column
@@ -33,13 +33,13 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				})),
 
 				-- 9.2.0
-				expansion(EXPANSION.SL, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_9_2_0 } }, {
+				expansion(EXPANSION.SL, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_9_2_0 } }, {
 					i(189721),	-- Glyph of the Sayaad
 				})),
 			}),
 			expansion(EXPANSION.DF, {
 				-- 10.0.0
-				expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+				expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 					i(194843),	-- Explorer's Barding Manuscript
 					i(192464),	-- Darkmoon Deck: Ysera
 					i(191783),	-- Draconic Treatise on Blacksmithing
@@ -49,7 +49,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.TWW, {
 				-- 11.0.0
-				expansion(EXPANSION.TWW, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+				expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
 					i(222241),	-- Ace of Evolution
 					i(222223),	-- Ace of Shining
 					i(222214),	-- Ace of Symbiosis
@@ -257,16 +257,16 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(222213),	-- Darkmoon Deck: Symbiosis
 					i(219675),	-- Darkmoon Deck: Vivacity
 					i(222231),	-- Darkmoon Deck: Vivacity
+					i(222561),	-- Darkmoon Sigil: Ascension
 					i(219555),	-- Darkmoon Sigil: Evolution
 					i(219556),	-- Darkmoon Sigil: Evolution
 					i(219557),	-- Darkmoon Sigil: Evolution
 					i(222124),	-- Darkmoon Sigil: Evolution
-					i(222561),	-- Darkmoon Sigil: Ascension
+					i(222562),	-- Darkmoon Sigil: Radiance
 					i(219558),	-- Darkmoon Sigil: Shine
 					i(219559),	-- Darkmoon Sigil: Shine
 					i(219560),	-- Darkmoon Sigil: Shine
 					i(222125),	-- Darkmoon Sigil: Shine
-					i(222562),	-- Darkmoon Sigil: Radiance
 					i(219561),	-- Darkmoon Sigil: Symbiosis
 					i(219562),	-- Darkmoon Sigil: Symbiosis
 					i(219563),	-- Darkmoon Sigil: Symbiosis
@@ -277,6 +277,9 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(219566),	-- Darkmoon Sigil: Vivacity
 					i(222127),	-- Darkmoon Sigil: Vivacity
 					i(222564),	-- Darkmoon Sigil: Vivacity
+					i(217971),	-- Deadly Cypher
+					i(217972),	-- Deadly Cypher
+					i(217973),	-- Deadly Cypher
 					i(222652),	-- DNT Colors of the Wind (Deprecated)
 					i(222650),	-- DNT Inquisitor's Greenwood Bow (Deprecated)
 					i(222651),	-- DNT Vagabond's Alacrity (Deprecated)
@@ -293,10 +296,13 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(222227),	-- Five of Shining
 					i(222218),	-- Five of Symbiosis
 					i(222236),	-- Five of Vivacity
+					i(219599),	-- Fortuitous Essence
+					i(222689),	-- Fortuitous Essence
 					i(222244),	-- Four of Evolution
 					i(222226),	-- Four of Shining
 					i(222217),	-- Four of Symbiosis
 					i(222235),	-- Four of Vivacity
+					i(225338),	-- Glyph of Jab
 					i(219602),	-- Hasty Alchemist's Mixing Rod
 					i(222138),	-- Hasty Alchemist's Mixing Rod
 					i(222133),	-- Inquisitor's Baton
@@ -307,14 +313,22 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(219616),	-- Inquisitor's Greenwood Bow
 					i(219604),	-- Inscribed Rolling Pin
 					i(222141),	-- Inscribed Rolling Pin
+					i(222108),	-- Khaz Algar Milling
 					i(219611),	-- Leveling Agility Stave
 					i(219613),	-- Lexicon of Mysteries
 					i(222134),	-- Lexicon of Mysteries
 					i(222571),	-- Lexicon of Mysteries
 					i(219601),	-- Lightweight Scribe's Quill
 					i(222136),	-- Lightweight Scribe's Quill
+					i(217977),	-- Masterful Cypher
+					i(217978),	-- Masterful Cypher
+					i(217979),	-- Masterful Cypher
+					i(222545),	-- Milling
 					i(219603),	-- Patient Alchemist's Mixing Rod
 					i(222139),	-- Patient Alchemist's Mixing Rod
+					i(217974),	-- Quick Cypher
+					i(217975),	-- Quick Cypher
+					i(217976),	-- Quick Cypher
 					i(219528),	-- Sable Ink
 					i(219529),	-- Sable Ink
 					i(219530),	-- Sable Ink
@@ -359,13 +373,16 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(219633),	-- Vantus Rune: 11.0 Season 1 Raid
 					i(219634),	-- Vantus Rune: 11.0 Season 1 Raid
 					i(219635),	-- Vantus Rune: 11.0 Season 1 Raid
+					i(217980),	-- Versatile Cypher
+					i(217981),	-- Versatile Cypher
+					i(217982),	-- Versatile Cypher
 				})),
 			}),
 		}),
 		filter(RECIPES, {
 			expansion(EXPANSION.BFA, {
 				-- 8.0.1
-				expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+				expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 					r(269744),	-- Honorable Combatant's Inked Vessel [Rank 1]
 					r(256250),	-- Inked Vessel of Robust Regeneration [Rank 1]
 					r(256251),	-- Inked Vessel of Robust Regeneration [Rank 2]
@@ -378,7 +395,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				})),
 
 				-- 8.2.0
-				expansion(EXPANSION.BFA, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_2_0 } }, {
+				expansion(EXPANSION.BFA, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_2_0 } }, {
 					r(299666),	-- Contract: Ankoan [Rank 2]
 					r(299667),	-- Contract: Ankoan [Rank 3]
 					r(299669),	-- Contract: Unshackled [Rank 2]
@@ -395,7 +412,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.SL, {
 				-- 9.0.1
-				expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+				expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 					r(343688),	-- Crafter's Mark III
 					r(343687),	-- Crafter's Mark IV
 					r(311407),	-- Deathbound Codex
@@ -407,7 +424,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.DF, {
 				-- 10.0.0
-				expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+				expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 					r(382583),	-- Opening
 					r(391783),	-- Wisp of Tyr
 					r(388458),	-- Unknown
@@ -479,17 +496,25 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				})),
 
 				-- 10.2.7
-				expansion(EXPANSION.DF, 2.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
+				expansion(EXPANSION.DF, patch(2,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
 					-- Without SpellID attached
 					i(224270),	-- Tattered Technique: Certificate of Ownership
 				})),
 			}),
 			expansion(EXPANSION.TWW, {
 				-- 11.0.0
-				expansion(EXPANSION.TWW, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+				expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+					r(445068),	-- Inquisitor's Greenwood Bow
+					r(441318),	-- Miner's Rune of Decyphering
+					r(445069),	-- Vagabond's Alacrity
+					r(444228),	-- Recraft Equipment
 					-- With SpellID attached
 					i(223072),	-- Technique: Colors of the Wind [DEPRECATED] (RECIPE!)
 					i(223059),	-- Technique: Lexicon of Mysteries (RECIPE!)
+					-- Without SpellID attached
+					i(223034),	-- Technique: Inscribed Rolling Pin
+					i(223032),	-- Technique: Lexicon of Mysteries
+					i(223033),	-- Technique: Patient Alchemist's Mixing Rod
 				})),
 			}),
 		}),
@@ -498,20 +523,20 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 	prof(INSCRIPTION, {
 		expansion(EXPANSION.MOP, {
 			-- 5.0.1
-			expansion(EXPANSION.MOP, 0.1, bubbleDownSelf({ ["timeline"] = {CREATED_5_0_4} }, {
+			expansion(EXPANSION.MOP, patch(0,1), bubbleDownSelf({ ["timeline"] = {CREATED_5_0_4} }, {
 				i(87829),	-- Technique: Incarnadine Ink
 				i(87830),	-- Technique: Tigersblood Tincture
 			})),
 		}),
 		expansion(EXPANSION.WOD, {
 			-- 6.2.1
-			expansion(EXPANSION.WOD, 2.1, bubbleDownSelf({ ["timeline"] = {CREATED_6_2_2} }, {
+			expansion(EXPANSION.WOD, patch(2,1), bubbleDownSelf({ ["timeline"] = {CREATED_6_2_2} }, {
 				i(129139),	-- Tome of Rapid Pathfinding
 			})),
 		}),
 		expansion(EXPANSION.LEGION, {
 			-- 7.0.3
-			expansion(EXPANSION.LEGION, 0.3, bubbleDownSelf({ ["timeline"] = {CREATED_7_0_3} }, {
+			expansion(EXPANSION.LEGION, patch(0,3), bubbleDownSelf({ ["timeline"] = {CREATED_7_0_3} }, {
 				-- #if BEFORE 10.1.5
 				i(141061),	-- Technique: Grimoire of the Abyssal (Item never made it into the game)
 				-- #endif
@@ -520,7 +545,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			})),
 
 			-- 7.2.0
-			expansion(EXPANSION.LEGION, 2.0, bubbleDownSelf({ ["timeline"] = {CREATED_7_2_0} }, {
+			expansion(EXPANSION.LEGION, patch(2,0), bubbleDownSelf({ ["timeline"] = {CREATED_7_2_0} }, {
 				i(146335),	-- Vantus Rune Technique: Black Rook Hold (likely PTR version)
 				i(146355),	-- Vantus Rune Technique: Black Rook Hold (likely PTR version)
 				i(146375),	-- Vantus Rune Technique: Black Rook Hold (likely PTR version)

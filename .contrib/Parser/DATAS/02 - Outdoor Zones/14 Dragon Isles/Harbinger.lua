@@ -6,11 +6,27 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_7 } }
 		q(79009, {	-- The Harbinger
 			-- Auto accepted when logging in
 			["groups"] = {
-				i(223988),  -- Dalaran Hearthstone (QI!)
+				i(223988),	-- Dalaran Hearthstone (QI!)
+			},
+		}),
+		q(81654, {	-- The Harbinger
+			["provider"] = { "n", 221491 },	-- Khadgar's Summons
+			["aqd"] = {
+				["coord"] = { 84.8, 25.2, STORMWIND_CITY },
+			},
+			["hqd"] = {
+				["coord"] = { 41.4, 75.6, ORGRIMMAR },
+			},
+			["groups"] = {
+				i(223988),	-- Dalaran Hearthstone (QI!)
 			},
 		}),
 		q(79010, {	-- Door to the Ren'dorei
-			["sourceQuests"] = { 79009 },	-- The Harbinger
+			["sourceQuests"] = {
+				79009,	-- The Harbinger
+				81654,	-- The Harbinger
+			},
+			["sourceQuestNumRequired"] = 1,
 			["provider"] = { "n", 215013 },	-- Alleria Windrunner
 			["coord"] = { 31.4, 41.8, AEGWYNNS_GALLERY },
 		}),
@@ -34,7 +50,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_7 } }
 		}),
 		q(79014, {	-- Walk a Mile in Her Shadows
 			["sourceQuests"] = { 79013 },	-- Galakrond's Unrest
-			["provider"] = { "n", 214698 },	-- Alleria Windrunner
+			["provider"] = { "n", 214634 },	-- Alleria Windrunner
 			["coord"] = { 56.6, 39, DRAGONBLIGHT },
 		}),
 		q(79015, {	-- Dark Descension
@@ -79,25 +95,27 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_7 } }
 			["provider"] = { "n", 214657 },	-- Locus-Walker
 			["coord"] = { 50.2, 75.2, TELOGRUS_RIFT },
 			["groups"] = {
-				i(213561),	-- Winding Slitherdrake: Void Scales (DM!)
-                ach(40382), -- Hunt the Harbinger
+				i(213561),	-- Winding Slitherdrake: Void Scales (MM!)
+				ach(40382),	-- Hunt the Harbinger
 			},
 		}),
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.DF, {
-		q(81654),	-- Triggered with completion of Quest 79009
-		q(80199),	-- Bow of the Ranger Captain
-		q(80450),	-- Arsenal: Voidtouched Weaponry
-		q(80198),	-- Triggered with completion of Quest 79016
-		q(80019),	-- Stay a while and listen - Magister Umbric (n: 217360)
-		q(80021),	-- Stay a while and listen - Archmage Khadgar (n: 214972), autoplay first time after turn in questID 79021 (Radiant Warnings)
-		q(80020, {	-- Stay awhile and listen: Locus-Walker
-			["name"] = "Stay awhile and listen: Locus-Walker",
-			["sourceQuests"] = { 79010 },	-- Door to the Ren'dorei
-			["provider"] = { "n", 126773 },	-- Locus-Walker
-			["coord"] = { 29.7, 27.1, TELOGRUS_RIFT },
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_7 } }, {
+	m(DRAGON_ISLES, {
+		header(HEADERS.Quest, 79009, {	-- The Harbinger
+			q(80199),	-- Bow of the Ranger Captain
+			q(80450),	-- Arsenal: Voidtouched Weaponry
+			q(80198),	-- Triggered with completion of Quest 79016
+			hqt(80019),	-- Stay awhile and listen - Magister Umbric (n: 217360)
+			hqt(80021),	-- Stay awhile and listen - Archmage Khadgar (n: 214972), autoplay first time after turn in questID 79021 (Radiant Warnings)
+			hqt(80020, {	-- Stay awhile and listen: Locus-Walker
+				["name"] = "Stay awhile and listen: Locus-Walker",
+				["sourceQuests"] = { 79010 },	-- Door to the Ren'dorei
+				["provider"] = { "n", 126773 },	-- Locus-Walker
+				["coord"] = { 29.7, 27.1, TELOGRUS_RIFT },
+			}),
 		}),
 	}),
-});
+})));

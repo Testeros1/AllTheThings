@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(THE_MAELSTROM, {
 		m(KEZAN, {
 			["lore"] = "The Isle of Kezan (pronounced \"KEH-zawn\") located in the South Seas is the tropical homeland of the goblins. Their capital of Undermine is located beneath the island, deep in the bowels of Mount Kajaro. Thanks to Kezan's prominence as a mercantile hub, it's been divided into dozens of districts by the trade princes, who view every inch of land as an opportunity waiting to be converted into gold and silver. Kezan's tropical palms are bisected with miles of roadway, and even the beaches are beginning to be paved over by goblin ambitions. Nature eventually reclaimed the island of Kezan as the massive Mount Kajaro erupted with the Cataclysm, flooding the island with searing lava and sending tidal recoil sweeping through Kezan's harbors.\n\nThe playable goblin race experiences a phased instance of Kezan in their earliest levels before evacuating to the Lost Isles. Kezan is not reachable by other races or beyond these initial levels. Many of the denizens now live in Bilgewater Harbor in Azshara.",
-			["icon"] = "Interface\\Icons\\Ability_Rhyolith_Volcano",
+			["icon"] = 524305,
 			["races"] = { GOBLIN },
 			["maps"] = {
 				195,	-- Kaja'mine
@@ -14,6 +14,17 @@ root(ROOTS.Zones, {
 				197,	-- Kaja'mine
 			},
 			["groups"] = {
+				n(EXPLORATION, sharedData({
+					["races"] = { GOBLIN },
+				},{
+					exploration(4767),    -- Bilgewater Port
+					exploration(4771),    -- Drudgetown
+					exploration(4770),    -- First Bank of Kezan
+					exploration(4768),    -- Gallywix's Villa
+					exploration(4766),    -- Kaja'mine
+					exploration(4822),    -- Kajaro Field
+					exploration(4765),    -- KTC Headquarters
+				})),
 				n(QUESTS, {
 					q(14125, {	-- 447
 						["coord"] = { 59.6, 77.0, KEZAN },
@@ -230,7 +241,7 @@ root(ROOTS.Zones, {
 				n(VENDORS, {
 					n(37761, {	--	Sally "Salvager" Sandscrew <Armor Vendor>
 						["coord"] = { 59.8, 72.6, KEZAN },
-						["sym"] = { { "sub", "common_vendor", 49884 } }, -- Sally "Salvager" Sandscrew <Armor Vendor>
+						["sym"] = { { "sub", "common_vendor", 49884 } },	-- Sally "Salvager" Sandscrew <Armor Vendor>
 					}),
 				}),
 			},

@@ -8,9 +8,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #else
 		["lore"] = "Hillsbrad Foothills is a mid-level zone most suitable for players around level 25. The hills are home to the towns of Southshore and Hillsbrad Fields (Alliance), and Tarren Mill (Horde). Some notable locations, such as Durnholde Keep and Azurelode Mine can also be found here. Since this area lies outside of Thoradin's Wall, it is considered as a crossroads between Alliance and Horde players, which makes combat between the two factions likely.\n\nHillsbrad is relatively safe and stable. Its hills are green and pastoral, its meadows fertile and its soil rich. Humans loyal to the Alliance control Hillsbrad from the town of Southshore, though the Syndicate, murlocs and Forsaken threaten their serenity.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_hillsbradfoothills",
-		-- #endif
+		["icon"] = 236779,
 		-- #if NOT ANYCLASSIC
 		["maps"] = { 623 },	-- Tarren Mill vs Southshore [TODO: Move this somewhere else]
 		-- #endif
@@ -18,17 +16,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(ACHIEVEMENTS, {
 				-- #if AFTER CATA
 				explorationAch(760, {	-- Explore Alterac Mountains
-					-- #if BEFORE WRATH
-					["description"] = "Explore Alterac Mountains, revealing the covered areas of the world map.",
-					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
 				-- #endif
-				explorationAch(772, {	-- Explore Hillsbrad Foothills
-					-- #if BEFORE WRATH
-					["description"] = "Explore Hillsbrad Foothills, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(772),	-- Explore Hillsbrad Foothills
 				ach(4895, {	-- Hillsbrad Foothills Quests
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
@@ -140,6 +131,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #endif
 				exploration(289),	-- Nethander Stead
 				exploration(896),	-- Purgation Isle
+				visit_exploration(3486,{coord={70.3,45.6,HILLSBRAD_FOOTHILLS}}),	-- Ravenholdt Manor
 				-- #if AFTER CATA
 				exploration(281),	-- Ruins of Alterac
 				exploration(271),	-- Ruins of Southshore
@@ -175,14 +167,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			-- #if AFTER CATA
 			n(FACTIONS, {
-				faction(349, {	-- Ravenholdt
-					["icon"] = "Interface\\Icons\\Ability_Rogue_Eviscerate",
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.Ravenholdt,
+				faction(FACTION_RAVENHOLDT, {	-- Ravenholdt
+					["icon"] = 132292,
+					["OnTooltip"] = [[_.OnTooltipDB.Ravenholdt]],
 				}),
-				faction(70, {	-- Syndicate
+				faction(FACTION_SYNDICATE, {	-- Syndicate
 					["description"] = "Neutral is the highest you can currently reach with the Syndicate.\n\nDoing this on will tank your Ravenholdt rep, they're mutually exclusive. Get this done on an alt if you want to.",
-					["minReputation"] = { 70, NEUTRAL - 1 },	-- Syndicate, Neutral. (-1)
-					["maxReputation"] = { 70, NEUTRAL },	-- Syndicate, Neutral.
+					["minReputation"] = { FACTION_SYNDICATE, NEUTRAL - 1 },	-- Syndicate, Neutral. (-1)
+					["maxReputation"] = { FACTION_SYNDICATE, NEUTRAL },	-- Syndicate, Neutral.
 				}),
 			}),
 			-- #endif
@@ -1825,7 +1817,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 6707,	-- Fahrad <Grand Master Rogue>
 					["coord"] = { 84.4, 80.3, ALTERAC_MOUNTAINS },
 					-- #endif
-					["maxReputation"] = { 349, EXALTED },	-- Ravenholdt, Exalted.
+					["maxReputation"] = { FACTION_RAVENHOLDT, EXALTED },	-- Ravenholdt, Exalted.
 					["cost"] = { { "i", 16885, 5 } },	-- Heavy Junkbox
 					["repeatable"] = true,
 					["lvl"] = lvlsquish(50, 50, 20),
@@ -2477,7 +2469,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 6766,	-- Ravenholdt Guard <Assassin's League>
 					["sourceQuest"] = 6681,	-- The Manor, Ravenholdt
 					["coord"] = { 85.2, 79.4, ALTERAC_MOUNTAINS },
-					["maxReputation"] = { 349, FRIENDLY },	-- Ravenholdt, Friendly.
+					["maxReputation"] = { FACTION_RAVENHOLDT, FRIENDLY },	-- Ravenholdt, Friendly.
 					["cost"] = { { "i", 17124, 1 } },	-- Syndicate Emblem
 					["timeline"] = { REMOVED_4_0_3 },
 					["classes"] = { ROGUE },
@@ -3416,7 +3408,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 52.2, 55.4, HILLSBRAD_FOOTHILLS },
 
 					-- Available to Humans without faction requirements.
-					["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+					["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. HUMAN .. [[ then
 							t.minReputation = nil;
@@ -3672,6 +3664,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = WARCHIEFS_COMMAND_BOARD_SYMLINK,
 				["races"] = HORDE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 			n(ZONE_DROPS, {

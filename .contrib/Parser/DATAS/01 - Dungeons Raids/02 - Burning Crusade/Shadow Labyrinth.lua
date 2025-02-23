@@ -111,7 +111,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["lvl"] = lvlsquish(68, 68, 20),
 					["groups"] = {
 						objective(1, {	-- 0/5 Soul Device
-							["provider"] = { "i", 27480 },	-- Soul Device
+							["providers"] = {
+								{ "i",  27480 },	-- Soul Device
+								{ "o", 182940 },	-- Soul Device
+							},
 						}),
 						i(28174),	-- Shattrath Wraps
 						i(28171),	-- Spymistress' Wristguards
@@ -126,7 +129,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["lvl"] = lvlsquish(68, 68, 20),
 					["groups"] = {
 						objective(1, {	-- 0/5 Soul Device
-							["provider"] = { "i", 27480 },	-- Soul Device
+							["providers"] = {
+								{ "i",  27480 },	-- Soul Device
+								{ "o", 182940 },	-- Soul Device
+							},
 						}),
 						i(28174),	-- Shattrath Wraps
 						i(28171),	-- Spymistress' Wristguards
@@ -185,7 +191,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 			}),
 			n(ZONE_DROPS, {
 				i(24514, {	-- First Key Fragment
-					["cr"] = 22890,	-- First Fragment Guardian
+					["providers"] = {
+						{ "o", 182196 },	-- Arcane Container
+						{ "n",  22890 },	-- First Fragment Guardian
+					},
 					["coord"] = { 82.6, 30.8, AUCHINDOUN_SHADOW_LABYRINTH },
 				}),
 				i(23607, {	-- Plans: Felsteel Helm
@@ -200,7 +209,9 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						i(27887),	-- Platinum Shield of the Valorous
 						i(27888),	-- Dream-Wing Helm
 						i(27889),	-- Jaedenfire Gloves of Annihilation
+						-- #if AFTER 7.3.5
 						i(27908),	-- Leggings of Assassination
+						-- #endif
 						i(27884),	-- Ornate Boots of the Sanctified
 						-- #if BEFORE MOP
 						i(27886, {	-- Idol of the Emerald Queen
@@ -215,6 +226,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						i(27890),	-- Wand of the Netherwing
 						i(28134),	-- Brooch of Heightened Potential
 						i(27892),	-- Cloak of the Inciter
+						i(27468),	-- Moonglade Handwraps
 						i(27893),	-- Ornate Leggings of the Venerated
 						i(27891),	-- Adamantine Figurine
 						i(25728),	-- Pattern: Stylin' Purple Hat (RECIPE!)
@@ -228,8 +240,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						i(27898),	-- Wrathfire Hand-Cannon
 						i(27775),	-- Hallowed Pauldrons
 						i(27897),	-- Breastplate of Many Graces
+						-- #if AFTER 7.3.5
 						i(27468),	-- Moonglade Handwraps
 						i(27909),	-- Tidefury Kilt
+						-- #endif
 						i(27900),	-- Jewel of Charismatic Mystique
 						i(30827),	-- Lexicon Demonica
 					},
@@ -262,6 +276,8 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						i(29261),	-- Girdle of Ferocity
 						i(30532),	-- Kirin Tor Master's Trousers
 						-- #endif
+						i(27908),	-- Leggings of Assassination
+						i(27909),	-- Tidefury Kilt
 						i(27902),	-- Silent Slippers of Meditation
 						i(24309),	-- Pattern: Spellstrike Pants (RECIPE!)
 					},
@@ -299,7 +315,9 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 							i(27887),	-- Platinum Shield of the Valorous
 							i(27888),	-- Dream-Wing Helm
 							i(27889),	-- Jaedenfire Gloves of Annihilation
+							-- #if AFTER 7.3.5
 							i(27908),	-- Leggings of Assassination
+							-- #endif
 							i(27884),	-- Ornate Boots of the Sanctified
 							-- #if BEFORE MOP
 							i(27886, {	-- Idol of the Emerald Queen
@@ -314,6 +332,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 							i(27890),	-- Wand of the Netherwing
 							i(28134),	-- Brooch of Heightened Potential
 							i(27892),	-- Cloak of the Inciter
+							i(27468),	-- Moonglade Handwraps
 							i(27893),	-- Ornate Leggings of the Venerated
 							i(27891),	-- Adamantine Figurine
 							i(25728),	-- Pattern: Stylin' Purple Hat (RECIPE!)
@@ -327,8 +346,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 							i(27898),	-- Wrathfire Hand-Cannon
 							i(27775),	-- Hallowed Pauldrons
 							i(27897),	-- Breastplate of Many Graces
+							-- #if AFTER 7.3.5
 							i(27468),	-- Moonglade Handwraps
 							i(27909),	-- Tidefury Kilt
+							-- #endif
 							i(27900),	-- Jewel of Charismatic Mystique
 						},
 					}),
@@ -356,6 +377,8 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 							i(29357),	-- Master Thief's Gloves
 							i(29261),	-- Girdle of Ferocity
 							i(30532),	-- Kirin Tor Master's Trousers
+							i(27908),	-- Leggings of Assassination
+							i(27909),	-- Tidefury Kilt
 							i(27902),	-- Silent Slippers of Meditation
 							i(24309),	-- Pattern: Spellstrike Pants (RECIPE!)
 							applyclassicphase(TBC_PHASE_ONE, i(23572)),	-- Primal Nether
@@ -368,11 +391,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 		},
 	}),
 })));
--- #if AFTER WOD
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(253, {
 		q(35519),	-- The Shadow Labyrinth Reward Quest - Normal completion
 		q(35520),	-- The Shadow Labyrinth Reward Quest - Heroic completion
 	}),
-});
--- #endif
+})));

@@ -16,11 +16,18 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 	["g"] = {
 		n(ACHIEVEMENTS, {
 			ach(14222, {	-- Exile's Reach
-				["sourceQuests"] = {
-					59641,	-- The Nation of Kul Tiras
-					60361,	-- Battle for Azeroth: Mission Statement
-				},
-				["sourceQuestNumRequired"] = 1,
+				crit(47974, {	-- Alliance NPE - "The Nation of Kul Tiras"
+					["sourceQuests"] = {
+						62802,	-- Triggered after going to Stormwind for An End to Beginnings
+						55991,	-- An End to Beginnings [A]
+					},
+				}),
+				crit(48307, {	-- Horde NPE - "Mission Statement"
+					["sourceQuests"] = {
+						62803,	-- Triggered after going to Orgrimmar for An End to Beginnings
+						59985,	-- An End to Beginnings [H]
+					},
+				}),
 			}),
 		}),
 		m(DARKMAUL_CITADEL, {
@@ -297,7 +304,6 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 					["provider"] = { "n", 163329 },	-- Ghostwolf
 					["coord"] = { 52.3, 55.6, EXILES_REACH },
 					["g"] = {
-						i(174947),	-- Old Grimoire (QI!)
 						i(174968),	-- Veil Blossom (QI!)
 					},
 				}),
@@ -479,7 +485,10 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 						59932,	-- Cooking Meat [H] [Hunter]
 						59934,	-- Enhanced Combat Tactics [H] [Monk]
 					},
-					["provider"] = { "n", 166854 },	-- Won'sa
+					["providers"] = {
+						{ "n", 166854 },	-- Won'sa
+						{ "n", 175030 },	-- Won'sa (Note: this creatureID here at least from 11.0.5)
+					},
 					["coord"] = { 58.3, 74.4, EXILES_REACH },
 					["races"] = HORDE_ONLY,
 					["sourceQuestNumRequired"] = 1,
@@ -541,10 +550,10 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 						i(174788, { ["timeline"] = { REMOVED_11_0_0 } }),	-- Linked Mail Gloves
 						i(174786, { ["timeline"] = { REMOVED_11_0_0 } }),	-- Stitched Cloth Gloves
 						i(174787, { ["timeline"] = { REMOVED_11_0_0 } }),	-- Thick Leather Gauntlets
-						i(175213, { ["timeline"] = { ADDED_11_0_0 } }), -- Expeditionary Cloth Boots
-						i(175215, { ["timeline"] = { ADDED_11_0_0 } }), -- Expeditionary Leather Boots
-						i(175214, { ["timeline"] = { ADDED_11_0_0 } }), -- Expeditionary Mail Sabatons
-						i(175212, { ["timeline"] = { ADDED_11_0_0 } }), -- Expeditionary Plate Warboots
+						i(175213, { ["timeline"] = { ADDED_11_0_0 } }),	-- Expeditionary Cloth Boots
+						i(175215, { ["timeline"] = { ADDED_11_0_0 } }),	-- Expeditionary Leather Boots
+						i(175214, { ["timeline"] = { ADDED_11_0_0 } }),	-- Expeditionary Mail Sabatons
+						i(175212, { ["timeline"] = { ADDED_11_0_0 } }),	-- Expeditionary Plate Warboots
 					},
 				}),
 				q(55193, {	-- The Scout-o-Matic 5000
@@ -1037,6 +1046,7 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 					["provider"] = { "n", 163211 },	-- Henry Garrick
 					["coord"] = { 75.3, 54.3, STORMWIND_CITY },
 					["races"] = ALLIANCE_ONLY,
+					["timeline"] = { ADDED_9_0_1, REMOVED_11_0_2 },
 					["customCollect"] = IGNORED_VALUE,	-- Technically only possible by NPE quest completion, but technically no longer NPE when accepting this quest...
 				}),
 				q(58983, {	-- Battle for Azeroth: Tides of War (SL/new player version)
@@ -1045,7 +1055,7 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 					["description"] = "This quest starts the Battle for Azeroth campaign for players from Exile's Reach.",
 					["coord"] = { 85.2, 32.1, STORMWIND_CITY },
 					["races"] = ALLIANCE_ONLY,
-					["timeline"] = { ADDED_9_0_1 },
+					["timeline"] = { ADDED_9_0_1, REMOVED_11_0_2 },
 					["groups"] = {
 						i(178941),	-- Alliance Dog Tags,
 					}
@@ -1055,7 +1065,7 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 					["sourceQuest"] = 58983,	-- Battle for Azeroth: Tides of War (SL/new player version)
 					["coord"] = { 85.8, 31.6, STORMWIND_CITY },
 					["races"] = ALLIANCE_ONLY,
-					["timeline"] = { ADDED_9_0_1 },
+					["timeline"] = { ADDED_9_0_1, REMOVED_11_0_2 },
 				}),
 
 					-- Orgrimmar --
@@ -1166,11 +1176,14 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 					["races"] = HORDE_ONLY,
 					["sourceQuestNumRequired"] = 1,
 				}),
+				----- The original ending of the questline where new players got funneled into BfA -----
+				-- After 11.0.2 players recieve Lost Dragonscale and the quest The Dragon Isles Await (65436 [A] / 65435 [H])
 				q(60360, {	-- An Urgent Meeting [H]
 					["sourceQuests"] = { 60359 },	-- Home Is Where the Hearth Is [H]
 					["provider"] = { "n", 168771 },	-- Shuja Grimaxe
 					["coord"] = { 70.9, 49.6, ORGRIMMAR },
 					["races"] = HORDE_ONLY,
+					["timeline"] = { ADDED_9_0_1, REMOVED_11_0_2 },
 					["customCollect"] = IGNORED_VALUE,	-- Technically only possible by NPE quest completion, but technically no longer NPE when accepting this quest...
 				}),
 				q(60361, {	-- Battle for Azeroth: Mission Statement (SL/new player version)
@@ -1179,6 +1192,7 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 					["qg"] = 168431,	-- Warlord Breka Grimaxe
 					["coord"] = { 48.3, 71.4, ORGRIMMAR },
 					["races"] = HORDE_ONLY,
+					["timeline"] = { ADDED_9_0_1, REMOVED_11_0_2 },
 					["groups"] = {
 						i(178942),	-- War-Chain of the Horde
 					},
@@ -1424,4 +1438,34 @@ root(ROOTS.Zones, m(EXILES_REACH, bubbleDownSelf({
 			}),
 		}),
 	},
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_1 } }, {
+	m(EXILES_REACH, {
+		n(QUESTS, {
+			q(58418),	-- Triggers shortly after login. Possibly some kind of indicator for the account having done it at least once per faction?
+			q(54927),	-- Triggers after the cinematic. You can't move until this quest triggers
+			q(54937),	-- Triggers after the cinematic. You can't move until this quest triggers
+			q(59699),	-- Defeat Private Cole(A) or Grunt Throg(H) during "Stand Your Ground". Coincides with hitting level 2
+			q(58882),	-- Triggered after looting white-quality chestpiece. loot controller so they don't drop twice
+			q(58883),	-- Triggered after looting white-quality boots. loot controller so they don't drop twice
+			q(54928),	-- Triggered after getting 3 holy power and striking Warlord Grimaxe with the first major combat ability. Didn't trigger at all on an alliance priest
+			q(58336),	-- Triggered at the same time as 54928. Possibly dialog-related?
+			q(55607),	-- Triggered while killing quilboars in Quilboar Briarpatch on an alliance priest. Did not see it trigger as horde
+			q(55611),	-- Triggered when completing "Message to Base" in Exile's Reach on alliance priest
+			q(59610),	-- Triggered after killing Torgok. Loot controller for "Torgok's Reagent Pouch"
+			q(59143),	-- Triggered after looting the Runetusk Necklace from ogres in Darkmaul Citadel
+			q(59139),	-- Triggered after looting the Spider-Eye Ring from spiders in Hrun's Barrow / Dented Legplates
+			q(60167),	-- Triggered right after Warlord Grimaxe tells Shuja to heal during the Tunk encounter
+			q(62547),	-- Triggered after speaking to trainer for What's Your Specialty? quest [Horde]
+			q(62548),	-- Triggered after speaking to trainer for What's Your Specialty? quest [Alliance]
+			q(62550),	-- Triggered after choosing a specialization for What's Your Specialty? quest [Alliance]
+			q(62551),	-- Triggered after choosing a specialization for What's Your Specialty? quest [Horde]
+			q(62655),	-- Triggers after you activate your specialization (both NPE and non-NPE characters)
+			q(62802),	-- Triggered after going to Stormwind for An End to Beginnings
+			q(62803),	-- Triggered after going to Orgrimmar for An End to Beginnings
+			q(63012),	-- Triggered after accepting first quest for your current leveling expansion
+			q(62912),	-- Triggered when flying from Exile's Reach (as Alliance if it matters)
+		}),
+	}),
 })));

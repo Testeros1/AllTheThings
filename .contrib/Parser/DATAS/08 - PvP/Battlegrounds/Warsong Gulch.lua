@@ -33,7 +33,7 @@ local HORDE_BATTLE_FOR_WSG_TIER_2 = {	-- Repeatables
 	8434,	-- Battle of Warsong Gulch
 	8435,	-- Battle of Warsong Gulch
 };
-local OnTooltipForWarsongGulch = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForWarsongGulch = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation >= 0 and reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -41,8 +41,15 @@ local OnTooltipForWarsongGulch = [[function(t, tooltipInfo)
 		addRepInfo(tooltipInfo, reputation, "Concerted Efforts", 100, 42000);
 -- #endif
 		local repPerFlagCapture = 35;
+-- #if AFTER 6.1.0
+		local repPerFlagCapture = 100;
+-- #endif
 		addRepInfo(tooltipInfo, reputation, "Flags Captured", repPerFlagCapture, 42000);
+-- #if BEFORE 6.0.2
 		tinsert(tooltipInfo, { left = " Each capture is worth " .. repPerFlagCapture .. " rep, +10 on WSG Weekend.", r = 1, g = 1, b = 1 });
+-- #else
+		tinsert(tooltipInfo, { left = " Each capture is worth " .. repPerFlagCapture .. " rep, +100 if you win or 35 if you lose 0-3.", r = 1, g = 1, b = 1 });
+-- #endif
 -- #if SEASON_OF_DISCOVERY
 		if reputation < ]] .. HONORED .. [[ then
 			tinsert(tooltipInfo, { left = " " });
@@ -56,13 +63,11 @@ end]];
 root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 	m(WARSONG_GULCH, {
 		["lore"] = "Warsong Gulch is a 10v10 capture-the-flag style battleground that traces the conflict between the Silverwing Sentinels seeking revenge on the orcs that chopped down the Ashenvale forest during the Third War.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_bg_captureflag_wsg",
+		["icon"] = 236350,
 		["maps"] = {
 			859,	-- Warsong Gulch
 			1339,	-- Warsong Gulch
 		},
-		-- #endif
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(1172, {	-- Master of Warsong Gulch
@@ -176,31 +181,25 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				ach(1259, {	-- Not So Fast
 					["timeline"] = { ADDED_3_0_2 },
 				}),
-				applyclassicphase(PHASE_TWO, achWithRep(713, 890, {	-- Silverwing Sentinel (A)
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with the Silverwing Sentinels to Exalted.",
-					-- #endif
+				applyclassicphase(PHASE_TWO, achWithRep(713, FACTION_SILVERWING_SENTINELS, {	-- Silverwing Sentinel (A)
 					["maps"] = { ASHENVALE },
 					["races"] = ALLIANCE_ONLY,
 				})),
-				applyclassicphase(PHASE_TWO, achWithRep(712, 889, {	-- Warsong Outrider (H)
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with the Warsong Outriders to Exalted.",
-					-- #endif
+				applyclassicphase(PHASE_TWO, achWithRep(712, FACTION_WARSONG_OUTRIDERS, {	-- Warsong Outrider (H)
 					["maps"] = { ASHENVALE },
 					["races"] = HORDE_ONLY,
 				})),
 			}),
 			n(FACTIONS, {
-				faction(890, {	-- Silverwing Sentinels
-					["icon"] = "Interface\\Icons\\ability_racial_shadowmeld",
-					["OnTooltip"] = OnTooltipForWarsongGulch,
+				faction(FACTION_SILVERWING_SENTINELS, {	-- Silverwing Sentinels
+					["icon"] = 132279,
+					["OnTooltip"] = [[_.OnTooltipDB.ForWarsongGulch]],
 					["maps"] = { ASHENVALE },
 					["races"] = ALLIANCE_ONLY,
 				}),
-				faction(889, {	-- Warsong Outriders
-					["icon"] = "Interface\\Icons\\Ability_Warrior_WarCry",
-					["OnTooltip"] = OnTooltipForWarsongGulch,
+				faction(FACTION_WARSONG_OUTRIDERS, {	-- Warsong Outriders
+					["icon"] = 132366,
+					["OnTooltip"] = [[_.OnTooltipDB.ForWarsongGulch]],
 					["maps"] = { ASHENVALE },
 					["races"] = HORDE_ONLY,
 				}),
@@ -424,7 +423,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(7868, {	-- Outrider Advanced Care Package
 					["qg"] = 14754,	-- Kelm Hargunth <Warsong Supply Officer>
-					["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+					["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.2, 20.0, NORTHERN_BARRENS },
@@ -440,7 +439,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(7866, {	-- Outrider Basic Care Package
 					["qg"] = 14754,	-- Kelm Hargunth <Warsong Supply Officer>
-					["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+					["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.2, 20.0, NORTHERN_BARRENS },
@@ -456,7 +455,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 				q(7867, {	-- Outrider Standard Care Package
 					["qg"] = 14754,	-- Kelm Hargunth <Warsong Supply Officer>
-					["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+					["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 40.2, 20.0, NORTHERN_BARRENS },
@@ -479,7 +478,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						{ 61.6, 83.8, ASHENVALE },
 						-- #endif
 					},
-					["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+					["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = lvlsquish(45, 45, 10),
 					["groups"] = {
@@ -495,7 +494,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						{ 61.6, 83.8, ASHENVALE },
 						-- #endif
 					},
-					["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+					["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = { 25, 34 },
 					["groups"] = {
@@ -511,7 +510,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						{ 61.6, 83.8, ASHENVALE },
 						-- #endif
 					},
-					["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+					["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = { 35, 44 },
 					["groups"] = {
@@ -537,7 +536,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 					["groups"] = {
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(211499, {	-- Trainee's Outrider Wolf
-							["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -548,7 +547,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19569)),	-- Advisor's Gnarled Staff
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212584, {	-- Advisor's Gnarled Staff
-							["minReputation"] = { 889, REVERED },	-- Warsong Outriders, Revered.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, REVERED },	-- Warsong Outriders, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -559,7 +558,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19553)),	-- Legionnaire's Sword
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212586, {	-- Legionnaire's Sword
-							["minReputation"] = { 889, REVERED },	-- Warsong Outriders, Revered.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, REVERED },	-- Warsong Outriders, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -570,7 +569,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19561)),	-- Outrider's Bow
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212585, {	-- Outrider's Bow
-							["minReputation"] = { 889, REVERED },	-- Warsong Outriders, Revered.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, REVERED },	-- Warsong Outriders, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -581,22 +580,22 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19545)),	-- Scout's Blade
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212587, {	-- Scout's Blade
-							["minReputation"] = { 889, REVERED },	-- Warsong Outriders, Revered.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, REVERED },	-- Warsong Outriders, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
 						moh(3, i(20441)),	-- Scout's Blade
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(211500, {	-- Resilient Cloth Headband
-							["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						applyclassicphase(SOD_PHASE_ONE, i(211856, {	-- Resilient Mail Coif
-							["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						applyclassicphase(SOD_PHASE_ONE, i(211857, {	-- Resilient Leather Mask
-							["minReputation"] = { 889, FRIENDLY },	-- Warsong Outriders, Friendly.
+							["minReputation"] = { FACTION_WARSONG_OUTRIDERS, FRIENDLY },	-- Warsong Outriders, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -657,7 +656,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 					["groups"] = {
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(211498, {	-- Trainee's Sentinel Nightsaber
-							["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -668,7 +667,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19573)),	-- Lorekeeper's Staff
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212580, {	-- Lorekeeper's Staff
-							["minReputation"] = { 890, REVERED },	-- Silverwing Sentinels, Revered.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, REVERED },	-- Silverwing Sentinels, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -679,7 +678,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19565)),	-- Outrunner's Bow
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212581, {	-- Outrunner's Bow
-							["minReputation"] = { 890, REVERED },	-- Silverwing Sentinels, Revered.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, REVERED },	-- Silverwing Sentinels, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -690,7 +689,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19557)),	-- Protector's Sword
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212582, {	-- Protector's Sword
-							["minReputation"] = { 890, REVERED },	-- Silverwing Sentinels, Revered.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, REVERED },	-- Silverwing Sentinels, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
@@ -701,22 +700,22 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						moh(3, i(19548)),	-- Sentinel's Blade
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(212583, {	-- Sentinel's Blade
-							["minReputation"] = { 890, REVERED },	-- Silverwing Sentinels, Revered.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, REVERED },	-- Silverwing Sentinels, Revered.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif
 						moh(3, i(19549)),	-- Sentinel's Blade
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, i(211500, {	-- Resilient Cloth Headband
-							["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						applyclassicphase(SOD_PHASE_ONE, i(211856, {	-- Resilient Mail Coif
-							["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						applyclassicphase(SOD_PHASE_ONE, i(211857, {	-- Resilient Leather Mask
-							["minReputation"] = { 890, FRIENDLY },	-- Silverwing Sentinels, Friendly.
+							["minReputation"] = { FACTION_SILVERWING_SENTINELS, FRIENDLY },	-- Silverwing Sentinels, Friendly.
 							["timeline"] = { REMOVED_2_0_1 },
 						})),
 						-- #endif

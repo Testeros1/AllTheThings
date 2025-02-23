@@ -15,6 +15,27 @@ root(ROOTS.Zones, {
 				178,	-- Gallywix Labor Mine - Mine Shaft
 			},
 			["groups"] = {
+				n(EXPLORATION, sharedData({
+					["races"] = { GOBLIN },
+				},{
+					exploration(4783),    -- Alliance Beachhead
+					exploration(4951),    -- Bilgewater Lumber Yard
+					exploration(4954),    -- Gallywix Docks
+					exploration(4779),    -- Horde Base Camp
+					exploration(4952),    -- KTC Oil Platform
+					exploration(4870),    -- Landing Site
+					exploration(4909),    -- Lost Caldera
+					exploration(4886),    -- Oomlot Village
+					exploration(4903),    -- Oostan
+					exploration(4873),    -- Raptor Rise
+					exploration(4876),    -- Ruins of Vashj'elan
+					exploration(4874),    -- Scorched Gully
+					exploration(4721),    -- Shipwreck Shore
+					exploration(4782),    -- The Savage Glen
+					exploration(4956),    -- The Slave Pits
+					exploration(4911),    -- Volcanoth's Lair
+					exploration(4912),    -- Warchief's Lookout
+				})),
 				n(QUESTS, {
 					q(24817, {	-- A Goblin in Shark's Clothing
 						["coord"] = { 45.2, 65.5, THE_LOST_ISLES },
@@ -601,15 +622,15 @@ root(ROOTS.Zones, {
 				n(VENDORS, {
 					n(36432, {	--	Chawg <Armor Vendor>
 						["coord"] = { 37.0, 77.8, THE_LOST_ISLES },
-						["sym"] = { { "sub", "common_vendor", 49884 } }, -- Sally "Salvager" Sandscrew <Armor Vendor>
+						["sym"] = { { "sub", "common_vendor", 49884 } },	-- Sally "Salvager" Sandscrew <Armor Vendor>
 					}),
 					n(36465, {	--	Chawg <Armor Vendor>
 						["coord"] = { 35.8, 67.0, THE_LOST_ISLES },
-						["sym"] = { { "sub", "common_vendor", 49884 } }, -- Sally "Salvager" Sandscrew <Armor Vendor>
+						["sym"] = { { "sub", "common_vendor", 49884 } },	-- Sally "Salvager" Sandscrew <Armor Vendor>
 					}),
 					n(36464, {	--	Chawg <Armor Vendor>
 						["coord"] = { 24.4, 64.2, THE_LOST_ISLES },
-						["sym"] = { { "sub", "common_vendor", 49884 } }, -- Sally "Salvager" Sandscrew <Armor Vendor>
+						["sym"] = { { "sub", "common_vendor", 49884 } },	-- Sally "Salvager" Sandscrew <Armor Vendor>
 					}),
 					n(39063, {	--	Chawg <Armor Vendor>
 						["coords"] = {
@@ -617,7 +638,7 @@ root(ROOTS.Zones, {
 							{ 43.6, 25.2, THE_LOST_ISLES },
 							{ 42.6, 16.2, THE_LOST_ISLES },
 						},
-						["sym"] = { { "sub", "common_vendor", 49884 } }, -- Sally "Salvager" Sandscrew <Armor Vendor>
+						["sym"] = { { "sub", "common_vendor", 49884 } },	-- Sally "Salvager" Sandscrew <Armor Vendor>
 					}),
 					n(45286, {	-- KTC Train-a-Tron Deluxe <Professions Trainer & Vendor>
 						["coord"] = { 45.7, 65.8, THE_LOST_ISLES },
@@ -660,7 +681,7 @@ root(ROOTS.Zones, {
 
 -- #if AFTER 4.0.3
 -- These quests never made it in.
-root(ROOTS.NeverImplemented, {
+root(ROOTS.NeverImplemented, n(QUESTS, {
 	expansion(EXPANSION.CATA, {
 		q(24936, {	-- Body And Soul
 			i(52911),	-- Yngwie's Vest
@@ -668,5 +689,5 @@ root(ROOTS.NeverImplemented, {
 			i(52935),	-- Pygmy Cloak
 		}),
 	}),
-});
+}));
 -- #endif

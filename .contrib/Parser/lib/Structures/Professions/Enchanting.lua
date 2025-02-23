@@ -433,7 +433,6 @@ MOP_ENCHANTING = applyclassicphase(MOP_PHASE_ONE, bubbleDown({ ["timeline"] = { 
 }));
 DRAENOR_ENCHANTING = applyclassicphase(WOD_PHASE_ONE, i(111922, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_3_LAUNCH } }, {
 	["description"] = "This is a reward for completing the introductory Enchanting questline that can drop from any Draenor mob. Also sold at the Enchanter's Study for 100 gold.",
-	["filterID"] = MISC,
 	["g"] = {
 		r(158716, {	-- Enchanting (Draenor Master)
 			["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_8_0_1_LAUNCH },
@@ -767,6 +766,7 @@ TWW_ENCHANTING = bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
 	}),
 	filter(MISC, {
 		r(445338),	-- Algari Mana Oil
+		r(470726),	-- Gleaming Shatter
 		r(445365),	-- Gleeful Glamour - Pandaren
 		r(445360),	-- Illusory Adornment: Runes
 	}),

@@ -6,7 +6,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Blood Elf|r.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 911, EXALTED },
+			["minReputation"] = { FACTION_SILVERMOON_CITY, EXALTED },
 			-- #endif
 		}, {
 			q(53791, {	-- The Pride of the Sin'dorei
@@ -228,31 +228,27 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 					i(210538),	-- Velen's Memory Stone (QI!)
 				},
 			}),
+			hqt(82162, {	-- Stay awhile and Listen: Prophet Velen
+				["name"] = "Stay awhile and listen: Prophet Velen",
+				["sourceQuests"] = {
+					78082,	-- A Burden Shared (Accepted)
+				},
+				["provider"] = { "n", 210670 },	-- Prophet Velen
+				["coord"] = { 53.8, 83.8, THE_EXODAR },
+				["lockCriteria"] = { 1, "questID", 78082 },	-- A Burden Shared (Completed)
+			}),
 			q(78083, {	-- Our Path Forward
 				["sourceQuests"] = { 78082 },	-- A Burden Shared
 				["provider"] = { "n", 212387 },	-- Grand Anchorite Almonen
 				["coord"] = { 64.4, 87.3, THE_EXODAR },
 				["g"] = {
 					i(210455),	-- Draenic Hologem (TOY!)
-					i(211313, {	-- Ensemble: Heritage of the Draenei
-						i(211333),	-- Amethyst Bands of Telhamat
-						i(211340),	-- Amethyst Chestplate of Telhamat
-						i(211338),	-- Amethyst Grips of Telhamat
-						i(211335),	-- Amethyst Sentinels of Telhamat
-						i(211334),	-- Dawnsteel Belt of Telhamat
-						i(211341),	-- Dawnsteel Casque of Telhamat
-						i(211339),	-- Dawnsteel Cleats of Telhamat
-						i(211337),	-- Dawnsteel Helm of Telhamat
-						i(211336),	-- Netherweave Legwraps of Telhamat
-						i(211309),	-- Sumptuous Legwraps of Lost Embaari
-						i(211306),	-- Taladite Bands of Lost Embaari
-						i(211305),	-- Taladite Chestplate of Lost Embaari
-						i(211311),	-- Taladite Grips of Lost Embaari
-						i(211308),	-- Taladite Sentinels of Lost Embaari
-						i(211307),	-- True Iron Belt of Lost Embaari
-						i(211342),	-- True Iron Casque of Lost Embaari
-						i(211312),	-- True Iron Cleats of Lost Embaari
-						i(211310),	-- True Iron Helm of Lost Embaari
+					iensemble(211313, {	-- Ensemble: Heritage of the Draenei
+						["extraTransmogSetSpells"] = {
+							428745,	-- Ensemble: Endurance of Temple Telhamat
+							428742,	-- Ensemble: Additional Tokens of Telhamat
+							428744,	-- Ensemble: Additional Tokens of Lost Embaari
+						},
 					}),
 				},
 			}),
@@ -262,7 +258,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Dwarf|r.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 47, EXALTED },
+			["minReputation"] = { FACTION_IRONFORGE, EXALTED },
 			-- #endif
 		}, {
 			q(53838, {	-- Keep Yer Feet On The Ground
@@ -282,6 +278,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 			q(53837, {	-- Watch Yer Back
 				["sourceQuest"] = 53836,	-- Ancient Armor, Ancient Mystery
 				["provider"] = { "n", 145464 },	-- Advisor Belgrum
+				["coord"] = { 56.9, 47.9, 1361 },	-- OldIronforge
 			}),
 			q(53839, {	-- Aegrim's Study
 				["description"] = "The coords leads to the stair down",
@@ -303,6 +300,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 				["sourceQuest"] = 53840,	-- Interest Yah In A Pint?
 				["provider"] = { "n", 145462 },	-- Brann Bronzebeard
 				["coord"] = { 35.0, 48.8, LOCH_MODAN },
+				["maps"] = { 745 },	-- Ulduar
 			}),
 			q(53842, {	-- Earthen Blessing
 				["sourceQuest"] = 53844,	-- Recruiting the Furnace Master
@@ -335,14 +333,53 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		}),
 	})),
 	header(HEADERS.Race, EARTHEN_ALLIANCE, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 }, ["races"] = { EARTHEN_ALLIANCE, EARTHEN_HORDE } }, {
-		-- TODO: Heritage questline & rewards
-		ach(40309),	-- Heritage of the Earthen
+		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Earthen|r.",
+		["g"] = {
+			q(82771, {	-- Heritage of the Earthen
+				["provider"] = { "n", 224790 },	-- Dawn <The Awakened>
+				["coord"] = { 29.0, 59.6, DORNOGAL },
+				["lvl"] = 50,
+				["g"] = {
+					ach(40309),	-- Heritage of the Earthen
+					------ Dornogal Set ------
+					i(224863),	-- Dornogal Cheststraps
+					i(224861),	-- Dornogal Crown
+					i(224867),	-- Dornogal Cuffs
+					i(224868),	-- Dornogal Gauntlets
+					i(224864),	-- Dornogal Girdle
+					i(224865),	-- Dornogal Legcoat
+					i(224862),	-- Dornogal Mantle
+					i(224866),	-- Dornogal Sabatons
+					i(234713, {["timeline"] = {ADDED_11_0_7}}),	-- Dornogal Waistcoat
+					------ Freywold Set ------
+					i(224878),	-- Freywold Cheststraps
+					i(224876),	-- Freywold Crown
+					i(224882),	-- Freywold Cuffs
+					i(224883),	-- Freywold Gauntlets
+					i(224879),	-- Freywold Girdle
+					i(224880),	-- Freywold Legcoat
+					i(224877),	-- Freywold Mantle
+					i(224881),	-- Freywold Sabatons
+					i(234715, {["timeline"] = {ADDED_11_0_7}}),	-- Freywold Waistcoat
+					------ Gundargaz Set ------
+					i(224886),	-- Gundargaz Cheststraps
+					i(224884),	-- Gundargaz Crown
+					i(224890),	-- Gundargaz Cuffs
+					i(224891),	-- Gundargaz Gauntlets
+					i(224887),	-- Gundargaz Girdle
+					i(224888),	-- Gundargaz Legcoat
+					i(224885),	-- Gundargaz Mantle
+					i(224889),	-- Gundargaz Sabatons
+					i(234714, {["timeline"] = {ADDED_11_0_7}}),	-- Gundargaz Waistcoat
+				},
+			}),
+		},
 	})),
 	race(GNOME, bubbleDown({ ["timeline"] = { ADDED_8_2_0 }, ["races"] = { GNOME } }, {
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Gnome|r that has completed |cFFFFD700Stay of Execution|r, the 8.2 War Campaign.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 54, EXALTED },
+			["minReputation"] = { FACTION_GNOMEREGAN, EXALTED },
 			-- #endif
 		}, {
 			q(54402, {	-- Shifting Gears
@@ -427,7 +464,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Goblin|r.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 1133, EXALTED },
+			["minReputation"] = { FACTION_BILGEWATER_CARTEL, EXALTED },
 			-- #endif
 		}, {
 			q(57043, {	-- Old Friends, New Opportunities
@@ -544,7 +581,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Human|r.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 72, EXALTED }
+			["minReputation"] = { FACTION_STORMWIND, EXALTED }
 			-- #endif
 		}, {
 			q(72644, {	-- An Urgent Matter
@@ -790,6 +827,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 			q(58436, {    -- Heritage of the Mechagnome
 				["provider"] = { "n", 158145 },	-- Prince Erazmin
 				["coord"] = { 73.0, 33.4, MECHAGON },
+				["maps"] = { MECHAGON_CITY },
 				["lvl"] = 50,
 				["g"] = {
 					ach(14014),	-- Heritage of the Mechagnome
@@ -877,21 +915,8 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 				["provider"] = { "n", 209140 },	-- Maiev Stormsong
 				["coord"] = { 52.7, 4.2, STORMWIND_CITY },
 				["g"] = {
-					i(208879, {	-- Ensemble: Kaldorei Protector's Adornment
-						i(208875),	-- Kaldorei Protector's Anklets
-						i(208824),	-- Kaldorei Protector's Band
-						i(208842),	-- Kaldorei Protector's Cinch
-						i(208876),	-- Kaldorei Protector's Coronet
-						i(208874),	-- Kaldorei Protector's Mantle
-						i(208877),	-- Kaldorei Protector's Talons
-						i(208882),	-- Kaldorei Protector's Wrap
-						i(208885),	-- Kaldorei Protector's Wristwraps
-					}),
-					i(208785, {	-- Traditionalist's Kaldorei Blades
-						i(208759),	-- Duskrune Glaive
-						i(208761),	-- Glaive of the Blood Moon
-						i(208762),	-- Moonlight Glaive
-					}),
+					iensemble(208879),	-- Ensemble: Kaldorei Protector's Adornment
+					iensemble(208785),	-- Traditionalist's Kaldorei Blades
 					title(511),	-- Ama'shan <Name>
 				},
 			}),
@@ -922,7 +947,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Orc|r.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 76, EXALTED }
+			["minReputation"] = { FACTION_ORGRIMMAR, EXALTED }
 			-- #endif
 		}, {
 			q(73703, {	-- A Summon to Orgrimmar
@@ -1104,7 +1129,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Tauren|r that has completed |cFFFFD700Stay of Execution|r, the 8.2 War Campaign.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 81, EXALTED },
+			["minReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },
 			-- #endif
 		}, {
 			q(54759, {	-- When Spririts Whisper
@@ -1285,27 +1310,12 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 				["provider"] = { "n", 212782 },	-- Rokhan
 				["coord"] = { 58.5, 65.5, ECHO_ISLES },
 				["g"] = {
-					i(211446, {	-- Ensemble: Heritage of the Darkspear
-						i(211438),	-- Darkspear Battlestraps
-						i(218007),	-- Darkspear Battlestraps of the Horde
-						i(211441),	-- Darkspear Belt
-						i(218015),	-- Darkspear Belt of the Horde
-						i(211440),	-- Darkspear Bracers
-						i(218016),	-- Darkspear Bracers of the Horde
-						i(211437),	-- Darkspear Greaves
-						i(218010),	-- Darkspear Greaves of the Horde
-						i(211436),	-- Darkspear Grips
-						i(218011),	-- Darkspear Grips of the Horde
-						i(211434),	-- Darkspear Rush'kah
-						i(218012),	-- Darkspear Rush'kah of the Horde
-						i(211442),	-- Darkspear Shoulderguards
-						i(218014),	-- Darkspear Shoulderguards of the Horde
-						i(211439),	-- Darkspear Tusked Barrier
-						i(218009),	-- Darkspear Tusked Barrier of the Horde
-						i(211433),	-- Darkspear War-Skirt
-						i(218013),	-- Darkspear War-Skirt of the Horde
-						i(218119),	-- Kevo ya Siti's Mask of Cunning
-						i(218118),	-- Lukou's Mask of Regeneration
+					iensemble(211446, {	-- Ensemble: Heritage of the Darkspear
+						["extraTransmogSetSpells"] = {
+							441539,	-- Ensemble: Loyalty of the Darkspear
+							441988,	-- Ensemble: Mask of Kevo ya Siti
+							441987,	-- Ensemble: Mask of Lukou
+						},
 					}),
 					i(218105),	-- Loa's Blade-Blessing (COSMETIC!)
 				},
@@ -1357,7 +1367,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 					72858,	-- Acid Beats Paper
 					72857,	-- Boom Weed
 					72856,	-- Nothing Like the Classic
-				 },
+				},
 				["provider"] = { "n", 199793 },	-- Calia Menethil
 				["coord"] = { 45.6, 41.6, SILVERPINE_FOREST },
 				["g"] = {
@@ -1369,7 +1379,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 					72858,	-- Acid Beats Paper
 					72857,	-- Boom Weed
 					72856,	-- Nothing Like the Classic
-				 },
+				},
 				["provider"] = { "n", 199792 },	-- Lilian Voss
 				["coord"] = { 45.4, 41.6, SILVERPINE_FOREST },
 			}),
@@ -1377,7 +1387,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 				["sourceQuests"] = {
 					72859,	-- A Proper Disguise
 					72860,	-- Fear is Our Weapon
-				 },
+				},
 				["provider"] = { "n", 199792 },	-- Lilian Voss
 				["coord"] = { 45.4, 41.6, SILVERPINE_FOREST },
 				["g"] = {
@@ -1414,20 +1424,10 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 				["provider"] = { "n", 199893 },	-- Lilian Voss
 				["coord"] = { 61.8, 69.4, TIRISFAL_GLADES },
 				["g"] = {
-					i(208475, {	-- Forsaken Champion's Attire
-						i(208488),	-- Forsaken Champion's Backtomb
-						i(208477),	-- Forsaken Champion's Belt
-						i(208479),	-- Forsaken Champion's Boots
-						i(208480),	-- Forsaken Champion's Bracers
-						i(208476),	-- Forsaken Champion's Chestguard
-						i(208495),	-- Forsaken Champion's Cowl
-						i(208481),	-- Forsaken Champion's Grips
-						i(208478),	-- Forsaken Champion's Leggings
-						i(208515),	-- Forsaken Champion's Rotcowl
-						i(208474),	-- Forsaken Champion's Spaulders
-						i(209065),	-- Forsaken Champion's Tabard
-						i(210054),	-- Forsaken Champion's Vest
-						i(209068),	-- Queen Loyalist's Tabard
+					iensemble(208475, {	-- Ensemble: Forsaken Champion's Attire
+						["extraTransmogSetSpells"] = {
+							419716,	-- Ensemble: Forsaken Champion's Additional Attire
+						},
 					}),
 				},
 			}),
@@ -1482,7 +1482,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 		["description"] = "To unlock this questline you need to be logged in on a |cFFa335eelevel 50 Worgen|r.",
 		["g"] = bubbleDown({
 			-- #if BEFORE 10.1.0
-			["minReputation"] = { 1134, EXALTED },
+			["minReputation"] = { FACTION_GILNEAS, EXALTED },
 			-- #endif
 		}, {
 			q(54976, {	-- The Shadow of Gilneas
@@ -1490,7 +1490,7 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 				["coord"] = { 54.6, 18.4, STORMWIND_CITY },
 			}),
 			q(54977, {	-- Into Duskwood
-				["sourceQuests"] = { 54976 }, -- The Shadow of Gilneas
+				["sourceQuests"] = { 54976 },	-- The Shadow of Gilneas
 				["provider"] = { "n", 151784 },	-- Mia Greymane
 				["coord"] = { 82.3, 27.8, STORMWIND_CITY },
 			}),
@@ -1573,62 +1573,69 @@ root(ROOTS.Character, n(HERITAGE, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_5 
 
 root(ROOTS.HiddenQuestTriggers, {
 	expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
-		q(54868),	-- During Heritage for Taurens in the End
-		q(54869),	-- Starting Heritage for Taurens.
-		q(54867),	-- Triggered when doing "When Spirits Whisper" Tauren Heritage
+		n(HERITAGE, {
+			n(QUESTS, {
+				q(54868),	-- During Heritage for Taurens in the End
+				q(54867),	-- Triggered when doing "When Spirits Whisper" Tauren Heritage
+			}),
+			q(54869),	-- Starting Heritage for Taurens.
+		}),
 	})),
 	expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_0_7 } }, {
-		q(74894),	-- Triggers after the scene ends after 'Go with Honor, Friend' (questID 72452) (spellID 403652)
-		q(73705),	-- Triggers right after accepting 'The Kosh'harg' (questID 72464) (spellID 399758)
-		q(74541),	-- Triggers when you find a 'Mysterious Orc' during 'The Kosh'harg' (questID 72464) (spellID 401231)
-		q(73394),	-- 'Saurfang had a message for you' dialog with Durak during 'A Worthy Offering' (questID 74415) (spellID 399298)
-		q(73396),	-- 'Saurfang had a message for you' dialog with Thrall during 'Honor and Glory' (questID 72478) (spellID 399303)
-		q(73397),	-- 'Saurfang had a message for you' dialog with Eitrigg during 'Aka'magosh' (questID 72479) (spellID 399305)
-		q(72468),	-- Choosing Thrall (Forstworlf clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398639)
-		q(72470),	-- Choosing Eitrigg (Blackrock clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398644)
-		q(72472),	-- Choosing Jorin Deadeye (Bleeding Hollow clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398648)
-		q(72469),	-- Choosing Gorgonna (Warsong clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398662)
-		q(72473),	-- Choosing Gorfax Angerfang (Dragonmaw clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398670)
-		q(72471),	-- Choosing Thega Graveblade (Shattered Hand clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398674)
+		n(HERITAGE, {
+			n(QUESTS, {
+				q(74894),	-- Triggers after the scene ends after 'Go with Honor, Friend' (questID 72452) (spellID 403652)
+				q(73705),	-- Triggers right after accepting 'The Kosh'harg' (questID 72464) (spellID 399758)
+				q(74541),	-- Triggers when you find a 'Mysterious Orc' during 'The Kosh'harg' (questID 72464) (spellID 401231)
+				q(73394),	-- 'Saurfang had a message for you' dialog with Durak during 'A Worthy Offering' (questID 74415) (spellID 399298)
+				q(73396),	-- 'Saurfang had a message for you' dialog with Thrall during 'Honor and Glory' (questID 72478) (spellID 399303)
+				q(73397),	-- 'Saurfang had a message for you' dialog with Eitrigg during 'Aka'magosh' (questID 72479) (spellID 399305)
+				q(72468),	-- Choosing Thrall (Forstworlf clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398639)
+				q(72470),	-- Choosing Eitrigg (Blackrock clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398644)
+				q(72472),	-- Choosing Jorin Deadeye (Bleeding Hollow clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398648)
+				q(72469),	-- Choosing Gorgonna (Warsong clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398662)
+				q(72473),	-- Choosing Gorfax Angerfang (Dragonmaw clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398670)
+				q(72471),	-- Choosing Thega Graveblade (Shattered Hand clan) during 'The Blessing of the Clan' (questID 72467) (spellID 398674)
+			}),
 
-		-- New Heritage questline start HQTs
-		q(75246),	-- Human Heritage (spellID 406118)
-		q(75247),	-- Orc Heritage (spellID 406119)
-		q(75248),	-- Goblin Heritage (spellID 406121)
-		q(75249),	-- Worgen Heritage (spellID 406122)
-		q(75250),	-- Tauren Heritage (spellID 406123)
-		q(75251),	-- Gnome Heritage (spellID 406126)
-		q(75252),	-- Blood Elf Heritage (spellID 406127)
-		q(75253),	-- Dwarf Heritage (spellID 406128)
+			-- New Heritage questline start HQTs
+			q(75246),	-- Human Heritage (spellID 406118)
+			q(75247),	-- Orc Heritage (spellID 406119)
+			q(75248),	-- Goblin Heritage (spellID 406121)
+			q(75249),	-- Worgen Heritage (spellID 406122)
+			q(75250),	-- Tauren Heritage (spellID 406123)
+			q(75251),	-- Gnome Heritage (spellID 406126)
+			q(75252),	-- Blood Elf Heritage (spellID 406127)
+			q(75253),	-- Dwarf Heritage (spellID 406128)
+		}),
 	})),
 	expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_1_7 } }, {
-		q(76556),	-- Triggers after handing in quest 'Ancient Curses' (questID 75891) (spellID 415206)
-		q(78022),	-- Triggers after talking to Maiev Stormsong during quest 'Stepping into the Shadows' (questID 76203) (spellID 422467)
-		q(77884),	-- Triggers after using 'Ensemble: Kaldorei Protector's Adornment' (itemID 208879) (spellID 421666)
-		q(77783),	-- Triggers after using 'Traditionalist's Kaldorei Blades' (itemID 208785) (spellID 421070)
-		q(78021),	-- Ensemble: Forsaken Champion's Additional Attire (itemID ?) (spellID 419716)
-		q(77654),	-- Ensemble: Forsaken Champion's Attire (itemID 208475) (spellID 422437)
-		q(77796),	-- Choosing Angellene during 'Fear is Our Weapon' (questID 72860) (spellID 421083)
-		q(77797),	-- Choosing Emalora during 'Fear is Our Weapon' (questID 72860) (spellID 421086)
-		q(77798),	-- Choosing Margix during 'Fear is Our Weapon' (questID 72860) (spellID 421087)
+		n(HERITAGE, {
+			q(76556),	-- Triggers after handing in quest 'Ancient Curses' (questID 75891) (spellID 415206)
+			q(78022),	-- Triggers after talking to Maiev Stormsong during quest 'Stepping into the Shadows' (questID 76203) (spellID 422467)
+			-- q(78021),	-- Ensemble: Forsaken Champion's Additional Attire (itemID ?) (spellID 419716)
+			-- q(77654),	-- Ensemble: Forsaken Champion's Attire (itemID 208475) (spellID 422437)
+			q(77796),	-- Choosing Angellene during 'Fear is Our Weapon' (questID 72860) (spellID 421083)
+			q(77797),	-- Choosing Emalora during 'Fear is Our Weapon' (questID 72860) (spellID 421086)
+			q(77798),	-- Choosing Margix during 'Fear is Our Weapon' (questID 72860) (spellID 421087)
 
-		-- New Heritage questline start HQTs
-		q(76457),	-- Undead Heritage (spellID 414546)
-		q(76458),	-- Night Elf Heritage (spellID 414550)
+			-- New Heritage questline start HQTs
+			q(76457),	-- Undead Heritage (spellID 414546)
+			q(76458),	-- Night Elf Heritage (spellID 414550)
+		}),
 	})),
 	expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_2_7 } }, {
-		q(82162),	-- Stay a while and listen with Chieftain Hatuun / Prophet Velen during 'A Burden Shared' (questID 78082)
-		q(78841),	-- Ensemble: Heritage of the Draenei
-		q(78843),	-- Ensemble: Heritage of the Draenei
-		q(78844),	-- Ensemble: Heritage of the Draenei
-		q(78845),	-- Ensemble: Heritage of the Draenei
-		q(78913),	-- Ensemble: Heritage of the Darkspear
-		q(80503),	-- Ensemble: Heritage of the Darkspear
-		q(80542),	-- Ensemble: Heritage of the Darkspear
-		q(80543),	-- Ensemble: Heritage of the Darkspear
-
-		-- New Heritage questline start HQTs
-		q(78548),	-- Draenei Heritage (spellID 426497)
-		q(78549),	-- Troll Heritage (spellID 426505)
+		n(HERITAGE, {
+			-- New Heritage questline start HQTs
+			q(78548),	-- Draenei Heritage (spellID 426497)
+			q(78549),	-- Troll Heritage (spellID 426505)
+		}),
+	})),
+	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(HERITAGE, {
+			q(82770),	-- Ensemble: Earthen Copper Regalia
+			q(82788),	-- Arsenal: Earthen Weaponry
+			q(82789),	-- Popped on turn in of Stranger in a Strange Land [A] (81887)
+		}),
 	})),
 });

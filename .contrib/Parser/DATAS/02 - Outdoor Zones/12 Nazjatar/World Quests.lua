@@ -23,7 +23,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			q(55889),	-- Champion Kyx'zhul the Deepspeaker
 			q(55888),	-- Champion Qalina, Spear of Ice
 			q(55890),	-- Champion Vyz'olgo the Mind-Taker
-			q(56382),	-- Chomp
+			petbattle(q(56382)),	-- Chomp
 			q(57353, {	-- Deepcoil Cleansing
 				["g"] = {
 					i(171257),	-- Voidtinged Substance (QI!)
@@ -42,9 +42,9 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					i(171254),	-- Fathom Ray Meat (QI!)
 				},
 			}),
-			q(56391),	-- Frenzied Knifefang
+			petbattle(q(56391)),	-- Frenzied Knifefang
 			q(55895),	-- Frozen Winds of Zhiela
-			q(56392),	-- Giant Opaline Conch
+			petbattle(q(56392)),	-- Giant Opaline Conch
 			q(56041),	-- Give 'Em Shell
 			q(55997),	-- Hungry Hungry Hydras
 			q(55884),	-- Infestation of Madness
@@ -62,9 +62,9 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 				},
 			}),
 			q(56385),	-- Pearlhusk Crawler
-			q(56381),	-- Prince Wiggletail
+			petbattle(q(56381)),	-- Prince Wiggletail
 			q(57336),	-- Putting the Past to Rest
-			q(56387),	-- Ravenous Scalespawn
+			petbattle(q(56387)),	-- Ravenous Scalespawn
 			q(56003, {	-- Runelocked Chest
 				["sourceQuests"] = { 56248 },	-- Treasure Tale
 			}),
@@ -122,7 +122,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 					i(167079),	-- Battered Supplies (QI!)
 				},
 			}),
-			q(56384),	-- Shadowspike Lurker
+			petbattle(q(56384)),	-- Shadowspike Lurker
 			q(56383),	-- Silence
 			q(55899),	-- Starseeker of the Shirakess
 			q(55897),	-- Szun, Breaker of Slaves
@@ -323,5 +323,18 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			}),
 			q(55894),	-- Zoko, Her Iron Defender
 		})),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } }, {
+	m(NAZJATAR, {
+		n(WORLD_QUESTS, {
+			q(57167),	-- Killed Vyz'olgo the Mind-Taker. Probably related to a daily loot flag from the lieutenants
+			q(57166),	-- triggered when completing #55891, "Champion Aldrantiss, Defender of Her Kingdom," in nazjatar
+			q(57165),	-- triggered when completing #55892, "Champion Eldanar, Shield of Her Glory," in nazjatar
+			q(57168),	-- triggered when completing #55889, "Champion Kyx'zhul the Deepspeaker," in nazjatar
+			q(57170),	-- triggered when completing #55888, "Champion Qalina, Spear of Ice," in nazjatar
+			q(57169),	-- triggered when completing WQ to kill Alzana, Arrow of Thunder (not WQ ID)
+		}),
 	}),
 })));

@@ -5,9 +5,6 @@
 local _, app = ...;
 local coroutine, InCombatLockdown = coroutine, InCombatLockdown;
 
--- Refresh collection data.
-local RefreshCollections;
-
 -- for the first auto-refresh, don't actually print to chat since some users don't like that auto-chat on login
 local print = app.EmptyFunction;
 local __FirstRefresh = true;
@@ -21,6 +18,8 @@ local math_max, tonumber, type, select, pcall, ipairs, pairs =
 local GetAchievementInfo =
 	  GetAchievementInfo;
 local ATTAccountWideData
+
+-- TODO: try making a NonCollectibleQuest wrapper, and wrapping un-completable quests in the wrapper
 
 local function CacheAccountWideCompleteViaAchievement(accountWideData)
 	-- Cache some collection states for account wide quests that aren't actually granted account wide and can be flagged using an achievementID. (Allied Races)
@@ -40,14 +39,14 @@ local function CacheAccountWideCompleteViaAchievement(accountWideData)
 		{ 14012, { 58214, 57486, 57487, 57488, 57490, 57491, 57492, 57493, 57494, 57496, 57495, 57497 } },	-- Allied Races: Mechagnome
 		{ 13207, { 53870, 53889, 53890, 53891, 53892, 53893, 53894, 53895, 53897, 53898, 54026, 53899, 58087, 53901, 53900, 53902, 54027, 53903, 53904, 53905, 54036, 53906, 53907, 53908, 57448 } },	-- Allied Races: Vulpera
 		-- Garrison Shipyard Equipment Blueprints
-		{ 10372, { 38932 } }, -- Equipment Blueprint: Bilge Pump
-		{ 10373, { 39366 } }, -- Equipment Blueprint: Felsmoke Launchers
-		{ 10374, { 39356 } }, -- Equipment Blueprint: High Intensity Fog Lights
-		{ 10375, { 39365 } }, -- Equipment Blueprint: Ghostly Spyglass
-		{ 10376, { 39364 } }, -- Equipment Blueprint: Gyroscopic Internal Stabilizer
-		{ 10377, { 39363 } }, -- Equipment Blueprint: Ice Cutter
-		{ 10378, { 39355 } }, -- Equipment Blueprint: Trained Shark Tank
-		{ 10379, { 39360 } }, -- Equipment Blueprint: True Iron Rudder
+		{ 10372, { 38932 } },	-- Equipment Blueprint: Bilge Pump
+		{ 10373, { 39366 } },	-- Equipment Blueprint: Felsmoke Launchers
+		{ 10374, { 39356 } },	-- Equipment Blueprint: High Intensity Fog Lights
+		{ 10375, { 39365 } },	-- Equipment Blueprint: Ghostly Spyglass
+		{ 10376, { 39364 } },	-- Equipment Blueprint: Gyroscopic Internal Stabilizer
+		{ 10377, { 39363 } },	-- Equipment Blueprint: Ice Cutter
+		{ 10378, { 39355 } },	-- Equipment Blueprint: Trained Shark Tank
+		{ 10379, { 39360 } },	-- Equipment Blueprint: True Iron Rudder
 		-- stupid pet tamer breadcrumbs that are once per account (there may be more breadcrumbs for the questline that need to be added here)
 		-- these aren't really 'once per account' in that only a single character gets credit.
 		-- all 5 quests of the faction are marked completed account-wide, and the other 5 can never be completed on that account
@@ -185,7 +184,7 @@ local function CacheAccountWideSharedQuests(accountWideData)
 		},
 		{
 			53061,	-- The Azerite Advantage (BFA Alliance Island Unlock / AWHQT 51994)
-			53062,  -- The Azerite Advantage (BFA Horde Island Unlock / AWHQT 51994)
+			53062,	-- The Azerite Advantage (BFA Horde Island Unlock / AWHQT 51994)
 		},
 		{
 			53055,	-- Pushing Our Influence (BFA Horde PreQ for 1st Foothold)
@@ -247,6 +246,57 @@ local function FixNonOneTimeQuests(accountWideData)
 	end
 end
 
+local OneTimeFixFunctions = {
+	-- ref. https://github.com/ATTWoWAddon/AllTheThings/commit/d1b02b8021a7f2aa80c03d212a2ea54a443e9117
+	Spell148972 = function()
+		local ATTCharacterData = app.LocalizeGlobalIfAllowed("ATTCharacterData", true);
+		local found
+		for charGuid,charData in pairs(ATTCharacterData) do
+			if charData.Spells and charData.Spells[148972] then
+				charData.Spells[148972] = nil
+				found = true
+			end
+		end
+		if found then
+			app.print(app.Modules.Color.Colorize("One-Time removal for inaccurate cached data performed!", app.Colors.Account),
+						"If any character knows",
+						app:Linkify("Spell 148972", app.Colors.ChatLink,"search:spellID:148972"),
+						"they will need to log in to properly re-collect in ATT")
+		end
+	end,
+	-- ref. https://github.com/ATTWoWAddon/AllTheThings/commit/d1b02b8021a7f2aa80c03d212a2ea54a443e9117
+	Spell241857 = function()
+		local ATTCharacterData = app.LocalizeGlobalIfAllowed("ATTCharacterData", true);
+		local found
+		for charGuid,charData in pairs(ATTCharacterData) do
+			if charData.Spells and charData.Spells[241857] then
+				charData.Spells[241857] = nil
+				found = true
+			end
+		end
+		if found then
+			app.print(app.Modules.Color.Colorize("One-Time removal for inaccurate cached data performed!", app.Colors.Account),
+						"If any character knows",
+						app:Linkify("Spell 241857", app.Colors.ChatLink,"search:spellID:241857"),
+						"they will need to log in to properly re-collect in ATT")
+		end
+	end,
+}
+
+local function OneTimeFixes(accountWideData)
+	if not accountWideData.OneTimeFixes then accountWideData.OneTimeFixes = {} end
+	local appliedFixes = accountWideData.OneTimeFixes
+
+	for fix,func in pairs(OneTimeFixFunctions) do
+		if not appliedFixes[fix] then
+			appliedFixes[fix] = 1
+			func(accountWideData)
+		end
+	end
+
+	OneTimeFixFunctions = nil
+end
+
 local function CheckOncePerAccountQuestsForCharacter(accountWideData)
 	-- Double check if any once-per-account quests which haven't been detected as being completed are completed by this character
 	local acctQuests, oneTimeQuests = accountWideData.Quests, accountWideData.OneTimeQuests;
@@ -272,28 +322,12 @@ app.AddEventHandler("OnRefreshCollections", CacheAccountWideMiscQuests)
 app.AddEventHandler("OnRefreshCollections", CacheAccountWideSharedQuests)
 app.AddEventHandler("OnRefreshCollections", CheckOncePerAccountQuestsForCharacter)
 
-RefreshCollections = function()
-	if InCombatLockdown() then
-		print(app.L.REFRESHING_COLLECTION,"(",COMBAT,")");
-		while InCombatLockdown() do coroutine.yield(); end
-	else
-		print(app.L.REFRESHING_COLLECTION);
-	end
-
+local RefreshCollections = function()
 	-- Execute the OnRefreshCollections handlers.
 	app.HandleEvent("OnRefreshCollections", ATTAccountWideData)
 end
-
 -- [Event]Done is called automatically when processed by a Runner and it completes the set of functions
 app.AddEventHandler("OnRefreshCollectionsDone", function()
-
-	-- Need to update the Settings window as well if User does not have auto-refresh for Settings
-	if app.Settings:Get("Skip:AutoRefresh") or app.Settings.NeedsRefresh then
-		app.Settings:UpdateMode("FORCE");
-	else
-		app:RefreshData(false, false, true);
-	end
-
 	-- Report success once refresh is done
 	print(app.L.DONE_REFRESHING);
 	if __FirstRefresh then
@@ -305,10 +339,23 @@ end)
 app.AddEventHandler("OnSavedVariablesAvailable", function(currentCharacter, accountWideData)
 	ATTAccountWideData = accountWideData
 	FixNonOneTimeQuests(accountWideData)
+	OneTimeFixes(accountWideData)
 end)
+app.RefreshCollections = function()
+	if IsRefreshing then return end
+	IsRefreshing = true
+	if InCombatLockdown() then
+		print(app.L.REFRESHING_COLLECTION,"(",COMBAT,")");
+	else
+		print(app.L.REFRESHING_COLLECTION);
+	end
+
+	app.CallbackHandlers.AfterCombatCallback(RefreshCollections)
+end
+app.AddEventHandler("OnReady", app.RefreshCollections)
 
 else	-- Classic
-RefreshCollections = function()
+local RefreshCollections = function()
 	if InCombatLockdown() then
 		print(app.L.REFRESHING_COLLECTION,"(",COMBAT,")");
 		while InCombatLockdown() do coroutine.yield(); end
@@ -328,11 +375,11 @@ RefreshCollections = function()
 	end
 	IsRefreshing = nil
 end
-end
-
 app.RefreshCollections = function()
 	if IsRefreshing then return end
 	IsRefreshing = true
 	app:StartATTCoroutine("RefreshingCollections", RefreshCollections)
 end
+-- TODO: test Classic with this as 'OnReady'
 app.AddEventHandler("OnInit", app.RefreshCollections)
+end

@@ -44,7 +44,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["coord"] = { 67.1, 11.8, THALDRASZUS },
 			}),
 			explorationAch(16518),	-- Explore Thaldraszus
-			achraw(16634, {	-- Framing a New Perspective
+			ach(16634, {	-- Framing a New Perspective
 				["description"] = "Exact point in the world will be within a light pink beam of light when using the 'Selfie Camera MkII' near the proper location.",
 				["g"] = {
 					crit(55994, {	-- The Seat of the Aspects
@@ -114,6 +114,26 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			pvp(ach(16593)),	-- Tour of Duty: Thaldraszus
 			ach(16301, {	-- Treasures of Thaldraszus
 				["sym"] = {{ "achievement_criteria" }},
+			}),
+		}),
+	}),
+})));
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	m(DRAGON_ISLES, {
+		m(THALDRASZUS, {
+			n(ACHIEVEMENTS, {
+				-- Achievement Framing a New Perspective
+				q(72142, name(HEADERS.AchCriteria, 16634.01)),	-- The Seat of the Aspects
+				q(72143, name(HEADERS.AchCriteria, 16634.02)),	-- The Cascades
+				q(72144, name(HEADERS.AchCriteria, 16634.03)),	-- Passage of Time
+				q(72145, name(HEADERS.AchCriteria, 16634.04)),	-- Vault of the Incarnates
+				q(72146, name(HEADERS.AchCriteria, 16634.05)),	-- Tryhold
+				q(72147, name(HEADERS.AchCriteria, 16634.06)),	-- Algeth'era Court
+				q(72148, name(HEADERS.AchCriteria, 16634.07)),	-- Veiled Ossuary
+				q(72149, name(HEADERS.AchCriteria, 16634.08)),	-- Serene Dreams Spa
+				q(72150, name(HEADERS.AchCriteria, 16634.09)),	-- Shadow Ledge
+				q(72151, name(HEADERS.AchCriteria, 16634.10)),	-- Valdrakken's Portal Room
+				q(72152, name(HEADERS.AchCriteria, 16634.11)),	-- Tryhold Reservoir
 			}),
 		}),
 	}),

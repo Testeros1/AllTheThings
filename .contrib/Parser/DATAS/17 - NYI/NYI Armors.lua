@@ -119,7 +119,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.TBC, 0.3, {
+			expansion(EXPANSION.TBC, patch(0,3), {
 				i(38387),	-- Grizzled Hat
 				i(38388),	-- Cap of the North
 				i(38389),	-- Comfy Raccoonskin Hat
@@ -133,7 +133,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.TBC, 0.3, {
+			expansion(EXPANSION.TBC, patch(0,3), {
 				i(27965),	-- TEST 130 Epic Paladin DPS Chest
 			}),
 			n(P2xx, {
@@ -143,11 +143,6 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(24137),	-- PH Plate Ramparts Reward
 				--
 				i(27718),	-- Aldor Defender's Legplates
-			}),
-		}),
-		filter(TABARDS, {
-			n(P2xx, {
-				i(23388),	-- Tranquillen Tabard
 			}),
 		}),
 		filter(SHIRTS, {
@@ -191,18 +186,18 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(CLOTH, {
-			expansion(EXPANSION.WRATH, 0.1, {
+			expansion(EXPANSION.WRATH, patch(0,1), {
 				i(37210),	-- Seafarer Cinch
 				i(37225),	-- Sweltering Sandals
 				i(37273),	-- Crimson Keeper Mitts
 			}),
-			expansion(EXPANSION.WRATH, 0.2, {
+			expansion(EXPANSION.WRATH, patch(0,2), {
 				i(43878),	-- Mantle of Unholy Power
 			}),
-			expansion(EXPANSION.WRATH, 1.0, {
+			expansion(EXPANSION.WRATH, patch(1,0), {
 				i(45629),	-- Shadoweave Belt
 			}),
-			expansion(EXPANSION.WRATH, 2.0, {
+			expansion(EXPANSION.WRATH, patch(2,0), {
 				i(47103),	-- Rotting Handwraps
 			}),
 			n(P3xx, {
@@ -212,7 +207,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.WRATH, 0.1, {
+			expansion(EXPANSION.WRATH, patch(0,1), {
 				i(37385),	-- Seared Harness
 				i(37386),	-- Ruby Heart Spaulders
 				i(37400),	-- Whalehunter Cuffs
@@ -229,7 +224,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.WRATH, 0.1, {
+			expansion(EXPANSION.WRATH, patch(0,1), {
 				i(37433),	-- Layered Scale Boots
 				i(37420),	-- Sharkproof Boots
 				i(41758),	-- Blood-Bond Helm
@@ -247,7 +242,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.WRATH, 0.1, {
+			expansion(EXPANSION.WRATH, patch(0,1), {
 				i(37485),	-- Clam Collector Gauntlets
 				i(37510),	-- Wristguards of Edification
 				i(37511),	-- Crucible Waistguard
@@ -266,11 +261,11 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(NECK_F, {
-			expansion(EXPANSION.WRATH, 0.2, {
+			expansion(EXPANSION.WRATH, patch(0,2), {
 				i(44391),	-- Cast Steel Choker
 				i(44392),	-- Necklace of Permeation
 			}),
-			expansion(EXPANSION.WRATH, 3.3, {
+			expansion(EXPANSION.WRATH, patch(3,3), {
 				i(49312),	-- Purified Onyxia Blood Talisman
 				i(49314),	-- Sparkling Onyxia Tooth Pendant
 			}),
@@ -284,7 +279,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.WRATH, 0.1, {
+			expansion(EXPANSION.WRATH, patch(0,1), {
 				i(41756),	-- Heart's Blood Signet
 			}),
 			n(P3xx, {
@@ -294,7 +289,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.WRATH, 1.0, {
+			expansion(EXPANSION.WRATH, patch(1,0), {
 				i(44869),	-- Frenzyheart Insignia of Fury
 				i(44870),	-- Oracle Talisman of Ablution
 			}),
@@ -311,13 +306,13 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 	}),
 	expansion(EXPANSION.CATA, {
 		cl(ROGUE, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(54692),	-- Armor of Thero-Shan
 				i(59600),	-- Phosphora Fedora
 			}),
 		}),
 		filter(BACK_F, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(56355),	-- Skin of Stone
 				i(65815),	-- Drape of the Mortal Guardians
 				i(60221),	-- Furlbrow Cloak
@@ -327,7 +322,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(CLOTH, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(59797),	-- Abalone-Linked Robes
 				i(62988),	-- Sash of the Unhonored
 				i(66013),	-- Mantle of the Glorious Song
@@ -349,7 +344,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(65746),	-- Leggings of Valorous Defense
 				i(47102),	-- Manaweave Robe
 			}),
-			expansion(EXPANSION.CATA, 3.0, {
+			expansion(EXPANSION.CATA, patch(3,0), {
 				i(78532),	-- Clockwinder's Immaculate Gloves
 				i(78608),	-- Clockwinder's Immaculate Gloves
 				i(78541),	-- Hood of Hidden Flesh
@@ -363,7 +358,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(56701),	-- Jinxed Vest
 				i(56405),	-- Oasis Bracers
 				i(59796),	-- Treads of Decapod Death
@@ -417,12 +412,12 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(62703),	-- Art Template Leather Shoulder - Leather_Cataclysm_B_01 - Brown
 				i(62704),	-- Art Template Leather Wrist - Leather_Cataclysm_B_01 - Brown
 			}),
-			expansion(EXPANSION.CATA, 2.0, {
+			expansion(EXPANSION.CATA, patch(2,0), {
 				i(71569),	-- Flamebinder Bracers
 				i(71394),	-- Flamebinding Girdle
 				i(71581),	-- Smolderskull Bindings
 			}),
-			expansion(EXPANSION.CATA, 3.0, {
+			expansion(EXPANSION.CATA, patch(3,0), {
 				i(78565),	-- Belt of Hidden Keys
 				i(78640),	-- Belt of Hidden Keys
 				i(78566),	-- Belt of Universal Curing
@@ -454,7 +449,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(63002),	-- Bat Claw Boots
 				--
 				i(54551),	-- Defiant Bracers
@@ -478,11 +473,11 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(54781),	-- Thorbia's Gauntlets
 				i(54783),	-- Silvered Bronze Shoulders
 			}),
-			expansion(EXPANSION.CATA, 2.0, {
+			expansion(EXPANSION.CATA, patch(2,0), {
 				i(71570),	-- Bracers of Forked Lightning
 				i(71582),	-- Bracers of Misting Ash
 			}),
-			expansion(EXPANSION.CATA, 3.0, {
+			expansion(EXPANSION.CATA, patch(3,0), {
 				i(78527),	-- Arrowflick Gauntlets
 				i(78610),	-- Arrowflick Gauntlets
 				i(78512),	-- Boneshard Boots
@@ -507,7 +502,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(49450),	-- Defusing Cinch
 				i(59795),	-- Harp Shell Shoulderplates
 				--
@@ -519,13 +514,13 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(65743),	-- Helm of Vicious Direction
 				i(54789),	-- Art Template Plate Belt - Plate_Common_C_01 - Rust
 			}),
-			expansion(EXPANSION.CATA, 2.0, {
+			expansion(EXPANSION.CATA, patch(2,0), {
 				i(71583),	-- Bracers of Imperious Truths
 				i(71585),	-- Bracers of Regal Force
 				i(71584),	-- Gigantiform Bracers
 				i(71400),	-- Girdle of the Indomitable Flame
 			}),
-			expansion(EXPANSION.CATA, 3.0, {
+			expansion(EXPANSION.CATA, patch(3,0), {
 				i(78563),	-- Blinding Girdle of Truth
 				i(78644),	-- Blinding Girdle of Truth
 				i(78499),	-- Bones of the Damned
@@ -565,7 +560,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(SHIRTS, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(52548),	-- Initiate's Tunic
 				i(53869),	-- War Paint (Shirt) NOT GOOD FOR THE LADIES (NYI)
 				i(53879),	-- Rugged Work Shirt
@@ -590,7 +585,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(57708),	-- QA Test Finger 500 Strength
 				i(57709),	-- QA Test Finger Strength
 				i(57710),	-- QA Test Finger 2000 Strength
@@ -603,15 +598,50 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.CATA, 0.3, {
+			expansion(EXPANSION.CATA, patch(0,3), {
 				i(54547),	-- Cracked Jewelry Box
 				i(65015),	-- DONTUSEFury of Angerforge
 			}),
 		}),
+		-- #if BEFORE MOP
+		filter(MISC, {
+			-- These were created for Dragon Soul, but the Normal Mode relics themselves were added to the Valor vendor instead, meaning the LFR and Heroic versions were never available to players
+			i(78629, {	-- Gutripper Shard (LFR)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78550, {	-- Gutripper Shard (Heroic)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78631, {	-- Lightning Spirit in a Bottle (LFR)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78552, {	-- Lightning Spirit in a Bottle (Heroic)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78630, {	-- Mindbender Lens (LFR)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78553, {	-- Mindbender Lens (Heroic)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78633, {	-- Ripfang Relic (LFR)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78554, {	-- Ripfang Relic (Heroic)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78632, {	-- Stoutheart Talisman (LFR)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+			i(78551, {	-- Stoutheart Talisman (Heroic)
+				["timeline"] = { CREATED_4_3_0, REMOVED_5_0_4 },
+			}),
+		}),
+		-- #endif
 	}),
 	expansion(EXPANSION.MOP, {
 		filter(CLOTH, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(80948),	-- Peacebreaker's Silk Cowl
 				i(80949),	-- Peacebreaker's Satin Hood
 				i(80988),	-- Scavenger's Silk Amice
@@ -629,7 +659,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 			-- #if BEFORE 10.2.7
 			-- All was added into MoP: Remix Throne of Thunder Ensembles
-			expansion(EXPANSION.MOP, 2.0, {
+			expansion(EXPANSION.MOP, patch(2,0), {
 				i(96705),	-- Abandoned Zandalari Firecord
 				i(97077),	-- Abandoned Zandalari Firecord
 				i(96706),	-- Abandoned Zandalari Shadowgirdle
@@ -642,7 +672,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			-- #endif
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(80946),	-- Peacebreaker's Leather Helm
 				i(80950),	-- Peacebreaker's Hide Helm
 				i(80986),	-- Scavenger's Leather Spaulders
@@ -660,7 +690,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 			-- #if BEFORE 10.2.7
 			-- All was added into MoP: Remix Throne of Thunder Ensembles
-			expansion(EXPANSION.MOP, 2.0, {
+			expansion(EXPANSION.MOP, patch(2,0), {
 				i(96715),	-- Abandoned Zandalari Moonstrap
 				i(97087),	-- Abandoned Zandalari Moonstrap
 				i(96714),	-- Abandoned Zandalari Silentbelt
@@ -673,13 +703,13 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			-- #endif
 			-- #if BEFORE 10.2.7
 			-- All was added into MoP: Remix Throne of Thunder Ensembles
-			expansion(EXPANSION.MOP, 4.0, {
+			expansion(EXPANSION.MOP, patch(4,0), {
 				i(104986),	-- Unrepentant Heels
 			}),
 			-- #endif
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(80947),	-- Peacebreaker's Chain Helm
 				i(80951),	-- Peacebreaker's Ringmail Helm
 				i(80987),	-- Scavenger's Chain Spaulders
@@ -697,7 +727,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 			-- #if BEFORE 10.2.7
 			-- All was added into MoP: Remix Throne of Thunder Ensembles
-			expansion(EXPANSION.MOP, 2.0, {
+			expansion(EXPANSION.MOP, patch(2,0), {
 				i(96716),	-- Abandoned Zandalari Arrowlinks
 				i(97088),	-- Abandoned Zandalari Arrowlinks
 				i(96717),	-- Abandoned Zandalari Waterchain
@@ -710,7 +740,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			-- #endif
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(81709),	-- Belt of Broken Bones
 				i(81710),	-- Grinning Skull Greatboots
 				i(80952),	-- Peacebreaker's Burnished Headcover
@@ -737,7 +767,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 			-- #if BEFORE 10.2.7
 			-- All was added into MoP: Remix Throne of Thunder Ensembles
-			expansion(EXPANSION.MOP, 2.0, {
+			expansion(EXPANSION.MOP, patch(2,0), {
 				i(96720),	-- Abandoned Zandalari Bucklebreaker
 				i(97092),	-- Abandoned Zandalari Bucklebreaker
 				i(96719),	-- Abandoned Zandalari Goreplate
@@ -754,28 +784,28 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			-- #endif
 		}),
 		filter(BACK_F, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(80965),	-- Scavenger's Cape
 				i(80966),	-- Scavenger's Drape
 				i(80967),	-- Scavenger's Shawl
 				i(80968),	-- Scavenger's Cloak
 				i(80969),	-- Scavenger's Manteau
 			}),
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97518),	-- Dreadful Gladiator's Drape of Prowess
 				i(97926),	-- Malevolent Gladiator's Drape of Prowess
 				i(97836),	-- Malevolent Gladiator's Drape of Prowess
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(80955),	-- Scavenger's Loop
 				i(80956),	-- Scavenger's Ring
 				i(80957),	-- Scavenger's Band
 				i(80958),	-- Scavenger's Seal
 				i(80959),	-- Scavenger's Signet
 			}),
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97527),	-- Dreadful Gladiator's Band of Meditation
 				i(97529),	-- Dreadful Gladiator's Band of Meditation
 				i(97844),	-- Malevolent Gladiator's Band of Accuracy
@@ -785,34 +815,34 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(98037),	-- QA Test Finger Dodge
 				i(98038),	-- QA Test Finger Parry
 			}),
-			expansion(EXPANSION.MOP, 4.0, {
+			expansion(EXPANSION.MOP, patch(4,0), {
 				i(103825),	-- 5.4 Raid - Normal - Siege of Orgrimmar - Wildcard - Int Hit Ring
 				i(103897),	-- 5.4 Raid - Normal - Siege of Orgrimmar - Wildcard - Str Tank Ring
 			}),
 		}),
 		filter(NECK_F, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(81049),	-- Scavenger's Necklace
 				i(81050),	-- Scavenger's Choker
 				i(81051),	-- Scavenger's Locket
 				i(81052),	-- Scavenger's Amulet
 				i(81053),	-- Scavenger's Pendant
 			}),
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97516),	-- Dreadful Gladiator's Pendant of Meditation
 				i(97924),	-- Malevolent Gladiator's Pendant of Cruelty
 				i(97834),	-- Malevolent Gladiator's Pendant of Cruelty
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.MOP, 0.1, {
+			expansion(EXPANSION.MOP, patch(0,1), {
 				i(80960),	-- Scavenger's Medal
 				i(80961),	-- Scavenger's Emblem
 				i(80962),	-- Scavenger's Medallion
 				i(80963),	-- Scavenger's Badge
 				i(80964),	-- Scavenger's Insignia
 			}),
-			expansion(EXPANSION.MOP, 1.0, {
+			expansion(EXPANSION.MOP, patch(1,0), {
 				i(91330),	-- Tyrannical Gladiator's Medallion of Cruelty [H]
 				i(91334),	-- Tyrannical Gladiator's Medallion of Meditation [H]
 				i(91332),	-- Tyrannical Gladiator's Medallion of Tenacity [H]
@@ -826,7 +856,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(91334),	-- Tyrannical Gladiator's Medallion of Meditation [H]
 				i(91332),	-- Tyrannical Gladiator's Medallion of Tenacity [H]
 			}),
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97531),	-- Malevolent Gladiator's Badge of Dominance
 				i(97532),	-- Malevolent Gladiator's Badge of Dominance
 				i(97936),	-- Malevolent Gladiator's Badge of Dominance
@@ -834,7 +864,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(97845),	-- Malevolent Gladiator's Medallion of Cruelty [H]
 				i(97935),	-- Malevolent Gladiator's Medallion of Cruelty [H]
 			}),
-			expansion(EXPANSION.MOP, 4.0, {
+			expansion(EXPANSION.MOP, patch(4,0), {
 				i(102312),	-- 5.4 Raid - Normal - Siege of Orgrimmar - Boss X Loot X - Agi DPS Trinket (5)
 				i(102313),	-- 5.4 Raid - Normal - Siege of Orgrimmar - Boss X Loot X - Int Hit Trinket (5)
 				i(102314),	-- 5.4 Raid - Normal - Siege of Orgrimmar - Boss X Loot X - Int Versatility Trinket (5)
@@ -844,20 +874,20 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		}),
 		-- These have no armor type
 		n(WRIST, {
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97838),	-- Malevolent Gladiator's Cuffs of Accuracy
 				i(97521),	-- Malevolent Gladiator's Cuffs of Meditation
 			}),
 		}),
 		n(WAIST, {
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97930),	-- Malevolent Gladiator's Cord of Accuracy
 				i(97840),	-- Malevolent Gladiator's Cord of Accuracy
 				i(97523),	-- Malevolent Gladiator's Cord of Cruelty
 			}),
 		}),
 		n(FEET, {
-			expansion(EXPANSION.MOP, 3.0, {
+			expansion(EXPANSION.MOP, patch(3,0), {
 				i(97526),	-- Malevolent Gladiator's Treads of Alacrity
 				i(97842),	-- Malevolent Gladiator's Treads of Cruelty
 				i(97932),	-- Malevolent Gladiator's Treads of Cruelty
@@ -866,7 +896,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 	}),
 	expansion(EXPANSION.WOD, {
 		filter(BACK_F, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				i(114421),	-- Arrowleaf Longcloak
 				i(114301),	-- Axebreak Darkcloak
 				i(114424),	-- Blade-Ring Greatcloak
@@ -901,7 +931,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(CLOTH, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				i(114247),	-- Firefly Bracers
 				i(114275),	-- Firefly Cord
 				i(114255),	-- Firefly Sandals
@@ -949,16 +979,16 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(105928),	-- Magic Bunny Hat
 				i(104355),	-- Titan Rocket Boots
 			}),
-			expansion(EXPANSION.WOD, 0.2, {
+			expansion(EXPANSION.WOD, patch(0,2), {
 				i(116001),	-- Cord of Skulls
 			}),
-			expansion(EXPANSION.WOD, 0.3, {
+			expansion(EXPANSION.WOD, patch(0,3), {
 				-- Does Not Load In Game --
 				i(120318),	-- Sol-Shaper's Sandals
 			}),
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				i(107660),	-- Battle Aged Leather Pauldrons
 				i(114276),	-- Bloodthorn Belt
 				i(114256),	-- Bloodthorn Boots
@@ -997,10 +1027,10 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(109486),	-- 6.0 QA Combat Test Leather Shoulders 4
 				i(107203),	-- Lasso Bracers, Powerup
 			}),
-			expansion(EXPANSION.WOD, 0.2, {
+			expansion(EXPANSION.WOD, patch(0,2), {
 				i(116207),	-- 6.0 LFR - Highmaul Raid - UNUSED - Leather Belt 1
 			}),
-			expansion(EXPANSION.WOD, 0.3, {
+			expansion(EXPANSION.WOD, patch(0,3), {
 				-- Does Not Load In Game --
 				i(107337),	-- Practice Power Bracers
 			}),
@@ -1018,7 +1048,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				i(114277),	-- Leafscale Belt
 				i(114257),	-- Leafscale Boots
 				i(114249),	-- Leafscale Bracers
@@ -1065,12 +1095,12 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(109425),	-- 7.0 QA Combat Test Mail Shoulders 3
 				i(109484),	-- 7.0 QA Combat Test Mail Shoulders 4
 			}),
-			expansion(EXPANSION.WOD, 0.2, {
+			expansion(EXPANSION.WOD, patch(0,2), {
 				i(116031),	-- 6.0 LFR - Highmaul Raid - UNUSED - Mail Versatile Belt 1
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				i(114250),	-- Ruby Plate Bracers
 				i(114258),	-- Ruby Plate Greaves
 				i(114278),	-- Ruby Plate Girdle
@@ -1107,7 +1137,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(109332),	-- 7.0 QA Combat Test Plate Shoulders 3
 				i(109338),	-- 7.0 QA Combat Test Plate Shoulders 4
 			}),
-			expansion(EXPANSION.WOD, 0.2, {
+			expansion(EXPANSION.WOD, patch(0,2), {
 				i(116232),	-- 6.0 LFR - Highmaul Raid - UNUSED - Plate Versatile Belt 1
 			}),
 			n(P6xx, {
@@ -1123,7 +1153,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})
 		}),
 		filter(NECK_F, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				-- Does Not Load In Game --
 				i(108812),	-- 6.0 PH Neck Agi
 				i(108819),	-- 6.0 PH Neck Int
@@ -1141,7 +1171,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				-- Does Not Load In Game --
 				i(108813),	-- 6.0 PH Ring Agi
 				i(108821),	-- 6.0 PH Ring Int
@@ -1162,7 +1192,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.WOD, 0.1, {
+			expansion(EXPANSION.WOD, patch(0,1), {
 				i(114960),	-- Spires unused
 				-- Does Not Load In Game --
 				i(109263),	-- 6.0 QA Combat Test Agility DPS Trinket
@@ -1189,7 +1219,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(113018),	-- 7.0 QRP Template PH Str Trinket #1
 				i(113019),	-- 7.0 QRP Template PH Str Trinket #2
 			}),
-			expansion(EXPANSION.WOD, 2.0, {
+			expansion(EXPANSION.WOD, patch(2,0), {
 				i(124870),	-- Wild Gladiator's Accolade of Conquest
 				i(125044),	-- Wild Combatant's Accolade of Conquest
 				i(125347),	-- Wild Gladiator's Accolade of Conquest
@@ -1215,79 +1245,79 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 	}),
 	expansion(EXPANSION.LEGION, {
 		cl(ROGUE, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(130327),	-- Artful Britches
 			}),
 		}),
 		filter(BACK_F, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(134579),	-- Vanguard Cape
 				i(134605),	-- Vanguard Cloak
 				i(134609),	-- Scorching Cape
 				i(134617),	-- Scorching Drape
 			}),
-			expansion(EXPANSION.LEGION, 1.0, {
+			expansion(EXPANSION.LEGION, patch(1,0), {
 				i(134693),	-- Enveloping Cape
 				i(134699),	-- Enveloping Drape
 			}),
-			expansion(EXPANSION.LEGION, 2.5, {
+			expansion(EXPANSION.LEGION, patch(2,5), {
 				i(150489),	-- Shroud of Forgiveness
 				i(150714),	-- Travel-Worn Shawl
 			}),
-			expansion(EXPANSION.LEGION, 3.5, {
+			expansion(EXPANSION.LEGION, patch(3,5), {
 				i(157751),	-- Drape of New Beginnings
 			}),
 		}),
 		filter(CLOTH, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(134017),	-- Don Carlos' Famous Hat
 				i(138420),	-- Pilfered Ettin String
 			}),
-			expansion(EXPANSION.LEGION, 3.0, {
+			expansion(EXPANSION.LEGION, patch(3,0), {
 				i(153289),	-- Eredar Priestess' Tunic
 			}),
-			expansion(EXPANSION.LEGION, 3.5, {
+			expansion(EXPANSION.LEGION, patch(3,5), {
 				i(142214),	-- 7.1 Dungeon - Karazhan - Cloth SHOULDER 2
 			}),
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(129046),	-- 7.0 PH Leather Helm
 				i(129127),	-- Ebon Stalker's Boots
 			}),
-			expansion(EXPANSION.LEGION, 2.0, {
+			expansion(EXPANSION.LEGION, patch(2,0), {
 				i(147036),	-- Fel-Stippled Legguards
 			}),
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(129152),	-- Boulderfall Stompers
 			}),
-			expansion(EXPANSION.LEGION, 2.0, {
+			expansion(EXPANSION.LEGION, patch(2,0), {
 				i(147058),	-- Chaos-Calming Wristguards
 			}),
-			expansion(EXPANSION.LEGION, 2.5, {
+			expansion(EXPANSION.LEGION, patch(2,5), {
 				i(140011),	-- Duskwatch Adjudicator's Pauldrons
 			}),
-			expansion(EXPANSION.LEGION, 3.0, {
+			expansion(EXPANSION.LEGION, patch(3,0), {
 				i(152745),	-- REUSE ME
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.LEGION, 1.0, {
+			expansion(EXPANSION.LEGION, patch(1,0), {
 				i(138489),	-- Kargath's Sacrified Hands
 			}),
-			expansion(EXPANSION.LEGION, 2.0, {
+			expansion(EXPANSION.LEGION, patch(2,0), {
 				i(147074),	-- Vambraces of Resoulte Justice
 			}),
 		}),
 		filter(TABARDS, {
-			expansion(EXPANSION.LEGION, 2.0, {
+			expansion(EXPANSION.LEGION, patch(2,0), {
 				i(147204),	-- Black Apron - TEST
 			}),
 		}),
 		filter(NECK_F, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(131919),	-- Bitestone Incisor
 				i(134710),	-- Enveloping Choker
 				i(134708),	-- Enveloping Necklace
@@ -1296,54 +1326,53 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(134597),	-- Vanguard Necklace
 				i(134598),	-- Vanguard Pendant
 			}),
-			expansion(EXPANSION.LEGION, 3.0, {
+			expansion(EXPANSION.LEGION, patch(3,0), {
 				i(153484),	-- Fierce Combatant's Necklace
 			}),
-			expansion(EXPANSION.LEGION, 3.5, {
+			expansion(EXPANSION.LEGION, patch(3,5), {
 				i(157750),	-- Pendant of Good Fortune
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(141907),	-- Arena Victory Bonus
 			}),
-			expansion(EXPANSION.LEGION, 1.0, {
+			expansion(EXPANSION.LEGION, patch(1,0), {
 				i(143604),	-- Rating Min Item Level Reward
 			}),
-			expansion(EXPANSION.LEGION, 1.5, {
+			expansion(EXPANSION.LEGION, patch(1,5), {
 				i(144455),	-- Rating Min Item Level Reward
 			}),
-			expansion(EXPANSION.LEGION, 2.0, {
+			expansion(EXPANSION.LEGION, patch(2,0), {
 				i(147397),	-- Rating Min Item Level Reward
 				i(147421),	-- Rating Min Item Level Reward
 			}),
-			expansion(EXPANSION.LEGION, 3.0, {
+			expansion(EXPANSION.LEGION, patch(3,0), {
 				i(150368),	-- Rating Min Item Level Reward
 				i(150369),	-- Rating Min Item Level Reward
 				i(150370),	-- Rating Min Item Level Reward
 			}),
-			expansion(EXPANSION.LEGION, 3.5, {
+			expansion(EXPANSION.LEGION, patch(3,5), {
 				i(157748),	-- Simple Golden Ring
 				i(157749),	-- Ornate Silver Loop
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(133062),	-- Demon Trophy of Insanity
 				i(131803),	-- Spine of Barax
 			}),
-			expansion(EXPANSION.LEGION, 1.0, {
-				i(140035),	-- Fluctuating Arc Capacitor
+			expansion(EXPANSION.LEGION, patch(1,0), {
 				i(138084),	-- Iron Wrought Insignia of Conquest
 				i(138090),	-- Iron Wrought Insignia of Dominance
 				i(138093),	-- Iron Wrought Insignia of Victory
 				i(140027),	-- Ley Spark
 			}),
-			expansion(EXPANSION.LEGION, 3.0, {
+			expansion(EXPANSION.LEGION, patch(3,0), {
 				i(151967),	-- Electrostatic Lasso
 				i(151961),	-- Legionsteel Flywheel
 			}),
-			expansion(EXPANSION.LEGION, 3.5, {
+			expansion(EXPANSION.LEGION, patch(3,5), {
 				i(157746),	-- Graven Keepsake
 				i(157747),	-- Illuminated Charm
 			}),
@@ -1352,14 +1381,14 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		n(RELICS, {
-			expansion(EXPANSION.LEGION, 0.3, {
+			expansion(EXPANSION.LEGION, patch(0,3), {
 				i(133018),	-- Azsuna Package 3 - Holy 1 - Unused
 				i(138229),	-- Nightmare Boss 3 Relic Storm
 				i(130162),	-- Val-Sharah Artifact Gem #1 [Holy]
 			}),
 		}),
 		n(TRIAL_OF_STYLE_HEADER, {
-			expansion(EXPANSION.LEGION, 2.5, {
+			expansion(EXPANSION.LEGION, patch(2,5), {
 				i(188240),	-- Augur's Walkers
 				i(188246),	-- Bloodbathed Slippers
 				i(188247),	-- Boots of the Blightbelcher
@@ -1375,7 +1404,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 	}),
 	expansion(EXPANSION.BFA, {
 		d(DIFFICULTY.DUNGEON.TIMEWALKING, {
-			expansion(EXPANSION.LEGION, 2.5, {
+			expansion(EXPANSION.LEGION, patch(2,5), {
 				i(150450),	-- Nether Shadow Tunic
 				i(150448),	-- Pauldrons of Abyssal Fury
 				i(150461),	-- Praetorian's Legguards
@@ -1390,7 +1419,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(BACK_F, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(153397),	-- Salt Starched Shawl
 				i(154968),	-- Drape of the Golden City
 				i(155384),	-- Singed Skycaller Drape
@@ -1399,10 +1428,10 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(158552),	-- Drape of the Golden City
 				i(158582),	-- Wickerweave Cloak
 			}),
-			expansion(EXPANSION.BFA, 1.0, {
+			expansion(EXPANSION.BFA, patch(1,0), {
 				i(165792),	-- Worn Cloak
 			}),
-			expansion(EXPANSION.BFA, 3.0, {
+			expansion(EXPANSION.BFA, patch(3,0), {
 				i(174857),	-- Hidden Cloak
 			}),
 			n(P8xx, {
@@ -1410,7 +1439,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(CLOTH, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(156753),	-- Turnabout Gloves
 				i(153389),	-- Galetorn Crown
 				i(153390),	-- Galetorn Gloves
@@ -1459,7 +1488,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(154871),	-- Heartsbane Sandals
 				i(154873),	-- Heartsbane Cuffs
 			}),
-			expansion(EXPANSION.BFA, 2.0, {
+			expansion(EXPANSION.BFA, patch(2,0), {
 				i(167111, {["sourceID"] = 103263 }),	-- QA Combat Test Caster Belt 1
 				i(167112, {["sourceID"] = 103264 }),	-- QA Combat Test Caster Robes 1
 				i(167113, {["sourceID"] = 103265 }),	-- QA Combat Test Caster Shoulders 1
@@ -1471,7 +1500,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(156751),	-- Nightbinder Grips
 				i(153373),	-- Sea-Treated Armbands
 				i(153374),	-- Sea-Treated Grips
@@ -1519,7 +1548,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(159181),	-- Mistfall Spaulders
 				i(159182),	-- Mistfall Chainmail
 			}),
-			expansion(EXPANSION.BFA, 1.0, {
+			expansion(EXPANSION.BFA, patch(1,0), {
 				i(166786),	-- Disenchant Test Item
 				i(166239),	-- Testus Maximus Breastplate
 			}),
@@ -1544,7 +1573,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(156754),	-- Throatcrusher Grips
 				i(153381),	-- Aiguille-Scaler's Wristguards
 				i(153382),	-- Aiguille-Scaler's Gloves
@@ -1583,7 +1612,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(159210),	-- Eventide Gloves
 				i(159213),	-- Eventide Leggings
 			}),
-			expansion(EXPANSION.BFA, 2.0, {
+			expansion(EXPANSION.BFA, patch(2,0), {
 				i(167119, {["sourceID"] = 103271 }),	-- QA Combat Test Mail Helm
 				i(167120, {["sourceID"] = 103272 }),	-- QA Combat Test Mail Legs 1
 				i(167121, {["sourceID"] = 103273 }),	-- QA Combat Test Mail Bracer 1
@@ -1595,7 +1624,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(160673),	-- Primus Breastplate
 				i(160674),	-- Secondus Breastplate
 				i(160675),	-- Tertius Breastplate
@@ -1644,7 +1673,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(159195),	-- Brineworks Greaves
 				i(159197),	-- Brineworks Stompers
 			}),
-			expansion(EXPANSION.BFA, 2.0, {
+			expansion(EXPANSION.BFA, patch(2,0), {
 				i(167127, {["sourceID"] = 103279 }),	-- QA Combat Test Plate Bracer 1
 				i(167128, {["sourceID"] = 103280 }),	-- QA Combat Test Plate Chest 1
 				i(167129, {["sourceID"] = 103281 }),	-- QA Combat Test Plate Shoulders 1
@@ -1656,7 +1685,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(NECK_F, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(153399),	-- Shaleshell Pendant
 				i(154970),	-- Shaleshell Pendant
 				i(158502),	-- Shaleshell Pendant
@@ -1667,7 +1696,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(158501),	-- Sea Sapphire Band
 				i(158519),	-- Beaten Copper Loop
 				i(158553),	-- Sea Sapphire Band
@@ -1677,10 +1706,10 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(161288),	-- Honey-Maker's Ring
 				i(162454),	-- Band of the Stormy Coast
 			}),
-			expansion(EXPANSION.BFA, 1.0, {
+			expansion(EXPANSION.BFA, patch(1,0), {
 				i(166490),	-- Shiny Ring
 			}),
-			expansion(EXPANSION.BFA, 3.0, {
+			expansion(EXPANSION.BFA, patch(3,0), {
 				i(174050),	-- Corrupted Ring - Revel in Violence
 				i(174051),	-- Corrupted Ring - Spontaneous Fury
 				i(174056),	-- Corrupted Ring - Face the Truth
@@ -1693,7 +1722,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.BFA, 0.1, {
+			expansion(EXPANSION.BFA, patch(0,1), {
 				i(161223),	-- Agency Manipulator
 				i(157761),	-- Barbaric Mindslaver
 				i(154983),	-- Bijou of the Golden City
@@ -1727,7 +1756,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(158572),	-- Shimmering Rune
 				i(157766),	-- Vial of Nightmare Fog
 			}),
-			expansion(EXPANSION.BFA, 3.0, {
+			expansion(EXPANSION.BFA, patch(3,0), {
 				i(173426),	-- Black Empire trinkets
 			}),
 			n(P8xx, {
@@ -1744,20 +1773,20 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 	}),
 	expansion(EXPANSION.SL, {
 		filter(BACK_F, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(169822),	-- Flowing Cloak
 			}),
-			expansion(EXPANSION.SL, 0.5, {
+			expansion(EXPANSION.SL, patch(0,5), {
 				i(167150),	-- QA Combat Test Cloak 1
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188117),	-- Cypher Attunement Cloak
 				i(184123),	-- Sinful Gladiator's Cape
 				i(184145),	-- Sinful Aspirant's Greatcloak
 			}),
 		}),
 		filter(CLOTH, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(179587),	-- Drust Mask
 				i(179588),	-- Drust Mask
 				i(179589),	-- Drust Mask
@@ -1766,7 +1795,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(179592),	-- Drust Mask
 				i(179595),	-- Drust Mask
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188065),	-- Choral Bands
 				i(188064),	-- Choral Belt
 				i(188063),	-- Choral Breeches
@@ -1826,12 +1855,12 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				}),
 				]]--
 			}),
-			expansion(EXPANSION.SL, 2.5, {
+			expansion(EXPANSION.SL, patch(2,5), {
 				i(191425),	-- Choral Amice
 			}),
 		}),
 		filter(LEATHER, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(178148),	-- 9.0 Dungeon - PH Item
 				i(180559),	-- Boots of Endless Betrayal
 				i(180561),	-- Bracers of Impossible Choices
@@ -1844,7 +1873,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(180566),	-- Well-Flattened Wristguards
 				i(180619),	-- Wristwraps of Broken Trust
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188068),	-- Staccato Bands
 				i(188072),	-- Staccato Bracers
 				i(188069),	-- Staccato Cap
@@ -1896,7 +1925,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(MAIL, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(183993),	-- Ye Olde Test Chestguard
 				i(183994),	-- Ye Olde Test Chestguard
 				i(183999),	-- Ye Olde Test Chestguard
@@ -1909,7 +1938,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(184012),	-- Ye Olde Test Chestguard
 				i(178304),	-- unused
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188074),	-- Anthemic Boots
 				i(188079),	-- Anthemic Clasp
 				i(188077),	-- Anthemic Cuisses
@@ -1961,7 +1990,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(PLATE, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(180537),	-- Eredar Warcouncil Sabatons
 				i(180538),	-- Nathrezim Battle Girdle
 				i(170051),	-- Lost Pauldron of Might
@@ -1971,7 +2000,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(180551),	-- Flamelicked Girdle
 				i(180552),	-- Wristguards of the Dark Keepers
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188082),	-- Harmonium Armor
 				i(188087),	-- Harmonium Belt
 				i(188088),	-- Harmonium Binders
@@ -2331,22 +2360,22 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		filter(NECK_F, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(177146),	-- Shaleshell Pendant
 				i(177165),	-- Shaleshell Pendant
 				i(175735),	-- 9.0 QRP - Bastion - Accessory - Neck
 			}),
-			expansion(EXPANSION.SL, 1.0, {
+			expansion(EXPANSION.SL, patch(1,0), {
 				i(185943),	-- Lost Adventurer's Medallion
 				i(186633),	-- Mawrat Mongrel's Collar
 				i(186983),	-- Attendant's Chain
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188111),	-- Cypher Attunement Neck
 			}),
 		}),
 		filter(FINGER_F, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(175717),	-- Inquisitor's Signet
 				i(177145),	-- Sea Sapphire Band
 				i(177153),	-- Beaten Copper Loop
@@ -2354,12 +2383,12 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(177167),	-- Beaten Copper Loop
 				i(175705),	-- 9.0 QRP - Bastion - Accessory - Ring D
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188112),	-- Cypher Attunement Ring
 			}),
 		}),
 		filter(TRINKET_F, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				i(175726),	-- Primalist's Kelpling
 				i(175727),	-- Elder's Stormseed
 				i(177147),	-- Seabeast Tusk
@@ -2379,10 +2408,10 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 				i(179341),	-- Critterbomb Contraption
 				i(181332),	-- Sinstone Kernel
 			}),
-			expansion(EXPANSION.SL, 0.5, {
+			expansion(EXPANSION.SL, patch(0,5), {
 				i(184873),	-- Soul Igniter (Test)
 			}),
-			expansion(EXPANSION.SL, 2.0, {
+			expansion(EXPANSION.SL, patch(2,0), {
 				i(188105),	-- [PH] Copy Fine Razorwing Quill
 				i(188057),	-- [PH] Copy Harmonic Crowd Breaker
 				i(188052),	-- [PH] Copy Iron Maiden's Toolkit
@@ -2394,7 +2423,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			}),
 		}),
 		n(SEASON_SINFUL, {
-			expansion(EXPANSION.SL, 0.1, {
+			expansion(EXPANSION.SL, patch(0,1), {
 				n(FEET, {
 					i(180650),	-- Shadowlandy Gladiator's Stompers
 				}),
@@ -2416,7 +2445,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 	expansion(EXPANSION.DF, {
 		filter(BACK_F, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189669),	-- 10.0 Dungeon Template - Generic - Cloak
 				i(189061),	-- 10.0 End Game Template <Descriptor> Shawl
 				i(192038),	-- 10.0 PH Dragonscale Expedition Shawl
@@ -2429,7 +2458,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.0
-			expansion(EXPANSION.DF, 2.0, bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
+			expansion(EXPANSION.DF, patch(2,0), bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
 				header(HEADERS.LFGDungeon, 2502, {	-- Amirdrassil, the Dream's Hope
 					d(DIFFICULTY.RAID.LFR, {
 						i(207160, { ["bonusID"] = 6894, ["modID"] = 0, }),	-- Inflammable Drapeleaf [LFR]
@@ -2451,13 +2480,13 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.5
-			expansion(EXPANSION.DF, 2.5, bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
+			expansion(EXPANSION.DF, patch(2,5), bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
 				i(210525),	-- Timerunner's Cloak
 			})),
 		}),
 		cl(DRUID, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(198145),	-- Copy Bracers of the druid name PH
 				i(198144),	-- Copy Chestguard of the druid name PH
 				i(198147),	-- Copy Cincture of the druid name PH
@@ -2471,7 +2500,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		}),
 		filter(CLOTH, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189683),	-- 10.0 Dungeon Template - Cloth - Feet
 				i(189641),	-- 10.0 Dungeon Template - Cloth - Hand
 				i(189643),	-- 10.0 Dungeon Template - Cloth - Head
@@ -2515,7 +2544,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.0
-			expansion(EXPANSION.DF, 2.0, bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
+			expansion(EXPANSION.DF, patch(2,0), bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
 				header(HEADERS.LFGDungeon, 2502, {	-- Amirdrassil, the Dream's Hope
 					d(DIFFICULTY.RAID.LFR, {
 						i(207124, { ["bonusID"] = 6894, ["modID"] = 0, }),	-- Blooming Redeemer's Sash [LFR]
@@ -2577,7 +2606,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.5
-			expansion(EXPANSION.DF, 2.5, bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
+			expansion(EXPANSION.DF, patch(2,5), bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
 				i(210528),	-- Timerunning Belt
 				i(210529),	-- Timerunning Boots
 				i(210527),	-- Timerunning Bracers
@@ -2588,7 +2617,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.7
-			expansion(EXPANSION.DF, 2.7, bubbleDown({ ["timeline"] = { CREATED_10_2_7 } }, {
+			expansion(EXPANSION.DF, patch(2,7), bubbleDown({ ["timeline"] = { CREATED_10_2_7 } }, {
 				i(215074),	-- REUSE
 				i(215085),	-- REUSE
 				i(215092),	-- REUSE
@@ -2596,7 +2625,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		}),
 		filter(LEATHER, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189638),	-- 10.0 Dungeon Template - Leather - Chest
 				i(189685),	-- 10.0 Dungeon Template - Leather - Feet
 				i(189639),	-- 10.0 Dungeon Template - Leather - Hand
@@ -2641,7 +2670,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.0
-			expansion(EXPANSION.DF, 2.0, bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
+			expansion(EXPANSION.DF, patch(2,0), bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
 				header(HEADERS.LFGDungeon, 2502, {	-- Amirdrassil, the Dream's Hope
 					d(DIFFICULTY.RAID.LFR, {
 						i(207131, { ["bonusID"] = 6894, ["modID"] = 0, }),	-- Bloody Dragonhide Belt [LFR]
@@ -2703,13 +2732,13 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.5
-			expansion(EXPANSION.DF, 2.5, bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
+			expansion(EXPANSION.DF, patch(2,5), bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
 				i(210279),	-- Thunderpaw Spaulders
 			})),
 		}),
 		filter(MAIL, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189637),	-- 10.0 Dungeon Template - Mail - Chest
 				i(189684),	-- 10.0 Dungeon Template - Mail - Feet
 				i(189642),	-- 10.0 Dungeon Template - Mail - Hand
@@ -2754,7 +2783,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.0
-			expansion(EXPANSION.DF, 2.0, bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
+			expansion(EXPANSION.DF, patch(2,0), bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
 				header(HEADERS.LFGDungeon, 2502, {	-- Amirdrassil, the Dream's Hope
 					d(DIFFICULTY.RAID.LFR, {
 						i(207138, { ["bonusID"] = 6894, ["modID"] = 0, }),	-- Aerwynn's Ritual Sarong [LFR]
@@ -2843,7 +2872,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		}),
 		filter(PLATE, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189636),	-- 10.0 Dungeon Template - Plate - Chest
 				i(189634),	-- 10.0 Dungeon Template - Plate - Feet
 				i(189640),	-- 10.0 Dungeon Template - Plate - Hand
@@ -2899,7 +2928,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.0
-			expansion(EXPANSION.DF, 2.0, bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
+			expansion(EXPANSION.DF, patch(2,0), bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
 				header(HEADERS.LFGDungeon, 2502, {	-- Amirdrassil, the Dream's Hope
 					d(DIFFICULTY.RAID.LFR, {
 						i(207150, { ["bonusID"] = 6894, ["modID"] = 0, }),	-- Agonizing Manacles [LFR]
@@ -2979,20 +3008,20 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.7
-			expansion(EXPANSION.DF, 2.7, bubbleDown({ ["timeline"] = { CREATED_10_2_7 } }, {
+			expansion(EXPANSION.DF, patch(2,7), bubbleDown({ ["timeline"] = { CREATED_10_2_7 } }, {
 				i(219904),	-- Romuul's Controllable Shoulderplate
 			})),
 		}),
 		filter(TABARDS, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(191271),	-- Black Smith's Tabard
 				i(194676),	-- Emboldened Dracthyr's Tabard [Lol they changed model]
 			})),
 		}),
 		filter(NECK_F, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189667),	-- 10.0 Dungeon Template - Generic - Neck
 				i(189062),	-- 10.0 End Game Template <Descriptor> Choker
 				i(192039),	-- 10.0 PH Dragonscale Expedition Choker
@@ -3003,7 +3032,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.5
-			expansion(EXPANSION.DF, 2.5, bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
+			expansion(EXPANSION.DF, patch(2,5), bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
 				i(208489),	-- Ankh of Reincarnation
 				i(210262),	-- Divine Prayer Beads
 				i(211346),	-- Gigantifier
@@ -3014,7 +3043,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		}),
 		filter(FINGER_F, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189662),	-- 10.0 Dungeon Template - Generic - Finger
 				i(189049),	-- 10.0 End Game Template <Descriptor> Band
 				i(189059),	-- 10.0 End Game Template <Descriptor> Band
@@ -3034,14 +3063,14 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.2.5
-			expansion(EXPANSION.DF, 2.5, bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
+			expansion(EXPANSION.DF, patch(2,5), bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
 				i(210257),	-- Bamboo Band
 				i(210256),	-- Cloud-Rider Seal
 			})),
 		}),
 		filter(TRINKET_F, {
 			-- 10.0.0
-			expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+			expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 				i(189666),	-- 10.0 Dungeon Template - Generic - Trinket
 				i(189058),	-- 10.0 End Game Template <Descriptor> Trinket
 				i(192035),	-- 10.0 PH Dragonscale Expedition Trinket
@@ -3069,29 +3098,29 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 			})),
 
 			-- 10.0.7
-			expansion(EXPANSION.DF, 0.7, bubbleDown({ ["timeline"] = { CREATED_10_0_7 } }, {
+			expansion(EXPANSION.DF, patch(0,7), bubbleDown({ ["timeline"] = { CREATED_10_0_7 } }, {
 				i(204192),	-- Ascendancy
 				i(203680),	-- Totem Toss
 			})),
 
 			-- 10.2.5
-			expansion(EXPANSION.DF, 2.5, bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
+			expansion(EXPANSION.DF, patch(2,5), bubbleDown({ ["timeline"] = { CREATED_10_2_5 } }, {
 				i(208556),	-- Flicker Blossom
 				i(208553),	-- Timerunner's Chalice
 			})),
 		}),
 		-- 10.0.0
-		expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {	-- Unknown
+		expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {	-- Unknown
 			i(198681),	-- Luke Test Belt [DNT]
 		})),
 
 		-- 10.0.0
-		expansion(EXPANSION.DF, 0.01, bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
+		expansion(EXPANSION.DF, patch(0,01), bubbleDown({ ["timeline"] = { CREATED_10_0_0 } }, {
 			i(191942),	-- Belloc's Hat [Added SpellIDs regarding this.. Belloc also lost his hat... In Waking Shores 371683 (Wear Belloc's Hat [DNT]), 371665 (Sit on Belloc's Head [DNT]) /Brage ]
 		})),
 
 		-- 10.1.0
-		expansion(EXPANSION.DF, 1.0, bubbleDown({ ["timeline"] = { CREATED_10_1_0 } }, {
+		expansion(EXPANSION.DF, patch(1,0), bubbleDown({ ["timeline"] = { CREATED_10_1_0 } }, {
 			i(202648),	-- 10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2
 			i(202666),	-- 10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3
 			i(202649),	-- 10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2
@@ -3116,7 +3145,7 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		})),
 
 		-- 10.1.5
-		expansion(EXPANSION.DF, 1.5, bubbleDown({ ["timeline"] = { CREATED_10_1_5 } }, {
+		expansion(EXPANSION.DF, patch(1,5), bubbleDown({ ["timeline"] = { CREATED_10_1_5 } }, {
 			i(208988),	-- Band of the Petrified Pumpkin [Hallow's End]
 			i(208991),	-- Seal of Ghoulish Glee [Hallow's End]
 			i(208986),	-- The Horseman's Horrific Hood [Hallow's End]
@@ -3126,11 +3155,287 @@ root(ROOTS.NeverImplemented, n(ARMOR, {
 		})),
 
 		-- 10.2.0
-		expansion(EXPANSION.DF, 2.0, bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
+		expansion(EXPANSION.DF, patch(2,0), bubbleDown({ ["timeline"] = { CREATED_10_2_0 } }, {
 			i(208979),	-- 10.2 Monster - Merithra - Robe
 			i(208982),	-- 10.2 Monster - Merithra - Waist
 			i(208981),	-- 10.2 Monster - Merithra - Wrist
 			i(211132),	-- Omni Storm
+		})),
+
+		-- 10.2.7
+		expansion(EXPANSION.DF, patch(2,7), bubbleDown({ ["timeline"] = { CREATED_10_2_7 } }, {
+			filter(CLOTH, {
+				------ NYI or only in Ensembles ------
+				i(220967),	-- Spirit-Waker Shirt
+				i(220968),	-- Scrollkeeper Shirt
+				i(220969),	-- Passionsilk Vests
+				i(220970),	-- Mindbender Shirt
+				i(220971),	-- Mistwalker's Shirt
+				i(220972),	-- Shaded Wood Vest
+				i(225064),	-- Breezebinder's Shirt
+			}),
+			filter(LEATHER, {
+				------ NYI or only in Ensembles ------
+				i(220985),	-- Vest of the Shattered Vale
+			}),
+		})),
+	}),
+	expansion(EXPANSION.TWW, {
+		-- 11.0.0
+		expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+			-- Leave this for Darkal //Braghe
+			i(211620),	-- 11.0 Dungeon Template - Plate - Feet
+			i(211621),	-- 11.0 Dungeon Template - Cloth - Robe
+			i(211622),	-- 11.0 Dungeon Template - Plate - Chest
+			i(211623),	-- 11.0 Dungeon Template - Mail - Chest
+			i(211624),	-- 11.0 Dungeon Template - Leather - Chest
+			i(211625),	-- 11.0 Dungeon Template - Leather - Hand
+			i(211626),	-- 11.0 Dungeon Template - Plate - Hand
+			i(211627),	-- 11.0 Dungeon Template - Cloth - Hand
+			i(211628),	-- 11.0 Dungeon Template - Mail - Hand
+			i(211629),	-- 11.0 Dungeon Template - Cloth - Head
+			i(211630),	-- 11.0 Dungeon Template - Mail - Head
+			i(211631),	-- 11.0 Dungeon Template - Leather - Head
+			i(211632),	-- 11.0 Dungeon Template - Plate - Legs
+			i(211633),	-- 11.0 Dungeon Template - Cloth - Legs
+			i(211634),	-- 11.0 Dungeon Template - Mail - Legs
+			i(211635),	-- 11.0 Dungeon Template - Leather - Legs
+			i(211636),	-- 11.0 Dungeon Template - Leather - Shoulder
+			i(211637),	-- 11.0 Dungeon Template - Plate - Shoulder
+			i(211638),	-- 11.0 Dungeon Template - Cloth - Shoulder
+			i(211639),	-- 11.0 Dungeon Template - Mail - Shoulder
+			i(211640),	-- 11.0 Dungeon Template - Plate - Waist
+			i(211641),	-- 11.0 Dungeon Template - Cloth - Waist
+			i(211642),	-- 11.0 Dungeon Template - Mail - Waist
+			i(211643),	-- 11.0 Dungeon Template - Leather - Waist
+			i(211644),	-- 11.0 Dungeon Template - Cloth - Wrist
+			i(211645),	-- 11.0 Dungeon Template - Plate - Wrist
+			i(211646),	-- 11.0 Dungeon Template - Mail - Wrist
+			i(211647),	-- 11.0 Dungeon Template - Leather - Wrist
+			i(211648),	-- 11.0 Dungeon Template - Generic - Finger
+			i(211649),	-- 11.0 Dungeon Template - Generic - Trinket
+			i(211650),	-- 11.0 Dungeon Template - Generic - Neck
+			i(211651),	-- 11.0 Dungeon Template - Generic - Cloak
+			i(211663),	-- 11.0 Dungeon Template - Plate - Head
+			i(211664),	-- 11.0 Dungeon Template - Cloth - Feet
+			i(211665),	-- 11.0 Dungeon Template - Mail - Feet
+			i(211666),	-- 11.0 Dungeon Template - Leather - Feet
+			i(211889),	-- 11.0 Poor Item Template - <Descriptor> Leather Cinch
+			i(211890),	-- 11.0 Poor Item Template - <Descriptor> Leather Footwraps
+			i(211891),	-- 11.0 Poor Item Template - <Descriptor> Leather Handwraps
+			i(211892),	-- 11.0 Poor Item Template - <Descriptor> Leather Guise
+			i(211893),	-- 11.0 Poor Item Template - <Descriptor> Leather Leggings
+			i(211894),	-- 11.0 Poor Item Template - <Descriptor> Leather Shoulderpads
+			i(211895),	-- 11.0 Poor Item Template - <Descriptor> Leather Jerkin
+			i(211896),	-- 11.0 Poor Item Template - <Descriptor> Leather Bracers
+			i(211897),	-- 11.0 Poor Item Template - <Descriptor> Plate Vambraces
+			i(211898),	-- 11.0 Poor Item Template - <Descriptor> Plate Warboots
+			i(211899),	-- 11.0 Poor Item Template - <Descriptor> Plate Shoulderguards
+			i(211900),	-- 11.0 Poor Item Template - <Descriptor> Plate Legguards
+			i(211901),	-- 11.0 Poor Item Template - <Descriptor> Plate Faceguard
+			i(211902),	-- 11.0 Poor Item Template - <Descriptor> Plate Gloves
+			i(211903),	-- 11.0 Poor Item Template - <Descriptor> Plate Chestpiece
+			i(211904),	-- 11.0 Poor Item Template - <Descriptor> Plate Greatbelt
+			i(211905),	-- 11.0 Poor Item Template - <Descriptor> Cloth Armbands
+			i(211906),	-- 11.0 Poor Item Template - <Descriptor> Cloth Vestments
+			i(211907),	-- 11.0 Poor Item Template - <Descriptor> Cloth Footpads
+			i(211908),	-- 11.0 Poor Item Template - <Descriptor> Cloth Legwraps
+			i(211909),	-- 11.0 Poor Item Template - <Descriptor> Cloth Grips
+			i(211910),	-- 11.0 Poor Item Template - <Descriptor> Cloth Hood
+			i(211911),	-- 11.0 Poor Item Template - <Descriptor> Cloth Cincture
+			i(211912),	-- 11.0 Poor Item Template - <Descriptor> Cloth Mantle
+			i(211913),	-- 11.0 Poor Item Template - <Descriptor> Chain Armguards
+			i(211914),	-- 11.0 Poor Item Template - <Descriptor> Chain Spaulders
+			i(211915),	-- 11.0 Poor Item Template - <Descriptor> Chain Footguards
+			i(211916),	-- 11.0 Poor Item Template - <Descriptor> Chain Breeches
+			i(211917),	-- 11.0 Poor Item Template - <Descriptor> Chain Vest
+			i(211918),	-- 11.0 Poor Item Template - <Descriptor> Chain Gauntlets
+			i(211919),	-- 11.0 Poor Item Template - <Descriptor> Chain Helm
+			i(211920),	-- 11.0 Poor Item Template - <Descriptor> Chain Clasp
+			i(212098),	-- 11.0 End Game Template <Descriptor> Vestment
+			i(212099),	-- 11.0 End Game Template <Descriptor> Sandals
+			i(212100),	-- 11.0 End Game Template <Descriptor> Handwraps
+			i(212101),	-- 11.0 End Game Template <Descriptor> Cowl
+			i(212102),	-- 11.0 End Game Template <Descriptor> Leggings
+			i(212103),	-- 11.0 End Game Template <Descriptor> Cord
+			i(212104),	-- 11.0 End Game Template <Descriptor> Cuffs
+			i(212105),	-- 11.0 End Game Template <Descriptor> Waders
+			i(212106),	-- 11.0 End Game Template <Descriptor> Grips
+			i(212108),	-- 11.0 End Game Template <Descriptor> Breeches
+			i(212109),	-- 11.0 End Game Template <Descriptor> Sash
+			i(212110),	-- 11.0 End Game Template <Descriptor> Bindings
+			i(212111),	-- 11.0 End Game Template <Descriptor> Chainmail
+			i(212112),	-- 11.0 End Game Template <Descriptor> Striders
+			i(212113),	-- 11.0 End Game Template <Descriptor> Grips
+			i(212114),	-- 11.0 End Game Template <Descriptor> Coif
+			i(212115),	-- 11.0 End Game Template <Descriptor> Greaves
+			i(212116),	-- 11.0 End Game Template <Descriptor> Shoulderguards
+			i(212117),	-- 11.0 End Game Template <Descriptor> Cinch
+			i(212118),	-- 11.0 End Game Template <Descriptor> Bracers
+			i(212119),	-- 11.0 End Game Template <Descriptor> Helm
+			i(212120),	-- 11.0 End Game Template <Descriptor> Breastplate
+			i(212121),	-- 11.0 End Game Template <Descriptor> Sabatons
+			i(212122),	-- 11.0 End Game Template <Descriptor> Gauntlets
+			i(212123),	-- 11.0 End Game Template <Descriptor> Legguards
+			i(212124),	-- 11.0 End Game Template <Descriptor> Mantle
+			i(212125),	-- 11.0 End Game Template <Descriptor> Girdle
+			i(212126),	-- 11.0 End Game Template <Descriptor> Armplates
+			i(212127),	-- 11.0 End Game Template <Descriptor> Vest
+			i(212128),	-- 11.0 End Game Template <Descriptor> Epaulets
+			i(212129),	-- 11.0 End Game Template <Descriptor> Shoulderpads
+			i(212140),	-- 11.0 End Game Template <Descriptor> Band
+			i(212141),	-- 11.0 End Game Template <Descriptor> Signet
+			i(212148),	-- 11.0 End Game Template <Descriptor> Trinket
+			i(212149),	-- 11.0 End Game Template <Descriptor> Band
+			i(212150),	-- 11.0 End Game Template <Descriptor> Belt
+			i(212151),	-- 11.0 End Game Template <Descriptor> Shawl
+			i(212152),	-- 11.0 End Game Template <Descriptor> Choker
+			i(206211),	-- Onyx Annulet
+			i(210220),	-- Resilient Mask
+			i(213099),	-- Test Warbound until equipped (DNT)
+			i(215173),	-- Serum of Unconstrained Senses
+			i(215175),	-- Belt of Vials
+			i(216657),	-- Test Item C
+			i(218132),	-- 11.0 Zone Uncommon Template - Vestment
+			i(218133),	-- 11.0 Zone Uncommon Template - Sandals
+			i(218134),	-- 11.0 Zone Uncommon Template - Handwraps
+			i(218135),	-- 11.0 Zone Uncommon Template - Cowl
+			i(218136),	-- 11.0 Zone Uncommon Template - Leggings
+			i(218137),	-- 11.0 Zone Uncommon Template - Cord
+			i(218138),	-- 11.0 Zone Uncommon Template - Cuffs
+			i(218139),	-- 11.0 Zone Uncommon Template - Waders
+			i(218140),	-- 11.0 Zone Uncommon Template - Grips
+			i(218141),	-- 11.0 Zone Uncommon Template - Helm
+			i(218142),	-- 11.0 Zone Uncommon Template - Breeches
+			i(218143),	-- 11.0 Zone Uncommon Template - Sash
+			i(218144),	-- 11.0 Zone Uncommon Template - Bindings
+			i(218145),	-- 11.0 Zone Uncommon Template - Chainmail
+			i(218146),	-- 11.0 Zone Uncommon Template - Striders
+			i(218147),	-- 11.0 Zone Uncommon Template - Grips
+			i(218148),	-- 11.0 Zone Uncommon Template - Coif
+			i(218149),	-- 11.0 Zone Uncommon Template - Greaves
+			i(218150),	-- 11.0 Zone Uncommon Template - Shoulderguards
+			i(218151),	-- 11.0 Zone Uncommon Template - Cinch
+			i(218152),	-- 11.0 Zone Uncommon Template - Bracers
+			i(218153),	-- 11.0 Zone Uncommon Template - Helm
+			i(218154),	-- 11.0 Zone Uncommon Template - Breastplate
+			i(218155),	-- 11.0 Zone Uncommon Template - Sabatons
+			i(218156),	-- 11.0 Zone Uncommon Template - Gauntlets
+			i(218157),	-- 11.0 Zone Uncommon Template - Legguards
+			i(218158),	-- 11.0 Zone Uncommon Template - Mantle
+			i(218159),	-- 11.0 Zone Uncommon Template - Girdle
+			i(218160),	-- 11.0 Zone Uncommon Template - Armplates
+			i(218161),	-- 11.0 Zone Uncommon Template - Vest
+			i(218162),	-- 11.0 Zone Uncommon Template - Epaulets
+			i(218163),	-- 11.0 Zone Uncommon Template - Shoulderpads
+			i(218174),	-- 11.0 Zone Uncommon Template - Band
+			i(218175),	-- 11.0 Zone Uncommon Template - Signet
+			i(218182),	-- 11.0 Zone Uncommon Template - Trinket
+			i(218183),	-- 11.0 Zone Uncommon Template - Band
+			i(218184),	-- 11.0 Zone Uncommon Template - Belt
+			i(218185),	-- 11.0 Zone Uncommon Template - Shawl
+			i(218186),	-- 11.0 Zone Uncommon Template - Choker
+			i(218189),	-- 11.0 Leveling Quest Template - Vestment
+			i(218190),	-- 11.0 Leveling Quest Template - Sandals
+			i(218191),	-- 11.0 Leveling Quest Template - Handwraps
+			i(218192),	-- 11.0 Leveling Quest Template - Cowl
+			i(218193),	-- 11.0 Leveling Quest Template - Leggings
+			i(218194),	-- 11.0 Leveling Quest Template - Cord
+			i(218195),	-- 11.0 Leveling Quest Template - Cuffs
+			i(218196),	-- 11.0 Leveling Quest Template - Waders
+			i(218197),	-- 11.0 Leveling Quest Template - Grips
+			i(218198),	-- 11.0 Leveling Quest Template - Helm
+			i(218199),	-- 11.0 Leveling Quest Template - Breeches
+			i(218200),	-- 11.0 Leveling Quest Template - Sash
+			i(218201),	-- 11.0 Leveling Quest Template - Bindings
+			i(218202),	-- 11.0 Leveling Quest Template - Chainmail
+			i(218203),	-- 11.0 Leveling Quest Template - Striders
+			i(218204),	-- 11.0 Leveling Quest Template - Grips
+			i(218205),	-- 11.0 Leveling Quest Template - Coif
+			i(218206),	-- 11.0 Leveling Quest Template - Greaves
+			i(218207),	-- 11.0 Leveling Quest Template - Shoulderguards
+			i(218208),	-- 11.0 Leveling Quest Template - Cinch
+			i(218209),	-- 11.0 Leveling Quest Template - Bracers
+			i(218210),	-- 11.0 Leveling Quest Template - Helm
+			i(218211),	-- 11.0 Leveling Quest Template - Breastplate
+			i(218212),	-- 11.0 Leveling Quest Template - Sabatons
+			i(218213),	-- 11.0 Leveling Quest Template - Gauntlets
+			i(218214),	-- 11.0 Leveling Quest Template - Legguards
+			i(218215),	-- 11.0 Leveling Quest Template - Mantle
+			i(218216),	-- 11.0 Leveling Quest Template - Girdle
+			i(218217),	-- 11.0 Leveling Quest Template - Armplates
+			i(218218),	-- 11.0 Leveling Quest Template - Vest
+			i(218219),	-- 11.0 Leveling Quest Template - Epaulets
+			i(218220),	-- 11.0 Leveling Quest Template - Shoulderpads
+			i(218231),	-- 11.0 Leveling Quest Template - Band
+			i(218232),	-- 11.0 Leveling Quest Template - Signet
+			i(218239),	-- 11.0 Leveling Quest Template - Trinket
+			i(218240),	-- 11.0 Leveling Quest Template - Band
+			i(218241),	-- 11.0 Leveling Quest Template - Belt
+			i(218242),	-- 11.0 Leveling Quest Template - Shawl
+			i(218243),	-- 11.0 Leveling Quest Template - Choker
+			i(224084),	-- Tentacled Hat
+			i(224085),	-- Hightfish Cap
+			i(224086),	-- Nat's Drinking Hat
+			i(224087),	-- Boots of the Bay
+			i(224088),	-- Worn Fishing Hat
+			i(224089),	-- Nat Pagle's Extreme Anglin' Boots
+			i(224090),	-- Weather-Beaten Fishing Hat
+			i(224091),	-- Nat's Hat
+			i(224092),	-- Darkmoon Fishing Cap
+			i(224093),	-- Anglin' Art's Stompers
+			i(224094),	-- Anglin' Art's Waders
+			i(224095),	-- Anglin' Art's Treads
+			i(224096),	-- Anglin' Art's Sandals
+			i(224097),	-- Lucky Fishing Hat
+			i(224170),	-- Wildercloth Fishing Cap
+			i(224171),	-- Master's Wildercloth Fishing Cap
+			i(225509),	-- [PH] Armor Vestment
+			i(225510),	-- [PH] Armor Sandals
+			i(225511),	-- [PH] Armor Handwraps
+			i(225512),	-- [PH] Armor Cowl
+			i(225517),	-- [PH] Armor Grips
+			i(225518),	-- [PH] Armor Helm
+			i(225519),	-- [PH] Armor Breeches
+			i(225522),	-- [PH] Armor Chainmail
+			i(225525),	-- [PH] Armor Coif
+			i(225527),	-- [PH] Armor Shoulderguards
+			i(225528),	-- [PH] Armor Cinch
+			i(225531),	-- [PH] Armor Breastplate
+			i(225532),	-- [PH] Armor Sabatons
+			i(225534),	-- [PH] Armor Legguards
+			i(225536),	-- [PH] Armor Girdle
+			i(225539),	-- [PH] Armor Epaulets
+			i(219942),	-- 11.0 Stalwart's Sandals
+			i(221066),	-- Template - Accessory - Finger
+			i(221505),	-- [DNT] Rare Cloth - Robe
+			i(223944),	-- [PH] Infested Fungal Wristwraps
+			i(223945),	-- [PH] Perchfather's Cuffs
+			i(223946),	-- [PH] Storm Bindings
+			i(223947),	-- [PH] Steam-Powered Wristwatch
+			i(207390),	-- Delve Ring
+			-- Mail Belt
+			i(223458),	-- [PH] 11.0 - Belt
+			i(226165),	-- Unseemly Agate Choker
+			--- Trinkets
+			i(213423),	-- Bygone Weapon Charm
+			i(213533),	-- Ancient Weapon Charm
+			i(213534),	-- Bygone Armor Charm
+			i(213535),	-- Ancient Armor Charm
+			i(217402),	-- Olden Armor Charm
+			i(217403),	-- Olden Weapon Charm
+			i(217404),	-- Time-Worn Armor Charm
+			i(217405),	-- Time-Worn Weapon Charm
+			i(219916),	-- Bronzebeard Family Compass
+			i(225669),	-- Brute Force Idol
+			i(225682),	-- Time Lost Relic
+			i(225683),	-- Grasping Necrotic Relic
+			i(225684),	-- Relicblood of Zekvir
+			i(225685),	-- Relic of Sentience
+			i(212412),	-- 11.0 Raid Template - Wand - RangedRight
+			i(212455),	-- 11.0 Raid Template - Physical DPS - Trinket
+			i(226695),	-- Cunning Advisor's Favor
+			i(226696),	-- Mighty Advisor's Favor
 		})),
 	}),
 }));

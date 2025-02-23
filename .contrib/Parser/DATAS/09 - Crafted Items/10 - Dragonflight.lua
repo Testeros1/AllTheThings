@@ -1,12 +1,11 @@
 ---------------------------------------------
 --    C R A F T A B L E S   M O D U L E    --
 ---------------------------------------------
--- Simple function for First Craft tracking Quests
+-- Simple function for First Craft HQTs
 -- ex. FirstCraft(QUESTID, RECIPEID);	-- RECIPE_NAME
 local function FirstCraft(questID, recipeID, added, removed)
-	local t = {}
-	t.questID = questID
-	t.type = HEADERS.Spell..":"..recipeID
+	local t = hqt(questID, name(HEADERS.Spell, recipeID))
+	t.provider = { "s", recipeID };
 	if added then
 		t.timeline = { added };
 	end
@@ -19,7 +18,9 @@ local function FirstCraft(questID, recipeID, added, removed)
 	return t;
 end
 local function FirstSkin(questID, creatureID, added, group)
-	local t = { ["questID"] = questID, ["type"] = HEADERS.NPC..":"..creatureID, };
+	local t = hqt(questID, name(HEADERS.NPC, creatureID))
+	t.provider = { "n", creatureID };
+	t.isWeekly = true;
 	if added then
 		t.timeline = { added };
 	end
@@ -33,6 +34,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 	i(190456),	-- Artisan's Mettle
 	-- Optional
 	i(198046),	-- Concentrated Primal Infusion
+	i(228368, {["timeline"] = { ADDED_11_0_0 }}),	-- Relic of the Past VI
 	i(198048),	-- Titan Training Matrix I
 	i(198056),	-- Titan Training Matrix II
 	i(198058),	-- Titan Training Matrix III
@@ -970,16 +972,16 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 			-- Artisan Curios
 			FirstCraft(74310, 400809, ADDED_10_0_7);	-- Glowing Crystal Bookmark
 			-- Infusions of Power
-			FirstCraft(79002, 429947, ADDED_10_2_6_SEASON_FOUR);		-- Enchanted Aspect's Awakened Crest
+			FirstCraft(79002, 429947, ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH);		-- Enchanted Aspect's Awakened Crest
 			FirstCraft(76543, 414989, ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR);	-- Enchanted Aspect's Dreaming Crest
 			FirstCraft(75316, 406418, ADDED_10_1_0, REMOVED_10_2_0);	-- Enchanted Aspect's Shadowflame Crest
-			FirstCraft(79003, 429948, ADDED_10_2_6_SEASON_FOUR);		-- Enchanted Whelpling's Awakened Crest
+			FirstCraft(79003, 429948, ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH);		-- Enchanted Whelpling's Awakened Crest
 			FirstCraft(76541, 414985, ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR);	-- Enchanted Whelpling's Dreaming Crest
 			FirstCraft(75256, 406108, ADDED_10_1_0, REMOVED_10_2_0);	-- Enchanted Whelpling's Shadowflame Crest
-			FirstCraft(79001, 429945, ADDED_10_2_6_SEASON_FOUR);		-- Enchanted Wyrm's Awakened Crest
+			FirstCraft(79001, 429945, ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH);		-- Enchanted Wyrm's Awakened Crest
 			FirstCraft(76542, 414988, ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR);	-- Enchanted Wyrm's Dreaming Crest
 			FirstCraft(75315, 406413, ADDED_10_1_0, REMOVED_10_2_0);	-- Enchanted Wyrm's Shadowflame Crest
-			FirstCraft(75235, 405937, ADDED_10_1_0);	-- Titan Training Matrix V
+			FirstCraft(75235, 405937, ADDED_10_1_0, REMOVED_TWW_LAUNCH);	-- Titan Training Matrix V
 			-- Legendary
 			FirstCraft(78011, 422338, ADDED_10_2_0);	-- Shalasar's Sophic Vellum
 		})),
@@ -1570,7 +1572,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 		i(199345),	-- Rimefin Tuna
 		i(199346),	-- Rotten Rimefin Tuna
 		i(202105),	-- Rusted Coin of the Isles
-		i(194730),	-- Scalebelly Mackeral
+		i(194730),	-- Scalebelly Mackerel
 		i(199339),	-- Silver Coin of the Isles
 		i(198614),	-- Soggy Clump of Darkmoon Cards
 		i(194969),	-- Temporal Dragonhead
@@ -1607,6 +1609,28 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 			i(191472),	-- Writhebark+++
 		}),
 		n(DISCOVERY, {
+			header(HEADERS.Map, EMERALD_DREAM, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_0 }, }, {
+				["g"] = sharedData({
+					["maps"] = { EMERALD_DREAM }
+				},{
+					r(422293),	-- Overload Overgrown Herb
+					r(421176),	-- Overgrown Bubble Poppy
+					r(421224),	-- Overgrown Hochenblume
+					r(421226),	-- Overgrown Saxifrage
+					r(421227),	-- Overgrown Writhebark
+				}),
+			})),
+			header(HEADERS.Map, ZARALEK_CAVERN, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_0 }, }, {
+				["g"] = sharedData({
+					["maps"] = { ZARALEK_CAVERN }
+				},{
+					r(405124),	-- Lambent Bubble Poppy
+					r(405123),	-- Lambent Hochenblume
+					r(405126),	-- Lambent Saxifrage
+					r(405127),	-- Lambent Writhebark
+					r(405134),	-- Overload Lambent Herb
+				}),
+			})),
 			r(391444),	-- Bubble Poppy
 			r(391507),	-- Decayed Bubble Poppy
 			r(391492),	-- Decayed Hochenblume
@@ -1620,23 +1644,13 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 			r(391498),	-- Infurious Hochenblume
 			r(391499),	-- Infurious Saxifrage
 			r(391506),	-- Infurious Writhebark
-			r(405124, {["timeline"] = {ADDED_10_1_0}}),	-- Lambent Bubble Poppy
-			r(405123, {["timeline"] = {ADDED_10_1_0}}),	-- Lambent Hochenblume
-			r(405126, {["timeline"] = {ADDED_10_1_0}}),	-- Lambent Saxifrage
-			r(405127, {["timeline"] = {ADDED_10_1_0}}),	-- Lambent Writhebark
 			r(391511),	-- Lush Bubble Poppy
 			r(391415),	-- Lush Hochenblume
 			r(391502),	-- Lush Saxifrage
 			r(391512),	-- Lush Writhebark
-			r(421176, {["timeline"] = {ADDED_10_2_0}}),	-- Overgrown Bubble Poppy
-			r(421224, {["timeline"] = {ADDED_10_2_0}}),	-- Overgrown Hochenblume
-			r(421226, {["timeline"] = {ADDED_10_2_0}}),	-- Overgrown Saxifrage
-			r(421227, {["timeline"] = {ADDED_10_2_0}}),	-- Overgrown Writhebark
 			r(391564),	-- Overload Decayed Herb
 			r(391562),	-- Overload Frigid Herb
 			r(391558),	-- Overload Infurious Herb
-			r(405134, {["timeline"] = {ADDED_10_1_0}}),	-- Overload Lambent Herb
-			r(422293, {["timeline"] = {ADDED_10_2_0}}),	-- Overload Overgrown Herb
 			r(391557),	-- Overload Titan-Touched Herb
 			r(391560),	-- Overload Windswept Herb
 			r(391441),	-- Saxifrage
@@ -1730,34 +1744,34 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 			r(383520),	-- Draconic Treatise on Tailoring
 		}),
 		n(DRAKEWATCHER_MANUSCRIPTS, {
-			i(196981),	-- Cliffside Wylderdrake: Conical Head (DM!)
-			i(196988),	-- Cliffside Wylderdrake: Red Hair (DM!)
-			i(196963),	-- Cliffside Wylderdrake: Silver and Blue Armor (DM!)
-			i(196968),	-- Cliffside Wylderdrake: Steel and Yellow Armor (DM!)
-			i(196980),	-- Cliffside Wylderdrake: Triple Head Horns (DM!)
-			i(207761, {["timeline"] = {ADDED_10_2_0}}),	-- Grotto Netherwing Drake: Chin Tendrils (DM!)
-			i(207773, {["timeline"] = {ADDED_10_2_0}}),	-- Grotto Netherwing Drake: Spiked Jaw (DM!)
-			i(197117),	-- Highland Drake: Black Hair (DM!)
-			i(197091),	-- Highland Drake: Silver and Blue Armor (DM!)
-			i(197108),	-- Highland Drake: Spined Head (DM!)
-			i(197154),	-- Highland Drake: Spined Neck (DM!)
-			i(197096),	-- Highland Drake: Steel and Yellow Armor (DM!)
-			i(197377),	-- Renewed Proto-Drake: Bovine Horns (DM!)
-			i(197394),	-- Renewed Proto-Drake: Predator Pattern (DM!)
-			i(197347),	-- Renewed Proto-Drake: Silver and Blue Armor (DM!)
-			i(197362),	-- Renewed Proto-Drake: Spined Crest (DM!)
-			i(197352),	-- Renewed Proto-Drake: Steel and Yellow Armor (DM!)
-			i(197597),	-- Windborne Velocidrake: Black Fur (DM!)
-			i(197578),	-- Windborne Velocidrake: Silver and Blue Armor (DM!)
-			i(197592),	-- Windborne Velocidrake: Spined Head (DM!)
-			i(197579),	-- Windborne Velocidrake: Steel and Orange Armor (DM!)
-			i(197634),	-- Windborne Velocidrake: Windswept Pattern (DM!)
-			i(203300, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Blue and Silver Armor (DM!)
-			i(203314, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Curved Chin Horn (DM!)
-			i(203311, {["timeline"] = {ADDED_10_2_0}}),	-- Winding Slitherdrake: Hairy Chin (DM!)
-			i(203364, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Small Finned Throat (DM!)
-			i(203324, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: White Hair (DM!)
-			i(203304, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Yellow and Silver Armor (DM!)
+			i(196981),	-- Cliffside Wylderdrake: Conical Head (MM!)
+			i(196988),	-- Cliffside Wylderdrake: Red Hair (MM!)
+			i(196963),	-- Cliffside Wylderdrake: Silver and Blue Armor (MM!)
+			i(196968),	-- Cliffside Wylderdrake: Steel and Yellow Armor (MM!)
+			i(196980),	-- Cliffside Wylderdrake: Triple Head Horns (MM!)
+			i(207761, {["timeline"] = {ADDED_10_2_0}}),	-- Grotto Netherwing Drake: Chin Tendrils (MM!)
+			i(207773, {["timeline"] = {ADDED_10_2_0}}),	-- Grotto Netherwing Drake: Spiked Jaw (MM!)
+			i(197117),	-- Highland Drake: Black Hair (MM!)
+			i(197091),	-- Highland Drake: Silver and Blue Armor (MM!)
+			i(197108),	-- Highland Drake: Spined Head (MM!)
+			i(197154),	-- Highland Drake: Spined Neck (MM!)
+			i(197096),	-- Highland Drake: Steel and Yellow Armor (MM!)
+			i(197377),	-- Renewed Proto-Drake: Bovine Horns (MM!)
+			i(197394),	-- Renewed Proto-Drake: Predator Pattern (MM!)
+			i(197347),	-- Renewed Proto-Drake: Silver and Blue Armor (MM!)
+			i(197362),	-- Renewed Proto-Drake: Spined Crest (MM!)
+			i(197352),	-- Renewed Proto-Drake: Steel and Yellow Armor (MM!)
+			i(197597),	-- Windborne Velocidrake: Black Fur (MM!)
+			i(197578),	-- Windborne Velocidrake: Silver and Blue Armor (MM!)
+			i(197592),	-- Windborne Velocidrake: Spined Head (MM!)
+			i(197579),	-- Windborne Velocidrake: Steel and Orange Armor (MM!)
+			i(197634),	-- Windborne Velocidrake: Windswept Pattern (MM!)
+			i(203300, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Blue and Silver Armor (MM!)
+			i(203314, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Curved Chin Horn (MM!)
+			i(203311, {["timeline"] = {ADDED_10_2_0}}),	-- Winding Slitherdrake: Hairy Chin (MM!)
+			i(203364, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Small Finned Throat (MM!)
+			i(203324, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: White Hair (MM!)
+			i(203304, {["timeline"] = {ADDED_10_1_0}}),	-- Winding Slitherdrake: Yellow and Silver Armor (MM!)
 		}),
 		n(FIRST_CRAFTS_HEADER, sharedData({
 			["requireSkill"] = INSCRIPTION,
@@ -3056,11 +3070,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 	prof(SKINNING, {
 		n(FIRST_CRAFTS_HEADER, sharedData({
 			["requireSkill"] = SKINNING,
-			["collectible"] = false,
 		},{
-		-- To do:
-		-- Needs Achievements attached (roughly 1/3 should be attached to achievement criteria)
-		-- Remove collectible tag=false tag for those that can be collected due achievement
+			-- TODO: Needs Achievements attached (roughly 1/3 should be attached to achievement criteria)
 			FirstSkin(74204, 193243),	-- Skinning Acrosoth
 			FirstSkin(78824, 210288, ADDED_10_2_0),	-- Skinning Ancient Core Hound
 			FirstSkin(74219, 187111),	-- Skinning Ancient Hornswog
@@ -3226,11 +3237,11 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 		i(193895),	-- Temporal Dragonhead Lure
 		i(198807),	-- Titan-Infused Creature Bait
 		i(193894),	-- Thousandbite Piranha Lure
-		n(FIRST_CRAFTS_HEADER, sharedData({
-			["requireSkill"] = SKINNING,
-		},{
-		-- Listed under HQ until Quest Tracking Update
-		})),
+		-- n(FIRST_CRAFTS_HEADER, sharedData({
+		-- 	["requireSkill"] = SKINNING,
+		-- },{
+		-- -- Listed under HQ until Quest Tracking Update
+		-- })),
 	}),
 	prof(TAILORING, {
 		n(ARMOR, {
@@ -3536,9 +3547,9 @@ root(ROOTS.Craftables, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
 	-- TODO: likely many of these to be added as actual tracking under ExpansionFeatures > DF > Professions
-	expansion(EXPANSION.DF, {
+	n(PROFESSIONS, {
 		prof(ALCHEMY, {
 			q(71948),	-- Maxxed Out Transmutation
 		}),
@@ -3561,7 +3572,7 @@ root(ROOTS.HiddenQuestTriggers, {
 			q(66936),	-- Heated Ore Sample / Unyielding Stone Chunk
 		}),
 		prof(SKINNING, {
-			q(77792),	-- Dreamscale daily lockout for anniversary world boss (Emeriss, Lethon, Taerar, Ysondre)
+			q(77792, {["timeline"] = {ADDED_10_1_5}}),	-- Dreamscale daily lockout for anniversary world boss (Emeriss, Lethon, Taerar, Ysondre)
 		}),
 		prof(TAILORING, {
 			q(71946),	-- Timeweaving unlocked
@@ -3570,4 +3581,4 @@ root(ROOTS.HiddenQuestTriggers, {
 			q(71294),	-- Azureweave Full maxed out
 		}),
 	}),
-});
+})));

@@ -457,7 +457,7 @@ root(ROOTS.Professions, prof(TAILORING, bubbleDownSelf({ ["requireSkill"] = TAIL
 						["cost"] = {{"i", EMBROIDERED_DEEP_SEA_SATIN, 50}}
 					}),
 					i(167881, {	-- Pattern: Belt of the Archmage
-						["cost"] = {{"i", EMBROIDERED_DEEP_SEA_SATIN, 100}}
+						["cost"] = {{"i", EMBROIDERED_DEEP_SEA_SATIN, 150}}
 					}),
 					i(167887, {	-- Pattern: Cindercloth Gloves
 						["cost"] = {{"i", EMBROIDERED_DEEP_SEA_SATIN, 75}}
@@ -783,21 +783,21 @@ root(ROOTS.Professions, prof(TAILORING, bubbleDownSelf({ ["requireSkill"] = TAIL
 			},
 		},{
 			i(198609),	-- Tailoring Examples
-			q(74115, {	-- Inscription Order: Tailoring
-				["name"] = "Inscription Order: Tailoring",
+			q(74115, {	-- DF Inscription Order: Tailoring
+				["name"] = "DF Inscription Order: Tailoring",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194698 },	-- Draconic Treatise on Tailoring
 			}),
-			q(66386, {	-- Weekly Tailoring Knowledgepoint #1
-				["name"] = "Tailoring Treasure #1",
+			q(66386, {	-- DF Weekly Tailoring Knowledgepoint #1
+				["name"] = "DF Tailoring Treasure #1",
 				["provider"] = { "i", 193898 },	-- Umbral Bone Needle
 			}),
-			q(66387, {	-- Weekly Tailoring Knowledgepoint #2
-				["name"] = "Tailoring Treasure #2",
+			q(66387, {	-- DF Weekly Tailoring Knowledgepoint #2
+				["name"] = "DF Tailoring Treasure #2",
 				["provider"] = { "i", 193899 },	-- Primalweave Spindle
 			}),
-			q(70525, {	-- Weekly Tailoring Knowledgepoint #3
-				["name"] = "Tailoring Drop #1: Beast Humanoid",
+			q(70525, {	-- DF Weekly Tailoring Knowledgepoint #3
+				["name"] = "DF Tailoring Drop #1: Beast Humanoid",
 				["description"] = "Drops from any beastlike Humanoid.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					192500,	-- Fetid Slogger
@@ -809,8 +809,8 @@ root(ROOTS.Professions, prof(TAILORING, bubbleDownSelf({ ["requireSkill"] = TAIL
 				},
 				["provider"] = { "i", 198978 },	-- Stupidly Effective Stitchery
 			}),
-			q(70524, {	-- Weekly Tailoring Knowledgepoint #4
-				["name"] = "Tailoring Drop #2: Ohn'ahran Humanoid",
+			q(70524, {	-- DF Weekly Tailoring Knowledgepoint #4
+				["name"] = "DF Tailoring Drop #2: Ohn'ahran Humanoid",
 				["description"] = "Drops from any Ohn'ahran Humanoid.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					193840,	-- Nokhud Raider
@@ -824,6 +824,18 @@ root(ROOTS.Professions, prof(TAILORING, bubbleDownSelf({ ["requireSkill"] = TAIL
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(228779),	-- Algari Tailor's Notebook
+			},
+		},{
+			q(84132, {	-- Tailoring Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
+			}),
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_TAILORING_KNOWLEDGE, 1 }} }, {
@@ -851,6 +863,65 @@ root(ROOTS.Professions, prof(TAILORING, bubbleDownSelf({ ["requireSkill"] = TAIL
 				r(446931),	-- Treads of the Woven Dawn
 				r(446934),	-- Warm Sunrise Bracers
 				r(446997),	-- Weavercloth Embroidery Thread
+				r(446999),	-- Weavercloth Spellthread
+			}),
+		}),
+		n(TREASURES, {
+			o(455941, {	-- Arathi Rotary Cutter
+				["coord"] = { 49.2, 62.3, HALLOWFALL },
+				["questID"] = 83926,
+				["g"] = {
+					i(226352),	-- Arathi Rotary Cutter
+				},
+			}),
+			o(455945, {	-- Dornogal Seam Ripper
+				["coord"] = { 61.4, 18.6, DORNOGAL },
+				["questID"] = 83922,
+				["g"] = {
+					i(226348),	-- Dornogal Seam Ripper
+				},
+			}),
+			o(455944, {	-- Earthen Tape Measure
+				["coord"] = { 56.2, 61.0, ISLE_OF_DORN },
+				["questID"] = 83923,
+				["g"] = {
+					i(226349),	-- Earthen Tape Measure
+				},
+			}),
+			o(455942, {	-- Eathen Sticher's Snips
+				["coord"] = { 64.2, 60.2, THE_RINGING_DEEPS },
+				["questID"] = 83925,
+				["g"] = {
+					i(226351),	-- Earthen Stitcher's Snips
+				},
+			}),
+			o(455938, {	-- Nerubian's Pincushion
+				["coord"] = { 50.2, 16.7, NERUBAR },
+				["questID"] = 83929,
+				["g"] = {
+					i(226355),	-- Nerubian's Pincushion
+				},
+			}),
+			o(455939, {	-- Nerubian Quilt
+				["coord"] = { 53.2, 53.1, AZJ_KAHET },
+				["questID"] = 83928,
+				["g"] = {
+					i(226354),	-- Nerubian Quilt
+				},
+			}),
+			o(455940, {	-- Royal Outfitter's Protractor
+				["coord"] = { 40.1, 68.1, HALLOWFALL },
+				["questID"] = 83927,
+				["g"] = {
+					i(226353),	-- Royal Outfitter's Protractor
+				},
+			}),
+			o(455943, {	-- Runed Earthen Pins
+				["coord"] = { 48.8, 32.8, THE_RINGING_DEEPS },
+				["questID"] = 83924,
+				["g"] = {
+					i(226350),	-- Runed Earthen Pins
+				},
 			}),
 		}),
 		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
@@ -859,32 +930,33 @@ root(ROOTS.Professions, prof(TAILORING, bubbleDownSelf({ ["requireSkill"] = TAIL
 				currency(TWW_TAILORING_KNOWLEDGE),
 			},
 		},{
-			q(83735, {	-- Inscription Order: Tailoring
-				["name"] = "Inscription Order: Tailoring",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222547 },	-- Algari Treatise on Tailoring
+			q(83270, {	-- TWW Weekly Tailoring Knowledgepoint #1
+				["name"] = "TWW Weekly Tailoring Treasure #1",
+				["provider"] =  { "i", 225220 },	-- Chitin Needle
+			}),
+			q(83269, {	-- TWW Weekly Tailoring Knowledgepoint #2
+				["name"] = "TWW Weekly Tailoring Treasure #2",
+				["provider"] =  { "i", 225221 },	-- Spool of Webweave
 			}),
 		})),
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 	n(PROFESSIONS, {
 		prof(TAILORING, {
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
-				q(38976),	-- FLAG: Undying Silkweave Bracers
-				q(38977),	-- FLAG: Undying Silkweave Cinch Crafted
-				q(38978),	-- FLAG: Undying Silkweave Epaulets Crafted
-				q(38979),	-- FLAG: Undying Silkweave Slippers Crafted
-				q(38980),	-- FLAG: Undying Silkweave Gloves Crafted
-				q(38981),	-- FLAG: Undying Silkweave Hood Crafted
-				q(38982),	-- FLAG: Undying Silkweave Pantaloons Crafted
-				q(38983),	-- FLAG: Undying Silkweave Robe Crafted
-				q(47093),	-- Broken Shore - Choice: Tailoring
-			})),
+			q(38976),	-- FLAG: Undying Silkweave Bracers
+			q(38977),	-- FLAG: Undying Silkweave Cinch Crafted
+			q(38978),	-- FLAG: Undying Silkweave Epaulets Crafted
+			q(38979),	-- FLAG: Undying Silkweave Slippers Crafted
+			q(38980),	-- FLAG: Undying Silkweave Gloves Crafted
+			q(38981),	-- FLAG: Undying Silkweave Hood Crafted
+			q(38982),	-- FLAG: Undying Silkweave Pantaloons Crafted
+			q(38983),	-- FLAG: Undying Silkweave Robe Crafted
+			q(47093),	-- Broken Shore - Choice: Tailoring
 		}),
 	}),
-});
+})));
 
 -- #if ANYCLASSIC
 local applytraining = function(g)
@@ -894,6 +966,68 @@ local applytraining = function(g)
 	-- #endif
 	return g;
 end
+
+-- Bloodied Crafted Gear was added with Cataclysm and then removed from the game after Firelands was released.
+-- #if ANYCLASSIC
+local BLOODIED_ONUPDATE = [[function(t)
+	if _.Settings:GetUnobtainableFilter(]] .. CATA_PHASE_RAGE_OF_THE_FIRELANDS .. [[) then
+		t.u = ]] .. REMOVED_FROM_GAME .. [[;
+		t.rwp = nil;
+	else
+		t.u = ]] .. CATA_PHASE_ONE .. [[;
+		t.rwp = 40200;
+	end
+end]];
+-- #endif
+local function bloodied(t)
+	-- #if CATA
+	t.timeline = { ADDED_4_0_3_LAUNCH, REMOVED_5_0_4 };
+		-- #if ANYCLASSIC
+		t.OnUpdate = BLOODIED_ONUPDATE;
+		-- #endif
+	-- #else
+	t.timeline = { ADDED_4_0_3_LAUNCH, REMOVED_4_2_0 };
+	-- #endif
+	return t;
+end
+
+-- Bloodthirsty Crafted Gear was added with Firelands and then removed from the game after Dragon Soul was released.
+-- #if ANYCLASSIC
+local BLOODTHIRSTY_ONUPDATE = [[function(t)
+	if _.Settings:GetUnobtainableFilter(]] .. CATA_PHASE_HOUR_OF_TWILIGHT .. [[) then
+		t.u = ]] .. REMOVED_FROM_GAME .. [[;
+		t.rwp = nil;
+	else
+		t.u = ]] .. CATA_PHASE_RAGE_OF_THE_FIRELANDS .. [[;
+		t.rwp = 40300;
+	end
+end]];
+-- #endif
+local function bloodthirsty(t)
+	-- #if CATA
+	t.timeline = { ADDED_4_2_0, REMOVED_5_0_4 };
+		-- #if ANYCLASSIC
+		t.OnUpdate = BLOODTHIRSTY_ONUPDATE;
+		-- #endif
+	-- #else
+	t.timeline = { ADDED_4_2_0, REMOVED_4_3_0 };
+	-- #endif
+	return applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, t);
+end
+
+local function moltenfront(t)
+	t.timeline = { ADDED_4_2_0 };
+	return applyclassicphase(CATA_PHASE_MOLTEN_FRONT, t);
+end
+local function firelands(t)
+	t.timeline = { ADDED_4_2_0 };
+	return applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, t);
+end
+local function dragonsoul(t)
+	t.timeline = { ADDED_4_3_0 };
+	return applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, t);
+end
+
 
 profession(TAILORING, {
 	-- #if BEFORE 4.0.1.12984
@@ -1038,7 +1172,7 @@ profession(TAILORING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Leather-Reinforced Runecloth Bag",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461727
 				}),
 				-- #endif
@@ -1111,14 +1245,14 @@ profession(TAILORING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
 					["name"] = "Enchanter's Cowl",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439102
 				}),
 				-- #endif
 				{
 					["name"] = "Enchanter's Cowl",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3857
 				},
@@ -1183,12 +1317,12 @@ profession(TAILORING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["name"] = "Crimson Silk Shoulders",
 					["recipeID"] = 439093
 				}),
 				{
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					["name"] = "Crimson Silk Shoulders",
 					["recipeID"] = 8793
 				},
@@ -1212,7 +1346,7 @@ profession(TAILORING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(446193, {	-- Fractured Mind Pauldrons
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				{
@@ -1225,7 +1359,7 @@ profession(TAILORING, {
 					["recipeID"] = 435848
 				}),
 				applyclassicphase(SOD_PHASE_THREE, recipe(446194, {	-- Mantle of Insanity
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				applyclassicphase(PHASE_THREE_RECIPES, {
@@ -1254,7 +1388,7 @@ profession(TAILORING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, recipe(446195, {	-- Shoulderpads of the Deranged
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 				})),
 				-- #endif
 				applyclassicphase(PHASE_FIVE_CATCH_UP, {
@@ -1281,12 +1415,12 @@ profession(TAILORING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["name"] = "Black Mageweave Vest",
 					["recipeID"] = 439086
 				}),
 				{	--
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					["name"] = "Black Mageweave Vest",
 					["recipeID"] = 12048
 				},
@@ -1335,12 +1469,12 @@ profession(TAILORING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["name"] = "Crimson Silk Robe",
 					["recipeID"] = 8802
 				}),
 				{
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					["name"] = "Crimson Silk Robe",
 					["recipeID"] = 8802
 				},
@@ -1425,7 +1559,7 @@ profession(TAILORING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Incandescent Mooncloth Robe",
 					["recipeID"] = 461708,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				{
@@ -1436,7 +1570,7 @@ profession(TAILORING, {
 					["name"] = "Mooncloth Robe",
 					["recipeID"] = 22902,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				}),
 				{
@@ -1572,7 +1706,7 @@ profession(TAILORING, {
 					["name"] = "Belt of the Archmage",
 					["recipeID"] = 22866,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				}),
 				{
@@ -1587,7 +1721,7 @@ profession(TAILORING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Embroidered Belt of the Archmage",
 					["recipeID"] = 462282,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				{
@@ -1739,12 +1873,12 @@ profession(TAILORING, {
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["name"] = "Black Mageweave Leggings",
 					["recipeID"] = 439088
 				}),
 				{
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					["name"] = "Black Mageweave Leggings",
 					["recipeID"] = 12049
 				},
@@ -1869,12 +2003,12 @@ profession(TAILORING, {
 				}),
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["name"] = "Boots of the Enchanter",
 					["recipeID"] = 439097
 				}),
 				{
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					["name"] = "Boots of the Enchanter",
 					["recipeID"] = 3860
 				},
@@ -2233,22 +2367,22 @@ profession(TAILORING, {
 			["groups"] = {
 				{
 					["name"] = "Golden Spellthread",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 31433
 				},
 				{
 					["name"] = "Mystic Spellthread",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 31430
 				},
 				{
 					["name"] = "Runic Spellthread",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 31432
 				},
 				{
 					["name"] = "Silver Spellthread",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 31431
 				}
 			}
@@ -2345,7 +2479,7 @@ profession(TAILORING, {
 				},
 				{
 					["name"] = "Flameheart Vest",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 37884
 				},
 				-- #if AFTER 4.0.1.12984
@@ -2418,7 +2552,7 @@ profession(TAILORING, {
 				}),
 				{
 					["name"] = "Flameheart Bracers",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 37882
 				},
 				{
@@ -2491,7 +2625,7 @@ profession(TAILORING, {
 			["groups"] = {
 				{
 					["name"] = "Flameheart Gloves",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 37883
 				},
 				applyclassicphase(TBC_PHASE_FIVE, {
@@ -3294,8 +3428,9 @@ profession(TAILORING, {
 					["name"] = "Illusionary Bag",
 					["recipeID"] = 75308
 				},
-				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Luxurious Silk Gem Bag",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 100585
 				}),
 				{
@@ -3384,6 +3519,7 @@ profession(TAILORING, {
 			["groups"] = {
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bracers of Unconquered Power",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101923
 				}),
 				{
@@ -3392,6 +3528,7 @@ profession(TAILORING, {
 				},
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Dreamwraps of the Light",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101922
 				}),
 				{
@@ -3448,10 +3585,12 @@ profession(TAILORING, {
 				},
 				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Don Tayo's Inferno Mittens",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99449
 				}),
 				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Grips of Altered Reality",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99448
 				}),
 				{
@@ -3486,6 +3625,7 @@ profession(TAILORING, {
 				},
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Lavaquake Legwraps",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101921
 				}),
 				{
@@ -3502,6 +3642,7 @@ profession(TAILORING, {
 				},
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "World Mender's Pants",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101920
 				}),
 			}
@@ -3512,6 +3653,7 @@ profession(TAILORING, {
 			["groups"] = {
 				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Boots of the Black Flame",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99460
 				}),
 				{
@@ -3520,6 +3662,7 @@ profession(TAILORING, {
 				},
 				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Endless Dream Walkers",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99459
 				}),
 				{
@@ -3540,10 +3683,22 @@ profession(TAILORING, {
 			["name"] = "Cloaks",
 			["categoryID"] = 983,
 			["groups"] = {
-				{
+				-- #if ANYCLASSIC
+				firelands({
+					["name"] = "Bloodthirsty Embersilk Cape",
+					["recipeID"] = 1216338
+				}),
+				--[[
+				dragonsoul({
+					["name"] = "Vicious Embersilk Cape",
+					["recipeID"] = 99537	-- TODO: Get the spellID after Dragon Soul is launched.
+				}),
+				]]--
+				-- #endif
+				bloodied({
 					["name"] = "Vicious Embersilk Cape",
 					["recipeID"] = 99537
-				}
+				}),
 			}
 		},
 		{
@@ -6578,7 +6733,7 @@ itemrecipe("Pattern: Grips of Altered Reality", 69965, 99448, CATA_PHASE_RAGE_OF
 itemrecipe("Pattern: High Society Top Hat", 67541, 75289, CATA_PHASE_ONE);
 itemrecipe("Pattern: Illusionary Bag", 54605, 75308, CATA_PHASE_ONE);
 itemrecipe("Pattern: Lavaquake Legwraps", 72002, 101921, CATA_PHASE_HOUR_OF_TWILIGHT);
-itemrecipe("Pattern: Luxurious Silk Gem Bag", 70176, 100585, CATA_PHASE_RAGE_OF_THE_FIRELANDS);
+itemrecipe("Pattern: Luxurious Silk Gem Bag", 70176, 100585, CATA_PHASE_MOLTEN_FRONT);
 itemrecipe("Pattern: Powerful Enchanted Spellthread", 54599, 75309, CATA_PHASE_ONE);
 itemrecipe("Pattern: Powerful Ghostly Spellthread", 54600, 75310, CATA_PHASE_ONE);
 itemrecipe("Pattern: Vicious Embersilk Cowl", 54593, 75306, CATA_PHASE_ONE);

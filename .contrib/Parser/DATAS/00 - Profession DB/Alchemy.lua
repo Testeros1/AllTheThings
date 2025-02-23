@@ -1167,19 +1167,34 @@ i(210241, 415628);	-- Dreamwalker's Healing Potion
 i(0, 415810);		-- Potion of Withering Dreams
 
 ------------------
+-- PATCH 11.0.0 --
+------------------
+--- NYI ---
+i(0, 430606);		-- Unknown
+i(0, 430613);		-- Unknown
+i(0, 433271);		-- Unknown
+i(0, 433604);		-- Unknown
+i(0, 433605);		-- Unknown
+i(0, 433606);		-- Unknown
+i(0, 433607);		-- Unknown
+i(0, 433608);		-- Unknown
+i(224019, 430610);	-- Vicious Flask of Manifested Fury
+
+------------------
 -- PATCH 11.0.2 --
 ------------------
 --- TRAINER ---
 i(0, 423321);		-- Khaz Algar Alchemy
 i(0, 430590);		-- Algari Healing Potion
+i(0, 462121);		-- Bubbling Mycobloom Culture
 i(0, 427214);		-- Neutralize Concoctions
+i(0, 462122);		-- Petal Powder
 i(0, 425137);		-- Recraft Equipment
 i(0, 427174);		-- Wild Experimentation
 --- ITEM ---
 i(223080, 427185);	-- Algari Alchemist Stone
 i(224018, 430607);	-- Vicious Flask of Classical Spirits
 i(224017, 430608);	-- Vicious Flask of Honor
-i(224019, 430610);	-- Vicious Flask of Manifested Fury
 i(224020, 430611);	-- Vicious Flask of the Wrecking Ball
 --- DISCOVERY ---
 --- THAUMATURGY ---

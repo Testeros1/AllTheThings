@@ -8,16 +8,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #else
 		["lore"] = "The Redridge Mountains are located east of Elwynn Forest, northeast of Duskwood, and south of the Burning Steppes. Although it may be considered contested, Horde characters have no settlements or NPCs and it is thus a place they use mostly for passing through to reach Flame Crest or Stonard.\n\nAn idyllic region of rushing rivers, towering elms and rising elevations, the Redridge Mountains are under Stormwind's protection (though since the second war it is technically independent), and remain one of the last peaceful regions in Azeroth. The people are content and calm, and supply Stormwind with timber, fish, and crops. A force of Blackrock orcs from the Burning Steppes has secured Stonewatch Keep, but so far the orcs keep to themselves.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_redridgemountains",
-		-- #endif
+		["icon"] = 236814,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(780, {	-- Explore Redridge Mountains
-					-- #if BEFORE WRATH
-					["description"] = "Explore Redridge Mountains, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(780),	-- Explore Redridge Mountains
 				ach(4902, {	-- Redridge Mountain Quests
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -527,7 +521,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 85.8, 32.4, STORMWIND_CITY },	-- Grand Admiral Jes-Tereth
 						{ 56.3, 47.6, WESTFALL },	-- Captain Danuvin
 					},
+					-- #IF BEFORE 11.0.5
+					-- [Unsure prior to this]
 					["description"] = "This quest seems to be unobtainable at higher levels, so if you want to collect the transmog from this quest then you'll need to do it early.",
+					-- #ENDIF
 					["timeline"] = { ADDED_4_0_3 },
 					["isBreadcrumb"] = true,
 					["races"] = ALLIANCE_ONLY,
@@ -1028,7 +1025,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(26570, {	-- Render's Army
 					["qg"] = 382,	-- Marshal Marris
 					["sourceQuest"] = 26568,	-- This Ain't My War
-					["coord"] = { 31.8, 44.8, REDRIDGE_MOUNTAINS },
+					["coord"] = { 29.7, 44.5, REDRIDGE_MOUNTAINS },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -1079,7 +1076,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
-						objective(1, {	-- 	Foreman Oslow Saved
+						objective(1, {	-- Foreman Oslow Saved
 							["providers"] = {
 								{ "n", 341 },	-- Foreman Oslow
 								{ "i", 58895 },	-- Ettin Control Orb
@@ -1994,6 +1991,22 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
+				n(956, {	-- Dorin Songblade <Armorer>
+					-- #if AFTER CATA
+					["coord"] = { 29.7, 42.9, REDRIDGE_MOUNTAINS },
+					-- #else
+					["coord"] = { 29.6, 43.8, REDRIDGE_MOUNTAINS },
+					-- #endif
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						1853,	-- Scalemail Belt
+						287,	-- Scalemail Boots
+						1852,	-- Scalemail Bracers
+						718,	-- Scalemail Gloves
+						286,	-- Scalemail Pants
+						285,	-- Scalemail Vest
+					}},
+				}),
 				n(3091, {	-- Franklin Hamar <Tailoring Supplies>
 					-- #if AFTER CATA
 					["coord"] = { 26.5, 42.0, REDRIDGE_MOUNTAINS },
@@ -2013,6 +2026,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
+				n(3090, {	-- Gerald Crawley <Poison Supplies>
+					["coord"] = { 24.8, 38.3, REDRIDGE_MOUNTAINS },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						4565,	-- Simple Dagger
+					}},
+				}),
 				n(3085, {	-- Gloria Femmel <Cooking Supplies>
 					-- #if AFTER CATA
 					["coord"] = { 26.1, 40.3, REDRIDGE_MOUNTAINS },
@@ -2024,6 +2044,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(21219),	-- Recipe: Sagefish Delight (RECIPE!)
 						i(21099),	-- Recipe: Smoked Sagefish (RECIPE!)
 					},
+				}),
+				n(3088, {	-- Henry Chapal <Gunsmith>
+					["coord"] = { 23.7, 38.5, REDRIDGE_MOUNTAINS },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						2511,	-- Hunter's Boomstick
+						3023,	-- Large Bore Blunderbuss
+					}},
 				}),
 				n(793, {	-- Kara Adams <Shield Crafter>
 					-- #if AFTER CATA
@@ -2043,6 +2071,18 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["isLimited"] = true,
 						}),
 					},
+				}),
+				n(789, {	-- Kimberly Hiett <Bowyer>
+					-- #if AFTER CATA
+					["coord"] = { 26.4, 42.0, REDRIDGE_MOUNTAINS },
+					-- #else
+					["coord"] = { 25.8, 43.4, REDRIDGE_MOUNTAINS },
+					-- #endif
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						2507,	-- Laminated Recurve Bow
+						3026,	-- Reinforced Bow
+					}},
 				}),
 			}),
 			n(ZONE_DROPS, {

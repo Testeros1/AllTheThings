@@ -3,7 +3,7 @@
 -------------------------------------------
 root(ROOTS.Character, n(CLASS_TRIAL, {
 	expansion(EXPANSION.SL, bubbleDown({["timeline"] = { ADDED_9_1_5, REMOVED_10_2_0 } }, {
-		n(LEVEL_FIFTY_TRIAL, {
+		header(HEADERS.Achievement, 14782, {
 			-- Note: [As of July 4, 2018 it's Boosted 110's as no 110 trial is available]
 			-- Note: [As of August 18th, 2018 110 trials have been implemented and use same itemID's as boosting]
 			-- Note: [As of October 13th, 2020 Level 110 trials became Level 48 trials]
@@ -11,7 +11,7 @@ root(ROOTS.Character, n(CLASS_TRIAL, {
 			["description"] = "These are gained by creating a Level 50 Trial of that particular class.  Each class has one default spec except Shamans, Druids and Hunters.",
 			["lvl"] = 50,
 			["groups"] = {
-				i(185940), -- Pristine Survival Kit
+				i(185940),	-- Pristine Survival Kit
 				cl(DEATHKNIGHT, {
 					i(171988, {	-- Adventurer's Footlocker
 						i(170591),	-- Heart-Lesion Blade
@@ -56,8 +56,8 @@ root(ROOTS.Character, n(CLASS_TRIAL, {
 				}),
 				cl(DRUID, {
 					i(171988, {	-- Adventurer's Footlocker
-						i(170617), -- Springrain Spear
-						i(170611), -- Springrain Stave
+						i(170617),	-- Springrain Spear
+						i(170611),	-- Springrain Stave
 					}),
 					cl(DRUID, BALANCE, {
 						-- #if BEFORE 9.2.5

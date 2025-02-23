@@ -3,13 +3,9 @@
 ---------------------------------------------------
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(ULDUM, {
-		["lore"] = "Uldum, a new zone added with Cataclysm, was known as the Land of the Titans. An ancient desert formerly inaccessible to the Alliance and the Horde, it is rich with Titan lore and an advanced civilization, the Tol'vir. This region draws aesthetic influences heavily from Ancient Egypt, with pyramids, obelisks, similar deities, and irrigation systems.",
-		["icon"] = "Interface\\Icons\\Achievement_zone_uldum",
+		["lore"] = "Uldum, a new zone added with Cataclysm, was known as the Land of the Titans. An ancient desert formerly inaccessible to the Alliance and the Horde, it is rich with Titan lore and an advanced civilization, the Tol'vir. This region draws aesthetic influences heavily from Ancient Egypt, with pyramids, obelisks, similar deities, and irrigation systems.\n\nThis zone requires the use of flying mounts.",
+		["icon"] = 409550,
 		["timeline"] = { ADDED_4_0_3 },
-		--["maps"] = {
-			-- 737,	-- The Vortex Pinnacle
-			-- 857,	-- Throne of the Four Winds
-		--},
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				explorationAch(4865),	-- Explore Uldum
@@ -20,7 +16,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ "i", 63046 },	-- Reins of the Grey Riding Camel
 					},
 				}),
-				achWithRep(4884, 1173),	-- Ramkahen
+				achWithRep(4884, FACTION_RAMKAHEN),	-- Ramkahen
 				ach(5767, {	-- Scourer of the Eternal Sands
 					["provider"] = { "i", 63046 },	-- Reins of the Grey Riding Camel
 					["groups"] = {
@@ -32,6 +28,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				}),
 				ach(4872, {	-- Unearthing Uldum
+					-- #IF RETAIL
+					["_doautomation"] = true,
+					-- #ENDIF
 					-- #if ANYCLASSIC
 					-- #if AFTER MOP
 					["groups"] = {
@@ -86,33 +85,103 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					631,	-- Emerald Boa (PET!)
 				}},
 				["groups"] = {
-					pet(851),	-- Horned Lizard (PET!)
-					pet(545),	-- Leopard Scorpid (PET!)
-					pet(543),	-- Locust (PET!)
-					pet(542),	-- Mac Frog (PET!)
-					pet(544),	-- Oasis Moth (PET!)
-					pet(511),	-- Sidewinder (PET!)
-					pet(546),	-- Tol'vir Scarab (PET!)
+					pet(851, {	-- Horned Lizard (PET!)
+						["description"] = "Can be found in most places around Uldum, the listed coordinates indicates the wider areas where the pet is most common.",
+						["coords"] = {
+							{ 30.6, 15.0, ULDUM },	-- Oasis of Vir'sar
+							{ 50.4, 21.8, ULDUM },	-- Sahket Wastes
+							{ 65.5, 33.4, ULDUM },	-- Obelisk of the Stars
+							{ 76.0, 55.7, ULDUM },	-- The Steps of Fate
+							{ 60.8, 72.7, ULDUM },	-- Lost City ofthe Tol'vir
+						},
+					}),
+					pet(545, {	-- Leopard Scorpid (PET!)
+						["description"] = "Can be found in most places around Uldum, the listed coordinates indicates the wider areas where the pet is most common.",
+						["coords"] = {
+							{ 30.6, 15.0, ULDUM },	-- Oasis of Vir'sar
+							{ 50.4, 21.8, ULDUM },	-- Sahket Wastes
+							{ 65.5, 33.4, ULDUM },	-- Obelisk of the Stars
+							{ 76.0, 55.7, ULDUM },	-- The Steps of Fate
+							{ 32.0, 62.7, ULDUM },	-- Ruins of Ammon
+						},
+					}),
+					pet(543, {	-- Locust (PET!)
+						["description"] = "Found around Vir'naal river.",
+						["coords"] = {
+							{ 58.0, 76.8, ULDUM },	-- Western Vir'naal River Delta
+							{ 57.3, 50.8, ULDUM },	-- Vir'naal River
+							{ 48.5, 34.15, ULDUM },	-- Vir'naal Oasis west
+							{ 59.2, 31.5, ULDUM },	-- Vir'naal Oasis east
+						},
+					}),
+					pet(542, {	-- Mac Frog (PET!)
+						["description"] = "Found around Vir'nal river.",
+						["coords"] = {
+							{ 66.0, 72.4, ULDUM },	-- Eastern Vir'naal River Delta
+							{ 58.0, 76.8, ULDUM },	-- Western Vir'naal River Delta
+							{ 57.3, 50.8, ULDUM },	-- Vir'naal River
+							{ 48.5, 34.15, ULDUM },	-- Vir'naal Oasis west
+							{ 59.2, 31.5, ULDUM },	-- Vir'naal Oasis east
+						},
+					}),
+					pet(544, {	-- Oasis Moth (PET!)
+						["description"] = "Found around Vir'nal river.",
+						["coords"] = {
+							{ 58.0, 76.8, ULDUM },	-- Western Vir'naal River Delta
+							{ 57.3, 50.8, ULDUM },	-- Vir'naal River
+							{ 48.5, 34.15, ULDUM },	-- Vir'naal Oasis west
+							{ 59.2, 31.5, ULDUM },	-- Vir'naal Oasis east
+						},
+					}),
+					pet(511, {	-- Sidewinder (PET!)
+						["description"] = "Can be found in most places around Uldum and Silithus, the listed coordinates indicates the wider areas where the pet is most common.",
+						["coords"] = {
+							{ 48.0, 37.0, SILITHUS },	-- West of Cenarion Hold
+							{ 36.7, 77.7, SILITHUS },	-- The Scarab Wall
+							{ 30.6, 15.0, ULDUM },	-- Oasis of Vir'sar
+							{ 50.4, 21.8, ULDUM },	-- Sahket Wastes
+							{ 65.5, 33.4, ULDUM },	-- Obelisk of the Stars
+							{ 76.0, 55.7, ULDUM },	-- The Steps of Fate
+							{ 32.0, 62.7, ULDUM },	-- Ruins of Ammon
+						},
+					}),
+					pet(546, {	-- Tol'vir Scarab (PET!)
+						["description"] = "Can be found in most places around Uldum, the listed coordinates indicates the wider areas where the pet is most common.",
+						["coords"] = {
+							{ 32.0, 62.7, ULDUM },	-- Ruins of Ammon
+							{ 39.45, 41.45, ULDUM },	-- Orsis
+							{ 34.0, 23.85, ULDUM },	-- Temple of Uldum
+							{ 35.9, 15.75, ULDUM },	-- Ruins of Khintaset
+							{ 46.0, 15.0, ULDUM },	-- Ruins of Ahmtul
+							{ 53.2, 27.7, ULDUM },	-- Seal of the Sun King
+							{ 63.65, 26.7, ULDUM },	-- Obelisk of the Stars
+							{ 76.0, 55.7, ULDUM },	-- The Steps of Fate
+						},
+					}),
 				},
 			}),
 			explorationHeader({
-				exploration(5499),	-- Akhenet Fields
+				visit_exploration(5499,{coord={53.4,48.5,ULDUM}}),	-- Akhenet Fields
 				exploration(5596),	-- Cradle of the Ancients
 				exploration(5701),	-- Halls of Origination Entrance
 				exploration(5455),	-- Khartut's Tomb
-				exploration(5599),	-- Lost City of the Tol'vir
+				visit_exploration(5599,{coord={60.9,65.2,ULDUM}}),	-- Lost City of the Tol'vir
 				exploration(5498),	-- Mar'at
+				visit_exploration(5688,{coord={52.2,71.8,ULDUM}}),	-- Mount Akher
 				exploration(5467),	-- Nahom
-				exploration(5663),	-- Neferset City
+				visit_exploration(5663,{coord={51.9,72.1,ULDUM}}),	-- Neferset City
+				visit_exploration(5679,{coord={50.7,64.4,ULDUM}}),	-- Neferset City Outskirts
 				exploration(5668),	-- Obelisk of the Moon
 				exploration(5423),	-- Obelisk of the Stars
 				exploration(5597),	-- Obelisk of the Sun
 				exploration(5465),	-- Orsis
 				exploration(5466),	-- Ramkahen
+				visit_exploration(5500,{coord={58.4,45.9,ULDUM}}),	-- Ramkahen Legion Outpost
 				exploration(5647),	-- Ruins of Ahmtul
 				exploration(5606),	-- Ruins of Ammon
 				exploration(5671),	-- Ruins of Khintaset
 				exploration(5602),	-- Schnottz's Landing
+				visit_exploration(5665,{coord={57.6,61.5,ULDUM}}),	-- Sunwatcher's Ridge
 				exploration(5696),	-- Surveyors' Outpost
 				exploration(5669),	-- Temple of Uldum
 				exploration(5612),	-- The Cursed Landing
@@ -123,11 +192,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				exploration(5583),	-- The Vortex Pinnacle
 				exploration(5684),	-- Throne of the Four Winds
 				exploration(5689),	-- Tombs of the Precursors
-				exploration(5666),	-- Vir'naal Dam
+				visit_exploration(5666,{coord={54.7,42.6,ULDUM}}),	-- Vir'naal Dam
+				visit_exploration(5586,{coord={55.0,46.4,ULDUM}}),	-- Vir'naal River
+				visit_exploration(5717,{coord={66.5,68.3,ULDUM}}),	-- Vir'naal River Delta
 			}),
 			n(FACTIONS, {
-				faction(1173, {	-- Ramkahen
-					["icon"] = "Interface\\Icons\\inv_misc_tabard_tolvir",
+				faction(FACTION_RAMKAHEN, {	-- Ramkahen
+					["provider"] = { "i", 65904 },	-- Tabard of Ramkahen
 				}),
 			}),
 			n(FLIGHT_PATHS, {
@@ -202,6 +273,20 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						i(65865),	-- Ankh-Inscribed Bracers
 					},
 				}),
+				q(27176, {	-- A Strange Disc
+					["coord"] = { 64.8, 29.5, ULDUM },
+					["modelScale"] = 30,
+					["provider"] = { "o", 205266 },	-- Elaborate Disc
+					["sourceQuests"] = {
+						28112,	-- Escape From the Lost City
+						27141,	-- Exploding Through
+					},
+					["groups"] = {
+						i(65889),	-- Shardfinder Hood
+						i(65888),	-- Splinterproof Bracers
+						i(65887),	-- Staffseeker Shoulderplates
+					},
+				}),
 				q(27624, {	-- After the Fall
 					["qg"] = 45296,	-- Harrison Jones
 					["coord"] = { 64.5, 28.0, ULDUM },
@@ -261,8 +346,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(27760, {	-- Artificial Intelligence
 					["provider"] = { "i", 62483 },	-- A.I.D.A. Communicator
-					["description"] = "Drops while on |cFFFFD700The Curse of the Tombs|r",
-					["sourceQuest"] = 28501,	-- The Defense of Nahom
 					["crs"] = {
 						46920,	-- Expedition Member
 						46590,	-- Crazed Digger
@@ -425,6 +508,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 47202,	-- Diseased Vulture
 					["sourceQuest"] = 27926,	-- Eastern Hospitality
 					["description"] = "This quest is auto-accepted when you kill a Diseased Vulture after accepting The Desert Fox or A Favor for the Furrier.",
+					["coord"] = { 43.5, 70.5, ULDUM },	-- Cradle of the Ancients
 					["groups"] = {
 						objective(1, {	-- 0/8 Diseased Vultures Slain
 							["provider"] = { "n", 47202 },	-- Diseased Vulture
@@ -449,6 +533,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 45202,	-- Mangy Hyena
 					["sourceQuest"] = 27141,	-- Harrison Jones
 					["description"] = "This quest is auto-accepted when you kill a Mangy Hyena after accepting A Strange Disc or Field Work.",
+					["coord"] = { 64.0, 30.0, ULDUM },	-- Obelisk of the Stars
 					["groups"] = {
 						objective(1, {	-- 0/12 Mangy Hyenas Eradicated
 							["providers"] = {
@@ -494,12 +579,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 27669,	-- Do the Honors
 					["isBreadcrumb"] = true,
 				}),
-				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, q(29327, {	-- Elemental Bonds: Doubt
-					["qg"] = 53524,	-- Cyclonas
-					["sourceQuest"] = 29335,	-- Into Slashing Winds
-					["coord"] = { 47.7, 88.9, ULDUM },
-					["timeline"] = { ADDED_4_2_0 },
-				})),
 				q(28112, {	-- Escape From the Lost City
 					["qg"] = 46872,	-- Prince Nadun
 					["coord"] = { 59.5, 72.0, ULDUM },
@@ -559,6 +638,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				}),
 				q(28267, {	-- Firing Squad
+					-- #if AFTER 9.2.0
+					["description"] = "If Harrison Jones does not spawn after the cutscene, you have to zone out and back in again. Either log out and in again, or fly northwest to Ahn'Qiraj and back.",
+					-- #endif
 					["qg"] = 47972,	-- Commander Schnottz
 					["coord"] = { 22.5, 63.1, ULDUM },
 					["sourceQuests"] = {
@@ -605,12 +687,12 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				}),
 				q(27778, {	-- Hacking the Wibson
-					["coord"] = { 74.1, 64.4, ULDUM },
 					["provider"] = { "o", 206293 },	-- A.I.D.A. Terminal
 					["sourceQuests"] = {
 						27761,	-- A Disarming Distraction
 						27777,	-- Core Access Codes
 					},
+					["coord"] = { 74.1, 64.4, ULDUM },
 					["groups"] = {
 						objective(1, {	-- 0/1 Wibson Mainframe hacked
 							["providers"] = {
@@ -693,23 +775,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 54.9, 32.7, ULDUM },
 					["sourceQuest"] = 28112,	-- Escape From the Lost City
 				}),
-				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, q(29336, {	-- Into Coaxing Tides
-					["qg"] = 53519,	-- Aggra
-					["sourceQuest"] = 29327,	-- Elemental Bonds: Doubt
-					["coord"] = { 34.3, 77.6, ULDUM },
-					["timeline"] = { ADDED_4_2_0 },
-					["groups"] = {
-						objective(1, {	-- 0/1 Speak with Nomarch Teneth
-							["provider"] = { "n", 46603 },	-- Nomarch Teneth
-						}),
-						objective(2, {	-- 0/1 Speak with Sun Priest Asaris
-							["provider"] = { "n", 47715 },	-- Sun Priest Asaris
-						}),
-						objective(3, {	-- 0/1 Speak with Asaq
-							["provider"] = { "n", 47930 },	-- Asaq
-						}),
-					},
-				})),
 				q(28353, {	-- Jonesy Sent For You
 					["qg"] = 48431,	-- Sullah
 					["coord"] = { 29.6, 21.8, ULDUM },
@@ -733,20 +798,11 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						objective(4, {	-- 0/5 Turquoise Scarabs Slain
 							["provider"] = { "n", 46126 },	-- Turquoise Scarab
 						}),
-					},
-				}),
-				q(27176, {	-- A Strange Disc
-					["coord"] = { 64.8, 29.5, ULDUM },
-					["modelScale"] = 30,
-					["provider"] = { "o", 205266 },	-- Elaborate Disc
-					["sourceQuests"] = {
-						28112,	-- Escape From the Lost City
-						27141,	-- Exploding Through
-					},
-					["groups"] = {
-						i(65889),	-- Shardfinder Hood
-						i(65888),	-- Splinterproof Bracers
-						i(65887),	-- Staffseeker Shoulderplates
+						-- #if BEFORE MOP
+						i(68612, {	-- Scarab Leg Talisman
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(28105, {	-- Kavem the Callous
@@ -770,8 +826,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(28480, {	-- Lieutenants of Darkness
 					["qg"] = 48564,	-- King Phaoris
-					["coord"] = { 52.0, 65.4, ULDUM },
 					["sourceQuest"] = 28623,	-- The Push Westward
+					["coord"] = { 52.0, 65.4, ULDUM },
 					["groups"] = {
 						objective(1, {	-- 0/1 Scorpion-Lord Namkhare slain
 							["provider"] = { "n", 47742 },	-- Scorpion-Lord Namkhare
@@ -781,6 +837,11 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 						i(65813),	-- Scarab-Inlaid Crossbow
 						i(65814),	-- Sekhemet's Seal
+						-- #if BEFORE MOP
+						i(65812, {	-- Namkhare's Cabochon Charm
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 				q(28193, {	-- Lockdown!
@@ -837,20 +898,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 23.5, 60.2, ULDUM },
 					["sourceQuest"] = 28267,	-- Firing Squad
 				}),
-				q(28295, {	-- Meetup with the Caravan
-					["qg"] = 44238,	-- Harrison Jones
-					["sourceQuest"] = 28292,	-- That's No Pyramid!
-					["coord"] = { 85.6, 25.8, STORMWIND_CITY },
-					["races"] = ALLIANCE_ONLY,
-					["isBreadcrumb"] = true,
-				}),
-				q(28296, {	-- Meetup with the Caravan
-					["sourceQuest"] = 28293,	-- That's No Pyramid!
-					["isBreadcrumb"] = true,
-					["qg"] = 47571,	-- Belloc Brightblade
-					["coord"] = { 49.1, 70.5, ORGRIMMAR },
-					["races"] = HORDE_ONLY,
-				}),
 				q(27520, {	-- Minions of Al'Akir
 					["qg"] = 45799,	-- Prince Nadun
 					["coord"] = { 45.2, 37.9, ULDUM },
@@ -898,6 +945,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 27632,	-- Tanotep's Son
 				}),
 				q(27196, {	-- On to Something
+					["description"] = "Warning: Jumping after Harrison Jones DOES NOT give you any slow fall effects. Mount up and fly down after him.",
 					["qg"] = 45180,	-- Harrison Jones
 					["coord"] = { 64.5, 28.5, ULDUM },
 					["sourceQuests"] = {
@@ -1012,6 +1060,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 28210,	-- Shaping Up
 				}),
 				q(28402, {	-- Schnottz So Fast
+					-- #if AFTER 9.2.0
+					["description"] = "If Harrison Jones does not spawn after the cutscene, you have to zone out and back in again. Either log out and in again, or fly out of Chamber of the Moon and back.",
+					-- #endif
 					["qg"] = 48186,	-- Harrison Jones
 					["coord"] = { 27.0, 7.5, ULDUM },
 					["sourceQuest"] = 28367,	-- Shroud of the Makers
@@ -1413,6 +1464,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 27549,	-- By the Light of the Stars
 				}),
 				q(27922, {	-- Traitors!
+					["description"] = "You are meant to get up on the roof by using your own flyng mount.",
 					["qg"] = 46872,	-- Prince Nadun
 					["coord"] = { 59.5, 72.0, ULDUM },
 					["sourceQuest"] = 27003,	-- Easy Money (tanaris)
@@ -1566,22 +1618,47 @@ root(ROOTS.Zones, m(KALIMDOR, {
 			n(VENDORS, {
 				n(48617, {	-- Blacksmith Abasi <Ramkahen Quartermaster>
 					["coord"] = { 54.0, 33.2, ULDUM },
+					["groups"] = bubbleDownClassicRep(FACTION_RAMKAHEN, {
+						{	-- Neutral
+						},
+						{	-- Friendly
+							i(65904),	-- Tabard of Ramkahen
+						},
+						{	-- Honored
+							i(62437),	-- Shroud of the Dead
+							i(62439),	-- Belt of the Stargazer
+							i(62438),	-- Drystone Greaves
+							i(62436),	-- Ammunae's Blessing
+						},
+						{	-- Revered
+							i(62441),	-- Robes of Orsis
+							i(62446),	-- Quicksand Belt
+							i(62445),	-- Sash of Prophecy
+							i(62440),	-- Red Rock Band
+							i(62369, {	-- Arcanum of the Ramkahen
+								["description"] = "This version is only visible on the vendor when you aren't at the required reputation to purchase it yet on your current character.",
+								["filterID"] = CONSUMABLES,
+							}),
+							i(68766, {	-- Arcanum of the Ramkahen
+								["filterID"] = CONSUMABLES,
+							}),
+						},
+						{	-- Exalted
+							i(62447),	-- Gift of Nadun
+							i(62449),	-- Sandguard Bracers
+							i(62448),	-- Sun King's Girdle
+							i(62450),	-- Desert Walker Sandals
+							i(63044),	-- Brown Riding Camel (MOUNT!)
+							i(63045),	-- Tan Riding Camel (MOUNT!)
+						},
+					}),
+				}),
+				n(49406, {	-- Yasmin <Innkeeper>
+					["coord"] = { 26.6, 7.2, ULDUM },
 					["groups"] = {
-						i(63044),	-- Brown Riding Camel (MOUNT!)
-						i(63045),	-- Tan Riding Camel (MOUNT!)
-						i(62436),	-- Ammunae's Blessing
-						i(62439),	-- Belt of the Stargazer
-						i(62450),	-- Desert Walker Sandals
-						i(62438),	-- Drystone Greaves
-						i(62447),	-- Gift of Nadun
-						i(62446),	-- Quicksand Belt
-						i(62440),	-- Red Rock Band
-						i(62441),	-- Robes of Orsis
-						i(62449),	-- Sandguard Bracers
-						i(62445),	-- Sash of Prophecy
-						i(62437),	-- Shroud of the Dead
-						i(62448),	-- Sun King's Girdle
-						i(65904),	-- Tabard of Ramkahen
+						i(65893, {	-- Sands of Time
+							["cost"] = 30000000,	-- 3000g
+						}),
 					},
 				}),
 			}),

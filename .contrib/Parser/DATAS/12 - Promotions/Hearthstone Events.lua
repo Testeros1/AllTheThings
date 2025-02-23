@@ -3,10 +3,11 @@
 -----------------------------------------------------
 HEARTHSTONE = createHeader({
 	readable = "Hearthstone",
-	icon = "Interface\\Icons\\Inv_misc_rune_01",
+	icon = 134414,
 	text = {
 		en = "Hearthstone",
 		cn = "炉石传说",
+		tw = "爐石戰記",
 	},
 	description = {
 		en = "Win 3 games in Hearthstone to qualify for these rewards.\n\nThe game is free, go get it!\n\nNOTE: You can thank IceQ1337 for this!",
@@ -14,7 +15,7 @@ HEARTHSTONE = createHeader({
 });
 HEARTHSTONE_MERCENARIES_MODE = createHeader({
 	readable = "Hearthstone Mercenaries",
-	icon = "Interface\\Icons\\Inv_misc_rune_01",
+	icon = 134414,
 	text = {
 		en = "Hearthstone Mercenaries",
 		es = "Hearthstone Mercenarios",
@@ -24,6 +25,7 @@ HEARTHSTONE_MERCENARIES_MODE = createHeader({
 		pt = "Hearthstone Mercenários",
 		ru = "Hearthstone Наемники",
 		cn = "炉石传说佣兵战纪",
+		tw = "《爐石戰記》傭兵戰隊",
 	},
 	description = {
 		en = "Complete the Mercenaries Mode tutorial in Hearthstone and send your party on a mission in order to receive this reward.",
@@ -31,7 +33,7 @@ HEARTHSTONE_MERCENARIES_MODE = createHeader({
 });
 HEARTHSTONE_10TH_ANNIVERSARY = createHeader({
 	readable = "Hearthstone's 10th Anniversary",
-	icon = "Interface\\Icons\\Inv_misc_rune_01",
+	icon = 134414,
 	text = {
 		en = "Hearthstone's 10th Anniversary",
 		es = "10.º aniversario de Hearthstone",
@@ -41,17 +43,18 @@ HEARTHSTONE_10TH_ANNIVERSARY = createHeader({
 		pt = "10º Aniversário de Hearthstone",
 		ru = "10-я годовщина Hearthstone",
 		cn = "《炉石传说》10周年",
+		tw = "《爐石戰記》10週年"
 	},
 });
 root(ROOTS.Promotions, {
-	n(HEARTHSTONE, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
+	n(HEARTHSTONE, bubbleDown({ ["u"] = REAL_MONEY }, {
 		["timeline"] = { ADDED_5_3_0 },
 		["groups"] = {
 			ach(8345),	-- Hearthstoned
-			i(98618), -- Hearthsteed (MOUNT!)
+			i(98618),	-- Hearthsteed (MOUNT!)
 		},
 	})),
-	n(HEARTHSTONE_MERCENARIES_MODE, bubbleDown({ ["u"] = BLIZZARD_BALANCE }, {
+	n(HEARTHSTONE_MERCENARIES_MODE, bubbleDown({ ["u"] = REAL_MONEY }, {
 		["timeline"] = { ADDED_9_1_0 },
 		["groups"] = {
 			mount(356488),	-- Sarge's Tale (MOUNT!)
@@ -69,9 +72,12 @@ root(ROOTS.Promotions, {
 			n(ACHIEVEMENTS, {
 				ach(19866,	{	-- Hearthstoned: Fiery Edition
 					["provider"] = { "i", 163186 },	-- Fiery Hearthsteed (MOUNT!)
+					["u"] = REMOVED_FROM_GAME,	-- May 14, 2024
 				}),
 				ach(20033, {	-- Hearthstone Beginner
-					i(211946),	-- Hearthstone Game Table (TOY!)
+					i(211946, {	-- Hearthstone Game Table (TOY!)
+						i(212924),	-- Stolen Hearthstone Card
+					}),
 				}),
 				ach(19724),		-- Hearthstone Card Collection
 			}),
@@ -198,7 +204,8 @@ root(ROOTS.Promotions, {
 				},
 			}),
 			i(163186, {	-- Fiery Hearthsteed (MOUNT!)
-				["description"] = "Granted to Players who login to Hearthstone between March 11 2024 and May 14 2024.",
+				["description"] = "Granted to Players who logged in to Hearthstone between March 11th 2024 and May 14th 2024.",
+				["u"] = REMOVED_FROM_GAME,
 			}),
 			n(VENDORS, {
 				n(215385, {	-- Shady Dealer
@@ -213,11 +220,11 @@ root(ROOTS.Promotions, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, {
-	n(HEARTHSTONE, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_5 } }, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_5 } }, {
+	n(HEARTHSTONE, {
 		q(79451),	-- After first daily kill of Dr. Boom (maybe bag loot trigger?)
 		q(79452),	-- After first daily kill of Dr. Boom (maybe something else trigger?)
-		q(79441),	-- Looted Sarge (itemID 212606)
+		-- q(79441),	-- Looted Sarge (itemID 212606) (automated)
 		q(79186),	-- Completing 'Hearthstone's Anniversary!' (questID 79184)
 		q(79189),	-- Completing 'Hearthstone's Anniversary!' (questID 79184)
 		-- Account lockout from getting the same card again
@@ -244,5 +251,5 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, {
 		q(79430),	-- Stolen Hearthstone Card will contain 'Forbidden Words' card
 		q(79431),	-- Stolen Hearthstone Card will contain 'Scarlet Crusader' card
 		q(79459),	-- Stolen Hearthstone Card will contain 'Cairne Bloodhoof' card
-	})),
-}));
+	}),
+})));

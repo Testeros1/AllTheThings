@@ -4,17 +4,11 @@
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(UNGORO_CRATER, {
 		["lore"] = "Un'Goro Crater is a lush jungle in southern Kalimdor, isolated from the source as it shares borders with the deserts of Feralas and Silithus. Although its borders make Un'Goro Crater a rather isolated area, many challenges await players here as they explore the wide range of exotic fauna, from aggressive plant mobs to the mighty devilsaurs.\n\nMarshal's Refuge, the main questing hub in Un'Goro, is also a cradle of references to TV Show Land of the Lost: The last names of the main characters were Marshal, Williden Marshal and Hol'anyee Marshal are clear references to main characters Will and Holly Marshal, and Un'Goro's plot revolves around massive pylons scattered across the zone, also a central part of the plot in Land of the Lost.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_ungorocrater_01",
-		-- #endif
+		["icon"] = 236850,
 		["maps"] = { 79 },	-- The Slithering Scar
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(854, {	-- Explore Un'Goro Crater
-					-- #if BEFORE WRATH
-					["description"] = "Explore Un'Goro Crater, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(854),	-- Explore Un'Goro Crater
 				ach(4939, {	-- Un'Goro Crater Quests
 					["timeline"] = { ADDED_4_0_3 },
 					-- #if ANYCLASSIC
@@ -58,7 +52,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					405,	-- Tree Python (PET!)
 				}},
 				["groups"] = {
-					pet(632),	-- Ash Lizard (PET!)
+					pet(632, {	-- Ash Lizard (PET!)
+						["description"] = "Found around Fire Plum Ridge in Un'goro Crater and around fiery and dry areas in lower Mount Hyjal.",
+						["coords"] = {
+							{ 50.0, 49.0, UNGORO_CRATER },	-- Fire Plum Ridge
+							{ 60.0, 70.0, MOUNT_HYJAL },	-- Fiery Mount Hyjal
+						},
+					}),
 					pet(504, {	-- Diemetradon Hatchling (PET!)
 						["description"] = "Can be found around Golakka Hot Springs, near Elder Diemetradons.",
 					}),
@@ -304,7 +304,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				applyclassicphase(PHASE_FOUR_SUNKEN_TEMPLE_CLASS_QUESTS, q(9052, {	-- Bloodpetal Poison
 					["qg"] = 9619,	-- Torwa Pathfinder
-					["sourceQuest"] = 9063,  -- Torwa Pathfinder
+					["sourceQuest"] = 9063,	-- Torwa Pathfinder
 					["coord"] = { 71.6, 76.0, UNGORO_CRATER },
 					["timeline"] = { REMOVED_4_0_3 },
 					["classes"] = { DRUID },
@@ -333,7 +333,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 42.9, 9.6, UNGORO_CRATER },
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.2",
+						REMOVED_1_15_2,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -359,7 +359,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 45.6, 8.6, UNGORO_CRATER },
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.2",
+						REMOVED_1_15_2,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -1872,9 +1872,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						ach(3357, {	-- Venomhide Ravasaur
 							["provider"] = { "i", 46102 },	-- Whistle of the Venomhide Ravasaur
 							["timeline"] = { ADDED_3_2_0 },
-							-- #if BEFORE WRATH
-							["description"] = "Obtain a Venomhide Ravasaur.",
-							-- #endif
 							["races"] = HORDE_ONLY,
 							["f"] = MOUNTS,
 						}),
@@ -1901,7 +1898,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				})),
 				applyclassicphase(PHASE_FOUR_SUNKEN_TEMPLE_CLASS_QUESTS, q(9051, {	-- Toxic Test
 					["qg"] = 9619,	-- Torwa Pathfinder
-					["sourceQuest"] = 9052,  -- Bloodpetal Poison
+					["sourceQuest"] = 9052,	-- Bloodpetal Poison
 					["coord"] = { 71.6, 76.0, UNGORO_CRATER },
 					["timeline"] = { REMOVED_4_0_3 },
 					["classes"] = { DRUID },
@@ -1921,7 +1918,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["lvl"] = lvlsquish(48, 48, 15),
 					["groups"] = {
 						objective(1, {	-- 0/20 Splashed with Venomhide blood
-							["provider"] = { "n", 6508 }, -- Venomhide Ravasaur
+							["provider"] = { "n", 6508 },	-- Venomhide Ravasaur
 						}),
 					},
 				}),
@@ -2086,7 +2083,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 					["groups"] = {
 						i(45052, {	-- Gruffscale Leggings
-							["timeline"] = { ADDED_3_1_0 },
+							["timeline"] = { ADDED_3_1_0, REMOVED_4_0_3, ADDED_8_0_1 },
 						}),
 					},
 				}),

@@ -15,6 +15,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 			ru = "Вторжение троллей",
 			ko = "트롤의 난입",
 			cn = "巨魔来袭",
+			tw = "食人妖入侵",
 		},
 		lore = {
 			en = "Empowered by the Zandalari's offer the Gurubashi launched on all-out attack to claim Stranglethorn Vale for themselves. In Northern Stranglethorn Bambala, Fort Livingston, Nesingwary's Expedition, Grom'gol Base Camp, and the Rebel Camp came under attack by serpents sent by High Priest Venoxis. High Priestess Kilnara sent panthers to attack the Rebel Camp and Grom'gol while the panther Mauti attacked the hunters at Nesingwary's Expedition. Both Grom'gol and the Rebel Camp later came under attack by Gurubashi trolls led by Bloodlord Mandokir. After heroes of the Horde and Alliance beat back the Gurubashi attack, they were sent to the Cape of Stranglethorn which faced its own troubles.",
@@ -164,6 +165,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 					},
 					["coord"] = { 77.9, 68.1, NORTHERN_STRANGLETHORN },
 					["races"] = ALLIANCE_ONLY,
+					["groups"] = {
+						objective(1, {	-- Bwemba has inspected the Cat
+							["provider"] = { "n", 52372 },	-- Mauti
+							["coord"] = { 77.16, 69.04, NORTHERN_STRANGLETHORN },
+						}),
+					},
 				}),
 				q(29230, {	-- Mauti (H)
 					["qg"] = 52234,	-- Bwemba
@@ -173,6 +180,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 					},
 					["coord"] = { 77.7, 68.3, NORTHERN_STRANGLETHORN },
 					["races"] = HORDE_ONLY,
+					["groups"] = {
+						objective(1, {	-- Bwemba has inspected the Cat
+							["provider"] = { "n", 52372 },	-- Mauti
+							["coord"] = { 77.16, 69.04, NORTHERN_STRANGLETHORN },
+						}),
+					},
 				}),
 				q(29105, {	-- Nesingwary Will Know (A)
 					["qg"] = 52281,	-- Livingston Marshal
@@ -196,7 +209,14 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 							["provider"] = { "n", 52224 },	-- Jungle Serpent
 						}),
 						objective(2, {	-- 0/10 Adventurers healed
-							["provider"] = { "n", 52225 },	-- Fort Livingston Adventurer
+							["providers"] = {
+								{ "n", 52225 },	-- Fort Livingston Adventurer
+								{ "n", 52279 },	-- Daniel Roberts <Blacksmithing Supplies>
+								{ "n", 52280 },	-- Robert Rhodes <Gryphon Master>
+								{ "n", 53555 },	-- Kinnel
+								{ "n", 53556 },	-- Priestess Thaalia
+								{ "n", 53557 },	-- Wulfred Harrys
+							},
 						}),
 					},
 				}),
@@ -210,7 +230,15 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 							["provider"] = { "n", 52224 },	-- Jungle Serpent
 						}),
 						objective(2, {	-- 0/10 Headhunters healed
-							["provider"] = { "n", 52978 },	-- Injured Bambala Headhunter
+							["providers"] = {
+								{ "n", 52978 },	-- Injured Bambala Headhunter
+								{ "n", 53440 },	-- Durango <General Goods>
+								{ "n", 53441 },	-- Kin'weelay
+								{ "n", 53442 },	-- Priestess Hu'rala
+								{ "n", 53443 },	-- Pechanga <Reagents & Poisons>
+								{ "n", 53444 },	-- Skeezy Whillzap
+								{ "n", 53445 },	-- Morango <Trade Goods>
+							},
 						}),
 					},
 				}),
@@ -243,12 +271,24 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 					["sourceQuest"] = 29114,	-- Track the Tracker
 					["coord"] = { 50.3, 21.7, NORTHERN_STRANGLETHORN },
 					["races"] = ALLIANCE_ONLY,
+					["groups"] = {
+						objective(1, {	-- Bring Grent Direhammer to the body of Mauti
+							["provider"] = { "n", 52349 },	-- Mauti?
+							["coord"] = { 64.5, 21.1, NORTHERN_STRANGLETHORN },
+						}),
+					},
 				}),
 				q(29227, {	-- The Hunter's Revenge (H)
 					["qg"] = 52294,	-- Grent Direhammer
 					["sourceQuest"] = 29226,	-- Track the Tracker
 					["coord"] = { 50.3, 21.7, NORTHERN_STRANGLETHORN },
 					["races"] = HORDE_ONLY,
+					["groups"] = {
+						objective(1, {	-- Bring Grent Direhammer to the body of Mauti
+							["provider"] = { "n", 52349 },	-- Mauti?
+							["coord"] = { 64.5, 21.1, NORTHERN_STRANGLETHORN },
+						}),
+					},
 				}),
 				heroscall(q(29156, {	-- The Troll Incursion
 					["timeline"] = { ADDED_4_1_0, REMOVED_7_0_3 },
@@ -329,7 +369,6 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.CATA, applyclassicphase(CATA_P
 				q(29233, {	-- Warn Grom'gol
 					["qg"] = 52234,	-- Bwemba
 					["sourceQuest"] = 29232,	-- Bury Me With Me Boots...
-					--["coord"] = {},	-- can be picked up anywhere since Bwemba follows you
 					["races"] = HORDE_ONLY,
 				}),
 				q(29124, {	-- Warn the Rebel Camp

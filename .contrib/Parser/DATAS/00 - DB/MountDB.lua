@@ -27,8 +27,15 @@ i(184865, 348459);	-- Reawakened Phase-Hunter
 i(192455, 372677);	-- Kalu'ak Whalebone Glider
 i(201699, 394209);	-- Festering Emerald Drake
 i(207097, 416158);	-- Nightmarish Emerald Drake
+i(0, 440915);		-- Auspicious Arborwyrm
 i(0, 423869);		-- Avatar of Flame
 i(0, 446902);		-- Polly Roger
+i(0, 471440);		-- Skybound Spectral Tiger (CN Only)
+
+-- Cata Classic --
+i(0, 463045);		-- Lava Drake
+i(0, 473487);		-- Sha-Touched Cloud Serpent
+i(0, 473478);		-- Sha-Touched Riding Tiger
 --- NYI ---
 i(0, 388516);		-- Hao-Yue, River Foreseer
 i(198632, 387319);	-- Big Battle Bear
@@ -860,7 +867,7 @@ i(124089, 183889);	-- Vicious War Mechanostrider
 i(128282, 189044);	-- Warmongering Gladiator's Felblood Gronnling
 i(128281, 189043);	-- Wild Gladiator's Felblood Gronnling
 --- NYI ---
-i(128480, 190690);	-- Bristling Hellboar
+i(128480, 0);	-- Bristling Hellboar
 
 -----------------
 -- PATCH 6.2.1 --
@@ -1487,7 +1494,6 @@ i(187682, 359407);	-- Wastewarped Deathwalker
 i(190768, 368158);	-- Zereth Overseer
 --- NYI ---
 i(0, 356802);		-- Holy Lightstrider
-i(187674, 359380);	-- Depthstalker
 
 -----------------
 -- PATCH 9.2.5 --
@@ -1527,7 +1533,6 @@ i(198821, 359408);	-- Divine Kiss of Ohn'ahra
 i(192804, 374263);	-- Restless Hornstrider
 i(198823, 385253);	-- [PH] Brown Wind Eagle
 i(192787, 351403);	-- [PH] Mammoth V2 Dark
-i(192789, 374172);	-- [PH] Mammoth V2 Gray
 i(192771, 352927);	-- [PH] Water Salamander Blue
 i(192773, 374093);	-- [PH] Water Salamander Orange
 i(192748, 373913);	-- PH Moose Bull Brown
@@ -1541,7 +1546,8 @@ i(192801, 374255);	-- PH Primal Tallstrider White
 i(192793, 374200);	-- PH Thunder Lizard Black
 i(192794, 374201);	-- PH Thunder Lizard Blue
 i(194106, 0);		-- Highland Drake
-i(192770, 0);		-- [PH] Moose Bull Black
+i(192770, 0);		-- Noble Elderhorn
+i(192789, 0);		-- [PH] Mammoth V2 Gray
 
 ------------------
 -- PATCH 10.0.2 --
@@ -1595,8 +1601,6 @@ i(190231, 366962);	-- Ash'adar, Harbinger of Dawn
 i(192800, 352926);	-- Skyskin Hornstrider
 --- NYI ---
 i(0, 369480);		-- Cerulean Marsh Hopper
-i(190767, 368126);	-- Armored Golden Pterrordax
-i(190539, 367620);	-- Coral-Stalker Waveray
 i(190168, 366789);	-- Crusty Crawler
 i(203226, 399708);	-- Stormfused Salamanther
 
@@ -1672,8 +1676,10 @@ i(210022, 424082);	-- Mimiron's Jumpjets
 -- PATCH 10.2.0 --
 ------------------
 i(210061, 424484);	-- Anu'relos, Flame's Guidance
+i(190767, 368126);	-- Armored Golden Pterrordax
 i(0, 418286);		-- Auspicious Arborwyrm
 i(209947, 423871);	-- Blossoming Dreamstag
+i(211074, 428005);	-- Jeweled Copper Scarab
 i(210919, 427435);	-- Crimson Glimmerfur
 i(210831, 427222);	-- Delugen
 i(210058, 424479);	-- Evening Sun Dreamsaber
@@ -1703,12 +1709,12 @@ i(210141, 424601);	-- [PH] Brown-Furred Spiky Bakar
 i(210143, 424608);	-- [PH] White-Furred Bakar
 i(210144, 424610);	-- [PH] Yellow-Furred Spiky Bakar
 i(210145, 424611);	-- [PH] YellowBlack-Furred Bakar
+-- #if BEFORE 11.0.5
 i(211075, 428013);	-- Deathbringer's Shadowcycle
+-- #endif
 i(211089, 428068);	-- Felreaver Deathcycle
-i(211074, 428005);	-- Jeweled Copper Scarab
 i(211086, 428065);	-- Jeweled Jade Scarab
 i(211085, 428062);	-- Jeweled Sapphire Scarab
-i(211087, 428067);	-- Shadowflame Hellbike
 i(210140, 0);		-- [PH] Black-Furred Bakar
 
 ------------------
@@ -1725,8 +1731,6 @@ i(212630, 432558);	-- Majestic Azure Peafowl
 i(212599, 432455);	-- Noble Flying Carpet
 i(212229, 431360);	-- Twilight Sky Prowler
 --- NYI ---
-i(212631, 432562);	-- Brilliant Sunburst Peafowl
-i(212228, 431359);	-- Soaring Sky Fox
 i(212632, 432564);	-- Starry Twilight Peafowl
 i(211486, 0);		-- Winding Slitherdrake
 
@@ -1743,10 +1747,14 @@ i(205206, 408648);	-- Calescent Shalewing
 i(192774, 374097);	-- Coralscale Salamanther
 i(0, 424539);		-- Draconic Gladiator's Drake
 i(213438, 434462);	-- Infinite Armoredon
+-- #if BEFORE 11.0.7
 i(0, 437162);		-- Polly Roger
 i(0, 254812);		-- Royal Seafeather
+-- #endif
 i(212920, 433281);	-- Savage Blue Battle Turtle
+-- #if BEFORE 11.0.7
 i(0, 300154);		-- Silver Tidestallion
+-- #endif
 i(192751, 373967);	-- Stormtouched Bruffalon
 i(210142, 424607);	-- Taivan
 i(213439, 434470);	-- Vicious Dreamtalon [A]
@@ -1796,21 +1804,60 @@ i(224374, 132036);	-- Thundering Ruby Cloud Serpent
 i(213604, 435125);	-- Tropical Riding Crane
 i(223285, 448851);	-- Underlight Corrupted Behemoth
 --- NYI ---
-i(223471, 449142);	-- [PH] Alliance Wolf Mount Purple
 i(223470, 449141);	-- [PH] Alliance Wolf Mount Red
 i(223282, 448845);	-- [PH] Blue Old God Fish Mount
 i(221270, 446352);	-- [PH] Goblin Surfboard - Blue
-i(223459, 449132);	-- [PH] Nightsaber Horde Mount Black
 i(223460, 449133);	-- [PH] Nightsaber Horde Mount White
-i(224574, 453255);	-- Savage Ebony Battle Turtle
 i(223284, 448849);	-- Underlight Shorestalker
 
 ------------------
 -- PATCH 11.0.0 --
 ------------------
-i(229128, 464443);	-- Harmonious Salutations Bear (MOUNT!)
+i(229128, 464443);	-- Harmonious Salutations Bear
 i(217985, 441324);	-- Remembered Golden Gryphon
 i(217987, 441325);	-- Remembered Wind Rider
+--- NYI ---
+i(0, 405623);		-- Armadillo Roller
+i(223570, 449416);	-- Ebonhide Ramolith
+i(226044, 457659);	-- Plunderlord's Weathered Crocolisk
+i(223321, 448984);	-- [PH] ArathiLynxMount (Black Fur, Black Armor)
+i(223319, 448980);	-- [PH] ArathiLynxMount (Gold Fur, Yellow Armor)
+i(223320, 448981);	-- [PH] ArathiLynxMount (White Fur, Purple Armor)
+i(223272, 447938);	-- [PH] CaveBorerWormMount (Blue Skin, Purple Saddle)
+i(223273, 447956);	-- [PH] CaveBorerWormMount (Forest Skin, Blue Saddle)
+i(223275, 447958);	-- [PH] CaveBorerWormMount (Nocturne Skin, Red Saddle)
+i(223159, 448265);	-- [PH] Firebee Mount (Blue Variant)
+i(223152, 447149);	-- [PH] Firebee Mount (Grey Skin, Silver Saddle)
+i(223154, 447156);	-- [PH] Firebee Mount (White Skin, White Saddle)
+i(222988, 447173);	-- [PH] Firefly2Mount (Green)
+i(222991, 447181);	-- [PH] Firefly2Mount (Purple)
+i(221778, 447161);	-- [PH] Firefly2Mount (Yellow)
+i(223265, 447189);	-- [PH] FlyingNerubian2 Mount (Tan Body, Orange Saddle)
+i(224413, 452768);	-- [PH] Goliathus (Blue)
+i(224414, 452777);	-- [PH] Goliathus (Green)
+i(224416, 452780);	-- [PH] Goliathus (Purple)
+i(223271, 447214);	-- [PH] Gryphon_Air_Mount (White Skin, Gold Saddle)
+i(223500, 449260);	-- [PH] MoleMount (Gray Skin, Purple Saddle, Teeth Tusks, Nose Base)
+i(221852, 447466);	-- [PH] MoleMount (Pink Skin, Blue Saddle, Teeth Rodent, Nose Large Pointed)
+i(223503, 449271);	-- [PH] MoleMountBasic (Blue Skin, Purple Saddle, Teeth Tusks, Nose Base)
+i(223504, 449283);	-- [PH] MoleMountBasic (Green Skin, Black Saddle, Teeth Tusks, Nose Star)
+i(223506, 449265);	-- [PH] MoleMountBasic (Yellow Skin, Blue Saddle, Teeth Rodent, Nose Large Pointed)
+i(222898, 447898);	-- [PH] Mount - Unicorn Moose (Blue) (Gold Saddle) (Player Mount)
+i(222901, 447910);	-- [PH] Mount - Shalehorn (Brown) (Copper Saddle) (Player Mount) / Item: [PH] Mount - Unicorn Moose (Brown) (Copper Saddle) (Player Mount)
+i(222902, 447911);	-- [PH] Mount - Shalehorn (Crimson) (Dark Saddle) (Player Mount)  / Item: [PH] Mount - Unicorn Moose (Crimson) (Dark Saddle) (Player Mount)
+i(222903, 447912);	-- [PH] Mount - Shalehorn (Ivory) (Silver Saddle) (Player Mount)  / Item: [PH] Mount - Unicorn Moose (Ivory) (Silver Saddle) (Player Mount)
+i(222904, 447913);	-- [PH] Mount - Shalehorn (Yellow) (White Saddle) (Player Mount)  / Item: [PH] Mount - Unicorn Moose (Yellow) (White Saddle) (Player Mount)
+i(224148, 451487);	-- [PH] NerubianWarbeastMount (Cyan)
+i(224149, 451488);	-- [PH] NerubianWarbeastMount (Orange)
+i(223573, 449421);	-- [PH] Proto Ram Earthen (Sand Skin, Grand Horns, Dark Saddle)
+i(223574, 449419);	-- [PH] Proto Ram Earthen (White Skin, Grand Horns, White Saddle)
+i(223587, 449465);	-- [PH] Silver Armored Fel Bat Gladiator Mount
+i(223277, 448682);	-- [PH] SpiderUndergroundMount (Green)
+i(220786, 0);		-- Delver's Dirigible
+i(207104, 0);		-- Morsel Sniffer Reins
+i(219012, 0);		-- Placeholder Delve Exclusive Mount
+i(223268, 0);		-- [PH] DwarvenMechBoss (Gold)
+i(223502, 0);		-- [PH] MoleMount (Brown Skin, Red Saddle, Teeth Tusks, Nose Pointed)
 
 ------------------
 -- PATCH 11.0.2 --
@@ -1823,24 +1870,33 @@ i(223505, 449269);	-- Crimson Mudnose
 i(221967, 448186);	-- Crowd Pummeler 2-30
 i(222989, 447176);	-- Cyan Glowmite
 i(223318, 448979);	-- Dauntless Imperial Lynx
+i(187674, 359380);	-- Depthstalker
 i(226357, 458335);	-- Diamond Mechsuit
 i(219391, 446052);	-- Delver's Dirigible
 i(0, 453785);		-- Earthen Ordinant's Ramolith
 i(223274, 447957);	-- Ferocious Jawcrawler
 i(223586, 449466);	-- Forged Gladiator's Fel Bat
+i(228751, 463025);	-- Gigantic Grrloc
+i(0, 457485);		-- Grizzly Hills Packmaster
+i(226506, 459193);	-- Hand of Reshkigaal
 i(223278, 448685);	-- Heritage Undercrawler
 i(224415, 452779);	-- Ivory Goliathus
 i(223286, 448850);	-- Kah, Legend of the Deep
+i(226041, 457654);	-- Keg Leg's Radiant Crocolisk
 i(223269, 448188);	-- Machine Defense Unit 1-11
 i(223501, 449258);	-- Ol' Mole Rufus
+i(226040, 457650);	-- Plunderlord's Golden Crocolisk
 i(223158, 447160);	-- Raging Cinderbee
 i(223279, 448689);	-- Royal Court Undercrawler
+i(224574, 453255);	-- Savage Ebony Battle Turtle
 i(223314, 448939);	-- Shackled Shadow
 i(223266, 447190);	-- Shadowed Swarmite
 i(223571, 449418);	-- Shale Ramolith
 i(224150, 451489);	-- Siesbarg
+i(223572, 449415);	-- Slatestone Ramolith
 i(221753, 447057);	-- Smoldering Cinderbee
 i(223153, 447151);	-- Soaring Meaderbee
+i(225250, 454682);	-- Startouched Furline
 i(221765, 442358);	-- Stonevault Mechsuit
 i(224147, 451486);	-- Sureki Skyrazor
 i(223267, 447195);	-- Swarmite Skyhunter
@@ -1851,13 +1907,105 @@ i(225548, 449264);	-- Wick's Lead
 i(223276, 448680);	-- Widow's Undercrawler
 
 ------------------
--- PATCH 11.0.0 --
+-- PATCH 11.0.5 --
 ------------------
---- UNSORTED ---
-i(223570, 449416);	-- Ebonhide Ramolith
-i(226506, 459193);	-- Hand of Reshkigaal
-i(226041, 457654);	-- Keg Leg's Radiant Crocolisk
-i(226040, 457650);	-- Plunderlord's Golden Crocolisk
+i(224399, 452645);	-- Amani Hunting Bear
+i(223459, 449132);	-- Blackrock Warsaber
+i(230200, 466838);	-- Chaos-Forged Dreadwing
+i(230184, 466811);	-- Chaos-Forged Gryphon
+i(230185, 466812);	-- Chaos-Forged Hippogryph
+i(230201, 466845);	-- Chaos-Forged Wind Rider
+i(228760, 463133);	-- Coldflame Tempest
+i(231374, 468353);	-- Enchanted Spellweave Carpet
+i(224398, 452643);	-- Frayfeather Hippogryph
+i(211087, 428067);	-- Hateforged Blazecycle
+-- #if AFTER 11.0.5
+i(229348, 428013);		-- Incognitro, the Indecipherable Felcycle
+-- #endif
+i(223471, 449142);	-- Kaldorei War Wolf
+i(212228, 431359);	-- Soaring Sky Fox
+i(229418, 465235);	-- Trader's Gilded Brutosaur
+
+------------------
+-- PATCH 11.0.7 --
+------------------
+i(235344, 1216542);	-- Blazing Royal Fire Hawk (CN Only)
+i(212631, 432562);	-- Brilliant Sunburst Peafowl
+i(234730, 1214946);	-- Broodling of Sinestra
+i(234740, 1214974);	-- Copper-Maned Quilen
+i(190539, 367620);	-- Coral-Stalker Waveray
+i(0, 303767);		-- Honeyback Hivemother
+i(227362, 459784);	-- Golden Ashes of Al'ar (CN Only)
+i(233241, 471696);	-- Hooktalon
+i(235515, 473472);	-- Jani's Trashpile
+i(234716, 1214920);	-- Nightfall Skyreaver
+i(232926, 472479);	-- Love Witch's Sweeper
+i(232901, 472253);	-- Lunar Launcher
 i(226042, 457656);	-- Plunderlord's Midnight Crocolisk
-i(226044, 457659);	-- Plunderlord's Weathered Crocolisk
-i(223572, 449415);	-- Slatestone Ramolith
+i(233240, 437162);	-- Polly Roger
+i(233489, 474086);	-- Prismatic Snapdragon
+i(233242, 254812);	-- Royal Seafeather
+i(233354, 473861);	-- Savage Alabaster Battle Turtle
+i(235286, 1216422);	-- Sha-Warped Cloud Serpent
+i(235287, 1216430);	-- Sha-Warped Riding Tiger
+i(223313, 448934);	-- Shadow of Doubt
+i(233243, 300154);	-- Silver Tidestallion
+i(233023, 472487);	-- Silvermoon Sweeper
+i(233019, 472489);	-- Sky Witch's Sweeper
+i(233058, 473137);	-- Soweezi's Vintage Waveshredder
+i(232991, 472752);	-- The Breaker's Song
+i(232639, 471562);	-- Thrayir, Eyes of the Siren
+i(231297, 468205);	-- Timbered Sky Snake
+i(232624, 471538);	-- Timely Buzzbee
+i(233020, 472488);	-- Twilight Witch's Sweeper
+i(234721, 1214940);	-- Ur'zul Fleshripper
+
+------------------
+-- PATCH 11.1.0 --
+------------------
+i(229952, 466023);	-- Asset Advocator
+i(0, 466024);		-- Bildewater Bombardier
+i(0, 466001);		-- Blackwater Bonecrusher
+i(229948, 466019);	-- Blackwater Shredder Deluxe Mk 2
+i(233064, 473188);	-- Bronze Goblin Wave Shredder
+i(229935, 465999);	-- Crimson Armored Growler
+i(0, 1217235);		-- Crimson Shreddertank
+i(0, 466000);		-- Darkfuse Chompactor
+i(229950, 466018);	-- Darkfuse Demolisher
+i(229955, 466027);	-- Darkfuse Spy-Eye
+i(229974, 466133);	-- Delver's Gob-Trotter
+i(237141, 1221694);	-- Enterprising Shreddertank
+i(0, 466011);		-- Flarendo the Furious
+i(232523, 460013);	-- G-99 Breakneck
+i(229941, 466017);	-- Innovation Investigator
+i(0, 468068);		-- Junkmaestro's Magnetomech
+i(229954, 466025);	-- Margin Manipulator
+i(229956, 466028);	-- Mean Green Flying Machine
+i(229946, 466013);	-- Ocher Delivery Rocket
+i(229949, 466020);	-- Personalized Goblin S.C.R.A.Per
+i(229987, 466144);	-- Prized Gladiator's Fel Bat
+i(236960, 1221155);	-- Prototype A.S.M.R.
+i(229953, 466026);	-- Salvaged Goblin Gazillionaire's Flying Machine
+i(0, 466014);		-- Steamwheedle Supplier
+i(235626, 1217760);	-- The Big G
+i(229944, 466016);	-- The Topskimmer Special
+i(0, 466012);		-- Thunderdrum Misfire
+i(0, 466022);		-- Venture Co-ordinator
+i(0, 466146);		-- Vicious Electro Eel [A]
+i(0, 466145);		-- Vicious Electro Eel [H]
+i(229936, 466002);	-- Violet Armored Growler
+i(229947, 466021);	-- Violet Goblin Shredder
+-- TRADING POST TAG
+i(235662, 1218069);	-- Emerald Snail
+i(235555, 1217341);	-- Lively Darkmoon Charger
+i(235659, 1218014);	-- Midnight Butterfly
+i(235554, 1217340);	-- Midnight Darkmoon Charger
+i(235650, 1217994);	-- Pearlescent Butterfly
+i(235657, 1218012);	-- Ruby Butterfly
+i(235646, 1217965);	-- Shimmermist Free Runner
+i(235557, 1217343);	-- Snowy Darkmoon Charger
+i(235658, 1218013);	-- Spring Butterfly
+i(235556, 1217342);	-- Violet Darkmoon Charger
+--- Probably not real Mounts
+i(0, 466423);	-- Unstable Rocket
+i(0, 466464);	-- Unstable Rocket

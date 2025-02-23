@@ -4,7 +4,7 @@
 local FACTION_GUILD = 1168;
 root(ROOTS.Character, n(createHeader({
 	readable = "Guild",
-	icon = "Interface\\Icons\\achievement_guildperk_everybodysfriend",
+	icon = 442272,
 	text = {
 		en = [[~GUILD]],
 	},
@@ -241,7 +241,7 @@ root(ROOTS.Character, n(createHeader({
 		ach(7444, {	-- Scenario Challenges
 			["timeline"] = { ADDED_5_0_4, REMOVED_7_0_3 },
 		}),
-		
+
 		-- Copy+Pasted from the Vendor list. Adjust as desired.
 		ach(4989),	-- A Class Act
 		ach(5422),	-- A Daily Routine
@@ -323,7 +323,12 @@ root(ROOTS.Character, n(createHeader({
 			["description"] = "This is a hidden reputation. It might not count towards reputation achievements.",
 			["collectible"] = false,
 		}),
-		faction(FACTION_GUILD),
+		faction(FACTION_GUILD, {
+			["providers"] = {
+				{ "i", 69210 },	-- Renowned Guild Tabard
+				{ "i", 69209 },	-- Illustrious Guild Tabard
+			},
+		}),
 	}),
 	n(createHeader({
 		readable = "Guild Vendors",

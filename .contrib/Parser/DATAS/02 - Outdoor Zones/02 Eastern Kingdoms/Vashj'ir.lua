@@ -5,7 +5,7 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(VASHJIR, {
 		["lore"] = "Vashj'ir is an underwater zone. Players receive underwater breathing, swim speed buffs, and eventually a sea horse mount early on in questing to make transportation easier. Players learn about the history of the Highborne, as this city was home to Lady Vashj before the Sundering. Players learn about the threat of Ozumat, culminating in a battle between Neptulon and the naga.",
-		["icon"] = "Interface\\Icons\\achievement_zone_vashjir",
+		["icon"] = 409551,
 		["timeline"] = { ADDED_4_0_3 },
 		["groups"] = {
 			n(ACHIEVEMENTS, {
@@ -40,6 +40,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				ach(4869, {	-- Sinking into Vashj'ir (A)
 					["races"] = ALLIANCE_ONLY,
+					-- #IF RETAIL
+					["_doautomation"] = true,
+					-- #ENDIF
 					-- #if ANYCLASSIC
 					-- #if AFTER MOP
 					["groups"] = {
@@ -154,7 +157,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 					-- #endif
 				}),
-				achWithRep(4881, 1135, {	-- The Earthen Ring
+				achWithRep(4881, FACTION_THE_EARTHEN_RING, {	-- The Earthen Ring
 					["maps"] = {
 						VASHJIR_ABYSSAL_DEPTHS,
 						VASHJIR_KELPTHAR_FOREST,
@@ -163,8 +166,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 			}),
 			n(FACTIONS, {
-				faction(1135, {	-- The Earthen Ring
-					["icon"] = "Interface\\Icons\\inv_misc_tabard_tolvir",
+				faction(FACTION_THE_EARTHEN_RING, {	-- The Earthen Ring
+					["provider"] = { "i", 65905 },	-- Tabard of the Earthen Ring
 					["maps"] = {
 						VASHJIR_ABYSSAL_DEPTHS,
 						VASHJIR_KELPTHAR_FOREST,
@@ -174,7 +177,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			m(VASHJIR_ABYSSAL_DEPTHS, {
 				["lore"] = "Abyssal Depths is the last, and darkest zone, players reach when questing in Vash'jir. They are home to the ancient god L'ghorek, which the Twilight Hammer is siphoning energy from to be prepared when fighting Neptulon in the future.",
-				["icon"] = "Interface\\Icons\\achievement_zone_vashjir",
+				["icon"] = 409551,
 				["groups"] = {
 					explorationHeader({
 						exploration(5135),	-- Abandoned Reef
@@ -222,6 +225,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								}),
 								i(59639),	-- Spikemender Shoulderplates
 								i(59638),	-- Necklace of the Furious Standard
+								-- #if BEFORE MOP
+								i(59640, {	-- Fetish of Azrajar
+									["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+								}),
+								-- #endif
 							},
 						}),
 						q(25980, {	-- A Standard Day for Azrajar (H)
@@ -238,6 +246,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								}),
 								i(59636),	-- Spikemender Shoulderplates
 								i(59635),	-- Necklace of the Furious Standard
+								-- #if BEFORE MOP
+								i(59637, {	-- Fetish of Azrajar
+									["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+								}),
+								-- #endif
 							},
 						}),
 						q(26143, {	-- All that Rises
@@ -399,22 +412,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["coord"] = { 42.8, 51.0, VASHJIR_ABYSSAL_DEPTHS },
 							["races"] = HORDE_ONLY,
 						}),
-						applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, q(29328, {	-- Elemental Bonds: Desire
-							["qg"] = 53652,	-- Aggra
-							["sourceQuest"] = 29336,	-- Into Coaxing Tides
-							["coord"] = { 69.8, 34.2, VASHJIR_ABYSSAL_DEPTHS },
-							["timeline"] = { ADDED_4_2_0 },
-							["groups"] = {
-								objective(1, {	-- 0/4 Coldlight Hunter slain
-									["provider"] = { "n", 41925 },	-- Coldlight Hunter
-								}),
-								objective(2, {	-- 0/4 Coldlight Oracle slain
-									["provider"] = { "n", 41926 },	-- Coldlight Oracle
-								}),
-							},
-						})),
-						q(26019, {	-- Enormous Eel Egg
-							["provider"] = { "i", 56570 },	-- Enormous Eel Egg
+						q(26019, {	-- Enormous Eel Egg (A)
+							["provider"] = { "i", 56571 },	-- Enormous Eel Egg
 							["sourceQuest"] = 26015,	-- Phosphora Hunting
 							["crs"] = {
 								41925,	-- Coldlight Hunters
@@ -466,6 +465,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								}),
 								i(59628),	-- Hood of Teeming Horror
 								i(59627),	-- Tentacle-Slayer Bracers
+								-- #if BEFORE MOP
+								i(59626, {	-- Wil'hai's Extraneous Tooth
+									["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+								}),
+								-- #endif
 							},
 						}),
 						q(26106, {	-- Fuel-ology 101
@@ -521,12 +525,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							},
 							["races"] = HORDE_ONLY,
 						}),
-						applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, q(29337, {	-- Into Constant Earth
-							["qg"] = 53652,	-- Aggra
-							["sourceQuest"] = 29328,	-- Elemental Bonds: Desire
-							["coord"] = { 69.8, 34.2, VASHJIR_ABYSSAL_DEPTHS },
-							["timeline"] = { ADDED_4_2_0 },
-						})),
 						q(26072, {	-- Into the Totem
 							["qg"] = 41600,	-- Erunak Stonespeaker
 							["sourceQuests"] = {
@@ -923,7 +921,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			m(VASHJIR_KELPTHAR_FOREST, {
 				["lore"] = "Kelp'thar Forest is the first subzone players reach when questing in Vash'jir. It has tropical underwater life and is closer to the surface than other subzones. Quests introduce the threat of the naga while also reacquainting the player with stranded members of the Zul'Aman exploratory crew.",
-				["icon"] = "Interface\\Icons\\achievement_zone_vashjir",
+				["icon"] = 409551,
 				["groups"] = {
 					explorationHeader({
 						exploration(5055),	-- Gnaws' Boneyard
@@ -970,14 +968,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 									["cr"] = 41018,	-- King Gurboggle
 								}),
 							}
-						}),
-						q(25388, {	-- Crate of Crab Meat
-							["providers"] = {
-								{ "o", 202871 },	-- Sunken Crate
-								{ "i",  53061 },	-- Crate of Crab Meat
-							},
-							["sourceQuest"] = 25587,	-- Gimme Shelter
-							["coord"] = { 49.6, 40.8, VASHJIR_KELPTHAR_FOREST },
 						}),
 						q(25471, {	-- Across the Great Divide
 							["qg"] = 41341,	-- Erunak Stonespeaker
@@ -1132,6 +1122,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["coord"] = { 27.4, 24.2, STORMWIND_CITY },
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
+							-- #if AFTER 9.0.3
+							["groups"] = {
+								n(36799, { -- Recruiter Burns
+									["description"] = "Accepting the quest 'Call of Duty' will instantly teleport you to Vashj'ir. Although the old event and cutscene is skipped, the questline is still intact.\n\nIf Burns do not offer you the quest, you might be phased due to Legion intro questline (even by being within the eligible level range!).",
+								}),
+							},
+							-- #endif
 						}),
 						q(25924, {	-- Call of Duty (H)
 							["qg"] = 41621,	-- Commander Thorak
@@ -1173,6 +1170,21 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								i(59778),	-- Medusoid Staff
 								i(59777),	-- Conch-Inlaid Gauntlets
 								i(59776),	-- Pipefish Bracers
+							},
+						}),
+						q(25388, {	-- Crate of Crab Meat
+							["providers"] = {
+								{ "o", 202871 },	-- Sunken Crate
+								{ "i",  53061 },	-- Crate of Crab Meat
+							},
+							["sourceQuest"] = 25587,	-- Gimme Shelter
+							["coord"] = { 49.6, 40.8, VASHJIR_KELPTHAR_FOREST },
+							["groups"] = {
+								-- #if BEFORE MOP
+								i(68609, {	-- Fine-Toothed Comb
+									["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+								}),
+								-- #endif
 							},
 						}),
 						q(25657, {	-- Dah, Nunt.. Dah, Nunt...
@@ -1320,7 +1332,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["isBreadcrumb"] = true,
 						}),
 						q(25946, {	-- Helm's Deep
-							["icon"] = "Interface\\Icons\\inv_helmet_49",
+							["icon"] = 133151,
 							["sourceQuests"] = {
 								25942,	-- Buy Us Some Time
 								27668,	-- Pay Attention
@@ -1558,7 +1570,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						q(25377, {	-- The Horde's Hoard
 							["provider"] = { "i", 53053 },	-- Tattered Treasure Map
-							["sourceQuest"] = 25558,	-- All or Nothing
 							["crs"] = { 39918 },	-- Clacksnap Pincer
 							["groups"] = {
 								objective(1, {	-- 0/1 Horde Chest Key
@@ -1734,29 +1745,32 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #if AFTER 5.3.0
 					-- These vendors have nothing useful to show until after 5.3.0.
 					n(VENDORS, {
-						n(36915, {	-- Erunak Stonespeaker <The Earthen Ring>
-							["coord"] = { 45.0, 23.2, VASHJIR_KELPTHAR_FOREST },
-							["races"] = ALLIANCE_ONLY,
-							["sym"] = {
-								{ "select", "npcID", 71304 },	-- Iris Moondreamer <Quartermaster> },
-								{ "pop" },						-- Pop the Headers
-							},
-						}),
-						n(41618, {	-- Erunak Stonespeaker <The Earthen Ring>
-							["coord"] = { 38.8, 31.6, VASHJIR_KELPTHAR_FOREST },
-							["races"] = HORDE_ONLY,
-							["sym"] = {
-								{ "select", "npcID", 71304 },	-- Iris Moondreamer <Quartermaster> },
-								{ "pop" },						-- Pop the Headers
-							},
-						}),
+						["sharedDescription"] = "You can only buy gear from Erunak during the early questing when the shipwreck is the quest hub. His wares is also available at Iris Moondreamer in Nordrassil Inn, at the top of Mount Hyjal.",
+						["groups"] = {
+							n(36915, {	-- Erunak Stonespeaker <The Earthen Ring>
+								["coord"] = { 45.0, 23.2, VASHJIR_KELPTHAR_FOREST },
+								["races"] = ALLIANCE_ONLY,
+								["sym"] = {
+									{ "select", "npcID", 71304 },	-- Iris Moondreamer <Quartermaster> },
+									{ "pop" },						-- Pop the Headers
+								},
+							}),
+							n(41618, {	-- Erunak Stonespeaker <The Earthen Ring>
+								["coord"] = { 38.8, 31.6, VASHJIR_KELPTHAR_FOREST },
+								["races"] = HORDE_ONLY,
+								["sym"] = {
+									{ "select", "npcID", 71304 },	-- Iris Moondreamer <Quartermaster> },
+									{ "pop" },						-- Pop the Headers
+								},
+							}),
+						},
 					}),
 					-- #endif
 				},
 			}),
 			m(VASHJIR_SHIMMERING_EXPANSE, {
 				["lore"] = "The Shimmering Expanse is a subzone of Vash'jir. It contains The Earthen Ring quartermaster in Silver Tide Hollow, the only flight points in the zone, and tons of  Azshara's Veil. In this section, players learn about the highborne's past and the threat of the naga through the eyes of Battlemaidens.",
-				["icon"] = "Interface\\Icons\\achievement_zone_vashjir",
+				["icon"] = 409551,
 				["groups"] = {
 					explorationHeader({
 						exploration(4966),	-- Biel'aran Ridge
@@ -3163,21 +3177,38 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					n(VENDORS, {
 						n(50324, {	-- Provisioner Arok <Earthen Ring Quartermaster>
 							["coord"] = { 49.1, 42.1, VASHJIR_SHIMMERING_EXPANSE },
-							["groups"] = {
-								i(62357),	-- Cloak of Ancient Wisdom
-								i(62363),	-- Earthmender's Boots
-								i(62364),	-- Flamebloom Gloves
-								i(62356),	-- Helm of Temperance
-								i(62358),	-- Leggings of Clutching Roots
-								i(62353),	-- Mantle of Moss
-								i(62359),	-- Peacemaker's Breastplate
-								i(62354),	-- Pendant of Elemental Balance
-								i(62362),	-- Signet of the Elder Council
-								i(62361),	-- Softwind Cape
-								i(62355),	-- Stone-Wrapped Greaves
-								i(65905),	-- Tabard of the Earthen Ring
-								i(62365),	-- World Keeper's Gauntlets
-							},
+							["groups"] = bubbleDownClassicRep(FACTION_THE_EARTHEN_RING, {
+								{	-- Neutral
+								},
+								{	-- Friendly
+									i(65905),	-- Tabard of the Earthen Ring
+								},
+								{	-- Honored
+									i(62356),	-- Helm of Temperance
+									i(62354),	-- Pendant of Elemental Balance
+									i(62353),	-- Mantle of Moss
+									i(62355),	-- Stone-Wrapped Greaves
+								},
+								{	-- Revered
+									i(62357),	-- Cloak of Ancient Wisdom
+									i(62361),	-- Softwind Cape
+									i(62359),	-- Peacemaker's Breastplate
+									i(62358),	-- Leggings of Clutching Roots
+									i(62366, {	-- Arcanum of the Earthen Ring
+										["description"] = "This version is only visible on the vendor when you aren't at the required reputation to purchase it yet on your current character.",
+										["filterID"] = CONSUMABLES,
+									}),
+									i(68764, {	-- Arcanum of the Earthen Ring
+										["filterID"] = CONSUMABLES,
+									}),
+								},
+								{	-- Exalted
+									i(62364),	-- Flamebloom Gloves
+									i(62365),	-- World Keeper's Gauntlets
+									i(62363),	-- Earthmender's Boots
+									i(62362),	-- Signet of the Elder Council
+								},
+							}),
 						}),
 					}),
 				},

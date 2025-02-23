@@ -4,9 +4,7 @@
 root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 	m(BLOODMYST_ISLE, {
 		["lore"] = "Bloodmyst Isle is a low-level zone covering the struggles of the Draenei to rebuild their civilization. It gets its distinctive red look from the corrupting red crystals found on the Exodar, the Draenei's spaceship that crashed.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_bloodmystisle_01",
-		-- #endif
+		["icon"] = 236721,
 		["timeline"] = { ADDED_2_0_1 },
 		["lvl"] = 10,
 		["groups"] = {
@@ -64,11 +62,7 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 					-- #endif
 					-- #endif
 				}),
-				explorationAch(861, {	-- Explore Bloodmyst Isle
-					-- #if BEFORE WRATH
-					["description"] = "Explore Bloodmyst Isle, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(861),	-- Explore Bloodmyst Isle
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -1348,7 +1342,7 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 						{ 14.4, 54.6, BLOODMYST_ISLE },	-- vector coil, bottom
 						{ 25.6, 50.8, BLOODMYST_ISLE },	-- top camp
 						{ 24.3, 56.5, BLOODMYST_ISLE },	-- middle camp
-						{ 21.1, 60.9, BLOODMYST_ISLE }, -- bottom camp
+						{ 21.1, 60.9, BLOODMYST_ISLE },	-- bottom camp
 						{ 36.3, 62.7, BLOODMYST_ISLE },	-- cryo-core, left
 						{ 37.8, 58.4, BLOODMYST_ISLE },	-- cryo-core, mid
 						{ 40.1, 61.2, BLOODMYST_ISLE },	-- cryo-core, right
@@ -1390,6 +1384,10 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(KALIMDOR, m(BLOODMYST_ISLE, {
-	q(9750),	-- UNUSED Urgent Delivery
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TBC, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
+	m(KALIMDOR, {
+		m(BLOODMYST_ISLE, {
+			q(9750),	-- UNUSED Urgent Delivery
+		}),
+	}),
 })));

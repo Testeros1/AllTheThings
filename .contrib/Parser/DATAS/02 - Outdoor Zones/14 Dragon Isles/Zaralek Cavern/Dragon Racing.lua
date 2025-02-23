@@ -28,7 +28,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 							17475,	-- Sulfur Sprint: Silver
 						}},
 						["g"] = {
-							i(203325),	-- Winding Slitherdrake: Red Hair (DM!)
+							i(203325),	-- Winding Slitherdrake: Red Hair (MM!)
 						},
 					}),
 					ach(17485, {	-- Zaralek Cavern: Gold
@@ -64,7 +64,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 							17478,	-- Sulfur Sprint Advanced: Silver
 						}},
 						["g"] = {
-							i(203303),	-- Winding Slitherdrake: Red and Gold Armor (DM!)
+							i(203303),	-- Winding Slitherdrake: Red and Gold Armor (MM!)
 						},
 					}),
 					ach(17488, {	-- Zaralek Cavern Advanced: Gold
@@ -467,6 +467,56 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 							ach(18099),	-- Sulfur Sprint Reverse Challenge: Gold
 						},
 					}),
+				}),
+			})),
+			n(WORLD_QUESTS, {
+				i(205226,	-- Cavern Racer's Purse
+					bubbleDownSelf({ ["timeline"] = { ADDED_10_1_0 } }, {
+					i(196978),	-- Cliffside Wylderdrake: Small Head Spikes (MM!)
+					i(196997),	-- Cliffside Wylderdrake: Split Horns (MM!)
+					i(197104),	-- Highland Drake: Tapered Chin (MM!)
+					i(202280),	-- Renewed Proto-Drake: Pronged Tail (MM!)
+					i(203361),	-- Winding Slitherdrake: Finned Tip Tail (MM!)
+					i(203348),	-- Winding Slitherdrake: Pointed Nose (MM!)
+					i(203317),	-- Winding Slitherdrake: Small Finned Crest (MM!)
+					i(203342),	-- Winding Slitherdrake: Triple Jaw Horns (MM!)
+				})),
+			}),
+			n(WORLD_QUESTS, sharedData({
+				["sourceQuests"] = {
+					71232,	-- Renown of the Dragon Isles
+					DF_ACCOUNT_CAMPAIGN_QUEST,
+				},
+				["sourceQuestNumRequired"] = 1,
+				["maxReputation"] = { FACTION_VALDRAKKEN_ACCORD, 30 },
+				["isWorldQuest"] = true,
+				["timeline"] = { ADDED_10_1_0 },
+				["sym"] = {{"select","itemID",205226}},	-- Cavern Racer's Purse
+			}, {
+				------ Zaralek Cavern ------
+				q(75121, {	-- Dragonrider Racing - Brimstone Scramble
+					["coord"] = { 54.3, 24.0, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_0 },
+				}),
+				q(75120, {	-- Dragonrider Racing - Caldera Cruise
+					["coord"] = { 39.0, 49.8, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_0 },
+				}),
+				q(75119, {	-- Dragonrider Racing - Crystal Circuit
+					["coord"] = { 38.8, 60.6, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_0 },
+				}),
+				q(75123, {	-- Dragonrider Racing - Loamm Roamm
+					["coord"] = { 58.1, 57.6, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_0 },
+				}),
+				q(75122, {	-- Dragonrider Racing - Shimmering Slalom
+					["coord"] = { 58.6, 45.0, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_0 },
+				}),
+				q(75124, {	-- Dragonrider Racing - Sulfur Sprint
+					["coord"] = { 51.3, 46.6, ZARALEK_CAVERN },
+					["timeline"] = { ADDED_10_1_0 },
 				}),
 			})),
 		}),

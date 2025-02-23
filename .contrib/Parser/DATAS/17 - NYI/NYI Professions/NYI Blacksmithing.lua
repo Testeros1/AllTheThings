@@ -21,7 +21,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.WRATH, {
 				-- 3.0.2
-				expansion(EXPANSION.WRATH, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
+				expansion(EXPANSION.WRATH, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
 					i(41741),	-- Cobalt Rod
 				})),
 			}),
@@ -29,7 +29,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				-- 5.0.4
 				-- #if BEFORE 10.2.7
 				-- All was added into MoP: Remix Ensembles
-				expansion(EXPANSION.MOP, 0.4, bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
+				expansion(EXPANSION.MOP, patch(0,4), bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
 					i(82918),	-- Lightsteel Belt
 					i(82917),	-- Lightsteel Boots
 					i(82913),	-- Lightsteel Breastplate
@@ -56,7 +56,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				-- #endif
 
 				-- 5.2.0
-				expansion(EXPANSION.MOP, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_5_2_0 } }, {
+				expansion(EXPANSION.MOP, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_5_2_0 } }, {
 					i(93441),	-- Crafted Dreadful Gladiator's Barrier - UNUSED
 					i(93483),	-- Crafted Dreadful Gladiator's Redoubt
 					i(93614),	-- Crafted Dreadful Gladiator's Shield Wall
@@ -64,7 +64,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.WOD, {
 				-- 6.0.2
-				expansion(EXPANSION.WOD, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
+				expansion(EXPANSION.WOD, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
 					i(108422),	-- Blackrock Crucible
 					i(107968),	-- Draenic Steel Chestplate
 					i(107976),	-- Draenic Steel Chestplate
@@ -138,8 +138,6 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(108023),	-- Draenic Steel Wristwraps
 					i(108031),	-- Draenic Steel Wristwraps
 					i(108039),	-- Draenic Steel Wristwraps
-					i(116653),	-- Unstable Greater Steelforged Essence
-					i(116650),	-- Unstable Greater Truesteel Essence
 
 					-- #if BEFORE 10.1.5
 					-- All was added into Dawn of the Infinite dungeon [Quantum Chestpiece]
@@ -253,13 +251,11 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 					i(108217),	-- Peerless Draenic Steel Wristwraps
 					i(108225),	-- Peerless Draenic Steel Wristwraps
 					-- #endif
-					i(122538),	-- Unstable Powerful Steelforged Essence
-					i(122539),	-- Unstable Powerful Truesteel Essence
 				})),
 			}),
 			expansion(EXPANSION.LEGION, {
 				-- 7.0.3
-				expansion(EXPANSION.LEGION, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
+				expansion(EXPANSION.LEGION, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
 					i(124434),	-- Handmade Leystone Helm
 					i(124432),	-- Leystone Dome
 					i(124431),	-- Leystone Faceguard
@@ -269,7 +265,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.BFA, {
 				-- 8.0.1
-				expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+				expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 					i(159854, {["modID"] = 90, ["sourceID"] = 95903, ["name"] = "Honorable Combatant's Battleaxe", }),
 					i(159854, {["modID"] = 91, ["sourceID"] = 95904, ["name"] = "Honorable Combatant's Battleaxe", }),
 					i(159854, {["modID"] = 92, ["sourceID"] = 95905, ["name"] = "Honorable Combatant's Battleaxe", }),
@@ -406,7 +402,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.SL, {
 				-- 9.0.1
-				expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+				expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 					i(171425),	-- [DNT] REUSE ME \\ Laestrite Plates \\ Blacksmithing - Modified Crafting Reagent 06
 					i(171424),	-- [DNT] REUSE ME \\ Laestrite Spikes
 					i(171426),	-- [DNT] REUSE ME \\ Blacksmithing - Modified Crafting Reagent 07
@@ -496,7 +492,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.DF, {
 				-- 10.0.0
-				expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+				expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 					i(191070),	-- Blacksmithing Gloves
 					i(191025),	-- Blacksmith Hammer - DO NOT USE
 					i(191033),	-- Blacksmith Hammer 2 - DO NOT USE
@@ -512,13 +508,13 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				})),
 
 				-- 10.0.2
-				expansion(EXPANSION.DF, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_2 } }, {
+				expansion(EXPANSION.DF, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_2 } }, {
 					i(191882),	-- Serevite Repair Hammer
 					i(191883),	-- Serevite Repair Hammer
 				})),
 
 				-- 10.1.0
-				expansion(EXPANSION.DF, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
+				expansion(EXPANSION.DF, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
 					i(205040),	-- Shadowed Belt Buckle
 					i(205041),	-- Shadowed Belt Buckle
 					i(205042),	-- Shadowed Belt Buckle
@@ -529,139 +525,240 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.TWW, {
 				-- 11.0.0
-				expansion(EXPANSION.TWW, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
-					i(222057), -- Artisan Blacksmith's Hammer
-					i(222058), -- Artisan Blacksmith's Toolbox
-					i(222055), -- Artisan Leatherworker's Knife
-					i(217938), -- Artisan Leatherworker's Toolset
-					i(222056), -- Artisan Leatherworker's Toolset
-					i(222054), -- Artisan Needle Set
-					i(222052), -- Artisan Pickaxe
-					i(222051), -- Artisan Sickle
-					i(222053), -- Artisan Skinning Knife
-					i(220177), -- Charged Alloy
-					i(220178), -- Charged Alloy
-					i(220179), -- Charged Alloy
-					i(221987), -- Charged Alloy
-					i(221988), -- Charged Alloy
-					i(221989), -- Charged Alloy
-					i(222014), -- Charged Claymore
-					i(222016), -- Charged Crusher
-					i(222013), -- Charged Facesmasher
-					i(222015), -- Charged Halberd
-					i(222011), -- Charged Hexsword
-					i(222017), -- Charged Invoker
-					i(222012), -- Charged Runeaxe
-					i(222018), -- Charged Slicer
-					i(220174), -- Core Alloy
-					i(220175), -- Core Alloy
-					i(220176), -- Core Alloy
-					i(221983), -- Core Alloy
-					i(221984), -- Core Alloy
-					i(221985), -- Core Alloy
-					i(221986), -- Core Alloy
-					i(222083), -- Coreforged Repair Hammer
-					i(222084), -- Coreforged Repair Hammer
-					i(222085), -- Coreforged Repair Hammer
-					i(222086), -- Coreforged Skeleton Key
-					i(222087), -- Coreforged Skeleton Key
-					i(222088), -- Coreforged Skeleton Key
-					i(222524), -- Coreforged Skeleton Key
-					i(222525), -- Coreforged Skeleton Key
-					i(220955), -- Crystal Gazer's Gauntlets
-					i(222021), -- Crystal Gazer's Gauntlets
-					i(222080), -- Earthen Master's Hammer
-					i(222081), -- Earthen Master's Hammer
-					i(222082), -- Earthen Master's Hammer
-					i(221997), -- Everforged Breastplate
-					i(221999), -- Everforged Defender
-					i(222004), -- Everforged Gauntlets
-					i(222010), -- Everforged Greataxe
-					i(221998), -- Everforged Greatbelt
-					i(222000), -- Everforged Helm
-					i(222001), -- Everforged Legplates
-					i(222007), -- Everforged Longsword
-					i(222009), -- Everforged Mace
-					i(222003), -- Everforged Pauldrons
-					i(221996), -- Everforged Sabatons
-					i(222005), -- Everforged Shortblade
-					i(222006), -- Everforged Spellblade
-					i(222002), -- Everforged Vambraces
-					i(222008), -- Everforged Warglaive
-					i(220186), -- Forged Framework
-					i(220187), -- Forged Framework
-					i(220188), -- Forged Framework
-					i(222062), -- Forged Framework
-					i(222063), -- Forged Framework
-					i(222064), -- Forged Framework
-					i(220192), -- Ironclaw Alloy
-					i(220193), -- Ironclaw Alloy
-					i(220194), -- Ironclaw Alloy
-					i(221993), -- Ironclaw Alloy
-					i(221994), -- Ironclaw Alloy
-					i(221995), -- Ironclaw Alloy
-					i(222032), -- Ironclaw Axe
-					i(222035), -- Ironclaw Breastplate
-					i(222037), -- Ironclaw Defender
-					i(222028), -- Ironclaw Dirk
-					i(222042), -- Ironclaw Gauntlets
-					i(222033), -- Ironclaw Great Axe
-					i(222031), -- Ironclaw Great Mace
-					i(222036), -- Ironclaw Greatbelt
-					i(222038), -- Ironclaw Helm
-					i(222030), -- Ironclaw Knuckles
-					i(222039), -- Ironclaw Legplates
-					i(222041), -- Ironclaw Pauldrons
-					i(222034), -- Ironclaw Sabatons
-					i(222027), -- Ironclaw Stiletto
-					i(222029), -- Ironclaw Sword
-					i(222040), -- Ironclaw Vambraces
-					i(220949), -- Ironclaw Weapon Stone
-					i(220950), -- Ironclaw Weapon Stone
-					i(220951), -- Ironclaw Weapon Stone
-					i(222065), -- Ironclaw Weapon Stone
-					i(222066), -- Ironclaw Weapon Stone
-					i(222067), -- Ironclaw Weapon Stone
-					i(226422), -- Ironclaw Whetstone
-					i(226423), -- Ironclaw Whetstone
-					i(226424), -- Ironclaw Whetstone
-					i(220956), -- Lightwatcher's Visor
-					i(222022), -- Lightwatcher's Visor
-					i(222049), -- Proficient Blacksmith's Hammer
-					i(222050), -- Proficient Blacksmith's Toolbox
-					i(222047), -- Proficient Leatherworker's Knife
-					i(217943), -- Proficient Leatherworker's Toolset
-					i(222048), -- Proficient Leatherworker's Toolset
-					i(222046), -- Proficient Needle Set
-					i(222044), -- Proficient Pickaxe
-					i(222043), -- Proficient Sickle
-					i(222045), -- Proficient Skinning Knife
-					i(220943), -- Reinforced Handle
-					i(220944), -- Reinforced Handle
-					i(220945), -- Reinforced Handle
-					i(222068), -- Reinforced Handle
-					i(222069), -- Reinforced Handle
-					i(222070), -- Reinforced Handle
-					i(220189), -- Sanctified Alloy
-					i(220190), -- Sanctified Alloy
-					i(220191), -- Sanctified Alloy
-					i(221990), -- Sanctified Alloy
-					i(221991), -- Sanctified Alloy
-					i(221992), -- Sanctified Alloy
-					i(220183), -- Seasoned Skillet
-					i(220184), -- Seasoned Skillet
-					i(220185), -- Seasoned Skillet
-					i(222071), -- Seasoned Skillet
-					i(222072), -- Seasoned Skillet
-					i(222073), -- Seasoned Skillet
-					i(220960), -- Siphoning Stiletto
-					i(222026), -- Siphoning Stiletto
-					i(220946), -- Weighted Lure
-					i(220947), -- Weighted Lure
-					i(220948), -- Weighted Lure
-					i(222077), -- Weighted Lure
-					i(222078), -- Weighted Lure
-					i(222079), -- Weighted Lure
+				expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+					i(220961),	-- Arathor Armor Patch
+					i(220962),	-- Arathor Armor Patch
+					i(220963),	-- Arathor Armor Patch
+					i(222020),	-- Arathor Armor Patch
+					i(222455),	-- Arathor Armor Patch
+					i(222456),	-- Arathor Armor Patch
+					i(222457),	-- Arathor Armor Patch
+					i(222057),	-- Artisan Blacksmith's Hammer
+					i(222058),	-- Artisan Blacksmith's Toolbox
+					i(217944),	-- Artisan Herbalist's Sickle
+					i(222055),	-- Artisan Leatherworker's Knife
+					i(217935),	-- Artisan Leatherworker's Scalpel
+					i(217938),	-- Artisan Leatherworker's Toolset
+					i(222056),	-- Artisan Leatherworker's Toolset
+					i(217940),	-- Artisan Miner's Pickaxe
+					i(222054),	-- Artisan Needle Set
+					i(222052),	-- Artisan Pickaxe
+					i(222051),	-- Artisan Sickle
+					i(217941),	-- Artisan Skinner's Knife
+					i(222053),	-- Artisan Skinning Knife
+					i(217942),	-- Artisan Smithing Hammer
+					i(217936),	-- Artisan Smithing Toolbox
+					i(217932),	-- Artisan Tailor's Needle Set
+					i(225661),	-- Burning Binding
+					i(220177),	-- Charged Alloy
+					i(220178),	-- Charged Alloy
+					i(220179),	-- Charged Alloy
+					i(221987),	-- Charged Alloy
+					i(221988),	-- Charged Alloy
+					i(221989),	-- Charged Alloy
+					i(222014),	-- Charged Claymore
+					i(222016),	-- Charged Crusher
+					i(222013),	-- Charged Facesmasher
+					i(217861),	-- Charged Glaive
+					i(222015),	-- Charged Halberd
+					i(222011),	-- Charged Hexsword
+					i(222017),	-- Charged Invoker
+					i(217857),	-- Charged Mace
+					i(222012),	-- Charged Runeaxe
+					i(217858),	-- Charged Shiv
+					i(222018),	-- Charged Slicer
+					i(220174),	-- Core Alloy
+					i(220175),	-- Core Alloy
+					i(220176),	-- Core Alloy
+					i(221983),	-- Core Alloy
+					i(221984),	-- Core Alloy
+					i(221985),	-- Core Alloy
+					i(221986),	-- Core Alloy
+					i(222517),	-- Core Framework
+					i(222518),	-- Core Framework
+					i(222519),	-- Core Framework
+					i(222083),	-- Coreforged Repair Hammer
+					i(222084),	-- Coreforged Repair Hammer
+					i(222085),	-- Coreforged Repair Hammer
+					i(222086),	-- Coreforged Skeleton Key
+					i(222087),	-- Coreforged Skeleton Key
+					i(222088),	-- Coreforged Skeleton Key
+					i(222524),	-- Coreforged Skeleton Key
+					i(222525),	-- Coreforged Skeleton Key
+					i(217923),	-- Coreway Excavator's Boots
+					i(217920),	-- Coreway Excavator's Bracers
+					i(217919),	-- Coreway Excavator's Chestguard
+					i(217912),	-- Coreway Excavator's Clasp
+					i(217921),	-- Coreway Excavator's Gauntlets
+					i(217911),	-- Coreway Excavator's Greaves
+					i(217922),	-- Coreway Excavator's Helm
+					i(217917),	-- Coreway Excavator's Spaulders
+					i(220955),	-- Crystal Gazer's Gauntlets
+					i(222021),	-- Crystal Gazer's Gauntlets
+					i(220180),	-- Earthen Master's Arsenal
+					i(220181),	-- Earthen Master's Arsenal
+					i(220182),	-- Earthen Master's Arsenal
+					i(222059),	-- Earthen Master's Arsenal
+					i(222060),	-- Earthen Master's Arsenal
+					i(222061),	-- Earthen Master's Arsenal
+					i(222496),	-- Earthen Master's Arsenal
+					i(222497),	-- Earthen Master's Arsenal
+					i(222498),	-- Earthen Master's Arsenal
+					i(222080),	-- Earthen Master's Hammer
+					i(222081),	-- Earthen Master's Hammer
+					i(222082),	-- Earthen Master's Hammer
+					i(220195),	-- Echoing Impact Seal
+					i(220196),	-- Echoing Impact Seal
+					i(220197),	-- Echoing Impact Seal
+					i(222019),	-- Echoing Impact Seal
+					i(222452),	-- Echoing Impact Seal
+					i(222453),	-- Echoing Impact Seal
+					i(222454),	-- Echoing Impact Seal
+					i(222023),	-- Echoing Truncheon
+					i(222460),	-- Echoing Truncheon
+					i(220957),	-- Echoing Tuncheon
+					i(220959),	-- Entangling Cutlass
+					i(222024),	-- Entangling Cutlass
+					i(222461),	-- Entangling Cutlass
+					i(221997),	-- Everforged Breastplate
+					i(217854),	-- Everforged Chest
+					i(221999),	-- Everforged Defender
+					i(217851),	-- Everforged Feet
+					i(222004),	-- Everforged Gauntlets
+					i(217924),	-- Everforged Great Axe
+					i(222010),	-- Everforged Greataxe
+					i(221998),	-- Everforged Greatbelt
+					i(217847),	-- Everforged Hands
+					i(217855),	-- Everforged Helm
+					i(222000),	-- Everforged Helm
+					i(222001),	-- Everforged Legplates
+					i(217850),	-- Everforged Legs
+					i(222007),	-- Everforged Longsword
+					i(222009),	-- Everforged Mace
+					i(222003),	-- Everforged Pauldrons
+					i(221996),	-- Everforged Sabatons
+					i(222005),	-- Everforged Shortblade
+					i(217852),	-- Everforged Shoulders
+					i(222006),	-- Everforged Spellblade
+					i(222002),	-- Everforged Vambraces
+					i(217849),	-- Everforged Waist
+					i(222008),	-- Everforged Warglaive
+					i(217848),	-- Everforged Wrists
+					i(220186),	-- Forged Framework
+					i(220187),	-- Forged Framework
+					i(220188),	-- Forged Framework
+					i(222062),	-- Forged Framework
+					i(222063),	-- Forged Framework
+					i(222064),	-- Forged Framework
+					i(220958),	-- Haunting Void
+					i(222025),	-- Haunting Void
+					i(222462),	-- Haunting Void
+					i(220192),	-- Ironclaw Alloy
+					i(220193),	-- Ironclaw Alloy
+					i(220194),	-- Ironclaw Alloy
+					i(221993),	-- Ironclaw Alloy
+					i(221994),	-- Ironclaw Alloy
+					i(221995),	-- Ironclaw Alloy
+					i(222032),	-- Ironclaw Axe
+					i(222035),	-- Ironclaw Breastplate
+					i(222037),	-- Ironclaw Defender
+					i(222028),	-- Ironclaw Dirk
+					i(222042),	-- Ironclaw Gauntlets
+					i(217909),	-- Ironclaw Great Axe
+					i(222033),	-- Ironclaw Great Axe
+					i(217913),	-- Ironclaw Great Mace
+					i(222031),	-- Ironclaw Great Mace
+					i(222036),	-- Ironclaw Greatbelt
+					i(222038),	-- Ironclaw Helm
+					i(217914),	-- Ironclaw Knuckles
+					i(222030),	-- Ironclaw Knuckles
+					i(222039),	-- Ironclaw Legplates
+					i(222041),	-- Ironclaw Pauldrons
+					i(222034),	-- Ironclaw Sabatons
+					i(217915),	-- Ironclaw Stiletto
+					i(222027),	-- Ironclaw Stiletto
+					i(217916),	-- Ironclaw Sword
+					i(222029),	-- Ironclaw Sword
+					i(222040),	-- Ironclaw Vambraces
+					i(220949),	-- Ironclaw Weapon Stone
+					i(220950),	-- Ironclaw Weapon Stone
+					i(220951),	-- Ironclaw Weapon Stone
+					i(222065),	-- Ironclaw Weapon Stone
+					i(222066),	-- Ironclaw Weapon Stone
+					i(222067),	-- Ironclaw Weapon Stone
+					i(226422),	-- Ironclaw Whetstone
+					i(226423),	-- Ironclaw Whetstone
+					i(226424),	-- Ironclaw Whetstone
+					i(220956),	-- Lightwatcher's Visor
+					i(222022),	-- Lightwatcher's Visor
+					i(217859),	-- Pressurized Alloy Breastplate
+					i(217910),	-- Pressurized Alloy Defender
+					i(217862),	-- Pressurized Alloy Gauntlets
+					i(217856),	-- Pressurized Alloy Greatbelt
+					i(217918),	-- Pressurized Alloy Sword
+					i(217860),	-- Pressurized Alloy Vambraces
+					i(222049),	-- Proficient Blacksmith's Hammer
+					i(222050),	-- Proficient Blacksmith's Toolbox
+					i(217931),	-- Proficient Herbalist's Sickle
+					i(222047),	-- Proficient Leatherworker's Knife
+					i(217933),	-- Proficient Leatherworker's Scalpel
+					i(217943),	-- Proficient Leatherworker's Toolset
+					i(222048),	-- Proficient Leatherworker's Toolset
+					i(217945),	-- Proficient Miner's Pickaxe
+					i(222046),	-- Proficient Needle Set
+					i(222044),	-- Proficient Pickaxe
+					i(222043),	-- Proficient Sickle
+					i(217939),	-- Proficient Skinner's Knife
+					i(222045),	-- Proficient Skinning Knife
+					i(217934),	-- Proficient Smithing Hammer
+					i(217937),	-- Proficient Tailor's Needle Set
+					i(220943),	-- Reinforced Handle
+					i(220944),	-- Reinforced Handle
+					i(220945),	-- Reinforced Handle
+					i(222068),	-- Reinforced Handle
+					i(222069),	-- Reinforced Handle
+					i(222070),	-- Reinforced Handle
+					i(220189),	-- Sanctified Alloy
+					i(220190),	-- Sanctified Alloy
+					i(220191),	-- Sanctified Alloy
+					i(221990),	-- Sanctified Alloy
+					i(221991),	-- Sanctified Alloy
+					i(221992),	-- Sanctified Alloy
+					i(220183),	-- Seasoned Skillet
+					i(220184),	-- Seasoned Skillet
+					i(220185),	-- Seasoned Skillet
+					i(222071),	-- Seasoned Skillet
+					i(222072),	-- Seasoned Skillet
+					i(222073),	-- Seasoned Skillet
+					i(220960),	-- Siphoning Stiletto
+					i(222026),	-- Siphoning Stiletto
+					i(220952),	-- Webbed Fishing Line
+					i(220953),	-- Webbed Fishing Line
+					i(220954),	-- Webbed Fishing Line
+					i(222074),	-- Webbed Fishing Line
+					i(222075),	-- Webbed Fishing Line
+					i(222076),	-- Webbed Fishing Line
+					i(220946),	-- Weighted Lure
+					i(220947),	-- Weighted Lure
+					i(220948),	-- Weighted Lure
+					i(222077),	-- Weighted Lure
+					i(222078),	-- Weighted Lure
+					i(222079),	-- Weighted Lure
+					i(218092),	-- <Endgame Alloy B>
+					i(218095),	-- <Endgame Alloy B>
+					i(218097),	-- <Endgame Alloy B>
+					i(218089),	-- <Endgame Alloy C>
+					i(218090),	-- <Endgame Alloy C>
+					i(218098),	-- <Endgame Alloy C>
+					i(217853),	-- <Insert Bespoke Cantrip Gear>
+					i(217863),	-- <Insert Bespoke Cantrip Gear>
+					i(218087),	-- <Pressurized Core Alloy>
+					i(218088),	-- <Pressurized Core Alloy>
+					i(218091),	-- <Pressurized Core Alloy>
+					i(218094),	-- <PVP Alloy>
+					i(218096),	-- <PVP Alloy>
+					i(218099),	-- <PVP Alloy>
+					i(218093),	-- <Vendor Reagent A>
 				})),
 			}),
 		}),
@@ -694,7 +791,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.TBC, {
 				-- 2.1.0
-				expansion(EXPANSION.TBC, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_2_1_0 } }, {
+				expansion(EXPANSION.TBC, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_2_1_0 } }, {
 					-- Without SpellID attached
 					i(35529),	-- Plans: Dawnsteel Bracers
 					i(35530),	-- Plans: Dawnsteel Shoulders
@@ -703,7 +800,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				})),
 
 				-- 2.4.0
-				expansion(EXPANSION.TBC, 4.0, bubbleDownSelf({ ["timeline"] = { CREATED_2_4_0 } }, {
+				expansion(EXPANSION.TBC, patch(4,0), bubbleDownSelf({ ["timeline"] = { CREATED_2_4_0 } }, {
 					-- Without SpellID attached
 					i(35553),	-- Plans: Hard Khorium Battlefists
 					i(35554),	-- Plans: Hard Khorium Battleplate
@@ -713,14 +810,14 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.WRATH, {
 				-- 3.0.2
-				expansion(EXPANSION.WRATH, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
+				expansion(EXPANSION.WRATH, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
 					r(55730),	-- Cobalt Rod
 					r(50465),	-- Socket One-Handed Weapon
 				})),
 			}),
 			expansion(EXPANSION.CATA, {
 				-- 4.0.1
-				expansion(EXPANSION.CATA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_4_0_1 } }, {
+				expansion(EXPANSION.CATA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_4_0_1 } }, {
 					r(85531),	-- Unknown
 					-- Without SpellID attached
 					i(66095),	-- Plans: Cold-Forged Shank
@@ -760,7 +857,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.MOP, {
 				-- 5.0.4
-				expansion(EXPANSION.MOP, 0.4, bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
+				expansion(EXPANSION.MOP, patch(0,4), bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
 					r(126867),	-- Unknown
 					r(113263),	-- Unknown
 					r(126864),	-- Unknown
@@ -820,7 +917,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.WOD, {
 				-- 6.0.2
-				expansion(EXPANSION.WOD, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
+				expansion(EXPANSION.WOD, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
 					r(153631),	-- Draenic Steel Bulwark
 					r(153605),	-- Draenic Steel Chestplate
 					r(153629),	-- Draenic Steel Dagger
@@ -871,7 +968,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.LEGION, {
 				-- 7.0.3
-				expansion(EXPANSION.LEGION, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
+				expansion(EXPANSION.LEGION, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
 					r(184345),	-- Handmade Leystone Helm
 					r(184342),	-- Leystone Dome
 					r(184341),	-- Leystone Faceguard
@@ -893,7 +990,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 				})),
 
 				-- 7.3.0
-				expansion(EXPANSION.LEGION, 3.0, bubbleDownSelf({ ["timeline"] = { CREATED_7_3_0 } }, {
+				expansion(EXPANSION.LEGION, patch(3,0), bubbleDownSelf({ ["timeline"] = { CREATED_7_3_0 } }, {
 					-- Without SpellID attached
 					i(151711),	-- Plans: Empyrial Breastplate [Rank 1]
 					i(151709),	-- Plans: Felslate Anchor
@@ -901,7 +998,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.BFA, {
 				-- 8.0.1
-				expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+				expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 					r(253129),	-- 9.0 Blacksmithing - Modified Crafting Reagent 02
 					r(265939),	-- 9.0 Blacksmithing - Crafted Reagent 06
 					r(265938),	-- 9.0 Blacksmithing - Crafted Reagent 05
@@ -923,7 +1020,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.SL, {
 				-- 9.0.1
-				expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+				expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 					r(307649),	-- 9.0 Blacksmithing - Crafted Reagent 03
 					r(307650),	-- 9.0 Blacksmithing - Crafted Reagent 04
 					r(280659),	-- 9.0 Blacksmithing - Crafted Reagent 07
@@ -1010,7 +1107,7 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.DF, {
 				-- 10.0.0
-				expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+				expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 					r(371396),	-- Draconium Repair Hammer
 					r(382579),	-- Opening
 					r(376698),	-- Wisp of Tyr
@@ -1043,34 +1140,84 @@ root(ROOTS.NeverImplemented, n(PROFESSIONS, {
 			}),
 			expansion(EXPANSION.TWW, {
 				-- 11.0.0
-				expansion(EXPANSION.TWW, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
-					i(223026), -- Plans: Artisan Leatherworker's Knife
-					i(223027), -- Plans: Artisan Leatherworker's Toolset
-					i(223025), -- Plans: Artisan Needle Set
-					i(223023), -- Plans: Artisan Pickaxe
-					i(223022), -- Plans: Artisan Sickle
-					i(223024), -- Plans: Artisan Skinning Knife
-					i(223011), -- Plans: Charged Claymore
-					i(223038), -- Plans: Charged Claymore
-					i(223013), -- Plans: Charged Crusher
-					i(223010), -- Plans: Charged Facesmasher
-					i(223012), -- Plans: Charged Halberd
-					i(223039), -- Plans: Charged Halberd
-					i(223008), -- Plans: Charged Hexsword
-					i(223035), -- Plans: Charged Hexsword
-					i(223014), -- Plans: Charged Invoker
-					i(223041), -- Plans: Charged Invoker
-					i(223009), -- Plans: Charged Runeaxe
-					i(223015), -- Plans: Charged Slicer
-					i(223031), -- Plans: Coreforged Skeleton Key
-					i(223016), -- Plans: Crystal Gazer's Gauntlets
-					i(223017), -- Plans: Lightwatcher's Visor
-					i(223044), -- Plans: Lightwatcher's Visor
-					i(223028), -- Plans: Seasoned Skillet
-					i(223055), -- Plans: Seasoned Skillet
-					i(223021), -- Plans: Siphoning Stiletto
-					i(223030), -- Plans: Weighted Lure
-					i(223057), -- Plans: Weighted Lure
+				expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+					r(450290),	-- Core Framework
+					r(450243),	-- Echoing Impact
+					-- With SpellID attached
+					i(223045),	-- Plans: Burning Binding
+					i(223018),	-- Plans: Echoing Truncheon
+					i(223046),	-- Plans: Entangling Cutlass
+					i(223047),	-- Plans: Haunting Void
+					-- Without SpellId attached
+					i(218102),	-- Bloodstained Plans: <PVP Alloy>
+					i(223026),	-- Plans: Artisan Leatherworker's Knife
+					i(223027),	-- Plans: Artisan Leatherworker's Toolset
+					i(223025),	-- Plans: Artisan Needle Set
+					i(223023),	-- Plans: Artisan Pickaxe
+					i(223022),	-- Plans: Artisan Sickle
+					i(223024),	-- Plans: Artisan Skinning Knife
+					i(223011),	-- Plans: Charged Claymore
+					i(223013),	-- Plans: Charged Crusher
+					i(223010),	-- Plans: Charged Facesmasher
+					i(223012),	-- Plans: Charged Halberd
+					i(223039),	-- Plans: Charged Halberd
+					i(223008),	-- Plans: Charged Hexsword
+					i(223035),	-- Plans: Charged Hexsword
+					i(223014),	-- Plans: Charged Invoker
+					i(223041),	-- Plans: Charged Invoker
+					i(223009),	-- Plans: Charged Runeaxe
+					i(223015),	-- Plans: Charged Slicer
+					i(223031),	-- Plans: Coreforged Skeleton Key
+					i(223016),	-- Plans: Crystal Gazer's Gauntlets
+					i(223019),	-- Plans: Entangling Cutlass
+					i(223020),	-- Plans: Haunting Void
+					i(217950),	-- Plans: Hematic Alloy Blacksmith's Hammer
+					i(217952),	-- Plans: Hematic Alloy Blacksmith's Toolbox
+					i(217947),	-- Plans: Hematic Alloy Leatherworker's Knife
+					i(217949),	-- Plans: Hematic Alloy Leatherworker's Toolset
+					i(217954),	-- Plans: Hematic Alloy Needle Set
+					i(217948),	-- Plans: Hematic Alloy Pickaxe
+					i(217953),	-- Plans: Hematic Alloy Sickle
+					i(217955),	-- Plans: Hematic Alloy Skinning Knife
+					i(223017),	-- Plans: Lightwatcher's Visor
+					i(223044),	-- Plans: Lightwatcher's Visor
+					i(217867),	-- Plans: Polarized Alloy Claymore
+					i(217879),	-- Plans: Polarized Alloy Crusher
+					i(217873),	-- Plans: Polarized Alloy Halberd
+					i(217870),	-- Plans: Polarized Alloy Hexsword
+					i(217869),	-- Plans: Polarized Alloy Runeaxe
+					i(217868),	-- Plans: Polarized Alloy Slicer
+					i(217887),	-- Plans: Pressurized Alloy Breastplate
+					i(217884),	-- Plans: Pressurized Alloy Defender
+					i(217882),	-- Plans: Pressurized Alloy Gauntlets
+					i(217880),	-- Plans: Pressurized Alloy Greataxe
+					i(217878),	-- Plans: Pressurized Alloy Greatbelt
+					i(217877),	-- Plans: Pressurized Alloy Helm
+					i(217876),	-- Plans: Pressurized Alloy Legplates
+					i(217886),	-- Plans: Pressurized Alloy Longsword
+					i(217865),	-- Plans: Pressurized Alloy Mace
+					i(217885),	-- Plans: Pressurized Alloy Pauldrons
+					i(217866),	-- Plans: Pressurized Alloy Sabatons
+					i(217875),	-- Plans: Pressurized Alloy Shortblade
+					i(217883),	-- Plans: Pressurized Alloy Spellblade
+					i(217881),	-- Plans: Pressurized Alloy Vambraces
+					i(217864),	-- Plans: Pressurized Alloy Warglaive
+					i(223028),	-- Plans: Seasoned Skillet
+					i(223055),	-- Plans: Seasoned Skillet
+					i(223021),	-- Plans: Siphoning Stiletto
+					i(217951),	-- Plans: Sturdy Expedition Shovel
+					i(223029),	-- Plans: Webbed Fishing Line
+					i(223056),	-- Plans: Webbed Fishing Line
+					i(223030),	-- Plans: Weighted Lure
+					i(223057),	-- Plans: Weighted Lure
+					i(218103),	-- Plans: <Endgame Alloy C>
+					i(217946),	-- Plans: <Epic Smithing Hammer>
+					i(217871),	-- Plans: <Insert Bespoke Cantrip Gear>
+					i(217874),	-- Plans: <Insert Bespoke Cantrip Gear>
+					i(217888),	-- Plans: <Insert Bespoke Cantrip Gear>
+					i(217890),	-- Plans: <Insert Bespoke Cantrip Gear>
+					i(218100),	-- Plans: <Optional Reagnt A>
+					i(218101),	-- Plans: <PVP Alloy>
 				})),
 			}),
 		}),

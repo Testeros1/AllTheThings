@@ -6,7 +6,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		-- #if BEFORE MOP
 		["lore"] = "Recently, a night elf druid named Naralex discovered a network of underground caverns within the heart of the Barrens. Dubbed the 'Wailing Caverns', these natural caves were filled with steam fissures which produced long, mournful wails as they vented. Naralex believed he could use the caverns' underground springs to restore lushness and fertility to the Barrens - but to do so would require siphoning the energies of the fabled Emerald Dream.\n\nOnce connected to the Dream, however, the druid's vision somehow became a nightmare. Soon the Wailing Caverns began to change - the waters turned foul and the once-docile creatures inside metamorphosed into vicious, deadly predators. It is said that Naralex himself still resides somewhere inside the heart of the labyrinth, trapped beyond the edges of the Emerald Dream. Even his former acolytes have been corrupted by their master's waking nightmare - transformed into the wicked Druids of the Fang.",
 		-- #endif
+		-- #if BEFORE WRATH
 		["zone-text-areaID"] = 718,	-- Wailing Caverns
+		-- #endif
 		["mapID"] = WAILING_CAVERNS,
 		["coords"] = {
 			-- #if AFTER CATA
@@ -119,7 +121,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						["races"] = HORDE_ONLY,
 						["lvl"] = 10,
 					}),
-					q(3370,  {	-- In Nightmares [A]
+					q(3370, {	-- In Nightmares [A]
 						["qg"] = 8418,	-- Falla Sagewind
 						["sourceQuest"] = 6981,	-- The Glowing Shard
 						["description"] = "She lives in a house on top of the mountain.",
@@ -139,7 +141,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							}),
 						},
 					}),
-					q(3369,  {	-- In Nightmares [H]
+					q(3369, {	-- In Nightmares [H]
 						["qg"] = 8418,	-- Falla Sagewind
 						["sourceQuest"] = 6981,	-- The Glowing Shard
 						["description"] = "She lives in a house on top of the mountain.",
@@ -426,11 +428,10 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		},
 	}),
 }));
--- #if AFTER 6.0.1
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(240, {
 		q(35303),	-- Wailing Caverns Reward Quest — Normal completion
 		q(35307),	-- Wailing Caverns Bonus Objective
 	}),
-});
--- #endif
+})));

@@ -23,6 +23,7 @@ PIRATES_DAY_HEADER = createHeader({
 		ru = "День пирата",
 		ko = "해적의 날",
 		cn = "海盗日",
+		tw = "海盜節",
 	},
 });
 root(ROOTS.Holidays, applyevent(EVENTS.PIRATES_DAY, n(PIRATES_DAY_HEADER, {
@@ -73,7 +74,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.PIRATES_DAY, n(PIRATES_DAY_HEADER, {
 		-- #endif
 		-- #if AFTER 6.0.2.18816
 		n(VENDORS, {
-			n(28048,  {	-- Dread Captain DeMeza <Scourge of the South Seas>
+			n(28048, {	-- Dread Captain DeMeza <Scourge of the South Seas>
 				["description"] = "When you speak with her, she gives you a Pirate Costume buff that lasts for 12 hours.",
 				["coord"] = { 40.0, 72.6, THE_CAPE_OF_STRANGLETHORN },
 				["groups"] = {
@@ -84,7 +85,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.PIRATES_DAY, n(PIRATES_DAY_HEADER, {
 						["timeline"] = { ADDED_6_0_2 },
 						["filterID"] = CONSUMABLES,	-- Changed from "Toy"
 					}),
-					i(208858, {	-- Highland Drake: Pirates' Day Armor (DM!)
+					i(208858, {	-- Highland Drake: Pirates' Day Armor (MM!)
 						["timeline"] = { ADDED_10_1_7 },
 						["cost"] = 500000000,	-- 50k
 					}),

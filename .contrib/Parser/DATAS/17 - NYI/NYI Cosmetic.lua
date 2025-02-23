@@ -10,25 +10,25 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 	}),
 	expansion(EXPANSION.CATA, {
 		-- 4.0.3
-		expansion(EXPANSION.CATA, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_4_0_3 } }, {
+		expansion(EXPANSION.CATA, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_4_0_3 } }, {
 			i(52488),	-- Jeweler's Sapphire Monocle
 		})),
 	}),
 	expansion(EXPANSION.MOP, {
 		-- 5.0.1
-		expansion(EXPANSION.MOP, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
+		expansion(EXPANSION.MOP, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
 			i(73240),	-- Sedge Hat of the Enlightened
 		})),
 	}),
 	expansion(EXPANSION.WOD, {
 		-- 6.0.1
-		expansion(EXPANSION.WOD, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
+		expansion(EXPANSION.WOD, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
 			i(116399),	-- Emerald Sunglasses
 		})),
 	}),
 	expansion(EXPANSION.LEGION, {
 		-- 7.0.3
-		expansion(EXPANSION.LEGION, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
+		expansion(EXPANSION.LEGION, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
 			i(92894),	-- Art Template Generic Head - Helm_Misc_StarPartyHat_A_01
 			i(81862),	-- Art Template Robe Dress_B_03 - Blue
 			i(133996),	-- Burgy Blackheart's Handsome Hat
@@ -37,7 +37,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 7.2.0
-		expansion(EXPANSION.LEGION, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_7_2_0 } }, {
+		expansion(EXPANSION.LEGION, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_7_2_0 } }, {
 			i(147379),	-- Wooden Toy Axe [H] used to apply the mog
 			i(147378),	-- Wooden Toy Sword [A] (Visual usage for toy weapon set)
 			--
@@ -48,7 +48,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 	}),
 	expansion(EXPANSION.BFA, {
 		-- 8.0.1
-		expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+		expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 			i(162641),	-- Alliance Toy Cape (used from Winter Veil 2018 Toy, but its just used to attach the look to you, you actually never get the item)
 			i(162640),	-- Horde Toy Cape (used from Winter Veil 2018 Toy, but its just used to attach the look to you, you actually never get the item)
 			i(163922),	-- Kobold Candle Helm
@@ -58,18 +58,18 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 8.1.5
-		expansion(EXPANSION.BFA, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_8_1_5 } }, {
+		expansion(EXPANSION.BFA, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_8_1_5 } }, {
 			i(168004),	-- Gift of N'Zoth
 		})),
 	}),
 	expansion(EXPANSION.SL, {
 		-- 9.0.1
-		expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+		expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 			i(182306),	-- Monster Mantle
 		})),
 
 		-- 9.1.0
-		expansion(EXPANSION.SL, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_9_1_0 } }, {
+		expansion(EXPANSION.SL, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_9_1_0 } }, {
 			iensemble(186500),	-- Ensemble: Garb of the Twilight Grove (questID 63596)
 			iensemble(186518),	-- Ensemble: Forsworn Aspirant's Regalia (questID 63600)
 			iensemble(186505),	-- Ensemble: Rogue Necromancer's Vestments (questID 63629)
@@ -80,13 +80,13 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 9.1.5
-		expansion(EXPANSION.SL, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_1_5 } }, {
+		expansion(EXPANSION.SL, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_1_5 } }, {
 			i(187914),	-- Captain Noteo's Unused Eye Patch
 		})),
 	}),
 	expansion(EXPANSION.DF, {
 		-- 10.0.0
-		expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+		expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 			i(194318),	-- Book of Ancient Lore
 			i(193069),	-- Climber's Pack
 			i(198385),	-- Draconian Garden Pick
@@ -162,12 +162,11 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 10.0.5
-		expansion(EXPANSION.DF, 0.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_5 } }, {
+		expansion(EXPANSION.DF, patch(0,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_5 } }, {
 				------ TRADING POST ------
 			n(ARMOR, {
 				i(190672),	-- Deathguard Acolyte's Cloak
 				i(189869),	-- Distinguished Warcloak
-				i(190068),	-- Emerald Drape
 			}),
 			n(SETS, {
 				i(190575),	-- Ensemble: Chains of the Honored Valarjar
@@ -255,7 +254,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				i(190714),	-- Gorian Pulverizer
 				i(190442),	-- Illidari Bladeward
 				i(190713),	-- Imperator's Command
-				i(190132),	-- Krokul Battlescythe
 				i(189883),	-- Lordaeron Sentry's Bulwark
 				i(189886),	-- Might of the Titanforged
 				i(190687),	-- Painted Warblade
@@ -268,7 +266,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 10.1.0
-		expansion(EXPANSION.DF, 1.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
+		expansion(EXPANSION.DF, patch(1,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
 				------ TRADING POST ------
 			n(SETS, {
 				i(190796),	-- Ensemble: Slumbering Caldera Regalia
@@ -280,7 +278,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 10.1.5
-		expansion(EXPANSION.DF, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_5 } }, {
+		expansion(EXPANSION.DF, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_5 } }, {
 			i(206800),	-- Arcane Detection Rod
 			i(206806),	-- Part Dislocator
 				------ TRADING POST ------
@@ -289,16 +287,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 			}),
 			n(SETS, {
 				iensemble(200917),	-- Ensemble: Tidecaller's Chainmail
-
-				------ Vagabond's Cloudy Threads ------
-				iensemble(206328),	-- Ensemble: Vagabond's Cloudy Threads
-				i(206284),	-- Vagabond's Cloudy Cape
-				i(206295),	-- Vagabond's Cloudy Hood
-
-				------ Vagabond's Faded Threads ------
-				iensemble(206324),	-- Ensemble: Vagabond's Faded Threads
-				i(206280),	-- Vagabond's Faded Cape
-				i(206291),	-- Vagabond's Faded Hood
 
 				------ Vagabond's Grassy Threads ------
 				iensemble(206329),	-- Ensemble: Vagabond's Grassy Threads
@@ -309,16 +297,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				iensemble(206323),	-- Ensemble: Vagabond's Plum Threads
 				i(206279),	-- Vagabond's Plum Cape
 				i(206290),	-- Vagabond's Plum Hood
-
-				------ Wanderer's Cloudy Trappings ------
-				iensemble(206339),	-- Ensemble: Wanderer's Cloudy Trappings
-				i(206317),	-- Wanderer's Cloudy Cloak
-				i(206306),	-- Wanderer's Cloudy Scarf
-
-				------ Wanderer's Faded Trappings ------
-				iensemble(206335),	-- Ensemble: Wanderer's Faded Trappings
-				i(206313),	-- Wanderer's Faded Cloak
-				i(206302),	-- Wanderer's Faded Scarf
 
 				------ Wanderer's Grassy Trappings ------
 				iensemble(206340),	-- Ensemble: Wanderer's Grassy Trappings
@@ -335,23 +313,13 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 			}),
 		})),
 
-		-- 10.1.7
-		expansion(EXPANSION.DF, 1.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_7 } }, {
-			i(209053),	-- Green Brewfest Bulwark
-		})),
-
 		-- 10.2.0
-		expansion(EXPANSION.DF, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_0 } }, {
+		expansion(EXPANSION.DF, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_0 } }, {
 				------ Trading Post ------
 			n(ARMOR, {
-				i(211069),	-- Azure Treads of the Kalu'ak
-				i(210867),	-- Blademaster's Lively Stones
-				i(210854),	-- Trader's Camo Sarong
 				i(210856),	-- Trader's Faded Sarong
 				i(210851),	-- Trader's Grassy Sarong
-				i(210848),	-- Trader's Midnight Sarong
 				i(210859),	-- Trader's Plum Sarong
-				i(210862),	-- Trader's Snowy Sarong
 			}),
 			n(WEAPONS, {
 				i(190875),	-- Chilled Touch of the Condemned
@@ -359,7 +327,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 10.2.5
-		expansion(EXPANSION.DF, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
+		expansion(EXPANSION.DF, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
 			i(212338),	-- DNT - Hearthstone - Loot - Hat (Needs Art)
 			i(212532),	-- Reno's Hat
 			i(211926),	-- Riders of Azeroth Tabard
@@ -370,11 +338,8 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				i(190692),	-- Champion's Battle Standard
 				i(190847),	-- Deathmantle Assassin's Barb
 				i(190090),	-- Dessicated Bouquet
-				i(212622),	-- Dueler's Camo Shoulder Cape
-				i(212620),	-- Dueler's Faded Shoulder Cape
 				i(212625),	-- Dueler's Grassy Shoulder Cape
 				i(212618),	-- Dueler's Plum Shoulder Cape
-				i(212615),	-- Dueler's Snowy Shoulder Cape
 				i(190893),	-- Jeweled Valkyrion Cape
 				i(190688),	-- Silvered Helm of Righteousness
 				i(212705),	-- Spring Reveler's Cornsilk Attire
@@ -393,30 +358,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				iensemble(200924),	-- Ensemble: Void-Bound Battlegear
 				iensemble(201000),	-- Ensemble: Void-Bound Chains
 				iensemble(201001),	-- Ensemble: Void-Bound Warplate
-
-				------ Dark Ranger General ------
-				iensemble(213158),	-- Ensemble: Dark Ranger General's Kit
-				i(213150),	-- Dark Ranger General's Boots
-				i(213153),	-- Dark Ranger General's Bracers
-				i(213146),	-- Dark Ranger General's Breastplate
-				i(213151),	-- Dark Ranger General's Chestguard
-				i(213149),	-- Dark Ranger General's Cinch
-				i(213154),	-- Dark Ranger General's Cloak
-				i(213147),	-- Dark Ranger General's Gloves
-				i(213145),	-- Dark Ranger General's Hood
-				i(213152),	-- Dark Ranger General's Leggings
-				i(213155),	-- Dark Ranger General's Quiver
-				i(213148),	-- Dark Ranger General's Spaulders
-
-				------ Sky Witch's Attire ------
-				iensemble(212221),	-- Ensemble: Sky Witch's Attire
-				i(212204),	-- Sky Witch's Blouse
-				i(212205),	-- Sky Witch's Boots
-				i(212206),	-- Sky Witch's Gloves
-				i(212207),	-- Sky Witch's Hat
-				i(212210),	-- Sky Witch's Sash
-				i(212209),	-- Sky Witch's Shoulders
-				i(212208),	-- Sky Witch's Skirt
 			}),
 			n(WEAPONS, {
 				i(190848),	-- [DNT] Do not use
@@ -425,7 +366,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				i(213073),	-- Faded Floral Staff
 				i(190816),	-- Forgehand's "Stable" Fuel Cell
 				i(213107),	-- Gladiator's Ragged Greatsword
-				i(213106),	-- Gladiator's Serrated Greatsword
 				i(213077),	-- Lavender Bow-quet
 				i(190822),	-- Mo'arg Enforcer's Halberd
 				i(213076),	-- Orchid Bow-quet
@@ -439,7 +379,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				i(213072),	-- Ruby Floral Staff
 				i(190891),	-- Shabby Battleaxe
 				i(190903),	-- Soulburner Warscythe
-				i(190818),	-- Steamwheedle Artifact Extractor
 				i(213067),	-- Violet Floral Edge
 				i(190902),	-- Will of the Titanforged
 				i(190889),	-- Woodsman's Hatchet
@@ -447,7 +386,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		})),
 
 		-- 10.2.6
-		expansion(EXPANSION.DF, 2.6, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
+		expansion(EXPANSION.DF, patch(2,6), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
 			i(217635),	-- Dream Raider's Azure Razor
 
 			------ Dragonriding Cup ------
@@ -461,32 +400,26 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 			i(212880),	-- Drake Racer's Azure Shoulderpads
 			i(212881),	-- Drake Racer's Azure Helmet
 
-			------ Gladiator's Battered ------
-			i(217038),	-- Ensemble: Gladiator's Battered Armor
-			i(217037),	-- Gladiator's Battered Belt
-			i(217030),	-- Gladiator's Battered Chest
-			i(217033),	-- Gladiator's Battered Grips
-			i(217034),	-- Gladiator's Battered Headband
-			i(217035),	-- Gladiator's Battered Leggings
-			i(217036),	-- Gladiator's Battered Shoulderpads
-			i(217031),	-- Gladiator's Battered Treads
-
 			------ Single Pieces ------
 			i(217373),	-- Frenzied Hat of the Dark Depths
-			i(217376),	-- Frenzied Hat of the Murky Waters
 			i(217374),	-- Frenzied Hat of the Shallows
 		})),
 
 		-- 10.2.7
-		expansion(EXPANSION.DF, 2.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
+		expansion(EXPANSION.DF, patch(2,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
 			n(SETS, {
 				i(223243),	-- Ensemble: Blue Diver Suit
 				i(221541),	-- Ensemble: Blue Tropical
+				q(82138),	-- Ensemble: Blue Tropical
 				i(223246),	-- Ensemble: Copper Diver Suit
+				q(82270),	-- Ensemble: Copper Diver Suit
 				i(222959),	-- Ensemble: Tropical Sunrise Swimwear
+				q(82231),	-- Ensemble: Tropical Sunrise Swimwear
 				------ Black Tropical Set ------
 				i(221540),	-- Ensemble: Black Tropical
+				q(82137),	-- Ensemble: Black Tropical
 				i(221847),	-- Ensemble: Black Tropical Swimwear
+				q(82198),	-- Ensemble: Black Tropical Swimwear
 				i(221826),	-- Black Tropical Airy Sandals
 				i(221825),	-- Black Tropical Beads
 				i(221524),	-- Black Tropical Floater
@@ -501,6 +434,7 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 
 				------ Green Diver Set ------
 				i(223245),	-- Ensemble: Green Diver Suit
+				q(82269),	-- Ensemble: Green Diver Suit
 				i(223226),	-- Green Diver's Belt
 				i(223223),	-- Green Diver's Bonnet
 				i(223228),	-- Green Diver's Boots
@@ -514,35 +448,103 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				------ Pink Tropical Set ------
 				i(221543),	-- Ensemble: Pink Tropical
 				i(222960),	-- Ensemble: Pink Tropical Swimwear
-				i(221838),	-- Pink Tropical Airy Sandals
-				i(221837),	-- Pink Tropical Beads
-				i(221534),	-- Pink Tropical Floater
-				i(221835),	-- Pink Tropical Halter Top
-				i(221533),	-- Pink Tropical Sandals
-				i(221839),	-- Pink Tropical Sash
-				i(221530),	-- Pink Tropical Shirt
-				i(221836),	-- Pink Tropical Skirt
-				i(221840),	-- Pink Tropical Sunshade
-				i(221531),	-- Pink Tropical Trunks
-				i(221532),	-- Pink Tropical Wristwraps
-
-				------ Purple Snugglefin Murloc Set ------
-				i(223486),	-- Ensemble: Purple Snugglefin Murloc Romper
-				i(221015),	-- Angry Purple Snugglefin Murloc Hood
-				i(221016),	-- Happy Purple Snugglefin Murloc Hood
-				i(221479),	-- Purple Snugglefin Murloc Backpack
-				i(221013),	-- Purple Snugglefin Murloc Mittens
-				i(221011),	-- Purple Snugglefin Murloc Pullover
-				i(221012),	-- Purple Snugglefin Murloc Slippers
-				i(221014),	-- Purple Snugglefin Murloc Sweatpants
-
 			}),
 			n(WEAPONS, {
-
 				------ Single Pieces ------
-				i(220655),	-- Water Blaster P.K.
 				i(220690),	-- Water Blaster P.R.
 				i(220691),	-- Water Blaster Y.L.
+			}),
+		})),
+	}),
+	expansion(EXPANSION.TWW, {
+		-- 11.0.0
+		expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+			n(ARMOR, {
+				i(212170),	-- Bronzebeard's Spare Hat
+				i(224869),	-- Earthen Drape
+				i(224169),	-- Stonebound Tabard
+			}),
+			n(SETS, {
+				i(226000),	-- Ensemble: Earthen Adventurer's Copper Drapery
+				i(218911),	-- [DNT] EarthenCivilian Robe Copper
+				i(218912),	-- [DNT] EarthenCivilian Robe Dark
+				i(218913),	-- [DNT] EarthenCivilian Robe Gold
+				i(218914),	-- [DNT] EarthenCivilian Robe Silver
+				i(218915),	-- [DNT] EarthenCivilian Robe Skardyn
+				i(218916),	-- [DNT] EarthenCivilian Robe White
+				i(219095),	-- [DNT] Ensemble: CivilianAdventurer
+				i(219096),	-- [DNT] Ensemble: CivilianAdventurer
+				i(219097),	-- [DNT] Ensemble: CivilianAdventurer
+				i(219098),	-- [DNT] Ensemble: CivilianAdventurer
+				i(219099),	-- [DNT] Ensemble: CivilianAdventurer
+				i(219090),	-- [DNT] Ensemble: CivilianCraftsperson
+				i(219091),	-- [DNT] Ensemble: CivilianCraftsperson
+				i(219092),	-- [DNT] Ensemble: CivilianCraftsperson
+				i(219093),	-- [DNT] Ensemble: CivilianCraftsperson
+				i(219094),	-- [DNT] Ensemble: CivilianCraftsperson
+				i(219085),	-- [DNT] Ensemble: CivilianLaborer
+				i(219086),	-- [DNT] Ensemble: CivilianLaborer
+				i(219087),	-- [DNT] Ensemble: CivilianLaborer
+				i(219088),	-- [DNT] Ensemble: CivilianLaborer
+				i(219089),	-- [DNT] Ensemble: CivilianLaborer
+				i(219080),	-- [DNT] Ensemble: CivilianMerchant
+				i(219081),	-- [DNT] Ensemble: CivilianMerchant
+				i(219082),	-- [DNT] Ensemble: CivilianMerchant
+				i(219083),	-- [DNT] Ensemble: CivilianMerchant
+				i(219084),	-- [DNT] Ensemble: CivilianMerchant
+				i(219075),	-- [DNT] Ensemble: CivilianNoble
+				i(219076),	-- [DNT] Ensemble: CivilianNoble
+				i(219077),	-- [DNT] Ensemble: CivilianNoble
+				i(219078),	-- [DNT] Ensemble: CivilianNoble
+				i(219079),	-- [DNT] Ensemble: CivilianNoble
+				i(219070),	-- [DNT] Ensemble: CivilianPeasant
+				i(219071),	-- [DNT] Ensemble: CivilianPeasant
+				i(219072),	-- [DNT] Ensemble: CivilianPeasant
+				i(219073),	-- [DNT] Ensemble: CivilianPeasant
+				i(219074),	-- [DNT] Ensemble: CivilianPeasant
+				i(219065),	-- [DNT] Ensemble: CivilianScholar
+				i(219066),	-- [DNT] Ensemble: CivilianScholar
+				i(219067),	-- [DNT] Ensemble: CivilianScholar
+				i(219068),	-- [DNT] Ensemble: CivilianScholar
+				i(219069),	-- [DNT] Ensemble: CivilianScholar
+
+				------ Battered Harvest Golem Set ------
+				i(226483),	-- Ensemble: Battered Harvest Golem
+				i(226452),	-- Battered Harvest Golem's Belt
+				i(226451),	-- Battered Harvest Golem's Boots
+				i(226438),	-- Battered Harvest Golem's Chest
+				i(226450),	-- Battered Harvest Golem's Gloves
+				i(226691),	-- Battered Harvest Golem's Head
+				i(226449),	-- Battered Harvest Golem's Pants
+				i(226448),	-- Battered Harvest Golem's Pauldrons
+				i(226439),	-- Battered Harvest Golem's Post
+
+				------ Grimy Harvest Golem Set ------
+				i(226482),	-- Ensemble: Grimy Harvest Golem
+				i(226470),	-- Grimy Harvest Golem's Belt
+				i(226469),	-- Grimy Harvest Golem's Boots
+				i(226468),	-- Grimy Harvest Golem's Chest
+				i(226467),	-- Grimy Harvest Golem's Gloves
+				i(226689),	-- Grimy Harvest Golem's Head
+				i(226466),	-- Grimy Harvest Golem's Pants
+				i(226465),	-- Grimy Harvest Golem's Pauldrons
+				i(226464),	-- Grimy Harvest Golem's Post
+
+				------ Patched Harvest Golem Set ------
+				i(226471),	-- Ensemble: Patched Harvest Golem
+			}),
+			n(WEAPONS, {
+				i(225495),	-- Brilliant Beacon
+				i(226425),	-- Harvester's Claw
+				i(226426),	-- Harvester's Claw
+				i(217706),	-- Learn Warglaives Test Item (DNT)
+				i(225496),	-- Unhinged Vault-Hatch
+			}),
+		})),
+		-- 11.0.7
+		expansion(EXPANSION.TWW, patch(0,07), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_7 } }, {
+			n(ARMOR, {
+				i(234758),	-- Korkron Spaulders
 			}),
 		})),
 	}),

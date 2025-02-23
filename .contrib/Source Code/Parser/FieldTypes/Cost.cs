@@ -58,13 +58,13 @@ namespace ATT.FieldTypes
             Cost cost;
             if (!data.TryGetValue("cost", out object costobj))
             {
-                if (value is Cost newCost)
-                {
-                    data[Field] = newCost;
-                    return newCost;
-                }
                 cost = new Cost(data);
                 data[Field] = cost;
+                if (value is Cost newCost)
+                {
+                    cost.Merge(newCost);
+                    return cost;
+                }
             }
             else
             {
@@ -292,6 +292,12 @@ namespace ATT.FieldTypes
                         LogDebug($"INFO: Excluding Cost {ToJSON(costObj)} due to Phase {phase} within Max Phase {MAX_PHASE_ID}", _data);
                         continue;
                     }
+
+                    if (Phases != null && !Phases.ContainsKey(phase))
+                    {
+                        LogError($"Undefined Phase '{phase}', please make sure a phase definition exists in the .contrib/lib/Constants/Phases.lua file.");
+                    }
+                    else MarkPhaseAsRequired(phase);
                 }
 
                 // add the cost data into the cost object
@@ -331,7 +337,7 @@ namespace ATT.FieldTypes
 
             if (_costTypes == null)
             {
-                _costTypes = merge._costTypes;
+                _costTypes = new Dictionary<string, IDictionary<decimal, long>>(merge._costTypes);
                 return;
             }
 

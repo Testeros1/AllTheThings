@@ -1,7 +1,10 @@
--- Automatic Header Constants (verify if supported against AllTheThings.lua::HeaderTypeAbbreviations)
+-- Automatic Header Constants (verify if supported against Classes/Header.lua::HeaderTypeAbbreviations)
 HEADERS = {
 	Achievement = "a",
 	Class = "c",
+	Currency = "cu",
+	Faction = "fa",
+	Exploration = "e",
 	Global = "_G",
 	Item = "i",
 	Map = "m",

@@ -8,16 +8,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "The Stonetalon Mountains are craggy and forbidding. The air is usually hot, though violent rainstorms and severe winds cool the slopes and endanger travelers. The mountains are home to many fierce creatures, including hippogryphs, harpies, drakes, wyverns and kobolds. This region is inhospitable and extreme.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_stonetalon_01",
-		-- #endif
+		["icon"] = 236831,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(847, {	-- Explore Stonetalon Mountains
-					-- #if BEFORE WRATH
-					["description"] = "Explore Stonetalon Mountains, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(847),	-- Explore Stonetalon Mountains
 				ach(4936, {	-- Stonetalon Mountains Quests (A)
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
@@ -2074,7 +2068,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["provider"] = { "o", 424005 },	-- Pocket Litter
 					["sourceQuest"] = 79192,	-- Stepping Stones
 					["coord"] = { 40.8, 52.5, STONETALON_MOUNTAINS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 14,
 					["groups"] = {
 						i(216619, {	-- Student Fodder
@@ -2093,7 +2087,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 66.1, 63.7, STONETALON_MOUNTAINS },
 					["description"] = "This quest cannot be completed after level 30, after reaching Exalted with Orgrimmar, or after finishing the Stonetalon Mountains questline.",
 					["timeline"] = { ADDED_4_0_3 },
-					["maxReputation"] = { 76, EXALTED },
+					["maxReputation"] = { FACTION_ORGRIMMAR, EXALTED },	-- Orgrimmar, Exalted
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
 					["groups"] = {
@@ -2612,7 +2606,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["provider"] = { "o", 424012 },	-- Mound of Dirt
 					["sourceQuest"] = 79980,	-- Scramble
 					["coord"] = { 39.6, 49.9, STONETALON_MOUNTAINS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["maps"] = { LOCH_MODAN },
 					["lvl"] = 14,
 					["groups"] = {

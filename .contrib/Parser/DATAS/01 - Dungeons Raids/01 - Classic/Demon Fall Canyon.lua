@@ -3,7 +3,7 @@
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
 root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
-	applyclassicphase(SOD_PHASE_FOUR, inst(2784, bubbleDownSelf({["timeline"] = { "added 1.15.3" }}, {	-- Demon Fall Canyon
+	applyclassicphase(SOD_PHASE_FOUR, inst(2784, bubbleDownSelf({["timeline"] = { ADDED_1_15_3 }}, {	-- Demon Fall Canyon
 		["lore"] = "Demon Fall Canyon is historically the location of the final battle between Grom Hellscream and Mannoroth as featured in Warcraft III.",
 		["provider"] = { "i", 228172 },	-- Shadowtooth Illusion Ward
 		["sourceQuest"] = 84384,	-- Demonic Deceptions
@@ -17,6 +17,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				i(228080),	-- Resin Loop
 				i(228081),	-- Germinating Poisonseed
 				i(228083),	-- Gloaming Treeheart
+				applyclassicphase(SOD_PHASE_SEVEN, i(235787, {	-- Ancient Ironwood Branch (QI!)
+					["timeline"] = { ADDED_1_15_6 },
+				})),
 			}),
 			n(228022, {	-- The Destructor's Wraith
 				i(228075),	-- Spear of Destiny
@@ -33,6 +36,19 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				i(228087),	-- Supercharged Silver Moebius
 				i(228084),	-- Miniaturized Fire Extinguisher
 			}),
+			applyclassicphase(SOD_PHASE_FIVE, n(232632, bubbleDownSelf({["timeline"] = { ADDED_1_15_4 }}, {	-- Azgaloth <Lord of the Pit>
+				i(231913),	-- Eye of the Observer
+				i(231911),	-- Signet of the Legion General
+				i(231910),	-- Heart of Azgaloth
+				i(231912),	-- Blade of the Pit
+				i(231460),	-- Planebreaker of Azgaloth
+				i(4213, {	-- Grimoire of Doom
+					["classes"] = { WARLOCK },
+					["groups"] = {
+						recipe(18540),	-- Ritual of Doom
+					},
+				}),	
+			}))), 
 			n(227140, {	-- Pyranis
 				i(228090),	-- Cenarion Ritual Dagger
 				i(228092),	-- Druidic Mantle

@@ -4,9 +4,9 @@ name: Release
 
 # Controls when the action will run.
 on:
-  # Package alpha version at 06:00 UTC every Thursday
+  # Package alpha version at 06:00 UTC everyday
   schedule:
-    - cron: '0 6 * * THU'
+    - cron: '0 6 * * *'
   # Triggers the workflow on tag events
   push:
     tags: '*'
@@ -15,15 +15,48 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
+  build-windows:
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Database Parser for Retail
+        timeout-minutes: 5
+        run: |
+          cd .contrib/Parser
+          "Parser for Retail".bat
+        shell: cmd
+
+      - name: Database Parser for Classic
+        timeout-minutes: 5
+        run: |
+          cd .contrib/Parser
+          "Parser for Classic".bat
+        shell: cmd
+
+      - uses: actions/upload-artifact@v4
         with:
-          # checkout@v2 doesn't pull tags by default now, which results in super long auto changelog, so pull all history incl. tags
-          # alternative would be to use checkout@v1
-          fetch-depth: 0
+            name: db-output  # Artifact name
+            path: db/  # File path to upload
+            retention-days: 7
+
+  release-linux:
+    runs-on: ubuntu-latest
+    needs: build-windows
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch 200 latest commits and tags
+        run: |
+          git fetch origin --deepen=200
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: db-output  # Name of the artifact to download
+          path: db
 
       # once cloned, we just run the GitHub Action for the packager project
       - name: Package and release

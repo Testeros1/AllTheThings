@@ -10,6 +10,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 			{ 57.7, 30.4, CAVERNS_OF_TIME },	-- dungeon entrance
 			{ 64.7, 49.9, TANARIS },	-- entrance to CoT
 		},
+		["description"] = "Consists of three bosses. The first boss can either be Echo of Baine in the Obsidian Dragonshrine, or Echo of Sylvanas in the Ruby Dragonshrine. The second boss is either Echo of Jaina in the Azure Dragonshrine, or Echo of Tyrande in the Emerald Dragonshrine. Myrozond is always the last boss.",
 		["groups"] = {
 			n(QUESTS, {
 				q(30097, {	-- Archival Purposes
@@ -42,9 +43,12 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 					["races"] = HORDE_ONLY,
 					["DisablePartySync"] = true,
 					["isBreadcrumb"] = true,
+					-- #if NOT ANYCLASSIC
 					-- AlexSoft note: this is could be different for Classic version
 					-- I didn't check Horde version but assumed that it is same
+					-- CRIEVE NOTE: You're right, doesn't seem to have anything to do with Keeper's of Time in Cata Classic.
 					["lockCriteria"] = { 1, "factionID", 989.5 },	-- Keepers of Time, Friendly
+					-- #endif
 				}),
 				q(30095, {	-- The End Time
 					["qg"] = 52408,	-- Coridormi
@@ -52,8 +56,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 					["races"] = ALLIANCE_ONLY,
 					["DisablePartySync"] = true,
 					["isBreadcrumb"] = true,
+					-- #if NOT ANYCLASSIC
 					-- AlexSoft note: this is could be different for Classic version
+					-- CRIEVE NOTE: You're right, doesn't seem to have anything to do with Keeper's of Time in Cata Classic.
 					["lockCriteria"] = { 1, "factionID", 989.5 },	-- Keepers of Time, Friendly
+					-- #endif
 				}),
 				q(30098, {	-- The Well of Eternity
 					["qg"] = 54751,	-- Nozdormu
@@ -175,8 +182,8 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, bubbleDown({ ["timeline"] = ADDE
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(184, {
 		q(35358),	-- End Time Reward Quest - Heroic completion
 	}),
-});
+})));

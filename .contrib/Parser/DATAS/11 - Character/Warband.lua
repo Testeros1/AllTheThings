@@ -3,22 +3,30 @@
 -------------------------------------------
 WARBAND = createHeader({
 	readable = "Warband",
-	icon = "Interface\\Icons\\inv_cape_special_treasure_c_01",
+	icon = 4203076,
 	text = {
-		en = "Warband",
+		en = [[~ACCOUNT_QUEST_LABEL]],
 	},
 });
-root(ROOTS.Character, n(WARBAND, {
-	n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Character, n(WARBAND, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	n(ACHIEVEMENTS, {
 		ach(19470),	-- One Warband Mentor: The War Within
 		ach(19460),	-- Two Warband Mentors: The War Within
 		ach(19475),	-- Three Warband Mentors: The War Within
 		ach(19476),	-- Four Warband Mentors: The War Within
 		ach(19477),	-- Five Warband Mentors: The War Within
-	})),
+		ach(40142, {	-- Learning to Share
+			["timeline"] = { CREATED_11_0_0, ADDED_11_1_0 },
+		}),
+		ach(40145, {	-- So Much Sharing
+			["timeline"] = { CREATED_11_0_0, ADDED_11_1_0 },
+		}),
+	}),
 	n(QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_0 } }, {
 		q(83492, {	-- Warbanding Together
-			-- Auto granted upon login
+			["g"] = {
+				i(228623),	-- Blue's Request (QS!/QI!)
+			},
 		}),
 		q(83493, {	-- Rift Reader
 			["sourceQuest"] = 83492,	-- Warbanding Together
@@ -46,9 +54,8 @@ root(ROOTS.Character, n(WARBAND, {
 			["provider"] = { "n", 226658 },	-- Blue
 			["coord"] = { 48.5, 31.6, TANARIS },
 			["g"] = {
-				--  TODO: Now a spell? not an item
-				-- i(216665),	-- Warband Bank Distance Inhibitor (TOY!)
+				spell(465226),	-- Warband Bank Distance Inhibitor
 			},
 		}),
 	})),
-}));
+})));

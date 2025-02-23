@@ -1,6 +1,12 @@
 ---------------------------------------------
 --    C R A F T A B L E S   M O D U L E    --
 ---------------------------------------------
+local function ClassicCost(cost)
+	-- This data is provided by ReagentsDB in Retail
+	-- #IF ANYCLASSIC
+	return cost
+	-- #ENDIF
+end
 root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
 	i(180055, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past I
 	i(180057, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past II
@@ -161,7 +167,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 	prof(BLACKSMITHING, {
 		n(DISCOVERY, {
 			spell(143255, bubbleDownSelf({ ["timeline"] = { ADDED_5_4_0 } }, {	-- Balanced Trillium Ingot
-				["cost"] = {{ "i", 72095, 1 }},	-- 1x Trillium Bar
+				["cost"] = ClassicCost({{ "i", 72095, 1 }}),	-- 1x Trillium Bar
 				["g"] = {
 					r(142959),	-- Avenger's Trillium Legplates
 					r(142968),	-- Avenger's Trillium Waistplate
@@ -207,7 +213,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 				},
 			})),
 			spell(138646, bubbleDownSelf({ ["timeline"] = { ADDED_5_2_0 } }, {	-- Lightning Steel Ingot
-				["cost"] = {{ "i", 72096, 10 }},	-- 10x Ghost Iron Bar
+				["cost"] = ClassicCost({{ "i", 72096, 10 }}),	-- 10x Ghost Iron Bar
 				["g"] = {
 					r(137792),	-- Crafted Dreadful Gladiator's Armplates of Alacrity
 					r(137791),	-- Crafted Dreadful Gladiator's Armplates of Proficiency
@@ -643,8 +649,6 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 			i(87216),	-- Thermal Anvil
 		}),
 		filter(MOUNTS, {
-			i(87250),	-- Depleted-Kyparium Rocket (MOUNT!)
-			i(87251),	-- Geosynchronous World Spinner (MOUNT!)
 			i(95416, {["timeline"] = {ADDED_5_4_0}}),	-- Sky Golem (MOUNT!)
 		}),
 		i(89991, {  -- Pandaria Fireworks
@@ -785,22 +789,22 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 		filter(HELD_IN_OFF_HAND, {
 			i(79333),	-- Inscribed Fan
 			i(79334, {	-- Inscribed Jade Fan
-				["cost"] = { { "i", 79333, 1 }, },	-- Inscribed Fan
+				["cost"] = ClassicCost({ { "i", 79333, 1 }, }),	-- Inscribed Fan
 			}),
 			i(79335, {	-- Inscribed Red Fan
-				["cost"] = { { "i", 79333, 1 }, },	-- Inscribed Fan
+				["cost"] = ClassicCost({ { "i", 79333, 1 }, }),	-- Inscribed Fan
 			}),
 		}),
 		filter(STAVES, {
 			i(79342),	-- Ghost Iron Staff
 			i(79340, {	-- Inscribed Crane Staff
-				["cost"] = { { "i", 79339, 1 }, },	-- Rain Poppy Staff
+				["cost"] = ClassicCost({ { "i", 79339, 1 }, }),	-- Rain Poppy Staff
 			}),
 			i(79341, {	-- Inscribed Serpent Staff
-				["cost"] = { { "i", 79339, 1 }, },	-- Rain Poppy Staff
+				["cost"] = ClassicCost({ { "i", 79339, 1 }, }),	-- Rain Poppy Staff
 			}),
 			i(79343, {	-- Inscribed Tiger Staff
-				["cost"] = { { "i", 79342, 1 }, },	-- Ghost Iron Staff
+				["cost"] = ClassicCost({ { "i", 79342, 1 }, }),	-- Ghost Iron Staff
 			}),
 			i(79339),	-- Rain Poppy Staff
 		}),
@@ -843,7 +847,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 	prof(LEATHERWORKING, {
 		n(DISCOVERY, {
 			spell(142976, bubbleDownSelf({ ["timeline"] = { ADDED_5_4_0 } }, {	-- Hardened Magnificent Hide
-				["cost"] = {{ "i", 72163, 2 }},	-- 2x Magnificent Hide
+				["cost"] = ClassicCost({{ "i", 72163, 2 }}),	-- 2x Magnificent Hide
 				["g"] = {
 					r(143146),	-- Crafted Malevolent Gladiator's Armbands of Meditation
 					r(143145),	-- Crafted Malevolent Gladiator's Armbands of Prowess
@@ -930,7 +934,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 				},
 			})),
 			spell(140040, bubbleDownSelf({ ["timeline"] = { ADDED_5_2_0 } }, {	-- Magnificence of Leather
-				["cost"] = {{ "i", 72120, 20 }},	-- 20x Mist-Touched Leather
+				["cost"] = ClassicCost({{ "i", 72120, 20 }}),	-- 20x Mist-Touched Leather
 				["g"] = {
 					r(137832),	-- Crafted Dreadful Gladiator's Armwraps of Accuracy
 					r(137845),	-- Crafted Dreadful Gladiator's Armwraps of Alacrity
@@ -982,7 +986,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.MOP, applyclassicphase(MOP_PHASE_ONE,
 				},
 			})),
 			spell(140041, bubbleDownSelf({ ["timeline"] = { ADDED_5_2_0 } }, {	-- Magnificence of Scales
-				["cost"] = {{ "i", 79101, 20 }},	-- 20x Prismatic Scale
+				["cost"] = ClassicCost({{ "i", 79101, 20 }}),	-- 20x Prismatic Scale
 				["g"] = {
 					r(138596),	-- Cloud Serpent Helm
 					r(138595),	-- Cloud Serpent Sabatons

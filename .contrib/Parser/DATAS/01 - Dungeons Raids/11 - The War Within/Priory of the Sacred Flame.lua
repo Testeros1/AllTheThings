@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	inst(1267, {	-- Priory of the Sacred Flame
 		["coord"] = { 41.3, 49.3, HALLOWFALL },
 		["maps"] = {
@@ -49,7 +49,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 						i(221127),	-- Emberbrand Zweihander
 						i(221200),	-- Radiant Necromancer's Band
 						i(221203),	-- Reanimator's Pyreforged Shoulders
-						i(221130),	-- Seraphic Legwraps of the Ordained
+						i(221130),	-- Seraphic Wraps of the Ordained
 						i(221128),	-- Starforged Seraph's Mace
 					},
 				}),
@@ -62,14 +62,14 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 					},
 				}),
 			}),
-			d(DIFFICULTY.DUNGEON.MYTHIC, {
+			d(DIFFICULTY.DUNGEON.MYTHIC, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_2, ADDED_11_1_0 } }, {
 				e(2573, {	-- Prioress Murrpray
 					["crs"] = { 207940 },	-- Prioress Murrpray
 					["g"] = {
 						ach(40596),	-- Mythic: Priory of the Sacred Flame
 					},
 				}),
-			}),
+			})),
 		},
 	})
 })));

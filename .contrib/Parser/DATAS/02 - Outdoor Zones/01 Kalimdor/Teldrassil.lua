@@ -1,6 +1,11 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
+local PRIESTESS_OF_THE_MOON_RACES = ALLIANCE_ONLY;
+-- #if BEFORE 7.2.5
+PRIESTESS_OF_THE_MOON_RACES = { NIGHTELF };
+-- #endif
+
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(TELDRASSIL, {
 		-- #if AFTER CATA
@@ -8,9 +13,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		-- #else
 		["lore"] = "In the past few years, the night elves have moved their capital to an island off northwest Kalimdor. Here, the Circle of the Ancients and the wise druids pooled their power to create a great tree akin to the World Tree, but on a smaller scale.\n\nThey called this tree Teldrassil, meaning “Crown of the Earth,” and built their city of Darnassus atop it. The island takes the name of the tree as well, and a twilite forest now covers it.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_darnassus",
-		-- #endif
+		["icon"] = 236740,
 		["maps"] = {
 			59,	-- Fel Rock
 			60,	-- Ban'ethil Barrow Den
@@ -19,11 +22,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		["groups"] = {
 			m(SHADOWGLEN, {
 				["lore"] = "Shadowglen is the starting area for night elves in the northeast part of Teldrassil, just north of Starbreeze Village. A small twilight field, bathed in a quiet dusk, the area is dominated by the great tree Aldrassil, which lies at the clearing's center. It has class trainers for all night elf classes. Another notable location is Shadowthread Cave, which lies in the region's extreme northwest. The area is ringed by mountains; the only gap is to the south, where the path headed to Dolanaar parts the mountain range.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Nightelf_Female",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Nightelf_Female")]],
-				-- #endif
+				["icon"] = 236449,
 				-- #if BEFORE 6.0.0
 				-- CRIEVE NOTE: I actually have no idea when they added the proper mapID for this subzone.
 				["zone-text-areas"] = {
@@ -46,7 +45,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28734, {	-- A Favor for Melithar
 							["qg"] = 2079,	-- Ilthalaine
 							["sourceQuest"] = 28714,	-- Fel Moss Corruption
-							["coord"] = { 46.3, 73.5, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.6, 74.5, SHADOWGLEN },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
 							["isBreadcrumb"] = true,
@@ -145,10 +150,29 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								28734,	-- A Favor for Melithar
 								28713,	-- The Balance of Nature
 							},
-							["coord"] = { 45.9, 72.8, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 73, SHADOWGLEN },
+								-- #else
+								{ 58, 38.8, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
 							["groups"] = {
+								objective(1, {	-- 0/5 Melithar's Stolen Bags
+									["providers"] = {
+										{ "i",  46700 },	-- Melithar's Stolen Bags
+										{ "o", 195074 },	-- Melithar's Stolen Bags
+									},
+									["coords"] = {
+										-- #if AFTER 5.0.4
+										{ 33.3, 77.4, SHADOWGLEN },
+										-- #else
+										{ 54.4, 39.5, TELDRASSIL },
+										-- #endif
+									},
+								}),
 								i(46753, {	-- Melithar's Supply Bag
 									["timeline"] = { ADDED_4_0_3 },
 								}),
@@ -159,11 +183,15 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								{ "n", 6780 },	-- Porthannius
 								{ "i", 7627 },	-- Dolanaar Delivery
 							},
-							-- #if AFTER CATA
-							["coord"] = { 54.5, 84.7, SHADOWGLEN },
-							-- #else
-							["coord"] = { 61.2, 47.6, TELDRASSIL },
-							-- #endif
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 54.5, 84.7, SHADOWGLEN },
+								-- #elseif AFTER CATA
+								{ 60.2, 41.6, TELDRASSIL },
+								-- #else
+								{ 61.2, 47.6, TELDRASSIL },
+								-- #endif
+							},
 							["races"] = ALLIANCE_ONLY,
 						}),
 						q(3118, {	-- Encrypted Sigil
@@ -175,13 +203,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								-- #endif
 								{ "i", 9551 },	-- Encrypted Sigil
 							},
-							-- #if AFTER CATA
-							["sourceQuest"] = 28714,	-- Fel Moss Corruption
-							["coord"] = { 45.8, 73.0, SHADOWGLEN },
-							-- #else
-							["sourceQuest"] = 457,	-- The Balance of Nature (2/2)
-							["coord"] = { 58.6, 44.2, TELDRASSIL },
-							-- #endif
+							["sourceQuests"] = {
+								-- #if AFTER CATA
+								28714,	-- Fel Moss Corruption
+								-- #else
+								457,	-- The Balance of Nature (2/2)
+								-- #endif
+							},
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 73, SHADOWGLEN },
+								-- #elseif AFTER CATA
+								{ 58, 38.8, TELDRASSIL },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { REMOVED_7_0_3 },
 							["races"] = { NIGHTELF },
 							["classes"] = { ROGUE },
@@ -195,13 +232,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								-- #endif
 								{ "i", 9567 },	-- Etched Sigil
 							},
-							-- #if AFTER CATA
-							["sourceQuest"] = 28714,	-- Fel Moss Corruption
-							["coord"] = { 45.8, 73.0, SHADOWGLEN },
-							-- #else
-							["sourceQuest"] = 457,	-- The Balance of Nature (2/2)
-							["coord"] = { 58.6, 44.2, TELDRASSIL },
-							-- #endif
+							["sourceQuests"] = {
+								-- #if AFTER CATA
+								28714,	-- Fel Moss Corruption
+								-- #else
+								457,	-- The Balance of Nature (2/2)
+								-- #endif
+							},
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 73, SHADOWGLEN },
+								-- #elseif AFTER CATA
+								{ 58, 38.8, TELDRASSIL },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { REMOVED_7_0_3 },
 							["races"] = { NIGHTELF },
 							["classes"] = { HUNTER },
@@ -209,10 +255,23 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28714, {	-- Fel Moss Corruption
 							["qg"] = 2079,	-- Ilthalaine
 							["sourceQuest"] = 28713,	-- The Balance of Nature
-							["coord"] = { 45.6, 74.5, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.6, 74.5, SHADOWGLEN },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
 							["groups"] = {
+								objective(1, {	-- 0/8 Fel Moss
+									["provider"] = { "i", 3297 },	-- Fel Moss
+									["crs"] = {
+										1988,	-- Grell
+										1989,	-- Grellkin
+									},
+								}),
 								i(5398),	-- Canopy Leggings
 								i(5399),	-- Tracking Boots
 								i(11190),	-- Viny Gloves
@@ -230,13 +289,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								-- #endif
 								{ "i", 9557 },	-- Hallowed Sigil
 							},
-							-- #if AFTER CATA
-							["sourceQuest"] = 28714,	-- Fel Moss Corruption
-							["coord"] = { 45.8, 73.0, SHADOWGLEN },
-							-- #else
-							["sourceQuest"] = 457,	-- The Balance of Nature (2/2)
-							["coord"] = { 58.6, 44.2, TELDRASSIL },
-							-- #endif
+							["sourceQuests"] = {
+								-- #if AFTER CATA
+								28714,	-- Fel Moss Corruption
+								-- #else
+								457,	-- The Balance of Nature (2/2)
+								-- #endif
+							},
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 73, SHADOWGLEN },
+								-- #elseif AFTER CATA
+								{ 58, 38.8, TELDRASSIL },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { REMOVED_7_0_3 },
 							["races"] = { NIGHTELF },
 							["classes"] = { PRIEST },
@@ -253,10 +321,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28724, {	-- Iverron's Antidote
 							["qg"] = 49479,	-- Dentaria Silverglade
 							["sourceQuest"] = 28723,	-- Priestess of the Moon
-							["coord"] = { 46.2, 73.5, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 46.2, 73.5, SHADOWGLEN },
+								-- #else
+								{ 57.2, 33.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 							["groups"] = {
+								objective(1, {	-- 0/4 Moonpetal Lily
+									["providers"] = {
+										{ "i", 10641 },	-- Moonpetal Lily
+										{ "o", 152095 },	-- Moonpetal Lily
+									},
+								}),
 								i(10655),	-- Sedgeweed Britches
 								i(10656),	-- Barkmail Vest
 							},
@@ -308,7 +388,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 						q(26949, {	-- Learning the Word
 							["qg"] = 3595,	-- Shanda
-							["coord"] = { 47.6, 59.6, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 47.6, 59.6, SHADOWGLEN },
+								-- #else
+								{ 59.2, 40.4, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3, REMOVED_7_0_3 },
 							["races"] = { NIGHTELF },
 							["classes"] = { PRIEST },
@@ -333,11 +419,20 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						})),
 						-- #endif
 						q(28730, {	-- Precious Waters
-							["qg"] = 49479,	-- Dentaria Silverglade
-							["sourceQuest"] = 28729,	-- Teldrassil: Crown onf Azeroth
-							["coord"] = { 42.5, 50.4, SHADOWGLEN },
+							["providers"] = {
+								{ "n", 49479 },	-- Dentaria Silverglade
+								{ "i", 5184 },	-- Filled Crystal Phial
+							},
+							["sourceQuest"] = 28729,	-- Teldrassil: Crown of Azeroth
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 42.5, 50.4, SHADOWGLEN },
+								-- #else
+								{ 57.2, 33.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 							["groups"] = {
 								i(5395),	-- Woodland Shield
 								i(4907),	-- Woodland Tunic
@@ -353,9 +448,15 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								28714,	-- Fel Moss Corruption
 								28715,	-- Demonic Thieves
 							},
-							["coord"] = { 46.2, 73.5, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.6, 74.5, SHADOWGLEN },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 						}),
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, q(77571, {	-- Relics of the Kaldorei
@@ -374,6 +475,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								i(2127),	-- Cracked Leather Vest
 							},
 						})),
+						-- #endif
 						-- #if NOT ANYCLASSIC
 						q(5629, {	-- Returning Home [Teldrassil]
 							["qg"] = 3600,	-- Laurna Morninglight <Priest Trainer>
@@ -400,6 +502,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							-- #endif
 						}),
 						-- #endif
+						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_ONE, q(77573, {	-- Second-Story Work
 							["qg"] = 3594,	-- Frahun Shadewhisper <Rogue Trainer>
 							["coord"] = { 59.6, 38.6, TELDRASSIL },
@@ -423,9 +526,16 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28728, {	-- Signs of Things to Come
 							["qg"] = 49480,	-- Tarindrella
 							["sourceQuest"] = 28727,	-- Vile Touch
-							["coord"] = { 44.8, 29.0, SHADOWGLEN },
+							["coords"] = {
+								{ 44.8, 29.0, SHADOWGLEN },
+								-- #if AFTER 5.0.4
+								{ 45.6, 74.5, SHADOWGLEN },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 						}),
 						q(3116, {	-- Simple Sigil
 							["providers"] = {
@@ -436,13 +546,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								-- #endif
 								{ "i", 9545 },	-- Simple Sigil
 							},
-							-- #if AFTER CATA
-							["sourceQuest"] = 28714,	-- Fel Moss Corruption
-							["coord"] = { 45.8, 73.0, SHADOWGLEN },
-							-- #else
-							["sourceQuest"] = 457,	-- The Balance of Nature (2/2)
-							["coord"] = { 58.6, 44.2, TELDRASSIL },
-							-- #endif
+							["sourceQuests"] = {
+								-- #if AFTER CATA
+								28714,	-- Fel Moss Corruption
+								-- #else
+								457,	-- The Balance of Nature (2/2)
+								-- #endif
+							},
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 73, SHADOWGLEN },
+								-- #elseif AFTER CATA
+								{ 58, 38.8, TELDRASSIL },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { REMOVED_7_0_3 },
 							["races"] = { NIGHTELF, WORGEN },
 							["classes"] = { WARRIOR },
@@ -450,20 +569,47 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28729, {	-- Teldrassil: Crown of Azeroth
 							["qg"] = 49479,	-- Dentaria Silverglade
 							["sourceQuest"] = 28728,	-- Signs of Things to Come
-							["coord"] = { 42.5, 50.4, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 42.5, 50.4, SHADOWGLEN },
+								-- #else
+								{ 57.2, 33.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
+							["groups"] = {
+								objective(1, {	-- 0/1 Filled Crystal Phial
+									["providers"] = {
+										{ "i", 5184 },	-- Filled Crystal Phial
+										{ "i", 5185 },	-- Crystal Phial
+									},
+									["coords"] = {
+										-- #if AFTER 5.0.4
+										{ 50, 28, SHADOWGLEN },
+										-- #else
+										{ 59, 28, TELDRASSIL },
+										-- #endif
+									},
+								}),
+							},
 						}),
 						q(28731, {	-- Teldrassil: Passing Awareness
-							["qg"] = 3514,	-- Tenaron Stormgrip
+							["providers"] = {
+								{ "n", 3514 },	-- Tenaron Stormgrip
+								{ "i", 5186 },	-- Partially Filled Vessel
+							},
 							["sourceQuest"] = 28730,	-- Precious Waters
 							["coords"] = {
-								{ 47.1, 55.9, SHADOWGLEN },
-								{ 41.4, 45.8, TELDRASSIL },
+								-- #if AFTER 5.0.4
+								{ 47.4, 55.6, SHADOWGLEN },
+								-- #else
+								{ 58.4, 34.4, TELDRASSIL },
+								-- #endif
 							},
 							["description"] = "The quest completion marker is placed wrong, go to the crossroad just outside of Darnassus.",
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 						}),
 						q(920, {	-- Tenaron's Summons
 							["qg"] = 2082,	-- Gilshalan Windwalker
@@ -481,10 +627,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						}),
 						q(28713, {	-- The Balance of Nature
 							["qg"] = 2079,	-- Ilthalaine
-							["coord"] = { 45.6, 74.5, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.6, 74.5, SHADOWGLEN },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
 							["groups"] = {
+								objective(1, {	-- 0/7 Young Nightsaber
+									["provider"] = { "n", 2031 },	-- Young Nightsaber
+								}),
 								i(5394),	-- Archery Training Gloves
 								i(131815, {	-- Glen Culler's Grips
 									["timeline"] = { ADDED_7_0_3 },
@@ -528,9 +683,15 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28725, {	-- The Woodland Protector
 							["qg"] = 49479,	-- Dentaria Silverglade
 							["sourceQuest"] = 28724,	-- Iverron's Antidote
-							["coord"] = { 42.4, 50.4, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 42.4, 50.4, SHADOWGLEN },
+								-- #else
+								{ 57.2, 33.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 						}),
 						q(458, {	-- The Woodland Protector (1/2)
 							["qg"] = 2077,	-- Melithar Staghelm
@@ -566,13 +727,22 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								-- #endif
 								{ "i", 9580 },	-- Verdant Sigil
 							},
-							-- #if AFTER CATA
-							["sourceQuest"] = 28714,	-- Fel Moss Corruption
-							["coord"] = { 45.8, 73.0, SHADOWGLEN },
-							-- #else
-							["sourceQuest"] = 457,	-- The Balance of Nature (2/2)
-							["coord"] = { 58.6, 44.2, TELDRASSIL },
-							-- #endif
+							["sourceQuests"] = {
+								-- #if AFTER CATA
+								28714,	-- Fel Moss Corruption
+								-- #else
+								457,	-- The Balance of Nature (2/2)
+								-- #endif
+							},
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 73, SHADOWGLEN },
+								-- #elseif AFTER CATA
+								{ 58, 38.8, TELDRASSIL },
+								-- #else
+								{ 58.6, 44.2, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { REMOVED_7_0_3 },
 							["races"] = { NIGHTELF },
 							["classes"] = { DRUID },
@@ -580,10 +750,26 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28727, {	-- Vile Touch
 							["qg"] = 49480,	-- Tarindrella
 							["sourceQuest"] = 28726,	-- Webwood Corruption
-							["coord"] = { 45.8, 91.0, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 91.0, SHADOWGLEN },
+								-- #else
+								{ 57.6, 29.0, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 							["groups"] = {
+								objective(1, {	-- 0/12 Webwood Spider slain
+									["provider"] = { "n", 1994 },	-- Githyiss the Vile
+									["coords"] = {
+										-- #if AFTER 5.0.4
+										{ 45.8, 91.0, SHADOWGLEN },
+										-- #else
+										{ 56.8, 26.6, TELDRASSIL },
+										-- #endif
+									},
+								}),
 								i(5405),	-- Draped Cloak
 								i(6058),	-- Blackened Leather Belt
 								i(131704, {	-- Web Covered Mail Belt
@@ -594,10 +780,26 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						q(28726, {	-- Webwood Corruption
 							["qg"] = 49480,	-- Tarindrella
 							["sourceQuest"] = 28725,	-- The Woodland Protector
-							["coord"] = { 45.8, 91.0, SHADOWGLEN },
+							["coords"] = {
+								-- #if AFTER 5.0.4
+								{ 45.8, 91.0, SHADOWGLEN },
+								-- #else
+								{ 57.6, 29.0, TELDRASSIL },
+								-- #endif
+							},
 							["timeline"] = { ADDED_4_0_3 },
-							["races"] = ALLIANCE_ONLY,
+							["races"] = PRIESTESS_OF_THE_MOON_RACES,
 							["groups"] = {
+								objective(1, {	-- 0/12 Webwood Spider slain
+									["provider"] = { "n", 1986 },	-- Webwood Spider
+									["coords"] = {
+										-- #if AFTER 5.0.4
+										{ 45.8, 91.0, SHADOWGLEN },
+										-- #else
+										{ 57.6, 29.0, TELDRASSIL },
+										-- #endif
+									},
+								}),
 								i(10544),	-- Thistlewood Maul
 								i(5392),	-- Thistlewood Dagger
 								i(5393),	-- Thistlewood Staff
@@ -647,11 +849,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				},
 			}),
 			n(ACHIEVEMENTS, {
-				explorationAch(842, {	-- Explore Teldrassil
-					-- #if BEFORE WRATH
-					["description"] = "Explore Teldrassil, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(842),	-- Explore Teldrassil
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -1369,7 +1567,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 28731,	-- Teldrassil: Passing Awareness
 					["coord"] = { 41.4, 45.8, TELDRASSIL },
 					["description"] = "The quest completion marker is placed wrong, go to the crossroad just outside of Darnassus.",
-					["races"] = ALLIANCE_ONLY,
+					["races"] = PRIESTESS_OF_THE_MOON_RACES,
 				}),
 				-- #endif
 				q(2241, {	-- The Apple Falls

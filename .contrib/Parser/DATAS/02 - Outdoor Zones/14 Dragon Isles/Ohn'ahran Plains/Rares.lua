@@ -164,7 +164,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				-- #else
 				["description"] = "Requires Duck Trap Kit, purchased from a nearby camp (northern waypoint).\n\nYou'll need a rank 1 of these reagents:\n\n1 x Large Sturdy Femur\n\n3 x Contoured Fowlfeather\n\n2 x Tallstrider Sinew\n\nUse the item to trap a duck and then go to southern waypoint & put the trapped duck into the nest.",
 				-- #endif
-					["coords"] = {
+				["coords"] = {
 					{ 68.2, 79.2, OHNAHRAN_PLAINS },
 					{ 70.43, 63.49, OHNAHRAN_PLAINS },
 				},
@@ -216,9 +216,9 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["coord"] = { 29.9, 41.1, OHNAHRAN_PLAINS },
 				["questID"] = 74075,
 				["g"] = {
-					i(196996),	-- Cliffside Wylderdrake: Branched Horns (DM!)
+					i(196996),	-- Cliffside Wylderdrake: Branched Horns (MM!)
 					i(200437),	-- Dreamsong Censer
-					i(197115),	-- Highland Drake: Thorned Jaw (DM!)
+					i(197115),	-- Highland Drake: Thorned Jaw (MM!)
 					i(200444),	-- Mantle of the Gatekeeper
 				},
 			}),
@@ -242,7 +242,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["g"] = {
 					bo(74465, true),
 					i(203676),	-- Stormcaller's Grounding Shoes
-					i(197367),	-- Renewed Proto-Drake: Gray Hair (DM!)
+					i(197367),	-- Renewed Proto-Drake: Gray Hair (MM!)
 				},
 			})),
 			n(191842, {	-- Sulfurion

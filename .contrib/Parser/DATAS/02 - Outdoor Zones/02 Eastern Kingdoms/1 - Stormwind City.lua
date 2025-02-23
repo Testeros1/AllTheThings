@@ -1,12 +1,6 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local COOKING_AWARD;
--- #if AFTER 5.0.4
-COOKING_AWARD = currency(81);	-- Epicurean's Award
--- #else
-COOKING_AWARD = currency(402);	-- Ironpaw Token // Pre 5.0.4 named Chef's Award
--- #endif
 local JEWELCRAFTING_AWARD_GROUPS = {
 	currency(361),	-- Illustrious Jewelcrafter's Token
 };
@@ -27,9 +21,7 @@ local PVP_MOUNT_COST = {
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(STORMWIND_CITY, {
 		["lore"] = "Stormwind City is the capital city of the Alliance. It is located in the northwestern part of Elwynn Forest.\n\nDuring the First War, the Kingdom of Azeroth, including its capital, Stormwind Keep, was utterly destroyed by the Horde and its survivors fled to Lordaeron. After the orcs were defeated at the Dark Portal at the end of the Second War, it was decided that the city would be rebuilt. The nobles of Stormwind assembled a team of the most skilled and ingenious stonemasons and architects they could find--which later turned sour and led to the rise of the Defias.\n\nWith the fall of the northern kingdoms, Stormwind is by far the most populated city in the world. It serves in many ways as the cultural and trade center of the Alliance, even with remote access to the sea. It is home to the Academy of Arcane Sciences, the only wizarding school in Eastern Kingdoms, as well as SI:7, a rogue intelligence organization.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\inv_misc_tournaments_banner_human",
-		-- #endif
+		["icon"] = 255130,
 		["isRaid"] = true,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
@@ -37,13 +29,45 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = FISHING,
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {{ "achievement_criteria" }},
+					["groups"] = {
+						crit(15812, {	-- Hitting a Walleye
+							["_quests"] = { 26414 },
+						}),
+						crit(15813, {	-- Diggin' for Worms
+							["_quests"] = { 26420 },
+						}),
+						crit(15814, {	-- Rock Lobster
+							["_quests"] = { 26442 },
+						}),
+						crit(15815, {	-- Big Gulp
+							["_quests"] = { 26488 },
+						}),
+						crit(15816, {	-- Thunder Falls
+							["_quests"] = { 26536 },
+						}),
+					},
 				})),
 				applyclassicphase(CATA_PHASE_ONE, ach(5474, {	-- Let's Do Lunch: Stormwind
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {{ "achievement_criteria" }},
+					["groups"] = {
+						crit(15802, {	-- A Fisherman's Feast
+							["_quests"] = { 26190 },
+						}),
+						crit(15803, {	-- Feeling Crabby?
+							["_quests"] = { 26177 },
+						}),
+						crit(15804, {	-- Orphans Like Cookies Too!
+							["_quests"] = { 26192 },
+						}),
+						crit(15805, {	-- Penny's Pumpkin Pancakes
+							["_quests"] = { 26153 },
+						}),
+						crit(15806, {	-- The King's Cider
+							["_quests"] = { 26183 },
+						}),
+					},
 				})),
 			}),
 			battlepets({
@@ -53,17 +77,22 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					675,	-- Stormwind Rat (PET!)
 				}},
 			}),
+			explorationHeader({
+				visit_exploration(5390,{coord={50.2,72.7,STORMWIND_CITY}}),	-- The Canals
+				visit_exploration(5148,{coord={61.4,74.8,STORMWIND_CITY}}),	-- Trade District
+			}),
 			n(FACTIONS, {
-				faction(72, {	-- Stormwind
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Human_Female",
+				faction(FACTION_STORMWIND, {	-- Stormwind
+					-- #if AFTER CATA
+					["provider"] = { "i", 45574 },	-- Stormwind Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Human_Female")]],
+					["icon"] = 236447,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = ALLIANCE_ONLY,
 				}),
-				faction(1353, {	-- Tushui Pandaren
+				faction(FACTION_TUSHUI_PANDAREN, {	-- Tushui Pandaren
+					["provider"] = { "i", 83079 },	-- Tushui Tabard
 					["timeline"] = { ADDED_5_0_4 },
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -99,6 +128,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = HEROS_CALL_BOARD_SYMLINK,
 				["races"] = ALLIANCE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 			n(PROFESSIONS, {
@@ -442,7 +472,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26190, {	-- A Fisherman's Feast
 					["qg"] = 42288,	-- Robby Flay
-					["coord"] = { 50.6, 71.6, STORMWIND_CITY },
+					["coords"] = {
+						-- #if AFTER 9.2.5
+						{ 50.7, 73.8, STORMWIND_CITY },
+						-- #else
+						{ 50.6, 71.9, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
@@ -678,7 +714,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #endif
 					},
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
-					["maxReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+					["maxReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -964,7 +1000,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					49748,	-- Hero's Herald
 					-- #endif
 				},
-				["coord"] = { 27.6, 21.2, STORMWIND_CITY },
+				["coords"] = {
+					{ 27.6, 21.2, STORMWIND_CITY },
+					{ 62.3, 30.3, STORMWIND_CITY },
+				},
 				["timeline"] = { ADDED_8_0_1 },
 				["races"] = ALLIANCE_ONLY,
 			}),
@@ -1190,6 +1229,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["collectible"] = false,
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
+						i(155832),	-- Pristine Crystal Shard (QI!)
 						i(122661, {	-- S.E.L.F.I.E. Lens Upgrade Kit
 							["timeline"] = { ADDED_6_1_0 },
 							["groups"] = {
@@ -1333,6 +1373,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["groups"] = {
+						objective(1, {	-- 0/1 Crystal Bass
+							["providers"] = {
+								{ "i",  58787 },	-- Crystal Bass
+								{ "i",  58788 },	-- Overgrown Earthworm
+								{ "o", 204281 },	-- Worm Mound
+							},
+							["coord"] = { 57.7, 14.1, STORMWIND_CITY },
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
 				}),
@@ -1350,6 +1398,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #endif
 					},
 					["timeline"] = { REMOVED_4_0_3 },
+					-- #if AFTER 4.0.3
+					["description"] = "This quest gets marked as completed when you complete the quest 'Dungar Longdrink' (26395).",
+					-- #endif
 					["races"] = { HUMAN },
 					["lvl"] = 10,
 				}),
@@ -1494,7 +1545,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26177, {	-- Feeling Crabby?
 					["qg"] = 42288,	-- Robby Flay
-					["coord"] = { 50.6, 71.6, STORMWIND_CITY },
+					["coords"] = {
+						-- #if AFTER 9.2.5
+						{ 50.7, 73.8, STORMWIND_CITY },
+						-- #else
+						{ 50.6, 71.9, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
@@ -2439,7 +2496,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26192, {	-- Orphans Like Cookies Too!
 					["qg"] = 42288,	-- Robby Flay
-					["coord"] = { 50.6, 71.6, STORMWIND_CITY },
+					["coords"] = {
+						-- #if AFTER 9.2.5
+						{ 50.7, 73.8, STORMWIND_CITY },
+						-- #else
+						{ 50.6, 71.9, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
@@ -2483,7 +2546,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26153, {	-- Penny's Pumpkin Pancakes
 					["qg"] = 42288,	-- Robby Flay
-					["coord"] = { 50.6, 71.6, STORMWIND_CITY },
+					["coords"] = {
+						-- #if AFTER 9.2.5
+						{ 50.7, 73.8, STORMWIND_CITY },
+						-- #else
+						{ 50.6, 71.9, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
@@ -2594,6 +2663,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #endif
 					},
 					["timeline"] = { REMOVED_4_0_3 },
+					-- #if AFTER 4.0.3
+					["description"] = "This quest gets marked as completed when you complete the quest 'Return to Argus' (26396) in Elwynn Forest.",
+					-- #endif
 					["maps"] = { WESTFALL },
 					["races"] = { HUMAN },
 					["lvl"] = 10,
@@ -2658,6 +2730,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["groups"] = {
+						objective(1, {	-- 0/6 Rock Lobster
+							["providers"] = {
+								{ "i",  58809 },	-- Rock Lobster
+								{ "o", 204284 },	-- Stormwind Lobster Trap
+							},
+							["coord"] = { 21.5, 36.6, STORMWIND_CITY },
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
 				}),
@@ -2784,7 +2863,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(SOD_PHASE_ONE, n(createHeader({	-- Speak to Brother Romulus
 					readable = "Speak to Brother Romulus",
-					icon = "Interface\\CURSOR\\Speak",
+					icon = 131038,
 					text = {
 						en = "Speak to Brother Romulus",
 						es = "Habla con el Hermano Romulus",
@@ -3107,6 +3186,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 19.8, 34.9, STORMWIND_CITY },
 					["timeline"] = { ADDED_7_0_3 },
 					["races"] = ALLIANCE_ONLY,
+					["g"] = {
+						i(132251),	-- Letter to Anduin (QI!)
+					},
 				}),
 				q(6182, {	-- The First and the Last
 					-- #if AFTER WRATH
@@ -3136,7 +3218,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26183, {	-- The King's Cider
 					["qg"] = 42288,	-- Robby Flay
-					["coord"] = { 50.6, 71.6, STORMWIND_CITY },
+					["coords"] = {
+						-- #if AFTER 9.2.5
+						{ 50.7, 73.8, STORMWIND_CITY },
+						-- #else
+						{ 50.6, 71.9, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
@@ -3322,14 +3410,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				applyclassicphase(SOD_PHASE_FOUR, q(84418, {	-- The Missing Knight
 					["qg"] = 5492,	-- Katherine the Pure <Paladin Trainer>
 					["coord"] = { 37.4, 32, STORMWIND_CITY },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = 48,
 					["groups"] = {
 						i(228238, {	-- Testament of Divine Steed
 							["spellID"] = 461607,	-- Divine Steed
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 							["f"] = RECIPES,
 						}),
 					},
@@ -3343,7 +3431,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(27072, {	-- The Old Barracks
-					["qg"] = 50049,	-- Jack Bauden <SI:7 Agent>
+					["qg"] = 332,	-- Master Mathias Shaw <Leader of SI:7>
 					["sourceQuest"] = 28807,	-- Expert Opinion
 					["coord"] = { 81.2, 63.2, STORMWIND_CITY },
 					["timeline"] = { ADDED_4_0_3, REMOVED_7_0_3 },
@@ -3360,7 +3448,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.1",
+						REMOVED_1_15_1,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -3383,7 +3471,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				applyclassicphase(SOD_PHASE_TWO, q(80241, {	-- The Origins of Smithing
 					["qg"] = 7798,	-- Hank the Hammer
 					["coord"] = { 56.0, 16.0, STORMWIND_CITY },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["requireSkill"] = BLACKSMITHING,
 					["learnedAt"] = 210,
 					["cost"] = { { "i", 6040, 6 } },	-- Golden Scale Bracers
@@ -3391,7 +3479,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["lvl"] = 40,
 					["groups"] = {
 						i(217274, {	-- Plans: Golden Scale Gauntlets (RECIPE!)
-							["timeline"] = { "added 1.15.1" },
+							["timeline"] = { ADDED_1_15_1 },
 							["description"] = "This item can be sold on the Neutral Auction House to Horde Blacksmiths for a... nominal fee.\n\nOnly naturally accessible to Alliance Blacksmiths.",
 						}),
 					},
@@ -4269,7 +4357,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(92071, {	-- Tushui Satchel
-							["minReputation"] = { 1353, REVERED },	-- Tushui Pandaren, Revered.
+							["minReputation"] = { FACTION_TUSHUI_PANDAREN, REVERED },	-- Tushui Pandaren, Revered.
 							["timeline"] = { ADDED_5_1_0 },
 						}),
 						i(83079, {	-- Tushui Tabard
@@ -4432,7 +4520,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["description"] = "Appears in Stormwind after War of Thorns.",
 					["coord"] = { 52.4, 8.2, STORMWIND_CITY },
 					-- Available to Worgen without faction requirements.
-					["minReputation"] = { 1134, EXALTED },	-- Gilneas, Exalted.
+					["minReputation"] = { FACTION_GILNEAS, EXALTED },	-- Gilneas, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. WORGEN .. [[ then
 							t.minReputation = nil;
@@ -4545,29 +4633,53 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{"exclude", "headerID", NECK, FINGER, TRINKET },	-- Exclude Neck, Finger and Trinkets
 					},
 				}),
-				-- 54661: Captain Dirgehammer <Cataclysmic Gladiator> (Cataclysmic?)
-				-- 52546: Captain Dirgehammer <Conquest Quartermaster> (Ruthless?)
-				-- 51254: Captain Dirgehammer <Conquest Quartermaster> (Vicious?)
-				applyclassicphase(WRATH_PHASE_FOUR, n(34075, {	-- Captain Dirgehammer <Apprentice Armor Quartermaster> // Original S8 Vendor // Relentless Gladiator: Season 7 Gladiator Gear
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, n(54661, {	-- Captain Dirgehammer <Conquest Quartermaster> // Original S11 Vendor // Cataclysmic Gladiator: Season 11 Gladiator Gear
+					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
+					-- #if BEFORE MOP
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_CATACLYSMIC, PVP_GLADIATOR },{ "pop" }},	-- Cataclysmic Gladiator's Set
+					-- #endif
+					["timeline"] = { REMOVED_5_0_4 },
+					["races"] = ALLIANCE_ONLY,
+				})),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(52546, {	-- Captain Dirgehammer <Conquest Quartermaster> // Original S10 Vendor // Ruthless Gladiator: Season 10 Gladiator Gear
+					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
+					-- #if BEFORE MOP
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_GLADIATOR },{ "pop" }},	-- Ruthless Gladiator's Set
+					-- #endif
+					["timeline"] = { REMOVED_5_0_4 },
+					["races"] = ALLIANCE_ONLY,
+				})),
+				applyclassicphase(CATA_PHASE_ONE, n(51254, {	-- Captain Dirgehammer <Conquest Quartermaster> // Original S9 Vendor // Vicious Gladiator: Season 9 Gladiator Gear
+					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
+					-- #if BEFORE MOP
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_GLADIATOR },{ "pop" }},	-- Vicious Gladiator's Set
+					-- #endif
+					["timeline"] = { REMOVED_5_0_4 },
+					["races"] = ALLIANCE_ONLY,
+				})),
+				applyclassicphase(WRATH_PHASE_FOUR, n(34075, {	-- Captain Dirgehammer <Apprentice Armor Quartermaster> // Original S8 Vendor // Relentless Gladiator: Season 8 Gladiator Gear
 					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
 					-- #if BEFORE 4.0.3.13277
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_RELENTLESS, PVP_GLADIATOR },{ "pop" }},	-- Relentless Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
-				applyclassicphase(WRATH_PHASE_THREE, n(34074, {	-- Captain Dirgehammer <Apprentice Armor Quartermaster> // Original S7 Vendor // Furious Gladiator: Season 6 Gladiator Gear
+				applyclassicphase(WRATH_PHASE_THREE, n(34074, {	-- Captain Dirgehammer <Apprentice Armor Quartermaster> // Original S7 Vendor // Furious Gladiator: Season 7 Gladiator Gear
 					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
 					-- #if BEFORE 4.0.3.13277
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_FURIOUS, PVP_GLADIATOR },{ "pop" }},	-- Furious Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
-				applyclassicphase(WRATH_PHASE_TWO, n(34073, {	-- Captain Dirgehammer <Apprentice Armor Quartermaster> // Original S6 Vendor // Deadly Gladiator: Season 5 Gladiator Gear
+				applyclassicphase(WRATH_PHASE_TWO, n(34073, {	-- Captain Dirgehammer <Apprentice Armor Quartermaster> // Original S6 Vendor // Deadly Gladiator: Season 6 Gladiator Gear
 					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
 					-- #if BEFORE 4.0.3.13277
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_DEADLY, PVP_GLADIATOR },{ "pop" }},	-- Deadly Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_ONE, n(32381, {	-- Captain Dirgehammer // Original S5 Vendor // Hateful Gladiator: Season 5 Gladiator Gear
 					["coord"] = { 75.0, 67.4, STORMWIND_CITY },
@@ -4575,6 +4687,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_DEADLY, PRE_SEASON_HATEFUL },{ "pop" }},	-- Hateful Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				n(12777, {	-- Captain Dirgehammer <Armor Quartermaster>
 					-- #if BEFORE TBC
@@ -4602,7 +4715,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{"pop"},
 						{ "exclude", "headerID", WEAPONS, BACK },
 						{ "exclude", "filterID", NECK_F, FINGER_F, RELICS_F, TRINKET_F },
-						{"postprocess"},
 					},
 					-- #endif
 					["races"] = ALLIANCE_ONLY,
@@ -4616,19 +4728,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64902, {	-- Cape of Stormwind
-							["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+							["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 							["timeline"] = { ADDED_4_0_1 },
 						}),
 						i(64901, {	-- Mantle of Stormwind
-							["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+							["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 							["timeline"] = { ADDED_4_0_1 },
 						}),
 						i(64903, {	-- Shroud of Stormwind
-							["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+							["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 							["timeline"] = { ADDED_4_0_1 },
 						}),
 						i(67531, {	-- Stormwind Satchel
-							["minReputation"] = { 72, REVERED },	-- Stormwind, Revered.
+							["minReputation"] = { FACTION_STORMWIND, REVERED },	-- Stormwind, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -5095,6 +5207,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_0_1 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = TIER_THIRTEEN_GROUPS,
+					-- #if AFTER 4.3.0
+					["description"] = "Sells gear related to Cataclysm raid tier 13 (Dragon Soul).",
+					-- #endif
 				}),
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, n(56925, {	-- Farrah Facet <Epic Gem Recipes>
 					["coord"] = { 63.8, 61.6, STORMWIND_CITY },
@@ -5386,6 +5501,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				-- #endif
+				n(164947, { -- Gerald Black <Shady Dealer>
+					["coord"] = { 78.8, 70.6, STORMWIND_CITY },
+					["timeline"] = { ADDED_9_0_1 },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{ "select", "npcID", 99863 }, { "pop" }},    -- Jenri <Spymaster>
+				}),
 				n(1333, {	-- Gerik Koen <Two Handed Weapon Merchant>
 					["coords"] = {
 						-- #if AFTER WRATH
@@ -5396,6 +5517,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
+						i(2361, {	-- Battleworn Bludgeon
+							["timeline"] = { ADDED_11_0_5 },
+						}),
 						i(23346, {	-- Battleworn Claymore
 							["timeline"] = { ADDED_10_1_7 },
 						}),
@@ -5573,7 +5697,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				-- #endif
 				n(49701, {	-- Jon Casper <Sous Chef>
-					["coord"] = { 50.6, 71.6, STORMWIND_CITY },
+					["coords"] = {
+						-- #if AFTER 9.2.5
+						{ 50.5, 73.9, STORMWIND_CITY },
+						-- #else
+						{ 50.6, 71.6, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -5635,7 +5765,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(43694, {	-- Katie Stokx <Horse Breeder>
 					["coord"] = { 77.0, 67.8, STORMWIND_CITY },
 					-- Available to Humans without faction requirements.
-					["minReputation"] = { 72, EXALTED },	-- Stormwind, Exalted.
+					["minReputation"] = { FACTION_STORMWIND, EXALTED },	-- Stormwind, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. HUMAN .. [[ then
 							t.minReputation = nil;
@@ -5700,9 +5830,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				applyclassicphase(WRATH_PHASE_FOUR, n(34084, {	-- Knight-Lieutenant Moonstrike <Northrend Armor Quartermaster> // Original S8 Vendor // Furious Gladiator: Season 8 Honor Gear
 					["coord"] = { 74.8, 67.3, STORMWIND_CITY },
 					-- #if BEFORE 4.0.3.13277
-					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_FURIOUS, PVP_GLADIATOR },{ "pop" }},	-- Furious Gladiator's Set
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_FURIOUS, PVP_ELITE },{ "pop" }},	-- Furious Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_THREE, n(34083, {	-- Knight-Lieutenant Moonstrike <Northrend Armor Quartermaster> // Original S7 Vendor // Deadly Gladiator: Season 7 Honor Gear
 					["coord"] = { 74.8, 67.3, STORMWIND_CITY },
@@ -5710,6 +5841,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_DEADLY, PVP_GLADIATOR },{ "pop" }},	-- Deadly Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_TWO, n(34082, {	-- Knight-Lieutenant Moonstrike <Armor Quartermaster> // Original S6 Vendor // Hateful Gladiator: Season 6 Honor Gear
 					["coord"] = { 74.8, 67.3, STORMWIND_CITY },
@@ -5717,6 +5849,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_DEADLY, PRE_SEASON_HATEFUL },{ "pop" }},	-- Hateful Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_ONE, n(32834, {	-- Knight-Lieutenant Moonstrike <Armor Quartermaster> // Original S5 Vendor // Savage Gladiator: Season 5 Honor Gear
 					["coord"] = { 74.8, 67.3, STORMWIND_CITY },
@@ -5724,6 +5857,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_DEADLY, PVP_HONOR },{ "pop" }},	-- Savage Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				-- #if AFTER CATA
 				-- This is a future Crieve problem, probably a similar thing to Moonstrike.
@@ -5796,7 +5930,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["description"] = "Appears in Stormwind after War of Thorns.",
 					["coord"] = { 55.0, 12.6, STORMWIND_CITY },
 					-- Available to Night Elves without faction requirements.
-					["minReputation"] = { 69, EXALTED },	-- Darnassus, Exalted.
+					["minReputation"] = { FACTION_DARNASSUS, EXALTED },	-- Darnassus, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. NIGHTELF .. [[ then
 							t.minReputation = nil;
@@ -5823,6 +5957,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(97921, {	-- Bom'bay's Color-Seein'Sauce (TOY!)
 							["timeline"] = { ADDED_5_3_0 },
 						}),
+						i(138382, {	-- Lucky Rat's Tooth
+							["timeline"] = { ADDED_7_0_3 },
+						}),
 						i(138385, {	-- Lucky Shirt
 							["timeline"] = { ADDED_7_0_3 },
 						}),
@@ -5832,20 +5969,27 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(12784, {	-- Lieutenant Jackspring <Legacy Weapon Quartermaster> [WRATH+] / Lieutenant Jackspring <Weapons Quartermaster>
 					-- #if AFTER WRATH
 					["coord"] = { 75.2, 67.2, STORMWIND_CITY },
+					-- #if NOT ANYCLASSIC
 					["description"] = "Blizzard strikes again. In order to transmog these, you need to have the original title associated with the gear. However, you can still collect them even if you've never had the title.\n\nThese items will require a refresh/reload to register as collected, and it's highly recommended that you keep them in your bank/void storage for later. You'll likely randomly lose credit for them and have to re-equip them to remind the game they exist.",
+					-- #endif
 					-- #else
 					["coord"] = { 71.9, 55.6, STORMWIND_CITY },
 					-- #endif
 					["timeline"] = { ADDED_2_0_1 },	-- Prior to TBC, was just a Reagent Vendor.
 					["sym"] = {
 						-- #IF ANYCLASSIC
-							{"sub", "pvp_gear_base", EXPANSION.CLASSIC, FACTION_HEADER_ALLIANCE, WEAPONS },	-- Grand Marshal Weapons
+						{"sub", "pvp_gear_base", EXPANSION.CLASSIC, FACTION_HEADER_ALLIANCE, WEAPONS }, {"pop"}, { "finalize" },	-- Grand Marshal Weapons
+						-- #if AFTER CATA
+						{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_WRATHFUL, PVP_GLADIATOR }, {"pop"}, { "where", "headerID", WEAPONS }, { "pop" }, { "finalize" },
+						{"sub", "pvp_gear_base", EXPANSION.TBC, SEASON_BRUTAL, PVP_GLADIATOR }, {"pop"}, { "where", "headerID", WEAPONS }, { "pop" }, { "finalize" },
+						-- #endif
+						{ "merge" },
 						-- #ELSE
-							{"select","expansionID",EXPANSION.CLASSIC},
-							{"find","headerID",FACTION_HEADER_ALLIANCE},
-							{"find","headerID",WEAPONS},	-- Grand Marshal Weapons
-						-- #ENDIF
+						{"select","expansionID",EXPANSION.CLASSIC},
+						{"find","headerID",FACTION_HEADER_ALLIANCE},
+						{"find","headerID",WEAPONS},	-- Grand Marshal Weapons
 						{"pop"},
+						-- #ENDIF
 					},
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -5894,8 +6038,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					}),
 				}),
-				-- #if AFTER CATA
-				-- This is a future Crieve problem, probably a similar thing to the other Tristias.
+				n(12778, {	-- Lieutenant Rachel Vaccar <Outland Armor Quartermaster>
+					["coord"] = { 75.2, 67.2, STORMWIND_CITY },
+					["timeline"] = { ADDED_3_0_2, REMOVED_5_0_4 },
+					-- #IF ANYCLASSIC
+					["sym"] = {
+						{ "select", "expansionID", EXPANSION.TBC },	{ "pop" },
+						{ "contains", "headerID", SEASON_BRUTAL, SEASON_VENGEFUL, SEASON_MERCILESS, SEASON_GLADIATOR }, { "pop" },
+						{ "where", "headerID", PVP_GLADIATOR }, { "pop" },
+					},
+					-- #ENDIF
+					["races"] = ALLIANCE_ONLY,
+				}),
+				-- #if AFTER LEGION
 				n(54660, {	-- Lieutenant Tristia <Vicious Gladiator>
 					["coord"] = { 75.0, 67.0, STORMWIND_CITY },
 					["races"] = ALLIANCE_ONLY,
@@ -5905,18 +6060,37 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{"exclude", "headerID", NECK, FINGER, TRINKET },	-- Exclude Neck, Finger and Trinkets
 					},
 				}),
-				n(51255, {	-- Lieutenant Tristia Original CATA S9 ELITE VENDOR Alliance
-					["coord"] = { 75.0, 67.0, STORMWIND_CITY },
+				-- #else
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, n(54660, {	-- Lieutenant Tristia <Glorious Conquest Quartermaster> // Original S11 Vendor // Cataclysmic Gladiator: Elite Season 11 Gladiator Gear
+					["coord"] = { 74.8, 67.6, STORMWIND_CITY },
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_CATACLYSMIC, PVP_ELITE },{ "pop" }},	-- Elite Cataclysmic Gladiator's Set
+					["timeline"] = { REMOVED_5_0_4 },
 					["races"] = ALLIANCE_ONLY,
-					["u"] = REMOVED_FROM_GAME,
-				}),
+				})),
 				-- #endif
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(52545, {	-- Lieutenant Tristia <Glorious Conquest Quartermaster> // Original S10 Vendor // Ruthless Gladiator: Elite Season 10 Gladiator Gear
+					["coord"] = { 74.8, 67.6, STORMWIND_CITY },
+					-- #if BEFORE MOP
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_ELITE },{ "pop" }},	-- Elite Ruthless Gladiator's Set
+					-- #endif
+					["timeline"] = { REMOVED_5_0_4 },
+					["races"] = ALLIANCE_ONLY,
+				})),
+				applyclassicphase(CATA_PHASE_ONE, n(51255, {	-- Lieutenant Tristia <Glorious Conquest Quartermaster> // Original S9 Vendor // Vicious Gladiator: Elite Season 9 Gladiator Gear
+					["coord"] = { 74.8, 67.6, STORMWIND_CITY },
+					-- #if BEFORE MOP
+					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_ELITE },{ "pop" }},	-- Elite Vicious Gladiator's Set
+					-- #endif
+					["timeline"] = { REMOVED_5_0_4 },
+					["races"] = ALLIANCE_ONLY,
+				})),
 				applyclassicphase(WRATH_PHASE_FOUR, n(34078, {	-- Lieutenant Tristia <Veteran Armor Quartermaster> // Original S8 Vendor // Wrathful Gladiator: Season 8 Gladiator Gear
 					["coord"] = { 74.7, 67.2, STORMWIND_CITY },
 					-- #if BEFORE 4.0.3.13277
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_WRATHFUL, PVP_GLADIATOR },{ "pop" }},	-- Wrathful Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_THREE, n(34077, {	-- Lieutenant Tristia <Veteran Armor Quartermaster> // Original S7 Vendor // Relentless Gladiator: Season 7 Gladiator Gear
 					["coord"] = { 74.7, 67.2, STORMWIND_CITY },
@@ -5924,6 +6098,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_RELENTLESS, PVP_GLADIATOR },{ "pop" }},	-- Relentless Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_TWO, n(34076, {	-- Lieutenant Tristia <Veteran Armor Quartermaster> // Original S6 Vendor // Furious Gladiator: Season 6 Gladiator Gear
 					["coord"] = { 74.7, 67.2, STORMWIND_CITY },
@@ -5931,6 +6106,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sym"] = {{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_FURIOUS, PVP_GLADIATOR },{ "pop" }},	-- Furious Gladiator's Set
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				applyclassicphase(WRATH_PHASE_ONE, n(32380, {	-- Lieutenant Tristia <Veteran Armor Quartermaster> // Original S5 Vendor // Deadly Gladiator: Season 5 Gladiator Gear
 					["coord"] = { 74.7, 67.2, STORMWIND_CITY },
@@ -5943,6 +6119,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
+					["races"] = ALLIANCE_ONLY,
 				})),
 				-- #if NOT ANYCLASSIC
 				-- Crieve NOTE: This NPC ID wasn't used for TBC Classic, so not sure how this was actually used.
@@ -5951,8 +6128,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 75.0, 67.0, STORMWIND_CITY },
 					["races"] = ALLIANCE_ONLY,
 					["u"] = REMOVED_FROM_GAME,
-					["groups"] = {
-					},
 				}),
 				-- #endif
 				n(8666, {	-- Lil Timmy <Boy with kittens>
@@ -6099,19 +6274,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64893, {	-- Cape of Gilneas
-							["minReputation"] = { 1134, EXALTED },	-- Gilneas, Exalted.
+							["minReputation"] = { FACTION_GILNEAS, EXALTED },	-- Gilneas, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64892, {	-- Mantle of Gilneas
-							["minReputation"] = { 1134, EXALTED },	-- Gilneas, Exalted.
+							["minReputation"] = { FACTION_GILNEAS, EXALTED },	-- Gilneas, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64894, {	-- Shroud of Gilneas
-							["minReputation"] = { 1134, EXALTED },	-- Gilneas, Exalted.
+							["minReputation"] = { FACTION_GILNEAS, EXALTED },	-- Gilneas, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67532, {	-- Gilnean Satchel
-							["minReputation"] = { 1134, REVERED },	-- Gilneas, Revered.
+							["minReputation"] = { FACTION_GILNEAS, REVERED },	-- Gilneas, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -6128,6 +6303,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_0_1 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = TIER_TWELVE_GROUPS,
+					-- #if AFTER 4.2.0
+					["description"] = "Sells gear related to Cataclysm raid tier 12 (Firelands) as well as Baradin Hold.",
+					-- #endif
 				}),
 				n(1313, {	-- Maria Lumere <Alchemy Supplies>
 					["coords"] = {
@@ -6258,19 +6436,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64887, {	-- Cape of Darnassus
-							["minReputation"] = { 69, EXALTED },	-- Darnassus, Exalted.
+							["minReputation"] = { FACTION_DARNASSUS, EXALTED },	-- Darnassus, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64888, {	-- Mantle of Darnassus
-							["minReputation"] = { 69, EXALTED },	-- Darnassus, Exalted.
+							["minReputation"] = { FACTION_DARNASSUS, EXALTED },	-- Darnassus, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64886, {	-- Shroud of Darnassus
-							["minReputation"] = { 69, EXALTED },	-- Darnassus, Exalted.
+							["minReputation"] = { FACTION_DARNASSUS, EXALTED },	-- Darnassus, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67526, {	-- Darnassian Satchel
-							["minReputation"] = { 69, REVERED },	-- Darnassus, Revered.
+							["minReputation"] = { FACTION_DARNASSUS, REVERED },	-- Darnassus, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -6352,7 +6530,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(65068, {	-- Old Whitenose <Dragon Turtle Breeder>
 					["coord"] = { 67.8, 18.4, STORMWIND_CITY },
 					-- Available to Tushui Pandaren without faction requirements.
-					["minReputation"] = { 1353, EXALTED },	-- Tushui Pandaren, Exalted.
+					["minReputation"] = { FACTION_TUSHUI_PANDAREN, EXALTED },	-- Tushui Pandaren, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. PANDAREN_ALLIANCE .. [[ then
 							t.minReputation = nil;
@@ -6460,17 +6638,17 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				n(87501, {	-- Paulie
-					["coord"] = { 73.0, 59.3, STORMWIND_CITY },
-					["timeline"] = { ADDED_6_0_2 },
+				n(87501, bubbleDownSelf({	-- Paulie
 					["races"] = ALLIANCE_ONLY,
+					["timeline"] = { ADDED_6_0_2 },
+				},{
+					["coord"] = { 73.0, 59.3, STORMWIND_CITY },
 					["groups"] = {
 						i(116789, {	-- Champion's Treadblade (MOUNT!)
-							["timeline"] = { ADDED_6_0_2 },
 							["cost"] = 1000000000,	-- 100,000g
 						})
 					},
-				}),
+				})),
 				n(167429, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_1 } }, {	-- Quartermaster Richter
 					["description"] = "Only sells items once the achievement |cffebae34Exile's Reach|r [14222] is completed.",
 					["coord"] = { 79.5, 69.0, STORMWIND_CITY },
@@ -6628,10 +6806,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_2_0_1 },	-- Prior to TBC, was just a Food Vendor.
 					["sym"] = {	-- Grand Marshal Armor
 						-- #IF ANYCLASSIC
-							{"sub", "pvp_gear_base", EXPANSION.CLASSIC, FACTION_HEADER_ALLIANCE },
+						{"sub", "pvp_gear_base", EXPANSION.CLASSIC, FACTION_HEADER_ALLIANCE }, { "merge" },
+						-- #if AFTER CATA
+						{"sub", "pvp_gear_base", EXPANSION.WRATH, SEASON_WRATHFUL, PVP_GLADIATOR },{ "merge" },
+						{"sub", "pvp_gear_base", EXPANSION.TBC, SEASON_BRUTAL, PVP_GLADIATOR },{ "merge" },
+						-- #endif
 						-- #ELSE
-							{"select","expansionID",EXPANSION.CLASSIC},
-							{"find","headerID",FACTION_HEADER_ALLIANCE},
+						{"select","expansionID",EXPANSION.CLASSIC},
+						{"find","headerID",FACTION_HEADER_ALLIANCE},
 						-- #ENDIF
 						{ "pop" },
 						{ "exclude", "headerID", WEAPONS },
@@ -6760,12 +6942,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				applyclassicphase(SOD_PHASE_FOUR, n(17804, {	-- Squire Rowe
 					["sourceQuest"] = 6502,	-- Drakefire Amulet
 					["coord"] = { 70.6, 86.0, STORMWIND_CITY },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(226500),	-- Chipped Drakefire Amulet
 						i(228222, {	-- Handbook of Valor of Azeroth
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 							["spellID"] = 461475,	-- Valor of Azeroth
 							["f"] = RECIPES,
 						}),
@@ -6852,6 +7034,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_3_0 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = TIER_ELEVEN_GROUPS,
+					["description"] = "Sells gear related to Cataclysm raid tier 11 (Throne of the Four Winds, Blackwing Descent, and Bastion of Twilight) as well as Baradin Hold.",
 				}),
 				n(1341, {	-- Wilhelm Strang <Mail Armor Merchant>
 					["coords"] = {
@@ -6903,13 +7086,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
--- #if AFTER 8.0.1.27291
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
 	m(EASTERN_KINGDOMS, {
 		m(STORMWIND_CITY, {
-			q(53645),	-- triggered during 'Molten Core' (53342) when porting to Molten Core
-			q(59255),	-- completed when turning in 'Fame Waits for Gnome One' (58708)
+			n(QUESTS, {
+				q(53645),	-- triggered during 'Molten Core' (53342) when porting to Molten Core
+				q(59255),	-- completed when turning in 'Fame Waits for Gnome One' (58708)
+			}),
 		}),
 	}),
-});
--- #endif
+})));

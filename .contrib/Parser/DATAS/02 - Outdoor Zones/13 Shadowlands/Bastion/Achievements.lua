@@ -4,93 +4,18 @@
 root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNCH } }, {
 	m(BASTION, {
 		n(ACHIEVEMENTS, {
-			achraw(14307, {	-- Adventurer of Bastion
+			ach(14307, {		-- Adventurer of Bastion (automated)
 				crit(50582, {
+					["_noautomation"] = true,	-- This normally points to a quest but we prefer it to point to the rare
 					["_npcs"] = { 158659 },	-- Herculon <Aspirant Assessor>
 				}),
-				crit(50596, {
-					["_npcs"] = { 160721 },	-- Fallen Acolyte Erisne
-				}),
-				crit(50597, {
-					["_npcs"] = { 161527 },	-- Sigilback
-				}),
-				crit(50598, {
-					["_npcs"] = { 161530 },	-- Cloudtail
-				}),
-				crit(50599, {
-					["_npcs"] = { 161529 },	-- Nemaeus
-				}),
-				crit(50592, {
-					["_npcs"] = { 160629 },	-- Baedos
-				}),
-				crit(50600, {
-					["_npcs"] = { 167078 },	-- Wingflayer the Cruel
-				}),
-				crit(50594, {
-					["_npcs"] = { 160882 },	-- Nikara Blackheart
-				}),
-				crit(50595, {
-					["_npcs"] = { 163460 },	-- Dionae
-				}),
-				crit(50601, {
-					["_npcs"] = { 170548 },	-- Sundancer
-				}),
-				crit(50602, {
-					["_npcs"] = { 170659 },	-- Basilofos, King of the Hill
-				}),
-				crit(50603, {
-					["_npcs"] = { 170623 },	-- Dark Watcher
-				}),
-				crit(50604, {
-					["_npcs"] = { 170932 },	-- Cloudfeather Guardian
-				}),
-				crit(50605, {
-					["_npcs"] = { 171009 },	-- Enforcer Aegeon
-				}),
-				crit(50606, {
-					["_npcs"] = { 171008 },	-- Unstable Memory
-				}),
-				crit(50607, {
-					["_npcs"] = { 171013 },	-- Embodied Hunger
-				}),
-				crit(50608, {
-					["_npcs"] = { 171040 },	-- Xixin the Ravening
-				}),
-				crit(50609, {
-					["_npcs"] = { 171041 },	-- Worldfeaster Chronn
-				}),
-				crit(50610, {
-					["_npcs"] = { 171014 },	-- Collector Astorestes
-				}),
 				crit(50611, {
+					["_noautomation"] = true,	-- This normally points to a quest but we prefer it to point to the rare
 					["_npcs"] = { 171011 },	-- Demi the Relic Hoarder
 				}),
-				crit(50612, {
-					["_npcs"] = { 171189 },	-- Bookkeeper Mnemis
-				}),
-				crit(50613, {
-					["_npcs"] = { 171211 },	-- Aspirant Eolis
-				}),
 				crit(50614, {
+					["_noautomation"] = true,	-- This normally points to a quest but we prefer it to point to the rare
 					["_npcs"] = { 171255 },	-- Echo of Aella <Hand of Courage>
-				}),
-				crit(50615, {
-					["_npcs"] = { 171010 },	-- Corrupted Clawguard
-				}),
-				crit(50616, {
-					["_npcs"] = { 171327 },	-- Reekmonger
-				}),
-				crit(50617, {
-					["_npcs"] = { 161528 },	-- Aethon
-				}),
-				crit(50593, {
-					["_npcs"] = { 160985 },	-- Selena the Reborn
-				}),
-				crit(50618, {
-					["_npcs"] = { 156340 },	-- Larionrider Orstus
-				}),
-				crit(50619, {
-					["_npcs"] = { 170899 },	-- Ascended Council
 				}),
 			}),
 			ach(14767, {	-- Count Your Blessings
@@ -486,31 +411,31 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 			}),
 			pvp(ach(14514)),	-- Tour of Duty: Bastion
 			ach(14311, {	-- Treasures of Bastion
-				crit(50047,  {	-- Scroll of Aeons
+				crit(50047, {	-- Scroll of Aeons
 					["_quests"] = { 58298 },
 				}),
-				crit(50048,  {	-- Vesper of Virtues
+				crit(50048, {	-- Vesper of Virtues
 					["_quests"] = { 60478 },
 				}),
-				crit(50049,  {	-- Purifying Draught
+				crit(50049, {	-- Purifying Draught
 					["_quests"] = { 58329 },
 				}),
-				crit(50050,  {	-- Lost Disciple's Notes
+				crit(50050, {	-- Lost Disciple's Notes
 					["_quests"] = { 61048 },
 				}),
-				crit(50051,  {	-- Larion Tamer's Harness
+				crit(50051, {	-- Larion Tamer's Harness
 					["_quests"] = { 61049 },
 				}),
-				crit(50052,  {	-- Stolen Equipment
+				crit(50052, {	-- Stolen Equipment
 					["_quests"] = { 61044 },
 				}),
-				crit(50053,  {	-- Abandoned Stockpile
+				crit(50053, {	-- Abandoned Stockpile
 					["_quests"] = { 61006 },
 				}),
-				crit(50054,  {	-- Experimental Construct Part
+				crit(50054, {	-- Experimental Construct Part
 					["_quests"] = { 61052 },
 				}),
-				crit(50055,  {	-- Windsmith's Tools
+				crit(50055, {	-- Windsmith's Tools
 					["_quests"] = { 61053 },
 				}),
 				crit(50056, {	-- Memorial Offerings

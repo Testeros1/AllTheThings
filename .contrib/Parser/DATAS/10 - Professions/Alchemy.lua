@@ -120,7 +120,7 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 			}),
 		})),
 		n(QUESTS, sharedData({
-			["description"] = "Requires 300 Classic Alchemy.",
+			["sharedDescription"] = "Requires 300 Classic Alchemy.",
 			["qgs"] = {
 				4160,	-- Ainethil
 				3347,	-- Yelmak
@@ -328,6 +328,7 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 			["maps"] = { PANDARIA },
 			["cost"] = {{ "i", 72238, 3 }},	-- 3x Golden Lotus
 			["g"] = {
+				i(80240),	-- Strange Spherical Stone (QI!)
 				i(75274),	-- Zen Alchemist Stone
 			},
 		}),
@@ -430,12 +431,12 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 		}),
 		q(44112, {	-- Trading for Dreams
 			["sourceQuests"] = { 39431 },	-- Mending the Filter
-			["provider"] = { "n", 93974 }, -- Leyweaver Erenyi
+			["provider"] = { "n", 93974 },	-- Leyweaver Erenyi
 			["coord"] = { 70.5, 46.4, VALSHARAH },
 		}),
 		q(39338, {	-- Return the Filter
 			["sourceQuests"] = { 44112 },	-- Trading for Dreams
-			["provider"] = { "n", 93974 }, -- Leyweaver Erenyi
+			["provider"] = { "n", 93974 },	-- Leyweaver Erenyi
 			["coord"] = { 70.5, 46.4, VALSHARAH },
 		}),
 		q(39339, {	-- A Fragile Crucible
@@ -579,14 +580,17 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 			},
 		})),
 		q(48002, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {	-- Limited Supplies
+			["sourceQuest"] = 46816,	-- Rendezvous
 			["provider"] = { "n", 125346 },	-- Alchemist Funen
 			["coord"] = { 56.2, 66.8, KROKUUN },
 			["groups"] = {
 				i(151657),	-- Recipe: Lightblood Elixir [Rank 1] (RECIPE!)
+				i(151845),	-- Used Vial (QI!)
 			},
 		})),
 		q(48013, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {	-- Tracking the Trackers
 			["provider"] = { "n", 125346 },	-- Alchemist Funen
+			["sourceQuest"] = 46816,	-- Rendezvous
 			["coord"] = { 56.2, 66.8, KROKUUN },
 			["groups"] = {
 				i(151703),	-- Recipe: Tears of the Naaru [Rank 1] (RECIPE!)
@@ -651,6 +655,9 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 				["coord"] = { 74.2, 6.5, BORALUS },
 				["races"] = ALLIANCE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(156657),	-- Highlands Mauler Eye (QI!)
+				},
 			}),
 			q(50113, {	-- Ocular Extracts [H]
 				["sourceQuests"] = { 50112 },	-- Casting the First Stone [H]
@@ -658,6 +665,9 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 				["coord"] = { 42.2, 38.0, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(156806),	-- Razorwing Eye (QI!)
+				},
 			}),
 			q(50124, {	-- Changing the Scenery [A]
 				["sourceQuests"] = { 50121 },	-- Casting the First Stone [A]
@@ -1060,30 +1070,30 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 			["g"] = {
 				currency(DF_ALCHEMY_KNOWLEDGE),
 			},
-		 }, {
+		}, {
 			i(198608),	-- Alchemy Notes
-			q(74108, {	-- Inscription Order: Alchemy
-				["name"] = "Inscription Order: Alchemy",
+			q(74108, {	-- DF Inscription Order: Alchemy
+				["name"] = "DF Inscription Order: Alchemy",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 194697 },	-- Draconic Treatise on Alchemy
 			}),
-			q(66373, {	-- Weekly Alchemy Knowledgepoint #1
-				["name"] = "Alchemy Treasure #1",
+			q(66373, {	-- DF Weekly Alchemy Knowledgepoint #1
+				["name"] = "DF Alchemy Treasure #1",
 				["provider"] = { "i", 193891 },		-- Experimental Substance
 			}),
-			q(66374, {	-- Weekly Alchemy Knowledgepoint #2
-				["name"] = "Alchemy Treasure #2",
+			q(66374, {	-- DF Weekly Alchemy Knowledgepoint #2
+				["name"] = "DF Alchemy Treasure #2",
 				["provider"] = { "i", 193897 },		-- Reawakened Catalyst
 			}),
-			q(70504, {	-- Weekly Alchemy Knowledgepoint #3
-				["name"] = "Alchemy Drop #1: Decayed",
+			q(70504, {	-- DF Weekly Alchemy Knowledgepoint #3
+				["name"] = "DF Alchemy Drop #1: Decayed",
 				["description"] = "Drops from any Decayed Mob.\nCoordinates link to the spot(s) we found best.",
 				["provider"] = { "i", 198963 },		-- Decaying Phlegm
 				["crs"] = { 186361 },	-- Rotting Treant
 				["coord"] = { 18.6, 38.4, THE_AZURE_SPAN },
 			}),
-			q(70511, {	-- Weekly Alchemy Knowledgepoint #4
-				["name"] = "Alchemy Drop #2: Elemental",
+			q(70511, {	-- DF Weekly Alchemy Knowledgepoint #4
+				["name"] = "DF Alchemy Drop #2: Elemental",
 				["description"] = "Drops from any Elemental.\nCoordinates link to the spot(s) we found best.",
 				["provider"] = { "i", 198964 },		-- Elementious Splinter
 				["crs"] = { 191712 },	-- Hissing Springsoul
@@ -1093,10 +1103,21 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 		n(ACHIEVEMENTS, {
-			-- TODO: Flask of Rampant Toxicity criteria currently not working correctly, recipe needs to be added to "crafted items" section.
 			ach(19704),	-- Overflowing Algari Flasks (automated)
 			ach(19716),	-- Plentiful Algari Potions (automated)
 		}),
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(228773),	-- Algari Alchemist's Notebook
+			},
+		},{
+			q(84133, {	-- Alchemy Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
+			}),
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_ALCHEMY_KNOWLEDGE, 1 }} }, {
@@ -1128,10 +1149,24 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 				},
 			}),
 			o(456025, {	-- Earthen Iron Powder
-				["coord"] = { 30.6, 70.4, DORNOGAL },
+				["coord"] = { 32.5, 60.3, DORNOGAL },
 				["questID"] = 83840,
 				["g"] = {
 					i(226265),	-- Earthen Iron Powder
+				},
+			}),
+			o(456022, {	-- Engraved Stirring Rod
+				["coord"] = { 64.9, 61.8, THE_RINGING_DEEPS },
+				["questID"] = 83843,
+				["g"] = {
+					i(226268),	-- Engraved Stirring Rod
+				},
+			}),
+			o(456024, {	-- Metal Dornogal Frame
+				["coord"] = { 57.7, 61.8, ISLE_OF_DORN },
+				["questID"] = 83841,
+				["g"] = {
+					i(226266),	-- Metal Dornogal Frame
 				},
 			}),
 			o(456019, {	-- Nerubian Mixing Salts
@@ -1161,18 +1196,14 @@ root(ROOTS.Professions, prof(ALCHEMY, bubbleDownSelf({ ["requireSkill"] = ALCHEM
 			["g"] = {
 				currency(TWW_ALCHEMY_KNOWLEDGE),
 			},
-		 }, {
-			q(83725, {	-- Inscription Order: Alchemy
-				["name"] = "Inscription Order: Alchemy",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222546 },	-- Algari Treatise on Alchemy
-			}),
-			q(83253, {	-- Weekly Alchemy Knowledgepoint #1
-				["name"] = "TWW: Alchemy Treasure #1",
+		}, {
+			i(228773),	-- Algari Alchemist's Notebook
+			q(83253, {	-- TWW Weekly Alchemy Knowledgepoint #1
+				["name"] = "TWW Weekly Alchemy Treasure #1",
 				["provider"] =  { "i", 225234 },	-- Alchemical Sediment
 			}),
-			q(83255, {	-- Weekly Alchemy Knowledgepoint #2
-				["name"] = "TWW: Alchemy Treasure #2",
+			q(83255, {	-- TWW Weekly Alchemy Knowledgepoint #2
+				["name"] = "TWW Weekly Alchemy Treasure #2",
 				["provider"] = { "i", 225235} ,		-- Deepstone Crucible
 			}),
 		})),
@@ -1676,12 +1707,12 @@ root(ROOTS.Professions, prof(ALCHEMY, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, {
 					["name"] = "Flask of Everlasting Nightmares",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["recipeID"] = 446226,
 				}),
 				applyclassicphase(SOD_PHASE_THREE, {
 					["name"] = "Flask of Nightmarish Mojo",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["recipeID"] = 446851,
 				}),
 				-- #endif
@@ -1694,7 +1725,7 @@ root(ROOTS.Professions, prof(ALCHEMY, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_THREE, {
 					["name"] = "Flask of Restless Dreams",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["recipeID"] = 448085,
 				}),
 				-- #endif

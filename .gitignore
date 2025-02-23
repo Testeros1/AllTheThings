@@ -41,3 +41,8 @@ obj/
 *.bak
 __pycache__
 .venv
+.contrib/.source/Item DB Compiler/bin/
+.sync.ffs_db
+.DS_Store
+.contrib/.source/Achievement Database Consolidator/bin/
+.contrib/.tools/Wago/

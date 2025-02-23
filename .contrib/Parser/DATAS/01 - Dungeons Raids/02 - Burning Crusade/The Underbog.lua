@@ -43,7 +43,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["qg"] = 17856,	-- Gzhun'tt
 					["sourceQuest"] = 9715,	-- Bring Me A Shrubbery!
 					["coord"] = { 19.4, 50.0, ZANGARMARSH },
-					["maxReputation"] = { 970, EXALTED },	-- Sporeggar, Exalted.
+					["maxReputation"] = { FACTION_SPOREGGAR, EXALTED },	-- Sporeggar, Exalted.
 					["timeline"] = { REMOVED_4_3_0 },
 					["repeatable"] = true,
 					["cost"] = {
@@ -54,7 +54,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 				q(29692, {	-- Bring Me Another Shrubbery!
 					["qg"] = 54674,	-- T'shu
 					["sourceQuest"] = 29691,	-- Bring Me A Shrubbery!
-					["maxReputation"] = { 970, EXALTED },	-- Sporeggar, Exalted.
+					["maxReputation"] = { FACTION_SPOREGGAR, EXALTED },	-- Sporeggar, Exalted.
 					["timeline"] = { ADDED_4_3_0 },
 					["repeatable"] = true,
 					["cost"] = {
@@ -390,11 +390,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 		},
 	}),
 })));
--- #if AFTER WOD
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(262, {
 		q(35559),	-- The Underbog Reward Quest - Normal completion
 		q(35560),	-- The Underbog Reward Quest - Heroic completion
 	}),
-});
--- #endif
+})));

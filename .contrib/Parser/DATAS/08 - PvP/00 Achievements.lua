@@ -309,7 +309,9 @@ root(ROOTS.PVP, pvp(n(ACHIEVEMENTS, {
 	ach(19417, {		-- Brawlroom Blitzer
 		["timeline"] = { ADDED_10_2_0 },
 	}),
-	applyclassicphase(PHASE_TWO, ach(727, {	-- Call in the Cavalry
+	applyclassicphase(PHASE_TWO, ach(727, {	-- Call in the Cavalry (automated)
+	-- #IF ANYCLASSIC
+	-- @Crieve: This should be automated now
 		["providers"] = {
 			{ "i", 18243 },	-- Black Battlestrider (Original)
 			{ "i", 18247 },	-- Black War Kodo (Original)
@@ -332,9 +334,7 @@ root(ROOTS.PVP, pvp(n(ACHIEVEMENTS, {
 			{ "i", 29472 },	-- Whistle of the Black War Raptor
 			-- #endif
 		},
-		-- #if BEFORE WRATH
-		["description"] = "Obtain one of the war mounts through the honor system.",
-		-- #endif
+		-- #ENDIF
 	})),
 	applyclassicphase(WRATH_PHASE_ONE, ach(908, {	-- Call to Arms! (Alliance)
 		["timeline"] = { ADDED_3_0_2 },
@@ -656,12 +656,12 @@ root(ROOTS.PVP, pvp(n(ACHIEVEMENTS, {
 	ach(9214, {		-- Hero of Stormshield
 		["races"] = ALLIANCE_ONLY,
 		["timeline"] = { ADDED_6_0_2, REMOVED_8_0_1 },
-		["minReputation"] = { 1682, EXALTED },	-- Wrynn's Vanguard
+		["minReputation"] = { FACTION_WRYNNS_VANGUARD, EXALTED },	-- Wrynn's Vanguard
 	}),
 	ach(9215, {		-- Hero of Warspear
 		["races"] = HORDE_ONLY,
 		["timeline"] = { ADDED_6_0_2, REMOVED_8_0_1 },
-		["minReputation"] = { 1681, EXALTED },	-- Vol'jin's Spear
+		["minReputation"] = { FACTION_VOLJINS_SPEAR, EXALTED },	-- Vol'jin's Spear
 	}),
 	ach(406, {		-- High Five: 1550
 		["timeline"] = { ADDED_3_0_2, REMOVED_6_2_0 },
@@ -1026,7 +1026,6 @@ root(ROOTS.PVP, pvp(n(ACHIEVEMENTS, {
 	}),
 	applyclassicphase(PHASE_TWO, ach(714, {	-- The Conqueror
 		-- #if BEFORE 3.0.1
-		["description"] = "Raise your reputation values in Warsong Gulch, Arathi Basin and Alterac Valley to Exalted.",
 		["OnClick"] = THE_JUSTICAR_AND_THE_CONQUEROR_OnClick,
 		["OnTooltip"] = THE_JUSTICAR_AND_THE_CONQUEROR_OnTooltip,
 		["OnUpdate"] = THE_CONQUEROR_OnUpdate,
@@ -1051,7 +1050,6 @@ root(ROOTS.PVP, pvp(n(ACHIEVEMENTS, {
 	}),
 	applyclassicphase(PHASE_TWO, ach(907, {	-- The Justicar
 		-- #if BEFORE 3.0.1
-		["description"] = "Raise your reputation values in Warsong Gulch, Arathi Basin and Alterac Valley to Exalted.",
 		["OnClick"] = THE_JUSTICAR_AND_THE_CONQUEROR_OnClick,
 		["OnTooltip"] = THE_JUSTICAR_AND_THE_CONQUEROR_OnTooltip,
 		["OnUpdate"] = THE_JUSTICAR_OnUpdate,

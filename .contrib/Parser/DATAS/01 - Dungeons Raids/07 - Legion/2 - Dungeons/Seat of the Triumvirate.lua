@@ -42,16 +42,25 @@ root(ROOTS.Instances, { expansion(EXPANSION.LEGION, {
 					["provider"] = { "n", 123668 },	-- Captain Fareeya <The Crescent Glaive>
 					["sourceQuest"] = 48230,	-- Fragment of the Past
 					["coord"] = { 62.6, 39.4, EREDATH },
+					["g"] = {
+						i(152205),	-- Glowing key Fragment (QI!)
+					},
 				}),
 				q(48271, {	-- Recovering the Pieces
 					["provider"] = { "n", 125246 },	-- Gaal <Blacksmith>
 					["coord"] = { 56.9, 68.6, KROKUUN },
 					["sourceQuest"] = 48864,	-- The Broken Blacksmith
+					["g"] = {
+						i(152201),	-- Armory Key Fragment (QI!)
+					},
 				}),
 				q(48261, {	-- The Power to Reforge
 					["provider"] = { "n", 125246 },	-- Gaal <Blacksmith>
 					["coord"] = { 56.9, 68.6, KROKUUN },
 					["sourceQuest"] = 48864,	-- The Broken Blacksmith
+					["g"] = {
+						i(152200),	-- Dendrite Cluster (QI!)
+					},
 				}),
 				q(48803, {	-- Forging a Key to the Past
 					["provider"] = { "n", 125246 },	-- Gaal <Blacksmith>
@@ -66,106 +75,20 @@ root(ROOTS.Instances, { expansion(EXPANSION.LEGION, {
 					["coord"] = { 56.9, 68.6, KROKUUN },
 					["sourceQuest"] = 48803,	-- Forging a Key to the Past
 					["g"] = {
-						i(152241, sharedData({["modID"] = 2}, {	-- Ensemble: Light-Woven Triumvirate Regalia
+						iensemble(152241, {	-- Ensemble: Light-Woven Triumvirate Regalia
 							["description"] = "May require relogging to gain all appearances.",
-							["g"] = {
-								-- Heroic items
-								i(151337, {["modID"] = 2,}),	-- Head
-								i(151299, {["modID"] = 2,}),	-- Shoulder
-								i(151635, {["modID"] = 2,}),	-- Cloak
-								i(151303, {["modID"] = 2,}),	-- Chest
-								i(151305, {["modID"] = 2,}),	-- Wrist
-								i(151300, {["modID"] = 2,}),	-- Hands
-								i(151302, {["modID"] = 2,}),	-- Waist
-								i(151304, {["modID"] = 2,}),	-- Legs
-								i(151301, {["modID"] = 2,}),	-- Feet
-								-- Mythic items
-								i(151337, {["modID"] = 23,}),	-- Head
-								i(151299, {["modID"] = 23,}),	-- Shoulder
-								--i(151635, {["modID"] = 23,}),	-- Cloak - No mythic version of the cloak exists
-								i(151303, {["modID"] = 23,}),	-- Chest
-								i(151305, {["modID"] = 23,}),	-- Wrist
-								i(151300, {["modID"] = 23,}),	-- Hands
-								i(151302, {["modID"] = 23,}),	-- Waist
-								i(151304, {["modID"] = 23,}),	-- Legs
-								i(151301, {["modID"] = 23,}),	-- Feet
-							},
-						})),
-						i(152242, sharedData({["modID"] = 2}, {	-- Ensemble: Burnished Triumvirate Armor
+						}),
+						iensemble(152242, {	-- Ensemble: Burnished Triumvirate Armor
 							["description"] = "May require relogging to gain all appearances.",
-							["g"] = {
-								-- Heroic items
-								i(151336, {["modID"] = 2,}),	-- Head
-								i(151319, {["modID"] = 2,}),	-- Shoulder
-								i(151306, {["modID"] = 2,}),	-- Cloak
-								i(151313, {["modID"] = 2,}),	-- Chest
-								i(151315, {["modID"] = 2,}),	-- Wrist
-								i(151318, {["modID"] = 2,}),	-- Hands
-								i(151316, {["modID"] = 2,}),	-- Waist
-								i(151314, {["modID"] = 2,}),	-- Legs
-								i(151317, {["modID"] = 2,}),	-- Feet
-								-- Mythic items
-								i(151336, {["modID"] = 23,}),	-- Head
-								i(151319, {["modID"] = 23,}),	-- Shoulder
-								--i(151306, {["modID"] = 23,}),	-- Cloak - No mythic version of the cloak exists
-								i(151313, {["modID"] = 23,}),	-- Chest
-								i(151315, {["modID"] = 23,}),	-- Wrist
-								i(151318, {["modID"] = 23,}),	-- Hands
-								i(151316, {["modID"] = 23,}),	-- Waist
-								i(151314, {["modID"] = 23,}),	-- Legs
-								i(151317, {["modID"] = 23,}),	-- Feet
-							},
-						})),
-						i(152243, sharedData({["modID"] = 2}, {	-- Ensemble: Sterling Triumvirate Chainmail
+						}),
+						iensemble(152243, {	-- Ensemble: Sterling Triumvirate Chainmail
 							["description"] = "May require relogging to gain all appearances.",
-							["g"] = {
-								-- Heroic items
-								i(151324, {["modID"] = 2,}),	-- Head
-								i(151323, {["modID"] = 2,}),	-- Shoulder
-								i(151634, {["modID"] = 2,}),	-- Cloak
-								i(151325, {["modID"] = 2,}),	-- Chest
-								i(151321, {["modID"] = 2,}),	-- Wrist
-								i(151322, {["modID"] = 2,}),	-- Hands
-								i(151326, {["modID"] = 2,}),	-- Waist
-								i(151338, {["modID"] = 2,}),	-- Legs
-								i(151320, {["modID"] = 2,}),	-- Feet
-								-- Mythic items
-								i(151324, {["modID"] = 23,}),	-- Head
-								i(151323, {["modID"] = 23,}),	-- Shoulder
-								--i(151634, {["modID"] = 23,}),	-- Cloak - No mythic version of the cloak exists
-								i(151325, {["modID"] = 23,}),	-- Chest
-								i(151321, {["modID"] = 23,}),	-- Wrist
-								i(151322, {["modID"] = 23,}),	-- Hands
-								i(151326, {["modID"] = 23,}),	-- Waist
-								i(151338, {["modID"] = 23,}),	-- Legs
-								i(151320, {["modID"] = 23,}),	-- Feet
-							},
-						})),
-						i(152244, sharedData({["modID"] = 2}, {	-- Ensemble: Venerated Triumvirate Battleplate
+						}),
+						iensemble(152244, {	-- Ensemble: Venerated Triumvirate Battleplate
 							["description"] = "May require relogging to gain all appearances.",
-							["g"] = {
-								-- Heroic items
-								i(151333, {["modID"] = 2,}),	-- Head
-								i(151331, {["modID"] = 2,}),	-- Shoulder
-								i(151298, {["modID"] = 2,}),	-- Cloak
-								i(151329, {["modID"] = 2,}),	-- Chest
-								i(151328, {["modID"] = 2,}),	-- Wrist
-								i(151332, {["modID"] = 2,}),	-- Hands
-								i(151327, {["modID"] = 2,}),	-- Waist
-								i(151339, {["modID"] = 2,}),	-- Legs
-								i(151330, {["modID"] = 2,}),	-- Feet
-								-- Mythic items
-								i(151333, {["modID"] = 23,}),	-- Head
-								i(151331, {["modID"] = 23,}),	-- Shoulder
-								--i(151298, {["modID"] = 23,}),	-- Cloak - No mythic version of the cloak exists
-								i(151329, {["modID"] = 23,}),	-- Chest
-								i(151328, {["modID"] = 23,}),	-- Wrist
-								i(151332, {["modID"] = 23,}),	-- Hands
-								i(151327, {["modID"] = 23,}),	-- Waist
-								i(151339, {["modID"] = 23,}),	-- Legs
-								i(151330, {["modID"] = 23,}),	-- Feet
-							},
-						})),
+						}),
+						i(152202),	-- Armor of the Triumvirate (QI!)
+						i(152203),	-- Reforged Armory Key (QI!)
 					},
 				}),
 			}),
@@ -345,11 +268,3 @@ root(ROOTS.Instances, { expansion(EXPANSION.LEGION, {
 		},
 	}),
 })});
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(48566),	-- learning Ensemble: Venerated Triumvirate Battleplate
-		q(48567),	-- learning Ensemble: Sterling Triumvirate Chainmail
-		q(48568),	-- learning Ensemble: Burnished Triumvirate Armor
-		q(48569),	-- learning Ensemble: Light-Woven Triumvirate Regalia
-	}),
-});

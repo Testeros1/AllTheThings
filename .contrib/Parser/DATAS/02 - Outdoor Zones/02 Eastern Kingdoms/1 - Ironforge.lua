@@ -1,13 +1,6 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local COOKING_AWARD_GROUPS = {
-	-- #if AFTER 5.0.4
-	currency(81),	-- Epicurean's Award
-	-- #else
-	currency(402),	-- Ironpaw Token // Pre 5.0.4 named Chef's Award
-	-- #endif
-};
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(IRONFORGE, {
 		-- #if AFTER CATA
@@ -15,9 +8,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #else
 		["lore"] = "Ironforge is the capital city of the dwarves, proud members of the Alliance. It is the ancestral home of the Bronzebeard dwarves. King Bronzebeard rules the kingdom of Khaz Modan from the throne room within the city. The Great Forge area gave the city its name.\n\nCarved into the stone heart of Khaz Modan, the mighty city of Ironforge is a testament to the dwarves' strength and resilience. The city is perhaps the most intricate of the Alliance cities, boasting many small passageways, shops built into the rock walls, and cavernous rooms. The feel of the city is a bustling, rowdy, and somewhat industrial one. However, it is predominantly safe-feeling and cozy; fires roar in the hearths of the inns and shops, and much dwarven laughing and frivolity is to be heard. Also, unlike Stormwind and Darnassus, the city is actually a massive cavern carved into the earth by the dwarves; the ceiling and floor are both hard stone.\n\nMainly because of the Deeprun Tram, linking Ironforge and Stormwind City, and the district of Tinker Town, Ironforge is one of the most racially diverse cities in the Alliance world. Dwarves predominate, of course, but you will find plenty of gnomes even outside of Tinker Town, and probably as many humans. You will find almost no night elves however, as they probably prefer more natural and open spaced environments.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Inv_misc_tournaments_symbol_dwarf",
-		-- #endif
+		["icon"] = 255138,
 		-- #if AFTER CATA
 		["maps"] = { 1361 },	-- Old Ironforge
 		-- #endif
@@ -28,19 +19,48 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = FISHING,
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {{ "achievement_criteria" }},
+					["groups"] = {
+						crit(17749, {	-- Cold Water Fishing
+							["_quests"] = { 29342 },
+						}),
+						crit(17750, {	-- One fer the Ages
+							["_quests"] = { 29343 },
+						}),
+						crit(17751, {	-- Fish fer Squirky
+							["_quests"] = { 29344 },
+						}),
+						crit(17752, {	-- Live Bait
+							["_quests"] = { 29347 },
+						}),
+						crit(17753, {	-- The Gnomish Bait-o-Matic
+							["_quests"] = { 29350 },
+						}),
+					},
 				})),
 				applyclassicphase(CATA_PHASE_ONE, ach(5841, {	-- Let's Do Lunch: Ironforge
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {{ "achievement_criteria" }},
+					["groups"] = {
+						crit(17723, {	-- A Round of the Guards
+							["_quests"] = { 29351 },
+						}),
+						crit(17724, {	-- A Fowl Shortage
+							["_quests"] = { 29352 },
+						}),
+						crit(17725, {	-- Keepin' the Haggis Flowin'
+							["_quests"] = { 29353 },
+						}),
+						crit(17726, {	-- Can't Get Enough Spice Bread
+							["_quests"] = { 29355 },
+						}),
+						crit(17727, {	-- I Need to Cask a Favor
+							["_quests"] = { 29356 },
+						}),
+					},
 				})),
 				applyclassicphase(TBC_PHASE_ONE, ach(1837, {	-- Old Ironjaw
 					["provider"] = { "i", 34484 },	-- Old Ironjaw
-					-- #if BEFORE WRATH
-					["description"] = "Fish up Old Ironjaw in Ironforge.",
-					-- #endif
 					["timeline"] = { ADDED_2_0_1 },
 					["requireSkill"] = FISHING,
 				})),
@@ -49,22 +69,22 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				pet(404),	-- Long-tailed Mole (PET!)
 			}),
 			n(FACTIONS, {
-				faction(54, {	-- Gnomeregan Exiles
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Gnome_Male",
+				faction(FACTION_GNOMEREGAN, {	-- Gnomeregan Exiles
+					-- #if AFTER CATA
+					["provider"] = { "i", 45578 },	-- Gnomeregan Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Gnome_Male")]],
+					["icon"] = 236446,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = ALLIANCE_ONLY,
 				}),
-				faction(47, {	-- Ironforge
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Dwarf_Male",
+				faction(FACTION_IRONFORGE, {	-- Ironforge
+					-- #if AFTER CATA
+					["provider"] = { "i", 45577 },	-- Ironforge Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Dwarf_Male")]],
+					["icon"] = 236444,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = ALLIANCE_ONLY,
 				}),
 			}),
@@ -85,6 +105,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = HEROS_CALL_BOARD_SYMLINK,
 				["races"] = ALLIANCE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 			n(PROFESSIONS, {
@@ -231,16 +252,26 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = 12,
 				}),
-				q(29352, {	-- A Fowl Shortage
+				applyclassicphase(CATA_PHASE_ONE, q(29352, {	-- A Fowl Shortage
 					["qg"] = 5159,	-- Daryl Riknussun
 					["coord"] = { 60.1, 36.4, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
+					["maps"] = { DUN_MOROGH },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
-				}),
+					["groups"] = {
+						objective(1, {	-- 0/6 Dun Morogh Chicken
+							["providers"] = {
+								{ "i", 69982 },	-- Dun Morogh Chicken
+								{ "n", 53568 },	-- Dun Morogh Chicken
+							},
+							["coord"] = { 59.8, 38.2, DUN_MOROGH },
+						}),
+						COOKING_AWARD,
+					},
+				})),
 				q(686, {	-- A King's Tribute (1/3)
 					["qg"] = 2784,	-- King Magni Bronzebeard
 					["sourceQuest"] = 683,	-- Sara Balloo's Plea
@@ -315,7 +346,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["cr"] = 7092,	-- Tainted Ooze
 						}),
 						-- #if ANYCLASSIC
-						i(11912, {	 -- Package of Empty Ooze Containers
+						i(11912, {	-- Package of Empty Ooze Containers
 							i(11914),	-- Empty Cursed Ooze Jar
 							i(11948),	-- Empty Tainted Ooze Jar
 						}),
@@ -339,7 +370,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							},
 						}),
 						-- #if ANYCLASSIC
-						i(11955, {	 -- Bag of Empty Ooze Containers
+						i(11955, {	-- Bag of Empty Ooze Containers
 							i(11953),	-- Empty Pure Sample Jar
 						}),
 						-- #endif
@@ -347,7 +378,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(12051),	-- Brazen Gauntlets
 					},
 				}),
-				q(29351, {	-- A Round for the Guards
+				applyclassicphase(CATA_PHASE_ONE, q(29351, {	-- A Round for the Guards
 					["qg"] = 5159,	-- Daryl Riknussun
 					["coord"] = { 60.1, 36.4, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
@@ -355,14 +386,22 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
-				}),
+					["groups"] = {
+						objective(1, {	-- 0/6 Ironforge Guards Fed
+							["providers"] = {
+								{ "i", 69981 },	-- Ironforge Rations
+								{ "n", 5595 },	-- Ironforge Guard
+							},
+						}),
+						COOKING_AWARD,
+					},
+				})),
 				q(7806, {	-- Additional Runecloth [Ironforge]
 					["qg"] = 14723,	-- Mistina Steelshield
 					["sourceQuest"] = 7805,	-- A Donation of Runecloth
 					["coord"] = { 43.2, 31.9, IRONFORGE },
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
-					["maxReputation"] = { 47, EXALTED },	-- Ironforge, Exalted.
+					["maxReputation"] = { FACTION_IRONFORGE, EXALTED },	-- Ironforge, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -373,7 +412,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sourceQuest"] = 7811,	-- A Donation of Runecloth
 					["coord"] = { 74.1, 48.1, IRONFORGE },
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
-					["maxReputation"] = { 54, EXALTED },	-- Gnomeregan Exiles, Exalted.
+					["maxReputation"] = { FACTION_GNOMEREGAN, EXALTED },	-- Gnomeregan Exiles, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["repeatable"] = true,
@@ -523,7 +562,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				})),
 				-- #endif
-				q(29355, {	-- Can't Get Enough Spice Bread
+				applyclassicphase(CATA_PHASE_ONE, q(29355, {	-- Can't Get Enough Spice Bread
 					["qg"] = 5159,	-- Daryl Riknussun
 					["coord"] = { 60.1, 36.4, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
@@ -531,20 +570,30 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
-				}),
-				q(29342, {	-- Cold Water Fishing
+					["groups"] = {
+						objective(1, {	-- 0/10 Spice Bread
+							["provider"] = { "i", 30816 },	-- Spice Bread
+						}),
+						COOKING_AWARD,
+					},
+				})),
+				applyclassicphase(CATA_PHASE_ONE, q(29342, {	-- Cold Water Fishing
 					["qg"] = 5161,	-- Grimnur Stonebrand
 					["coord"] = { 48.4, 8.2, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
+					["maps"] = { DUN_MOROGH },
 					["requireSkill"] = FISHING,
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
 					["groups"] = {
+						objective(1, {	-- 0/5 Arctic Char
+							["provider"] = { "i", 69931 },	-- Arctic Char
+							["coord"] = { 84.6, 50.9, DUN_MOROGH },
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
-				}),
+				})),
 				q(38394, {	-- Completionism
 					["qg"] = 6294,	-- Krom Stoutarm
 					["sourceQuest"] = 38345,	-- Numismatics
@@ -616,7 +665,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["isBreadcrumb"] = true,
 					["lvl"] = lvlsquish(12, 12, 5),
 				}),
-				q(29344, {	-- Fish fer Squrky
+				applyclassicphase(CATA_PHASE_ONE, q(29344, {	-- Fish fer Squrky
 					["qg"] = 5161,	-- Grimnur Stonebrand
 					["coord"] = { 48.4, 8.2, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
@@ -625,9 +674,16 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["isDaily"] = true,
 					["lvl"] = 10,
 					["groups"] = {
+						objective(1, {	-- 0/3 Feed Squirky
+							["providers"] = {
+								{ "n", 53544 },	-- Squirky
+								{ "i", 69933 },	-- Blind Minnow
+							},
+							["coord"] = { 47.1, 14.5, IRONFORGE },
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
-				}),
+				})),
 				q(1618, {	-- Gearing Redridge
 					["qg"] = 6031,	-- Tormus Deepforge
 					["coord"] = { 48.6, 43, IRONFORGE },
@@ -702,16 +758,23 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["isBreadcrumb"] = true,
 					["lvl"] = 35,
 				}),
-				q(29356, {	-- I Need to Cask a Favor
+				applyclassicphase(CATA_PHASE_ONE, q(29356, {	-- I Need to Cask a Favor
 					["qg"] = 5159,	-- Daryl Riknussun
 					["coord"] = { 60.1, 36.4, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
+					["maps"] = { DUN_MOROGH },
 					["requireSkill"] = COOKING,
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
-				}),
+					["groups"] = {
+						objective(1, {	-- Deliver Cask of Drugan's IPA
+							["provider"] = { "o", 208872 },	-- Cask of Drugan's IPA
+							["coord"] = { 53.9, 50.6, DUN_MOROGH },
+						}),
+						COOKING_AWARD,
+					},
+				})),
 				q(1073, {	-- Ineptitude + Chemicals = Fun (1/2)
 					["qg"] = 4081,	-- Lomac Gearstrip
 					["sourceQuest"] = 1072,	-- An Old Colleague
@@ -748,7 +811,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["lvl"] = 20,
 					["groups"] = {
 						objective(1, {	-- 0/20 Searing Coral
-							["provider"] = { "i", 6848 },	-- Searing Coral
+							["providers"] = {
+								{ "i", 6848 },	-- Searing Coral
+								{ "o", 89634 },	-- Iron Coral
+							},
+							["coord"] = { 9.0, 69.2, WETLANDS },
 						}),
 					},
 				}),
@@ -771,12 +838,15 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["lvl"] = 10,
 					["groups"] = {
 						objective(1, {	-- 0/1 Umbral Ore
-							["provider"] = { "i", 6800 },	-- Umbral Ore
+							["providers"] = {
+								{ "i", 6800 },	-- Umbral Ore
+								{ "o", 85562 },	-- Ironband's Strongbox
+							},
 							["coord"] = { 77.9, 62.2, DUN_MOROGH },
 						}),
 					},
 				}),
-				q(29353, {	-- Keepin' the Haggis Flowin'
+				applyclassicphase(CATA_PHASE_ONE, q(29353, {	-- Keepin' the Haggis Flowin'
 					["qg"] = 5159,	-- Daryl Riknussun
 					["coord"] = { 60.1, 36.4, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
@@ -784,8 +854,25 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
-				}),
+					["groups"] = {
+						objective(1, {	-- 0/1 Bag o' Sheep Innards
+							["provider"] = { "i", 69984 },	-- Bag o' Sheep Innards
+							["coord"] = { 61.6, 72.8, IRONFORGE },
+							["cr"] = 5124,	-- Sognar Cliffbeard <Meat Vendor>
+						}),
+						objective(2, {	-- 0/4 Sack of Oatmeal
+							["providers"] = {
+								{ "i",  69985 },	-- Sack of Oatmeal
+								{ "o", 208870 },	-- Sack of Oatmeal
+							},
+							["coord"] = { 48.9, 29.8, IRONFORGE },
+						}),
+						objective(3, {	-- 0/5 Mild Spices
+							["provider"] = { "i", 2678 },	-- Mild Spices
+						}),
+						COOKING_AWARD,
+					},
+				})),
 				q(2298, {	-- Kingly Shakedown
 					["qg"] = 5165,	-- Hulfdan Blackbeard
 					["sourceQuest"] = 2299,	-- To Hulfdan!
@@ -810,18 +897,27 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				q(29347, {	-- Live Bait
+				applyclassicphase(CATA_PHASE_ONE, q(29347, {	-- Live Bait
 					["qg"] = 5161,	-- Grimnur Stonebrand
 					["coord"] = { 48.4, 8.2, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
+					["maps"] = { DUN_MOROGH },
 					["requireSkill"] = FISHING,
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
 					["groups"] = {
+						objective(1, {	-- Catch Cold Water Crayfish
+							["provider"] = { "i", 69940 },	-- Grimnur's Bait
+							["coord"] = { 84, 51, DUN_MOROGH },
+						}),
+						objective(2, {	-- Take Crayfish to Cook Ghilm
+							["provider"] = { "n", 1355 },	-- Cook Ghilm
+							["coord"] = { 75.6, 52.8, DUN_MOROGH },
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
-				}),
+				})),
 				q(1880,	{	-- Mage-tastic Gizmonitor
 					["qg"] = 5144,	-- Bink <Mage Trainer>
 					["sourceQuest"] = 1879,	-- Speak with Bink
@@ -834,7 +930,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["lvl"] = 10,
 					["groups"] = {
 						objective(1, {	-- 0/1 Mage-tastic Gizmonitor
-							["provider"] = { "i", 7226 },	-- Mage-tastic Gizmonitor
+							["providers"] = {
+								{ "i",   7226 },	-- Mage-tastic Gizmonitor
+								{ "o", 102984 },	-- Bink's Toolbox
+							},
 							["coord"] = { 27.7, 36.5, DUN_MOROGH },
 						}),
 						i(7507, {	-- Arcane Orb
@@ -861,7 +960,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				q(29343, {	-- One fer the Ages
+				applyclassicphase(CATA_PHASE_ONE, q(29343, {	-- One fer the Ages
 					["qg"] = 5161,	-- Grimnur Stonebrand
 					["coord"] = { 48.4, 8.2, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
@@ -870,9 +969,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["isDaily"] = true,
 					["lvl"] = 10,
 					["groups"] = {
+						objective(1, {	-- Put Young Ironjaw on Display
+							["providers"] = {
+								{ "i",  69932 },	-- Young Ironjaw
+								{ "o", 208860 },	-- Empty Plaque
+							},
+							["coords"] = {
+								{ 47.5, 14.5, IRONFORGE },
+								{ 71, 10, IRONFORGE },
+							},
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
-				}),
+				})),
 				q(3448, {	-- Passing the Burden
 					["qg"] = 2916,	-- Historian Karnik
 					["coord"] = { 77.2, 11.8, IRONFORGE },
@@ -983,13 +1092,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = 25,
 				}),
-				q(26118, {	-- Seize the Ambassador
+				applyclassicphase(CATA_PHASE_ONE, q(26118, {	-- Seize the Ambassador
 					["qg"] = 42129,	-- Moira Thaurissan
 					["sourceQuest"] = 26112,	-- Demanding Answers
 					["coord"] = { 39.7, 57.3, IRONFORGE },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
+						objective(1, {	-- Arrest Ambassador Slaghammer and bring him to the High Seat
+							["providers"] = {
+								{ "i", 56837 },	-- Sturdy Manacles
+								{ "n", 42146 },	-- Ambassador Slaghammer <Dark Iron Ambassador>
+							},
+							["coord"] = { 36.6, 43.6, IRONFORGE },
+						}),
 						i(57583, {	-- The Slaghammer
 							["timeline"] = { ADDED_4_0_3 },
 						}),
@@ -1003,15 +1119,15 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_7_0_3 },
 						}),
 					},
-				}),
+				})),
 				q(3641, {	-- Show Your Work
 					["qg"] = 7944,	-- Tinkmaster Overspark <Master Gnome Engineer>
 					["sourceQuest"] = 3640,	-- The Pledge of Secrecy
 					["altQuests"] = { 3639, 3643 },	-- Show Your Work
-					["description"] = "Requires 200 Engineering to start this quest.",
 					["coord"] = { 69.8, 50.2, IRONFORGE },
 					["timeline"] = { REMOVED_3_0_2 },	-- Originally supposed to be removed in 4.0.3, but Wrath Classic was weird.
 					["requireSkill"] = ENGINEERING,
+					["learnedAt"] = 200,
 					["races"] = ALLIANCE_ONLY,
 					["cost"] = {
 						{ "i", 4392, 2 },	-- Advanced Target Dummy
@@ -1061,18 +1177,31 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #endif
 					},
 				}),
-				q(29350, {	-- The Gnomish Bait-o-Matic
+				applyclassicphase(CATA_PHASE_ONE, q(29350, {	-- The Gnomish Bait-o-Matic
 					["qg"] = 5161,	-- Grimnur Stonebrand
 					["coord"] = { 48.4, 8.2, IRONFORGE },
 					["timeline"] = { ADDED_4_0_1 },
+					["maps"] = { DEEPRUN_TRAM },
 					["requireSkill"] = FISHING,
 					["races"] = ALLIANCE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
 					["groups"] = {
+						objective(1, {	-- 0/1 Gnomish Bait-o-Matic
+							["providers"] = {
+								{ "i",  69978 },	-- Gnomish Bait-o-Matic
+								{ "i",  69979 },	-- Bait-o-Matic Blueprints
+								{ "o", 208864 },	-- Rat Trap
+							},
+							["cost"] = {
+								{ "i", 6529, 5 },	-- Shiny Bauble
+								{ "i", 69980, 3 },	-- Rat Trap
+								{ "i", 39684, 1 },	-- Hair Trigger
+							},
+						}),
 						i(67414),	-- Bag of Shiny Things
 					},
-				}),
+				})),
 				q(3640, {	-- The Pledge of Secrecy
 					["qg"] = 7944,	-- Tinkmaster Overspark <Master Gnome Engineer>
 					["sourceQuests"] = {
@@ -1081,10 +1210,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						3630,	-- Gnome Engineering
 					},
 					["altQuests"] = { 3638, 3642 },	-- The Pledge of Secrecy
-					["description"] = "Requires 200 Engineering to start this quest.",
 					["coord"] = { 69.8, 50.2, IRONFORGE },
 					["timeline"] = { REMOVED_3_0_2 },	-- Originally supposed to be removed in 4.0.3, but Wrath Classic was weird.
 					["requireSkill"] = ENGINEERING,
+					["learnedAt"] = 200,
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = 30,
 					["groups"] = {
@@ -1362,7 +1491,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 40.2, 33.4, IRONFORGE },
 					["races"] = ALLIANCE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = { {"sub", "common_recipes_vendor", 3366} }, -- Tamar <Leatherworking Supplies>
+					["sym"] = { {"sub", "common_recipes_vendor", 3366} },	-- Tamar <Leatherworking Supplies>
 					-- #endif
 					["groups"] = {
 						i(18731, {	-- Pattern: Heavy Leather Ball (RECIPE!)
@@ -1440,19 +1569,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64899, {	-- Cape of Ironforge
-							["minReputation"] = { 47, EXALTED },	-- Ironforge, Exalted.
+							["minReputation"] = { FACTION_IRONFORGE, EXALTED },	-- Ironforge, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64900, {	-- Mantle of Ironforge
-							["minReputation"] = { 47, EXALTED },	-- Ironforge, Exalted.
+							["minReputation"] = { FACTION_IRONFORGE, EXALTED },	-- Ironforge, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64898, {	-- Shroud of Ironforge
-							["minReputation"] = { 47, EXALTED },	-- Ironforge, Exalted.
+							["minReputation"] = { FACTION_IRONFORGE, EXALTED },	-- Ironforge, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67528, {	-- Ironforge Satchel
-							["minReputation"] = { 47, REVERED },	-- Ironforge, Revered.
+							["minReputation"] = { FACTION_IRONFORGE, REVERED },	-- Ironforge, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -1512,7 +1641,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 60.6, 38.2, IRONFORGE },
 					["races"] = ALLIANCE_ONLY,
 					-- #if AFTER CATA
-					["sym"] = {{"sub", "common_recipes_vendor", 49701}}, -- Jon Casper <Sous Chef>
+					["sym"] = {{"sub", "common_recipes_vendor", 49701}},	-- Jon Casper <Sous Chef>
 					-- #endif
 					["groups"] = {
 						i(21219),	-- Recipe: Sagefish Delight (RECIPE!)
@@ -1826,7 +1955,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 50.6, 27.0, IRONFORGE },
 					["timeline"] = { ADDED_4_1_0 },
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = { {"sub", "common_recipes_vendor", 50482} }, -- Marith Lazuria <Jewelcrafting Supplies>
+					["sym"] = { {"sub", "common_recipes_vendor", 50482} },	-- Marith Lazuria <Jewelcrafting Supplies>
 				}),
 				n(5129, {	-- Lissyphus Finespindle
 					["coord"] = { 54.6, 88.2, IRONFORGE },
@@ -1857,7 +1986,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				n(5049, {	-- Lyesa Steelbrow <Tabard Vendor>
 					["coord"] = { 36.4, 84.4, IRONFORGE },
-					["sym"] = { {"sub", "common_vendor", 5193} }, -- Rebecca Laughlin <Tabard Designer>
+					["sym"] = { {"sub", "common_vendor", 5193} },	-- Rebecca Laughlin <Tabard Designer>
 					["races"] = ALLIANCE_ONLY,
 				}),
 				n(5156, {	-- Maeva Snowbraid
@@ -1882,19 +2011,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64896, {	-- Cape of Gnomeregan
-							["minReputation"] = { 54, EXALTED },	-- Gnomeregan Exiles, Exalted.
+							["minReputation"] = { FACTION_GNOMEREGAN, EXALTED },	-- Gnomeregan Exiles, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64895, {	-- Mantle of Gnomeregan
-							["minReputation"] = { 54, EXALTED },	-- Gnomeregan Exiles, Exalted.
+							["minReputation"] = { FACTION_GNOMEREGAN, EXALTED },	-- Gnomeregan Exiles, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64897, {	-- Shroud of Gnomeregan
-							["minReputation"] = { 54, EXALTED },	-- Gnomeregan Exiles, Exalted.
+							["minReputation"] = { FACTION_GNOMEREGAN, EXALTED },	-- Gnomeregan Exiles, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67530, {	-- Gnomeregan Satchel
-							["minReputation"] = { 54, REVERED },	-- Gnomeregan Exiles, Revered.
+							["minReputation"] = { FACTION_GNOMEREGAN, REVERED },	-- Gnomeregan Exiles, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -1967,7 +2096,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(5154, {	-- Poranna Snowbraid <Tailoring Supplies>
 					["coord"] = { 43.8, 29.6, IRONFORGE },
 					-- #if AFTER CATA
-					["sym"] = { {"sub", "common_recipes_vendor", 3364} }, -- Borya <Tailoring Supplies>
+					["sym"] = { {"sub", "common_recipes_vendor", 3364} },	-- Borya <Tailoring Supplies>
 					-- #endif
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -2062,14 +2191,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(4259, {	-- Thurgrum Deepforge <Blacksmithing Supplies>
 					["coord"] = { 51.8, 41.2, IRONFORGE },
 					-- #if AFTER CATA
-					["sym"] = { {"sub", "common_recipes_vendor", 3356} }, -- Sumi <Blacksmithing Supplies>
+					["sym"] = { {"sub", "common_recipes_vendor", 3356} },	-- Sumi <Blacksmithing Supplies>
 					-- #endif
 					["races"] = ALLIANCE_ONLY,
 				}),
 				n(5158, {	-- Tilli Thistlefuzz <Enchanting Supplies>
 					["coord"] = { 60.8, 44.2, IRONFORGE },
 					-- #if AFTER CATA
-					["sym"] = { { "sub", "common_recipes_vendor", 1318 } }, -- Jessara Cordell <Enchanting Supplies>
+					["sym"] = { { "sub", "common_recipes_vendor", 1318 } },	-- Jessara Cordell <Enchanting Supplies>
 					-- #endif
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {

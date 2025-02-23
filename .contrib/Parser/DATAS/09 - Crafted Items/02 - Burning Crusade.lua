@@ -1,6 +1,12 @@
 ---------------------------------------------
 --    C R A F T A B L E S   M O D U L E    --
 ---------------------------------------------
+local function ClassicCost(cost)
+	-- This data is provided by ReagentsDB in Retail
+	-- #IF ANYCLASSIC
+	return cost
+	-- #ENDIF
+end
 root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_5 } }, {
 	i(180055, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past I
 	i(180057, {["timeline"] = {ADDED_9_0_1}}),	-- Relic of the Past II
@@ -83,23 +89,26 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 		}),
 		filter(REAGENTS, {
 			i(25867),	-- Earthstorm Diamond
-			i(22451),	-- Primal Air
-			i(22452),	-- Primal Earth
-			i(21884),	-- Primal Fire
-			i(21886),	-- Primal Life
-			i(22457),	-- Primal Mana
+			convertItem(22451, 22572, 10),	-- Primal Air / Mote of Air
+			convertItem(22452, 22573, 10),	-- Primal Earth / Mote of Earth
+			convertItem(21884, 22574, 10),	-- Primal Fire / Mote of Fire
+			convertItem(21886, 22575, 10),	-- Primal Life / Mote of Life
+			convertItem(22457, 22576, 10),	-- Primal Mana / Mote of Mana
 			i(23571),	-- Primal Might
-			i(22456),	-- Primal Shadow
-			i(21885),	-- Primal Water
+			convertItem(22456, 22577, 10),	-- Primal Shadow / Mote of Shadow
+			convertItem(21885, 22578, 10),	-- Primal Water / Mote of Water
 			i(25868),	-- Skyfire Diamond
 		}),
 		filter(TRINKET_F, {
-			i(13503),	-- Alchemist Stone
-			applyclassicphase(TBC_PHASE_FIVE, i(35751, {["timeline"] = {ADDED_2_4_0}})),	-- Assassin's Alchemist Stone
-			applyclassicphase(TBC_PHASE_FIVE, i(35748, {["timeline"] = {ADDED_2_4_0}})),	-- Guardian's Alchemist Stone
-			applyclassicphase(TBC_PHASE_FIVE, i(35750, {["timeline"] = {ADDED_2_4_0}})),	-- Redeemer's Alchemist Stone
-			applyclassicphase(TBC_PHASE_FIVE, i(35749, {["timeline"] = {ADDED_2_4_0}})),	-- Sorcerer's Alchemist Stone
-			i(31080),	-- Mercurial Stone
+			["sharedDescription"] = "Alchemy Lab can be found on Aldor Rise and Scryer's Tier in Shattrath.",
+			["groups"] = {
+				i(13503),	-- Alchemist Stone
+				applyclassicphase(TBC_PHASE_FIVE, i(35751, {["timeline"] = {ADDED_2_4_0}})),	-- Assassin's Alchemist Stone
+				applyclassicphase(TBC_PHASE_FIVE, i(35748, {["timeline"] = {ADDED_2_4_0}})),	-- Guardian's Alchemist Stone
+				applyclassicphase(TBC_PHASE_FIVE, i(35750, {["timeline"] = {ADDED_2_4_0}})),	-- Redeemer's Alchemist Stone
+				applyclassicphase(TBC_PHASE_FIVE, i(35749, {["timeline"] = {ADDED_2_4_0}})),	-- Sorcerer's Alchemist Stone
+				i(31080),	-- Mercurial Stone
+			},
 		}),
 	}),
 	prof(ARCHAEOLOGY, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
@@ -609,46 +618,126 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 	-- #endif
 	prof(FISHING, {
 		i(27422, {	-- Barbed Gill Trout
-			["description"] = "Can be caught in open waters around Outland and Deadwind Pass.",
+			["maps"] = {
+				DEADWIND_PASS,
+				NAGRAND,
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
+		}),
+		i(34865, {	-- Blackfin Darter (Quest Item for Terokkar Forest fishing daily q(11666) Bait Bandits)
+			["maps"] = { TEROKKAR_FOREST } ,
+			["timeline"] = { ADDED_2_4_0 },
+		}),
+		i(35313, {	-- Bloated Barbed Gill Trout (Quest Item for Terokkar Forest fishing daily q(11668) Shrimpin' Ain't Easy)
+			["maps"] = ZANGARMARSH,
+			["timeline"] = { ADDED_2_4_0 },
+			["groups"] = {
+				i(34866),	-- Giant Freshwater Shrimp
+			},
 		}),
 		applyclassicphase(TBC_PHASE_FOUR, i(33823, {	-- Bloodfin Catfish
-			["description"] = "Can only be caught in Deadwind Pass.",
-			["timeline"] = {ADDED_2_3_0},
+			["maps"] = { DEADWIND_PASS },
+			["timeline"] = { ADDED_2_3_0 },
 		})),
 		applyclassicphase(TBC_PHASE_FOUR, i(33824, {	-- Crescent-Tail Skullfish
-			["description"] = "Can only be caught in Deadwind Pass.",
-			["timeline"] = {ADDED_2_3_0},
+			["maps"] = { DEADWIND_PASS },
+			["timeline"] = { ADDED_2_3_0 },
 		})),
 		i(27513),	-- Curious Crate
 		i(27516, {	-- Enormous Barbed Gill Trout
-			["description"] = "Can be caught from fishing schools in Nagrand, Terokkar Forest and Zangarmarsh.",
+			["providers"] = {
+				{ "o", 182959 },	-- Bluefish School
+				{ "o", 182954 },	-- Brackish Mixed School
+				{ "o", 182957 },	-- Highland Mixed School
+				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182956 },	-- School of Darter
+				{ "o", 182953 },	-- Sporefish School
+				{ "o", 182952 },	-- Steam Pump Floatsam
+			},
+			["maps"] = {
+				NAGRAND,
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
 		}),
 		i(27435, {	-- Figluster's Mudfish
-			["description"] = "Can be caught from Mudfish Schools in Nagrand.",
+			["provider"] = { "o", 182958 },	-- Mudfish School
+			["maps"] = { NAGRAND },
 		}),
 		i(27439, {	-- Furious Crawdad
-			["description"] = "Can be caught from Highland Mixed Schools in Terokkar Forest.",
+			["provider"] = { "o", 182957 },	-- Highland Mixed School
+			["coords"] = {
+				{ 59.6, 59.85, TEROKKAR_FOREST },	-- Lake Ere'Noru
+				{ 46.6, 40.7, TEROKKAR_FOREST },	-- Lake Jorune
+				{ 66.0, 78.3, TEROKKAR_FOREST },	-- Skettis
+			},
 		}),
 		applyclassicphase(TBC_PHASE_FIVE, i(35285, {	-- Giant Sunfish
-			["description"] = "Can only be caught in open sea waters around Isle of Quel'Danas.",
-			["timeline"] = {ADDED_2_4_0},
+			["maps"] = ISLE_OF_QUELDANAS,
+			["timeline"] = { ADDED_2_4_0 },
 		})),
 		i(27438, {	-- Golden Darter
-			["description"] = "Can be caught from School of Darter in Terokkar Forest.",
+			["providers"] = {
+				{ "o", 182954 },	-- Brackish Mixed School
+				{ "o", 182957 },	-- Highland Mixed School
+				{ "o", 182956 },	-- School of Darter
+			},
+			["maps"] = TEROKKAR_FOREST,
 		}),
 		i(27481),	-- Heavy Supply Crate
 		i(27515, {	-- Huge Spotted Feltail
-			["description"] = "Can be caught from fishing schools in Nagrand, Terokkar Forest and Zangarmarsh.",
+			["providers"] = {
+				{ "o", 182959 },	-- Bluefish School
+				{ "o", 182954 },	-- Brackish Mixed School
+				{ "o", 182957 },	-- Highland Mixed School
+				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182956 },	-- School of Darter
+				{ "o", 182953 },	-- Sporefish School
+				{ "o", 182952 },	-- Steam Pump Floatsam
+			},
+			["maps"] = {
+				NAGRAND,
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
 		}),
 		i(27437, {	-- Icefin Bluefish
-			["description"] = "Can be caught from Bluefish Schools in Nagrand.",
+			["provider"] = { "o", 182959 },	-- Bluefish School
+			["maps"] = { NAGRAND },
 		}),
-		i(27511),	-- Inscribed Scrollcase
+		i(27511, {	-- Inscribed Scrollcase
+			["providers"] = {
+				{ "o", 182959 },	-- Bluefish School
+				{ "o", 182954 },	-- Brackish Mixed School
+				{ "o", 182957 },	-- Highland Mixed School
+				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182956 },	-- School of Darter
+				{ "o", 182953 },	-- Sporefish School
+				{ "o", 182952 },	-- Steam Pump Floatsam
+			},
+			["maps"] = {
+				NAGRAND,
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
+		}),
+		i(34867, {	-- Monstrous Felblood Snapper (Quest Item for Terokkar Forest fishing daily q(11669) Felblood Fillet)
+			["maps"] = {
+				HELLFIRE_PENINSULA,
+				SHADOWMOON_VALLEY,
+			},
+			["timeline"] = { ADDED_2_4_0 },
+		}),
 		i(27425, {	-- Spotted Feltail
-			["description"] = "Can be caught in open waters in Terokkar Forest and Zangarmarsh.",
+			["maps"] = {
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
 		}),
 		i(27429, {	-- Zangarian Sporefish
-			["description"] = "Can be caught from Sporefish Schools in Zangarmarsh.",
+			["provider"] = { "o", 182953 },	-- Sporefish School
+			["maps"] = { ZANGARMARSH },
 		}),
 		filter(RECIPES, {
 			i(34109, {	-- Weather-Beaten Journal (RECIPE!)
@@ -659,34 +748,149 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 	}),
 	prof(HERBALISM, {
 		spell(2366, {	-- Herb Gathering
-			i(22790),	-- Ancient Lichen
-			i(108348, {["timeline"] = {ADDED_6_0_2}}),	-- Ancient Lichen Petal
-			i(22786),	-- Dreaming Glory
-			i(108345, {["timeline"] = {ADDED_6_0_2}}),	-- Dreaming Glory Petal
+			i(22790, {	-- Ancient Lichen
+				["maps"] = {
+					AUCHINDOUN_AUCHENAI_CRYPTS,
+					AUCHINDOUN_MANA_TOMBS,
+					AUCHINDOUN_SETHEKK_HALLS,
+					AUCHINDOUN_SHADOW_LABYRINTH,
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+				},
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(108348, {	-- Ancient Lichen Petal
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22790),	-- Ancient Lichen
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(22786, {	-- Dreaming Glory
+				["description"] = "Found around edges and highly uneven terrain.",
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+				},
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(108345, {	-- Dreaming Glory Petal
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22786),	-- Dreaming Glory
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
 			i(22795),	-- Fel Blossom
-			i(22794),	-- Fel Lotus
-			i(22785),	-- Felweed
-			i(108344, {["timeline"] = {ADDED_6_0_2}}),	-- Felweed Stalk
-			i(22788),	-- Flame Cap
-			i(22793),	-- Mana Thistle
-			i(108351, {["timeline"] = {ADDED_6_0_2}}),	-- Mana Thistle Leaf
-			i(35229, {["timeline"] = {ADDED_2_4_0}}),	-- Nether Residue
-			i(22791),	-- Netherbloom
-			i(108349, {["timeline"] = {ADDED_6_0_2}}),	-- Netherbloom Leaf
-			i(32468, {["timeline"] = {ADDED_2_1_0}}),	-- Netherdust Pollen
-			i(22797),	-- Nightmare Seed
-			i(22792),	-- Nightmare Vine
-			i(108350, {["timeline"] = {ADDED_6_0_2}}),	-- Nightmare Vine Stem
-			i(22787),	-- Ragveil
-			i(108346, {["timeline"] = {ADDED_6_0_2}}),	-- Ragveil Cap
-			i(22789),	-- Terocone
-			i(108347, {["timeline"] = {ADDED_6_0_2}}),	-- Terocone Leaf
-			i(24401),	-- Unidentified Plant Parts
-			-- Not Herb --
-			--[[	No need to list Tradegoods w/ many other sources
-			i(22575),	-- Mote of Life
-			i(22576),	-- Mote of Mana
-			--]]
+			i(22794, {	-- Fel Lotus
+				["description"] = "Can uncommonly be looted when gathered TBC herbs.",
+			}),
+			i(22785, {	-- Felweed
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					HELLFIRE_PENINSULA,
+					NAGRAND,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(108344, {	-- Felweed Stalk
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22785),	-- Felweed
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(22788, {	-- Flame Cap
+				["maps"] = ZANGARMARSH,
+			}),
+			i(22793, {	-- Mana Thistle
+				["maps"] = ISLE_OF_QUELDANAS,
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(108351, {	-- Mana Thistle Leaf
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22793),	-- Mana Thistle
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(35229, {["timeline"] = { ADDED_2_4_0 }}),	-- Nether Residue (Quest Item for Shattrath q(11875) Gaining the Advantage) 
+			i(22791, {	-- Netherbloom
+				["maps"] = NETHERSTORM,
+			}),
+			i(108349, {	-- Netherbloom Leaf
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22791),	-- Netherbloom
+				},
+			}),
+			i(22797, {	-- Nightmare Seed
+				["timeline"] = { REMOVED_3_3_0 }, -- Danny Donkey: Must confirm how this applies to Classic!
+			}),
+			i(22792, {	-- Nightmare Vine
+				["maps"] = ISLE_OF_QUELDANAS,
+			}),
+			i(108350, {	-- Nightmare Vine Stem
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22792),	-- Nightmare Vine
+				},
+			}),
+			i(22787, {	-- Ragveil
+				["maps"] = ZANGARMARSH,
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(108346, {	-- Ragveil Cap
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+					i(22787),	-- Ragveil
+				},
+			}),
+			i(22789, {	-- Terocone
+				["maps"] = TEROKKAR_FOREST,
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+				},
+			}),
+			i(108347, {	-- Terocone Leaf
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(22575),	-- Mote of Life
+					i(21886),	-- Primal Life
+					i(22789),	-- Terocone
+				},
+			}),
+			i(24401, {	-- Unidentified Plant Parts (Quest Item for Zangarmarsh q(9802) and q(9784))
+				["maps"] = ZANGARMARSH,
+			}),
 		}),
 	}),
 	-- #if AFTER WRATH
@@ -1021,16 +1225,86 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 	}),
 	prof(MINING, {
 		spell(2575, {	-- Mining
-			i(23425),	-- Adamantite Ore
-			i(108302, {["timeline"] = {ADDED_6_0_2}}),	-- Adamantite Ore Nugget
-			i(23427),	-- Eternium Ore
-			i(108303, {["timeline"] = {ADDED_6_0_2}}),	-- Eternium Ore Nugget
-			i(23424),	-- Fel Iron Ore
-			i(108301, {["timeline"] = {ADDED_6_0_2}}),	-- Fel Iron Ore Nugget
-			i(23426),	-- Khorium Ore
-			i(108304, {["timeline"] = {ADDED_6_0_2}}),	-- Khorium Ore Nugget
-			i(35229, {["timeline"] = {ADDED_2_4_0}}),	-- Nether Residue
-			i(32464, {["timeline"] = {ADDED_2_1_0}}),	-- Nethercite Ore
+			i(23425, {	-- Adamantite Ore
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					ISLE_OF_QUELDANAS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+			}),
+			i(108302, {	-- Adamantite Ore Nugget
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(23425),	-- Adamantite Ore
+				}
+			}),
+			i(23427, {	-- Eternium Ore
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					ISLE_OF_QUELDANAS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+				["providers"] = {
+					{ "o", 181556 },	-- Adamantite Deposit
+					{ "o", 181557 },	-- Khorium Vein
+					{ "o", 181569 },	-- Rich Adamantite Deposit
+				},
+			}),
+			i(108303, {	-- Eternium Ore Nugget
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(23427),	-- Eternium Ore
+				}
+			}),
+			i(23424, {	-- Fel Iron Ore
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					HELLFIRE_PENINSULA,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+			}),
+			i(108301, {	-- Fel Iron Ore Nugget
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(23424),	-- Fel Iron Ore
+				}
+			}),
+			i(23426, {	-- Khorium Ore
+				["maps"] = {
+					AUCHINDOUN_AUCHENAI_CRYPTS,
+					AUCHINDOUN_MANA_TOMBS,
+					AUCHINDOUN_SETHEKK_HALLS,
+					AUCHINDOUN_SHADOW_LABYRINTH,
+					BLADES_EDGE_MOUNTAINS,
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+					ISLE_OF_QUELDANAS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+				},
+			}),
+			i(108304, {	-- Khorium Ore Nugget
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(23426),	-- Khorium Ore
+				}
+			}),
+			i(35229, {["timeline"] = {ADDED_2_4_0}}),	-- Nether Residue (Quest Item for Shattrath q(11875) Gaining the Advantage)
 			--	Not Ore
 			--[[	No need to list Tradegoods w/ many other sources
 			i(23117),	-- Azure Moonstone
@@ -1043,8 +1317,6 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			i(23112),	-- Golden Draenite
 			i(32229, {["timeline"] = {ADDED_2_1_0}}),	-- Lionseye
 			i(23436),	-- Living Ruby
-			i(22573),	-- Mote of Earth
-			i(22574),	-- Mote of Fire
 			i(23441),	-- Nightseye
 			i(23439),	-- Noble Topaz
 			i(32231, {["timeline"] = {ADDED_2_1_0}}),	-- Pyrestone
@@ -1057,32 +1329,32 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 		}),
 		spell(2656, {	-- Smelting
 			i(23446, {    -- Adamantite Bar
-				["cost"] = { { "i", 23425, 2 } },    -- Adamantite Ore
+				["cost"] = ClassicCost({ { "i", 23425, 2 } }),    -- Adamantite Ore
 			}),
 			i(23447, {    -- Eternium Bar
-				["cost"] = { { "i", 23427, 2 } },    -- Eternium Ore
+				["cost"] = ClassicCost({ { "i", 23427, 2 } }),    -- Eternium Ore
 			}),
 			i(23445, {    -- Fel Iron Bar
-				["cost"] = { { "i", 23424, 2 } },    -- Fel Iron Ore
+				["cost"] = ClassicCost({ { "i", 23424, 2 } }),    -- Fel Iron Ore
 			}),
 			i(23448, {    -- Felsteel Bar
-				["cost"] = {
+				["cost"] = ClassicCost({
 					{ "i", 23445, 3 },	-- Fel Iron Bar
 					{ "i", 23447, 2 },	-- Eternium Bar
-				},
+				}),
 			}),
 			i(23573, {    -- Hardened Adamantite Bar
-				["cost"] = { { "i", 23446, 10 } },    -- Adamantite Bar
+				["cost"] = ClassicCost({ { "i", 23446, 10 } }),    -- Adamantite Bar
 			}),
 			applyclassicphase(TBC_PHASE_FIVE, i(35128, {    -- Hardened Khorium Bar
 				["timeline"] = {ADDED_2_4_0},
-				["cost"] = {
+				["cost"] = ClassicCost({
 					{ "i", 23449, 3 },    -- Khorium Bar
 					{ "i", 23573, 1 },    -- Hardened Adamantite Bar
-				},
+				}),
 			})),
 			i(23449, {    -- Khorium Bar
-				["cost"] = { { "i", 23426, 2 } },    -- Khorium Ore
+				["cost"] = ClassicCost({ { "i", 23426, 2 } }),    -- Khorium Ore
 			}),
 		}),
 	}),
@@ -1094,19 +1366,213 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 		i(22055),	-- Wound Poison V
 	})),
 	prof(SKINNING, {
-		["description"] = "The following items can be gathered by skinning creatures out in the world.",
+		["description"] = "The following items can be gathered by skinning creatures on Outland. Note that Knothide Leader is the most common reagent to get from skinning. All other skinned reagents have a lower than 100% drop chance from skinning the respective mobs, thus you must expect having to skin multiple creatures to obtain the reagent.",
 		["groups"] = {
-			i(29539),	-- Cobra Scales
-			i(25699),	-- Crystal-Infused Leather
-			i(25707),	-- Fel Hide
-			i(25700),	-- Fel Scales
-			i(21887),	-- Knothide Leather
-			i(25649),	-- Knothide Leather Scraps
-			i(29548),	-- Nether Dragonscales
-			i(35229),	-- Nether Residue
-			i(32470),	-- Nethermine Flayer Hide
-			i(25708),	-- Thick Clefthoof Leather
-			i(29547),	-- Wind Scales
+			i(29539, {    -- Cobra Scales
+				["crs"] = {
+					19784,	-- Coilskar Cobra
+					23020,	-- Shadow Serpent
+					23026,	-- Twilight Serpent
+				},
+				["coords"] = {
+					{ 11.4, 39.3, NAGRAND },	-- Twilight Ridge west
+					{ 19.4, 34.6, NAGRAND },	-- Twilight Ridge east
+					{ 45.5, 13.0, SHADOWMOON_VALLEY },	-- Coilskar Point, north of.
+					{ 65.25, 22.5, SHADOWMOON_VALLEY },	-- Altar of Sha'tar, north of.
+					{ 66.1, 30.0, SHADOWMOON_VALLEY },	-- Altar of Sha'tar, east of.
+					{ 71.8, 30.0, SHADOWMOON_VALLEY },	-- Black Temple, north of.
+					{ 53.05, 25.55, SHADOWMOON_VALLEY },	-- Coilskar Cistern
+					{ 45.8, 28.6, SHADOWMOON_VALLEY },	-- Coilskar Point
+				},
+			}),
+			i(25699, {    -- Crystal-Infused Leather
+				["crs"] = {
+					18461,	-- Dampscale Basilisk
+					18463,	-- Dampscale Devourer
+					20924,	-- Grishnath Basilisk
+					21816,	-- Ironspine Chomper
+					19730,	-- Ironspine Gazer
+					21854,	-- Ironspine Petrifier
+					19729,	-- Ironspine Threshalisk
+					20283,	-- Marshrock Stomper
+					19706,	-- Marshrock Threshalisk
+					16934,	-- Quillfang Ravager
+					19189,	-- Quillfang Skitterer
+					20279,	-- Ragestone Threshalisk
+					20280,	-- Ragestone Trampler
+					16932,	-- Razorfang Hatchling
+					16933,	-- Razorfang Ravager
+					20987,	-- Ruuan Weald Basilisk
+					20925,	-- Scalded Basilisk
+					22180,	-- Shard-Hide Boar
+					19349,	-- Thornfang Ravager
+					19350,	-- Thornfang Venomspitter
+					-- #if AFTER 2.1.0
+					23169,	-- Nethermine Flayer
+					23326,	-- Nethermine Ravager
+					23264,	-- Overmine Flayer
+					-- #endif
+				},
+				["coords"] = {
+					{ 64.5, 33.0, BLADES_EDGE_MOUNTAINS },	-- Veil Ruuan
+					{ 72.4, 20.2, BLADES_EDGE_MOUNTAINS },	-- Skald
+					{ 67.5, 11.7, BLADES_EDGE_MOUNTAINS },	-- Crystal Spine East
+					{ 61.0, 11.0, BLADES_EDGE_MOUNTAINS },	-- Crystal Spine West
+					{ 40.2, 18.4, BLADES_EDGE_MOUNTAINS },	-- Grishnath
+					{ 32.1, 55.0, BLADES_EDGE_MOUNTAINS },	-- Vortex Summit North
+					{ 29.5, 67.0, BLADES_EDGE_MOUNTAINS },	-- Vortex Summit South
+					{ 38.5, 88.3, HELLFIRE_PENINSULA }, -- Razorthorn Trail
+					{ 22.9, 67.2, HELLFIRE_PENINSULA }, -- Dustquill Ravine
+					{ 8.7, 50.8, HELLFIRE_PENINSULA }, -- Thornfang Hill
+					{ 68.5, 44.4, NETHERSTORM }, -- Voidwind Plateu
+					{ 39.3, 9.7, TEROKKAR_FOREST },	-- Silmyr Lake
+					{ 44.6, 34.3, TEROKKAR_FOREST },	-- Cenarion Thicket, south of
+					{ 62.4, 49.0, TEROKKAR_FOREST },	-- Bonechewer Ruins, west of
+					{ 68.7, 30.5, TEROKKAR_FOREST },	-- Firewing Point, northwest of
+					{ 88.1, 33.6, ZANGARMARSH }, -- Dead Mire East
+					{ 78.1, 30.0, ZANGARMARSH }, -- Dead Mire North
+					{ 34.7, 18.0, ZANGARMARSH }, -- Hewn Bog, north of
+					{ 24.7, 19.1, ZANGARMARSH }, -- Daggerfen Village, north of
+					{ 14.9, 28.9, ZANGARMARSH }, -- Ango'rosh, west of
+					{ 8.3, 52.7, ZANGARMARSH }, -- Sporewind Lake, west of
+					-- #if AFTER 2.1.0
+					{ 63.0, 07.8, SHADOWMOON_VALLEY }, -- Netherwing Mines (entrance)
+					{ 73.0, 85.4, SHADOWMOON_VALLEY }, -- Netherwing Ledge flayer hill
+					-- #endif
+				},
+				["description"] = "Can be efficiently farmed in Blade's Edge Mountains and Zangarmarsh using a route from the southwestern end of Zangarmarsh following the western edge northwards and later eastwards to Blade's Edge Mountains. Then fly up to and follow the Vortex Summit, down again to Grishnath, and east up again following the Crystal Spine, over to Skald, and down to Veil Ruuan.\n\nCan also be found on basilisks all over Terokkar Forest, most of them dropping Dampscale Basilisk Eye.\n\nSkinning most mobs can also give Fel Scales",
+			}),
+			i(25707, {    -- Fel Hide
+				["crs"] = {
+					19852,	-- Artifact Seeker
+					23219,	-- Blackwind Warp Chaser
+					22255,	-- Daggertail Lizard
+					16863,	-- Deranged Helboar
+					16177,	-- Dreadbeast
+					16880,	-- Hulking Helboar
+					16950,	-- Netherhound
+					16178,	-- Phase Hound
+					16176,	-- Shadowbeast
+					18884,	-- Warp Chaser
+					18465,	-- Warp Hunter
+					18464,	-- Warp Stalker
+					20557,	-- Wrath Hound
+				},
+				["coords"] = {
+					{ 67.5, 11.7, BLADES_EDGE_MOUNTAINS },	-- Crystal Spine East
+					{ 61.0, 11.0, BLADES_EDGE_MOUNTAINS },	-- Crystal Spine West
+					{ 34.8, 40.4, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Wrath
+					{ 20.3, 55.8, HELLFIRE_PENINSULA }, -- Shanaari Wastes, east of
+					{ 49.5, 71.5, HELLFIRE_PENINSULA }, -- Honour Hold, southwest of
+					{ 49.5, 31.3, HELLFIRE_PENINSULA }, -- Stonewall Canyon
+					{ 63.1, 70.7, HELLFIRE_PENINSULA }, -- Zeth'gor, west of
+					{ 72.1, 57.0, HELLFIRE_PENINSULA }, -- The Legion Front South
+					{ 72.8, 42.4, HELLFIRE_PENINSULA }, -- The Legion Front North
+					{ 40.8, 72.5, NETHERSTORM }, -- Arklon Ruins
+					{ 56.4, 60.0, NETHERSTORM }, -- The Vortex Fields west
+					{ 66.3, 61.8, NETHERSTORM }, -- The Vortex Fields east
+					{ 65.9, 85.0, TEROKKAR_FOREST },	-- Blackwind Lake Southside
+					{ 60.3, 38.7, TEROKKAR_FOREST },	-- Tuurem, southeast of
+					{ 20.6, 73.5, TEROKKAR_FOREST },	-- Veil Lithic, vest of
+				},
+			}),
+			i(25700, {	-- Fel Scales
+				["crs"] = {
+					18461,	-- Dampscale Basilisk
+					18463,	-- Dampscale Devourer
+					20924,	-- Grishnath Basilisk
+					21816,	-- Ironspine Chomper
+					19730,	-- Ironspine Gazer
+					21854,	-- Ironspine Petrifier
+					19729,	-- Ironspine Threshalisk
+					20283,	-- Marshrock Stomper
+					19706,	-- Marshrock Threshalisk
+					16934,	-- Quillfang Ravager
+					19189,	-- Quillfang Skitterer
+					20279,	-- Ragestone Threshalisk
+					20280,	-- Ragestone Trampler
+					16932,	-- Razorfang Hatchling
+					16933,	-- Razorfang Ravager
+					20987,	-- Ruuan Weald Basilisk
+					20925,	-- Scalded Basilisk
+					22180,	-- Shard-Hide Boar
+					19349,	-- Thornfang Ravager
+					19350,	-- Thornfang Venomspitter
+				},
+				["coords"] = {
+					{ 64.5, 33.0, BLADES_EDGE_MOUNTAINS },	-- Veil Ruuan
+					{ 72.4, 20.2, BLADES_EDGE_MOUNTAINS },	-- Skald
+					{ 67.5, 11.7, BLADES_EDGE_MOUNTAINS },	-- Crystal Spine East
+					{ 61.0, 11.0, BLADES_EDGE_MOUNTAINS },	-- Crystal Spine West
+					{ 40.2, 18.4, BLADES_EDGE_MOUNTAINS },	-- Grishnath
+					{ 32.1, 55.0, BLADES_EDGE_MOUNTAINS },	-- Vortex Summit North
+					{ 29.5, 67.0, BLADES_EDGE_MOUNTAINS },	-- Vortex Summit South
+					{ 38.5, 88.3, HELLFIRE_PENINSULA }, -- Razorthorn Trail
+					{ 22.9, 67.2, HELLFIRE_PENINSULA }, -- Dustquill Ravine
+					{ 8.7, 50.8, HELLFIRE_PENINSULA }, -- Thornfang Hill
+					{ 68.5, 44.4, NETHERSTORM }, -- Voidwind Plateu
+					{ 39.3, 9.7, TEROKKAR_FOREST },	-- Silmyr Lake
+					{ 44.6, 34.3, TEROKKAR_FOREST },	-- Cenarion Thicket, south of
+					{ 62.4, 49.0, TEROKKAR_FOREST },	-- Bonechewer Ruins, west of
+					{ 68.7, 30.5, TEROKKAR_FOREST },	-- Firewing Point, northwest of
+					{ 88.1, 33.6, ZANGARMARSH }, -- Dead Mire East
+					{ 78.1, 30.0, ZANGARMARSH }, -- Dead Mire North
+					{ 34.7, 18.0, ZANGARMARSH }, -- Hewn Bog, north of
+					{ 24.7, 19.1, ZANGARMARSH }, -- Daggerfen Village, north of
+					{ 14.9, 28.9, ZANGARMARSH }, -- Ango'rosh, west of
+					{ 8.3, 52.7, ZANGARMARSH }, -- Sporewind Lake, west of
+				},
+				["description"] = "Can be efficiently farmed in Blade's Edge Mountains and Zangarmarsh using a route from the southwestern end of Zangarmarsh following the western edge northwards and later eastwards to Blade's Edge Mountains. Then fly up to and follow the Vortex Summit, down again to Grishnath, and east up again following the Crystal Spine, over to Skald, and down to Veil Ruuan.\n\nCan also be found on basilisks all over Terokkar Forest, most of them dropping Dampscale Basilisk Eye.\n\nSkinning all mobs can also give Crystal-Infused Leather.",
+			}),
+			i(21887, {	-- Knothide Leather
+				["description"] = "Can be skinned from any skinnable TBC mobs.",
+			}),
+			i(25649, {	-- Knothide Leather Scraps
+				["groups"] = {
+					i(21887),	-- Knothide Leather
+				},
+			}),
+			i(29548, {    -- Nether Dragonscales
+				["description"] = "Is skinned from Netherwing drakes in Outland. Characters who have started the Netherwing questline can only kill Netherwing drakes in Blade's Edge Nountains and Netherstorm, and then it requires the player to toggle 'At War' with the Netherwing in the reputation panel. Killing Netherwing drakes does not lower the reputation with the faction.",
+				["crs"] = {
+					21722,	-- Enslaved Netherwing Drake
+					21004,	-- Lesser Nether Drake
+					20332,	-- Nether Dragon
+					18877,	-- Nether Drake
+				},
+				["coords"] = {
+					{ 62.3, 77.0, BLADES_EDGE_MOUNTAINS }, -- Singing Ridge
+					{ 72.5, 38.4, NETHERSTORM }, -- Celestial Ridge
+					{ 68.35, 61.0, SHADOWMOON_VALLEY }, -- Dragonmaw Fortress
+				},
+			}),
+			i(35229),	-- Nether Residue (Quest Item for Shattrath q(11875) Gaining the Advantage)
+			i(25708, {    -- Thick Clefthoof Leather
+				["description"] = "Clefthoofs can be found all over Nagrand.",
+				["crs"] = {
+					17133,	-- Aged Clefthoof
+					17132,	-- Clefthoof Bull
+					19183,	-- Clefthoof Calf
+					18205,	-- Clefthoof
+				},
+				["maps"] = { NAGRAND },
+			}),
+			i(29547, {    -- Wind Scales
+				["crs"] = {
+					20502,	-- Eclipsion Dragonhawk
+					21123,	-- Felsworn Scalewing
+					20749,	-- Scalewing Serpent
+					20673,	-- Swiftwing Shredder
+				},
+				["coords"] = {
+					{ 68.5, 70.55, BLADES_EDGE_MOUNTAINS }, -- Scalewing Shelf
+					{ 66.0, 52.6, BLADES_EDGE_MOUNTAINS }, -- Razor Ridge
+					{ 71.5, 30.1, BLADES_EDGE_MOUNTAINS }, -- Bladed Gulch
+					{ 56.4, 60.0, NETHERSTORM }, -- The Vortex Fields west
+					{ 66.3, 61.8, NETHERSTORM }, -- The Vortex Fields east
+					{ 47.0, 64.5, SHADOWMOON_VALLEY }, -- Eclipse Point
+				},
+			}),
 		},
 	}),
 	prof(TAILORING, {

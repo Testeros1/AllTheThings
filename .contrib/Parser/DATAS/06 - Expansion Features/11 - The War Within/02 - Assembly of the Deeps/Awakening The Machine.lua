@@ -3,59 +3,75 @@
 -------------------------------------------------------------------
 AWAKENING_THE_MACHINE = createHeader({
 	readable = "Awakening The Machine",
-	icon = "Interface\\Icons\\inv_dwarvenmechboss_bronze",
+	icon = 5768149,
 	text = {
 		en = "Awakening The Machine",
+		ru = "Пробуждение Машины",
+		cn = "主机觉醒",
+		tw = "甦醒機械",
 	},
 });
-root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(THE_ASSEMBLY_OF_THE_DEEPS, {
 		n(AWAKENING_THE_MACHINE, {
 			["crs"] = { 217128 },	-- Speaker Kuldas <Awakening the Machine>
 			["coord"] = { 47.5, 31.9, THE_RINGING_DEEPS },
 			["g"] = {
 				n(ACHIEVEMENTS, {
-					ach(40662, {	-- It's Not Much, But It's Honest Work
-						i(223269),	-- Machine Defense Unit 1-11 (MOUNT!)
+					ach(40662, {		-- It's Not Much, But It's Honest Work
+						title(568),	-- <Name>, Machine-Warden
 					}),
 				}),
 				n(QUESTS, {
 					q(83333, {	-- Gearing Up for Trouble
+						-- #if BEFORE 11.0.5
 						["provider"] = { "n", 216164 },	-- Gnawbles
 						["coord"] = { 47.7, 35.3, THE_RINGING_DEEPS },
+						-- #else
+						["provider"] = { "n", 217128 },	-- Speaker Kuldas
+						["coord"] = { 47.5, 32.0, THE_RINGING_DEEPS },
+						-- #endif
 						["isWeekly"] = true,
 						["g"] = {
-							i(226273),	-- Awakened Mechanical Cache
-							--i(223128),	-- Formula: Enchant Chest - Oathsworn's Strength (RECIPE!) from cache
+							i(226273, {	-- Awakened Mechanical Cache
+								["sym"] = {{"select","itemID",228361},{"pop"}},	-- Seasoned Adventurer's Cache [Zone Rewards content]
+								["g"] = {
+									i(223128),	-- Formula: Enchant Chest - Oathsworn's Strength (RECIPE!)
+									i(224426),	-- Pattern: Ignition Satchel (RECIPE!)
+									i(223040),	-- Plans: Charged Crusher (RECIPE!)
+								},
+							}),
 						},
 					}),
 				}),
-				n(REWARDS, {
-					i(223128),	-- Formula: Enchant Chest - Oathsworn's Strength (RECIPE!)
-					i(224426),	-- Pattern: Ignition Satchel (RECIPE!)
-					i(223040),	-- Plans: Charged Crusher (RECIPE!)
-				}),
 				n(TREASURES, {
-					-- weekly?
-					o(465243, {	-- Awakened Cache
-						["coord"] = { 47.4, 31.9, THE_RINGING_DEEPS },
-						["questID"] = 84642,
-						--["isWeekly"] = true,
-					}),
-					o(465242, {	-- Awakened Cache
-						["coord"] = { 47.5, 32.0, THE_RINGING_DEEPS },
-						["questID"] = 84644,
-						--["isWeekly"] = true,
-					}),
-					o(465241, {	-- Awakened Cache
-						["coord"] = { 47.5, 31.9, THE_RINGING_DEEPS },
-						["questID"] = 84646,
-						--["isWeekly"] = true,
-					}),
-					o(464938, {	-- Awakened Cache
-						["coord"] = { 47.5, 31.9, THE_RINGING_DEEPS },
-						["questID"] = 84647,
-						--["isWeekly"] = true,
+					o_repeated({
+						i(223269),	-- Machine Defense Unit 1-11 (MOUNT!)
+						i(226218),	-- Machine-Warden's Cloak
+						i(229000),	-- Machine-Warden's Cog
+						i(226221),	-- Machine-Warden's Pauldrons
+						i(226220),	-- Machine-Warden's Tabard
+						-- weekly?
+						o(465243, {	-- Awakened Cache
+							["coord"] = { 47.4, 31.9, THE_RINGING_DEEPS },
+							["questID"] = 84642,
+							["isWeekly"] = true,
+						}),
+						o(465242, {	-- Awakened Cache
+							["coord"] = { 47.5, 32.0, THE_RINGING_DEEPS },
+							["questID"] = 84644,
+							["isWeekly"] = true,
+						}),
+						o(465241, {	-- Awakened Cache
+							["coord"] = { 47.5, 31.9, THE_RINGING_DEEPS },
+							["questID"] = 84646,
+							["isWeekly"] = true,
+						}),
+						o(464938, {	-- Awakened Cache
+							["coord"] = { 47.5, 31.9, THE_RINGING_DEEPS },
+							["questID"] = 84647,
+							["isWeekly"] = true,
+						}),
 					}),
 				}),
 				n(VENDORS, {
@@ -129,9 +145,21 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"]
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, {
-	q(84631),	-- Wave 5
-	q(84632),	-- Wave 10
-	q(84633),	-- Wave 15
-	q(84634),	-- Wave 20
-}));
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	n(THE_ASSEMBLY_OF_THE_DEEPS, {
+		n(AWAKENING_THE_MACHINE, {
+			q(84631, {	-- Wave 5
+				["name"] = "Awakening The Machine: Wave 5 Completed.",
+			}),
+			q(84632, {	-- Wave 10
+				["name"] = "Awakening The Machine: Wave 10 Completed.",
+			}),
+			q(84633, {	-- Wave 15
+				["name"] = "Awakening The Machine: Wave 15 Completed.",
+			}),
+			q(84634, {	-- Wave 20
+				["name"] = "Awakening The Machine: Wave 20 Completed. Congratulations.",
+			}),
+		}),
+	}),
+})));

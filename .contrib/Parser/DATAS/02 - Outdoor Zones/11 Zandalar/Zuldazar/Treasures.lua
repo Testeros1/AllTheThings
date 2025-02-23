@@ -23,6 +23,10 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["questID"] = 50582,
 				["coord"] = { 51.5, 26.7, ZULDAZAR },
 			}),
+			o(316863, {	-- Lost Zandalari Relic
+				["coord"] = { 46.6, 29.9, DAZARALOR },
+				["g"] = { i(166506) },	-- Clump of Broken Loa Idols
+			}),
 			o(276735, {	-- Offerings of the Chosen
 				["questID"] = 48938,
 				["coord"] = { 38.3, 7.2, DAZARALOR },
@@ -38,6 +42,19 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			o(284455, {	-- The Exile's Lament
 				["questID"] = 50949,
 				["coord"] = { 71.8, 16.7, ZULDAZAR },
+			}),
+			o(278460, {	-- Treasure Chest
+				["coords"] = {
+					{ 48.9, 39.0, ZULDAZAR },
+					{ 48.9, 39.8, ZULDAZAR },
+					{ 48.9, 40.7, ZULDAZAR },
+					{ 48.9, 42.4, ZULDAZAR },
+					{ 50.0, 39.7, ZULDAZAR },
+					{ 50.1, 40.9, ZULDAZAR },
+					{ 50.0, 42.2, ZULDAZAR },
+					{ 51.1, 41.7, ZULDAZAR },
+					{ 52.6, 47.1, ZULDAZAR },
+				},
 			}),
 			o(277561, {	-- Warlord's Cache
 				["questID"] = 49257,
@@ -65,7 +82,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				}),
 				o(278694, {	-- Treasure Chest
 					["questID"] = 50724,
-					["coord"] = { 80.1, 13.1, ZULDAZAR },
+					["coord"] = { 79.5, 15.7, ZULDAZAR },
 				}),
 				o(278793, {	-- Treasure Chest
 					["questID"] = 50715,
@@ -82,10 +99,23 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(ZANDALAR, {
-	m(ZULDAZAR, {
-		n(TREASURES, {
-			q(50950),	-- for using the Incense prior to opening Gift of the Brokenhearted for achievement Treasures of Zuldaza
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(ZANDALAR, {
+		m(ZULDAZAR, {
+			n(TREASURES, {
+				q(50950),	-- for using the Incense prior to opening Gift of the Brokenhearted for achievement Treasures of Zuldazar
+				q(50712),	-- Zuldazar repeatable random chest
+				q(50719),	-- Zuldazar repeatable random chest
+				q(50720),	-- Zuldazar repeatable random chest
+				q(50721),	-- Zuldazar repeatable random chest
+				q(50722),	-- Zuldazar repeatable random chest
+				q(50723),	-- Zuldazar repeatable random chest
+				q(50726),	-- Zuldazar repeatable random chest
+				q(50727),	-- Zuldazar repeatable random chest
+				q(50728),	-- Zuldazar repeatable random chest
+				q(51346),	-- Zuldazar repeatable random chest
+				q(50729),	-- looted a chest in Zuldazar at 58.6, 81.1
+			}),
 		}),
 	}),
-}));
+})));

@@ -3,10 +3,10 @@
 -----------------------------------------------------
 root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
 	m(ISLE_OF_THUNDER, {
-		["icon"] = "Interface\\Icons\\spell_nature_callstorm",
+		["icon"] = 136014,
 		["g"] = {
 			n(ACHIEVEMENTS, {
-				achraw(19892, {	-- Campaign: Isle of Thunder
+				ach(19892, {	-- Campaign: Isle of Thunder
 					crit(67270, {	-- Assault the Shipyard
 						["_quests"] = { 32655 },
 					}),
@@ -53,70 +53,44 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 						20015,	-- Looking For Group: Isle of Thunder
 					}},
 					["g"] = {
-						cl(DEATHKNIGHT, {
-							iensemble(217824, {	-- Arsenal: Webbed Soulforged Weaponry
-								["classes"] = DEATHKNIGHT,
-							}),
+						clWithoutLock(DEATHKNIGHT, {
+							iensemble(217824),	-- Arsenal: Webbed Soulforged Weaponry
 						}),
-						cl(DEMONHUNTER, {
-							iensemble(217828, {	-- Arsenal: Aldrachi Blasphemer's Glaives
-								["classes"] = DEMONHUNTER,
-							}),
+						clWithoutLock(DEMONHUNTER, {
+							iensemble(217828),	-- Arsenal: Aldrachi Blasphemer's Glaives
 						}),
-						cl(DRUID, {
-							iensemble(217829, {	-- Arsenal: Ela'lothen's Blessings of Rebirth
-								["classes"] = DRUID,
-							}),
+						clWithoutLock(DRUID, {
+							iensemble(217829),	-- Arsenal: Ela'lothen's Blessings of Rebirth
 						}),
-						cl(EVOKER, {
-							iensemble(217821, {	-- Arsenal: Treasure of the Gold Hoarder
-								["classes"] = EVOKER,
-							}),
+						clWithoutLock(EVOKER, {
+							iensemble(217821),	-- Arsenal: Treasure of the Gold Hoarder
 						}),
-						cl(HUNTER, {
-							iensemble(217820, {	-- Arsenal: Dreadsquall Hunter's Preference
-								["classes"] = HUNTER,
-							}),
+						clWithoutLock(HUNTER, {
+							iensemble(217820),	-- Arsenal: Dreadsquall Hunter's Preference
 						}),
-						cl(MAGE, {
-							iensemble(217823, {	-- Arsenal: Sin'dorei Magister's Enchantment
-								["classes"] = MAGE,
-							}),
+						clWithoutLock(MAGE, {
+							iensemble(217823),	-- Arsenal: Sin'dorei Magister's Enchantment
 						}),
-						cl(MONK, {
-							iensemble(217827, {	-- Arsenal: Shado-Pan Watcher Arsenal
-								["classes"] = MONK,
-							}),
+						clWithoutLock(MONK, {
+							iensemble(217827),	-- Arsenal: Shado-Pan Watcher Arsenal
 						}),
-						cl(PALADIN, {
-							iensemble(217832, {	-- Arsenal: Armaments of the Holy Avenger
-								["classes"] = PALADIN,
-							}),
+						clWithoutLock(PALADIN, {
+							iensemble(217832),	-- Arsenal: Armaments of the Holy Avenger
 						}),
-						cl(PRIEST, {
-							iensemble(217831, {	-- Arsenal: Secrets of the Abyssal Cult
-								["classes"] = PRIEST,
-							}),
+						clWithoutLock(PRIEST, {
+							iensemble(217831),	-- Arsenal: Secrets of the Abyssal Cult
 						}),
-						cl(ROGUE, {
-							iensemble(217830, {	-- Arsenal: Igneous Onyx Blades
-								["classes"] = ROGUE,
-							}),
+						clWithoutLock(ROGUE, {
+							iensemble(217830),	-- Arsenal: Igneous Onyx Blades
 						}),
-						cl(SHAMAN, {
-							iensemble(217819, {	-- Arsenal: Tools of Krag'wa's Disciple
-								["classes"] = SHAMAN,
-							}),
+						clWithoutLock(SHAMAN, {
+							iensemble(217819),	-- Arsenal: Tools of Krag'wa's Disciple
 						}),
-						cl(WARLOCK, {
-							iensemble(217826, {	-- Arsenal: Instruments of Temptation's Call
-								["classes"] = WARLOCK,
-							}),
+						clWithoutLock(WARLOCK, {
+							iensemble(217826)	-- Arsenal: Instruments of Temptation's Call
 						}),
-						cl(WARRIOR, {
-							iensemble(217825, {	-- Arsenal: Fanatical Champion's Aggression
-								["classes"] = WARRIOR,
-							}),
+						clWithoutLock(WARRIOR, {
+							iensemble(217825),	-- Arsenal: Fanatical Champion's Aggression
 						}),
 					},
 				}),
@@ -130,7 +104,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 				}),
 			}),
 			n(FACTIONS, {
-				faction(1387, {	-- Kirin Tor Offensive
+				faction(FACTION_KIRIN_TOR_OFFENSIVE, {	-- Kirin Tor Offensive
 					["races"] = ALLIANCE_ONLY,
 					["g"] = {
 						n(ACHIEVEMENTS, {
@@ -140,7 +114,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 						}),
 					},
 				}),
-				faction(1388, {	-- Sunreaver Onslaught
+				faction(FACTION_SUNREAVER_ONSLAUGHT, {	-- Sunreaver Onslaught
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						n(ACHIEVEMENTS, {
@@ -156,28 +130,28 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 					["provider"] = { "n", 67933 },	-- Vereesa Windrunner
 					["coord"] = { 63.2, 72.1, ISLE_OF_THUNDER },
 					["races"] = ALLIANCE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["isDaily"] = true,
 				}),
 				q(81749, {	-- Aid the Kirin Tor Offensive [A]
 					["provider"] = { "n", 67933 },	-- Vereesa Windrunner
 					["coord"] = { 63.2, 72.1, ISLE_OF_THUNDER },
 					["races"] = ALLIANCE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(80442, {	-- Aid the Sunreavers Onslaught [H]
 					["provider"] = { "n", 70520 },	-- Halduron Brightwing
 					["coord"] = { 32.5, 35.5, ISLE_OF_THUNDER },
 					["races"] = HORDE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["isDaily"] = true,
 				}),
 				q(81748, {	-- Aid the Sunreavers Onslaught [H]
 					["provider"] = { "n", 70520 },	-- Halduron Brightwing
 					["coord"] = { 32.5, 35.5, ISLE_OF_THUNDER },
 					["races"] = HORDE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 			}),

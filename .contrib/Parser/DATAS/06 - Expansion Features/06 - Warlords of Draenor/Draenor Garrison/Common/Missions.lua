@@ -96,6 +96,19 @@ root(ROOTS.ExpansionFeatures,
 								["questID"] = 36464,
 							}),
 						}),
+						mi(467),	-- Mushroom Mystery
+						mi(468),	-- I See Dead Orcs
+						mi(469),	-- The Bigger They Are
+						mi(470),	-- Boiling Hot Magma
+						mi(471),	-- Backbreaker
+						mi(472),	-- Green Thumb
+						mi(473),	-- We Will Fight In the Shadar
+						mi(474),	-- I See Dead Ogres
+						mi(475),	-- Pro-Labor
+						mi(476),	-- Fall From Grace
+						mi(477),	-- Forced Eviction
+						mi(478),	-- Early Mover
+						mi(479),	-- Mountain of Spirits
 						i(114053, {	-- Shimmering Gauntlets
 							["description"] = "This token is a reward from one of the first missions when you initially unlock your garrison.",
 							["g"] = {
@@ -199,7 +212,7 @@ root(ROOTS.ExpansionFeatures,
 						}),
 					-- munificent, turbulent, and grandiose tokens below are each in their own bracket
 					-- maybe group each category under one header instead of having the same description on each token?
-						n(-493, sharedData ({ ["description"] = "To receive a mission for these tokens, your character's 'bag' item level (as displayed in game when mousing over the item level number on the character panel) has to be 44 or lower. You must also have at least one level 40 follower.\nTaking an alt with higher item level gear and reducing it to 44 or less will (by deleting items) enables the toon to get the token missions once the table updates (about twice a week). Raising your item level above 44 instantly causes any available token missions to disappear, and they won't return until your item level is reduced and the table updates." }, {	-- Garrison Mission Loot
+						n(-493, sharedData ({ ["sharedDescription"] = "To receive a mission for these tokens, your character's 'bag' item level (as displayed in game when mousing over the item level number on the character panel) has to be 44 or lower. You must also have at least one level 40 follower.\nTaking an alt with higher item level gear and reducing it to 44 or less will (by deleting items) enables the toon to get the token missions once the table updates (about twice a week). Raising your item level above 44 instantly causes any available token missions to disappear, and they won't return until your item level is reduced and the table updates." }, {	-- Garrison Mission Loot
 							i(114109, {	-- Munificent Armament
 							--["description"] = "You must have level 100 active followers without upgraded gear in order to get missions that reward Munificent tokens.",
 								["g"] = {
@@ -450,6 +463,7 @@ root(ROOTS.ExpansionFeatures,
 						i(122576),	-- Rush Order: Alchemy Lab
 						i(122594),	-- Rush Order: Tailoring Emporium
 						i(122596),	-- Rush Order: The Tannery
+						i(114129),	-- Striking Weapon Enhancement
 						i(118474),	-- Supreme Manual of Dance
 						i(114616),	-- War Ravaged Weaponry
 						i(120302),	-- Weapon Enhancement Token

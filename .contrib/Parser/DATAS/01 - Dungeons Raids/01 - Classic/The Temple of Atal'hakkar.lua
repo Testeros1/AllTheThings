@@ -3,7 +3,7 @@
 -----------------------------------------------------
 local ATALAI_DEFENDERS = createHeader({
 	readable = "Atal'ai Defenders",
-	icon = "Interface\\Icons\\Inv_misc_head_troll_01",
+	icon = 134177,
 	text = {
 		en = "Atal'ai Defenders",
 		fr = "Défenseurs Atal'ai",
@@ -102,12 +102,12 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		["groups"] = {
 			-- #if SEASON_OF_DISCOVERY
 			-- In Season of Discovery, this version of the instance has been deprecated and removed in favor of the raid.
-			d(DIFFICULTY.DUNGEON.NORMAL, bubbleDownTimelineEventSelf("removed 1.15.1", {
+			d(DIFFICULTY.DUNGEON.NORMAL, bubbleDownTimelineEventSelf(REMOVED_1_15_1, {
 			-- #endif
 			n(QUESTS, {
 				applyclassicphase(PHASE_FOUR_SUNKEN_TEMPLE_CLASS_QUESTS, q(9053, {	-- A Better Ingredient
 					["qg"] = 9619,	-- Torwa Pathfinder
-					["sourceQuest"] = 9051,  -- Toxic Test
+					["sourceQuest"] = 9051,	-- Toxic Test
 					["coord"] = { 71.6, 76.0, UNGORO_CRATER },
 					["timeline"] = { REMOVED_4_0_3 },
 					["classes"] = { DRUID },
@@ -787,14 +787,14 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 			}),
 			-- #if SEASON_OF_DISCOVERY
 			})),
-			applyclassicphase(SOD_PHASE_THREE, d(DIFFICULTY.SOD.PLAYER20, bubbleDownSelf({ ["timeline"] = { "added 1.15.2", REMOVED_2_0_1 }, }, {
+			applyclassicphase(SOD_PHASE_THREE, d(DIFFICULTY.SOD.PLAYER20, bubbleDownSelf({ ["timeline"] = { ADDED_1_15_2, REMOVED_2_0_1 }, }, {
 				["description"] = "This instance was converted from a normal difficulty dungeon into a 20-player raid instance.",
 				["lvl"] = 50,
 				["groups"] = {
 					n(QUESTS, {
 						q(82112, {	-- A Better Ingredient
 							["qg"] = 9619,	-- Torwa Pathfinder
-							--["sourceQuest"] = 9051,  -- Toxic Test
+							--["sourceQuest"] = 9051,	-- Toxic Test
 							["coord"] = { 71.6, 76.0, UNGORO_CRATER },
 							["classes"] = { DRUID },
 							["lvl"] = 50,
@@ -1547,10 +1547,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		},
 	}),
 }));
--- #if AFTER 6.0.1
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(237, {
 		q(35582),	-- Sunken Temple Reward Quest - Normal completion
 	}),
-});
--- #endif
+})));

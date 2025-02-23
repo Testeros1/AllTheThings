@@ -8,16 +8,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #else
 		["lore"] = "The Western Plaguelands are located in northern Lordaeron, wedged between Tirisfal Glades to the west, the Eastern Plaguelands to the east, and the Alterac Mountains to the south. It is filled with a smoky gray mist and the creatures here are blighted and sick, angrily attacking anyone who wanders too close with surprising ferocity. The land is also home to countless undead who infest the ruins of Andorhal, the four cauldron fields, and Sorrow Hill. The Scarlet Crusade has a significant holding in and around Hearthglen to the north, and the Alliance has settled in the small Chillwind Camp to the south.\n\nLike their eastern counterparts, the Western Plaguelands were once fertile and beautiful but are now gray, blighted and noxious. Undead wander the land and haunt the abandoned towns and farmsteads. The largest Scourge city here is Andorhal, beneath which is an underground complex housing the undead's School of Necromancy. The Scarlet Crusade strikes against the Scourge from Hearthglen. The only place of any sanity in the Western Plaguelands is Uther's Tomb, a consecrated monument to the fallen hero Uther Lightbringer.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_westernplaguelands_01",
-		-- #endif
+		["icon"] = 236851,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(770, {	-- Explore Western Plaguelands
-					-- #if BEFORE WRATH
-					["description"] = "Explore Western Plaguelands, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(770),	-- Explore Western Plaguelands
 				ach(4893, {	-- Western Plaguelands Quests
 					["timeline"] = { ADDED_4_0_3 },
 					-- #if ANYCLASSIC
@@ -105,11 +99,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if AFTER CATA
 				exploration(193),	-- Andorhal
 				-- #endif
+				visit_exploration(2298,{coord={67.5,73.4,WESTERN_PLAGUELANDS}}),	-- Caer Darrow
 				-- #if AFTER CATA
 				exploration(3197),	-- Chillwind Camp
 				-- #endif
 				exploration(200),	-- Dalson's Tears / Dalson's Farm [CATA+]
 				exploration(2297),	-- Darrowmere Lake
+				visit_exploration(2625,{coord={43.4,19.3,WESTERN_PLAGUELANDS}}),	-- Eastwall Gate
 				exploration(199),	-- Felstone Field
 				exploration(201),	-- Gahrron's Withering
 				exploration(190),	-- Hearthglen
@@ -150,7 +146,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 				}),
 				fp(66, {	-- Chillwind Camp, Western Plaguelands
-					["cr"] = 12596,  -- Bibilfaz Featherwhistle <Gryphon Master>
+					["cr"] = 12596,	-- Bibilfaz Featherwhistle <Gryphon Master>
 					["coord"] = { 42.8, 85.0, WESTERN_PLAGUELANDS },
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -182,8 +178,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							WESTERN_PLAGUELANDS,
 							EASTERN_PLAGUELANDS,
 							UNGORO_CRATER,
-							FERELAS,
-							HINTERLANDS,
+							FERALAS,
+							THE_HINTERLANDS,
 							DUSTWALLOW_MARSH,
 							BLASTED_LANDS,
 							DESOLACE,
@@ -754,7 +750,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, n(createHeader({	-- Bless the Fallen
 					readable = "SOD - PALADIN - Bless the Fallen",
-					icon = "Interface\\CURSOR\\Speak",
+					icon = 131038,
 					text = {
 						en = "Bless the Fallen",
 					},
@@ -762,7 +758,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["questID"] = 83756,	-- Bless the Fallen HQT
 					["qg"] = 227519,	-- Fallen Knight
 					["coord"] = { 44.6, 46.6, WESTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 				})),
@@ -844,7 +840,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, n(createHeader({	-- Burn the Fallen Knight
 					readable = "SOD - PALADIN - Burn the Fallen Knight",
-					icon = "Interface\\CURSOR\\Speak",
+					icon = 131038,
 					text = {
 						en = "Burn the Fallen Knight",
 					},
@@ -853,7 +849,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["questID"] = 84004,	-- Burn the Fallen Knight HQT
 					["sourceQuest"] = 83935,	-- Clearing the Path
 					["coord"] = { 44.6, 46.6, WESTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 				})),
@@ -889,7 +885,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						5521,	-- Chromatic Mantle of the Dawn
 						5524,	-- Chromatic Mantle of the Dawn
 					},
-					["minReputation"] = { 529, EXALTED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
 					["cost"] = { { "i", 12844, 25 } },	-- Argent Dawn Valor Token
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 55,
@@ -902,7 +898,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 227672,	-- Squire Cuthbert
 					["sourceQuest"] = 83808,	-- In A Bind
 					["coord"] = { 47.8, 50.4, WESTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -1088,7 +1084,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sourceQuest"] = 83822,	-- The Fallen Knight
 					["coord"] = { 47.8, 50.4, WESTERN_PLAGUELANDS },
 					["description"] = "Upon completing this quest, you will have a personal Squire.",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -1355,7 +1351,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 227672,	-- Squire Cuthbert
 					["sourceQuest"] = 83756,	-- Bless the Fallen HQT
 					["coord"] = { 47.8, 50.4, WESTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -1524,7 +1520,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						["qg"] = 10856,	-- Argent Quartermaster Hasana <The Argent Dawn>
 						["coord"] = { 83.2, 68.2, TIRISFAL_GLADES },
 					}),
-					["minReputation"] = { 529, REVERED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, REVERED },	-- Argent Dawn
 					["cost"] = { { "i", 12844, 10 } },	-- Argent Dawn Valor Token
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 55,
@@ -2245,7 +2241,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 227672,	-- Squire Cuthbert
 					["sourceQuest"] = 83935,	-- Clearing the Path
 					["coord"] = { 47.8, 50.4, WESTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -3075,7 +3071,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_FOUR, i(226413, {	-- Rune of Arcane Specialization
 					["provider"] = { "o", 457102 },	-- Elements for Dummies Volume III: Arcane
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 47.3, 13.7, WESTERN_PLAGUELANDS },
 					["classes"] = { HUNTER, MAGE, DRUID },
 					["groups"] = {
@@ -3189,13 +3185,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(12819),	-- Plans: Ornate Thorium Handaxe (RECIPE!)
 						i(12703, {	-- Plans: Storm Gauntlets (RECIPE!)
 							-- #if SEASON_OF_DISCOVERY
-							["timeline"] = { "removed 1.15.3" },
+							["timeline"] = { REMOVED_1_15_3 },
 							-- #endif
 						}),
 						i(13501),	-- Recipe: Major Mana Potion (RECIPE!)
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_FOUR, i(228313, {	-- Plans: Tempest Gauntlets (RECIPE!)
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 						})),
 						-- #endif
 						i(13485),	-- Recipe: Transmute Water to Air (RECIPE!)
@@ -3361,7 +3357,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						1791,	-- Slavering Ghoul
 					},
 					-- #endif
-					["timeline"] = { REMOVED_4_0_3 }, -- Maybe still drops, this tag will help with reporting if somebody does get a drop
+					["timeline"] = { REMOVED_4_0_3 },	-- Maybe still drops, this tag will help with reporting if somebody does get a drop
 				}),
 				i(13496, {	-- Recipe: Greater Nature Protection Potion (RECIPE!)
 					["crs"] = {

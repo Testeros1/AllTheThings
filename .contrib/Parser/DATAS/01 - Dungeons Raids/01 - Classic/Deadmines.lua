@@ -57,26 +57,9 @@ DEADMINES_INSTANCE = inst(63, {	-- Deadmines
 					objective(1, {	-- 0/100 Bloodied Defias Bandana
 						["provider"] = { "i", 142349 },	-- Bloodied Defias Bandana
 					}),
-					i(142273, {	-- Ensemble: Blackened Defias Armor
+					iensemble(142273, {	-- Ensemble: Blackened Defias Armor
 						["timeline"] = { ADDED_7_1_0 },
 						["classes"] = { ROGUE },
-						["groups"] = {
-							i(10399, {	-- Blackened Defias Armor
-								["timeline"] = { ADDED_7_1_0 },
-							}),
-							i(10401, {	-- Blackened Defias Gloves
-								["timeline"] = { ADDED_7_1_0 },
-							}),
-							i(10403, {	-- Blackened Defias Belt
-								["timeline"] = { ADDED_7_1_0 },
-							}),
-							i(10400, {	-- Blackened Defias Leggings
-								["timeline"] = { ADDED_7_1_0 },
-							}),
-							i(10402, {	-- Blackened Defias Boots
-								["timeline"] = { ADDED_7_1_0 },
-							}),
-						},
 					}),
 				},
 			}),
@@ -459,9 +442,9 @@ DEADMINES_INSTANCE = inst(63, {	-- Deadmines
 				-- #if BEFORE 4.0.3
 				["cr"] = 3947,	-- Goblin Shipbuilder
 				-- #elseif AFTER 10.1.7
-				["description"] = "The item drops from Goblins between 1st and 2nd boss.",
+				["description"] = "Drops from Goblin Engineer's around 2nd Boss or Goblin Overseer's around last Boss.",
 				["crs"] = {
-					48279,	-- Goblin Overseer	-- Not 100% sure
+					48279,	-- Goblin Overseer
 					48439,	-- Goblin Engineer
 				},
 				-- #endif
@@ -566,7 +549,7 @@ DEADMINES_INSTANCE = inst(63, {	-- Deadmines
 				-- #endif
 			}),
 			i(5787, {	-- Pattern: Murloc Scale Breastplate (RECIPE!)
-				["crs"] = {	
+				["crs"] = {
 					-- #if BEFORE 4.0.3
 					657,	-- Defias Pirate
 					-- #else
@@ -851,10 +834,32 @@ DEADMINES_INSTANCE = inst(63, {	-- Deadmines
 						i(63482),	-- Daughter's Hands
 						i(63483),	-- Guildmaster's Greaves
 						i(65178),	-- VanCleef's Boots
+						-- #if BEFORE MOP
+						i(63487, {	-- Book of the Well Sung Song
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						i(63480, {	-- Record of the Brotherhood's End
+							["timeline"] = { ADDED_4_0_3, REMOVED_5_0_4 },
+						}),
+						-- #endif
 					},
 				}),
 			},
 		}),
+		-- #if ANYCLASSIC
+		applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(PROTOCOL_INFERNO, {
+			["OnInit"] = FUNCTION_TEMPLATES.OnInit.GenerateShouldExcludeFromTooltipForBuffs(470595),
+			["timeline"] = { ADDED_4_0_3 },
+			["groups"] = {
+				e(95, {	-- Vanessa VanCleef
+					["creatureID"] = 49541,	-- Vanessa VanCleef
+					["groups"] = {
+						ach(41146),	-- Protocol Inferno: Deadmines
+					},
+				}),
+			},
+		})),
+		-- #endif
 	},
 });
 
@@ -863,18 +868,11 @@ DEADMINES_INSTANCE = inst(63, {	-- Deadmines
 root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 	DEADMINES_INSTANCE,
 }));
-
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		inst(63, {	-- Deadmines
-			q(35586),	-- Deadmines Reward Quest - Normal completion
-			q(35587),	-- Deadmines Reward Quest - Heroic completion
-		}),
-	}),
-	expansion(EXPANSION.LEGION, {
-		inst(63, {	-- Deadmines
-			q(42778),	-- [Scarlet Crusader] When completing 44930/using Ensemble: Blackened Defias Armor
-		}),
-	}),
-});
 -- #endif
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(63, {	-- Deadmines
+		q(35586),	-- Deadmines Reward Quest - Normal completion
+		q(35587),	-- Deadmines Reward Quest - Heroic completion
+	}),
+})));

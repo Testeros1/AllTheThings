@@ -49,6 +49,14 @@ root(ROOTS.BlackMarket, {
 	})),
 });
 root(ROOTS.BlackMarket, bubbleDown({ ["u"] = BLACK_MARKET, },{
+	n(ACHIEVEMENTS, {
+		ach(881, {	-- Swift Razzashi Raptor
+			["provider"] = { "i", 19872 },	-- Swift Razzashi Raptor
+		}),
+		ach(880, {	-- Swift Zulian Tiger
+			["provider"] = { "i", 19902 },	-- Swift Zulian Tiger
+		}),
+	}),
 	filter(BAGS, {
 		i(183634),	-- Papa's Mint Condition Bag (9.1)
 	}),
@@ -87,21 +95,24 @@ root(ROOTS.BlackMarket, bubbleDown({ ["u"] = BLACK_MARKET, },{
 		i(94228),	-- Cobalt Primordial Direhorn (MOUNT!)
 		i(63040),	-- Drake of the North Wind (MOUNT!)
 		i(63041),	-- Drake of the South Wind (MOUNT!)
+		i(211084, {	-- Golden Regal Scarab (MOUNT!)
+			["timeline"] = { ADDED_11_0_5 },
+		}),
 		i(166705, {	-- Glacial Tidestorm
+			["timeline"] = { ADDED_10_1_5 },
+		}),
+		i(166518, {	-- GMOD
 			["timeline"] = { ADDED_10_1_5 },
 		}),
 		i(43959),	-- Grand Black War Mammoth (A) (MOUNT!)
 		i(44083),	-- Grand Black War Mammoth (H) (MOUNT!)
 		i(44707),	-- Green Proto-Drake (MOUNT!)
-		i(166518, {	-- GMOD
-			["timeline"] = { ADDED_10_1_5 },
-		}),
 		i(87771),	-- Heavenly Onyx Cloud Serpent (MOUNT!)
 		i(94231),	-- Jade Primordial Direhorn (MOUNT!)
 		i(168826, {	-- Mechagon Peacekeeper
 			["timeline"] = { ADDED_10_1_5 },
 		}),
-		i(163042),  -- Mighty Caravan Brutosaur (MOUNT!)
+		i(163042),	-- Mighty Caravan Brutosaur (MOUNT!)
 		i(159921, {	-- Mummified Raptor Skull
 			["timeline"] = { ADDED_10_1_5 },
 		}),
@@ -400,7 +411,28 @@ root(ROOTS.BlackMarket, bubbleDown({ ["u"] = BLACK_MARKET, },{
 	}),
 	n(WEAPONS, {
 		i(39769),	-- Arcanite Ripper
+		iensemble(211300, {	-- Arsenal: Whispering Temple Blades
+			["timeline"] = { ADDED_11_0_5 },
+		}),
 		i(90176),	-- Flintlocke's Blasthammer
+		i(211097, {	-- Gilded Crown Splitter
+			["timeline"] = { ADDED_11_0_5 },
+		}),
+		i(211099, {	-- Gilded Scarab Bulwark
+			["timeline"] = { ADDED_11_0_5 },
+		}),
+		i(211096, {	-- Gold-Plated Witchhunter's Carbine
+			["timeline"] = { ADDED_11_0_5 },
+		}),
+		i(211294, {	-- Marauder King's Body Carver
+			["timeline"] = { ADDED_11_0_5 },
+		}),
+		i(211145, {	-- Royal Witch Doctor's Trophies
+			["timeline"] = { ADDED_11_0_5 },
+		}),
+		i(211159, {	-- Royal Witch Doctor's Guard
+			["timeline"] = { ADDED_11_0_5 },
+		}),
 		i(44924),	-- Sun-Lute of the Phoenix King
 	}),
 	i(50379),	-- Battered Hilt (Alliance)
@@ -410,10 +442,9 @@ root(ROOTS.BlackMarket, bubbleDown({ ["u"] = BLACK_MARKET, },{
 	}),
 	un(REMOVED_FROM_GAME, i(128312)),	-- Elixir of the Rapid Mind
 	i(45037),	-- Epic Purple Shirt
-	i(110672, {	-- Grimoire of the Four Winds
+	TempForceMisc(i(110672, {	-- Grimoire of the Four Winds
 		["u"] = REMOVED_FROM_GAME,
-		["collectible"] = false,
-	}),
+	})),
 	-- Heart of Fear Heroic Trash Drops. Only where available from the BMAH while HoF was current Content.
 	un(REMOVED_FROM_GAME, i(86993)),	-- Darting Damselfly Cuffs
 	un(REMOVED_FROM_GAME, i(86994)),	-- Gleaming Moth Cuffs
@@ -435,6 +466,9 @@ root(ROOTS.BlackMarket, bubbleDown({ ["u"] = BLACK_MARKET, },{
 		i(105746),	-- Kor'kron Dark Shaman Kilt
 		i(105742),	-- Kor'kron Dark Shaman Treads
 	}),
+	i(211259, {	-- Regal Gryphon Rider's Headgear
+		["timeline"] = { ADDED_11_0_5 },
+	}),
 	i(142000),	-- Rhinestone Sunglasses
 	i(14617),	-- Sawbones Shirt
 	i(112935),	-- Tusks of Mannoroth
@@ -447,6 +481,9 @@ root(ROOTS.BlackMarket, bubbleDown({ ["u"] = BLACK_MARKET, },{
 			{"not", "itemID", 169430 },			-- Remove itself from the final list
 			{"not", "itemID", 141995 },			-- Remove old version from the final list
 		},
+	}),
+	i(211295, {	-- Wrathful Crusader's Helm
+		["timeline"] = { ADDED_11_0_5 },
 	}),
 	un(REMOVED_FROM_GAME, i(141995)),	-- Unclaimed Black Market Container Pre 8.2.5 (they updated and added new items)
 }));

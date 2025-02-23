@@ -32,6 +32,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["questID"] = 60933,
 				["g"] = {
 					o(354175, {	-- Cache of the Ascended
+						["coord"] = { 53.5, 88.7, BASTION },
 						["questID"] = 60977,
 						["isDaily"] = true,
 						["g"] = {
@@ -94,6 +95,15 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["crs"] = { 157979 },	-- Echo of Mercia <Paragon of Humility>
 				["coord"] = { 66.0, 43.6, BASTION },
 				["questID"] = 61002,
+				["providers"] = {
+					{ "o", 354283 },	-- Mercia's Legacy: Chapter One
+					{ "o", 354284 },	-- Mercia's Legacy: Chapter Two
+					{ "o", 354285 },	-- Mercia's Legacy: Chapter Three
+					{ "o", 354286 },	-- Mercia's Legacy: Chapter Four
+					{ "o", 354287 },	-- Mercia's Legacy: Chapter Five
+					{ "o", 354288 },	-- Mercia's Legacy: Chapter Six
+					{ "i", 180569 },	-- Mercia's Legacy: Chapter Seven
+				},
 				["g"] = {
 					i(183606),	-- Bulwark of Echoing Courage
 					i(184295),	-- Eternal Daybreak Necklace
@@ -101,7 +111,17 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					i(183614),	-- Gavel of Harmonious Wisdom
 					i(183611),	-- Humble Ophelia's Greatblade
 					i(183604),	-- Piercing Timbre Crossbow
-					i(180569),	-- Mercia's Legacy: Chapter Seven (so the item is associated with the rare)
+					o(354467, {	-- Mercia's Legacy: Chapter Seven
+						["coords"] = {
+							{ 65.3, 44.4, BASTION },
+							{ 65.4, 42.9, BASTION },
+							{ 65.8, 44.4, BASTION },
+							{ 66.4, 43.0, BASTION },
+							{ 67.3, 43.6, BASTION },
+							{ 67.4, 42.8, BASTION },
+						},
+						["g"] = { i(180569), },	-- Mercia's Legacy: Chapter Seven (so the item is associated with the rare)
+					}),
 					i(183613),	-- Glinting Daybreak Dagger
 					i(183612),	-- Loyal Champion's Hammer
 					i(183609),	-- Re-Powered Goliath Fists
@@ -133,17 +153,19 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["coord"] = { 37.0, 41.8, BASTION },
 				["questID"] = 61000,
 				["g"] = {
-					i(183606),	-- Bulwark of Echoing Courage
-					i(183608),	-- Evernote Vesper
-					i(183614),	-- Gavel of Harmonious Wisdom
-					i(183613),	-- Glinting Daybreak Dagger
-					i(183611),	-- Humble Ophelia's Greatblade
-					i(183612),	-- Loyal Champion's Hammer
-					i(183604),	-- Piercing Timbre Crossbow
-					i(183609),	-- Re-Powered Golliath Fists
-					i(183607),	-- Uncertain Aspirant's Spear
-					i(183610),	-- Warrior Poet's Poniard
-					i(183605),	-- Devourer Wrought Warglaive
+					o(354649, {	-- Relic Hoard
+						i(183606),	-- Bulwark of Echoing Courage
+						i(183608),	-- Evernote Vesper
+						i(183614),	-- Gavel of Harmonious Wisdom
+						i(183613),	-- Glinting Daybreak Dagger
+						i(183611),	-- Humble Ophelia's Greatblade
+						i(183612),	-- Loyal Champion's Hammer
+						i(183604),	-- Piercing Timbre Crossbow
+						i(183609),	-- Re-Powered Golliath Fists
+						i(183607),	-- Uncertain Aspirant's Spear
+						i(183610),	-- Warrior Poet's Poniard
+						i(183605),	-- Devourer Wrought Warglaive
+					}),
 				},
 			}),
 			n(163460, {	-- Dionae
@@ -295,7 +317,28 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 		})),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, {
-	q(57741),	-- when defeating Sundancer after also having ridden Sundancer using the Skyfeather Glider
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_2_LAUNCH } }, {
+	m(SHADOWLANDS, {
+		m(BASTION, {
+			n(RARES, {
+				q(63422),	-- Aethon secondary quest
+				q(62192),	-- Baedos secondary quest
+				q(62158),	-- Basilofos secondary quest
+				q(62167),	-- Bookkeeper Mnemis secondary quest along with 59022
+				q(62191),	-- Cloudfeather Guardian secondary quest
+				q(63424),	-- Cloudtail secondary quest
+				q(61069),	-- Demi the Relic Hoarder secondary quest
+				q(61082),	-- Echo of Aella kill quest
+				q(62251),	-- Echo of Aella secondary loot quest
+				q(57705),	-- Herculon kill quest
+				q(62201),	-- Herculon secondary loot quest
+				q(63421),	-- Nemaeus secondary quest
+				q(63410),	-- Selena the Reborn secondary quest (spellID 347866)
+				q(63423),	-- Sigilback secondary quest
+				q(62197),	-- Wingflayer the Cruel secondary quest
+				q(62202),	-- triggers when killing Corrupted Clawguard, which drops Functioning Anima Core
+				q(57741),	-- when defeating Sundancer after also having ridden Sundancer using the Skyfeather Glider
+			}),
+		}),
+	}),
+})));

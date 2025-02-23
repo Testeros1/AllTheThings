@@ -317,6 +317,12 @@
 1.15.3.55391
 2660@@@Elemental (The Molten Core Adds)
 2661@@@Hydraxian (The Molten Core Adds)
+1.15.4.56400
+2679@@@Order of the Silver Hand
+2686@@@S03 - Scourge Disguise
+2687@@@Hunter Quest Boss (Tamed Beast)
+1.15.6.58658
+2721@@@S03 - Scarlet Crusade
 2.0.0.6080
 911@@@Silvermoon City
 914@@@PLAYER, Blood Elf
@@ -1082,3 +1088,30 @@
 2647@@@The Vizier (Paragon)
 2648@@@The Weaver (Paragon)
 2649@@@The General (Paragon)
+11.0.5.56487
+2682@@@
+11.1.0.58221
+2652@@@Darkfuse Enforcement
+2653@@@The Cartels of Undermine
+2667@@@The Cartels of Undermine (Paragon)
+2668@@@Darkfuse Solutions (Paragon)
+2669@@@Darkfuse Solutions
+2670@@@Venture Co. (Paragon)
+2671@@@Venture Co.
+2672@@@Bilgewater Cartel (Paragon)
+2673@@@Bilgewater Cartel
+2674@@@Blackwater Cartel (Paragon)
+2675@@@Blackwater Cartel
+2676@@@Steamwheedle Cartel (Paragon)
+2677@@@Steamwheedle Cartel
+2683@@@Delves: Season 2
+2684@@@Gallagio Loyalty Rewards Club (Paragon)
+2685@@@Gallagio Loyalty Rewards Club
+2692@@@Venture Company
+2693@@@Delver's Journey (Season 1)
+2694@@@UNUSED - Brann Bronzebeard (Season 2)
+2695@@@Test Account Wide Stormwind (DNT)
+2697@@@Chase's test faction (DNT)
+11.1.0.58626
+2670@@@Venture Company (Paragon)
+2671@@@Venture Company

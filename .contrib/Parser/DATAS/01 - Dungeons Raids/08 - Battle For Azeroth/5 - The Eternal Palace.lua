@@ -47,6 +47,15 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADD
                         ["_encounter"] = { 2361, DIFFICULTY.RAID.LFR },
                     }),
                 }),
+				ach(40962, {	-- The Eternal Palace
+					["timeline"] = { ADDED_11_0_7 },
+					-- Meta Achievement
+					["sym"] = {{"meta_achievement",
+						13719,	-- Depths of the Devoted
+						13725,	-- The Circle of Stars
+						13718,	-- The Grand Reception
+					}},
+				}),
 				ach(13687, {	-- Glory of the Eternal Raider
 					-- Meta Achievement
 					["sym"] = {{"meta_achievement",
@@ -928,8 +937,17 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADD
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } }, {
 	inst(1179, {	-- The Eternal Palace
+		-- Aqueous Reliquary LootIDs (This is a guess ... have to determine which ID is for which difficulty, - sadidorf)
+		q(56961),	-- Radiance of Azshara Aqueous Reliquary LFR? LootID
+		q(56962),	-- Radiance of Azshara Aqueous Reliquary NHC? LootID
+		q(56964),	-- Radiance of Azshara Aqueous Reliquary HC? LootID
+		q(56965),	-- Queen's Court Aqueous Reliquary LFR? LootID
+		q(56966),	-- Queen's Court Aqueous Reliquary NHC? LootID
+		q(56968),	-- Queen's Court Aqueous Reliquary HC? LootID
+		q(56963),	-- Radiance of Azshara Aqueous Reliquary Mythic? LootID
+
 		q(56948),	-- creating rank 1 Condensed Life-Force from Aqueous Reliquaries
 		q(56949),	-- creating rank 2 Condensed Life-Force from Aqueous Reliquaries
 		q(56525),	-- Killing heroic Azshara
@@ -947,4 +965,4 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, {
 		q(55761),	-- Queen Azshara killed (Heroic)
 		q(56524),	-- Queen Azshara killed (Mythic)
 	}),
-}));
+})));

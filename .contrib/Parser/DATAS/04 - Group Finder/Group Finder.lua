@@ -331,13 +331,16 @@ applyclassicphase(WRATH_PHASE_FOUR, root(ROOTS.GroupFinder, {
 			["description"] = "Rewarded for completing a random cata dungeon during leveling or completing a random cata timewalking dungeon.\nBag contents might be slightly off due to 7.3.5 adjustments and still running for confirmation.",
 			-- #endif
 			["groups"] = {
+				i(113725),	-- Molten Slagstone Ring
+				i(113726),	-- Burning Slagstone Ring
+				i(113727),	-- Smoldering Slagstone Ring	— Confirmed by milotic on GitHub on August 24, 2020
+				i(113736),	-- Rumbling Mountain Choker
 				i(113760),	-- Smoldercloth Bracers*
 				i(113759),	-- Smoldercloth Cap*
 				i(113763),	-- Smoldercloth Gloves*
 				i(113761),	-- Smoldercloth Leggings*
 				i(113762),	-- Smoldercloth Robe*
 				i(113786),	-- Smoldercloth Slippers*
-				i(113727),	-- Smoldering Slagstone Ring	— Confirmed by milotic on GitHub on August 24, 2020
 				i(113769),	-- Ravaged Leather Boots*		— 01/18/22
 				i(113705, {	-- Ravaged Leather Bracers*
 					["timeline"] = { REMOVED_7_3_5 },
@@ -835,21 +838,256 @@ applyclassicphase(WRATH_PHASE_FOUR, root(ROOTS.GroupFinder, {
 			["timeline"] = { ADDED_7_0_3_LAUNCH, REMOVED_8_0_1 }
 		}),
 	}),
-	expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH, REMOVED_9_0_1 } }, {
-		i(160054),	-- War-Torn Satchel of Cooperation
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH, REMOVED_9_0_1 } }, {
+		q(51370, {	-- Short-Supply Reward
+			["repeatable"] = true,
+			["g"] = {
+				i(160054),	-- War-Torn Satchel of Cooperation
+			},
+		}),
 	})),
-	expansion(EXPANSION.SL, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNCH, REMOVED_10_0_0 } }, {
+	expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_2_LAUNCH, REMOVED_10_0_0 } }, {
 		i(184522),	-- Veiled Satchel of Cooperation
 	})),
-	expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
 		i(201326, {	-- Draconic Satchel of Cooperation
 			i(201325),	-- Draconic Augment Rune
 		}),
 	})),
-	expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
-		i(224573, {	-- Crystal Satchel of Cooperation
-			i(224572),	-- Crystallized Augment Rune
+	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		q(83023, {	-- Short-Supply Reward
+			["repeatable"] = true,
+			["g"] = {
+				i(224573, {	-- Crystal Satchel of Cooperation
+					i(224572),	-- Crystallized Augment Rune
+				}),
+			},
 		}),
 	})),
 }));
+
+root(ROOTS.HiddenQuestTriggers, {
+	expansion(EXPANSION.WRATH, bubbleDownSelf({ ["timeline"] = { ADDED_3_3_0 } }, {
+		n(GROUP_FINDER, {
+			q(24887),	-- LFGDungeons - Burning Crusade - Normal Random - 1st
+			q(24895),	-- LFGDungeons - Burning Crusade - Normal Random - Nth
+		}),
+	})),
+	expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
+		n(GROUP_FINDER, {
+			q(31614),	-- LFGDungeons - Mists - Heroic Random - 1st
+			q(31615),	-- LFGDungeons - Mists - Heroic Random - Nth
+			q(31274),	-- LFGDungeons - Mists - Raid Finder - 1st
+			q(31275),	-- LFGDungeons - Mists - Raid Finder - Nth
+			q(32097),	-- Short-Supply Reward
+			q(33233),	-- Short-Supply Reward
+		}),
+	})),
+	expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+		n(GROUP_FINDER, {
+			q(36145),	-- LFGDungeons - Cataclysm - Dungeon Normal 1st
+			q(36151),	-- LFGDungeons - Cataclysm - Dungeon Normal Nth
+			q(40829),	-- LFGDungeons - Draenor 6.2 - Raid Finder - 1st
+			q(37333),	-- LFGDungeons - Draenor - Heroic Random - 1st
+			q(37334),	-- LFGDungeons - Draenor - Heroic Random - Nth
+			q(37335),	-- LFGDungeons - Draenor - Normal Random - 1st
+			q(37336),	-- LFGDungeons - Draenor - Normal Random - Nth
+			q(37505),	-- LFGDungeons - Draenor - Raid Finder - 1st
+			q(37506),	-- LFGDungeons - Draenor - Raid Finder - Nth
+			q(36143),	-- LFGDungeons - Lich King - Dungeon Normal 1st
+			q(36149),	-- LFGDungeons - Lich King - Dungeon Normal Nth
+			q(31618),	-- LFGDungeons - Mists - Normal Random - 1st
+			q(31619),	-- LFGDungeons - Mists - Normal Random - Nth
+			q(36147),	-- LFGDungeons - Pandaria - Dungeon Normal 1st
+			q(36139),	-- LFGDungeons - Pandaria - Dungeon Normal Nth
+			q(40395),	-- LFGDungeons - Timewalking "Heroic" Random - Nth
+			q(36144),	-- LFG WLK 75-80
+			q(36150),	-- LFG WLK 75-80
+			q(37648),	-- Short-Supply Reward
+			q(35963),	-- Warlords Heroic Dungeon Reward Quest - triggered at the end of Mythic Grimrail Depot
+			q(36277),	-- Warlords Max Level Dungeon Bonus Reward
+			q(35962),	-- Warlords Max Level Dungeon Reward Quest - triggered at the end of Normal Grimrail Depot
+		}),
+	})),
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
+		n(GROUP_FINDER, {
+			q(41710),	-- Legion 110 A
+			q(41712),	-- Legion 110 A
+			q(41714),	-- Legion 110 A
+			q(41716),	-- Legion 110 A
+			q(41718),	-- Legion 110 A
+			q(41720),	-- Legion 110 A
+			q(41721),	-- Legion 110 A
+			q(42457),	-- Legion 110 A
+			q(42458),	-- Legion 110 A
+			q(42462),	-- Legion 110 A
+			q(42464),	-- Legion 110 A
+			q(42466),	-- Legion 110 A
+			q(42467),	-- Legion 110 A
+			q(42468),	-- Legion 110 A
+			q(42469),	-- Legion 110 A
+			q(42470),	-- Legion 110 A
+			q(43497),	-- Legion 110 A
+			q(43498),	-- Legion 110 A
+			q(44435),	-- Legion 110 Dungeon Reward Quest
+			q(41711),	-- Legion 110 H
+			q(41713),	-- Legion 110 H
+			q(41715),	-- Legion 110 H
+			q(41717),	-- Legion 110 H
+			q(41719),	-- Legion 110 H
+			q(41722),	-- Legion 110 H
+			q(41723),	-- Legion 110 H
+			q(42459),	-- Legion 110 H
+			q(42460),	-- Legion 110 H
+			q(42463),	-- Legion 110 H
+			q(42465),	-- Legion 110 H
+			q(42471),	-- Legion 110 H
+			q(42472),	-- Legion 110 H
+			q(42473),	-- Legion 110 H
+			q(42474),	-- Legion 110 H
+			q(42475),	-- Legion 110 H
+			q(43499),	-- Legion 110 H
+			q(43500),	-- Legion 110 H
+			q(44437),	-- Legion Dungeon Reward Quest
+			q(45533),	-- Legion Dungeon Reward Quest
+			q(42915),	-- LFGDungeons - Legion - Dungeon Heroic - 1st
+			q(42916),	-- LFGDungeons - Legion - Dungeon Heroic - Nth
+			q(42912),	-- LFGDungeons - Legion - Dungeon Normal - 1st
+			q(42913),	-- LFGDungeons - Legion - Dungeon Normal - Nth
+			q(42897),	-- LFGDungeons - Legion - Heroic Random - 1st
+			q(42899),	-- LFGDungeons - Legion - Heroic Random - Nth
+			q(42901),	-- LFGDungeons - Legion - Normal Random - 1st
+			q(42903),	-- LFGDungeons - Legion - Normal Random - Nth
+			q(42904),	-- LFGDungeons - Legion - Raid Finder - 1st
+			q(42905),	-- LFGDungeons - Legion - Raid Finder - Nth
+			q(42554),	-- WOD 100 A
+			q(42555),	-- WOD 100 A
+			q(42561),	-- WOD 100 A
+			q(42562),	-- WOD 100 A
+			q(42563),	-- WOD 100 A
+			q(42564),	-- WOD 100 A
+			q(42565),	-- WOD 100 A
+			q(42552),	-- WOD 100 H
+			q(42553),	-- WOD 100 H
+			q(42556),	-- WOD 100 H
+			q(42557),	-- WOD 100 H
+			q(42558),	-- WOD 100 H
+			q(42559),	-- WOD 100 H
+			q(42560),	-- WOD 100 H
+		}),
+	})),
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
+		n(GROUP_FINDER, {
+			q(53379),	-- BFA 120 E
+			q(53380),	-- BFA 120 E
+			q(53381),	-- BFA 120 E
+			q(53382),	-- BFA 120 E
+			q(53383),	-- BFA 120 E
+			q(53391),	-- BFA 120 E
+			q(53392),	-- BFA 120 E
+			q(53393),	-- BFA 120 E
+			q(53394),	-- BFA 120 E
+			q(53395),	-- BFA 120 E
+			q(53396),	-- BFA 120 E
+			q(53397),	-- BFA 120 E
+			q(53398),	-- BFA 120 E
+			q(53399),	-- BFA 120 E
+			q(53400),	-- BFA 120 E
+			q(53401),	-- BFA 120 E
+			q(53402),	-- BFA 120 E
+			q(53403),	-- BFA 120 E
+			q(53404),	-- BFA 120 E
+			q(53554),	-- BFA 120 E
+			q(53555),	-- BFA 120 E
+			q(53556),	-- BFA 120 E
+			q(53557),	-- BFA 120 E
+			q(53558),	-- BFA 120 E
+			q(53731),	-- Legion 110 A
+			q(53732),	-- Legion 110 A
+			q(53733),	-- Legion 110 A
+			q(53727),	-- Legion 110 H
+			q(53728),	-- Legion 110 H
+			q(53729),	-- Legion 110 H
+			q(53730),	-- Legion 110 H
+			q(53374),	-- BFA 111-119 E
+			q(53375),	-- BFA 111-119 E
+			q(53376),	-- BFA 111-119 E
+			q(53377),	-- BFA 111-119 E
+			q(53378),	-- BFA 111-119 E
+			q(53388),	-- BFA 111-119 E
+			q(53389),	-- BFA 111-119 E
+			q(53390),	-- BFA 111-119 E
+			q(53559),	-- BFA 111-119 E
+			q(53560),	-- BFA 111-119 E
+			q(53561),	-- BFA 111-119 E
+			q(53562),	-- BFA 111-119 E
+			q(53563),	-- BFA 111-119 E
+			q(50627),	-- LFGDungeons - BFA - Heroic Random - 1st
+			q(50628),	-- LFGDungeons - BFA - Heroic Random - Nth
+			q(50626),	-- LFGDungeons - BFA - Normal Random - 1st
+			q(50625),	-- LFGDungeons - BFA - Normal Random - Nth
+			q(52051),	-- LFGDungeons - BFA - Raid Finder - 1st
+			q(52052),	-- LFGDungeons - BFA - Raid Finder - Nth
+		}),
+	})),
+	expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_2_LAUNCH } }, {
+		n(GROUP_FINDER, {
+			q(62642),	-- LFGDungeons - SL - Heroic Random - 1st
+			q(62643),	-- LFGDungeons - SL - Heroic Random - Nth
+			q(62644),	-- LFGDungeons - SL - Normal Random - 1st
+			q(62645),	-- LFGDungeons - SL - Normal Random - Nth
+			q(62646),	-- LFGDungeons - SL - Raid Finder - 1st
+			q(62647),	-- LFGDungeons - SL - Raid Finder - Nth
+			q(62658),	-- Shadowlands Dungeon Reward Quest
+			q(62346),	-- Shadowlands (50-59) E
+			q(62347),	-- Shadowlands (50-59) E
+			q(62348),	-- Shadowlands (50-59) E
+			q(62349),	-- Shadowlands (50-59) E
+			q(62350),	-- Shadowlands (50-59) E
+			q(62353),	-- Shadowlands (50-59) E
+			q(62354),	-- Shadowlands (50-59) E
+			q(62355),	-- Shadowlands (50-59) E
+			q(62356),	-- Shadowlands (50-59) E
+			q(62357),	-- Shadowlands (50-59) E
+			q(62358),	-- Shadowlands (50-59) E
+			q(62359),	-- Shadowlands (50-59) E
+			q(62360),	-- Shadowlands (50-59) E
+			q(60023),	-- Shadowlands (60) E
+			q(60024),	-- Shadowlands (60) E
+			q(60025),	-- Shadowlands (60) E
+			q(60031),	-- Shadowlands (60) E
+			q(60032),	-- Shadowlands (60) E
+			q(60033),	-- Shadowlands (60) E
+			q(60034),	-- Shadowlands (60) E
+			q(60035),	-- Shadowlands (60) E
+			q(60036),	-- Shadowlands (60) E
+			q(60037),	-- Shadowlands (60) E
+			q(60038),	-- Shadowlands (60) E
+			q(60039),	-- Shadowlands (60) E
+			q(60040),	-- Shadowlands (60) E
+			q(64996, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(64997, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(64998, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(64999, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(65000, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(65001, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(65002, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(65003, {["timeline"] = {ADDED_9_1_5}}),	-- Shadowlands (60) E
+			q(65703, {["timeline"] = {ADDED_9_2_0}}),	-- Shadowlands (60) E
+			q(65704, {["timeline"] = {ADDED_9_2_0}}),	-- Shadowlands (60) E
+			q(65705, {["timeline"] = {ADDED_9_2_0}}),	-- Shadowlands (60) E
+			q(60014),	-- Shadowlands 60 E
+			q(60015),	-- Shadowlands 60 E
+			q(60016),	-- Shadowlands 60 E
+			q(60017),	-- Shadowlands 60 E
+			q(60018),	-- Shadowlands 60 E
+			q(60019),	-- Shadowlands 60 E
+			q(60026),	-- Shadowlands 60 E
+			q(60027),	-- Shadowlands 60 E
+			q(60028),	-- Shadowlands 60 E
+			q(60029),	-- Shadowlands 60 E
+			q(60030),	-- Shadowlands 60 E
+		}),
+	})),
+});
 -- #endif

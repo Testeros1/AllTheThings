@@ -1,24 +1,15 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local COOKING_AWARD_GROUPS = {
-	-- #if AFTER 5.0.4
-	currency(81),	-- Epicurean's Award
-	-- #else
-	currency(402),	-- Ironpaw Token // Pre 5.0.4 named Chef's Award
-	-- #endif
-};
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(THUNDER_BLUFF, {
 		["lore"] = "Thunder Bluff is the Tauren capital city located in the northern part of the region of Mulgore. The whole of the city is built on bluffs several hundred feet above the surrounding landscape, and is accessible by elevators on the southwestern and northeastern sides.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Inv_misc_tournaments_symbol_tauren",
-		-- #endif
+		["icon"] = 255144,
 		["isRaid"] = true,
 		["groups"] = {
 			-- #if AFTER 4.2.0
 			n(ACHIEVEMENTS, {
-				ach(5849, {	-- Fish or Cut Bait: Thunder Bluff
+				applyclassicphase(CATA_PHASE_ONE, ach(5849, {	-- Fish or Cut Bait: Thunder Bluff
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = FISHING,
 					["races"] = HORDE_ONLY,
@@ -39,8 +30,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["_quests"] = { 29354 },
 						}),
 					},
-				}),
-				ach(5843, {	-- Let's Do Lunch: Thunder Bluff
+				})),
+				applyclassicphase(CATA_PHASE_ONE, ach(5843, {	-- Let's Do Lunch: Thunder Bluff
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
@@ -61,7 +52,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["_quests"] = { 29358 },
 						}),
 					},
-				}),
+				})),
 			}),
 			-- #endif
 			battlepets({
@@ -73,13 +64,13 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}},
 			}),
 			n(FACTIONS, {
-				faction(81, {	-- Thunder Bluff
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Tauren_Male",
+				faction(FACTION_THUNDER_BLUFF, {	-- Thunder Bluff
+					-- #if AFTER CATA
+					["provider"] = { "i", 45584 },	-- Thunder Bluff Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Tauren_Male")]],
+					["icon"] = 236454,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = HORDE_ONLY,
 				}),
 			}),
@@ -131,7 +122,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(6361, {	-- A Bundle of Hides
 					["providers"] = {
@@ -189,7 +182,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 7823,	-- A Donation of Runecloth
 					["coord"] = { 43.2, 42.8, THUNDER_BLUFF },
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
-					["maxReputation"] = { 81, EXALTED },	-- Thunder Bluff, Exalted.
+					["maxReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },	-- Thunder Bluff, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = HORDE_ONLY,
 					["repeatable"] = true,
@@ -278,7 +271,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(29349, {	-- Craving Crayfish
 					["qg"] = 3028,	-- Kah Mistrunner
@@ -492,7 +487,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(29365, {	-- Perfectly Picked Portions
 					["qg"] = 3026,	-- Aska Mistrunner
@@ -502,7 +499,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(29358, {	-- Pining for Nuts
 					["qg"] = 3026,	-- Aska Mistrunner
@@ -512,7 +511,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
 					["lvl"] = 10,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(29345, {	-- Pond Predators
 					["qg"] = 3028,	-- Kah Mistrunner
@@ -943,19 +944,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64917, {	-- Cape of Thunder Bluff
-							["minReputation"] = { 81, EXALTED },	-- Thunder Bluff, Exalted.
+							["minReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },	-- Thunder Bluff, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64918, {	-- Mantle of Thunder Bluff
-							["minReputation"] = { 81, EXALTED },	-- Thunder Bluff, Exalted.
+							["minReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },	-- Thunder Bluff, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64919, {	-- Shroud of Thunder Bluff
-							["minReputation"] = { 81, EXALTED },	-- Thunder Bluff, Exalted.
+							["minReputation"] = { FACTION_THUNDER_BLUFF, EXALTED },	-- Thunder Bluff, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67534, {	-- Thunder Bluff Satchel
-							["minReputation"] = { 81, REVERED },	-- Thunder Bluff, Revered.
+							["minReputation"] = { FACTION_THUNDER_BLUFF, REVERED },	-- Thunder Bluff, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -1016,7 +1017,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						928,	-- Long Staff
 						852,	-- Mace
 						924,	-- Maul
-						20981,  -- Neophyte's Mace
+						20981,	-- Neophyte's Mace
 						854,	-- Quarter Staff
 						2026,	-- Rock Hammer
 					}},
@@ -1326,7 +1327,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						-- #endif
 						i(4496),	-- Small Brown Pouch
 						-- #if AFTER CATA
-						i(60335),	-- Thick Hide Pack
+						--i(60335),	-- Thick Hide Pack	// blacklisted as its a common vendor good since cata
 						-- #endif
 					},
 				}),
@@ -1465,6 +1466,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = WARCHIEFS_COMMAND_BOARD_SYMLINK,
 				["races"] = HORDE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 		},

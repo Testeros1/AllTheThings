@@ -174,11 +174,10 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 					},
 					["g"] = {
 						ach(10081),	-- Mythic: Skyreach
-						ig(127772, {	-- Gemcutter Module: Haste
+						TempForceMisc(ig(127772, {	-- Gemcutter Module: Haste
 							["requireSkill"] = JEWELCRAFTING,
 							["description"] = "Take this recipe to the \"Apexis Gemcutter\" in Tanaan Jungle to learn.  If you have this recipe already you will need to revisit the vendor to cache the recipe.",
-							["f"] = MISC,
-						}),
+						})),
 						i(110033),	-- Arcanic of the High Sage
 						i(110034),	-- Viryx's Indomitable Bulwark
 						i(110011),	-- Fires of the Sun
@@ -190,12 +189,12 @@ root(ROOTS.Instances, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { ADD
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(476, {
 		q(35961),	-- Skyreach Reward Quest
 		q(34542),	-- Spires of Arak Challenge Mode - Bronze Addition (Nth)
 		q(34524),	-- Spires of Arak Challenge Mode - Consolation (Nth)
 		q(34544),	-- Spires of Arak Challenge Mode - Gold Addition (Nth)
 		q(34543),	-- Spires of Arak Challenge Mode - Silver Addition (Nth)
 	}),
-});
+})));

@@ -1,6 +1,10 @@
 ---@diagnostic disable: lowercase-global
--- Construct a commonly formatted object.
-struct = function(field, id, t)
+
+---@param field string
+---@param id number
+---@param t? table
+---@return table|nil
+struct = function(field, id, t)		-- Construct a commonly formatted object.
 	if not t then t = {};
 	elseif (t.g or t.groups) and t[1] then
 		print("ERROR: Don't use 'g' or 'groups' with an array of objects! Fix Group: "..field..":"..id);
@@ -13,16 +17,22 @@ struct = function(field, id, t)
 	if not id then
 		print("Missing ID for",field,"group");
 	end
+	if t[field] and t[field] ~= id then
+		print("ERROR: Don't reuse tables within constructed objects! Fix Group: "..field..":"..id.." which has "..t[field].." already assigned!")
+	end
 	t[field] = id;
 	return t;
 end
--- Clone a piece of data as a separate table (t => c, return c)
-clone = function(t, c)
+
+---@param t table
+---@param c? table
+---@return table
+clone = function(t, c)	-- Clone a piece of data as a separate table (t => c, return c)
 	if type(t) ~= "table" then return t end
 	c = c or {};
 
 	for key,value in pairs(t) do
-		if not c[key] then
+		if c[key] == nil then
 			c[key] = type(value) == "table" and clone(value) or value;
 		end
 	end
@@ -88,6 +98,13 @@ appendAllGroups = function(g, ...)
 	end
 	return g;
 end
+local SharedKeyWarnings = {
+	-- sharedData description is not 'always' correct to consolidate to sharedDescription since it is recursive for all children, and may not be intentional for them
+	-- description = "Using an identical 'description' on nested multiple groups via bubbleDown is not recommended. Use 'sharedDescription' instead for reduced data requirements!",
+}
+local BubbleDownKeyWarnings = {
+	description = "Using an identical 'description' on nested multiple groups via bubbleDown is not recommended. Use 'sharedDescription' instead for reduced data requirements!",
+}
 -- I've determined that this isn't going to work out with how our data is currently organized
 -- Since we've grown accustomed to making the inner timeline fully-replace any bubbleDown, there's no
 -- real way to add logic to merge these properly. Oh well, maybe another field will eventually benefit
@@ -127,6 +144,9 @@ applyData = function(data, t)
 	if data and t then
 		for key, value in pairs(data) do
 			if t[key] == nil then	-- don't replace existing data
+				if SharedKeyWarnings[key] then
+					print(SharedKeyWarnings[key],"[",value,"]")
+				end
 				t[key] = clone(value)
 			-- else
 			-- 	local custom = CustomMergedData[key]
@@ -136,6 +156,21 @@ applyData = function(data, t)
 			end
 		end
 	end
+end
+-- Applies a function against the group and all sub-groups
+applyFunc = function(func, t)
+	if not func then return t end
+	if t.groups then
+		applyFunc(func, t.groups)
+	elseif t.g then
+		applyFunc(func, t.g)
+	elseif isarray(t) then
+		for _,group in ipairs(t) do
+			applyFunc(func, group)
+		end
+	end
+	func(t)
+	return t
 end
 splitTimelineEvent = function(epoch)
 	local words = {};
@@ -198,7 +233,7 @@ sharedData = function(data, t)
 	if not data then
 		print("sharedData: No Shared Data")
 	end
-	if not t then
+	if not t or (#t == 0 and not t.g and not t.groups) then
 		print("sharedData: No Source 't'")
 	end
 	if t then
@@ -225,8 +260,11 @@ sharedDataSelf = function(data, t)
 	t = togroups(t);
 	-- then apply the data to itself
 	applyData(data, t);
-	-- then apply regular sharedData on the group
-	return sharedData(data, t);
+	-- then apply regular sharedData on the group if it has content
+	if not (#t == 0 and not t.g and not t.groups) then
+		return sharedData(data, t);
+	end
+	return t
 end
 -- Applies a copy of the provided data into all sub-groups of the provided table/array
 bubbleDown = function(data, t)
@@ -235,6 +273,11 @@ bubbleDown = function(data, t)
 	end
 	if not t then
 		print("bubbleDown: No Source 't'")
+	end
+	for key,val in pairs(data) do
+		if BubbleDownKeyWarnings[key] then
+			print(BubbleDownKeyWarnings[key],"[",val,"]")
+		end
 	end
 	if t then
 		if t.g or t.groups then
@@ -335,14 +378,24 @@ end
 bubbleDownTimelineEventSelf = function(epoch, t)
 	return bubbleDownTimelineEvent(epoch, togroups(t));
 end
+generateValidationStructure = function(indent, t)
+	local msg = "";
+	for j,o in pairs(t) do
+		msg = msg .. "\n" .. indent .. j .. ": " .. tostring(o);
+		if type(o) == "table" then
+			msg = msg .. generateValidationStructure(indent .. " ", o);
+		end
+	end
+	return msg;
+end
 -- Validates and returns 't' (expected 'groups' content) ensuring that contained content is in the expected formats
 validateGroups = function(t)
 	if t then
 		for i,group in pairs(t) do
 			if type(i) ~= "number" then
-				error("You're trying to use '" .. i .. "' in a 'groups' field. (can't do that!)");
+				error("You're trying to use '" .. i .. "' in a 'groups' field. (can't do that!)\nDetails: " .. generateValidationStructure(" ", t));
 			elseif type(group) ~= "table" then
-				error("You're trying to use '" .. group .. "' in a 'groups' field. (can't do that!)");
+				error("You're trying to use '" .. group .. "' in a 'groups' field. (can't do that!)\nDetails: " .. generateValidationStructure(" ", t));
 			end
 		end
 		return t;
@@ -489,9 +542,15 @@ end
 applyclassicphase = function(phase, data, force)
 	return (force and bubbleDownAndReplace or bubbleDown)({ ["u"] = phase }, data);
 end
+ifclassic = function(classicValue, value)
+	return classicValue;
+end
 -- #else
 applyclassicphase = function(phase, data, force)
 	return data;
+end
+ifclassic = function(classicValue, value)
+	return value;
 end
 -- #endif
 local function ProcessProviderForRetailAsUncollectible(provider)
@@ -616,6 +675,10 @@ epicurean = function(cost, item)						-- Assign a Epicurean's Award cost to an i
 	applycost(item, { "c", 81, cost });
 	return item;
 end
+fbiron = function(cost, item)						-- Assign a Flame-Blessed Iron cost to an item.
+	if cost > 0 then applycost(item, { "c", 3090, cost }); end
+	return item;
+end
 gold = function(cost, item)								-- Assign a Gold cost to an item.
 	applycost(item, { "g", cost * 10000 });	-- Gold
 	return item;
@@ -700,7 +763,6 @@ achWithRep = function(id, factionID, t)					-- Create an ACHIEVEMENT Object with
 		-- #if ANYCLASSIC
 		-- CRIEVE NOTE: This function is temporary until I get the handlers cleared out of the main files.
 		t.OnInit = [[function(t) return _.CommonAchievementHandlers.EXALTED_REP_OnInit(t, ]] .. factionID ..[[); end]];
-		-- #if BEFORE 4.1.0
 		if not t.OnUpdate then
 			-- #if AFTER 3.0.1
 			if id == 5788 then	-- Agent of Shen'dralar still needs this until after 4.1.0
@@ -712,7 +774,6 @@ achWithRep = function(id, factionID, t)					-- Create an ACHIEVEMENT Object with
 		end
 		t.OnClick = [[_.CommonAchievementHandlers.EXALTED_REP_OnClick]];
 		t.OnTooltip = [[_.CommonAchievementHandlers.EXALTED_REP_OnTooltip]];
-		-- #endif
 		-- #endif
 	end
 	return t;
@@ -789,11 +850,11 @@ artifact = function(id, t)								-- Create an ARTIFACT Object
 end
 az = function(id, rank, t)								-- Create a AZERITE ESSENCE Object.
 	if t or type(rank) == "number" then
-		t = struct("azeriteEssenceID", id, t or {});
+		t = struct("azeriteessenceID", id, t or {});
 		t.rank = rank;
 		return t;
 	else
-		return struct("azeriteEssenceID", id, rank);
+		return struct("azeriteessenceID", id, rank);
 	end
 end
 azeriteEssence = az;									-- Create a AZERITE ESSENCE Object. (alternative shortcut)
@@ -821,12 +882,10 @@ battlepettype = function(id, t)							-- Create a BATTLE PET TYPE Object
 	return struct("petTypeID", id, t);
 end
 bpt = battlepettype;									-- Create a BATTLE PET TYPE Object (alternative shortcut)
-cat = function(id, t)									-- Create a CATEGORY Object.
-	return struct("categoryID", id, t);
-end
 category = function(id, t)								-- Create a CATEGORY Object.
 	return struct("categoryID", id, t);
 end
+cat = category
 cl = function(id, specc, t)								-- Create a CHARACTER CLASS Object
 	-- specc is optional
 	if not t then
@@ -843,12 +902,12 @@ cl = function(id, specc, t)								-- Create a CHARACTER CLASS Object
 				specc = 73;
 			end
 		end
-		id = id + (specc / 1000 )
+		id = id + (specc / 1000)
 		t = togroups(t)
 	end;
 	return struct("classID", id, t);
 end
-clWithoutLock = function(id, t)							-- Create a CHARACTER CLASS Object without a Classi Lock
+clWithoutLock = function(id, t)							-- Create a CHARACTER CLASS Object without a Class Lock
 	t = struct("headerID", id, t);
 	t.type = HEADERS.Class;
 	return t;
@@ -878,6 +937,10 @@ crit = function(criteriaUID, t)							-- Create an Achievement Criteria Object (
 		error(table.concat({"Do not use 'creatureID' or 'npcID' in crit(",criteriaUID,") ==> [\"crs\"]={",t.creatureID or t.npcID,"}"}))
 	end
 	t.criteriaID = criteriaUID;
+	-- Apply a default timeline of 3.0.2 to Criteria
+	if not t.timeline then
+		t._defaulttimeline = { ADDED_3_0_2 }
+	end
 	return t;
 end
 currency = function(id, t)								-- Create a CURRENCY Object
@@ -989,17 +1052,21 @@ elitepvp = function(t)									-- Flag all nested content as requiring Elite PvP
 		["u"] = ELITE_PVP_REQUIREMENT,					-- CRIEVE NOTE: This currently uses the same filter as our other filters. This should probably be changed to act like the PVP filter or make "pvp" a 2 or something.
 	}, t);
 end
+local PatchDecimals = 2
+local RevDecimals = 2
+local PatchShift = 10 ^ PatchDecimals
+local RevShift = 10 ^ RevDecimals
 expansion = function(id, patch, t)							-- Create an EXPANSION Object
 	-- patch is optional
 	if not t then
 		t = patch;
 	else
-		id = id + (patch / 100);
+		id = id + (patch / PatchShift);
 		t = togroups(t);
 	end
 	t = struct("expansionID", id, t);
 	if t and not t.timeline then
-		t.timeline = { "added " .. math.floor(id) .. ".0" };
+		t._defaulttimeline = { "added " .. math.floor(id) .. ".0" };
 	end
 	return t;
 end
@@ -1009,11 +1076,28 @@ exploration = function(id, t)							-- Create an EXPLORATION Object
 	end
 	return struct("explorationID", id, t);
 end
+visit_exploration = function(id, t)						-- Create an EXPLORATION Object (which fails to return in exploration API and must be visited manually for name-based area check to capture)
+	t = struct("explorationID", id, t)
+	t.collectible = false	-- only way to cache these is to visit manually -- too tedious :/
+	-- #IF ANYCLASSIC
+	-- leave it up to the ExplorationAreaPositionDB for that Classic Version
+	t.coord = nil
+	t.coords = nil
+	-- Flag as collectible if the areaID is confirmed as validly-working in that Classic Version
+	if ValidExplorationAreaIDsForClassic[id] then
+		t.collectible = nil
+	else
+		-- completely omit non-valid explorations from Classic for now since they're connected to Exploration Achievements
+		t._remove=true
+	end
+	-- #ENDIF
+	return t
+end
 faction = function(id, t)								-- Create a FACTION Object
 	return struct("factionID", id, t);
 end
 flightpath = function(id, t)							-- Create a FLIGHT PATH Object
-	return struct("flightPathID", id, t);
+	return struct("flightpathID", id, t);
 end
 fp = flightpath;										-- Create a FLIGHT PATH Object (Alternative)
 filter = function(id, t)								-- Create a FILTER Object
@@ -1057,14 +1141,20 @@ heir = function(id, t)									-- Create an HEIRLOOM Object(NOTE: You should onl
 	return struct("itemID", id, t);
 end
 hqt = function(id, t)									-- Create a HQT (Hidden Quest Tracker) Object
-	-- currently this is simply a 'Quest' but will soon be an actual new Type to track
-	return q(id, t);
+	t = q(id, t);
+	t.type = "hqt"
+	return t
 end
 illusion = function(id, t)								-- Create an ILLUSION Object (only necessary for illusions without itemIDs)
 	return struct("illusionID", id, t);
 end
 ill = illusion;											-- Create an ILLUSION Object
-item = function(id, t)									-- Create an ITEM Object
+
+-- Create an ITEM Object
+---@param id number
+---@param t? table
+---@return table|nil
+item = function(id, t)
 	return struct("itemID", id, t);
 end
 i = item;												-- Create an ITEM Object (alternative shortcut)
@@ -1099,6 +1189,10 @@ iexact = function(itemID, modID, bonusID, t)			-- Create an exact ITEM Object (s
 	end
 	return i;
 end
+
+---@param id number
+---@param t? table
+---@return table|nil
 inst = function(id, t)									-- Create an INSTANCE Object
 	t = struct("instanceID", id, t);
 
@@ -1121,6 +1215,10 @@ inst = function(id, t)									-- Create an INSTANCE Object
 	-- #endif
 	return t;
 end
+
+---@param id number
+---@param t? table
+---@return table|nil
 map = function(id, t)									-- Create a MAP Object
 	if t then
 		-- do not attach achievements to maps
@@ -1134,12 +1232,11 @@ m = map;												-- Create a MAP Object (alternative shortcut)
 mission = function(id, t)								-- Create an MISSION Object
 	return struct("missionID", id, t);
 end
-mi = function(id, t)									-- Create a MISSION Object (Alternative)
-	return struct("missionID", id, t);
-end
-molemachine = function(questID, name, t)				-- Create a MOLE MACHINE Quest Object
+mi = mission											-- Create a MISSION Object (Alternative)
+molemachine = function(questID, explorationID, t)		-- Create a MOLE MACHINE Quest Object
 	if questID then
-		t = struct("questID", questID, t);
+		t = q(questID, name(HEADERS.Exploration, explorationID, t))
+		t.type = "characterUnlockQuestID"
 		if t and not t.provider then
 			t.provider = { "n", 143925 };	-- Dark Iron Mole Machine
 		end
@@ -1148,17 +1245,10 @@ molemachine = function(questID, name, t)				-- Create a MOLE MACHINE Quest Objec
 	end
 	if t then
 		if not t.icon then
-			t.icon = "Interface\\Icons\\ability_racial_molemachine";
+			t.icon = 1786409;
 		end
 		if not t.timeline then
-			t.timeline = { ADDED_8_0_1 };
-		end
-		-- TODO: Do we really need the location as a description if its in each zone?
-		-- CRIEVE NOTE: Perhaps make an areaID-based class that can do header things?
-		-- CRIEVE NOTE2: ... Hell yeah, when I get time I'm converting those names to areaID!
-		if name then
-			t.name = name;
-			t.description = name;
+			t._defaulttimeline = { ADDED_8_0_1 };
 		end
 		if not t.races then
 			t.races = { DARKIRON };
@@ -1169,6 +1259,10 @@ end
 mount = function(id, t)									-- Create a MOUNT Object, which is just a spellID with a filter.
 	return struct("mountID", id, t);
 end
+
+---@param id number
+---@param t? table
+---@return table|nil
 npc = function(id, t)									-- Create an NPC Object (negative indicates that it is custom)
 	if not id then
 		print("NPC ID Missing for n() header");
@@ -1284,12 +1378,12 @@ questobjective = function(id, t)						-- Create a QUEST OBJECTIVE Object
 	t = struct("objectiveID", id, t);
 	if t then
 		-- #if NOT OBJECTIVES
-		ProcessProviderForRetailAsUncollectible(t.provider);
-		if t.providers then
-			for i,provider in ipairs(t.providers) do
-				ProcessProviderForRetailAsUncollectible(provider);
-			end
-		end
+		-- ProcessProviderForRetailAsUncollectible(t.provider);
+		-- if t.providers then
+		-- 	for i,provider in ipairs(t.providers) do
+		-- 		ProcessProviderForRetailAsUncollectible(provider);
+		-- 	end
+		-- end
 		-- #endif
 		if t.itemID then
 			print("INCORRECT OBJECTIVE FORMAT", id, t.itemID);
@@ -1303,12 +1397,42 @@ qo = questobjective;									-- Create a QUEST OBJECTIVE Object (alternative sho
 race = function(id, t)									-- Create a RACE Object
 	return struct("raceID", id, t);
 end
+raceWithoutLock = function(id, t)							-- Create a CHARACTER RACE Object without a Race Lock
+	t = struct("headerID", id, t);
+	t.type = HEADERS.Race;
+	return t;
+end
 recipe = function(id, t)								-- Create a RECIPE Object
 	return struct("recipeID", id, t);
 end
 r = recipe;												-- Create a RECIPE Object (alternative shortcut)
+local function HQTCleanup(data)
+	if data.questID then return end
+	data.timeline = nil
+	data.u = nil
+end
+local SpecialRoots = {
+	__DropG = function(g)
+		return bubbleDownFiltered({
+			-- keep API data from populating into NYI/Hidden quests
+			["_drop"]={"g"}
+		},FILTERFUNC_questID,g)
+	end,
+	__HiddenQuestTriggers = function(g)
+		return bubbleDownFiltered({
+			-- keep API data from populating into NYI/Hidden quests
+			["_drop"]={"g"}
+		},FILTERFUNC_questID, applyFunc(HQTCleanup, g))
+	end,
+}
+SpecialRoots[ROOTS.HiddenAchievementTriggers] = SpecialRoots.__DropG
+SpecialRoots[ROOTS.HiddenCurrencyTriggers] = SpecialRoots.__DropG
+SpecialRoots[ROOTS.HiddenQuestTriggers] = SpecialRoots.__HiddenQuestTriggers
+SpecialRoots[ROOTS.NeverImplemented] = SpecialRoots.__DropG
 root = function(category, g)							-- Create a ROOT CATEGORY Object
 	if not g then g = g or {}; end
+	-- special global handling for certain categories
+	if SpecialRoots[category] then g = SpecialRoots[category](g) end
 	local o = _[category];
 	if not o then
 		if isarray(g) then
@@ -1357,6 +1481,11 @@ spell = function(id, t)									-- Create a SPELL Object
 end
 sp = spell;												-- Create a SPELL Object (alternative shortcut)
 title = function(id, t)									-- Create a TITLE Object
+sensemble = function(spellID, t)						-- Create an Ensemble directly from SpellID
+	local i = sp(spellID, t);
+	i.type = "ensembleSpellID"
+	return i
+end
 	return struct("titleID", id, t);
 end
 title_female = function(id, t)							-- Create a TITLE Object for Female Characters
@@ -1383,6 +1512,18 @@ dragonridingrace = function(id, t)						-- Creates a QUEST which is for a Dragon
 	return t;
 end
 skyridingrace = function(id, t)						-- Creates a QUEST which is for a Skyriding Race
+	t = q(id, t);
+	t.repeatable = true;
+	t.collectible = false;	-- quest literally cannot be completed
+	-- TODO: Do similar conditions exist?
+	-- t.sourceQuestNumRequired = 1;
+	-- t.sourceQuests = {
+	-- 	68795,	-- Dragonriding
+	-- 	DF_ACCOUNT_CAMPAIGN_QUEST,
+	-- };
+	return t;
+end
+driverace = function(id, t)						-- Creates a QUEST which is for a D.R.I.V.E. Race
 	t = q(id, t);
 	t.repeatable = true;
 	t.collectible = false;	-- quest literally cannot be completed
@@ -1437,6 +1578,11 @@ a = function(t)	-- Flag as Alliance Only
 	end
 	return t;
 end
+-- Adds an item which is convertable between itself and another subitem by way of a subitem amount and whether the
+-- item to subitem is possible
+convertItem = function(itemID, subItemID, subItemAmount, includeItemToSubitem)
+	return i(itemID, {["cost"]={{"i",subItemID,subItemAmount}},["g"]=includeItemToSubitem and {i(subItemID)} or nil})
+end
 crs = function(id, t)											-- Add a Creature List to an object.
 	if type(id) == "number" then
 		t.cr = id;
@@ -1476,17 +1622,47 @@ model = function(displayID, t)
 end
 -- Converts a given Item/Mod/Bonus combination into the current modItemID format (should roughly match GetGroupItemIDWithModID from Item.Retail.lua)
 modItemId = function(itemID, modID, bonusID)
-	local i, m, b;
-	i = itemID and tonumber(itemID) or 0;
+	itemID = itemID and tonumber(itemID) or 0;
+	-- #if AFTER LEGION
+	local m, b;
 	m = modID and tonumber(modID);
 	b = bonusID and tonumber(bonusID);
 	if m then
-		i = i + (m / 1000);
+		itemID = itemID + (m / 1000);
 	end
 	if b and b ~= 3524 then
-		i = i + (b / 100000000);
+		itemID = itemID + (b / 100000000);
 	end
-	return i;
+	-- #endif
+	return itemID;
+end
+-- Adds the 'autoname' field with proper formatting to set the 'name' of this object automatically in Retail
+-- NOTE: The base Type must support: GlobalVariants.WithAutoName as a Class Variant for the 'autoname' field to be recognized in the addon to generate a 'name'
+-- ref. Classes/Quest.lua
+name = function(type, id, t)
+	if not type or not id then return t end
+	t = t or {}
+	if t.autoname then
+		error("Cannot use name() when the contained data includes 'autoname' field! "..type..":"..id)
+	end
+	t.autoname = type..":"..id
+	return t
+end
+-- Converts 3 separate patch values into a single patch decimal for use within expansion() groups
+patch = function(major,minor,build)
+	major = math.floor(tonumber(major) or 0)
+	minor = math.floor(tonumber(minor) or 0)
+	build = math.floor(tonumber(build) or 0)
+	if major >= PatchShift then
+		print("Using a Major Patch with too many digits! It will not be represented properly in-game",major)
+	end
+	if minor >= RevShift then
+		print("Using a Minor Patch with too many digits! It will not be represented properly in-game",minor)
+	end
+	if build > 0 then
+		print("WARN: Not currently supporting Build within a Patch",build)
+	end
+	return major + minor / RevShift
 end
 un = function(u, t) t.u = u; return t; end						-- Mark an object unobtainable where u is the type.
 
@@ -1515,11 +1691,23 @@ regionUnavailable = function(region, t)
 end]];
 	return t;
 end
-chinaONLY = function(t)
+krONLY = function(t)
+	return regionExclusive("KR", t);
+end
+krUnavailable = function(t)
+	return regionUnavailable("KR", t);
+end
+cnONLY = function(t)
 	return regionExclusive("CN", t);
 end
-chinaUnavailable = function(t)
+cnUnavailable = function(t)
 	return regionUnavailable("CN", t);
+end
+twONLY = function(t)
+	return regionExclusive("TW", t);
+end
+twUnavailable = function(t)
+	return regionUnavailable("TW", t);
 end
 euONLY = function(t)
 	return regionExclusive("EU", t);
@@ -1532,6 +1720,13 @@ usONLY = function(t)
 end
 usUnavailable = function(t)
 	return regionUnavailable("US", t);
+end
+
+-- Temporary function to force Items to use the Misc filter so that they do not get turned into Recipes by the Parser
+-- until the 'guessing' logic is eventually relegated when Prof DB's are sufficient
+TempForceMisc = function(t)
+	t.f = MISC
+	return t
 end
 
 -- Create a Header. Returns a UNIQUE ID, starting at 0.
@@ -1844,7 +2039,7 @@ end
 CRIEVES_SUPER_COOL_HEADER = createHeader({
 	readable = "Crieve's Super Cool Header",
 	constant = "CRIEVES_SUPER_COOL_HEADER",	-- If you specify a constant, the identifier will become accessible in the addon code (app.HeaderConstants.CRIEVES_SUPER_COOL_HEADER)
-	icon = "INTERFACE\\ICONS\\Interface_Icon_Lol",
+	icon = 12345,
 	text = {
 		en = "Crieve's Super Cool Header",
 		ru = "TODO: Russion Translation Here",
@@ -1957,7 +2152,10 @@ local ItemRecipeHelper = function(itemID, recipeID, unobtainStatus, requireSkill
 	local unobtainType = unobtainStatus and type(unobtainStatus);
 	if unobtainType then
 		if unobtainType == "number" then
+			-- #if ANYCLASSIC
+			-- CRIEVE NOTE: At this time, this is exclusive to Classic builds.
 			object.u = unobtainStatus;
+			-- #endif
 		elseif unobtainType == "string" then
 			object.timeline = { unobtainStatus };
 		elseif unobtainType == "table" then

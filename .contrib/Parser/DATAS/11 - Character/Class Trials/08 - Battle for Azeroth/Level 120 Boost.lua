@@ -3,7 +3,7 @@
 -------------------------------------------
 root(ROOTS.Character, n(CLASS_TRIAL, {
 	expansion(EXPANSION.BFA, bubbleDown({["u"] = REMOVED_FROM_GAME}, {
-		n(LEVEL_HUNDRED_TWENTY, {
+		header(HEADERS.Achievement, 12544, {
 			-- Note: [As of October 13th, 2020 These became lvl 50 Boost]
 			["description"] = "These are gained by boosting a character to Level 120.  Each class has one default spec except Shamans, Druids and Hunters.",
 			["lvl"] = 120,
@@ -51,8 +51,8 @@ root(ROOTS.Character, n(CLASS_TRIAL, {
 				}),
 				cl(DRUID, {
 					i(171988, {	-- Adventurer's Footlocker
-						i(170617), -- Springrain Spear
-						i(170611), -- Springrain Stave
+						i(170617),	-- Springrain Spear
+						i(170611),	-- Springrain Stave
 					}),
 					cl(DRUID, BALANCE, {
 						i(170611),	-- Springrain Stave
@@ -376,7 +376,7 @@ root(ROOTS.Character, n(CLASS_TRIAL, {
 				}),
 				cl(WARRIOR, {
 					i(171988, {	-- Adventurer's Footlocker
-						i(170745),  -- Oathsworn Axe
+						i(170745),	-- Oathsworn Axe
 						i(170743),	-- Oathsworn Greataxe
 						i(170744),	-- Oathsworn Headchopper
 						i(170746),	-- Oathsworn Bulwark

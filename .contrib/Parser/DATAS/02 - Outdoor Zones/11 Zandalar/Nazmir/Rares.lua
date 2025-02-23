@@ -195,6 +195,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			n(134296, {	-- Lucille (Chag's Challenge)
 				["questID"] = 50567,
 				["coord"] = { 68.0, 19.8, NAZMIR },
+				["description"] = "This rare is sometimes bugged when the world quest is active. If you cannot talk to Chag to summon Lucille, try Warmode On/Off to enter another shard that he might be working in, or come back later.",
 				["g"] = {
 					crit(41452, {	-- Chag's Challenge
 						["achievementID"] = 12942,	-- Adventurer of Nazmir
@@ -212,7 +213,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 						["achievementID"] = 12942,	-- Adventurer of Nazmir
 					}),
 					i(163703, {	-- Crawag Gnawed Femur
-						["crs"] = { 128930 },  -- Rohnkor
+						["crs"] = { 128930 },	-- Rohnkor
 					}),
 				},
 			}),
@@ -286,7 +287,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			o(282666, {	-- Urn of Agussu
 				["questID"] = 50888,
 				["coord"] = { 38.1, 57.6, NAZMIR },
-				["icon"] = "Interface\\Icons\\INV_Misc_Urn_01",
+				["icon"] = 134514,
 				--["crs"] = { 135565 },	-- Guardian of Agussu
 				["g"] = {
 					crit(41472, {	-- Urn of Agussu

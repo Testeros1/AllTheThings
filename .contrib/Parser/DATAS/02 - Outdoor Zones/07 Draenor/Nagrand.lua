@@ -75,7 +75,7 @@ root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(DRAENOR_NAGRAND, {
 			["lore"] = "Nagrand is a zone in western Draenor. It lies west of Talador. It is home to the Burning Blade and Warsong orcish clans, as well as a seat of the ogre empire situated on the continent of Draenor, with Highmaul as its capital.",
-			["icon"] = "Interface\\Icons\\achievement_zone_nagrand_02",
+			["icon"] = 1032150,
 			["maps"] = {
 				551,	-- The Master's Cavern
 				552,	-- Stonecrag Gorge
@@ -90,7 +90,7 @@ root(ROOTS.Zones, {
 						["sym"] = {{ "achievement_criteria" }},
 					}),
 					explorationAch(8942),	-- Explore Nagrand
-					achraw(9610,  {	-- History of Violence (Broken Precipice)
+					ach(9610, {	-- History of Violence (Broken Precipice)
 						["description"] = "In order to get the relics, except the Bust, use Jewel of Transformation in the area and then break boulder piles.",
 						["groups"] = {
 							crit(26397),	-- Krog the Dominator's Hammer
@@ -101,19 +101,19 @@ root(ROOTS.Zones, {
 							crit(26404),	-- Gorg the Subjugator's Idol
 						},
 					}),
-					ach(9617,  {	-- Making the Cut (Gorian Proving Grounds)
+					ach(9617, {	-- Making the Cut (Gorian Proving Grounds)
 						["description"] = "Spawns in the building behind The Ring of Blood.  Kill 15 mobs that spawn around him in order to attack him.",
 						["crs"] = { 88210 },	-- Krud the Eviscerator
 					}),
-					ach(8927,  {	-- Nagrandeur (Alliance)
+					ach(8927, {	-- Nagrandeur (Alliance)
 						["races"] = ALLIANCE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(8928,  {	-- Nagrandeur (Horde)
+					ach(8928, {	-- Nagrandeur (Horde)
 						["races"] = HORDE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(9564,  {	-- Securing Draenor (Alliance)
+					ach(9564, {	-- Securing Draenor (Alliance)
 						["collectible"] = false,	-- We want to hide the achievement after the finished the criteria for the zone since they can't earn anything more here
 						["races"] = ALLIANCE_ONLY,
 						["g"] = {
@@ -121,7 +121,7 @@ root(ROOTS.Zones, {
 							crit(26252),	-- Assault on Mok'gol Watchpost
 						},
 					}),
-					ach(9562,  {	-- Securing Draenor (Horde)
+					ach(9562, {	-- Securing Draenor (Horde)
 						["collectible"] = false,	-- We want to hide the achievement after the finished the criteria for the zone since they can't earn anything more here
 						["races"] = HORDE_ONLY,
 						["g"] = {
@@ -129,10 +129,10 @@ root(ROOTS.Zones, {
 							crit(26237),	-- Assault on Mok'gol Watchpost
 						},
 					}),
-					ach(9541,  {	-- The Song of Silence
+					ach(9541, {	-- The Song of Silence
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(9615,  {	-- With a Nagrand Cherry On Top
+					ach(9615, {	-- With a Nagrand Cherry On Top
 						["sym"] = {{ "achievement_criteria" }},
 					}),
 				}),
@@ -153,19 +153,25 @@ root(ROOTS.Zones, {
 				})),
 				explorationHeader({
 					exploration(7072),	-- Ancestral Grounds
+					visit_exploration(7156,{coord={81.0,60.3,DRAENOR_NAGRAND}}),	-- Anguish Point
 					exploration(7303),	-- Broken Precipice
 					exploration(7331),	-- Cerulean Lagoon
+					visit_exploration(7461,{coord={51.7,25.9,DRAENOR_NAGRAND}}),	-- Earthshaker Gorge
+					visit_exploration(7226,{coord={83.2,35.9,DRAENOR_NAGRAND}}),	-- Eastwind Gulch
 					exploration(7139),	-- Elemental Plateau
 					exploration(7069),	-- Gates of Grommashar
 					exploration(7375),	-- Gorian Proving Grounds
+					visit_exploration(7465,{coord={33.9,25.8,DRAENOR_NAGRAND}}),	-- Gorian Strand
 					exploration(7188),	-- Gra'ah
 					exploration(7068),	-- Grommashar
 					exploration(7123),	-- Hallvalor
 					exploration(7060),	-- Hemet's Happy Hunting Grounds
+					visit_exploration(7469,{coord={49.9,37.0,DRAENOR_NAGRAND}}),	-- Hidden Camp
 					exploration(7367),	-- Highmaul
 					exploration(7405),	-- Highmaul Harbor
 					exploration(7070),	-- Ironfist Harbor
 					exploration(7065),	-- Lok-rath
+					visit_exploration(7206,{coord={57.3,69.0,DRAENOR_NAGRAND}}),	-- Lonely Falls
 					exploration(7067),	-- Mar'gok's Overwatch
 					exploration(7296, {	-- Mok'gol Watchpost
 						-- CRIEVE NOTE: I was initially able to collect this, but if you collect Highmaul Harbor / Broken Precipe, it gets masked behind it.
@@ -176,6 +182,7 @@ root(ROOTS.Zones, {
 					exploration(7297),	-- Ruins of Na'gwa
 					exploration(7052),	-- Sabermaw
 					exploration(7172),	-- Shadowfall Canyon
+					visit_exploration(7227,{coord={67.7,22.8,DRAENOR_NAGRAND}}),	-- Skysong Lake
 					exploration(7071),	-- Snarlpaw Ledge
 					exploration(7151),	-- Spirit Woods
 					exploration(7386),	-- Spiteleaf Thicket
@@ -183,9 +190,16 @@ root(ROOTS.Zones, {
 					exploration(7074),	-- Telaar
 					exploration(7406),	-- The Cliffs of Highmaul
 					exploration(7395),	-- The Coliseum
+					visit_exploration(7466,{coord={26.2,39.6,DRAENOR_NAGRAND}}),	-- The Imperator's Favor
 					exploration(7376),	-- The Ring of Blood
 					exploration(7073),	-- The Ring of Trials
+					visit_exploration(7436,{coord={39.3,61.0,DRAENOR_NAGRAND}}),	-- The South Sea
+					visit_exploration(7064,{coord={66.0,37.4,DRAENOR_NAGRAND}}),	-- The Stones of Prophecy
+					visit_exploration(7594,{coord={29.0,32.7,DRAENOR_NAGRAND}}),	-- The Underbelly
 					exploration(7280),	-- Throne of the Elements
+					visit_exploration(7377,{coord={93.0,32.3,DRAENOR_NAGRAND}}),	-- Time-Lost Glade
+					visit_exploration(7056,{coord={88.7,67.3,DRAENOR_NAGRAND}}),	-- Warsong Lookout
+					visit_exploration(7408,{coord={44.3,77.7,DRAENOR_NAGRAND}}),	-- Windroc Bay
 					exploration(7059),	-- Wor'var
 					exploration(7271),	-- Worgskin's Camp
 					exploration(7095),	-- Wrecked Caravan
@@ -193,7 +207,7 @@ root(ROOTS.Zones, {
 					exploration(7385),	-- Zangar Shore
 				}),
 				n(FACTIONS, {
-					faction(1711, {	-- Steamwheedle Preservation Society
+					faction(FACTION_STEAMWHEEDLE_PRESERVATION_SOCIETY, {	-- Steamwheedle Preservation Society
 						["crs"] = { 87394 },	-- Kwilax Fuseshiv <Reputation Vendor>
 						["g"] = {
 							n(ACHIEVEMENTS, {
@@ -356,26 +370,44 @@ root(ROOTS.Zones, {
 							n(VENDORS, {
 								n(87394, {	-- Kwilax Fuseshiv <Reputation Vendor>
 									["coord"] = { 50.5, 41.4, DRAENOR_NAGRAND },
-									["g"] = {
-										i(119149, {	-- Forest Sproutling (PET!)
-											["cost"] = { { "c", 823, 2000 } },	-- 2000x Apexis Crystal
-										}),
-										i(116672, {	-- Domesticated Razorback (MOUNT!)
-											["cost"] = { { "c", 823, 5000 } },	-- 5000x Apexis Crystal
-										}),
-										i(119148, {	-- Albino River Calf (PET!)
-											["cost"] = { { "c", 823, 2000 } },	-- 2000x Apexis Crystal
-										}),
-										i(118667, {	-- Steamwheedle Elixir
-											["cost"] = { { "c", 823, 1 } },	-- 1x Apexis Crystal
-										}),
-										i(119165, {	-- Contract: Professor Felblast
-											follower(460),	-- Professor Felblast
-										}),
-										i(110426),	-- Goblin Hot Potato
-										i(118683),	-- Portable Goon Squad
-										i(119137),	-- Steamwheedle "Preservation" Society Tabard
-									},
+									["g"] = bubbleDownClassicRep(FACTION_STEAMWHEEDLE_PRESERVATION_SOCIETY, {
+										{		-- Neutral
+										}, {	-- Friendly
+											i(118667),	-- Steamwheedle Elixir
+										}, {	-- Honored
+											i(110426),	-- Goblin Hot Potato
+											i(118683, {	-- Portable Goon Squad
+												["cost"] = 5000000,	-- 500g
+											}),
+										}, {	-- Revered
+											i(119165, {	-- Contract: Professor Felblast
+												["cost"] = 50000000,	-- 5,000g
+												["g"] = {
+													follower(460),	-- Professor Felblast
+												},
+											}),
+											i(119149, {	-- Forest Sproutling (PET!)
+												["cost"] = {
+													{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
+													{ "g", 10000000 },	-- 1,000g
+												},
+											}),
+											i(119148, {	-- Indentured Albino River Calf (PET!)
+												["cost"] = {
+													{ "c", 823, 2000 },	-- 2,000x Apexis Crystal
+													{ "g", 10000000 },	-- 1,000g
+												},
+											}),
+										}, {	-- Exalted
+											i(116672, {	-- Domesticated Razorback (MOUNT!)
+												["cost"] = {
+													{ "c", 823, 5000 },	-- 5,000x Apexis Crystal
+													{ "g", 50000000 },	-- 5,000g
+												},
+											}),
+											i(119137),	-- Steamwheedle "Preservation" Society Tabard
+										},
+									}),
 								}),
 							}),
 						},
@@ -922,7 +954,7 @@ root(ROOTS.Zones, {
 					}),
 					q(34466, {	-- Mysterious Staff
 						["coord"] = { 46.3, 16.0, DRAENOR_NAGRAND },
-						["icon"] = "Interface\\Icons\\inv_staff_52",
+						["icon"] = 135188,
 						["provider"] = {"o",229344},	-- Buried Timewarped Staff
 					}),
 					q(34900, {	-- New Babies
@@ -1074,14 +1106,14 @@ root(ROOTS.Zones, {
 					}),
 					q(34597, {	-- Removing the Paper Trail
 						["coord"] = { 81.3, 70.3, DRAENOR_NAGRAND },
-						["icon"] = "Interface\\Icons\\trade_archaeology_silverscrollcase",
+						["icon"] = 454060,
 						["races"] = ALLIANCE_ONLY,
 						["sourceQuest"] = 34769,	-- A Choice to Make (alliance)
 						["provider"] = {"o",231901},	-- Ogre Scrolls
 					}),
 					q(35156, {	-- Removing the Paper Trail
 						["coord"] = { 81.3, 70.3, DRAENOR_NAGRAND },
-						["icon"] = "Interface\\Icons\\trade_archaeology_silverscrollcase",
+						["icon"] = 454060,
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 34899,	-- A Choice to Make (horde)
 						["provider"] = {"o",231901},	-- Ogre Scrolls
@@ -2144,7 +2176,7 @@ root(ROOTS.Zones, {
 				n(TREASURES, {
 					--[[
 					Note: These objects have known flags to mark completion but they never seem to fire.
-						  The coords have been added to the "Abu'gar" quest instead.
+						The coords have been added to the "Abu'gar" quest instead.
 					o(233157, {	-- Abu'gar's Vitality
 						["questID"] = 35711,
 						["coord"] = { 65.8, 61.1, DRAENOR_NAGRAND },
@@ -2296,6 +2328,7 @@ root(ROOTS.Zones, {
 						["coord"] = { 75.4, 47.1, DRAENOR_NAGRAND },
 						["g"] = {
 							currency(824),	-- Garrison Resources
+							i(118236),	-- Counterfeit Coin
 						},
 					}),
 					o(233539, {	-- Genedar Debris
@@ -2625,28 +2658,30 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(37250),	-- Broken Precipice POI Tracking Quest - triggers after finding Krog the Dominator's Hammer (achievementID 9610)
-		q(37251),	-- Broken Precipice POI Tracking Quest - triggers after finding Thak the Conqueror's Bust (achievementID 9610)
-		q(37252),	-- Broken Precipice POI Tracking Quest - triggers after finding Thurg the Slave Lord's Necklace (achievementID 9610)
-		q(37253),	-- Broken Precipice POI Tracking Quest - triggers after finding Gorg the Subjugator's Idol (achievementID 9610)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	m(DRAENOR, {
+		m(DRAENOR_NAGRAND, {
+			n(QUESTS, {
+				q(34679),	-- Alliance Stables Tracking Event
+				q(34680),	-- Alliance Workshop Tracking Event
+				q(37202),	-- Hemet Nesingwary Visitor Tracking Event
+				q(34812),	-- Horde Stables Tracking Event
+				q(34813),	-- Horde Workshop Tracking Event
+				q(34518),	-- Nagrand Corral
+				q(36906),	-- Ogre Waygate
+				q(37802),	-- Gutrek's Hilt Looted - triggers during "Gutrek's Cleaver: The First Piece" (questID 37797)
+				q(37803),	-- Gutrek's Pommel Looted - triggers during "Gutrek's Cleaver: The Second Piece" (questID 37798)
+				q(37804),	-- Gutrek's Blade Looted - triggers during "Gutrek's Cleaver: The Final Piece" (questID 37799)
+				q(37671),	-- Nagrand 6.0:JP3 - Broken Precipice - Tracking Quest - See Greblin Fastfizzle - triggers during "Garrison Campaign: The Broken Precipice" (questID 35985 & 36117)
+				-- TODO: verify
+				--q(37805),	-- Goblin Looted - triggers during "Gutrek's Cleaver: The Spirit Forge" (questID 37811 & 37992)
+			}),
+			n(TREASURES, {
+				hqt(37250, name(HEADERS.AchCriteria, 9610.01)),	-- Krog the Dominator's Hammer
+				hqt(37251, name(HEADERS.AchCriteria, 9610.02)),	-- Thak the Conqueror's Bust
+				hqt(37252, name(HEADERS.AchCriteria, 9610.03)),	-- Thurg the Slave Lord's Necklace
+				hqt(37253, name(HEADERS.AchCriteria, 9610.04)),	-- Gorg the Subjugator's Idol
+			}),
+		}),
 	}),
-});
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(34679),	-- Alliance Stables Tracking Event
-		q(34680),	-- Alliance Workshop Tracking Event
-		q(37202),	-- Hemet Nesingwary Visitor Tracking Event
-		q(34812),	-- Horde Stables Tracking Event
-		q(34813),	-- Horde Workshop Tracking Event
-		q(34518),	-- Nagrand Corral
-		q(36906),	-- Ogre Waygate
-		q(37802),	-- Gutrek's Hilt Looted - triggers during "Gutrek's Cleaver: The First Piece" (questID 37797)
-		q(37803),	-- Gutrek's Pommel Looted - triggers during "Gutrek's Cleaver: The Second Piece" (questID 37798)
-		q(37804),	-- Gutrek's Blade Looted - triggers during "Gutrek's Cleaver: The Final Piece" (questID 37799)
-		q(37671),	-- Nagrand 6.0:JP3 - Broken Precipice - Tracking Quest - See Greblin Fastfizzle - triggers during "Garrison Campaign: The Broken Precipice" (questID 35985 & 36117)
-		-- TODO: verify
-		--q(37805),	-- Goblin Looted - triggers during "Gutrek's Cleaver: The Spirit Forge" (questID 37811 & 37992)
-	}),
-});
+})));

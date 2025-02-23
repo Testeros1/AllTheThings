@@ -1,12 +1,15 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
+ExportDB.OnTooltipDB.ZidormiTravelArtID1136 = [[~function(t, tooltipInfo)
+					if t.parent.artID == 1136 then
+						tinsert(tooltipInfo, { left = "You need to speak to Zidormi to travel back to the past in order to collect these." });
+					end
+				end]]
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(TIRISFAL_GLADES, {
 		["lore"] = "On the northern coast of Lordaeron lies the eerie Tirisfal Glades. The unofficial kingdom to the Forsaken, servants of the Banshee Queen Sylvanas Windrunner, the wooded hills are seeped through with the curse of the Lich King's plague. The sky over Tirisfal is eternally gloomy and tinted a blighted green, and the trees and other flora desperately cling to their last shreds of life.\n\nAlthough tainted and melancholy, Tirisfal still very much has its own unique, haunting beauty, particularly in such areas as the stony North Coast, the village of Brill, and the deep atmosphere of the ruined Agamand Mills.\n\nTirisfal Glades is home not only to the Forsaken, but to their enemies as well. The Scarlet Crusade has several outposts here, including the seat of their religious faith, the Scarlet Monastery. The minions of the Scourge are also ever present, tainting the derelict farmsteads and dilapidated mills with their foul presence.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_tirisfalglades_01",
-		-- #endif
+		["icon"] = 236849,
 		-- #if NOT ANYCLASSIC
 		["maps"] = {
 			20,		-- Keeper's Rest (part of Priest artifact questline) [CRIEVE NOTE: This shouldn't be here.]
@@ -19,11 +22,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		["groups"] = {
 			m(DEATHKNELL, {
 				["lore"] = "Deathknell is a small Forsaken village nestled in a well guarded valley just north of Silverpine Forest in Tirisfal Glades which serves as the starting area for the Forsaken.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Undead_Female",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Undead_Female")]],
-				-- #endif
+				["icon"] = 236457,
 				-- #if BEFORE MOP
 				["zone-text-areas"] = {
 					154,	-- Deathknell
@@ -749,17 +748,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["coord"] = { 36.8, 68.0, TIRISFAL_GLADES },
 							-- #endif
 						}),
-						i(3261, {	-- Webbed Cloak
-							["timeline"] = { REMOVED_4_0_3, ADDED_10_1_7 },	-- ATT Discord 05.09.2023
-							["coords"] = {
-								{ 23.8, 58.4, TIRISFAL_GLADES },
-								{ 86.2, 53.4, TIRISFAL_GLADES },
-							},
-							["crs"] = {
-								1688,	-- Night Web Matriarch
-								1555,	-- Vicious Night Web Spiders
-							},
-						}),
 						i(3263, {	-- Webbed Pants
 							["timeline"] = { REMOVED_4_0_3, ADDED_10_1_7 },	-- ATT Discord 05.09.2023
 							["cr"] = 1505,	-- Night Web Spider
@@ -792,7 +780,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					--}),
 				})),
 				n(ZONE_DROPS, {
-					["icon"] = "Interface\\Icons\\inv_helmet_52",
+					["icon"] = 133154,
 					["crs"] = {
 						4284,	-- Scarlet Augur
 						4285,	-- Scarlet Disciple
@@ -829,11 +817,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			-- #endif
 			n(ACHIEVEMENTS, {
-				explorationAch(768, {	-- Explore Tirisfal Glades
-					-- #if BEFORE WRATH
-					["description"] = "Explore Tirisfal Glades, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(768),	-- Explore Tirisfal Glades
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -845,11 +829,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			explorationHeader({
 				-- #if AFTER BFA
-				["OnTooltip"] = [[function(t, tooltipInfo)
-					if t.parent.artID == 1136 then
-						tinsert(tooltipInfo, { left = "You need to speak to Zidormi to travel back to the past in order to collect these." });
-					end
-				end]],
+				["OnTooltip"] = [[_.OnTooltipDB.ZidormiTravelArtID1136]],
 				-- #endif
 				["groups"] = {
 					exploration(157),	-- Agamand Mills
@@ -2624,7 +2604,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = { ORC, TROLL, UNDEAD },
 
 					-- Available to Undead without faction requirements.
-					["minReputation"] = { 68, EXALTED },	-- Undercity, Exalted.
+					["minReputation"] = { FACTION_UNDERCITY, EXALTED },	-- Undercity, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. UNDEAD .. [[ then
 							t.minReputation = nil;
@@ -2783,7 +2763,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #endif
 					},
 					-- Available to Undead without faction requirements.
-					["minReputation"] = { 68, EXALTED },	-- Undercity, Exalted.
+					["minReputation"] = { FACTION_UNDERCITY, EXALTED },	-- Undercity, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. UNDEAD .. [[ then
 							t.minReputation = nil;
@@ -3099,6 +3079,17 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 36.6, 38.6, TIRISFAL_GLADES },
 						{ 34.8, 44.8, TIRISFAL_GLADES },
 						-- #endif
+					},
+				}),
+				i(3261, {	-- Webbed Cloak
+					["timeline"] = { REMOVED_4_0_3, ADDED_10_1_7 },	-- ATT Discord 05.09.2023
+					["coords"] = {
+						{ 23.8, 58.4, TIRISFAL_GLADES },
+						{ 86.2, 53.4, TIRISFAL_GLADES },
+					},
+					["crs"] = {
+						1688,	-- Night Web Matriarch
+						1555,	-- Vicious Night Web Spiders
 					},
 				}),
 			}),

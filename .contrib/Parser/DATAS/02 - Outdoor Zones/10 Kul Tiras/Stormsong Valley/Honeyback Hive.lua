@@ -5,9 +5,9 @@
 root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_5 } }, {
 	m(STORMSONG_VALLEY, {
 		n(FACTIONS, {
-			faction(2395, {	-- Honeyback Hive
+			faction(FACTION_HONEYBACK_HIVE, {	-- Honeyback Hive
 				["races"] = ALLIANCE_ONLY,
-				["icon"] = "Interface\\Icons\\inv_cooking_80_choralhoney3",
+				["icon"] = 3066348,
 				-- Possible to use HQT's to track unlock
 				["description"] = "How to unlock the faction:\n\nStep1: Own either a Seabreeze Bumblebee or Bumbles.\nStep2: Go to Barry in Stormsong Valley at 69.64 with your Bee summoned.\nStep3: Follow the green clouds to 62.26 & watch the interaction between Barry and the Honeyback Hivemother.\nStep4: Loot the Thin Jelly just outside the Cave at 63.28, try to give it to the Hivemother & then talk to Barry again.\nStep5: Follow Barry inside, talk to him for the million'th time & then feed your first Jelly to the Nascent Harvester, which is in the honey pool in front of him. This gives you your first 20 reputation, allowing you to now see Jelly Deposits and earn reputation.\n\nAll Coordinates can be placed via rightclicking the Honeyback Hive Header.",
 				["coords"] = {
@@ -17,7 +17,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_5 } }, {
 				},
 				["g"] = {
 					n(FACTIONS, {
-						faction(2398, {	-- Honeyback Harvester
+						faction(FACTION_HONEYBACK_HARVESTER, {	-- Honeyback Harvester
 							["races"] = ALLIANCE_ONLY,
 						}),
 					}),
@@ -216,18 +216,18 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_5 } }, {
 							{ 66.3, 69.9, STORMSONG_VALLEY },
 							{ 72.3, 52.2, STORMSONG_VALLEY },
 						},
-						["description"] = "This Rare has a chance to spawn during the Honeyback Harvester Event on either Wave 4, 9, 14, 19 and so on.",
+						["sharedDescription"] = "This Rare has a chance to spawn during the Honeyback Harvester Event on either Wave 4, 9, 14, 19 and so on.",
 					}, {
 						n(155055, {	-- Gurg the Hivethief
 							["groups"] = {
 								i(169657),	-- Hivethief's Jelly Stash
 							},
-						}),	
+						}),
 						n(155173, {	-- Honeyback Usurper
 							["groups"] = {
 								i(169658),	-- Usurper's Scent Gland
 							},
-						}),	
+						}),
 						n(155176, {	-- Old Nasha
 							["groups"] = {
 								i(169659),	-- Old Nasha's Paw
@@ -248,12 +248,14 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_5 } }, {
 								i(169654),	-- Spiral Yeti Horn
 							},
 						}),
-					})),	
+					})),
 					n(VENDORS, {
 						n(153393, {	-- Barry
 							["coord"] = { 69.2, 64.2, STORMSONG_VALLEY },
 							["g"] = {
+								i(169109),	-- Beeholder's Goggles
 								i(169141),	-- Butterfly Net
+								i(169395),	-- Summit Zephyr
 							},
 						}),
 					}),

@@ -23,6 +23,7 @@ DAY_OF_THE_DEAD_HEADER = createHeader({
 		pt = "Dia dos Mortos",
 		ru = "День мертвых",
 		cn = "悼念日",
+		tw = "亡者節",
 	},
 });
 local COSTUME_PROVIDERS = {
@@ -157,12 +158,12 @@ root(ROOTS.Holidays, applyevent(EVENTS.DAY_OF_THE_DEAD, n(DAY_OF_THE_DEAD_HEADER
 			}),
 			q(14172, {	-- The Grateful Dead — Terokkar Forest, Aldor, all
 				["qg"] = 35260,	-- Cheerful Aldor Spirit
-				["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+				["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 				["coord"] = { 40.1, 22.2, TEROKKAR_FOREST },
 			}),
 			q(14173, {	-- The Grateful Dead — Terokkar Forest, Scryer, all
 				["qg"] = 35261,	-- Cheerful Aldor Spirit
-				["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+				["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 				["coord"] = { 40.1, 22.2, TEROKKAR_FOREST },
 			}),
 			q(14174, {	-- The Grateful Dead — Tirisfal Glades, Undead
@@ -214,7 +215,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.DAY_OF_THE_DEAD, n(DAY_OF_THE_DEAD_HEADER
 					i(46690, {	-- Candy Skull
 						["timeline"] = { ADDED_3_2_2 },
 					}),
-					i(208859, {	-- Cliffside Wylderdrake: Day of the Dead Armor (DM!)
+					i(208859, {	-- Cliffside Wylderdrake: Day of the Dead Armor (MM!)
 						["timeline"] = { ADDED_10_1_7 },
 					}),
 					i(188689, {	-- Marigold Petal Offering Bowl
@@ -231,6 +232,9 @@ root(ROOTS.Holidays, applyevent(EVENTS.DAY_OF_THE_DEAD, n(DAY_OF_THE_DEAD_HEADER
 					}),
 					i(46860, {	-- Whimsical Skull Mask (Cosmetic)
 						["timeline"] = { ADDED_3_2_2 },
+						-- #if BEFORE LEGION
+						["collectible"] = false,
+						-- #endif
 					}),
 					i(79048, {	-- Whimsical Skull Mask
 						["timeline"] = { ADDED_5_0_4 },

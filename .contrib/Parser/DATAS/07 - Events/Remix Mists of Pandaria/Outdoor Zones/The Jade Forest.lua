@@ -3,112 +3,13 @@
 -----------------------------------------------------
 root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ ["timeline"] = { ADDED_10_2_7, REMOVED_MOP_REMIX_END } }, {
 	m(THE_JADE_FOREST, {
-		["icon"] = "Interface\\Icons\\achievement_zone_jadeforest",
+		["icon"] = 617824,
 		["g"] = {
 			n(ACHIEVEMENTS, {
-				ach(19882, {	-- Campaign: The Jade Forest [A]
-					["races"] = ALLIANCE_ONLY,
-					["g"] = {
-						crit(67207),	-- Nectarbreeze Orchard
-						crit(67211),	-- Greenstone Quarry
-						crit(67217),	-- The Waterspeaking Ceremony
-						crit(67218),	-- The Battle for the Forest
-						crit(67219),	-- Overcoming Doubt
-						crit(67220),	-- Paw'don Village
-						crit(67221),	-- The White Pawn
-						crit(67222),	-- The Temple of the Jade Serpent
-						crit(67223),	-- Terrace of Ten Thunders
-						crit(67208, {	-- Tian Monastery
-							["_noautomation"] = true,
-							["_quests"] = { 29646 },	-- Flying Colors (Groundskeeper Wu)
-						}),
-						crit(67209, {	-- Tian Monastery
-							["_noautomation"] = true,
-							["_quests"] = { 29647 },	-- Flying Colors (Instructor Myang)
-						}),
-						crit(67210, {	-- Tian Monastery
-							["_noautomation"] = true,
-							["_quests"] = { 29639 },	-- Flying Colors (Instructor Xann)
-						}),
-						crit(67212, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29882 },	-- Quill of Stingers
-						}),
-						crit(67213, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29920 },	-- Getting Permission
-						}),
-						crit(67214, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29881 },	-- The Perfect Color
-						}),
-						crit(67215, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29865 },	-- The Silkwood Road
-						}),
-						crit(67216, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29723 },	-- The Jade Witch
-						}),
-						crit(67224, {	-- Pearlfin Village
-							["_noautomation"] = true,
-							["_quests"] = { 29906 },	-- Carp Diem
-						}),
-						crit(67225, {	-- Pearlfin Village
-							["_noautomation"] = true,
-							["_quests"] = { 29905 },	-- Let Them Burn
-						}),
-					},
-				}),
-				ach(19883, {	-- Campaign: The Jade Forest [H]
-					["races"] = HORDE_ONLY,
-					["g"] = {
-						crit(67222),	-- The Temple of the Jade Serpent
-						crit(67211),	-- Greenstone Quarry
-						crit(67226),	-- First Contact
-						crit(67227),	-- The Remains of Hellscream's Fist
-						crit(67228),	-- Overcoming Doubt
-						crit(67229),	-- Grookin Hill
-						crit(67223),	-- Terrace of Ten Thunders
-						crit(67207),	-- Nectarbreeze Orchard
-						crit(67230),	-- The Battle for the Forest
-						crit(67231),	-- Strange Bedfellows
-						crit(67208, {	-- Tian Monastery
-							["_noautomation"] = true,
-							["_quests"] = { 29646 },	-- Flying Colors (Groundskeeper Wu)
-						}),
-						crit(67209, {	-- Tian Monastery
-							["_noautomation"] = true,
-							["_quests"] = { 29647 },	-- Flying Colors (Instructor Myang)
-						}),
-						crit(67210, {	-- Tian Monastery
-							["_noautomation"] = true,
-							["_quests"] = { 29639 },	-- Flying Colors (Instructor Xann)
-						}),
-						crit(67212, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29882 },	-- Quill of Stingers
-						}),
-						crit(67213, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29920 },	-- Getting Permission
-						}),
-						crit(67214, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29881 },	-- The Perfect Color
-						}),
-						crit(67215, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29865 },	-- The Silkwood Road
-						}),
-						crit(67216, {	-- Dawn's Blossom
-							["_noautomation"] = true,
-							["_quests"] = { 29723 },	-- The Jade Witch
-						}),
-					},
-				}),
-				ach(19993),		-- Elusive Foes: The Jade Forest
-				ach(20026),		-- Explore Jade Forest (automated)
+				ach(19882),	-- Campaign: The Jade Forest [A] (automated)
+				ach(19883),	-- Campaign: The Jade Forest [H] (automated)
+				ach(19993),	-- Elusive Foes: The Jade Forest
+				ach(20026),	-- Explore Jade Forest (automated)
 				ach(19977, {	-- Hidden Treasures: The Jade Forest
 					crit(65478, {	-- Ship's Storage
 						["_quests"] = { 31396 },
@@ -150,10 +51,9 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 						19977,	-- Hidden Treasures: The Jade Forest
 					}},
 				}),
-
 			}),
 			n(FACTIONS, {
-				faction(1271, {	-- Order of the Cloud Serpent
+				faction(FACTION_ORDER_OF_THE_CLOUD_SERPENT, {	-- Order of the Cloud Serpent
 					n(ACHIEVEMENTS, {
 						ach(19912),		-- Order of the Cloud Serpent
 					}),
@@ -260,35 +160,30 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.REMIX_MOP, n(REMIX_MOP, bubbleDown({ [
 					["provider"] = { "n", 213664 },	-- Momentus
 					["coord"] = { 42.5, 27.3, THE_JADE_FOREST },
 				}),
-				q(80311, {	-- Order of the Cloud Serpent
-					["provider"] = { "n", 63900 },	-- Toortle Wider
-					["coord"] = { 49, 46, THE_JADE_FOREST },
-					["isBreadcrumb"] = true,
-				}),
 				q(80441, {	-- Aid the Order of the Cloud Serpent
 					["provider"] = { "n", 58564 },	-- Elder Anli
 					["coord"] = { 57.6, 44.9, THE_JADE_FOREST },
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(80429, {	-- Aid the August Celestials
 					["provider"] = { "n", 57319 },	-- Elder Sage Storm-Sing
 					["coord"] = { 53.8, 61.9, THE_JADE_FOREST },
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(83793, {	-- Aid the Jinyu [A]
 					["provider"] = { "n", 54960 },	-- Elder Lusshan
 					["coord"] = { 58.8, 80.6, THE_JADE_FOREST },
 					["races"] = ALLIANCE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 				q(83795, {	-- Aid the Hozen [H]
 					["provider"] = { "n", 56336 },	-- Chief Kah Kah
 					["coord"] = { 28.0, 47.0, THE_JADE_FOREST },
 					["races"] = HORDE_ONLY,
-					["cost"] = { { "c", 738, 10 } },  -- 10x Lesser Charm of Good Fortune
+					["cost"] = { { "c", 738, 10 } },	-- 10x Lesser Charm of Good Fortune
 					["repeatable"] = true,
 				}),
 			}),

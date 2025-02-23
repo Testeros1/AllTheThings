@@ -6,6 +6,7 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 		["isRaid"] = true,
 		["coord"] = { 64.3, 21.0, BROKEN_SHORE },
 		["maps"] = {
+			645,
 			850,
 			851,
 			852,
@@ -464,6 +465,7 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 							47727,	-- Tomb of Sargeras: Aegwynn's Path (Mythic)
 						},
 						["provider"] = { "n", 119723 },	-- Image of Aegwynn
+						["g"] = { i(151248) },	-- Fragment of the Guardian's Seal (QI!)
 					}),
 				}),
 				n(ZONE_DROPS, {
@@ -761,6 +763,7 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 						["description"] = "Finishing this quest will grant you access to Maiden of Vigilance after killing Goroth on Heroic difficulty each week.\n\n|cfffd1818This quest becomes unobtainable if you complete the Mythic version first.|r\n",
 						["altQuests"] = { 47727 },	-- Tomb of Sargeras: Aegwynn's Path (Mythic)
 						["provider"] = { "n", 119723 },	-- Image of Aegwynn
+						["g"] = { i(151249) },	-- Fragment of the Guardian's Seal (QI!)
 					}),
 				}),
 				n(ZONE_DROPS, {
@@ -1046,6 +1049,7 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 						["description"] = "Finishing this quest will grant you access to Maiden of Vigilance after killing Goroth on Mythic difficulty each week.\n",
 						["altQuests"] = { 47727 },	-- Tomb of Sargeras: Aegwynn's Path (Mythic)
 						["provider"] = { "n", 119723 },	-- Image of Aegwynn
+						["g"] = { i(151250) },	-- Fragment of the Guardian's Seal (QI!)
 					}),
 				}),
 				n(ZONE_DROPS, {
@@ -1343,8 +1347,8 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 		},
 	}),
 }));
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+	inst(875, {
 		q(48064),	-- Goroth Intro - first time cinematic prior to Goroth
 		q(48643),	-- Goroth
 		q(48644),	-- Demonic Inquisition
@@ -1366,4 +1370,4 @@ root(ROOTS.HiddenQuestTriggers, {
 		q(47109),	-- 7.2 Raid - Tomb - 4 - Quest Item Reward - Tracking Quest
 		q(46332),	-- [DNT]Shadow Priests - Elune Death Enabled — for trying to use Xal'atath to absorb Elune's power after Sisters of the Moon
 	}),
-});
+})));

@@ -8,7 +8,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }
 				------ Chapter 1 ------
 				q(76317, {	-- Call of the Dream
 					["g"] = {
-						i(208181), -- Shandris's Scouting Report (QI!)
+						i(208181),	-- Shandris's Scouting Report (QI!)
 					},
 				}),
 				q(76318, {	-- Emerald Welcome
@@ -525,16 +525,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }
 					["races"] = { NIGHTELF },
 					["coord"] = { 50.8, 61.4, AMIRDRASSIL },
 					["g"] = {
-						i(209604, {	-- Ensemble: Raiment of Amirdrassi
-							i(209591),	-- Wristbands of Chosen Renewal
-							i(209592),	-- Belt of Chosen Renewal
-							i(209593),	-- Shoulders of Chosen Renewal
-							i(209594),	-- Legguards of Chosen Renewal
-							i(209595),	-- Crown of Chosen Renewal
-							i(209596),	-- Grips of Chosen Renewal
-							i(209597),	-- Anklets of Chosen Renewal
-							i(209598),	-- Wraps of Chosen Renewal
-						}),
+						iensemble(209604),	-- Ensemble: Raiment of Amirdrassi
 					},
 				}),
 				q(77200, {	-- Offerings for the Well
@@ -830,11 +821,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }
 				["provider"] = { "n", 208669 },	-- Lady Moonberry
 				["coord"] = { 49.8, 62.5, EMERALD_DREAM },
 				["g"] = {
-					i(210996, {	-- Moonberry's Many Mischief Makers
-						i(210994),	-- Enchanting Dreamblade
-						i(210995),	-- Enchanting Dreambow
-						i(210993),	-- Enchanting Dreamstaff
-					}),
+					iensemble(210996),	-- Moonberry's Many Mischief Makers
 					i(210997),	-- Spare Party Hat
 				},
 			}),
@@ -1133,7 +1120,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }
 				--
 				q(78890, {	--Emerald Frenzy
 					--["sourceQuests"] = {  },	-- ?
-					["coord"] = { 55.5, 50.0, EMERALD_DREAM }, -- 47.1, 30.3
+					["coord"] = { 55.5, 50.0, EMERALD_DREAM },	-- 47.1, 30.3
 					["repeatable"] = true,
 				}),
 				--probably move big rares here, since they have seems like weekly lockout?
@@ -1141,49 +1128,51 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_2_0 } }
 		}),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(EMERALD_DREAM, {
-		--- pop during main story
-		q(77413),	-- Shandris's Scouting Report (itemID 208181) (spellID 418275)
-		q(77572),	-- 'Make player eligible for superbloom' (spellID 425375)
-		q(77887),	-- 'World Quest Unlock' (spellID 421687)
-		q(78904),	-- 'Local Stories Quest Unlock' (spellID 429258) (after qID 77178 'Tactical Withdrawal')
-		q(77769),	-- 'Stay a while and listen' Delaryn Summermoon (n: 206930) during qID 76281 (Something Worth Celebrating)
-		q(77768),	-- 'Stay a while and listen' Tyrande Whisperwind (n: 206402) during qID 76281 (Something Worth Celebrating)
-		q(77771),	-- 'Stay a while and listen' Lady Jaina Proudmoore (n: 206943) during qID 76281 (Something Worth Celebrating)
-		q(77770),	-- 'Stay a while and listen' Lady Jaina Proudmoore (n: 209610) during qID 76283 (Andu-falah-dor)
-		q(77772),	-- 'Stay a while and listen' Watcher Koranos (n: 209334) during qID 76283 (Andu-falah-dor)
-		-- Dryad Garden
-		q(77808),	-- Quest "What Do I Call You?": Pick the title of "Mother"
-		q(77809),	-- Quest "What Do I Call You?": Pick the title of "Father"
-		q(77810),	-- Quest "What Do I Call You?": Pick the title of "Commander"
-		q(77811),	-- Quest "What Do I Call You?": Pick the title of "Guardian"
-		-- Require Legion Class Hall (and seems like completely finished quest chain from it?) for each unique class line (otherwise there will be only 4 above)
-		q(77834),	-- Quest "What Do I Call You?": Pick the title of "Archdruid" (druid)
-		q(78238),	-- Quest "What Do I Call You?": Pick the title of "Archmage" (mage)
-		q(78235),	-- Quest "What Do I Call You?": Pick the title of "Battlelord" (warrior)
-		q(77812),	-- Quest "What Do I Call You?": Pick the title of "Deathlord"(dk)
-		--q(),	-- Quest "What Do I Call You?": Pick the title of "Farseer" (shaman)
-		q(78258),	-- Quest "What Do I Call You?": Pick the title of "Grandmaster" (monk)
-		q(78246),	-- Quest "What Do I Call You?": Pick the title of "High Priest" (priest)
-		q(78257),	-- Quest "What Do I Call You?": Pick the title of "Highlord" (paladin)
-		--q(),	-- Quest "What Do I Call You?": Pick the title of "Huntmaster" (hunter)
-		--q(),	-- Quest "What Do I Call You?": Pick the title of "Illidari" (dh, doesn't exist?)
-		--q(),	-- Quest "What Do I Call You?": Pick the title of "Master Assassin" (rogue, doesn't exist?)
-		--q(),	-- Quest "What Do I Call You?": Pick the title of "Netherlord" (warlock)
-		q(78259),	-- Quest "What Do I Call You?": Pick the title of "Shadowbane" (rogue)
-		--q(),	-- Quest "What Do I Call You?": Pick the title of "Slayer" (dh?)
-		--
-		q(78977),	-- pop after finishing qID 78890 (Emerald Frenzy) first time (daily), seems like it is fired when give you reward
-		-- Sprout
-		q(77712),	-- talk with Smoldering Sprout (n: 209253) first time which transform itself into Blackened Sprout
-		q(77713),	-- talk with Blackened Sprout (n: 209468) transform itself into Sprout (n: 209292) and unlock quests
-		q(77717),	-- lockout after turn in quest and flower show timer (progress bar)
-		q(77767),	-- after turn in qID 77711 (And a Pinch of Magic), when Professor Ash come to flower (spellIDs 421103 & 420717)
-		q(77759),	-- after turn in qID 77711 (And a Pinch of Magic), when animation start pop around flower (spellID 420720)
-		--
-		q(78707),	-- Moonberry's Many Mischief Makers (itemID 210996)
-		q(78086),	-- Ensemble: Raiment of Amirdrassi (itemID 209604)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_0 } }, {
+	m(DRAGON_ISLES, {
+		m(EMERALD_DREAM, {
+			n(QUESTS, {
+				--- pop during main story
+				q(77413),	-- Shandris's Scouting Report (itemID 208181) (spellID 418275)
+				q(77572),	-- 'Make player eligible for superbloom' (spellID 425375)
+				q(77887),	-- 'World Quest Unlock' (spellID 421687)
+				q(78904),	-- 'Local Stories Quest Unlock' (spellID 429258) (after qID 77178 'Tactical Withdrawal')
+				------ Stay awhile and listen ------ (TODO upgrade to proper HQT in Emerald Dream)
+				hqt(77769),	-- 'Stay a while and listen' Delaryn Summermoon (n: 206930) during qID 76281 (Something Worth Celebrating)
+				hqt(77768),	-- 'Stay a while and listen' Tyrande Whisperwind (n: 206402) during qID 76281 (Something Worth Celebrating)
+				hqt(77771),	-- 'Stay a while and listen' Lady Jaina Proudmoore (n: 206943) during qID 76281 (Something Worth Celebrating)
+				hqt(77770),	-- 'Stay a while and listen' Lady Jaina Proudmoore (n: 209610) during qID 76283 (Andu-falah-dor)
+				hqt(77772),	-- 'Stay a while and listen' Watcher Koranos (n: 209334) during qID 76283 (Andu-falah-dor)
+				-- Dryad Garden
+				q(77808),	-- Quest "What Do I Call You?": Pick the title of "Mother"
+				q(77809),	-- Quest "What Do I Call You?": Pick the title of "Father"
+				q(77810),	-- Quest "What Do I Call You?": Pick the title of "Commander"
+				q(77811),	-- Quest "What Do I Call You?": Pick the title of "Guardian"
+				-- Require Legion Class Hall (and seems like completely finished quest chain from it?) for each unique class line (otherwise there will be only 4 above)
+				q(77834),	-- Quest "What Do I Call You?": Pick the title of "Archdruid" (druid)
+				q(78238),	-- Quest "What Do I Call You?": Pick the title of "Archmage" (mage)
+				q(78235),	-- Quest "What Do I Call You?": Pick the title of "Battlelord" (warrior)
+				q(77812),	-- Quest "What Do I Call You?": Pick the title of "Deathlord"(dk)
+				--q(),	-- Quest "What Do I Call You?": Pick the title of "Farseer" (shaman)
+				q(78258),	-- Quest "What Do I Call You?": Pick the title of "Grandmaster" (monk)
+				q(78246),	-- Quest "What Do I Call You?": Pick the title of "High Priest" (priest)
+				q(78257),	-- Quest "What Do I Call You?": Pick the title of "Highlord" (paladin)
+				--q(),	-- Quest "What Do I Call You?": Pick the title of "Huntmaster" (hunter)
+				--q(),	-- Quest "What Do I Call You?": Pick the title of "Illidari" (dh, doesn't exist?)
+				--q(),	-- Quest "What Do I Call You?": Pick the title of "Master Assassin" (rogue, doesn't exist?)
+				--q(),	-- Quest "What Do I Call You?": Pick the title of "Netherlord" (warlock)
+				q(78259),	-- Quest "What Do I Call You?": Pick the title of "Shadowbane" (rogue)
+				--q(),	-- Quest "What Do I Call You?": Pick the title of "Slayer" (dh?)
+				--
+				q(78977),	-- pop after finishing qID 78890 (Emerald Frenzy) first time (daily), seems like it is fired when give you reward
+				-- Sprout
+				q(77712),	-- talk with Smoldering Sprout (n: 209253) first time which transform itself into Blackened Sprout
+				q(77713),	-- talk with Blackened Sprout (n: 209468) transform itself into Sprout (n: 209292) and unlock quests
+				q(77717),	-- lockout after turn in quest and flower show timer (progress bar)
+				q(77767),	-- after turn in qID 77711 (And a Pinch of Magic), when Professor Ash come to flower (spellIDs 421103 & 420717)
+				q(77759),	-- after turn in qID 77711 (And a Pinch of Magic), when animation start pop around flower (spellID 420720)
+				--
+			}),
+		}),
 	}),
-}));
+})));

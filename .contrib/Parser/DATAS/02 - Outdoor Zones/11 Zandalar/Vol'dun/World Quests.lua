@@ -115,9 +115,15 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51098),	-- Commodore Calhoun
 			q(51562, {	-- Damaged Goods
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(160923),	-- Torch (QI!)
+				},
 			}),
 			q(51559, {	-- Damaged Goods
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(160923),	-- Torch (QI!)
+				},
 			}),
 			q(54189, {	-- Desert Crawl (Faction Assault WQ)
 				["races"] = HORDE_ONLY,
@@ -125,9 +131,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(164742),	-- Crawler Mine Parts (QI!)
 				},
 			}),
-			q(52878, {	-- Desert Survivors
+			petbattle(q(52878, {	-- Desert Survivors
 				["provider"] = { "n", 142054 },	-- Kusa
-			}),
+			})),
 			q(51780, {	-- Dinner for Dolly and Dot
 				["g"] = {
 					i(155680),	-- Buzzard Meat (QI!)
@@ -165,6 +171,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(54649),	-- Flames of War (Faction Assault WQ)
 			q(53296, {	-- Flourishing Sea Stalks
 				["requireSkill"] = HERBALISM,
+				["g"] = {
+					i(163588),	-- Flourishing Sea Stalk (QI!)
+				},
 			}),
 			q(54645, {	-- Fury of the Earth (Faction Assault WQ)
 				["races"] = HORDE_ONLY,
@@ -190,6 +199,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 130443 },	-- Hivemother Kraxi
 			}),
 			q(51228, {	-- Instant Meat, Ready to Eat
+				["races"] = HORDE_ONLY,
 				["g"] = {
 					i(159794),	-- Broiled Buzzard Meat (QI!)
 					i(159796),	-- Meatification Potion (QI!)
@@ -216,9 +226,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51100),	-- Jumbo Sandsnapper
 			q(51125),	-- Jungleweb Hunter
 			q(51102),	-- Kamid the Trapper
-			q(52850, {	-- Keeyo's Champions of Vol'dun
+			petbattle(q(52850, {	-- Keeyo's Champions of Vol'dun
 				["provider"] = { "n", 141879 },	-- Keeyo
-			}),
+			})),
 			q(51429),	-- King Clickyclack
 			q(51252),	-- Kiro's Desert Flower
 			q(51635),	-- Make Loh Go
@@ -239,7 +249,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(51153),	-- Mor'fani the Exile
 			q(54287, {	-- Naga Attack!
-				i(165605),  -- Azsharan Medallion
+				i(165605),	-- Azsharan Medallion
 			}),
 			q(51103),	-- Nez'ara
 			q(51834),	-- No Negotiations
@@ -248,6 +258,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(53300, {	-- Overgrown Anchor Weed
 				["requireSkill"] = HERBALISM,
+				["g"] = { i(163601) },	-- Overgrown Anchor Weed (QI!)
 			}),
 			q(51850, {	-- Preserve the Oasis
 				["races"] = HORDE_ONLY,
@@ -260,12 +271,20 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = ALLIANCE_ONLY,
 			}),
 			q(51124),	-- Relic Hunter Hazaak
-			q(51330),	-- Resilient Seeds
+			q(51330, {	-- Resilient Seeds
+				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(159909),	-- Resilient Seed (QI!)
+				},
+			}),
 			q(54127, {	-- Rocket Hop (Faction Assault WQ)
 				["races"] = ALLIANCE_ONLY,
 			}),
 			q(53324, {	-- Rough Monelite
 				["requireSkill"] = MINING,
+				["g"] = {
+					i(163625),	-- Rough Monelite (QI!)
+				},
 			}),
 			q(51804),	-- Running Interference
 			q(54636, {	-- Sandbinder Sodir (Faction Assault WQ)
@@ -273,13 +292,25 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(51173, {	-- Sandfishing
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(159767),	-- Sandworm Fang (QI!)
+					-- Drops from Quest Mob required for achievement
+					i(163464),	-- Cobalt Sandworm Scale
+					i(163465),	-- Silver Sandworm Scale
+					i(163467),	-- Emerald Sandworm Scale
+					i(163468),	-- Ruby Sandworm Scale
+					i(163469),	-- Onyx Sandworm Scale
+				},
 			}),
 			q(51107),	-- Scaleclaw Broodmother
 			q(51122),	-- Scorpox
 			q(54188, {	-- Scrambled Bots (Faction Assault WQ)
 				["races"] = ALLIANCE_ONLY,
 				["g"] = {
-					i(165841),	-- Bot Scrambler (QI!)
+					o(311822, {	-- Bot Scrambler
+						["coord"] = { 39.5, 53.7, VOLDUN },
+						["g"] = { i(165841), },	-- Bot Scrambler (QI!)
+					}),
 				},
 			}),
 			q(51629),	-- Shell Game
@@ -291,10 +322,13 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(51116),	-- Skycarver Krakit
 			q(53326, {	-- Smooth Platinum
 				["requireSkill"] = MINING,
+				["g"] = {
+					i(163627),	-- Smooth Platinum (QI!)
+				},
 			}),
-			q(52856, {	-- Snakes on a Terrace
+			petbattle(q(52856, {	-- Snakes on a Terrace
 				["provider"] = { "n", 141945 },	-- Sizzik
-			}),
+			})),
 			q(51106),	-- Songstress Nahjeen
 			q(51836, {	-- Sourching Resources
 				["g"] = {
@@ -303,9 +337,15 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(51558, {	-- Spider Scorching
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(160870),	-- Torch (QI!)
+				},
 			}),
 			q(51561, {	-- Spider Scorching
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(160870),	-- Torch (QI!)
+				},
 			}),
 			q(51120),	-- Stef "Marrow" Quin
 			q(54786, {	-- Stop the Shipments (Faction Assault WQ)
@@ -327,7 +367,10 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(54154, {	-- The Hills Have Spies (Faction Assault WQ)
 				["races"] = HORDE_ONLY,
 				["g"] = {
-					i(165942),	-- Gallywix's Getaway Pack (QI!)
+					o(315933, {	-- Gallywix's Getaway Pack
+						["coord"] = { 37.0, 52.1, VOLDUN },
+						["g"] = { i(165942) },	-- Gallywix's Getaway Pack (QI!) 
+					}),
 					i(165656),	-- Spy Gear (QI!)
 				},
 			}),
@@ -347,17 +390,26 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				},
 			}),
 			q(51316),	-- Walking in a Spiderweb
-			q(51223),	-- Walking on Broken Glass
+			q(51223, {	-- Walking on Broken Glass
+				["g"] = {
+					i(159790),	-- Sea Glass (QI!)
+				},
+			}),
 			q(51112),	-- Warbringer Hozzik
 			q(51113),	-- Warlord Zothix
 			q(51114),	-- Warmother Captive
 			q(54014, {	-- Wet Work: Blood in the Sand (Faction Assault WQ)
 				["races"] = ALLIANCE_ONLY,
 			}),
-			q(52864, {	-- What Do You Mean, Mind Controlling Plants?
+			petbattle(q(52864, {	-- What Do You Mean, Mind Controlling Plants?
 				["provider"] = { "n", 141969 },	-- Spineleaf
+			})),
+			q(51315, {	-- Wild Flutterbies
+				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(162585),	-- Flutterby Collector (QI!)
+				},
 			}),
-			q(51315),	-- Wild Flutterbies
 			q(51322, {	-- Wings and Stingers
 				["g"] = {
 					i(159925),	-- Buzzard Wing (QI!)

@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(PANDARIA, {
 		m(KRASARANG_WILDS, {
 			["lore"] = "The Krasarang Wilds along Pandaria's southern coast conceal many ancient secrets of a lost dynasty that have drawn the attention of prophecy-seekers among the Alliance and Horde. The Wilds are also home to the vicious, domineering mogu, and a more insidious danger still: the Sha of Despair is believed to have escaped from its bindings in the Temple of the Red Crane, and stifling gloom has begun to blanket the land in its path.",
-			["icon"] = "Interface\\Icons\\achievement_zone_krasarangwilds",
+			["icon"] = 623769,
 			["maps"] = {
 				419,	-- Ruins of Ogudei, Alliance Excavation
 				420,	-- Ruins of Ogudei (the map is weird here, and this ID only shows up when you're headed towards the objective for Ogudei's Lieutenants.  for the rest of this floor, when you hit M it registers you on the incorrect level, and displays the wrong floor on the map)
@@ -45,17 +45,28 @@ root(ROOTS.Zones, {
 					},
 				}),
 				explorationHeader({
+					visit_exploration(6160,{coord={31.9,70.6,KRASARANG_WILDS}}),	-- Angkhal Pavilion
+					visit_exploration(6430,{coord={62.3,39.7,KRASARANG_WILDS}}),	-- Anglers Expedition
 					exploration(6106),	-- Anglers Wharf
 					exploration(6155),	-- Cradle of Chi-Ji
 					exploration(6049),	-- Crane Wing Refuge
 					exploration(6013),	-- Dawnchaser Retreat
 					exploration(6010),	-- Dojani River
+					visit_exploration(6162,{coord={34.6,82.7,KRASARANG_WILDS}}),	-- Dome Balrissa
 					exploration(6017),	-- Fallsong Village
+					visit_exploration(6612,{coord={14.2,59.4,KRASARANG_WILDS}}),	-- Horde Landing Site
+					visit_exploration(6147,{coord={46.2,63.9,KRASARANG_WILDS}}),	-- Kea Krak
 					exploration(6369),	-- Krasarang Cove
+					visit_exploration(6018,{coord={35.9,38.8,KRASARANG_WILDS}}),	-- Krasari Falls
 					exploration(6146),	-- Marista
+					visit_exploration(6113,{coord={64.9,48.5,KRASARANG_WILDS}}),	-- Narsong Spires
+					visit_exploration(6108,{coord={71.6,40.8,KRASARANG_WILDS}}),	-- Narsong Trench
 					exploration(6135),	-- Nayeli Lagoon
+					visit_exploration(6161,{coord={36.8,75.9,KRASARANG_WILDS}}),	-- Pedestal of Hope
+					visit_exploration(6011,{coord={52.5,33.0,KRASARANG_WILDS}}),	-- Pools of Youth
 					exploration(6008),	-- Ruins of Dojan
 					exploration(6015),	-- Ruins of Korja
+					visit_exploration(6158,{coord={60.9,43.5,KRASARANG_WILDS}}),	-- Sandy Shallows
 					exploration(6016),	-- Sentinel Basecamp
 					exploration(6058),	-- Shattered Convoy
 					exploration(6048),	-- Temple of the Red Crane
@@ -81,9 +92,9 @@ root(ROOTS.Zones, {
 					exploration(6000),	-- Zhu's Watch
 				}),
 				n(FACTIONS, {
-					faction(1375, {	-- Dominance Offensive
+					faction(FACTION_DOMINANCE_OFFENSIVE, {	-- Dominance Offensive
 						["races"] = HORDE_ONLY,
-						["icon"] = "Interface\\Icons\\achievement_general_hordeslayer",
+						["icon"] = 464078,
 						["g"] = {
 							n(ACHIEVEMENTS, {
 								ach(8206, {		-- Dominance Offensive
@@ -160,7 +171,7 @@ root(ROOTS.Zones, {
 								q(32352, {	-- A Gathering Storm
 									["sourceQuests"] = { 32351 },	-- Echoes of Thunder
 									["provider"] = { "n", 68287 },	-- Baine Bloodhoof
-									["coord"] = { 68.9, 45.8, 392 },
+									["coord"] = { 68.3, 44.9, 392 },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32413, {	-- A Return to Krasarang
@@ -168,8 +179,9 @@ root(ROOTS.Zones, {
 									["sourceQuest"] = 32412,	-- One Last Grasp
 									["description"] = "To be able to pick up this quest, head to Domination Point in Krasarang Wilds and take the flightpath back to Dalaran.",
 									["timeline"] = { ADDED_5_1_0 },
-									["maps"] = { 501, 502 },	-- Dalaran (Scenario)
+									["maps"] = { 501 },	-- Dalaran (Scenario)
 									["isBreadcrumb"] = true,
+									["coord"] = { 50.4, 48.4, 502 },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32406, {	-- A Tactical Assault
@@ -295,7 +307,7 @@ root(ROOTS.Zones, {
 								q(32251, {	-- Dagger in the Dark
 									["sourceQuests"] = { 32108 },	-- Domination Point
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 									["maps"] = { 488, 489 },	-- Dagger in the Dark
 								}),
@@ -321,10 +333,10 @@ root(ROOTS.Zones, {
 									["races"] = HORDE_ONLY,
 								}),
 								q(32351, {	-- Echoes of Thunder
-									["minReputation"] = { 1375, HONORED+10750 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, HONORED+10750 },
 									["sourceQuests"] = { 32384 },	-- Trapping the Leader
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.29, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32168, {	-- End of an Elder
@@ -355,10 +367,10 @@ root(ROOTS.Zones, {
 									},
 								}),
 								q(32329, {	-- Get My Results!
-									["minReputation"] = { 1375, REVERED+2700 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, REVERED+2700 },
 									["sourceQuests"] = { 32352 },	-- A Gathering Storm
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.1, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32130, {	-- Good Luck, Have Fun
@@ -382,10 +394,10 @@ root(ROOTS.Zones, {
 									["races"] = HORDE_ONLY,
 								}),
 								q(32326, {	-- Insertion
-									["minReputation"] = { 1375, REVERED+14540 },	-- possibly 14530
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, REVERED+14540 },	-- possibly 14530
 									["sourceQuests"] = { 32392 },	-- The Divine Bell
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.3, 51.1, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32344, {	-- It Is A Mystery
@@ -492,10 +504,10 @@ root(ROOTS.Zones, {
 									},
 								}),
 								q(32256, {	-- Rise Of An Empire
-									["minReputation"] = { 1375, FRIENDLY+950 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, FRIENDLY+950 },
 									["sourceQuests"] = { 32108 },	-- Domination Point
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.3, 51.1, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32137, {	-- Runnin' On Empty
@@ -513,7 +525,7 @@ root(ROOTS.Zones, {
 									["races"] = HORDE_ONLY,
 								}),
 								q(32284, {	-- Someone You Should See
-									["minReputation"] = { 1375, FRIENDLY+4900 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, FRIENDLY+4900 },
 									["sourceQuests"] = { 32257 },	-- Voice of the Gods
 									["provider"] = { "n", 67865 },	-- Messenger Grummle
 									["coord"] = { 9.62, 51.2, KRASARANG_WILDS },
@@ -534,13 +546,13 @@ root(ROOTS.Zones, {
 									["races"] = HORDE_ONLY,
 								}),
 								q(32398, {	-- The Bell Speaks
-									["minReputation"] = { 1375, EXALTED },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, EXALTED },
 									["sourceQuests"] = {
 										32412,	-- One Last Grasp
 										32413,	-- A Return to Krasarang
 									},
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32327, {	-- The Darnassus Mission
@@ -558,7 +570,10 @@ root(ROOTS.Zones, {
 								q(32320, {	-- The Horde Is Family
 									["sourceQuests"] = { 32319 },	-- Find Thrall!
 									["provider"] = { "n", 68025 },	-- Thrall
-									["coord"] = { 38.4, 46.6, VALLEY_OF_TRIALS },
+									["coords"] = {
+										{ 38.4, 46.6, ECHO_ISLES },
+										{ 44.6, 66.9, VALLEY_OF_TRIALS },
+									},
 									["races"] = HORDE_ONLY,
 									["groups"] = {
 										i(92510),	-- Vol'jin's Hearthstone (QI!)
@@ -574,10 +589,10 @@ root(ROOTS.Zones, {
 									},
 								}),
 								q(32363, {	-- The Kun-Lai Expedition
-									["minReputation"] = { 1375, REVERED+6650 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, REVERED+6650 },
 									["sourceQuests"] = { 32330 },	-- What's in the Box?
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32250, {	-- The Might of the Warchief
@@ -590,10 +605,10 @@ root(ROOTS.Zones, {
 									["races"] = HORDE_ONLY,
 								}),
 								q(32391, {	-- The Ruins of Korune
-									["minReputation"] = { 1375, REVERED+10515 },	-- possibly up to 10755?  it didn't show up for me until turning in a quest that took me from 10455 to 11145
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, REVERED+10515 },	-- possibly up to 10755?  it didn't show up for me until turning in a quest that took me from 10455 to 11145
 									["sourceQuests"] = { 32368 },	-- Memory Wine
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32449, {	-- The Ruins of Ogudei
@@ -629,10 +644,10 @@ root(ROOTS.Zones, {
 									["races"] = HORDE_ONLY,
 								}),
 								q(32402, {	-- The Situation In Dalaran
-									["minReputation"] = { 1375, REVERED+18500 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, REVERED+18500 },
 									["sourceQuests"] = { 32328 },	-- Victorious Return
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32342, {	-- The Spirit Trap
@@ -659,21 +674,21 @@ root(ROOTS.Zones, {
 									},
 								}),
 								q(32190, {	-- To Mogujia
-									["minReputation"] = { 1375, HONORED+2850 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, HONORED+2850 },
 									["sourceQuests"] = { 32372 },	-- De-Subjugation
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.30, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32376, {	-- To the Valley!
-									["minReputation"] = { 1375, HONORED+6800 },
+									["minReputation"] = { FACTION_DOMINANCE_OFFENSIVE, HONORED+6800 },
 									["sourceQuests"] = {
 										32191,	-- Ancient Guardians
 										32192,	-- Bloodlines
 										32244,	-- The Korune
 									},
 									["provider"] = { "n", 67939 },	-- General Nazgrim
-									["coord"] = { 9.29, 51.2, KRASARANG_WILDS },
+									["coord"] = { 10.4, 53.7, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
 								}),
 								q(32384, {	-- Trapping the Leader
@@ -776,58 +791,64 @@ root(ROOTS.Zones, {
 								n(69060, {	-- Tuskripper Grukna <Dominance Offensive Quartermaster>
 									["coord"] = { 10.8, 53.4, KRASARANG_WILDS },
 									["races"] = HORDE_ONLY,
-									["g"] = {
-										i(93329),	-- Bambrick's Striking Strap
-										i(93271),	-- Beach-Born Sandals
-										i(93327),	-- Bloodbinder Links
-										i(93266),	-- Boots of the Healing Steam
-										i(93330),	-- Chang's Changing Cord
-										i(93264),	-- Cragchewer Sollerets
-										i(93255),	-- Cutstitcher Medallion
-										i(93325),	-- Divide's Greatheart Clasp
-										i(93342),	-- Dominator's Arcane Badge
-										i(93249),	-- Dominator's Band
-										i(93251),	-- Dominator's Circle
-										i(93341),	-- Dominator's Deadeye Badge
-										i(93345),	-- Dominator's Durable Badge
-										i(93344),	-- Dominator's Knightly Badge
-										i(93250),	-- Dominator's Loop
-										i(93343),	-- Dominator's Mending Badge
-										i(93252),	-- Dominator's Seal
-										i(93248),	-- Dominator's Signet
-										i(93169, {	-- Grand Armored Wyvern (MOUNT!)
-											["cost"] = 20000000,	-- 2,000g
-										}),
-										i(93232),	-- Grand Commendation of the Dominance Offensive
-										i(93267),	-- Greaves of Manifest Destiny
-										i(93263),	-- Groundbreaker Sabatons
-										i(93324),	-- Immovable Waistplate
-										i(93323),	-- Kwon's Crushing Girdle
-										i(93257),	-- Medallion of Mystefying Vapors
-										i(93328),	-- Prevenge's Dagger-Carrier
-										i(93331),	-- Sash of Surehandedness
-										i(93265),	-- Scar Swallower Greatboots
-										i(93326),	-- Shigi's Chain of Cheerful Summons
-										i(93256),	-- Skullrender Medallion
-										i(93270),	-- Slippers of Soothing Balm
-										i(93254),	-- Static-Caster's Medallion
-										i(93268),	-- Treads of Rejuvenating Mists
-										i(93269),	-- Troll-Toe Tabi
-										i(93253),	-- Woundripper Medallion
-									},
+									["g"] = bubbleDownClassicRep(FACTION_DOMINANCE_OFFENSIVE, {
+										{		-- Neutral
+											i(93342),	-- Dominator's Arcane Badge
+											i(93341),	-- Dominator's Deadeye Badge
+											i(93345),	-- Dominator's Durable Badge
+											i(93344),	-- Dominator's Knightly Badge
+											i(93343),	-- Dominator's Mending Badge
+										}, {	-- Friendly
+										}, {	-- Honored
+											i(93249),	-- Dominator's Band
+											i(93251),	-- Dominator's Circle
+											i(93250),	-- Dominator's Loop
+											i(93252),	-- Dominator's Seal
+											i(93248),	-- Dominator's Signet
+										}, {	-- Revered
+											i(93329),	-- Bambrick's Striking Strap
+											i(93271),	-- Beach-Born Sandals
+											i(93327),	-- Bloodbinder Links
+											i(93266),	-- Boots of the Healing Steam
+											i(93330),	-- Chang's Changing Cord
+											i(93264),	-- Cragchewer Sollerets
+											i(93255),	-- Cutstitcher Medallion
+											i(93325),	-- Divide's Greatheart Clasp
+											i(93232),	-- Grand Commendation of the Dominance Offensive
+											i(93267),	-- Greaves of Manifest Destiny
+											i(93263),	-- Groundbreaker Sabatons
+											i(93324),	-- Immovable Waistplate
+											i(93323),	-- Kwon's Crushing Girdle
+											i(93257),	-- Medallion of Mystefying Vapors
+											i(93328),	-- Prevenge's Dagger-Carrier
+											i(93331),	-- Sash of Surehandedness
+											i(93265),	-- Scar Swallower Greatboots
+											i(93326),	-- Shigi's Chain of Cheerful Summons
+											i(93256),	-- Skullrender Medallion
+											i(93270),	-- Slippers of Soothing Balm
+											i(93254),	-- Static-Caster's Medallion
+											i(93268),	-- Treads of Rejuvenating Mists
+											i(93269),	-- Troll-Toe Tabi
+											i(93253),	-- Woundripper Medallion
+										}, {	-- Exalted
+											i(93169, {	-- Grand Armored Wyvern (MOUNT!)
+												["cost"] = 20000000,	-- 2,000g
+											}),
+										},
+									}),
 								}),
 							}),
 						},
 					}),
-					faction(1376, {	-- Operation: Shieldwall
+					faction(FACTION_OPERATION_SHIELDWALL, {	-- Operation: Shieldwall
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\achievement_general_allianceslayer",
+						["icon"] = 464076,
 						["g"] = {
 							n(ACHIEVEMENTS, {
 								ach(7932, {	-- I'm In Your Base, Killing Your Dudes
 									crit(22455, {	-- Champion of Arms slain
 										["coord"] = { 13.5, 54.8, KRASARANG_WILDS },	-- Kar Warmaker
-										["provider"] = { "n", 68321 }, 	-- Kar Warmaker
+										["provider"] = { "n", 68321 },	-- Kar Warmaker
 									}),
 									crit(22457, {	-- Champion of the Shadows slain
 										["coord"] = { 12.8, 64.7, KRASARANG_WILDS },	-- Ubunti the Shade
@@ -913,7 +934,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32315, {	-- Anduin's Plea
-									["minReputation"] = { 1376, HONORED+10750 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, HONORED+10750 },
 									["sourceQuests"] = {
 										32194,	-- Bad Blood
 										32243,	-- The Source of Korune Power
@@ -926,7 +947,7 @@ root(ROOTS.Zones, {
 									["sourceQuests"] = { 32109 },	-- Lion's Landing
 									["provider"] = { "n", 67631 },	-- Marshal Troteman
 									["isDaily"] = true,
-									["coord"] = { 94.5, 28.9, KRASARANG_WILDS },
+									["coord"] = { 89.6, 33.1, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32194, {	-- Bad Blood
@@ -1003,7 +1024,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32414, {	-- Darnassus Attacked?
-									["minReputation"] = { 1376, REVERED+8600 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+8600 },
 									["sourceQuests"] = { 32394 },	-- The Divine Bell
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 94.4, 28.4, KRASARANG_WILDS },
@@ -1054,7 +1075,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32382, {	-- He's In Deep
-									["minReputation"] = { 1376, FRIENDLY+4900 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, FRIENDLY+4900 },
 									["sourceQuests"] = { 32426 },	-- Stirred, Not Shaken
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 94.4, 28.4, KRASARANG_WILDS },
@@ -1076,7 +1097,7 @@ root(ROOTS.Zones, {
 									["sourceQuests"] = { 32109 },	-- Lion's Landing
 									["provider"] = { "n", 67631 },	-- Marshal Troteman
 									["isDaily"] = true,
-									["coord"] = { 94.5, 28.9, KRASARANG_WILDS },
+									["coord"] = { 89.6, 33.1, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32119, {	-- It Is A Mystery
@@ -1151,7 +1172,7 @@ root(ROOTS.Zones, {
 									["sourceQuests"] = { 32109 },	-- Lion's Landing
 									["provider"] = { "n", 67631 },	-- Marshal Troteman
 									["isDaily"] = true,
-									["coord"] = { 94.5, 28.9, KRASARANG_WILDS },
+									["coord"] = { 89.6, 33.1, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32149, {	-- Resource Gathering
@@ -1172,7 +1193,7 @@ root(ROOTS.Zones, {
 								q(32451, {	-- Send A Message
 									["provider"] = { "n", 68908 },	-- Amber Kearnen
 									["isDaily"] = true,
-									["coord"] = { 94.7, 28.3, KRASARANG_WILDS },
+									["coord"] = { 89.8, 32.4, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32417, {	-- Sewer Cleaning
@@ -1192,7 +1213,7 @@ root(ROOTS.Zones, {
 									["sourceQuests"] = { 32109 },	-- Lion's Landing
 									["provider"] = { "n", 67631 },	-- Marshal Troteman
 									["isDaily"] = true,
-									["coord"] = { 94.5, 28.9, KRASARANG_WILDS },
+									["coord"] = { 89.6, 33.1, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 									["groups"] = {
 										objective(1, {	-- 0/1 Bilgewater Blasting Cap
@@ -1215,7 +1236,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32400, {	-- The Bell Speaks
-									["minReputation"] = { 1376, EXALTED },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, EXALTED },
 									["sourceQuests"] = {
 										32336,	-- The Handle
 										32338,	-- The Harmonic Ointment
@@ -1226,7 +1247,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32380, {	-- The Best Around
-									["minReputation"] = { 1376, FRIENDLY+950 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, FRIENDLY+950 },
 									["sourceQuests"] = { 32109 },	-- Lion's Landing
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 89.5, 32.5, KRASARANG_WILDS },
@@ -1261,35 +1282,35 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32336, {	-- The Handle
-									["minReputation"] = { 1376, REVERED+18500 },	-- maybe 18490
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+18500 },	-- maybe 18490
 									["sourceQuests"] = { 32335 },	-- The Greatest Prank
 									["provider"] = { "n", 68538 },	-- The Monkey King
 									["coord"] = { 93.8, 27.5, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32355, {	-- The Harmonic Mallet
-									["minReputation"] = { 1376, REVERED+14540 },	-- possibly 14530
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+14540 },	-- possibly 14530
 									["sourceQuests"] = { 32423 },	-- What Had To Be Done
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 94.5, 28.5, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32338, {	-- The Harmonic Ointment
-									["minReputation"] = { 1376, REVERED+18500 },	-- maybe 18490
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+18500 },	-- maybe 18490
 									["sourceQuests"] = { 32335 },	-- The Greatest Prank
 									["provider"] = { "n", 68538 },	-- The Monkey King
 									["coord"] = { 93.8, 27.5, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32337, {	-- The Head
-									["minReputation"] = { 1376, REVERED+18500 },	-- maybe 18490
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+18500 },	-- maybe 18490
 									["sourceQuests"] = { 32335 },	-- The Greatest Prank
 									["provider"] = { "n", 68538 },	-- The Monkey King
 									["coord"] = { 93.8, 27.5, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32331, {	-- The Kirin Tor
-									["minReputation"] = { 1376, HONORED+2850 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, HONORED+2850 },
 									["sourceQuests"] = {
 										32383,	-- Bugging Out
 										32397,	-- He Won't Even Miss It
@@ -1299,7 +1320,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32370, {	-- The Kun-Lai Expedition
-									["minReputation"] = { 1376, REVERED+2700 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+2700 },
 									["sourceQuests"] = { 32316 },	-- Heart Of The Alliance
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 94.4, 28.5, KRASARANG_WILDS },
@@ -1319,7 +1340,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32393, {	-- The Ruins of Korune
-									["minReputation"] = { 1376, REVERED+6650 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, REVERED+6650 },
 									["sourceQuests"] = { 32371 },	-- Memory Wine
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 94.5, 28.4, KRASARANG_WILDS },
@@ -1371,7 +1392,7 @@ root(ROOTS.Zones, {
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32193, {	-- To Mogujia
-									["minReputation"] = { 1376, HONORED+6800 },
+									["minReputation"] = { FACTION_OPERATION_SHIELDWALL, HONORED+6800 },
 									["sourceQuests"] = { 32331 },	-- The Kirin Tor
 									["provider"] = { "n", 67940 },	-- Admiral Taylor
 									["coord"] = { 94.4, 28.4, KRASARANG_WILDS },
@@ -1381,7 +1402,7 @@ root(ROOTS.Zones, {
 									["sourceQuests"] = { 32109 },	-- Lion's Landing
 									["provider"] = { "n", 67631 },	-- Marshal Troteman
 									["isDaily"] = true,
-									["coord"] = { 94.5, 28.9, KRASARANG_WILDS },
+									["coord"] = { 89.6, 33.1, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
 								}),
 								q(32460, {	-- Tracking the Thieves
@@ -1463,45 +1484,51 @@ root(ROOTS.Zones, {
 								n(69059, {	-- Agent Malley <Operation: Shieldwall Quartermaster>
 									["coord"] = { 94.5, 29.2, KRASARANG_WILDS },
 									["races"] = ALLIANCE_ONLY,
-									["g"] = {
-										i(93347),	-- Arcane Badge of the Shieldwall
-										i(93258),	-- Arrowflight Medallion
-										i(93244),	-- Band of the Shieldwall
-										i(93339),	-- Bon-iy's Unbreakable Cord
-										i(93335),	-- Chain of Flaming Arrows
-										i(93246),	-- Circle of the shieldwall
-										i(93278),	-- Crab-Leather Tabi
-										i(93346),	-- Deadeye Badge of the Shieldwall
-										i(93334),	-- Divide's Loyal Clasp
-										i(93350),	-- Durable Badge of the Shieldwall
-										i(93332),	-- Girdle of Crushing Strength
-										i(93168, {	-- Grand Armored Gryphon (MOUNT!)
-											["cost"] = 20000000,	-- 2,000g
-										}),
-										i(93231),	-- Grand Commendation of Operation: Shieldwall
-										i(93274),	-- Greatboots of Flashing Light
-										i(93260),	-- Heartwarmer Medallion
-										i(93261),	-- Helmbreaker Medallion
-										i(93349),	-- Knightly Badge of the Shieldwall
-										i(93336),	-- Links of Bonded Blood
-										i(93245),	-- Loop of the Shieldwall
-										i(93348),	-- Mending Badge of the Shieldwall
-										i(93276),	-- Odlaw's Everwalkers
-										i(93337),	-- Prevenge's Swashbuckling Cinch
-										i(93272),	-- Sabatons of the Sullied Shore
-										i(93280),	-- Sandals of Oiled Silk
-										i(93340),	-- Sash of Bouncing Power
-										i(93273),	-- Sea-Soaked Sollerets
-										i(93247),	-- Seal of the Shieldwall
-										i(93279),	-- Shieldwarden Slippers
-										i(93259),	-- Shock-Charger Medallion
-										i(93243),	-- Signet of the Shieldwall
-										i(93338),	-- Soothing Straps
-										i(93277),	-- Statue Summoner's Treads
-										i(93275),	-- Totem-Binder Boots
-										i(93262),	-- Vaporshield Medallion
-										i(93333),	-- Waistplate of Immobility
-									},
+									["g"] = bubbleDownClassicRep(FACTION_OPERATION_SHIELDWALL, {
+										{		-- Neutral
+											i(93347),	-- Arcane Badge of the Shieldwall
+											i(93346),	-- Deadeye Badge of the Shieldwall
+											i(93350),	-- Durable Badge of the Shieldwall
+											i(93349),	-- Knightly Badge of the Shieldwall
+											i(93348),	-- Mending Badge of the Shieldwall
+										}, {	-- Friendly
+										}, {	-- Honored
+											i(93244),	-- Band of the Shieldwall
+											i(93246),	-- Circle of the shieldwall
+											i(93245),	-- Loop of the Shieldwall
+											i(93247),	-- Seal of the Shieldwall
+											i(93243),	-- Signet of the Shieldwall
+										}, {	-- Revered
+											i(93258),	-- Arrowflight Medallion
+											i(93339),	-- Bon-iy's Unbreakable Cord
+											i(93335),	-- Chain of Flaming Arrows
+											i(93278),	-- Crab-Leather Tabi
+											i(93334),	-- Divide's Loyal Clasp
+											i(93332),	-- Girdle of Crushing Strength
+											i(93231),	-- Grand Commendation of Operation: Shieldwall
+											i(93274),	-- Greatboots of Flashing Light
+											i(93260),	-- Heartwarmer Medallion
+											i(93261),	-- Helmbreaker Medallion
+											i(93336),	-- Links of Bonded Blood
+											i(93276),	-- Odlaw's Everwalkers
+											i(93337),	-- Prevenge's Swashbuckling Cinch
+											i(93272),	-- Sabatons of the Sullied Shore
+											i(93280),	-- Sandals of Oiled Silk
+											i(93340),	-- Sash of Bouncing Power
+											i(93273),	-- Sea-Soaked Sollerets
+											i(93279),	-- Shieldwarden Slippers
+											i(93259),	-- Shock-Charger Medallion
+											i(93338),	-- Soothing Straps
+											i(93277),	-- Statue Summoner's Treads
+											i(93275),	-- Totem-Binder Boots
+											i(93262),	-- Vaporshield Medallion
+											i(93333),	-- Waistplate of Immobility
+										}, {	-- Exalted
+											i(93168, {	-- Grand Armored Gryphon (MOUNT!)
+												["cost"] = 20000000,	-- 2,000g
+											}),
+										},
+									}),
 								}),
 								n(67881, {	-- Proveditor Grantley <Collector of Commissions>
 									["coord"] = { 94.4, 29.3, KRASARANG_WILDS },
@@ -1523,14 +1550,14 @@ root(ROOTS.Zones, {
 							}),
 						},
 					}),
-					faction(1302, {	-- The Anglers
+					faction(FACTION_THE_ANGLERS, {	-- The Anglers
 						["requireSkill"] = FISHING,	-- doesn't seem like you can even get access to the faction on a non-fisher.  flew/walked all around the area on a character with no professions and nothing, and as soon as i flew up on a character with fishing the faction unlocked and all the NPCs appeared
-						["icon"] = "Interface\\Icons\\achievement_faction_anglers",
+						["icon"] = 643874,
 						["g"] = {
 							n(ACHIEVEMENTS, {
 								ach(6547),		-- The Anglers
 							}),
-							faction(1358, {	-- Nat Pagle
+							faction(FACTION_NAT_PAGLE, {	-- Nat Pagle
 								n(QUESTS, {
 									q(31443, {	-- Flying Tiger Gourami
 										["requireSkill"] = FISHING,
@@ -1558,12 +1585,19 @@ root(ROOTS.Zones, {
 									["provider"] = { "n", 60135 },	-- Trawler Yotimo
 									["isDaily"] = true,
 									["coord"] = { 70.9, 39.0, KRASARANG_WILDS },
+									["g"] = {
+										i(80403),	-- Angler's Fishing Spear (QI!)
+										i(80437),	-- Armored Carp (QI!)
+									},
 								}),
 								q(30754, {	-- Bright Bait
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 60674 },	-- John "Big Hook" Marsock
 									["isDaily"] = true,
 									["coord"] = { 71.6, 40.0, KRASARANG_WILDS },
+									["g"] = {
+										i(81116),	-- Suncrawler (QI!)
+									},
 								}),
 								q(30588, {	-- Fishing for a Bruising
 									["requireSkill"] = FISHING,
@@ -1576,12 +1610,19 @@ root(ROOTS.Zones, {
 									["provider"] = { "n", 60135 },	-- Trawler Yotimo
 									["isDaily"] = true,
 									["coord"] = { 70.9, 39.0, KRASARANG_WILDS },
+									["g"] = {
+										i(80403),	-- Angler's Fishing Spear (QI!)
+										i(80529),	-- Prickly Puffer Spine (QI!)
+									},
 								}),
 								q(30586, {	-- Jagged Abalone
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 59584 },	-- Fisherman Haito
 									["isDaily"] = true,
 									["coord"] = { 71.2, 41.9, KRASARANG_WILDS },
+									["g"] = {
+										i(80277),	-- Jagged Abalone Meat (QI!)
+									},
 								}),
 								q(30753, {	-- Jumping the Shark
 									["requireSkill"] = FISHING,
@@ -1594,88 +1635,121 @@ root(ROOTS.Zones, {
 									["provider"] = { "n", 60136 },	-- Fiznix
 									["isDaily"] = true,
 									["coord"] = { 70.8, 41.3, KRASARANG_WILDS },
+									["g"] = {
+										i(80599),	-- Goblin Fishing Bomb (QI!)
+										i(80600),	-- Stinger (QI!)
+									},
 								}),
 								q(30763, {	-- Piranha!
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 60675 },	-- Fo Fook
 									["isDaily"] = true,
 									["coord"] = { 70.5, 37.5, KRASARANG_WILDS },
+									["g"] = {
+										i(81122),	-- Wolf Piranha (QI!)
+									},
 								}),
 								q(30698, {	-- Scavenger Hunt
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 60136 },	-- Fiznix
 									["isDaily"] = true,
 									["coord"] = { 70.8, 41.3, KRASARANG_WILDS },
+									["g"] = {
+										i(80830),	-- Rusty Shipwreck Debris (QI!)
+									},
 								}),
 								q(30584, {	-- Shocking!
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 59584 },	-- Fisherman Haito
 									["isDaily"] = true,
 									["coord"] = { 71.2, 41.8, KRASARANG_WILDS },
+									["g"] = {
+										i(80260),	-- Dojani Eel (QI!)
+										i(81175),	-- Crispy Dojani Eel
+									},
 								}),
 								q(30700, {	-- Snapclaw
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 59586 },	-- Angler Shen
 									["isDaily"] = true,
 									["coord"] = { 70.8, 40.2, KRASARANG_WILDS },
+									["g"] = {
+										i(80831),	-- Snapclaw's Claw (QI!)
+									},
 								}),
 								q(30701, {	-- Viseclaw Soup
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 60675 },	-- Fo Fook
 									["isDaily"] = true,
 									["coord"] = { 70.5, 37.5, KRASARANG_WILDS },
+									["g"] = {
+										i(80832),	-- Viseclaw Fisher Eye (QI!)
+									},
 								}),
 								q(30585, {	-- What Lurks Below
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 60673 },	-- Elder Fisherman Rassan
 									["isDaily"] = true,
 									["coord"] = { 71.7, 38.7, KRASARANG_WILDS },
+									["g"] = {
+										i(80262),	-- Beloved Ring (QI!)
+									},
 								}),
 								q(30598, {	-- Who Knew Fish Liked Eggs?
 									["requireSkill"] = FISHING,
 									["provider"] = { "n", 60673 },	-- Elder Fisherman Rassan
 									["isDaily"] = true,
 									["coord"] = { 71.6, 38.6, KRASARANG_WILDS },
+									["g"] = {
+										i(80303),	-- Pristine Crane Egg (QI!)
+										i(80310),	-- Silver Goby (QI!)
+									},
 								}),
 							}),
 							n(VENDORS, {
 								n(63721, {	-- Nat Pagle <The Anglers Quartermaster>
 									["coord"] = { 68.4, 43.5, KRASARANG_WILDS },
-									["g"] = appendGroups(MOP_FISHING, {
-										i(85500, {	-- Angler's Fishing Raft (TOY!)
-											["cost"] = 8500000,	-- 850g
-										}),
-										i(89401),	-- Angler's Tabard
-										i(168416),	-- Angler's Water Striders
-										i(107950, {	-- Bipsi's Bobbing Berg
-											["classes"] = { MAGE },
-											["cost"] = 10000000,	-- 1,000g
-										}),
-										i(84661),	-- Dragon Fishing Pole -- NOT MOGGABLE
-										i(93225),	-- Grand Commendation of the Anglers
-										i(86596, {	-- Nat's Fishing Chair (TOY!)
-											["description"] = "Requires Best Friend to see.",
-										}),
-										i(88710),	-- Nat's Hat -- NOT MOGGABLE
-										i(84660),	-- Pandaren Fishing Pole -- NOT MOGGABLE
-										i(85505),	-- Recipe: Krasarang Fritters (RECIPE!)
-										i(85502),	-- Recipe: Viseclaw Soup (RECIPE!)
-										i(81354, {	-- Azure Water Strider (MOUNT!)
-											["cost"] = 9500000,	-- 950g
-										}),
-										i(88535, {	-- Sharpened Tuskarr Pole -- NOT MOGGABLE
-											["cost"] = 12750000,	-- 1,275g
-										}),
-										i(85447),	-- Tiny Goldfish (PET!)
-									}),
+									["g"] = appendGroups(MOP_FISHING, bubbleDownClassicRep(FACTION_THE_ANGLERS, {
+										{		-- Neutral
+											i(168416),	-- Angler's Water Striders
+											i(86596, {	-- Nat's Fishing Chair (TOY!)
+												["description"] = "Requires Best Friend to see.",
+											}),
+										}, {	-- Friendly
+											i(85505),	-- Recipe: Krasarang Fritters (RECIPE!)
+											i(85502),	-- Recipe: Viseclaw Soup (RECIPE!)
+										}, {	-- Honored
+											i(88710),	-- Nat's Hat -- NOT MOGGABLE
+											i(84660),	-- Pandaren Fishing Pole -- NOT MOGGABLE
+											i(85447),	-- Tiny Goldfish (PET!)
+										}, {	-- Revered
+											i(85500, {	-- Angler's Fishing Raft (TOY!)
+												["cost"] = 8500000,	-- 850g
+											}),
+											i(107950, {	-- Bipsi's Bobbing Berg
+												["classes"] = { MAGE },
+												["cost"] = 10000000,	-- 1,000g
+											}),
+											i(84661),	-- Dragon Fishing Pole -- NOT MOGGABLE
+											i(93225),	-- Grand Commendation of the Anglers
+											i(88535, {	-- Sharpened Tuskarr Pole -- NOT MOGGABLE
+												["cost"] = 12750000,	-- 1,275g
+											}),
+										}, {	-- Exalted
+											i(89401),	-- Angler's Tabard
+											i(81354, {	-- Azure Water Strider (MOUNT!)
+												["cost"] = 9500000,	-- 950g
+											}),
+										},
+									})),
 								}),
 							}),
 						},
 					}),
-					faction(1341, {	-- The August Celestials
+					faction(FACTION_THE_AUGUST_CELESTIALS, {	-- The August Celestials
 						["description"] = "Each day, the August Celestials require your aid at one of their temples.  Speak to the representative in your faction's Vale of Eternal Blossoms shrine to find out where your help is needed (|cff3f48ccSage Whiteheart for Alliance|r and |cff880015Sage Lotusbloom for Horde|r).\n\nThe dailies will be in one of these locations:\nJade Forest - Temple of the Jade Serpent\nKrasarang Wilds - Cradle of Chi-Ji\nKun-Lai Summit - Temple of the White Tiger\nTownlong Steppes - Niuzao Temple\n\n",
 						["collectible"] = false,
-						["icon"] = "Interface\\Icons\\achievement_faction_celestials",
+						["icon"] = 645203,
 						["g"] = {
 							n(ACHIEVEMENTS, {
 								ach(7287, {	-- Champion of Chi-Ji (Cradle of Chi-Ji)
@@ -1937,6 +2011,7 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 58779 },	-- Daggle Bombstrider
 						["coord"] = { 67.6, 25.6, KRASARANG_WILDS },
 						["g"] = {
+							i(85854),	-- The Needlebeak (QI!)
 							i(88052),	-- Nayeli Waistband
 							i(88051),	-- Mortbreath Waistband
 							i(88050),	-- Deepwild Belt
@@ -1984,6 +2059,9 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 58735 },	-- Lyalia
 						["coord"] = { 70.6, 28.5, KRASARANG_WILDS },
 						["races"] = ALLIANCE_ONLY,
+						["g"] = {
+							i(79332),	-- Sentinel Scout's Report (QI!)
+						},
 					}),
 					q(30465, {	-- Going on the Offensive
 					--	does this have different SQs than the previous version?
@@ -1998,6 +2076,9 @@ root(ROOTS.Zones, {
 						["coord"] = { 63.1, 20.7, KRASARANG_WILDS },
 						["races"] = HORDE_ONLY,
 						["lockCriteria"] = { 1, "questID", 30273 },	-- In the House of the Red Crane
+						["g"] = {
+							i(79745),	-- Sunwalker Scout's Report (QI!)
+						},
 					}),
 					q(30464, {	-- Going West
 						["sourceQuests"] = {
@@ -2020,6 +2101,7 @@ root(ROOTS.Zones, {
 							o(210209, {	-- Imperial Lotus
 								i(78918),	-- Imperial Lotus Leaves (QI!)
 							}),
+							i(88532),	-- Lotus Water
 						},
 					}),
 					heroscall(q(49558, {	-- Hero's Call: Krasarang Wilds!
@@ -2121,10 +2203,14 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 56114 },	-- Kang Bramblestaff
 						["coord"] = { 70.6, 28.5, KRASARANG_WILDS },
 						["races"] = ALLIANCE_ONLY,
+						["g"] = {
+							i(78918),	-- Imperial Lotus Leaves (QI!)
+							i(88532),	-- Lotus Water
+						},
 					}),
 					q(30081, {	-- Materia Medica
 						["sourceQuests"] = {
-							30079,  -- What's Eating Zhu's Watch?
+							30079,	-- What's Eating Zhu's Watch?
 							30082,	-- Cheer Up, Yi-Mo
 						},
 						["provider"] = { "n", 56115 },	-- Ken-ken
@@ -2181,6 +2267,7 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 58779 },	-- Daggle Bombstrider
 						["coord"] = { 67.6, 25.6, KRASARANG_WILDS },
 						["g"] = {
+							i(78914),	-- Vial of Tiger Blood (QI!)
 							i(81494),	-- Nayeli Gloves
 							i(81495),	-- Mortbreath Gloves
 							i(81496),	-- Deepwild Gauntlets
@@ -2199,9 +2286,12 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = { 30353 },	-- Profit Mastery
 						["provider"] = { "n", 58779 },	-- Daggle Bombstrider
 						["coord"] = { 67.6, 25.6, KRASARANG_WILDS },
+						["g"] = {
+							i(85774),	-- Ancient Tiger's Blood (QI!)
+						},
 					}),
 					q(30169, {	-- Raid Leader Slovan
-						["provider"] = { "n", 58278 }, -- Tired Shushen <Waterspeaker>
+						["provider"] = { "n", 58278 },	-- Tired Shushen <Waterspeaker>
 						["coord"] = { 29.7, 39, KRASARANG_WILDS },
 						["g"] = {
 							i(88387),	-- Shushen's Spittoon (TOY!)
@@ -2300,6 +2390,10 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 56114 },	-- Kang Bramblestaff
 						["coord"] = { 70.6, 28.5, KRASARANG_WILDS },
 						["races"] = ALLIANCE_ONLY,
+						["g"] = {
+							i(78911),	-- Intact Skitterer Glands (QI!)
+							i(88388),	-- Squirmy Delight
+						},
 					}),
 					q(30272, {	-- Striking the Rain
 						["sourceQuests"] = {
@@ -2345,7 +2439,7 @@ root(ROOTS.Zones, {
 						["races"] = ALLIANCE_ONLY,
 					}),
 					q(30669, {	-- The Lorewalker on the Lake
-						["sourceQuests"] = { 30668 }, -- Build Your Own Raft
+						["sourceQuests"] = { 30668 },	-- Build Your Own Raft
 						["provider"] = { "n", 60173 },	-- Jay Cloudfall
 						["coord"] = { 51.6, 76.8, KRASARANG_WILDS },
 					}),
@@ -2355,6 +2449,7 @@ root(ROOTS.Zones, {
 						["coord"] = { 50.9, 31.7, KRASARANG_WILDS },
 						["races"] = ALLIANCE_ONLY,
 						["g"] = {
+							i(79713),	-- Dynastic Tablet (QI!)
 							i(81522),	-- Ring of the Pools of Youth
 							i(81523),	-- Ring of Tears
 							i(81524),	-- Toothrow Band
@@ -2508,6 +2603,7 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 58278 },	-- Tired Shushen
 						["coord"] = { 29.7, 39, KRASARANG_WILDS },
 						["g"] = {
+							i(78958),	-- Pillaged Jinyu Loot (QI!)
 							i(81532),	-- Silkspawn Carving
 							i(81534),	-- Carp Hunter Feather
 							i(81535),	-- Glade Pincher Feather
@@ -2844,7 +2940,7 @@ root(ROOTS.Zones, {
 							["collectible"] = false,
 							["repeatable"] = true,
 						--	["questID"] = 31664,	-- An Angler's Quest
-							["icon"] = "Interface\\Icons\\inv_misc_book_11",
+							["icon"] = 133743,
 						}),
 					}),
 					n(50352, {	-- Qu'nas
@@ -2897,6 +2993,9 @@ root(ROOTS.Zones, {
 					o(214403, {	-- Stack of Papers
 						["questID"] = 31863,
 						["coord"] = { 52.16, 73.42, KRASARANG_WILDS },
+						["g"] = {
+							i(87798),	-- Stack of Papers
+						},
 					}),
 				}),
 			},
@@ -2904,14 +3003,46 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers,{
-	expansion(EXPANSION.MOP, {
-		q(30719),	-- FLAG - Cradle of Chi-Ji Progress Bit 01
-		q(30720),	-- FLAG - Cradle of Chi-Ji Progress Bit 02 - triggered after turning in Dextrous Izissha quest, 6th for Champion of Chi-Ji, triggered on another character after turning in Minh Do-Tan, which is the 2nd
-		q(30721),	-- FLAG - Cradle of Chi-Ji Progress Bit 03
-		q(30722),	-- FLAG - Cradle of Chi-Ji Progress Bit 04
-		q(30087),	-- FLAG - Kung Fu Intro — triggers either when flying close to the magical barrier or after accepting The "Arcanic Oubliette" (questID 30274)
-		q(31371),	-- Tracking Event: Player Has Completed One Anglers Daily
-		q(32477),	-- Tracking Event: Player is Back in Time - going back and forth in time via Taradormi
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
+	m(PANDARIA, {
+		m(KRASARANG_WILDS, {
+			n(FACTIONS, {
+				header(HEADERS.Faction, FACTION_DOMINANCE_OFFENSIVE, bubbleDownSelf({ ["timeline"] = { ADDED_5_1_0 } }, {
+					n(QUESTS, {
+						q(32361),	-- triggered after turning in #32352, "A Gathering Storm," part of the Dominance Offensive campaign
+						q(32364),	-- triggered after turning in #32448, "Ties with the Past," part of the Dominance Offensive campaign
+						q(32437),	-- Tracking Event: Saw Sarannha 1 - triggered at the end of "The Divine Bell," part of the Dominance Offensive campaign
+						q(32438),	-- Tracking Event: Saw Sarannha 2 - triggered at the end of "The Divine Bell," part of the Dominance Offensive campaign
+					}),
+				})),
+				header(HEADERS.Faction, FACTION_OPERATION_SHIELDWALL, bubbleDownSelf({ ["timeline"] = { ADDED_5_1_0 } }, {
+					n(QUESTS, {
+						q(32357),	-- Tracking Event: Event Complete - triggeres after watching the RP after turning in "Heart of the Alliance" (questID 32316)
+						q(32356),	-- Tracking Event: Ambassadors Summoned - triggeres  "Heart of the Alliance" completion
+						q(32395),	-- Tracking Event: Saw Avartu - triggered while on "The Divine Bell," part of the Operation: Shieldwall campaign (at the end of the quest before killing Avartu)
+						q(32339),	-- Rebuilding the Mallet (Tracker) - triggered after turning in The Head and The Harmonic Ointment (The Handle was turned in earlier, but presumably requires all 3), part of the Operation: Shieldwall campaign
+						q(32365),	-- Tracking Event: Epilogue Complete - triggered after turning in "The Silence" and watching the RP, part of the Operation: Shieldwall campaign.  didn't go off until I left the area and turned in another quest (which is a daily that doesn't normally have any additional tracking quests attached, so i know it was from the final campaign quest)
+					}),
+				})),
+				header(HEADERS.Faction, FACTION_THE_ANGLERS, {
+					n(QUESTS, {
+						q(31371),	-- Tracking Event: Player Has Completed One Anglers Daily
+					}),
+				}),
+				header(HEADERS.Faction, FACTION_THE_AUGUST_CELESTIALS, {
+					n(QUESTS, {
+						q(30719),	-- FLAG - Cradle of Chi-Ji Progress Bit 01
+						q(30720),	-- FLAG - Cradle of Chi-Ji Progress Bit 02 - triggered after turning in Dextrous Izissha quest, 6th for Champion of Chi-Ji, triggered on another character after turning in Minh Do-Tan, which is the 2nd
+						q(30721),	-- FLAG - Cradle of Chi-Ji Progress Bit 03
+						q(30722),	-- FLAG - Cradle of Chi-Ji Progress Bit 04
+					}),
+				}),
+			}),
+			n(QUESTS, {
+				q(30087),	-- FLAG - Kung Fu Intro — triggers either when flying close to the magical barrier or after accepting The "Arcanic Oubliette" (questID 30274)
+				q(55163),	-- Throw a lantern into the water during the Wanderer's Festival
+				q(32477, { ["timeline"] = { ADDED_5_1_0 } }),	-- Tracking Event: Player is Back in Time - going back and forth in time via Taradormi
+			}),
+		}),
 	}),
-});
+})));

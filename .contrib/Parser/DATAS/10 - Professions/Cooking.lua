@@ -139,10 +139,10 @@ root(ROOTS.Professions, prof(COOKING, bubbleDownSelf({ ["requireSkill"] = COOKIN
 			["cost"] = {{"i", 43004, 10}},	-- 10x Critter Bites
 		}),
 		ach(1785, {	-- Dinner Impossible
-			crit(6626, { ["provider"] = { "i", 34753 } } ),	-- Alterac Valley
-			crit(6627, { ["provider"] = { "i", 34753 } } ),	-- Arathi Basin
-			crit(6628, { ["provider"] = { "i", 34753 } } ),	-- Warsong Gulch
-			crit(6630, { ["provider"] = { "i", 34753 } } ),	-- Eye of the Storm
+			crit(6626, { ["provider"] = { "i", 34753 }, ["maps"] = { ALTERAC_VALLEY, 1537 } } ),	-- Alterac Valley
+			crit(6627, { ["provider"] = { "i", 34753 }, ["maps"] = ARATHI_BASIN } ),	-- Arathi Basin
+			crit(6628, { ["provider"] = { "i", 34753 }, ["maps"] = { WARSONG_GULCH, 1339 } } ),	-- Warsong Gulch
+			crit(6630, { ["provider"] = { "i", 34753 }, ["maps"] = { EYE_OF_THE_STORM, 397 } } ),	-- Eye of the Storm
 		}),
 		ach(1780, {	-- Second That Emotion
 			crit(6450, { ["provider"] = { "i", 43491 } } ),	-- Bad Clams
@@ -282,7 +282,7 @@ root(ROOTS.Professions, prof(COOKING, bubbleDownSelf({ ["requireSkill"] = COOKIN
 	})),
 	expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
 		ach(6365),	-- Zen Master Cook
-		ach(7306,  {	-- Master of Pandaren Cooking
+		ach(7306, {	-- Master of Pandaren Cooking
 			-- Meta Achievement
 			["sym"] = {{"meta_achievement",
 				7305,	-- Master of the Brew
@@ -302,7 +302,7 @@ root(ROOTS.Professions, prof(COOKING, bubbleDownSelf({ ["requireSkill"] = COOKIN
 		ach(7302),		-- Master of the Pot
 		ach(7303),		-- Master of the Steamer
 		ach(7301),		-- Master of the Wok
-		ach(7325,  {	-- Now I Am the Master
+		ach(7325, {	-- Now I Am the Master
 			crit(20537, {	-- Obtain the Cooking School Bell
 				["provider"] = { "i", 86425 },	-- Cooking School Bell
 			}),
@@ -807,15 +807,13 @@ root(ROOTS.Professions, prof(COOKING, bubbleDownSelf({ ["requireSkill"] = COOKIN
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 	n(PROFESSIONS, {
 		prof(COOKING, {
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
-				q(45341),	-- Tracking Quest - after obtaining the Chef's Hat toy (itemID 134020)
-			})),
+			q(45341),	-- Tracking Quest - after obtaining the Chef's Hat toy (itemID 134020)
 		}),
 	}),
-});
+})));
 
 
 -- #if ANYCLASSIC

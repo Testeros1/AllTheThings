@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --       W O R L D   D R O P S   M O D U L E       --
 -----------------------------------------------------
-root(ROOTS.WorldDrops, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.WorldDrops, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	n(ARMOR, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_0 } }, {
 		filter(CLOTH, {
 			i(220314),	-- Moth-Ridden Armlets
@@ -13,7 +13,7 @@ root(ROOTS.WorldDrops, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { AD
 			i(220312),	-- Moth-Ridden Stole
 			i(220313),	-- Moth-Ridden Waistwrap
 		}),
-		filter(LEATHER,  {
+		filter(LEATHER, {
 			i(220321),	-- Distressed Belt
 			i(220316),	-- Distressed Boots
 			i(220322),	-- Distressed Bracers
@@ -93,11 +93,10 @@ root(ROOTS.WorldDrops, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { AD
 		}),
 	}),
 	n(WEAPONS, {
-		--TODO: uncomment & remove from unsorted if it drop
 		i(224627),	-- Arathi Arquebus
 		i(224628),	-- Arathi Claymore
-		i(224629),	-- Arathi Hatchet
 		i(224633),	-- Arathi Greataxe
+		i(224629),	-- Arathi Hatchet
 		i(224634),	-- Arathi Mace
 		i(227692),	-- Arathi Sword
 		i(224630),	-- Deep-Dweller's Battleaxe
@@ -126,11 +125,15 @@ root(ROOTS.WorldDrops, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { AD
 		i(224824),	-- Duskweave+
 		i(228233),	-- Duskweave++
 		i(228234),	-- Duskweave+++
+		i(221757),	-- Gloomfathom Hide
 		i(225912),	-- Hot Honeycomb
 		i(225565),	-- Massive Worm Flank
 		i(225564),	-- Meaty Muscle
+		i(221758),	-- Profaned Tinderbox
+		i(221754),	-- Ringing Deeps Ingot
 		i(225568),	-- Slum Shark Scrap
 		i(221756),	-- Vial of Kaheti Oils
+		i(221763),	-- Viridian Charmcap
 		i(225566),	-- Warped Wing
 		i(224828),	-- Weavercloth+
 		i(228231),	-- Weavercloth++

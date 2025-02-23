@@ -71,7 +71,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 				["g"] = sharedData({
 					["sourceQuest"] = 65346,	-- Dormant Alcove Arrangement
 					["cost"] = { { "i", 189863, 1 }, },	-- 1 Spatial Opener
-					["description"] = "Gather 60 Cosmic energy and go to Interior Locus then use Arcae Locus.",
+					["sharedDescription"] = "Gather 60 Cosmic energy and go to Interior Locus then use Arcae Locus.",
 					["crs"] = {
 						184329,	-- Locus Shift (Gravid Repose)
 						184485,	-- Locus Shift (Interior)
@@ -391,13 +391,13 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 					{ 60.3, 71.6, ZERETH_MORTIS },
 					{ 59.1, 64.7, ZERETH_MORTIS },
 					{ 60.3, 71.7, ZERETH_MORTIS },
+					{ 36.4, 50.2, ZERETH_MORTIS },
 				},
 				["g"] = {
 					i(189148),	-- Poultrid Lattice
 				},
 			}),
 			o(375950, {	-- Bauble of Pure Innovation
-				["description"] = "Multiple spawn places?",
 				["coord"] = { 34.5, 49.7, ZERETH_MORTIS },
 				["g"] = {
 					i(189171),	-- Bauble of Pure Innovation
@@ -509,6 +509,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 					{ 55.7, 52.5, ZERETH_MORTIS },
 					{ 46.4, 95.8, ZERETH_MORTIS },
 					{ 37.8, 56.9, ZERETH_MORTIS },
+					{ 36.6, 43.9, ZERETH_MORTIS },
 				},
 			}),
 			o(375915, {	-- Glimmer of Serenity

@@ -98,24 +98,24 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				["questID"] = 74995,
 				["cost"] = {{"i",204323,1}},	-- Old Trunk Key
 				["g"] = {
-					q(75526, {	-- First Rock Mouse
+					hqt(75526, {	-- First Rock Mouse
 						["name"] = "First Rock Mouse",
 						["provider"] = { "n", 203073 },
 						["coord"] = { 43.0, 82.6, ZARALEK_CAVERN },
 					}),
-					q(75527, {	-- Second Rock Mouse
+					hqt(75527, {	-- Second Rock Mouse
 						["name"] = "Second Rock Mouse",
 						["provider"] = { "n", 204277 },
 						["coord"] = { 42.1, 80.2, ZARALEK_CAVERN },
 						["sourceQuest"] = 75526,	-- First Rock Mouse
 					}),
-					q(75534, {	-- Third Rock Mouse
+					hqt(75534, {	-- Third Rock Mouse
 						["name"] = "Third Rock Mouse",
 						["provider"] = { "n", 204279 },
 						["coord"] = { 41.7, 81.5, ZARALEK_CAVERN },
 						["sourceQuest"] = 75527,	-- Second Rock Mouse
 					}),
-					q(75535, {	-- Fourth Rock Mouse
+					hqt(75535, {	-- Fourth Rock Mouse
 						["name"] = "Fourth Rock Mouse",
 						["provider"] = { "n", 204280 },
 						["coord"] = { 42.8, 82.2, ZARALEK_CAVERN },
@@ -167,7 +167,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				},
 			}),
 			o(386080, {	-- Scorching Key
-				-- TODO: ["questID"] = ,
+				-- ["questID"] = ,	-- No questid triggered (Jan 5, 2025)
 				["coord"] = { 30.1, 40.8, ZARALEK_CAVERN },
 				["g"] = {
 					i(202869),    -- Scorching Key
@@ -181,7 +181,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				},
 			}),
 			o(386079, {	-- Well-Chewed Chest
-				["description"] = "Loot the key under the massive corehound's head, then use it to open the chest",
+				["description"] = "Loot the key under the massive corebeasts's head, then use it to open the chest",
 				["coord"] = { 29.7, 40.6, ZARALEK_CAVERN },
 				["questID"] = 73395,
 				["cost"] = { { "i", 202869, 1 }, },	-- 1x Scorching Key
@@ -200,7 +200,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 				},
 				["g"] = appendAllGroups({
 					-- Shared Drops
-					i(202275),	-- Renewed Proto-Drake: Plated Jaw (DM!)
+					i(202275),	-- Renewed Proto-Drake: Plated Jaw (MM!)
 				},sharedData({
 					["isDaily"] = true,
 				},{
@@ -217,9 +217,12 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					o(386089, {	-- Ritual Offerings
 						["questID"] = 73551,
 						["coords"] = {
-							{ 33.0, 39.9, ZARALEK_CAVERN },
-							{ 31.9, 39.6, ZARALEK_CAVERN },
-							{ 35.2, 41.8, ZARALEK_CAVERN },
+							{ 30.4, 43.7, ZARALEK_CAVERN },
+							{ 31.9, 39.7, ZARALEK_CAVERN },
+							{ 32.6, 44.2, ZARALEK_CAVERN },
+							{ 33.1, 39.9, ZARALEK_CAVERN },
+							{ 35.4, 41.8, ZARALEK_CAVERN },
+							{ 36.0, 44.6, ZARALEK_CAVERN },
 						},
 					}),
 					o(386090, {	-- Ritual Offerings
@@ -292,7 +295,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 						["sym"] = {
 							{"select","mapID",ZARALEK_CAVERN},
 							{"find","headerID",COMMON_BOSS_DROPS},{"pop"},	-- Obtained Weapons/Armor confirmed by Wowhead/Runaway
-							{"select","itemID", 202275},	-- Renewed Proto-Drake: Plated Jaw (DM!)
+							{"select","itemID", 202275},	-- Renewed Proto-Drake: Plated Jaw (MM!)
 						},
 					}),
 				},
@@ -305,10 +308,10 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 					{"select","mapID",ZARALEK_CAVERN},
 					{"find","headerID",COMMON_BOSS_DROPS},
 					{"find","headerID",BACK},{"pop"},		-- Only Cloak/Ring drop from these it appears
-					{"select","itemID", 202275},	-- Renewed Proto-Drake: Plated Jaw (DM!)
+					{"select","itemID", 202275},	-- Renewed Proto-Drake: Plated Jaw (MM!)
 				},
 				["g"] = {
-					i(203313),	-- Winding Slitherdrake: Spiked Chin (DM!)
+					i(203313),	-- Winding Slitherdrake: Spiked Chin (MM!)
 				},
 			}),
 			o_repeated({	-- Stolen Stash
@@ -334,12 +337,15 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(ZARALEK_CAVERN, {
-		q(75559),	-- Orange Crystal (Crystal Chest) (spellID 408322)
-		q(74987),	-- Purple Crystal (Crystal Chest) (spellID 400760)
-		q(75601),	-- Lock Opened? (Crystal Chest) (spellID 408329)
-
-		q(75814),	-- Probably Some Barter Brick Tracker
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }, {
+	m(DRAGON_ISLES, {
+		m(ZARALEK_CAVERN, {
+			n(TREASURES, {
+				q(75559),	-- Orange Crystal (Crystal Chest) (spellID 408322)
+				q(74987),	-- Purple Crystal (Crystal Chest) (spellID 400760)
+				q(75601),	-- Lock Opened? (Crystal Chest) (spellID 408329)
+				q(75814),	-- Probably Some Barter Brick Tracker
+			}),
+		}),
 	}),
-}));
+})));

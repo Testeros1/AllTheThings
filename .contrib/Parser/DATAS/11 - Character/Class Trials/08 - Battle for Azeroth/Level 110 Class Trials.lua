@@ -3,7 +3,7 @@
 -------------------------------------------
 root(ROOTS.Character, n(CLASS_TRIAL, {
 	expansion(EXPANSION.BFA, bubbleDown({["u"] = REMOVED_FROM_GAME}, {
-		n(LEVEL_HUNDRED_TEN, {
+		header(HEADERS.Achievement, 10671, {
 			-- Note: [As of July 4, 2018 it's Boosted 110's as no 110 trial is available]
 			-- Note: [As of August 18th, 2018 110 trials have been implemented and use same itemID's as boosting]
 			-- Note: [As of October 13th, 2020 these Became LvL 48 Class Trials ]

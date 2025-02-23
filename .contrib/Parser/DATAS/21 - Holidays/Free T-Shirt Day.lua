@@ -9,6 +9,8 @@ FREE_T_SHIRT_DAY_HEADER = createHeader({
 	text = {
 		en = "Free T-Shirt Day",
 		ru = "День бесплатных футболок",
+		cn = "免费T恤日",
+		tw = "免費T恤日",
 	},
 });
 root(ROOTS.Holidays, applyevent(EVENTS.FREE_T_SHIRT_DAY, n(FREE_T_SHIRT_DAY_HEADER, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {

@@ -70,7 +70,12 @@ root(ROOTS.Zones, {
 				["u"] = REMOVED_FROM_GAME,
 			}),
 			q(49846, {	-- Wars on Two Fronts [Cataclysm]
-				["provider"] = { "i", 156477 },	-- Special Duty Assignments
+				["providers"] = {
+					{ "o", 206111 },	-- [SW]
+					{ "o", 207321 },	-- [DA]
+					{ "o", 207320 },	-- [IF]
+					{ "i", 156477 },	-- Special Duty Assignments
+				},
 				["description"] = "The Special Duty Assignments will automatically pop up when you reach level 80.  You can use them to progress either to Cataclysm or Pandaria.",
 				["timeline"] = { ADDED_7_3_5 },
 				["isBreadcrumb"] = true,
@@ -79,7 +84,12 @@ root(ROOTS.Zones, {
 				-- Received 49846 on Alliance Warlock when I hit 80, so it isn't the Horde version item as a previous comment speculated. - slumber
 			}),
 			q(49864, {	-- Wars on Two Fronts (Cataclysm or Pandaria)
-				["provider"] = { "i", 156477 },	-- Special Duty Assignments
+				["providers"] = {
+					{ "o", 206111 },	-- [SW]
+					{ "o", 207321 },	-- [DA]
+					{ "o", 207320 },	-- [IF]
+					{ "i", 156477 },	-- Special Duty Assignments
+				},
 				["description"] = "The Special Duty Assignments will automatically pop up when you reach level 80.  You can use them to progress either to Cataclysm or Pandaria.",
 				["timeline"] = { ADDED_7_3_5 },
 				["isBreadcrumb"] = true,
@@ -117,9 +127,9 @@ root(ROOTS.Zones, {
 	})),
 });
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, {
-	n(QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+	n(DUNGEON_JOURNAL, {
 		q(72751),	-- Triggers whenever you collect one of the Coin quests from your Adventurer's Journal.
-	})),
-}));
+	}),
+})));
 -- #endif

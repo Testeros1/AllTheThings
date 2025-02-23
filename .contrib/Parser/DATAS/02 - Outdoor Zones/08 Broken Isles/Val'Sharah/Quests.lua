@@ -415,7 +415,7 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 					["provider"] = { "o", 248534 },	-- The Tears of Elune
 					["sourceQuests"] = { 38743 },	-- The Fate of Val'Sharah
 					["coord"] = { 53.7, 55.8, VALSHARAH },
-					["icon"] = "Interface\\Icons\\inv_jewelcrafting_gem_42",
+					["icon"] = 237230,
 					["g"] = {
 						i(130001),	-- Shaladrassil Cuirass
 						i(129993),	-- Shaladrassil Tunic
@@ -697,21 +697,21 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 					["lvl"] = 110,
 				}),
 				q(46082, {	-- Shadowsong's Return
-					["sourceQuests"] = { 46079 }, -- Aid on the Front Lines
+					["sourceQuests"] = { 46079 },	-- Aid on the Front Lines
 					["_drop"] = { "classes" },	-- bad API data
 					["classes"] = { DRUID, MONK, PRIEST, PALADIN, SHAMAN },	-- Legion healing classes
 					["provider"] = { "n", 118752 },	-- Mayor Heathrow
 					["lvl"] = 110,
 				}),
 				q(46106, {	-- Cutting off the Heads
-					["sourceQuests"] = { 46082 }, -- Shadowsong's Return
+					["sourceQuests"] = { 46082 },	-- Shadowsong's Return
 					["provider"] = { "n", 118947 },	-- Commander Jarod Shadowsong
 					["_drop"] = { "classes" },	-- bad API data
 					["classes"] = { DRUID, MONK, PRIEST, PALADIN, SHAMAN },	-- Legion healing classes
 					["lvl"] = 110,
 				}),
 				q(46080, {	-- Quieting the Spirits
-					["sourceQuests"] = { 46082 }, -- Shadowsong's Return
+					["sourceQuests"] = { 46082 },	-- Shadowsong's Return
 					["provider"] = { "n", 118954 },	-- Commander Jarod Shadowsong
 					["_drop"] = { "classes" },	-- bad API data
 					["classes"] = { DRUID, MONK, PRIEST, PALADIN, SHAMAN },	-- Legion healing classes
@@ -744,23 +744,10 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 					["provider"] = { "i", 127860 },	-- Warden's Signet
 					["coord"] = { 38.9, 65.1, VALSHARAH },
 					["cr"] = 94366,	-- Lelyn Swiftshadow
+					["g"] = {
+						i(127860),	-- Warden's Signet (QI!)
+					},
 				}),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 				q(39015, {	-- Grumpy
 					-- not sure if there are prereqs for this.
@@ -770,12 +757,8 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 					},
 				}),
 
-
-
-
-
 				n(BONUS_OBJECTIVES, sharedData({
-					["description"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
+					["sharedDescription"] = "This can be completed in party-sync with a character who is in Chromie Time for Legion.",
 					["lockCriteria"] = { 1, "lvl", 45 },
 				},{
 					-- TODO: Check SQ, also probably can't do after a certain level
@@ -790,17 +773,26 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 		}),
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(38666),	-- entering the burning house during 38644	(The Farmsteads)
-		q(45490),	-- Lytheron
-		q(44881),	-- Sharptalon Matriarch Tracking Q From the WQ Sharptalon
-		q(44079),	-- Druids of the Scythe - 1 (Killing Feral Worgen 112820)
-		q(42575),	-- Shaman Shrine - Valsharah Earth 01
-		q(42576),	-- Shaman Shrine - Valsharah Earth 02
-		q(42581),	-- Shaman Shrine - Valsharah Wind 01
-		q(38994),	-- TRACKING Encounter Botanist - during/after doing the "To Old Friends" (questID 38582)
-		q(38596),	-- TRACKING Nightmare 02 - during/after doing the "To Old Friends" (questID 38582)
-		q(43447),	-- Vignette: Wraithtalon - secondary trigger for Wraithtalon rare in Val'sharah
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(BROKEN_ISLES, {
+		m(VALSHARAH, {
+			n(FACTIONS, {
+				n(EMISSARY_QUESTS, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
+					q(46797),	-- Paragon of the Dreamweavers
+				})),
+			}),
+			n(QUESTS, {
+				q(38666),	-- entering the burning house during 38644	(The Farmsteads)
+				q(45490),	-- Lytheron
+				q(44881),	-- Sharptalon Matriarch Tracking Q From the WQ Sharptalon
+				q(44079),	-- Druids of the Scythe - 1 (Killing Feral Worgen 112820)
+				q(42575),	-- Shaman Shrine - Valsharah Earth 01
+				q(42576),	-- Shaman Shrine - Valsharah Earth 02
+				q(42581),	-- Shaman Shrine - Valsharah Wind 01
+				q(38994),	-- TRACKING Encounter Botanist - during/after doing the "To Old Friends" (questID 38582)
+				q(38596),	-- TRACKING Nightmare 02 - during/after doing the "To Old Friends" (questID 38582)
+			}),
+		}),
 	}),
-});
+})));

@@ -6,7 +6,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 		n(EMISSARY_QUESTS, {
 			q(64012, {	-- Supplies from Death's Advance
 				["repeatable"] = true,
-				["minReputation"] = { 2470, 8 },	-- Death's Advance, Exalted
+				["minReputation"] = { FACTION_DEATHS_ADVANCE, EXALTED },	-- Death's Advance, Exalted
 				["g"] = {
 					i(186650, {	-- Death's Advance Supplies
 						i(186644),	-- Beryl Shardhide (MOUNT!)
@@ -17,7 +17,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 			}),
 			q(64266, {	-- Supplies from The Archivist's Codex
 				["repeatable"] = true,
-				["minReputation"] = { 2472, 6 },	-- The Archivist's Codex, Tier 6
+				["minReputation"] = { FACTION_THE_ARCHIVISTS_CODEX, 6 },	-- The Archivist's Codex, Tier 6
 				["g"] = {
 					i(187028, {	-- Supplies of the Archivists' Codex
 						i(186641),	-- Tamed Mauler (MOUNT!)
@@ -29,9 +29,15 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	q(64286),	-- Paragon of Death's Advance
-	q(64287),	-- Paragon of The Archivists' Codex
-	q(64670),	-- triggered when turning in Supplies of the Archivists' Codex
-	q(64669),	-- triggered when turning in Supplies from Death's Advance
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_1_0 } }, {
+	m(SHADOWLANDS, {
+		m(KORTHIA, {
+			n(EMISSARY_QUESTS, {
+				q(64286),	-- Paragon of Death's Advance
+				q(64287),	-- Paragon of The Archivists' Codex
+				q(64670),	-- triggered when turning in Supplies of the Archivists' Codex
+				q(64669),	-- triggered when turning in Supplies from Death's Advance
+			}),
+		}),
+	}),
+})));

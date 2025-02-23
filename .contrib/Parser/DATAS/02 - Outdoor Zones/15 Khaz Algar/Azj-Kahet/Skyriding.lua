@@ -107,9 +107,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			n(QUESTS, {
 				skyridingrace(80277, {	-- City of Threads Twist
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					-- ["coord"] = { 32.9, 74.8, AZJ_KAHET },
+					["provider"] = { "n", 219564 },	-- Bronze Timekeeper
+					["coord"] = { 27.0, 8.0, NERUBAR },
 					["g"] = {
 						ach(20419),	-- City of Threads Twist: Bronze
 						ach(20420),	-- City of Threads Twist: Silver
@@ -117,9 +116,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80283, {	-- City of Threads Twist - Advanced
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					-- ["coord"] = { 32.9, 74.8, AZJ_KAHET },
+					["provider"] = { "n", 219564 },	-- Bronze Timekeeper
+					["coord"] = { 27.0, 8.0, NERUBAR },
 					["g"] = {
 						ach(20422),	-- City of Threads Twist Advanced: Bronze
 						ach(20423),	-- City of Threads Twist Advanced: Silver
@@ -127,9 +125,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80289, {	-- City of Threads Twist - Reverse
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					-- ["coord"] = { 32.9, 74.8, AZJ_KAHET },
+					["provider"] = { "n", 219564 },	-- Bronze Timekeeper
+					["coord"] = { 27.0, 8.0, NERUBAR },
 					["g"] = {
 						ach(20425),	-- City of Threads Twist Reverse: Bronze
 						ach(20426),	-- City of Threads Twist Reverse: Silver
@@ -137,9 +134,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80278, {	-- Maddening Deep Dip
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					["coord"] = { 76.6, 81.0, AZJ_KAHET },
+					["provider"] = { "n", 219565 },	-- Bronze Timekeeper
+					["coord"] = { 77.9, 79.6, AZJ_KAHET },
 					["g"] = {
 						ach(20429),	-- Maddening Deep Dip: Bronze
 						ach(20430),	-- Maddening Deep Dip: Silver
@@ -147,9 +143,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80284, {	-- Maddening Deep Dip - Advanced
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					["coord"] = { 76.6, 81.0, AZJ_KAHET },
+					["provider"] = { "n", 219565 },	-- Bronze Timekeeper
+					["coord"] = { 77.9, 79.6, AZJ_KAHET },
 					["g"] = {
 						ach(20432),	-- Maddening Deep Dip Advanced: Bronze
 						ach(20433),	-- Maddening Deep Dip Advanced: Silver
@@ -157,9 +152,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80290, {	-- Maddening Deep Dip - Reverse
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					["coord"] = { 76.6, 81.0, AZJ_KAHET },
+					["provider"] = { "n", 219565 },	-- Bronze Timekeeper
+					["coord"] = { 77.9, 79.6, AZJ_KAHET },
 					["g"] = {
 						ach(20435),	-- Maddening Deep Dip Reverse: Bronze
 						ach(20436),	-- Maddening Deep Dip Reverse: Silver
@@ -167,9 +161,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80281, {	-- Pit Plunge
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					["coord"] = { 27.0, 52.3, AZJ_KAHET },
+					["provider"] = { "n", 219569 },	-- Bronze Timekeeper
+					["coord"] = { 23.8, 48.4, AZJ_KAHET },
 					["g"] = {
 						ach(20457),	-- Pit Plunge: Bronze
 						ach(20458),	-- Pit Plunge: Silver
@@ -177,9 +170,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80287, {	-- Pit Plunge - Advanced
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					["coord"] = { 27.0, 52.3, AZJ_KAHET },
+					["provider"] = { "n", 219569 },	-- Bronze Timekeeper
+					["coord"] = { 23.8, 48.4, AZJ_KAHET },
 					["g"] = {
 						ach(20460),	-- Pit Plunge Advanced: Bronze
 						ach(20461),	-- Pit Plunge Advanced: Silver
@@ -187,9 +179,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80293, {	-- Pit Plunge - Reverse
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					["coord"] = { 27.0, 52.3, AZJ_KAHET },
+					["provider"] = { "n", 219569 },	-- Bronze Timekeeper
+					["coord"] = { 23.8, 48.4, AZJ_KAHET },
 					["g"] = {
 						ach(20463),	-- Pit Plunge Reverse: Bronze
 						ach(20464),	-- Pit Plunge Reverse: Silver
@@ -197,9 +188,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80280, {	-- Rak-Ahat Rush
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					-- ["coord"] = { 32.9, 74.8, AZJ_KAHET },
+					["provider"] = { "n", 219568 },	-- Bronze Timekeeper
+					["coord"] = { 71.3, 36.4, AZJ_KAHET },
 					["g"] = {
 						ach(20448),	-- Rak-Ahat Rush: Bronze
 						ach(20449),	-- Rak-Ahat Rush: Silver
@@ -207,9 +197,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80286, {	-- Rak-Ahat Rush - Advanced
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					-- ["coord"] = { 32.9, 74.8, AZJ_KAHET },
+					["provider"] = { "n", 219568 },	-- Bronze Timekeeper
+					["coord"] = { 71.3, 36.4, AZJ_KAHET },
 					["g"] = {
 						ach(20451),	-- Rak-Ahat Rush Advanced: Bronze
 						ach(20452),	-- Rak-Ahat Rush Advanced: Silver
@@ -217,9 +206,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				skyridingrace(80292, {	-- Rak-Ahat Rush - Reverse
-					-- TODO
-					-- ["provider"] = { "n", X },	-- Bronze Timekeeper
-					-- ["coord"] = { 32.9, 74.8, AZJ_KAHET },
+					["provider"] = { "n", 219568 },	-- Bronze Timekeeper
+					["coord"] = { 71.3, 36.4, AZJ_KAHET },
 					["g"] = {
 						ach(20454),	-- Rak-Ahat Rush Reverse: Bronze
 						ach(20455),	-- Rak-Ahat Rush Reverse: Silver
@@ -228,7 +216,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				skyridingrace(80282, {	-- Siegehold Scuttle
 					["provider"] = { "n", 219570 },	-- Bronze Timekeeper
-					["coord"] = { 42.0, 32.2, AZJ_KAHET },
+					["coord"] = { 40.2, 32.2, AZJ_KAHET },
 					["g"] = {
 						ach(20466),	-- Siegehold Scuttle: Bronze
 						ach(20467),	-- Siegehold Scuttle: Silver
@@ -237,7 +225,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				skyridingrace(80288, {	-- Siegehold Scuttle - Advanced
 					["provider"] = { "n", 219570 },	-- Bronze Timekeeper
-					["coord"] = { 42.0, 32.2, AZJ_KAHET },
+					["coord"] = { 40.2, 32.2, AZJ_KAHET },
 					["g"] = {
 						ach(20469),	-- Siegehold Scuttle Advanced: Bronze
 						ach(20470),	-- Siegehold Scuttle Advanced: Silver
@@ -246,7 +234,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				skyridingrace(80294, {	-- Siegehold Scuttle - Reverse
 					["provider"] = { "n", 219570 },	-- Bronze Timekeeper
-					["coord"] = { 42.0, 32.2, AZJ_KAHET },
+					["coord"] = { 40.2, 32.2, AZJ_KAHET },
 					["g"] = {
 						ach(20472),	-- Siegehold Scuttle Reverse: Bronze
 						ach(20473),	-- Siegehold Scuttle Reverse: Silver

@@ -32,10 +32,10 @@
     <ApplicationIcon>lib\att_logo_128_new_jrX_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <DebugSymbols>false</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\Parser\</OutputPath>
-    <DefineConstants>TRACE;RETAIL;DF</DefineConstants>
-    <DebugType>none</DebugType>
+    <DefineConstants>TRACE;RETAIL;TWW</DefineConstants>
+    <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
@@ -46,7 +46,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\Parser\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;RETAIL;DF;</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;RETAIL;TWW</DefineConstants>
     <Optimize>false</Optimize>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -54,6 +54,9 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ATT.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Csv, Version=2.0.93.0, Culture=neutral, processorArchitecture=MSIL">
@@ -75,6 +78,9 @@
     <Compile Include="CollectedStatus.cs" />
     <Compile Include="CustomConfiguration.cs" />
     <Compile Include="DataValidator.cs" />
+    <Compile Include="DB\Types\ItemEffect.cs" />
+    <Compile Include="DB\Types\ItemXItemEffect.cs" />
+    <Compile Include="DB\Types\Item.cs" />
     <Compile Include="DB\Types\SpellEffect.cs" />
     <Compile Include="DB\Types\TransmogSet.cs" />
     <Compile Include="DB\Types\TransmogSetItem.cs" />
@@ -94,10 +100,7 @@
     <Compile Include="Export\Object Data\AchievementData.cs" />
     <Compile Include="Export\Object Data\RecipeData.cs" />
     <Compile Include="Export\Object Data\MountData.cs" />
-    <Compile Include="Export\Object Data\NPCData.cs" />
     <Compile Include="Export\Object Data\ObjectData.cs" />
-    <Compile Include="Export\Object Data\QuestData.cs" />
-    <Compile Include="Export\Object Data\SpellData.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="FieldTypes\Cost.cs" />
     <Compile Include="FieldTypes\IExportableField.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="Framework\Framework.Items.cs" />
     <Compile Include="Framework\Framework.cs" />
     <Compile Include="Framework\Framework.Processing.cs" />
+    <Compile Include="Framework\HierarchicalFieldAdjustments.cs" />
     <Compile Include="Harvesters\ObjectHarvester.cs" />
     <Compile Include="Framework\ParseStage.cs" />
     <Compile Include="MiniJSON.cs" />

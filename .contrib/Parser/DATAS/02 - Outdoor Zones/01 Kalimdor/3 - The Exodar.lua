@@ -17,9 +17,7 @@ local REDEMPTION = recipe(7328);	-- Redemption
 root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 	m(THE_EXODAR, bubbleDownSelf({ ["timeline"] = { ADDED_2_0_1 } }, {
 		["lore"] = "The Exodar is the capital city of the Draenei. It is located in the westernmost part of Azuremyst Isle. The Exodar's faction leader is Prophet Velen, who is located near the battlemasters in the Vault of Lights.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\Inv_misc_tournaments_symbol_draenei",
-		-- #endif
+		["icon"] = 255137,
 		["isRaid"] = true,
 		["groups"] = {
 			battlepets({
@@ -29,8 +27,11 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 				}},
 			}),
 			n(FACTIONS, {
-				faction(930, {	-- Exodar
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+				faction(FACTION_EXODAR, {	-- Exodar
+					-- #if AFTER CATA
+					["provider"] = { "i", 45580 },	-- Exodar Tabard
+					-- #endif
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = ALLIANCE_ONLY,
 				}),
 			}),
@@ -54,6 +55,7 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = HEROS_CALL_BOARD_SYMLINK,
 				["races"] = ALLIANCE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 			n(QUESTS, {
@@ -105,7 +107,7 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 					["qg"] = 20604,	-- Dugiru <Alliance Cloth Quartermaster>
 					["sourceQuest"] = 10357,	-- A Donation of Runecloth
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
-					["maxReputation"] = { 930, EXALTED },	-- Exodar, Exalted.
+					["maxReputation"] = { FACTION_EXODAR, EXALTED },	-- Exodar, Exalted.
 					["coord"] = { 63.5, 67.7, THE_EXODAR },
 					["timeline"] = { REMOVED_4_0_3},
 					["races"] = ALLIANCE_ONLY,
@@ -411,6 +413,22 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 						4565,    -- Simple Dagger
 					}},
 				}),
+				n(221817, {	-- Gaal <Blacksmith>
+					["coord"] = { 56.6, 81.8, THE_EXODAR},
+					["timeline"] = { ADDED_10_2_7 },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						208684,		-- Anchorite's Sorrow
+						208755,		-- Ancient Soulpriest's Staff
+						208683,		-- Arinor Ritual Baton
+						208677,		-- Eredath Crystal Hammer
+						208662,		-- Lightforged Seeker
+						206195,		-- Path of the Naaru (TOY!)
+						208685,		-- Recovered Kaarinos Blade
+						208688,		-- Telaasti Mining Pick
+						208686,		-- Velenite Claymore
+					}},
+				}),
 				n(16716, {	-- Gornii <Cloth Armor Merchant>
 					["coord"] = { 71.5, 91.7, THE_EXODAR },
 					["races"] = ALLIANCE_ONLY,
@@ -492,19 +510,19 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64889, {	-- Mantle of Exodar
-							["minReputation"] = { 930, EXALTED },	-- Exodar, Exalted.
+							["minReputation"] = { FACTION_EXODAR, EXALTED },	-- Exodar, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64890, {	-- Cape of Exodar
-							["minReputation"] = { 930, EXALTED },	-- Exodar, Exalted.
+							["minReputation"] = { FACTION_EXODAR, EXALTED },	-- Exodar, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64891, {	-- Shroud of Exodar
-							["minReputation"] = { 930, EXALTED },	-- Exodar, Exalted.
+							["minReputation"] = { FACTION_EXODAR, EXALTED },	-- Exodar, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67527, {	-- Exodar Satchel
-							["minReputation"] = { 930, REVERED },	-- Exodar, Revered.
+							["minReputation"] = { FACTION_EXODAR, REVERED },	-- Exodar, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -599,7 +617,7 @@ root(ROOTS.Zones, m(KALIMDOR, applyclassicphase(TBC_PHASE_ONE, {
 				n(17584, {	-- Torallius the Pack Handler <Elekk Breeder>
 					["coord"] = { 81.5, 51.4, THE_EXODAR },
 					-- Available to Draenei without faction requirements.
-					["minReputation"] = { 930, EXALTED },	-- Exodar, Exalted.
+					["minReputation"] = { FACTION_EXODAR, EXALTED },	-- Exodar, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. DRAENEI .. [[ then
 							t.minReputation = nil;

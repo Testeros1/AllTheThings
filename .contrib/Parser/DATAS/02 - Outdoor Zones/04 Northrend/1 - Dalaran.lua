@@ -772,7 +772,7 @@ root(ROOTS.Zones, {
 	m(NORTHREND, applyclassicphase(WRATH_PHASE_ONE, {
 		m(NORTHREND_DALARAN, {
 			["lore"] = "Dalaran is a magocratic city-state and was once located within the Alterac Mountains in the Eastern Kingdoms. Now, the city, including the Violet Citadel, resides above the Crystalsong Forest in Northrend. The top part of the city is sparkling and airy, while the sewers underground show the darker side of magic addiction and luxury.",
-			["icon"] = "Interface\\Icons\\spell_arcane_teleportdalaran",
+			["icon"] = 237509,
 			["maps"] = {
 				501,	-- Dalaran (operation shieldwall)
 				502,	-- Dalaran (sewers, operation shieldwall)
@@ -782,7 +782,7 @@ root(ROOTS.Zones, {
 			["groups"] = {
 				m(NORTHREND_THE_UNDERBELLY, {
 					["zone-text-areaID"] = 4560,	-- The Underbelly
-					["icon"] = "Interface\\LFGFRAME\\LFGICON-DALARANSEWERS",
+					["icon"] = 460862,
 					["groups"] = {
 						n(ACHIEVEMENTS, {
 							ach(1958, {	-- I Smell A Giant Rat
@@ -909,21 +909,21 @@ root(ROOTS.Zones, {
 							applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, n(54653, {	-- Nargle Lashcord <Glorious Conquest Quartermaster>
 								["coord"] = { 58.7, 59.0, NORTHREND_THE_UNDERBELLY },
 								-- #if BEFORE 7.0.1
-								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_CATACLYSMIC, PVP_GLADIATOR },{"merge"},},	-- Cataclysmic Gladiator's Set
+								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_CATACLYSMIC, PVP_GLADIATOR }},	-- Cataclysmic Gladiator's Set
 								-- #endif
 								["timeline"] = { ADDED_4_3_0, REMOVED_7_0_3 },
 							})),
 							applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(52541, {	-- Nargle Lashcord <Glorious Conquest Quartermaster>
 								["coord"] = { 58.7, 59.0, NORTHREND_THE_UNDERBELLY },
 								-- #if BEFORE 5.0.1
-								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_GLADIATOR },{"merge"},},	-- Ruthless Gladiator's Set
+								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_GLADIATOR }},	-- Ruthless Gladiator's Set
 								-- #endif
 								["timeline"] = { ADDED_4_2_0, REMOVED_4_3_0 },
 							})),
 							applyclassicphase(CATA_PHASE_ONE, n(40211, {	-- Nargle Lashcord <Glorious Conquest Quartermaster>
 								["coord"] = { 58.7, 59.0, NORTHREND_THE_UNDERBELLY },
 								-- #if BEFORE 5.0.1
-								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_GLADIATOR },{"merge"},},	-- Vicious Gladiator's Set
+								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_GLADIATOR }},	-- Vicious Gladiator's Set
 								-- #endif
 								["timeline"] = { ADDED_4_0_3, REMOVED_4_2_0 },
 							})),
@@ -1038,21 +1038,21 @@ root(ROOTS.Zones, {
 							}),
 							applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, n(54651, {	-- Zom Bocom <Honor Quartermaster>
 								-- #if BEFORE 5.2.0.16577
-								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_GLADIATOR },{"merge"},},	-- Ruthless Gladiator's Set
+								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_RUTHLESS, PVP_GLADIATOR }},	-- Ruthless Gladiator's Set
 								-- #endif
 								["timeline"] = { ADDED_4_3_0, REMOVED_5_2_0 },
 							})),
 							applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, n(52534, {	-- Zom Bocom <Honor Quartermaster>
 								["coord"] = { 59.1, 59.6, NORTHREND_THE_UNDERBELLY },
 								-- #if BEFORE 5.0.1
-								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_GLADIATOR },{"merge"},},	-- Vicious Gladiator's Set
+								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_GLADIATOR }},	-- Vicious Gladiator's Set
 								-- #endif
 								["timeline"] = { ADDED_4_2_0, REMOVED_4_3_0 },
 							})),
 							applyclassicphase(CATA_PHASE_ONE, n(40205, {	-- Zom Bocom <Honor Quartermaster>
 								["coord"] = { 59.1, 59.6, NORTHREND_THE_UNDERBELLY },
 								-- #if BEFORE 5.0.1
-								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_HONOR },{"merge"},},	-- Bloodthirsty Gladiator's Set
+								["sym"] = {{"sub", "pvp_gear_base", EXPANSION.CATA, SEASON_VICIOUS, PVP_HONOR }},	-- Bloodthirsty Gladiator's Set
 								-- #endif
 								["timeline"] = { ADDED_4_0_3, REMOVED_4_2_0 },
 							})),
@@ -1122,49 +1122,9 @@ root(ROOTS.Zones, {
 					}),
 					ach(1956, {	-- Higher Learning
 						["description"] = "The Schools of Arcane Magic books share a spawn location with generic books. Read the books in each location to start the respawn timer, which seems to be 3-4 hours.\n\nThe best time to hunt books is right after a server restart.",
-						-- #if ANYCLASSIC
 						["groups"] = {
-							crit(7237, {	-- The Schools of Arcane Magic - Abjuration
-								["provider"] = { "o", 192709 },	-- The Schools of Arcane Magic - Abjuration
-								["description"] = "The floor of the Dalaran Visitors Center next to a small book covered table.",
-								["coord"] = { 52.2, 54.8, NORTHREND_DALARAN },
-							}),
-							crit(7238, {	-- The Schools of Arcane Magic - Conjuration
-								["provider"] = { "o", 192710 },	-- The Schools of Arcane Magic - Conjuration
-								["description"] = "First floor of the Violet Citadel on the bottom shelf of the left bookcase on the north side of the room.",
-								["coord"] = { 31.0, 46.7, NORTHREND_DALARAN },
-							}),
-							crit(7239, {	-- The Schools of Arcane Magic - Divination
-								["provider"] = { "o", 192711 },	-- The Schools of Arcane Magic - Divination
-								["description"] = "Between the two bookcases on the south side of the second floor of the Violet Citadel.",
-								["coord"] = { 26.5, 52.2, NORTHREND_DALARAN },
-							}),
-							crit(7240, {	-- The Schools of Arcane Magic - Enchantment
-								["provider"] = { "o", 192713 },	-- The Schools of Arcane Magic - Enchantment
-								["description"] = "On a box on the upper balcony of The Threads of Fate.",
-								["coord"] = { 43.6, 46.7, NORTHREND_DALARAN },
-							}),
-							crit(7241, {	-- The Schools of Arcane Magic - Illusion
-								["provider"] = { "o", 192865 },	-- The Schools of Arcane Magic - Illusion
-								["description"] = "On a box in the corner of the Violet Hold near Archmage Timear.",
-								["coord"] = { 64.4, 52.4, NORTHREND_DALARAN },
-							}),
-							crit(7236, {	-- The Schools of Arcane Magic - Introduction
-								["provider"] = { "o", 192708 },	-- The Schools of Arcane Magic - Introduction
-								["description"] = "First floor of the teleportation room of the Violet Gate near a bookcase.",
-								["coord"] = { 56.7, 45.5, NORTHREND_DALARAN },
-							}),
-							crit(7242, {	-- The Schools of Arcane Magic - Necromancy
-								["provider"] = { "o", 192866 },	-- The Schools of Arcane Magic - Necromancy
-								["description"] = "Second floor of the Legerdemain Lounge in a bookcase in the northwest bedroom.",
-								["coord"] = { 46.8, 39.1, NORTHREND_DALARAN },
-							}),
-							crit(7243, {	-- The Schools of Arcane Magic - Transmutation
-								["provider"] = { "o", 192867 },	-- The Schools of Arcane Magic - Transmutation
-								["description"] = "First floor of the Legerdemain Lounge in the bookcase nearest the stove.",
-								["coord"] = { 46.8, 40.0, NORTHREND_DALARAN },
-							}),
 							i(44738, {	-- Kirin Tor Familiar (PET!)
+								["description"] = "This pet is obtained by doing the following:\n1. Complete the achievement 'Higher Learning'\n2. Use the newly aqcuired toy 'The Schools of Arcane Magic - Mastery' and teleport yourself to the spires atop Violet Citadel.\n3. Interact with Archmage Vargoth.",
 								["timeline"] = { ADDED_3_0_3 },
 							}),
 							i(43824, {	-- The Schools of Arcane Magic - Mastery (TOY!)
@@ -1172,9 +1132,8 @@ root(ROOTS.Zones, {
 								["cr"] = 16128,	-- Rhonin <Leader of the Kirin Tor>
 							}),
 						},
-						-- #endif
 					}),
-					achWithReps(1010, { 1106, 1090, 1098, 1091 }, {	-- Northrend Vanguard
+					achWithReps(1010, { FACTION_ARGENT_CRUSADE, FACTION_KIRIN_TOR, FACTION_EBON_BLADE, FACTION_THE_WYRMREST_ACCORD }, {	-- Northrend Vanguard
 						["maps"] = {
 							DRAGONBLIGHT,
 							ICECROWN,
@@ -1294,7 +1253,7 @@ root(ROOTS.Zones, {
 							i(44430),		-- Titanium Seal of Dalaran (TOY!)
 						},
 					}),
-					achWithRep(1008, 1090),	-- The Kirin Tor
+					achWithRep(1008, FACTION_KIRIN_TOR),	-- The Kirin Tor
 					ach(1957, {	-- There's Gold In That There Fountain
 						["sym"] = {{ "achievement_criteria" }},
 						["requireSkill"] = FISHING,
@@ -1344,16 +1303,17 @@ root(ROOTS.Zones, {
 					}),
 				}),
 				n(FACTIONS, {
-					faction(1090, {	-- Kirin Tor
-						["icon"] = "Interface\\Icons\\spell_holy_mindsooth",
+					faction(FACTION_KIRIN_TOR, {	-- Kirin Tor
+						["provider"] = { "i", 43157 },	-- Tabard of the Kirin Tor
+						["icon"] = 135933,
 					}),
-					faction(1094, {	-- The Silver Covenant
-						["icon"] = "Interface\\Icons\\inv_banner_02",
+					faction(FACTION_THE_SILVER_COVENANT, {	-- The Silver Covenant
+						["icon"] = 132483,
 						["maps"] = { ICECROWN },
 						["races"] = ALLIANCE_ONLY,
 					}),
-					faction(1124, {	-- The Sunreavers
-						["icon"] = "Interface\\Icons\\inv_elemental_primal_nether",
+					faction(FACTION_THE_SUNREAVERS, {	-- The Sunreavers
+						["icon"] = 132850,
 						["maps"] = { ICECROWN },
 						["races"] = HORDE_ONLY,
 					}),
@@ -1364,6 +1324,7 @@ root(ROOTS.Zones, {
 					}),
 					i(43659, {	-- Bloodied Prison Shank
 						["timeline"] = { ADDED_3_0_2 },
+						["description"] = "Can be fished up from the waters outside Violet Hold on WotLK Dalaran.",
 					}),
 					o(193402, {	-- Rusted Prisoner's Footlocker
 						["coord"] = { 64.5, 73.8, NORTHREND_DALARAN },
@@ -1405,8 +1366,15 @@ root(ROOTS.Zones, {
 					["timeline"] = { ADDED_4_0_1 },
 					["sym"] = HEROS_CALL_BOARD_SYMLINK,
 					["races"] = ALLIANCE_ONLY,
+					["skipFill"] = true,
 				}),
 				-- #endif
+				n(32838, {	-- Minigob Manabonk
+					["timeline"] = { ADDED_3_1_0 },
+					["groups"] = {
+						i(44817),	-- The Mischief Maker
+					},
+				}),
 				n(PROFESSIONS, {
 					prof(ALCHEMY, {
 						n(28703, {	-- Linzy Blackbolt <Alchemy Trainer>
@@ -1532,7 +1500,7 @@ root(ROOTS.Zones, {
 					q(13833, {	-- Blood Is Thicker
 						["qg"] = 28742,	-- Marcia Chase
 						["coord"] = { 53.0, 64.9, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { BOREAN_TUNDRA },
 						["requireSkill"] = FISHING,
 						["isDaily"] = true,
@@ -1555,7 +1523,7 @@ root(ROOTS.Zones, {
 							["qg"] = 29631,	-- Awilo Longomba
 							["coord"] = { 70.0, 39.0, NORTHREND_DALARAN },
 						}),
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["requireSkill"] = COOKING,
 						["isDaily"] = true,
 						["groups"] = {
@@ -1603,7 +1571,7 @@ root(ROOTS.Zones, {
 							["qg"] = 29631,	-- Awilo Longomba
 							["coord"] = { 70.0, 39.0, NORTHREND_DALARAN },
 						}),
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["requireSkill"] = COOKING,
 						["isDaily"] = true,
 						["groups"] = {
@@ -1623,7 +1591,7 @@ root(ROOTS.Zones, {
 					q(13834, {	-- Dangerously Delicious
 						["qg"] = 28742,	-- Marcia Chase
 						["coord"] = { 53.0, 64.9, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { WINTERGRASP },
 						["requireSkill"] = FISHING,
 						["isDaily"] = true,
@@ -1637,7 +1605,7 @@ root(ROOTS.Zones, {
 					q(13836, {	-- Disarmed!
 						["qg"] = 28742,	-- Marcia Chase
 						["coord"] = { 53.0, 64.9, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["requireSkill"] = FISHING,
 						["isDaily"] = true,
 						["groups"] = {
@@ -1702,7 +1670,7 @@ root(ROOTS.Zones, {
 							["qg"] = 29631,	-- Awilo Longomba
 							["coord"] = { 70.0, 39.0, NORTHREND_DALARAN },
 						}),
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { NORTHREND_THE_UNDERBELLY },
 						["requireSkill"] = COOKING,
 						["isDaily"] = true,
@@ -1733,7 +1701,7 @@ root(ROOTS.Zones, {
 					q(13832, {	-- Jewel Of The Sewers
 						["qg"] = 28742,	-- Marcia Chase
 						["coord"] = { 53.0, 64.9, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { NORTHREND_THE_UNDERBELLY },
 						["requireSkill"] = FISHING,
 						["isDaily"] = true,
@@ -1832,7 +1800,7 @@ root(ROOTS.Zones, {
 							["qg"] = 29631,	-- Awilo Longomba
 							["coord"] = { 70.0, 39.0, NORTHREND_DALARAN },
 						}),
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["requireSkill"] = COOKING,
 						["isDaily"] = true,
 						["groups"] = {
@@ -1893,7 +1861,7 @@ root(ROOTS.Zones, {
 					q(13254, {	-- Proof of Demise: Anub'arak
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -1909,7 +1877,7 @@ root(ROOTS.Zones, {
 					q(13256, {	-- Proof of Demise: Cyanigosa
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -1925,7 +1893,7 @@ root(ROOTS.Zones, {
 					q(13250, {	-- Proof of Demise: Gal'darah
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -1941,7 +1909,7 @@ root(ROOTS.Zones, {
 					q(13255, {	-- Proof of Demise: Herald Volazj
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -1957,7 +1925,7 @@ root(ROOTS.Zones, {
 					q(13245, {	-- Proof of Demise: Ingvar the Plunderer
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -1973,7 +1941,7 @@ root(ROOTS.Zones, {
 					q(13246, {	-- Proof of Demise: Keristrasza
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -1989,7 +1957,7 @@ root(ROOTS.Zones, {
 					q(13248, {	-- Proof of Demise: King Ymiron
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2005,7 +1973,7 @@ root(ROOTS.Zones, {
 					q(13247, {	-- Proof of Demise: Ley-Guardian Eregos
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2021,7 +1989,7 @@ root(ROOTS.Zones, {
 					q(13253, {	-- Proof of Demise: Loken
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2037,7 +2005,7 @@ root(ROOTS.Zones, {
 					q(13251, {	-- Proof of Demise: Mal'Ganis
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2053,7 +2021,7 @@ root(ROOTS.Zones, {
 					q(13252, {	-- Proof of Demise: Sjonnir The Ironshaper
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2069,7 +2037,7 @@ root(ROOTS.Zones, {
 					applyclassicphase(WRATH_PHASE_THREE, q(14199, {	-- Proof of Demise: The Black Knight
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = [[function(t)
 							if _.Settings:GetUnobtainableFilter(]] .. WRATH_PHASE_FOUR .. [[) then
@@ -2093,7 +2061,7 @@ root(ROOTS.Zones, {
 					q(13249, {	-- Proof of Demise: The Prophet Tharon'ja
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2110,7 +2078,7 @@ root(ROOTS.Zones, {
 					applyclassicphase(WRATH_PHASE_FOUR, q(78752, {	-- Proof of Demise: Titan Rune Protocol Gamma
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if BEFORE 4.0.1
 						["description"] = "The quest item can also drop from any of the new Icecrown Heroic Dungeons.",
 						-- #endif
@@ -2146,7 +2114,7 @@ root(ROOTS.Zones, {
 					applyclassicphase(WRATH_PHASE_FOUR, q(78753, {	-- Proof of Demise: Threats to Azeroth
 						["qg"] = 20735,	-- Archmage Lan'dalock
 						["coord"] = { 57.6, 66.8, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["timeline"] = { ADDED_3_3_0, REMOVED_4_0_1 },
 						["maps"] = {
 							AHNKAHET_THE_OLD_KINGDOM,
@@ -2208,7 +2176,7 @@ root(ROOTS.Zones, {
 							["qg"] = 29631,	-- Awilo Longomba
 							["coord"] = { 70.0, 39.0, NORTHREND_DALARAN },
 						}),
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { NORTHREND_THE_UNDERBELLY, CRYSTALSONG_FOREST },
 						["requireSkill"] = COOKING,
 						["isDaily"] = true,
@@ -2228,7 +2196,7 @@ root(ROOTS.Zones, {
 					q(12958, {	-- Shipment: Blood Jade Amulet
 						["qg"] = 28701,	-- Timothy Jones
 						["coord"] = { 40.7, 35.4, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { ICECROWN, THE_STORM_PEAKS, HOWLING_FJORD },
 						["requireSkill"] = JEWELCRAFTING,
 						["isDaily"] = true,
@@ -2248,7 +2216,7 @@ root(ROOTS.Zones, {
 					q(12962, {	-- Shipment: Bright Armor Relic
 						["qg"] = 28701,	-- Timothy Jones
 						["coord"] = { 40.7, 35.4, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { DRAGONBLIGHT, THE_STORM_PEAKS },
 						["requireSkill"] = JEWELCRAFTING,
 						["isDaily"] = true,
@@ -2268,7 +2236,7 @@ root(ROOTS.Zones, {
 					q(12959, {	-- Shipment: Glowing Ivory Figurine
 						["qg"] = 28701,	-- Timothy Jones
 						["coord"] = { 40.7, 35.4, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { DRAGONBLIGHT, SHOLAZAR_BASIN, THE_STORM_PEAKS },
 						["requireSkill"] = JEWELCRAFTING,
 						["isDaily"] = true,
@@ -2288,7 +2256,7 @@ root(ROOTS.Zones, {
 					q(12961, {	-- Shipment: Intricate Bone Figurine
 						["qg"] = 28701,	-- Timothy Jones
 						["coord"] = { 40.7, 35.4, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { THE_STORM_PEAKS, SHOLAZAR_BASIN, HOWLING_FJORD },
 						["requireSkill"] = JEWELCRAFTING,
 						["isDaily"] = true,
@@ -2308,7 +2276,7 @@ root(ROOTS.Zones, {
 					q(12963, {	-- Shipment: Shifting Sun Curio
 						["qg"] = 28701,	-- Timothy Jones
 						["coord"] = { 40.7, 35.4, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { ICECROWN, CRYSTALSONG_FOREST },
 						["requireSkill"] = JEWELCRAFTING,
 						["isDaily"] = true,
@@ -2328,7 +2296,7 @@ root(ROOTS.Zones, {
 					q(12960, {	-- Shipment: Wicked Sun Brooch
 						["qg"] = 28701,	-- Timothy Jones
 						["coord"] = { 40.7, 35.4, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { THE_STORM_PEAKS, HOWLING_FJORD, GRIZZLY_HILLS },
 						["requireSkill"] = JEWELCRAFTING,
 						["isDaily"] = true,
@@ -2354,7 +2322,7 @@ root(ROOTS.Zones, {
 					q(13830, {	-- The Ghostfish
 						["qg"] = 28742,	-- Marcia Chase
 						["coord"] = { 53.0, 64.9, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						["maps"] = { SHOLAZAR_BASIN },
 						["requireSkill"] = FISHING,
 						["isDaily"] = true,
@@ -2410,7 +2378,7 @@ root(ROOTS.Zones, {
 					q(13240, {	-- Timear Foresees Centrifuge Constructs in your Future!
 						["qg"] = 31439,	-- Archmage Timear
 						["coord"] = { 63.8, 55.0, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2442,7 +2410,7 @@ root(ROOTS.Zones, {
 					q(13243, {	-- Timear Foresees Infinite Agents in your Future!
 						["qg"] = 31439,	-- Archmage Timear
 						["coord"] = { 63.8, 55.0, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2474,7 +2442,7 @@ root(ROOTS.Zones, {
 					q(13244, {	-- Timear Foresees Titanium Vanguards in your Future!
 						["qg"] = 31439,	-- Archmage Timear
 						["coord"] = { 63.8, 55.0, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2506,7 +2474,7 @@ root(ROOTS.Zones, {
 					q(13241, {	-- Timear Foresees Ymirjar Berserkers in your Future!
 						["qg"] = 31439,	-- Archmage Timear
 						["coord"] = { 63.8, 55.0, NORTHREND_DALARAN },
-						["maxReputation"] = { 1090, EXALTED },	-- Kirin Tor, Exalted.
+						["maxReputation"] = { FACTION_KIRIN_TOR, EXALTED },	-- Kirin Tor, Exalted.
 						-- #if ANYCLASSIC
 						["OnUpdate"] = OnUpdateForTimearDailies,
 						-- #endif
@@ -2655,7 +2623,6 @@ root(ROOTS.Zones, {
 						},
 					}),
 				}),
-				-- #if NOT ANYCLASSIC
 				n(TREASURES, {
 					o(192709, {	-- The Schools of Arcane Magic - Abjuration
 						["description"] = "The floor of the Dalaran Visitors Center next to a small book covered table.",
@@ -2690,7 +2657,6 @@ root(ROOTS.Zones, {
 						["coord"] = { 46.8, 40.0, NORTHREND_DALARAN },
 					}),
 				}),
-				-- #endif
 				n(VENDORS, {
 					-- #if BEFORE 8.0.1
 					n(28994, {	-- Abra Cadabra [WRATH] / Wanda Chanter <Wands> [BFA+]
@@ -2741,79 +2707,6 @@ root(ROOTS.Zones, {
 							i(44693),	-- Wound Dressing
 						},
 					}),
-					-- #if ANYCLASSIC
-					applyclassicphase(WRATH_PHASE_THREE, n(207128, {	-- Animated Constellation <Sidereal Essence Exchange>
-						["coords"] = {
-							{ 38.0, 56.6, NORTHREND_DALARAN },
-							{ 66.4, 24.6, NORTHREND_DALARAN },
-						},
-						["groups"] = {
-							siderealessence(3, i(47556)),	-- Crusader Orb
-							siderealessence(38, i(45868)),	-- Aesir's Edge
-							siderealessence(38, i(46035)),	-- Aesuga, Hand of the Ardent Champion
-							siderealessence(19, i(46068)),	-- Amice of Inconceivable Horror
-							siderealessence(19, i(46048)),	-- Band of Lights
-							siderealessence(19, i(45455)),	-- Belt of the Crystal Tree
-							siderealessence(15, i(45888)),	-- Bitter Cold Armguards
-							siderealessence(25, i(45867)),	-- Breastplate of the Stoneshaper
-							siderealessence(32, i(46039)),	-- Breastplate of the Timeless
-							siderealessence(25, i(46097)),	-- Caress of Insanity
-							siderealessence(25, i(45930)),	-- Combatant's Bootblade
-							siderealessence(24, i(46038)),	-- Dark Matter
-							siderealessence(15, i(46032)),	-- Drape of the Faceless General
-							siderealessence(19, i(46042)),	-- Drape of the Messenger
-							siderealessence(15, i(45946)),	-- Fire Orchid Signet
-							siderealessence(15, i(45869)),	-- Fluxing Energy Coils
-							siderealessence(25, i(45982)),	-- Fused Alloy Legplates
-							siderealessence(38, i(45990)),	-- Fusion Blade
-							siderealessence(19, i(45928)),	-- Gauntlets of the Thunder God
-							siderealessence(25, i(45295)),	-- Gilded Steel Legplates
-							siderealessence(24, i(46043)),	-- Gloves of the Endless Dark
-							siderealessence(19, i(45943)),	-- Gloves of Whispering Winds
-							siderealessence(19, i(45988)),	-- Greaves of the Iron Army
-							siderealessence(38, i(46067)),	-- Hammer of Crushing Whispers
-							siderealessence(19, i(45293)),	-- Handguards of Potent Cures
-							siderealessence(25, i(45887)),	-- Ice Layered Barrier
-							siderealessence(38, i(45886)),	-- Icecore Staff
-							siderealessence(25, i(46034)),	-- Leggings of Profound Darkness
-							siderealessence(15, i(45456)),	-- Loop of the Agile
-							siderealessence(38, i(45870)),	-- Magnetized Projectile Emitter
-							siderealessence(19, i(45300)),	-- Mantle of Fiery Vengeance
-							siderealessence(24, i(46051)),	-- Meteorite Crystal
-							siderealessence(25, i(45993)),	-- Mimiron's Flight Goggles
-							siderealessence(19, i(45931)),	-- Mjolnir Runestone
-							siderealessence(19, i(46046)),	-- Nebula Band
-							siderealessence(24, i(46044)),	-- Observer's Mantle
-							siderealessence(15, i(45933)),	-- Pendant of the Shallow Grave
-							siderealessence(19, i(46047)),	-- Pendant of the Somber Witness
-							siderealessence(25, i(45448)),	-- Perilous Bite
-							siderealessence(15, i(45294)),	-- Petrified Ivy Sprig
-							siderealessence(24, i(46045)),	-- Pulsar Gloves
-							siderealessence(15, i(45871)),	-- Seal of Ulduar
-							siderealessence(15, i(45945)),	-- Seed of Budding Carnage
-							siderealessence(25, i(45947)),	-- Serilas, Blood Blade of Invar One-Arm
-							siderealessence(15, i(45297)),	-- Shimmering Seal
-							siderealessence(25, i(45876)),	-- Shiver
-							siderealessence(24, i(46037)),	-- Shoulderplates of the Celestial Watch
-							siderealessence(19, i(45929)),	-- Sif's Remembrance
-							siderealessence(15, i(46096)),	-- Signet of Soft Lament
-							siderealessence(19, i(46095)),	-- Soul-Devouring Cinch
-							siderealessence(24, i(46041)),	-- Starfall Girdle
-							siderealessence(24, i(46050)),	-- Starlight Treads
-							siderealessence(19, i(46040)),	-- Strength of the Heavens
-							siderealessence(19, i(45989)),	-- Tempered Mercury Greaves
-							siderealessence(25, i(45877)),	-- The Boreal Guard
-							siderealessence(25, i(45449)),	-- The Masticator
-							siderealessence(38, i(46033)),	-- Tortured Earth
-							siderealessence(15, i(45296, {	-- Twirling Blades
-								["timeline"] = { REMOVED_5_0_4 },
-							})),
-							siderealessence(25, i(46036)),	-- Void Sabre
-							siderealessence(15, i(45447)),	-- Watchful Eye of Fate
-							siderealessence(32, i(46049)),	-- Zodiac Leggings
-						},
-					})),
-					-- #endif
 					n(28990, {	-- Anthony Durain <Shield Merchant>
 						["coord"] = { 46.8, 27.6, NORTHREND_DALARAN },
 						["groups"] = {
@@ -2848,38 +2741,42 @@ root(ROOTS.Zones, {
 					})),
 					n(32287, {	-- Archmage Alvareaux <Kirin Tor Quartermaster>
 						["coord"] = { 25.2, 47.8, NORTHREND_DALARAN },
-						["groups"] = {
-							i(50368, {	-- Arcanum of Burning Mysteries
-								["description"] = "This version is only visible on the vendor when you aren't at the required reputation to purchase it yet on your current character.",
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44159, {	-- Arcanum of Burning Mysteries
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44141, {	-- Arcanum of the Flame's Soul
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44182),	-- Boots of Twinkling Stars
-							i(41718),	-- Design: Brilliant Scarlet Ruby [CATA+] / Design: Runed Scarlet Ruby [WRATH]
-							i(44183),	-- Fireproven Gauntlets
-							i(44173),	-- Flameheart Spell Scalpel
-							i(44181),	-- Ghostflicker Waistband
-							i(44176),	-- Girdle of the Warrior Magi
-							i(44170),	-- Helm of the Majestic Stag
-							i(44166),	-- Lightblade Rivener
-							i(44179),	-- Mind-Expanding Leggings
-							i(42188),	-- Pattern: Sapphire Spellthread
-							i(44180),	-- Robes of Crackling Flame
-							i(44167),	-- Shroud of Dedicated Research
-							i(44171),	-- Spaulders of Grounded Lightning
-							i(44174),	-- Stave of Shrouded Mysteries
-							i(43157, {	-- Tabard of the Kirin Tor
-								["factionID"] = 1090,	-- Kirin Tor
-							}),
-						},
+						["groups"] = bubbleDownClassicRep(FACTION_KIRIN_TOR, {
+							{		-- Neutral
+							}, {	-- Friendly
+								i(43157),	-- Tabard of the Kirin Tor
+							}, {	-- Honored
+								i(44141, {	-- Arcanum of the Flame's Soul
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44170),	-- Helm of the Majestic Stag
+								i(44166),	-- Lightblade Rivener
+								i(44167),	-- Shroud of Dedicated Research
+								i(44171),	-- Spaulders of Grounded Lightning
+							}, {	-- Revered
+								i(50368, {	-- Arcanum of Burning Mysteries
+									["description"] = "This version is only visible on the vendor when you aren't at the required reputation to purchase it yet on your current character.",
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44159, {	-- Arcanum of Burning Mysteries
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44173),	-- Flameheart Spell Scalpel
+								i(44176),	-- Girdle of the Warrior Magi
+								i(44179),	-- Mind-Expanding Leggings
+								i(44174),	-- Stave of Shrouded Mysteries
+							}, {	-- Exalted
+								i(44182),	-- Boots of Twinkling Stars
+								i(41718),	-- Design: Brilliant Scarlet Ruby [CATA+] / Design: Runed Scarlet Ruby [WRATH]
+								i(44183),	-- Fireproven Gauntlets
+								i(44181),	-- Ghostflicker Waistband
+								i(42188),	-- Pattern: Sapphire Spellthread
+								i(44180),	-- Robes of Crackling Flame
+							},
+						}),
 					}),
 					n(29499, {	-- Bartram Haller <Dagger & Fist Weapon Merchant>
 						["coord"] = { 53.5, 62.4, NORTHREND_DALARAN },
@@ -3153,188 +3050,6 @@ root(ROOTS.Zones, {
 							emoh(40, i(40683)),	-- Valor Medal of the First War
 						},
 					}),
-					-- #if ANYCLASSIC
-					applyclassicphase(WRATH_PHASE_FOUR, n(211340, {	-- Kolara Dreamsmasher <Defiler's Scourgestone Exchange>
-						["coord"] = { 65.8, 24.8, NORTHREND_DALARAN },
-						["races"] = HORDE_ONLY,
-						["groups"] = {
-							defilersscourgestone(1, currency(SIDEREAL_ESSENCE)),	-- Sidereal Essence
-							defilersscourgestone(12, i(49908)),	-- Primordial Saronite
-							defilersscourgestone(20, i(47242)),	-- Trophy of the Crusade
-
-							-- Ulduar 25 HM Items
-							defilersscourgestone(60, i(45461)),	-- Drape of Icy Intent
-							defilersscourgestone(60, i(45242)),	-- Drape of Mortal Downfall
-							defilersscourgestone(60, i(45486)),	-- Drape of the Sullen Goddess
-							defilersscourgestone(60, i(45496)),	-- Titanskin Cloak
-							defilersscourgestone(60, i(45495)),	-- Conductive Seal
-							defilersscourgestone(60, i(45471)),	-- Fate's Clutch
-							defilersscourgestone(60, i(45534)),	-- Seal of the Betrayed King
-							defilersscourgestone(60, i(45485)),	-- Bronze Pendant of the Vanir
-							defilersscourgestone(60, i(45443)),	-- Charm of Meticulous Timing
-							defilersscourgestone(60, i(45459)),	-- Frigid Strength of Hodir
-							defilersscourgestone(60, i(45133)),	-- Pendant of Fiery Havoc
-							defilersscourgestone(60, i(45517)),	-- Pendulum of Infinity
-							defilersscourgestone(60, i(45243)),	-- Sapphire Amulet of Renewal
-							defilersscourgestone(60, i(45609)),	-- Comet's Trail
-							defilersscourgestone(60, i(45518)),	-- Flare of the Heavens
-							defilersscourgestone(60, i(45535)),	-- Show of Faith
-
-							-- TOC 25 Items (Horde)
-							defilersscourgestone(30, i(47257)),	-- Cloak of the Untamed Predator
-							defilersscourgestone(30, i(47256)),	-- Drape of the Refreshing Winds
-							defilersscourgestone(30, i(47328)),	-- Maiden's Adoration
-							defilersscourgestone(30, i(47320)),	-- Might of the Nerub
-							defilersscourgestone(30, i(47275)),	-- Pride of the Demon Lord
-							defilersscourgestone(30, i(47291)),	-- Shroud of Displacement
-							defilersscourgestone(38, i(47262)),	-- Boots of the Harsh Winter
-							defilersscourgestone(38, i(47321)),	-- Boots of the Icy Floe
-							defilersscourgestone(38, i(47269)),	-- Dawnbreaker Sabatons
-							defilersscourgestone(38, i(47296)),	-- Greaves of Ruthless Judgment
-							defilersscourgestone(38, i(47312)),	-- Greaves of the Saronite Citadel
-							defilersscourgestone(38, i(47284)),	-- Icewalker Treads
-							defilersscourgestone(38, i(47263)),	-- Sabatons of the Courageous
-							defilersscourgestone(38, i(47295)),	-- Sabatons of Tremoring Earth
-							defilersscourgestone(38, i(47293)),	-- Sandals of the Mourning Widow
-							defilersscourgestone(30, i(47282)),	-- Band of Callous Aggression
-							defilersscourgestone(30, i(47315)),	-- Band of the Traitor King
-							defilersscourgestone(30, i(47278)),	-- Circle of the Darkmender
-							defilersscourgestone(30, i(47327)),	-- Lurid Manifestation
-							defilersscourgestone(30, i(47252)),	-- Ring of the Violent Temperament
-							defilersscourgestone(30, i(47309)),	-- Mystifying Charm
-							defilersscourgestone(30, i(47276)),	-- Talisman of Heedless Sins
-							defilersscourgestone(60, i(47261)),	-- Barb of Tarasque
-							defilersscourgestone(60, i(47322)),	-- Suffering's End
-							defilersscourgestone(30, i(47272)),	-- Charge of the Eredar
-							defilersscourgestone(30, i(47307)),	-- Cry of the Val'kyr
-							defilersscourgestone(30, i(47305)),	-- Legionnaire's Gorget
-							defilersscourgestone(30, i(47297)),	-- The Executioner's Vice
-							defilersscourgestone(50, i(47266)),	-- Blood Fury
-							defilersscourgestone(50, i(47300)),	-- Gouge of the Frigid Heart
-							defilersscourgestone(50, i(47314)),	-- Hellscream Slicer
-							defilersscourgestone(50, i(47255)),	-- Stygian Bladebreaker
-							defilersscourgestone(76, i(47267)),	-- Death's Head Crossbow
-							defilersscourgestone(50, i(47287)),	-- Bastion of Resolve
-							defilersscourgestone(50, i(47260)),	-- Forlorn Barrier
-							defilersscourgestone(38, i(47303)),	-- Death's Choice
-							defilersscourgestone(38, i(47290)),	-- Juggernaut's Vitality
-							defilersscourgestone(38, i(47316)),	-- Reign of the Dead
-							defilersscourgestone(38, i(47271)),	-- Solace of the Fallen
-							defilersscourgestone(76, i(47285)),	-- Dual-blade Butcher
-							defilersscourgestone(76, i(47329)),	-- Hellion Glaive
-							defilersscourgestone(76, i(47302)),	-- Twin's Pact
-							defilersscourgestone(38, i(47286)),	-- Belt of Biting Cold
-							defilersscourgestone(38, i(47283)),	-- Belt of Bloodied Scars
-							defilersscourgestone(38, i(47308)),	-- Belt of Pale Thorns
-							defilersscourgestone(38, i(47299)),	-- Belt of the Pitiless Killer
-							defilersscourgestone(38, i(47258)),	-- Belt of the Tenebrous Mist
-							defilersscourgestone(38, i(47265)),	-- Binding of the Ice Burrower
-							defilersscourgestone(38, i(47268)),	-- Bloodbath Girdle
-							defilersscourgestone(38, i(47323)),	-- Girdle of the Forgotten Martyr
-							defilersscourgestone(38, i(47311)),	-- Waistguard of Deathly Dominion
-
-							defilersscourgestone(30, i(47313)),	-- Armbands of Dark Determination
-							defilersscourgestone(30, i(47298)),	-- Armguards of the Shieldmaiden
-							defilersscourgestone(30, i(47324)),	-- Bindings of the Ashen Saint
-							defilersscourgestone(30, i(47277)),	-- Bindings of the Autumn Willow
-							defilersscourgestone(30, i(47253)),	-- Boneshatter Vambraces
-							defilersscourgestone(30, i(47294)),	-- Bracers of the Broken Bond
-							defilersscourgestone(30, i(47281)),	-- Bracers of the Silent Massacre
-							defilersscourgestone(30, i(47306)),	-- Dark Essence Bindings
-							defilersscourgestone(30, i(47280)),	-- Wristwraps of Cloudy Omen
-						},
-					})),
-					applyclassicphase(WRATH_PHASE_FOUR, n(211332, {	-- Korralin Hoperender <Defiler's Scourgestone Exchange>
-						["coord"] = { 37.2, 56.0, NORTHREND_DALARAN },
-						["races"] = ALLIANCE_ONLY,
-						["groups"] = {
-							defilersscourgestone(1, currency(SIDEREAL_ESSENCE)),	-- Sidereal Essence
-							defilersscourgestone(12, i(49908)),	-- Primordial Saronite
-							defilersscourgestone(20, i(47242)),	-- Trophy of the Crusade
-
-							-- Ulduar 25 HM Items
-							defilersscourgestone(60, i(45461)),	-- Drape of Icy Intent
-							defilersscourgestone(60, i(45242)),	-- Drape of Mortal Downfall
-							defilersscourgestone(60, i(45486)),	-- Drape of the Sullen Goddess
-							defilersscourgestone(60, i(45496)),	-- Titanskin Cloak
-							defilersscourgestone(60, i(45495)),	-- Conductive Seal
-							defilersscourgestone(60, i(45471)),	-- Fate's Clutch
-							defilersscourgestone(60, i(45534)),	-- Seal of the Betrayed King
-							defilersscourgestone(60, i(45485)),	-- Bronze Pendant of the Vanir
-							defilersscourgestone(60, i(45443)),	-- Charm of Meticulous Timing
-							defilersscourgestone(60, i(45459)),	-- Frigid Strength of Hodir
-							defilersscourgestone(60, i(45133)),	-- Pendant of Fiery Havoc
-							defilersscourgestone(60, i(45517)),	-- Pendulum of Infinity
-							defilersscourgestone(60, i(45243)),	-- Sapphire Amulet of Renewal
-							defilersscourgestone(60, i(45609)),	-- Comet's Trail
-							defilersscourgestone(60, i(45518)),	-- Flare of the Heavens
-							defilersscourgestone(60, i(45535)),	-- Show of Faith
-
-							-- TOC 25 Items (Alliance)
-							defilersscourgestone(30, i(47089)),	-- Cloak of Displacement
-							defilersscourgestone(30, i(46970)),	-- Drape of the Untamed Predator
-							defilersscourgestone(30, i(47225)),	-- Maiden's Favor
-							defilersscourgestone(30, i(47042)),	-- Pride of the Eredar
-							defilersscourgestone(30, i(46976)),	-- Shawl of the Refreshing Winds
-							defilersscourgestone(30, i(47183)),	-- Strength of the Nerub
-							defilersscourgestone(38, i(46985)),	-- Boots of the Courageous
-							defilersscourgestone(38, i(47092)),	-- Boots of the Mourning Widow
-							defilersscourgestone(38, i(46988)),	-- Boots of the Unrelenting Storm
-							defilersscourgestone(38, i(47090)),	-- Boots of Tremoring Earth
-							defilersscourgestone(38, i(46997)),	-- Dawnbreaker Greaves
-							defilersscourgestone(38, i(47194)),	-- Footpads of the Icy Floe
-							defilersscourgestone(38, i(47150)),	-- Greaves of the 7th Legion
-							defilersscourgestone(38, i(47106)),	-- Sabatons of Ruthless Judgment
-							defilersscourgestone(38, i(47071)),	-- Treads of the Icewalker
-							defilersscourgestone(30, i(47054)),	-- Band of Deplorable Violence
-							defilersscourgestone(30, i(46959)),	-- Band of the Violent Temperment
-							defilersscourgestone(30, i(47070)),	-- Ring of Callous Aggression
-							defilersscourgestone(30, i(47223)),	-- Ring of the Darkmender
-							defilersscourgestone(30, i(47149)),	-- Signet of the Traitor King
-							defilersscourgestone(30, i(47138)),	-- Chalice of Searing Light
-							defilersscourgestone(30, i(47053)),	-- Symbol of Transgression
-							defilersscourgestone(60, i(46979)),	-- Blade of Tarasque
-							defilersscourgestone(60, i(47193)),	-- Misery's End
-							defilersscourgestone(30, i(47043)),	-- Charge of the Demon Lord
-							defilersscourgestone(30, i(47116)),	-- The Arbiter's Muse
-							defilersscourgestone(30, i(47105)),	-- The Executioner's Malice
-							defilersscourgestone(30, i(47139)),	-- Wail of the Val'kyr
-							defilersscourgestone(50, i(46996)),	-- Lionhead Slasher
-							defilersscourgestone(50, i(46958)),	-- Steel Bladebreaker
-							defilersscourgestone(50, i(47148)),	-- Stormpike Cleaver
-							defilersscourgestone(50, i(47104)),	-- Twin Spike
-							defilersscourgestone(76, i(46994)),	-- Talonstrike
-							defilersscourgestone(50, i(47079)),	-- Bastion of Purity
-							defilersscourgestone(50, i(46963)),	-- Crystal Plated Vanguard
-							defilersscourgestone(38, i(47115)),	-- Death's Verdict
-							defilersscourgestone(38, i(47182)),	-- Reign of the Unliving
-							defilersscourgestone(38, i(47080)),	-- Satrina's Impeding Scarab
-							defilersscourgestone(38, i(47041)),	-- Solace of the Defeated
-							defilersscourgestone(76, i(47233)),	-- Archon Glaive
-							defilersscourgestone(76, i(47069)),	-- Justicebringer
-							defilersscourgestone(76, i(47114)),	-- Lupine Longstaff
-							defilersscourgestone(38, i(47152)),	-- Belt of Deathly Dominion
-							defilersscourgestone(38, i(47195)),	-- Belt of the Forgotten Martyr
-							defilersscourgestone(38, i(46990)),	-- Belt of the Ice Burrower
-							defilersscourgestone(38, i(47107)),	-- Belt of the Merciless Killer
-							defilersscourgestone(38, i(46999)),	-- Bloodbath Belt
-							defilersscourgestone(38, i(47081)),	-- Cord of Biting Cold
-							defilersscourgestone(38, i(47140)),	-- Cord of Pale Thorns
-							defilersscourgestone(38, i(46972)),	-- Cord of the Tenebrous Mist
-							defilersscourgestone(38, i(47072)),	-- Girdle of Bloodied Scars
-
-							defilersscourgestone(30, i(47203)),	-- Armbands of the Ashen Saint
-							defilersscourgestone(30, i(47141)),	-- Bindings of Dark Essence
-							defilersscourgestone(30, i(46961)),	-- Boneshatter Armplates
-							defilersscourgestone(30, i(47056)),	-- Bracers of Cloudy Omen
-							defilersscourgestone(30, i(47151)),	-- Bracers of Dark Determination
-							defilersscourgestone(30, i(47055)),	-- Bracers of the Autumn Willow
-							defilersscourgestone(30, i(47108)),	-- Bracers of the Shieldmaiden
-							defilersscourgestone(30, i(47073)),	-- Bracers of the Untold Massacre
-							defilersscourgestone(30, i(47093)),	-- Vambraces of the Broken Bond
-						},
-					})),
-					-- #endif
 					n(31032, {	-- Derek Odds <Cooking Supplies>
 						["coord"] = { 40.7, 65.9, NORTHREND_DALARAN },
 						["races"] = ALLIANCE_ONLY,
@@ -3690,7 +3405,11 @@ root(ROOTS.Zones, {
 						["coord"] = { 69.73, 45.45, NORTHREND_DALARAN },
 						["groups"] = {
 							i(49177, {	-- Tome of Cold Weather Flight
+								-- #IF ANYCLASSIC
 								["recipeID"] = 54197,	-- Cold Weather Flight
+								-- #ELSE
+								["f"] = MISC,
+								-- #ENDIF
 								["timeline"] = { REMOVED_4_0_1 },
 								["cost"] = {{ "g", 10000000 }},	-- 1000g
 							}),
@@ -3785,7 +3504,7 @@ root(ROOTS.Zones, {
 							i(42360),	-- Ebon Filigreed Doublet
 							i(42369),	-- Ebon Filigreed Shirt
 							i(53852, {	-- Embroidered Shirt
-								["timeline"] = { ADDED_4_0_3 },
+								["timeline"] = { ADDED_6_0_3 },
 								["cost"] = 10000000,	-- 1,000g
 							}),
 							i(42363),	-- Golden Filigreed Doublet
@@ -4177,7 +3896,7 @@ root(ROOTS.Zones, {
 					}),
 					-- #if AFTER CATA
 					n(32712, {	-- The Amazing Zanzo
-						["description"] = "Wanders around the commerce and alliance bank sections.",
+						["description"] = "This NPC have two possiple spawns and routes: Either leaving The Militiant Mystic in The Eventide going to the nearby bank, or leaving the Legerdemain Lounge for a stroll through the Magus Commerce Exchange and back.",
 						["groups"] = {
 							{
 								["recipeID"] = 28272,	-- Polymorph (Pig)
@@ -4859,6 +4578,7 @@ root(ROOTS.Zones, {
 					["timeline"] = { ADDED_4_0_1 },
 					["sym"] = WARCHIEFS_COMMAND_BOARD_SYMLINK,
 					["races"] = HORDE_ONLY,
+					["skipFill"] = true,
 				}),
 				-- #endif
 			},

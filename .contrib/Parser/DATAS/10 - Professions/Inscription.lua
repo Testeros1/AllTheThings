@@ -391,6 +391,10 @@ GLYPH_OF_COLD_WAVES = r(304036, {	-- Glyph of the Cold Waves
 	["name"] = "Glyph of the Cold Waves",
 	["timeline"] = { ADDED_8_2_0 },
 });
+GLYPH_OF_COLLOSUS_SMASH = r(89815, {	-- Glyph of Colossus Smash
+	["name"] = "Glyph of Colossus Smash",
+	["timeline"] = { ADDED_4_0_3, REMOVED_6_0_2 },
+});
 GLYPH_OF_COMMAND_AND_THUNDER_STRIKE = r(68166, {	-- Glyph of Command / Glyph of Thunder Strike [CATA+]
 	-- #if AFTER CATA
 	["name"] = "Glyph of Thunder Strike",
@@ -3391,6 +3395,7 @@ local CLASS_GLYPHS = cat(1126, {	-- Glyphs
 		GLYPH_OF_BURNING_ANGER,
 		GLYPH_OF_CHARGE_AND_LONG_CHARGE,
 		GLYPH_OF_CLEAVING_AND_HINDERING_STRIKES,
+		GLYPH_OF_COLLOSUS_SMASH,
 		GLYPH_OF_COMMAND_AND_THUNDER_STRIKE,
 		GLYPH_OF_CROW_FEAST_AND_HAWK_FEAST,
 		GLYPH_OF_DEATH_WISH_AND_RECKLESSNESS,
@@ -3530,7 +3535,7 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 			crit(60914, {	-- Swarm of Origami Beetles released in Eastern Plaguelands
 				["provider"] = { "i", 63246 },	-- Origami Beetle
 			}),
-			crit(60917, {	-- 	Swarm of Origami Slimes released in Felwood
+			crit(60917, {	-- Swarm of Origami Slimes released in Felwood
 				["provider"] = { "i", 62239 },	-- Origami Slime
 			}),
 			crit(60918, {	-- Swarm of Origami Slimes released in Maldraxxus
@@ -4270,6 +4275,17 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 		}),
 		-- #if BEFORE 5.0.4
 		n(RELICS, {
+			-- #if ANYCLASSIC
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, r(1216316, {	-- Bloodthirsty Charm of Triumph
+				["timeline"] = { ADDED_4_2_0, DELETED_5_0_4 },
+			})),
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, r(1216290, {	-- Bloodthirsty Eyeball of Dominance
+				["timeline"] = { ADDED_4_2_0, DELETED_5_0_4 },
+			})),
+			applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, r(1216317, {	-- Bloodthirsty Jawbone of Conquest
+				["timeline"] = { ADDED_4_2_0, DELETED_5_0_4 },
+			})),
+			-- #endif
 			r(86647, {	-- Etched Horn
 				["timeline"] = { ADDED_4_0_3, DELETED_5_0_4 },
 			}),
@@ -4288,6 +4304,20 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 			r(86652, {	-- Tattooed Eyeball / Rosethorn Staff [5.0.4+]
 				["timeline"] = { ADDED_4_0_3 },
 			}),
+			-- #if ANYCLASSIC
+			--[[
+			-- TODO: Blizzard is gonna add new spellIDs because they can't be bothered to look up reference data from the OG builds. - Crieve
+			applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, r(99547, {	-- Vicious Charm of Triumph
+				["timeline"] = { ADDED_4_3_0, DELETED_5_0_4 },
+			})),
+			applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, r(99548, {	-- Vicious Eyeball of Dominance
+				["timeline"] = { ADDED_4_3_0, DELETED_5_0_4 },
+			})),
+			applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, r(99549, {	-- Vicious Jawbone of Conquest
+				["timeline"] = { ADDED_4_3_0, DELETED_5_0_4 },
+			})),
+			]]--
+			-- #endif
 			r(99547, {	-- Vicious Charm of Triumph
 				["timeline"] = { ADDED_4_0_3, DELETED_5_0_4 },
 			}),
@@ -4376,11 +4406,7 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 			}),
 			r(169081),	-- War Paints
 			r(167950, {	-- Research: Warbinder's Ink
-				-- TODO: use this ItemID as 'cost' on Glyph recipes which can ONLY be learned from using it
-				-- and clean this up it's listed like 6 other times for no reason
-				i(113992, {	-- Scribe's Research Notes
-					["filterID"] = MISC,
-				}),
+				i(113992),	-- Scribe's Research Notes
 			}),
 			r(178497),	-- Warbinder's Ink
 		}),
@@ -4955,19 +4981,22 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 					49694,	-- Turn to Drust [A]
 					49944,	-- Turn to Drust [H]
 				},
-				["provider"] = { "o", 279647 }, -- Tome of Sacrifice
+				["provider"] = { "o", 279647 },	-- Tome of Sacrifice
 				["coord"] = { 20.6, 44, DRUSTVAR },
 				["groups"] = {
 					r(259665),	-- Blood Contract: Sacrifice
+					i(168046),	-- Fresh Heart (QI!)
+					i(156549),	-- Writ of Sacrifice (QI!)
 				},
 			})),
 			q(49874, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {	-- By the Book
 				["sourceQuests"] = { 49873 },	-- Sacrificial Writes
 				["provider"] = { "n", 131657 },	-- Bloodshed Compendium
 				["coord"] = { 20.7, 44, DRUSTVAR },
-				["maps"] = { 1407 }, -- Prison of Ink (Scenario Map)
+				["maps"] = { 1407 },	-- Prison of Ink (Scenario Map)
 				["groups"] = {
 					r(292012),	-- Blood Contract: Bloodshed
+					i(156509),	-- Sanguine Ink (QI!)
 				},
 			})),
 			q(49876, {	-- Lines in the Sand [A]
@@ -4991,12 +5020,15 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 				},
 				["provider"] = { "n", 150318 },	-- Veriss
 				["coord"] = { 27.6, 52.3, VOLDUN },
-				["maps"] = { 1038, 1043 }, -- Temple of Sethraliss
+				["maps"] = { 1038, 1043 },	-- Temple of Sethraliss
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(156512),	-- Tome of Oblivion (QI!)
+				},
 			}),
 			q(49879, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {	-- Brush With Death
 				["sourceQuests"] = { 49877 },	-- Temple of Sethraliss: Booking on a Favor
-				["provider"] = { "o", 279645 }, -- Tome of Oblivion
+				["provider"] = { "o", 279645 },	-- Tome of Oblivion
 				["coord"] = { 27.6, 52.3, VOLDUN },
 				["groups"] = {
 					r(292322),	-- Blood Contract: Oblivion
@@ -5004,10 +5036,13 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 			})),
 			q(49878, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 } }, {	--Penning In Protection
 				["sourceQuests"] = { 49877 },	-- Temple of Sethraliss: Booking on a Favor
-				["provider"] = { "o", 279646 }, -- Bloodguard Chronicles
+				["provider"] = { "o", 279646 },	-- Bloodguard Chronicles
 				["coord"] = { 27.6, 52.2, VOLDUN },
 				["groups"] = {
 					r(292320),	-- Blood Contract: Bloodguard
+					i(156598),	-- Pile of Fine Bone Dust (QI!)
+					i(156600),	-- Vial of Ossein Ink (QI!)
+					i(156601),	-- Zem'lan Pirate Bone (QI!)
 				},
 			})),
 			q(49881, {	-- The Final Verse
@@ -5322,20 +5357,20 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 			},
 		},{
 			i(198607),	-- Scribe's Glyphs
-			q(74105, {	-- Inscription Order: Inscription
-				["name"] = "Inscription Order: Inscription",
+			q(74105, {	-- DF Inscription Order: Inscription
+				["name"] = "DF Inscription Order: Inscription",
 				["provider"] = { "i", 194699 },	-- Draconic Treatise on Inscription
 			}),
-			q(66375, {	-- Weekly Inscription Knowledgepoint #1
-				["name"] = "Inscription Treasure #1",
+			q(66375, {	-- DF Weekly Inscription Knowledgepoint #1
+				["name"] = "DF Inscription Treasure #1",
 				["provider"] = { "i", 193904 },		-- Phoenix Feather Quill
 			}),
-			q(66376, {	-- Weekly Inscription Knowledgepoint #2
-				["name"] = "Inscription Treasure #2",
+			q(66376, {	-- DF Weekly Inscription Knowledgepoint #2
+				["name"] = "DF Inscription Treasure #2",
 				["provider"] = { "i", 193905 },		-- Iskaaran Trading Ledger
 			}),
-			q(70518, {	-- Weekly Inscription Knowledgepoint #3
-				["name"] = "Inscription Drop #1: Qalashi Djaradin",
+			q(70518, {	-- DF Weekly Inscription Knowledgepoint #3
+				["name"] = "DF Inscription Drop #1: Qalashi Djaradin",
 				["description"] = "Drops from any Qalashi Djaradin.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					186109,	-- Qalashi Necksnapper
@@ -5348,8 +5383,8 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 					{ 39.6, 51.4, THE_WAKING_SHORES },
 				},
 			}),
-			q(70519, {	-- Weekly Inscription Knowledgepoint #4
-				["name"] = "Inscription Drop #2: Dragon-kin/Proto Drakes",
+			q(70519, {	-- DF Weekly Inscription Knowledgepoint #4
+				["name"] = "DF Inscription Drop #2: Dragon-kin/Proto Drakes",
 				["description"] = "Drops from any Dragon-kin/Proto Drake.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					193973,	-- Mistyvale Splashcaster
@@ -5361,6 +5396,18 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(228776),	-- Algari Scribe's Journal
+			},
+		},{
+			q(84129, {	-- Inscription  Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
+			}),
+		})),
 		filter(RECIPES, {
 			["description"] = "These are learned by specialization.",
 			["g"] = sharedData({ ["cost"] = {{ "c", TWW_INSCRIPTION_KNOWLEDGE, 1 }} }, {
@@ -5379,15 +5426,77 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 				r(444225),	-- Transcribe: Vivacity
 			}),
 		}),
+		n(TREASURES, {
+			o(455982, {	-- Blue Earthen Pigment
+				["coord"] = { 62.4, 58.0, THE_RINGING_DEEPS },
+				["questID"] = 83885,
+				["g"] = {
+					i(226311),	-- Blue Earthen Pigment
+				},
+			}),
+			o(455980, {	-- Calligrapher's Chiseled Marker
+				["coord"] = { 42.8, 49.0, HALLOWFALL },
+				["questID"] = 83887,
+				["g"] = {
+					i(226313),	-- Calligrapher's Chiseled Marker
+				},
+			}),
+			o(455985, {	-- Dornogal Scribe's Quill
+				["coord"] = { 57.1, 46.98, DORNOGAL },
+				["questID"] = 83882,
+				["g"] = {
+					i(226308),	-- Dornogal Scribe's Quill
+				},
+			}),
+			o(455984, {	-- Historian's Dip Pen
+				["coord"] = { 55.9, 60.0, ISLE_OF_DORN },
+				["questID"] = 83883,
+				["g"] = {
+					i(226309),	-- Historian's Dip Pen
+				},
+			}),
+			o(455981, {	-- Informant's Fountain Pen
+				["coord"] = { 43.2, 58.9, HALLOWFALL },
+				["questID"] = 83886,
+				["g"] = {
+					i(226312),	-- Informant's Fountain Pen
+				},
+			}),
+			o(455979, {	-- Nerubian Texts
+				["coord"] = { 55.8, 43.9, AZJ_KAHET },
+				["questID"] = 83888,
+				["g"] = {
+					i(226314),	-- Nerubian Texts
+				},
+			}),
+			o(455983, {	-- Runic Scroll
+				["coord"] = { 48.5, 34.3, THE_RINGING_DEEPS },
+				["questID"] = 83884,
+				["g"] = {
+					i(226310),	-- Runic Scroll
+				},
+			}),
+			o(455978, {	-- Venomancer's Ink Well
+				["coord"] = { 50.1, 30.8, NERUBAR },
+				["questID"] = 83889,
+				["g"] = {
+					i(226315),	-- Venomancer's Ink Well
+				},
+			}),
+		}),
 		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
 			["isWeekly"] = true,
 			["g"] = {
 				currency(TWW_INSCRIPTION_KNOWLEDGE),
 			},
 		},{
-			q(83730, {	-- Inscription Order: Inscription
-				["name"] = "Inscription Order: Inscription",
-				["provider"] = { "i", 222548 },	-- Algari Treatise on Inscription
+			q(83264, {	-- TWW Weekly Inscription Knowledgepoint #1
+				["name"] = "TWW Weekly Inscription Treasure #1",
+				["provider"] = { "i", 225226 },	-- Striated Inkstone
+			}),
+			q(83262, {	-- TWW Weekly Inscription Knowledgepoint #2
+				["name"] = "TWW Weekly Inscription Treasure #2",
+				["provider"] = { "i", 225227 },	-- Wax-Sealed Records
 			}),
 		})),
 	})),

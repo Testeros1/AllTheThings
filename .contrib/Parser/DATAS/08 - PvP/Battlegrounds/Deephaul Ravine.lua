@@ -3,11 +3,11 @@
 -----------------------------------------------
 root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 	m(2345, {	-- Deephaul Ravine
-		["icon"] = "Interface\\Icons\\inv_achievement_battleground_earthen",
+		["icon"] = 5899325,
 		["timeline"] = { ADDED_11_0_2 },
 		["g"] = {
 			n(ACHIEVEMENTS, {
-				ach(40617,{ 	-- Deepholla
+				ach(40617,{	-- Deepholla
 					-- Meta Achievement
 					["sym"] = {{"meta_achievement",
 						40216,	-- Deephaul Ravine Expedience
@@ -25,12 +25,16 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				ach(40215),	-- Deepwind Ravine Shutout
 				ach(40211),	-- Deephaul Ravine Veteran
 				ach(40210),	-- Deephaul Ravine Victory
+				-- INFO: Verified 2024-10-04, shows a criteria without achraw
 				achraw(40613),	-- Resilient Runner
 				ach(40608),	-- Running in the Ravine
 				ach(40612),	-- Sprinting in the Ravine
 				ach(40615),	-- Unexpected Arrival
 				ach(40616),	-- Unexpected Arrivals
 				ach(40607),	-- Wandering in the Ravine
+			}),
+			n(QUESTS, {
+				q(82748),	-- Deephaul Ravine (auto-accepted when you first time on battleground)
 			}),
 		},
 	}),

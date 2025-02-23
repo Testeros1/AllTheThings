@@ -3,5 +3,7 @@ TIER_THREE = createHeader({
 	-- icon = "", Uses different Icons
 	text = {
 		en = [[~string.format(COVENANT_SANCTUM_TIER, 3)]],
+		cn = "T3套装",
+		tw = "T3套裝",
 	},
 });

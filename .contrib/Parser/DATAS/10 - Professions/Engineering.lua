@@ -6,19 +6,7 @@ local TWW_ENGINEERING_KNOWLEDGE = 2788;
 root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = ENGINEERING }, {
 	n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
 		ach(18901, {	-- Chromatic Calibration: Holo-Gogs
-			i(209062, {	-- Ensemble: Chromatically Calibrated Holo-Gogs
-				i(208787),	-- Black Holo-Gogs
-				i(208788),	-- Blue Holo-Gogs
-				i(208789),	-- Gold Holo-Gogs
-				i(208790),	-- Green Holo-Gogs
-				i(208795),	-- Midnight Holo-Gogs
-				i(208796),	-- Orange Holo-Gogs
-				i(208791),	-- Purple Holo-Gogs
-				i(208792),	-- Red Holo-Gogs
-				i(208793),	-- Silver Holo-Gogs
-				i(208794),	-- White Holo-Gogs
-				i(208797),	-- Yellow Holo-Gogs
-			}),
+			iensemble(209062),	-- Ensemble: Chromatically Calibrated Holo-Gogs
 			crit(61677, {	-- Gnomish Power Goggles
 				["provider"] = { "i", 23828 },	-- Gnomish Power Goggles
 			}),
@@ -191,7 +179,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 			}),
 		})),
 		n(QUESTS, sharedData({
-			["description"] = "Requires 200 Engineering (Classic) to start this quest.",
+			["learnedAt"] = 200,
 		}, {
 			q(3634, {	-- Gnome Engineering [A]
 				["providers"] = {
@@ -563,12 +551,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 	}),
 	expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
 		ach(18908, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {	-- Chromatic Calibration: Bio-Optic Killshades
-			i(209063, {	-- Ensemble: Chromatically Calibrated Bio-Optic Killshades
-				i(208813),	-- Black Bio-Optic Killshades
-				i(208814),	-- Blue Bio-Optic Killshades
-				i(208815),	-- Red Bio-Optic Killshades
-				i(208812),	-- Yellow Bio-Optic Killshades
-			}),
+			iensemble(209063),	-- Ensemble: Chromatically Calibrated Bio-Optic Killshades
 			crit(61820, {	-- Reinforced Bio-Optic Killshades
 				["provider"] = { "i", 59359 },	-- Reinforced Bio-Optic Killshades
 			}),
@@ -594,14 +577,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 	})),
 	expansion(EXPANSION.MOP, bubbleDownSelf({ ["timeline"] = { ADDED_5_0_4 } }, {
 		ach(18905, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {	-- Chromatic Calibration: Retinal Armor
-			i(209064, {	-- Ensemble: Chromatically Calibrated Retinal Armor
-				i(208802),	-- Black Retinal Armor
-				i(208803),	-- Blue Retinal Armor
-				i(208804),	-- Green Retinal Armor
-				i(208805),	-- Red Retinal Armor
-				i(208806),	-- White Retinal Armor
-				i(208807),	-- Yellow Retinal Armor
-			}),
+			iensemble(209064),	-- Ensemble: Chromatically Calibrated Retinal Armor
 			crit(61781, {	-- Lightweight Retinal Armor
 				["provider"] = { "i", 77533 },	-- Lightweight Retinal Armor
 			}),
@@ -632,12 +608,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 	})),
 	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 		ach(18906, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {	-- Chromatic Calibration: Cranial Cannons
-			i(209066, {	-- Ensemble: Chromatically Calibrated Cranial Cannons
-				i(208808),	-- Green Cranial Cannon
-				i(208809),	-- Orange Cranial Cannon
-				i(208810),	-- Purple Cranial Cannon
-				i(208811),	-- Yellow Cranial Cannon
-			}),
+			iensemble(209066),	-- Ensemble: Chromatically Calibrated Cranial Cannons
 			crit(61789, {	-- Blink-Trigger Headgun
 				["provider"] = { "i", 132500 },	-- Blink-Trigger Headgun
 			}),
@@ -951,6 +922,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 				["coord"] = { 38.6, 25.0, LEGION_DALARAN },
 				["g"] = {
 					r(247717),	-- Gravitational Reduction Slippers (RECIPE!)
+					i(151927),	-- Prototype Gravitational Reduction Slippers (QI!)
 				},
 			})),
 			q(48065, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {	-- Extraterrestrial Exploration
@@ -959,6 +931,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 				["coord"] = { 38.8, 25.6, LEGION_DALARAN },
 				["g"] = {
 					r(247744),	-- Wormhole Generator: Argus (RECIPE!)
+					i(151926),	-- Ionized Geographical Recorder (QI!)
 				},
 			})),
 		}),
@@ -1114,12 +1087,7 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 	})),
 	expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_2_LAUNCH } }, {
 		ach(18907, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {	-- Chromatic Calibration: Ectoplasmic Specs
-			i(209067, {	-- Ensemble: Chromatically Calibrated Ectoplasmic Specs
-				i(208817),	-- Blue Ectoplasmic Specs
-				i(208818),	-- Green Ectoplasmic Specs
-				i(208819),	-- Red Ectoplasmic Specs
-				i(208820),	-- Yellow Ectoplasmic Specs
-			}),
+			iensemble(209067),	-- Ensemble: Chromatically Calibrated Ectoplasmic Specs
 			crit(61816, {	-- Flexible Ectoplasmic Specs
 				["provider"] = { "i", 172905 },	-- Flexible Ectoplasmic Specs
 			}),
@@ -1509,28 +1477,28 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 			},
 		},{
 			i(198611),	-- Engineering Details
-			q(74111, {	-- Inscription Order: Engineering
-				["name"] = "Inscription Order: Engineering",
+			q(74111, {	-- DF Inscription Order: Engineering
+				["name"] = "DF Inscription Order: Engineering",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 198510 },	-- Draconic Treatise on Engineering
 			}),
-			q(66379, {	-- Weekly Engineering Knowledgepoint #1
-				["name"] = "Engineering Treasure #1",
+			q(66379, {	-- DF Weekly Engineering Knowledgepoint #1
+				["name"] = "DF Engineering Treasure #1",
 				["provider"] = { "i", 193902 },	-- Eroded Titan Gizmo
 			}),
-			q(66380, {	-- Weekly Engineering Knowledgepoint #2
-				["name"] = "Engineering Treasure #2",
+			q(66380, {	-- DF Weekly Engineering Knowledgepoint #2
+				["name"] = "DF Engineering Treasure #2",
 				["provider"] = { "i", 193903 },	-- Watcher Power Core
 			}),
-			q(70517, {	-- Weekly Engineering Knowledgepoint #3
-				["name"] = "Engineering Drop #1: Dragon-esque",
+			q(70517, {	-- DF Weekly Engineering Knowledgepoint #3
+				["name"] = "DF Engineering Drop #1: Dragon-esque",
 				["description"] = "Drops from any Dragon-kin/Proto Drakes/Dragonlike beasts.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = { 194656 },	-- Reservoir Dapple
 				["provider"] = { "i", 198970 },		-- Infinitely Attachable Pair o' Docks
 				["coord"] = { 49.4, 62.6, THALDRASZUS },
 			}),
-			q(70516, {	-- Weekly Engineering Knowledgepoint #4
-				["name"] = "Engineering Drop #2: Tyrhold Ancient",
+			q(70516, {	-- DF Weekly Engineering Knowledgepoint #4
+				["name"] = "DF Engineering Drop #2: Tyrhold Ancient",
 				["description"] = "Drops from any Tyrhold-esque mob.\nCoordinates link to Tyrhold where almost any mob can drop it.",
 				["crs"] = { 193244 },	-- Titan Defense Matrix
 				["provider"] = { "i", 198969 },		-- Keeper's Mark
@@ -1539,16 +1507,16 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
-		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
+		n(QUESTS, sharedData({
 			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
 			["g"] = {
-				currency(TWW_ENGINEERING_KNOWLEDGE),
+				i(228775),	-- Algari Engineer's Notepad
 			},
 		},{
-			q(83728, {	-- Inscription Order: Engineering
-				["name"] = "Inscription Order: Engineering",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222621 },	-- Algari Treatise on Engineering
+			q(84128, {	-- Engineering Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
 			}),
 		})),
 		filter(RECIPES, {
@@ -1564,83 +1532,89 @@ root(ROOTS.Professions, prof(ENGINEERING, bubbleDownSelf({ ["requireSkill"] = EN
 			}),
 		}),
 		n(TREASURES, {
-			o(456001, {	-- Rock Engineer's Wrench
-				["coord"] = { 61.3, 69.5, ISLE_OF_DORN },
-				--["questID"] = XXXXX,
-				["g"] = {
-					i(226292),	-- Rock Engineer's Wrench
-				},
-			}),
 			o(455996, {	-- Arathi Safety Gloves
 				["coord"] = { 41.5, 48.9, HALLOWFALL },
-				--["questID"] = XXXXX,
+				["questID"] = 83871,
 				["g"] = {
 					i(226297),	-- Arathi Safety Gloves
 				},
 			}),
 			o(456000, {	-- Dornogal Spectacles
-				["coord"] = { 49.3, 55.6, DORNOGAL },
-				--["questID"] = XXXXX,
+				["coord"] = { 64.7, 52.7, DORNOGAL },
+				["questID"] = 83867,
 				["g"] = {
 					i(226293),	-- Dornogal Spectacles
 				},
 			}),
 			o(455998, {	-- Earthen Construct Blueprints
 				["coord"] = { 64.5, 58.8, THE_RINGING_DEEPS },
-				--["questID"] = XXXXX,
+				["questID"] = 83869,
 				["g"] = {
 					i(226295),	-- Earthen Construct Blueprints
 				},
 			}),
 			o(455994, {	-- Emptied Venom Canister
-				["coord"] = { 61.1, 11.3, AZJ_KAHET },
-				--["questID"] = XXXXX,
+				["coord"] = { 63.1, 11.1, NERUBAR },
+				["questID"] = 83873,
 				["g"] = {
 					i(226299),	-- Emptied Venom Canister
 				},
 			}),
 			o(455997, {	-- Holy Firework Dud
-				["coord"] = { 44.3, 61.4, HALLOWFALL },
-				--["questID"] = XXXXX,
+				["coord"] = { 46.3, 61.3, HALLOWFALL },
+				["questID"] = 83870,
 				["g"] = {
 					i(226296),	-- Holy Firework Dud
 				},
 			}),
 			o(455999, {	-- Inert Mining Bomb
 				["coord"] = { 42.6, 27.3, THE_RINGING_DEEPS },
-				--["questID"] = 83844,
+				["questID"] = 83868,
 				["g"] = {
 					i(226294),	-- Inert Mining Bomb
 				},
 			}),
 			o(455995, {	-- Puppeted Mechanical Spider
-				["coord"] = { 46.9, 38.6, AZJ_KAHET },
-				--["questID"] = 83844,
+				["coord"] = { 56.8, 38.6, AZJ_KAHET },
+				["questID"] = 83872,
 				["g"] = {
 					i(226298),	-- Puppeted Mechanical Spider
 				},
 			}),
+			o(456001, {	-- Rock Engineer's Wrench
+				["coord"] = { 61.3, 69.6, ISLE_OF_DORN },
+				["questID"] = 83866,
+				["g"] = {
+					i(226292),	-- Rock Engineer's Wrench
+				},
+			}),
 		}),
+		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
+			["isWeekly"] = true,
+			["g"] = {
+				currency(TWW_ENGINEERING_KNOWLEDGE),
+			},
+		},{
+			q(83260, {	-- TWW Weekly Engineering Knowledgepoint #1
+				["name"] = "TWW Weekly Engineering Treasure #1",
+				["provider"] = { "i", 225228 },	-- Rust-Locked Mechanism
+			}),
+			q(83261, {	-- TWW Weekly Engineering Knowledgepoint #2
+				["name"] = "TWW Weekly Engineering Treasure #2",
+				["provider"] = { "i", 225229 },	-- Earthen Induction Coil
+			}),
+		})),
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 	n(PROFESSIONS, {
 		prof(ENGINEERING, {
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
-				q(41100),	-- FLAG - Swap Didis - triggers after completing the "Endless Possibilities" (questID 40854)
-				q(45365),	-- Treasure: Wand of Simulated Life - part of some legion engineering quest
-			})),
-			expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
-				q(78030),	-- Ensemble: Chromatically Calibrated Holo-Gogs
-				q(78031),	-- Ensemble: Chromatically Calibrated Bio-Optic Killshades
-				q(78032),	-- Ensemble: Chromatically Calibrated Retinal Armor
-				q(78034),	-- Ensemble: Chromatically Calibrated Cranial Cannons
-				q(78035),	-- Ensemble: Chromatically Calibrated Ectoplasmic Specs
-			})),
+			q(41100),	-- FLAG - Swap Didis - triggers after completing the "Endless Possibilities" (questID 40854)
+			q(45365),	-- Treasure: Wand of Simulated Life - part of some legion engineering quest
 		}),
 	}),
-});
+})));
 
 -- #if ANYCLASSIC
 local applytraining = function(g)
@@ -2156,17 +2130,17 @@ profession(ENGINEERING, {
 			["groups"] = {
 				applyclassicphase(SOD_PHASE_THREE, {
 					["name"] = "Void-Powered Invoker's Vambraces",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["recipeID"] = 446236,
 				}),
 				applyclassicphase(SOD_PHASE_THREE, {
 					["name"] = "Void-Powered Protector's Vambraces",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["recipeID"] = 446238,
 				}),
 				applyclassicphase(SOD_PHASE_THREE, {
 					["name"] = "Void-Powered Slayer's Vambraces",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["recipeID"] = 446237,
 				}),
 			},
@@ -2189,7 +2163,7 @@ profession(ENGINEERING, {
 				{
 					["name"] = "Core Marksman Rifle",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 					["recipeID"] = 22795,
 				},
@@ -2204,7 +2178,7 @@ profession(ENGINEERING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Fiery Core Sharpshooter Rifle",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461710,
 				}),
 				-- #endif
@@ -3230,7 +3204,7 @@ profession(ENGINEERING, {
 			["name"] = "Weapons",
 			["categoryID"] = 740,
 			["groups"] = {
-				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Extreme-Impact Hole Puncher",
 					["recipeID"] = 100687,
 				}),
@@ -3260,7 +3234,7 @@ profession(ENGINEERING, {
 			["name"] = "Scopes",
 			["categoryID"] = 741,
 			["groups"] = {
-				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Flintlocke's Woodchucker",
 					["recipeID"] = 100587,
 				}),
@@ -3731,8 +3705,8 @@ itemrecipe("Schematic: Mekgineer's Chopper", 44503, 60867, WRATH_PHASE_ONE);
 
 -- #if AFTER CATA
 -- Cata Recipes
-itemrecipe("Schematic: Extreme-Impact Hole Puncher", 71078, 100687, CATA_PHASE_RAGE_OF_THE_FIRELANDS);
-itemrecipe("Schematic: Flintlocke's Woodchucker", 70177, 100587, CATA_PHASE_RAGE_OF_THE_FIRELANDS);
+itemrecipe("Schematic: Extreme-Impact Hole Puncher", 71078, 100687, CATA_PHASE_MOLTEN_FRONT);
+itemrecipe("Schematic: Flintlocke's Woodchucker", 70177, 100587, CATA_PHASE_MOLTEN_FRONT);
 -- #endif
 
 

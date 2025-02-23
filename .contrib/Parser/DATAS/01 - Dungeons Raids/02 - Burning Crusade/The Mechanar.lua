@@ -28,12 +28,22 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 				}),
 				q(29659, {	-- Lost Treasure
 					["qg"] = 18481,	-- A'dal
+					-- #if ANYCLASSIC
+					["description"] = "Blizzard broke the cache of the legion with Cataclysm Classic by removing the keys and not adding the automatic unlock from killing the mini bosses.",
+					["isBounty"] = true,
+					-- #else
 					-- #if AFTER MOP
 					["description"] = "Automatically provided after killing either Gatewatcher. If autocomplete doesn't work, you can turn in at A'dal in Shattrath City.",
 					-- #else
 					["description"] = "Automatically provided after killing either Gatewatcher. This appears to be bugged.",
 					-- #endif
-					["timeline"] = { ADDED_4_3_0 },
+					-- #endif
+					["timeline"] = {
+						ADDED_4_3_0,
+						-- #if ANYCLASSIC
+						REMOVED_4_3_0,
+						-- #endif
+					},
 					["lvl"] = lvlsquish(67, 67, 20),
 					["groups"] = {
 						objective(1, {	-- 0/1 Blinding Fury
@@ -87,12 +97,18 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 					["cr"] = 19168,	-- Sunseeker Astromage
 				}),
 			}),
-			o(184465, {	-- Cache of the Legion
+			o(184465, bubbleDownSelf({
+				-- #if ANYCLASSIC
+				["timeline"] = { REMOVED_4_0_3 },
+				["isBounty"] = true,
+				-- #endif
+			}, {	-- Cache of the Legion
 				["modelScale"] = 1.6,
 				-- #if BEFORE 4.3.0.14942
-				["cost"] = {
-					{ "i", 30438, 1 },	-- Cache of the Legion Key
-				},
+				["cost"] = {{ "i", 30438, 1 }},	-- Cache of the Legion Key
+				-- #endif
+				-- #if ANYCLASSIC
+				["sharedDescription"] = "Blizzard broke the cache of the legion with Cataclysm Classic by removing the keys and not adding the automatic unlock from killing the mini bosses.",
 				-- #endif
 				["groups"] = {
 					i(28252),	-- Bloodfyre Robes of Annihilation
@@ -108,7 +124,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 						["timeline"] = { ADDED_4_3_0 },
 					}),
 				},
-			}),
+			})),
 			d(DIFFICULTY.DUNGEON.NORMAL, {
 				e(563, {	-- Mechano-Lord Capacitus
 					["creatureID"] = 19219,
@@ -285,11 +301,10 @@ root(ROOTS.Instances, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE, 
 		},
 	}),
 })));
--- #if AFTER WOD
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	inst(258, {
 		q(35528),	-- The Mechanar Reward Quest - Normal completion
 		q(35529),	-- The Mechanar Reward Quest - Heroic completion
 	}),
-});
--- #endif
+})));

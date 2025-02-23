@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace ATT.FieldTypes
 {
-    public class Timeline : IProcessedField, IExportableField // required for DebugDB exports
+    public class Timeline : IProcessedField, IExportableField, IEnumerable<TimelineEntry> // required for DebugDB exports
     {
         private static readonly TimelineEntry[] _empty = Array.Empty<TimelineEntry>();
         private TimelineEntry[] _entries;
@@ -37,6 +38,11 @@ namespace ATT.FieldTypes
         private Timeline(object obj)
         {
             _dirty = true;
+            if (obj is Timeline timeline)
+            {
+                _entries = timeline._entries.ToArray();
+                return;
+            }
             if (obj is IEnumerable<string> strs)
             {
                 _entries = strs.Select(TimelineEntry.AsTimelineEntry).ToArray();
@@ -58,20 +64,19 @@ namespace ATT.FieldTypes
 
         public static Timeline Merge(IDictionary<string, object> data, object value)
         {
-            if (!(value is Timeline timeline))
+            Timeline timeline;
+            try
             {
-                try
-                {
-                    timeline = new Timeline(value);
-                }
-                catch
-                {
-                    throw new InvalidDataException($"Failed to create Timeline object from provided data: {MiniJSON.Json.Serialize(value)}");
-                }
+                timeline = new Timeline(value);
+            }
+            catch
+            {
+                throw new InvalidDataException($"Failed to create Timeline object from provided data: {MiniJSON.Json.Serialize(value)}");
             }
 
             if (!data.TryGetValue(Field, out object rawobj))
             {
+                // copy the Timeline from the incoming value, otherwise we can get Timeline objects linked between different Sources
                 data[Field] = timeline;
                 return timeline;
             }
@@ -120,6 +125,16 @@ namespace ATT.FieldTypes
                 return;
             }
             _entries = _entries.Union(obj._entries).ToArray();
+        }
+
+        public IEnumerator<TimelineEntry> GetEnumerator()
+        {
+            return Entries.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)Entries).GetEnumerator();
         }
     }
 }

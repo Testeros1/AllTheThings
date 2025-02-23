@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	inst(1269, {	-- The Stonevault
 		["coord"] = { 46.8, 8.5, THE_RINGING_DEEPS },
 		["maps"] = { 2341 },	-- The Stonevault
@@ -57,6 +57,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 					["g"] = {
 						ach(40643),	-- The Stonevault
 						i(221091),	-- Cutting-Edge Sermon
+						i(221093),	-- Deeply Corrupted Coil [Only Available as Warbound]
 						i(221090),	-- Eirich's Fist of Deception
 						i(219303),	-- High Speaker's Accretion
 						i(221092),	-- Legplates of Broken Trust

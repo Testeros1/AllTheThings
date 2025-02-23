@@ -4,9 +4,7 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(ARATHI_HIGHLANDS, {
 		["lore"] = "The Arathi Highlands are located in southeastern Lordaeron, east of Hillsbrad Foothills and south of the Hinterlands. It is a flat but craggy region that has traditionally been the home of the humans of Arathor, who gave the region its name. The main hubs of activity are now Refuge Pointe and Hammerfall, which houses bases for Alliance and Horde, respectively. The large city of Stromgarde lies in ruins to the southwest, and pockets of Syndicate resistance dot the land. The Boulderfist Orges also infest Arathor, and prove to be a constant threat to the Alliance, Horde, and Syndicate factions vying for supremacy.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_arathihighlands_01",
-		-- #endif
+		["icon"] = 236712,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				ach(4896, {	-- Arathi Highlands Quests
@@ -60,28 +58,17 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["sourceQuests"] = {
 						26628,	-- Death From Below
-						38275,	-- Refuge Pointe (A)
 						26117,	-- For Southshore
-						38276,	-- Refuge Pointe (A)
 						26038,	-- Attack on the Tower
-						38277,	-- Myzrael's Tale (A)
 						26049,	-- The Princess Unleashed (A)
-						38270,	-- Galen's Fall (H)
 						26081,	-- Alina's Reward
-						38271,	-- Galen's Fall (H)
 						26029,	-- The Real Threat
-						38272,	-- Hammerfall (H)
 						26912,	-- The Princess Unleashed (H)
-						38273,	-- Hammerfall (H)
 						26108,	-- Guile of the Raptor
 					},
 					-- #endif
 				}),
-				explorationAch(761, {	-- Explore Arathi Highlands
-					-- #if BEFORE WRATH
-					["description"] = "Explore Arathi Highlands, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(761),	-- Explore Arathi Highlands
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -199,7 +186,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 217300,	-- Skonk <Amateur Chef>
 					["sourceQuest"] = 79624,	-- Anyone Can Cook
 					["coord"] = { 57.6, 74.6, ARATHI_HIGHLANDS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["maps"] = { HILLSBRAD_FOOTHILLS, SWAMP_OF_SORROWS, BADLANDS },
 					["classes"] = { WARRIOR },
 					["lvl"] = 26,
@@ -276,7 +263,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 217300 },	-- Skonk <Amateur Chef>
 					},
 					["coord"] = { 20.0, 67.4, ARATHI_HIGHLANDS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["maps"] = { ALTERAC_MOUNTAINS },
 					["classes"] = { WARRIOR },
 					["crs"] = {
@@ -504,7 +491,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(26429, {	-- Crush the Witherbark
 					["qg"] = 2771,	-- Drum Fel
-					["sourceQuest"] = 26912,	-- The Princess Unleashed (TODO: verify. Didn't see this until after killing Myzrael)
+					-- not required as of 2018/2024
+					-- ["sourceQuest"] = 26912,	-- The Princess Unleashed (TODO: verify. Didn't see this until after killing Myzrael)
 					["coord"] = { 69.0, 34.8, ARATHI_HIGHLANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
@@ -524,7 +512,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(635, {	-- Crystal in the Mountains
-					["provider"] = { "i", 4614 },  -- Pendant of Myzrael
+					["provider"] = { "i", 4614 },	-- Pendant of Myzrael
 					["description"] = "If you miss out on picking up the necklace first, you can still complete this quest even after finishing the rest of the chain.",
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 30,
@@ -1015,7 +1003,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 215643,	-- Tokal
 					["sourceQuest"] = 79236,	-- Cherry for Your Thoughts?
 					["coord"] = { 27.0, 77.2, STRANGLETHORN_VALE },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 30,
 					["groups"] = {
 						objective(1, {	-- 0/1 Found Illari Duskfeather
@@ -1569,7 +1557,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 217300,	-- Skonk <Amateur Chef>
 					["sourceQuest"] = 79677,	-- A Quick Grocery Run
 					["coord"] = { 57.6, 74.6, ARATHI_HIGHLANDS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { WARRIOR },
 					["lvl"] = 26,
 					["groups"] = {
@@ -1749,6 +1737,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(26341, {	-- The Stone Shards
 					["qg"] = 2789,	-- Skuerto
 					["coord"] = { 40.3, 49.1, ARATHI_HIGHLANDS },
+					["description"] = "This quest gets marked as completed when its Horde counterpart 'The Stone Shards' (26909) is handed in.",
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["isBreadcrumb"] = true,
@@ -1756,6 +1745,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(26909, {	-- The Stone Shards
 					["qg"] = 2787,	-- Zaruk
 					["coord"] = { 69.6, 36.5, ARATHI_HIGHLANDS },
+					["description"] = "This quest gets marked as completed when its Alliance counterpart 'The Stone Shards' (26341) is handed in.",
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
 					["isBreadcrumb"] = true,
@@ -1809,7 +1799,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["sourceQuest"] = 79975,	-- Eagle's Fist
 					["coord"] = { 22.5, 24.2, ARATHI_HIGHLANDS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 14,
 					["groups"] = {
 						i(211527),	-- Cozy Sleeping Bag
@@ -2388,7 +2378,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			n(TREASURES, {
 				applyclassicphase(SOD_PHASE_TWO, i(213447, {	-- Rosary of the Light
 					["description"] = "Combine the 3 divine prayer beads and then bring it to Brother Atticus.",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["cost"] = {
 						{ "i", 213448, 1 },	-- Divine Prayer Bead I
 						{ "i", 213449, 1 },	-- Divine Prayer Bead II
@@ -2403,7 +2393,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 217387 },	-- Brother Atticus
 					},
 					["coord"] = { 27.0, 57.0, ARATHI_HIGHLANDS },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -2416,7 +2406,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(2816, {	-- Androd Fadran <Leatherworking Supplies>
 					["coords"] = {
 						-- #if AFTER CATA
-						{ 39.2, 48.2, ARATHI_HIGHLANDS },
+						{ 39.2, 48.1, ARATHI_HIGHLANDS },
 						-- #else
 						{ 45.1, 46.8, ARATHI_HIGHLANDS },
 						-- #endif
@@ -2434,7 +2424,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				-- #if AFTER 4.0.3
 				n(3180, {	-- Dark Iron Entrepreneur <Speciality Goods>
-					["coord"] = { 42.6, 90.6, ARATHI_HIGHLANDS },
+					["coord"] = { 42.7, 90.3, ARATHI_HIGHLANDS },
 					["groups"] = {
 						i(11150),	-- Formula: Enchant Gloves - Mining (RECIPE!)
 						i(4824, {	-- Blurred Axe
@@ -2511,33 +2501,41 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(2810, {	-- Hammon Karwn <Superior Tradesman>
 					["coords"] = {
 						-- #if AFTER CATA
-						{ 40.4, 48.8, ARATHI_HIGHLANDS },
+						{ 40.5, 48.9, ARATHI_HIGHLANDS },
 						-- #else
 						{ 46.5, 47.4, ARATHI_HIGHLANDS },
 						-- #endif
 					},
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {{"select", "itemID",
-						5973,	-- Pattern: Barbaric Leggings (RECIPE!)
-					}},
 					["groups"] = {
 						-- #if AFTER TBC
 						i(21942, {	-- Design: Ruby Crown of Restoration
 							["isLimited"] = true,
 						}),
 						-- #endif
+						i(5973, {	-- Pattern: Barbaric Leggings (RECIPE!)
+							["isLimited"] = true,
+						}),
 						i(12228),	-- Recipe: Roast Raptor (RECIPE!)
 					},
 				}),
 				n(1471, {	-- Jannos Ironwill <Superior Macecrafter>
 					["coords"] = {
 						-- #if AFTER CATA
-						{ 40.8, 48.0, ARATHI_HIGHLANDS },
+						{ 40.8, 48.1, ARATHI_HIGHLANDS },
 						-- #else
 						{ 46.0, 47.7, ARATHI_HIGHLANDS },
 						-- #endif
 					},
 					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						2527,	-- Battle Staff
+						2532,	-- Morning Star
+						2524,	-- Truncheon
+						2525,	-- War Hammer
+						2533,	-- War Maul
+						2535,	-- War Staff
+					}},
 					["groups"] = {
 						i(10858, {	-- Plans: Solid Iron Maul (RECIPE!)
 							["isLimited"] = true,
@@ -2602,7 +2600,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(2814, {	-- Narj Deepslice <Butcher>
 					["coords"] = {
 						-- #if AFTER CATA
-						{ 39.6, 48.8, ARATHI_HIGHLANDS },
+						{ 39.7, 48.9, ARATHI_HIGHLANDS },
 						-- #else
 						{ 45.6, 47.6, ARATHI_HIGHLANDS },
 						-- #endif
@@ -2744,7 +2742,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, i(213444, {	-- Tarnished Prayer Bead I
 					["description"] = "With this in your inventory and while in combat, cast Blessing of Might and then kill an enemy that grants XP.",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -2753,7 +2751,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(SOD_PHASE_TWO, i(213445, {	-- Tarnished Prayer Bead II
 					["description"] = "With this in your inventory and while in combat with less than 10% health, cast Divine Shield.",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
@@ -2762,7 +2760,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(SOD_PHASE_TWO, i(213446, {	-- Tarnished Prayer Bead III
 					["description"] = "With this in your inventory and while in combat, cast Seal of Justice and then cast Judgement AS THE MOB IS RUNNING AWAY. Judging the enemy before they run will not work.",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["classes"] = { PALADIN },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {

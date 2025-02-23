@@ -34,7 +34,6 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					{ 23.76, 60.86, DRUSTVAR },
 					{ 19.00, 58.29, DRUSTVAR },
 				},
-				["_noautomation"] = true,
 			}),
 			ach(13094, {	-- Cursed Game Hunter
 				crit(41794, {	-- Goats
@@ -228,221 +227,6 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 44.90, 27.41, DRUSTVAR },
 				["sym"] = {{ "achievement_criteria" }},
 			}),
-			petbattle(ach(13279, {	-- Family Battler
-				["collectible"] = false,
-				["g"] = {
-					ach(13280, {	-- Hobbyist Aquarist
-						["collectible"] = false,
-						["g"] = {
-							crit(43591, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43593, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43594, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43595, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13270, {	-- Beast Mode
-						["collectible"] = false,
-						["g"] = {
-							crit(43611, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43613, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43614, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43615, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13271, {	-- Critters with Huge Teeth
-						["collectible"] = false,
-						["g"] = {
-							crit(43631, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43633, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43634, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43635, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13272, {	-- Dragons Make Everything Better
-						["collectible"] = false,
-						["g"] = {
-							crit(43652, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43654, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43655, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43656, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13273, {	-- Element of Success
-						["collectible"] = false,
-						["g"] = {
-							crit(43671, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43673, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43674, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43675, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13274, {	-- Fun With Flying
-						["collectible"] = false,
-						["g"] = {
-							crit(43699, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43701, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43702, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43703, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13281, {	-- Human Resources
-						["collectible"] = false,
-						["g"] = {
-							crit(43721, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43723, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43724, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43725, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13275, {	-- Magician's Secrets
-						["collectible"] = false,
-						["g"] = {
-							crit(43740, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43742, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43743, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43744, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13277, {	-- Machine Learning
-						["collectible"] = false,
-						["g"] = {
-							crit(43759, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43761, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43762, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43763, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-					ach(13278, {	-- Not Quite Dead Yet
-						["collectible"] = false,
-						["g"] = {
-							crit(43778, {	-- Captain Hermes
-								["cr"] = 139489,	-- Captain Hermes
-								["coord"] = { 21.4, 66.4, DRUSTVAR },
-							}),
-							crit(43780, {	-- Dilbert McClint
-								["cr"] = 140461,	-- Dilbert McClint
-								["coord"] = { 63.6, 59.6, DRUSTVAR },
-							}),
-							crit(43781, {	-- Fizzie Sparkwhistle
-								["cr"] = 140813,	-- Fizzie Sparkwhistle
-								["coord"] = { 38.1, 38.5, DRUSTVAR },
-							}),
-							crit(43782, {	-- Michael Skarn
-								["cr"] = 140880,	-- Michael Skarn
-								["coord"] = { 61.0, 17.6, DRUSTVAR },
-							}),
-						},
-					}),
-				},
-			})),
 			ach(12952, {	-- Order of Embers
 				["races"] = ALLIANCE_ONLY,
 			}),
@@ -452,39 +236,39 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					-- TODO: use provider instead for crits
 					i(163110, {	-- Fried Boar Sausage
 						["coord"] = { 26.7, 72.5, DRUSTVAR },
-						["criteriaID"] = 1,
+						["criteriaID"] = 41649,
 						["crs"] = {
 							136655,	-- Alisha Darkwater
 						},
 					}),
 					i(155812, {	-- Goldshire Farms Smoked Sausage
 						["coord"] = { 55.6, 34.8, DRUSTVAR },
-						["criteriaID"] = 2,
+						["criteriaID"] = 41648,
 						["crs"] = {
 							128467,	-- Elijah Eggleton <Sausages>
 						},
 					}),
 					i(163781, {	-- Heartsbane Hexenwurst
 						["description"] = "Recipe for cooks is dropped by Raal the Gluttonous in Waycrest Manor or buy the sausage off the AH.",
-						["criteriaID"] = 3,
+						["criteriaID"] = 41650,
 					}),
 					i(155811, {	-- Roland's Famous Frankfurter
 						["coord"] = { 55.6, 34.8, DRUSTVAR },
-						["criteriaID"] = 4,
+						["criteriaID"] = 41651,
 						["crs"] = {
 							128467,	-- Elijah Eggleton <Sausages>
 						},
 					}),
 					i(155813, {	-- Rosco Fryer's Mostly-Meat Brat
 						["coord"] = { 55.6, 34.8, DRUSTVAR },
-						["criteriaID"] = 5,
+						["criteriaID"] = 41652,
 						["crs"] = {
 							128467,	-- Elijah Eggleton <Sausages>
 						},
 					}),
 					i(155814, {	-- Timmy Gene Sunrise Pork
 						["coord"] = { 55.6, 34.8, DRUSTVAR },
-						["criteriaID"] = 6,
+						["criteriaID"] = 41653,
 						["crs"] = {
 							128467,	-- Elijah Eggleton <Sausages>
 						},
@@ -528,7 +312,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(297879, {	-- Bespelled Chest
 					["description"] = "Click the inactive torches.",
 					["questID"] = 53472,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 55.60, 51.80, DRUSTVAR },
 					["g"] = {
 						i(163790),	-- Spooky Incantation
@@ -537,7 +321,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(297881, {	-- Enchanted Chest
 					["description"] = "Click the inactive torches.",
 					["questID"] = 53474,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 25.50, 24.20, DRUSTVAR },
 					["g"] = {
 						i(163796),	-- Wolf Pup Spine
@@ -545,7 +329,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				}),
 				o(297880, {	-- Ensorcelled Chest
 					["questID"] = 53473,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 67.70, 73.70, DRUSTVAR },
 					["g"] = {
 						i(163791),	-- Miniature Stag Skull
@@ -554,7 +338,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(297878, {	-- Hexed Chest
 					["description"] = "Click the inactive torches.",
 					["questID"] = 53471,
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["coord"] = { 18.50, 51.30, DRUSTVAR },
 					["g"] = {
 						i(163789),	-- Bundle of Wicker Stick
@@ -563,7 +347,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(297828, {	-- Merchant's Chest
 					["questID"] = 53357,
 					["coord"] = { 25.69, 20.03, DRUSTVAR },
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["description"] = "Look for the Gorging Raven flying above with the 'Holding Keys' buff, and kill it to get the key to open this chest.",
 					["g"] = {
 						n(137468, {	-- Gorging Raven
@@ -571,13 +355,13 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 						}),
 					},
 					["sym"] = {{"select","itemID",
-						163036,	-- Polished Pet Charm
+						POLISHED_PET_CHARM,
 					}},
 				}),
 				o(297891, {	-- Runebound Cache
 					["questID"] = 53385,
 					["coord"] = { 63.3, 65.8, DRUSTVAR },
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["description"] = "Left. Down. Up. Right.",
 					["g"] = {
 						i(163743),	-- Drust Soulcatcher
@@ -586,7 +370,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(297892, {	-- Runebound Chest
 					["questID"] = 53386,
 					["coord"] = { 44.2, 27.8, DRUSTVAR },
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["description"] = "Left. Right. Down. Up.",
 					["g"] = {
 						i(163742),	-- Heartsbane Grimoire (TOY!)
@@ -595,7 +379,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(297893, {	-- Runebound Coffer
 					["questID"] = 53387,
 					["coord"] = { 33.68, 71.74, DRUSTVAR },
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["description"] = "Right. Up. Left. Down.",
 					["g"] = {
 						i(163740),	-- Drust Ritual Knife (TOY!)
@@ -604,25 +388,44 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				o(298920, {	-- Stolen Thornspeaker Cache
 					["questID"] = 53475,
 					["coord"] = { 24.3, 48.5, DRUSTVAR },
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["description"] = "Enter the cave at 24.70, 48.95.",
 					["sym"] = {{"select","itemID",
-						163036,	-- Polished Pet Charm
+						POLISHED_PET_CHARM,
 					}},
 				}),
 				o(297825, {	-- Web-Covered Chest
 					["questID"] = 53356,
 					["coord"] = { 33.7, 30.1, DRUSTVAR },
-					["icon"] = "Interface\\Icons\\garrison_bronzechest",
+					["icon"] = 1001977,
 					["g"] = {
 						i(160053),	-- Battle-Scarred Augment Rune
 					},
 				}),
 			}),
+			ach(41207, {	-- When the Drust Settles
+				["timeline"] = { ADDED_11_0_7 },
+				-- Meta Achievement
+				["sym"] = {{"meta_achievement",
+					12941,	-- Adventurer of Drustvar
+					13083,	-- Better, Faster, Stronger
+					13094,	-- Cursed Game Hunter
+					13064,	-- Drust the Facts, Ma'am
+					13082,	-- Everything Old Is New Again
+					12995,	-- Treasures of Drustvar
+					13087,	-- Sausage Sampler
+				}},
+			}),
 		}),
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	q(53448),	-- Spooky Bundle of Sticks Crafting [Wicker Pup]
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(KUL_TIRAS, {
+		m(DRUSTVAR, {
+			n(ACHIEVEMENTS, {
+				q(53448),	-- Spooky Bundle of Sticks Crafting [Wicker Pup]
+			}),
+		}),
+	}),
+})));

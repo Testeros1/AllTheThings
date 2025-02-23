@@ -40,11 +40,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 213116 },	-- Faerin
 					["coord"] = { 70.1, 61.0, HALLOWFALL },
 					["g"] = {
-						i(213191),	-- Arathi Tinderbox (QI!)
-						i(220109),	-- Chainmail of Sina's Stalwarts
-						i(220112),	-- Cowl of Sina's Stalwarts
-						i(220110),	-- Greaves of Sina's Stalwarts
-						i(220108),	-- Helm of Sina's Stalwarts
+						i(220126),	-- Lamplighter's Cinch
+						i(220125),	-- Lamplighter's Epaulets
+						i(220119),	-- Lamplighter's Handwraps
+						i(220127),	-- Lamplighter's Sabatons
+						o(421909, {	-- Fallen Defender
+							i(213191),	-- Arathi Tinderbox (QI!)
+						}),
 					},
 				}),
 				q(78668, {	-- Rally on the Dawnbreaker
@@ -60,7 +62,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 224945 },	-- Faerin
 					["coord"] = { 57.5, 64.4, HALLOWFALL },
 					["g"] = {
-						i(213630),	-- Keg of Black Powder (QI!)
+						o(411930, {	-- Blackpowder Barrel
+							i(213630),	-- Keg of Black Powder (QI!)
+						}),
+						i(220118),	-- Arathi Demolition Charge
 					},
 				}),
 				q(78669, {	-- For Their Eyes Only
@@ -108,6 +113,17 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 214376 },	-- General Steelstrike
 					["coord"] = { 53.9, 31.5, HALLOWFALL },
 				}),
+				------ Stay awhile and listen ------
+				hqt(81594, {	-- Stay awhile and listen: Faerin Lothar
+					["name"] = "Stay awhile and listen: Faerin Lothar",
+					["sourceQuests"] = {
+						78932,	-- Fickle Fiendish Fish
+						78929,	-- Tricks of the Dark
+					},
+					["provider"] = { "n", 214378 },	-- Faerin
+					["coord"] = { 53.9, 30.7, HALLOWFALL },
+				}),
+				--
 				q(78934, {	-- Blades of the Arathi
 					["sourceQuests"] = {
 						78932,	-- Fickle Fiendish Fish
@@ -161,10 +177,11 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 221733 },	-- Faerin Lothar
 					["coord"] = { 55.8, 43.4, HALLOWFALL },
 					["g"] = {
-						i(220126),	-- Lamplighter's Cinch
-						i(220125),	-- Lamplighter's Epaulets
-						i(220119),	-- Lamplighter's Handwraps
-						i(220127),	-- Lamplighter's Sabatons
+						i(213191),	-- Arathi Tinderbox (QI!)
+						i(220109),	-- Chainmail of Sina's Stalwarts
+						i(220112),	-- Cowl of Sina's Stalwarts
+						i(220110),	-- Greaves of Sina's Stalwarts
+						i(220108),	-- Helm of Sina's Stalwarts
 					},
 				}),
 				------ Chapter 3 ------
@@ -181,14 +198,33 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						i(217708),	-- A Round of Drinks (QI!)
 					},
 				}),
+				------ Stay awhile and listen ------
+				hqt(79706, {	-- Stay awhile and listen: Faerin Lothar
+					["name"] = "Stay awhile and listen: Faerin Lothar",
+					["sourceQuests"] = { 78613 },	-- The Bastion of Hallowfall
+					["provider"] = { "n", 220406 },	-- Faerin Lothar
+					["coord"] = { 43.2, 56.2, HALLOWFALL },
+				}),
+				hqt(79971, {	-- Stay awhile and listen: Alleria Windrunner
+					["name"] = "Stay awhile and listen: Alleria Windrunner",
+					["sourceQuests"] = { 78613 },	-- The Bastion of Hallowfall
+					["provider"] = { "n", 220402 },	-- Alleria Windrunner
+					["coord"] = { 41.7, 56.8, HALLOWFALL },
+				}),
+				--
 				q(79297, {	-- Nightwatch
 					["sourceQuests"] = { 78613 },	-- The Bastion of Hallowfall
 					["provider"] = { "n", 218182 },	-- Alleria Windrunner
 					["coord"] = { 42.8, 55.7, HALLOWFALL },
 					["g"] = {
-						i(217995),	-- Order of Night Propaganda (QI!)
-						i(217993),	-- Order of Night Propaganda (QI!)
-						i(217900),	-- Order of Night Propaganda (QI!)
+						o_repeated({
+							i(217995),	-- Order of Night Propaganda (QI!)
+							i(217993),	-- Order of Night Propaganda (QI!)
+							i(217900),	-- Order of Night Propaganda (QI!)
+							i(217990),	-- Order of Night Propaganda (QI!)
+							o(433907),	-- Order of Night Propaganda
+							o(424436),	-- Order of Night Propaganda
+						}),
 					},
 				}),
 				q(78626, {	-- Spar Day
@@ -196,6 +232,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 213108 },	-- General Steelstrike
 					["coord"] = { 41.3, 53.0, HALLOWFALL },
 				}),
+				------ Stay awhile and listen ------
+				hqt(81636, {	-- Stay awhile and listen: General Steelstrike
+					["name"] = "Stay awhile and listen: General Steelstrike",
+					["sourceQuests"] = { 78626 },	-- Spar Day
+					["provider"] = { "n", 213108 },	-- General Steelstrike
+					["coord"] = { 41.2, 52.9, HALLOWFALL },
+				}),
+				--
 				q(78614, {	-- Mereldar's Light
 					["sourceQuests"] = { 78626 },	-- Spar Day
 					["provider"] = { "n", 213108 },	-- General Steelstrike
@@ -237,6 +281,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 213107 },	-- Faerin Lothar
 					["coord"] = { 33.6, 54.8, HALLOWFALL },
 				}),
+				------ Stay awhile and listen ------
+				hqt(81631, {	-- Stay awhile and listen: Faerin Lothar
+					["name"] = "Stay awhile and listen: Faerin Lothar",
+					["sourceQuests"] = { 80049 },	-- The Flame Still Burns
+					["provider"] = { "n", 213107 },	-- Faerin Lothar
+					["coord"] = { 33.5, 54.8, HALLOWFALL },
+				}),
+				--
 				q(78627, {	-- The Final Front
 					["sourceQuests"] = {
 						79089,	-- Consecrated Cleanup
@@ -300,9 +352,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(78693, {	-- Spears for Fears
 					["sourceQuests"] = { 78690 },	-- Situational Awareness
 					["provider"] = { "n", 213613 },	-- Aemyra Acton
-					["coord"] = { 50.0, 20.8, HALLOWFALL },
+					["coords"] = {
+						{ 50.0, 20.8, HALLOWFALL },
+						{ 45.8, 13.1, HALLOWFALL },
+					},
 					["g"] = {
-						i(211948),	-- Kobyss Spear (QI!)
+						o(416401, {	-- Kobyss Spear
+							i(211948),	-- Kobyss Spear (QI!)
+						}),
 					},
 				}),
 				q(78694, {	-- Reclaiming Velhan's Claim
@@ -316,7 +373,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						78693,	-- Spears for Fears
 					},
 					["provider"] = { "n", 213613 },	-- Aemyra Acton
-					["coord"] = { 50.0, 20.8, HALLOWFALL },
+					["coord"] = { 45.8, 13.1, HALLOWFALL },
 				}),
 				q(78692, {	-- Teach a Man to Fish
 					["sourceQuests"] = {
@@ -356,7 +413,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
 					["provider"] = { "n", 215335 },	-- General Steelstrike
 					["coord"] = { 40.5, 50.8, HALLOWFALL },
-					["isBreadcrumb"] = true,
 				}),
 				q(79642, {	-- Stave Them Off
 					["sourceQuests"] = { 82628 },	-- The Brothers Braunpyke
@@ -377,7 +433,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						79641,	-- Wipe Away Their Smiles
 					},
 					["provider"] = { "n", 221492 },	-- Baron Sybaestan Braunpyke
-					--["coord"] = { x, y, HALLOWFALL },	-- follow player
 				}),
 				q(79644, {	-- Go to The Priory
 					["sourceQuests"] = { 79643 },	-- Dreaded Dreadfang
@@ -394,7 +449,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 217398 },	-- Sister Etna Blayze
 					["coord"] = { 40.5, 35.0, HALLOWFALL },
 					["g"] = {
-						i(218113),	-- Wasp Venom (QI!)
+						i(218113),	-- Sweet-Sting Venom (QI!)
 					},
 				}),
 				q(79647, {	-- Burning Reflections
@@ -422,14 +477,28 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["maps"] = { 2308, 2309 },	-- Priory of the Sacred Flame
 					["g"] = {
 						i(226139),	-- Arathi Officer's Gauntlets
+						i(226137),	-- Inquisitive Sister's Cinch
+						i(226134),	-- Mourning Baron's Shoulderpads
+						i(226138),	-- Vow-Taker's Boots
 					},
+				}),
+				------ Stay awhile and listen ------
+				hqt(82538, {	-- Stay awhile and listen: General Steelstrike
+					["name"] = "Stay awhile and listen: General Steelstrike",
+					["sourceQuests"] = { 79650 },	-- Priory of the Sacred Flame: A Brother's Grief
+					["provider"] = { "n", 218289 },	-- General Steelstrike
+					["coord"] = { 42.3, 55, HALLOWFALL },
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40844.03, {	-- Striking Steel
 				q(82216, {	-- Economical Request
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 213145 },	-- Auralia Steelstrike
 					["coord"] = { 41.3, 53.1, HALLOWFALL },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(216694),	-- Letter of Recommendation (QI!)
 					},
@@ -456,30 +525,37 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(82217, {	-- Underground Economics
-					["sourceQuests"] = {	-- possibly will be require all 3 but atm only 'Does Anyone Like Wasps?'
-						--82213,	-- A Batty Request
+					["sourceQuests"] = {
+						82213,	-- A Batty Request
 						82214,	-- Does Anyone Like Wasps?
-						--82215,	-- Regular Fiber
+						82215,	-- Regular Fiber
 					},
 					["provider"] = { "n", 225711 },	-- General Steelstrike
 					["coord"] = { 68.4, 44.6, HALLOWFALL },
 					["g"] = {
 						--i(223638),	-- Arathi Trade Goods (QI!)
 						i(223892),	-- Assorted Spices (QI!)
-						i(223889),	-- Flame Touched Weaponry (QI!)
+						i(223889),	-- Flame-Touched Weaponry (QI!)
 						i(223890),	-- Tough Ivy Rope (QI!)
 					},
 				}),
 				q(82219, {	-- Spice Up Your Life
-					--["sourceQuests"] = { ? },	-- TODO: suddenly become available with next reset/new build/renown level/item from Time Lost/Found?
+					["description"] = "Becomes available after daily reset.",
+					["sourceQuests"] = { 82217 },	-- Underground Economics
 					["provider"] = { "n", 213145 },	-- Auralia Steelstrike
 					["coord"] = { 42.3, 55.0, HALLOWFALL },
 					["g"] = {
-						i(222953),	-- Light-Bathed Lotus Cuttings (QI!)
+						o_repeated({
+							i(222953),	-- Light-Bathed Lotus Cuttings (QI!)
+							o(444028),	-- Light-Bathed Lotus
+							o(444029),	-- Light-Bathed Lotus
+							o(444030),	-- Light-Bathed Lotus
+						}),
 					},
 				}),
 				q(82220, {	-- Eagle Eye, Eagle Die
-					--["sourceQuests"] = { ? },	-- TODO: suddenly become available with next reset/new build/renown level/item from Time Lost/Found?
+				["description"] = "Becomes available after daily reset.",
+					["sourceQuests"] = { 82217 },	-- Underground Economics
 					["provider"] = { "n", 213145 },	-- Auralia Steelstrike
 					["coord"] = { 42.3, 55.0, HALLOWFALL },
 					["g"] = {
@@ -511,34 +587,44 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			}),
 			header(HEADERS.AchCriteria, 40844.04, {	-- Lost in the Darkness
 				q(80382, {	-- Eggs In One Basket
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "o", 430581 },	-- Egg Basket
 					["coord"] = { 60.8, 27.9, HALLOWFALL },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(217396),	-- Hillhelm Egg (QI!)
 					},
 				}),
 				q(76247, {	-- Keep The Home Fires Burning
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 206528 },	-- Aliya Hillhelm
 					["coord"] = { 61.2, 30.5, HALLOWFALL },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(209854),	-- Hillhelm Remnant Supply (QI!)
 					},
 				}),
 				q(79108, {	-- Seeds of Evil
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = {
+						TEMPORARY_SOURCEQUEST,
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["provider"] = { "n", 206528 },	-- Aliya Hillhelm
 					["coord"] = { 61.2, 30.5, HALLOWFALL },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(212153),	-- Corrupted Shadowleaf Seed (QI!)
 					},
 				}),
-
 				q(50690, {	-- A Flickering of Hope (don't ask me about this questID, ask Blizzard, it is also currently in HQTs)
 					["sourceQuests"] = {
-						80382,	-- Eggs In One Basket
-						76247,	-- Keep The Home Fires Burning // either all 3 or only this one required
+						76247,	-- Keep The Home Fires Burning // either all 2 or only this one required
 						79108,	-- Seeds of Evil
 					},
 					["provider"] = { "n", 206528 },	-- Aliya Hillhelm
@@ -562,8 +648,13 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40844.05, {	-- The Sky's the Limit
-				q(79304, {	-- 	-- Care Package
-					["isBreadcrumb"] = true,	-- But I didn't find it
+				q(79304, {	-- Care Package
+					["provider"] = { "n", 217609 },	-- Barahl Lynflayme
+					["coord"] = { 69.2, 43.8, HALLOWFALL },
+					["isBreadcrumb"] = true,
+					["g"] = {
+						i(228409),	-- Valrin's Sweetrolls (QI!)
+					},
 				}),
 				q(79300, {	-- The Notebook
 					["sourceQuests"] = { 79304 },	-- Care Package
@@ -595,9 +686,19 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 			}),
 			header(HEADERS.AchCriteria, 40844.06, {	-- Crushing Depths
-				q(81797),	-- Targeted Recon
-				q(80312, {	-- Gasping Plea
+				q(81797, {	-- Targeted Recon
+					["description"] = "Look for Arathi Captives in the area. They are an illusion. You can find Kobyss Shadeshapers right behind them.",
+					["crs"] = {
+							215623,	-- Arathi Captive
+							215653,	-- Kobyss Shadeshaper
+					},
 					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["provider"] = { "n", 218508 },	-- Joseph Brayvemarc
+					["coord"] = { 42.6, 55.3, HALLOWFALL },
+					["isBreadcrumb"] = true,
+				}),
+				q(80312, {	-- Gasping Plea
+					["sourceQuests"] = { 81797 },	-- Targeted Recon
 					["provider"] = { "i", 217352 },	-- Gasping Fish (QI!)
 				}),
 				q(80313, {	-- Tidal Charms
@@ -643,7 +744,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 219135 },	-- Wenren Althal
 					["coord"] = { 48.8, 64.5, HALLOWFALL },
 					["g"] = {
-						i(217269),	-- Arcane Suffused Organ (QI!)
+						i(217269),	-- Arcane-Suffused Organ (QI!)
 					},
 				}),
 				q(80177, {	-- Arcane Experiments
@@ -679,8 +780,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 215301 },	-- Shinda Creedpike
 					["coord"] = { 40.7, 50.6, HALLOWFALL },
 					["g"] = {
+						i(228367),	-- Arathi Scout's Walking Stick
+						i(228366),	-- Child's Former Fishing Rod
 						i(228365),	-- Concerned Captain's Cudgel
-						i(228362),	-- Shinda's Spare Greataxe
+						i(228364),	-- Endiri's Chipped Boot Knife
+						i(228362),	-- Polished Arathi Rifle
+						i(228363),	-- Shinda's Spare Greataxe
 					},
 				}),
 				q(79162, {	-- Burnout
@@ -703,15 +808,22 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 224378 },	-- Orren Masyn
 					["coord"] = { 47.3, 64.8, HALLOWFALL },
 					["g"] = {
-						i(224193),	-- Orren's Message	(QI!)
-						i(224098),	-- Crimson Charmer	(QI!)
-						i(224099),	-- Amber Bloom	(QI!)
+						o(446363, {	-- Amber Bloom
+							i(224099),	-- Amber Bloom (QI!)
+						}),
+						o(446362, {	-- Crimson Charmer
+							i(224098),	-- Crimson Charmer (QI!)
+						}),
+						i(224193),	-- Orren's Message (QI!)
 					},
 				}),
 				q(82479, {	-- The Sword is Mightier
 					["sourceQuests"] = { 82478 },	-- Regularly Scheduled Maintenance
 					["provider"] = { "n", 213613 },	-- Aemyra Acton
-					["coord"] = { 46.0, 10.5, HALLOWFALL },
+					["coords"] = {
+						{ 50.0, 20.8, HALLOWFALL },
+						{ 46.0, 10.5, HALLOWFALL },
+					},
 				}),
 				q(82480, {	-- Job Killing Robot Or...
 					["sourceQuests"] = { 82479 },	-- The Sword is Mightier
@@ -726,7 +838,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(83497, {	-- A Concerned Friend
 					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
 					["provider"] = { "n", 226708 },	-- Val Thalvassa
-					["coord"] = { 51.6, 54.2, DORNOGAL },
+					["coord"] = { 51.1, 46.0, DORNOGAL },
 					["isBreadcrumb"] = true,
 				}),
 				q(79165, {	-- A Moment To Rest
@@ -740,7 +852,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["coord"] = { 40.7, 70.9, HALLOWFALL },
 					["g"] = {
 						i(214615),	-- Broken Trinket (QI!)
-						--i(214616),	-- Engraved Dagger (QI!) TODO: removed?
+						i(214616),	-- Engraved Dagger (QI!)
 						i(214609),	-- Game Piece (QI!)
 						i(211959),	-- Lost Belongings (QI!)
 					},
@@ -765,7 +877,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 215237 },	-- Alyza Bowblaze
 					["coord"] = { 41.8, 55.6, HALLOWFALL },
 					["g"] = {
-						i(216604),	-- "Much Loved" Teddy Bear (QI!)
+						o(423958, {	-- Arathi Chest
+							i(216604),	-- "Much Loved" Teddy Bear (QI!)
+						}),
 					},
 				}),
 				q(83182, {	-- A Bloody Inheritance
@@ -773,10 +887,18 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 218062 },	-- Alyza Bowblaze
 					["coord"] = { 52.4, 50.2, HALLOWFALL },
 					["g"] = {
-						i(215446),	-- Battered Helmet (QI!)
-						i(216525),	-- Dented Boots (QI!)
-						i(216526),	-- Resplendant Shield (QI!)
-						i(216524),	-- Salt-pitted Sword (QI!)
+						o(416310, {	-- Kobyss Chest
+							i(215446),	-- Battered Helmet (QI!)
+						}),
+						o(423977, {	-- Kobyss Chest
+							i(216525),	-- Dented Boots (QI!)
+						}),
+						o(423979, {	-- Kobyss Chest
+							i(216526),	-- Resplendant Shield (QI!)
+						}),
+						o(423978, {	-- Kobyss Chest
+							i(216524),	-- Salt-pitted Sword (QI!)
+						}),
 					},
 				}),
 				q(79152, {	-- Gutting the Pool
@@ -805,7 +927,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 			header(HEADERS.AchCriteria, 40844.12, {	-- The Mysterious Chef
 				q(84392, {	-- Hungry in Hollow
 					--["sourceQuests"] = { xx },	-- ?
-					["provider"] = { "n", 222323 },	-- Haelmut Aegisaxe
+					["provider"] = { "n", 222683 },	-- Haelmut Aegisaxe
 					["coord"] = { 48.4, 39.4, HALLOWFALL },
 					["isBreadcrumb"] = true,	-- TODO: need to re-confirm, just in case
 				}),
@@ -830,7 +952,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 224741 },	-- Dolena
 					["coord"] = { 69.9, 32.6, HALLOWFALL },
 					["g"] = {
-						i(224395),	-- Secret Garlic (QI!)
+						o(451442, {	-- Secret Garlic
+							i(224395),	-- Secret Garlic (QI!)
+						}),
 					},
 				}),
 				q(82848, {	-- Sous
@@ -854,7 +978,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 216063 },	-- Scout Wayshelm
 					["coord"] = { 75.4, 49.6, HALLOWFALL },
 					["g"] = {
-						i(213519),	-- Maevest's Compass (QI!)
+						o(422560, {	-- Maevest's Compass
+							i(213519),	-- Maevest's Compass (QI!)
+						}),
 					},
 				}),
 				q(79312, {	-- Mow the Masses
@@ -889,16 +1015,23 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(83247, {	-- Suspicious Minds
-					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
+					["sourceQuests"] = { TEMPORARY_SOURCEQUEST },	-- For Morale is not the source quest, you can do 83247 before 83283
 					["provider"] = { "n", 225879 },	-- Derill Fayn
 					["coord"] = { 68.1, 44.2, HALLOWFALL },
 					["g"] = {
 						i(225179),	-- Salamanther Heart (QI!)
-						--
 						i(228438),	-- Derill's Unused Visor
+						i(228437),	-- Salamanther-Scale Greaves
+						i(228436),	-- United Arathi's Jerkin
+						i(228435),	-- Wine-Dyed Leggings
 					},
 				}),
-				q(83279),	-- Prove One's Mettle
+				q(83279, {	-- Prove One's Mettle
+					["description"] = "This quest is only obtainable as either a Death Knight, Demon Hunter, Shadow Priest, or Warlock or as an Undead or Void Elf. It will be properly filtered by ATT on these criteria soon.",
+					["sourceQuests"] = { 83247 },	-- Suspicious Minds
+					["provider"] = { "n", 225879 },	-- Derill Fayn
+					["coord"] = { 68.1, 44.2, HALLOWFALL },
+				}),
 			}),
 			header(HEADERS.AchCriteria, 40844.15, {	-- Memories of the Sky
 				q(80673, {	-- Runway Scare-a-way
@@ -922,12 +1055,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["provider"] = { "n", 220718 },	-- Maera Ashyld
 					["coord"] = { 60.5, 60.2, HALLOWFALL },
 					["g"] = {
-						i(219814),	-- Rusted Torch (QI!)
-						i(219813),	-- Tarnished Compass (QI!)
-						i(219811),	-- Broken Bracelet (QI!)
-						i(219816),	-- Knotted Aviator Scarf (QI!)
-						i(219812),	-- Plush Lynx (QI!)
-						i(219815),	-- Small Hilt (QI!)
+						o(437025, {	-- Sludge Pile
+							i(219814),	-- Rusted Torch (QI!)
+							i(219813),	-- Tarnished Compass (QI!)
+							i(219811),	-- Broken Bracelet (QI!)
+							i(219816),	-- Knotted Aviator Scarf (QI!)
+							i(219812),	-- Plush Lynx (QI!)
+							i(219815),	-- Small Hilt (QI!)
+						}),
 						--
 						i(219810),	-- Broken Bracelet
 						i(219809),	-- Plush Lynx
@@ -935,17 +1070,19 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(82810, {	-- Time Found
-					["description"] = "Become available on next week, after Time Lost was finished",
+					["description"] = "Becomes available a week after 'Time Lost' was finished.",
 					["sourceQuests"] = { 80678 },	-- Time Lost
 					["provider"] = { "n", 220718 },	-- Maera Ashyld
 					["coord"] = { 60.5, 60.2, HALLOWFALL },
 					["g"] = {
-						i(224184),	-- Crusty Spyglass (QI!)
-						i(224187),	-- Dented Spearhead (QI!)
-						i(224188),	-- Filigreed Cleric (QI!)
-						i(224186),	-- Hymns of the Flame (QI!)
-						i(224189),	-- Ivory Tinderbox (QI!
-						i(224179),	-- Swamplogged Letter (QI!)
+						o(451538, {	-- Sludge Pile
+							i(224184),	-- Crusty Spyglass (QI!)
+							i(224187),	-- Dented Spearhead (QI!)
+							i(224188),	-- Filigreed Cleric (QI!)
+							i(224186),	-- Hymns of the Flame (QI!)
+							i(224189),	-- Ivory Tinderbox (QI!
+							i(224179),	-- Swamplogged Letter (QI!)
+						}),
 						--
 						i(224267),	-- Dented Spearhead
 						i(224268),	-- Filigreed Cleric
@@ -953,132 +1090,204 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					},
 				}),
 				q(82813, {	-- Time Borrowed
-					["description"] = "Become available on next week, after Time Found was finished",
+					["description"] = "Become available a week after 'Time Found' was finished.",
 					["sourceQuests"] = { 82810 },	-- Time Found
 					["provider"] = { "n", 220718 },	-- Maera Ashyld
 					["coord"] = { 60.5, 60.2, HALLOWFALL },
 					["g"] = {
+						i(224187),	-- Dented Spearhead (QI!)
+						i(224239),	-- Pile of Leather String (QI!)
+						i(224257),	-- Sturdy Locket (QI!)
+						i(224250),	-- Toy Fish (QI!)
+						i(224254),	-- Wooden Figure (QI!)
+						i(224238),	-- Worn Coin (QI!)
 						--
+						i(224272),	-- Calcified Journal
+						i(224274),	-- Sturdy Locket
+						i(224273),	-- Wooden Figure
 					},
 				}),
 			}),
 			------ Miscellaneous ------
-			q(81651),	-- Delver's Guide to Delves [Might be NYI??]
-			q(79222, {	-- Shadow-Hardened Mainspring
-				["provider"] = { "i", 212330 },	-- Shadow-Hardened Mainspring
+			q(79554, {	-- Holy Hydrocarbons
+				["provider"] = { "i", 217388 },	-- Crate of Devotional Candles (QS!/QI!)
 			}),
 			q(79221, {	-- The Unusual Bug
-				["provider"] = { "i", 212331 },	-- The Unusual Bug (QI!)
-				["coord"] = { 67.2, 19.2, HALLOWFALL },
+				["provider"] = { "i", 212331 },	-- The Unusual Bug (QS!/QI!)
+				["coord"] = { 67.2, 21.8, HALLOWFALL },
+				["maps"] = { AZJ_KAHET },
+			}),
+			q(81640, {	-- Tenir and the Order of Night
+				["provider"] = { "i", 219384 },	-- Umbral Eggplant (QS!/QI!)
+				["maps"] = { ISLE_OF_DORN },
 			}),
 			q(82894, {	-- The Price of Hope
 				["sourceQuests"] = { TEMPORARY_SOURCEQUEST },
 				["provider"] = { "n", 215335 },	-- General Steelstrike
 				["coord"] = { 40.5, 50.8, HALLOWFALL },
 				["g"] = {
-					i(216687),	-- Cobbled Together Bandage (QI!)
+					o(424343, {	-- Medical Supplies
+						i(216687),	-- Cobbled Together Bandage (QI!)
+					}),
 				},
 			}),
-			-- Items turn in quests?
-			q(82846, {	-- Dented Spearhead
-				["sourceQuests"] = { 82810 },	-- Time Found
-				["provider"] = { "n", 213145 },	-- Auralia Steelstrike
-				["coord"] = { 42.3, 55.0, HALLOWFALL },
-				["cost"] = {{"i", 224267, 1}},	-- 1x Dented Spearhead
+			header(HEADERS.Achievement, 40618, {	-- Lost and Found
+				-- Items are obtained during quests Time Lost, Time Found and Time Borrowed
+				q(80681, {	-- Broken Bracelet
+					["sourceQuests"] = { 80678 },	-- Time Lost
+					["provider"] = { "n", 215527 },	-- Keyrra Flamestonge <Expedition Scout>
+					["coord"] = { 65.4, 32.2, HALLOWFALL },
+					["cost"] = {{"i", 219810, 1}},	-- 1x Broken Bracelet
+				}),
+				q(82835, {	-- Calcified Journal
+					["sourceQuests"] = { 82813 },	-- Time Borrowed
+					["provider"] = { "n", 222813 },	-- Lorel Ironglen
+					["coord"] = { 48.4, 38.9, HALLOWFALL },
+					["cost"] = {{"i", 224272, 1}},	-- 1x Calcified Journal
+				}),
+				q(82846, {	-- Dented Spearhead
+					["sourceQuests"] = { 82810 },	-- Time Found
+					["provider"] = { "n", 213145 },	-- Auralia Steelstrike
+					["coord"] = { 42.3, 55.0, HALLOWFALL },
+					["cost"] = {{"i", 224267, 1}},	-- 1x Dented Spearhead
+				}),
+				q(82849, {	-- Filigreed Cleric
+					["sourceQuests"] = { 82810 },	-- Time Found
+					["provider"] = { "n", 217813 },	-- Kiera Horth
+					["coord"] = { 44.0, 49.7, HALLOWFALL },
+					["cost"] = {{"i", 224268, 1}},	-- 1x Filigreed Cleric
+				}),
+				q(82845, {	-- Ivory Tinderbox
+					["sourceQuests"] = { 82810 },	-- Time Found
+					["provider"] = { "n", 226051 },	-- Haverd Sunhart
+					["coord"] = { 41.6, 34.8, HALLOWFALL },
+					["cost"] = {{"i", 224266, 1}},	-- 1x Ivory Tinderbox
+				}),
+				q(80679, {	-- Stuffed Lynx Toy
+					["sourceQuests"] = { 80678 },	-- Time Lost
+					["provider"] = { "n", 218486 },	-- Phillip Taversil <Leatherworking>
+					["coord"] = { 43.3, 55.4, HALLOWFALL },
+					["cost"] = {{"i", 219809, 1}},	-- 1x Plush Lynx
+				}),
+				q(82815, {	-- Sturdy Locket
+					["sourceQuests"] = { 82813 },	-- Time Borrowed
+					["provider"] = { "n", 220859 },	-- Amy Lychenstone
+					["coord"] = { 42.1, 49.5, HALLOWFALL },
+					["cost"] = {{"i", 224274, 1}},	-- 1x Sturdy Locket
+				}),
+				q(80680, {	-- Tarnished Compass
+					["sourceQuests"] = { 80678 },	-- Time Lost
+					["provider"] = { "o", 439890 },	-- Grave Offering Location
+					["coord"] = { 43.5, 51.7, HALLOWFALL },
+					["cost"] = {{"i", 219524, 1}},	-- 1x Tarnished Compass
+				}),
+				q(82832, {	-- Wooden Figure
+					["sourceQuests"] = { 82813 },	-- Time Borrowed
+					["provider"] = { "n", 217609 },	-- Barahi Lynflayme
+					["coord"] = { 69.3, 43.8, HALLOWFALL },
+					["cost"] = {{"i", 224273, 1}},	-- 1x Wooden Figure
+				}),
 			}),
-			q(82849, {	-- Filigreed Cleric
-				["sourceQuests"] = { 82810 },	-- Time Found
-				["provider"] = { "n", 217813 },	-- Kiera Horth
-				["coord"] = { 44.0, 49.7, HALLOWFALL },
-				["cost"] = {{"i", 224268, 1}},	-- 1x Filigreed Cleric
-			}),
-			--
-			q(82025, {	-- Talk with Sky-Captain Aerthin
+			hqt(82025, {	-- Talk with Sky-Captain Aerthin
 				["name"] = "Talk with Sky-Captain Aerthin",
-				["description"] = "This NPC is Patrolling",
+				["description"] = "This npc is on a patrolling airship.",
 				["provider"] = { "n", 222323 },	-- Sky-Captain Aerthin
 				["coords"] = {
 					{ 33.0, 43.0, HALLOWFALL },
 					{ 34.2, 45.4, HALLOWFALL },
 				},
 			}),
-			q(82024, {	-- Talk with Sky-Captain Clairmonte
+			hqt(82024, {	-- Talk with Sky-Captain Clairmonte
 				["name"] = "Talk with Sky-Captain Clairmonte",
-				["description"] = "This NPC is Patrolling",
+				["description"] = "This npc is on a patrolling airship.",
 				["provider"] = { "n", 222311 },	-- Sky-Captain Clairmonte
 				["coords"] = {
 					{ 44.6, 45.8, HALLOWFALL },
 					{ 34.2, 45.4, HALLOWFALL },
 				},
 			}),
-			q(82012, {	-- Talk with Sky-Captain Dornald
+			hqt(82012, {	-- Talk with Sky-Captain Dornald
 				["name"] = "Talk with Sky-Captain Dornald",
-				["description"] = "This NPC is Patrolling",
+				["description"] = "This npc is on a patrolling airship.",
 				["provider"] = { "n", 222333 },	-- Sky-Captain Dornald
 				["coords"] = {
 					{ 45.4, 47.4, HALLOWFALL },
 					{ 58.0, 40.2, HALLOWFALL },
 				},
 			}),
-			q(82026, {	-- Talk with Sky-Captain Onaro
+			hqt(82026, {	-- Talk with Sky-Captain Onaro
 				["name"] = "Talk with Sky-Captain Onaro",
-				["description"] = "This NPC is Patrolling",
+				["description"] = "This npc is on a patrolling airship.",
 				["provider"] = { "n", 222337 },	-- Sky-Captain Onaro
 				["coords"] = {
 					{ 45.4, 47.4, HALLOWFALL },
 					{ 58.0, 40.2, HALLOWFALL },
 				},
 			}),
-			n(BONUS_OBJECTIVES, {
+			n(BONUS_OBJECTIVES, sharedData({
+				["lockCriteria"] = { 1, "lvl", 80 },
+			},{
 				q(81568, {	-- Release the Beasts
+					["sourceQuests"] = {
+						78672,	-- A Lamplighter's Duty
+						TWW_ACCOUNT_CAMPAIGN_QUEST,
+					},
 					["coord"] = { 55.2, 26.8, HALLOWFALL },
+					["sourceQuestNumRequired"] = 1,
 					["g"] = {
 						i(217352),	-- Gasping Fish (QI!)
 					},
 				}),
+			})),
+			------ Stay awhile and listen ------
+			hqt(81635, {	-- Stay awhile and listen: Nalina Ironsong
+				["name"] = "Stay awhile and listen: Nalina Ironsong",
+				-- ["sourceQuests"] = { ??? },	-- TODO: Find a sourcequest and move this quest next to it in quests
+				["provider"] = { "n", 217642 },	-- Nalina Ironsong
+				["coord"] = { 42.8, 55.8, HALLOWFALL },
 			}),
 		}),
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	-- During questing
-	q(83614),	-- [DNT] Zone 3 Bread Crumb Completed Organically (spellID 456930), after turn in questID 78658 (The Hallowed Path)
-	q(79654),	-- [DNT] Hallowfall Arathi Renown Unlock (spellID 448657)
-	q(81594),	-- [DNT] Complete Tracking Quest (spellID 443002), after turn in questID 78932 (Fickle Fiendish Fish) (could be rp unlock for 'Stay a while and listen' Faerin during Blades of the Arathi? Activation of this dialog didn't fire any quest)
-	q(79971),	-- Stay a while and listen - Alleria Windrunner, during questID 79971 (Nightwatch)
-	q(79706),	-- Stay a while and listen - Faerin Lothar, during questID 79971 (Nightwatch)
-	--q(82538),	-- Stay a while and listen - General Steelstrike, before turn in questID 78626 (Spar Day)
-	q(81636),	-- Stay a while and listen - General Steelstrike, after turn in questID 78626 (Spar Day)
-	q(81631),	-- Stay a while and listen - Faerin Lothar, after pick up questID 80049 (The Flame Still Burns)
-	q(81635),	-- Stay a while and listen - Nalina Ironsong @ 42.7, 55.8, HALLOWFALL (n: 217642) (idk when become available)
-	-- questID 79303 (A Principled Principal) nodes
-	q(83287),	-- should accept work
-	q(83288),	-- system become unfair
-	q(83289),	-- reject work and blame Edwyn in addition
-	--questID 82894 (The Price of Hope)
-	q(79081),	-- after using Cobbled Together Bandage on injured Soldier @ 43.3, 51.7
-	-- questID 82479 (The Sword is Mightier)
-	q(82728),	-- 4 page / 1 node (The work...)
-	q(82738),	-- 4 page / 1 node (The work...)
-	q(82729),	-- 4 page / 3 node (Don't get...)
-	q(82730),	-- 4 page / 4 node (Please...)
-	q(82732),	-- 5 page / 1 node (I'm...)
-	q(82736),	-- 5 page / 1 node (I'm...)
-	q(82731),	-- 5 page / 3 node (I want...)
-	q(82733),	-- 5 page / 4 node (If you...)
-	q(82737),	-- 5 page / 4 node (If you...)
-	--
-	q(82674),	-- trigger after interact with Cooking Pot and choose 'Good enought' option, during questID 82222 (Cooking With Style)
-	--
-	q(82218),	-- 'Break [DNT]' triggered during questID 82217 (Underground Economics) when you click 'Alliance' dialog option on Andee Seabraid
-	--q(xxxxx),	-- '?' triggered during questID 82217 (Underground Economics) when you click 'Horde' dialog option on Andee Seabraid
-	--
-	q(82749),	-- Flag for next quest after weekly reset for Time Lost & Time Found (spellID 452551 - Flag Timer)
-	q(83748),	-- triggered after turn in questID 79168 (Light's Gambit) (spellID 457904 - [DNT] Have Played Light's Gambit)
-	q(79941, {["isDaily"]=true,}),	-- <I wish to visit Veneration Groundkeeper> - Justicia Baercennan (n: 225942 @ 41.8, 54.3), nothing happen & reset on daily (spellID 454635)
-	q(79212),	-- not sure why it pop near Defender of the Flame quest chain @ 65.5, 32.2, when I fly here first time
-	-- Special Assignment unclocks tracker
-	q(82158),	-- Special Assignment: Lynx Rescue
-	q(82161),	-- Special Assignment: Bombs from Behind
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+	m(KHAZ_ALGAR, {
+		m(HALLOWFALL, {
+			n(QUESTS, {
+				-- During questing
+				q(83614),	-- [DNT] Zone 3 Bread Crumb Completed Organically (spellID 456930), after turn in questID 78658 (The Hallowed Path)
+				q(79654),	-- [DNT] Hallowfall Arathi Renown Unlock (spellID 448657)
+				-- questID 79303 (A Principled Principal) nodes
+				q(83287),	-- should accept work
+				q(83288),	-- system become unfair
+				q(83289),	-- reject work and blame Edwyn in addition
+				--questID 82894 (The Price of Hope)
+				-- questID 82479 (The Sword is Mightier)
+				q(82728),	-- 4 page / 1 node (The work...)
+				q(82738),	-- 4 page / 1 node (The work...)
+				q(82729),	-- 4 page / 3 node (Don't get...)
+				q(82730),	-- 4 page / 4 node (Please...)
+				q(82732),	-- 5 page / 1 node (I'm...)
+				q(82736),	-- 5 page / 1 node (I'm...)
+				q(82731),	-- 5 page / 3 node (I want...)
+				q(82733),	-- 5 page / 4 node (If you...)
+				q(82737),	-- 5 page / 4 node (If you...)
+				--
+				q(82673),	-- trigger after interact with Cooking Pot and choose 'Seems good to me' option, during questID 82222 (Cooking With Style)
+				q(82674),	-- trigger after interact with Cooking Pot and choose 'Good enought' option, during questID 82222 (Cooking With Style)
+				q(82675),	-- trigger after interact with Cooking Pot and choose 'Retry' or 'Cooking' option, during questID 82222 (Cooking With Style)
+				q(83056),	-- Cooking With Style Tracker (completed with Q(82222) and was named by blizzard)
+				--
+				q(82218),	-- 'Break [DNT]' triggered during questID 82217 (Underground Economics) when you click 'Alliance' dialog option on Andee Seabraid
+				--q(xxxxx),	-- '?' triggered during questID 82217 (Underground Economics) when you click 'Horde' dialog option on Andee Seabraid
+				--
+				q(82749, {	-- Flag for next quest after weekly reset for Time Lost & Time Found & Time Borrowed (spellID 452551 - Flag Timer)
+					["name"] = "Times Lost, Found and Borrowed have been reset. You should visit Maera Ashyld at the outskirts of Stagnant Mire.",
+				}),
+				q(83748),	-- triggered after turn in questID 79168 (Light's Gambit) (spellID 457904 - [DNT] Have Played Light's Gambit)
+				q(79941, {["isDaily"]=true,}),	-- <I wish to visit Veneration Groundkeeper> - Justicia Baercennan (n: 225942 @ 41.8, 54.3), nothing happen & reset on daily (spellID 454635)
+				q(79212),	-- not sure why it pop near Defender of the Flame quest chain @ 65.5, 32.2, when I fly here first time
+			}),
+		}),
+	}),
+})));

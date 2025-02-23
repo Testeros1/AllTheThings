@@ -7,7 +7,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 			q(64867, {	-- Supplies from The Enlightened
 				["provider"] = { "n", 182257 },	-- Vilo
 				["coord"] = { 34.8, 64.1, ZERETH_MORTIS },
-				["minReputation"] = { 2478, 8 },	-- The Enlightened, Exalted
+				["minReputation"] = { FACTION_THE_ENLIGHTENED, EXALTED },	-- The Enlightened, Exalted
 				["repeatable"] = true,
 				["g"] = {
 					i(187780, {	-- Enlightened Broker Supplies
@@ -35,7 +35,13 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	q(64869),	-- "Paragon of Automa" ( Probably something left by blizzard when removed the Automa Rep and Cache /Braghe)
-	q(64870),	-- Paragon of Enlightened Brokers
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_2_0 } }, {
+	m(SHADOWLANDS, {
+		m(ZERETH_MORTIS, {
+			n(EMISSARY_QUESTS, {
+				q(64869),	-- "Paragon of Automa" ( Probably something left by blizzard when removed the Automa Rep and Cache /Braghe)
+				q(64870),	-- Paragon of Enlightened Brokers
+			}),
+		}),
+	}),
+})));

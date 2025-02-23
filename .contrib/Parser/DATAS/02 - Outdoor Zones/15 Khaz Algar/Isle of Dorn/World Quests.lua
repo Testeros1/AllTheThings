@@ -8,8 +8,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				79197,	-- Surface Bound
 				TWW_ACCOUNT_CAMPAIGN_QUEST,
 			},
-			["g"] = sharedData({ ["isWorldQuest"] = true, }, {
+			["g"] = bubbleDownFiltered({ ["isWorldQuest"] = true, },FILTERFUNC_questID,{
 				petbattle(q(82292, {	-- Rock Collector
+					["provider"] = { "n", 223446 },	-- Collector Dyna
 					["coord"] = { 34.9, 85.6, ISLE_OF_DORN },
 				})),
 				petbattle(q(82291, {	-- Robot Rumble
@@ -31,7 +32,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(81465, {	-- Artifacts Galore
 					["coord"] = { 78.4, 26.7, ISLE_OF_DORN },
 					["g"] = {
-						i(218454),	-- Titan Artifact (QI!)
+						o(437195, {	-- Titan Artifacts
+							i(218454),	-- Titan Artifact (QI!)
+						}),
 					},
 				}),
 				q(82448, {	-- Book It to the Library
@@ -46,7 +49,15 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(82658, {	-- Drop and Go
 					--["coord"] = { 45.2, 65.0, ISLE_OF_DORN },	-- could be wrong, all Isle of Dorn missing quest zone highlights
 					["g"] = {
-						i(224074),	-- Opal-Mining Tools (QI!)
+						o(449528, {	-- Opal-Mining Tools
+							i(224074),	-- Opal-Mining Tools (QI!)
+						})
+					}
+				}),
+				q(80395, {	-- Elemental Excavation
+					["coord"] = { 74.8, 55.1, ISLE_OF_DORN },
+					["g"] = {
+						i(218124),	-- Element Extractor (QI!)
 					}
 				}),
 				q(82225, {	-- Excavation Extravaganza
@@ -55,7 +66,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(81639, {	-- Honey Thieving Nerubians
 					["coord"] = { 78.9, 37.9, ISLE_OF_DORN },
 					["g"] = {
-						i(211811),	-- Small Glob of Fire Honey (QI!)
+						o(439463, {	-- Spilled Fire honey
+							["coords"] = {
+								{ 75.0, 36.5, ISLE_OF_DORN },
+								{ 75.1, 38.1, ISLE_OF_DORN },
+								{ 75.7, 37.7, ISLE_OF_DORN },
+								{ 76.1, 36.3, ISLE_OF_DORN },
+								{ 76.4, 37.1, ISLE_OF_DORN },
+							},
+							["g"] = { i(211811) },	-- Small Glob of Fire Honey (QI!)
+						}),
 					},
 				}),
 				q(81710, {	-- Mead for the Catalog
@@ -66,6 +86,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				}),
 				q(82451, {	-- Preserving Plush Pals
 					["coord"] = { 32.5, 53.3, ISLE_OF_DORN },
+					["g"] = {
+						i(223952),	-- Singed Plush (QI!)
+					},
 				}),
 				q(81512, {	-- Props and Incense
 					["coord"] = { 66.2, 58.5, ISLE_OF_DORN },
@@ -89,6 +112,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(81799, {	-- Skyrider Racing - Dornogal Drift
 					["coord"] = { 43.5, 11.7, DORNOGAL },	-- probably gonna need to move out of here
 				}),
+				q(81806, {	-- Skyrider Racing - Orecreg's Doglegs
+					["coord"] = { 32.9, 74.6, ISLE_OF_DORN },
+				}),
 				q(81802, {	-- Skyrider Racing - Storm's Watch Survey
 					["coord"] = { 38.6, 43.6, ISLE_OF_DORN },
 				}),
@@ -96,11 +122,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					["coord"] = { 62.0, 46.0, ISLE_OF_DORN },
 				}),
 				q(81805, {	-- Skyrider Racing - Thunderhead Trail
-					["coord"] = { 58.6, 21.1, ISLE_OF_DORN },
+					["coord"] = { 58.3, 24.9, ISLE_OF_DORN },
 				}),
 				q(81621, {	-- Tunnels Be Gone!
-					--also pop as bonus objective (and didn't show on map, but fall as world quest in quest tracker)
-					--move it out of here if needed
 					--["coord"] = { 63.9, 43.1, ISLE_OF_DORN },	-- could be wrong, all Isle of Dorn missing quest zone highlights
 					["g"] = {
 						i(219284),	-- Explosive Sticks (QI!)
@@ -119,11 +143,26 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				q(82355, {	-- Special Assignment: Cinderbee Surge
 					["coord"] = { 71.3, 40.7, ISLE_OF_DORN },
 				}),
-				q(81649, {	-- Special Assignment: Titanic Resurgence // can bug out interface and make you character unplayable atm
+				q(82146, {	-- Special Assignment: Cinderbee Surge
+					--["coord"] = { x, y, ISLE_OF_DORN },
+				}),
+				q(81650, {	-- Special Assignment: Titanic Resurgence
+					["coord"] = { 71.7, 31.1, ISLE_OF_DORN },
+				}),
+				q(81649, {	-- Special Assignment: Titanic Resurgence
 					["coord"] = { 73.0, 77.2, ISLE_OF_DORN },
 				}),
 				q(82154, {	-- Special Assignment: Titanic Resurgence
 					["coord"] = { 73.0, 77.2, ISLE_OF_DORN },
+				}),
+				q(83069, {	-- Special Assignment: Titanic Resurgence
+					--["coord"] = { x, y, ISLE_OF_DORN },
+				}),
+				q(83070, {	-- Special Assignment: Titanic Resurgence
+					--["coord"] = { x, y, ISLE_OF_DORN },
+				}),
+				q(81647, {	-- Special Assignment: Titanic Resurgence
+					["coord"] = { 31.8, 71.3, ISLE_OF_DORN },
 				}),
 			}),
 		}),

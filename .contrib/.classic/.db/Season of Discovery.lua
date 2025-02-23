@@ -163,7 +163,7 @@ end]];
 
 local SEASON_OF_DISCOVERY_HEADER = createHeader({	-- Season of Discovery
 	readable = "Season of Discovery",
-	icon = "Interface\\Icons\\inv_misc_map_01",
+	icon = 134269,
 	constant = "SEASON_OF_DISCOVERY",
 	text = {
 		en = "Season of Discovery",
@@ -175,6 +175,7 @@ local SEASON_OF_DISCOVERY_HEADER = createHeader({	-- Season of Discovery
 		ru = "Сезон открытий",
 		ko = "발견의 계절",
 		cn = "发现季节",
+		tw = "探索賽季",
 	},
 	description = {
 		en = "This Season brings an initial level cap of 25 and a new level-25 endgame, including a 10-player Blackfathom Deeps raid with new mechanics, new and reimagined bosses to challenge player tactics and strategies, and fresh rewards.",
@@ -186,6 +187,7 @@ local SEASON_OF_DISCOVERY_HEADER = createHeader({	-- Season of Discovery
 		ru = "В этом сезоне начальный максимальный уровень равен 25, а также новый финал для 25-го уровня, включающий рейд в Непроглядную Пучину для 10 игроков с новой механикой, новыми и переосмысленными боссами, которые бросят вызов тактике и стратегии игроков, а также свежими наградами.",
 		ko = "이번 시즌에는 새로운 메커니즘이 포함된 10인 Blackfathom Deeps 레이드, 플레이어 전술과 전략에 도전할 수 있는 새롭고 재구성된 보스, 새로운 보상을 포함하여 초기 레벨 상한이 25이고 새로운 레벨 25 최종 게임이 제공됩니다.",
 		cn = "本赛季带来了 25 级的初始等级上限和新的 25 级终局游戏，包括 10 名玩家的 Blackfathom Deeps 突袭，其中包含新的机制、新的和重新设计的 Boss 来挑战玩家的战术和策略，以及新鲜的奖励。",
+		tw = "這個賽季起初將會有 25 級的上限，還會帶來全新的 25 級終局內容，包括帶有全新機制的 10 人玩家黑澗深淵副本、全新設計的首領來挑戰玩家的戰術實力，同時還會給予新獎勵。",
 	},
 });
 root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCOVERY_HEADER, bubbleDownSelf({ ["timeline"] = { REMOVED_2_0_1 } }, {
@@ -440,7 +442,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 	}),
 	n(createHeader({	-- Comprehension
 		readable = "Comprehension",
-		icon = "Interface\\ICONS\\spell_holy_mindsooth",
+		icon = 135933,
 		text = {
 			en = "Comprehension",
 			es = "Comprensión",
@@ -451,6 +453,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			ru = "Понимание",
 			ko = "이해력",
 			cn = "理解",
+			tw = "理解",
 		},
 	}), {
 		["classes"] = { MAGE },
@@ -458,7 +461,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			n(REWARDS, {
 				n(createHeader({	-- Tier 1
 					readable = "Comprehension - Tier 1",
-					icon = "Interface\\ICONS\\inv_scroll_01",
+					icon = 134937,
 					text = {
 						en = "Tier 1",
 						es = "Nivel 1",
@@ -468,7 +471,8 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 						pt = "Nível 1",
 						ru = "Уровень 1",
 						ko = "층 1",
-						cn = "等级 2",
+						cn = "等级 1",
+						tw = "等級 1",
 					},
 				}), {
 					["cost"] = {
@@ -493,7 +497,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 				}),
 				n(createHeader({	-- Tier 2
 					readable = "Comprehension - Tier 2",
-					icon = "Interface\\ICONS\\inv_scroll_14",
+					icon = 237449,
 					text = {
 						en = "Tier 2",
 						es = "Nivel 2",
@@ -504,6 +508,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 						ru = "Уровень 2",
 						ko = "층 2",
 						cn = "等级 2",
+						tw = "等級 2",
 					},
 				}), {
 					["cost"] = {
@@ -539,7 +544,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 				}),
 				applyclassicphase(SOD_PHASE_TWO, n(createHeader({	-- Tier 3
 					readable = "Comprehension - Tier 3",
-					icon = "Interface\\ICONS\\inv_scroll_11",
+					icon = 237446,
 					text = {
 						en = "Tier 3",
 						es = "Nivel 3",
@@ -550,6 +555,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 						ru = "Уровень 3",
 						ko = "층 3",
 						cn = "等级 3",
+						tw = "等級 3",
 					},
 				}), {
 					["cost"] = {
@@ -641,7 +647,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 						{ 37.8, 80.2, STORMWIND_CITY },
 						{ 73.6, 33, UNDERCITY },
 					},
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["maps"] = { FERALAS, THE_HINTERLANDS, ZULFARRAK },
 					["lvl"] = 42,
 					["groups"] = {
@@ -930,7 +936,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 	}),
 	n(createHeader({	-- Monster Hunting
 		readable = "Monster Hunting",
-		icon = "Interface\\CURSOR\\Attack",
+		icon = 131013,
 		text = {
 			en = "Monster Hunting",
 			es = "Caza de Monstruos",
@@ -941,6 +947,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			ru = "Охота на монстров",
 			ko = "몬스터 사냥",
 			cn = "怪物狩猎",
+			tw = "怪物狩獵",
 		},
 	}), {
 		["classes"] = { WARRIOR },
@@ -1066,16 +1073,16 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 		icon = 134108,
 		text = {
 			en = "Nightmare Incursions",
-			--[[
-			es = "",
-			de = "",
-			fr = "",
-			it = "",
-			pt = "",
-			ru = "",
-			ko = "",
-			cn = "",
-			]]--
+			es = "Incursiones de la Pesadilla",
+			mx = "Incursiones de pesadilla",
+			de = "Alptraumeinfälle",
+			fr = "Incursions de cauchemar",
+			-- it = "",
+			pt = "Incursões Pesadelares",
+			ru = "Кошмарные вторжения",
+			ko = "악몽 침공지",
+			cn = "梦魇进犯",
+			tw = "夢魘入侵",
 		},
 		description = {
 			en = "This event focuses on the portals found across Azeroth, typically hosting an Emerald Dragon World Boss. These new events are PvE focused, asking players to complete quests around and inside the portals.\n\nThe event is intended to provide both endgame content and variation, with a new faction, the Emerald Wardens as well as new items and sets, but also to supplement the leveling experience. As early as level 25, players will be able to start doing Nightmare Incursions for experience and reputation.\n\nIncursions are also intended to be done in a group, with quests being shareable to up to 4 other players. Some quests will also require killing boss-type enemies, or require you to utilize gathering professions. This doesn't mean that you can't do them solo, it is just unlikely to be very efficient.",
@@ -2782,7 +2789,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 	})),
 	n(createHeader({	-- Rune Engraving
 		readable = "Rune Engraving",
-		icon = "Interface\\Icons\\trade_engraving",
+		icon = 136244,
 		text = {
 			en = "Rune Engraving",
 			es = "Grabado",
@@ -2793,6 +2800,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			ru = "Гравировка",
 			ko = "각인술",
 			cn = "铭刻",
+			tw = "紋刻",
 		},
 		description = {
 			en = "Rune Engraving is a new class system for Season of Discovery. It allows each class to tailor their gameplay experience by unlocking new unique abilities!",
@@ -2803,7 +2811,8 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			pt = "A gravação de runas é um novo sistema anunciado recentemente para a Temporada de Descobertas. Ele permite que cada classe personalize sua experiência de jogo, desbloqueando novas habilidades únicas!",
 			ru = "Гравировка рун — это новая система, недавно анонсированная в сезоне «Открытие». Это позволяет каждому классу адаптировать свой игровой процесс, открывая новые уникальные способности!",
 			ko = "룬 각인은 최근 발견의 시즌에 발표된 새로운 시스템입니다. 이를 통해 각 클래스는 새로운 고유 능력을 잠금 해제하여 게임 플레이 경험을 맞춤화할 수 있습니다!",
-			cn = "符文雕刻是最近在发现季节宣布的一个新系统。它允许每个班级通过解锁新的独特能力来定制他们的游戏体验！",
+			cn = "铭刻是最近在发现季节宣布的一个新系统。它允许每个职业通过解锁新的独特能力来定制他们的游戏体验！",
+			tw = "紋刻是最近在探索賽季實現的一個新系統，它允許每個職業通過解鎖新的獨特能力來自訂他們的遊戲體驗！",
 		},
 	}), {
 		classHeader(DRUID, {
@@ -2841,7 +2850,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			applyclassicphase(SOD_PHASE_FOUR, recipe(439767)),	-- Engrave Cloak - Tree of Life
 			applyclassicphase(SOD_PHASE_FOUR, recipe(439770)),	-- Engrave Cloak - Starfall
 			applyclassicphase(SOD_PHASE_FOUR, recipe(453703, {	-- Engrave Ring - Feral Combat Specialization
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 			})),
 		}),
 		classHeader(HUNTER, {
@@ -3140,65 +3149,65 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 
 		-- Non-Class Specific Runes
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453695, {	-- Engrave Ring - Arcane Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { HUNTER, MAGE, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453688, {	-- Engrave Ring - Axe Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, PALADIN, HUNTER, SHAMAN },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453690, {	-- Engrave Ring - Dagger Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, HUNTER, ROGUE, PRIEST, SHAMAN, MAGE, WARLOCK, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(459313, {	-- Engrave Ring - Defense Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, PALADIN, ROGUE, SHAMAN, WARLOCK, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453696, {	-- Engrave Ring - Fire Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { HUNTER, SHAMAN, MAGE, WARLOCK },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453691, {	-- Engrave Ring - Fist Weapon Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, HUNTER, SHAMAN, ROGUE, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453697, {	-- Engrave Ring - Frost Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { HUNTER, SHAMAN, MAGE },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453702, {	-- Engrave Ring - Holy Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { PALADIN, PRIEST },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453689, {	-- Engrave Ring - Mace Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, PALADIN, PRIEST, SHAMAN, ROGUE, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453698, {	-- Engrave Ring - Nature Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { HUNTER, ROGUE, SHAMAN, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453694, {	-- Engrave Ring - Pole Weapon Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, PALADIN, HUNTER, PRIEST, SHAMAN, MAGE, WARLOCK, DRUID },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453692, {	-- Engrave Ring - Ranged Weapon Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, HUNTER, ROGUE },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453700, {	-- Engrave Ring - Shadow Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { PRIEST, WARLOCK },
 		})),
 		applyclassicphase(SOD_PHASE_FOUR, recipe(453635, {	-- Engrave Ring - Sword Specialization
-			["timeline"] = { "added 1.15.3" },
+			["timeline"] = { ADDED_1_15_3 },
 			["classes"] = { WARRIOR, PALADIN, HUNTER, MAGE, WARLOCK, ROGUE },
 		})),
 	}),
 	n(createHeader({	-- Soul Brokers
 		readable = "SOD - Soul Brokers",
-		icon = "Interface\\ICONS\\spell_shadow_lifedrain02",
+		icon = 136169,
 		text = {
 			en = "Soul Brokers",
 			es = "Corredores de Almas",
@@ -3208,7 +3217,8 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			pt = "Corretores de Almas",
 			ru = "Душевные брокеры",
 			ko = "소울 브로커",
-			cn = "灵魂经纪人",
+			cn = "灵魂掮客",
+			tw = "靈魂仲介者",
 		},
 	}), {
 		["aqd"] = {
@@ -3290,13 +3300,13 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 		},
 	}), {
 		["sourceQuest"] = 83936,	-- Dalton's Quest
-		["timeline"] = { "added 1.15.3" },
+		["timeline"] = { ADDED_1_15_3 },
 		["classes"] = { PALADIN },
 		["lvl"] = 50,
 		["groups"] = {
 			n(createHeader({	-- Inspiration Rank One
 				readable = "SOD - PALADIN - Squire Training - Inspiration Rank One",
-				icon = "Interface\\CURSOR\\Attack",
+				icon = 131013,
 				text = {
 					en = "Inspiration Rank One",
 				},
@@ -3314,7 +3324,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			q(83936, {	-- A Lesson in Violence
 				["qg"] = 227673,	-- <Player>'s Squire (Rank 1)
 				["sourceQuest"] = 84416,	-- Inspiration Rank One HQT
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 				["classes"] = { PALADIN },
 				["lvl"] = 50,
 				["groups"] = {
@@ -3323,7 +3333,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			}),
 			n(createHeader({	-- Inspiration Rank Two
 				readable = "SOD - PALADIN - Squire Training - Inspiration Rank Two",
-				icon = "Interface\\CURSOR\\Attack",
+				icon = 131013,
 				text = {
 					en = "Inspiration Rank Two",
 				},
@@ -3338,7 +3348,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			q(84008, {	-- A Lesson in Grace
 				["qg"] = 227464,	-- <Player>'s Squire (Rank 2)
 				["sourceQuest"] = 84417,	-- Inspiration Rank Two HQT
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 				["classes"] = { PALADIN },
 				["lvl"] = 50,
 				["groups"] = {
@@ -3348,7 +3358,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			q(84017, {	-- A Time to Kill
 				["qg"] = 227674,	-- <Player>'s Squire (Rank 3)
 				["sourceQuest"] = 84008,	-- A Lesson in Grace
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 				["maps"] = { EASTERN_PLAGUELANDS },
 				["classes"] = { PALADIN },
 				["lvl"] = 50,
@@ -3363,7 +3373,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 				["qg"] = 227674,	-- <Player>'s Squire (Rank 3)
 				["sourceQuest"] = 84017,	-- A Time to Kill
 				["coord"] = { 86.8, 39.4, EASTERN_PLAGUELANDS },
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 				["classes"] = { PALADIN },
 				["lvl"] = 50,
 				["groups"] = {
@@ -3381,7 +3391,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 				["qg"] = 227674,	-- <Player>'s Squire (Rank 3)
 				["sourceQuest"] = 84125,	-- Close Enough To Touch
 				["coord"] = { 86.8, 39.4, EASTERN_PLAGUELANDS },
-				["timeline"] = { "added 1.15.3" },
+				["timeline"] = { ADDED_1_15_3 },
 				["classes"] = { PALADIN },
 				["lvl"] = 50,
 				["groups"] = {
@@ -3401,9 +3411,57 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			}),
 		},
 	})),
+
+	n(createHeader({	-- Tier-Set Shoulder Enchants
+		readable = "Tier-Set Shoulder Enchants",
+		text = {
+			en = "Tier-Set Shoulder Enchants",
+		},
+	}), {
+		["groups"] = {
+			n(QUESTS, {
+				applyclassicphase(SOD_PHASE_SEVEN, q(88745, {	-- Shadows of Doom
+					["qg"] = 16361,	-- Commander Thomas Helleran <The Argent Dawn>
+					["coord"] = { 80.8, 60.2, EASTERN_PLAGUELANDS },
+					["lvl"] = 50,
+					["groups"] = {
+						objective(1, {	-- 0/1 Shadow of Doom
+							["provider"] = { "n", 16143 },	-- Shadow of Doom
+						}),
+					},
+				})),
+				applyclassicphase(SOD_PHASE_SEVEN, q(87361, {	-- Laid to Rest
+					["provider"] = { "i", 236750},		-- Heart of Doom
+					["sourceQuest"] = 88745,	-- Shadows of Doom
+					["lvl"] = 60,
+					["groups"] = {
+						objective(1, {
+							["provider"] = { "n", 238376 },		-- Brother Luctus <Soul Seer>
+							["coord"] = { 80.6, 65.4 , EASTERN_PLAGUELANDS },
+						}),
+					},
+				})),
+			}),
+			n(238376, {		-- Brother Luctus <Soul Seer>
+				["coord"] = { 80.6, 65.4 , EASTERN_PLAGUELANDS },
+				["groups"] = {
+					i(236589, {		-- Soul of the Gentle Paw
+						["cost"] = { { "i", 12844, 5 } },	-- Argent Dawn Valor Token
+					}),
+					i(236590, {		-- Soul of the Ferocious
+						["cost"] = { { "i", 12844, 5 } },	-- Argent Dawn Valor Token
+					}),
+					i(236591, {		-- Soul of the Shifter
+						["cost"] = { { "i", 12844, 5 } },	-- Argent Dawn Valor Token
+					}),
+				},
+			}),
+		},
+	}),
+
 	n(createHeader({	-- Waylaid Supplies
 		readable = "Waylaid Supplies",
-		icon = "Interface\\Icons\\inv_crate_03",
+		icon = 132763,
 		text = {
 			en = "Waylaid Supplies",
 			es = "Suministros asaltados",
@@ -3413,7 +3471,8 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			pt = "Suprimentos emboscados",
 			ru = "Подстерегающие припасы",
 			ko = "웨이레이드 보급품",
-			cn = "伏击补给品",
+			cn = "遭劫货物",
+			tw = "遭攔截的物資",
 		},
 		description = {
 			en = "Waylaid Supplies quest items drop from mobs of level 6 and above all over Azeroth. These quests request delivery of the Waylaid Supplies to an organization representative in return for a few silver, experience, and Reputation. Of course, there are items missing from the supply shipment, and you can supplement it for greater reputation rewards.",
@@ -3424,7 +3483,8 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			pt = "Itens de missão Waylaid Supplies são obtidos de mobs de nível 6 e acima de Azeroth. Essas missões exigem a entrega dos Suprimentos Waylaid a um representante da organização em troca de um pouco de prata, experiência e reputação. É claro que faltam itens na remessa de suprimentos e você pode complementá-los para obter maiores recompensas de reputação.",
 			ru = "Квестовые предметы Waylaid Supplies падают с мобов 6-го уровня и выше по всему Азероту. Эти квесты требуют доставки Запасных припасов представителю организации в обмен на немного серебра, опыта и репутации. Конечно, в поставке припасов отсутствуют предметы, и вы можете дополнить их, чтобы получить больше репутации.",
 			ko = "길레이드 보급품 퀘스트 아이템은 아제로스 전역의 6레벨 이상의 몹에게서 드롭됩니다. 이 퀘스트는 약간의 은화, 경험치, 평판을 대가로 조직 대표에게 Waylaid 보급품을 전달하도록 요청합니다. 물론, 보급품 배송에 누락된 품목이 있으며, 이를 보완하여 더 큰 평판 보상을 받을 수 있습니다.",
-			cn = "伏击补给品任务物品从艾泽拉斯 6 级及以上的小怪中掉落。这些任务要求将路障补给品交付给组织代表，以换取一些银币、经验和声望。当然，补给中也有缺少的物品，你可以补充以获得更大的声望奖励。",
+			cn = "'遭劫货物'任务物品从艾泽拉斯 6 级及以上的小怪中掉落。这些任务要求将'遭劫货物'交付给组织代表，以换取一些银币、经验和声望。当然，货物中也有缺少的物品，你可以补充以获得更大的声望奖励。",
+			tw = "'遭攔截的物資'任務物品會從艾澤拉斯各地6級及以上的怪物掉落。這些任務要求將'遭攔截的物資'交付給某個組織的代表，以換取少量銀幣、經驗值和聲望。當然，物資運送中有一些物品遺失，你可以補充這些物品以獲得更多的聲望獎勵。",
 		},
 	}), {
 		["aqd"] = faction(2586, AZEROTH_COMMERCE_AUTHORITY_VENDORS),
@@ -3573,7 +3633,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			}),
 			n(createHeader({	-- Crafted
 				readable = "Crafted",
-				icon = "Interface\\CURSOR\\REPAIRNPC",
+				icon = 131034,
 				text = {
 					en = "Crafted",
 					--[[
@@ -3586,6 +3646,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 					ko = "",
 					cn = "",
 					]]--
+					tw = "製作",
 				},
 			}), {
 				-- iLvl 10 - Crafted Supplies
@@ -3772,7 +3833,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 				applyclassicphase(SOD_PHASE_TWO, i(215410, {	-- Waylaid Supplies: Dusky Belts
 					-- TODO: Cost is currently bugged ingame. Fix when Blizzard also does.
 					["cost"] = { { "i", 2840, 20 } },	-- Dusky Belts
-					["timeline"] = { "created 1.15.1" },
+					["timeline"] = { CREATED_1_15_1 },
 					["groups"] = {
 						i(217338),	-- Supply Shipment [iLvl 40 - Crafted (Tier 3)]
 					},
@@ -3828,7 +3889,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 				applyclassicphase(SOD_PHASE_TWO, i(215412, {	-- Waylaid Supplies: Shadowskin Gloves
 					-- TODO: Cost is currently bugged ingame. Fix when Blizzard also does.
 					["cost"] = { { "i", 2840, 20 } },	-- Dusky Belts
-					["timeline"] = { "created 1.15.1" },
+					["timeline"] = { CREATED_1_15_1 },
 					["groups"] = {
 						i(217338),	-- Supply Shipment [iLvl 40 - Crafted (Tier 3)]
 					},
@@ -3963,7 +4024,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 			}),
 			n(createHeader({	-- Gathering
 				readable = "Gathering",
-				icon = "Interface\\CURSOR\\Mine",
+				icon = 131025,
 				text = {
 					en = "Gathering",
 					--[[
@@ -3976,6 +4037,7 @@ root(ROOTS.SeasonOfDiscovery, applyclassicphase(SOD_PHASE_ONE, n(SEASON_OF_DISCO
 					ko = "",
 					cn = "",
 					]]--
+					tw = "採集",
 				},
 			}), {
 				-- iLvl 10 - Gathering Supplies
@@ -4389,11 +4451,6 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 	applyclassicphase(SOD_PHASE_FOUR, n(WORLD_BOSSES)),	-- World Bosses
 	applyclassicphase(SOD_PHASE_FOUR, inst(741)),	-- Molten Core
 	applyclassicphase(SOD_PHASE_FOUR, inst(760)),	-- Onyxia's Lair
-	applyclassicphase(SOD_PHASE_FIVE, inst(742)),	-- Blackwing Lair
-	applyclassicphase(SOD_PHASE_SIX, inst(76)),		-- Zul'Gurub
-	applyclassicphase(SOD_PHASE_SEVEN, inst(743)),	-- Ruins of Ahn'Qiraj
-	applyclassicphase(SOD_PHASE_SEVEN, inst(744)),	-- Temple of Ahn'Qiraj
-	applyclassicphase(SOD_PHASE_EIGHT, inst(754)),	-- Naxxramas
 }));
 
 -- World Drop Recipes

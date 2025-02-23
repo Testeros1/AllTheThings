@@ -12,17 +12,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			470,	-- Frostmane Hold
 			-- #endif
 		},
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_dunmorogh",
-		-- #endif
+		["icon"] = 236755,
 		["groups"] = {
 			m(COLDRIDGE_VALLEY, {
 				["lore"] = "Coldridge Valley is the starting area for young dwarven recruits, and contains the base camp of Anvilmar. It is located in the southwestern corner of Dun Morogh, and is linked to the greater area by Coldridge Pass to the northeast.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Dwarf_Male",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Dwarf_Male")]],
-				-- #endif
+				["icon"] = 236444,
 				-- #if BEFORE MOP
 				["zone-text-areas"] = {
 					132,	-- Coldridge Valley
@@ -195,6 +189,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							-- #else
 							["coord"] = { 28.6, 67.8, DUN_MOROGH },
 							-- #endif
+							["timeline"] = { ADDED_4_0_3, REMOVED_7_0_3 },
+							["races"] = { DWARF },
+							["classes"] = { MAGE },
+						}),
+						q(24526, {	-- Filling Up the Spellbook
+							["qg"] = 37121,	-- Teegli Merrowith <Mage Trainer>
+							["sourceQuest"] = 24496,	-- Arcane Rune
+							-- #if AFTER MOP
+							-- TODO: confirm coord after MOP.
+							["coord"] = { 60.6, 21.1, COLDRIDGE_VALLEY },
+							-- #else
+							["coord"] = { 35.7, 64.8, DUN_MOROGH },
+							-- #endif
+							-- TODO: confirm remove patch.
 							["timeline"] = { ADDED_4_0_3, REMOVED_7_0_3 },
 							["races"] = { DWARF },
 							["classes"] = { MAGE },
@@ -442,7 +450,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 									-- #if AFTER MOP
 									["coord"] = { 56.3, 27.4, COLDRIDGE_VALLEY },
 									-- #else
-									["coord"] = { 27.83, 68.98, DUN_MOROGH },
+									["coord"] = { 34.8, 67.4, DUN_MOROGH },
 									-- #endif
 								}),
 								objective(2, {	-- 0/1 Cask of Theramore Pale Ale
@@ -453,7 +461,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 									-- #if AFTER MOP
 									["coord"] = { 40.0, 28.2, COLDRIDGE_VALLEY },
 									-- #else
-									["coord"] = { 24.49, 69.22, DUN_MOROGH },
+									["coord"] = { 31.5, 67.6, DUN_MOROGH },
 									-- #endif
 								}),
 								objective(3, {	-- 0/1 Cask of Gnomenbrau
@@ -464,7 +472,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 									-- #if AFTER MOP
 									["coord"] = { 68.5, 28.2, COLDRIDGE_VALLEY },
 									-- #else
-									["coord"] = { 30.07, 68.99, DUN_MOROGH },
+									["coord"] = { 37.1, 67.4, DUN_MOROGH },
 									-- #endif
 								}),
 							},
@@ -486,7 +494,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							-- #if AFTER MOP
 							["coord"] = { 67.1, 41.3, COLDRIDGE_VALLEY },
 							-- #else
-							["coord"] = { 29.8, 71.6, DUN_MOROGH },
+							["coord"] = { 36.9, 70.0, DUN_MOROGH },
 							-- #endif
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
@@ -555,7 +563,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							-- #if AFTER MOP
 							["coord"] = { 67.1, 41.3, COLDRIDGE_VALLEY },
 							-- #else
-							["coord"] = { 29.8, 71.6, DUN_MOROGH },
+							["coord"] = { 36.9, 70.0, DUN_MOROGH },
 							-- #endif
 							["timeline"] = { ADDED_4_0_3 },
 							["races"] = ALLIANCE_ONLY,
@@ -866,7 +874,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["coord"] = { 29.8, 71.2, DUN_MOROGH },
 							-- #endif
 							["timeline"] = { REMOVED_7_0_3 },
-							["races"] = { DWARF, NIGHTELF },
+							["races"] = { DWARF },
 							["classes"] = { WARRIOR },
 						}),
 						-- #if SEASON_OF_DISCOVERY
@@ -934,7 +942,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								-- #endif
 								{ "i", 9577 },	-- Tainted Memorandum
 							},
-							["sourceQuest"] = 179,	-- Dwarven Outfitters
+							-- #if AFTER CATA
+							["sourceQuest"] = 24473,	-- Lockdown in Anvilmar
+							-- #else
+							["sourceQuest"] = 179,		-- Dwarven Outfitters
+							-- #endif
 							-- #if AFTER MOP
 							["coord"] = { 60.6, 21.1, COLDRIDGE_VALLEY },
 							-- #elseif AFTER CATA
@@ -942,8 +954,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							-- #else
 							["coord"] = { 29.8, 71.2, DUN_MOROGH },
 							-- #endif
-							["timeline"] = { REMOVED_4_0_3 },
+							["timeline"] = { REMOVED_7_0_3 },
+							-- #if AFTER CATA
+							["races"] = { DWARF },
+							-- #else
 							["races"] = { GNOME },
+							-- #endif
+							["classes"] = { WARLOCK },
+						}),
+						q(26904, {	-- Harnessing the Flames
+							["qg"] = 43455,				-- Saripal Smolderbrew <Warlock Trainer>
+							["sourceQuest"] = 3115,		-- Tainted Memorandum
+							["coord"] = { 35.7, 65.3, DUN_MOROGH },
+							["timeline"] = { ADDED_4_0_3, REMOVED_7_0_3 },
+							["races"] = { DWARF },
 							["classes"] = { WARLOCK },
 						}),
 						q(183, {	-- The Boar Hunter
@@ -1060,7 +1084,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								}),
 								i(2195),	-- Anvilmar Knife
 								i(12446, {	-- Anvilmar Musket
-									["timeline"] = { "created 1.11.1", ADDED_4_0_3 },
+									["timeline"] = { CREATED_1_11_1, ADDED_4_0_3 },
 								}),
 								i(5761),	-- Anvilmar Sledge
 								i(961),	-- Healing Herb
@@ -1091,7 +1115,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["coord"] = { 28.4, 67.6, DUN_MOROGH },
 							["timeline"] = { REMOVED_2_0_1 },
 							["classes"] = { ROGUE },
-							["races"] = { DWARF },
+							["races"] = { GNOME },
 							["lvl"] = 2,
 							["groups"] = {
 								objective(1, {	-- 0/1 Learn Spell: Engrave Gloves - Shadowstrike
@@ -1314,11 +1338,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			-- #if AFTER 4.0.3
 			m(NEW_TINKERTOWN, {
 				["lore"] = "New Tinkertown is a small town built just outside of Gnomeregan. It is here surviving gnomes teleport to after having escaped their radiated city.",
-				-- #if AFTER WRATH
-				["icon"] = "Interface\\Icons\\Achievement_Character_Gnome_Female",
-				-- #else
-				["icon"] = [[~_.asset("Achievement_Character_Gnome_Female")]],
-				-- #endif
+				["icon"] = 236445,
 				-- #if BEFORE MOP
 				["zone-text-areas"] = {
 					133,	-- New Tinkertown
@@ -1931,12 +1951,16 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["qg"] = 42317,	-- High Tinker Mekkatorque
 							["sourceQuests"] = {
 								26423,	-- Meet the High Tinker (Rogue)
+								-- #if AFTER 5.0.4
 								31137,	-- Meet the High Tinker (Monk)
+								-- #endif
 								26422,	-- Meet the High Tinker (Priest)
 								26421,	-- Meet the High Tinker (Mage)
 								26425,	-- Meet the High Tinker (Warrior)
 								26424,	-- Meet the High Tinker (Warlock)
+								-- #if AFTER 7.0.3
 								41218,	-- Meet the High Tinker (Hunter)
+								-- #endif
 							},
 							-- #if AFTER MOP
 							["coord"] = { 38.7, 32.7, NEW_TINKERTOWN },
@@ -2132,11 +2156,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			-- #endif
 			n(ACHIEVEMENTS, {
-				explorationAch(627, {	-- Explore Dun Morogh
-					-- #if BEFORE WRATH
-					["description"] = "Explore Dun Morogh, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(627),	-- Explore Dun Morogh
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -2551,7 +2571,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 56823 },	-- Stonebreaker's Report
 					},
 					["sourceQuest"] = 26102,	-- Grimaxe's Demise
-					["coord"] = { 78.2, 20.4, IRONFORGE },
+					["coord"] = { 78.2, 20.4, DUN_MOROGH },
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 				}),
@@ -3518,6 +3538,15 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(131209, {	-- Stonehallow's Pressed Cuffs
 							["timeline"] = { ADDED_7_0_3 },
 						}),
+						n(1977, {	-- Senator Mehr Stonehallow --
+							--	Danny Donkey:	Repeating the same description is not a perfect solution.
+							--					2025/02/23: Found unflagged again. Molkree says this quest propably got added by mistake to a list of quests to be marked as incomplete on a yearly basis. All yearly quests resets 15/01.
+							-- #if AFTER 9.1.5
+							["description"] = "The quest 'A Public Servant' get flagged as not completed on a yearly basis, thus is unintentionally repeatable. This does not affect the collected state of the quest rewards.",
+							-- #elseif ANYCLASSIC
+							["description"] = "The quest 'A Public Servant' get flagged as not completed on a yearly basis, thus is unintentionally repeatable. This does not affect the collected state of the quest rewards.",
+							-- #endif
+						}),
 					},
 				}),
 				q(291, {	-- The Reports
@@ -4022,7 +4051,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = { DWARF, GNOME },
 
 					-- Available to Gnomes without faction requirements.
-					["minReputation"] = { 54, EXALTED },	-- Gnomeregan Exiles, Exalted.
+					["minReputation"] = { FACTION_GNOMEREGAN, EXALTED },	-- Gnomeregan Exiles, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. GNOME .. [[ then
 							t.minReputation = nil;
@@ -4041,7 +4070,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 
 					-- Available to Dwarves without faction requirements.
-					["minReputation"] = { 47, EXALTED },	-- Ironforge, Exalted.
+					["minReputation"] = { FACTION_IRONFORGE, EXALTED },	-- Ironforge, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. DWARF .. [[ then
 							t.minReputation = nil;
@@ -4164,6 +4193,31 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(2686),	-- Thunder Ale
 					},
 				}),
+				-- #if AFTER CATA
+				n(46996, {	-- Jade Ramalot <Weaponsmith>
+					["coord"] = { 78.6, 20.0, DUN_MOROGH },
+					["races"] = ALLIANCE_ONLY,
+					["sym"] = {{"select","itemID",
+						926,	-- Battle Axe
+						2025,	-- Bearded Axe
+						2029,	-- Cleaver
+						927,	-- Double Axe
+						925,	-- Flail
+						1197,	-- Giant Mace
+						2030,	-- Gnarled Staff
+						2028,	-- Hammer
+						853,	-- Hatchet
+						928,	-- Long Staff
+						852,	-- Mace
+						924,	-- Maul
+						20981,	-- Neophyte's Mace
+						854,	-- Quarter Staff
+						2026,	-- Rock Hammer
+						1196,	-- Tabar
+						37,		-- Worn Axe
+					}},
+				}),
+				-- #endif
 				n(7955, {	-- Milli Featherwhistle <Mechanostrider Merchant>
 					-- #if AFTER CATA
 					["coord"] = { 56.2, 46.3, DUN_MOROGH },
@@ -4172,7 +4226,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 
 					-- Available to Gnomes without faction requirements.
-					["minReputation"] = { 54, EXALTED },	-- Gnomeregan Exiles, Exalted.
+					["minReputation"] = { FACTION_GNOMEREGAN, EXALTED },	-- Gnomeregan Exiles, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. GNOME .. [[ then
 							t.minReputation = nil;
@@ -4221,7 +4275,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 
 					-- Available to Dwarves without faction requirements.
-					["minReputation"] = { 47, EXALTED },	-- Ironforge, Exalted.
+					["minReputation"] = { FACTION_IRONFORGE, EXALTED },	-- Ironforge, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. DWARF .. [[ then
 							t.minReputation = nil;

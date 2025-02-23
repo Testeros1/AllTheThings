@@ -128,7 +128,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				["coord"] = { 49.8, 45, IRONFORGE },
 				["description"] = "Upon finishing this quest, you will become a Weaponsmith and be locked out of becoming an Armorsmith.",
 				-- #if SEASON_OF_DISCOVERY
-				["timeline"] = { "removed 1.15.2" },
+				["timeline"] = { REMOVED_1_15_2 },
 				-- #endif
 				["cost"] = {
 					{ "i", 3853, 4 },	-- Moonsteel Broadsword
@@ -148,7 +148,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				["coord"] = { 79.6, 23.6, ORGRIMMAR },
 				["description"] = "Upon finishing this quest, you will become a Weaponsmith and be locked out of becoming an Armorsmith.",
 				-- #if SEASON_OF_DISCOVERY
-				["timeline"] = { "removed 1.15.2" },
+				["timeline"] = { REMOVED_1_15_2 },
 				-- #endif
 				["cost"] = {
 					{ "i", 3853, 4 },	-- Moonsteel Broadsword
@@ -168,7 +168,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				},
 				["coord"] = { 49.8, 45, IRONFORGE },
 				["description"] = "Upon finishing this quest, you will become a Weaponsmith and be locked out of becoming an Armorsmith.",
-				["timeline"] = { "added 1.15.2" },
+				["timeline"] = { ADDED_1_15_2 },
 				["cost"] = {
 					{ "i", 217281, 4 },	-- Moonsteel Broadsword
 					{ "i", 3855, 4 },	-- Massive Iron Axe
@@ -186,7 +186,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				},
 				["coord"] = { 79.6, 23.6, ORGRIMMAR },
 				["description"] = "Upon finishing this quest, you will become a Weaponsmith and be locked out of becoming an Armorsmith.",
-				["timeline"] = { "added 1.15.2" },
+				["timeline"] = { ADDED_1_15_2 },
 				["cost"] = {
 					{ "i", 217281, 4 },	-- Moonsteel Broadsword
 					{ "i", 3855, 4 },	-- Massive Iron Axe
@@ -301,7 +301,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 			["sourceQuest"] = 38507,	-- Secrets of Leysmithing
 			["provider"] = { "n", 97261 },	-- Alard Schmied
 			["coord"] = { 45.0, 29.6, LEGION_DALARAN },
-			["cost"] = { { "i", 124103,	 10 }, },	-- 10xFoxflower
+			["cost"] = { { "i", 124103,	10 }, },	-- 10xFoxflower
 		}),
 		q(38500, {	-- Leysmithing Mastery
 			["sourceQuest"] = 38515,	-- Nature Provides
@@ -639,6 +639,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 			["coord"] = { 41.2, 59.4, BROKEN_SHORE },
 			["repeatable"] = true,
 			["g"] = {
+				i(146709),	-- Ancient Demonsteel (QI!)
 				i(146708),	-- Ancient Demonsteel Armor (QI!)
 			},
 		})),
@@ -716,6 +717,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 			["races"] = ALLIANCE_ONLY,
 			["g"] = {
 				r(247700),	-- Felslate Anchor (RECIPE!)
+				i(151871),	-- Crate of Felslate (QI!)
 			},
 		})),
 		q(48054, bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {	-- Weigh Anchor [H]
@@ -725,6 +727,7 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 			["races"] = HORDE_ONLY,
 			["g"] = {
 				r(247700),	-- Felslate Anchor (RECIPE!)
+				i(151871),	-- Crate of Felslate (QI!)
 			},
 		})),
 	})),
@@ -754,6 +757,9 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				["coord"] = { 73.6, 8.6, BORALUS },
 				["races"] = ALLIANCE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(156875),	-- Revlis Ore (QI!)
+				},
 			}),
 			q(50276, {	-- A Recipe For the Ages [H]
 				["description"] = "Requires 150 Zandalari Blacksmithing.",
@@ -761,6 +767,9 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				["coord"] = { 43.6, 38.3, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(156875),	-- Revlis Ore (QI!)
+				},
 			}),
 			q(50114, {	-- Hammering Out Information [A]
 				["sourceQuests"] = { 50123 },	-- A Recipe For the Ages [A]
@@ -812,6 +821,10 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				["coord"] = { 53.9, 50.0, DEEPHOLM },
 				["sourceQuestNumRequired"] = 1,
 				["timeline"] = { ADDED_8_1_5 },
+				["g"] = {
+					i(157556),	-- Earthen Thumper (QI!)
+					i(156886),	-- Endurite (QI!)
+				},
 			}),
 			q(50274, {	-- Titanic Forging
 				["sourceQuests"] = {
@@ -1151,21 +1164,21 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 			},
 		},{
 			i(198606),	-- Blacksmith's Writ
-			q(74109, {	-- Inscription Order: Blacksmith
-				["name"] = "Inscription Order: Blacksmith",
+			q(74109, {	-- DF Inscription Order: Blacksmith
+				["name"] = "DF Inscription Order: Blacksmith",
 				["description"] = "Requires a crafting order from Inscription.",
 				["provider"] = { "i", 198454 },	-- Draconic Treatise on Blacksmith
 			}),
-			q(66381, {	-- Weekly Blacksmithing Knowledgepoint #1
-				["name"] = "Blacksmithing Treasure #1",
+			q(66381, {	-- DF Weekly Blacksmithing Knowledgepoint #1
+				["name"] = "DF Blacksmithing Treasure #1",
 				["provider"] = { "i", 192131 },	-- Valdrakken Weapon Chain
 			}),
-			q(66382, {	-- Weekly Blacksmithing Knowledgepoint #2
-				["name"] = "Blacksmithing Treasure #2",
+			q(66382, {	-- DF Weekly Blacksmithing Knowledgepoint #2
+				["name"] = "DF Blacksmithing Treasure #2",
 				["provider"] = { "i", 192132 },	-- Draconium Blade Sharpener
 			}),
-			q(70513, {	-- Weekly Blacksmithing Knowledgepoint #3
-				["name"] = "Blacksmithing Drop #1: Fire Elemental",
+			q(70513, {	-- DF Weekly Blacksmithing Knowledgepoint #3
+				["name"] = "DF Blacksmithing Drop #1: Fire Elemental",
 				["description"] = "Drops from any Fire Elemental.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					196168,	-- Springs Heater
@@ -1174,8 +1187,8 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 				["provider"] = { "i", 198966 },	-- Molten Globule
 				["coord"] = { 39.0, 48.8, THALDRASZUS },
 			}),
-			q(70512, {	-- Weekly Blacksmithing Knowledgepoint #4
-				["name"] = "Blacksmithing Drop #2: Earth Elemental",
+			q(70512, {	-- DF Weekly Blacksmithing Knowledgepoint #4
+				["name"] = "DF Blacksmithing Drop #2: Earth Elemental",
 				["description"] = "Drops from any Earth Elemental.\nCoordinates link to the spot(s) we found best.",
 				["crs"] = {
 					194212,	-- Unleashed Rubble
@@ -1193,38 +1206,139 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 		})),
 	})),
 	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(QUESTS, sharedData({
+			["isWeekly"] = true,
+			["maxReputation"] = { FACTION_ARTISANS_CONSORTIUM_DRAGON_ISLES_BRANCH, 5 },
+			["g"] = {
+				i(228774),	-- Algari Blacksmiths's Journal
+			},
+		},{
+			q(84127, {	-- Blacksmithing Services Requested
+				["provider"] = { "n", 228177 },	-- Kala Clayhoof
+				["coord"] = { 59.2, 55.2, DORNOGAL },
+			}),
+		})),
+		filter(RECIPES, {
+			["description"] = "These are learned by specialization.",
+			["g"] = sharedData({ ["cost"] = {{ "c", TWW_BLACKSMITHING_KNOWLEDGE, 1 }} }, {
+				r(450281),	-- Artisan Blacksmith's Hammer
+				r(450282),	-- Artisan Blacksmith's Toolbox
+				r(450238),	-- Charged Claymore
+				r(450239),	-- Charged Halberd
+				r(450235),	-- Charged Hexsword
+				r(450241),	-- Charged Invoker
+				r(453727),	-- Everburning Ignition
+				r(450221),	-- Everforged Breastplate
+				r(450230),	-- Everforged Dagger
+				r(450223),	-- Everforged Defender
+				r(450228),	-- Everforged Gauntlets
+				r(450234),	-- Everforged Greataxe
+				r(450222),	-- Everforged Greatbelt
+				r(450224),	-- Everforged Helm
+				r(450225),	-- Everforged Legplates
+				r(450231),	-- Everforged Longsword
+				r(450233),	-- Everforged Mace
+				r(450227),	-- Everforged Pauldrons
+				r(450220),	-- Everforged Sabatons
+				r(450229),	-- Everforged Stabber
+				r(450226),	-- Everforged Vambraces
+				r(450232),	-- Everforged Warglaive
+				r(450286),	-- Ironclaw Razorstone
+				r(450285),	-- Ironclaw Whetstone
+				r(450289),	-- Tempered Framework
+			}),
+		}),
+		n(TREASURES, {
+			o(456017, {	-- Ancient Earthen Anvil
+				["coord"] = { 59.8, 61.9, ISLE_OF_DORN },
+				["questID"] = 83848,
+				["g"] = {
+					i(226276),	-- Ancient Earthen Anvil
+				},
+			}),
+			o(456016, {	-- Dornogal Hammer
+				["coord"] = { 47.7, 26.5, DORNOGAL },
+				["questID"] = 83849,
+				["g"] = {
+					i(226277),	-- Dornogal Hammer
+				},
+			}),
+			o(456014, {	-- Earthen Chisels
+				["coord"] = { 60.6, 53.8, THE_RINGING_DEEPS },
+				["questID"] = 83851,
+				["g"] = {
+					i(226279),	-- Earthen Chisels
+				},
+			}),
+			o(456013, {	-- Holy Flame Forge
+				["coord"] = { 47.6, 61.0, HALLOWFALL },
+				["questID"] = 83852,
+				["g"] = {
+					i(226280),	-- Holy Flame Forge
+				},
+			}),
+			o(456011, {	-- Nerubian Smith's Kit
+				["coord"] = { 46.6, 22.7, NERUBAR },
+				["questID"] = 83854,
+				["g"] = {
+					i(226282),	-- Nerubian Smith's Kit
+				},
+			}),
+			o(456012, {	-- Radiant Tongs
+				["coord"] = { 44.1, 55.6, HALLOWFALL },
+				["questID"] = 83853,
+				["g"] = {
+					i(226281),	-- Radiant Tongs
+				},
+			}),
+			o(456015, {	-- Ringing Hammer Vise
+				["coord"] = { 47.7, 33.2, THE_RINGING_DEEPS },
+				["questID"] = 83850,
+				["g"] = {
+					i(226278),	-- Ringing Hammer Vise
+				},
+			}),
+			o(456010, {	-- Spiderling's Wire Brush
+				["coord"] = { 53.0, 51.3, AZJ_KAHET },
+				["questID"] = 83855,
+				["g"] = {
+					i(226283),	-- Spiderling's Wire Brush
+				},
+			}),
+		}),
 		n(WEEKLY_PROFESSION_KNOWLEDGE, sharedData({
 			["isWeekly"] = true,
 			["g"] = {
 				currency(TWW_BLACKSMITHING_KNOWLEDGE),
 			},
-		 }, {
-			q(83726, {	-- Inscription Order: Blacksmithing
-				["name"] = "Inscription Order: Blacksmithing",
-				["description"] = "Requires a crafting order from Inscription.",
-				["provider"] = { "i", 222554 },	-- Algari Treatise on Blacksmithing
+		}, {
+			q(83257, {	-- TWW Weekly Blacksmithing Knowledgepoint #1
+				["name"] = "TWW Weekly Blacksmithing Treasure #1",
+				["provider"] = { "i", 225232 },	-- Coreway Billet
+			}),
+			q(83256, {	-- TWW Weekly Blacksmithing Knowledgepoint #2
+				["name"] = "TWW Weekly Blacksmithing Treasure #2",
+				["provider"] = { "i", 225233 },	-- Dense Bladestone
 			}),
 		})),
 	})),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 	n(PROFESSIONS, {
 		prof(BLACKSMITHING, {
-			expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
-				q(38543),	-- FLAG: Demonsteel Armguards Crafted
-				q(38544),	-- FLAG: Demonsteel Waistguard Crafted
-				q(38545),	-- FLAG: Demonsteel Pauldrons Crafted
-				q(38546),	-- FLAG: Demonsteel Boots Crafted
-				q(38547),	-- FLAG: Demonsteel Gauntlets Crafted
-				q(38549),	-- FLAG: Demonsteel Helm Crafted
-				q(38550),	-- FLAG: Demonsteel Greaves Crafted
-				q(38551),	-- FLAG: Demonsteel Breastplate Crafted
-				q(47096),	-- Broken Shore - Choice: Blacksmithing
-			})),
+			q(38543),	-- FLAG: Demonsteel Armguards Crafted
+			q(38544),	-- FLAG: Demonsteel Waistguard Crafted
+			q(38545),	-- FLAG: Demonsteel Pauldrons Crafted
+			q(38546),	-- FLAG: Demonsteel Boots Crafted
+			q(38547),	-- FLAG: Demonsteel Gauntlets Crafted
+			q(38549),	-- FLAG: Demonsteel Helm Crafted
+			q(38550),	-- FLAG: Demonsteel Greaves Crafted
+			q(38551),	-- FLAG: Demonsteel Breastplate Crafted
+			q(47096),	-- Broken Shore - Choice: Blacksmithing
 		}),
 	}),
-});
+})));
 
 
 -- #if ANYCLASSIC
@@ -1617,14 +1731,14 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				{
 					["name"] = "Golden Scale Coif",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439126,
 				},
 				-- #endif
 				{
 					["name"] = "Golden Scale Coif",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3503,
 				},
@@ -1641,7 +1755,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Helm of the Great Chief",
 					["recipeID"] = 16728,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				-- #endif
@@ -1686,7 +1800,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Warcrest of the Great Chief",
 					["recipeID"] = 461739,
 					["requireSkill"] = 9788,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				{
@@ -1724,7 +1838,7 @@ profession(BLACKSMITHING, {
 					["recipeID"] = 16660,
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"added 1.15.3",
+						ADDED_1_15_3,
 						-- #else
 						CREATED_1_12_1, ADDED_2_0_1,
 						-- #endif
@@ -1738,14 +1852,14 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				{
 					["name"] = "Golden Scale Shoulders",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439130,
 				},
 				-- #endif
 				{
 					["name"] = "Golden Scale Shoulders",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3505,
 				},
@@ -1877,7 +1991,7 @@ profession(BLACKSMITHING, {
 					["recipeID"] = 16655,
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -1887,7 +2001,7 @@ profession(BLACKSMITHING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Fiery Plate Gauntlets of the Hidden Technique",
 					["recipeID"] = 461651,
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 				}),
 				-- #endif
 				-- #endif
@@ -1902,7 +2016,7 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				{
 					["name"] = "Golden Scale Gauntlets",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439120,
 				},
 				-- #endif
@@ -1910,7 +2024,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Golden Scale Gauntlets",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.1",
+						REMOVED_1_15_1,
 						-- #else
 						REMOVED_4_0_1,
 						-- #endif
@@ -1966,7 +2080,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Storm Gauntlets",
 					["recipeID"] = 16661,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				{
@@ -1977,7 +2091,7 @@ profession(BLACKSMITHING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Tempest Gauntlets",
 					["recipeID"] = 461737,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				{
@@ -2018,7 +2132,7 @@ profession(BLACKSMITHING, {
 				{
 					["name"] = "Dark Iron Plate",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 					["recipeID"] = 15296,
 				},
@@ -2047,14 +2161,14 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				{
 					["name"] = "Golden Scale Cuirass",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439124,
 				},
 				-- #endif
 				{
 					["name"] = "Golden Scale Cuirass",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3511,
 				},
@@ -2146,7 +2260,7 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Tempered Dark Iron Plate",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 461667,
 				}),
 				-- #endif
@@ -2253,14 +2367,14 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				{
 					["name"] = "Golden Scale Leggings",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439132,
 				},
 				-- #endif
 				{
 					["name"] = "Golden Scale Leggings",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3507,
 				},
@@ -2344,14 +2458,14 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				{
 					["name"] = "Golden Scale Boots",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439122,
 				},
 				-- #endif
 				{
 					["name"] = "Golden Scale Boots",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3515,
 				},
@@ -2422,7 +2536,7 @@ profession(BLACKSMITHING, {
 					["recipeID"] = 16991,
 					-- #if SEASON_OF_DISCOVERY
 					["description"] = "Blizzard stated that Annihilator was an item that forced 1 member of the raid into a role that did not fit their design, so they've decided to not include Annihilator.",
-					["timeline"] = { "removed 1.15.0" },
+					["timeline"] = { REMOVED_1_15_0 },
 					-- #endif
 				},
 				{
@@ -2535,7 +2649,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Corruption",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_2_0_1, ADDED_3_0_2, REMOVED_4_0_3, ADDED_7_1_5,
 						-- #endif
@@ -2582,12 +2696,12 @@ profession(BLACKSMITHING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Deadly Heartseeker",
 					["recipeID"] = 461716,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Desecration",
 					["recipeID"] = 461714,
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 				}),
 				-- #endif
 				applyclassicphase(PHASE_THREE_RECIPES, {
@@ -2608,7 +2722,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Enchanted Battlehammer",
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -2628,7 +2742,7 @@ profession(BLACKSMITHING, {
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Finely-Enchanted Battlehammer",
 					["recipeID"] = 461733,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
 				-- #endif
 				-- #endif
@@ -2665,7 +2779,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Heartseeker",
 					["recipeID"] = 16995,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 				},
 				-- #endif
@@ -2731,14 +2845,14 @@ profession(BLACKSMITHING, {
 				{
 					["name"] = "Moonsteel Broadsword",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.1" },
+					["timeline"] = { REMOVED_1_15_1 },
 					-- #endif
 					["recipeID"] = 3496,
 				},
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_TWO, {
 					["name"] = "Moonsteel Broadsword",
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["recipeID"] = 439128,
 				}),
 				-- #endif
@@ -2747,7 +2861,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Nightfall",
 					["recipeID"] = 23653,
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.0" },
+					["timeline"] = { REMOVED_1_15_0 },
 					-- #endif
 				}),
 				-- #endif
@@ -2800,11 +2914,13 @@ profession(BLACKSMITHING, {
 					["recipeID"] = 3500,
 				},
 				-- #if AFTER TBC
+				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Skyrider's Masterwork Stormhammer",
 					["recipeID"] = 461647,
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 				}),
+				-- #endif
 				-- #endif
 				{
 					["name"] = "Solid Iron Maul",
@@ -2813,14 +2929,14 @@ profession(BLACKSMITHING, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, {
 					["name"] = "Sulfuron Hammer",
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["recipeID"] = 460460,
 				}),
 				-- #endif
 				{
 					["name"] = "Sulfuron Hammer",
 					-- #if SEASON_OF_DISCOVERY
-					["timeline"] = { "removed 1.15.3" },
+					["timeline"] = { REMOVED_1_15_3 },
 					-- #endif
 					["recipeID"] = 21161,
 				},
@@ -3012,7 +3128,7 @@ profession(BLACKSMITHING, {
 				},
 				{
 					["name"] = "Flamebane Helm",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 29615,
 				},
 				{
@@ -3089,7 +3205,7 @@ profession(BLACKSMITHING, {
 				},
 				{
 					["name"] = "Flamebane Bracers",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 29614,
 				},
 				applyclassicphase(TBC_PHASE_THREE, {
@@ -3128,7 +3244,7 @@ profession(BLACKSMITHING, {
 				},
 				{
 					["name"] = "Flamebane Gloves",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 29616,
 				},
 				{
@@ -3171,7 +3287,7 @@ profession(BLACKSMITHING, {
 				},
 				{
 					["name"] = "Enchanted Adamantite Breastplate",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 29610,
 				},
 				{
@@ -3184,7 +3300,7 @@ profession(BLACKSMITHING, {
 				},
 				{
 					["name"] = "Flamebane Breastplate",
-					["minReputation"] = { 932, NEUTRAL },	-- The Aldor, Neutral.
+					["minReputation"] = { FACTION_THE_ALDOR, NEUTRAL },	-- The Aldor, Neutral.
 					["recipeID"] = 29617,
 				},
 				applyclassicphase(TBC_PHASE_FIVE, {
@@ -3219,7 +3335,7 @@ profession(BLACKSMITHING, {
 				}),
 				{
 					["name"] = "Enchanted Adamantite Belt",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 29608,
 				},
 				{
@@ -3246,7 +3362,7 @@ profession(BLACKSMITHING, {
 			["groups"] = {
 				{
 					["name"] = "Enchanted Adamantite Leggings",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 29613,
 				},
 				{
@@ -3285,7 +3401,7 @@ profession(BLACKSMITHING, {
 				}),
 				{
 					["name"] = "Enchanted Adamantite Boots",
-					["minReputation"] = { 934, NEUTRAL },	-- The Scryers, Neutral.
+					["minReputation"] = { FACTION_THE_SCRYERS, NEUTRAL },	-- The Scryers, Neutral.
 					["recipeID"] = 29611,
 				},
 				{
@@ -4083,10 +4199,11 @@ profession(BLACKSMITHING, {
 			["name"] = "Armor",
 			["categoryID"] = 570,
 			["groups"] = {
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bracers of Destructive Strength",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101931,
-				},
+				}),
 				{
 					["name"] = "Elementium Deathplate",
 					["recipeID"] = 76445,
@@ -4095,22 +4212,26 @@ profession(BLACKSMITHING, {
 					["name"] = "Elementium Girdle of Pain",
 					["recipeID"] = 76446,
 				},
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Emberforged Elementium Boots",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99454,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Eternal Elementium Handguards",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99440,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Fists of Fury",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99439,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Foundations of Courage",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101928,
-				},
+				}),
 				{
 					["name"] = "Hardened Elementium Girdle",
 					["recipeID"] = 76444,
@@ -4151,10 +4272,11 @@ profession(BLACKSMITHING, {
 					["name"] = "Hardened Obsidium Shoulders",
 					["recipeID"] = 76258,
 				},
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Holy Flame Gauntlets",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99441,
-				},
+				}),
 				{
 					["name"] = "Light Elementium Belt",
 					["recipeID"] = 76448,
@@ -4163,14 +4285,16 @@ profession(BLACKSMITHING, {
 					["name"] = "Light Elementium Chestguard",
 					["recipeID"] = 76447,
 				},
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Mirrored Boots",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99453,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Pyrium Legplates of Purified Evil",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101924,
-				},
+				}),
 				{
 					["name"] = "Redsteel Belt",
 					["recipeID"] = 76264,
@@ -4203,10 +4327,11 @@ profession(BLACKSMITHING, {
 					["name"] = "Redsteel Shoulders",
 					["recipeID"] = 76266,
 				},
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Soul Redeemer Bracers",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101929,
-				},
+				}),
 				{
 					["name"] = "Stormforged Belt",
 					["recipeID"] = 76283,
@@ -4239,14 +4364,16 @@ profession(BLACKSMITHING, {
 					["name"] = "Stormforged Shoulders",
 					["recipeID"] = 76286,
 				},
-				{
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Titanguard Wristplates",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101932,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Unstoppable Destroyer's Legplates",
+					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101925,
-				},
+				}),
 				{
 					["name"] = "Vicious Ornate Pyrium Belt",
 					["recipeID"] = 76467,
@@ -4311,10 +4438,11 @@ profession(BLACKSMITHING, {
 					["name"] = "Vicious Pyrium Shoulders",
 					["recipeID"] = 76461,
 				},
-				{
+				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Warboots of Mighty Lords",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99452,
-				},
+				}),
 			},
 		},
 		{
@@ -4343,10 +4471,11 @@ profession(BLACKSMITHING, {
 			["name"] = "Weapons",
 			["categoryID"] = 571,
 			["groups"] = {
-				{
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Brainsplinter",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99652,
-				},
+				}),
 				{
 					["name"] = "Cold-Forged Shank",
 					["recipeID"] = 76434,
@@ -4379,10 +4508,11 @@ profession(BLACKSMITHING, {
 					["name"] = "Elementium Spellblade",
 					["recipeID"] = 76449,
 				},
-				{
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Elementium-Edged Scalper",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99655,
-				},
+				}),
 				{
 					["name"] = "Fire-Etched Dagger",
 					["recipeID"] = 76435,
@@ -4395,18 +4525,21 @@ profession(BLACKSMITHING, {
 					["name"] = "Lifeforce Hammer",
 					["recipeID"] = 76436,
 				},
-				{
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Lightforged Elementium Hammer",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99654,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Masterwork Elementium Deathblade",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99658,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Masterwork Elementium Spellblade",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99653,
-				},
+				}),
 				{
 					["name"] = "Obsidium Bladespear",
 					["recipeID"] = 76474,
@@ -4415,18 +4548,21 @@ profession(BLACKSMITHING, {
 					["name"] = "Obsidium Executioner",
 					["recipeID"] = 76437,
 				},
-				{
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Pyrium Spellward",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99656,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Unbreakable Guardian",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99657,
-				},
-				{
+				}),
+				applyclassicphase(CATA_PHASE_MOLTEN_FRONT, {
 					["name"] = "Witch-Hunter's Harvester",
+					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99660,
-				},
+				}),
 			},
 		},
 		{

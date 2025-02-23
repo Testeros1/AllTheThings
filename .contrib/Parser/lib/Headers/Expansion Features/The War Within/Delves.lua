@@ -6,6 +6,6 @@ DELVES = createHeader({
 	export = true,
 	-- #endif
 	text = {
-		en = "Delves",
+		en = [[~DELVES_LABEL]],
 	},
 });

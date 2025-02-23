@@ -101,12 +101,15 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 			}),
 			q(41612, {	-- Huge Mossgill Perch
 				["requireSkill"] = FISHING,
+				["g"] = { i(134568) },	-- Huge Mossgill Perch (QI!)
 			}),
 			q(41613, {	-- Huge Mossgill Perch
 				["requireSkill"] = FISHING,
+				["g"] = { i(134568) },	-- Huge Mossgill Perch (QI!)
 			}),
 			q(41270, {	-- Huge Mossgill Perch
 				["requireSkill"] = FISHING,
+				["g"] = { i(134568) },	-- Huge Mossgill Perch (QI!)
 			}),
 			q(45804),	-- Impvasion! (Invasion wq)
 			q(42028),	-- Into the Nightmare
@@ -310,14 +313,18 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(45485),	-- Val'sharah - WQ rare: Aodh Witherpetal
-		q(45483),	-- Val'sharah - WQ rare: Ealdis
-		q(45484),	-- Val'sharah - WQ rare: Harbinger of Screams
-		q(45501),	-- Val'sharah - WQ rare: Malisandra
-		q(45488),	-- Val'sharah - WQ rare: Nylaathria the Forgotten
-		q(45487),	-- Val'sharah - WQ rare: Rabxach
-		q(45493),	-- Val'sharah - WQ rare: Witchdoctor Grgl-Brgl
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(BROKEN_ISLES, {
+		m(VALSHARAH, {
+			n(WORLD_QUESTS, {
+				q(45485),	-- Val'sharah - WQ rare: Aodh Witherpetal
+				q(45483),	-- Val'sharah - WQ rare: Ealdis
+				q(45484),	-- Val'sharah - WQ rare: Harbinger of Screams
+				q(45501),	-- Val'sharah - WQ rare: Malisandra
+				q(45488),	-- Val'sharah - WQ rare: Nylaathria the Forgotten
+				q(45487),	-- Val'sharah - WQ rare: Rabxach
+				q(45493),	-- Val'sharah - WQ rare: Witchdoctor Grgl-Brgl
+			}),
+		}),
 	}),
-});
+})));

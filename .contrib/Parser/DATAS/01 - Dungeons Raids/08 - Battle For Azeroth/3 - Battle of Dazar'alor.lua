@@ -20,6 +20,18 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADD
 		},
 		["g"] = {
 			n(ACHIEVEMENTS, {
+				ach(40961, {	-- Batle of Dazar'alor
+					["timeline"] = { ADDED_11_0_7 },
+					-- Meta Achievement
+					["sym"] = {{"meta_achievement",
+						13290,	-- Death's Bargain
+						13289,	-- Defense of Dazar'alor
+						13287,	-- Empire's Fall
+						13288,	-- Might of the Alliance
+						13286,	-- Siege of Dazar'alor
+						13291,	-- Victory or Death
+					}},
+				}),
 				ach(13385),	-- Daz'aling Attire
 				ach(13315, {	-- Glory of the Dazar'alor Raider
 					["sym"] = {{"meta_achievement",
@@ -1084,9 +1096,12 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADD
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_0 } }, {
 	inst(1176, {	-- Battle of Dazar'alor
 		q(55026),	-- Killing Opulence (H)
 		q(55027),	-- Killing Opulence (M)
+		q(54963),	-- LFR, cinematic at the start of Siege of Dazar'alor wing
+		q(55024),	-- LFR, moving into the hallway after Opulence (not a killID -- this triggered in chat while i was in combat with the trash in the hall)
+		q(55025),	-- triggered after killing Conclave on normal
 	}),
-}));
+})));

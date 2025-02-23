@@ -1,4 +1,9 @@
 -- Map Constants for quick and easy replacement when we can get mapIDs on live!
+-- The MapID in this file is the UiMapID, see the UiMap in https://warcraft.wiki.gg/wiki/UiMapID.
+-- The MapID in this file should be obtained by the UiMap table, see https://wago.tools/db2/UiMap?build=11.0.7.58238
+-- The UiMapID is widely used in Cata Classic/Retail, almost all dungeons/outdoor areas have UiMapID, but in Classic Era/SoD, only outdoor areas have UiMapID.
+-- Please do not confuse UiMapID with the ID in the Map table, see the Map table in https://wago.tools/db2/Map?build=11.0.7.58238.
+
 -- Raids (Classic)
 BLACKWING_LAIR = 287;
 MOLTEN_CORE = 232;
@@ -329,12 +334,14 @@ SHADOWMOON_VALLEY = 104;
 -- #endif
 
 -- Cataclysm
+FIRELANDS = 367
 MOUNT_HYJAL = 198;
 DARKMOON_ISLAND = 407;
 DEEPHOLM = 207;
 KEZAN = 194;
 THE_LOST_ISLES = 174;
 THE_MAELSTROM = 948;
+THE_MOLTEN_FRONT = 338;
 
 -- Vashj'ir (and subzones)
 VASHJIR = 203;
@@ -417,6 +424,7 @@ SKYHOLD = 695;
 THE_DREAMGROVE = 747;
 THE_HALL_OF_SHADOWS = 626;
 THE_HEART_Of_AZEROTH = 726;
+THE_HEART_OF_AZEROTH_FIRELANDS = 738;
 THE_WANDERING_ISLE = 709;
 TRUESHOT_LODGE = 739;
 CLASS_HALL_MAPS = {
@@ -523,7 +531,7 @@ OHNAHRAN_PLAINS = 2023;
 THALDRASZUS = 2025;
 THE_AZURE_SPAN = 2024;
 THE_FORBIDDEN_REACH = 2151;
-THE_FORBIDDEN_REACH_EVOKER = 2118;
+THE_FORBIDDEN_REACH_DRACTHYR = 2118;
 THE_PRIMALIST_FUTURE = 2085;
 THE_WAKING_SHORES = 2022;
 VALDRAKKEN = 2112;
@@ -538,5 +546,26 @@ ISLE_OF_DORN = 2248;
 KHAZ_ALGAR = 2274;
 NERUBAR = 2213;
 NERUBAR_LOWER = 2216;
+SIREN_ISLE = 2369;
+THE_PROSCENIUM = 2328;	-- Theatre Troupe location
 THE_RINGING_DEEPS = 2214;
+UNDERMINE = 2346
 VAULT_OF_MEMORY = 2367;
+
+EARTHCRAWL_MINES = 2269;
+FUNGAL_FOLLY = 2249;
+KRIEGVALS_REST = 2250;
+MYCOMANCER_CAVERN = 2312;
+NIGHTFALL_SANCTUM = 2277;
+SKITTERING_BREACH = 2310;
+TAK_RETHAN_ABYSS = 2259;
+THE_DREAD_PIT = 2302;
+THE_SINKHOLE = 2301;
+THE_SPIRAL_WEAVE = 2347;
+THE_UNDERKEEP = 2299;
+THE_WATERWORKS = 2251;
+ZEKVIRS_LAIR = 2348;
+THE_WAR_CRECHE = 2373;	-- Starting zone for non-evoker Dracthyr
+EXCAVATION_SITE_9 = 2396;
+SIDESTREET_SLUICE = 2420;
+DEMOLITION_DOME = 2425;

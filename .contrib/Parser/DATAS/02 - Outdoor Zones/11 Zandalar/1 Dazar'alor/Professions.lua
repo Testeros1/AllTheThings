@@ -113,7 +113,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 			}),
 			prof(MINING, {
 				n(122694, {	-- Secott the Goldsmith <Mining Trainer>
-					["coord"] = { 75.2, 7.6, DAZARALOR },
+					["coord"] = { 44.1, 39.0, DAZARALOR },
 					["races"] = HORDE_ONLY,
 					["g"] = appendGroups(BFA_MINING, {
 						r(265853),	-- Mining (Zandalari)
@@ -130,6 +130,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						recipe(257153),	-- Skinning Technique: Bone Gathering (Rank 2)
+						i(161434),	-- Unbroken Makrura Carapace (QI!)
 					},
 				}),
 				q(52217, {	-- Loa Fit For A King
@@ -140,6 +141,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						recipe(257154),	-- Skinning Technique: Bone Gathering (Rank 3)
+						i(161435),	-- Rezan's Bone Splinter (QI!)
 					},
 				}),
 				-- Leather Gathering
@@ -151,6 +153,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						recipe(257147),	-- Skinning Technique: Leather Gathering (Rank 2)
+						i(161430),	-- Rana's 'Ancient Artifact' (QI!)
 					},
 				}),
 				-- Scale Gathering
@@ -162,6 +165,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						recipe(257150),	-- Skinning Technique: Scale Gathering (Rank 2)
+						i(161432),	-- Pristine Crocolisk Skin (QI!)
 					},
 				}),
 				q(52215, {	-- A Thicker Thread
@@ -173,6 +177,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 					["races"] = HORDE_ONLY,
 					["g"] = {
 						recipe(257151),	-- Skinning Technique: Scale Gathering (Rank 3)
+						i(161433),	-- Thick Webbing (QI!)
 					},
 				}),
 			}),
@@ -180,6 +185,14 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH }
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	q(55240),	--  triggered after destroying all portals during Seam Stress quest (55214)
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(ZANDALAR, {
+		m(THE_GREAT_SEAL, {
+			n(PROFESSIONS, {
+				n(QUESTS, {
+					q(55240),	--  triggered after destroying all portals during Seam Stress quest (55214)
+				}),
+			}),
+		}),
+	}),
+})));

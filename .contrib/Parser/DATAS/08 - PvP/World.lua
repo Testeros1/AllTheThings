@@ -3,7 +3,7 @@
 -----------------------------------------------
 BOUNTY = createHeader({
 	readable = "Bounty",
-	icon = "Interface\\Icons\\Inv_bountyhunting",
+	icon = 2125377,
 	text = {
 		en = "Bounty",
 		es = "Prima",
@@ -21,6 +21,8 @@ WORLD_PVP = createHeader({
 	icon = [[~_.asset("Category_Zones")]],
 	text = {
 		en = "World PvP",
+		cn = "世界PvP",
+		ru = "Мировое PvP",
 	},
 });
 root(ROOTS.PVP, pvp(n(WORLD_PVP, {
@@ -107,15 +109,33 @@ root(ROOTS.PVP, pvp(n(WORLD_PVP, {
 				}),
 			}),
 			ach(17335, {	-- Airborne Tumbler (x1)
-				["maps"] = { THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS },
+				["maps"] = {
+					-- #if BEFORE 11.0.2
+					THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS,
+					-- #else
+					THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS, DORNOGAL, AZJ_KAHET, HALLOWFALL, ISLE_OF_DORN, THE_RINGING_DEEPS,
+					-- #endif
+				},
 				["timeline"] = { ADDED_10_0_5 },
 			}),
 			ach(17336, {	-- Airborne Tumbler (x10)
-				["maps"] = { THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS },
+				["maps"] = {
+					-- #if BEFORE 11.0.2
+					THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS,
+					-- #else
+					THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS, DORNOGAL, AZJ_KAHET, HALLOWFALL, ISLE_OF_DORN, THE_RINGING_DEEPS,
+					-- #endif
+				},
 				["timeline"] = { ADDED_10_0_5 },
 			}),
 			ach(17345, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_5 }, }, {	-- Airborne Tumbler (x50)
-				["maps"] = { THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS },
+				["maps"] = {
+					-- #if BEFORE 11.0.2
+					THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS,
+					-- #else
+					THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS, DORNOGAL, AZJ_KAHET, HALLOWFALL, ISLE_OF_DORN, THE_RINGING_DEEPS,
+					-- #endif
+				},
 				["g"] =	{
 					title(492),	-- Skyscourge <Name>
 				},
@@ -210,15 +230,17 @@ root(ROOTS.PVP, pvp(n(WORLD_PVP, {
 			}),
 		}),
 		n(REWARDS, {
-			currency(2123),	-- Bloody Tokens
+			currency(2123, {	-- Bloody Tokens
+				["timeline"] = { REMOVED_11_0_0 },
+			}),
 			i(201756),	-- Bulging Coin Purse
 			i(202184),	-- Trophy of Strife
 		}),
 	})),
-	expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 		n(ACHIEVEMENTS, {
 			ach(40088, {	-- A Champion's Tour: The War Within (automated)
-				i(223802),	-- Purple Stagshell (PET!)
+				i(223802),	-- Ruby-Eyed Stagshell (PET!)
 			}),
 			ach(40464),	-- Bounty Master
 			ach(40097, {	-- Ruffious's Bid
@@ -257,27 +279,85 @@ root(ROOTS.PVP, pvp(n(WORLD_PVP, {
 			ach(40096, {	-- Sparking Battle (x20)
 				i(225969),	-- Forged Flag of Victory (TOY!)
 			}),
-			ach(40089),	-- Spoiled Goods
-			ach(40090),	-- Spoiled Goods
+			ach(40089),	-- Spoiled Goods (1x)
+			ach(40090),	-- Spoiled Goods (10x)
 			ach(40087),	-- Unbound Battle (automated)
 			ach(40465),	-- Unbound Bounty (automated)
-			ach(40466),	-- Unbound Glory
-			ach(40467),	-- Unbound Glory
-			ach(40468),	-- Unbound Glory
+			ach(40466),	-- Unbound Glory (10x)
+			ach(40467),	-- Unbound Glory (25x)
+			ach(40468),	-- Unbound Glory (5x)
+		}),
+		n(TREASURES, {
+			o(433370,{	-- War Supply Chest
+				i(225452),    -- Pattern Algari Competitors Chain Chainmail
+				i(225453),    -- Pattern Algari Competitors Chain Cowl
+				i(225458),    -- Pattern Algari Competitors Chain Cuffs
+				i(225457),    -- Pattern Algari Competitors Chain Gauntlets
+				i(225455),    -- Pattern Algari Competitors Chain Girdle
+				i(225456),    -- Pattern Algari Competitors Chain Leggings
+				i(225437),    -- Pattern Algari Competitors Cloth Bands
+				i(225439),    -- Pattern Algari Competitors Cloth Gloves
+				i(225438),    -- Pattern Algari Competitors Cloth Hood
+				i(225434),    -- Pattern Algari Competitors Cloth Leggings
+				i(225435),    -- Pattern Algari Competitors Cloth Shoulderpads
+				i(225436),    -- Pattern Algari Competitors Cloth Treads
+				i(225440),    -- Pattern Algari Competitors Cloth Tunic
+				i(225449),    -- Pattern Algari Competitors Leather Gloves
+				i(225446),    -- Pattern Algari Competitors Leather Shoulderpads
+				i(225448),    -- Pattern Algari Competitors Leather Trousers
+			}),
+		}),
+		n(REWARDS, {
+			currency(2123),	-- Bloody Tokens
 		}),
 	})),
 })));
 
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-		q(72376),	-- looting first War Crate of the day
-		q(72377, {	-- looting first War Crate of the day
-			["name"] = "Warmode Crate Looted",
-			["isDaily"] = true,
+	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+		n(PVP, {
+			q(72376, {	-- looting first War Crate of the day
+				["name"] = "Warmode Crate Looted",
+			}),
+			q(72377, {	-- looting first War Crate of the day
+				["name"] = "Warmode Crate Looted",
+				["isDaily"] = true,
+			}),
+			q(72362, {
+				["name"] = "Warmode Bounty Looted",
+				["isDaily"] = true,
+			}),
+			q(80413, {	-- after looting War Supply chest, first time per day
+				["name"] = "First War Supply Chest of the Day!",
+				["timeline"] = {ADDED_10_2_7},
+				["isDaily"] = true,
+			}),
+			q(80414, {	-- after looting War Supply chest, first time per day
+				["name"] = "First War Supply Chest of the Day!",
+				["timeline"] = {ADDED_10_2_7},
+				["isDaily"] = true,
+			}),
 		}),
-		q(72362, {
-			["name"] = "Warmode Bounty Looted",
-			["isDaily"] = true,
+	})),
+	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
+		n(PVP, {
+			q(80415, {	-- after looting War Supply chest, first time per day
+				["name"] = "First War Supply Chest of the Day!",
+				["isDaily"] = true,
+			}),
+			q(80416, {	-- after looting War Supply chest, first time per day
+				["name"] = "First War Supply Chest of the Day!",
+				["isDaily"] = true,
+			}),
+			q(84447, {	-- after looting an Unbound Spoils War Supply Chest
+				["name"] = "Unbound Spoils Looted.",
+			}),
+			q(84448, {	-- after looting an Unbound Spoils War Supply Chest
+				["name"] = "Unbound Spoils Looted.",
+			}),
+			q(84449, {	-- after looting an Unbound Spoils War Supply Chest
+				["name"] = "Unbound Spoils Looted.",
+			}),
 		}),
 	})),
 });

@@ -1967,10 +1967,20 @@ root(ROOTS.Holidays, applyevent(EVENTS.CHILDRENS_WEEK, n(CHILDRENS_WEEK_HEADER, 
 })));
 
 root(ROOTS.HiddenQuestTriggers, {
-	q(55376, {	-- completing Hunting for Gold (53969)
-		["timeline"] = { ADDED_8_0_1 },
-	}),
-	q(55377, {	-- completing Hunting for Gold (53969)
-		["timeline"] = { ADDED_8_0_1 },
-	}),
+	expansion(EXPANSION.WRATH, bubbleDownSelf({ ["timeline"] = { ADDED_3_1_3 } }, {
+		applyevent(EVENTS.CHILDRENS_WEEK, n(CHILDRENS_WEEK_HEADER, {
+			n(QUESTS, {
+				q(13959),	-- Old "Back To The Orphanage" quest, triggers together with modern version (Oracle quest during Children's Week)
+				q(13960),	-- Old "Back To The Orphanage" quest, triggers together with modern version (Wolvar quest during Children's Week)
+			}),
+		})),
+	})),
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+		applyevent(EVENTS.CHILDRENS_WEEK, n(CHILDRENS_WEEK_HEADER, {
+			n(QUESTS, {
+				q(55376),	-- completing Hunting for Gold (53969)
+				q(55377),	-- completing Hunting for Gold (53969)
+			}),
+		})),
+	})),
 });

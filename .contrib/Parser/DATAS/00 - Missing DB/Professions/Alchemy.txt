@@ -1,30 +1,24 @@
-11.0.0.54311
-r(430606),	--
-r(430613),	--
-r(433271),	--
-r(433604),	--
-r(433605),	--
-r(433606),	--
-r(433607),	--
-r(433608),	--
-11.0.0.55288
-r(462121),	-- Bubbling Mycobloom Culture
-r(462122),	-- Petal Powder
+1.15.5.57537
+r(1213544),	-- Flask of Unyielding Sorrow
+r(1213546),	-- Flask of Ancient Knowledge
+r(1213548),	-- Flask of the Old Gods
+r(1213552),	-- Flask of Madness
+r(1213559),	-- Elixir of the Honey Badger
+r(1213563),	-- Elixir of the Mage-Lord
+r(1213565),	-- Elixir of the Ironside
+r(1213571),	-- Elixir of Alacrity
 
 
 
 
 Missing in Alchemy.lua
 
-11.0.0.54311
-r(430606),	--
-r(430613),	--
-r(433271),	--
-r(433604),	--
-r(433605),	--
-r(433606),	--
-r(433607),	--
-r(433608),	--
-11.0.0.55288
-r(462121),	-- Bubbling Mycobloom Culture
-r(462122),	-- Petal Powder
+1.15.5.57537
+r(1213544),	-- Flask of Unyielding Sorrow
+r(1213546),	-- Flask of Ancient Knowledge
+r(1213548),	-- Flask of the Old Gods
+r(1213552),	-- Flask of Madness
+r(1213559),	-- Elixir of the Honey Badger
+r(1213563),	-- Elixir of the Mage-Lord
+r(1213565),	-- Elixir of the Ironside
+r(1213571),	-- Elixir of Alacrity

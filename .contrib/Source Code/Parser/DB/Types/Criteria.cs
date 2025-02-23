@@ -52,8 +52,13 @@ namespace ATT.DB.Types
             GetProviderObject() > 0 ||
             GetRequiredAchievement() > 0 ||
             GetRequiredFlightPath() > 0 ||
+            GetRecruitFollowerID() > 0 ||
+            GetGarrisonMissionID() > 0 ||
             GetModifierTreeID() > 0 ||
-            Type == 43;
+            // Reveal world map overlay "{WorldMapOverlay}" (Exploration stuff)
+            Type == 43 ||
+            // Mythic Plus Completed
+            Type == 216;
 
         public long GetSourceQuest() =>
             Type == 27 ? Asset : 0;
@@ -66,6 +71,12 @@ namespace ATT.DB.Types
 
         public long GetFactionID() =>
             Type == 46 ? Asset : 0;
+
+        public long GetRecruitFollowerID() =>
+            Type == 176 ? Asset : 0;
+
+        public long GetGarrisonMissionID() =>
+            Type == 174 ? Asset : 0;
 
         public long GetProviderItem() =>
         Type == 36 || Type == 41 || Type == 42 || Type == 57 ? Asset : 0;

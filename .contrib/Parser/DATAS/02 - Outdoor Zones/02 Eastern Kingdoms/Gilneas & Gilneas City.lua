@@ -5,7 +5,7 @@
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(179, {	-- Gilneas
 		["lore"] = "Gilneas, once a human kingdom, was isolated from the rest of the world ever since the Second War. It is now home of Genn Graymane's worgen who have re-joined the Alliance once again since the Forsaken invasion and the Cataclysm wrecked their kingdom. Gilneas is a worgen-only leveling zone that relies heavily upon phasing. The starting zone covers how the player transforms into a Worgen, later aiding Graymane in trying to protect his kingdom from Sylvanas.",
-		["icon"] = "Interface\\Icons\\achievement_battleground_battleforgilneas",
+		["icon"] = 462671,
 		["timeline"] = { ADDED_4_0_3 },
 		["maps"] = {
 			180,	-- Emberstone Mine
@@ -18,7 +18,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		["groups"] = {
 			m(202, {	-- Gilneas City
 				["lore"] = "Gilneas City was the capital city of the Kingdom of Gilneas. It was a dark and foreboding place of narrow cobblestone streets and crowded, Gothic houses, divided into four districts, centered around the Light's Dawn Cathedral. Shortly after the Cataclysm, the city was struck by a worgen assault and, later, a Forsaken invasion. After its abandonment by the Gilneans, the Alliance managed to retake the city, although its current status remains unknown.",
-				["icon"] = "Interface\\Icons\\Achievement_worganhead",
+				["icon"] = 463876,
 				["groups"] = {
 					n(QUESTS, {
 						q(14093, {	-- All Hell Breaks Loose
@@ -237,7 +237,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								14289,	-- Safety in Numbers [Priest]
 								14290,	-- Safety in Numbers [Hunter]
 								14291,	-- Safety in Numbers [Druid]
+								-- #if AFTER 10.0.7
 								75189,	-- Safety in Numbers [Monk]
+								-- #endif
 							},
 							["coord"] = { 65.83, 77.84, 202 },
 							["races"] = { WORGEN },
@@ -1299,10 +1301,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
--- #if AFTER CATA
-root(ROOTS.HiddenQuestTriggers, m(EASTERN_KINGDOMS, {
-	m(179, {	-- Gilneas
-		q(25331),	-- Grandma's Cat (when completing 14401)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3 } }, {
+	m(EASTERN_KINGDOMS, {
+		m(179, {	-- Gilneas
+			n(QUESTS, {
+				q(25331),	-- Grandma's Cat (when completing 14401)
+			})
+		}),
 	}),
-}));
--- #endif
+})));

@@ -322,18 +322,33 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 			["races"] = HORDE_ONLY,
 		}),
 		i(203724, {	-- Field Medic's Hazard Payout
-			["timeline"] = { ADDED_10_0_7 },
+			["timeline"] = { ADDED_10_0_7, REMOVED_TWW_LAUNCH },
 			["g"] = {
 				i(208567, {	-- Cracked Medal of Conquest
 					["timeline"] = { ADDED_10_1_5, REMOVED_10_2_0 },
 				}),
-				i(212554, {	-- Medal of Conquest
+				i(212554, {	-- Cracked Medal of Conquest
 					["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
 				}),
-				i(211773, {	-- Medal of Conquest
-					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+				i(211773, {	-- Cracked Medal of Conquest
+					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 				}),
 			},
+		}),
+		i(224557, {	-- Field Medic's Hazard Payout
+			["timeline"] = { ADDED_11_0_2 },
+			["g"] = {
+				i(225493, {	-- Cracked Medal of Conquest
+					["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+				}),
+				i(232790, {	-- Medal of Conquest
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+			},
+		}),
+		-- Reward for winning Epic Battleground
+		i(225772, {	-- Artisan's Consortium Advertisement (QS!/QI!)
+			["timeline"] = { ADDED_11_0_2 },
 		}),
 	})),
 })));

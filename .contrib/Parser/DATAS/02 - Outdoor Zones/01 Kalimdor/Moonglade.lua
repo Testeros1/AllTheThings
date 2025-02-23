@@ -4,16 +4,10 @@
 root(ROOTS.Zones, m(KALIMDOR, {
 	m(MOONGLADE, {
 		["lore"] = "Moonglade is both home of the Cenarion Circle and a haven for all druids. It is an uncorrupted neutral zone, protected by mountains and shrouded in green light, without any hostile mobs or gathering resources. The main village of Nighthaven is maintained by the Cenarion Circle and features druid trainers and a rare robe vendor, Geenia Sunshadow, who sells items like Formal Dangui.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\spell_arcane_teleportmoonglade",
-		-- #endif
+		["icon"] = 135758,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(855, {	-- Explore Moonglade
-					-- #if BEFORE WRATH
-					["description"] = "Explore Moonglade, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(855),	-- Explore Moonglade
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -42,7 +36,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 32.2, 66.6, MOONGLADE },
 					["races"] = HORDE_ONLY,
 				}),
-				-- #if ANYCLASSIC
 				fp(63, {	-- Nighthaven, Moonglade
 					["cr"] = 11800,	-- Silva Fil'naveth <Darnassus Flight Master>
 					["coord"] = { 44.2, 45.2, MOONGLADE },
@@ -55,7 +48,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["classes"] = { DRUID },
 					["races"] = HORDE_ONLY,
 				}),
-				-- #endif
 			}),
 			n(QUESTS, {
 				q(26, {	-- A Lesson to Learn [A]
@@ -112,8 +104,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				},
 				q(5931, {	-- Back to Darnassus
-					["qg"] = 11802,  -- Dendrite Starblaze
-					["sourceQuest"] = 5929,  -- Great Bear Spirit [A]
+					["qg"] = 11802,	-- Dendrite Starblaze
+					["sourceQuest"] = 5929,	-- Great Bear Spirit [A]
 					["coord"] = { 56.2, 30.4, MOONGLADE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { DARNASSUS },
@@ -122,8 +114,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["lvl"] = 10,
 				}),
 				q(5932, {	-- Back to Thunder Bluff
-					["qg"] = 11802,  -- Dendrite Starblaze
-					["sourceQuest"] = 5930,  -- Great Bear Spirit [H]
+					["qg"] = 11802,	-- Dendrite Starblaze
+					["sourceQuest"] = 5930,	-- Great Bear Spirit [H]
 					["coord"] = { 56.2, 30.4, MOONGLADE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { THUNDER_BLUFF },
@@ -303,7 +295,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["lvl"] = 14,
 				}),
 				q(5921, {	-- Moonglade [A]
-					["qg"] = 4217,  -- Mathrengyl Bearwalker <Druid Trainer>
+					["qg"] = 4217,	-- Mathrengyl Bearwalker <Druid Trainer>
 					["sourceQuests"] = {
 						5923,	-- Heeding the Call [Darnassus]
 						5924,   -- Heeding the Call [Stormwind City]
@@ -315,7 +307,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["classes"] = { DRUID },
 				}),
 				q(5922, {	-- Moonglade [H]
-					["qg"] = 3033,  -- Turak Runetotem <Druid Trainer>
+					["qg"] = 3033,	-- Turak Runetotem <Druid Trainer>
 					["sourceQuests"] = {
 						5926,	-- Heeding the Call [Thunder Bluff]
 						5927,   -- Heeding the Call [Orgrimmar]
@@ -396,7 +388,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				},
 				q(6762, {	-- Rabine Saturna [A]
-					["qg"] = 4217,  -- Mathrengyl Bearwalker <Druid Trainer>
+					["qg"] = 4217,	-- Mathrengyl Bearwalker <Druid Trainer>
 					["sourceQuest"] = 6761,	-- The New Frontier (2/2) [Darnassus]
 					["coord"] = { 35.2, 8.0, DARNASSUS },
 					["timeline"] = { REMOVED_4_0_3 },
@@ -724,7 +716,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				applyclassicphase(SOD_PHASE_THREE, n(222188, {	-- Shadowy Figure
 					["sourceQuest"] = 81986,	-- Waking the Nightmare
 					["description"] = "She will only offer to teach you the recipes after you have collected an Inert Mantle of Nightmares once already by completing the Waking the Nightmare quest from ST.",
-					["timeline"] = { "added 1.15.2" },
+					["timeline"] = { ADDED_1_15_2 },
 					["lvl"] = 50,
 					["groups"] = {
 						recipe(446191),	-- Baleful Pauldrons

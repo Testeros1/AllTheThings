@@ -6,7 +6,7 @@ root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(FROSTFIRE_RIDGE, {
 			["lore"] = "Frostfire Ridge is a zone in north-western Draenor. It is home to the Frostwolf clan and the Thunderlord clan. The ogre stronghold-turned Horde capital, Bladespire Citadel is located here. When Draenor shattered and became Outland, Frostfire Ridge and Gorgrond were pressed together to become the Blade's Edge Mountains. Several recognizable landmarks in Blade's Edge Mountains can be found in Frostfire, such as the Circle of Blood and the rock spires jutting from the earth.",
-			["icon"] = "Interface\\Icons\\achievement_zone_frostfire",
+			["icon"] = 1031536,
 			["maps"] = {
 				526,	-- Turgall's Den (1st floor)
 				527,	-- Turgall's Den (2nd floor)
@@ -103,31 +103,63 @@ root(ROOTS.Zones, {
 					},
 				})),
 				explorationHeader({
+					visit_exploration(6995,{coord={82.9,75.1,FROSTFIRE_RIDGE}}),	-- Agurak's Fall
+					visit_exploration(6781,{coord={70.4,38.2,FROSTFIRE_RIDGE}}),	-- Altar of Kron
+					visit_exploration(6782,{coord={72.9,35.4,FROSTFIRE_RIDGE}}),	-- Ascent of Frostfire
+					visit_exploration(7323,{coord={52.1,31.8,FROSTFIRE_RIDGE}}),	-- Ashen Crater
+					visit_exploration(7054,{coord={45.1,40.0,FROSTFIRE_RIDGE}}),	-- Blade's Edge Mountain
 					exploration(6864),	-- Bladespire Citadel
 					exploration(6962),	-- Bladespire Ravine
 					exploration(6875),	-- Bladespire Throne
+					visit_exploration(7237,{coord={46.9,9.50,FROSTFIRE_RIDGE}}),	-- Bloodmaul Landing
 					exploration(7013),	-- Bloodmaul Stronghold
 					exploration(6994),	-- Bones of Agurak
+					visit_exploration(7006,{coord={54.8,16.0,FROSTFIRE_RIDGE}}),	-- Coldsnap Bluffs
+					visit_exploration(7447,{coord={55.3,8.30,FROSTFIRE_RIDGE}}),	-- Colossal Depths
 					exploration(6775),	-- Colossal's Fall
 					exploration(6744),	-- Daggermaw Ravine
+					visit_exploration(7047,{coord={30.8,54.2,FROSTFIRE_RIDGE}}),	-- Forbidden Glacier
+					visit_exploration(6929,{coord={14.1,55.4,FROSTFIRE_RIDGE}}),	-- Frostboar Drifts
 					exploration(6742),	-- Frostwind Crag
+					visit_exploration(6805,{coord={66.8,33.8,FROSTFIRE_RIDGE}}),	-- Gate of the Breakers
+					visit_exploration(7257,{coord={41.0,64.6,FROSTFIRE_RIDGE}}),	-- Glacier Bay
+					visit_exploration(6905,{coord={18.9,44.1,FROSTFIRE_RIDGE}}),	-- Gormaul Tower
 					exploration(6817),	-- Grimfrost Hill
 					exploration(6779),	-- Grom'gar
+					visit_exploration(6758,{coord={23.3,11.9,FROSTFIRE_RIDGE}}),	-- Icescar Boneyard
+					visit_exploration(6778,{coord={64.8,45.7,FROSTFIRE_RIDGE}}),	-- Icewind Drifts
 					exploration(6983),	-- Iron Siegeworks
 					exploration(7076, {	-- Iron Waystation
 						-- CRIEVE NOTE: I was initially able to collect this, but if you collect Bones of Agurak, it gets masked behind it.
 						["collectible"] = false,
 					}),
+					visit_exploration(6759,{coord={26.1,19.9,FROSTFIRE_RIDGE}}),	-- Lashwind Cleft
 					exploration(6784),	-- Magnarok
+					visit_exploration(6907,{coord={30.9,50.6,FROSTFIRE_RIDGE}}),	-- Mor'dul Tower
+					visit_exploration(6911,{coord={62.4,42.8,FROSTFIRE_RIDGE}}),	-- Pit of the Devourer
+					visit_exploration(7018,{coord={22.2,18.8,FROSTFIRE_RIDGE}}),	-- Ruins of Ata'gar
+					visit_exploration(6966,{coord={55.0,61.4,FROSTFIRE_RIDGE}}),	-- Shivering Trench
+					visit_exploration(7005,{coord={65.6,15.2,FROSTFIRE_RIDGE}}),	-- Snowfall Alcove
+					visit_exploration(6850,{coord={26.9,42.1,FROSTFIRE_RIDGE}}),	-- Sootstained Mining Camp
+					visit_exploration(7055,{coord={72.9,71.1,FROSTFIRE_RIDGE}}),	-- Southwind Cliffs
+					visit_exploration(7765,{coord={43.9,70.7,FROSTFIRE_RIDGE}}),	-- Southwind Shore
 					exploration(6777),	-- Stonefang Outpost
 					exploration(6964),	-- Stonefang Ridge
 					exploration(6968),	-- Stonefury Cliffs
+					visit_exploration(7058,{coord={71.6,51.7,FROSTFIRE_RIDGE}}),	-- The Bleeding Mountain
 					exploration(6776),	-- The Boneslag
+					visit_exploration(7062,{coord={42.6,63.2,FROSTFIRE_RIDGE}}),	-- The Burning Glacier
 					exploration(6774),	-- The Cracking Plains
+					visit_exploration(7450,{coord={49.5,38.5,FROSTFIRE_RIDGE}}),	-- The Savage Crag
+					visit_exploration(6743,{coord={31.5,12.4,FROSTFIRE_RIDGE}}),	-- Throm'var
+					visit_exploration(7014,{coord={79.3,56.3,FROSTFIRE_RIDGE}}),	-- Thunder Pass
+					visit_exploration(7236,{coord={41.5,10.3,FROSTFIRE_RIDGE}}),	-- Tor'goroth's Tooth
+					visit_exploration(7113,{coord={74.4,59.7,FROSTFIRE_RIDGE}}),	-- Wolf's Stand
 					exploration(6869),	-- Wor'gol
+					visit_exploration(7255,{coord={15.2,66.9,FROSTFIRE_RIDGE}}),	-- Zangar Sea
 				}),
 				n(FACTIONS, {
-					faction(1445, {["races"] = HORDE_ONLY}),	-- Frostwolf Orcs
+					faction(FACTION_FROSTWOLF_ORCS, {["races"] = HORDE_ONLY}),	-- Frostwolf Orcs
 				}),
 				n(FLIGHT_PATHS, {
 					fp(1387, {	-- Bladespire Citadel, Frostfire Ridge
@@ -345,9 +377,7 @@ root(ROOTS.Zones, {
 						["requireSkill"] = JEWELCRAFTING,
 						["g"] = {
 							i(115503),	-- Blazing Diamond Pendant (TOY!)
-							i(115359, {	-- Draenor Jewelcrafting
-								["filterID"] = MISC,
-							}),
+							i(115359),	-- Draenor Jewelcrafting
 							i(111814),	-- Gem Boutique, Level 1
 						},
 					}),
@@ -360,7 +390,6 @@ root(ROOTS.Zones, {
 						["g"] = {
 							i(115357, {	-- Draenor Tailoring
 								["description"] = "This is a reward for completing the introductory Tailoring questline that can drop from any Draenor mob. Also sold at the Tailoring Emporium for 100 gold.",
-								["filterID"] = MISC,
 								["g"] = {
 									recipe(168835),	-- Hexweave Cloth
 									recipe(176058),	-- Secrets of Draenor Tailoring
@@ -768,21 +797,14 @@ root(ROOTS.Zones, {
 						["g"] = {
 							i(111815),	-- Scribe's Quarters, Level 1
 							i(111923, {	-- Secret of Draenor Inscription
-								["filterID"] = MISC,
-								["g"] = {
-									i(120136),		-- Recipe: Secrets of Draenor Inscription
-									recipe(169081),	-- War Paints
-									recipe(167950, {	-- Research: Warbinder's Ink
-										i(113992, {	-- Scribe's Research Notes
-											["filterID"] = MISC,
-										}),
-									}),
-									recipe(175390),	-- Laughing Tarot
-									recipe(175389),	-- Ocean Tarot
-									recipe(175392),	-- Savage Tarot
-									recipe(166669),	-- Card of Omens
-									recipe(178497),	-- Warbinder's Ink
-								},
+								i(120136),		-- Recipe: Secrets of Draenor Inscription
+								recipe(169081),	-- War Paints
+								recipe(167950),	-- Research: Warbinder's Ink
+								recipe(175390),	-- Laughing Tarot
+								recipe(175389),	-- Ocean Tarot
+								recipe(175392),	-- Savage Tarot
+								recipe(166669),	-- Card of Omens
+								recipe(178497),	-- Warbinder's Ink
 							}),
 							i(116114),	-- Prestige Card: The Turn
 						},
@@ -1329,7 +1351,7 @@ root(ROOTS.Zones, {
 						["coord"] = { 62.6, 42.4, FROSTFIRE_RIDGE },
 						["g"] = {
 							o(224686, {	-- Devourer's Gutstone
-								["icon"] = "Interface\\Icons\\INV_Elemental_Primal_Fire",
+								["icon"] = 132847,
 								["g"] = {
 									i(112110),	-- Carapace Shield of the Devourer
 								},
@@ -1731,7 +1753,7 @@ root(ROOTS.Zones, {
 							i(120341),	-- Burning Pearl
 						},
 					}),
-					n(75120,  {	-- Clumsy Cragmaul Brute
+					n(75120, {	-- Clumsy Cragmaul Brute
 						["questID"] = 33531,
 						["coord"] = { 50.2, 18.7, FROSTFIRE_RIDGE },
 						["g"] = {
@@ -1753,8 +1775,15 @@ root(ROOTS.Zones, {
 						},
 					}),
 					n(79473, {	-- Dagg
+						["provider"] = { "o", 230498 },	-- Thunderlord Cage
+						["sourceQuest"] = 34654,	-- Dagg
 						["questID"] = 34651,
 						["coord"] = { 65.9, 60.8, FROSTFIRE_RIDGE },
+					}),
+					n(79488, {	-- Dagg
+						["provider"] = { "o", 230506 },	-- Thunderlord Cage
+						["questID"] = 34654,
+						["coord"] = { 39.6, 28.0, FROSTFIRE_RIDGE },
 					}),
 					o(232218, {	-- Doorog's Secret Stash
 						["questID"] = 35370,
@@ -1996,7 +2025,7 @@ root(ROOTS.Zones, {
 							}),
 						},
 					}),
-					n(75072,  {	-- Young Orc Traveler
+					n(75072, {	-- Young Orc Traveler
 						["description"] = "Use the Bound Traveler's Scroll to obtain Snow Hare's Foot. Must collect the Frostwolf First-Fang from the Young Orc Woman to complete.",
 						["questID"] = 33525,
 						["coord"] = { 54.8, 35.4, FROSTFIRE_RIDGE },
@@ -2004,7 +2033,7 @@ root(ROOTS.Zones, {
 							i(112206),	-- Talisman of Yearning Unfulfilled
 						},
 					}),
-					n(75081,  {	-- Young Orc Woman
+					n(75081, {	-- Young Orc Woman
 						["description"] = "Use the Frozen Envelope to obtain Frostwolf First-Fang. Must collect the Snow Hare's Foot from the Young Orc Traveler to complete.",
 						["questID"] = 33525,
 						["coord"] = { 63.4, 14.7, FROSTFIRE_RIDGE },
@@ -2015,6 +2044,8 @@ root(ROOTS.Zones, {
 				}),
 				n(VENDORS, {
 					n(77465, {	-- "Wrong Knick" <Repairs>
+						["coord"] = { 28.2, 34.6, FROSTFIRE_RIDGE },
+						["races"] = HORDE_ONLY,
 						["sym"] = {
 							{"sub", "common_vendor", 64054},	-- Krogo Darkhide <Leatherworking & Skinning Supplies>
 						},
@@ -2025,35 +2056,42 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(33443),	-- Barrier Destroyed - triggers upon reaching the top of the walkway with rolling fireballs in Bladespire Citadel during "Great Balls of Fire!" (questID 33408)
-		q(33847),	-- Flag: Seen Ga'nar Rolling Out - triggers when going into Chillfang's cave immediately upon getting to Draenor
-		q(33909),	-- Flag: Seen Ga'nar Rolling Out to Bladespire - triggers shortly after reaching Wor'gol during "Den of Wolves" (questID 34379)
-		q(33846),	-- Flag: Seen Thrall Cyclone - triggers during "These Colors Don't Run" (questID 33526)
-		q(36793),	-- Founded Garrison - triggers after building Horde Garrison
-		q(37544),	-- Garrison Follower: Greatmother Geyah - Greatmother Geyah selected during "The Frostwolves Stand Ready" (questID 37563)
-		q(37545),	-- Garrison Follower: Kal'gor the Honorable - Kal'gor the Honorable selected during "The Frostwolves Stand Ready" (questID 37563)
-		q(34730),	-- Garrison Follower: Lokra - Lokra selected during "The Frostwolves Stand Ready" (questID 37563)
-		q(36904),	-- Ogre Waygate
-		q(34313),	-- Orlana Strongbrow - triggers during "The Shadow Gate" (questID 34381)
-		q(34329),	-- Shamanstone: Buffeting Galefury selected. Only procs once
-		q(34330),	-- Shamanstone: Ogrish Fortitude selected. Only procs once
-		q(34456),	-- Shamanstone: Spirit of the Wolf. Popped when approaching the Frostwolf shamanstone
-		q(34331),	-- Shamanstone: Spirit of the Wolf selected. Only procs once
-		q(34332),	-- Shamanstone: Touched By Fire selected. Only procs once
-		q(34333),	-- Shamanstone: Touched By Ice selected. Only procs once
-		q(34328),	-- Shamanstone: Blessing of the WOlf selected. Only procs once
-		q(34312),	-- The Magma Lord - triggers when Molthron first appears at 43.6, 15.6
-		q(34510),	-- Tracking Event: Catapuls 'n' Clefthoof - triggers after riding the wolf down Bladespire Citadel during "Moving In" (questID 33657)
-		q(34453),	-- Tracking Event: Gazlowe Arrived
-		q(34511),	-- Tracking Event: Ogre Drag - triggers after riding the wolf down Bladespire Citadel during "Moving In" (questID 33657)
-		q(34654),	-- Tracking Flag: Dagg Found at Daggermaw Ravine - triggers when you open Dagg's cage at 39.6, 28.1
-		q(34715),	-- Tracking Flag: Shamanstone Summons - appoach the frostwolf shaman stone in Wor'gol while on "Honor Has Its Rewards" to start the dialog (questID 33816)
-		q(34521),	-- Treasure: Glowing Obsidian Shard - secondary quest triggered when looting Burning Pearl in Frostfire Ridge
-		q(34968),	-- Treasure: Ice-Covered Supplies - secondary quest triggered when looting Forgotten Supplies in Frostfire Ridge
-		q(34519),	-- Vignette: Brotoculus - tertiary trigger for g'lok the Frozen rare
-		q(34517),	-- Vignette: Gargantuan Frostbeak - secondary trigger for Ug'lok the Frozen rare
-		q(37652),	-- Vignette: Jabberjaw - secondary trigger for Jabberjaw rare
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	m(DRAENOR, {
+		m(FROSTFIRE_RIDGE, {
+			n(QUESTS, {
+				q(33443),	-- Barrier Destroyed - triggers upon reaching the top of the walkway with rolling fireballs in Bladespire Citadel during "Great Balls of Fire!" (questID 33408)
+				q(33847),	-- Flag: Seen Ga'nar Rolling Out - triggers when going into Chillfang's cave immediately upon getting to Draenor
+				q(33909),	-- Flag: Seen Ga'nar Rolling Out to Bladespire - triggers shortly after reaching Wor'gol during "Den of Wolves" (questID 34379)
+				q(33846),	-- Flag: Seen Thrall Cyclone - triggers during "These Colors Don't Run" (questID 33526)
+				q(36793),	-- Founded Garrison - triggers after building Horde Garrison
+				q(37544),	-- Garrison Follower: Greatmother Geyah - Greatmother Geyah selected during "The Frostwolves Stand Ready" (questID 37563)
+				q(37545),	-- Garrison Follower: Kal'gor the Honorable - Kal'gor the Honorable selected during "The Frostwolves Stand Ready" (questID 37563)
+				q(34730),	-- Garrison Follower: Lokra - Lokra selected during "The Frostwolves Stand Ready" (questID 37563)
+				q(36904),	-- Ogre Waygate
+				q(34313),	-- Orlana Strongbrow - triggers during "The Shadow Gate" (questID 34381)
+				q(34312),	-- The Magma Lord - triggers when Molthron first appears at 43.6, 15.6
+				q(34510),	-- Tracking Event: Catapuls 'n' Clefthoof - triggers after riding the wolf down Bladespire Citadel during "Moving In" (questID 33657)
+				q(34453),	-- Tracking Event: Gazlowe Arrived
+				q(34511),	-- Tracking Event: Ogre Drag - triggers after riding the wolf down Bladespire Citadel during "Moving In" (questID 33657)
+				q(34715),	-- Tracking Flag: Shamanstone Summons - appoach the frostwolf shaman stone in Wor'gol while on "Honor Has Its Rewards" to start the dialog (questID 33816)
+			}),
+			n(RARES, {
+				q(34519),	-- Vignette: Brotoculus - tertiary trigger for g'lok the Frozen rare
+				q(34517),	-- Vignette: Gargantuan Frostbeak - secondary trigger for Ug'lok the Frozen rare
+				q(37652),	-- Vignette: Jabberjaw - secondary trigger for Jabberjaw rare
+			}),
+			n(TREASURES, {
+				q(34329),	-- Shamanstone: Buffeting Galefury selected. Only procs once
+				q(34330),	-- Shamanstone: Ogrish Fortitude selected. Only procs once
+				q(34456),	-- Shamanstone: Spirit of the Wolf. Popped when approaching the Frostwolf shamanstone
+				q(34331),	-- Shamanstone: Spirit of the Wolf selected. Only procs once
+				q(34332),	-- Shamanstone: Touched By Fire selected. Only procs once
+				q(34333),	-- Shamanstone: Touched By Ice selected. Only procs once
+				q(34328),	-- Shamanstone: Blessing of the WOlf selected. Only procs once
+				q(34521),	-- Treasure: Glowing Obsidian Shard - secondary quest triggered when looting Burning Pearl in Frostfire Ridge
+				q(34968),	-- Treasure: Ice-Covered Supplies - secondary quest triggered when looting Forgotten Supplies in Frostfire Ridge
+			}),
+		}),
 	}),
-});
+})));

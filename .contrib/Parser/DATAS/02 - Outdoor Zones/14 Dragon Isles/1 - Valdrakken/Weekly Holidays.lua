@@ -24,10 +24,10 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
 				}),
 				i(217728, {	-- Cache of Awakened Treasures (N)
-					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED },
+					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 				}),
 				i(217729, {	-- Cache of Awakened Treasures (H)
-					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED },
+					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 				}),
 				i(202091, {	-- Dragonscale Expedition Insignia [Epic 2.5k]
 					["minReputation"] = { FACTION_DRAGONSCALE_EXPEDITION, 25 },
@@ -60,6 +60,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["provider"] = { "n", 199526 },	-- Kazra
 				["coord"] = { 49.5, 59.9, VALDRAKKEN },
 				["isWeekly"] = true,
+				["timeline"] = { REMOVED_11_0_2 },
 			}, {
 				q(72727),					-- A Burning Path Through Time
 				q(72719),					-- A Fel Path Through Time
@@ -80,15 +81,15 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				["_drop"] = { "g" },	-- Drop Trash
 			}, {
 				-- #IF AFTER DF
-				pvp(q(47148, {	-- Something Different
-					["timeline"] = { ADDED_10_0_2_LAUNCH },
-				})),
+				-- #IF BEFORE TWW
+				pvp(q(47148)),	-- Something Different
+				-- #ENDIF
 				-- #ENDIF
 				pvp(q(78128, {	-- Gotta Go Fast
-					["timeline"] = { ADDED_10_2_0 },
+					["timeline"] = { ADDED_10_2_0, REMOVED_11_0_2 },
 				})),
 				pvp(q(78129, {	-- Gotta Go Faster
-					["timeline"] = { ADDED_10_2_0 },
+					["timeline"] = { ADDED_10_2_0, REMOVED_11_0_2 },
 					["sourceQuests"] = { 78128 },
 				})),
 			})),

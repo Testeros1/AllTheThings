@@ -68,7 +68,7 @@ root(ROOTS.Zones, {
 	m(DRAENOR, {
 		m(DRAENOR_SHADOWMOON_VALLEY, {
 			["lore"] = "Shadowmoon Valley is a zone in south-eastern Draenor. A lush valley engulfed in eternal night, the Pale Lady shines so brightly here that it even replaced the sun as the valley's primary light source during the day. Shadowmoon serves as one of the key centers of draenei civilization on the world of Draenor, its heart being the sacred temple of Karabor. Lately, the Iron Horde began advancing on the draenei settlements through the Shadowmoon clan and naval attacks targeting Karabor itself.",
-			["icon"] = "Interface\\Icons\\achievement_zone_newshadowmoonvalley",
+			["icon"] = 1048304,
 			["maps"] = {
 				540,	-- Bloodthorn Cave
 				541,	-- Den of Secrets
@@ -120,7 +120,20 @@ root(ROOTS.Zones, {
 						["races"] = ALLIANCE_ONLY,
 						["sym"] = {{ "achievement_criteria" }},
 					}),
-					ach(9435),	-- Take From Them Everything (Socrethar's Rise)
+					ach(9435, {	-- Take From Them Everything (Socrethar's Rise)
+						["description"] = "Pickup the buff and then keep that same buff active for 10 minutes, make sure to only click Fruit Baskets.",
+						["provider"] = { "o" , 234457 },	-- Fruit Basket
+						["coords"] = {
+							{ 46.4, 81.4, DRAENOR_SHADOWMOON_VALLEY },
+							{ 47.5, 72.8, DRAENOR_SHADOWMOON_VALLEY },
+							{ 49.7, 72.8, DRAENOR_SHADOWMOON_VALLEY },
+							{ 50.4, 74.4, DRAENOR_SHADOWMOON_VALLEY },
+							{ 50.5, 75.8, DRAENOR_SHADOWMOON_VALLEY },
+							{ 50.7, 79.7, DRAENOR_SHADOWMOON_VALLEY },
+							{ 51.1, 77.4, DRAENOR_SHADOWMOON_VALLEY },
+							{ 51.3, 75.2, DRAENOR_SHADOWMOON_VALLEY },
+						},
+					}),
 					ach(9432),	-- Would You Like a Pamphlet? (Shadowmoon Enclave)
 					ach(9479),	-- You Can't Make a Giant Omelette... (Darktide Roost)
 					ach(9481),	-- You Have Been Rylakinated! (Darktide Roost)
@@ -151,38 +164,67 @@ root(ROOTS.Zones, {
 					},
 				})),
 				explorationHeader({
+					visit_exploration(7120,{coord={60.9,26.4,DRAENOR_SHADOWMOON_VALLEY}}),	-- Altar of Sha'tar
 					exploration(6873),	-- Anguish Fortress
+					visit_exploration(7122,{coord={52.6,38.8,DRAENOR_SHADOWMOON_VALLEY}}),	-- Arbor Glen
 					exploration(7144),	-- Blademoon Bloom
+					visit_exploration(7048,{coord={23.4,33.8,DRAENOR_SHADOWMOON_VALLEY}}),	-- Bloodthorn Hill
 					exploration(6910),	-- Darktide Roost
+					visit_exploration(7256,{coord={53.5,84.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- Darktide Strait
+					visit_exploration(7472,{coord={50.6,16.2,DRAENOR_SHADOWMOON_VALLEY}}),	-- Deadwalker Pass
 					exploration(7232),	-- Drybone Hollow
 					exploration(7051),	-- Dyvari Overgrowth
 					exploration(7116),	-- Elodor
 					exploration(7117),	-- Elodor Fields
 					exploration(6923),	-- Embaari Village
+					visit_exploration(7760,{coord={27.6,9.50,DRAENOR_SHADOWMOON_VALLEY}}),	-- Eventide Bay
+					visit_exploration(7173,{coord={25.2,7.60,DRAENOR_SHADOWMOON_VALLEY}}),	-- Eventide Landing
 					exploration(6957),	-- Exile's Rise
+					visit_exploration(7118,{coord={59.1,30.6,DRAENOR_SHADOWMOON_VALLEY}}),	-- Fey Landing
+					visit_exploration(7165,{coord={54.1,57.1,DRAENOR_SHADOWMOON_VALLEY}}),	-- Fiona's Caravan
+					visit_exploration(7220,{coord={42.1,77.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- Forgotten Shore
+					visit_exploration(6870,{coord={46.5,15.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- Gloomshade Grotto
 					exploration(6855),	-- Gloomshade Grove
 					exploration(7216),	-- Great Tree Valuundira
 					exploration(6797),	-- Gul'var
+					visit_exploration(7473,{coord={61.4,34.5,DRAENOR_SHADOWMOON_VALLEY}}),	-- Hills of Valuun
 					exploration(7221),	-- Isle of Shadows
 					exploration(6930),	-- Karabor
+					visit_exploration(6946,{coord={80.6,42.5,DRAENOR_SHADOWMOON_VALLEY}}),	-- Karabor Harbor
 					exploration(6793),	-- Light's Fall
 					exploration(6922),	-- Moonflower Valley
+					visit_exploration(7397,{coord={66.2,35.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- Moonlit Shore
+					visit_exploration(6993,{coord={37.3,53.7,DRAENOR_SHADOWMOON_VALLEY}}),	-- Moonwillow Peak
+					visit_exploration(7470,{coord={48.4,22.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- Mount Kra'gor
 					exploration(6931),	-- Path of the Light
 					exploration(7392),	-- Pillars of Fate
 					exploration(6921),	-- Plains of Serenity
+					visit_exploration(7119,{coord={57.2,23.4,DRAENOR_SHADOWMOON_VALLEY}}),	-- Rangari Enclave
+					visit_exploration(7492,{coord={50.4,30.8,DRAENOR_SHADOWMOON_VALLEY}}),	-- Saraah's Vale
+					visit_exploration(6811,{coord={23.0,20.2,DRAENOR_SHADOWMOON_VALLEY}}),	-- Secluded Glade
 					exploration(6792),	-- Shaz'gul
+					visit_exploration(7189,{coord={50.4,82.0,DRAENOR_SHADOWMOON_VALLEY}}),	-- Shrine of Othaar
 					exploration(6909),	-- Socrethar's Rise
 					exploration(7231),	-- Swamplight Trail
+					visit_exploration(7265,{coord={41.8,10.7,DRAENOR_SHADOWMOON_VALLEY}}),	-- Tanaan Channel
+					visit_exploration(6794,{coord={48.3,36.2,DRAENOR_SHADOWMOON_VALLEY}}),	-- Teluuna Observatory
+					visit_exploration(6872,{coord={30.7,42.6,DRAENOR_SHADOWMOON_VALLEY}}),	-- Terrace of the Stars
 					exploration(6791),	-- The Burial Fields
+					visit_exploration(6945,{coord={74.7,53.0,DRAENOR_SHADOWMOON_VALLEY}}),	-- The Coliseum of Light
+					visit_exploration(7426,{coord={56.7,57.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- The Crescent Hearth
 					exploration(6772),	-- The Cursed Woods
 					exploration(7161),	-- The Draakorium
 					exploration(7049),	-- The Nightmarsh
+					visit_exploration(6857,{coord={18.4,29.8,DRAENOR_SHADOWMOON_VALLEY}}),	-- The Shadow Rise
 					exploration(7091),	-- The Shimmer Moor
+					visit_exploration(7427,{coord={60.0,27.3,DRAENOR_SHADOWMOON_VALLEY}}),	-- The Silken Pillow
+					visit_exploration(6977,{coord={53.3,42.7,DRAENOR_SHADOWMOON_VALLEY}}),	-- The Verdant Mire
 					exploration(6944),	-- Tranquil Court
+					visit_exploration(6866,{coord={41.0,55.1,DRAENOR_SHADOWMOON_VALLEY}}),	-- Twilight Glade
 					exploration(7225),	-- Umbrafen
 				}),
 				n(FACTIONS, {
-					faction(1731, {["races"] = ALLIANCE_ONLY}),	-- Council of Exarchs
+					faction(FACTION_COUNCIL_OF_EXARCHS, {["races"] = ALLIANCE_ONLY}),	-- Council of Exarchs
 				}),
 				n(FLIGHT_PATHS, {
 					fp(1569, {	-- Akeeta's Hovel, Shadowmoon Valley
@@ -221,6 +263,8 @@ root(ROOTS.Zones, {
 						["coord"] = { 40.6, 55.2, DRAENOR_SHADOWMOON_VALLEY },
 						["races"] = ALLIANCE_ONLY,
 					}),
+					-- This FlightPath is not collectible, but is faked on the map by Blizzard
+					fp(1567, {["collectible"] = false}),	-- Temple of Karabor, Shadowmoon Valley
 				}),
 				petbattles({ ADDED_6_0_2 }, {
 					n(87124, {	-- Ashlei <Grand Master Pet Tamer>
@@ -351,6 +395,9 @@ root(ROOTS.Zones, {
 						["lvl"] = 110,
 						["provider"] = { "o", 258980 },	-- Cursed Tome
 						["coord"] = { 37.6, 59.3, DRAENOR_SHADOWMOON_VALLEY },
+						["g"] = {
+							i(141361),	-- Cursed Tome (QI!)
+						},
 					}),
 					q(33765, {	-- Dark Enemies
 						["sourceQuests"] = { 33075 },	-- A Hero's Welcome
@@ -404,7 +451,7 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = { 34780 },	-- Invisible Ramparts
 						["coord"] = { 56.9, 34.6, DRAENOR_SHADOWMOON_VALLEY },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_DataCrystal11",
+						["icon"] = 132785,
 						["provider"] = {"o",230933},	-- Defense Pylon Central Control Console
 					}),
 					q(34786, {	-- Engorged Goren
@@ -614,7 +661,7 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 77417 },	-- Image of Archmage Khadgar
 					}),
 					heroscall(q(49562, {	-- Hero's Call: Shadowmoon Valley! (Draenor)
-						["description"] = "Abandon quest 'Step Three: Prophet!' after the 'Assault on the Dark Portal' scenario and visit a Hero's Call Board to pick this quest up.",
+						["description"] = "After the 'Assault on the Dark Portal' scenario, turn in quest 'Step Three: Prophet!' without accepting the following quest, then visit a Hero's Call Board to pick this quest up.",
 						["timeline"] = { ADDED_7_3_5 },
 						["DisablePartySync"] = true,
 						["isBreadcrumb"] = true,
@@ -629,7 +676,6 @@ root(ROOTS.Zones, {
 						["g"] = {
 							i(115357, {	-- Draenor Tailoring
 								["description"] = "This is a reward for completing the introductory Tailoring questline that can drop from any Draenor mob. Also sold at the Tailoring Emporium for 100 gold.",
-								["filterID"] = MISC,
 								["g"] = {
 									recipe(168835),	-- Hexweave Cloth
 									recipe(176058),	-- Secrets of Draenor Tailoring
@@ -992,21 +1038,14 @@ root(ROOTS.Zones, {
 						["g"] = {
 							i(111815),	-- Scribe's Quarters, Level 1
 							i(111923, {	-- Secret of Draenor Inscription
-								["filterID"] = MISC,
-								["g"] = {
-									i(120136),		-- Recipe: Secrets of Draenor Inscription
-									recipe(169081),	-- War Paints
-									recipe(167950, {	-- Research: Warbinder's Ink
-										i(113992, {	-- Scribe's Research Notes
-											["filterID"] = MISC,
-										}),
-									}),
-									recipe(175390),	-- Laughing Tarot
-									recipe(175389),	-- Ocean Tarot
-									recipe(175392),	-- Savage Tarot
-									recipe(166669),	-- Card of Omens
-									recipe(178497),	-- Warbinder's Ink
-								},
+								i(120136),		-- Recipe: Secrets of Draenor Inscription
+								recipe(169081),	-- War Paints
+								recipe(167950),	-- Research: Warbinder's Ink
+								recipe(175390),	-- Laughing Tarot
+								recipe(175389),	-- Ocean Tarot
+								recipe(175392),	-- Savage Tarot
+								recipe(166669),	-- Card of Omens
+								recipe(178497),	-- Warbinder's Ink
 							}),
 						},
 					}),
@@ -1102,7 +1141,7 @@ root(ROOTS.Zones, {
 						["provider"] = {"o",237021},	-- Wanted: Kliaa's Stinger
 						["coord"] = { 26.4, 32.7, DRAENOR_SHADOWMOON_VALLEY },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Misc_ScrollRolled02c",
+						["icon"] = 1500867,
 						["g"] = {
 							i(113163),	-- Kliaa's Venomclaws
 							i(113159),	-- Probiscus of the Swampfly Queen
@@ -1112,13 +1151,13 @@ root(ROOTS.Zones, {
 					q(33833, {	-- WANTED: Kuu'rat's Tusks
 						["coord"] = { 33.2, 30.7, DRAENOR_SHADOWMOON_VALLEY },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 						["provider"] = {"o",237016},	-- Wanted: Kuu'rat
 					}),
 					q(33836, {	-- WANTED: Maa'run's Hoof
 						["coord"] = { 57.5, 57.2, DRAENOR_SHADOWMOON_VALLEY },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Inscription_ScrollOfWisdom_01",
+						["icon"] = 632821,
 						["provider"] = {"o",232405},	-- Wanted Poster
 						["g"] = {
 							i(117989),	-- Maa'run's Baleful Eye
@@ -1130,7 +1169,7 @@ root(ROOTS.Zones, {
 						["sourceQuests"] = { 35552 },	-- Trust No One
 						["coord"] = { 60.9, 24.4, DRAENOR_SHADOWMOON_VALLEY },
 						["races"] = ALLIANCE_ONLY,
-						["icon"] = "Interface\\Icons\\INV_Artifact_tome01",
+						["icon"] = 1411833,
 						["provider"] = {"o",233229},	-- Shadow Council Tome of Curses
 					}),
 					q(33786, {	-- Crippled Caravan
@@ -1521,9 +1560,6 @@ root(ROOTS.Zones, {
 					o(224756, {	-- Alchemist's Satchel
 						["questID"] = 35581,
 						["coord"] = { 54.9, 45.0, DRAENOR_SHADOWMOON_VALLEY },
-						["g"] = {
-							i(109124),	-- Frostweed
-						},
 					}),
 					o(232596, {	-- Ancestral Greataxe
 						["questID"] = 35584,
@@ -1619,9 +1655,6 @@ root(ROOTS.Zones, {
 					o(233241, {	-- Glowing Cave Mushroom
 						["questID"] = 35798,
 						["coord"] = { 48.7, 47.5, DRAENOR_SHADOWMOON_VALLEY },
-						["g"] = {
-							i(109127),	-- Starflower
-						},
 					}),
 					o(232588, {	-- Greka's Urn
 						["questID"] = 33614,
@@ -1858,32 +1891,36 @@ root(ROOTS.Zones, {
 	}),
 });
 
-root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, {
-		q(35626),	-- Apprentice Artificer Andren - Apprentice Artificer Andren selected during "Friend of the Exarchs" (questID 34788)
-		q(36797),	-- Founded Garrison - triggers after building Alliance Garrison
-		q(34024),	-- Fungal Heart - triggers when you kill the Windfang Matriarch during "The Clarity Elixir" (questID 33076)
-		q(35628),	-- Rangari Chel - Rangari Chel selected during "Friend of the Exarchs" (questID 34788)
-		q(33151),	-- Saw scout Valdez arrive in Twilight Glade
-		q(37451),	-- See Qiana Moonshadow (Follower Mission Turn in) - triggers while on "Qiana Moonshadow" (questID 34646)
-		q(37674),	-- Shadowmoon Valley 6.0:JP3 - Gloomshade Grove - Tracking Quest - See Shelly Hamby (Game of Thorns) - after killing King Deathbloom
-		q(31155),	-- Tracking Event - Saved Arekk - triggers during "A Matter of Life and Death" (questID 33419)
-		q(31153),	-- Tracking Event - Saved Diaani - triggers during "A Matter of Life and Death" (questID 33419)
-		q(31154),	-- Tracking Event - Saved Zuulo - triggers during "A Matter of Life and Death" (questID 33419)
-		q(36493),	-- Tracking Quest: Can Open Othaar's Door
-		q(36907),	-- Tracking Quest: Defense of Karabor - Celebration Finished
-		q(33903),	-- Tracking Quest: Romuul & Yrel Leave for Teluuna
-		q(33839),	-- Tracking Quest: Saw Naaru Purified
-		q(34622),	-- Tracking Quest: Saw Ner'zhul Leave
-		q(34600),	-- Tracking Quest: Saw Vorka, Rangari Leave
-		q(34599),	-- Tracking Quest: Saw Yrel Leave Twilight Glade
-		q(33086),	-- Tracking Quest: The Root of Darkness - Stone 1
-		q(33165),	-- Tracking Quest: The Root of Darkness - Stone 2
-		q(33167),	-- Tracking Quest: The Root of Darkness - Stone 3
-		q(33166),	-- Tracking Quest: The Root of Darkness - Stone 4
-		q(34896),	-- Tracking Quest: Stealthed Rangari - triggers when approaching Rangari Navra (43.7, 51.7)
-		q(35629),	-- Vindicator Onaala - Vindicator Onaala selected during "Friend of the Exarchs" (questID 34788)
-		q(33550),	-- [NOTUSED]Vignette: Iron Horde Napmaster - triggers when looting "The Crystal Blade of Torvath"
-		q(49544),	-- triggers after handing in "Hero's Call: Shadowmoon Valley!" (questID 49562)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	m(DRAENOR, {
+		m(DRAENOR_SHADOWMOON_VALLEY, {
+			n(QUESTS, {
+				q(35626),	-- Apprentice Artificer Andren - Apprentice Artificer Andren selected during "Friend of the Exarchs" (questID 34788)
+				q(36797),	-- Founded Garrison - triggers after building Alliance Garrison
+				q(34024),	-- Fungal Heart - triggers when you kill the Windfang Matriarch during "The Clarity Elixir" (questID 33076)
+				q(35628),	-- Rangari Chel - Rangari Chel selected during "Friend of the Exarchs" (questID 34788)
+				q(33151),	-- Saw scout Valdez arrive in Twilight Glade
+				q(37451),	-- See Qiana Moonshadow (Follower Mission Turn in) - triggers while on "Qiana Moonshadow" (questID 34646)
+				q(37674),	-- Shadowmoon Valley 6.0:JP3 - Gloomshade Grove - Tracking Quest - See Shelly Hamby (Game of Thorns) - after killing King Deathbloom
+				q(31155),	-- Tracking Event - Saved Arekk - triggers during "A Matter of Life and Death" (questID 33419)
+				q(31153),	-- Tracking Event - Saved Diaani - triggers during "A Matter of Life and Death" (questID 33419)
+				q(31154),	-- Tracking Event - Saved Zuulo - triggers during "A Matter of Life and Death" (questID 33419)
+				q(36493),	-- Tracking Quest: Can Open Othaar's Door
+				q(36907),	-- Tracking Quest: Defense of Karabor - Celebration Finished
+				q(33903),	-- Tracking Quest: Romuul & Yrel Leave for Teluuna
+				q(33839),	-- Tracking Quest: Saw Naaru Purified
+				q(34622),	-- Tracking Quest: Saw Ner'zhul Leave
+				q(34600),	-- Tracking Quest: Saw Vorka, Rangari Leave
+				q(34599),	-- Tracking Quest: Saw Yrel Leave Twilight Glade
+				q(33086),	-- Tracking Quest: The Root of Darkness - Stone 1
+				q(33165),	-- Tracking Quest: The Root of Darkness - Stone 2
+				q(33167),	-- Tracking Quest: The Root of Darkness - Stone 3
+				q(33166),	-- Tracking Quest: The Root of Darkness - Stone 4
+				q(34896),	-- Tracking Quest: Stealthed Rangari - triggers when approaching Rangari Navra (43.7, 51.7)
+				q(35629),	-- Vindicator Onaala - Vindicator Onaala selected during "Friend of the Exarchs" (questID 34788)
+				q(33550),	-- [NOTUSED]Vignette: Iron Horde Napmaster - triggers when looting "The Crystal Blade of Torvath"
+				q(49544),	-- triggers after handing in "Hero's Call: Shadowmoon Valley!" (questID 49562)
+			}),
+		}),
 	}),
-});
+})));

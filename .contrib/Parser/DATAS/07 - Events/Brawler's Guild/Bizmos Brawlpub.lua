@@ -6,7 +6,7 @@ root(ROOTS.WorldEvents, m(500, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Bi
 	["races"] = ALLIANCE_ONLY,
 	["lvl"] = 120,
 	["maps"] = { DEEPRUN_TRAM },
-	["icon"] = "Interface\\Icons\\ability_warrior_secondwind",
+	["icon"] = 132356,
 	["groups"] = {
 		n(ACHIEVEMENTS, {
 			ach(7944, {		-- Bottle Service (Season 2)
@@ -91,7 +91,7 @@ root(ROOTS.WorldEvents, m(500, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Bi
 				["timeline"] = { ADDED_5_3_0, REMOVED_7_0_3 },
 			}),
 			ach(11573, {	-- Rumble Club
-			 	["timeline"] = { ADDED_7_1_5, REMOVED_9_1_5 },
+				["timeline"] = { ADDED_7_1_5, REMOVED_9_1_5 },
 			}),
 			ach(7947, {		-- The First Rule of Brawler's Guild (Season 1 or 2)
 				["races"] = ALLIANCE_ONLY,
@@ -150,16 +150,16 @@ root(ROOTS.WorldEvents, m(500, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Bi
 		n(FACTIONS, sharedData({
 			["races"] = ALLIANCE_ONLY,
 		},{
-			faction(1419, {	-- Bizmo's Brawlpub (Season 1)
+			faction(FACTION_BRAWLPUB_SEASON_1, {	-- Bizmo's Brawlpub (Season 1)
 				["timeline"] = { ADDED_5_1_0, REMOVED_6_0_2 },
 			}),
-			faction(1691, {	-- Bizmo's Brawlpub (Season 2)
+			faction(FACTION_BRAWLPUB_SEASON_2, {	-- Bizmo's Brawlpub (Season 2)
 				["timeline"] = { ADDED_6_0_3_LAUNCH, REMOVED_7_0_3_LAUNCH },
 			}),
-			faction(2011, {	-- Bizmo's Brawlpub (Season 3)
+			faction(FACTION_BRAWLPUB_SEASON_3, {	-- Bizmo's Brawlpub (Season 3)
 				["timeline"] = { ADDED_7_2_0, REMOVED_8_0_1_LAUNCH },
 			}),
-			faction(2371, {	-- Bizmo's Brawlpub
+			faction(FACTION_BRAWLPUB_SEASON_4, {	-- Bizmo's Brawlpub
 				["timeline"] = { ADDED_8_1_5, REMOVED_9_0_2_LAUNCH },
 			}),
 		})),
@@ -394,25 +394,12 @@ root(ROOTS.WorldEvents, m(500, bubbleDown({ ["u"] = REMOVED_FROM_GAME }, {	-- Bi
 					i(98085),	-- Brucehide Jersey
 					i(93025),	-- Clock'em (PET!)
 					i(98092),	-- Digmaster's Bodysleeve
-					i(167891, {	-- Ensemble: Brawler's Garb
-						["ignoreBonus"] = true,
-						["groups"] = {
-							i(167821),	-- Brawler's Bracer Chains
-							i(167815),	-- Brawler's Footpads
-							i(167816),	-- Brawler's Gloves
-							i(167813),	-- Brawler's Harness
-							i(167817),	-- Brawler's Headgear
-							i(167820),	-- Brawler's Heavy Belt
-							i(167818),	-- Brawler's Leggings
-							i(167819),	-- Brawler's Shoulderpads
-						},
-					}),
+					iensemble(167891),	-- Ensemble: Brawler's Garb
 					i(98079),	-- Floot-Tooter's Tunic
-					i(127773, {	-- Gemcutter Module: Mastery
+					TempForceMisc(i(127773, {	-- Gemcutter Module: Mastery
 						["description"] = "Take this recipe to the \"Apexis Gemcutter\" in Tanaan Jungle to learn.  If you have this recipe already you will need to revisit the vendor to cache the recipe.",
 						["requireSkill"] = JEWELCRAFTING,
-						["f"] = MISC,
-					}),
+					})),
 					i(98080),	-- Gorgeous Blouse
 					i(98091),	-- Last Season's Shirt
 					i(98084),	-- Ooze-Soaked Shirt

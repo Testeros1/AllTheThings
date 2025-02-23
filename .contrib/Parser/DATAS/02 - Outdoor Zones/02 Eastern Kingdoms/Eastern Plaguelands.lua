@@ -27,9 +27,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		-- #else
 		["lore"] = "Eastern Plaguelands is heavily-ravaged from the Scourge. The Argent Dawn has made some progress after The Lich King's defeat, but the zone is still full of Undead. Players explore Eastern Plaguelands primarily through escorting a Worgen merchant, Fiona, and her band of merry travelers she picks up along the way. The Plaguelands are the site for some of the most gripping storylines, including the Battle for Darrowshire and the fate of the Stratholme residents.",
 		-- #endif
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_easternplaguelands",
-		-- #endif
+		["icon"] = 236760,
 		-- #if AFTER CATA
 		["maps"] = { LIGHTS_HOPE_CHAPEL },
 		-- #endif
@@ -37,9 +35,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			-- #if AFTER WRATH
 			m(THE_SCARLET_ENCLAVE, {
 				["lore"] = "The Scarlet Enclave is the name of the starting area for all Death Knight players in World of Warcraft: Wrath of the Lich King.",
-				["icon"] = "Interface\\Icons\\Spell_Deathknight_ClassIcon",
+				["icon"] = 135771,
 				["groups"] = {
 					n(QUESTS, {
+						-- #IF AFTER DF
+						["_drop"] = { "classes", "c" },
+						-- #ENDIF
 						["classes"] = { DEATHKNIGHT },
 						["groups"] = {
 							q(12738, {	-- A Cry For Vengeance!
@@ -599,21 +600,21 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					}),
 					prof(RUNEFORGING, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_2 }, ["classes"] = { DEATHKNIGHT } }, {
 						r(53428),	-- Runeforging
-						r(53341, {["timeline"] = {ADDED_3_0_2, REMOVED_6_0_2}}), -- Rune of Cinderglacier
-						r(326911, {["timeline"] = {ADDED_9_0_1}}), -- Rune of Hysteria
-						r(53331, {["timeline"] = {ADDED_3_0_2, REMOVED_7_0_3}}), -- Rune of Lichbane
-						r(53343), -- Rune of Razorice
-						r(326805, {["timeline"] = {ADDED_9_0_1}}), -- Rune of Sanguination
-						r(54447, {["timeline"] = {ADDED_3_0_2, REMOVED_7_0_3}}), -- Rune of Spellbreaking
-						r(53342, {["timeline"] = {ADDED_3_0_2, REMOVED_7_0_3}}), -- Rune of Spellshattering
-						r(326855, {["timeline"] = {ADDED_9_0_1}}), -- Rune of Spellwarding
-						r(54446, {["timeline"] = {ADDED_3_0_2, REMOVED_6_0_2}}), -- Rune of Swordbreaking
-						r(53323, {["timeline"] = {ADDED_3_0_2, REMOVED_6_0_2}}), -- Rune of Swordshattering
-						r(327082, {["timeline"] = {ADDED_9_0_1}}), -- Rune of the Apocalypse
-						r(53344), -- Rune of the Fallen Crusader
-						r(70164, {["timeline"] = {ADDED_3_3_0, REMOVED_6_0_2}}), -- Rune of the Nerubian Carapace
-						r(62158, {["timeline"] = {ADDED_3_0_8}}), -- Rune of the Stoneskin Gargoyle
-						r(326977, {["timeline"] = {ADDED_9_0_1}}), -- Rune of Unending Thirst
+						r(53341, {["timeline"] = {ADDED_3_0_2, REMOVED_6_0_2}}),	-- Rune of Cinderglacier
+						r(326911, {["timeline"] = {ADDED_9_0_1, REMOVED_11_0_0}}),	-- Rune of Hysteria
+						r(53331, {["timeline"] = {ADDED_3_0_2, REMOVED_7_0_3}}),	-- Rune of Lichbane
+						r(53343),	-- Rune of Razorice
+						r(326805, {["timeline"] = {ADDED_9_0_1}}),	-- Rune of Sanguination
+						r(54447, {["timeline"] = {ADDED_3_0_2, REMOVED_7_0_3}}),	-- Rune of Spellbreaking
+						r(53342, {["timeline"] = {ADDED_3_0_2, REMOVED_7_0_3}}),	-- Rune of Spellshattering
+						r(326855, {["timeline"] = {ADDED_9_0_1}}),	-- Rune of Spellwarding
+						r(54446, {["timeline"] = {ADDED_3_0_2, REMOVED_6_0_2}}),	-- Rune of Swordbreaking
+						r(53323, {["timeline"] = {ADDED_3_0_2, REMOVED_6_0_2}}),	-- Rune of Swordshattering
+						r(327082, {["timeline"] = {ADDED_9_0_1}}),	-- Rune of the Apocalypse
+						r(53344),	-- Rune of the Fallen Crusader
+						r(70164, {["timeline"] = {ADDED_3_3_0, REMOVED_6_0_2}}),	-- Rune of the Nerubian Carapace
+						r(62158, {["timeline"] = {ADDED_3_0_8}}),	-- Rune of the Stoneskin Gargoyle
+						r(326977, {["timeline"] = {ADDED_9_0_1}}),	-- Rune of Unending Thirst
 					})),
 					n(VENDORS, {
 						n(29587, {	-- Dread Commander Thalanor
@@ -709,7 +710,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #if AFTER CATA
 						i(20768, {	-- Oozing Bag
 							-- #if AFTER BFA
-							["description"] = "Oozing Bags with the biggest chance of containing the battle pet Disgusting Oozeling drops from mobs between level 53-59. Chromie time may be required.",
+							["description"] = "Oozing Bags with the biggest chance of containing the battle pet Disgusting Oozeling drops from creatures between level 53-59. Chromie time may be required.",
 							-- #else
 							["description"] = "The slimes can still be farmed during the 'Massacre At Light's Point' quest at the Death Knight starting area.",
 							-- #endif
@@ -768,11 +769,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					-- #endif
 				}),
-				explorationAch(771, {	-- Explore Eastern Plaguelands
-					-- #if BEFORE WRATH
-					["description"] = "Explore Eastern Plaguelands, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(771),	-- Explore Eastern Plaguelands
 				ach(5442, {	-- Full Caravan
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
@@ -803,10 +800,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				achWithRep(946, 529, {	-- The Argent Dawn
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with the Argent Dawn to Exalted.",
-					-- #endif
+				achWithRep(946, FACTION_ARGENT_DAWN, {	-- The Argent Dawn
 					["maps"] = { WESTERN_PLAGUELANDS },
 				}),
 			}),
@@ -858,8 +852,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				exploration(2273),	-- Zul'Mashar
 			}),
 			n(FACTIONS, {
-				faction(529, {	-- Argent Dawn
-					["icon"] = "Interface\\Icons\\INV_Misc_Token_ArgentDawn3",
+				faction(FACTION_ARGENT_DAWN, {	-- Argent Dawn
+					["icon"] = 134501,
 					["maps"] = {
 						WESTERN_PLAGUELANDS,
 						SCHOLOMANCE,
@@ -880,7 +874,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				fp(87, {	-- Crown Guard Tower, Eastern Plaguelands
 					-- #if AFTER 4.0.3.13277
 					["cr"] = 44232,	-- Janice Myers <Flight Master>
-					["coord"] = { 34.8, 68.0, EASTERN_PLAGUELANDS },
+					["coord"] = { 34.9, 67.9, EASTERN_PLAGUELANDS },
 					-- #else
 					["description"] = "If Plaguewood Tower is controlled by your faction, you can fly to this tower.",
 					["collectible"] = false,
@@ -909,7 +903,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				fp(68, {	-- Light's Hope Chapel, Eastern Plaguelands
 					["cr"] = 12636,	-- Georgia <Bat Handler>
 					-- #if AFTER CATA
-					["coord"] = { 75.6, 53.2, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.3, EASTERN_PLAGUELANDS },
 					-- #elseif AFTER WRATH
 					["coord"] = { 74.6, 51.4, EASTERN_PLAGUELANDS },
 					-- #else
@@ -925,7 +919,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				fp(85, {	-- Northpass Tower, Eastern Plaguelands
 					-- #if AFTER 4.0.3.13277
 					["cr"] = 28621,	-- Grayson Ironwing <Flight Master>
-					["coord"] = { 51.2, 21.2, EASTERN_PLAGUELANDS },
+					["coord"] = { 51.4, 21.3, EASTERN_PLAGUELANDS },
 					-- #else
 					["description"] = "If Plaguewood Tower is controlled by your faction, you can fly to this tower.",
 					["collectible"] = false,
@@ -934,7 +928,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				fp(84, {	-- Plaguewood Tower, Eastern Plaguelands
 					-- #if AFTER 4.0.3.13277
 					["cr"] = 44233,	-- William Kielar Jr. <Flight Master>
-					["coord"] = { 18.4, 27.4, EASTERN_PLAGUELANDS },
+					["coord"] = { 18.5, 27.4, EASTERN_PLAGUELANDS },
 					-- #else
 					["cr"] = 17209,	-- William Kielar Jr. William Kielar <Spectral Gryphon Master>
 					-- #if AFTER WRATH
@@ -949,7 +943,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if AFTER 4.0.3.13277
 				fp(383, {	-- Thondroril River, Eastern Plaguelands
 					["cr"] = 37888,	-- Frax Bucketdrop <Flight Master>
-					["coord"] = { 10.0, 65.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 10.1, 65.7, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_3_3_0 },
 				}),
 				-- #endif
@@ -965,13 +959,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27463, {	-- A Boyhood Dream
 					["qg"] = 45431,	-- Gidwin Goldbraids
 					["sourceQuest"] = 27455,	-- Boys Will Be Boys
-					["coord"] = { 74.3, 53.3, EASTERN_PLAGUELANDS },
+					["coord"] = { 74.4, 53.3, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(27533, {	-- A Fate Worse Than Butchery
 					["qg"] = 12384,	-- Augustus the Touched
 					["sourceQuest"] = 27535,	-- Just a Little Touched
-					["coord"] = { 11.3, 28.5, EASTERN_PLAGUELANDS },
+					["coord"] = { 11.3, 28.6, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/9 Plagued Swine slain
@@ -993,6 +987,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27372, {	-- A Gift For Fiona
 					["qg"] = 45429,	-- Tarenar Sunstrike
+					["description"] = "If you abandon this quest, you can pick it up again at Fiona's Caravan at the zone entrance on the border with Western Plaguelands.",
 					["sourceQuest"] = 27371,	-- What I Do Best
 					["coord"] = { 8.9, 66.5, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
@@ -1033,7 +1028,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 60987 },	-- Joseph's Hunting Blade
 					},
 					["sourceQuest"] = 27385,	-- "Little Pamela"
-					["coord"] = { 35.5, 68.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 35.6, 68.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				-- #if SEASON_OF_DISCOVERY
@@ -1041,7 +1036,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["provider"] = { "o", 462236 },	-- Mysterious Chest
 					["sourceQuest"] = 84414,	-- Send Me On Me Way!
 					["coord"] = { 27.4, 85.8, EASTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -1069,7 +1064,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["sourceQuest"] = 84319,	-- Oh No Ye Don't!
 					["coord"] = { 33.8, 28.8, EASTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["maps"] = { STRATHOLME },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
@@ -1083,7 +1078,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #endif
 				q(27539, {	-- Add'em to the Pile
 					["qg"] = 45831,	-- Crusader Kevin Frost
-					["coord"] = { 27.6, 20.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 27.7, 20.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/16 Stinking Skull
@@ -1109,7 +1104,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27421, {	-- Amidst Death, Life
 					["qg"] = 16135,	-- Rayne <Cenarion Circle>
-					["coord"] = { 30.2, 56.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 30.2, 56.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Seed planted in southeastern ziggurat
@@ -1144,36 +1139,31 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						27465,	-- Argent Call: The Noxious Glade
 						27456,	-- Gathering Some Grub(s)
 					},
-					["coord"] = { 73.7, 51.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 73.8, 51.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
-				}),
-				q(28755, {	-- Annals of the Silver Hand
-					["qg"] = 49856,	-- Lord Raymond George
-					["sourceQuest"] = 27464,	-- Argent Call: The Trial of the Crypt
-					["coord"] = { 76.1, 50.9, EASTERN_PLAGUELANDS },
-					["maxReputation"] = { 529, EXALTED },	-- Argent Dawn, Exalted.
-					["timeline"] = { ADDED_4_0_3 },
-					["maps"] = { STRATHOLME },
-					["repeatable"] = true,
-					["groups"] = {
-						objective(1, {	-- 0/1 Annals of the Silver Hand
-							["providers"] = {
-								{ "i",  65615 },	-- Annals of the Silver Hand
-								{ "o", 207389 },	-- Annals of the Silver Hand
-							},
-						}),
-					},
 				}),
 				q(27466, {	-- Argent Call: Northdale
 					["qg"] = 45729,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27465,	-- Argent Call: The Noxious Glade
-					["coord"] = { 61.6, 43.24, EASTERN_PLAGUELANDS },
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 42.5, 91.3, LIGHTS_HOPE_CHAPEL },
+						-- #else
+						{ 61.6, 43.2, EASTERN_PLAGUELANDS },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(27465, {	-- Argent Call: The Noxious Glade
 					["qg"] = 11034,	-- Lord Maxwell Tyrosus
 					["sourceQuest"] = 27464,	-- Argent Call: The Trial of the Crypt
-					["coord"] = { 43.3, 87.2, LIGHTS_HOPE_CHAPEL },
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 43.4, 87.3, LIGHTS_HOPE_CHAPEL },
+						-- #else
+						{ 75.6, 52.2, EASTERN_PLAGUELANDS },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/16 Noxious Glade Scourge slain
@@ -1195,7 +1185,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27464, {	-- Argent Call: The Trial of the Crypt
 					["qg"] = 11034,	-- Lord Maxwell Tyrosus
 					["sourceQuest"] = 27463,	-- A Boyhood Dream
-					["coord"] = { 43.3, 87.2, LIGHTS_HOPE_CHAPEL },
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 43.4, 87.3, LIGHTS_HOPE_CHAPEL },
+						-- #else
+						{ 75.6, 52.2, EASTERN_PLAGUELANDS },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Trial of the Crypt completed
@@ -1209,7 +1205,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(5503, {	-- Argent Dawn Commission
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -1229,7 +1225,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						27616,	-- The Huntsman
 						27619,	-- The Commander
 					},
-					["coord"] = { 75.3, 76.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.3, 76.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(27560, {	-- Argus' Journal
@@ -1270,7 +1266,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27534, {	-- Augustus' Receipt Book
 					["qg"] = 12384,	-- Augustus the Touched
-					["coord"] = { 11.3, 28.5, EASTERN_PLAGUELANDS },
+					["coord"] = { 11.3, 28.6, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Augustus' Receipt Book
@@ -1350,9 +1346,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 				})),
 				q(27524, {	-- Blind Fury
-					["qg"] = 45417,	-- Tarenar Sunstrike
+					["qg"] = 45417,	-- Fiona
 					["sourceQuest"] = 27522,	-- Beat it Out of Them
-					["coord"] = { 50.5, 20.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 50.5, 20.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(5543, {	-- Blood Tinged Skies
@@ -1440,13 +1436,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27455, {	-- Boys Will Be Boys
 					["qg"] = 45417,	-- Fiona
 					["sourceQuest"] = 27448,	-- The Trek Continues
-					["coord"] = { 52.9, 53.0, EASTERN_PLAGUELANDS },
+					["coord"] = { 52.9, 53.1, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(27467, {	-- Buried Blades
 					["qg"] = 16365,	-- Master Craftsman Omarion
 					["sourceQuest"] = 27464,	-- Argent Call: The Trial of the Crypt
-					["coord"] = { 75.6, 52.0, EASTERN_PLAGUELANDS },
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 41.5, 88.0, LIGHTS_HOPE_CHAPEL },
+						-- #else
+						{ 75.6, 52.0, EASTERN_PLAGUELANDS },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/10 Blades buried
@@ -1487,11 +1489,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27453, {	-- Catalysm
 					["qg"] = 11035,	-- Betina Bigglezink
+					["description"] = "If you abandon this quest, you can pick it up again from Betina Bigglezink at Light's Shield Tower.",
 					["sourceQuests"] = {
 						27452,	-- Dark Garb
 						27451,	-- To Kill With Purpose
 					},
-					["coord"] = { 53.2, 54.5, EASTERN_PLAGUELANDS },
+					["coord"] = { 53.2, 54.6, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/8 Active Liquid Plague Agent
@@ -1521,7 +1524,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 81.6, 60.0, EASTERN_PLAGUELANDS },
 					-- #endif
-					["minReputation"] = { 529, EXALTED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
 					["cost"] = { { "i", 12844, 25 } },	-- Argent Dawn Valor Token
 					["timeline"] = { REMOVED_4_0_3 },
 					["altQuests"] = {
@@ -1559,7 +1562,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(5508, {	-- Corruptor's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -1573,20 +1576,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				q(76268, {	-- Corruptor's Scourgestones
+				q(76268, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {	-- Corruptor's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
-					["timeline"] = { ADDED_10_1_5 },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					["cost"] = {{ "i", 206375, 1 }},	-- 1x Corruptor's Scourgestone
 					["repeatable"] = true,
 					["groups"] = {
 						i(12844),	-- Argent Dawn Valor Token
 					},
-				}),
+				})),
 				q(27531, {	-- Counter-Plague Research
 					["qg"] = 45828,	-- Argent Apotehcary Judkins
 					["sourceQuest"] = 27532,	-- The Plaguewood Tower
-					["coord"] = { 17.5, 27.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 17.6, 27.8, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/20 Rotberry
@@ -1686,7 +1688,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				q(27452, {	-- Dark Garb
 					["qg"] = 11035,	-- Betina Bigglezink
-					["coord"] = { 53.2, 54.5, EASTERN_PLAGUELANDS },
+					["coord"] = { 53.2, 54.6, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Death Cultist Headwear
@@ -1750,7 +1752,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27529, {	-- Defenders of Darrowshire
 					["qg"] = 45831,	-- Crusader Kevin Frost
-					["coord"] = { 27.6, 20.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 27.7, 20.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/15 Darrowshire Spirits Freed
@@ -1845,7 +1847,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 81.6, 60.0, EASTERN_PLAGUELANDS },
 					-- #endif
-					["minReputation"] = { 529, EXALTED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
 					-- #if BEFORE 4.0.3
@@ -1883,8 +1885,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 81.6, 60.0, EASTERN_PLAGUELANDS },
 					-- #endif
-					["maxReputation"] = { 529, HONORED },	-- Argent Dawn
-					["minReputation"] = { 529, FRIENDLY },	-- Argent Dawn
+					["maxReputation"] = { FACTION_ARGENT_DAWN, HONORED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, FRIENDLY },	-- Argent Dawn
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
 					-- #if BEFORE 4.0.3
@@ -1922,8 +1924,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 81.6, 60.0, EASTERN_PLAGUELANDS },
 					-- #endif
-					["maxReputation"] = { 529, REVERED },	-- Argent Dawn
-					["minReputation"] = { 529, HONORED },	-- Argent Dawn
+					["maxReputation"] = { FACTION_ARGENT_DAWN, REVERED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, HONORED },	-- Argent Dawn
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
 					-- #if BEFORE 4.0.3
@@ -1961,8 +1963,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 81.6, 60.0, EASTERN_PLAGUELANDS },
 					-- #endif
-					["maxReputation"] = { 529, EXALTED },	-- Argent Dawn
-					["minReputation"] = { 529, REVERED },	-- Argent Dawn
+					["maxReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, REVERED },	-- Argent Dawn
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
 					-- #if BEFORE 4.0.3
@@ -2086,7 +2088,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27450, {	-- Frederick's Fish Fancy
 					["qg"] = 45575,	-- Frederick Calston
-					["coord"] = { 53.7, 53.9, EASTERN_PLAGUELANDS },
+					["coord"] = { 53.8, 54.0, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/8 Plague Puffer
@@ -2120,7 +2122,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27456, {	-- Gathering Some Grub(s)
 					["qg"] = 16134,	-- Rimblat Earthshatter
-					["coord"] = { 73.7, 51.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 73.8, 51.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/15 Slab of Carrion Worm Meat
@@ -2161,7 +2163,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						27524,	-- Blind Fury
 						27551,	-- The Baroness' Missive
 					},
-					["coord"] = { 27.6, 21.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 27.6, 21.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Find Gidwin Goldbraids
@@ -2188,7 +2190,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["repeatable"] = true,
 				}),
 				q(27369, {	-- Greasing the Wheel
-					["qg"] = 45428,	-- Gidwin Goldbraids
+					["qg"] = 45431,	-- Gidwin Goldbraids
 					["sourceQuest"] = 27368,	-- Just Encased
 					["coord"] = { 4.1, 36.0, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
@@ -2220,7 +2222,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27525, {	-- Guardians of Stratholme
 					["qg"] = 45729,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27524,	-- Blind Fury
-					["coord"] = { 27.6, 21.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 27.6, 21.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Omasum Blighthoof slain
@@ -2388,7 +2390,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27449, {	-- Honor and Strength
 					["qg"] = 45574,	-- Vex'tul
 					["sourceQuest"] = 27432,	-- Zaeldarr the Outcast
-					["coord"] = { 52.7, 51.3, EASTERN_PLAGUELANDS },
+					["coord"] = { 52.8, 51.4, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/3 Mossflayer Rogue slain
@@ -2421,7 +2423,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27488, {	-- Impatience
 					["qg"] = 45729,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27487,	-- Ix'lar the Underlord
-					["coord"] = { 61.5, 43.2, EASTERN_PLAGUELANDS },
+					["coord"] = { 61.6, 43.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Gidwin's Prayer Book
@@ -2434,9 +2436,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(27482, {	-- Into the Flames
-					["qg"] = 45574,	-- Vex'tul
+					["qg"] = 45574,	-- Vex'tul (MobileNPC)
+					["description"] = "If you abandon this quest, you can pick it up again from Vex'tul at Eastwall Tower.",
 					["sourceQuest"] = 27481,	-- Out of the Ziggurat
-					["coord"] = { 60.6, 43.4, EASTERN_PLAGUELANDS },
+					["coords"] = {	-- Walks back-and-forth between these two points
+						{ 60.6, 43.3, EASTERN_PLAGUELANDS },
+						{ 61.8, 41.0, EASTERN_PLAGUELANDS },
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Warlord Thresh'jin's Body burned
@@ -2456,7 +2462,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["coords"] = {
 						{ 42.9, 83.5, WESTERN_PLAGUELANDS },	-- Argent Officer Pureheart (A)
-						{ 48.8, 54.7, WESTERN_PLAGUELANDS },	-- Adrine Towhide
+						{ 48.9, 54.8, WESTERN_PLAGUELANDS },	-- Adrine Towhide
 						{ 47.3, 64.4, WESTERN_PLAGUELANDS },	-- Jearl Donald (H)
 					},
 					["timeline"] = { ADDED_4_0_3 },
@@ -2465,7 +2471,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(5509, {	-- Invader's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -2482,7 +2488,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(76270, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {	-- Invader's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -2495,7 +2501,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27487, {	-- Ix'lar the Underlord
 					["qg"] = 45729,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27466,	-- Argent Call: Northdale
-					["coord"] = { 61.5, 43.2, EASTERN_PLAGUELANDS },
+					["coord"] = { 61.6, 43.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Ix'lar the Underlord slain
@@ -2528,7 +2534,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 61379 },	-- Gidwin's Hearthstone
 					},
 					["sourceQuest"] = 27526,	-- Gidwin's Fate Revealed
-					["coord"] = { 28.4, 25.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 28.5, 25.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						i(63022, {	-- Gidwin's Medallion
@@ -2550,8 +2556,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27454, {	-- Just a Drop in the Bucket
 					["qg"] = 11035,	-- Betina Bigglezink
+					["description"] = "If you abandon this quest, you can pick it up again from Betina Bigglezink at Light's Shield Tower.",
 					["sourceQuest"] = 27453,	-- Catalysm
-					["coord"] = { 53.2, 54.5, EASTERN_PLAGUELANDS },
+					["coord"] = { 53.2, 54.6, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Disturb Mereldar Plague Cauldron
@@ -2580,7 +2587,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27535, {	-- Just a Little Touched
 					["qg"] = 45828,	-- Argent Apotehcary Judkins
-					["coord"] = { 17.5, 27.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 17.6, 27.8, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["isBreadcrumb"] = true,
 				}),
@@ -2607,7 +2614,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						27618,	-- Argent Upheaval
 						27617,	-- Befouled No More
 					},
-					["coord"] = { 76.0, 75.3, EASTERN_PLAGUELANDS },
+					["coord"] = { 76.1, 75.3, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Crusader Lord Valdelmar slain
@@ -2627,7 +2634,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27383, {	-- Little Pamela
 					["qg"] = 11063,	-- Carlin Redpath
-					["coord"] = { 35.5, 68.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 35.6, 68.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(5513, {	-- Mantles of the Dawn
@@ -2637,7 +2644,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 81.6, 60.0, EASTERN_PLAGUELANDS },
 					-- #endif
-					["minReputation"] = { 529, REVERED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, REVERED },	-- Argent Dawn
 					["cost"] = { { "i", 12844, 10 } },	-- Argent Dawn Valor Token
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 55,
@@ -2645,7 +2652,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(77243, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {	-- Many Corruptor's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -2658,7 +2665,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(77242, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {	-- Many Invader's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -2712,7 +2719,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(5510, {	-- Minion's Scourgestones
 					["qg"] = 11039,	-- Duke Nicholas Zverenhoff <The Argent Dawn>
 					-- #if AFTER WRATH
-					["coord"] = { 75.6, 53.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.8, 53.8, EASTERN_PLAGUELANDS },
 					-- #else
 					["coord"] = { 81.4, 59.8, EASTERN_PLAGUELANDS },
 					-- #endif
@@ -2754,7 +2761,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27489, {	-- Nobody to Blame but Myself
 					["qg"] = 45729,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27488,	-- Impatience
-					["coord"] = { 61.5, 43.2, EASTERN_PLAGUELANDS },
+					["coord"] = { 61.6, 43.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Ride Fiona's Caravan to Northpass Tower
@@ -2770,7 +2777,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 228619 },	-- Orthas <Dwarven Spirit>
 					},
 					["coord"] = { 34.2, 80.4, EASTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -2790,7 +2797,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["sourceQuest"] = 84318,	-- Oi!
 					["coord"] = { 61.3, 69.2, EASTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -2820,10 +2827,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(27481, {	-- Out of the Ziggurat
-					["qg"] = 45574,	-- Vex'tul
+					["qg"] = 45574,	-- Vex'tul (MobileNPC)
 					["sourceQuests"] = {
 						27465,	-- Argent Call: The Noxious Glade
 						27449,	-- Honor and Strength
+					},
+					["coords"] = {	-- Walks back-and-forth between these two points
+						{ 60.6, 43.3, EASTERN_PLAGUELANDS },
+						{ 61.8, 41.0, EASTERN_PLAGUELANDS },
 					},
 					["coord"] = { 60.6, 43.4, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
@@ -2891,7 +2902,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27420, {	-- Postponing the Inevitable
 					["qg"] = 16135,	-- Rayne <Cenarion Circle>
 					["sourceQuest"] = 27544,	-- Cenarion Tenacity
-					["coord"] = { 30.2, 56.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 30.2, 56.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/3 Plague Disseminator destroyed
@@ -2934,8 +2945,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["lvl"] = 56,
 				}),
 				q(27479, {	-- Righteous Indignation
-					["qg"] = 45736,	-- Deacon Andaal
-					["coord"] = { 61.0, 44.2, EASTERN_PLAGUELANDS },
+					["qg"] = 45736,	-- Deacon Andaal (MobileNPC)
+					["coord"] = { 61.6, 43.4, EASTERN_PLAGUELANDS },	-- Walks in the "U" shape in front of the Eastwall Tower
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/30 Mossflayer Eye
@@ -2958,9 +2969,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["repeatable"] = true,
 				}),
 				q(27382, {	-- Rough Roads
-					["qg"] = 45451,	-- Argus Highbeacon
+					["qg"] = 45451,	-- Argus Highbeacon (MobileNPC)
 					["sourceQuest"] = 27373,	-- Onward, to Light's Hope Chapel
-					["coord"] = { 35.5, 68.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 35.7, 68.9, EASTERN_PLAGUELANDS },	-- Walks around on top of the Crown Guard Tower
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/13 Plaguebat slain
@@ -3035,7 +3046,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27614, {	-- Scarlet Salvage
 					["qg"] = 16112,	-- Crusade Commander Korfax
 					["sourceQuest"] = 27462,	-- To Take the Barracks
-					["coord"] = { 75.3, 76.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.3, 76.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Crimson Boar
@@ -3070,7 +3081,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27528, {	-- Scourged Mass
 					["qg"] = 45831,	-- Crusader Kevin Frost
-					["coord"] = { 27.6, 20.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 27.7, 20.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/8 Overstuffed Golem corpse burned
@@ -3086,7 +3097,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 229018,	-- Rotting Dwarf Corpse
 					["sourceQuest"] = 84330,	-- A Wee Bit O' Necromancy
 					["coord"] = { 27.6, 86.0, EASTERN_PLAGUELANDS },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["classes"] = { PALADIN },
 					["lvl"] = 50,
 					["groups"] = {
@@ -3129,7 +3140,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				applyclassicphase(PHASE_SIX, q(9227, {	-- Superior Armaments of Battle - Exalted Amongst the Dawn
 					["qg"] = 11536,	-- Quartermaster Miranda Breechlock <The Argent Dawn>
-					["minReputation"] = { 529, EXALTED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
 					-- #if AFTER WRATH
 					["coord"] = { 75.8, 54.0, EASTERN_PLAGUELANDS },
 					-- #else
@@ -3165,8 +3176,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(PHASE_SIX, q(9221, {	-- Superior Armaments of Battle - Friend of the Dawn
 					["qg"] = 11536,	-- Quartermaster Miranda Breechlock <The Argent Dawn>
-					["maxReputation"] = { 529, HONORED },	-- Argent Dawn
-					["minReputation"] = { 529, FRIENDLY },	-- Argent Dawn
+					["maxReputation"] = { FACTION_ARGENT_DAWN, HONORED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, FRIENDLY },	-- Argent Dawn
 					-- #if AFTER WRATH
 					["coord"] = { 75.8, 54.0, EASTERN_PLAGUELANDS },
 					-- #else
@@ -3202,8 +3213,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(PHASE_SIX, q(9223, {	-- Superior Armaments of Battle - Honored Amongst the Dawn
 					["qg"] = 11536,	-- Quartermaster Miranda Breechlock <The Argent Dawn>
-					["maxReputation"] = { 529, REVERED },	-- Argent Dawn
-					["minReputation"] = { 529, HONORED },	-- Argent Dawn
+					["maxReputation"] = { FACTION_ARGENT_DAWN, REVERED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, HONORED },	-- Argent Dawn
 					-- #if AFTER WRATH
 					["coord"] = { 75.8, 54.0, EASTERN_PLAGUELANDS },
 					-- #else
@@ -3239,8 +3250,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(PHASE_SIX, q(9226, {	-- Superior Armaments of Battle - Revered Amongst the Dawn
 					["qg"] = 11536,	-- Quartermaster Miranda Breechlock <The Argent Dawn>
-					["maxReputation"] = { 529, EXALTED },	-- Argent Dawn
-					["minReputation"] = { 529, REVERED },	-- Argent Dawn
+					["maxReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
+					["minReputation"] = { FACTION_ARGENT_DAWN, REVERED },	-- Argent Dawn
 					-- #if AFTER WRATH
 					["coord"] = { 75.8, 54.0, EASTERN_PLAGUELANDS },
 					-- #else
@@ -3345,7 +3356,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #else
 					["coord"] = { 20.8, 18.4, EASTERN_PLAGUELANDS },
 					-- #endif
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["cost"] = {
 						{ "i", 18646, 1 },	-- The Eye of Divinity
 						{ "i", 18665, 1 },	-- The Eye of Shadow
@@ -3358,10 +3369,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["classes"] = { PRIEST },
 						}),
 						i(228336, {	-- Anathema
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 						}),
 						i(228335, {	-- Benediction
-							["timeline"] = { "added 1.15.3" },
+							["timeline"] = { ADDED_1_15_3 },
 						}),
 					},
 				})),
@@ -3379,7 +3390,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -3398,7 +3409,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(18609, {	-- Anathema
 							["timeline"] = {
 								-- #if SEASON_OF_DISCOVERY
-								"removed 1.15.3",
+								REMOVED_1_15_3,
 								-- #else
 								REMOVED_4_0_3,
 								-- #endif
@@ -3407,7 +3418,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(18608, {	-- Benediction
 							["timeline"] = {
 								-- #if SEASON_OF_DISCOVERY
-								"removed 1.15.3",
+								REMOVED_1_15_3,
 								-- #else
 								REMOVED_4_0_3,
 								-- #endif
@@ -3477,7 +3488,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27459, {	-- The Brotherhood of Light
 					["qg"] = 11036,	-- Leonid Barthalomew the Revered
 					["sourceQuest"] = 27463,	-- A Boyhood Dream
-					["coord"] = { 41.0, 87.9, LIGHTS_HOPE_CHAPEL },
+					["coords"] = {
+						-- #if AFTER LEGION
+						{ 41.0, 87.9, LIGHTS_HOPE_CHAPEL },
+						-- #else
+						{ 75.6, 52.5, EASTERN_PLAGUELANDS },
+						-- #endif
+					},
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(6144, {	-- The Call to Command
@@ -3517,7 +3534,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27619, {	-- The Commander
 					["qg"] = 16112,	-- Crusade Commander Korfax
 					["sourceQuest"] = 27462,	-- To Take the Barracks
-					["coord"] = { 75.3, 76.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.3, 76.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Scarlet Commander Marjhan slain
@@ -3542,7 +3559,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						27529,	-- Defenders of Darrowshire
 						27528,	-- Scourged Mass
 					},
-					["coord"] = { 27.6, 20.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 27.7, 20.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/3 Corpsebeast destroyed
@@ -3589,7 +3606,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27477, {	-- The Corpulent One
 					["qg"] = 45735,	-- Gamella Cracklefizz
-					["coord"] = { 61.5, 43.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 61.6, 43.1, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Borelgore slain
@@ -3666,7 +3683,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27616, {	-- The Huntsman
 					["qg"] = 16112,	-- Crusade Commander Korfax
 					["sourceQuest"] = 27462,	-- To Take the Barracks
-					["coord"] = { 75.3, 76.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.3, 76.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Huntsman Leopold slain
@@ -3700,8 +3717,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "n", 45451 },	-- Argus Highbeacon
 						{ "i", 61362 },	-- Highbeacon's Parcel
 					},
-					["sourceQuest"] = 27522,	-- Beat it Out of Them [Discord, 2023-8-2]
-					["coord"] = { 28.3, 25.8, EASTERN_PLAGUELANDS },
+					["description"] = "Position of Argus Highbeacon depends on the position of Fionas Caravan and the order of quests you completed.",
+					["sourceQuest"] = 27522,	-- Beat it Out of Them
+					["coords"] = {
+						{ 28.3, 25.8, EASTERN_PLAGUELANDS },
+						{ 50.5, 20.2, EASTERN_PLAGUELANDS },
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["isBreadcrumb"] = true,
 				}),
@@ -3786,7 +3807,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						27382,	-- Rough Roads
 						27381,	-- Traveling Companion
 					},
-					["coord"] = { 34.8, 69.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 34.9, 69.1, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Ride Fiona's Caravan
@@ -3797,7 +3818,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27615, {	-- The Wrathcaster
 					["qg"] = 16112,	-- Crusade Commander Korfax
 					["sourceQuest"] = 27462,	-- To Take the Barracks
-					["coord"] = { 75.3, 76.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 75.3, 76.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Mataus the Wrathcaster slain
@@ -3878,13 +3899,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27461, {	-- To Take the Abbey
 					["provider"] = { "o", 205875 },	-- Crusader's Flare
 					["sourceQuest"] = 27460,	-- Soft Landing
-					["coord"] = { 77.5, 79.4, EASTERN_PLAGUELANDS },
+					["coord"] = { 77.6, 79.4, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(27462, {	-- To Take the Barracks
 					["provider"] = { "o", 205875 },	-- Crusader's Flare
 					["sourceQuest"] = 27460,	-- Soft Landing
-					["coord"] = { 77.5, 79.4, EASTERN_PLAGUELANDS },
+					["coord"] = { 77.6, 79.4, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
 				q(5248, {	-- Tormented By the Past
@@ -3905,7 +3926,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27381, {	-- Traveling Companions
 					["qg"] = 45429,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27373,	-- Onward, to Light's Hope Chapel
-					["coord"] = { 35.2, 68.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 35.3, 68.9, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- Find a traveling companion
@@ -3963,6 +3984,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 53.0, 53.2, EASTERN_PLAGUELANDS },
 						{ 61.6, 42.6, EASTERN_PLAGUELANDS },
 						{ 50.6, 20.1, EASTERN_PLAGUELANDS },
+						{ 73.6, 51.9, EASTERN_PLAGUELANDS },
 					},
 					["timeline"] = { ADDED_4_0_3 },
 					["repeatable"] = true,
@@ -4063,7 +4085,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(27371, {	-- What I Do Best
 					["qg"] = 45429,	-- Tarenar Sunstrike
 					["sourceQuest"] = 27370,	-- Tarenar Sunstrike
-					["coord"] = { 18.3, 74.8, EASTERN_PLAGUELANDS },
+					["coord"] = { 18.4, 74.8, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/5 Death's Step Miscreation slain
@@ -4103,7 +4125,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27521, {	-- Wretched Hive of Scum and Villainy
 					["qg"] = 45826,	-- Kirkian Dawnshield
-					["coord"] = { 49.9, 19.5, EASTERN_PLAGUELANDS },
+					["coord"] = { 50.0, 19.5, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/9 Quel'lithien Wretched slain
@@ -4159,7 +4181,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(27432, {	-- Zaeldarr the Outcast
 					["qg"] = 45500,	-- Urk Gagbaz
-					["coord"] = { 35.0, 68.1, EASTERN_PLAGUELANDS },
+					["coord"] = { 35.0, 68.2, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 					["groups"] = {
 						objective(1, {	-- 0/1 Zaeldarr's Head
@@ -4186,7 +4208,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				-- #if BEFORE 4.0.3
 				i(12843, {	-- Corruptor's Scourgestone / Inert Corruptor's Scourgestone
-					["description"] = "Can drop from any Undead rare mob or boss in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
+					["description"] = "Can drop from any Undead Rare creature or Boss in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
 					["timeline"] = { DELETED_4_0_3 },
 				}),
 				-- #endif
@@ -4582,7 +4604,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_FOUR, i(226418, {	-- Rune of Holy Specialization
 					["provider"] = { "o", 457094 },	-- The True Nature of the Light
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 83.6, 78.1, EASTERN_PLAGUELANDS },
 					["classes"] = { PALADIN, PRIEST },
 					["groups"] = {
@@ -4593,7 +4615,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				})),
 				applyclassicphase(SOD_PHASE_FOUR, i(226410, {	-- Rune of Ranged Weapon Specialization
 					["provider"] = { "o", 457090 },	-- Famous (and Infamous) Rangers of Azeroth
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["coord"] = { 26.2, 74.8, EASTERN_PLAGUELANDS },
 					["classes"] = { WARRIOR, HUNTER, ROGUE },
 					["groups"] = {
@@ -4649,6 +4671,36 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 73.8, 52.4, EASTERN_PLAGUELANDS },
 					["timeline"] = { ADDED_4_0_3 },
 				}),
+				n(47106, {	-- Christine Gade <Shieldcrafter>
+					["coord"] = { 17.8, 27.8, EASTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_0_3 },
+					["sym"] = {{"select","itemID",
+						2451,	-- Crested Heater Shield
+						2448,	-- Heavy Pavise
+						2446,	-- Kite Shield
+						2445,	-- Large Metal Shield
+						17189,	-- Metal Buckler
+						17190,	-- Ornate Buckler
+						17192,	-- Reinforced Targe
+						17188,	-- Ringed Buckler
+					}},
+				}),
+				n(47166, {	-- Dorris Manchester <Weaponsmith>
+					["coord"] = { 50.9, 19.5, EASTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_0_3 },
+					["sym"] = {{"select","itemID",
+						926,	-- Battle Axe
+						2025,	-- Bearded Axe
+						3025,	-- BKP 42 "Ultra"
+						3024,	-- BKP 2700 "Enforcer"
+						2029,	-- Cleaver
+						927,	-- Double Axe
+						853,	-- Hatchet
+						3023,	-- Large Bore Blunderbuss
+						1196,	-- Tabar
+						37,	-- Worn Axe
+					}},
+				}),
 				n(12941, {	-- Jase Farlane <Trade Supplies>
 					-- #if AFTER CATA
 					["coord"] = { 74.3, 50.9, EASTERN_PLAGUELANDS },
@@ -4666,6 +4718,27 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["isLimited"] = true,
 						}),
 					},
+				}),
+				n(47149, {	-- Kathryn Humphries <Weaponsmith>
+					["coord"] = { 53.8, 54.0, EASTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_0_3 },
+					["sym"] = {{"select","itemID",
+						926,	-- Battle Axe
+						2527,	-- Battle Staff
+						2025,	-- Bearded Axe
+						2029,	-- Cleaver
+						927,	-- Double Axe
+						853,	-- Hatchet
+						15811,	-- Heavy Spear
+						2532,	-- Morning Star
+						15810,	-- Short Spear
+						1196,	-- Tabar
+						2524,	-- Truncheon
+						2525,	-- War Hammer
+						2533,	-- War Maul
+						2535,	-- War Staff
+						37,	-- Worn Axe
+					}},
 				}),
 				-- #if AFTER 4.0.1
 				n(16365, {	-- Master Craftsman Omarion <Brotherhood of the Light>
@@ -4714,15 +4787,35 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					}),
 				}),
 				-- #endif
+				n(47144, {	-- Patricia Marshall <Weaponsmith>
+					["coord"] = { 62.4, 42.3, EASTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_0_3 },
+					["sym"] = {{"select","itemID",
+						2520,	-- Broadsword
+						2451,	-- Crested Heater Shield
+						2528,	-- Falchion
+						2448,	-- Heavy Pavise
+						15811,	-- Heavy Spear
+						2446,	-- Kite Shield
+						2445,	-- Large Metal Shield
+						2526,	-- Main Gauche
+						17189,	-- Metal Buckler
+						17190,	-- Ornate Buckler
+						17192,	-- Reinforced Targe
+						17188,	-- Ringed Buckler
+						2534,	-- Rondel
+						15810,	-- Short Spear
+					}},
+				}),
 				n(11536, {	-- Quartermaster Miranda Breechlock <The Argent Crusade>
 					["coords"] = {
 						-- #if AFTER WRATH
-						{ 75.8, 54.0, EASTERN_PLAGUELANDS },
+						{ 75.9, 54.0, EASTERN_PLAGUELANDS },
 						-- #else
 						{ 81.6, 60.0, EASTERN_PLAGUELANDS },
 						-- #endif
 					},
-					["groups"] = bubbleDownClassicRep(529, {
+					["groups"] = bubbleDownClassicRep(FACTION_ARGENT_DAWN, {
 						{	-- Neutral
 							i(136801, {	-- Divine Tome: Contemplation (CI!)
 								["timeline"] = { ADDED_7_0_3_LAUNCH },
@@ -4733,7 +4826,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							}),
 							-- 10.1.5 Scholomance Items
 							i(206584, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {	-- Archived Crafting Techniques
-								--	["minReputation"] = { 529, EXALTED },	-- Argent Dawn
+								--	["minReputation"] = { FACTION_ARGENT_DAWN, EXALTED },	-- Argent Dawn
 								["cost"] = { { "i", 12844, 6 } },	-- Argent Dawn Valor Token
 								["groups"] = {
 									i(207569),	-- Ancient Formula: Magebane Nexus (RECIPE!)
@@ -4775,12 +4868,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 
 							-- #if SEASON_OF_DISCOVERY
 							applyclassicphase(SOD_PHASE_FOUR, i(227813, {	-- Drinkable Stratholme Holy Water
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["cost"] = {{ "i", 13180, 1 }},	-- Stratholme Holy Water
 							})),
 							-- EPIC CRAFTED ITEMS UPGRADES
 							applyclassicphase(SOD_PHASE_FOUR, i(227816, {	-- Argent Elite Boots
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = TAILORING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4790,7 +4883,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227888, {	-- Argent Elite Shoulders
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = TAILORING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4800,7 +4893,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227815, {	-- Fine Dawn Treaders
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = LEATHERWORKING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4810,7 +4903,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227818, {	-- Glowing Mantle of the Dawn
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = LEATHERWORKING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4820,7 +4913,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227814, {	-- Radiant Girdle of the Dawn
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = BLACKSMITHING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4830,7 +4923,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227817, {	-- Radiant Gloves of the Dawn
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = BLACKSMITHING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4840,7 +4933,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227859, {	-- Shimmering Dawnbringer Shoulders
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = BLACKSMITHING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -4898,7 +4991,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							-- #if SEASON_OF_DISCOVERY
 							-- CRIEVE NOTE: With SOD phase 4, they put this recipe directly on the vendor. Interesting.
 							applyclassicphase(SOD_PHASE_FOUR, i(12698, {	-- Plans: Dawnbringer Shoulders (RECIPE!)
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 							})),
 							-- #endif
 							applyclassicphase(PHASE_THREE_RECIPES, i(19205)),	-- Plans: Gloves of the Dawn (RECIPE!)
@@ -4922,11 +5015,33 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 									5521,	-- Chromatic Mantle of the Dawn
 									5524,	-- Chromatic Mantle of the Dawn
 								},
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 							})),
 							-- #endif
 						},
 					}),
+				}),
+				n(45500, {	-- Urk Gagbaz <Armor Vendor>
+					["coord"] = { 35.0, 68.2, EASTERN_PLAGUELANDS },
+					["timeline"] = { ADDED_4_0_3 },
+					["sym"] = {{"select","itemID",
+						2424,	-- Brigandine Belt
+						2426,	-- Brigandine Boots
+						2427,	-- Brigandine Bracers
+						2428,	-- Brigandine Gloves
+						3894,	-- Brigandine Helm
+						2425,	-- Brigandine Leggings
+						2423,	-- Brigandine Vest
+						2451,	-- Crested Heater Shield
+						17190,	-- Ornate Buckler
+						8094,	-- Platemail Armor
+						8088,	-- Platemail Belt
+						8089,	-- Platemail Boots
+						8090,	-- Platemail Bracers
+						8091,	-- Platemail Gloves
+						8092,	-- Platemail Helm
+						8093,	-- Platemail Leggings
+					}},
 				}),
 			}),
 			n(ZONE_DROPS, {
@@ -5060,11 +5175,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				-- #if BEFORE 4.0.3
 				i(12841, {	-- Invader's Scourgestone / Inert Invader's Scourgestone
-					["description"] = "Can drop from any Undead mobs in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
+					["description"] = "Can drop from any Undead creature in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
 				i(12840, {	-- Minion's Scourgestone / Inert Minion's Scourgestone
-					["description"] = "Can drop from weak Undead mobs in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
+					["description"] = "Can drop from weak Undead creature in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
 				-- #endif
@@ -5176,13 +5291,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
--- #if AFTER 4.0.3
-root(ROOTS.HiddenQuestTriggers, bubbleDown({ ["timeline"] = { ADDED_4_0_3 } }, m(EASTERN_KINGDOMS, {
-	m(EASTERN_PLAGUELANDS, {
-		q(27552),	-- Triggers on changing buffs at Fiona's Caravan
-		q(27553),	-- Triggers on changing buffs at Fiona's Caravan
-		q(27554),	-- Triggers on changing buffs at Fiona's Caravan
-		q(27563),	-- [FLAG] Beezil's Flag
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3 } }, {
+	m(EASTERN_KINGDOMS, {
+		m(EASTERN_PLAGUELANDS, {
+			q(27552),	-- Triggers on changing buffs at Fiona's Caravan
+			q(27553),	-- Triggers on changing buffs at Fiona's Caravan
+			q(27554),	-- Triggers on changing buffs at Fiona's Caravan
+			q(27563),	-- [FLAG] Beezil's Flag
+		}),
 	}),
 })));
--- #endif

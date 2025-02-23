@@ -127,27 +127,18 @@ end
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(STRANGLETHORN_VALE, {
 		["lore"] = "The Stranglethorn Vale is a vast jungle south of Duskwood.\n\nJungle trolls patrol this steaming rainforest. Ancient Gurubashi trolls once ruled the region, and the ruins of their great cities crumble in the jungle's heat and growth. Naga hunt along the coast and vicious animals and plants, including the eponymous strangle-thorns, make travel dangerous. The Arena, a center for gladiatorial games set in a ruined Gurubashi fighting stadium, draws shady characters of all races. The Blackwater Raiders, a vile group of pirates, make their home in Booty Bay, on the Stranglethorn's southern coast.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_stranglethorn_01",
-		-- #endif
+		["icon"] = 236844,
 		["groups"] = {
 			n(ACHIEVEMENTS, {
 				applyclassicphase(PHASE_ONE, ach(871, {	-- Avast Ye, Admiral!
 					["sourceQuest"] = 4621,	-- Avast Ye, Admiral!
-					-- #if BEFORE WRATH
-					["description"] = "Obtain the Bloodsail Admiral's Hat... and try to get some fresh air every now and then.",
-					-- #endif
 					["groups"] = {
 						title(111, {	-- Bloodsail Admiral <Name>
 							["timeline"] = { ADDED_3_0_2 },
 						}),
 					},
 				})),
-				explorationAch(781, {	-- Explore Stranglethorn Vale
-					-- #if BEFORE WRATH
-					["description"] = "Explore Stranglethorn Vale, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(781),	-- Explore Stranglethorn Vale
 				ach(940, {	-- The Green Hills of Stranglethorn
 					["sourceQuests"] = {
 						208,	-- Big Game Hunter
@@ -156,7 +147,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						-- #endif
 					},
 					-- #if BEFORE WRATH
-					["description"] = "Complete all of Hemet Nesingwary quests in Stranglethorn Vale up to and including The Green Hills of Stranglethorn and Big Game Hunter.",
 					["AllSourceQuestsRequiredForAchievement"] = true,
 					-- #endif
 				}),
@@ -174,7 +164,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					ach(389, {	-- Gurubashi Arena Master
 						["provider"] = { "i", 18706 },	-- Arena Master
 						-- #if BEFORE WRATH
-						["description"] = "Loot the Arena Master trinket from the Gurubashi Arena. Keep it in your bank until achievements come out.\n\nProbably not a bad idea to knock this out before all the normies start farming for this.",
+						["lore"] = "Keep it in your bank until achievements come out.\n\nProbably not a bad idea to knock this out before all the normies start farming for this.",
 						["OnUpdate"] = [[function(t) t:SetAchievementCollected(t.achievementID, ]] .. WOWAPI_GetItemCount(18706) .. [[ > 0 or ]] .. WOWAPI_GetItemCount(19024) .. [[ > 0); end]],
 						-- #endif
 					}),
@@ -224,10 +214,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				exploration(122),	-- Zuuldaia Ruins
 			}),
 			n(FACTIONS, {
-				faction(87, {	-- Bloodsail Buccaneers
-					["icon"] = "Interface\\Icons\\INV_Misc_Bandana_03",
+				faction(FACTION_BLOODSAIL_BUCCANEERS, {	-- Bloodsail Buccaneers
+					["icon"] = 133694,
 					-- #if BEFORE WRATH
-					["minReputation"] = { 87, EXALTED - 1 },	-- Bloodsail Buccaneers, must be 20999 into Revered.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, EXALTED - 1 },	-- Bloodsail Buccaneers, must be 20999 into Revered.
 					-- #endif
 					-- #if BEFORE CATA
 					["OnTooltip"] = OnTooltipForBloodsail,
@@ -236,8 +226,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["crs"] = { 9179 },	-- Jazzrik
 					-- #endif
 				}),
-				faction(21, {	-- Booty Bay
-					["icon"] = "Interface\\Icons\\INV_Misc_Coin_01",
+				faction(FACTION_BOOTY_BAY, {	-- Booty Bay
+					["icon"] = 133784,
 					["OnTooltip"] = OnTooltipForBootyBay,
 					["maps"] = {
 						TANARIS,
@@ -247,7 +237,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if SEASON_OF_DISCOVERY
 				pvp(applyclassicphase(SOD_PHASE_TWO, faction(2634, {	-- Blood Moon
 					["description"] = "This faction is probably not one that you can gain reputation with.",
-					["timeline"] = { "created 1.15.1" },
+					["timeline"] = { CREATED_1_15_1 },
 				}))),
 				-- #endif
 			}),
@@ -456,7 +446,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						ach(396, {	-- Arena Grandmaster
 							["provider"] = { "i", 19024 },	-- Arena Grand Master
 							-- #if BEFORE WRATH
-							["description"] = "Complete Short John Mithril's quest to obtain the Arena Grand Master trinket. Keep it in your bank until achievements come out.\n\nProbably not a bad idea to knock this out before all the normies start farming for this.",
+							["lore"] = "Keep it in your bank until achievements come out.\n\nProbably not a bad idea to knock this out before all the normies start farming for this.",
 							-- #endif
 						}),
 						i(19024),	-- Arena Grand Master
@@ -475,7 +465,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(4621, {	-- Avast Ye, Admiral!
 					["qg"] = 2546,	-- Fleet Master Firallon
 					["sourceQuest"] = 1036,	-- Avast Ye, Scallywag
-					["minReputation"] = { 87, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
 					["description"] = "This quest also requires you to be hated or lower with Booty Bay.",
 					["coords"] = {
 						-- #if AFTER CATA
@@ -491,7 +481,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(1036, {	-- Avast Ye, Scallywag
 					["qg"] = 2545,	-- "Pretty Boy" Duncan
-					["minReputation"] = { 87, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, FRIENDLY },	-- Bloodsail Buccaneers, Friendly.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 44.4, 92.6, THE_CAPE_OF_STRANGLETHORN },
@@ -755,7 +745,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 215643,	-- Tokal
 					["sourceQuest"] = 79235,	-- On The Lam
 					["coord"] = { 27.0, 77.2, STRANGLETHORN_VALE },
-					["timeline"] = { "added 1.15.1" },
+					["timeline"] = { ADDED_1_15_1 },
 					["lvl"] = 30,
 					["groups"] = {
 						objective(1, {	-- 0/1 Cherry Grog
@@ -871,7 +861,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(9272, {	-- Dressing the Part
 					["qg"] = 2546,	-- Fleet Master Firallon
-					["minReputation"] = { 87, NEUTRAL },	-- Bloodsail Buccaneers, Neutral.
+					["minReputation"] = { FACTION_BLOODSAIL_BUCCANEERS, NEUTRAL },	-- Bloodsail Buccaneers, Neutral.
 					["coords"] = {
 						-- #if AFTER CATA
 						{ 46.6, 95.2, THE_CAPE_OF_STRANGLETHORN },
@@ -949,7 +939,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(8554, {	-- Facing Negolash
 					["qg"] = 2594,	-- Sprogger
 					["sourceQuest"] = 8553,	-- The Captain's Cutlass
-					["altQuests"] = { 618 },	-- Facing Negolash
+					["altQuests"] = { 618 },	-- Facing Negolash [Old]
 					["coord"] = { 26.7, 73.6, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 35,
@@ -1598,7 +1588,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				applyclassicphase(SOD_PHASE_FOUR, q(83934, {	-- Show Me The Money!
 					["qg"] = 227853,	-- Pix Xizzix
 					["coord"] = { 28.4, 75.8, STRANGLETHORN_VALE },
-					["timeline"] = { "added 1.15.3" },
+					["timeline"] = { ADDED_1_15_3 },
 					["lvl"] = 55,
 					["groups"] = {
 						objective(1, {	-- 0/1 Tarnished Undermine Real
@@ -1611,10 +1601,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 7406,	-- Oglethorpe Obnoticus <Master Gnome Engineer>
 					["sourceQuest"] = 3642,	-- The Pledge of Secrecy
 					["altQuests"] = { 3639, 3641 },	-- The Pledge of Secrecy
-					["description"] = "Requires 200 Engineering to start this quest.",
 					["coord"] = { 28.2, 76.2, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_3_0_2 },	-- Originally supposed to be removed in 4.0.3, but Wrath Classic was weird.
 					["requireSkill"] = ENGINEERING,
+					["learnedAt"] = 200,
 					["races"] = HORDE_ONLY,
 					["cost"] = {
 						{ "i", 4392, 2 },	-- Advanced Target Dummy
@@ -1970,7 +1960,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(8553, {	-- The Captain's Cutlass
 					["qg"] = 2500,	-- Captain Hecklebury Smotts
 					["sourceQuest"] = 8552,	-- The Monogrammed Sash
-					["altQuests"] = { 615 },	-- The Captain's Cutlass
+					["altQuests"] = { 615 },	-- The Captain's Cutlass [Old]
 					["coord"] = { 26.6, 73.6, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 35,
@@ -2144,7 +2134,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				q(8552, {	-- The Monogrammed Sash
 					["provider"] = { "i", 3985 },	-- Monogrammed Sash
-					["altQuests"] = { 620 },	-- The Monogrammed Sash
+					["altQuests"] = { 620 },	-- The Monogrammed Sash [Old]
 					["coord"] = { 23.0, 71.4, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_4_0_3 },
 					["cr"] = 1493,	-- Mok'rash
@@ -2157,10 +2147,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						3637,	-- Gnome Engineering
 					},
 					["altQuests"] = { 3638, 3640 },	-- The Pledge of Secrecy
-					["description"] = "Requires 200 Engineering to start this quest.",
 					["coord"] = { 28.2, 76.2, STRANGLETHORN_VALE },
 					["timeline"] = { REMOVED_3_0_2 },	-- Originally supposed to be removed in 4.0.3, but Wrath Classic was weird.
 					["requireSkill"] = ENGINEERING,
+					["learnedAt"] = 200,
 					["races"] = HORDE_ONLY,
 					["lvl"] = 30,
 					["groups"] = {
@@ -2336,7 +2326,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 31.8, 70.9, STRANGLETHORN_VALE },
 						-- #endif
 					},
-					["maxReputation"] = { 21, NEUTRAL },	-- Booty Bay, must be less than Neutral
+					["maxReputation"] = { FACTION_BOOTY_BAY, NEUTRAL },	-- Booty Bay, must be less than Neutral
 					["cost"] = {
 						{ "i", 4306, 40 },	-- Silk Cloth
 						{ "i", 2604, 4 },	-- Red Dye
@@ -2656,7 +2646,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}), {
 				i(213168, {	-- Copper Blood Coin
 					["description"] = "Bring Blood for the Loa stacks to a blood altar on the map to exchange for this coin.\n\nThe ratio is 1 Copper Blood Coin per 1 blood stack.",
-					["timeline"] = { "removed 1.15.2" },
+					["timeline"] = { REMOVED_1_15_2 },
 				}),
 				bloodcoin_c(100, i(213169)),	-- Silver Blood Coin
 				bloodcoin_s(100, i(213170)),	-- Gold Blood Coin
@@ -2893,7 +2883,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}))),
 						applyclassicphase(SOD_PHASE_THREE, massacrecoin_s(1, i(223283))),	-- Bloodstained Commendation
 						bloodcoin_c(25, i(216914, {	-- Bloodstained Commendation / Tarnished Commendation
-							["timeline"] = { "removed 1.15.2" },
+							["timeline"] = { REMOVED_1_15_2 },
 						})),
 						bloodcoin_s(1, i(216491)),	-- Shipment of Stranglethorn Lumber
 						bloodcoin_g(1, i(216570)),	-- Reins of the Golden Sabercat
@@ -3058,7 +3048,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				-- #if SEASON_OF_DISCOVERY
-				applyclassicphase(SOD_PHASE_FOUR, n(227853, bubbleDownSelf({ ["timeline"] = { "added 1.15.3" } }, {	-- Pix Xizzix <Undermine Trader>
+				applyclassicphase(SOD_PHASE_FOUR, n(227853, bubbleDownSelf({ ["timeline"] = { ADDED_1_15_3 } }, {	-- Pix Xizzix <Undermine Trader>
 					["sourceQuest"] = 83934,	-- Show Me The Money!
 					["coord"] = { 28.4, 75.8, STRANGLETHORN_VALE },
 					["groups"] = {
@@ -3348,13 +3338,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_TWO, i(217258, {	-- Pattern: Enchanter's Cowl
-							["timeline"] = { "added 1.15.1" },
+							["timeline"] = { ADDED_1_15_1 },
 							["isLimited"] = true,
 						})),
 						-- #endif
 						i(14630, {	-- Pattern: Enchanter's Cowl
 							-- #if SEASON_OF_DISCOVERY
-							["timeline"] = { "removed 1.15.1" },
+							["timeline"] = { REMOVED_1_15_1 },
 							-- #endif
 							["isLimited"] = true,
 						}),
@@ -3432,13 +3422,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						i(12163, {	-- Plans: Moonsteel Broadsword (RECIPE!)
 							-- #if SEASON_OF_DISCOVERY
-							["timeline"] = { "removed 1.15.1" },
+							["timeline"] = { REMOVED_1_15_1 },
 							-- #endif
 							["isLimited"] = true,
 						}),
 						-- #if SEASON_OF_DISCOVERY
 						applyclassicphase(SOD_PHASE_TWO, i(217282, {	-- Plans: Moonsteel Broadsword (RECIPE!)
-							["timeline"] = { "added 1.15.1" },
+							["timeline"] = { ADDED_1_15_1 },
 							["isLimited"] = true,
 						})),
 						-- #endif
@@ -3605,9 +3595,15 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
-root(ROOTS.HiddenQuestTriggers, m(EASTERN_KINGDOMS, {
-	m(STRANGLETHORN_VALE, {
-		q(7908),	-- triggered when completing 7810 'Arena Master'
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CLASSIC, bubbleDownSelf({ ["timeline"] = { ADDED_1_11_1 } }, {
+	m(EASTERN_KINGDOMS, {
+		m(STRANGLETHORN_VALE, {
+			q(7908, {["timeline"] = { ADDED_1_12_1 }}),	-- Arena Master [Old] - completed with quest 7810
+			q(618),		-- Facing Negolash [Old] - completed with quest 8554
+			q(614),		-- The Captain's Chest [Old] - completed with quest 8551
+			q(615, {["timeline"] = { ADDED_1_12_1 }}),		-- The Captain's Cutlass [Old] - completed with quest 8553
+			q(620, {["timeline"] = { ADDED_1_12_1 }}),		-- The Monogrammed Sash [Old] - completed with quest 8552
+		}),
 	}),
-}));
+})));
 -- #endif

@@ -381,8 +381,8 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(11401, { ["name"] = "Call the Headless Horseman", }),
 			q(11404, { ["name"] = "Call the Headless Horseman", }),
 			q(11405, { ["name"] = "Call the Headless Horseman", }),
-			q(12405, { ["name"] = "Candy Bucket", }),
-			q(12410, { ["name"] = "Candy Bucket", }),
+			q(12405, { ["name"] = "Candy Bucket", ["_drop"] = { "g" }, }),
+			q(12410, { ["name"] = "Candy Bucket", ["_drop"] = { "g" }, }),
 			q(10181, { ["name"] = "Collector's Edition: -pn - E - FLAG", }),
 			q(9577, { ["name"] = "DAILY TEST QUEST (PVP)     TBC:DAILY TEST QUEST (PVP)  WOTLK:DAILY TEST QUEST (PVP)", }),
 			q(11121, { ["name"] = "DAILY TEST QUEST (RAID)", }),
@@ -663,9 +663,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		q(28601),	-- Old Puttery
 		q(25435),	-- Pressure is Mounting
 		q(25384),	-- Raw Materials
-		q(26704),	-- REUSE
 		q(28270),	-- Riding Shotgun
-		q(29572),	-- Safety is Job One
 		q(25117),	-- Scout's Dishonor
 		q(25506),	-- Sea-Food Chain
 		q(29168),	-- Secondary Targets
@@ -685,16 +683,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		q(24630),	-- The Crone of the Kraul
 		q(29601),	-- The Darkmoon Field Guide
 		q(26837),	-- The Explorers' League Digsite
-		q(29810),	-- The Faceless Ones
 		q(26282),	-- The Favor of Akil'darah
 		q(27634),	-- The God Hakkar
 		q(27018),	-- The Herald <NYI>
 		q(28606),	-- The Keys to the Hot Rod
 		q(29672),	-- The Opening of the Dark Portal
-		q(29683),	-- The Scryer's Scryer
 		q(26243),	-- The World Pillar
 		q(24568),	-- To the Walls!
-		q(28468),	-- Toxic Horrors
 		q(28481),	-- Troubled Spirits of Kel'Theril
 		q(28752),	-- Unstoppable Onslaught
 		q(29170),	-- UNUSED
@@ -709,7 +704,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 	}),
 	expansion(EXPANSION.MOP, {
 		-- 5.0.1
-		expansion(EXPANSION.MOP, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
+		expansion(EXPANSION.MOP, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
 			q(30003, { ["name"] = "A Book By Its Cover", }),	-- A Book By Its Cover
 			q(30019, { ["name"] = "A Breach in the Wall", }),	-- A Breach in the Wall
 			q(30537, { ["name"] = "A Fizzy Fusion", }),	-- A Fizzy Fusion
@@ -913,7 +908,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 5.0.4
-		expansion(EXPANSION.MOP, 0.4, bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
+		expansion(EXPANSION.MOP, patch(0,4), bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
 			q(31940, { ["name"] = "Battle Pet Trainers: Pandaria", }),	-- Battle Pet Trainers: Pandaria
 			q(31988, { ["name"] = "Daily Selected Scenario", }),	-- Daily Selected Scenario
 			q(31968, { ["name"] = "Doubt Begins To Surface", }),	-- Doubt Begins To Surface
@@ -933,7 +928,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 5.1.0
-		expansion(EXPANSION.MOP, 1.0, bubbleDownSelf({ ["timeline"] = {CREATED_5_1_0} }, {
+		expansion(EXPANSION.MOP, patch(1,0), bubbleDownSelf({ ["timeline"] = {CREATED_5_1_0} }, {
 			q(32367, { ["name"] = "A Bit of Yak", }),	-- A Bit of Yak
 			q(32375, { ["name"] = "A Dash of That", }),	-- A Dash of That
 			q(32366, { ["name"] = "A Lick of Fire", }),	-- A Lick of Fire
@@ -964,7 +959,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 5.2.0
-		expansion(EXPANSION.MOP, 2.0, bubbleDownSelf({ ["timeline"] = {CREATED_5_2_0} }, {
+		expansion(EXPANSION.MOP, patch(2,0), bubbleDownSelf({ ["timeline"] = {CREATED_5_2_0} }, {
 			q(32475, { ["name"] = "A Spark of Life", }),	-- A Spark of Life
 			q(32727, { ["name"] = "Contributed to Server Percentage Daily Tracking Quest", }),	-- Contributed to Server Percentage Daily Tracking Quest
 			q(32566, { ["name"] = "DEBUG: Eligible for All Quests", }),	-- DEBUG: Eligible for All Quests
@@ -1003,7 +998,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 5.4.0
-		expansion(EXPANSION.MOP, 4.0, bubbleDownSelf({ ["timeline"] = {CREATED_5_4_0} }, {
+		expansion(EXPANSION.MOP, patch(4,0), bubbleDownSelf({ ["timeline"] = {CREATED_5_4_0} }, {
 			q(33360, { ["name"] = "5.4 Raid - RRP - Boss 1 Legendary Quest", }),	-- 5.4 Raid - RRP - Boss 1 Legendary Quest
 			q(33361, { ["name"] = "5.4 Raid - RRP - Boss 2 Legendary Quest", }),	-- 5.4 Raid - RRP - Boss 2 Legendary Quest
 			q(33362, { ["name"] = "5.4 Raid - RRP - Boss 3 Legendary Quest", }),	-- 5.4 Raid - RRP - Boss 3 Legendary Quest
@@ -1047,13 +1042,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 5.4.2
-		expansion(EXPANSION.MOP, 4.2, bubbleDownSelf({ ["timeline"] = { CREATED_5_4_2 } }, {
+		expansion(EXPANSION.MOP, patch(4,2), bubbleDownSelf({ ["timeline"] = { CREATED_5_4_2 } }, {
 			q(33634, { ["name"] = "6.0 Invasion Opt-Out", }),	-- Maldo's Test Quest
 		})),
 	}),
 	expansion(EXPANSION.WOD, {
 		-- 6.0.1
-		expansion(EXPANSION.WOD, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
+		expansion(EXPANSION.WOD, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
 			q(33772, { ["name"] = "6.0 Invasion Opt-Out", }),	-- 6.0 Invasion Opt-Out
 			q(34311, { ["name"] = "6.0 Invasion: Opted Out", }),	-- 6.0 Invasion: Opted Out
 			q(36211, { ["name"] = "6.0 Tanaan - Boots Bootstrap", }),	-- 6.0 Tanaan - Boots Bootstrap
@@ -1267,7 +1262,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(34677, { ["name"] = "NOT USED", }),	-- NOT USED
 			q(34025, { ["name"] = "Nuke Bastion Rise Tracking Flag", }),	-- Nuke Bastion Rise Tracking Flag
 			q(34738, { ["name"] = "Nullin' Void", }),	-- Nullin' Void
-			q(36903, { ["name"] = "Ogre Waygate", }),	-- Ogre Waygate
 			q(35721, { ["name"] = "Old Balance Treads", }),	-- Old Balance Treads
 			q(32784, { ["name"] = "On the Trail of Blood", }),	-- On the Trail of Blood
 			q(34684, { ["name"] = "One Step Ahead", }),	-- One Step Ahead
@@ -1637,7 +1631,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 6.0.2
-		expansion(EXPANSION.WOD, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
+		expansion(EXPANSION.WOD, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
 			q(37598, { ["name"] = "Abrogator Stones", }),	-- Abrogator Stones
 			q(37599, { ["name"] = "Abrogator Stones", }),	-- Abrogator Stones
 			q(37600, { ["name"] = "Abrogator Stones", }),	-- Abrogator Stones
@@ -1700,12 +1694,12 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 6.0.3
-		expansion(EXPANSION.WOD, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_3 } }, {
+		expansion(EXPANSION.WOD, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_3 } }, {
 			q(33466, { ["name"] = "Rally the Artificers", }),	-- Rally the Artificers
 		})),
 
 		-- 6.1.0
-		expansion(EXPANSION.WOD, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_6_1_0 } }, {
+		expansion(EXPANSION.WOD, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_6_1_0 } }, {
 			q(35256, { ["name"] = "A Heart Unbroken", }),	-- A Heart Unbroken
 			q(38204, { ["name"] = "Assault on the Gorian Proving Grounds", }),	-- Assault on the Gorian Proving Grounds (A)
 			q(38205, { ["name"] = "Assault on the Gorian Proving Grounds", }),	-- Assault on the Gorian Proving Grounds (H)
@@ -1742,7 +1736,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 6.2.0
-		expansion(EXPANSION.WOD, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_6_2_0 } }, {
+		expansion(EXPANSION.WOD, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_6_2_0 } }, {
 			q(38592, { ["name"] = "6.2 Tanaan Max-level Choice Reward Summary: Group", }),	-- 6.2 Tanaan Max-level Choice Reward Summary: Group
 			q(38594, { ["name"] = "6.2 Tanaan Max-level Choice Reward Summary: Group", }),	-- 6.2 Tanaan Max-level Choice Reward Summary: Group
 			q(37888, { ["name"] = "6.2 Tanaan Max-level Choice Reward Summary: Solo", }),	-- 6.2 Tanaan Max-level Choice Reward Summary: Solo
@@ -1789,7 +1783,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 6.2.1
-		expansion(EXPANSION.WOD, 2.1, bubbleDownSelf({ ["timeline"] = { CREATED_6_2_2 } }, {
+		expansion(EXPANSION.WOD, patch(2,1), bubbleDownSelf({ ["timeline"] = { CREATED_6_2_2 } }, {
 			q(39292, { ["name"] = "Ashran Dominance", }),	-- Ashran Dominance
 			q(38260, { ["name"] = "Beachhead", }),	-- Beachhead
 			q(38575, { ["name"] = "Beachhead", }),	-- Beachhead
@@ -1802,7 +1796,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 6.2.2
-		expansion(EXPANSION.WOD, 2.2, bubbleDownSelf({ ["timeline"] = { CREATED_6_2_2 } }, {
+		expansion(EXPANSION.WOD, patch(2,2), bubbleDownSelf({ ["timeline"] = { CREATED_6_2_2 } }, {
 			q(35499, { ["name"] = "Blow up towers", }),	-- Blow up towers
 			q(39052, { ["name"] = "Blueprints Are Important", }),	-- Blueprints Are Important
 			q(33560, { ["name"] = "Light's Rest", }),	-- Light's Rest
@@ -2068,7 +2062,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 	}),
 	expansion(EXPANSION.LEGION, {
 		-- 7.0.1
-		expansion(EXPANSION.LEGION, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
+		expansion(EXPANSION.LEGION, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
 			q(40103, { ["name"] = "7.0 ALPHA DK TEST QUEST", }),	-- 7.0 ALPHA DK TEST QUEST
 			q(39846, { ["name"] = "7.0 Dalaran - Treasure 001 - Burnt Cart", }),	-- 7.0 Dalaran - Treasure 001 - Burnt Cart
 			q(39507, { ["name"] = "7.0 Highmountain - Treasure 062 - Pinerock Basin", }),	-- 7.0 Highmountain - Treasure 062 - Pinerock Basin
@@ -2191,7 +2185,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(39011, { ["name"] = "Black Rook Invasion", }),	-- Black Rook Invasion
 			q(38648, { ["name"] = "Black Rook Orders", }),	-- Black Rook Orders
 			q(38321, { ["name"] = "Blackbeak Overlook", }),	-- Blackbeak Overlook
-			q(42167, { ["name"] = "Blood Gather Bit", }),	-- Blood Gather Bit
 			q(39819, { ["name"] = "Bloodhunt Highland Treasure", }),	-- Bloodhunt Highland Treasure
 			q(39820, { ["name"] = "Bloodhunt Highland Treasure", }),	-- Bloodhunt Highland Treasure
 			q(39821, { ["name"] = "Bloodhunt Highland Treasure", }),	-- Bloodhunt Highland Treasure
@@ -2220,7 +2213,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(40572, { ["name"] = "Darkheart Thicket Normal Reward Quest", }),	-- Darkheart Thicket Normal Reward Quest
 			q(41880, { ["name"] = "Den of Shadows", }),	-- Den of Shadows
 			q(40720, { ["name"] = "DEPRECATE - REUSE", }),	-- DEPRECATE - REUSE
-			q(40721, { ["name"] = "DEPRECATE - REUSE", }),	-- DEPRECATE - REUSE
 			q(40719, { ["name"] = "DEPRECATE- REUSE", }),	-- DEPRECATE- REUSE
 			q(39116, { ["name"] = "DEPRECATED", }),	-- DEPRECATED
 			q(39190, { ["name"] = "DEPRECATED", }),	-- DEPRECATED
@@ -2469,7 +2461,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(41879, { ["name"] = "TBD", }),	-- TBD
 			q(38896, { ["name"] = "Tearing down the Legion", }),	-- Tearing down the Legion
 			q(40502, { ["name"] = "Test - Fireball", }),	-- Test - Fireball
-			q(39353, { ["name"] = "Test - New", }),	-- Test - New
 			q(40940, { ["name"] = "Test Quest Two", }),	-- Test Quest Two
 			q(40726, { ["name"] = "Test Reward Quest", }),	-- Test Reward Quest
 			q(39981, { ["name"] = "Thassarian Slotted", }),	-- Thassarian Slotted
@@ -2576,7 +2567,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.0.3
-		expansion(EXPANSION.LEGION, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
+		expansion(EXPANSION.LEGION, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
 			q(42374, { ["name"] = "7.0 Greeting Kits - Tracking Quest", }),	-- 7.0 Greeting Kits - Tracking Quest
 			q(42566, { ["name"] = "A Blaze of Starlight", }),	-- A Blaze of Starlight
 			q(40790, { ["name"] = "A Struggle Of Power", }),	-- A Struggle Of Power
@@ -2773,10 +2764,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.1.0
-		expansion(EXPANSION.LEGION, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_7_1_0 } }, {
-			q(45184, { ["name"] = "7.1 Class Hall - Special - PVP - PVP Repeated - Arena - Tracking Quest", }),	-- 7.1 Class Hall - Special - PVP - PVP Repeated - Arena - Tracking Quest
-			q(45183, { ["name"] = "7.1 Class Hall - Special - PVP - PVP Repeated - Ashran - Tracking Quest", }),	-- 7.1 Class Hall - Special - PVP - PVP Repeated - Ashran - Tracking Quest
-			q(45181, { ["name"] = "7.1 Class Hall - Special - PVP - PVP Repeated - Battleground - Tracking Quest", }),	-- 7.1 Class Hall - Special - PVP - PVP Repeated - Battleground - Tracking Quest
+		expansion(EXPANSION.LEGION, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_7_1_0 } }, {
 			q(44916, { ["name"] = "99.0 [reuse me]", }),	-- 99.0 [reuse me]
 			q(40243, { ["name"] = "Break Weapon Racks", }),	-- Break Weapon Racks
 			q(45508, { ["name"] = "Durguth", }),	-- Durguth
@@ -2806,7 +2794,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.1.5
-		expansion(EXPANSION.LEGION, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_7_1_5 } }, {
+		expansion(EXPANSION.LEGION, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_7_1_5 } }, {
 			q(40631, { ["name"] = "Basking in Glory", }),	-- Basking in Glory
 			q(39770, { ["name"] = "Burn the Candle at Both Ends [NOT USED]", }),	-- Burn the Candle at Both Ends [NOT USED]
 			q(44941, { ["name"] = "Dances With Ravenbears (UNUSED)", }),	-- Dances With Ravenbears (UNUSED)
@@ -2825,7 +2813,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.2.0
-		expansion(EXPANSION.LEGION, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_7_2_0 } }, {
+		expansion(EXPANSION.LEGION, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_7_2_0 } }, {
 			q(45022, { ["name"] = "3+ Targets Chosen", }),	-- 3+ Targets Chosen
 			q(45054, { ["name"] = "Ancient Elven War Orders", }),	-- Ancient Elven War Orders
 			q(44854, { ["name"] = "AoE Chosen", }),	-- AoE Chosen
@@ -2996,7 +2984,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.2.5
-		expansion(EXPANSION.LEGION, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_7_2_5 } }, {
+		expansion(EXPANSION.LEGION, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_7_2_5 } }, {
 			q(43404, { ["name"] = "A Gathering for the Grand Master", }),	-- A Gathering for the Grand Master
 			q(45441, { ["name"] = "Adacic Grubs - REWORK", }),	-- Adacic Grubs - REWORK
 			q(47611, { ["name"] = "Betrayer Regalia", }),	-- Betrayer Regalia
@@ -3035,7 +3023,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.3.0
-		expansion(EXPANSION.LEGION, 3.0, bubbleDownSelf({ ["timeline"] = { CREATED_7_3_0 } }, {
+		expansion(EXPANSION.LEGION, patch(3,0), bubbleDownSelf({ ["timeline"] = { CREATED_7_3_0 } }, {
 			q(49193, { ["name"] = "A Pile of Intact Demon Eyes", }),	-- A Pile of Intact Demon Eyes
 			q(49194, { ["name"] = "Another Pile of Intact Demon Eyes", }),	-- Another Pile of Intact Demon Eyes
 			q(45036, { ["name"] = "Asgrim the Dreadkiller", }),	-- Asgrim the Dreadkiller
@@ -3070,7 +3058,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(47385, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
 			q(47386, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
 			q(47859, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
-			q(48316, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
 			q(48340, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
 			q(48341, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
 			q(48342, { ["name"] = "Tracking Quest", }),	-- Tracking Quest
@@ -3113,7 +3100,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(49155),	--
 			q(49157),	--
 			q(49158),	--
-			q(49163),	--
 			q(49192),	--
 			-- 7.3.0.24730
 			-- 7.3.0.24738
@@ -3143,7 +3129,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 7.3.5
-		expansion(EXPANSION.LEGION, 3.5, bubbleDownSelf({ ["timeline"] = { CREATED_7_3_5 } }, {
+		expansion(EXPANSION.LEGION, patch(3,5), bubbleDownSelf({ ["timeline"] = { CREATED_7_3_5 } }, {
 			q(50035, { ["name"] = "Bret Test - SQL", }),	-- Bret Test - SQL
 			q(50384, { ["name"] = "Doug Test - Completable Quest4", ["_drop"] = { "g" }, }),	-- Doug Test - Completable Quest4
 			q(50250, { ["name"] = "Posthaste", }),	-- Posthaste
@@ -3231,86 +3217,9 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 	}),
 	expansion(EXPANSION.BFA, {
 		-- 8.0.1
-		expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+		expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 			q(50882,{ ["_drop"] = { "g" },}),	-- All to Ash
 			q(52220),	-- Dragon Attack
-			q(53339),	-- LFG - BFA - Island Expedition - Heroic Win - Nth
-			q(53340),	-- LFG - BFA - Island Expedition - Mythic Win - Nth
-			q(51838),	-- LFG - BFA - Island Expedition - Normal Win - Nth
-			q(53341),	-- LFG - BFA - Island Expedition - PvP Win - Nth
-			q(50627),	-- LFGDungeons - BFA - Heroic Random - 1st
-			q(50628),	-- LFGDungeons - BFA - Heroic Random - Nth
-			q(50626),	-- LFGDungeons - BFA - Normal Random - 1st
-			q(50625),	-- LFGDungeons - BFA - Normal Random - Nth
-			q(52051),	-- LFGDungeons - BFA - Raid Finder - 1st
-			q(52052),	-- LFGDungeons - BFA - Raid Finder - Nth
-			q(53641),	-- LFGDungeons - BFA - Stromgarde (Arathi)
-			q(53374),	-- BFA 111-119 E
-			q(53375),	-- BFA 111-119 E
-			q(53376),	-- BFA 111-119 E
-			q(53377),	-- BFA 111-119 E
-			q(53378),	-- BFA 111-119 E
-			q(53388),	-- BFA 111-119 E
-			q(53389),	-- BFA 111-119 E
-			q(53390),	-- BFA 111-119 E
-			q(53559),	-- BFA 111-119 E
-			q(53560),	-- BFA 111-119 E
-			q(53561),	-- BFA 111-119 E
-			q(53562),	-- BFA 111-119 E
-			q(53563),	-- BFA 111-119 E
-			q(53379, {	-- BFA 120 E
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53380),	-- BFA 120 E
-			q(53381),	-- BFA 120 E
-			q(53382, {	-- BFA 120 E
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53383),	-- BFA 120 E
-			q(53391),	-- BFA 120 E
-			q(53392),	-- BFA 120 E
-			q(53393),	-- BFA 120 E
-			q(53394, {	-- BFA 120 E
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53395),	-- BFA 120 E
-			q(53396),	-- BFA 120 E
-			q(53397),	-- BFA 120 E
-			q(53398, {	-- BFA 120 E
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53399),	-- BFA 120 E
-			q(53400),	-- BFA 120 E
-			q(53401),	-- BFA 120 E
-			q(53402),	-- BFA 120 E
-			q(53403),	-- BFA 120 E
-			q(53404),	-- BFA 120 E
-			q(53554, {	-- BFA 120 E
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53555, {	-- BFA 120 E
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53556),	-- BFA 120 E
-			q(53557),	-- BFA 120 E
-			q(53558),	-- BFA 120 E
-			q(53731, {	-- Legion 110 A
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53732, {	-- Legion 110 A
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53733),	-- Legion 110 A
-			q(53727, {	-- Legion 110 H
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53728, {	-- Legion 110 H
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53729, {	-- Legion 110 H
-				["_drop"] = { "g" },	-- drop MoH to remove this quest from the popout
-			}),
-			q(53730),	-- Legion 110 H
 			q(49675),	--
 			q(47860),	-- A Rude Awakening
 			q(48994),	-- Akunda the Liar
@@ -3370,9 +3279,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
-				["g"] = {
-					i(150753),	-- Decaying Bloodstone (QI!)
-				},
 			}),
 			q(47506, {
 				["lvl"] = 255,
@@ -3397,10 +3303,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["lvl"] = 10,
 				["races"] = ALLIANCE_ONLY,
 			}),
-			q(48023, {
+			q(48023, {	-- Orders Received
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(151928),	-- Explicit Orders (QI!)
+				},
 			}),
 			q(48086, {
 				["description"] = "Area: |cFFf09f26Nazmir|r",
@@ -3420,10 +3329,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(48237, {
 				["description"] = "Type: |cFFf09f26Account|r",
 			}),
-			q(48515, {
+			q(48515, {	-- Silver Blades
 				["description"] = "Area: |cFFf09f26Drustvar|r",
 				["lvl"] = 20,
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(155906),	-- Tarnished Silver Blade (QI!)
+				},
 			}),
 			q(48604, {	-- Home Again, Home Again
 				["description"] = "Area: |cFFf09f26Drustvar|r",
@@ -3462,14 +3374,20 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["description"] = "Category: |cFFf09f26Herbalism|r",
 				["lvl"] = 10,
 			}),
-			q(48808, {
+			q(48808, {	-- Thesis Statement
 				["description"] = "Area: |cFFf09f26Drustvar|r",
 				["lvl"] = 20,
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(152705),	-- Thesis Paper Page (QI!)
+				},
 			}),
-			q(48905, {
+			q(48905, {	-- Unappreciated Scrolls
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
+				["g"] = {
+					i(152864),	-- Tortollan Scroll (QI!)
+				},
 			}),
 			q(48913, {
 				["description"] = "Category: |cFFf09f26Mining|r",
@@ -3531,30 +3449,39 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["description"] = "Category: |cFFf09f26Mining|r",
 				["lvl"] = 10,
 			}),
-			q(48949, {
+			q(48949, {	-- Weeds of the Mire
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(152895),	-- Sprig of Graveweed (QI!)
+				},
 			}),
 			q(48950, {
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
 			}),
-			q(49073, {
+			q(49073, {	-- Ritualistic Denial
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(153025),	-- Scroll of Purging (QI!)
+				},
 			}),
 			q(49123, {
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
 			}),
-			q(49124, {
+			q(49124, {	-- Tortollan Rescue
 				["description"] = "Area: |cFFf09f26Nazmir|r",
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(153049),	-- Scroll of Purging (QI!)
+				},
 			}),
 			q(49375, {
 				["description"] = "Area: |cFFf09f26Nazmir|r",
@@ -3610,10 +3537,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["description"] = "Category: |cFFf09f26Herbalism|r",
 				["lvl"] = 10,
 			}),
-			q(49464, {
+			q(49464, {	-- Saurolisk Tails
 				["description"] = "Area: |cFFf09f26Tiragarde Sound|r",
 				["lvl"] = 10,
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(155663),	-- Saurolisk Tail (QI!)
+				},
 			}),
 			q(49578, {
 				["description"] = "Category: |cFFf09f26Jewelcrafting|r",
@@ -3665,10 +3595,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["lvl"] = 50,
 				["races"] = HORDE_ONLY,
 			}),
-			q(49597, {
+			q(49597, {	-- REUSE ME
 				["description"] = "Category: |cFFf09f26Jewelcrafting|r",
 				["lvl"] = 50,
 				["races"] = HORDE_ONLY,
+				-- ["g"] = {
+				-- 	i(155830),	-- Runic Core (QI!)
+				-- },
 			}),
 			q(49598, {
 				["description"] = "Category: |cFFf09f26Jewelcrafting|r",
@@ -3723,9 +3656,12 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["lvl"] = 20,
 				["races"] = HORDE_ONLY,
 			}),
-			q(50273, {
+			q(50273, {	-- Atal'Dazar: Locking Horns
 				["description"] = "Type: |cFFf09f26Dungeon|r\nCategory: |cFFf09f26Blacksmithing|r",
 				["lvl"] = 10,
+				["g"] = {
+					i(156920),	-- The Golden Horn of Rezan (QI!)
+				},
 			}),
 			q(50321, {
 				["description"] = "Area: |cFFf09f26Nazmir|r",
@@ -3819,12 +3755,12 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				["lvl"] = 50,
 				["races"] = ALLIANCE_ONLY,
 				["repeatable"] = 1,
-				["g"] = {
-					i(151557, {	-- Champion's Strongbox
-						["b"] = 1,
-						["q"] = 2,
-					}),
-				},
+				-- ["g"] = {
+				-- 	i(151557, {	-- Champion's Strongbox
+				-- 		["b"] = 1,
+				-- 		["q"] = 2,
+				-- 	}),
+				-- },
 			}),
 			q(51068, {	-- Raiding Their Stores
 				["description"] = "Type: |cFFf09f26Group|r\nCategory: |cFFf09f26Warfronts|r",
@@ -3857,40 +3793,40 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 					}),
 				},
 			}),
-			q(51070, {
+			q(51070, {	-- Raiding the Boulderfist
 				["description"] = "Type: |cFFf09f26Group|r\nCategory: |cFFf09f26Warfronts|r",
 				["lvl"] = 50,
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(159721),	-- Unprocessed Iron Ore (QI!)
+				},
 			}),
-			q(51086, {
+			q(51086, {	-- Break's Over (QI!)
 				["description"] = "Category: |cFFf09f26Warfronts|r",
 				["lvl"] = 50,
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(159744),	-- Overseer's Blackjack (QI!)
+				},
 			}),
 			q(51130, {
 				["lvl"] = 50,
 				["races"] = HORDE_ONLY,
 				["repeatable"] = 1,
-				["g"] = {
-					i(151557, {	-- Champion's Strongbox
-						["b"] = 1,
-						["q"] = 2,
-					}),
-				},
+				-- ["g"] = {
+				-- 	i(151557, {	-- Champion's Strongbox
+				-- 		["b"] = 1,
+				-- 		["q"] = 2,
+				-- 	}),
+				-- },
 			}),
-			q(51344, {
+			q(51344, {	-- To Matters at Hand
 				["description"] = "Area: |cFFf09f26Hall of Communion|r",
 				["lvl"] = 10,
 				["races"] = HORDE_ONLY,
-			}),
-			q(51370, {
-				["lvl"] = 50,
-				["g"] = {
-					i(160054, {	-- War-Torn Satchel of Cooperation
-						["b"] = 1,
-						["q"] = 3,
-					}),
-				},
+				-- ["g"] = {
+				-- 	i(159671),	-- Silithus Portal Stone (QI!)
+				-- },
 			}),
 			q(51425, {
 				["description"] = "Category: |cFFf09f26Warfronts|r",
@@ -3985,10 +3921,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 					}),
 				},
 			}),
-			q(52497, {
+			q(52497, {	-- Raiding the Boulderfist
 				["description"] = "Type: |cFFf09f26Group|r\nCategory: |cFFf09f26Warfronts|r",
 				["lvl"] = 50,
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(159721),	-- Unprocessed Iron Ore (QI!)
+				},
 			}),
 			q(52991, {	-- [REMOVED]
 				["description"] = "Category: |cFFf09f26Hallow's End|r",
@@ -4652,11 +4591,27 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(53215),	--
 			q(53271),	-- Blooming Star Moss
 			q(53281),	-- Winter's Kiss Cluster
-			q(53283),	-- Flourishing Sea Stalks
-			q(53284),	-- Flourishing Riverbud
-			q(53297),	-- Flourishing Riverbud
+			q(53283, {	-- Flourishing Sea Stalks
+				-- ["g"] = {
+				-- 	i(163588),	-- Flourishing Sea Stalk (QI!)
+				-- },
+			}),
+			q(53284, {	-- Flourishing Riverbud
+				-- ["g"] = {
+				-- 	i(163595),	-- Flourishing Riverbud (QI!)
+				-- },
+			}),
+			q(53297, {	-- Flourishing Riverbud
+				-- ["g"] = {
+				-- 	i(163595),	-- Flourishing Riverbud (QI!)
+				-- },
+			}),
 			q(53299),	-- Blooming Siren's Sting
-			q(53302),	-- Flourishing Riverbud
+			q(53302, {	-- Flourishing Riverbud
+				-- ["g"] = {
+				-- 	i(163595),	-- Flourishing Riverbud (QI!)
+				-- },
+			}),
 			q(53309),	--
 			-- 8.0.1.26629
 			-- 8.0.1.26637
@@ -4664,8 +4619,19 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			-- 8.0.1.26683
 			-- 8.0.1.26707
 			q(52048),	--
-			q(53319),	-- Our Sacred Forest
-			q(53320),	-- Ours For the Taking
+			q(53319, {	-- Our Sacred Forest
+				["races"] = ALLIANCE_ONLY,
+				["lvl"] = 10,
+				["g"] = {
+					i(163631),	--Sacred Timber (QI!)
+				},
+			}),
+			q(53320, {	-- Ours For the Taking
+				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(163631),	--Sacred Timber (QI!)
+				},
+			}),
 			q(53427),	--
 			q(53447),	--
 			q(53460),	--
@@ -4737,7 +4703,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 8.1.0
-		expansion(EXPANSION.BFA, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_1_0 } }, {
+		expansion(EXPANSION.BFA, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_1_0 } }, {
 			-- Unsorted
 			q(53987, {
 				["description"] = "Category: |cFFf09f26Horde War Campaign|r",
@@ -4799,7 +4765,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(54095),	--
 			q(54115),	--
 			q(54116),	--
-			q(54119),	-- Hartford Sternbach
 			q(54142),	--
 			q(54173),	--
 			q(54209),	--
@@ -4826,7 +4791,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			-- 8.1.0.28186
 			-- 8.1.0.28202
 			q(54713),	--
-			q(54772),	--
 			q(54785),	--
 			-- 8.1.0.28294
 			-- 8.1.0.28366
@@ -4853,7 +4817,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 8.1.5
-		expansion(EXPANSION.BFA, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_8_1_5 } }, {
+		expansion(EXPANSION.BFA, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_8_1_5 } }, {
 			-- Unsorted
 			q(53787, {
 				["description"] = "Category: |cFFf09f26Engineering|r",
@@ -4897,7 +4861,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(55140),	--
 			q(55141),	--
 			q(55147),	--
-			q(55163),	--
 			-- 8.1.5.29141
 			q(55189),	--
 			q(55190),	--
@@ -4932,7 +4895,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 8.2.0
-		expansion(EXPANSION.BFA, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_2_0 } }, {
+		expansion(EXPANSION.BFA, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_2_0 } }, {
 			q(54048),	-- To Kill A Warden
 			q(56836),	-- The Eternal Palace: Master's Call
 			q(56837),	-- The Eternal Palace: Master's Call
@@ -5218,11 +5181,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				i(169189),	-- Blueprint: TK44[DNT]
 			}),
 			q(55742),	-- Bundle of Corroded Parts
-			q(56071, {	-- De-Synced Vibro Blade
-				["g"] = {
-					i(163482),	-- Broken Compass (QI!)
-				},
-			}),
+			q(56071),	-- De-Synced Vibro Blade
 			q(56072),	-- De-Synced Vibro Blade
 			q(55669, {	-- Encrypted Radio Receiver TBD
 				i(168221),	-- Encrypted Raido Receiver
@@ -5258,7 +5217,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			-- 8.2.0.30080
 			q(54122),	--
 			q(54125),	--
-			q(54866),	--
 			q(55093),	--
 			q(55102),	--
 			q(55104),	--
@@ -5379,7 +5337,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(56874),	--
 			q(56875),	--
 			q(56876),	--
-			q(56898),	--
 			q(56902),	--
 			-- 8.2.0.30495
 			-- 8.2.0.30613
@@ -5398,7 +5355,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			-- 8.2.0.30669
 			-- 8.2.0.30774
 			q(57184),	--
-			q(57193),	--
 			q(57194),	--
 			q(57195),	--
 			-- 8.2.0.30827
@@ -5411,13 +5367,12 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			-- 8.2.0.30948
 			-- 8.2.0.30993
 			-- 8.2.0.31229
-			q(57408),	--
 			-- 8.2.0.31429
 			-- 8.2.0.31478
 		})),
 
 		-- 8.2.5
-		expansion(EXPANSION.BFA, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_8_2_5 } }, {
+		expansion(EXPANSION.BFA, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_8_2_5 } }, {
 			q(57377),	-- A Hand Offered
 			q(57850),	-- Storied Partnerships
 			q(57852),	-- Dungeon Adventure
@@ -5507,9 +5462,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 8.3.0
-		expansion(EXPANSION.BFA, 3.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_3_0 } }, {
+		expansion(EXPANSION.BFA, patch(3,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_3_0 } }, {
 			q(58801),	-- Enter the Void
-			q(58904),	-- Shards of Corruption
+			q(58904, {	-- Shards of Corruption
+				["g"] = {
+					i(174867),	-- Shard of Corruption (QI!)
+				},
+			}),
 			q(57112),	-- Test Shared Quest
 			q(60185),	-- LFGDungeons - BFA - Ny'alotha Raid Finder - 1st
 			q(58707),	-- Sorting Through Visions
@@ -5563,7 +5522,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(55085),	--
 			q(55105),	--
 			q(55613),	-- Tracking Quest
-			q(55614),	-- Tracking Quest
 			q(55640),	-- Vision of Stormwind
 			q(55643),	--
 			q(55644),	--
@@ -5658,7 +5616,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(58848),	--
 			q(58874),	--
 			-- 8.3.0.32489
-			q(57596),	--
 			q(58898),	--
 			q(58899),	--
 			q(58913),	--
@@ -5726,13 +5683,12 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 8.3.7
-		expansion(EXPANSION.BFA, 3.7, bubbleDownSelf({ ["timeline"] = { CREATED_8_3_7 } }, {
+		expansion(EXPANSION.BFA, patch(3,7), bubbleDownSelf({ ["timeline"] = { CREATED_8_3_7 } }, {
 			-- Tools
 			-- 8.3.7.34872
 			q(59248),	--
 			q(59291),	-- Conquest's Reward
 			q(59292),	-- Conquest's Reward
-			q(59553),	--
 			-- 8.3.7.35114
 			-- 8.3.7.35249
 			-- 8.3.7.35284
@@ -5766,7 +5722,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 	}),
 	expansion(EXPANSION.SL, {
 		-- 9.0.1
-		expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+		expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 			q(44498),	-- Winterhoof Cleansing
 			q(60362),	-- Blank
 			q(57766),	-- War with the Horde
@@ -5954,9 +5910,24 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(62011),	-- Ensemble: Stitched Authority of Maldraxxus
 			q(62013),	-- Ensemble: Stitched Guile of Maldraxxus
 			q(62014),	-- Ensemble: Stitched Rationale of Maldraxxus
+			q(60380),	-- A Source of Sorrowvine (Kyrian)
+			q(60379),	-- A Source of Sorrowvine (Necrolords)
+			q(60373),	-- A Source of Sorrowvine (Night Fae)
+			q(60378),	-- A Source of Sorrowvine (Venthyr)
+			q(60372),	-- A Wealth of Wealdwood (Kyrian)
+			q(60371),	-- A Wealth of Wealdwood (Necrolords)
+			q(60369),	-- A Wealth of Wealdwood (Night Fae)
+			q(60370),	-- A Wealth of Wealdwood (Venthyr)
+			q(60377),	-- Bonemetal Bonanza (Kyrian)
+			q(60376),	-- Bonemetal Bonanza (Necrolords)
+			q(60374),	-- Bonemetal Bonanza (Night Fae)
+			q(60375),	-- Bonemetal Bonanza (Venthyr)
+			q(60358),	-- Gildenite Grab (Kyrian)
+			q(60363),	-- Gildenite Grab (Necrolords)
+			q(60364),	-- Gildenite Grab (Night Fae)
+			q(60365),	-- Gildenite Grab (Venthyr)
 			-- Quest from Unsorted
 			q(60286, { ["name"] = "A Token of Our Admiration", }),	-- A Token of Our Admiration
-			q(60463, { ["name"] = "Anima Appeal", }),	-- Anima Appeal
 			q(60157, { ["name"] = "Answers from the Ascended", }),	-- Answers from the Ascended
 			q(55424, { ["name"] = "Aspirant Elynna", }),	-- Aspirant Elynna
 			q(62168, { ["name"] = "Bonescript Dispatches", }),	-- Bonescript Dispatches
@@ -5974,22 +5945,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(59079, { ["name"] = "Portal to Paradise", }),	-- Portal to Paradise
 			q(62071, { ["name"] = "RRP Test Quest", }),	-- RRP Test Quest
 			q(59081, { ["name"] = "Scum Scrape", }),	-- Scum Scrape
-			q(60014, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60015, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60016, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60017, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60018, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60019, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60026, { ["name"] = "Shadowlands 60 E", ["_drop"] = { "g" }, }),	-- Shadowlands 60 E
-			q(60027, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60028, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60029, { ["name"] = "Shadowlands 60 E", }),	-- Shadowlands 60 E
-			q(60030, { ["name"] = "Shadowlands 60 E", ["_drop"] = { "g" }, }),	-- Shadowlands 60 E
-			q(62346, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62349, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62350, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(60036, { ["name"] = "Shadowlands (60) E", ["_drop"] = { "g" }, }),	-- Shadowlands (60) E
-			q(60040, { ["name"] = "Shadowlands (60) E", ["_drop"] = { "g" }, }),	-- Shadowlands (60) E
 			q(60105, { ["name"] = "Sineater Belfry", }),	-- Sineater Belfry
 			q(60092, { ["name"] = "Skoldus Hall", }),	-- Skoldus Hall
 			q(60474, { ["name"] = "Spawn Tracking Unit-Specified World Effect in a WMO Bug", }),	-- Spawn Tracking Unit-Specified World Effect in a WMO Bug
@@ -6610,7 +6565,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(60633),	--
 			-- 9.0.1.34278
 			q(60650),	--
-			q(60693),	--
 			-- 9.0.1.34324
 			-- 9.0.1.34365
 			q(60756),	--
@@ -6786,7 +6740,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(62291, { ["name"] = "Venari Rep Token Tracking", }),	-- Venari Rep Token Tracking
 			-- 9.0.1.35482
 			-- 9.0.1.35522
-			q(62380),	--
 			q(62413),	--
 			q(62416),	--
 			-- 9.0.1.35598
@@ -6810,9 +6763,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(62648),	--
 			q(62651),	--
 			q(62652),	--
-			q(62681),	--
-			q(62687),	--
-			q(62690),	--
 			-- 9.0.1.35707
 			-- 9.0.1.35755
 			q(62702),	--
@@ -6857,7 +6807,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 9.0.2
-		expansion(EXPANSION.SL, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_2 } }, {
+		expansion(EXPANSION.SL, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_2 } }, {
 			q(62696),	-- A Call to Service
 			q(59598),	-- Good for the Soul
 			q(63061),	-- Helping Hand
@@ -6878,29 +6828,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(61554),	-- The Play's The Thing
 			q(63101),	-- XX REUSEME
 			-- Quest from Unsorted
-			q(62642, { ["name"] = "LFGDungeons - SL - Heroic Random - 1st", }),	-- LFGDungeons - SL - Heroic Random - 1st
-			q(62643, { ["name"] = "LFGDungeons - SL - Heroic Random - Nth", }),	-- LFGDungeons - SL - Heroic Random - Nth
-			q(62644, { ["name"] = "LFGDungeons - SL - Normal Random - 1st", }),	-- LFGDungeons - SL - Normal Random - 1st
-			q(62645, { ["name"] = "LFGDungeons - SL - Normal Random - Nth", }),	-- LFGDungeons - SL - Normal Random - Nth
-			q(62646, { ["name"] = "LFGDungeons - SL - Raid Finder - 1st", }),	-- LFGDungeons - SL - Raid Finder - 1st
-			q(62647, { ["name"] = "LFGDungeons - SL - Raid Finder - Nth", }),	-- LFGDungeons - SL - Raid Finder - Nth
-			q(60023, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60024, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60025, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60031, { ["name"] = "Shadowlands (60) E", ["_drop"] = { "g" }, }),	-- Shadowlands (60) E
-			q(60032, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60033, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60034, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60035, { ["name"] = "Shadowlands (60) E", ["_drop"] = { "g" }, }),	-- Shadowlands (60) E
-			q(60037, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60038, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(60039, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(62354, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62355, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62356, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62358, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62359, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
-			q(62360, { ["name"] = "Shadowlands (51-59) E", }),	-- Shadowlands (51-59) E
 			q(63041, { ["name"] = "Short-Supply Reward", ["_drop"] = {"g"} }),	-- Short-Supply Reward
 			-- Quest from WoW.Tools
 			-- 9.0.2.35854
@@ -6967,7 +6894,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 9.0.5
-		expansion(EXPANSION.SL, 0.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_5 } }, {
+		expansion(EXPANSION.SL, patch(0,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_5 } }, {
 			-- Quest from Unsorted
 			-- Quest from WoW.Tools
 			-- 9.0.5.37503
@@ -6988,7 +6915,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 9.1.0
-		expansion(EXPANSION.SL, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_9_1_0 } }, {
+		expansion(EXPANSION.SL, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_9_1_0 } }, {
 			q(63420),
 			q(63430),
 			q(63431),
@@ -7058,7 +6985,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(63851),	--
 			q(63852),	--
 			q(63894),	--
-			q(63925),	--
 			q(63928),	--
 			q(63929),	--
 			q(63930),	--
@@ -7071,17 +6997,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(64087),	--
 			q(64096),	--
 			q(64102),	--
-			q(64110),	--
-			q(64113),	--
-			q(64114),	--
-			q(64115),	--
-			q(64116),	--
-			q(64117),	--
-			q(64118),	--
-			q(64119),	--
-			q(64121),	--
 			q(64122),	--
-			q(64127),	--
 			q(64130),	--
 			-- 9.1.0.38394
 			q(64239),	--
@@ -7145,16 +7061,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 9.1.5
-		expansion(EXPANSION.SL, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_1_5 } }, {
-			-- Quest from Unsorted
-			q(64996, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(64997, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(64998, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(64999, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(65000, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(65001, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(65002, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(65003, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
+		expansion(EXPANSION.SL, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_1_5 } }, {
 			-- Quest from WoW.Tools
 			-- 9.1.5.39977
 			q(64711),	--
@@ -7227,17 +7134,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 9.2.0
-		expansion(EXPANSION.SL, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_9_2_0 } }, {
+		expansion(EXPANSION.SL, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_9_2_0 } }, {
 			q(65152, { ["name"] = "A Hardened Bond", }),	-- A Hardened Bond
 			q(64649, { ["name"] = "A Mountain of Work to Do", }),	-- A Mountain of Work to Do
 			-- Quest from Unsorted
 			q(64006, { ["name"] = "Nav Test: Zereth Mortis", }),	-- Nav Test: Zereth Mortis
-			q(65703, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(65704, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
-			q(65705, { ["name"] = "Shadowlands (60) E", }),	-- Shadowlands (60) E
 			q(64582, { ["name"] = "Yuni-Test", }),	-- Yuni-Test
 
-			q(65375),	-- Schematic Reassimilation: Pale Regal Cervid
 			q(65392),	-- Schematic Reassimilation: Patient Bufonid
 			-- Quest from WoW.Tools
 			-- 9.2.0.41089
@@ -7362,7 +7265,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(65423),	--
 			q(65430),	--
 			q(65434),	--
-			q(65440),	--
+			--q(65440),	-- used for questID 82059 (Transmutation Station) in 11.0.2 (TODO: not sure what a better way to solve this)
 			q(65449),	--
 			q(65450),	--
 			q(65462),	--
@@ -7427,7 +7330,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 9.2.5
-		expansion(EXPANSION.SL, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_2_5 } }, {
+		expansion(EXPANSION.SL, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_2_5 } }, {
 			-- 9.2.5.42850
 			q(63505),	-- An Engraved Invitation	-- Ardenweald category
 			q(63506),	-- Mecha Gone	-- Ardenweald category, weird
@@ -7454,7 +7357,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 	}),
 	expansion(EXPANSION.DF, {
 		-- 10.0.0
-		expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+		expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 			q(70390),	-- (DNT) Chloe's Onboarding Kill Quest
 			q(65894),	-- [DNT] - Removed - Eggs Benediction
 			q(65897),	-- [DNT] - Removed - Focus Locus
@@ -7506,7 +7409,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(71928),	-- DNT - Knowledge Purchase - Iskaara Tuskarr (spellID 393202)
 			q(71929),	-- DNT - Knowledge Purchase - Maruuk Centaur (spellID 393203)
 			q(66522),	-- Draconium Blade Sharpener
-			q(70715),	-- Dragonflight (70) E
 			q(65042),	-- Dragons!
 			q(66490),	-- Dragons!
 			q(64537),	-- Duration Talent Quest 1 Flag (spellID 357793)
@@ -7519,12 +7421,9 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(69840),	-- Enraged Sapphire
 			q(69849),	-- Enraged Steamburst Elemental
 			q(65569),	-- Ensemble: Twisted Arcanum Regalia
-			q(65671),	-- Ensemble: Darkmoon Harlequin's Bells
-			q(65675),	-- Ensemble: Trapper's Munitions
 			q(65676),	-- Ensemble: Chains of the Honored Valarjar
 			q(65716),	-- Ensemble: Vestments of the Nightmare Forest
 			q(65734),	-- Ensemble: Battleplate of the Honored Valarjar
-			q(65738),	-- Ensemble: Dashing Buccaneer's Slops
 			q(70596),	-- Essence of Arcana
 			q(66496),	-- Expedition Task Accepted (spellID 372078)
 			q(66497),	-- Expedition Task Accepted (spellID 372095)
@@ -7647,7 +7546,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(65710),	--
 			q(65712),	--
 			q(65714),	--
-			q(65719),	--
 			q(65722),	--
 			q(65740),	--
 			q(65759),	--
@@ -8112,7 +8010,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(70637),	--
 			q(70645),	--
 			q(70657),	--
-			q(70660, {["_noautomation"] = true}),	--
+			q(70660),	--
 			q(70707),	--
 			q(70836),	--
 			q(70844),	--
@@ -8200,7 +8098,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 10.0.2
-		expansion(EXPANSION.DF, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_2 } }, {
+		expansion(EXPANSION.DF, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_2 } }, {
 			q(72365),	-- [test] Learn to spend talent points
 			q(72643, {["_drop"] = {"g"}}),	-- Dragon Isles Supplies
 			q(72357),	-- Review Box Used [DNT] (spellID 374484)
@@ -8210,7 +8108,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(72361),	--
 			q(72368),	--
 			q(72370),	--
-			q(72379),	--
 			q(72491),	--
 			q(72492),	--
 			q(72493),	--
@@ -8248,7 +8145,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(74044),	--
 			q(74045),	--
 			q(74046),	--
-			q(74047),	--
 			q(74048),	--
 			q(74049),	--
 			q(74050),	--
@@ -8256,7 +8152,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(74056),	--
 			q(74059),	--
 			q(74062),	--
-			q(74064),	--
 			q(74070),	--
 			q(74071),	--
 			q(74072),	--
@@ -8301,18 +8196,15 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 10.0.5
-		expansion(EXPANSION.DF, 0.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_5 } }, {
+		expansion(EXPANSION.DF, patch(0,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_5 } }, {
 			q(66925),	-- [DNT] Boar-B-Q
 			q(72384),	-- Valdrakken Tour
 			q(72085),	--
-			q(72092),	--
-			q(72829),	--
-			q(72830),	--
 			q(74898),	--
 		})),
 
 		-- 10.0.7
-		expansion(EXPANSION.DF, 0.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_7 } }, {
+		expansion(EXPANSION.DF, patch(0,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_7 } }, {
 			q(73549),	-- [DNT] Complete Clan Tracking Quest (spellID 399498)
 			q(73177),	-- [DNT] Injured Youth Kill Credit (spellID 398844)
 			q(74384),	-- [DNT] Placeholder Broadcast: Finale (spellID 398724)
@@ -8378,11 +8270,10 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(75533),	--
 			q(74672),	--
 			q(74677),	--
-			q(75449),	--
 		})),
 
 		-- 10.1.0
-		expansion(EXPANSION.DF, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
+		expansion(EXPANSION.DF, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
 			q(75719),	-- [DNT] Test Quest
 			q(72027),	-- [DNT] Training Kill Quest JKP
 			q(72480),	-- [DNT] Training Collect Quest
@@ -8447,7 +8338,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(75553),	--
 			q(75554),	--
 			q(75555),	--
-			q(75556),	--
 			q(75557),	--
 			q(75558),	--
 			q(75560),	--
@@ -8505,14 +8395,13 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(76174),	--
 			q(76200),	--
 			q(76202),	--
-			q(75659),	--
 			q(72943),	--
 			q(75054),	--
 			q(75059),	--
 		})),
 
 		-- 10.1.5
-		expansion(EXPANSION.DF, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_5 } }, {
+		expansion(EXPANSION.DF, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_5 } }, {
 			q(73022),	-- [DNT] Custom Delays
 			q(75714),	-- A Trainee's Test [DNT]
 			q(76021),	-- Basic Kill Quest [DNT]
@@ -8530,28 +8419,10 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(75536),	--
 			q(75605),	--
 			q(76198),	--
-			q(76218),	--
-			q(76219),	--
 			q(76220),	--
-			q(76221),	--
-			q(76222),	--
-			q(76223),	--
-			q(76224),	--
-			q(76225),	--
 			q(76226),	--
-			q(76227),	--
-			q(76228),	--
-			q(76229),	--
-			q(76230),	--
 			q(76231),	--
-			q(76232),	--
-			q(76233),	--
-			q(76234),	--
-			q(76235),	--
-			q(76236),	--
 			q(76237),	--
-			q(76238),	--
-			q(76239),	--
 			q(76245),	--
 			q(76289),	--
 			q(76360),	--
@@ -8589,48 +8460,27 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(77418),	--
 			q(77419),	--
 			q(77435),	--
-			q(77506),	--
-			q(77567),	--
 			q(77691),	--
-			q(76157),	--
 			q(77883),	--
-			q(77333),	--
-			q(77336),	--
-			q(77337),	--
-			q(77338),	--
 		})),
 
 		-- 10.1.7
-		expansion(EXPANSION.DF, 1.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_7 } }, {
+		expansion(EXPANSION.DF, patch(1,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_7 } }, {
 			q(76560),	-- [PH] Cogs Breadcrumb
 			q(77488),	-- Excavation: Back to Eadweard!
 			q(77485),	-- Technoscrying: Back to Eadweard!
 			q(75938),	-- Test
 			q(75369),	-- Use Your Coin!
 			q(77615),	--
-			q(77699),	--
-			q(77700),	--
-			q(77701),	--
-			q(77702),	--
-			q(77703),	--
-			q(77704),	--
-			q(77705),	--
-			q(77706),	--
-			q(77707),	--
-			q(77708),	--
-			q(77709),	--
-			q(77710),	--
 			q(77790),	--
 			q(77861),	--
 			q(78161),	--
-			q(78300),	--
 			q(78323),	--
 			q(78324),	--
 			q(76405),	--
 			q(76455),	--
 			q(76511),	--
 			q(76553),	--
-			q(77569),	--
 			q(76210),	--
 			q(76211),	--
 			q(76408),	--
@@ -8646,7 +8496,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 10.2.0
-		expansion(EXPANSION.DF, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_0 } }, {
+		expansion(EXPANSION.DF, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_0 } }, {
 			q(78001),	-- [DEPRECATED] 10.2 Enchanting
 			q(78268),	-- [DNT] Test Quest
 			q(76167),	-- A Place of Refuge
@@ -8704,15 +8554,7 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(77694),	--
 			q(77695),	--
 			q(77738),	--
-			q(77740),	--
-			q(77741),	--
 			q(77742),	--
-			q(77748),	--
-			q(77749),	--
-			q(77750),	--
-			q(77751),	--
-			q(77752),	--
-			q(77753),	--
 			q(77758),	--
 			q(77773),	--
 			q(77803),	--
@@ -8728,11 +8570,8 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(78067),	--
 			q(78087),	--
 			q(78209),	--
-			q(78217),	--
-			q(78218),	--
 			q(78247),	--
 			q(78252),	--
-			q(78253),	--
 			q(78331),	--
 			q(78357),	--
 			q(78362),	--
@@ -8747,16 +8586,11 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(78577),	--
 			q(78578),	--
 			q(78617),	--
-			q(78644),	--
 			q(78711),	--
-			q(78712),	--
 			q(78720),	--
-			q(78725),	--
 			q(78731),	--
 			q(78732),	--
-			q(78737),	--
 			q(78789),	--
-			q(78822),	--
 			q(78825),	--
 			q(78829),	--
 			q(78891),	--
@@ -8764,7 +8598,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(78906),	--
 			q(78928),	--
 			q(78955),	--
-			q(77952),	--
 			q(77837),	--
 			q(78048),	--
 			q(76383),	--
@@ -8777,11 +8610,8 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 		})),
 
 		-- 10.2.5
-		expansion(EXPANSION.DF, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
-			q(79314),	-- Arsenal: Quel'Serrar Skyborn Blades
+		expansion(EXPANSION.DF, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
 			q(77764),	-- Curious Find: Apprentice Astrologist Homework
-			q(79517),	-- Ensemble: Dark Ranger General's Kit
-			q(79210),	-- Ensemble: Sky Witch's Attire
 			q(80059),	-- Ensemble: Spring Reveler's Dandelion Collection
 			q(80060),	-- Ensemble: Spring Reveler's Dandelion Collection
 			q(80061),	-- Ensemble: Spring Reveler's Turquoise Collection
@@ -8796,7 +8626,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(76393),	--
 			q(78174),	--
 			q(78683),	--
-			q(78903),	--
 			q(79155),	--
 			q(79278),	--
 			q(79378),	--
@@ -8808,16 +8637,14 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(77870),	--
 			q(77873),	--
 			q(78179),	--
-			q(79474),	--
 		})),
 
 		-- 10.2.6
-		expansion(EXPANSION.DF, 2.6, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
+		expansion(EXPANSION.DF, patch(2,6), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
 			q(79462),	-- [DNT] Renown Reward 001
 			q(79464),	-- [DNT] Renown Reward 002
 			q(79465),	-- [DNT] Renown Reward 003
 			q(79466),	-- [DNT] Renown Reward 004
-			q(80172),	-- Ensemble: Gladiator's Battered Armor
 			q(79254),	-- Everspout
 			q(79319),	-- Frenzied Owlbeast
 			q(79320),	-- Gorthak Grimtusk
@@ -8829,13 +8656,37 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(79251),	--
 			q(79252),	--
 			q(79253),	--
-			q(79988),	--
 		})),
 
 		-- 10.2.7
-		expansion(EXPANSION.DF, 2.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
+		expansion(EXPANSION.DF, patch(2,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
 			q(77904),	-- Treasures, Not Trash
 			q(77907),	-- Shadow Spear
+		})),
+	}),
+	expansion(EXPANSION.TWW, {
+		-- 11.0.0
+		expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+			q(80950),	-- First Craft: Deepfury Hide
+			q(81114),	-- First Craft: Vicious Flask of Manifested Fury
+			q(81651),	-- Delver's Guide to Delves
+			q(82199),	-- TWW Alpha/Beta Questauren Isle of Dorn skip
+			q(82200),	-- TWW Alpha/Beta Questauren Ringing Deeps skip
+			q(82201),	-- TWW Alpha/Beta Questauren Hallowfall skip
+			q(82202),	-- TWW Alpha/Beta Questauren Azj-Kahet skip
+			q(82366, {	-- DO NOT USE
+			-- 	["provider"] = { "n", 221390 },	-- Waxmonger Squick <Quatermaster>
+			-- 	["coord"] = { 47.5, 32.8, THE_RINGING_DEEPS },
+				-- ["g"] = {
+			-- 		i(226146),	-- Handful of Humming Shinies
+			-- 	},
+			}),
+			q(82421, {	-- For Your Next Delve
+			--["provider"] = { "n", 223750 },	-- Lady Vinazian <Severed Threads Quartermaster>
+			--["coord"] = { 55.3, 41.2, AZJ_KAHET },
+			}),
+			q(85725),	-- (Argent Dawn Valor Token)
+			q(85726),	-- (Argent Dawn Valor Token)
 		})),
 	}),
 }));

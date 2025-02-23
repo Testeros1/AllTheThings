@@ -6,7 +6,7 @@ root(ROOTS.ExpansionFeatures,
 	expansion(EXPANSION.WOD, {
 		n(GARRISONS, sharedData({["maps"] = { LUNARFALL, FROSTWALL } },	{
 			n(BUILDINGS, {
-				garrisonBuilding(128,  {	-- Enchanter's Study (rank 1: 94, rank 2: 127, rank 3: 128)
+				garrisonBuilding(128, {	-- Enchanter's Study (rank 1: 94, rank 2: 127, rank 3: 128)
 					n(QUESTS, {
 						q(36262, {	-- Ameeka, Master Tailor
 							["requireSkill"] = TAILORING,
@@ -32,7 +32,6 @@ root(ROOTS.ExpansionFeatures,
 							["g"] = {
 								i(115357, {	-- Draenor Tailoring
 									["description"] = "This is a reward for completing the introductory Tailoring questline that can drop from any Draenor mob. Also sold at the Tailoring Emporium for 100 gold.",
-									["filterID"] = MISC,
 									["g"] = {
 										recipe(168835),	-- Hexweave Cloth
 										recipe(176058),	-- Secrets of Draenor Tailoring
@@ -47,7 +46,7 @@ root(ROOTS.ExpansionFeatures,
 							["description"] = "You have to build Level 3 Tailoring Emporium and hire a tailor there in order to use these spells.",
 							["races"] = ALLIANCE_ONLY,
 							["g"] = sharedData({["u"] = UNLEARNABLE},{
-								spell(176314), -- Fearsome Battle Standard [Alliance]
+								spell(176314),	-- Fearsome Battle Standard [Alliance]
 								spell(176313),	-- Inspiring Battle Standard [Alliance]
 							}),
 						}),
@@ -67,7 +66,6 @@ root(ROOTS.ExpansionFeatures,
 							["g"] = {
 								i(115357, {	-- Draenor Tailoring
 									["description"] = "This is a reward for completing the introductory Tailoring questline that can drop from any Draenor mob. Also sold at the Tailoring Emporium for 100 gold.",
-									["filterID"] = MISC,
 									["g"] = {
 										recipe(168835),	-- Hexweave Cloth
 										recipe(176058),	-- Secrets of Draenor Tailoring

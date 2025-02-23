@@ -94,6 +94,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(162123),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -117,6 +120,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(161484),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -134,6 +140,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(163335),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -157,6 +166,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(161386),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -174,6 +186,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(163185),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -197,6 +212,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = HORDE_ONLY,
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
+										["g"] = {
+											i(162512),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -214,6 +232,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(163191),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -254,6 +275,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = HORDE_ONLY,
 										["coord"] = { 51.59, 99.58, DAZARALOR },	-- The Banshee's Wail Location
+										["g"] = {
+											i(163194),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -277,6 +301,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(161488),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -301,6 +328,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },		-- Mission Command Table
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
+										["g"] = {
+											i(161152),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -319,6 +349,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = HORDE_ONLY,
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
+										["g"] = {
+											i(163519),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -347,6 +380,8 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 137818 },	-- Myxle "The Searat" Gutwrench
 				["g"] = {
 					h(ach(13056)),	-- Giving a Scrap (H)
+					i(160266),	-- Scrapped Cloth (QI!)
+					i(160267),	-- Tattered Pants (QI!)
 				},
 			}),
 			q(49122, {	-- A Port in Peril
@@ -356,14 +391,17 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					48897,	-- The Bargain is Struck (Gonk)
 					49663,	-- False Prophecies
 				},
-				["provider"] = { "n", 127815 },	-- Zolani
-				["coord"] = { 49.9, 46.6, DAZARALOR },
+				["provider"] = { "n", 120740 },	-- King Rastakhan
+				["coord"] = { 49.8, 46.4, DAZARALOR },
 				["races"] = HORDE_ONLY,
 			}),
 			q(50240, {	-- A Slip of the Tongue
 				["provider"] = { "n", 132989 },	-- Blind Tra'wala
 				["coord"] = { 53.6, 9.4, DAZARALOR },
 				["races"] = ALLIANCE_ONLY,
+				["g"] = {
+					i(156839),	-- Pack of Pterrordax Snacks (QI!)
+				},
 			}),
 			q(47437, {	-- Competitive Devotion
 				["sourceQuests"] = {
@@ -413,7 +451,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(47313, {	-- Discreet Discussions
 				["sourceQuests"] = { 47513 },	-- Vol'dun
-				["coord"] = { 41.1, 66.7, HALL_OF_CHRONICLERS },
+				["coord"] = { 40.1, 69.4, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 133050 },	-- Princess Talanji
 			}),
@@ -439,6 +477,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 126560 },	-- Wardruid Loti
 				["coord"] = { 45.0, 23.9, DAZARALOR },
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(152627),	-- Loti's Totem (QI!)
+				},
 			}),
 			q(47439, {	-- Gonk, Lord of the Pack
 				["sourceQuests"] = { 47438 },	-- Picking a Side
@@ -455,7 +496,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				},
 				["isBreadcrumb"] = true,
 				["provider"] = { "n", 141555 },	-- Baine Bloodhoof
-				["coord"] = { 41.4, 72.2, HALL_OF_CHRONICLERS },
+				["coord"] = { 41.1, 72.2, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 			}),
 			q(56249, {	-- I Am the Trashmaster
@@ -491,7 +532,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					51111,	-- King or Prey
 				},
 				["provider"] = { "n", 141555 },	-- Baine Bloodhoof
-				["coord"] = { 41.4, 72.2, HALL_OF_CHRONICLERS },
+				["coord"] = { 41.1, 72.2, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 			}),
 			q(52472, {	-- Make Loh Go
@@ -563,6 +604,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 50.0, 84.9, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 126684 },	-- Yazma
+				["g"] = {
+					i(152184),	-- Tongue of Gahz'ragon (QI!)
+				},
 			}),
 			q(47518, {	-- Raal
 				["sourceQuests"] = {
@@ -597,6 +641,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 124629 },	-- Kaza'jin the Wavebinder
 				["coord"] = { 42.6, 21.4, DAZARALOR },
 				["races"] = HORDE_ONLY,
+				["g"] = {
+					i(156923),	-- Fetish of Loti (QI!)
+				},
 			}),
 			q(47434, {	-- Restraining Order
 				["sourceQuests"] = { 47433 },	-- Offensively Defensive
@@ -674,7 +721,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(56044, {	-- Send the Fleet
 				["provider"] = { "n", 135691 },	-- Nathanos Blightcaller
-				["coord"] = { 58.4, 62.6, DAZARALOR },
+				["coord"] = { 58.4, 62.6, ZULDAZAR },
 				["races"] = HORDE_ONLY,
 				["sourceQuests"] = { 56030 },	-- The Warchief's Order
 			}),
@@ -704,20 +751,20 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(46931, {	-- Speaker of the Horde
 				["sourceQuests"] = { 46930 },	-- Rastakhan
-				["coord"] = { 50.0, 42.7, DAZARALOR },
+				["coord"] = { 49.8, 46.4, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 120740 },	-- King Rastakhan
 			}),
 			q(49488, {	-- Tal'gurub
 				["sourceQuests"] = { 49615 },	-- Trust of a King
-				["coord"] = { 49.9, 46.6, DAZARALOR },
+				["coord"] = { 49.8, 46.4, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 120740 },	-- King Rastakhan
 			}),
 			q(47509, {	-- Terrace of the Chosen
 				["sourceQuests"] = { 49310 },	-- The Prophet's Ploy
 				["provider"] = { "n", 141555 },	-- Baine Bloodhoof
-				["coord"] = { 41.4, 72.2, HALL_OF_CHRONICLERS },
+				["coord"] = { 41.1, 72.2, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 			}),
 			q(47432, {	-- The Bargain is Struck (Paku)
@@ -728,8 +775,8 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(48897, {	-- The Bargain is Struck (Gonk)
 				["sourceQuests"] = { 47439 },	-- Gonk, Lord of the Pack
-				["provider"] = { "n", 127489 },	-- Hexlord Raal
-				["coord"] = { 49.9, 33.5, DAZARALOR },
+				["provider"] = { "n", 127576 },	-- Wardruid Loti
+				["coord"] = { 50, 33.6, DAZARALOR },
 				["races"] = HORDE_ONLY,
 			}),
 			q(47199, {	-- The Blood Gate
@@ -740,7 +787,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				},
 				["isBreadcrumb"] = true,
 				["provider"] = { "n", 141555 },	-- Baine Bloodhoof
-				["coord"] = { 40.1, 70.7, HALL_OF_CHRONICLERS },
+				["coord"] = { 41.1, 72.2, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 			}),
 			q(47257, {	-- The Bones of Xibala (H)
@@ -803,11 +850,14 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 50.0, 84.7, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 126684 },	-- Yazma
+				["g"] = {
+					i(152101),	-- The Word of Zul (QI!)
+				},
 			}),
 			q(51101, {	-- The Wounded King
 				["sourceQuests"] = { 49310 },	-- The Prophet's Ploy
 				["provider"] = { "n", 141555 },	-- Baine Bloodhoof
-				["coord"] = { 41.4, 72.2, HALL_OF_CHRONICLERS },
+				["coord"] = { 41.1, 72.2, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 			}),
 			q(47445, {	-- The Zanchuli Council
@@ -857,7 +907,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(46957, {	-- Welcome to Zuldazar
 				["provider"] = { "n", 132332 },	-- Princess Talanji
 				["coord"] = { 57.9, 62.4, ZULDAZAR },
-				["sourceQuest"] = 50769,  -- The Stormwind Extraction
+				["sourceQuest"] = 50769,	-- The Stormwind Extraction
 				["races"] = HORDE_ONLY,
 			}),
 			q(52131, {	-- We Need Each Other
@@ -906,7 +956,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = HORDE_ONLY,
 			}),
 			q(47103, {	-- Journey to Nazmir
-				["coord"] = { 41.1, 66.8, HALL_OF_CHRONICLERS },
+				["coord"] = { 40.1, 69.4, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 133050 },
 				["sourceQuests"] = { 47512 },	-- Nazmir
@@ -929,9 +979,10 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				},
 			}),
 			q(47433, {	-- Offensively Defensive
-				["provider"] = { "n", 126564 },	-- Hexlord Raal
-				["races"] = HORDE_ONLY,
 				["sourceQuests"] = { 47423 },	-- Forbidden Practices
+				["provider"] = { "n", 126564 },	-- Hexlord Raal
+				["coord"] = { 51.8, 11.9, DAZARALOR },
+				["races"] = HORDE_ONLY,
 				["g"] = {
 					i(155246),	-- Jambani Grips
 					i(155247),	-- Rastari Gauntlets
@@ -959,6 +1010,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 152522 },	-- Gazlowe
 				["coord"] = { 53.0, 43.2, DAZARALOR },
 				["races"] = HORDE_ONLY,
+				["sourceQuest"] = 57024,	-- Rumors of Mechagon
 			}),
 			q(56379, {	-- The Missing Crew
 				["provider"] = { "n", 135690 },	-- Dread-Admiral Tattersail
@@ -986,7 +1038,6 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 136683 },	-- Trade Prince Gallywix
 				["races"] = HORDE_ONLY,
 			}),
-
 			q(75874, {	-- Time to Fly
 				["description"] = "Reaching Level 30 will make this quest pop up.",
 				["races"] = HORDE_ONLY,
@@ -999,22 +1050,28 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, {
-	-- Missions
-	q(53739),	-- Wolf's Den completed
-	q(53740),	-- Stonefist Watch completed
-	q(53741),	-- Windfall Cavern completed
-	q(53742),	-- Stonetusk Watch completed
-	q(53743),	-- Hillcrest Pasture completed
-	q(53744),	-- Swiftwind Post completed
-	q(53745),	-- Mudfisher Cove completed
-	-- Outpost Upgrades
-	q(54226),	-- Upgrade: The Great Seal started
-	q(54294),	-- Upgrade: The Great Seal completed
-	q(54259),	-- Upgrade: Vulpera Hideaway started
-	q(54296),	-- Upgrade: Vulpera Hideaway completed
-	q(54238),	-- Upgrade: Zul'jan Ruins started
-	q(54297),	-- Upgrade: Zul'jan Ruins completed
-	-- Misc
-	q(54767),	-- Correctly answer 8 riddles from Rid'lah
-});
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+	m(ZANDALAR, {
+		m(THE_GREAT_SEAL, {
+			n(QUESTS, {
+				-- Missions
+				q(53739),	-- Wolf's Den completed
+				q(53740),	-- Stonefist Watch completed
+				q(53741),	-- Windfall Cavern completed
+				q(53742),	-- Stonetusk Watch completed
+				q(53743),	-- Hillcrest Pasture completed
+				q(53744),	-- Swiftwind Post completed
+				q(53745),	-- Mudfisher Cove completed
+				-- Outpost Upgrades
+				q(54226),	-- Upgrade: The Great Seal started
+				q(54294),	-- Upgrade: The Great Seal completed
+				q(54259),	-- Upgrade: Vulpera Hideaway started
+				q(54296),	-- Upgrade: Vulpera Hideaway completed
+				q(54238),	-- Upgrade: Zul'jan Ruins started
+				q(54297),	-- Upgrade: Zul'jan Ruins completed
+				-- Misc
+				q(54767),	-- Correctly answer 8 riddles from Rid'lah
+			}),
+		}),
+	}),
+})));

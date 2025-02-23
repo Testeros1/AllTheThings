@@ -38,11 +38,17 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["lvl"] = 120,
 				["races"] = ALLIANCE_ONLY,
 				["isWorldQuest"] = true,
+				["g"] = {
+					i(160480),	-- Marine Dog Tags (QI!)
+				},
 			}),
 			q(51577, {	-- Defending the Academy
 				["lvl"] = 120,
 				["races"] = ALLIANCE_ONLY,
 				["isWorldQuest"] = true,
+				["g"] = {
+					i(160480),	-- Marine Dog Tags (QI!)
+				},
 			}),
 			q(50776, {	-- False Prophets
 				["lvl"] = 120,
@@ -61,6 +67,23 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["lvl"] = 110,
 				["races"] = ALLIANCE_ONLY,
 				["isWorldQuest"] = true,
+				["g"] = {
+					a(ach(13285, {	-- Upright Citizens
+						i(166247),		-- Citizens Brigade Whistle (TOY!)
+						hqt(54400, name(HEADERS.AchCriteria, 13285.01)),	-- Russel the Bard recruited
+						hqt(54401, name(HEADERS.AchCriteria, 13285.02)),	-- Flynn Fairwind recruited
+						hqt(54399, name(HEADERS.AchCriteria, 13285.03)),	-- Leeroy Jenkins recruited
+						crit(43718, {	-- Russel the Bard recruited
+							["coord"] = { 72.4, 68.9, BORALUS },
+						}),
+						crit(43719, {	-- Flynn Fairwind recruited
+							["coord"] = { 72.0, 61.6, BORALUS },
+						}),
+						crit(43720, {	-- Leeroy Jenkins recruited
+							["coord"] = { 66.8, 64.0, BORALUS },
+						}),
+					})),
+				},
 			}),
 			q(51092, {	-- Picturesque Boralus
 				["lvl"] = 120,
@@ -242,6 +265,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["lvl"] = 120,
 				["races"] = ALLIANCE_ONLY,
 				["isWorldQuest"] = true,
+				["g"] = {
+					i(158677),	-- Scrimshaw Ledger (QI!)
+				},
 			}),
 			q(51621, {	-- Tidal Teachings
 				["lvl"] = 120,
@@ -254,9 +280,12 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["isWorldQuest"] = true,
 			}),
 			q(51758, {	-- Weapons Shipment
-				["lvl"] = 120,
+				["lvl"] = 50,
 				["races"] = ALLIANCE_ONLY,
 				["isWorldQuest"] = true,
+				["g"] = {
+					i(160667),	-- Unstable Azerite Bomb (QI!)
+				},
 			}),
 			q(50992, {	-- Work Order: Calcified Bone
 				["provider"] = { "n", 135808 },	-- Provisioner Fray

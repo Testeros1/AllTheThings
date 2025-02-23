@@ -8,14 +8,12 @@ local ENCHANTING_VENDOR_GROUPS = {};
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 	m(EVERSONG_WOODS, {
 		["lore"] = "Eversong Woods is the starter zone for the Blood Elf race. It is a golden forest with typical high elf buildings. In the center of the map is a blighted strip known as the Dead Scar, a remnant from Arthas' battle against the High Elves. Quests involve learning about the blood elves' rich history, decadent lifestyle, and their struggles to keep the Dead Scar from growing.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_eversongwoods",
-		-- #endif
+		["icon"] = 236762,
 		["timeline"] = { ADDED_2_0_1 },
 		["groups"] = {
 			m(SUNSTRIDER_ISLE, {
 				["lore"] = "Sunstrider Isle is an island located in northwestern Eversong Woods. After the Third War, no elf was alive on the isle. It was through here that the red dragon Korialstrasz flew over when Prince Kael'thas destroyed the corrupted Sunwell. By the year 25, the isle was reclaimed and thriving.",
-				["icon"] = "Interface\\Icons\\Spell_Arcane_TeleportSilvermoon",
+				["icon"] = 135761,
 				-- #if BEFORE MOP
 				["zone-text-areas"] = {
 					3431,	-- Sunstrider Isle
@@ -484,9 +482,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 									-- #endif
 								}),
 								i(20474),	-- Sunstrider Book Satchel
-								i(131235, {	-- Sunspire Cinch
-									["timeline"] = { ADDED_7_0_3 },
-								}),
+								-- added after removal of the quest
+								-- i(131235, {	-- Sunspire Cinch
+								-- 	["timeline"] = { ADDED_7_0_3 },
+								-- }),
 								i(20996),	-- Sunspire Cord
 								i(20995),	-- Well Watcher Gloves
 							},
@@ -894,7 +893,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					}),
 					n(ZONE_DROPS, sharedData({
 						-- #if AFTER 9.0.3
-						["description"] = "This item seem to only drop easily for characters below level 14 within Sunstrider Isle.",
+						["sharedDescription"] = "This item seem to only drop easily for characters below level 14 within Sunstrider Isle.",
 						-- #endif
 					}, {
 						i(21002),	-- Unkempt Belt
@@ -922,11 +921,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				},
 			}),
 			n(ACHIEVEMENTS, {
-				explorationAch(859, {	-- Explore Eversong Woods
-					-- #if BEFORE WRATH
-					["description"] = "Explore Eversong Woods, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(859),	-- Explore Eversong Woods
 			}),
 			battlepets({
 				["sym"] = {{"select","speciesID",
@@ -2030,19 +2025,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64915, {	-- Cape of Silvermoon
-							["minReputation"] = { 911, EXALTED },	-- Silvermoon City, Exalted.
+							["minReputation"] = { FACTION_SILVERMOON_CITY, EXALTED },	-- Silvermoon City, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64916, {	-- Mantle of Silvermoon
-							["minReputation"] = { 911, EXALTED },	-- Silvermoon City, Exalted.
+							["minReputation"] = { FACTION_SILVERMOON_CITY, EXALTED },	-- Silvermoon City, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(64914, {	-- Shroud of Silvermoon
-							["minReputation"] = { 911, EXALTED },	-- Silvermoon City, Exalted.
+							["minReputation"] = { FACTION_SILVERMOON_CITY, EXALTED },	-- Silvermoon City, Exalted.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 						i(67535, {	-- Silvermoon Satchel
-							["minReputation"] = { 911, REVERED },	-- Silvermoon City, Revered.
+							["minReputation"] = { FACTION_SILVERMOON_CITY, REVERED },	-- Silvermoon City, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -2050,7 +2045,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				n(16264, {	-- Winaestra <Hawkstrider Breeder>
 					["coord"] = { 61.0, 54.6, EVERSONG_WOODS },
 					-- Available to Blood Elves without faction requirements.
-					["minReputation"] = { 911, EXALTED },	-- Silvermoon City, Exalted.
+					["minReputation"] = { FACTION_SILVERMOON_CITY, EXALTED },	-- Silvermoon City, Exalted.
 					["OnInit"] = [[function(t)
 						if _.RaceIndex == ]] .. BLOODELF .. [[ then
 							t.minReputation = nil;
@@ -2121,7 +2116,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 			}),
 			n(ZONE_DROPS, sharedData({
 				-- #if AFTER 9.0.3
-				["description"] = "This item seem to only drop easily for characters below level 14 within Sunstrider Isle.",
+				["sharedDescription"] = "This item seem to only drop easily for characters below level 14 within Sunstrider Isle.",
 				-- #endif
 			}, {
 				i(21002),	-- Unkempt Belt

@@ -3,9 +3,7 @@
 ---------------------------------------------------
 TIMBERMAW_HOLD = createHeader({
 	readable = "Timbermaw Hold",
-	-- #if AFTER WRATH
-	icon = [[~_.asset("achievement_reputation_timbermaw")]],
-	-- #endif
+	icon = 236696,
 	text = {
 		en = [[~C_Map.GetAreaInfo(1769)]],
 	},
@@ -13,7 +11,7 @@ TIMBERMAW_HOLD = createHeader({
 		en = "The Timbermaw Furbolgs inhabit two areas: Azshara and Felwood. They are presumed to be the only furbolg tribe to escape demonic corruption, though this may not be true due to the existence of Krolg, an uncorrupted furbolg of unknown tribe, and the Stillpine tribe on Azuremyst Isle in Burning Crusade. However, many other races kill furbolg blindly now, without bothering to see if they are friend or foe. For this reason, the Timbermaw furbolg trust very few.\n\nAdventurers who seek out Timbermaw Hold in northern Felwood and prove themselves as friends of the Timbermaw will learn that the furbolgs value their friends above all else. Though they possess no fine jewels or any worldly riches, the Timbermaw's shamanistic tradition is still strong. They know much about the art of crafting armors from animal hides, and they are more than happy to share their healing/resurrection knowledge with friends of their tribe. Besides, any reputation above Unfriendly will also grant you untroubled access to Moonglade and Winterspring through their tunnels.",
 	},
 });
-local OnTooltipForTimbermawHold = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForTimbermawHold = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
@@ -80,18 +78,12 @@ root(ROOTS.Zones, m(KALIMDOR, {
 		["maps"] = { FELWOOD, WINTERSPRING },
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				achWithRep(944, 576, {	-- They Love Me In That Tunnel
-					-- #if BEFORE WRATH
-					["description"] = "Raise your reputation with Timbermaw Hold to Exalted.",
-					-- #endif
-				}),
+				achWithRep(944, FACTION_TIMBERMAW_HOLD),	-- They Love Me In That Tunnel
 			}),
 			n(FACTIONS, {
-				faction(576, {	-- Timbermaw Hold
-					-- #if AFTER WRATH
-					["icon"] = [[~_.asset("achievement_reputation_timbermaw")]],
-					-- #endif
-					["OnTooltip"] = OnTooltipForTimbermawHold,
+				faction(FACTION_TIMBERMAW_HOLD, {	-- Timbermaw Hold
+					["icon"] = 236696,
+					["OnTooltip"] = [[_.OnTooltipDB.ForTimbermawHold]],
 				}),
 			}),
 			n(QUESTS, {
@@ -99,7 +91,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 11556,	-- Salfa
 					["sourceQuest"] = 8464,	-- Winterfall Activity
 					["coord"] = { 27.8, 34.6, WINTERSPRING },
-					["maxReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["maxReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["cost"] = { { "i", 21383, 5 } },	-- Winterfall Spirit Beads
 					["timeline"] = { REMOVED_4_0_3 },
 					["repeatable"] = true,
@@ -137,7 +129,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(8470, {	-- Deadwood Ritual Totem
 					["provider"] = { "i", 20741 },	-- Deadwood Ritual Totem
-					["minReputation"] = { 576, NEUTRAL },	-- Timbermaw Hold, Neutral.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, NEUTRAL },	-- Timbermaw Hold, Neutral.
 					["crs"] = {
 						7157,	-- Deadwood Avenger
 						7156,	-- Deadwood Den Watcher
@@ -148,7 +140,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(28524, {	-- Delivery for Donova
 					["qg"] = 11556,	-- Salfa
 					["coord"] = { 21.0, 46.1, WINTERSPRING },
-					["minReputation"] = { 576, NEUTRAL },	-- Timbermaw Hold, Neutral.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, NEUTRAL },	-- Timbermaw Hold, Neutral.
 					["timeline"] = { ADDED_4_0_3 },
 					["isBreadcrumb"] = true,
 				}),
@@ -176,7 +168,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 11554,	-- Grazle
 					["sourceQuest"] = 8460,	-- Timbermaw Ally
 					["coord"] = { 50.9, 85.0, FELWOOD },
-					["maxReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["maxReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["cost"] = {{ "i", 21377, 5 }},	-- Deadwood Headdress Feather
 					["repeatable"] = true,
@@ -189,7 +181,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						28366,	-- Disarming Bears
 					},
 					["coord"] = { 64.0, 10.3, FELWOOD },
-					["maxReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["maxReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["timeline"] = { ADDED_4_0_3 },
 					["cost"] = {{ "i", 21377, 5 }},	-- Deadwood Headdress Feather
 					["repeatable"] = true,
@@ -199,8 +191,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15395,	-- Nafien
 					["sourceQuest"] = 8460,	-- Timbermaw Ally
 					["coord"] = { 64.8, 8.2, FELWOOD },
-					["maxReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
-					["timeline"] = { "added 1.15.3" },
+					["maxReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
+					["timeline"] = { ADDED_1_15_3 },
 					["cost"] = {{ "i", 21377, 5 }},	-- Deadwood Headdress Feather
 					["repeatable"] = true,
 					["lvl"] = 45,
@@ -210,10 +202,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 15395,	-- Nafien
 					["sourceQuest"] = 8460,	-- Timbermaw Ally
 					["coord"] = { 64.8, 8.2, FELWOOD },
-					["maxReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["maxReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["timeline"] = {
 						-- #if SEASON_OF_DISCOVERY
-						"removed 1.15.3",
+						REMOVED_1_15_3,
 						-- #else
 						REMOVED_4_0_3,
 						-- #endif
@@ -226,7 +218,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["qg"] = 11556,	-- Salfa
 					["sourceQuest"] = 28522,	-- Winterfall Activity
 					["coord"] = { 21.0, 46.1, WINTERSPRING },
-					["maxReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["maxReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["cost"] = { { "i", 21383, 5 } },	-- Winterfall Spirit Beads
 					["timeline"] = { ADDED_4_0_3 },
 					["repeatable"] = true,
@@ -240,7 +232,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 65.6, 2.8, FELWOOD },
 						-- #endif
 					},
-					["minReputation"] = { 576, FRIENDLY },	-- Timbermaw Hold, Friendly.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, FRIENDLY },	-- Timbermaw Hold, Friendly.
 					["cost"] = {{ "i", 14047, 30 }},	-- Runecloth
 					["lvl"] = lvlsquish(40, 40, 15),
 					["groups"] = {
@@ -257,7 +249,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 65.6, 2.8, FELWOOD },
 						-- #endif
 					},
-					["minReputation"] = { 576, FRIENDLY },	-- Timbermaw Hold, Friendly.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, FRIENDLY },	-- Timbermaw Hold, Friendly.
 					["cost"] = {{ "i", 14342, 2 }},	-- Mooncloth
 					["requireSkill"] = TAILORING,
 					["lvl"] = lvlsquish(40, 40, 15),
@@ -313,7 +305,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 65.2, 2.6, FELWOOD },
 						-- #endif
 					},
-					["minReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["lvl"] = 45,
 				},
@@ -347,7 +339,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 65.2, 2.6, FELWOOD },
 						-- #endif
 					},
-					["minReputation"] = { 576, EXALTED },	-- Timbermaw Hold, Exalted.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, EXALTED },	-- Timbermaw Hold, Exalted.
 					["maps"] = { WINTERSPRING },
 					["lvl"] = lvlsquish(45, 45, 15),
 					["groups"] = {
@@ -428,7 +420,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(8471, {	-- Winterfall Ritual Totem
 					["provider"] = { "i", 20742 },	-- Winterfall Ritual Totem
-					["minReputation"] = { 576, NEUTRAL },	-- Timbermaw Hold
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, NEUTRAL },	-- Timbermaw Hold
 					["timeline"] = { REMOVED_4_0_3 },
 					["crs"] = {
 						10738,	-- High Chief Winterfall
@@ -443,11 +435,11 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				q(28768, {	-- Winterspring!
 					["qg"] = 15395,	-- Nafien
-					["sourceQuest"] = 28368,	-- Fire in the Hole!	TODO: could be earlier, but was available at this point
+					--["sourceQuest"] = 28368,	-- Fire in the Hole!	TODO: could be earlier, but was available at this point //Fire in the Hole! is Horde only so cannot be the correct sourcequest
 					["coord"] = { 64.0, 10.4, FELWOOD },
 					["timeline"] = { ADDED_4_0_3 },
 					["isBreadcrumb"] = true,
-					--["description"] = "Only available between level 15 and XX.", TODO: before level squish it was available from level 15 till level 60, now min is 15 but max is unknown
+					["description"] = "Only available above level 40.",
 				}),
 			}),
 			n(VENDORS, {
@@ -459,7 +451,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 65.2, 2.6, FELWOOD },
 						-- #endif
 					},
-					["minReputation"] = { 576, HONORED },	-- Timbermaw Hold, Honored.
+					["minReputation"] = { FACTION_TIMBERMAW_HOLD, HONORED },	-- Timbermaw Hold, Honored.
 					["groups"] = {
 						i(16768),	-- Furbolg Medicine Pouch
 						i(16769),	-- Furbolg Medicine Totem
@@ -473,9 +465,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 65.6, 2.8, FELWOOD },
 						-- #endif
 					},
-					["groups"] = bubbleDownClassicRep(576, {
+					["groups"] = bubbleDownClassicRep(FACTION_TIMBERMAW_HOLD, {
 						{	-- Neutral
-							
 						},
 						{	-- Friendly
 							applyclassicphase(PHASE_THREE_ENCHANTS, i(22392)),	-- Formula: Enchant 2H Weapon - Agility (RECIPE!)
@@ -488,11 +479,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							applyclassicphase(PHASE_THREE_RECIPES, i(19202)),	-- Plans: Heavy Timbermaw Belt (RECIPE!)
 							applyclassicphase(PHASE_THREE_RECIPES, i(19326)),	-- Pattern: Might of the Timbermaw (RECIPE!)
 							applyclassicphase(PHASE_THREE_RECIPES, i(19215)),	-- Pattern: Wisdom of the Timbermaw
-							
 							-- #if SEASON_OF_DISCOVERY
 							-- EPIC CRAFTED ITEMS UPGRADES
 							applyclassicphase(SOD_PHASE_FOUR, i(227807, {	-- Dense Timbermaw Belt
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = BLACKSMITHING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -502,7 +492,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227810, {	-- Dense Timbermaw Boots
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = BLACKSMITHING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -512,7 +502,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227803, {	-- Dire Warbear Harness
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = LEATHERWORKING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -522,7 +512,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227804, {	-- Dire Warbear Woolies
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = LEATHERWORKING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -532,7 +522,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227805, {	-- Ferocity of the Timbermaw
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = LEATHERWORKING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -542,7 +532,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227862, {	-- Incandescent Mooncloth Boots
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = TAILORING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -552,7 +542,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(228190, {	-- Knowledge of the Timbermaw
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = TAILORING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -562,7 +552,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227808, {	-- Rugged Mantle of the Timbermaw
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = TAILORING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -572,7 +562,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								},
 							})),
 							applyclassicphase(SOD_PHASE_FOUR, i(227809, {	-- Studded Timbermaw Brawlers
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 								["requireSkill"] = LEATHERWORKING,
 								["learnedAt"] = 290,
 								["cost"] = {
@@ -586,7 +576,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{	-- Revered
 							-- #if SEASON_OF_DISCOVERY
 							applyclassicphase(SOD_PHASE_FOUR, i(228982, {	-- Formula: Enchant Shield - Law of Nature
-								["timeline"] = { "added 1.15.3" },
+								["timeline"] = { ADDED_1_15_3 },
 							})),
 							-- #endif
 							applyclassicphase(PHASE_THREE_RECIPES, i(19218)),	-- Pattern: Mantle of the Timbermaw
@@ -598,7 +588,6 @@ root(ROOTS.Zones, m(KALIMDOR, {
 								["timeline"] = { ADDED_4_0_1 },
 							}),
 						},
-						
 					}),
 				}),
 			}),

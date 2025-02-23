@@ -1,11 +1,12 @@
 PVP_ELITE = createHeader({
 	readable = "Elite Gear",
-	icon = "Interface\\Worldmap\\GlowSkull_64Red",
+	icon = 311232,
 	text = {
 		en = "Elite Gear",
 		de = "Elite Rüstung",
 		fr = "Équipement Élite",
 		ru = "Элитные доспехи",
-		cn = "精锐套装",
+		cn = "精锐装备",
+		tw = "精英裝備",
 	},
 });

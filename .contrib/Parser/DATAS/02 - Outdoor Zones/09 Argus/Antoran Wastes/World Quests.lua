@@ -20,12 +20,16 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 			q(48867, {	-- Chief Alchemist Munculus
 				["sym"] = {{"select","npcID",127376}},	-- Select the WQ NPC
 			}),
-			q(48637),	-- Cleansing Fire
+			q(48637, {	-- Cleansing Fire
+				["g"] = {
+					i(152648),	-- Brightsoul Scepter (QI!)
+				},
+			}),
 			q(48831, {	-- Commander Texlaz
 				["sym"] = {{"select","npcID",127084}},	-- Select the WQ NPC
 			}),
 			q(48777),	-- Den of Fiends
-			q(49055),	-- Earseeker
+			petbattle(q(49055)),	-- Earseeker
 			q(47566, {	-- Gar'zoth
 				["sym"] = {{"select","npcID",122999}},	-- Select the WQ NPC
 			}),
@@ -40,7 +44,7 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sym"] = {{"select","npcID",126254}},	-- Select the WQ NPC
 			}),
 			q(48983),	-- Mining Regulation
-			q(49057),	-- Minixis
+			petbattle(q(49057)),	-- Minixis
 			q(47552, {	-- Mistress Il'thendra
 				["sym"] = {{"select","npcID",122947}},	-- Select the WQ NPC
 			}),
@@ -52,15 +56,27 @@ root(ROOTS.Zones, m(ARGUS, bubbleDown({ ["timeline"] = { ADDED_7_3_0 } }, {
 				["sym"] = {{"select","npcID",126040}},	-- Select the WQ NPC
 			}),
 			q(48833),	-- Ritual Completion
-			q(48958),	-- Ritual Interruption
+			q(48958, {	-- Ritual Interruption
+				["g"] = {
+					i(152465),	-- Banishment Stone Shard (QI!)
+				},
+			}),
 			q(48526),	-- Scuttled
 			q(48662),	-- Short Fuses
 			q(48514),	-- Slumbering Behemoths
-			q(48691),	-- Soul Chain
+			q(48691, {	-- Soul Chain
+				["g"] = {
+					i(152971),	-- Talisman of the Prophet (QI!)
+				},
+			}),
 			q(48358),	-- Supplies Needed: Empyrium
 			q(48360),	-- Supplies Needed: Fiendish Leather
 			q(48374),	-- Supplies Needed: Lightweave Cloth
-			q(48640),	-- The Immortal Squadron
+			q(48640, {	-- The Immortal Squadron
+				["g"] = {
+					i(152657),	-- Target Designator (QI!)
+				},
+			}),
 			q(48952),	-- Throw Them a Bone
 			q(48827, {	-- Varga
 				["sym"] = {{"select","npcID",126208}},	-- Select the WQ NPC

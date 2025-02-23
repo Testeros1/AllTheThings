@@ -25,7 +25,7 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 			ach(19509),		-- Elite: Dragonflight Season 4
 			ach(19490, {	-- Gladiator: Dragonflight Season 4
 				mount(424539),	-- Draconic Gladiator's Drake (MOUNT!)
-				i(216710),	-- Highland Drake: Embodiment of the Draconic Gladiator (DM!)
+				i(216710),	-- Highland Drake: Embodiment of the Draconic Gladiator (MM!)
 			}),
 			ach(19503),		-- Draconic Gladiator's Drake
 			ach(19454, {	-- Draconic Gladiator: Dragonflight Season 4
@@ -53,7 +53,7 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 				["timeline"] = { ADDED_10_2_6_SEASON_FOUR },
 			}),
 		})),
-		filter(MOUNTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP } }, {
+		filter(MOUNTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {
 			i(213439, {	-- Vicious Dreamtalon [A] (MOUNT!)
 				["races"] = ALLIANCE_ONLY,
 			}),
@@ -61,7 +61,7 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 				["races"] = HORDE_ONLY,
 			}),
 		})),
-		n(PVP_WARMODE, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP } }, {
+		n(PVP_WARMODE, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {
 			n(197553, {	-- Fieldmaster Emberath
 				["coord"] = { 43.1, 42.4, VALDRAKKEN },
 				["g"] = {
@@ -141,7 +141,7 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 				},
 			}),
 		})),
-		n(PVP_ASPIRANT, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP } }, {
+		n(PVP_ASPIRANT, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {
 			n(199601, {	-- Seltherex
 				["coord"] = { 44.7, 37.0, VALDRAKKEN },
 				["g"] = {
@@ -262,7 +262,7 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 				},
 			}),
 		})),
-		n(PVP_GLADIATOR, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP } }, {
+		n(PVP_GLADIATOR, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {
 			n(199599, {	-- Calderax
 				["coord"] = { 44.3, 36.6, VALDRAKKEN },
 				["g"] = {
@@ -797,25 +797,25 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 					i(216154),	-- Draconic Gladiator's Leather Wristwraps
 				}),
 				cl(SHAMAN, {
-					i(216213), -- Draconic Gladiator's Cloak
-					i(216214), -- Draconic Gladiator's Drape
-					i(216215), -- Draconic Gladiator's Shawl
-					i(216209), -- Draconic Gladiator's Chain Belt
-					i(216200), -- Draconic Gladiator's Chain Boots
-					i(216212), -- Draconic Gladiator's Chain Bracers
-					i(216206), -- Draconic Gladiator's Chain Breeches
-					i(216204), -- Draconic Gladiator's Chain Faceguard
-					i(216201), -- Draconic Gladiator's Chain Gauntlets
-					i(216210), -- Draconic Gladiator's Chain Girdle
-					i(216202), -- Draconic Gladiator's Chain Handguards
-					i(216203), -- Draconic Gladiator's Chain Helm
-					i(216205), -- Draconic Gladiator's Chain Leggings
-					i(216207), -- Draconic Gladiator's Chain Monnion
-					i(216199), -- Draconic Gladiator's Chain Sabatons
-					i(216208), -- Draconic Gladiator's Chain Shoulderguard
-					i(216198), -- Draconic Gladiator's Chain Tunic
-					i(216197), -- Draconic Gladiator's Chain Vest
-					i(216211), -- Draconic Gladiator's Chain Wristguards
+					i(216213),	-- Draconic Gladiator's Cloak
+					i(216214),	-- Draconic Gladiator's Drape
+					i(216215),	-- Draconic Gladiator's Shawl
+					i(216209),	-- Draconic Gladiator's Chain Belt
+					i(216200),	-- Draconic Gladiator's Chain Boots
+					i(216212),	-- Draconic Gladiator's Chain Bracers
+					i(216206),	-- Draconic Gladiator's Chain Breeches
+					i(216204),	-- Draconic Gladiator's Chain Faceguard
+					i(216201),	-- Draconic Gladiator's Chain Gauntlets
+					i(216210),	-- Draconic Gladiator's Chain Girdle
+					i(216202),	-- Draconic Gladiator's Chain Handguards
+					i(216203),	-- Draconic Gladiator's Chain Helm
+					i(216205),	-- Draconic Gladiator's Chain Leggings
+					i(216207),	-- Draconic Gladiator's Chain Monnion
+					i(216199),	-- Draconic Gladiator's Chain Sabatons
+					i(216208),	-- Draconic Gladiator's Chain Shoulderguard
+					i(216198),	-- Draconic Gladiator's Chain Tunic
+					i(216197),	-- Draconic Gladiator's Chain Vest
+					i(216211),	-- Draconic Gladiator's Chain Wristguards
 				}),
 				cl(WARLOCK, {
 					i(216080),	-- Draconic Gladiator's Cloak
@@ -963,7 +963,7 @@ root(ROOTS.PVP, pvp(expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_
 				["coord"] = { 43.1, 42.4, VALDRAKKEN },
 				["g"] = sharedData({
 					["cost"] = {{"i", 190450, 3}},	-- 3x Awakened Ire
-					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_PVP },
+					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 				}, {
 					i(211611),	-- Technique: Draconic Combatant's Emblem (RECIPE!)
 					i(211610),	-- Technique: Draconic Combatant's Insignia of Alacrity (RECIPE!)

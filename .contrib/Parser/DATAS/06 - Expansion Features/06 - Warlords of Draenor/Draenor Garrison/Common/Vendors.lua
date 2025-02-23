@@ -112,7 +112,6 @@ local HERB_TRADER = {
 	}),
 	i(122599, {	-- Tome of Sorcerous Elements (RECIPE!)
 		["cost"] = {{ "i", ALCHEMICAL_CATALYST, 10 }},
-		["filterID"] = MISC,
 		["g"] = {
 			r(181637),	-- Transmute: Sorcerous Air to Earth
 			r(181633),	-- Transmute: Sorcerous Air to Fire
@@ -130,7 +129,6 @@ local HERB_TRADER = {
 	}),
 	i(122605, {	-- Tome of the Stones (RECIPE!)
 		["cost"] = {{ "i", ALCHEMICAL_CATALYST, 10 }},
-		["filterID"] = MISC,
 		["g"] = {
 			r(181650),	-- Stone of Fire
 			r(181648),	-- Stone of the Earth
@@ -602,7 +600,7 @@ root(ROOTS.ExpansionFeatures,
 								i(111971),	-- Barracks, Level 3
 							},
 						}),
-						ach(9462,  {	-- Draenor Angler
+						ach(9462, {	-- Draenor Angler
 							["description"] = "Unlocks the ability to purchase the blueprint from Blueprints Vendors.",
 							["sym"] = {{"meta_achievement",
 								9461,		-- Sea Scorpion Angler
@@ -983,7 +981,7 @@ root(ROOTS.ExpansionFeatures,
 							},
 							["description"] = "Unlocks the ability to purchase the blueprint from Blueprints Vendors.",
 						}),
-						ach(9462,  {	-- Draenor Angler
+						ach(9462, {	-- Draenor Angler
 							["description"] = "Unlocks the ability to purchase the blueprint from Blueprints Vendors.",
 							["sym"] = {{"meta_achievement",
 								9461,		-- Sea Scorpion Angler

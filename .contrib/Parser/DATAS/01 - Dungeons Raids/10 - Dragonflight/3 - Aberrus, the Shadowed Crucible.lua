@@ -48,7 +48,7 @@ local EncounterToCRS = {
 	},
 };
 
------- EnconterToLoot ------
+------ EncounterToLoot ------
 local EncounterToLoot = {
 	[KAZZARA] = {
 		i(202594),	-- Bloodstench Skinguards
@@ -262,7 +262,7 @@ local EncounterToLoot = {
 		i(217408, {	-- Awakened Tempostone
 			["sym"] = GET_SYM_DF_S4_TIER_TOKENS(),
 			["up"] = IGNORED_VALUE,
-			["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED },
+			["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
 		}),
 	},
 };
@@ -494,7 +494,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					["provider"] = { "i", 205684 },	-- Forbidden Flounder
 				}),
 				-- Awakened
-				ach(19567, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Awakened Shadows
+				ach(19567, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Awakened Shadows
 					crit(64957, {	-- Kazzara, the Hellforged
 						["_encounter"] = { 2522, DIFFICULTY.RAID.MULTI.NORMAL_PLUS },
 					}),
@@ -523,7 +523,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						["_encounter"] = { 2520, DIFFICULTY.RAID.MULTI.NORMAL_PLUS },
 					}),
 				})),
-				ach(19568, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Heroic: Awakened Shadows
+				ach(19568, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Heroic: Awakened Shadows
 					crit(64966, {	-- Kazzara, the Hellforged
 						["_encounter"] = { 2522, DIFFICULTY.RAID.MULTI.HEROIC_PLUS },
 					}),
@@ -552,7 +552,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						["_encounter"] = { 2520, DIFFICULTY.RAID.MULTI.HEROIC_PLUS },
 					}),
 				})),
-				ach(19569, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_SEASON_AWAKENED } }, {	-- Mythic: Awakened Shadows
+				ach(19569, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH } }, {	-- Mythic: Awakened Shadows
 					crit(64975, {	-- Kazzara, the Hellforged
 						["_encounter"] = { 2522, DIFFICULTY.RAID.MYTHIC },
 					}),
@@ -587,6 +587,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				ach(18178),	-- Heroic: Aberrus, the Shadowed Crucible Guild Run
 			}),
 			-- #if AFTER 10.2.0
+			-- #if BEFORE 11.0.0
 			n(VENDORS, {
 				n(205676, {	-- Norzko the Proud
 					["coord"] = { 52.0, 25.6, ZARALEK_CAVERN },
@@ -689,6 +690,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				}),
 			}),
 			-- #endif
+			-- #endif
 			CommonBossDrops({
 				i(204857),	-- Ancient Elementium Fragment
 				i(204464),	-- Shadowflame Essence
@@ -706,13 +708,10 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				BossOnly(ASSAULT, {
 					i(205256, {	-- Satchel of Pilfered Recipes
 						i(194642),	-- Design: Choker of Shielding (RECIPE!)
-						i(201740, {	-- Elemental Codex of Ultimate Power
-							["collectible"] = false,
-							["g"] = {
-								r(370543),	-- Elemental Potion of Ultimate Power (RECIPE!)
-								r(370672),	-- Potion Cauldron of Ultimate Power (RECIPE!)
-							},
-						}),
+						TempForceMisc(ig(201740, {	-- Elemental Codex of Ultimate Power
+							r(370543),	-- Elemental Potion of Ultimate Power (RECIPE!)
+							r(370672),	-- Potion Cauldron of Ultimate Power (RECIPE!)
+						})),
 						i(194259),	-- Pattern: Allied Cinch of Time Dilation (RECIPE!)
 						i(194266),	-- Pattern: Bronzed Grip Wrappings (RECIPE!)
 						i(194260),	-- Pattern: Blue Dragon Soles (RECIPE!)
@@ -745,13 +744,13 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 			}),
 			Difficulty({DIFFICULTY.RAID.LFR,DIFFICULTY.RAID.NORMAL,DIFFICULTY.RAID.HEROIC}).AddGroups({
 				BossOnly(SARKARETH, {
-					i(206955),	-- Highland Drake: Embodiment of the Hellforged (DM!) [LFR, Normal, Heroic]
+					i(206955),	-- Highland Drake: Embodiment of the Hellforged (MM!) [LFR, Normal, Heroic]
 				}),
 			}),
 			Difficulty(DIFFICULTY.RAID.LFR).AddGroups({
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- LFR	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Zaralek Cavern Items & LFR Mode Non-set items from the Aberrus Raid into your class' LFR Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- LFR --
+					["description"] = "The Revival Catalyst is a system that lets you convert Zaralek Cavern's Weekly Event Zone Items (Researchers & A Worthy Ally: Niffen) & LFR Mode Non-set items from the Aberrus Raid into your class' LFR Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = bubbleDown({ ["modID"] = 4 }, {
@@ -873,7 +872,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					}),
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 					i(204075, {	-- Whelping's Shadowflame Crest Fragment
 						["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 },
@@ -973,9 +973,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						},
 					}),
 				}),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- NORMAL	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Normal Mode Non-set items from the Aberrus Raid into your class' Normal Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- NORMAL --
+					["description"] = "The Revival Catalyst is a system that lets you convert Normal Mode Non-set items from the Aberrus Raid into your class' Normal Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = {
@@ -1097,7 +1097,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					},
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 					i(204076, {	-- Drake's Shadowflame Crest Fragment
 						["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 },
@@ -1140,9 +1141,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						},
 					}),
 				}),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- HEROIC	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Heroic Mode Non-set items from the Aberrus Raid into your class' Heroic Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- HEROIC --
+					["description"] = "The Revival Catalyst is a system that lets you convert Heroic Mode Non-set items from the Aberrus Raid into your class' Heroic Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = bubbleDown({ ["modID"] = 5 }, {
@@ -1264,7 +1265,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					}),
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 					i(204077, {	-- Wyrm's Shadowflame Crest Fragment
 						["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 },
@@ -1308,9 +1310,9 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					i(204428),	-- Sanctum Guard's Forgewalkers
 					i(204420),	-- Sundered Edgelord's Breastplate
 				})),
-				--[[ Uncomment me once DF Awakened is over
-				o(382621, {	-- Revival Catalyst Console	-- MYTHIC	--
-					["description"] = "The Revival Catalyst is a system that lets you convert Mythic Mode Non-set items from the Aberrus Raid into your class' Mythic Transmog Set.\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles. Make sure to equip your item first before converting it.",
+				-- #if AFTER TWW
+				o(382621, {	-- Revival Catalyst Console	-- MYTHIC --
+					["description"] = "The Revival Catalyst is a system that lets you convert Mythic Mode Non-set items from the Aberrus Raid into your class' Mythic Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
 					["coord"] = { 60.6, 53.8, THALDRASZUS },
 					["modelScale"] = 4,
 					["g"] = bubbleDown({ ["modID"] = 6 }, {
@@ -1432,7 +1434,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 							},
 						}),
 					}),
-				}),--]]
+				}),
+				-- #endif
 				ZoneDrops({
 					i(204078, {	-- Aspect's Shadowflame Crest Fragment
 						["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 },
@@ -1471,7 +1474,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					})),
 					ach(18254, {["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 }}),	-- Cutting Edge: Scalecommander Sarkareth
 					ach(18179),	-- Mythic: Scalecommander Sarkareth Guild Run
-					i(205876),	-- Highland Drake: Embodiment of the Hellforged (DM!) [Mythic]
+					i(205876),	-- Highland Drake: Embodiment of the Hellforged (MM!) [Mythic]
 					i(206046, {	-- Void-Touched Curio
 						["sym"] = {{"sub","instance_tier",1208,DIFFICULTY.RAID.MYTHIC}},
 					}),
@@ -1481,7 +1484,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDED_10_1_0 } }, {
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_0 } }, {
 	inst(1208, {	-- Aberrus, the Shadowed Crucible
 		-- Normal
 		q(75732),	-- Kazzara
@@ -1496,21 +1499,14 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDown({ ["timeline"
 		-- Heroic
 		-- None
 		-- Mythic
-		-- q(),	-- Kazzara
-		-- q(),	-- The Amalgamation Chamber
-		-- q(),	-- The Forgotten Experiments
-		-- q(),	-- Assault of the Zaqali
-		-- q(),	-- Rashok
-		-- q(),	-- The Vigilant Steward, Zskarn
-		-- q(),	-- Magmorax
-		-- q(),	-- Echo of Neltharion
-		-- q(),	-- Scalecommander Sarkareth
+		-- None
 
 		q(76087),	-- Sarkareth HC kill on Evoker; Legendary 'higher chance' lockout?
+		q(75659),	-- Sarkareth M kill on Evoker; Legendary 'higher chance' lockout?
 		q(76088),	-- Normal Sarkareth Kill?
 		q(76089),	-- Normal Sarkareth Kill?
 
 		-- Nasz'uro, the Unbound Legacy
-		q(75623),	-- Triggers when you recieve the legendary during the last quest (spellID 408549)
+		q(75623),	-- Triggers when you receive the legendary during the last quest (spellID 408549)
 	}),
 })));

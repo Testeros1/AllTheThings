@@ -3,7 +3,7 @@
 -------------------------------------------------------------------
 GARRISON_INVASIONS = createHeader({
 	readable = "Garrison Invasions",
-	icon = "Interface\\Icons\\achievement_bg_defendxtowers_av",
+	icon = 236351,
 	text = {
 		en = [[~GARRISON_LANDING_INVASION]],
 	},
@@ -281,8 +281,26 @@ root(ROOTS.ExpansionFeatures,
 							i(122184),	-- Eye of the Unseen Star
 						},
 					}),
+					-- Items that drop at end of invasion that are used to spawn the bosses
+					i(122474),	-- Arcane Highmaul Relic
+					i(122472),	-- Bloodied Iron Horde Banner
+					i(122466),	-- Heart of Oak
+					i(122473),	-- Legion Beacon
+					i(122468),	-- Runed Greatstone
+					i(122475),	-- Void Prison
 				}),
 			}),
 		})),
 	})
 );
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	n(GARRISONS, {
+		n(GARRISON_INVASIONS, {
+			q(38276, { ["timeline"] = { ADDED_6_1_0 } }),	-- 6.1 Garrison - World Boss Invasion Loot - killing Commander Dro'gan
+			q(37198),	-- Garrison Visitor: Sappy - triggered during Goren invasion in Garrison
+			q(37199),	-- Garrison Visitor: Sappy - triggered during Goren invasion in Garrison
+			q(35914),	-- Internal: Default Invasion Reward - triggers during the first garrison invasion as part of Draenor's base intro
+		}),
+	}),
+})));

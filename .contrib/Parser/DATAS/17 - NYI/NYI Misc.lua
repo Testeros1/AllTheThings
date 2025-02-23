@@ -42,7 +42,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.TBC, {
 		-- 2.4.0
-		expansion(EXPANSION.TBC, 4.0, bubbleDownSelf({ ["timeline"] = { CREATED_2_4_0 } }, {
+		expansion(EXPANSION.TBC, patch(4,0), bubbleDownSelf({ ["timeline"] = { CREATED_2_4_0 } }, {
 			i(34548),	-- Cache of the Shattered Sun
 			i(34544),	-- Essence of the Immortals
 			i(35728),	-- Greater Inscription of the Blade (arena realm only)
@@ -64,17 +64,17 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.WRATH, {
 		-- 3.0.1
-		expansion(EXPANSION.WRATH, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
+		expansion(EXPANSION.WRATH, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
 			i(41596),	-- Dalaran Jewelcrafter's Token
 		})),
 
 		-- 3.0.2
-		expansion(EXPANSION.WRATH, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
+		expansion(EXPANSION.WRATH, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_3_0_2 } }, {
 			i(43016),	-- Dalaran Cooking Award
 		})),
 
 		-- 3.1.0
-		expansion(EXPANSION.WRATH, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_3_1_0 } }, {
+		expansion(EXPANSION.WRATH, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_3_1_0 } }, {
 			i(45705),	-- Argent Tournament Invitation
 			i(45924),	-- Certificate of Appreciation
 			i(44871),	-- Greater Inscription of the Axe
@@ -84,7 +84,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 3.3.3
-		expansion(EXPANSION.WRATH, 3.3, bubbleDownSelf({ ["timeline"] = { CREATED_3_3_3 } }, {
+		expansion(EXPANSION.WRATH, patch(3,3), bubbleDownSelf({ ["timeline"] = { CREATED_3_3_3 } }, {
 			i(50329),	-- Icecrown-10 Normal Loot Token
 		})),
 
@@ -98,7 +98,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.CATA, {
 		-- 4.0.1
-		expansion(EXPANSION.CATA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_4_0_1 } }, {
+		expansion(EXPANSION.CATA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_4_0_1 } }, {
 			i(42975),	-- Ace of Lords
 			i(42977),	-- Two of Lords
 			i(42978),	-- Three of Lords
@@ -112,7 +112,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 4.0.3
-		expansion(EXPANSION.CATA, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_4_0_3 } }, {
+		expansion(EXPANSION.CATA, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_4_0_3 } }, {
 			i(55217),	-- Aqua Transform
 			i(43254),	-- Essence Crystal
 			i(55216),	-- Fiery Transform
@@ -121,21 +121,8 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(52446),	-- Illustrious Jewelcrafter's Token
 		})),
 
-		-- 4.2.0
-		expansion(EXPANSION.CATA, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_4_2_0 } }, {
-			i(71679),	-- Chest of the Fiery Conqueror
-			i(71686),	-- Chest of the Fiery Protector
-			i(71672),	-- Chest of the Fiery Vanquisher
-			i(71676),	-- Gauntlets of the Fiery Conqueror
-			i(71683),	-- Gauntlets of the Fiery Protector
-			i(71669),	-- Gauntlets of the Fiery Vanquisher
-			i(71678),	-- Leggings of the Fiery Conqueror
-			i(71685),	-- Leggings of the Fiery Protector
-			i(71671),	-- Leggings of the Fiery Vanquisher
-		})),
-
 		-- 4.3.0
-		expansion(EXPANSION.CATA, 3.0, bubbleDownSelf({ ["timeline"] = { CREATED_4_3_0 } }, {
+		expansion(EXPANSION.CATA, patch(3,0), bubbleDownSelf({ ["timeline"] = { CREATED_4_3_0 } }, {
 			i(78892),	-- Perfect Geode
 		})),
 
@@ -146,17 +133,17 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.MOP, {
 		-- 5.0.1
-		expansion(EXPANSION.MOP, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
+		expansion(EXPANSION.MOP, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_5_0_4 } }, {
 			i(79907),	-- Spear of Xuen (Old Version)
 		})),
 
 		-- 5.1.0
-		expansion(EXPANSION.MOP, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_5_1_0 } }, {
+		expansion(EXPANSION.MOP, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_5_1_0 } }, {
 			i(92563),	-- The Eye of the Storm
 		})),
 
 		-- 5.2.0
-		expansion(EXPANSION.MOP, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_5_2_0 } }, {
+		expansion(EXPANSION.MOP, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_5_2_0 } }, {
 			i(96194),	-- Chest of the Crackling Vanquisher
 			i(96195),	-- Chest of the Crackling Conqueror
 			i(96196),	-- Chest of the Crackling Protector
@@ -190,13 +177,13 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 5.3.0
-		expansion(EXPANSION.MOP, 3.0, bubbleDownSelf({ ["timeline"] = { CREATED_5_3_0 } }, {
+		expansion(EXPANSION.MOP, patch(3,0), bubbleDownSelf({ ["timeline"] = { CREATED_5_3_0 } }, {
 			i(98001),	-- Saurok Collection
 			i(98005),	-- Saurok Collection
 		})),
 
 		-- 5.4.0
-		expansion(EXPANSION.MOP, 4.0, bubbleDownSelf({ ["timeline"] = { CREATED_5_4_0 } }, {
+		expansion(EXPANSION.MOP, patch(4,0), bubbleDownSelf({ ["timeline"] = { CREATED_5_4_0 } }, {
 			i(103535),	-- Bulging Bag of Charms (was planned for asia store)
 		})),
 
@@ -214,7 +201,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.WOD, {
 		-- 6.0.1
-		expansion(EXPANSION.WOD, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
+		expansion(EXPANSION.WOD, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_6_0_2 } }, {
 			i(115371),	-- [PLACEHOLDER TIER 3 ITEM]
 			i(107459),	-- Black Iron Fragment
 			i(108882),	-- Bloodmaul Blasting Charge
@@ -231,7 +218,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 6.1.0
-		expansion(EXPANSION.WOD, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_6_1_0 } }, {
+		expansion(EXPANSION.WOD, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_6_1_0 } }, {
 			i(122419),	-- Scouting Missive: Gorian Proving Grounds
 			i(122420),	-- Scouting Missive: Gorian Proving Grounds
 		})),
@@ -245,7 +232,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.LEGION, {
 		-- 7.0.3
-		expansion(EXPANSION.LEGION, 0.3, bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
+		expansion(EXPANSION.LEGION, patch(0,3), bubbleDownSelf({ ["timeline"] = { CREATED_7_0_3 } }, {
 			i(134824),	-- "Sir Pugsington" Costume
 			i(132118),	-- Aggramar's Blessing
 			i(129742),	-- Badge of Timewalking Justice
@@ -265,7 +252,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 7.2.0
-		expansion(EXPANSION.LEGION, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_7_2_0 } }, {
+		expansion(EXPANSION.LEGION, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_7_2_0 } }, {
 			n(SEASON_RUTHLESS, {
 				n(PVP_ELITE, {
 					i(146483),	-- Ensemble: Elite Ruthless Gladiator's Dreadplate Armor
@@ -312,7 +299,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.BFA, {
 		-- 8.0.1
-		expansion(EXPANSION.BFA, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
+		expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_8_0_1 } }, {
 			i(159734),	-- Add Keystone Affix: Fortified
 			i(159730),	-- Add Keystone Affix: Tyrannical
 			i(159732),	-- Add Keystone Affix: Bursting
@@ -372,7 +359,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 8.1.0
-		expansion(EXPANSION.BFA, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_1_0 } }, {
+		expansion(EXPANSION.BFA, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_1_0 } }, {
 			i(165730),	-- Cache of Dazar'alor Treasures
 			i(165731),	-- Cache of Dazar'alor Treasures
 			i(165732),	-- Cache of Dazar'alor Treasures
@@ -389,12 +376,12 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 8.1.5
-		expansion(EXPANSION.BFA, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_8_1_5 } }, {
+		expansion(EXPANSION.BFA, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_8_1_5 } }, {
 			i(167026),	-- Cache of Crucible Treasures
 		})),
 
 		-- 8.2.0
-		expansion(EXPANSION.BFA, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_2_0 } }, {
+		expansion(EXPANSION.BFA, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_2_0 } }, {
 			i(168272),	-- [PH] Amathet Cache
 			i(170501),	-- [PH] Mogu Cache
 			i(169154),	-- [PH] N'Zoth Cache
@@ -408,7 +395,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 8.2.5
-		expansion(EXPANSION.BFA, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_8_2_5 } }, {
+		expansion(EXPANSION.BFA, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_8_2_5 } }, {
 			i(170488),	-- [DNT] Torn Journal Page #7
 			i(170484),	-- [DNT] Torn Journal Page #14
 			i(170487),	-- [DNT] Torn Journal Page #23
@@ -417,7 +404,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 8.3.0
-		expansion(EXPANSION.BFA, 3.0, bubbleDownSelf({ ["timeline"] = { CREATED_8_3_0 } }, {
+		expansion(EXPANSION.BFA, patch(3,0), bubbleDownSelf({ ["timeline"] = { CREATED_8_3_0 } }, {
 			i(174455),	-- Add Keystone Affix: Awakened
 			i(169293),	-- Coalescing Visions
 			i(174838),	-- Collapsed Fusion Core
@@ -451,18 +438,14 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.SL, {
 		-- 9.0.1
-		expansion(EXPANSION.SL, 0.1, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
+		expansion(EXPANSION.SL, patch(0,1), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_1 } }, {
 			i(178152),	-- <Broker Adjective> Return Beacon
-			i(171298),	-- [DNT] REUSE ME \\ Modified Crafting Reagent 06
-			i(171299),	-- [DNT] REUSE ME \\ Modified Crafting Reagent 07
-			i(171300),	-- [DNT] REUSE ME \\ Modified Crafting Reagent 08
-			i(173063),	-- [DNT] REUSE ME \\ [DNT] REUSE ME [MTMM]
-			i(173064),	-- [DNT] REUSE ME \\ [DNT] REUSE ME [MTMM]
+			i(173063),	-- [DNT] REUSE ME
+			i(173064),	-- [DNT] REUSE ME
 			i(180483),	-- [PH] Legendary Dust
 			i(179367),	-- [PH] Torghast Boss Loot
 			i(180531),	-- [PH] Twisted Dust
 			i(181158),	-- [UNUSED - FOCUS] Blueprint: Charm of Energizing
-			i(182588),	-- A Bloody Hand
 			i(183949),	-- Add Keystone Affix: Inspiring
 			i(183803),	-- Add Keystone Affix: Prideful
 			i(183948),	-- Add Keystone Affix: Spiteful
@@ -612,6 +595,9 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(175752),	-- Mirror Fragment
 			i(177764),	-- Mirror Fragment
 			i(179664),	-- Mirror of Kalisthene
+			i(171298),	-- Modified Crafting Reagent 06
+			i(171299),	-- Modified Crafting Reagent 07
+			i(171300),	-- Modified Crafting Reagent 08
 			i(173941),	-- Monstrous Skull
 			i(183734),	-- Mysteriously Thrumming Orb
 			i(180399),	-- New Player Experience Box
@@ -686,7 +672,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(181854),	-- Set Keystone Map: Theater of Pain
 			i(176928),	-- Shadowlands Skinning Knife
 			i(179919),	-- Shadowy Rabbit's Foot
-			i(181166),	-- Sigil of Haunting Memories
 			i(181746),	-- Sika Elated PH Reward
 			i(181748),	-- Sika Happy PH Reward
 			i(181747),	-- Sika Very Happy PH Reward
@@ -751,7 +736,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 9.0.2
-		expansion(EXPANSION.SL, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_2 } }, {
+		expansion(EXPANSION.SL, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_2 } }, {
 			i(178659),	-- Abominable Backup
 			i(181739),	-- Bag of Soul Ash
 			i(184482),	-- Blueprint: Phial of Serenity
@@ -785,13 +770,12 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(184122),	-- Spare Foot
 			i(184119),	-- Spare Heart
 			i(184124),	-- Spare Stomach
-			i(184412),	-- Title Reward: Spirestalker
 			i(184611),	-- Tormentor's Notes
 			i(184607),	-- Words of the Warden
 		})),
 
 		-- 9.0.5
-		expansion(EXPANSION.SL, 0.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_0_5 } }, {
+		expansion(EXPANSION.SL, patch(0,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_0_5 } }, {
 			i(185472),	-- Heritage of the Shu'halo
 			i(185717),	-- Slumbering Spirit
 			i(186099),	-- Spatial Realignment Apparatus
@@ -799,7 +783,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 9.1.0
-		expansion(EXPANSION.SL, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_9_1_0 } }, {
+		expansion(EXPANSION.SL, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_9_1_0 } }, {
 			i(187524),	-- Add Keystone Affix: Tormented
 			i(186402),	-- Armament Ehancement Matrix
 			i(187120),	-- Blood Healing Shard 1 - Rank 5
@@ -846,7 +830,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(186715),	-- Research Report: Improved Alloys
 			i(187137),	-- Research Report: Relic Finding Techniques
 			i(186720),	-- Rift Gate Attenuator
-			i(187499),	-- Sculpted Elethium Orb
 			i(186197),	-- Seal of Death's Unity
 			i(186585),	-- Shard of Domination - Grim Harvester - Rank 1
 			i(186586),	-- Shard of Domination - Grim Harvester - Rank 2
@@ -875,21 +858,19 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(186972),	-- Teleporter Repair Kit
 			i(184844),	-- Test Item
 			i(186525),	-- The Mad Duke's Tea
-			i(187603),	-- The Mad Duke's Tea
 			i(187917),	-- The Mad Duke's Tea
 			i(186526),	-- The Mad Duke's Tea of Haste
 			i(186527),	-- The Mad Duke's Tea of Precision
 			i(186528),	-- The Mad Duke's Tea of Versatility
 			i(187515),	-- Theotar's Bottomless Teapot
 			i(186043),	-- Torghast Portal Manipulator
-			i(187501),	-- Understanding the Purpose
 			i(186658),	-- Ven'ari's Scavenged Supplies
 			i(187433),	-- Windcrystal Chimes
 			i(187921),	-- [PH] Core Currency
 		})),
 
 		-- 9.1.5
-		expansion(EXPANSION.SL, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_1_5 } }, {
+		expansion(EXPANSION.SL, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_1_5 } }, {
 			i(189534),	-- Add Keystone Affix: Infernal
 			i(187610),	-- Court of Farondis Insignia
 			i(188168),	-- Kyrian Traveler's Anima Cache
@@ -901,7 +882,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 9.2.0
-		expansion(EXPANSION.SL, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_9_2_0 } }, {
+		expansion(EXPANSION.SL, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_9_2_0 } }, {
 			i(189452),	-- 9.2 Mount Crafting Bag of Goodies
 			i(189428),	-- 9.2 Pet Battle Playtest Bag of Goodies
 			i(190938),	-- Add Keystone Affix: Encrypted
@@ -922,7 +903,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(189573),	-- Tame Prime: Garudeon
 			i(189572),	-- Tame Prime: Hadeon the Stonebreaker
 			i(189561),	-- Tame Prime: Orixal
-			i(190172),	-- Title Reward: Gauntlet Runner
 			--- Spheroids ---
 			i(190665),	-- [PH] Epic 1 Fluidic Spheroid
 			i(190666),	-- [PH] Epic 2 Fluidic Spheroid
@@ -931,54 +911,32 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(190662),	-- [PH] Rare 6 Fluidic Spheroid
 			i(190663),	-- [PH] Rare 7 Fluidic Spheroid
 			i(190664),	-- [PH] Rare 8 Fluidic Spheroid
-			i(189723),	-- Absorptialic Crystallic Spheroid
 			i(189736),	-- Absorptialic Fluidic Spheroid
-			i(189722),	-- Alacrialic Crystallic Spheroid
 			i(189740),	-- Alacrialic Fluidic Spheroid
-			i(189732),	-- Constialic Crystallic Spheroid
 			i(189748),	-- Constialic Fluidic Spheroid
-			i(189560),	-- Deflectialic Crystallic Spheroid
 			i(189577),	-- Deflectialic Fluidic Spheroid
-			i(189763),	-- Efficialic Crystallic Spheroid
 			i(189757),	-- Efficialic Fluidic Spheroid
-			i(189724),	-- Extractialic Crystallic Spheroid
 			i(189739),	-- Extractialic Fluidic Spheroid
-			i(189725),	-- Flexialic Crystallic Spheroid
 			i(189749),	-- Flexialic Fluidic Spheroid
-			i(189726),	-- Focialic Crystallic Spheroid
 			i(189743),	-- Focialic Fluidic Spheroid
-			i(189762),	-- Fortialic Crystallic Spheroid
 			i(189755),	-- Fortialic Fluidic Spheroid
-			i(189727),	-- Healialic Crystallic Spheroid
 			i(189742),	-- Healialic Fluidic Spheroid
-			i(189728),	-- Obscurialic Crystallic Spheroid
 			i(189737),	-- Obscurialic Fluidic Spheroid
-			i(189729),	-- Osmosialic Crystallic Spheroid
 			i(189741),	-- Osmosialic Fluidic Spheroid
 			i(189730),	-- Perceptialic Crystallic Spheroid
 			i(189738),	-- Perceptialic Fluidic Spheroid
 			i(189731),	-- Potentialic Crystallic Spheroid
 			i(189744),	-- Potentialic Fluidic Spheroid
-			i(189764),	-- Reflectialic Crystallic Spheroid
 			i(189758),	-- Reflectialic Fluidic Spheroid
-			i(189733),	-- Relialic Crystallic Spheroid
 			i(189745),	-- Relialic Fluidic Spheroid
-			i(190659),	-- Resonant Carapace Fluidic Spheroid
-			i(190658),	-- Resonant Gossamer Fluidic Spheroid
-			i(190660),	-- Resonant Mucus Fluidic Spheroid
-			i(190661),	-- Resonant Regrowth Fluidic Spheroid
-			i(189734),	-- Rigialic Crystallic Spheroid
 			i(189746),	-- Rigialic Fluidic Spheroid
-			i(189760),	-- Robustialic Crystallic Spheroid
 			i(189759),	-- Robustialic Fluidic Spheroid
-			i(189761),	-- Toxicialic Crystallic Spheroid
 			i(189756),	-- Toxicialic Fluidic Spheroid
-			i(189735),	-- Velocialic Crystallic Spheroid
 			i(189747),	-- Velocialic Fluidic Spheroid
 		})),
 
 		-- 9.2.5
-		expansion(EXPANSION.SL, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_9_2_5 } }, {
+		expansion(EXPANSION.SL, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_9_2_5 } }, {
 			i(191217),	-- [Daon Test]Beast Battle-Training Stone
 			i(191219),	-- [Daon Test]Immaculate Elemental Battle-Stone
 			i(191200),	-- [Daon Test]Ultimate Battle-Training Stone
@@ -989,7 +947,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 9.2.7
-		expansion(EXPANSION.SL, 2.7, bubbleDownSelf({ ["timeline"] = { CREATED_9_2_7 } }, {
+		expansion(EXPANSION.SL, patch(2,7), bubbleDownSelf({ ["timeline"] = { CREATED_9_2_7 } }, {
 			i(200655),	-- Set Keystone Level: 36
 			i(200656),	-- Set Keystone Level: 37
 			i(200657),	-- Set Keystone Level: 38
@@ -1005,7 +963,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 	}),
 	expansion(EXPANSION.DF, {
 		-- 10.0.0
-		expansion(EXPANSION.DF, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
+		expansion(EXPANSION.DF, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_0 } }, {
 			i(194719),	-- [DEPRECATED]Illusionary Coin
 			i(192600),	-- [DNT][PH] Meat
 			i(194110),	-- [PH] Dragon Rider's Honor
@@ -1035,7 +993,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(192127),	-- Basilisk Eggs
 			i(198442),	-- Bogthwottle's Shrinky-Do
 			i(192560),	-- Bossy Storm Stuff
-			i(200824),	-- Bottled Lightning
 			i(192078),	-- Bottled Putrescence
 			i(199690),	-- BWU Test Profession Accessory
 			i(200950),	-- Consortium Packaging String
@@ -1061,10 +1018,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(192476),	-- Expedition Bullwhip
 			i(191552),	-- Expedition Metal Detector
 			i(198724),	-- Expedition Telescope (NYI)
-			i(199904),	-- Extraction: Awakened Air
-			i(199905),	-- Extraction: Awakened Earth
-			i(199901),	-- Extraction: Awakened Fire
-			i(199903),	-- Extraction: Awakened Frost
 			i(199185),	-- Fanciful Strings
 			i(195460),	-- Fermented Musken Milk
 			i(198674),	-- Filled Life Pools Vial
@@ -1119,7 +1072,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(190319),	-- Resourceful!
 			i(191861),	-- Rocdrop Carapace
 			i(191864),	-- Rocdrop Pudgepart
-			i(191421),	-- Rudimentary Magical Lockpick
 			i(194025),	-- Runebound Parchment: Bottom Half
 			i(194024),	-- Runebound Parchment: Top Half
 			i(194075),	-- Sacrilegious Spear
@@ -1183,7 +1135,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.0.2
-		expansion(EXPANSION.DF, 0.2, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_2 } }, {
+		expansion(EXPANSION.DF, patch(0,2), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_2 } }, {
 			i(201252),	-- 10.0 Bronze PvP Chest (DNT)
 			i(193057),	-- 10.0 Placeholder Enchanting Crystal
 			i(193067),	-- Acadia's Tools [DNT/Unused]
@@ -1240,7 +1192,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.0.5
-		expansion(EXPANSION.DF, 0.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_5 } }, {
+		expansion(EXPANSION.DF, patch(0,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_5 } }, {
 			i(203461),	-- Chronologically Reallocated Rations
 			i(202112),	-- Crystal Shattering Armaments
 			i(202310),	-- Defective Doomsday Device
@@ -1251,7 +1203,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.0.7
-		expansion(EXPANSION.DF, 0.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_0_7 } }, {
+		expansion(EXPANSION.DF, patch(0,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_0_7 } }, {
 			i(202663),	-- [DNT] Dragonscale Expedition Item 01
 			i(202671),	-- [DNT] Dragonscale Expedition Item 02
 			i(202672),	-- [DNT] Dragonscale Expedition Item 03
@@ -1302,7 +1254,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.1.0
-		expansion(EXPANSION.DF, 1.0, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
+		expansion(EXPANSION.DF, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_0 } }, {
 			i(205934),	-- Add Keystone Affix: Afflicted
 			i(205933),	-- Add Keystone Affix: Entangling
 			i(205935),	-- Add Keystone Affix: Incorporeal
@@ -1335,7 +1287,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.1.5
-		expansion(EXPANSION.DF, 1.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_5 } }, {
+		expansion(EXPANSION.DF, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_5 } }, {
 			i(208097),	-- Flamethrower
 			i(205259),	-- Order Soul
 			i(207096),	-- Paracausal Chest
@@ -1344,7 +1296,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.1.7
-		expansion(EXPANSION.DF, 1.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_1_7 } }, {
+		expansion(EXPANSION.DF, patch(1,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_1_7 } }, {
 			i(208549),	-- Canned Meat Product
 			i(208783),	-- Corrupted Blood
 			i(209832),	-- Crate of Dreambound Leather
@@ -1426,8 +1378,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.2.0
-		expansion(EXPANSION.DF, 2.0, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_0 } }, {
-			i(208878),	-- Adventurer's Footlocker
+		expansion(EXPANSION.DF, patch(2,0), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_0 } }, {
 			i(208692),	-- Ancient Roottwined Tome
 			i(210441),	-- Behemoth's Feather
 			i(208840),	-- Concentrated Sophic Vellum
@@ -1437,7 +1388,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(210419),	-- Dream Wardens Insignia [Uncommon]
 			i(210786),	-- Dreaming Whiskerfish
 			i(208597),	-- Eadweard's Notes
-			i(208887),	-- Erdan's Notes
+			i(208887),	-- Erden's Notes
 			i(210027),	-- Extracted Ashen Dust
 			i(210028),	-- Extracted Ashen Dust
 			i(210450),	-- Flaming Orb
@@ -1452,7 +1403,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(208856),	-- Pocket Lint
 			i(211418),	-- Q'onzu Edict of Change
 			i(208690),	-- Roottwined Key
-			i(210726),	-- Ruby Flightstone
 			i(208839),	-- Rune of Adaptive Binding
 			i(210550),	-- Set Keystone Map: Dawn of the Infinite: Galakrond's Fall
 			i(210551),	-- Set Keystone Map: Dawn of the Infinite: Murozond's Rise
@@ -1466,12 +1416,11 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(210223),	-- Unstable Element
 			i(208569),	-- Verdant Crest of Honor
 			i(208565),	-- Verdant Trophy of Conquest
-			i(210438),	-- Wisp Dust
 			i(208745),	-- Your Reward [DNT]
 		})),
 
 		-- 10.2.5
-		expansion(EXPANSION.DF, 2.5, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
+		expansion(EXPANSION.DF, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
 			i(212784),	-- Destroyed Relic
 			i(211104),	-- Ephemeral Fractured Emerald
 			i(211112),	-- Ephemeral Swift Emerald
@@ -1483,7 +1432,7 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.2.6
-		expansion(EXPANSION.DF, 2.6, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
+		expansion(EXPANSION.DF, patch(2,6), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
 			------ Plunderstorm ------
 			i(212096),	-- [DNT] Starter Pirate Gear
 			i(212097),	-- [DNT] Starter Pirate Gear - Health Potion
@@ -1535,14 +1484,15 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 		})),
 
 		-- 10.2.7
-		expansion(EXPANSION.DF, 2.7, bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
+		expansion(EXPANSION.DF, patch(2,7), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_7 } }, {
 			i(218120),	-- Arsenal: Exodar Peacekeeper's Armaments
+			i(211932),	-- Cache of Infinite Treasure
+			i(219220),	-- Catch Up Thread
 			i(210881),	-- Cunning Charm
 			i(213530),	-- Entropic Crystal
 			i(217016),	-- Fragmented Medallion of the Darkspear
 			i(217010),	-- Fragmented Medallion of the Draenei
 			i(213540),	-- Ghostly Motes
-			i(211768),	-- Hastily Scrawled Satyr Ravings
 			i(213531),	-- Nether Sands
 			i(223475),	-- Set Keystone Level: 2
 			i(223476),	-- Set Keystone Level: 3
@@ -1552,63 +1502,218 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(223480),	-- Set Keystone Level: 7
 			i(223481),	-- Set Keystone Level: 8
 			i(223482),	-- Set Keystone Level: 9
+			i(224120),	-- Timerunner's Gem Box
+			i(216638),	-- Timerunner's Intro Kit
+			i(219218),	-- Timerunner's Starter Kit
+			i(219219),	-- Timerunner's Starter Kit
 			i(213532),	-- Void Rune
 			i(213537),	-- Void Tendril
 		})),
 	}),
 	expansion(EXPANSION.TWW, {
 		-- 11.0.0
-		expansion(EXPANSION.TWW, 0.01, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
-			i(219741), -- Algari Mineral
-			i(219742), -- Algari Spices
-			i(224030), -- Bottomless Bag of Khaz Algar Alchemy Goods
-			i(224031), -- Bottomless Bag of Khaz Algar Blacksmithing Goods
-			i(224032), -- Bottomless Bag of Khaz Algar Enchanting Goods
-			i(224033), -- Bottomless Bag of Khaz Algar Engineering Goods
-			i(224100), -- Bottomless Bag of Khaz Algar General Goods
-			i(224156), -- Bottomless Bag of Khaz Algar General Goods
-			i(224027), -- Bottomless Bag of Khaz Algar Herbs
-			i(224034), -- Bottomless Bag of Khaz Algar Inscription Goods
-			i(224035), -- Bottomless Bag of Khaz Algar Jewelcrafting Goods
-			i(224037), -- Bottomless Bag of Khaz Algar Leatherworking Goods
-			i(224040), -- Bottomless Bag of Khaz Algar Optional Goods
-			i(224028), -- Bottomless Bag of Khaz Algar Ore
-			i(224029), -- Bottomless Bag of Khaz Algar Skins
-			i(224039), -- Bottomless Bag of Khaz Algar Tailoring Goods
-			i(219743), -- Khaz Algar Olive (Vendor)
-			i(219744), -- Khaz Algar Vegetable
-			i(224068), -- Professor Instructaur's Brain Pertaining to Khaz Algar
-			i(224057), -- Professor Instructaur's Top Secret Guide to Khaz Algar Alchemy
-			i(224058), -- Professor Instructaur's Top Secret Guide to Khaz Algar Blacksmithing
-			i(224059), -- Professor Instructaur's Top Secret Guide to Khaz Algar Enchanting
-			i(224060), -- Professor Instructaur's Top Secret Guide to Khaz Algar Engineering
-			i(224061), -- Professor Instructaur's Top Secret Guide to Khaz Algar Herbalism
-			i(224062), -- Professor Instructaur's Top Secret Guide to Khaz Algar Inscription
-			i(224063), -- Professor Instructaur's Top Secret Guide to Khaz Algar Jewelcrafting
-			i(224064), -- Professor Instructaur's Top Secret Guide to Khaz Algar Leatherworking
-			i(224065), -- Professor Instructaur's Top Secret Guide to Khaz Algar Mining
-			i(224066), -- Professor Instructaur's Top Secret Guide to Khaz Algar Skinning
-			i(224067), -- Professor Instructaur's Top Secret Guide to Khaz Algar Tailoring
-			i(219142), -- Set Keystone Map: Ara-Kara, City of Echoes
-			i(219145), -- Set Keystone Map: Cinderbrew Meadery
-			i(219141), -- Set Keystone Map: City of Threads
-			i(219143), -- Set Keystone Map: Darkflame Cleft
-			i(219139), -- Set Keystone Map: Priory of the Sacred Flame
-			i(219146), -- Set Keystone Map: Stonevault
-			i(219144), -- Set Keystone Map: The Dawnbreaker
-			i(219140), -- Set Keystone Map: The Rookery
-			i(219690), -- Trophy Common Fish A
-			i(219691), -- Trophy Common Fish B
-			i(219696), -- Trophy Rare Fish A
-			i(219697), -- Trophy Rare Fish B
-			i(219698), -- Trophy Rare Fish C
-			i(219699), -- Trophy Rare Fish D
-			i(219700), -- Trophy Rare Fish E
-			i(219701), -- Trophy Rare Fish F
-			i(219692), -- Trophy Uncommon Fish A
-			i(219693), -- Trophy Uncommon Fish B
-			i(219694), -- Trophy Uncommon Fish C
-			i(219695), -- Trophy Uncoomon Fish D
+		expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
+			i(225640),	-- Abyssal Lure
+			i(228415),	-- Adelgonn's Journal
+			i(225211),	-- Airship Operations Manual
+			i(225570),	-- Algari Fowlfeather
+			i(219741),	-- Algari Mineral
+			i(219742),	-- Algari Spices
+			i(208670),	-- Arachnophobia Mode
+			i(228612),	-- Artisan's Consortium Payout [Epic]
+			i(228611),	-- Artisan's Consortium Payout [Rare]
+			i(228610),	-- Artisan's Consortium Payout [Uncommon]
+			i(211348),	-- Awkward Potion
+			i(223805),	-- Bag Test A
+			i(223806),	-- Bag Test B
+			i(216603),	-- Boots of the Light
+			i(224030),	-- Bottomless Bag of Khaz Algar Alchemy Goods
+			i(224031),	-- Bottomless Bag of Khaz Algar Blacksmithing Goods
+			i(224032),	-- Bottomless Bag of Khaz Algar Enchanting Goods
+			i(224033),	-- Bottomless Bag of Khaz Algar Engineering Goods
+			i(224100),	-- Bottomless Bag of Khaz Algar General Goods
+			i(224156),	-- Bottomless Bag of Khaz Algar General Goods
+			i(224027),	-- Bottomless Bag of Khaz Algar Herbs
+			i(224034),	-- Bottomless Bag of Khaz Algar Inscription Goods
+			i(224035),	-- Bottomless Bag of Khaz Algar Jewelcrafting Goods
+			i(224037),	-- Bottomless Bag of Khaz Algar Leatherworking Goods
+			i(224040),	-- Bottomless Bag of Khaz Algar Optional Goods
+			i(224028),	-- Bottomless Bag of Khaz Algar Ore
+			i(224029),	-- Bottomless Bag of Khaz Algar Skins
+			i(224039),	-- Bottomless Bag of Khaz Algar Tailoring Goods
+			i(222929),	-- Carved Coin Coffer
+			i(218340),	-- Chest of Playtest Equipment
+			i(228193),	-- Chipped Demon's Blade
+			i(220693),	-- Coffer Key Shard
+			i(222928),	-- Coin Coffer
+			i(225123),	-- Companion Experience
+			i(220260),	-- Corroded Golem Graspers
+			i(228192),	-- Cracked Fel Focus
+			i(225806),	-- Crystal Inkwell
+			i(220284),	-- Darkened Crystal
+			i(219138),	-- Delve Experience
+			i(226260),	-- Delver's Pouch of Gold
+			i(226257),	-- Delver's Pouch of Valorstones
+			i(210693),	-- Delves Keystone
+			i(211142),	-- Delves Keystone
+			i(217386),	-- Discarded Memory Gem
+			i(228225),	-- do not use
+			i(223869),	-- DO NOT USE Prismatic Codex
+			i(217970),	-- Dormant Runestone
+			i(228450),	-- Edible Copper Nuggets
+			i(210699),	-- Epic Delve Key
+			i(221503),	-- Explorer's Warbound Battlegear Drop
+			i(220233),	-- Extinguished Icon
+			i(219500),	-- Fang Adornments
+			i(212603),	-- First Half of Titan Key NOT USED
+			i(206348),	-- Fragmented Flame
+			i(209431),	-- Fungal Scraper
+			i(218123),	-- Glowing Shard
+			i(224791),	-- Golden Lord Outfit
+			i(220377),	-- Growing Void Mass
+			i(206581),	-- Harvester Core
+			i(219743),	-- Khaz Algar Olive (Vendor)
+			i(219744),	-- Khaz Algar Vegetable
+			i(225214),	-- List of Activities
+			i(213085),	-- Lost Treasure
+			i(210697),	-- Luckstone
+			i(220340),	-- Meatball Cluster
+			i(217984),	-- Miner's Rune of Decyphering
+			i(212385),	-- Moira's Healing Surge TO DEPRECATE
+			i(211349),	-- Mundane Potion
+			i(226430),	-- Navigations of The Soul
+			i(225805),	-- Ornate Box of Seasonings
+			i(221777),	-- Pearlescent Shellcrab
+			i(215360),	-- Personalized Setting
+			i(225240),	-- PH_1
+			i(225256),	-- PH_2
+			i(225365),	-- PH_3
+			i(225541),	-- PH_4
+			i(225553),	-- PH_5
+			i(221812),	-- Player Experience
+			i(222956),	-- Player Experience
+			i(206134),	-- Potion of Healing
+			i(225210),	-- Priory Theses
+			i(224068),	-- Professor Instructaur's Brain Pertaining to Khaz Algar
+			i(224057),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Alchemy
+			i(224058),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Blacksmithing
+			i(224059),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Enchanting
+			i(224060),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Engineering
+			i(224061),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Herbalism
+			i(224062),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Inscription
+			i(224063),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Jewelcrafting
+			i(224064),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Leatherworking
+			i(224065),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Mining
+			i(224066),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Skinning
+			i(224067),	-- Professor Instructaur's Top Secret Guide to Khaz Algar Tailoring
+			i(224913),	-- Radiant Fuel Cache
+			i(210698),	-- Rare Delve Key
+			i(219494),	-- Ritual Flame
+			i(224728),	-- Rollin' Barrel
+			i(222954),	-- Runed Coin Coffer
+			i(225209),	-- Sacred Flame Prayers
+			i(224792),	-- Sanguine Aristocrat Outfit
+			i(227677),	-- Satchel of Enchanting Surplus
+			i(227678),	-- Satchel of Engineering Surplus
+			i(227679),	-- Satchel of Inscription Surplus
+			i(227680),	-- Satchel of Jewelcrafting Surplus
+			i(222977),	-- Scorched Junk
+			i(228412),	-- Scouting Map: The Skies of the Dragon Isles
+			i(219632),	-- Scribe Water
+			i(228451),	-- Scrumptious Gold Bar
+			i(212601),	-- Second Half of Titan Key NOT USED
+			i(219142),	-- Set Keystone Map: Ara-Kara, City of Echoes
+			i(219145),	-- Set Keystone Map: Cinderbrew Meadery
+			i(219141),	-- Set Keystone Map: City of Threads
+			i(219143),	-- Set Keystone Map: Darkflame Cleft
+			i(219390),	-- Set Keystone Map: Grim Batol
+			i(219139),	-- Set Keystone Map: Priory of the Sacred Flame
+			i(219146),	-- Set Keystone Map: Stonevault
+			i(219144),	-- Set Keystone Map: The Dawnbreaker
+			i(219140),	-- Set Keystone Map: The Rookery
+			i(221750),	-- Shredded Weavercloth
+			i(222416),	-- Shredded Weavercloth
+			i(224823),	-- Shredded Weavercloth
+			i(212349),	-- Sizzling Spring Water [DNT][UNUSED]
+			i(224786),	-- Skeleton King Outfit
+			i(224729),	-- Slum Shark Tooth
+			i(210051),	-- Spark Feather
+			i(211494),	-- Spark of Beginnings
+			i(228224),	-- Spark of Legacies
+			i(220342),	-- Spiced Stock
+			i(212527),	-- Spiderforged Emitter Key [REMOVED]
+			i(216982),	-- Spy List
+			i(228416),	-- Steelvein's Manifesto
+			i(212340),	-- Strange Jar
+			i(228449),	-- Tasty Iron Bar
+			i(211529),	-- Test Big Bag (DNT)
+			i(213569),	-- Test Item A
+			i(213570),	-- Test Item B
+			i(213097),	-- Test Warbound until equipped (DNT)
+			i(219690),	-- Trophy Common Fish A
+			i(219691),	-- Trophy Common Fish B
+			i(219696),	-- Trophy Rare Fish A
+			i(219697),	-- Trophy Rare Fish B
+			i(219698),	-- Trophy Rare Fish C
+			i(219699),	-- Trophy Rare Fish D
+			i(219700),	-- Trophy Rare Fish E
+			i(219701),	-- Trophy Rare Fish F
+			i(219692),	-- Trophy Uncommon Fish A
+			i(219693),	-- Trophy Uncommon Fish B
+			i(219694),	-- Trophy Uncommon Fish C
+			i(219695),	-- Trophy Uncoomon Fish D
+			i(223316),	-- Trusty Hat
+			i(212677),	-- Underground Cloth 01
+			i(212678),	-- Underground Cloth 01
+			i(212679),	-- Underground Cloth 01
+			i(226154),	-- Wax-Sealed Crafty Crest
+			i(226152),	-- Wax-sealed Crests
+			i(228495),	-- Well-Used Potter's Wheel
+			i(217401),	-- Wormcaller's Resonator
+			i(217986),	-- "Delicious" Egg Parts
+			i(224269),	-- [DNT] 11.0 Food/Drink Template - Food Only - Level 75 - Required Level 70
+			i(226108),	-- [DNT] Debug Profession Stats
+			i(223804),	-- [DNT] Zone 1 Placeholder Treasure
+			i(224730),	-- [PH] Derby Dashers
+			i(224719),	-- [PH] Evasive Angler's Treads
+			i(224720),	-- [PH] Keen Angler's Eye
+			i(224716),	-- [PH] Skewered Slum Shark
+			i(224718),	-- [PH] Surface Tipper's Toes
+			i(220162),	-- [PH] Toy, Pipe Toy
+		})),
+
+		-- 11.0.2
+		expansion(EXPANSION.TWW, patch(0,02), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_2 } }, {
+			i(230209),	-- Add Keystone Affix: Challenger's Peril
+			i(230202),	-- Add Keystone Affix: Xal'atath's Bargain: Ascendant
+			i(230206),	-- Add Keystone Affix: Xal'atath's Bargain: Devour
+			i(230205),	-- Add Keystone Affix: Xal'atath's Bargain: Oblivion
+			i(230204),	-- Add Keystone Affix: Xal'atath's Bargain: Voidbound
+			i(230208),	-- Add Keystone Affix: Xal'atath's Guile
+			i(228745),	-- Aurora Strand
+			i(229130),	-- Cache of Delver's Spoils
+			i(229005),	-- Cache of Earthen Treasures
+			i(229006),	-- Cache of Earthen Treasures
+			i(229370),	-- Companion Experience
+			i(228743),	-- Damp Weavercloth
+			i(228744),	-- Golbin Twist-Rag
+			i(226275),	-- Grizzly Hills Granola
+			i(226274),	-- Grizzly Hills Spring Water
+			i(226262),	-- Grizzly Hills Trail Mix
+			i(228951),	-- Pact Treasure Map
+			i(232575),	-- Tome of Town Portal
+			i(228742),	-- Unidentifiable Cloth
+		})),
+
+		-- 11.0.5
+		expansion(EXPANSION.TWW, patch(0,05), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_5 } }, {
+			i(224569),	-- Commendation of the Defilers
+			i(224563),	-- Commendation of the Frostwolf Clan
+			i(224568),	-- Commendation of the League of Arathor
+			i(224564),	-- Commendation of the Ravasaur Trainers
+			i(224559),	-- Commendation of the Silverwing Sentinels
+			i(224562),	-- Commendation of the Stormpike Guard
+			i(224560),	-- Commendation of the Warsong Outriders
 		})),
 	}),
 }));

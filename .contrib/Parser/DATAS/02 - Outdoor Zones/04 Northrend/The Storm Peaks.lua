@@ -1,7 +1,7 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local OnTooltipForSonsOfHodir = [[function(t, tooltipInfo)
+ExportDB.OnTooltipDB.ForSonsOfHodir = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 0 then
 		local AddQuestTooltip = _.Modules.FactionData.AddQuestTooltip;
@@ -123,7 +123,7 @@ root(ROOTS.Zones, {
 	m(NORTHREND, applyclassicphase(WRATH_PHASE_ONE, {
 		m(THE_STORM_PEAKS, {
 			["lore"] = "The Storm Peaks is a leveling zone in central Northrend intended for level 25+ players. it is a frigid mountainous region that used to be the home of the titans, with Ulduar as their city. Currently, the storm giants live in the Storm Peaks. Players questing in this zone will learn about the lore behind the titans, the Hyldnir, Brann Bronzebeard, and the Sons of Hodir.",
-			["icon"] = "Interface\\Icons\\achievement_zone_stormpeaks_01",
+			["icon"] = 236832,
 			["groups"] = {
 				n(ACHIEVEMENTS, {
 					explorationAch(1269),	-- Explore The Storm Peaks
@@ -237,7 +237,6 @@ root(ROOTS.Zones, {
 						393,	-- Cockroach (PET!)
 						633,	-- Mountain Skunk (PET!)
 						412,	-- Spider (PET!)
-						1238,	-- Unborn Val'kyr (PET!)
 					}},
 					["groups"] = {
 						pet(558, {	-- Arctic Fox Kit (PET!)
@@ -247,49 +246,71 @@ root(ROOTS.Zones, {
 				}),
 				explorationHeader({
 					exploration(4452),	-- Bor's Breath
-					exploration(4484),	-- Bouldercrag's Refuge
+					visit_exploration(4451,{coord={36.8,75.3,THE_STORM_PEAKS}}),	-- Bor's Fall
+					visit_exploration(4484,{coord={30.2,37.4,THE_STORM_PEAKS}}),	-- Bouldercrag's Refuge
 					exploration(4442),	-- Brann's Base-Camp
 					exploration(4422),	-- Brunnhildar Village
 					exploration(4441),	-- Camp Tunka'lo
+					visit_exploration(4433,{coord={52.3,76.0,THE_STORM_PEAKS}}),	-- Dragonspine Peaks
 					exploration(4438),	-- Dun Niffelem
 					exploration(4431),	-- Engine of the Makers
 					exploration(4495),	-- Fjorn's Anvil
 					exploration(4439),	-- Frostfield Lake
+					visit_exploration(4487,{coord={62.4,41.4,THE_STORM_PEAKS}}),	-- Frostfloe Deep
+					visit_exploration(4472,{coord={26.7,66.7,THE_STORM_PEAKS}}),	-- Frostgrip's Hollow
 					exploration(4428),	-- Frosthold
 					exploration(4421),	-- Garm
 					exploration(4460),	-- Garm's Bane
 					exploration(4461),	-- Garm's Rise
+					visit_exploration(4592,{coord={47.3,55.0,THE_STORM_PEAKS}}),	-- Gimorak's Den
 					exploration(4429),	-- Grom'arsh Crash-Site
+					visit_exploration(4542,{coord={57.2,44.9,THE_STORM_PEAKS}}),	-- Hall of the Shaper
+					visit_exploration(4272,{coord={44.6,21.8,THE_STORM_PEAKS}}),	-- Halls of Lightning
+					visit_exploration(4264,{coord={39.3,28.1,THE_STORM_PEAKS}}),	-- Halls of Stone
+					visit_exploration(4455,{coord={55.8,63.7,THE_STORM_PEAKS}}),	-- Hibernal Cavern
 					exploration(4418),	-- K3
-					exploration(4435),	-- Narvir's Cradle
+					visit_exploration(4450,{coord={56.2,58.3,THE_STORM_PEAKS}}),	-- Loken's Bargain
+					visit_exploration(4502,{coord={33.7,38.8,THE_STORM_PEAKS}}),	-- Mimir's Workshop
+					visit_exploration(4435,{coord={28.5,40.7,THE_STORM_PEAKS}}),	-- Narvir's Cradle
 					exploration(4434),	-- Nidavelir
 					exploration(4444),	-- Plain of Echoes
 					exploration(4459),	-- Ricket's Folly
 					exploration(4453),	-- Rohemdal Pass
 					exploration(4423),	-- Sifreldar Village
 					exploration(4419),	-- Snowblind Hills
+					visit_exploration(4420,{coord={47.3,74.1,THE_STORM_PEAKS}}),	-- Snowblind Terrace
 					exploration(4436),	-- Snowdrift Plains
 					exploration(4458),	-- Sparksocket Minefield
 					exploration(4490),	-- Stormcrest
+					visit_exploration(4466,{coord={46.1,49.1,THE_STORM_PEAKS}}),	-- Temple of Invention
 					exploration(4463),	-- Temple of Life
 					exploration(4464),	-- Temple of Order
 					exploration(4430),	-- Temple of Storms
 					exploration(4465),	-- Temple of Winter
 					exploration(4543),	-- Temple of Wisdom
 					exploration(4446),	-- Terrace of the Makers
+					visit_exploration(4499,{coord={21.9,58.9,THE_STORM_PEAKS}}),	-- The Blighted Pool
+					visit_exploration(4631,{coord={38.8,65.7,THE_STORM_PEAKS}}),	-- The Broodmother's Nest
+					visit_exploration(4485,{coord={37.2,45.2,THE_STORM_PEAKS}}),	-- The Inventor's Library
+					visit_exploration(4488,{coord={66.3,43.0,THE_STORM_PEAKS}}),	-- The Howling Hollow
 					exploration(4432),	-- The Foot Steppes
+					visit_exploration(4425,{coord={47.0,68.4,THE_STORM_PEAKS}}),	-- The Forlorn Mine
 					exploration(4473),	-- The Frigid Tomb
+					visit_exploration(4486,{coord={27.4,49.9,THE_STORM_PEAKS}}),	-- The Frozen Mine
+					visit_exploration(4535,{coord={49.5,69.3,THE_STORM_PEAKS}}),	-- The Pit of The Fang
 					exploration(4440),	-- Thunderfall
+					visit_exploration(4457,{coord={33.0,83.5,THE_STORM_PEAKS}}),	-- Torseg's Rest
+					visit_exploration(4449,{coord={33.5,60.9,THE_STORM_PEAKS}}),	-- Uldis
 					exploration(4445),	-- Ulduar
 					exploration(4424),	-- Valkyrion
 					exploration(4437),	-- Valley of Ancient Winters
 				}),
 				n(FACTIONS, {
-					faction(1126, {	-- The Frostborn
+					faction(FACTION_THE_FROSTBORN, {	-- The Frostborn
 						["races"] = ALLIANCE_ONLY,
 					}),
-					faction(1119, {	-- The Sons of Hodir
-						["OnTooltip"] = OnTooltipForSonsOfHodir,
+					faction(FACTION_THE_SONS_OF_HODIR, {	-- The Sons of Hodir
+						["OnTooltip"] = [[_.OnTooltipDB.ForSonsOfHodir]],
 					}),
 				}),
 				n(FLIGHT_PATHS, {
@@ -331,13 +352,13 @@ root(ROOTS.Zones, {
 						["qg"] = 32540,	-- Lillehoff
 						["coord"] = { 66.1, 61.4, THE_STORM_PEAKS },
 						["cost"] = { { "i", 42780, 10 }, },	-- 10x Relic of Ulduar
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
 						["repeatable"] = true,
 					}),
 					q(13011, {	-- Culling Jorcuttar
 						["qg"] = 30105,	-- King Jokkum
 						["coord"] = { 65.3, 60.1, THE_STORM_PEAKS },
-						["minReputation"] = { 1119, FRIENDLY },	-- The Sons of Hodir, Friendly.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, FRIENDLY },	-- The Sons of Hodir, Friendly.
 						["groups"] = {
 							objective(1, {	-- 0/1 Jorcuttar slain
 								["provider"] = { "n", 30340 },	-- Jorcuttar
@@ -357,18 +378,18 @@ root(ROOTS.Zones, {
 						["provider"] = { "o", 192080 },	-- Hodir's Helm
 						["sourceQuest"] = 12987,	-- Placing Hodir's Helm
 						["coord"] = { 64.2, 59.6, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
 						["isDaily"] = true,
 					}),
 					q(13420, {	-- Everfrost
 						["provider"] = { "i", 44725 },	-- Everfrost Chip
-						["minReputation"] = { 1119, FRIENDLY },	-- The Sons of Hodir, Friendly.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, FRIENDLY },	-- The Sons of Hodir, Friendly.
 					}),
 					q(13421, {	-- Remember Everfrost!
 						["qg"] = 32594,	-- Calder <Blacksmithing Supplies>
 						["sourceQuest"] = 13420,	-- Everfrost
 						["coord"] = { 67.0, 60.8, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
 						["cost"] = { { "i", 44724, 1 } },	-- Everfrost Chip
 						["repeatable"] = true,
 					}),
@@ -376,36 +397,36 @@ root(ROOTS.Zones, {
 						["provider"] = { "o", 192078 },	-- Hodir's Horn
 						["sourceQuest"] = 12976,	-- A Monument to the Fallen
 						["coord"] = { 64.1, 64.7, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
 						["isDaily"] = true,
 					}),
 					q(13046, {	-- Feeding Arngrim
 						["provider"] = { "o", 192524 },	-- Arngrim the Insatiable
 						["coord"] = { 67.5, 60.0, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
-						["minReputation"] = { 1119, REVERED },	-- The Sons of Hodir, Revered.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, REVERED },	-- The Sons of Hodir, Revered.
 						["isDaily"] = true,
 					}),
 					q(12981, {	-- Hot and Cold
 						["provider"] = { "o", 192071 },	-- Fjorn's Anvil
 						["sourceQuest"] = 12967,	-- Battling the Elements
 						["coord"] = { 63.2, 63.0, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
 						["isDaily"] = true,
 					}),
 					q(12994, {	-- Spy Hunter
 						["qg"] = 30294,	-- Frostworg Denmother
 						["coord"] = { 63.5, 59.7, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
-						["minReputation"] = { 1119, HONORED },	-- The Sons of Hodir, Honored.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, HONORED },	-- The Sons of Hodir, Honored.
 						["isDaily"] = true,
 					}),
 					q(13003, {	-- How to Slay Your Dragon
 						["provider"] = { "o", 192079 },	-- Hodir's Spear
 						["sourceQuest"] = 13001,	-- Raising Hodir's Spear
 						["coord"] = { 65.0, 60.9, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- The Sons of Hodir, Exalted.
-						["minReputation"] = { 1119, HONORED },	-- The Sons of Hodir, Honored.
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- The Sons of Hodir, Exalted.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, HONORED },	-- The Sons of Hodir, Honored.
 						["isDaily"] = true,
 					}),
 
@@ -467,7 +488,7 @@ root(ROOTS.Zones, {
 						["provider"] = { "o", 192060 },	-- Fjorn's Anvil
 						["sourceQuest"] = 12922,	-- The Refiner's Fire
 						["coord"] = { 77.1, 62.9, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- Sons of Hodir, Exalted
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- Sons of Hodir, Exalted
 					}),
 					q(12925, {	-- Aberrations
 						["qg"] = 30041,	-- Thyra Kvinnshal
@@ -732,7 +753,7 @@ root(ROOTS.Zones, {
 						["qg"] = 30127,	-- Njormeld
 						["sourceQuest"] = 12967,	-- Battling the Elements
 						["coord"] = { 63.2, 63.2, THE_STORM_PEAKS },
-						["minReputation"] = { 1119, FRIENDLY },	-- The Sons of Hodir, Friendly.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, FRIENDLY },	-- The Sons of Hodir, Friendly.
 						["groups"] = {
 							objective(1, {	-- 0/8 Stormforged Eye
 								["providers"] = {
@@ -766,7 +787,7 @@ root(ROOTS.Zones, {
 					q(13001, {	-- Raising Hodir's Spear
 						["qg"] = 30252,	-- Lorekeeper Randvir
 						["coord"] = { 64.8, 59.1, THE_STORM_PEAKS },
-						["minReputation"] = { 1119, HONORED },	-- The Sons of Hodir, Honored.
+						["minReputation"] = { FACTION_THE_SONS_OF_HODIR, HONORED },	-- The Sons of Hodir, Honored.
 						["groups"] = {
 							objective(1, {	-- 0/3 Everfrost Shard
 								["providers"] = {
@@ -946,7 +967,7 @@ root(ROOTS.Zones, {
 					q(12915, {	-- Mending Fences
 						["qg"] = 29445,	-- Thorim
 						["coord"] = { 33.4, 58.0, THE_STORM_PEAKS },
-						["maxReputation"] = { 1119, EXALTED },	-- Sons of Hodir, Exalted
+						["maxReputation"] = { FACTION_THE_SONS_OF_HODIR, EXALTED },	-- Sons of Hodir, Exalted
 						["sourceQuest"] = 13064,	-- Sibling Rivalry
 					}),
 					q(12905, {	-- Mildred the Cruel
@@ -1070,7 +1091,7 @@ root(ROOTS.Zones, {
 					q(12869, {	-- Pushed Too Far
 						["qg"] = 29732,	-- Fjorlin Frostbrow
 						["coord"] = { 29.8, 75.7, THE_STORM_PEAKS },
-						["maxReputation"] = { 1126, EXALTED },	-- The Frostborn, Exalted.
+						["maxReputation"] = { FACTION_THE_FROSTBORN, EXALTED },	-- The Frostborn, Exalted.
 						["races"] = ALLIANCE_ONLY,
 						["isDaily"] = true,
 						-- this quest appeared for me after turning in "the brother's bronzebeard," which was the last quest i did for its criteria + the overall zone.  i'm not sure if the quest itself is a prerequisite or if it's based on reputation, because i also hit friendly with alliance vanguard when turning it in.  some wowhead comments said it had different requirements, so i'm not sure what to put for SQ or a description.
@@ -1622,78 +1643,84 @@ root(ROOTS.Zones, {
 					}),
 					n(32540, {	-- Lillehoff <The Sons of Hodir Quartermaster>
 						["coord"] = { 66.1, 61.4, THE_STORM_PEAKS },
-						["groups"] = {
-							ach(2083, {	-- Grand Ice Mammoth
-								["providers"] = {
-									{ "i", 43961 },	-- Grand Ice Mammoth (A) (MOUNT!)
-									{ "i", 44086 },	-- Grand Ice Mammoth (H) (MOUNT!)
-								},
-							}),
-							ach(2082, {	-- Ice Mammoth
-								["providers"] = {
-									{ "i", 43958 },	-- Ice Mammoth (A) (MOUNT!)
-									{ "i", 44080 },	-- Ice Mammoth (H) (MOUNT!)
-								},
-							}),
-							i(43961),	-- Grand Ice Mammoth (A) (MOUNT!)
-							i(44086),	-- Grand Ice Mammoth (H) (MOUNT!)
-							i(43958),	-- Ice Mammoth (A) (MOUNT!)
-							i(44080),	-- Ice Mammoth (H) (MOUNT!)
-							i(44137, {	-- Arcanum of the Frosty Soul
-								["timeline"] = { REMOVED_5_0_4 },
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44193),	-- Broken Stalactite
-							i(41720),	-- Design: Smooth Autumn's Glow
-							i(44189),	-- Giant Ring Belt
-							i(44194),	-- Giant-Friend Kilt
-							i(44133, {	-- Greater Inscription of the Axe
-								["filterID"] = CONSUMABLES,
-							}),
-							i(50335, {	-- Greater Inscription of the Axe
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44134, {	-- Greater Inscription of the Crag
-								["filterID"] = CONSUMABLES,
-							}),
-							i(50336, {	-- Greater Inscription of the Crag
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44136, {	-- Greater Inscription of the Pinnacle
-								["filterID"] = CONSUMABLES,
-							}),
-							i(50337, {	-- Greater Inscription of the Pinnacle
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44135, {	-- Greater Inscription of the Storm
-								["filterID"] = CONSUMABLES,
-							}),
-							i(50338, {	-- Greater Inscription of the Storm
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44131, {	-- Lesser Inscription of the Axe
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44130, {	-- Lesser Inscription of the Crag
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44132, {	-- Lesser Inscription of the Pinnacle
-								["filterID"] = CONSUMABLES,
-							}),
-							i(44129, {	-- Lesser Inscription of the Storm
-								["filterID"] = CONSUMABLES,
-							}),
-							i(42184),	-- Pattern: Glacial Bag
-							i(44510),	-- Pattern: Mammoth Mining Bag (RECIPE!)
-							i(44190),	-- Spaulders of Frozen Knives
-							i(44195),	-- Spaulders of the Giant Lords
-							i(44192),	-- Stalactite Chopper
+						["groups"] = bubbleDownClassicRep(FACTION_THE_SONS_OF_HODIR, {
+							{		-- Neutral
+							}, {	-- Friendly
 							-- #if ANYCLASSIC
-							i(206392, {	-- Tabard of the Sons of Hodir
-								["factionID"] = 1119,	-- The Sons of Hodir
-							}),
-							-- #endif
-						},
+								i(206392, {	-- Tabard of the Sons of Hodir
+									["factionID"] = FACTION_THE_SONS_OF_HODIR,	-- The Sons of Hodir
+								}),
+								-- #endif
+							}, {	-- Honored
+								i(44137, {	-- Arcanum of the Frosty Soul
+									["timeline"] = { REMOVED_5_0_4 },
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44189),	-- Giant Ring Belt
+								i(44131, {	-- Lesser Inscription of the Axe
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44130, {	-- Lesser Inscription of the Crag
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44132, {	-- Lesser Inscription of the Pinnacle
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44129, {	-- Lesser Inscription of the Storm
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44510),	-- Pattern: Mammoth Mining Bag (RECIPE!)
+								i(44190),	-- Spaulders of Frozen Knives
+							}, {	-- Revered
+								i(44193),	-- Broken Stalactite
+								i(44194),	-- Giant-Friend Kilt
+								ach(2082, {	-- Ice Mammoth
+									["providers"] = {
+										{ "i", 43958 },	-- Ice Mammoth (A) (MOUNT!)
+										{ "i", 44080 },	-- Ice Mammoth (H) (MOUNT!)
+									},
+								}),
+								i(44195),	-- Spaulders of the Giant Lords
+								i(44192),	-- Stalactite Chopper
+							}, {	-- Exalted
+								i(41720),	-- Design: Smooth Autumn's Glow
+								ach(2083, {	-- Grand Ice Mammoth
+									["providers"] = {
+										{ "i", 43961 },	-- Reins of the Grand Ice Mammoth (A) (MOUNT!)
+										{ "i", 44086 },	-- Reins of the Grand Ice Mammoth (H) (MOUNT!)
+									},
+								}),
+								i(44133, {	-- Greater Inscription of the Axe
+									["filterID"] = CONSUMABLES,
+								}),
+								i(50335, {	-- Greater Inscription of the Axe
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44134, {	-- Greater Inscription of the Crag
+									["filterID"] = CONSUMABLES,
+								}),
+								i(50336, {	-- Greater Inscription of the Crag
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44136, {	-- Greater Inscription of the Pinnacle
+									["filterID"] = CONSUMABLES,
+								}),
+								i(50337, {	-- Greater Inscription of the Pinnacle
+									["filterID"] = CONSUMABLES,
+								}),
+								i(44135, {	-- Greater Inscription of the Storm
+									["filterID"] = CONSUMABLES,
+								}),
+								i(50338, {	-- Greater Inscription of the Storm
+									["filterID"] = CONSUMABLES,
+								}),
+								i(42184),	-- Pattern: Glacial Bag (RECIPE!)
+								i(43961),	-- Reins of the Grand Ice Mammoth (A) (MOUNT!)
+								i(44086),	-- Reins of the Grand Ice Mammoth (H) (MOUNT!)
+								i(43958),	-- Reins of the Ice Mammoth (A) (MOUNT!)
+								i(44080),	-- Reins of the Ice Mammoth (H) (MOUNT!)
+							},
+						}),
 					}),
 					n(30472, {	-- Olut Alegut
 						["coord"] = { 37.0, 49.6, THE_STORM_PEAKS },
@@ -1722,6 +1749,20 @@ root(ROOTS.Zones, {
 							}),
 							i(43470, {	-- Worg Tooth Oatmeal Stout
 								["cost"] = { { "i", 42780, 10 }, },	-- 10x Relic of Ulduar
+							}),
+						},
+					}),
+					n(31247, {	-- Roxi Ramrocket <Flying Trainer>
+						["coord"] = { 40.6, 84.8, THE_STORM_PEAKS },
+						["groups"] = {
+							i(44500, {	-- Elementium-Plated Exhaust Pipe
+								["cost"] = 15000000,	-- 1500g
+							}),
+							i(44501, {	-- Goblin-Machined Piston
+								["cost"] = 10000000,	-- 1000g
+							}),
+							i(44499, {	-- Salvaged Iron Golem Parts
+								["cost"] = 30000000,	-- 3000g
 							}),
 						},
 					}),
@@ -1770,8 +1811,12 @@ root(ROOTS.Zones, {
 	})),
 });
 
-root(ROOTS.HiddenQuestTriggers, m(NORTHREND, {
-	m(THE_STORM_PEAKS, {
-		a(q(13417)),	-- The Brothers Bronzebeard	-- scrapped version? no qg on wowhead, and this isn't the version of the quest i received (i got the next quest, 12973)
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WRATH, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_2 } }, {
+	m(NORTHREND, {
+		m(THE_STORM_PEAKS, {
+			n(QUESTS, {
+				a(q(13417)),	-- The Brothers Bronzebeard	-- scrapped version? no qg on wowhead, and this isn't the version of the quest i received (i got the next quest, 12973)
+			}),
+		}),
 	}),
-}));
+})));

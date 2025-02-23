@@ -1,19 +1,10 @@
 ---------------------------------------------------
 --          Z O N E S        M O D U L E         --
 ---------------------------------------------------
-local COOKING_AWARD_GROUPS = {
-	-- #if AFTER 5.0.4
-	currency(81),	-- Epicurean's Award
-	-- #else
-	currency(402),	-- Ironpaw Token // Pre 5.0.4 named Chef's Award
-	-- #endif
-};
 root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	m(UNDERCITY, {
 		["lore"] = "The Undercity is the capital city of the Forsaken undead of the Horde.\n\nFar beneath the ruined Capital City of the kingdom of Lordaeron, its royal crypts were turned into a bastion of evil and undeath. Originally intended by Prince Arthas to be the Scourge's seat of power, the budding \"Undercity\" was abandoned when Arthas was recalled to aid the Lich King in the distant Northrend. In Arthas' absence, the Dark Lady, Sylvanas Windrunner, led the rebel Forsaken to the Undercity, and claimed it for her own. Since taking up residence, the Forsaken worked to complete the Undercity's construction by dredging the twisted maze of catacombs, tombs, and dungeons that Arthas began.",
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\inv_misc_tournaments_banner_scourge",
-		-- #endif
+		["icon"] = 255133,
 		-- #if AFTER BFA
 		["maps"] = { 998 },	-- Undercity (Battle for Lordaeron scenario)
 		-- #endif
@@ -24,13 +15,45 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = FISHING,
 					["races"] = HORDE_ONLY,
-					["sym"] = {{ "achievement_criteria" }},
+					["groups"] = {
+						crit(17764, {	-- Fish Head
+							["_quests"] = { 29317 },
+						}),
+						crit(17765, {	-- Tadpole Terror
+							["_quests"] = { 29319 },
+						}),
+						crit(17766, {	-- Like Pike?
+							["_quests"] = { 29320 },
+						}),
+						crit(17767, {	-- Time for Slime
+							["_quests"] = { 29322 },
+						}),
+						crit(17768, {	-- Moat Monster!
+							["_quests"] = { 29361 },
+						}),
+					},
 				})),
 				applyclassicphase(CATA_PHASE_ONE, ach(5844, {	-- Let's Do Lunch: Undercity
 					["timeline"] = { ADDED_4_2_0 },
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
-					["sym"] = {{ "achievement_criteria" }},
+					["groups"] = {
+						crit(17738, {	-- Fungus Among Us
+							["_quests"] = { 29315 },
+						}),
+						crit(17739, {	-- Lily, Oh Lily
+							["_quests"] = { 29332 },
+						}),
+						crit(17740, {	-- Escargot A Go-Go
+							["_quests"] = { 29333 },
+						}),
+						crit(17741, {	-- Roach Coach
+							["_quests"] = { 29334 },
+						}),
+						crit(17742, {	-- Would You Like Some Flies With That?
+							["_quests"] = { 29360 },
+						}),
+					},
 				})),
 			}),
 			battlepets({
@@ -43,13 +66,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				},
 			}),
 			n(FACTIONS, {
-				faction(68, {	-- Undercity
-					-- #if AFTER WRATH
-					["icon"] = "Interface\\Icons\\Achievement_Character_Undead_Male",
+				faction(FACTION_UNDERCITY, {	-- Undercity
+					-- #if AFTER CATA
+					["provider"] = { "i", 45583 },	-- Undercity Tabard
 					-- #else
-					["icon"] = [[~_.asset("Achievement_Character_Undead_Male")]],
+					["icon"] = 236458,
 					-- #endif
-					["OnTooltip"] = FUNCTION_TEMPLATES.OnTooltip.RuneclothTurnIns,
+					["OnTooltip"] = [[_.OnTooltipDB.RuneclothTurnIns]],
 					["races"] = HORDE_ONLY,
 				}),
 			}),
@@ -251,7 +274,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sourceQuest"] = 7818,	-- A Donation of Runecloth
 					["coord"] = { 71.8, 29, UNDERCITY },
 					["cost"] = { { "i", 14047, 20 } },	-- Runecloth
-					["maxReputation"] = { 68, EXALTED },	-- Undercity, Exalted.
+					["maxReputation"] = { FACTION_UNDERCITY, EXALTED },	-- Undercity, Exalted.
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = HORDE_ONLY,
 					["repeatable"] = true,
@@ -441,7 +464,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(1998, {	-- Fenwick Thatros
 					["qg"] = 6467,	-- Mennet Carkad
@@ -477,7 +502,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(1961, {	-- Gathering Materials
 					["qg"] = 4568,	-- Anastasia Hartwell <Mage Trainer>
@@ -654,7 +681,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(2995, {	-- Lines of Communication
 					["qg"] = 7825,	-- Oran Snakewrithe
@@ -809,7 +838,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 				q(1358, {	-- Sample for Helbrim
 					["providers"] = {
@@ -1379,7 +1410,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["requireSkill"] = COOKING,
 					["races"] = HORDE_ONLY,
 					["isDaily"] = true,
-					["groups"] = COOKING_AWARD_GROUPS,
+					["groups"] = {
+						COOKING_AWARD,
+					},
 				}),
 			}),
 			-- #if SEASON_OF_DISCOVERY
@@ -1413,7 +1446,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["timeline"] = { ADDED_6_1_0 },
 					["modelRotation"] = 270,
 					["modelScale"] = 1.3,
-					["icon"] = "Interface\\Icons\\Battleground_Strongbox_Skirmish_Horde",
+					["icon"] = 1041430,
 					["groups"] = {
 						i(122233, {	-- Music Roll: Lament of the Highborne
 							["timeline"] = { ADDED_6_1_0 },
@@ -1488,19 +1521,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["timeline"] = { ADDED_3_1_0 },
 						}),
 						i(64921, {	-- Cape of Undercity
-							["minReputation"] = { 68, EXALTED },	-- Undercity, Exalted.
+							["minReputation"] = { FACTION_UNDERCITY, EXALTED },	-- Undercity, Exalted.
 							["timeline"] = { ADDED_4_0_1 },
 						}),
 						i(64922, {	-- Mantle of Undercity
-							["minReputation"] = { 68, EXALTED },	-- Undercity, Exalted.
+							["minReputation"] = { FACTION_UNDERCITY, EXALTED },	-- Undercity, Exalted.
 							["timeline"] = { ADDED_4_0_1 },
 						}),
 						i(64920, {	-- Shroud of Undercity
-							["minReputation"] = { 68, EXALTED },	-- Undercity, Exalted.
+							["minReputation"] = { FACTION_UNDERCITY, EXALTED },	-- Undercity, Exalted.
 							["timeline"] = { ADDED_4_0_1 },
 						}),
 						i(67529, {	-- Undercity Satchel
-							["minReputation"] = { 68, REVERED },	-- Undercity, Revered.
+							["minReputation"] = { FACTION_UNDERCITY, REVERED },	-- Undercity, Revered.
 							["timeline"] = { ADDED_4_0_3 },
 						}),
 					},
@@ -2215,6 +2248,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				["timeline"] = { ADDED_4_0_1 },
 				["sym"] = WARCHIEFS_COMMAND_BOARD_SYMLINK,
 				["races"] = HORDE_ONLY,
+				["skipFill"] = true,
 			}),
 			-- #endif
 		},

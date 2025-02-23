@@ -178,6 +178,9 @@ root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADD
 					["qg"] = 134554,	-- Lady Sylvanas Windrunner
 					["races"] = HORDE_ONLY,
 					["sourceQuest"] = 50880,	-- An Unstoppable Force
+					["g"] = {
+						i(158937),	--Everburning Torch (QI!)
+					},
 				}),
 				q(52806, {	-- A Looming Threat [Note: Final Quest for Part 1]
 					["qg"] = 134554,	-- Lady Sylvanas Windrunner
@@ -236,6 +239,9 @@ root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADD
 					["qg"] = 134573,	-- Lorash
 					["races"] = HORDE_ONLY,
 					["sourceQuest"] = 50646,	-- A Quick Diversion
+					["g"] = {
+						i(158190),	-- Target Marker (QI!)
+					},
 				}),
 				q(53608, {	-- Fueling the Horde War Machine
 					["qg"] = 144346,	-- Jux Burstkix
@@ -367,6 +373,9 @@ root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADD
 					}),
 					q(52504, {	-- So We Meat Again
 						["races"] = ALLIANCE_ONLY,
+						["g"] = {
+							i(162013),	-- Haunch of Meat (QI!)
+						},
 					}),
 					q(52307, {	-- Spiritual Aid
 						["races"] = ALLIANCE_ONLY,
@@ -379,6 +388,9 @@ root(ROOTS.WorldEvents, n(EXPANSION_PRELAUNCH, bubbleDown({ ["timeline"] = { ADD
 					}),
 					q(52343, {	-- They Eat Like Orcs
 						["races"] = HORDE_ONLY,
+						["g"] = {
+							i(162013),	-- Haunch of Meat (QI!)
+						},
 					}),
 					q(52896, {	-- Under Pressure
 						["races"] = HORDE_ONLY,

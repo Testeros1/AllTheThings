@@ -187,7 +187,7 @@ namespace ATT
                     case 16: return Filters.Cloak;
                     case 18: return Filters.Bag;
                     case 19: return Filters.Tabard;
-                    case 22: return Filters.HeldInOffHand;
+                    //case 22: return Filters.HeldInOffHand;    // Causes off-hand axes and stuff to get flagged as held in offhand.
                     //case 23: return Filters.HeldInOffHand;    // causes un-bindable Fish to include a SourceID
                     case 29: return Filters.ProfessionEquipment;
                     case 30: return Filters.ProfessionEquipment;
@@ -687,9 +687,18 @@ namespace ATT
 
                 // Calculate the Filter ID based on Item Class, Sub Class, and Inventory Type
                 long itemClass = -1, itemSubClass = -1, inventoryType = -1;
-                if (data.TryGetValue("class", out object temp)) itemClass = Convert.ToInt64(temp);
-                if (data.TryGetValue("subclass", out temp)) itemSubClass = Convert.ToInt64(temp);
-                if (data.TryGetValue("inventoryType", out temp)) inventoryType = Convert.ToInt64(temp);
+                if (data.TryGetValue("class", out long temp) || data.TryGetValue("_class", out temp))
+                {
+                    itemClass = temp;
+                }
+                if (data.TryGetValue("subclass", out temp) || data.TryGetValue("_subclass", out temp))
+                {
+                    itemSubClass = temp;
+                }
+                if (data.TryGetValue("inventoryType", out temp) || data.TryGetValue("_inventoryType", out temp))
+                {
+                    inventoryType = temp;
+                }
                 return CalculateFilter(itemClass, itemSubClass, inventoryType);
             }
 
@@ -719,9 +728,22 @@ namespace ATT
                 if (recipeID > 0)
                     return false;
 
+                // don't guess Recipes for anything Unsorted
+                if (ProcessingUnsortedCategory) return false;
+
                 data.TryGetValue("spellID", out long spellID);
                 // get the name of the recipe item (i.e. Technique: blah blah)
                 Items.TryGetName(data, out string recipeItemName);
+                data.TryGetValue("itemID", out object itemID);
+
+                // have we already Sourced this Recipe? then assume it's also granted by another Item
+                if (TryGetSOURCED("recipeID", spellID, out var _))
+                {
+                    LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, spellID, recipeItemName, $"Duplicate SpellID Match with Sourced RecipeID");
+
+                    recipeID = spellID;
+                    return true;
+                }
 
                 // Item directly marked as a 'Recipe', then assume the associated spellID represents the recipeID
                 if (data.TryGetValue("f", out long filterID))
@@ -732,8 +754,7 @@ namespace ATT
                         {
                             recipeID = spellID;
 
-                            data.TryGetValue("itemID", out object itemID);
-                            LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, spellID, recipeItemName);
+                            LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, spellID, recipeItemName, "Filter Recipe with SpellID");
                             return true;
                         }
                     }
@@ -771,8 +792,7 @@ namespace ATT
                     data.Remove("spellID");
                     recipeID = spellID;
 
-                    data.TryGetValue("itemID", out object itemID);
-                    LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, spellID, recipeItemName);
+                    LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, spellID, recipeItemName, $"Item Name Contains Skill-matched Recipe Name '{matchedRecipeName}'");
                     return true;
                 }
 
@@ -784,8 +804,7 @@ namespace ATT
                     {
                         recipeID = recipeInfo.Key;
 
-                        data.TryGetValue("itemID", out object itemID);
-                        LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, recipeID, recipeItemName);
+                        LogDebugFormatted(LogFormats["ItemRecipeFormat"], itemID, recipeID, recipeItemName, $"Item Name Partially-Contains Recipe Name '{recipeInfo.Value}'");
                         return true;
                     }
                     // do we need further checking?
@@ -1594,6 +1613,7 @@ end");
                     case "title":
                     case "order":
                     case "SortType":
+                    case "an":
                         {
                             item[field] = ATT.Export.ToString(value).Replace("\n", "\\n").Replace("\r", "\\r").Replace("\t", "\\t");
                             break;
@@ -1648,7 +1668,7 @@ end");
                     case "displayID":
                     case "modID":
                     case "bonusID":
-                    case "runeforgePowerID":
+                    case "runeforgepowerID":
                     case "raceID":
                     case "conduitID":
                     case "criteriaTreeID":
@@ -1777,6 +1797,9 @@ end");
                     case "_objects":
                     case "_achievements":
                     case "_factions":
+                    case "extraTransmogSetSpells":
+                    case "_tmogSetIDs":
+                    case "_sourceIDs":
                         {
                             MergeIntegerArrayData(item, field, value);
                             break;
@@ -1981,11 +2004,6 @@ end");
                             }
                             break;
                         }
-                    case "_wipe":
-                    case "_drop":
-                    case "_sitemID":
-                        item[field] = value;
-                        break;
 
                     // Report all other fields.
                     default:
@@ -2341,8 +2359,7 @@ end");
             /// </summary>
             public static void MergeQuestData(IDictionary<string, object> data)
             {
-                if (!data.TryGetValue("questID", out long questID))
-                    return;
+                if (!data.TryGetValue("questID", out long questID)) return;
 
                 QUESTS_WITH_REFERENCES[questID] = true;
 
@@ -2455,7 +2472,7 @@ end");
                         return container.FindObject(mostSignificantID, id, "questID", objQuestID);
                     }
                 }
-                else if (mostSignificantID == "azeriteEssenceID" || mostSignificantID == "spellID")
+                else if (mostSignificantID == "azeriteessenceID" || mostSignificantID == "spellID")
                 {
                     // For Essences, also keep track of the ranks to allow more than one per list.
                     if (data2.TryGetValue("rank", out object fieldRef) && fieldRef.TryConvert(out decimal rank))

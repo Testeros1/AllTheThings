@@ -1,14 +1,12 @@
 SHARED_APPEARANCES = createHeader({
 	readable = "Shared Appearances",
 	constant = "SHARED_APPEARANCES",
-	-- #if AFTER CATA
 	export = true,
-	-- #endif
 	-- #if ANYCLASSIC
-	icon = "Interface\\Icons\\INV_Enchant_ShardBrilliantSmall",
+	icon = 132874,
 	-- #else
 	-- This icon became available in WOD, technically
-	icon = "Interface\\Icons\\Achievement_GarrisonFollower_ItemLevel650",
+	icon = 1033585,
 	-- #endif
 	text = {
 		en = "Shared Appearances",
@@ -20,6 +18,7 @@ SHARED_APPEARANCES = createHeader({
 		ru = "Общие Облики",
 		ko = "공유된 모습",
 		cn = "共享外观",
+		tw = "共享外觀",
 	},
 	description = {
 		en = "The items in this list are shared appearances for the above item. In Unique Appearance Mode, this list can help you understand why or why not a specific item would be marked Collected.",

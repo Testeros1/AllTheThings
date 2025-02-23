@@ -152,7 +152,7 @@ root(ROOTS.Zones, {
 				q(47041, {	-- Affliction: The Twisted Twin
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47034,  -- Legion Threat: The Necromancer
+						47034,	-- Legion Threat: The Necromancer
 					},
 					["providers"] = {
 						{ "n", 90463 },	-- Archmage Karlain
@@ -165,6 +165,9 @@ root(ROOTS.Zones, {
 					["provider"] = { "n", 113986 },	-- Archmage Khadgar
 					["sourceQuests"] = { 44182 },	-- City Under Siege
 					["coord"] = { 47.6, 74.6, DEADWIND_PASS },
+					["g"] = {
+						i(141411),	-- Translocation Anomaly Neutralization Crystal (QI!)
+					},
 				}),
 				q(45482, {	-- Arcane: Fate of the Tideskorn
 					["sourceQuests"] = {
@@ -200,7 +203,7 @@ root(ROOTS.Zones, {
 				q(47051, {	-- Assassination: Fate of the Tideskorn
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47033,  -- Legion Threat: Suramar
+						47033,	-- Legion Threat: Suramar
 					},
 					["classes"] = { ROGUE },
 					["providers"] = {
@@ -240,7 +243,7 @@ root(ROOTS.Zones, {
 				q(47037, {	-- Balance: The Twisted Twin
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47034,  -- Legion Threat: The Necromancer
+						47034,	-- Legion Threat: The Necromancer
 					},
 					["providers"] = {
 						{ "n", 90463 },	-- Archmage Karlain
@@ -300,7 +303,7 @@ root(ROOTS.Zones, {
 				}),
 				q(47025, {	-- Blood: Aid of the Illidari
 					["sourceQuests"] = {
-						47030,  -- Legion Threat: Dalaran Infiltration
+						47030,	-- Legion Threat: Dalaran Infiltration
 						44821,	-- In Dire Need
 					},
 					["classes"] = { DEATHKNIGHT },
@@ -312,7 +315,7 @@ root(ROOTS.Zones, {
 				}),
 				q(47024, {	-- Brewmaster: Aid of the Illidari
 					["sourceQuests"] = {
-						47030,  -- Legion Threat: Dalaran Infiltration
+						47030,	-- Legion Threat: Dalaran Infiltration
 						44821,	-- In Dire Need
 					},
 					["classes"] = { MONK },
@@ -400,7 +403,7 @@ root(ROOTS.Zones, {
 				q(47049, {	-- Demonology: Fate of the Tideskorn
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47033,  -- Legion Threat: Suramar
+						47033,	-- Legion Threat: Suramar
 					},
 					["providers"] = {
 						{ "n", 90417 },		-- Archmage Khadgar
@@ -439,7 +442,7 @@ root(ROOTS.Zones, {
 				q(45123, {	-- Elemental: The Folly of Levia Laurence
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47035,  -- Legion Threat: The Missing Mage
+						47035,	-- Legion Threat: The Missing Mage
 					},
 					["classes"] = { SHAMAN },
 					["providers"] = {
@@ -448,10 +451,20 @@ root(ROOTS.Zones, {
 					},
 					["coord"] = { 28.5, 48.9, LEGION_DALARAN },
 				}),
+				q(44412, {	-- Enemies Everywhere
+					["sourceQuest"] = 44411,    -- Strange Humming Crystal
+					["provider"] = { "n", 90417 },	-- Archmage Khadgar
+					["g"] = {
+						i(141348, {	-- Wondrous Wisdomball (PET!)
+							-- added cost of original quest chain start item
+							["cost"] = {{"i",141349,1}},	-- Strange Humming Crystal
+						}),
+					},
+				}),
 				q(47050, {	-- Enhancement: Fate of the Tideskorn
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47033,  -- Legion Threat: Suramar
+						47033,	-- Legion Threat: Suramar
 					},
 					["providers"] = {
 						{ "n", 90417 },		-- Archmage Khadgar
@@ -487,7 +500,7 @@ root(ROOTS.Zones, {
 				q(47059, {	-- Feral: The Folly of Levia Laurence
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47035,  -- Legion Threat: The Missing Mage
+						47035,	-- Legion Threat: The Missing Mage
 					},
 					["classes"] = { DRUID },
 					["providers"] = {
@@ -513,6 +526,10 @@ root(ROOTS.Zones, {
 					["coord"] = { 42.7, 28.4, LEGION_DALARAN },
 					["lvl"] = 45,
 					["timeline"] = { REMOVED_9_1_0 },
+					["g"] = {
+						i(136352),	-- Archmage Karlain's Imbued Silkweave Robe (QI!)
+						i(136351),	-- Handful of Obliterum Ash (QI!)
+					},
 				}),
 				q(45917, {	-- Following the Scent
 					["sourceQuests"] = { 45125 },	-- Dabbling in the Demonic
@@ -531,7 +548,7 @@ root(ROOTS.Zones, {
 				q(47046, {	-- Frost: The Thieving Apprentice
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47032,  -- Legion Threat: Azshara
+						47032,	-- Legion Threat: Azshara
 					},
 					["providers"] = {
 						{ "n", 115467 },	-- Archmage Kalec
@@ -556,7 +573,7 @@ root(ROOTS.Zones, {
 				q(47056, {	-- Fury: The Folly of Levia Laurence
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47035,  -- Legion Threat: The Missing Mage
+						47035,	-- Legion Threat: The Missing Mage
 					},
 					["classes"] = { WARRIOR },
 					["providers"] = {
@@ -595,7 +612,7 @@ root(ROOTS.Zones, {
 				}),
 				q(47023, {	-- Guardian: Aid of the Illidari
 					["sourceQuests"] = {
-						47030,  -- Legion Threat: Dalaran Infiltration
+						47030,	-- Legion Threat: Dalaran Infiltration
 						44821,	-- In Dire Need
 					},
 					["providers"] = {
@@ -608,7 +625,7 @@ root(ROOTS.Zones, {
 				q(47043, {	-- Havoc: The Thieving Apprentice
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47032,  -- Legion Threat: Azshara
+						47032,	-- Legion Threat: Azshara
 					},
 					["providers"] = {
 						{ "n", 115467 },	-- Archmage Kalec
@@ -637,7 +654,7 @@ root(ROOTS.Zones, {
 				q(47006, {	-- Holy: The Bradensbrook Investigation
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47027,  -- Legion Threat: Val'sharah
+						47027,	-- Legion Threat: Val'sharah
 					},
 					["classes"] = { PALADIN },
 					["providers"] = {
@@ -649,7 +666,7 @@ root(ROOTS.Zones, {
 				q(46078, {	-- Holy: The Bradensbrook Investigation
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47027,  -- Legion Threat: Val'sharah
+						47027,	-- Legion Threat: Val'sharah
 					},
 					["classes"] = { PRIEST },
 					["providers"] = {
@@ -753,7 +770,7 @@ root(ROOTS.Zones, {
 				q(47039, {	-- Marksmanship: The Twisted Twin
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47034,  -- Legion Threat: The Necromancer
+						47034,	-- Legion Threat: The Necromancer
 					},
 					["providers"] = {
 						{ "n", 90463 },	-- Archmage Karlain
@@ -805,10 +822,13 @@ root(ROOTS.Zones, {
 						PRIEST,		-- Shadow
 						WARLOCK,	-- Affliction
 					},
+					["g"] = {
+						i(143494),	-- A Mysterious Note (QI!)
+					},
 				}),
 				q(47005, {	-- Mistweaver: The Bradensbrook Investigation
 					["sourceQuests"] = {
-						47027,  -- Legion Threat: Val'sharah
+						47027,	-- Legion Threat: Val'sharah
 						44821,	-- In Dire Need
 					},
 					["classes"] = { MONK },
@@ -833,7 +853,7 @@ root(ROOTS.Zones, {
 				q(47058, {	-- Outlaw: The Folly of Levia Laurence
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47035,  -- Legion Threat: The Missing Mage
+						47035,	-- Legion Threat: The Missing Mage
 					},
 					["classes"] = { ROGUE },
 					["providers"] = {
@@ -871,7 +891,7 @@ root(ROOTS.Zones, {
 				}),
 				q(47022, {	-- Protection: Aid of the Illidari
 					["sourceQuests"] = {
-						47030,  -- Legion Threat: Dalaran Infiltration
+						47030,	-- Legion Threat: Dalaran Infiltration
 						44821,	-- In Dire Need
 					},
 					["classes"] = { PALADIN },
@@ -901,7 +921,7 @@ root(ROOTS.Zones, {
 				}),
 				q(47004, {	-- Restoration: The Bradensbrook Investigation (Druid version)
 					["sourceQuests"] = {
-						47027,  -- Legion Threat: Val'sharah
+						47027,	-- Legion Threat: Val'sharah
 						44821,	-- In Dire Need
 					},
 					["classes"] = { DRUID },
@@ -913,7 +933,7 @@ root(ROOTS.Zones, {
 				}),
 				q(47003, {	-- Restoration: The Bradensbrook Investigation (Shaman version)
 					["sourceQuests"] = {
-						47027,  -- Legion Threat: Val'sharah
+						47027,	-- Legion Threat: Val'sharah
 						44821,	-- In Dire Need
 					},
 					["classes"] = { SHAMAN },
@@ -926,7 +946,7 @@ root(ROOTS.Zones, {
 				q(47052, {	-- Retribution: Fate of the Tideskorn
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47033,  -- Legion Threat: Suramar
+						47033,	-- Legion Threat: Suramar
 					},
 					["providers"] = {
 						{ "n", 90417 },		-- Archmage Khadgar
@@ -1018,7 +1038,7 @@ root(ROOTS.Zones, {
 				q(47042, {	-- Shadow: The Twisted Twin
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47034,  -- Legion Threat: The Necromancer
+						47034,	-- Legion Threat: The Necromancer
 					},
 					["providers"] = {
 						{ "n", 90463 },	-- Archmage Karlain
@@ -1033,7 +1053,7 @@ root(ROOTS.Zones, {
 				q(47048, {	-- Subtlety: The Thieving Apprentice
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47032,  -- Legion Threat: Azshara
+						47032,	-- Legion Threat: Azshara
 					},
 					["classes"] = { ROGUE },
 					["providers"] = {
@@ -1045,7 +1065,7 @@ root(ROOTS.Zones, {
 				q(47047, {	-- Survival: The Thieving Apprentice
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47032,  -- Legion Threat: Azshara
+						47032,	-- Legion Threat: Azshara
 					},
 					["providers"] = {
 						{ "n", 115467 },	-- Archmage Kalec
@@ -1074,7 +1094,10 @@ root(ROOTS.Zones, {
 					["timeline"] = {
 						ADDED_7_3_5,
 						REMOVED_8_0_1
-					}
+					},
+					["g"] = {
+						i(154880),	-- Cursed Shard (QI!)
+					},
 				}),
 				q(42970, {	-- The Diamond King
 					["provider"] = { "n", 113655 },	-- Brann Bronzebeard
@@ -1186,7 +1209,7 @@ root(ROOTS.Zones, {
 				q(47057, {	-- Unholy: The Folly of Levia Laurence
 					["sourceQuests"] = {
 						44821,	-- In Dire Need
-						47035,  -- Legion Threat: The Missing Mage
+						47035,	-- Legion Threat: The Missing Mage
 					},
 					["classes"] = { DEATHKNIGHT },
 					["providers"] = {
@@ -1223,7 +1246,7 @@ root(ROOTS.Zones, {
 				}),
 				q(46314, {	-- Vengeance: Seeking Kor'vas
 					["sourceQuests"] = {
-						47030,  -- Legion Threat: Dalaran Infiltration
+						47030,	-- Legion Threat: Dalaran Infiltration
 						44821,	-- In Dire Need
 					},
 					["providers"] = {
@@ -1276,17 +1299,29 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
+
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.LEGION, {
-		q(40340),	-- Alard Schmied Greeting Seen - "Well, I'll be... the Ashbringer. ...' in Dalaran
-		q(45518),	-- First Aid Shop Searched - triggered after searching first aid shop during "Confirming Suspicions" (questID 45414)
-		q(47282),	-- First Aid Shop Searched - triggered after searching first aid shop during "Confirming Suspicions" (questID 45414)
-		q(46321),	-- Krasus Landing Searched - triggered when finding Velen during "Confirming Suspicions" (questID 45414)
-		q(46312),	-- Triggered after completing 'Where it's Thinnest' (questID 45190)
-		q(46835),	-- Whispers of a Frightened World Tracking - triggers while doing "Whispers of a Frightened World" (questID 46206)
-		q(41694),	-- World Quests Available - triggers when turning in "Uniting the Isles" (questID 45727)
-	}),
-	expansion(EXPANSION.BFA, {
-		q(58658),	-- Selecting an option to hide Vulpera hyena mount canopy/sunshade
-	}),
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+		m(BROKEN_ISLES, {
+			m(LEGION_DALARAN, {
+				q(46955),	-- Akazamzarak Silenced
+				q(40340),	-- Alard Schmied Greeting Seen - "Well, I'll be... the Ashbringer. ...' in Dalaran
+				n(QUESTS, {
+					q(45518),	-- First Aid Shop Searched - triggered after searching first aid shop during "Confirming Suspicions" (questID 45414)
+					q(47282),	-- First Aid Shop Searched - triggered after searching first aid shop during "Confirming Suspicions" (questID 45414)
+					q(46321),	-- Krasus Landing Searched - triggered when finding Velen during "Confirming Suspicions" (questID 45414)
+					q(46312),	-- Triggered after completing 'Where it's Thinnest' (questID 45190)
+					q(46835),	-- Whispers of a Frightened World Tracking - triggers while doing "Whispers of a Frightened World" (questID 46206)
+					q(41694),	-- World Quests Available - triggers when turning in "Uniting the Isles" (questID 45727)
+				}),
+			}),
+		}),
+	})),
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_3_0 } }, {
+		m(BROKEN_ISLES, {
+			m(LEGION_DALARAN, {
+				q(58658),	-- Selecting an option to hide Vulpera hyena mount canopy/sunshade
+			}),
+		}),
+	})),
 });

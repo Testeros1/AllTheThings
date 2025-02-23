@@ -11,7 +11,7 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 				i(137726),	-- Schematic: Leystone Buoy (RECIPE!)
 				prof(INSCRIPTION, {
 					i(141051, {	-- Technique: Glyph of the Trident (RECIPE!)
-						["description"] = "Drops from nagas in any Broken Isles zone. Recommended to farm the nagas before the first Boss in the Eye of Azshara Dungeon.",
+						["description"] = "Drops from Naga in any Broken Isles zone. Recommended to farm the Naga before the first Boss in the Eye of Azshara Dungeon.",
 					}),
 				}),
 			}),
@@ -52,10 +52,10 @@ root(ROOTS.Instances, expansion(EXPANSION.LEGION, {
 			}),
 			d(DIFFICULTY.DUNGEON.MULTI.NORMAL_PLUS, {
 				cr(91784, e(1480, {	-- Warlord Parjesh
-					i(139574), -- Coil of the Drowned Queen (shaman appearance)
+					i(139574),	-- Coil of the Drowned Queen (shaman appearance)
 				})),
 				cr(91789, e(1490, {	-- Lady Hatecoil
-					i(139574), -- Coil of the Drowned Queen (shaman appearance)
+					i(139574),	-- Coil of the Drowned Queen (shaman appearance)
 				})),
 				cr(96028, e(1492, {	-- Wrath of Azshara
 					ach(10780),	-- Eye of Azshara

@@ -20,78 +20,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 		["isRaid"] = true,
 		["lvl"] = 85,
 		["groups"] = {
-			n(ACHIEVEMENTS, {
-				ach(6106, {	-- Siege of Wyrmrest Temple
-					crit(18445, {	-- Morchok
-						["_encounter"] = { 311, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-					crit(18446, {	-- Warlord Zon'ozz
-						["_encounter"] = { 324, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-					crit(18447, {	-- Yor'sahj the Unsleeping
-						["_encounter"] = { 325, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-					crit(18448, {	-- Hagara the Stormbinder
-						["_encounter"] = { 317, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-				}),
-				ach(6107, {	-- Fall of Deathwing
-					crit(18449, {	-- Ultraxion
-						["_encounter"] = { 331, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-					crit(18450, {	-- Warmaster Blackthorn
-						["_encounter"] = { 332, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-					crit(18451, {	-- Spine of Deathwing
-						["_encounter"] = { 318, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-					crit(18452, {	-- Madness of Deathwing
-						["_encounter"] = { 333, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
-					}),
-				}),
-				ach(6169, {	-- Glory of the Dragon Soul Raider
-					["sym"] = {{"meta_achievement",
-						6109,	-- Heroic: Morchok
-						6110,	-- Heroic: Warlord Zon'ozz
-						6111,	-- Heroic: Yor'sahj the Unsleeping
-						6112,	-- Heroic: Hagara the Stormbinder
-						6113,	-- Heroic: Ultraxion
-						6114,	-- Heroic: Warmaster Blackhorn
-						6174,	-- Don't Stand So Close to Me
-						6129,	-- Taste the Rainbow!
-						6128,	-- Ping Pong Champion
-						6084,	-- Minutes to Midnight
-						6105,	-- Deck Defender
-						6133,	-- Maybe He'll Get Dizzy...
-						6180,	-- Chromatic Champion
-					}},
-					["groups"] = {
-						i(77068),	-- Twilight Harbinger (MOUNT!)
-					},
-				}),
-				ach(11756, {["timeline"] = {ADDED_7_2_0}}),	-- Wardrobe of the Old Gods (Dragon Soul)
-				ach(6123),	-- Dragon Soul Guild Run
-			}),
-			n(COMMON_BOSS_DROPS, {
-				["crs"] = {
-					55265,	-- Morchok
-					55308,	-- Warlord Zon'ozz
-					55312,	-- Yor'sahj the Unsleeping
-					55689,	-- Hagara the Stormbinder
-					55294,	-- Ultraxion
-					56427,	-- Warmaster Blackhorn
-				},
-				["groups"] = {
-					currency(614),	-- Mote of Darkness
-				},
-			}),
-			n(QUALITY_LEGENDARY, {
-				["title"] = "Fangs of the Father",
-				["icon"] = "Interface\\Icons\\ability_backstab",
-				["classes"] = { ROGUE },
+			header(HEADERS.Achievement, 6181,	-- Fangs of the Father
+			bubbleDownSelf({ ["classes"] = { ROGUE } }, {
 				["isRaid"] = true,
 				["lvl"] = 85,
-				["groups"] = bubbleDown({ ["classes"] = { ROGUE } }, {
+				["groups"] = {
 					q(29802, {	-- A Hidden Message
 						["qg"] = 55476,	-- Lord Afrasastrasz
 						["sourceQuest"] = 29801,	-- Proving Your Worth
@@ -99,6 +32,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 						["cost"] = {
 							{ "i", 74752, 1 },	-- Solved Cipher
 						},
+						["description"] = "Yes, you actually have to pay the 10 000 gold to progress on this questline.",
 						["groups"] = {
 							i(74749, {	-- Charging Decoder Ring
 								["description"] = "Just log out for 12 hours. Read a book or something!",
@@ -216,12 +150,80 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 							i(77948),	-- The Dreamer
 						},
 					}),
+				},
+			})),
+			n(ACHIEVEMENTS, {
+				ach(6106, {	-- Siege of Wyrmrest Temple
+					crit(18445, {	-- Morchok
+						["_encounter"] = { 311, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+					crit(18446, {	-- Warlord Zon'ozz
+						["_encounter"] = { 324, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+					crit(18447, {	-- Yor'sahj the Unsleeping
+						["_encounter"] = { 325, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+					crit(18448, {	-- Hagara the Stormbinder
+						["_encounter"] = { 317, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
 				}),
+				ach(6107, {	-- Fall of Deathwing
+					crit(18449, {	-- Ultraxion
+						["_encounter"] = { 331, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+					crit(18450, {	-- Warmaster Blackthorn
+						["_encounter"] = { 332, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+					crit(18451, {	-- Spine of Deathwing
+						["_encounter"] = { 318, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+					crit(18452, {	-- Madness of Deathwing
+						["_encounter"] = { 333, DIFFICULTY.LEGACY_RAID.MULTI.ALL },
+					}),
+				}),
+				ach(6169, {	-- Glory of the Dragon Soul Raider
+					["sym"] = {{"meta_achievement",
+						6109,	-- Heroic: Morchok
+						6110,	-- Heroic: Warlord Zon'ozz
+						6111,	-- Heroic: Yor'sahj the Unsleeping
+						6112,	-- Heroic: Hagara the Stormbinder
+						6113,	-- Heroic: Ultraxion
+						6114,	-- Heroic: Warmaster Blackhorn
+						6174,	-- Don't Stand So Close to Me
+						6129,	-- Taste the Rainbow!
+						6128,	-- Ping Pong Champion
+						6084,	-- Minutes to Midnight
+						6105,	-- Deck Defender
+						6133,	-- Maybe He'll Get Dizzy...
+						6180,	-- Chromatic Champion
+					}},
+					["groups"] = {
+						i(77068),	-- Twilight Harbinger (MOUNT!)
+					},
+				}),
+				ach(11756, {["timeline"] = {ADDED_7_2_0}}),	-- Wardrobe of the Old Gods (Dragon Soul)
+				ach(6123),	-- Dragon Soul Guild Run
+			}),
+			n(COMMON_BOSS_DROPS, {
+				["crs"] = {
+					55265,	-- Morchok
+					55308,	-- Warlord Zon'ozz
+					55312,	-- Yor'sahj the Unsleeping
+					55689,	-- Hagara the Stormbinder
+					55294,	-- Ultraxion
+					56427,	-- Warmaster Blackhorn
+				},
+				["groups"] = {
+					currency(614, {	-- Mote of Darkness
+						["description"] = "Used to buy uncut gems contaned in Crystalline Geode from vendor Dasnurimi in Wyrmrest Temple.",
+					}),
+				},
 			}),
 			n(VENDORS, {
 				n(58153, {	-- Dasnurimi <Geologist & Conservator>
 					i(78890, {	-- Crystalline Geode
 						["cost"] = {{ "c", 614, 1 }},	-- Mote of Darkness
+						["description"] = "Contains random uncut Cataclysm gems.",
 					}),
 					i(78891, {	-- Elementium-coated Geode
 						["cost"] = {{ "c", 615, 1 }},	-- Essence of Corrupted Deathwing
@@ -229,55 +231,66 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 				}),
 			}),
 			d(DIFFICULTY.LEGACY_RAID.MULTI.ALL, {
-				["groups"] = {
-					cr(55265, e(311, {	-- Morchok
-						-- Placeholder for criteria
-					})),
-					cr(55308, e(324, {	-- Warlord Zon'ozz
-						-- Placeholder for criteria
-					})),
-					cr(55312, e(325, {	-- Yor'sahj the Unsleeping
-					--	i(152979, {	-- Faceless Mindlasher (PET!)
-					--		["timeline"] = { ADDED_7_3_0 },
-					--	}),
-					})),
-					cr(55689, e(317, {	-- Hagara the Stormbinder
-						-- Placeholder for criteria
-					})),
-					cr(55294, e(331, {	-- Ultraxion
-						-- Placeholder for criteria
-					})),
-					cr(56427, e(332, {	-- Warmaster Blackthorn
-						-- Placeholder for criteria
-					})),
-					cr(53879, e(318, {	-- Spine of Deathwing
-					--	i(152980, {	-- Corrupted Blood (PET!)
-					--		["timeline"] = { ADDED_7_3_0 },
-					--	}),
-					--	i(122198, {	-- Music Roll: The Shattering [Note: Crieve got on stream]
-					--		["timeline"] = { ADDED_6_1_0 },
-					--	}),
-					})),
-					cr(56173, e(333, {	-- Madness of Deathwing
-					--	i(152981, {	-- Unstable Tendril (PET!)
-					--		["timeline"] = { ADDED_7_3_0 },
-					--	}),
-					--	i(122198, {	-- Music Roll: The Shattering [Confirmed in #errors]
-					--		["timeline"] = { ADDED_6_1_0 },
-					--	}),
-						-- #if AFTER 9.1.5
-						currency(615),	-- Essence of Corrupted Deathwing
-						-- #endif
-					})),
-				},
+				cr(55265, e(311, {	-- Morchok
+					-- Placeholder for criteria
+				})),
+				cr(55308, e(324, {	-- Warlord Zon'ozz
+					-- Placeholder for criteria
+				})),
+				cr(55312, e(325, {	-- Yor'sahj the Unsleeping
+				--	i(152979, {	-- Faceless Mindlasher (PET!)
+				--		["timeline"] = { ADDED_7_3_0 },
+				--	}),
+				})),
+				cr(55689, e(317, {	-- Hagara the Stormbinder
+					-- Placeholder for criteria
+				})),
+				cr(55294, e(331, {	-- Ultraxion
+					-- Placeholder for criteria
+				})),
+				cr(56427, e(332, {	-- Warmaster Blackthorn
+					-- Placeholder for criteria
+				})),
+				cr(53879, e(318, {	-- Spine of Deathwing
+				--	i(152980, {	-- Corrupted Blood (PET!)
+				--		["timeline"] = { ADDED_7_3_0 },
+				--	}),
+				--	i(122198, {	-- Music Roll: The Shattering [Note: Crieve got on stream]
+				--		["timeline"] = { ADDED_6_1_0 },
+				--	}),
+				})),
+				cr(56173, e(333, {	-- Madness of Deathwing
+				--	i(152981, {	-- Unstable Tendril (PET!)
+				--		["timeline"] = { ADDED_7_3_0 },
+				--	}),
+				--	i(122198, {	-- Music Roll: The Shattering [Confirmed in #errors]
+				--		["timeline"] = { ADDED_6_1_0 },
+				--	}),
+					-- #if AFTER 9.1.5
+					currency(615, {	-- Essence of Corrupted Deathwing
+						["description"] = "Used to buy random epic uncut gems contaned in Elementium-Coated Geode from vendor Dasnurimi in Wyrmrest Temple.",
+					}),
+					-- #endif
+				})),
 			}),
+			-----------------------------------------------------------------------------------------------------------------------------
+			-- CRIEVE TODO: After I add the vendor data for Protocol Twilight, this section can likely be excluded for Cataclysm Classic.
+			-----------------------------------------------------------------------------------------------------------------------------
 			d(DIFFICULTY.RAID.FINDER, {
 				-- #if AFTER 6.0.1.18322
 				["crs"] = { 80675 },	-- Auridormi <Raid Finder Guardian>
 				["coord"] = { 63.0, 27.6, CAVERNS_OF_TIME },
 				-- #endif
+				-- #if ANYCLASSIC
+				["description"] = "Blizzard decided that they didn't want to provide access to LFR to Cataclysm Classic players. Instead, refer to this list as what you can get from Protocol Twilight heroics & the vendor instead.",
+				["timeline"] = { CREATED_4_4_2 },
+				-- #endif
 				["ignoreBonus"] = true,
-				["groups"] = {
+				["groups"] = 
+				-- #if ANYCLASSIC
+				bubbleDown({ ["timeline"] = { CREATED_4_4_2 }, },
+				-- #endif
+				{
 					n(COMMON_BOSS_DROPS, {
 						["crs"] = {
 							55265,	-- Morchok
@@ -295,7 +308,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 							i(78876),	-- Shoulders of the Corrupted Protector
 							i(78874),	-- Shoulders of the Corrupted Vanquisher
 							i(78863, {	-- Chest of the Corrupted Conqueror
+								-- #if AFTER LEGION
 								["description"] = "Paladin Completionists will want to take this item to the vendor to get the specific item they want.  Right-clicking can award the Holy piece regardless of your spec.",
+								-- #endif
 							}),
 							i(78864),	-- Chest of the Corrupted Protector
 							i(78862),	-- Chest of the Corrupted Vanquisher
@@ -345,7 +360,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 							i(78395),	-- Belt of Flayed Skin
 							i(78398),	-- Cord of the Slain Champion
 							i(78396),	-- Treads of Crushed Flesh
-							i(77969),	-- Seal of the Signs [Dropped for Lucetia]
+							i(77969),	-- Seal of the Seven Signs [Dropped for Lucetia]
 						})),
 						cr(55312, e(325, {	-- Yor'sahj the Unsleeping
 							i(78409),	-- Experimental Specimen Slicer
@@ -433,8 +448,15 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 							}),
 						})),
 					}),
-				},
+				}
+				-- #if ANYCLASSIC
+				)
+				-- #endif
+				,
 			}),
+			-----------------------------------------------------------------------------------------------------------------------------
+			-- CRIEVE TODO: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			-----------------------------------------------------------------------------------------------------------------------------
 			d(DIFFICULTY.LEGACY_RAID.MULTI.NORMAL_HEROIC, {
 				["ignoreBonus"] = true,
 				["groups"] = {
@@ -561,7 +583,9 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 							["timeline"] = { ADDED_6_1_0 },
 						}),
 						-- #if BEFORE 9.1.5
-						currency(615),	-- Essence of Corrupted Deathwing
+						currency(615, {	-- Essence of Corrupted Deathwing
+							["description"] = "Used to buy random epic uncut gems contaned in Elementium-Coated Geode from vendor Dasnurimi in Wyrmrest Temple.",
+						}),
 						-- #endif
 					})),
 				},
@@ -883,6 +907,14 @@ root(ROOTS.Instances, expansion(EXPANSION.CATA, {
 					})),
 				},
 			}),
+			--	Misc descriptions
+			n(53879, { -- Spine of Deathwing
+				["sharedDescription"] = "For the encounter Spine of Deathwing:\n\nKill the Corruption tentacles on Deathwing's back and stay in it's place to be secured by Grasping Tendrils during Deathwing's rolls. The objective is to allow Hideous Amangamations to consume Corrupted Blood, and kill them when facing the forward armour plating on Deathwing's back. Then kill the revealed Burning Tendon, move forward and repeat the process.",
+				["groups"] = {
+					n(55891), -- Ka'anu Reevs
+					n(55870), -- Sky Captain Swayze
+				},
+			})
 		},
 	}))),
 }));

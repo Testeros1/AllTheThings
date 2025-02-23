@@ -5,13 +5,12 @@ WHELP_DAYCARE = createHeader({
 	readable = "Little Scales Daycare",
 	constant = "WHELP_DAYCARE",
 	export = true,
-	icon = "Interface\\Icons\\inv_dragonwhelpoutland2_cutepink",
+	icon = 3846202,
 	text = {
 		en = "Little Scales Daycare",
 		ru = "Драконьи ясли",
 	},
 });
-
 root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
 	m(VALDRAKKEN, {
 		n(WHELP_DAYCARE, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {
@@ -612,15 +611,18 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 		})),
 	}),
 })));
-
-root(ROOTS.HiddenQuestTriggers, m(DRAGON_ISLES, {
-	m(VALDRAKKEN, {
-		q(77173),	-- I think this is for activating Whelp Care? Or Daily?
-		q(76204),	-- After completing Warmth and Comfort [72455], end of day 1 obsidian?
-		q(76252),	-- Obsidian Whelp dailies unlock
-		q(76253),	-- Ruby Whelping dailies unlock
-		q(76254),	-- Bronze Whelp dailies unlock
-		q(76255),	-- Azure Whelp dailies unlock
-		q(76256),	-- Emerald Whelp dailies unlock
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {
+	m(DRAGON_ISLES, {
+		m(VALDRAKKEN, {
+			n(WHELP_DAYCARE, {
+				q(77173),	-- I think this is for activating Whelp Care? Or Daily?
+				q(76204),	-- After completing Warmth and Comfort [72455], end of day 1 obsidian?
+				q(76252),	-- Obsidian Whelp dailies unlock
+				q(76253),	-- Ruby Whelping dailies unlock
+				q(76254),	-- Bronze Whelp dailies unlock
+				q(76255),	-- Azure Whelp dailies unlock
+				q(76256),	-- Emerald Whelp dailies unlock
+			}),
+		}),
 	}),
-}));
+})));

@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, {
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_2 } }, {
 	inst(1268, {	-- The Rookery
 		["coord"] = { 32.2, 34.6, DORNOGAL },
 		["maps"] = {
@@ -63,14 +63,14 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDown({ ["timeline"] = { ADD
 					},
 				}),
 			}),
-			d(DIFFICULTY.DUNGEON.MYTHIC, {
+			d(DIFFICULTY.DUNGEON.MYTHIC, bubbleDownSelf({ ["timeline"] = { CREATED_11_0_2, ADDED_11_1_0 } }, {
 				e(2568, {	-- Voidstone Monstrosity
 					["crs"] = { 207207 },	-- Voidstone Monstrosity
 					["g"] = {
 						ach(40642),	-- Mythic: The Rookery
 					},
 				}),
-			}),
+			})),
 		},
 	})
 })));

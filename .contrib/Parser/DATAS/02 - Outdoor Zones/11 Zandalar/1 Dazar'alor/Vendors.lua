@@ -181,9 +181,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			n(130901, {	-- Chronicler Grazzul <Inscription Trainer>
 				["coord"] = { 42.3, 39.7, DAZARALOR },
 				["g"] = {
-					i(168026, {	-- Book of Techniques: Sanguine Feather Quill of Lana'thel
-						["f"] = MISC,
-					}),
+					TempForceMisc(i(168026)),	-- Book of Techniques: Sanguine Feather Quill of Lana'thel
 				},
 			}),
 			n(122703, {	-- Clever Kumali <Alchemist Trainer>
@@ -264,48 +262,48 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 56.0, 32.2, DAZARALOR },
 				["g"] = {
 					i(163508, {	-- Blue Flitter (PET!)
-						["cost"] = { { "i", 163036, 100 }, },	-- 100x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 100 }, },
 					}),
 					i(163504, {	-- Child of Jani (PET!)
 						["description"] = "Complete the \"Get Hek'd\" achievement for this item to appear on the vendor.",
-						["cost"] = { { "i", 163036, 100 }, },	-- 100x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 100 }, },
 					}),
 					i(163705, {	-- Imaginary Gun (TOY!)
-						["cost"] = { { "i", 163036, 250 }, },	-- 250x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 250 }, },
 					}),
 					i(165840, {	-- Interdimensional Pet Portal
 						["questID"] = 54264,
 						-- #if BEFORE 9.0.2
-						["cost"] = { { "i", 163036, 1000 }, },	-- 1,000x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 1000 }, },
 						-- #endif
 						["u"] = REMOVED_FROM_GAME,
 					}),
 					i(163502, {	-- Lil' Ben'fon (PET!)
 						["sourceQuests"] = { 50297 },	-- The Head of Her Enemy
 						["races"] = HORDE_ONLY,	-- Note!! We are only marking the item that learns it as Horde.  Alliance can use it so we don't mark the actual species.
-						["cost"] = { { "i", 163036, 300 }, },	-- 300x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 300 }, },
 					}),
 					i(161016, {	-- Lil' Tika (PET!)
 						["sourceQuests"] = { 49681 },	-- Lil' Tika
 						["races"] = HORDE_ONLY,	-- Note!! We are only marking the item that learns it as Horde.  Alliance can use it so we don't mark the actual species.
-						["cost"] = { { "i", 163036, 200 }, },	-- 200x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 200 }, },
 					}),
 					i(139003, {	-- Pocket Pet Portal
 						["questID"] = 43016,
-						["cost"] = { { "i", 163036, 1000 }, },	-- 1,000x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 1000 }, },
 						["u"] = REMOVED_FROM_GAME,
 					}),
 					i(163499, {	-- Zandalari Shinchomper (PET!)
-						["cost"] = { { "i", 163036, 50 }, },	-- 50x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 50 }, },
 					}),
 					i(163560, {	-- Saurolisk Hatchling (PET!)
-						["cost"] = { { "i", 163036, 200 }, },	-- 200x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 200 }, },
 					}),
 					i(163498, {	-- Tiny Direhorn (PET!)
-						["cost"] = { { "i", 163036, 100 }, },	-- 100x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 100 }, },
 					}),
 					i(163704, {	-- Tiny Mechanical Mouse (TOY!)
-						["cost"] = { { "i", 163036, 500 }, },	-- 500x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 500 }, },
 					}),
 				},
 			}),
@@ -329,105 +327,111 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			n(131287, {	-- Natal'hakata <Zandalari Empire Emissary>
 				["coord"] = { 67.2, 71.7, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
-				["g"] = {
-					i(161516, {	-- Bindings of the Disparate Tribes
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(161497, {	-- Cord of the Loa Worshippers
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162764, {	-- Design: Laribole Staff of Alacrity [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162761, {	-- Design: Owlseye Loop [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162765, {	-- Design: Scarlet Diamond Staff of Intuition [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(160530, {	-- Dinomancer's Cloak
-						["cost"] = 11000000,	-- 1,100g
-					}),
-					i(162717, {	-- Formula: Enchant Ring - Pact of Haste [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162722, {	-- Formula: Enchant Weapon - Deadly Navigation [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162721, {	-- Formula: Enchant Weapon - Stalwart Navigation [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(161548, {	-- Gonk Adherents Vambraces
-						["cost"] = 19000000,	-- 1,900g
-					}),
-					i(161526, {	-- Gral Worshipper's Waders
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(161546, {	-- Grand Fleet Legplates
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(163210, {	-- Party Totem (TOY!)
-						["cost"] = 18000000,	-- 1,800g
-					}),
-					i(163317, {	-- Recipe: Battle Potion of Stamina [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162704, {	-- Recipe: Coastal Healing Potion [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162753, {	-- Technique: Contract: Zandalari Empire [Rank 2] (RECIPE!)
-						["cost"] = 11000000,	-- 1,100g
-					}),
-					i(162696, {	-- Recipe: Flask of Endless Fathoms [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162692, {	-- Recipe: Potion of Replenishment [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(161665, {	-- Cobalt Pterrordax (MOUNT!)
-						["cost"] = 125000000,	-- 12,500g
-					}),
-					i(161664, {	-- Spectral Pterrorwing (MOUNT!)
-						["cost"] = 900000000,	-- 90,000g
-					}),
-					i(162730, {	-- Schematic: AZ3-R1-T3 Gearspun Goggles [Rank 2] (RECIPE!)
-						["cost"] = 11000000,	-- 1,100g
-					}),
-					i(162731, {	-- Schematic: AZ3-R1-T3 Gearspun Goggles [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162743, {	-- Schematic: Deployable Attire Rearranger [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162742, {	-- Schematic: Interdimensional Companion Repository [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(162741, {	-- Schematic: Organic Discombobulation Grenade [Rank 3] (RECIPE!)
-						["cost"] = 14000000,	-- 1,400g
-					}),
-					i(166736, {	-- Schematic: Unstable Temporal Time Shifter [Rank 2] (RECIPE!)
-						["cost"] = 19000000,	-- 1,900g
-						["timeline"] = { ADDED_8_1_0 },
-					}),
-					i(161500, {	-- Shadraspun Legwraps
-						["cost"] = 19000000,	-- 1,900g
-					}),
-					i(160546, {	-- Tabard of the Zandalari Empire
-						["cost"] = 6250000,	-- 625g
-					}),
-					i(162623, {	-- Tome of Hex: Zandalari Tendonripper (CI!)
-						["cost"] = 18000000,	-- 1,800g
-					}),
-					i(162625, {	-- Tome of Polymorph: Direhorn (CI!)
-						["cost"] = 18000000,	-- 1,800g
-					}),
-					i(161524, {	-- Torcali's Grips of the Bounty
-						["cost"] = 19000000,	-- 1,900g
-					}),
-					i(161517, {	-- Waistcord of Pa'ku's Flight
-						["cost"] = 19000000,	-- 1,900g
-					}),
-				},
+				["g"] = bubbleDownClassicRep(FACTION_ZANDALARI_EMPIRE, {
+					{		-- Neutral
+					}, {	-- Friendly
+					}, {	-- Honored
+						i(160530, {	-- Dinomancer's Cloak
+							["cost"] = 11000000,	-- 1,100g
+						}),
+						i(162730, {	-- Schematic: AZ3-R1-T3 Gearspun Goggles [Rank 2] (RECIPE!)
+							["cost"] = 11000000,	-- 1,100g
+						}),
+						i(162753, {	-- Technique: Contract: Zandalari Empire [Rank 2] (RECIPE!)
+							["cost"] = 11000000,	-- 1,100g
+						}),
+					}, {	-- Revered
+						i(161516, {	-- Bindings of the Disparate Tribes
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(161497, {	-- Cord of the Loa Worshippers
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162764, {	-- Design: Laribole Staff of Alacrity [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162761, {	-- Design: Owlseye Loop [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162765, {	-- Design: Scarlet Diamond Staff of Intuition [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(161526, {	-- Gral Worshipper's Waders
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(161546, {	-- Grand Fleet Legplates
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162717, {	-- Formula: Enchant Ring - Pact of Haste [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162722, {	-- Formula: Enchant Weapon - Deadly Navigation [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162721, {	-- Formula: Enchant Weapon - Stalwart Navigation [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(163210, {	-- Party Totem (TOY!)
+							["cost"] = 18000000,	-- 1,800g
+						}),
+						i(163317, {	-- Recipe: Battle Potion of Stamina [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162704, {	-- Recipe: Coastal Healing Potion [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162696, {	-- Recipe: Flask of Endless Fathoms [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162692, {	-- Recipe: Potion of Replenishment [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162731, {	-- Schematic: AZ3-R1-T3 Gearspun Goggles [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162743, {	-- Schematic: Deployable Attire Rearranger [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162742, {	-- Schematic: Interdimensional Companion Repository [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(162741, {	-- Schematic: Organic Discombobulation Grenade [Rank 3] (RECIPE!)
+							["cost"] = 14000000,	-- 1,400g
+						}),
+						i(166736, {	-- Schematic: Unstable Temporal Time Shifter [Rank 2] (RECIPE!)
+							["cost"] = 19000000,	-- 1,900g
+							["timeline"] = { ADDED_8_1_0 },
+						}),
+						i(162623, {	-- Tome of Hex: Zandalari Tendonripper (CI!)
+							["cost"] = 18000000,	-- 1,800g
+						}),
+						i(162625, {	-- Tome of Polymorph: Direhorn (CI!)
+							["cost"] = 18000000,	-- 1,800g
+						}),
+					}, {	-- Exalted
+						i(161548, {	-- Gonk Adherents Vambraces
+							["cost"] = 19000000,	-- 1,900g
+						}),
+						i(161665, {	-- Reins of the Cobalt Pterrordax (MOUNT!)
+							["cost"] = 125000000,	-- 12,500g
+						}),
+						i(161664, {	-- Reins of the Spectral Pterrorwing (MOUNT!)
+							["cost"] = 900000000,	-- 90,000g
+						}),
+						i(161500, {	-- Shadraspun Legwraps
+							["cost"] = 19000000,	-- 1,900g
+						}),
+						i(160546, {	-- Tabard of the Zandalari Empire
+							["cost"] = 6250000,	-- 625g
+						}),
+						i(161524, {	-- Torcali's Grips of the Bounty
+							["cost"] = 19000000,	-- 1,900g
+						}),
+						i(161517, {	-- Waistcord of Pa'ku's Flight
+							["cost"] = 19000000,	-- 1,900g
+						}),
+					},
+				}),
 			}),
 			n(148080, {	-- Olly <Pet Smuggler>
 				["description"] = "To unlock this vendor, win PvP pet battles until the mission \"A Shady Message\" spawns.  Complete the mission, and you'll be able to purchase items from the vendor.  It could take 1, 10, 100 or 1,000 PvP pet battles before it spawns.",
@@ -435,22 +439,22 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = HORDE_ONLY,
 				["g"] = {
 					i(163489, {	-- Abyssal Eel (PET!)
-						["cost"] = { { "i", 163036, 75 }, },	-- 75x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 75 }, },
 					}),
 					i(163493, {	-- Frenzied Cottontail (PET!)
-						["cost"] = { { "i", 163036, 300 }, },	-- 300x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 300 }, },
 					}),
 					i(163492, {	-- Drustvar Piglet (PET!)
-						["cost"] = { { "i", 163036, 75 }, },	-- 75x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 75 }, },
 					}),
 					i(163495, {	-- Greatwing Macaw (PET!)
-						["cost"] = { { "i", 163036, 50 }, },	-- 50x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 50 }, },
 					}),
 					i(163496, {	-- Mechanical Prarie Dog (PET!)
-						["cost"] = { { "i", 163036, 75 }, },	-- 75x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 75 }, },
 					}),
 					i(163494, {	-- Bilefang Skitterer (PET!)
-						["cost"] = { { "i", 163036, 100 }, },	-- 100x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 100 }, },
 					}),
 				},
 			}),
@@ -555,12 +559,10 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(161521, {	-- Goblin Sapper's Legguards
 						["cost"] = 14000000,	-- 1,400g
 					}),
-					i(166444, {	-- Honorbound Scouting Map
-						["filterID"] = MISC,
-					}),
+					i(166444),	-- Honorbound Scouting Map
 					i(163779, {	-- Lil' War Machine (PET!)
 						["races"] = HORDE_ONLY,
-						["cost"] = { { "i", 163036, 200 }, },	-- 200x Polished Pet Charm
+						["cost"] = { { "i", POLISHED_PET_CHARM, 200 }, },
 					}),
 					i(161550, {	-- Lustful Warbringer's Legplates
 						["cost"] = 19000000,	-- 1,900g
@@ -666,7 +668,6 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["g"] = {
 					i(168025, {	-- Book of Schematics: Ub3r-Spanner
 						["sourceQuest"] = 53937,	-- The Ub3r-Spanner (H)
-						["filterID"] = MISC,
 						["g"] = {
 							r(282975),	-- The Ub3r-Spanner (RECIPE!)
 							r(283399),	-- Ub3r-Module: Short-Fused Bomb Bots (RECIPE!)

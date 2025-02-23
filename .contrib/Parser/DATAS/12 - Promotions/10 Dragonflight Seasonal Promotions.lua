@@ -8,6 +8,7 @@ DRAGONFLIGHT_SEASONAL_PROMOTIONS = createHeader({
 		en = "Dragonflight Seasonal Promotions",
 		ru = "Промо Dragonflight",
 		cn = "巨龙时代季节性促销",
+		tw = "《巨龍崛起》季節性促銷",
 	},
 	description = {
 		en = "These promotions happened during the time Dragonflight was the most recent expansion between 25th October 2022 & 24th July 2024.\n\nThey are listed in the order of their first appearance.",
@@ -49,7 +50,7 @@ root(ROOTS.Promotions, {
 					REMOVED_10_0_2_LAUNCH,
 				},
 				-- #if BEFORE 10.0.2
-				["u"] = BLIZZARD_BALANCE,
+				["u"] = REAL_MONEY,
 				-- #endif
 			}),
 			i(70099, {	-- Cenarion Hatchling (PET!)
@@ -116,30 +117,24 @@ root(ROOTS.Promotions, {
 			}),
 			i(32566, {	-- Picnic Basket (TOY!)
 				["description"] = "Obtained through watching select Twitch Streamers with Drops enabled for at least 4 hours between July 11th, 10:00 a.m. & July 18th, 10:00 a.m. PDT.\n\nYour Twitch account has to be connected with your Battle.net Account & you have to redeem the drop on Twitch before receiving it in your in-game collection as gift.",
-				["timeline"] = { ADDED_10_1_5 }, -- REMOVED_10_1_0 },
+				["timeline"] = { ADDED_10_1_5 },	-- REMOVED_10_1_0 },
 				["u"] = REMOVED_FROM_GAME,	-- 18th July 2023
 			}),
-			i(190923,	-- Ensemble: Dashing Buccaneer's Slops
-				bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5, REMOVED_10_1_5 } }, {	-- Added 5th Sep, Removed 12th Sep
+			iensemble(190923, {	-- Ensemble: Dashing Buccaneer's Slops
 				["description"] = "Obtained through watching select Twitch Streamers with Drops enabled for at least 4 hours between September 5th, 10:00 a.m. & September 12th, 01:00 a.m. PDT.\n\nYour Twitch account has to be connected with your Battle.net Account & you have to redeem the drop on Twitch before receiving it in your in-game collection as gift.",
-				["g"] = {
-					i(190906),	-- Dashing Buccaneer's Breeches
-					i(190907),	-- Dashing Buccaneer's Boots
-					i(190905),	-- Dashing Buccaneer's Sash
-					i(190904),	-- Dashing Buccaneer's Tunic
-				},
-			})),
+				["timeline"] = { ADDED_10_1_5, REMOVED_10_1_5 },	-- Added 5th Sep, Removed 12th Sep
+			}),
 			i(208057, {	-- Smoldering Banner of the Aspects (TOY!)
 				["description"] = "Break the Meta: DF Season 2\n\nInstead of teams fighting to beat their opponent's time, Break the Meta is focused on teams pushing keys as high as they can with Season's 2 off-meta specs and classes.\n\nRegister for the event on |cFFFFFFFFraider.io/break-the-meta-df-season-2/signups|r and complete at least 2 BTM-Eligible timed keystones at level +15 or higher during the Competition Period, and the Smoldering Banner of the Aspects will be automatically added to your collection in-game after the conclusion of the event.\n\nThe Event starts on October 3rd for US, October 4th for EU & October 5th for KR/TW & lasts for 1 reset of your region.",
 				["timeline"] = { ADDED_10_1_7, REMOVED_10_1_7 },
 			}),
 			mount(419567, {	-- Ginormous Grrloc (MOUNT!)
 				["description"] = "Obtained if you set up a 12-Month WoW Subscription.",
-				["timeline"] = { ADDED_10_1_7 },
+				["timeline"] = { ADDED_10_1_7, REMOVED_11_0_2 },
 			}),
 			i(203727, {	-- Gleaming Moonbeast (MOUNT!)
 				["description"] = "Obtained if you set up a 12-Month WoW Subscription.",
-				["timeline"] = { ADDED_10_1_7 },
+				["timeline"] = { ADDED_10_1_7, REMOVED_11_0_2 },
 			}),
 			-- Season 3
 			pet(2623, {	-- Dottie (PET!)

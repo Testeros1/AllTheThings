@@ -12,18 +12,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 	m(GHOSTLANDS, {
 		["lore"] = "Ghostlands is a low-level zone focusing on the alliance between the Blood Elves and Forsaken in pushing back the Scourge's presence. It is dark and shadowy with corruption throughout the land, culminating in Deathholme. It is also the site of the ancient Amani troll empire and the low-level reputation hub of Tranquillien.",
 		["maps"] = { 96 },	-- Amani Catacombs
-		-- #if AFTER WRATH
-		["icon"] = "Interface\\Icons\\achievement_zone_ghostlands",
-		-- #endif
+		["icon"] = 236765,
 		["timeline"] = { ADDED_2_0_1 },
 		["lvl"] = lvlsquish(10, 10, 1),
 		["groups"] = {
 			n(ACHIEVEMENTS, {
-				explorationAch(858, {	-- Explore Ghostlands
-					-- #if BEFORE WRATH
-					["description"] = "Explore Ghostlands, revealing the covered areas of the world map.",
-					-- #endif
-				}),
+				explorationAch(858),	-- Explore Ghostlands
 				ach(4908, {	-- Ghostlands Quests
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
@@ -83,7 +77,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 						9173,	-- Retaking Windrunner Spire
 						9192,	-- Trouble at the Underlight Mines
 						9156,	-- WANTED: Knucklerot and Luzran (Is this really needed? WANTED quests are generally optional)
-						
+
 						-- Farstrider Enclave
 						9275,	-- A Little Dash of Seasoning
 						9277,	-- Assault on Zeb'Nowa
@@ -94,7 +88,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 						9274,	-- Spirits of the Drowned
 						9199,	-- Troll Juju
 						9174,	-- Vanquishing Aquantion
-						
+
 						-- Dar'Khan Drathir
 						9164,	-- Captives at Deatholme
 						9170,	-- Dar'Khan's Lieutenants
@@ -153,7 +147,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				exploration(3516),	-- Zeb'Tela
 			}),
 			n(FACTIONS, {
-				faction(922, {	-- Tranquillien
+				faction(FACTION_TRANQUILLIEN, {	-- Tranquillien
 					["races"] = HORDE_ONLY,
 				}),
 			}),
@@ -377,7 +371,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				}),
 				q(9460, {	-- Combining Forces
 					["qg"] = 17224,	-- Keltus Darkleaf
-					["sourceQuest"] = 9532, 	-- Find Keltus Darkleaf
+					["sourceQuest"] = 9532,	-- Find Keltus Darkleaf
 					["coord"] = { 33, 11.2, GHOSTLANDS },
 					["timeline"] = { ADDED_3_3_0, REMOVED_4_0_3 },
 					["classes"] = { ROGUE },
@@ -662,7 +656,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					},
 					["coord"] = { 45.4, 32.4, GHOSTLANDS },
 					-- #if BEFORE BFA
-					["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
+					["minReputation"] = { FACTION_TRANQUILLIEN, FRIENDLY },	-- Tranquillien, Friendly.
 					["isBreadcrumb"] = true,
 					-- #endif
 					["races"] = HORDE_ONLY,
@@ -753,7 +747,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["sourceQuest"] = 9138,	-- Suncrown Village
 					["coord"] = { 44.8, 32.5, GHOSTLANDS },
 					-- #IF BEFORE BFA
-					["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
+					["minReputation"] = { FACTION_TRANQUILLIEN, FRIENDLY },	-- Tranquillien, Friendly.
 					-- #ENDIF
 					["races"] = HORDE_ONLY,
 					["lvl"] = lvlsquish(11, 11, 1),
@@ -909,7 +903,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["qg"] = 16199,	-- Magister Darenis
 					["sourceQuest"] = 9138,	-- Suncrown Village
 					["coord"] = { 46.0, 31.9, GHOSTLANDS },
-					["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
+					["minReputation"] = { FACTION_TRANQUILLIEN, FRIENDLY },	-- Tranquillien, Friendly.
 					["races"] = HORDE_ONLY,
 					["lvl"] = lvlsquish(10, 10, 1),
 					["groups"] = {
@@ -1207,7 +1201,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 					["qg"] = 16251,	-- Deathstalker Maltendis
 					["sourceQuest"] = 9138,	-- Suncrown Village
 					["coord"] = { 44.7, 32.2, GHOSTLANDS },
-					["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
+					["minReputation"] = { FACTION_TRANQUILLIEN, FRIENDLY },	-- Tranquillien, Friendly.
 					["races"] = HORDE_ONLY,
 					["lvl"] = lvlsquish(11, 11, 1),
 					["groups"] = {
@@ -1407,53 +1401,34 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_ONE, {
 				n(16528, {	-- Provisioner Vredigar
 					["coord"] = { 47.6, 32.2, GHOSTLANDS },
 					["races"] = HORDE_ONLY,
-					["groups"] = {
-						i(22990, {	-- Tranquillien Champion's Cloak
-							["minReputation"] = { 922, EXALTED },	-- Tranquillien, Exalted.
-						}),
-						i(22986, {	-- Apothecary's Robe
-							["minReputation"] = { 922, REVERED },	-- Tranquillien, Revered.
-						}),
-						i(22987, {	-- Deathstalker's Vest
-							["minReputation"] = { 922, REVERED },	-- Tranquillien, Revered.
-						}),
-						i(132572, {	-- Deathstalker's Hauberk
-							["minReputation"] = { 922, REVERED },	-- Tranquillien, Revered.
-							["timeline"] = { ADDED_7_0_3 },
-						}),
-						i(22985, {	-- Suncrown Breastplate
-							["minReputation"] = { 922, REVERED },	-- Tranquillien, Revered.
-						}),
-						i(28155, {	-- Apothecary's Waistband
-							["minReputation"] = { 922, HONORED },	-- Tranquillien, Honored.
-						}),
-						i(28158, {	-- Batskin Belt
-							["minReputation"] = { 922, HONORED },	-- Tranquillien, Honored.
-						}),
-						i(28162, {	-- Tranquillien Defender's Girdle
-							["minReputation"] = { 922, HONORED },	-- Tranquillien, Honored.
-						}),
-						i(132573, {	-- Tranquillen Pathfinder's Cinch
-							["minReputation"] = { 922, HONORED },	-- Tranquillien, Honored.
-							["timeline"] = { ADDED_7_0_3 },
-						}),
-						i(28164, {	-- Tranquillien Flamberge
-							["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
-						}),
-						i(22991, {	-- Apprentice Boots
-							["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
-						}),
-						i(22992, {	-- Bogwalker Boots
-							["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
-						}),
-						i(22993, {	-- Volunteer's Greaves
-							["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
-						}),
-						i(132571, {	-- Woodrunner's Footpads
-							["minReputation"] = { 922, FRIENDLY },	-- Tranquillien, Friendly.
-							["timeline"] = { ADDED_7_0_3 },
-						}),
-					},
+					["g"] = bubbleDownClassicRep(FACTION_TRANQUILLIEN, {
+						{		-- Neutral
+						}, {	-- Friendly
+							i(22991),	-- Apprentice Boots
+							i(22992),	-- Bogwalker Boots
+							i(28164),	-- Tranquillien Flamberge
+							i(22993),	-- Volunteer's Greaves
+							i(132571, {	-- Woodrunner's Footpads
+								["timeline"] = { ADDED_7_0_3 },
+							}),
+						}, {	-- Honored
+							i(28155),	-- Apothecary's Waistband
+							i(28158),	-- Batskin Belt
+							i(28162),	-- Tranquillien Defender's Girdle
+							i(132573, {	-- Tranquillen Pathfinder's Cinch
+								["timeline"] = { ADDED_7_0_3 },
+							}),
+						}, {	-- Revered
+							i(22986),	-- Apothecary's Robe
+							i(22987),	-- Deathstalker's Vest
+							i(132572, {	-- Deathstalker's Hauberk
+								["timeline"] = { ADDED_7_0_3 },
+							}),
+							i(22985),	-- Suncrown Breastplate
+						}, {	-- Exalted
+							i(22990),	-- Tranquillien Champion's Cloak
+						},
+					}),
 				}),
 				n(16224, {	-- Rathis Tomber <Trade Supplies>
 					["coord"] = { 47.2, 28.6, GHOSTLANDS },

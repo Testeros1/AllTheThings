@@ -23,8 +23,8 @@ local INSANE_IN_THE_MEMBRANE_OnInit = [[function(t)
 					return;
 				end
 			end
-			local bloodsail = _.CreateFaction(87);
-			bloodsail.minReputation = { 87, ]] .. HONORED .. [[ };
+			local bloodsail = _.CreateFaction( ]] .. FACTION_BLOODSAIL_BUCCANEERS .. [[ );
+			bloodsail.minReputation = { ]] .. FACTION_BLOODSAIL_BUCCANEERS .. [[ , ]] .. HONORED .. [[ };
 			bloodsail.OnTooltip = factions[1].OnTooltip;
 			bloodsail.collectible = false;
 			factions[1] = bloodsail;
@@ -170,7 +170,7 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 		},
 		-- #endif
 	})),
-	applyclassicphase(CATA_PHASE_ONE, ach(5374, {	 	-- 45 Exalted Reputations
+	applyclassicphase(CATA_PHASE_ONE, ach(5374, {		-- 45 Exalted Reputations
 		-- #if ANYCLASSIC
 		["OnClick"] = [[_.CommonAchievementHandlers.REPUTATIONS_OnClick]],
 		["OnTooltip"] = [[_.CommonAchievementHandlers.REPUTATIONS_OnTooltip]],
@@ -616,41 +616,41 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 	ach(6748, {		-- Realm First! Level 90 Death Knight
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6743, { 	-- Realm First! Level 90 Druid
+	ach(6743, {		-- Realm First! Level 90 Druid
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6747, { 	-- Realm First! Level 90 Hunter
+	ach(6747, {		-- Realm First! Level 90 Hunter
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6749, { 	-- Realm First! Level 90 Mage
+	ach(6749, {		-- Realm First! Level 90 Mage
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6752, { 	-- Realm First! Level 90 Monk
+	ach(6752, {		-- Realm First! Level 90 Monk
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6744, { 	-- Realm First! Level 90 Paladin
+	ach(6744, {		-- Realm First! Level 90 Paladin
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6745, { 	-- Realm First! Level 90 Priest
+	ach(6745, {		-- Realm First! Level 90 Priest
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6751, { 	-- Realm First! Level 90 Rogue
+	ach(6751, {		-- Realm First! Level 90 Rogue
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6523, { 	-- Realm First! Level 90 Shaman
+	ach(6523, {	-- Realm First! Level 90 Shaman
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6746, { 	-- Realm First! Level 90 Warlock
+	ach(6746, {		-- Realm First! Level 90 Warlock
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
-	ach(6750, { 	-- Realm First! Level 90 Warrior
+	ach(6750, {		-- Realm First! Level 90 Warrior
 		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
 	ach(1463, {		-- Realm First! Northrend Vanguard
 		["timeline"] = { ADDED_3_0_2, REMOVED_3_0_8 },
 	}),
 	ach(6829, {		-- Realm First! Pandaren Ambassador
-	 	["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
+		["timeline"] = { ADDED_5_0_4, REMOVED_5_2_0 },
 	}),
 	ach(14662, {	-- Realm First! Shadowlands Keystone Master
 		["timeline"] = { ADDED_9_0_2, REMOVED_9_1_0 },
@@ -840,7 +840,6 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 			["OnTooltip"] = [[_.CommonAchievementHandlers.MOUNTS_OnTooltip]],
 			["OnUpdate"] = [[_.CommonAchievementHandlers.MOUNTS_OnUpdate]],
 			-- #endif
-			["f"] = 100,
 			-- #endif
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = ALLIANCE_ONLY,
@@ -856,7 +855,6 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 			["OnTooltip"] = [[_.CommonAchievementHandlers.MOUNTS_OnTooltip]],
 			["OnUpdate"] = [[_.CommonAchievementHandlers.MOUNTS_OnUpdate]],
 			-- #endif
-			["f"] = 100,
 			-- #endif
 			["timeline"] = { ADDED_3_0_2 },
 			["races"] = HORDE_ONLY,
@@ -871,7 +869,6 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 			-- #if BEFORE WRATH
 			["OnTooltip"] = [[_.CommonAchievementHandlers.MOUNTS_OnTooltip]],
 			["OnUpdate"] = [[_.CommonAchievementHandlers.MOUNTS_OnUpdate]],
-			["f"] = 100,
 			-- #endif
 			-- #endif
 			["timeline"] = { ADDED_2_0_1 },
@@ -887,7 +884,6 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 			["OnTooltip"] = [[_.CommonAchievementHandlers.MOUNTS_OnTooltip]],
 			["OnUpdate"] = [[_.CommonAchievementHandlers.MOUNTS_OnUpdate]],
 			-- #endif
-			["f"] = 100,
 			-- #endif
 			["rank"] = 25,
 		}),
@@ -898,39 +894,11 @@ root(ROOTS.Character, n(ACHIEVEMENTS, {
 			["OnTooltip"] = [[_.CommonAchievementHandlers.MOUNTS_OnTooltip]],
 			["OnUpdate"] = [[_.CommonAchievementHandlers.MOUNTS_OnUpdate]],
 			-- #endif
-			["f"] = 100,
 			-- #endif
 			["rank"] = 10,
 		}),
-		ach(9713, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {	-- Awake the Drakes
+		ach(9713, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {	-- Awake the Drakes (automated)
 			i(118676),		-- Emerald Drake (MOUNT!)
-			crit(26687, {	-- Azure Drake
-				["provider"] = { "i", 43952 }, -- Azure Drake
-			}),
-			crit(26683, {	-- Bronze Drake
-				["provider"] = { "i", 43951 }, -- Bronze Drake
-			}),
-			crit(26686, {	-- Black Drake
-				["provider"] = { "i", 43986 }, -- Black Drake
-			}),
-			crit(26688, {	-- Blazing Drake
-				["provider"] = { "i", 77067 }, -- Blazing Drake
-			}),
-			crit(26684, {	-- Blue Drake
-				["provider"] = { "i", 43953 }, -- Blue Drake
-			}),
-			crit(26690, {	-- Onyxian Drake
-				["provider"] = { "i", 49636 }, -- Onyxian Drake
-			}),
-			crit(26800, {	-- Purple Netherwing Drake
-				["provider"] = { "i", 32860 }, -- Purple Netherwing Drake
-			}),
-			crit(26685, {	-- Red Drake
-				["provider"] = { "i", 43955 }, -- Red Drake
-			}),
-			crit(26689, {	-- Twilight Drake
-				["provider"] = { "i", 43954 }, -- Twilight Drake
-			}),
 		})),
 	}),
 	-- #if AFTER 6.0.2

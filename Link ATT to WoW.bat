@@ -7,6 +7,7 @@ call :link_wowfolder "C:\Program Files\World of Warcraft"
 call :link_wowfolder "C:\Program Files (x86)\World of Warcraft"
 call :link_wowfolder "..\World of Warcraft"
 call :link_wowfolder "..\Blizzard\World of Warcraft"
+call :link_wowfolder "F:\World of Warcraft"
 call :report_taskcomplete
 EXIT /B 0
 
@@ -31,6 +32,12 @@ if exist "%~1\" (
 		rmdir /s /q "%~1\Interface\AddOns\AllTheThings"
 	)
 	if NOT exist "%~1\Interface\AddOns\AllTheThings" (
+		if NOT exist "%~1\Interface" (
+			mkdir "%~1\Interface"
+		)
+		if NOT exist "%~1\Interface\AddOns" (
+			mkdir "%~1\Interface\AddOns"
+		)
 		mklink /J "%~1\Interface\AddOns\AllTheThings" "%cd%"
 	)
 )
@@ -54,11 +61,10 @@ if exist "%~1\" (
 if NOT exist "%~1\" (
 	mkdir "%~1\"
 	mkdir "%~1\db"
-	mklink "%~1\db\AccountWideQuestsDB.lua" "%cd%\db\AccountWideQuestsDB.lua"
-	mklink "%~1\db\Presets.lua" "%cd%\db\Presets.lua"
-	mklink "%~1\db\RaceDB.lua" "%cd%\db\RaceDB.lua"
-	mklink "%~1\db\ReagentsDB.lua" "%cd%\db\ReagentsDB.lua"
-	mklink /J "%~1\db\Retail" "%cd%\.beta_db"
+	mkdir "%~1\db\Retail"
+	mklink "%~1\db\Retail\Categories.lua" "%cd%\db\Retail\.beta\Categories.lua"
+	mklink "%~1\db\Retail\LocalizationDB.lua" "%cd%\db\Retail\.beta\LocalizationDB.lua"
+	mklink "%~1\db\Retail\ReferenceDB.lua" "%cd%\db\Retail\.beta\ReferenceDB.lua"
 	mklink /J "%~1\assets" "%cd%\assets"
 	mklink /J "%~1\lib" "%cd%\lib"
 	mklink /J "%~1\locales" "%cd%\locales"
@@ -67,7 +73,6 @@ if NOT exist "%~1\" (
 	mklink "%~1\AllTheThings.lua" "%cd%\AllTheThings.lua"
 	mklink "%~1\AllTheThings.toc" "%cd%\AllTheThings.toc"
 	mklink "%~1\Bindings.xml" "%cd%\Bindings.xml"
-	mklink "%~1\Settings.lua" "%cd%\Settings.lua"
 )
 EXIT /B 0
 
@@ -89,11 +94,10 @@ if exist "%~1\" (
 if NOT exist "%~1\" (
 	mkdir "%~1\"
 	mkdir "%~1\db"
-	mklink "%~1\db\AccountWideQuestsDB.lua" "%cd%\db\AccountWideQuestsDB.lua"
-	mklink "%~1\db\Presets.lua" "%cd%\db\Presets.lua"
-	mklink "%~1\db\RaceDB.lua" "%cd%\db\RaceDB.lua"
-	mklink "%~1\db\ReagentsDB.lua" "%cd%\db\ReagentsDB.lua"
-	mklink /J "%~1\db\Retail" "%cd%\.ptr_db"
+	mkdir "%~1\db\Retail"
+	mklink "%~1\db\Retail\Categories.lua" "%cd%\db\Retail\.ptr\Categories.lua"
+	mklink "%~1\db\Retail\LocalizationDB.lua" "%cd%\db\Retail\.ptr\LocalizationDB.lua"
+	mklink "%~1\db\Retail\ReferenceDB.lua" "%cd%\db\Retail\.ptr\ReferenceDB.lua"
 	mklink /J "%~1\assets" "%cd%\assets"
 	mklink /J "%~1\lib" "%cd%\lib"
 	mklink /J "%~1\locales" "%cd%\locales"
@@ -102,7 +106,6 @@ if NOT exist "%~1\" (
 	mklink "%~1\AllTheThings.lua" "%cd%\AllTheThings.lua"
 	mklink "%~1\AllTheThings.toc" "%cd%\AllTheThings.toc"
 	mklink "%~1\Bindings.xml" "%cd%\Bindings.xml"
-	mklink "%~1\Settings.lua" "%cd%\Settings.lua"
 )
 EXIT /B 0
 
