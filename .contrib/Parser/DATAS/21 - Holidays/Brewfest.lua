@@ -271,6 +271,11 @@ local fillstein = function(t)
 	smallstepbrew(g[4]);	-- Small Step Brew - Horde]
 	jungleriverwater(g[5]);	-- Jungle River Water - Horde
 
+	-- these Items are actually provided by an Object, not looted, so this is ok
+	for _,o in ipairs(g) do
+		o._allowObjectProvider = true
+	end
+
 	-- #if AFTER CATA
 	t.description = "Fill up the stein with one brew, relog, and then manually refresh your collection. Once it has registered, move on to the next brew and repeat.\n\nBarleybrew Clear and Thunder 45 can only be found in Dun Morogh, while Small Step Brew and Jungle River Water can be only found in Durotar. Gordok Grog is in both areas. Players can use the opposite faction's kegs; it just requires a little traveling!";
 	if t.timeline then bubbleDown({ ["timeline"] = t.timeline }, g); end
@@ -666,11 +671,12 @@ root(ROOTS.Holidays, applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 						}),
 						-- #if ANYCLASSIC
 						-- The idiots at Blizzard decided that they wanted to give people 353 ilvl stuff from Coren in Cataclysm Classic.
+						-- Level 365 items will not be available in Classic 2025 Brewfest, it will be in MOP
 						applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, i(71331, {	-- Direbrew's Bloodied Shanker [Level 85, ilvl 365]
-							["timeline"] = { ADDED_4_0_1, REMOVED_5_0_4 },
+							["timeline"] = { CREATED_4_0_1 },
 						})),
 						applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, i(71332, {	-- Tremendous Tankard O'Terror [Level 85, ilvl 365]
-							["timeline"] = { ADDED_4_0_1, REMOVED_5_0_4 },
+							["timeline"] = { CREATED_4_0_1 },
 						})),
 						applyclassicphase(CATA_PHASE_ONE, i(232030, {	-- Direbrew's Bloodied Shanker [Level 85, ilvl 353]
 							["timeline"] = { ADDED_4_0_1, REMOVED_5_0_4 },
@@ -1423,17 +1429,17 @@ root(ROOTS.Holidays, applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 					-- #endif
 					-- #endif
 					-- #if AFTER 3.0.0
-					["provider"] = { "i", 37571 },    -- "Brew of the Month" Club Membership Form (current)
+					["provider"] = { "i", 37571 },	-- "Brew of the Month" Club Membership Form (current)
 					["repeatable"] = true,
 					-- #else
-					["provider"] = { "i", 37736 },    -- "Brew of the Month" Club Membership Form (original)
+					["provider"] = { "i", 37736 },	-- "Brew of the Month" Club Membership Form (original)
 					["description"] = "We're not sure if completing this at the moment will get you progress on the achievement during Wrath as it does NOT retain its completion status after acquired.",
 					["repeatable"] = true,
 					-- #endif
 				}),
 				-- #IF NOT ANYCLASSIC
 				q(12420, {	-- Brew of the Month Club (A)
-					["provider"] = { "i", 37736 },    -- "Brew of the Month" Club Membership Form (original)
+					["provider"] = { "i", 37736 },	-- "Brew of the Month" Club Membership Form (original)
 					["altQuests"] = { 12278 },	-- Brew of the Month Club (A)
 					["timeline"] = { ADDED_2_2_2 },	-- Originally added 3.0.2, but in TBC Classic?!
 					["u"] = REMOVED_FROM_GAME,	-- this version isn't available, but don't know when it was 'removed'
@@ -1460,17 +1466,17 @@ root(ROOTS.Holidays, applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 					-- #endif
 					-- #endif
 					-- #if AFTER 3.0.0
-					["provider"] = { "i", 37599 },    -- "Brew of the Month" Club Membership Form (current)
+					["provider"] = { "i", 37599 },	-- "Brew of the Month" Club Membership Form (current)
 					["repeatable"] = true,
 					-- #else
-					["provider"] = { "i", 37737 },    -- "Brew of the Month" Club Membership Form (original)
+					["provider"] = { "i", 37737 },	-- "Brew of the Month" Club Membership Form (original)
 					["description"] = "We're not sure if completing this at the moment will get you progress on the achievement during Wrath as it does NOT retain its completion status after acquired.",
 					["repeatable"] = true,
 					-- #endif
 				}),
 				-- #IF NOT ANYCLASSIC
 				q(12421, {	-- Brew of the Month Club (H)
-					["provider"] = { "i", 37737 },    -- "Brew of the Month" Club Membership Form (original)
+					["provider"] = { "i", 37737 },	-- "Brew of the Month" Club Membership Form (original)
 					["altQuests"] = { 12306 },	-- Brew of the Month Club (H)
 					["timeline"] = { ADDED_2_2_2 },	-- Originally added 3.0.2, but in TBC Classic?!
 					["u"] = REMOVED_FROM_GAME,	-- this version isn't available, but don't know when it was 'removed'
@@ -1801,9 +1807,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 					-- #endif
 					["maps"] = { AZUREMYST_ISLE, THE_EXODAR, ELWYNN_FOREST, DARNASSUS, TELDRASSIL, SHATTRATH_CITY },
 					["races"] = ALLIANCE_ONLY,
-					-- #if AFTER 3.2.0.10314
-					["provider"] = { "i", 46735 },	-- Synthebrew Goggles
-					-- #endif
 					["isYearly"] = true,
 					["groups"] = appendGroups(BREWFEST_TOKEN, {
 						objective(1, {	-- 0/3 Azuremyst Pink Elekk slain
@@ -1842,9 +1845,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 					-- #endif
 					["maps"] = { EVERSONG_WOODS, MULGORE, TIRISFAL_GLADES },
 					["races"] = HORDE_ONLY,
-					-- #if AFTER 3.2.0.10314
-					["provider"] = { "i", 46735 },	-- Synthebrew Goggles
-					-- #endif
 					["isYearly"] = true,
 					["groups"] = appendGroups(BREWFEST_TOKEN, {
 						objective(1, {	-- 0/3 Eversong Pink Elekk slain
@@ -2762,13 +2762,13 @@ root(ROOTS.Holidays, applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 })));
 
 root(ROOTS.HiddenQuestTriggers, {
-	expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
-		applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
-			n(QUESTS, {
-				q(37247)	-- Angry Brewfest Letter - triggers when using "Angry Brewfest Letter" to cancel Brew of the Month subscription
-			})
-		})),
-	})),
+	-- expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_6_0_2 } }, {
+	-- 	applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
+	-- 		n(QUESTS, {
+	-- 			q(37247)	-- Angry Brewfest Letter - triggers when using "Angry Brewfest Letter" to cancel Brew of the Month subscription
+	-- 		})
+	-- 	})),
+	-- })),
 	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
 		applyevent(EVENTS.BREWFEST, n(BREWFEST_HEADER, {
 			q(77775, {	-- Daily kill of Coren Direbrew

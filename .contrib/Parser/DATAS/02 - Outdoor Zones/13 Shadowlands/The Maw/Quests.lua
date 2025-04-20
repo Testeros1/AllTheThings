@@ -93,7 +93,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				q(59758, {	-- Speaking to the Dead
 					["sourceQuests"] = { 59757 },	-- Field Seance
 					["provider"] = { "n", 166723 },	-- Highlord Darion Morgraine
-					["maps"] = { 1648 },	-- pre-SL scenario
+					["coord"] = { 27.4, 30.8, 1648 },	-- pre-SL scenario
 					["g"] = {
 						i(184313),	-- Shattered Helm of Domination (QI!)
 					},
@@ -101,7 +101,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				q(59915, {	-- Soul in Hand
 					["sourceQuests"] = { 59758 },	-- Speaking to the Dead
 					["provider"] = { "n", 166723 },	-- Highlord Darion Morgraine
-					["maps"] = { 1648 },	-- pre-SL scenario
+					["coord"] = { 27.4, 30.8, 1648 },	-- pre-SL scenario
 				}),
 				q(59759, {	-- The Lion's Cage
 					["sourceQuests"] = { 59915 },	-- Soul in Hand
@@ -129,7 +129,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 						59760,	-- The Afflictor's Key
 						59761,	-- An Undeserved Fate
 					},
-					["provider"] = { "n", 167826 },	-- Lady Jaina Proudmoore
+					["provider"] = { "n", 167833 },	-- Anduin Wrynn
 					["coord"] = { 25.0, 13.4, 1648 },	-- pre-SL scenario
 				}),
 				q(59762, {	-- By and Down the River
@@ -162,7 +162,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 						59765,	-- Wounds Beyond Flesh
 					},
 					["provider"] = { "n", 167827 },	-- Thrall
-					["maps"] = { 1648 },	-- pre-SL scenario
+					["coord"] = { 33.3, 41.5, 1648 },	-- pre-SL scenario
 				}),
 				q(59767, {	-- The Path to Salvation
 					["sourceQuests"] = { 60644 },	-- Draw Out the Darkness
@@ -275,7 +275,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["provider"] = { "n", 162804 },	-- Ve'nari
 					["coord"] = { 46.9, 41.7, THE_MAW },
 					["g"] = {
-						i(184284),	-- Bloodhoof Warmace (QI!)
+						o(364498, {	-- Bloodhoof Warmace
+							["coord"] = { 33.5, 49.1, THE_MAW },
+							["g"] = { i(184284) },	-- Bloodhoof Warmace (QI!)
+						}),
 					},
 				}),
 				q(62837, {	-- Hopeful News
@@ -292,7 +295,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["provider"] = { "n", 162804 },	-- Ve'nari
 					["coord"] = { 46.9, 41.7, THE_MAW },
 					["g"] = {
-						i(184492),	-- Pulsing Sphere (QI!)
+						o(364872, {	-- Broker Cache
+							["coord"] = { 33.5, 14.6, THE_MAW },
+							["g"] = { i(184492) },	-- Pulsing Sphere (QI!)
+						}),
 					},
 				}),
 				q(60284, {	-- Rule 5: Be Audacious
@@ -554,6 +560,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 	m(SHADOWLANDS, {
 		m(THE_MAW, {
 			n(QUESTS, {
+				q(61858),	-- taking the portal to Acherus during "Shadowlands: A Chilling Summons"
 				q(62907),	-- triggered after collecting all stygia during "Rule 1: Have an Escape Plan" (questID 60287) (spellID 345141)
 				q(64627),	-- popped after turning in 'Setting the Ground Rules' (questID 62882) on a fresh alt (spellID 358753)
 				q(64983),	-- After completing The Maw intro, upon teleport and loading screen into Oribos (level 48 human rogue)

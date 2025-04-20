@@ -440,18 +440,18 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["time
 		m(SIREN_ISLE, {
 			n(QUESTS, {
 				-- A Choir of Citrines achievement tracking quests
-				q(85674),	-- Storm Sewer's Citrine
-				q(85673),	-- Old Salt's Bardic Citrine
-				q(85672),	-- Mariner's Hallowed Citrine
-				q(85707),	-- Legendary Skipper's Citrine
-				q(85708),	-- Seabed Leviathan's Citrine
-				q(85709),	-- Roaring War-Queen's Citrine
-				q(85676),	-- Stormbringer's Runed Citrine
-				q(85677),	-- Fathomdweller's Runed Citrine
-				q(85675),	-- Windsinger's Runed Citrine
-				q(85669),	-- Thunderlord's Crackling Citrine
-				q(85670),	-- Undersea Overseer's Citrine
-				q(85671),	-- Squall Sailor's Citrine
+				-- q(85674),	-- Storm Sewer's Citrine
+				-- q(85673),	-- Old Salt's Bardic Citrine
+				-- q(85672),	-- Mariner's Hallowed Citrine
+				-- q(85707),	-- Legendary Skipper's Citrine
+				-- q(85708),	-- Seabed Leviathan's Citrine
+				-- q(85709),	-- Roaring War-Queen's Citrine
+				-- q(85676),	-- Stormbringer's Runed Citrine
+				-- q(85677),	-- Fathomdweller's Runed Citrine
+				-- q(85675),	-- Windsinger's Runed Citrine
+				-- q(85669),	-- Thunderlord's Crackling Citrine
+				-- q(85670),	-- Undersea Overseer's Citrine
+				-- q(85671),	-- Squall Sailor's Citrine
 				--
 				q(85070),	-- when Special Assigment npc unlocked for storm phase (pop talking head)
 				-- Snapdragon timer after quest
@@ -469,12 +469,11 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["time
 				q(86387),	-- Sandy Snapdragon Treat
 				q(86384),	-- Storminfused Snapdragon Treat
 				-- q(86373),	-- Teal Snapdragon Treat (automated)
-				q(86375),	-- Talk to Gazix Fusegrease and unlock the Inky Snapdragon Treat
+				-- q(86375),	-- Talk to Gazix Fusegrease and unlock the Inky Snapdragon Treat (automated)
 				--
 				--It went live:
 				--it seems like questID fire per item drop for slot now
 				--
-				--q(85839),	-- leather / mail Head slot
 				q(84839, name(HEADERS.Global, "INVTYPE_HEAD")),	-- leather / plate Head slot
 				q(84840, name(HEADERS.Global, "INVTYPE_SHOULDER")),	-- leather / mail / plate Shoulder slot
 				q(84841, name(HEADERS.Global, "INVTYPE_LEGS")),	-- leather / mail / plate Legs slot

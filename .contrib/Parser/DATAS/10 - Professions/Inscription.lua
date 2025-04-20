@@ -3496,7 +3496,7 @@ r = oldR;
 local DF_INSCRIPTION_KNOWLEDGE = 2028;
 local TWW_INSCRIPTION_KNOWLEDGE = 2790;
 -- Inscription - Skill ID  / SPELL ID
-root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = INSCRIPTION }, {
+root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_2 }, ["requireSkill"] = INSCRIPTION }, {
 	n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
 		ach(18858, {	-- Forge and Befuddle
 			["races"] = HORDE_ONLY,
@@ -5074,10 +5074,6 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 		n(QUESTS, {
 			q(70361, {	-- Dragon Isles Inscription
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Inscription.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 198125 },	-- Isarian Shadowplume <Inscription Trainer>
 				["coord"] = { 57.1, 58.2, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1,
@@ -5087,10 +5083,6 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 			}),
 			q(72244, {	-- Dragon Isles Inscription
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Inscription.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 198380 },	-- Journalist Jessamine Spitz
 				["coord"] = { 76.1, 35.5, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1,
@@ -5501,7 +5493,7 @@ root(ROOTS.Professions, prof(INSCRIPTION, bubbleDownSelf({ ["requireSkill"] = IN
 		})),
 	})),
 })));
-applyclassicphase(WRATH_PHASE_ONE, root(ROOTS.Professions, prof(INSCRIPTION)));
+root(ROOTS.Professions, applyclassicphase(WRATH_PHASE_ONE, prof(INSCRIPTION)));
 
 -- #if ANYCLASSIC
 -- Inscription Item Database

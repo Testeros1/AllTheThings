@@ -791,12 +791,12 @@ root(ROOTS.Zones, {
 							}),
 						}),
 						prof(COOKING, {
-							i(43100, {	-- Infused Mushroom
+							i(43100, {	-- Infused Mushroom (QI!)
 								["provider"] = { "o", 192818 },	-- Infused Mushroom
 							}),
 						}),
 						prof(FISHING, {
-							i(45903),	-- Corroded Jewelry
+							i(45903),	-- Corroded Jewelry (QI!)
 							i(43698, {	-- Giant Sewer Rat (PET!)
 								["timeline"] = { ADDED_3_0_2 },
 							}),
@@ -2945,10 +2945,12 @@ root(ROOTS.Zones, {
 							i(136782, {	-- Fireworks Instruction Manual (CI!)
 								["timeline"] = { ADDED_7_0_3_LAUNCH },
 							}),
+							i(39684),	-- Hair Trigger
 							i(23817, {	-- Schematic: Titanium Toolbox (RECIPE!)
 								["isLimited"] = true,
 								["timeline"] = { ADDED_3_0_8 },
 							}),
+							i(40533),	-- Walnut Stock
 						},
 					}),
 					n(29702, {	-- Chameli Banaphash <Haberdasher>
@@ -3406,11 +3408,11 @@ root(ROOTS.Zones, {
 						["groups"] = {
 							i(49177, {	-- Tome of Cold Weather Flight
 								-- #IF ANYCLASSIC
-								["recipeID"] = 54197,	-- Cold Weather Flight
+								["recipeID"] = 54197,	-- Cold Weather Flying
 								-- #ELSE
 								["f"] = MISC,
 								-- #ENDIF
-								["timeline"] = { REMOVED_4_0_1 },
+								["timeline"] = { REMOVED_7_3_5 },
 								["cost"] = {{ "g", 10000000 }},	-- 1000g
 							}),
 						},

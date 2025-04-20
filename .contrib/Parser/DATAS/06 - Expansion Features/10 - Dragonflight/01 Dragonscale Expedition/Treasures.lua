@@ -82,13 +82,6 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] 
 				}),
 			}),
 			o_repeated({	-- Disturbed Dirt (all 5 of them)
-				["providers"] = {
-					{ "o", 383735 },	-- Disturbed Dirt (vignette)
-					{ "o", 376386 },	-- Disturbed Dirt (vignette)
-					{ "o", 383734 },	-- Disturbed Dirt (vignette)
-					{ "o", 383733 },	-- Disturbed Dirt (vignette)
-					{ "o", 382029 },	-- Disturbed Dirt (vignette)
-				},
 				["cost"] = {{"i",191304,1}},	-- Sturdy Expedition Shovel
 				["maps"] = { THE_WAKING_SHORES, OHNAHRAN_PLAINS, THE_AZURE_SPAN, THALDRASZUS },
 				["sym"] = {{"select","itemID",
@@ -101,6 +94,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] 
 					199067, -- Precious Plans
 					199068, -- Time-Lost Memo
 					198852, -- Bear Termination Orders
+					-- Glimmering Clusters
+					200864,	-- Glimmering Alexstraszite Cluster
+					200866,	-- Glimmering Malygite Cluster
+					200867,	-- Glimmering Neltharite Cluster
+					200863,	-- Glimmering Nozdorite Cluster
+					200865,	-- Glimmering Ysemerald Cluster
 					-- Profession Knowledge Items
 					193891,	-- Experimental Substance
 					193897,	-- Reawakened Catalyst

@@ -215,12 +215,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 22.2, 64.8, ULDUM },
 				}),
 			}),
-			petbattles({
-				n(66824, {	-- Obalis <Grand Master Pet Tamer>
-					["coord"] = { 56.6, 41.8, ULDUM },
-				}),
-			}),
-			n(PROFESSIONS, {
+			-- #if ANYCLASSIC
+ 			n(PROFESSIONS, {
 				prof(FISHING, {
 					o(202779, {	-- Blackbelly Mudfish School
 						i(22739),	-- Tome of Polymorph: Turtle (CI!)
@@ -234,6 +230,12 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["groups"] = {
 						i(67282),	-- Elementium Geode (PET!)
 					},
+				}),
+			}),
+			-- #endif
+			petbattles({
+				n(66824, {	-- Obalis <Grand Master Pet Tamer>
+					["coord"] = { 56.6, 41.8, ULDUM },
 				}),
 			}),
 			n(QUESTS, {
@@ -638,14 +640,19 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 				}),
 				q(28267, {	-- Firing Squad
-					-- #if AFTER 9.2.0
-					["description"] = "If Harrison Jones does not spawn after the cutscene, you have to zone out and back in again. Either log out and in again, or fly northwest to Ahn'Qiraj and back.",
-					-- #endif
 					["qg"] = 47972,	-- Commander Schnottz
-					["coord"] = { 22.5, 63.1, ULDUM },
 					["sourceQuests"] = {
 						28195,	-- Sending a Message
 						28194,	-- The Great Escape
+					},
+					["coord"] = { 22.5, 63.1, ULDUM },
+					-- #if AFTER 9.2.0
+					["description"] = "If Harrison Jones does not spawn after the cutscene, you have to zone out and back in again. Either log out and in again, or fly northwest to Ahn'Qiraj and back.",
+					-- #endif
+					["groups"] = {
+						i(65803),	-- Harrison's Insignia of Panache
+						i(65805),	-- Schnottz's Medallion of Command
+						i(65804),	-- Talisman of Sinister Order
 					},
 				}),
 				q(27748, {	-- Fortune and Glory

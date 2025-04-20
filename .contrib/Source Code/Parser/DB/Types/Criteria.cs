@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ATT.DB.Types
 {
@@ -44,7 +45,7 @@ namespace ATT.DB.Types
         /// </summary>
         public bool IsUseful() =>
             GetSourceQuest() > 0 ||
-            GetKnownSpellID() > 0 ||
+            GetReceivedSpellID() > 0 ||
             GetCastedSpellID() > 0 ||
             GetFactionID() > 0 ||
             GetProviderItem() > 0 ||
@@ -54,18 +55,26 @@ namespace ATT.DB.Types
             GetRequiredFlightPath() > 0 ||
             GetRecruitFollowerID() > 0 ||
             GetGarrisonMissionID() > 0 ||
-            GetModifierTreeID() > 0 ||
             // Reveal world map overlay "{WorldMapOverlay}" (Exploration stuff)
             Type == 43 ||
+            // Equip item in slot "{$Equip Slot}"
+            Type == 49 ||
             // Mythic Plus Completed
             Type == 216;
 
         public long GetSourceQuest() =>
             Type == 27 ? Asset : 0;
 
-        public long GetKnownSpellID() =>
-            Type == 34 ? Asset : 0;
+        /// <summary>
+        /// 28: Have the spell "{Spell}" cast on you<para/>
+        /// 34: Learn or Know spell "{Spell}"
+        /// </summary>
+        public long GetReceivedSpellID() =>
+            Type == 34 || Type == 28 ? Asset : 0;
 
+        /// <summary>
+        /// 29: Cast the spell "{Spell}"
+        /// </summary>
         public long GetCastedSpellID() =>
             Type == 29 ? Asset : 0;
 
@@ -82,7 +91,7 @@ namespace ATT.DB.Types
         Type == 36 || Type == 41 || Type == 42 || Type == 57 ? Asset : 0;
 
         public long GetProviderNPC() =>
-            Type == 0 && Asset > 0 ? Asset : 0;
+            (Type == 0 || Type == 96) && Asset > 0 ? Asset : 0;
 
         public long GetProviderObject() =>
             Type == 68 || Type == 72 ? Asset : 0;

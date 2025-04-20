@@ -38,6 +38,14 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 						}),
 					},
 				}),
+				q(85269, {	-- Boom Balloon
+					["coord"] = { 37.0, 30.8, UNDERMINE },
+					["g"] = {
+						o(508718, {	-- Rooftop Teleporter
+							["coord"] = { 37.4, 33.7, UNDERMINE },
+						}),
+					},
+				}),
 				q(85263, {	-- Boomball
 					["coord"] = { 66.0, 60.3, UNDERMINE },
 				}),
@@ -92,10 +100,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 						i(229407),	-- Citrus Acid (QI!)
 					},
 				}),
+				q(85515, {	-- Free Samples!
+					["coord"] = { 27.8, 45.5, UNDERMINE },
+					["g"] = {
+						i(231900),	-- Sample Potion (QI!)
+					},
+				}),
 				q(85500, {	-- Hazardous Waste
 					["coord"] = { 56.6, 30.4, UNDERMINE },
 					["g"] = {
-						o(232054, {	-- Depleted Hotrod Battery
+						o(479594, {	-- Depleted Hotrod Battery
 							i(232054),	-- Depleted Hotrod Battery (QI!)
 						}),
 						i(232053),	-- Electro-Gland (QI!)
@@ -121,10 +135,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 						i(231897),	-- Rusted Coin (QI!)
 						i(231896),	-- Unused Jar (QI!)
 						i(231894),	-- Useful Trash (QI!)
-						o(478435),	-- Waiting Garbage Can
-						o(478436),	-- Waiting Garbage Can
-						o(478437),	-- Waiting Garbage Can
-						o(478438),	-- Waiting Garbage Can
+						o_repeated({
+							o(478435),	-- Waiting Garbage Can
+							o(478436),	-- Waiting Garbage Can
+							o(478437),	-- Waiting Garbage Can
+							o(478438),	-- Waiting Garbage Can
+						}),
 					},
 				}),
 				q(85402, {	-- In The Heights
@@ -153,6 +169,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				}),
 				q(85400, {	-- Reduce, Re-ooze, Recycle
 					["coord"] = { 36.6, 59.2, UNDERMINE },	-- TODO: one of it is wrong
+				}),
+				q(85512, {	-- Rooting Out Counterfeits
+					["coord"] = { 26.9, 71.8, UNDERMINE },
 				}),
 				q(85518, {	-- Scalper Scum
 					["coord"] = { 49.9, 33.1, UNDERMINE },

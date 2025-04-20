@@ -230,25 +230,36 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 					41589,	-- That Can-Do Attitude
 					41588,	-- Read Between the Lines
 					41217,	-- Treasures of Undermine
+					41708,	-- You're My Friend Now
 				}},
-				-- TODO reward: Warband Campite: Gallagio Grand Gallery
+				["g"] = { ws(25) },	-- Gallagio Grand Gallery (WS!)
 			}),
 			ach(40948),	-- Nine-Tenths of the Law
 			ach(40894),	-- Sojourner of Undermine (automated)
 			ach(41588, {	-- Read Between the Lines (automated)
 				i(235050),	-- Desk-In-A-Box (TOY!)
 			}),
-			ach(41589),	-- That Can-Do Attitude
+			ach(41589, {	-- That Can-Do Attitude
+				["crs"] = { 237103 },	-- Discarded Can
+			}),
 			pvp(ach(41522)),	-- Tour of Duty: Undermine
 			ach(41217),	-- Treasures of Undermine (automated)
 			ach(40900),	-- Undermined (automated)
 			achraw(41708, {	-- You're My Friend Now
+				-- automation links to the individual spell casts for each rat
 				["crs"] = {
 					239250,	-- Grabbable Rat
 					239248,	-- Grabbable Rat
 					239249,	-- Grabbable Rat
 					239251,	-- Grabbable Rat
 					239252,	-- Grabbable Rat
+				},
+				["coords"] = {
+					{ 43.6, 11.3, UNDERMINE },
+					{ 28.5, 55.8, UNDERMINE },
+					{ 36.0, 85.6, UNDERMINE },
+					{ 65.3, 88.3, UNDERMINE },
+					{ 65.9, 44.0, UNDERMINE },
 				},
 			}),
 		}),

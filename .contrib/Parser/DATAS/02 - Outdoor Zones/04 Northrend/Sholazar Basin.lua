@@ -290,15 +290,6 @@ root(ROOTS.Zones, {
 						["OnTooltip"] = [[_.OnTooltipDB.ForOracles]],
 					}),
 				}),
-				prof(FISHING, {
-					o(192057, {	-- Nettlefish School
-						["requireSkill"] = FISHING,
-					}),
-					i(45902, {	-- Phantom Ghostfish
-						["description"] = "Eat this before it despawns!",
-						["_noautomation"] = true,
-					}),
-				}),
 				n(FLIGHT_PATHS, {
 					fp(309, {	-- Nesingwary Base Camp
 						["cr"] = 28037,	-- The Spirit of Gnomeregan <Flight Master>
@@ -1387,3 +1378,18 @@ root(ROOTS.Zones, {
 		}),
 	})),
 });
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WRATH, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_3 } }, {
+	m(NORTHREND, {
+		m(SHOLAZAR_BASIN, {
+			n(FACTIONS, {
+				header(HEADERS.Faction, FACTION_FRENZYHEART_TRIBE, {
+					q(12693),	-- Sholazar Basin - Wolvar Faction Choice Tracker
+				}),
+				header(HEADERS.Faction, FACTION_THE_ORACLES, {
+					q(12694),	-- Sholazar Basin - Oracle Faction Choice Tracker
+				}),
+			}),
+		}),
+	}),
+})));

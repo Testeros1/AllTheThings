@@ -529,7 +529,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 						i(219961),	-- Fresh Mug of Cinderbrew Mead (QI!)
 						i(220115),	-- Loldren's Market Audit (QI!)
 						o(415584, {	-- Sizzling Magma Core
-							i(211863),	-- Sizzling Magma Core (QI!)
+							["coord"] = { 50.2, 63.4, DORNOGAL },
+							["g"] = { i(211863) },	-- Sizzling Magma Core (QI!)
 						}),
 					},
 				}),
@@ -1200,10 +1201,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["coord"] = { 35.8, 77.1, ISLE_OF_DORN },
 				["g"] = {
 					o(428167, {	-- Discarded Research Notes
-						i(216882),	-- Log Entry 467-21-5 (QI!)
+						["coord"] = { 35.8, 77.2, ISLE_OF_DORN },
+						["g"] = { i(216882) },	-- Log Entry 467-21-5 (QI!)
 					}),
 					o(428199, {	-- Discarded Research Notes
-						i(216888),	-- Log Entry 652-12-3 (QI!)
+						["coord"] = { 35.6, 77.1, ISLE_OF_DORN },
+						["g"] = { i(216888) },	-- Log Entry 652-12-3 (QI!)
 					}),
 					i(216889),	-- Log Entry 893-03-9 (QI!)
 				},

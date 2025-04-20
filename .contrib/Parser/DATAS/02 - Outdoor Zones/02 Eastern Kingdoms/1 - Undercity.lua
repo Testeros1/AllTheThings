@@ -240,11 +240,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							},
 						}),
 						i(12230, {	-- Felwood Slime Sample
-							-- #if AFTER WRATH
-							["description"] = "Bring at least 15 of these back with you to the Undercity for testing.",
-							-- #else
-							["description"] = "Bring at least 30 of these back with you to the Undercity for testing.",
-							-- #endif
+							["description"] =
+								-- #if AFTER WRATH
+								"Bring at least 15 of these back with you to the Undercity for testing.",
+								-- #else
+								"Bring at least 30 of these back with you to the Undercity for testing.",
+								-- #endif
 							["crs"] = {
 								7086,	-- Cursed Ooze
 								7092,	-- Tainted Ooze
@@ -367,7 +368,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						3044,	-- Miles Welsh <Priest Trainer>
 					},
 					["coords"] = {
-						{ 49.01, 18.32, UNDERCITY },
+						{ 49.0, 18.3, UNDERCITY },
 						{ 35.6, 87.6, ORGRIMMAR },
 						{ 26.0, 15.8, THUNDER_BLUFF },
 					},
@@ -621,7 +622,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ "i", 8523 },	-- Field Testing Kit
 					},
 					["sourceQuest"] = 238,	-- Errand for Apothecary Zinge (2/2)
-					["coord"] = { 50.13, 67.98, UNDERCITY },
+					["coord"] = { 50.1, 68.0, UNDERCITY },
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { TANARIS },
 					["races"] = HORDE_ONLY,
@@ -823,11 +824,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["sourceQuest"] = 6322,	-- Michael Garrett
 					["coord"] = { 63.4, 48.6, UNDERCITY },
-					-- #if AFTER CATA
-					["maps"] = { TIRISFAL_GLADES },
-					-- #else
-					["maps"] = { SILVERPINE_FOREST },
-					-- #endif
+					["maps"] = {
+						-- #if AFTER CATA
+						TIRISFAL_GLADES,
+						-- #else
+						SILVERPINE_FOREST,
+						-- #endif
+					},
 					["races"] = { UNDEAD },
 					["lvl"] = lvlsquish(10, 10, 1),
 				}),
@@ -969,7 +972,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 49.01, 18.32, UNDERCITY },
 					["timeline"] = { REMOVED_2_4_1 },
 					["classes"] = { PRIEST },
-					["races"] = { UNDEAD },
+					["races"] = { TROLL },
 					["lvl"] = 20,
 					-- #if BEFORE 2.4.1
 					["groups"] = {
@@ -1373,7 +1376,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if NOT ANYCLASSIC
 				q(5658, {	-- Touch of Weakness [Undercity]
 					["qg"] = 4606,	-- Aelthalyste
-					["coord"] = { 49.01, 18.32, UNDERCITY },
+					["coord"] = { 49.0, 18.3, UNDERCITY },
 					["altQuests"] = {
 						5660,	-- Touch of Weakness [Durotar]
 						5661,	-- Touch of Weakness [Mulgore]
@@ -1397,7 +1400,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				q(1841, {	-- Velora Nitely and the Brutal Legguards
 					["qg"] = 5878,	-- Thun'grim Firegaze
 					["sourceQuest"] = 1838,	-- Brutal Armor
-					["coord"] = { 257.2, 30.2, THE_BARRENS },
+					["coord"] = { 57.2, 30.2, THE_BARRENS },
 					["timeline"] = { REMOVED_4_0_3 },
 					["classes"] = { WARRIOR },
 					["races"] = HORDE_ONLY,
@@ -1483,7 +1486,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["isLimited"] = true,
 						}),
 						i(13477, {	-- Recipe: Superior Mana Potion (RECIPE!)
-							["timeline"] = { REMOVED_2_0_1 },	-- Moved to Trainers
+							["timeline"] = { REMOVED_2_0_1 },	-- Now taught by trainer, recipe removed from the game.
 						}),
 					},
 				}),
@@ -1510,9 +1513,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(50304, {	-- Captain Donald Adams <Undercity Quartermaster>
 					["coords"] = {
 						{ 63.6, 48.8, UNDERCITY },
-						-- #IF AFTER 8.0.1
+						-- #if AFTER 8.0.1
 						{ 56.6, 90.2, ORGRIMMAR },
-						-- #ENDIF
+						-- #endif
 					},
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
@@ -1573,7 +1576,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 64.0, 37.4, UNDERCITY },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
-						i(20854, {	-- Design: Amulet of the Moon
+						i(20854, {	-- Design: Amulet of the Moon (RECIPE!)
 							["timeline"] = { ADDED_2_0_1 },
 							["isLimited"] = true,
 						}),
@@ -1585,9 +1588,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				-- #if AFTER 6.1.0
 				n(6566, {	-- Estelle Gendry <Heirloom "Curator">
 					["coords"] = {
-						-- #IF AFTER BFA
+						-- #if AFTER BFA
 						{ 57.1, 90.0, ORGRIMMAR },
-						-- #ENDIF
+						-- #endif
 						{ 78.2, 76.6, UNDERCITY },
 					},
 					["races"] = HORDE_ONLY,
@@ -1758,7 +1761,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 64.1, 50.6, UNDERCITY },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
-						i(20975, {	-- Design: The Jade Eye
+						i(20975, {	-- Design: The Jade Eye (RECIPE!)
 							["timeline"] = { ADDED_2_0_1 },
 							["isLimited"] = true,
 						}),
@@ -1991,19 +1994,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 70.6, 30.1, UNDERCITY },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
-						i(6275, {	-- Pattern: Greater Adept's Robe
+						i(6275, {	-- Pattern: Greater Adept's Robe (RECIPE!)
 							["isLimited"] = true,
 						}),
-						i(5772, {	-- Pattern: Red Woolen Bag
+						i(5772, {	-- Pattern: Red Woolen Bag (RECIPE!)
 							["isLimited"] = true,
 						}),
-						i(10326, {	-- Pattern: Tuxedo Jacket
+						i(10326, {	-- Pattern: Tuxedo Jacket (RECIPE!)
 							["isLimited"] = true,
 						}),
-						i(10323, {	-- Pattern: Tuxedo Pants
+						i(10323, {	-- Pattern: Tuxedo Pants (RECIPE!)
 							["isLimited"] = true,
 						}),
-						i(10321, {	-- Pattern: Tuxedo Shirt
+						i(10321, {	-- Pattern: Tuxedo Shirt (RECIPE!)
 							["isLimited"] = true,
 						}),
 					},
@@ -2080,7 +2083,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 62.2, 27.0, UNDERCITY },
 					["races"] = HORDE_ONLY,
 					["sym"] = {{"select","itemID",
-						3024,	-- Bkp 2700 Enforcer
+						3024,	-- BKP 2700 "Enforcer"
 						3023,	-- Large Bore Blunderbuss
 						2509,	-- Ornate Blunderbuss
 						2510,	-- Solid Blunderbuss
@@ -2205,7 +2208,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(20753),	-- Formula: Lesser Wizard Oil (RECIPE!)
 						i(20752),	-- Formula: Minor Mana Oil (RECIPE!)
 						i(20758),	-- Formula: Minor Wizard Oil (RECIPE!)
-						i(22307),	-- Pattern: Enchanted Mageweave Pouch
+						i(22307),	-- Pattern: Enchanted Mageweave Pouch (RECIPE!)
 					},
 				}),
 				n(4560, {	-- Walter Ellingson

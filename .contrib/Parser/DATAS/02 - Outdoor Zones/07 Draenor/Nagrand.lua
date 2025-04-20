@@ -969,7 +969,10 @@ root(ROOTS.Zones, {
 						["provider"] = { "n", 79576 },	-- Rangari D'kaan
 						["coord"] = { 63.5, 61.8, DRAENOR_NAGRAND },
 						["races"] = ALLIANCE_ONLY,
-						["sourceQuest"] = 34596,	-- Reglakk's Research
+						["sourceQuests"] = {
+							34596,	-- Reglakk's Research
+							34957,	-- Challenge of the Masters
+						},
 						["isBreadcrumb"] = true,
 					}),
 					q(34955, {	-- Not Without My Honor
@@ -2273,6 +2276,7 @@ root(ROOTS.Zones, {
 						},
 					}),
 					o(233973, {	-- Bounty of the Elements
+						["description"] = "Activate the totems in order: Air, Earth, Water, Fire",
 						["questID"] = 36174,
 						["coord"] = { 77.1, 16.6, DRAENOR_NAGRAND },
 						["g"] = {
@@ -2547,6 +2551,11 @@ root(ROOTS.Zones, {
 							i(118253),	-- Trophy Band of Telaar
 						},
 					}),
+					o(243282, {	-- Viking Pepe
+						["coord"] = { 80.11, 50.4, DRAENOR_NAGRAND },
+						["timeline"] = { ADDED_6_2_0 },
+						["g"] = { i(127865) },	-- A Tiny Viking Helmet (Pepe!)
+					}),
 					o(232590, {	-- Void-Infused Crystal
 						["questID"] = 35579,
 						["coord"] = { 50.0, 66.5, DRAENOR_NAGRAND },
@@ -2676,12 +2685,12 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["time
 				-- TODO: verify
 				--q(37805),	-- Goblin Looted - triggers during "Gutrek's Cleaver: The Spirit Forge" (questID 37811 & 37992)
 			}),
-			n(TREASURES, {
-				hqt(37250, name(HEADERS.AchCriteria, 9610.01)),	-- Krog the Dominator's Hammer
-				hqt(37251, name(HEADERS.AchCriteria, 9610.02)),	-- Thak the Conqueror's Bust
-				hqt(37252, name(HEADERS.AchCriteria, 9610.03)),	-- Thurg the Slave Lord's Necklace
-				hqt(37253, name(HEADERS.AchCriteria, 9610.04)),	-- Gorg the Subjugator's Idol
-			}),
+			-- n(TREASURES, {
+			-- 	hqt(37250, name(HEADERS.AchCriteria, 9610.01)),	-- Krog the Dominator's Hammer
+			-- 	hqt(37251, name(HEADERS.AchCriteria, 9610.02)),	-- Thak the Conqueror's Bust
+			-- 	hqt(37252, name(HEADERS.AchCriteria, 9610.03)),	-- Thurg the Slave Lord's Necklace
+			-- 	hqt(37253, name(HEADERS.AchCriteria, 9610.04)),	-- Gorg the Subjugator's Idol
+			-- }),
 		}),
 	}),
 })));

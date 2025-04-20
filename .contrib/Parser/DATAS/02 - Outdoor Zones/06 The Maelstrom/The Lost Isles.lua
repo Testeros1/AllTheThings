@@ -133,6 +133,11 @@ root(ROOTS.Zones, {
 						["coord"] = { 27.8, 75.5, THE_LOST_ISLES },
 						["qg"] = 35650,	-- Sassy Hardwrench
 						["sourceQuest"] = 14001,	-- Goblin Escape Pods
+						["groups"] = {
+							o(195201, {	-- Crate of Tools
+								i(46828),	-- Crate of Tools (QI!)
+							}),
+						},
 					}),
 					q(14241, {	-- Get to the Gyrochoppa
 						["coord"] = { 25.2, 59.8, THE_LOST_ISLES },
@@ -191,13 +196,14 @@ root(ROOTS.Zones, {
 						["qg"] = 38120,	-- Hobart Grapplehammer
 						["sourceQuest"] = 24817,	-- A Goblin in Shark's Clothing
 					}),
-					q(24864, {	-- Irresistable Pool Pony
+					q(24864, {	-- Irresistible Pool Pony
 						["coord"] = { 52.2, 73.1, THE_LOST_ISLES },
 						["qg"] = 38432,	-- Megs Dreadshredder
 						["sourceQuests"] = {
 							24858,	-- Bilgewater Cartel Represent
 							24859,	-- Naga Hide
 						},
+						["groups"] = { i(50602) },	-- Irresistible Pool Pony (QI!)
 					}),
 					q(14245, {	-- It's a Town-In-A-Box
 						["coord"] = { 44.5, 64.3, THE_LOST_ISLES },
@@ -285,7 +291,7 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 24901,	-- Town-In-A-Box: Under Attack
 					}),
 					q(14233, {	-- Orcs Can Write?
-						["coord"] = { 41.5, 25.7, THE_LOST_ISLES },
+						["coord"] = { 41.5, 25.7, 175 },	-- Kaja'mite Cavern
 						["qg"] = 35837,	-- Dead Orc Scout
 						["sourceQuest"] = 14248,	-- Help Wanted
 					}),
@@ -352,7 +358,7 @@ root(ROOTS.Zones, {
 					q(24868, {	-- Surrender or Else!
 						["coord"] = { 52.2, 73.1, THE_LOST_ISLES },
 						["qg"] = 38432,	-- Megs Dreadshredder
-						["sourceQuest"] = 24864,	-- Irresistable Pool Pony
+						["sourceQuest"] = 24864,	-- Irresistible Pool Pony
 						["groups"] = {
 							i(52954),	-- Hatchling Prodder
 							i(52908),	-- Hathcling Handlers
@@ -364,6 +370,9 @@ root(ROOTS.Zones, {
 						["qg"] = 38120,	-- Hobart Grapplehammer
 						["sourceQuest"] = 24741,	-- Trading Up
 						["groups"] = {
+							o(201977, {	-- The Biggest Egg Ever
+								i(50261),	-- The Biggest Egg Ever (QI!)
+							}),
 							i(52933),	-- Mechachicken Feather Cloak
 							i(52951),	-- Chicken Chopper
 							i(52905),	-- Best. Bracers. Ever.
@@ -496,6 +505,11 @@ root(ROOTS.Zones, {
 						["coord"] = { 45.2, 64.8, THE_LOST_ISLES },
 						["qg"] = 38122,	-- Bamm Megabomb
 						["sourceQuest"] = 24671,	-- Cluster Cluck
+						["groups"] = {
+							o(201974, {	-- Raptor Egg
+								i(50239),	-- Spiny Raptor Egg (QI!)
+							}),
+						},
 					}),
 					q(14244, {	-- Up, Up & Away!
 						["coord"] = { 36.0, 67.5, THE_LOST_ISLES },
@@ -616,6 +630,7 @@ root(ROOTS.Zones, {
 							i(52958),	-- S.B.R.B. Prototype 2
 							i(131842),	-- S.B.R.B. Prototype 3
 							i(52936),	-- S.B.R.B. Prototype 4
+							i(52013),	-- Super Booster Rocket Boots (QI!)
 						},
 					}),
 				}),
@@ -678,6 +693,20 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
+	m(THE_MAELSTROM, {
+		m(THE_LOST_ISLES, {
+			n(QUESTS, {
+				q(26705),	-- Lost Isles - It's a Town-In-A-Box tracking event. Triggers when you use the plunger to spawn the town
+				q(26902),	-- Lost Isles - Get Back to Town accepted tracking flag. Triggers the attack on town-in-a-box
+				q(28846),	-- Lost Isles - Repel the Paratroopers accepted tracking flag
+				q(25226),	-- Lost Isles - Kill Chip Endale tracking flag
+				q(25245),	-- Lost Isles - Kill Candy Cane tracking flag
+			}),
+		}),
+	}),
+})));
 
 -- #if AFTER 4.0.3
 -- These quests never made it in.

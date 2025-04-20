@@ -605,6 +605,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, {
 
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
 	n(ISLAND_EXPEDITIONS, {
+		n(GROUP_FINDER, {
+			q(53339),	-- LFG - BFA - Island Expedition - Heroic Win - Nth
+			q(53340),	-- LFG - BFA - Island Expedition - Mythic Win - Nth
+			q(51838),	-- LFG - BFA - Island Expedition - Normal Win - Nth
+			q(53341),	-- LFG - BFA - Island Expedition - PvP Win - Nth
+		}),
 		q(55591, {["repeatable"]=true}),	-- Expedition Demolisher
 		q(51994),	-- Unlock the ability to go on Island Expeditions in search of Azerite
 		q(55687, {["repeatable"]=true}),	-- Expedition GG-118 Micro-Jetpack — assembling a jetpack in Island Expeditions, Alliance
@@ -619,7 +625,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 		q(57103, {["repeatable"]=true}),	-- Upgrade Your Vehicle (Optional), Horde
 		q(55617),	-- Expedition Siege Engine — assembling siege engine in Island Expeditions
 		q(56998),	-- triggered when turning in "Azerite for the Alliance," (53436) which also triggered "Azerite for the Horde" (53435).  i also got Rank 1 Volatile Worldvein from the quest, so maybe this is for receiving that?
-		q(57063),	-- triggered when using Zem'lan's Lost Treasure Map (created from combining fragments from Island Expeditions)
+		-- q(57063),	-- triggered when using Zem'lan's Lost Treasure Map (created from combining fragments from Island Expeditions)
 		q(56520),	-- IE-related mission — not sure if this is the Stalwart Worldvein Rank 2 one or one that awarded Saurok Scale Headgear
 		q(57060),	-- IE-related mission — not sure if this is the Stalwart Worldvein Rank 2 one or one that awarded Saurok Scale Headgear
 		q(57061),	-- popped when i manually refreshed after fully completing the mission / getting Fluctuating Worldvein in my inventory

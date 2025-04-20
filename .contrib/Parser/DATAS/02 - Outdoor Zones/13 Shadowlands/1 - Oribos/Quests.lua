@@ -108,7 +108,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["sourceQuests"] = { 61099 },	-- The Search for Baine
 					["provider"] = { "n", 164079 },	-- Highlord Bolvar Fordragon
 					["coord"] = { 39.9, 68.5, ORIBOS },
-					["maps"] = { 1627 },	-- Torghast
+					["maps"] = { TORGHAST },
 					["g"] = {
 						i(184758),	-- Drape of Inscrutable Purpose
 						i(184198),	-- Soul-Touched Key (QI!)
@@ -535,7 +535,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					62704,	-- The Threads of Fate
 				},
 				["provider"] = { "n", 175008 },	-- Secutor Mevix
-				["coord"] = { 52.8, 68.2, MALDRAXXUS },
+				["coords"] = {
+					{ 52.8, 68.2, MALDRAXXUS },
+					{ 49.7, 43.5, SEAT_OF_THE_PRIMUS },
+				},
 				["g"] = {
 					i(181685),	-- Gorewrought Barrier
 					i(181689),	-- Gorewrought Bonesaw
@@ -624,8 +627,9 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["provider"] = { "n", 181328 },	-- Ve'nish
 				["coord"] = { 35.5, 46.9, 1627 },
 				["isDaily"] = true,
-				["timeline"] = { ADDED_9_1_5, REMOVED_10_0_2 },
+				["timeline"] = { ADDED_9_1_5 },
 				["lockCriteria"] = { 1, "lvl", 60 },
+				--  "able to acquire this quest after skipping the campaign on my fresh level 10"
 			}),
 			------ Oribos Return Quests ------
 			------ Ardenweald ------
@@ -650,7 +654,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 			q(62761, {	-- Return to Oribos
 				["sourceQuests"] = { 62748 },	-- Rallying Maldraxxus
 				["provider"] = { "n", 175008 },	-- Secutor Mevix
-				["coord"] = { 52.8, 68.2, MALDRAXXUS },
+				["coords"] = {
+					{ 52.8, 68.2, MALDRAXXUS },
+					{ 50.0, 44.2, SEAT_OF_THE_PRIMUS },
+				},
 				-- #if BEFORE DF
 				["lvl"] = { 48, 60 },
 				-- #endif
@@ -682,7 +689,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 			q(65035, {	-- Return to Oribos
 				["sourceQuests"] = { 64850 },	-- Traversing Torghast
 				["provider"] = { "n", 181328 },	-- Ve'nish
-				["coord"] = { 35.5, 46.9, 1627 },
+				["coord"] = { 35.5, 46.9, 1911 },	-- Torghast - Entrance
 				["timeline"] = { ADDED_9_1_5, REMOVED_10_0_2 },
 				["lvl"] = { 48, 60 },
 			}),
@@ -949,7 +956,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 				q(65756, {["timeline"] = {ADDED_9_2_0}}),	-- triggered with 'A New Deal', selected 'Cosmic Gladiator's Echoing Resolve'
 				q(65757, {["timeline"] = {ADDED_9_2_0}}),	-- triggered with 'A New Deal', selected 'Cosmic Gladiator's Fastidious Resolve'
 				q(66047, {["timeline"] = {ADDED_9_2_0}}),	-- Solo Shuffle Completion? /First win
-				q(70704, {["timeline"] = {ADDED_9_2_0}}),	-- Tracking quest for Vessel of Profound Possibilities (spellID 367898)
+				-- q(70704, {["timeline"] = {ADDED_9_2_0}}),	-- Tracking quest for Vessel of Profound Possibilities (spellID 367898)
 				------ Stay awhile and listen ------ (TODO upgrade to proper HQT in Oribos)
 				hqt(65511, {	-- Stay awhile and listen with Vareesa Windrunner (spellID 366650)
 					["timeline"] = {ADDED_9_2_0},

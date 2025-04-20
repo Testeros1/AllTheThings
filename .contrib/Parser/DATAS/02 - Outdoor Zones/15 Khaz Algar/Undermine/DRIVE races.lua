@@ -3,7 +3,7 @@
 ---------------------------------------------------
 root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, {
 	m(UNDERMINE, {
-		n(DRIVE_RACING, {
+		skyriding(n(DRIVE_RACING, {
 			n(ACHIEVEMENTS, {
 				ach(41081, {	-- Undermine Breaknecking: Bronze
 					-- Meta Achievement
@@ -18,7 +18,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 						41078,	-- Sandy Scuttle Reverse: Bronze
 					}},
 					["g"] = {
-						-- TODO: D.R.I.V.E. Engine: the Pozzik Standard
+						i(232982),	-- The Pozzik Standard
 					},
 				}),
 				ach(41083, {	-- Undermine Breaknecking: Silver
@@ -46,6 +46,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 						41077,	-- Sandy Scuttle: Gold
 						41080,	-- Sandy Scuttle Reverse: Gold
 					}},
+					["g"] = {
+						title(597),	-- Breaknecker <Name>
+					},
 				}),
 				ach(40936, {	-- Undermine Skyrocketing: Bronze
 					-- Meta Achievement
@@ -79,12 +82,15 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 						40932,	-- Rags to Riches Rush: Gold
 						40935,	-- Rags to Riches Rush Reverse: Gold
 						40926,	-- Scrapshop Shot: Gold
-						40927,	-- Scrapshop Shot Reverse: Bronze
+						40929,	-- Scrapshop Shot Reverse: Gold
 						40914,	-- Skyrocketing Sprint: Gold
 						40917,	-- Skyrocketing Sprint Reverse: Gold
 						40920,	-- The Heaps Leap: Gold
 						40923,	-- The Heaps Leap Reverse: Gold
 					}},
+					["g"] = {
+						title(580),	-- Skyrocketer <Name>
+					},
 				}),
 			}),
 			n(QUESTS, {
@@ -234,6 +240,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 					},
 				}),
 			}),
-		}),
+		})),
 	}),
 })));

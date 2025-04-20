@@ -75,6 +75,11 @@ namespace ATT
             public static IDictionary<string, string[]> MERGE_OBJECT_FIELDS { get; set; }
 
             /// <summary>
+            /// The set of MapID values and linked coord-shift requirements
+            /// </summary>
+            public static IDictionary<long, CoordShift> MAPID_COORD_SHIFTS { get; set; }
+
+            /// <summary>
             /// Allows capturing various objects which should be merged-into the sub-content of another object
             /// </summary>
             public static IDictionary<string, Dictionary<decimal, List<IDictionary<string, object>>>> PostProcessMergeIntos { get; } = new Dictionary<string, Dictionary<decimal, List<IDictionary<string, object>>>>();
@@ -1300,6 +1305,7 @@ end");
                         case "repeatable":
                         case "pvp":
                         case "pb":
+                        case "sr":
                         case "factionID":
                         case "requireSkill":
                         case "followerID":
@@ -1448,8 +1454,8 @@ end");
                     }
                     catch (Exception e)
                     {
-                        Log($"WHAT IS THIS: {field}{Environment.NewLine}{ToJSON(newList)}");
-                        Console.ReadLine();
+                        LogError($"WHAT IS THIS: {field}{Environment.NewLine}{ToJSON(newList)}");
+                        Framework.WaitForUser();
                         throw e;
                     }
                 }
@@ -1548,8 +1554,8 @@ end");
                             }
                             else
                             {
-                                Log($"Weird 'g' value??", value);
-                                Console.ReadLine();
+                                LogError($"Weird 'g' value??", value);
+                                Framework.WaitForUser();
                             }
                             break;
                         }
@@ -1560,6 +1566,7 @@ end");
                     case "repeatable":
                     case "pvp":
                     case "pb":
+                    case "sr":
                     case "isBreadcrumb":
                     case "DisablePartySync":
                     case "isBounty":

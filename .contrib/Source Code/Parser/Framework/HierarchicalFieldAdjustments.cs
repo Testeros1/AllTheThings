@@ -16,6 +16,9 @@ namespace ATT
         /// <summary>
         /// When the <paramref name="field"/> exists in all the <paramref name="groups"/> with an identical value
         /// it will be removed from said groups and copied into the <paramref name="parent"/>
+        /// A / A|A|A => A / _|_|_
+        /// _ / A|A|A => A / _|_|_
+        /// A / A|B|C => A / A|B|C
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalConsolidationFields]</remarks>
         private static void ConsolidateField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -57,6 +60,9 @@ namespace ATT
         /// When the <paramref name="field"/> exists in all the <paramref name="groups"/> with an identical value
         /// it will be removed from said groups and copied into the <paramref name="parent"/>. Otherwise that field will be removed from the <paramref name="parent"/>
         /// due to it not existing identically within all <paramref name="groups"/>
+        /// A / A|A|A => A / _|_|_
+        /// _ / A|A|A => A / _|_|_
+        /// A / A|B|C => _ / A|B|C
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalConsolidationFields]</remarks>
         private static void ForceConsolidateField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -110,6 +116,9 @@ namespace ATT
         /// <summary>
         /// When the <paramref name="field"/> exists in all the <paramref name="groups"/> with an identical value
         /// it will be copied into the <paramref name="parent"/>
+        /// A / A|A|A|_ => A / A|A|A|_
+        /// _ / A|A|A|_ => A / A|A|A|_
+        /// A / A|B|C|_ => A / A|B|C|_
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalPropagationFields]</remarks>
         private static void PropagateField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -145,6 +154,9 @@ namespace ATT
         /// <summary>
         /// For each of the <paramref name="groups"/> with an identical <paramref name="field"/> value to the the <paramref name="parent"/>,
         /// that value will be removed
+        /// A / A|A|A => A / _|_|_
+        /// _ / A|A|A => _ / A|A|A
+        /// A / A|B|C => A / _|B|C
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalNonRepeatFields]</remarks>
         private static void NonRepeatField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -156,16 +168,42 @@ namespace ATT
 
             foreach (IDictionary<string, object> data in groups)
             {
-                if (data.TryGetValue(field, out object value) && Equals(parentVal, value) && data.Remove(field))
+                if (data.TryGetValue(field, out object value))
                 {
-                    // awp and rwp are spammy
-                    //Framework.LogDebug($"INFO: Removed field {field}={value} due to " + nameof(NonRepeatField), data);
+                    _fieldValues.Add(value);
+                }
+                else
+                {
+                    // field value is missing from a group, use a random value instead
+                    _fieldValues.Add(Guid.NewGuid());
+                    return;
+                }
+            }
+
+            // exactly 1 unique value across all groups, then adjust...
+            if (_fieldValues.Count == 1)
+            {
+                object val = _fieldValues.First();
+                // parent has a different field val, don't touch it
+                if (parentVal != null && !Equals(parentVal, val))
+                    return;
+
+                foreach (IDictionary<string, object> data in groups)
+                {
+                    if (data.Remove(field))
+                    {
+                        // awp and rwp are spammy
+                        //Framework.LogDebug($"INFO: Removed field {field}={parentVal} due to " + nameof(NonRepeatField), data);
+                    }
                 }
             }
         }
 
         /// <summary>
         /// If any of the <paramref name="groups"/> contains the same identical <paramref name="field"/> value, it will be copied to the the <paramref name="parent"/>
+        /// A / A|A|_ => A / A|A|_
+        /// _ / A|A|_ => A / A|A|_
+        /// A / A|B|_ => A / A|B|_
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalAnyPropagationFields]</remarks>
         private static void AnyPropagateField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -195,6 +233,9 @@ namespace ATT
         /// <summary>
         /// Copies the minimum field value of the <paramref name="groups"/> into the <paramref name="parent"/>. If the type of the value does not
         /// implement <see cref="IComparable"/> then only the first non-null value found will be used
+        /// A / A|A|_ => A / A|A|_
+        /// _ / B|C|_ => B / B|C|_
+        /// A / A|B|_ => A / A|B|_
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalMinimumFields]</remarks>
         private static void MinimumField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -246,6 +287,9 @@ namespace ATT
         /// <summary>
         /// Copies the maximum field value of the <paramref name="groups"/> into the <paramref name="parent"/>. If the type of the value does not
         /// implement <see cref="IComparable"/> then only the first non-null value found will be used
+        /// A / A|A|_ => A / A|A|_
+        /// _ / B|C|_ => C / B|C|_
+        /// A / A|B|_ => B / A|B|_
         /// </summary>
         /// <remarks>Applied to fields defined in Config[HierarchicalMaximumFields]</remarks>
         private static void MaximumField(string field, IDictionary<string, object> parent, IDictionary<string, object>[] groups)
@@ -297,38 +341,38 @@ namespace ATT
         static HierarchicalFieldAdjustments()
         {
             _heirarchicalFieldAdjustments = new List<FieldAdjustment>();
-            string[] fields = Framework.Config["HierarchicalMinimumFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            string[] fields = Framework.Config["HierarchicalMinimumFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = MinimumField });
             }
-            fields = Framework.Config["HierarchicalMaximumFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            fields = Framework.Config["HierarchicalMaximumFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = MinimumField });
             }
-            fields = Framework.Config["HierarchicalForceConsolidationFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            fields = Framework.Config["HierarchicalForceConsolidationFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = ForceConsolidateField });
             }
-            fields = Framework.Config["HierarchicalConsolidationFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            fields = Framework.Config["HierarchicalConsolidationFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = ConsolidateField });
             }
-            fields = Framework.Config["HierarchicalPropagationFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            fields = Framework.Config["HierarchicalPropagationFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = PropagateField });
             }
-            fields = Framework.Config["HierarchicalNonRepeatFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            fields = Framework.Config["HierarchicalNonRepeatFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = NonRepeatField });
             }
-            fields = Framework.Config["HierarchicalAnyPropagationFields"] ?? Array.Empty<string>();
-            foreach (string field in fields)
+            fields = Framework.Config["HierarchicalAnyPropagationFields"];
+            foreach (string field in fields ?? Array.Empty<string>())
             {
                 _heirarchicalFieldAdjustments.Add(new FieldAdjustment() { Field = field, Adjustment = AnyPropagateField });
             }

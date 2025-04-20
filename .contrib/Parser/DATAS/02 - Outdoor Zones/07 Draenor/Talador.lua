@@ -291,7 +291,7 @@ root(ROOTS.Zones, {
 					}),
 				}),
 				n(QUESTS, {
-					n(-360, {	-- Arcane Sanctum
+					header(HEADERS.Achievement, 8987, {	-- Arcane Sanctum
 						q(34631, {	-- An Audience With The Archmage
 							["provider"] = { "n", 79133 },	-- Foreman Eksos
 							["coord"] = { 69.8, 20.8, TALADOR },
@@ -504,7 +504,7 @@ root(ROOTS.Zones, {
 							}),
 						}),
 					}),
-					n(-361, {	-- Artillery Tower
+					n(ARTILLERY_TOWER, {
 						q(34982, {	-- Armor Up
 							["provider"] = { "n", 80968 },	-- Miall
 							["coord"] = { 69.8, 20.7, TALADOR },
@@ -753,8 +753,8 @@ root(ROOTS.Zones, {
 						},
 					}),
 					q(33944, {	-- And the Elekk Too?!
+						["provider"] = { "o", 226987 },	-- Ricky
 						["coord"] = { 30.9, 70.8, TALADOR },
-						["icon"] = 656597,
 					}),
 					q(33967, {	-- Antivenin
 						["provider"] = { "n", 78028 },	-- Soulbinder Tuulani
@@ -1178,9 +1178,9 @@ root(ROOTS.Zones, {
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 33735,	-- In Short Supply
 						["coords"] = {
-							{ 62.0, 10.9, TALADOR },
-							{ 62.0, 10.9, TALADOR },
 							{ 55.6, 41.0, TALADOR },
+							{ 58.9, 20.3, TALADOR },
+							{ 62.0, 10.9, TALADOR },
 						},
 					}),
 					q(34095, {	-- Iron Them Out
@@ -1691,11 +1691,15 @@ root(ROOTS.Zones, {
 						},
 					}),
 					q(36843, {	-- They Came From Above
-						["sourceQuests"] = { 34579 },	-- Gas Guzzlers
-						["lockCriteria"] = { 1, "questID", 33740 },	-- Burning Sky
 						["provider"] = { "n", 86522 },	-- Akhan
 						["coord"] = { 67.4, 42.2, TALADOR },
+						["lockCriteria"] = { 1, "questID", 33740 },	-- Burning Sky
 						["isBreadcrumb"] = true,
+						["sourceQuestNumRequired"] = 1,
+						["sourceQuests"] = {
+							34579,	-- Gas Guzzlers [H]
+							34875,	-- Next Steps [A]
+						},
 					}),
 					q(34087, {	-- Through the Looking Glass
 						["provider"] = { "n", 75803 },	-- Vindicator Maraad
@@ -2384,6 +2388,7 @@ root(ROOTS.Zones, {
 						["lvl"] = 100,
 						["g"] = {
 							i(119371),	-- Mantle of the Destroyer
+							i(119435),	-- Path of Flame
 						},
 					}),
 					n(77529, {	-- Yazheera the Incinerator
@@ -2555,6 +2560,11 @@ root(ROOTS.Zones, {
 							i(116121),	-- A Steamy Romance Novel: I'm In Love With a Robot
 							i(116402),	-- Stonegrinder (PET!)
 						},
+					}),
+					o(243283, {	-- Knight Pepe
+						["coord"] = { 51.01, 63.31, TALADOR },
+						["timeline"] = { ADDED_6_2_0 },
+						["g"] = { i(127869) },	-- A Tiny Plated Helm (Pepe!)
 					}),
 					o(228022, {	-- Light of the Sea
 						["questID"] = 34258,
@@ -2879,7 +2889,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["time
 				q(34857),	-- Tracking Flag: Orcs Kicked Out of Cave - triggers when going to turn in "Old Friends, New Enemies" (questID 35226)
 				q(35491),	-- Tracking Flag - Underseer Bloodmane Vignette - secondary quest trigger for Underseer Bloodmane rare
 				q(33645),	-- Tracking Quest - Iskar's Hired Hand
-				q(34760),	-- Treasure: Warchest of Kull'krosh - secondary quest trigger for Rusted Lockbox treasure
+				-- q(34760),	-- Treasure: Warchest of Kull'krosh - secondary quest trigger for Rusted Lockbox treasure
 				q(34562),	-- Trigger Teron'gor Defense Spawns - triggers in a cave with Soulbind Nyami at Gul'Rok
 				q(34047),	-- Tuurem Explosion Tracker
 				q(34574),	-- Unused - triggeres when choosing the Arcane Sanctum building

@@ -216,14 +216,6 @@ root(ROOTS.Zones, {
 					exploration(4209),	-- Zeb'Halak
 					visit_exploration(4475,{coord={14.3,38.2,GRIZZLY_HILLS}}),	-- Zim'bo's Hideout
 				}),
-				prof(FISHING, {
-					o(192050, {	-- Glacial Salmon School
-						["requireSkill"] = FISHING,
-					}),
-					o(192052, {	-- Imperial Manta Ray School
-						["requireSkill"] = FISHING,
-					}),
-				}),
 				n(FLIGHT_PATHS, {
 					fp(253, {	-- Amberpine Lodge
 						["cr"] = 26880,	-- Vana Grey <Gryphon Master>

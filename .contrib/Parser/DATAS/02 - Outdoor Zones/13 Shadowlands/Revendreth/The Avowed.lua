@@ -116,7 +116,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 						}),
 					}),
 					n(RARES, {
-						n(-954, {	-- Inquisitors
+						n(INQUISITORS, {
 							n(COMMON_BOSS_DROPS, {
 								["crs"] = {
 									156918,	-- Inquisitor Otilia
@@ -154,7 +154,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 								["provider"] = { "i", 172999 },	-- Inquisitor Traian's Sinstone
 							}),
 						}),
-						n(-955, {	-- High Inquisitors
+						n(HIGH_INQUISITORS, {
 						--	TODO: add any missing loot (some is npc-specific, some is shared, ugh)
 							n(COMMON_BOSS_DROPS, {
 								["crs"] = {
@@ -206,7 +206,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 								},
 							}),
 						}),
-						n(-956, {	-- Grand Inquisitors
+						n(GRAND_INQUISITORS, {
 							n(COMMON_BOSS_DROPS, {
 								["crs"] = {
 									159157,	-- Grand Inquisitor Aurica
@@ -323,6 +323,16 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 						["description"] = "Repairing the Broken Bell when this soul is present will increase your reputation from absolving Fugitive Souls, but enemy venthyr will detect you from further away.",	-- TODO: add reputation info
 					}),
 				},
+			}),
+		}),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_1 } }, {
+	m(SHADOWLANDS, {
+		m(REVENDRETH, {
+			header(HEADERS.Faction, FACTION_THE_AVOWED, {
+				q(63090),	-- looting weekly chest of Sinstone Fragments next to Archivist Fane
 			}),
 		}),
 	}),

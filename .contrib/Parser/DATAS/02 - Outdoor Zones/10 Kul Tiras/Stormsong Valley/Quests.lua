@@ -231,10 +231,11 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(160376),	-- Darkwater Clasp
 					i(160379),	-- Stormchaser Buckle
 					i(160382),	-- Dread Corsair Cincture
-					-- Horde sourceid's(not actual reward)
-					i(161280),	-- Lastwind Shoes
-					i(161283),	-- Exiled Veteran's Sabatons
-					i(161282),	-- Resilient Outcast's Footguards
+					--
+					h(i(161280)),	-- Lastwind Shoes
+					h(i(161283)),	-- Exiled Veteran's Sabatons
+					h(i(161282)),	-- Resilient Outcast's Footguards
+					h(i(161281)),	-- Scorching Sands Treads
 				}),
 			}),
 			q(52070, {	-- Bauer Backup
@@ -917,6 +918,9 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(160358),	-- Dread Corsair Grips
 					i(160355),	-- Stormchaser Handcovers
 					i(160349),	-- Tidespeaker Mittens
+					--
+					h(i(161284)),	-- Faithless Dinorider's Focus
+					h(i(161286)),	-- Faithless Dinorider's Shield
 				}),
 			}),
 			q(50385, {	-- Indefatigable Purpose
@@ -1116,6 +1120,8 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(160363),	-- Darkwater Pants
 					i(160366),	-- Stormchaser Leggings
 					i(160369),	-- Dread Corsair Legguards
+					---
+					h(i(161285)),	-- Faithless Wingrider's Focus
 				},
 			}),
 			q(50698, {	-- Problem Solving with Gunpowder
@@ -1847,10 +1853,12 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 				q(54853),	-- naming the ship "Dawnsailor" during Blessing of the Tides quest to recruit Kul Tirans
 				q(54854),	-- naming the ship "Tiffin's Melody" during Blessing of the Tides quest to recruit Kul Tirans
 				q(54855),	-- naming the ship "The Lionheart" during Blessing of the Tides quest to recruit Kul Tirans
-				q(54775),	-- Warmode Storm's Rage
-				q(54716),	-- Secret Chest during Stormsong Valley Incursion in Warmode
-				q(54317),	-- BfA Alliance Stormsong "Invasion"
+				-- q(54775),	-- Warmode Storm's Rage
+				-- q(54716),	-- Secret Chest during Stormsong Valley Incursion in Warmode
+				-- q(54317),	-- BfA Alliance Stormsong "Invasion"
 				q(50694),	-- triggers with / alternate way of completing 'A Bloody Mess' (50593)
+				q(53202),	-- triggered when turning in #50264, "Free the Farmhands"
+				q(51163),	-- ??? plays during the cutscene when you walk across the bridge north of Brennadam in Stormsong Valley
 			}),
 		}),
 	}),

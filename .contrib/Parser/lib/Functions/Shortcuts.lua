@@ -7,7 +7,7 @@
 struct = function(field, id, t)		-- Construct a commonly formatted object.
 	if not t then t = {};
 	elseif (t.g or t.groups) and t[1] then
-		print("ERROR: Don't use 'g' or 'groups' with an array of objects! Fix Group: "..field..":"..id);
+		error("Don't use 'g' or 'groups' with an array of objects! Fix Group: "..field..":"..id);
 		return;
 	elseif not t.groups and t[1] then
 		t = { ["groups"] = validateGroups(t) };
@@ -15,10 +15,10 @@ struct = function(field, id, t)		-- Construct a commonly formatted object.
 		validateGroups(t.groups);
 	end
 	if not id then
-		print("Missing ID for",field,"group");
+		error("Missing ID for",field,"group");
 	end
 	if t[field] and t[field] ~= id then
-		print("ERROR: Don't reuse tables within constructed objects! Fix Group: "..field..":"..id.." which has "..t[field].." already assigned!")
+		error("Don't reuse tables within constructed objects! Fix Group: "..field..":"..id.." which has "..t[field].." already assigned!")
 	end
 	t[field] = id;
 	return t;
@@ -231,10 +231,10 @@ end
 -- Applies a copy of the provided data into the tables of the provided array/group
 sharedData = function(data, t)
 	if not data then
-		print("sharedData: No Shared Data")
+		print("ERROR: sharedData: No Shared Data")
 	end
 	if not t or (#t == 0 and not t.g and not t.groups) then
-		print("sharedData: No Source 't'")
+		print("ERROR: sharedData: No Source 't'")
 	end
 	if t then
 		for _,group in ipairs(t) do
@@ -251,10 +251,10 @@ end
 -- Performs sharedData logic but also applies the data to the top-level table
 sharedDataSelf = function(data, t)
 	if not data then
-		print("sharedDataSelf: No Shared Data")
+		print("ERROR: sharedDataSelf: No Shared Data")
 	end
 	if not t then
-		print("sharedDataSelf: No Source 't'")
+		print("ERROR: sharedDataSelf: No Source 't'")
 	end
 	-- if this is an array, convert to .groups container first to prevent merge confusion
 	t = togroups(t);
@@ -269,10 +269,10 @@ end
 -- Applies a copy of the provided data into all sub-groups of the provided table/array
 bubbleDown = function(data, t)
 	if not data then
-		print("bubbleDown: No Bubble Data")
+		print("ERROR: bubbleDown: No Bubble Data")
 	end
 	if not t then
-		print("bubbleDown: No Source 't'")
+		print("ERROR: bubbleDown: No Source 't'")
 	end
 	for key,val in pairs(data) do
 		if BubbleDownKeyWarnings[key] then
@@ -338,10 +338,10 @@ end
 -- Performs bubbleDown logic but also applies the data to the top-level table
 bubbleDownSelf = function(data, t)
 	if not data then
-		print("bubbleDownSelf: No Bubble Data")
+		print("ERROR: bubbleDownSelf: No Bubble Data")
 	end
 	if not t then
-		print("bubbleDownSelf: No Source 't'")
+		print("ERROR: bubbleDownSelf: No Source 't'")
 	end
 	-- if this is an array, convert to .g container first to prevent merge confusion
 	t = togroups(t);
@@ -351,10 +351,10 @@ end
 -- Applies the timeline event (epoch) to all sub-groups of the provided table/array
 bubbleDownTimelineEvent = function(epoch, t)
 	if not epoch then
-		print("bubbleDownTimelineEvent: No Epoch")
+		print("ERROR: bubbleDownTimelineEvent: No Epoch")
 	end
 	if not t then
-		print("bubbleDownTimelineEvent: No Source 't'")
+		print("ERROR: bubbleDownTimelineEvent: No Source 't'")
 	end
 	if t then
 		if t.g or t.groups then
@@ -586,6 +586,32 @@ end
 Sym_PvPWeaponsArsenal = function(TIER, SEASON, PVPSET)
 	return {{"sub","pvp_weapons_ensemble",TIER,SEASON,PVPSET}}
 end
+ChronicleOfLostMemories = function(t)
+	t = t or {}
+	-- TODO: revise this, don't rely on a header containing all legendaries
+	-- also, Covenant legendaries are not rewarded by the Chronicle since they require a specific renown and are rewarded automatically
+	-- so also need to exclude those with custom collect
+	t.sym = {
+		{ "select", "headerID", LEGENDARIES },	-- Legendary header
+		{ "extract", "runeforgepowerID" },	-- extract all Legendaries into a direct list
+		{ "exclude", "itemID",
+			190584,	-- Memory of Unity (DK)
+			190587,	-- Memory of Unity (DH)
+			190588,	-- Memory of Unity (DRUID)
+			199552,	-- Memory of Unity (EVOKER)
+			190589,	-- Memory of Unity (HUNTER)
+			190590,	-- Memory of Unity (MAGE)
+			190591,	-- Memory of Unity (MONK)
+			190592,	-- Memory of Unity (PALADIN)
+			190593,	-- Memory of Unity (PRIEST)
+			190594,	-- Memory of Unity (ROGUE)
+			190595,	-- Memory of Unity (SHAMAN)
+			190596,	-- Memory of Unity (WARLOCK)
+			190598,	-- Memory of Unity (WARRIOR)
+		},
+	}
+	return i(184665, t)	-- Chronicle of Lost Memories
+end
 
 -- Cost Helper Functions
 applycost = function(item, ...)
@@ -683,6 +709,10 @@ gold = function(cost, item)								-- Assign a Gold cost to an item.
 	applycost(item, { "g", cost * 10000 });	-- Gold
 	return item;
 end
+heavysavageleather = function(cost, item)				-- Assign an Heavy Savage Leather cost to an item.
+	if cost > 0 then applycost(item, { "i", 56516, cost }); end
+	return item;
+end
 honor = function(cost, item)							-- Assign an Honor cost to an item. (modern)
 	if cost > 0 then applycost(item, { "c", HONOR, cost }); end
 	return item;
@@ -753,6 +783,11 @@ ach = function(id, altID, t)							-- Create an ACHIEVEMENT Object
 				t.OnUpdate = AllSourceQuestsRequiredForAchievement and [[_.CommonAchievementHandlers.ALL_SOURCE_QUESTS]] or [[_.CommonAchievementHandlers.ANY_SOURCE_QUEST]];
 			end
 		end
+		-- #else
+			-- Apply a default timeline of 3.0.2 to Achievements
+			if not t.timeline then
+				t._defaulttimeline = { ADDED_3_0_2 }
+			end
 		-- #endif
 	end
 	return t;
@@ -867,6 +902,9 @@ azewrongItem = function(id, t)							-- Create an Item which is marked as having
 	t = i(id, t);
 	t.customCollect = { "!HOA" };
 	return t;
+end
+ws = function(id, t)
+	return struct("warbandSceneID", id, t);
 end
 battlepet = function(id, t)								-- Create a BATTLE PET Object (Battle Pet == Species == Pet)
 	return struct("speciesID", id, t);
@@ -1011,13 +1049,10 @@ e = function(id, t)										-- Create an ENCOUNTER Object (Post-Wrath)
 	return struct("encounterID", id, t);
 end
 -- #else
-e = function(id, t)										-- Create an ENCOUNTER Object (Post-Wrath)
+e = function(id, t)										-- Create an ENCOUNTER Object (Pre-Wrath)
 	-- Not yet supported in classic.
 	if t then
-		if t.groups or t.g then
-			-- #if AFTER WRATH
-			t.encounterID = id;
-			-- #endif
+		if not isarray(t) then
 			-- Convert to a Header or NPC ID.
 			if t.npcID then
 				return t;
@@ -1476,10 +1511,16 @@ root = function(category, g)							-- Create a ROOT CATEGORY Object
 	end
 	return o;
 end
+skyriding = function(t)									-- Skyriding (bubbleDown sr filter)
+	return bubbleDown({ ["sr"] = true }, t);
+end
 spell = function(id, t)									-- Create a SPELL Object
 	return struct("spellID", id, t);
 end
 sp = spell;												-- Create a SPELL Object (alternative shortcut)
+itemsource = function(id, t)							-- Create an Item Source Object
+	return struct("sourceID", id, t)
+end
 title = function(id, t)									-- Create a TITLE Object
 sensemble = function(spellID, t)						-- Create an Ensemble directly from SpellID
 	local i = sp(spellID, t);
@@ -1616,6 +1657,11 @@ h = function(t) -- Flag as Horde Only
 	end
 	return t;
 end
+itemDropHQT = function(itemID, questID, t)
+	t = t or {}
+	t.provider = {"i",itemID}	-- Item
+	return hqt(questID, name(HEADERS.Item, itemID, t))	-- Item Drop
+end
 model = function(displayID, t)
 	t.displayID = displayID;
 	return t;
@@ -1641,7 +1687,7 @@ end
 -- ref. Classes/Quest.lua
 name = function(type, id, t)
 	if not type or not id then return t end
-	t = t or {}
+	t = togroups(t or {})
 	if t.autoname then
 		error("Cannot use name() when the contained data includes 'autoname' field! "..type..":"..id)
 	end
@@ -1649,7 +1695,7 @@ name = function(type, id, t)
 	return t
 end
 -- Converts 3 separate patch values into a single patch decimal for use within expansion() groups
-patch = function(major,minor,build)
+patch = function(major, minor, build)
 	major = math.floor(tonumber(major) or 0)
 	minor = math.floor(tonumber(minor) or 0)
 	build = math.floor(tonumber(build) or 0)
@@ -1691,35 +1737,56 @@ regionUnavailable = function(region, t)
 end]];
 	return t;
 end
-krONLY = function(t)
-	return regionExclusive("KR", t);
-end
-krUnavailable = function(t)
-	return regionUnavailable("KR", t);
-end
-cnONLY = function(t)
-	return regionExclusive("CN", t);
-end
-cnUnavailable = function(t)
-	return regionUnavailable("CN", t);
-end
-twONLY = function(t)
-	return regionExclusive("TW", t);
-end
-twUnavailable = function(t)
-	return regionUnavailable("TW", t);
-end
-euONLY = function(t)
-	return regionExclusive("EU", t);
-end
-euUnavailable = function(t)
-	return regionUnavailable("EU", t);
-end
-usONLY = function(t)
+
+---@param t table|nil
+---@return table|nil
+usONLY = function(t)	-- the object only available on US realm
 	return regionExclusive("US", t);
 end
-usUnavailable = function(t)
+---@param t table|nil
+---@return table|nil
+euONLY = function(t)	-- the object only available on EU realm
+	return regionExclusive("EU", t);
+end
+---@param t table|nil
+---@return table|nil
+krONLY = function(t)	-- the object only available on KR realm
+	return regionExclusive("KR", t);
+end
+---@param t table|nil
+---@return table|nil
+twONLY = function(t)	-- the object only available on TW realm
+	return regionExclusive("TW", t);
+end
+---@param t table|nil
+---@return table|nil
+cnONLY = function(t)	-- the object only available on CN realm
+	return regionExclusive("CN", t);
+end
+---@param t table|nil
+---@return table|nil
+usUnavailable = function(t)	-- the object only unavailable on US realm
 	return regionUnavailable("US", t);
+end
+---@param t table|nil
+---@return table|nil
+euUnavailable = function(t)	-- the object only unavailable on EU realm
+	return regionUnavailable("EU", t);
+end
+---@param t table|nil
+---@return table|nil
+krUnavailable = function(t)	-- the object only unavailable on KR realm
+	return regionUnavailable("KR", t);
+end
+---@param t table|nil
+---@return table|nil
+twUnavailable = function(t)	-- the object only unavailable on TW realm
+	return regionUnavailable("TW", t);
+end
+---@param t table|nil
+---@return table|nil
+cnUnavailable = function(t)	-- the object only unavailable on CN realm
+	return regionUnavailable("CN", t);
 end
 
 -- Temporary function to force Items to use the Misc filter so that they do not get turned into Recipes by the Parser

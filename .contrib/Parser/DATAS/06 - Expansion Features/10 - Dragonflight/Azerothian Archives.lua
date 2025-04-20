@@ -53,19 +53,19 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] 
 						["coord"] = { 38.1, 49.8, ZARALEK_CAVERN },
 						["provider"] = {"n",207763},	-- Zenata
 						["_quests"] = { 78820 },	-- Technoscrying: The Mysteries of Igira's Watch
-						["_noautomation"] = true,
+						["_noautomation"] = true,	-- points to a fake NPC
 					}),
 					crit(65405, {	-- Zenata danced with at Dragonskull Island
 						["coord"] = { 77.1, 38.4, THE_FORBIDDEN_REACH },
 						["provider"] = {"n",207311},	-- Zenata
 						["_quests"] = { 78931 },	-- Technoscrying: The Mysteries of Dragonskull Island
-						["_noautomation"] = true,
+						["_noautomation"] = true,	-- points to a fake NPC
 					}),
 					crit(65406, {	-- Zenata danced with at Concord Observatory
 						["coord"] = { 56.3, 43.9, THE_WAKING_SHORES },
 						["provider"] = {"n",204835},	-- Zenata
 						["_quests"] = { 78616 },	-- Technoscrying: The Mysteries of the Concord Observatory
-						["_noautomation"] = true,
+						["_noautomation"] = true,	-- points to a fake NPC
 					}),
 				}),
 				ach(19792, {	-- Just One More Thing
@@ -642,22 +642,22 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timel
 			-- "Just One More Thing" trackers
 			q(79601),	-- Lost Atheneum first completion
 			q(79600),	-- Lost Atheneum second completion
-			q(79599),	-- Lost Atheneum third completion
+			-- q(79599),	-- Lost Atheneum third completion
 			q(79596),	-- The Riverbed first completion
 			q(79597),	-- The Riverbed second completion
-			q(79598),	-- The Riverbed third completion
+			-- q(79598),	-- The Riverbed third completion
 			q(79604),	-- Igira's Watch first completion
 			q(79603),	-- Igira's Watch second completion
-			q(79602),	-- Igira's Watch third completion
+			-- q(79602),	-- Igira's Watch third completion
 			q(79607),	-- Gaze of Neltharion first completion
 			q(79606),	-- Gaze of Neltharion second completion
-			q(79605),	-- Gaze of Neltharion third completion
+			-- q(79605),	-- Gaze of Neltharion third completion
 			q(79610),	-- Concord Observatory first completion
 			q(79609),	-- Concord Observatory second completion
-			q(79608),	-- Concord Observatory third completion
+			-- q(79608),	-- Concord Observatory third completion
 			q(79613),	-- Winglord's Perch first completion
 			q(79612),	-- Winglord's Perch second completion
-			q(79611),	-- Winglord's Perch third completion
+			-- q(79611),	-- Winglord's Perch third completion
 		}),
 		n(QUESTS, {
 			q(79992),	-- After completing 'Finally, An Archivist' (questID 79223) (spellID 436735) (WQ unlock - Riverbed, Concord Observatory, and Lost Anethenum Sites)

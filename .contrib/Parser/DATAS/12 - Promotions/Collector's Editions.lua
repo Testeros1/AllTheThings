@@ -358,7 +358,7 @@ root(ROOTS.Promotions, n(COLLECTORS_EDITION, bubbleDownSelf({ ["u"] = REAL_MONEY
 			["questID"] = 70449,	-- Elite Northrend Expedition Supplies [Heroic]
 			["g"] = {
 				i(198665),	-- Pebble's Pebble
-				i(198647),	-- Fishspeaker's Lucky Lure
+				i(198647),	-- Fishspeaker's Lucky Lure (TOY!)
 				ach(16332, {	-- The Perfect Pebble
 					["providers"] = {
 						{ "n", 194870 },	-- Pebble
@@ -463,9 +463,9 @@ root(ROOTS.Promotions, n(COLLECTORS_EDITION, bubbleDownSelf({ ["u"] = REAL_MONEY
 					["sourceID"] = 220348,
 					["f"] = CLOTH,
 				}),
-				
+
 				-- Town-In-A-Box Starter Set Toy (Added with Cataclysm)
-				i(216893, {	-- Goblin Town-in-a-Box
+				i(216893, {	-- Goblin Town-in-a-Box (TOY!)
 					["timeline"] = { ADDED_4_4_0, REMOVED_4_4_2 },
 				}),
 			},
@@ -501,11 +501,12 @@ root(ROOTS.Promotions, n(COLLECTORS_EDITION, bubbleDownSelf({ ["u"] = REAL_MONEY
 				--i(xxxxxx),	-- Joyous Pet (PET!)
 				--Ensemble: Stormstout's Sha-Touched Collection Transmog Set (Classic)
 				-- Sha-Touched Tea Set Toy (Added with Mists of Pandaria)
-				--i(xxxxxx, {	-- Sha-Touched Tea Set Toy
-				--	["timeline"] = { ADDED_4_4_2, REMOVED_5_5_2 },
-				--}),
+				i(235464, {	-- Sha-Touched Tea Set (TOY!)
+					["timeline"] = { ADDED_4_4_2, REMOVED_5_5_2 },
+				}),
 			},
 		}),
+	})),
 	-- #else
 	n(MOP_CLASSIC_HEROIC_PACK, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_7 } }, {
 		n(HEROIC_EDITION, {
@@ -625,7 +626,7 @@ root(ROOTS.Promotions, n(COLLECTORS_EDITION, bubbleDownSelf({ ["u"] = REAL_MONEY
 				ach(19027),	-- Heroic Edition: Algarian Stormrider
 				iensemble(209336, {	-- Ensemble: Stormrider's Attire
 				}),
-				n(DRAGONRIDING_RACING, {
+				skyriding(n(DRAGONRIDING_RACING, {
 					n(ACHIEVEMENTS, {
 						ach(18928, {	-- Storm Rider: Bronze
 							-- Meta Achievement
@@ -808,7 +809,7 @@ root(ROOTS.Promotions, n(COLLECTORS_EDITION, bubbleDownSelf({ ["u"] = REAL_MONEY
 							},
 						}),
 					}),
-				}),
+				})),
 			},
 		}),
 		n(EPIC_EDITION, {
@@ -915,6 +916,7 @@ root(ROOTS.HiddenQuestTriggers, n(COLLECTORS_EDITION, bubbleDownSelf({ ["u"] = R
 						-- Ensemble: Frenzied Stormrider's Attire
 						-- Ensemble: Shocking Stormrider's Attire
 						-- Ensemble: Sparking Stormrider's Attire
+			q(81995),	-- During Gryphons of a Feather (82809)
 			q(84824),	-- triggered when accepting "The Stormrider's Bond" (81993) [Dragon Isle Version]
 			q(84825),	-- triggered when accepting "The Stormrider's Bond" (83024) [Khaz Algar Version]
 		}),

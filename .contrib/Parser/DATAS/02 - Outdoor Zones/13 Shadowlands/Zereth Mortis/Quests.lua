@@ -46,6 +46,9 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 					["provider"] = { "n", 184062 },	-- Firim
 					["coord"] = { 31.2, 51.3, ZERETH_MORTIS },
 					["g"] = {
+						o(375015, {	-- Primordial Core
+							["coord"] = { 32.1, 57.3, ZERETH_MORTIS },
+						}),
 						i(188955),	-- Primordial Core (QI!)
 					},
 				}),
@@ -1068,7 +1071,7 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 			}),
 			q(65259, {	-- The Heart of the Sepulcher
 				["sourceQuests"] = { 64844 },	-- The Pilgrimage Ends
-				["provider"] = { "n", 181367 },	-- Highlord Bolvar Fordragon
+				["provider"] = { "n", 181183 },	-- Highlord Bolvar Fordragon
 				["coord"] = { 35, 64.7, ZERETH_MORTIS },
 			}),
 			q(65749, {	-- The Necessity Of Equipment
@@ -1076,7 +1079,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 				["provider"] = { "n", 177958 },	-- Firim
 				["coord"] = { 34.2, 48.6, ZERETH_MORTIS },
 				["g"] = {
-					i(190940),	-- Firim's Research Notes (QI!)
+					o(375977, {	-- Firim's Research Notes
+						["coord"] = { 34.1, 48.8, ZERETH_MORTIS },
+						["g"] = { i(190940) },	-- Firim's Research Notes (QI!)
+					}),
 				},
 			}),
 			q(65735, {	-- Wanted: Custos

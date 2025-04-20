@@ -38,8 +38,11 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					["coord"] = { 43.8, 50.8, UNDERMINE },
 				}),
 			}, {	-- RENOWN 9 --
-				-- TODO: missing restored key quest
 				q(85819, {	-- Weathered Crests
+					["provider"] = { "n", 231409 },	-- Smaks Topskimmer
+					["coord"] = { 43.8, 50.8, UNDERMINE },
+				}),
+				q(90557, {	-- Whose Key is This?
 					["provider"] = { "n", 231409 },	-- Smaks Topskimmer
 					["coord"] = { 43.8, 50.8, UNDERMINE },
 				}),
@@ -97,7 +100,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					},
 				}),
 				------ Paragon ------
-				q(85805, {	-- Renowned with the Cartels of Undermine (TODO: according to wowhead comment - it is bugged and could be replaced on release)
+				q(85805, {	-- Renowned with the Cartels of Undermine
 					["provider"] = { "n", 231409 },	-- Smaks Topskimmer
 					["coord"] = { 43.8, 50.8, UNDERMINE },
 					["isRepeatable"] = true,
@@ -138,7 +141,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						["g"] = {
 							i(237132, {	-- Bilgewater Trove (Paragon)
 								i(234741),	-- Miscellaneous Mechanica
-								mount(466024),		-- Bilgewater Bombardier (MOUNT!)
+								i(229957),	-- Bilgewater Bombardier (MOUNT!)
 							}),
 						},
 					}),
@@ -176,7 +179,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						["g"] = {
 							i(237135, {	-- Blackwater Trove (Paragon)
 								i(234741),	-- Miscellaneous Mechanica
-								mount(466001),		-- Blackwater Bonecrusher (MOUNT!)
+								i(229937),	-- Blackwater Bonecrusher (MOUNT!)
 							}),
 						},
 					}),
@@ -184,7 +187,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 				header(HEADERS.Faction, FACTION_DARKFUSE_SOLUTIONS, {
 					q(85808, {	-- Exalted with Darkfuse Solutions (Paragon)
 						["provider"] = { "n", 231396 },	-- Sitch Lowdown <Darkfuse Solutions Quartermaster>
-					--	["coord"] = { 63.2, 17.2, UNDERMINE },
+						["coord"] = { 30.8, 38.2, UNDERMINE },
 						["isRepeatable"] = true,
 						["g"] = {
 							i(232465, {	-- Darkfuse Trove (Paragon)
@@ -237,7 +240,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						["coord"] = { 53.2, 72.6, UNDERMINE },
 						["minReputation"] = { FACTION_TWW_VENTURE_CO, HONORED },	-- Venture Co Honored
 						["g"] = {
-							i(234746),	-- Venture Co's Trove (Green)
+							i(234746),	-- Venture Co. Trove (Green)
 						},
 					}),
 					q(88880, {	-- Revered with the Venture Co
@@ -245,7 +248,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						["coord"] = { 53.2, 72.6, UNDERMINE },
 						["minReputation"] = { FACTION_TWW_VENTURE_CO, REVERED },	-- Venture Co Revered
 						["g"] = {
-							i(235264),	-- Venture Co's Trove (Blue)
+							i(235264),	-- Venture Co. Trove (Blue)
 						},
 					}),
 					q(88881, {	-- Exalted with the Venture Co
@@ -253,7 +256,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						["coord"] = { 53.2, 72.6, UNDERMINE },
 						["minReputation"] = { FACTION_TWW_VENTURE_CO, EXALTED },	-- Venture Co Exalted
 						["g"] = {
-							i(235265),	-- Venture Co's Trove (Purple)
+							i(235265),	-- Venture Co. Trove (Purple)
 						},
 					}),
 					q(85810, {	-- Exalted with the Venture Co (Paragon)
@@ -264,7 +267,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						["g"] = {
 							i(237133, {	-- Venture Co Trove (Paragon)
 								i(234741),	-- Miscellaneous Mechanica
-								mount(466022),		-- Venture Co-ordinator (MOUNT!)
+								i(229951),	-- Venture Co-ordinator (MOUNT!)
 							}),
 						},
 					}),

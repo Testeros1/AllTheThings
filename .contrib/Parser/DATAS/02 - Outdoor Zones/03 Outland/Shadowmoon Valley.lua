@@ -185,10 +185,14 @@ root(ROOTS.Zones, {
 							{ 36.6, 55.0, SHADOWMOON_VALLEY },
 							{ 29.2, 28.6, SHADOWMOON_VALLEY },
 						},
-						["g"] = sharedData({ ["timeline"] = { ADDED_2_3_0 } }, {
-							r(44155),	-- Flying Machine
-							r(44157),	-- Turbo-Charged Flying Machine
-						}),
+						["groups"] = {
+							r(44155, {	-- Flying Machine
+								["timeline"] = { ADDED_2_3_0 },
+							}),
+							r(44157, {	-- Turbo-Charged Flying Machine
+								["timeline"] = { ADDED_2_3_0 },
+							}),
+						},
 					}),
 				}),
 				n(QUESTS, {

@@ -16,31 +16,37 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 	prof(ALCHEMY, {
 		n(DISCOVERY, {
 			spell(60893, {	-- Northrend Alchemy Research
-				r(53895),	-- Crazy Alchemist's Potion
-				r(60354),	-- Elixir of Accuracy
-				r(60365),	-- Elixir of Armor Piercing
-				r(60355),	-- Elixir of Deadly Strikes
-				r(60366),	-- Elixir of Lightning Speed
-				r(60356),	-- Elixir of Mighty Defense
-				r(60357),	-- Elixir of Mighty Intellect[10.1.7+] / Elixir of Expertise
-				r(56519),	-- Elixir of Mighty Mageblood
-				r(54220),	-- Elixir of Protection
-				r(62410, {["timeline"] = {ADDED_3_0_8}}),	-- Elixir of Water Walking
-				r(54221),	-- Potion of Speed
-				r(54222),	-- Potion of Wild Magic
-				r(53904),	-- Powerful Rejuvenation Potion
-				r(53777),	-- Transmute: Eternal Air to Earth
-				r(53776),	-- Transmute: Eternal Air to Water
-				r(53781),	-- Transmute: Eternal Earth to Air
-				r(53782),	-- Transmute: Eternal Earth to Shadow
-				r(53775),	-- Transmute: Eternal Fire to Life
-				r(53774),	-- Transmute: Eternal Fire to Water
-				r(53773),	-- Transmute: Eternal Life to Fire
-				r(53771),	-- Transmute: Eternal Life to Shadow
-				r(53779),	-- Transmute: Eternal Shadow to Earth
-				r(53780),	-- Transmute: Eternal Shadow to Life
-				r(53783),	-- Transmute: Eternal Water to Air
-				r(53784),	-- Transmute: Eternal Water to Fire
+				-- #if AFTER WOD
+				i(115460, {	-- Northrend Alchemy Research
+				-- #endif
+					r(53895),	-- Crazy Alchemist's Potion
+					r(60354),	-- Elixir of Accuracy
+					r(60365),	-- Elixir of Armor Piercing
+					r(60355),	-- Elixir of Deadly Strikes
+					r(60366),	-- Elixir of Lightning Speed
+					r(60356),	-- Elixir of Mighty Defense
+					r(60357),	-- Elixir of Mighty Intellect[10.1.7+] / Elixir of Expertise
+					r(56519),	-- Elixir of Mighty Mageblood
+					r(54220),	-- Elixir of Protection
+					r(62410, {["timeline"] = {ADDED_3_0_8}}),	-- Elixir of Water Walking
+					r(54221),	-- Potion of Speed
+					r(54222),	-- Potion of Wild Magic
+					r(53904),	-- Powerful Rejuvenation Potion
+					r(53777),	-- Transmute: Eternal Air to Earth
+					r(53776),	-- Transmute: Eternal Air to Water
+					r(53781),	-- Transmute: Eternal Earth to Air
+					r(53782),	-- Transmute: Eternal Earth to Shadow
+					r(53775),	-- Transmute: Eternal Fire to Life
+					r(53774),	-- Transmute: Eternal Fire to Water
+					r(53773),	-- Transmute: Eternal Life to Fire
+					r(53771),	-- Transmute: Eternal Life to Shadow
+					r(53779),	-- Transmute: Eternal Shadow to Earth
+					r(53780),	-- Transmute: Eternal Shadow to Life
+					r(53783),	-- Transmute: Eternal Water to Air
+					r(53784),	-- Transmute: Eternal Water to Fire
+				-- #if AFTER WOD
+				}),
+				-- #endif
 			}),
 		}),
 		filter(CONSUMABLES, {
@@ -87,7 +93,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 			i(40068),	-- Wrath Elixir
 		}),
 		filter(REAGENTS, {
-			i(36931),	-- Ametrine
+			applyclassicphase(WRATH_PHASE_THREE, i(36931, {["timeline"] = {ADDED_3_2_0}})),	-- Ametrine
 			applyclassicphase(WRATH_PHASE_THREE, i(36919, {["timeline"] = {ADDED_3_2_0}})),	-- Cardinal Ruby
 			applyclassicphase(WRATH_PHASE_THREE, i(36928, {["timeline"] = {ADDED_3_2_0}})),	-- Dreadstone
 			applyclassicphase(WRATH_PHASE_THREE, i(41334, {["timeline"] = {ADDED_3_2_0}})),	-- Earthsiege Diamond
@@ -114,7 +120,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 		i(64396),	-- Nerubian Obelisk
 		i(87399, {["timeline"] = {ADDED_5_0_4}}),	-- Restored Artifact
 		i(64395),	-- Vrykul Rune Stick
-		currency(ARCH_CURRENCY_NERUBIAN, {
+		header(HEADERS.Currency, ARCH_CURRENCY_NERUBIAN, sharedData({["cost"]={{"c",ARCH_CURRENCY_NERUBIAN,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 203078 },	-- Nerubian Archaeology Find
 			["maps"] = {
 				BOREAN_TUNDRA,
@@ -134,8 +140,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 				i(64474),	-- Spidery Sundial
 				i(64480),	-- Vizier's Scrawled Streamer
 			},
-		}),
-		currency(ARCH_CURRENCY_VRYKUL, {
+		})),
+		header(HEADERS.Currency, ARCH_CURRENCY_VRYKUL, sharedData({["cost"]={{"c",ARCH_CURRENCY_VRYKUL,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 207189 },	-- Vrykul Archaeology Find
 			["maps"] = {
 				HOWLING_FJORD,
@@ -152,7 +158,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 				i(64467),	-- Thorned Necklace
 				i(69775, {["timeline"] = {ADDED_4_1_0}}),	-- Vrykul Drinking Horn (TOY!)
 			},
-		}),
+		})),
 	})),
 	prof(BLACKSMITHING, {
 		-- #if BEFORE CATA
@@ -590,6 +596,28 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 			i(41167),	-- Heartseeker Scope
 			i(41146),	-- Sun Scope
 		}),
+		i(23821, {	-- Zapthrottle Mote Extractor
+			n(24879, {	-- Arctic Cloud (Gas cloud)
+				["description"] = "Too few and far between to be reliably farmed on it's own.",
+				["maps"] = { DRAGONBLIGHT, ICECROWN, THE_STORM_PEAKS, },
+				["requireSkill"] = ENGINEERING,
+			}),
+			n(32522, {	-- Cinder Cloud (Gas cloud)
+				["coords"] = {
+					{ 38.4, 32.3, DRAGONBLIGHT },	-- Obsidian Dragonshrine
+					{ 84.0, 71.5, WINTERGRASP },	-- The Cauldron of Flames
+					{ 45.65, 24.6, SHOLAZAR_BASIN },	-- The Savage Thicket
+				},
+				["description"] = "Too few and far between to be reliably farmed on it's own.",
+				["requireSkill"] = ENGINEERING,
+			}),
+			n(32544, {	-- Steam Cloud (Gas cloud)
+				["coord"] = { 66.0, 27.0, BOREAN_TUNDRA },	-- The Geyser Fields
+				["description"] = "Too few and far between to be reliably farmed on it's own.",
+				["maps"] = { SHOLAZAR_BASIN },
+				["requireSkill"] = ENGINEERING,
+			}),
+		}),
 	}),
 	-- #if BEFORE 8.0.1
 	prof(FIRST_AID, {
@@ -598,20 +626,59 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 	}),
 	-- #endif
 	prof(FISHING, {
+		-- Fish
 		i(41812, {	-- Barrelhead Goby
-			["description"] = "Can be caught in open waters in Sholazar Basin.",
+			["maps"] = { SHOLAZAR_BASIN },
+		}),
+		i(45905, {	-- Bloodtooth Frenzy (Dalaran Fishing daily quest objective)
+			["description"] = "Kill an animal and then swim in a body of water to create a pool to fish from.",
+			["provider"] = { "o", 194479 },	-- Pool of Blood
 		}),
 		i(41808, {	-- Bonescale Snapper
-			["description"] = "Can be caught in open waters around Northrend.",
+			["maps"] = {
+				BOREAN_TUNDRA,
+				CRYSTALSONG_FOREST,
+				DRAGONBLIGHT,
+				GRIZZLY_HILLS,
+				HOWLING_FJORD,
+				ICECROWN,
+				SHOLAZAR_BASIN,
+				THE_STORM_PEAKS,
+				WINTERGRASP,
+				ZULDRAK,
+			},
 		}),
 		i(41805, {	-- Borean Man O' War
-			["description"] = "Can be caught in 'Borean Man O' War Schools' around Borean Tundra.",
+			["description"] = "Schools can be found on the seaside.",
+			["maps"] = { BOREAN_TUNDRA },
+			["provider"] = { "o", 182958 },	-- Borean Man O' War School
 		}),
 		i(41800, {	-- Deep Sea Monsterbelly
-			["description"] = "Can be caught in 'Deep Sea Monsterbelly Schools' around icebergs on the shoreside of Borean Tundra, Dragonblight and Howling Fjord.",
+			["coords"] = {
+				{ 31.1, 67.6, BOREAN_TUNDRA },	-- Outside Unu'pe
+				{ 33.5, 66.6, BOREAN_TUNDRA },	-- Outside Death's Advance
+				{ 50.1, 69.7, DRAGONBLIGHT },	-- Path of the Titans on the Sea
+				{ 82.9, 90.3, HOWLING_FJORD },	-- Outside Baelgun's Excavation Site
+			},
+			["description"] = "The schools have shared spawn with Moonglow Cuttlefish Schools. Borean Tundra have most schools.",
+			["_allowObjectProvider"] = true,
+			["provider"] = { "o", 192053 },	-- Deep Sea Monsterbelly School
 		}),
 		i(41807, {	-- Dragonfin Angelfish
-			["description"] = "Can be caught in 'Dragonfin Angelfish Schools' in inland waters in Dragonblight.",
+			["coords"] = {
+				{ 40.1, 67.7, DRAGONBLIGHT },	-- Lake Indu'le
+				{ 91.0, 28.6, DRAGONBLIGHT },	-- Drak'Mar Lake
+				{ 89.9, 38.5, DRAGONBLIGHT },	-- Dragonspine Tributary by Onslaught Base Camp
+				{ 92.9, 48.2, DRAGONBLIGHT },	-- Dragonspine Tributary by Northern Carrion Fields
+				{ 92.8, 58.2, DRAGONBLIGHT },	-- Dragonspine Tributary by Southern Carrion Fields
+				{ 92.0, 69.0, DRAGONBLIGHT },	-- Dragonspine Tributary by Eldritch Heights
+			},
+			["_allowObjectProvider"] = true,
+			["provider"] = { "o", 192048 },	-- Dragonfin Angelfish School
+		}),
+		i(44703, {	-- Dark Herring
+			["maps"] = { HOWLING_FJORD },
+			["provider"] = { "o", 192049 },	-- Fangtooth Herring School
 		}),
 		i(44505, {	-- Dustbringer
 			["description"] = "Can be caught in schools or open water in Northrend.",
@@ -629,36 +696,66 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 			},
 		}),
 		i(41810, {	-- Fangtooth Herring
-			["description"] = "Can be caught in 'Fangtooth Herring Schools' in inland waters in Howling Fjord.",
+			["description"] = "Schools can be found in inland waters.",
+			["maps"] = { HOWLING_FJORD },
+			["provider"] = { "o", 192049 },	-- Fangtooth Herring School
 		}),
 		i(43646, {	-- Fountain Goldfish
-			["description"] = "Can be caught in the fountain on WotLK Dalaran.",
+			["description"] = "Can be caught in the fountain.",
+			["coord"] = { 52.9, 65.9, NORTHREND_DALARAN },	-- Dalaran fountain
 		}),
 		i(41809, {	-- Glacial Salmon
-			["description"] = "Can be caught in 'Glacial Salmon Schools' in inland waters in Grizzly Hills.",
+			["description"] = "Schools can be found in inland waters.",
+			["maps"] = { GRIZZLY_HILLS },
+			["provider"] = { "o", 192050 },	-- Glacial Salmon School
 		}),
 		i(41814, {	-- Glassfin Minnow
-			["description"] = "Can be caught in 'Glassfin Minnow Schools' in Crystalsong Forest.",
+			["maps"] = { CRYSTALSONG_FOREST },
+			["provider"] = { "o", 192059 },	-- Glassfin Minnow School
 		}),
 		i(41802, {	-- Imperial Manta Ray
-			["description"] = "Can be caught in 'Imperial Manta Ray Schools' on the shoreside of Borean Tundra, Dragonblight, Howling Fjord and Grizzly Hills.",
+			["description"] = "Schools can be found on the seaside.",
+			["maps"] = {
+				BOREAN_TUNDRA,
+				DRAGONBLIGHT,
+				GRIZZLY_HILLS,
+				HOWLING_FJORD,
+			},
+			["provider"] = { "o", 192052 },	-- Imperial Manta Ray School
 		}),
 		i(43572, {	-- Magic Eater
 			["description"] = "Can be caught in any waters on both WotLK and Legion Dalaran.",
+			["maps"] = {
+				NORTHREND_DALARAN,
+				NORTHREND_THE_UNDERBELLY,
+			},
 		}),
 		i(41801, {	-- Moonglow Cuttlefish
-			["description"] = "Can be caught in 'Moonglow Cuttlefish Schools' around icebergs on the shoreside of Borean Tundra, Dragonblight and Howling Fjord.",
+			["coords"] = {
+				{ 31.1, 67.6, BOREAN_TUNDRA },	-- Outside Unu'pe
+				{ 33.5, 66.6, BOREAN_TUNDRA },	-- Outside Death's Advance
+				{ 50.1, 69.7, DRAGONBLIGHT },	-- Path of the Titans on the Sea
+				{ 82.9, 90.3, HOWLING_FJORD },	-- Outside Baelgun's Excavation Site
+			},
+			["description"] = "The schools have shared spawn with Deep Sea Monsterbelly Schools. Borean Tundra have most schools.",
+			["_allowObjectProvider"] = true,
+			["provider"] = { "o", 192054 },	-- Moonglow Cuttlefish School
 		}),
 		i(41806, {	-- Musselback Sculpin
-			["description"] = "Can be caught in 'Musselback Sculpin Schools' in inland waters in Borean Tundra.",
+			["coord"] = { 51.6, 45.0, BOREAN_TUNDRA },	-- Lake Kum'uya
+			["_allowObjectProvider"] = true,
+			["provider"] = { "o", 192046 },	-- Musselback Sculpin School
 		}),
 		i(41813, {	-- Nettlefish
-			["description"] = "Can be caught in 'Nettlefish Schools' in inland waters in Sholazar Basin.",
+			["maps"] = { SHOLAZAR_BASIN },
+			["provider"] = { "o", 192057 },	-- Nettlefish School
 		}),
-		i(41803, {	-- Rockfin Grouper
-			["description"] = "Can be caught in open sea waters around Northrend.",
+		i(45902, {	-- Phantom Ghostfish (Dalaran Fishing daily quest objective)
+			["description"] = "Eat this before it despawns!",
+			["maps"] = { SHOLAZAR_BASIN },
+			["_noautomation"] = true,
 		}),
-		i(46109, {	-- Sea Turtle (MOUNT!)
+		i(44475, {	-- Reinforced Crate
 			["providers"] = {
 				{ "o", 192051 },	-- Borean Man O' War School
 				{ "o", 192053 },	-- Deep Sea Monsterbelly School
@@ -671,6 +768,27 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 				{ "o", 192046 },	-- Musselback Sculpin School
 				{ "o", 192057 },	-- Nettlefish School
 			},
+			["groups"] = {
+				i(33567),	-- Borean Leather Scraps
+				i(36909),	-- Cobalt Ore
+				i(33470),	-- Frostweave Cloth
+			},
+		}),
+		i(41803, {	-- Rockfin Grouper
+			["description"] = "Can be caught on the seaside around Northrend.",
+			["maps"] = {
+				BOREAN_TUNDRA,
+				DRAGONBLIGHT,
+				GRIZZLY_HILLS,
+				HOWLING_FJORD,
+				ICECROWN,
+				SHOLAZAR_BASIN,
+				THE_STORM_PEAKS,
+				ZULDRAK,
+			},
+		}),
+		i(46109, {	-- Sea Turtle (MOUNT!)
+			-- #if BEFORE 4.0.3
 			["maps"] = {
 				BOREAN_TUNDRA,
 				CRYSTALSONG_FOREST,
@@ -679,16 +797,101 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 				HOWLING_FJORD,
 				SHOLAZAR_BASIN,
 			},
+			["providers"] = {
+				{ "o", 192051 },	-- Borean Man O' War School
+				{ "o", 192053 },	-- Deep Sea Monsterbelly School
+				{ "o", 192048 },	-- Dragonfin Angelfish School
+				{ "o", 192049 },	-- Fangtooth Herring School
+				{ "o", 192050 },	-- Glacial Salmon School
+				{ "o", 192059 },	-- Glassfin Minnow School
+				{ "o", 192052 },	-- Imperial Manta Ray School
+				{ "o", 192054 },	-- Moonglow Cuttlefish School
+				{ "o", 192046 },	-- Musselback Sculpin School
+				{ "o", 192057 },	-- Nettlefish School
+			},
+			-- #endif
 		}),
 		i(43571, {	-- Sewer Carp
 			["description"] = "Can be caught in any waters on both WotLK and Legion Dalaran.",
+			["maps"] = {
+				NORTHREND_DALARAN,
+				NORTHREND_THE_UNDERBELLY,
+			},
 		}),
 		i(43647, {	-- Shimmering Minnow
 			["description"] = "Can be caught outside Violet Hold on both WotLK and Legion Dalaran.",
+			["coord"] = { 63.8, 64.3, NORTHREND_DALARAN },	-- The Violet Hold
 		}),
 		i(43652, {	-- Slippery Eel
 			["description"] = "Can be caught outside Violet Hold on both WotLK and Legion Dalaran.",
+			["coord"] = { 63.8, 64.3, NORTHREND_DALARAN },	-- The Violet Hold
 		}),
+		i(45904, {	-- Terrorfish (Dalaran Fishing daily quest objective)
+			["maps"] = { WINTERGRASP },
+		}),
+		-- Schools
+		o(192051, {	-- Borean Man O' War School
+			["description"] = "Can be found on the seaside.",
+			["maps"] = { BOREAN_TUNDRA },
+		}),
+		o(192053, {	-- Deep Sea Monsterbelly School
+			["coords"] = {
+				{ 31.1, 67.6, BOREAN_TUNDRA },	-- Outside Unu'pe
+				{ 33.5, 66.6, BOREAN_TUNDRA },	-- Outside Death's Advance
+				{ 50.1, 69.7, DRAGONBLIGHT },	-- Path of the Titans on the Sea
+				{ 82.9, 90.3, HOWLING_FJORD },	-- Outside Baelgun's Excavation Site
+			},
+			["description"] = "Have shared spawn with Moonglow Cuttlefish Schools. Borean Tundra have most schools.",
+		}),
+		o(192048, {	-- Dragonfin Angelfish School
+			["coords"] = {
+				{ 40.1, 67.7, DRAGONBLIGHT },	-- Lake Indu'le
+				{ 91.0, 28.6, DRAGONBLIGHT },	-- Drak'Mar Lake
+				{ 89.9, 38.5, DRAGONBLIGHT },	-- Dragonspine Tributary by Onslaught Base Camp
+				{ 92.9, 48.2, DRAGONBLIGHT },	-- Dragonspine Tributary by Northern Carrion Fields
+				{ 92.8, 58.2, DRAGONBLIGHT },	-- Dragonspine Tributary by Southern Carrion Fields
+				{ 92.0, 69.0, DRAGONBLIGHT },	-- Dragonspine Tributary by Eldritch Heights
+			},
+		}),
+		o(192049, {	-- Fangtooth Herring School
+			["description"] = "Can be found in inland waters.",
+			["maps"] = { HOWLING_FJORD },
+		}),
+		o(192050, {	-- Glacial Salmon School
+			["description"] = "Can be found in inland waters.",
+			["maps"] = { GRIZZLY_HILLS },
+		}),
+		o(192059, {	-- Glassfin Minnow School
+			["maps"] = { CRYSTALSONG_FOREST },
+		}),
+		o(192052, {	-- Imperial Manta Ray School
+			["description"] = "Schools can be found on the seaside.",
+			["maps"] = {
+				BOREAN_TUNDRA,
+				DRAGONBLIGHT,
+				GRIZZLY_HILLS,
+				HOWLING_FJORD,
+			},
+		}),
+		o(192054, {	-- Moonglow Cuttlefish School
+			["coords"] = {
+				{ 31.1, 67.6, BOREAN_TUNDRA },	-- Outside Unu'pe
+				{ 33.5, 66.6, BOREAN_TUNDRA },	-- Outside Death's Advance
+				{ 50.1, 69.7, DRAGONBLIGHT },	-- Path of the Titans on the Sea
+				{ 82.9, 90.3, HOWLING_FJORD },	-- Outside Baelgun's Excavation Site
+			},
+			["description"] = "Have shared spawn with Deep Sea Monsterbelly Schools. Borean Tundra have most schools.",
+		}),
+		o(192046, {	-- Musselback Sculpin School
+			["coord"] = { 51.6, 45.0, BOREAN_TUNDRA },	-- Lake Kum'uya
+		}),
+		o(192057, {	-- Nettlefish School
+			["maps"] = { SHOLAZAR_BASIN },
+		}),
+		o(194479, {	-- Pool of Blood (Dalaran Fishing daily quest objective)
+			["maps"] = { BOREAN_TUNDRA },
+		}),
+		-- Recipe
 		filter(RECIPES, {
 			i(34109, {	-- Weather-Beaten Journal (RECIPE!)
 				["description"] = "Can be fished from schools.",
@@ -697,25 +900,190 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 	}),
 	prof(HERBALISM, {
 		spell(2366, {	-- Herb Gathering
-			i(36903),	-- Adder's Tongue
-			i(108353, {["timeline"] = {ADDED_6_0_2}}),	-- Adder's Tongue Stem
-			i(37921),	-- Deadnettle
-			i(108358, {["timeline"] = {ADDED_6_0_2}}),	-- Deadnettle Bramble
-			i(39970),	-- Fire Leaf
-			i(108359, {["timeline"] = {ADDED_6_0_2}}),	-- Fire Leaf Bramble
-			i(36908),	-- Frost Lotus
-			i(36901),	-- Goldclover
-			i(108352, {["timeline"] = {ADDED_6_0_2}}),	-- Goldclover Leaf
-			i(36906),	-- Icethorn
-			i(108356, {["timeline"] = {ADDED_6_0_2}}),	-- Icethorn Bramble
-			i(36905),	-- Lichbloom
-			i(108355, {["timeline"] = {ADDED_6_0_2}}),	-- Lichbloom Stalk
-			i(36907),	-- Talandra's Rose
-			i(108357, {["timeline"] = {ADDED_6_0_2}}),	-- Talandra's Rose Petal
-			i(36904),	-- Tiger Lily
-			i(108354, {["timeline"] = {ADDED_6_0_2}}),	-- Tiger Lily Petal
-			--	No need to list Tradegoods w/ many other sources
-			--	i(37704),	-- Crystallized Life
+			--	Herbs
+			i(36903, {	-- Adder's Tongue
+				["maps"] = { SHOLAZAR_BASIN },
+				["provider"] = { "o", 191019 },	-- Adder's Tongue
+			}),
+			i(108353, {	-- Adder's Tongue Stem
+				["provider"] = { "o", 191019 },	-- Adder's Tongue
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(36903),	-- Adder's Tongue
+				},
+			}),
+			i(37921, {	-- Deadnettle
+				["description"] = "Is obtained from gathering other herbs.",
+				["maps"] = {
+					BOREAN_TUNDRA,
+					DRAGONBLIGHT,
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					SHOLAZAR_BASIN,
+					ZULDRAK,
+				},
+				["providers"] = {
+					{ "o", 189973 },	-- Goldclover
+					{ "o", 190170 },	-- Talandra's Rose
+					{ "o", 190169 },	-- Tiger Lily
+				},
+			}),
+			i(108358, {	-- Deadnettle Bramble
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(37921),	-- Deadnettle
+				},
+			}),
+			i(39970, {	-- Fire Leaf
+				["coord"] = { 70.6, 33.7, BOREAN_TUNDRA },	-- The Southern Geyser Fields
+				["_allowObjectProvider"] = true,
+				["provider"] = { "o", 191303 },	-- Firethorn
+			}),
+			i(108359, {	-- Fire Leaf Bramble
+				["provider"] = { "o", 191303 },	-- Firethorn
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(39970),	-- Fire Leaf
+				},
+			}),
+			i(36908, {	-- Frost Lotus
+				["description"] = "Can uncommonly be looted when gathering WotLK herbs.",
+				["providers"] = {
+					{ "o", 191019 },	-- Adder's Tongue
+					{ "o", 191303 },	-- Firethorn
+					{ "o", 189973 },	-- Goldclover
+					{ "o", 190172 },	-- Icethorn
+					{ "o", 190171 },	-- Lichbloom
+					{ "o", 190170 },	-- Talandra's Rose
+					{ "o", 190169 },	-- Tiger Lily
+				},
+			}),
+			i(36901, {	-- Goldclover
+				["coords"] = {
+					{ 48.8, 48.4, DRAGONBLIGHT },	-- Ruby Dragonshrine
+					{ 63.5, 72.5, DRAGONBLIGHT },	-- Emerald Dragonshrine
+				},
+				["description"] = "Found on grassy terrain.",
+				["maps"] = {
+					BOREAN_TUNDRA,
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					SHOLAZAR_BASIN,
+				},
+				["_allowObjectProvider"] = true,
+				["provider"] = { "o", 189973 },	-- Goldclover
+			}),
+			i(108352, {	-- Goldclover Leaf
+				["provider"] = { "o", 189973 },	-- Goldclover
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(36901),	-- Goldclover
+				},
+			}),
+			i(36906, {	-- Icethorn
+				["maps"] = {
+					ICECROWN,
+					THE_STORM_PEAKS,
+				},
+				["provider"] = { "o", 190172 },	-- Icethorn
+			}),
+			i(108356, {	-- Icethorn Bramble
+				["provider"] = { "o", 190172 },	-- Icethorn
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(36906),	-- Icethorn
+				},
+			}),
+			i(36905, {	-- Lichbloom
+				["maps"] = {
+					ICECROWN,
+					THE_STORM_PEAKS,
+				},
+				["provider"] = { "o", 190171 },	-- Lichbloom
+			}),
+			i(108355, {	-- Lichbloom Stalk
+				["provider"] = { "o", 190171 },	-- Lichbloom
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(36905),	-- Lichbloom
+				},
+			}),
+			i(36907, {	-- Talandra's Rose
+				["coord"] = { 33.2, 66.7, ZULDRAK },	-- Lower Zul'Drak
+				["description"] = "Found around the lower tiers of Zul'Drak.",
+				["_allowObjectProvider"] = true,
+				["provider"] = { "o", 190170 },	-- Talandra's Rose
+			}),
+			i(108357, {	-- Talandra's Rose Petal
+				["provider"] = { "o", 190170 },	-- Talandra's Rose
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(36907),	-- Talandra's Rose
+				},
+			}),
+			i(36904, {	-- Tiger Lily
+				["coord"] = { 51.6, 45.0, BOREAN_TUNDRA },	-- Lake Kum'uya
+				["description"] = "Found around inland waters and waterways.",
+				["maps"] = {
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					SHOLAZAR_BASIN,
+				},
+				["_allowObjectProvider"] = true,
+				["provider"] = { "o", 190169 },	-- Tiger Lily
+			}),
+			i(108354, {	-- Tiger Lily Petal
+				["provider"] = { "o", 190169 },	-- Tiger Lily
+				["timeline"] = { ADDED_6_0_2 },
+				["groups"] = {
+					i(36904),	-- Tiger Lily
+				},
+			}),
+			--	Nodes
+			o(191019, {	-- Adder's Tongue
+				["maps"] = { SHOLAZAR_BASIN },
+			}),
+			o(191303, {	-- Firethorn
+				["coord"] = { 70.6, 33.7, BOREAN_TUNDRA },	-- The Southern Geyser Fields
+			}),
+			o(189973, {	-- Goldclover
+				["coords"] = {
+					{ 48.8, 48.4, DRAGONBLIGHT },	-- Ruby Dragonshrine
+					{ 63.5, 72.5, DRAGONBLIGHT },	-- Emerald Dragonshrine
+				},
+				["description"] = "Found on grassy terrain.",
+				["maps"] = {
+					BOREAN_TUNDRA,
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					SHOLAZAR_BASIN,
+				},
+			}),
+			o(190172, {	-- Icethorn
+				["maps"] = {
+					ICECROWN,
+					THE_STORM_PEAKS,
+				},
+			}),
+			o(190171, {	-- Lichbloom
+				["maps"] = {
+					ICECROWN,
+					THE_STORM_PEAKS,
+				},
+			}),
+			o(190170, {	-- Talandra's Rose
+				["coord"] = { 33.2, 66.7, ZULDRAK },	-- Lower Zul'Drak
+				["description"] = "Found around the lower tiers of Zul'Drak.",
+			}),
+			o(190169, {	-- Tiger Lily
+				["coord"] = { 51.6, 45.0, BOREAN_TUNDRA },	-- Lake Kum'uya
+				["description"] = "Found around inland waters and waterways.",
+				["maps"] = {
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					SHOLAZAR_BASIN,
+				},
+			}),
 		}),
 	}),
 	prof(INSCRIPTION, {
@@ -1000,33 +1368,139 @@ root(ROOTS.Craftables, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_
 	}),
 	prof(MINING, {
 		spell(2575, {	-- Mining
-			i(36909),	-- Cobalt Ore
-			i(108305, {["timeline"] = {ADDED_6_0_2}}),	-- Cobalt Ore Nugget
-			i(36912),	-- Saronite Ore
-			i(108306, {["timeline"] = {ADDED_6_0_2}}),	-- Saronite Ore Nugget
-			i(36910),	-- Titanium Ore
-			i(108391, {["timeline"] = {ADDED_6_0_2}}),	-- Titanium Ore Nugget
+			-- Nodes
+			o(189978, {	-- Cobalt Deposit
+				["maps"] = {
+					BOREAN_TUNDRA,
+					DRAGONBLIGHT,
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					ZULDRAK,
+				},
+			}),
+			o(189979, {	-- Rich Cobalt Deposit
+				["maps"] = {
+					BOREAN_TUNDRA,
+					DRAGONBLIGHT,
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+					ZULDRAK,
+				},
+			}),
+			o(189981, {	-- Rich Saronite Deposit
+				["maps"] = {
+					DRAGONBLIGHT,
+					ICECROWN,
+					SHOLAZAR_BASIN,
+					THE_STORM_PEAKS,
+					WINTERGRASP,
+				},
+			}),
+			o(189980, {	-- Saronite Deposit
+				["maps"] = {
+					DRAGONBLIGHT,
+					ICECROWN,
+					SHOLAZAR_BASIN,
+					THE_STORM_PEAKS,
+					WINTERGRASP,
+				},
+			}),
+			o(191133, {	-- Titanium Vein
+				["maps"] = {
+					DRAGONBLIGHT,
+					ICECROWN,
+					SHOLAZAR_BASIN,
+					THE_STORM_PEAKS,
+					WINTERGRASP,
+				},
+			}),
+			-- Ores
+			i(36909, {	-- Cobalt Ore
+				["maps"] = {
+					BOREAN_TUNDRA,
+					DRAGONBLIGHT,
+					GRIZZLY_HILLS,
+					HOWLING_FJORD,
+				},
+				["providers"] = {
+					{ "o", 189978 },	-- Cobalt Deposit
+					{ "o", 189979 },	-- Rich Cobalt Deposit
+				},
+			}),
+			i(108305, {	-- Cobalt Ore Nugget
+				["providers"] = {
+					{ "o", 189978 },	-- Cobalt Deposit
+					{ "o", 189979 },	-- Rich Cobalt Deposit
+				},
+				["timeline"] = {ADDED_6_0_2},
+				["groups"] = {
+					i(36909),	-- Cobalt Ore
+				},
+			}),
+			i(36912, {	-- Saronite Ore
+				["maps"] = {
+					ICECROWN,
+					SHOLAZAR_BASIN,
+					THE_STORM_PEAKS,
+					WINTERGRASP,
+				},
+				["providers"] = {
+					{ "o", 189981 },	-- Rich Saronite Deposit
+					{ "o", 189980 },	-- Saronite Deposit
+				},
+			}),
+			i(108306, {	-- Saronite Ore Nugget
+				["providers"] = {
+					{ "o", 189981 },	-- Rich Saronite Deposit
+					{ "o", 189980 },	-- Saronite Deposit
+				},
+				["timeline"] = {ADDED_6_0_2},
+				["groups"] = {
+					i(36912),	-- Saronite Ore
+				},
+			}),
+			i(36910, {	-- Titanium Ore
+				["maps"] = {
+					ICECROWN,
+					SHOLAZAR_BASIN,
+					THE_STORM_PEAKS,
+					WINTERGRASP,
+				},
+				["provider"] = { "o", 191133 },	-- Titanium Vein
+			}),
+			i(108391, {	-- Titanium Ore Nugget
+				["provider"] = { "o", 191133 },	-- Titanium Vein
+				["timeline"] = {ADDED_6_0_2},
+				["groups"] = {
+					i(36910),	-- Titanium Ore
+				},
+			}),
 			-- Not Ore --
 			--[[	No need to list Tradegoods w/ many other sources
-			i(36921),	-- Autumn's Glow
+			-- Uncommon gem
 			i(36917),	-- Bloodstone
 			i(36923),	-- Chalcedony
+			i(36932),	-- Dark Jade
+			i(36929),	-- Huge Citrine
+			i(36926),	-- Shadow Crystal
+			i(36920),	-- Sun Crystal
+
+			-- Rare gem
+			i(36921),	-- Autumn's Glow
+			i(36933),	-- Forest Emerald
+			i(36930),	-- Monarch Topaz
+			i(36918),	-- Scarlet Ruby
+			i(36924),	-- Sky Sapphire
+			i(36927),	-- Twilight Opal
+
+			-- Elemental
 			i(37700),	-- Crystallized Air
 			i(37701),	-- Crystallized Earth
 			i(37702),	-- Crystallized Fire
 			i(37703),	-- Crystallized Shadow
 			i(37705),	-- Crystallized Water
-			i(36932),	-- Dark Jade
 			i(35624),	-- Eternal Earth
 			i(35627),	-- Eternal Shadow
-			i(36933),	-- Forest Emerald
-			i(36929),	-- Huge Citrine
-			i(36930),	-- Monarch Topaz
-			i(36918),	-- Scarlet Ruby
-			i(36926),	-- Shadow Crystal
-			i(36924),	-- Sky Sapphire
-			i(36920),	-- Sun Crystal
-			i(36927),	-- Twilight Opal
 			--]]
 		}),
 		spell(2656, {	-- Smelting

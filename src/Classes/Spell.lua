@@ -8,10 +8,10 @@ local pairs, select, rawget
 	= pairs, select, rawget
 
 -- App locals
-local IsQuestFlaggedCompleted, SearchForFieldContainer, GetFixedItemSpecInfo = app.IsQuestFlaggedCompleted, app.SearchForFieldContainer, app.GetFixedItemSpecInfo
+local IsQuestFlaggedCompleted, SearchForFieldContainer, GetFixedItemSpecInfo, SearchForField
+	= app.IsQuestFlaggedCompleted, app.SearchForFieldContainer, app.GetFixedItemSpecInfo, app.SearchForField
 
 -- WoW API Cache
-local GetItemInfo = app.WOWAPI.GetItemInfo;
 local GetSpellLink = app.WOWAPI.GetSpellLink;
 
 local IsSpellKnown, IsPlayerSpell, GetNumSpellTabs, GetSpellTabInfo, IsSpellKnownOrOverridesKnown
@@ -112,32 +112,51 @@ end
 });
 
 local cache = app.CreateCache("_cachekey");
+local function default_costCollectibles(t)
+	local id = t.spellID
+	if id then
+		local results = SearchForField("spellIDAsCost", id)
+		if #results > 0 then
+			-- app.PrintDebug("default_costCollectibles",t.hash,#results)
+			return results
+		end
+	end
+	return app.EmptyTable
+end
 local function CacheInfo(t, field)
 	local _t, id = cache.GetCached(t);
-	if t.itemID then
-		local name, link, _, _, _, _, _, _, _, icon = GetItemInfo(t.itemID);
-		if link then
-			_t.name = name;
-			_t.link = link;
-			_t.icon = icon;
-		end
-	else
-		local name, icon = GetSpellName(id), GetSpellIcon(id);
-		_t.name = name;
-		-- typically, the profession's spell icon will be a better representation of the spell if the spell is tied to a skill
-		_t.icon = SkillIcons[t.skillID] or icon;
-		local link = GetSpellLink(id);
-		_t.link = link;
-	end
+	local name, icon = GetSpellName(id), GetSpellIcon(id);
+	_t.name = name;
+	-- typically, the profession's spell icon will be a better representation of the spell if the spell is tied to a skill
+	_t.icon = SkillIcons[t.skillID] or icon;
+	local link = GetSpellLink(id);
+	_t.link = link;
 	-- track number of attempts to cache data for fallback to default values
-	local retries = (_t.retries or 0) + 1;
-	if retries > app.MaximumItemInfoRetries then
-		_t.name = t.itemID and "Item #"..t.itemID or "Spell #"..t.spellID;
+	if not _t.link and not t.CanRetry then
+		_t.name = "Spell #"..t.spellID;
 		-- fallback to skill icon if possible
 		_t.icon = SkillIcons[t.skillID] or 136243;	-- Trade_engineering
 		_t.link = _t.name;
 	end
-	_t.retries = retries;
+	if field then return _t[field]; end
+end
+local function CacheItemInfo(t, field)
+	local _t = cache.GetCached(t);
+	local item = _t._refitem
+	if not item then
+		-- this allows using the Item's cache to cache the Item information for the Recipe properly
+		-- eventually can use some shared ItemDB information cache driectly ideally
+		item = app.CreateItem(t.itemID)
+		_t._refitem = item
+	end
+	if item.link then
+		local itemCache = item._cache.GetCached(item)
+		_t.name = itemCache.name
+		_t.link = itemCache.link
+		_t.icon = itemCache.icon
+	elseif item.name then
+		_t.name = item.name
+	end
 	if field then return _t[field]; end
 end
 
@@ -170,6 +189,9 @@ do
 		skillID = function(t)
 			return t.requireSkill;
 		end,
+		costCollectibles = function(t)
+			return cache.GetCachedField(t, "costCollectibles", default_costCollectibles);
+		end,
 	},
 	"WithItem", {
 		_cachekey = function(t)
@@ -180,6 +202,15 @@ do
 		end,
 		tsm = function(t)
 			return ("i:%d"):format(t.itemID)
+		end,
+		name = function(t)
+			return cache.GetCachedField(t, "name", CacheItemInfo);
+		end,
+		link = function(t)
+			return cache.GetCachedField(t, "link", CacheItemInfo);
+		end,
+		icon = function(t)
+			return cache.GetCachedField(t, "icon", CacheItemInfo) or 136243;	-- Trade_engineering
 		end,
 	},
 	function(t) return t.itemID end)
@@ -248,9 +279,6 @@ do
 		spellID = function(t)
 			return t[KEY]
 		end,
-		f = function(t)
-			return 200;
-		end,
 		collectible = function(t)
 			return app.Settings.Collectibles[SETTING];
 			-- TODO: revise? this prevents showing a BoP, wrong-profession Recipe under a BoE used to obtain it, when within a Popout and NOT tracking Account-Wide Recipes
@@ -285,6 +313,15 @@ do
 		end,
 		tsm = function(t)
 			return ("i:%d"):format(t.itemID)
+		end,
+		name = function(t)
+			return cache.GetCachedField(t, "name", CacheItemInfo);
+		end,
+		link = function(t)
+			return cache.GetCachedField(t, "link", CacheItemInfo);
+		end,
+		icon = function(t)
+			return cache.GetCachedField(t, "icon", CacheItemInfo) or 136243;	-- Trade_engineering
 		end,
 	},
 	function(t) return t.itemID end);

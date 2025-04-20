@@ -385,6 +385,11 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 			}),
 		})),
 
+		-- 10.2.5
+		expansion(EXPANSION.DF, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
+			i(213155),	-- Dark Ranger General's Quiver
+		})),
+
 		-- 10.2.6
 		expansion(EXPANSION.DF, patch(2,6), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_6 } }, {
 			i(217635),	-- Dream Raider's Azure Razor
@@ -460,7 +465,6 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 		-- 11.0.0
 		expansion(EXPANSION.TWW, patch(0,01), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_0 } }, {
 			n(ARMOR, {
-				i(212170),	-- Bronzebeard's Spare Hat
 				i(224869),	-- Earthen Drape
 				i(224169),	-- Stonebound Tabard
 			}),
@@ -541,10 +545,350 @@ root(ROOTS.NeverImplemented, filter(COSMETIC, {
 				i(225496),	-- Unhinged Vault-Hatch
 			}),
 		})),
+
+		-- 11.0.5
+		expansion(EXPANSION.TWW, patch(0,5), bubbleDownSelf({ ["timeline"] = { ADDED_11_0_5 } }, {
+			n(SETS, {
+				------ Prowler's Aquatic Set ------
+				i(230181),	-- Ensemble: Prowler's Aquatic Headgear
+				i(230071),	-- Prowler's Aquatic Cowl
+				i(230091),	-- Prowler's Aquatic Mask
+				i(230050),	-- Prowler's Aquatic Shoulder Cape
+
+				------ Prowler's Brick Set ------
+				i(230171),	-- Ensemble: Prowler's Brick Headgear
+				i(230061),	-- Prowler's Brick Cowl
+				i(230081),	-- Prowler's Brick Mask
+				i(230039),	-- Prowler's Brick Shoulder Cape
+
+				------ Prowler's Cloudy Set ------
+				i(230168),	-- Ensemble: Prowler's Cloudy Headgear
+				i(230058),	-- Prowler's Cloudy Cowl
+				i(230078),	-- Prowler's Cloudy Mask
+				i(230037),	-- Prowler's Cloudy Shoulder Cape
+
+				------ Prowler's Grassy Set ------
+				i(230167),	-- Ensemble: Prowler's Grassy Headgear
+				i(230057),	-- Prowler's Grassy Cowl
+				i(230077),	-- Prowler's Grassy Mask
+				i(230036),	-- Prowler's Grassy Shoulder Cape
+
+				------ Prowler's Lively Set ------
+				i(230172),	-- Ensemble: Prowler's Lively Headgear
+				i(230062),	-- Prowler's Lively Cowl
+				i(230082),	-- Prowler's Lively Mask
+				i(230041),	-- Prowler's Lively Shoulder Cape
+
+				------ Prowler's Midnight Set ------
+				i(230152),	-- Ensemble: Prowler's Midnight Headgear
+				i(230054),	-- Prowler's Midnight Cowl
+				i(230074),	-- Prowler's Midnight Mask
+				i(230033),	-- Prowler's Midnight Shoulder Cape
+
+				------ Prowler's Plum Set ------
+				i(230178),	-- Ensemble: Prowler's Plum Headgear
+				i(230068),	-- Prowler's Plum Cowl
+				i(230088),	-- Prowler's Plum Mask
+				i(230047),	-- Prowler's Plum Shoulder Cape
+
+				------ Prowler's Rosy Set ------
+				i(230177),	-- Ensemble: Prowler's Rosy Headgear
+				i(230067),	-- Prowler's Rosy Cowl
+				i(230087),	-- Prowler's Rosy Mask
+				i(230046),	-- Prowler's Rosy Shoulder Cape
+			}),
+		})),
+
 		-- 11.0.7
 		expansion(EXPANSION.TWW, patch(0,07), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_7 } }, {
 			n(ARMOR, {
+				i(233976),	-- [PH] Cloak
+				i(233913),	-- [PH] Shield
+				i(233934),	-- [PH] Shield
+				i(233931),	-- [PH] Shoulder
+				i(233933),	-- [PH] Tabard
+				i(233238),	-- Azure Pack of Lunar Explosives
+				i(233183),	-- Banded Aquatic War Slippers
+				i(233166),	-- Banded Aquatic War Wraps
+				i(233170),	-- Banded Azure War Slippers
+				i(233153),	-- Banded Azure War Wraps
+				i(233176),	-- Banded Brick War Slippers
+				i(233159),	-- Banded Brick War Wraps
+				i(233179),	-- Banded Carrot War Slippers
+				i(233162),	-- Banded Carrot War Wraps
+				i(233173),	-- Banded Cloudy War Slippers
+				i(233156),	-- Banded Cloudy War Wraps
+				i(233178),	-- Banded Faded War Slippers
+				i(233161),	-- Banded Faded War Wraps
+				i(233172),	-- Banded Grassy War Slippers
+				i(233155),	-- Banded Grassy War Wraps
+				i(233177),	-- Banded Lively War Slippers
+				i(233160),	-- Banded Lively War Wraps
+				i(233169),	-- Banded Midnight War Slippers
+				i(233152),	-- Banded Midnight War Wraps
+				i(233180),	-- Banded Rosy War Slippers
+				i(233163),	-- Banded Rosy War Wraps
+				i(233184),	-- Banded Snowy War Slippers
+				i(233167),	-- Banded Snowy War Wraps
+				i(233182),	-- Banded Violet War Slippers
+				i(233165),	-- Banded Violet War Wraps
+				i(234710),	-- Earthen Artisan Kilt
+				i(234712),	-- Earthen Explorer's Kilt
+				i(234711),	-- Earthen Peacekeeper Warkilt
+				i(234709),	-- Earthen Travel Kilt
 				i(234758),	-- Korkron Spaulders
+				i(233237),	-- Lively Pack of Lunar Explosives
+				i(233110),	-- Long Aquatic War Skirt
+				i(233149),	-- Long Aquatic War Skirt and Leg Wraps
+				i(233097),	-- Long Azure War Skirt
+				i(233136),	-- Long Azure War Skirt and Leg Wraps
+				i(233103),	-- Long Brick War Skirt
+				i(233142),	-- Long Brick War Skirt and Leg Wraps
+				i(233106),	-- Long Carrot War Skirt
+				i(233145),	-- Long Carrot War Skirt and Leg Wraps
+				i(233100),	-- Long Cloudy War Skirt
+				i(233139),	-- Long Cloudy War Skirt and Leg Wraps
+				i(233105),	-- Long Faded War Skirt
+				i(233144),	-- Long Faded War Skirt and Leg Wraps
+				i(233099),	-- Long Grassy War Skirt
+				i(233138),	-- Long Grassy War Skirt and Leg Wraps
+				i(233104),	-- Long Lively War Skirt
+				i(233143),	-- Long Lively War Skirt and Leg Wraps
+				i(233096),	-- Long Midnight War Skirt
+				i(233135),	-- Long Midnight War Skirt and Leg Wraps
+				i(233107),	-- Long Rosy War Skirt
+				i(233146),	-- Long Rosy War Skirt and Leg Wraps
+				i(233111),	-- Long Snowy War Skirt
+				i(233150),	-- Long Snowy War Skirt and Leg Wraps
+				i(233109),	-- Long Violet War Skirt
+				i(233148),	-- Long Violet War Skirt and Leg Wraps
+				i(234059),	-- Lunar Festival Attire - Purple
+				i(234060),	-- Lunar Festival Attire - Teal
+				i(234043),	-- Lunar Festival Belt - Purple
+				i(234044),	-- Lunar Festival Belt - Teal
+				i(234055),	-- Lunar Festival Crown - Purple
+				i(234056),	-- Lunar Festival Crown - Teal
+				i(234047),	-- Lunar Festival Robe - Purple
+				i(234048),	-- Lunar Festival Robe - Teal
+				i(234039),	-- Lunar Festival Slippers - Purple
+				i(234040),	-- Lunar Festival Slippers - Teal
+				i(234051),	-- Lunar Festival Spaulders - Purple
+				i(234052),	-- Lunar Festival Spaulders - Teal
+				i(232924),	-- Sailor's Belt
+				i(233093),	-- Short Aquatic War Skirt
+				i(233132),	-- Short Aquatic War Skirt and Leg Wraps
+				i(233080),	-- Short Azure War Skirt
+				i(233117),	-- Short Azure War Skirt and Leg Wraps
+				i(233086),	-- Short Brick War Skirt
+				i(233125),	-- Short Brick War Skirt and Leg Wraps
+				i(233089),	-- Short Carrot War Skirt
+				i(233128),	-- Short Carrot War Skirt and Leg Wraps
+				i(233083),	-- Short Cloudy War Skirt
+				i(233122),	-- Short Cloudy War Skirt and Leg Wraps
+				i(233088),	-- Short Faded War Skirt
+				i(233127),	-- Short Faded War Skirt and Leg Wraps
+				i(233082),	-- Short Grassy War Skirt
+				i(233121),	-- Short Grassy War Skirt and Leg Wraps
+				i(233087),	-- Short Lively War Skirt
+				i(233126),	-- Short Lively War Skirt and Leg Wraps
+				i(233079),	-- Short Midnight War Skirt
+				i(233116),	-- Short Midnight War Skirt and Leg Wraps
+				i(233090),	-- Short Rosy War Skirt
+				i(233129),	-- Short Rosy War Skirt and Leg Wraps
+				i(233094),	-- Short Snowy War Skirt
+				i(233133),	-- Short Snowy War Skirt and Leg Wraps
+				i(233092),	-- Short Violet War Skirt
+				i(233131),	-- Short Violet War Skirt and Leg Wraps
+				i(234982),	-- Spare Sailor's Short-Sleeved Tunic
+				i(233272),	-- Steam-Powered Cobalt Clock Cloak
+				i(233275),	-- Steam-Powered Violet Clock Cloak
+				i(235330),	-- Steam-Pressed Cobalt Cloak
+				i(235333),	-- Steam-Pressed Violet Cloak
+				i(233239),	-- Sunny Pack of Lunar Explosives
+				i(232910),	-- Vivid Heartfelt Shoulder Cape
+				i(232916),	-- Vivid Heartfelt Spaulders
+			}),
+			n(SETS, {
+				------ Cobalt Clockwork Set ------
+				i(233327),	-- Cobalt Clockwork Attire
+				i(233310),	-- Cobalt Clockwork Belt
+				i(233322),	-- Cobalt Clockwork Boots
+				i(233314),	-- Cobalt Clockwork Bracer
+				i(233291),	-- Cobalt Clockwork Cap
+				i(233278),	-- Cobalt Clockwork Defender
+				i(233256),	-- Cobalt Clockwork Doomfist
+				i(233318),	-- Cobalt Clockwork Glove
+				i(233306),	-- Cobalt Clockwork Leggings
+				i(233295),	-- Cobalt Clockwork Pauldrons
+				i(233302),	-- Cobalt Clockwork Uniform
+
+				------ Violet Clockwork Set ------
+				i(233330),	-- Violet Clockwork Attire
+				i(233313),	-- Violet Clockwork Belt
+				i(233325),	-- Violet Clockwork Boots
+				i(233317),	-- Violet Clockwork Bracer
+				i(233294),	-- Violet Clockwork Cap
+				i(233280),	-- Violet Clockwork Defender
+				i(233321),	-- Violet Clockwork Glove
+				i(233309),	-- Violet Clockwork Leggings
+				i(233301),	-- Violet Clockwork Pauldrons
+				i(233305),	-- Violet Clockwork Uniform
+			}),
+			n(WEAPONS, {
+				i(233233),	-- Azure Lunar Firewhacker
+				i(233219),	-- Azure Lunar Lantern
+				i(233254),	-- Blue Clockwork Mace
+				i(233225),	-- Cobalt Lunar Blade
+				i(233227),	-- Gold Lunar Blade
+				i(233230),	-- Gold Lunar Polearm
+				i(233234),	-- Lively Lunar Firewhacker
+				i(233220),	-- Lively Lunar Lantern
+				i(233269),	-- Long-Range Cobalt Clockstopper
+				i(233268),	-- Long-Range Violet Clockstopper
+				i(233224),	-- Obsidian Lunar Blade
+				i(233259),	-- Purple Clockwork Doomfist
+				i(233253),	-- Purple Clockwork Mace
+				i(233229),	-- Silver Lunar Polearm
+				i(233231),	-- Steel Lunar Polearm
+				i(233235),	-- Violet Lunar Firewhacker
+				i(233221),	-- Violet Lunar Lantern
+			}),
+		})),
+
+		-- 11.1.0
+		expansion(EXPANSION.TWW, patch(1,0), bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+			n(ARMOR, {
+				i(231559),	-- [DNT] Experimental Gobbo-Flyer v3
+				i(235034),	-- Vigilante's Aquatic Mask
+				i(235020),	-- Vigilante's Azure Mask
+				i(235026),	-- Vigilante's Brick Mask
+				i(235029),	-- Vigilante's Carrot Mask
+				i(235023),	-- Vigilante's Cloudy Mask
+				i(235032),	-- Vigilante's Crimson Mask
+				i(235028),	-- Vigilante's Faded Mask
+				i(235022),	-- Vigilante's Grassy Mask
+				i(235027),	-- Vigilante's Lively Mask
+				i(235019),	-- Vigilante's Midnight Mask
+				i(235030),	-- Vigilante's Rosy Mask
+				i(235035),	-- Vigilante's Snowy Mask
+				i(235036),	-- Vigilante's Sunny Mask
+				i(235033),	-- Vigilante's Violet Mask
+				i(234601),	-- Wings of the Icy Rose Monarch
+			}),
+			n(SETS, {
+
+				------ Forest Dweller's Butterfly Set ------
+				i(235593),	-- Ensemble: Forest Dweller's Butterfly Attire
+				i(235589),	-- Forest Dweller's Butterfly Belt
+				i(235568),	-- Forest Dweller's Butterfly Boots
+				i(235576),	-- Forest Dweller's Butterfly Cap
+				i(235572),	-- Forest Dweller's Butterfly Glove
+				i(235585),	-- Forest Dweller's Butterfly Mantle
+				i(235580),	-- Forest Dweller's Butterfly Pants
+				i(235564),	-- Forest Dweller's Butterfly Tunic
+
+				------ Forest Dweller's Garden Set ------
+				i(235592),	-- Ensemble: Forest Dweller's Garden Attire
+				i(235588),	-- Forest Dweller's Garden Belt
+				i(235567),	-- Forest Dweller's Garden Boots
+				i(235575),	-- Forest Dweller's Garden Cap
+				i(235571),	-- Forest Dweller's Garden Glove
+				i(235584),	-- Forest Dweller's Garden Mantle
+				i(235579),	-- Forest Dweller's Garden Pants
+				i(235563),	-- Forest Dweller's Garden Tunic
+
+				------ Midnight Butterfly Set ------
+				i(235229),	-- Ensemble: Ornaments of the Midnight Butterfly
+				i(235215),	-- Midnight Butterfly Belt
+				i(235153),	-- Midnight Butterfly Helm
+				i(235155),	-- Midnight Butterfly Pauldrons
+
+				------ Spring Butterfly Set ------
+				i(235227),	-- Ensemble: Ornaments of the Spring Butterfly
+				i(235214),	-- Spring Butterfly Belt
+				i(235150),	-- Spring Butterfly Helm
+				i(235212),	-- Spring Butterfly Pauldrons
+
+				------ Topsy Turvy Mask Set ------
+				i(235340),	-- Topsy Turvy Fool's Mask
+				i(235343),	-- Topsy Turvy Joker's Mask
+
+				-- Old Delve Sets
+				------ Myconic Set ------
+				i(234347),	-- Myconic Chausses
+				i(234345),	-- Myconic Clutches
+				i(234343),	-- Myconic Frock
+				i(234346),	-- Myconic Hood
+				i(234348),	-- Myconic Shoulderstrap
+				i(234349),	-- Myconic Strap
+				i(234344),	-- Myconic Waders
+				i(234333),	-- Myconic Wrap
+				i(234350),	-- Myconic Wristbands
+
+				------ Hidden Stars Set ------
+				i(234335),	-- Amice of Hidden Stars
+				i(234365),	-- Charmbelt of Hidden Stars
+				i(234361),	-- Fists of Hidden Stars
+				i(234366),	-- Handguards of Hidden Stars
+				i(234363),	-- Legplates of Hidden Stars
+				i(234364),	-- Pauldrons of Hidden Stars
+				i(234359),	-- Raiment of Hidden Stars
+				i(234360),	-- Sollerets of Hidden Stars
+
+				------ Stygian Sea Set ------
+				i(234354),	-- Bascinet of the Stygian Sea
+				i(234353),	-- Grasps of the Stygian Sea
+				i(234351),	-- Hauberk of the Stygian Sea
+				i(234355),	-- Poleyns of the Stygian Sea
+				i(234357),	-- Sash of the Stygian Sea
+				i(234334),	-- Serape of the Stygian Sea
+				i(234356),	-- Spaulders of the Stygian Sea
+				i(234352),	-- Treads of the Stygian Sea
+				i(234358),	-- Wrist Bindings of the Stygian Sea
+
+				------ Unkindled Waxweave Set ------
+				i(234341),	-- Unkindled Waxweave Belt
+				i(234339),	-- Unkindled Waxweave Buskins
+				i(234342),	-- Unkindled Waxweave Clasps
+				i(234336),	-- Unkindled Waxweave Garb
+				i(234331),	-- Unkindled Waxweave Mitts
+				i(234332),	-- Unkindled Waxweave Mozzetta
+				i(234340),	-- Unkindled Waxweave Shoulderpads
+				i(234337),	-- Unkindled Waxweave Slippers
+				i(234338),	-- Unkindled Waxweave Veil
+			}),
+			n(WEAPONS, {
+				i(234374),	-- Arathi Holy Standard
+				i(234611),	-- Double-Bladed Butterfly Garden Trowel
+				i(234609),	-- Double-Bladed Forest Garden Trowel
+				i(234370),	-- Flame-Bearing Crozier
+				i(234371),	-- Hand of Piety
+				i(234373),	-- Imperial Flarebolt
+				i(234375),	-- Lamplighter's Mercy
+				i(235654),	-- Midnight Butterfly Longbow
+				i(235271),	-- Midnight Butterfly Mace
+				i(235400),	-- Midnight Butterfly Polearm
+				i(235292),	-- Midnight Butterfly Sword
+				i(235296),	-- Midnight Butterfly Wand
+				i(234369),	-- Pyretic Star
+				i(234378),	-- Radiant Steelglaives
+				i(234367),	-- Sanctifier's Startierce
+				i(234372),	-- Shooting Starquebus
+				i(235653),	-- Spring Butterfly Longbow
+				i(235269),	-- Spring Butterfly Mace
+				i(235399),	-- Spring Butterfly Polearm
+				i(235289),	-- Spring Butterfly Sword
+				i(235293),	-- Spring Butterfly Wand
+				i(234572),	-- Topsy Turvy Fool's Blade
+				i(234727),	-- Topsy Turvy Fool's Cleaver
+				i(235640),	-- Topsy Turvy Fool's Die
+				i(234577),	-- Topsy Turvy Joker's Blade
+				i(234726),	-- Topsy Turvy Joker's Cleaver
+				i(235643),	-- Topsy Turvy Joker's Die
+				i(234377),	-- Unscathed Rampart
+				i(234376),	-- Vessel of Sacred Flame
+				i(234362),	-- Visage of Hidden Stars
+				i(234368),	-- Worshipper's Poniard
 			}),
 		})),
 	}),

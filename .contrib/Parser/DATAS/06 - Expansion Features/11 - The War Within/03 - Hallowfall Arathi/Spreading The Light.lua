@@ -561,8 +561,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					o(452005, {	-- Lil Piggy
 						["description"] = "Requires any source of light (e.g. torch, candelabra) to reveal this treasure somewhere in The Whirring Field.",
 						["coords"] = {
-							{ 64.7, 26.5, HALLOWFALL },
-							{ 64.8, 27.3, HALLOWFALL },
+							{ 63.8, 26.4, HALLOWFALL },
+							{ 64.0, 26.0, HALLOWFALL },
+							{ 64.8, 27.4, HALLOWFALL },
+							{ 64.8, 26.7, HALLOWFALL },
 						},
 						["g"] = {
 							i(224457),	-- Lil Piggy (QS!/QI!)
@@ -1034,8 +1036,18 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					q(76586, {	-- Spreading The Light
 						["coord"] = { 55.3, 14.5, HALLOWFALL },
 						["g"] = {
-							i(226264, {	-- Radiant Cache
-								["sym"] = {{"select","itemID",228361},{"pop"}},	-- Seasoned Adventurer's Cache [Zone Rewards content]
+							i(226264, {	-- Radiant Cache (S1)
+								["sym"] = {{"select","itemID",228361},{"pop"}},	-- Seasoned Adventurer's Cache [Khaz Algar Zone Rewards content]
+								["timeline"] = { REMOVED_11_1_0_SEASONSTART },
+								["g"] = {
+									i(223134),	-- Formula: Illusory Adornment: Radiance (RECIPE!)
+									i(223099),	-- Pattern: Sanctified Torchbearer's Grips (RECIPE!)
+									i(227283),	-- Recipe: Feast of the Divine Day (RECIPE!)
+								},
+							}),
+							i(239126, {	-- Radiant Cache (S2)
+								["sym"] = {{"select","itemID",228361},{"pop"}},	-- Seasoned Adventurer's Cache [Khaz Algar Zone Rewards content]
+								["timeline"] = { ADDED_11_1_0_SEASONSTART },
 								["g"] = {
 									i(223134),	-- Formula: Illusory Adornment: Radiance (RECIPE!)
 									i(223099),	-- Pattern: Sanctified Torchbearer's Grips (RECIPE!)

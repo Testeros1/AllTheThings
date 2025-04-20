@@ -868,10 +868,6 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 		n(QUESTS, {
 			q(70358, {	-- Dragon Isles Blacksmithing
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Blacksmithing.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 192563 },	-- Kholmar Sunrunner
 				["coord"] = { 76.4, 34.4, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1,
@@ -881,10 +877,6 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 			}),
 			q(70357, {	-- Dragon Isles Blacksmithing
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Blacksmithing.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 192164 },	-- Gringot Coldsteel <Blacksmithing Trainer>
 				["coord"] = { 25.8, 54.4, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1,
@@ -1327,14 +1319,14 @@ root(ROOTS.Professions, prof(BLACKSMITHING, bubbleDownSelf({ ["requireSkill"] = 
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 	n(PROFESSIONS, {
 		prof(BLACKSMITHING, {
-			q(38543),	-- FLAG: Demonsteel Armguards Crafted
-			q(38544),	-- FLAG: Demonsteel Waistguard Crafted
-			q(38545),	-- FLAG: Demonsteel Pauldrons Crafted
-			q(38546),	-- FLAG: Demonsteel Boots Crafted
-			q(38547),	-- FLAG: Demonsteel Gauntlets Crafted
-			q(38549),	-- FLAG: Demonsteel Helm Crafted
-			q(38550),	-- FLAG: Demonsteel Greaves Crafted
-			q(38551),	-- FLAG: Demonsteel Breastplate Crafted
+			-- q(38543),	-- FLAG: Demonsteel Armguards Crafted
+			-- q(38544),	-- FLAG: Demonsteel Waistguard Crafted
+			-- q(38545),	-- FLAG: Demonsteel Pauldrons Crafted
+			-- q(38546),	-- FLAG: Demonsteel Boots Crafted
+			-- q(38547),	-- FLAG: Demonsteel Gauntlets Crafted
+			-- q(38549),	-- FLAG: Demonsteel Helm Crafted
+			-- q(38550),	-- FLAG: Demonsteel Greaves Crafted
+			-- q(38551),	-- FLAG: Demonsteel Breastplate Crafted
 			q(47096),	-- Broken Shore - Choice: Blacksmithing
 		}),
 	}),
@@ -4199,6 +4191,112 @@ profession(BLACKSMITHING, {
 			["name"] = "Armor",
 			["categoryID"] = 570,
 			["groups"] = {
+				-- #if ANYCLASSIC
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Belt",
+					["recipeID"] = 1224226,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Boots",
+					["recipeID"] = 1224227,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Bracers",
+					["recipeID"] = 1224224,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Breastplate",
+					["recipeID"] = 1224231,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Gauntlets",
+					["recipeID"] = 1224225,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Helm",
+					["recipeID"] = 1224230,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Legguards",
+					["recipeID"] = 1224229,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Bloodied Pyrium Shoulders",
+					["recipeID"] = 1224228,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Belt",
+					["recipeID"] = 76467,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Boots",
+					["recipeID"] = 76468,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Bracers",
+					["recipeID"] = 76465,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Breastplate",
+					["recipeID"] = 76472,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Gauntlets",
+					["recipeID"] = 76466,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Helm",
+					["recipeID"] = 76471,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Legguards",
+					["recipeID"] = 76470,
+				},
+				{
+					["name"] = "Bloodthirsty Ornate Pyrium Shoulders",
+					["recipeID"] = 76469,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Belt",
+					["recipeID"] = 76458,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Boots",
+					["recipeID"] = 76459,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Bracers",
+					["recipeID"] = 76456,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Breastplate",
+					["recipeID"] = 76464,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Gauntlets",
+					["recipeID"] = 76457,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Helm",
+					["recipeID"] = 76463,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Legguards",
+					["recipeID"] = 76462,
+				},
+				{
+					["name"] = "Bloodthirsty Pyrium Shoulders",
+					["recipeID"] = 76461,
+				},
+				-- #endif
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Bracers of Destructive Strength",
 					["timeline"] = { ADDED_4_3_0 },
@@ -4290,6 +4388,48 @@ profession(BLACKSMITHING, {
 					["timeline"] = { ADDED_4_2_0 },
 					["recipeID"] = 99453,
 				}),
+				-- #if ANYCLASSIC
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Belt",
+					["recipeID"] = 1224234,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Boots",
+					["recipeID"] = 1224235,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Bracers",
+					["recipeID"] = 1224232,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Breastplate",
+					["recipeID"] = 1224239,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Gauntlets",
+					["recipeID"] = 1224233,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Helm",
+					["recipeID"] = 1224238,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Legguards",
+					["recipeID"] = 1224237,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Ornate Pyrium Shoulders",
+					["recipeID"] = 1224236,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				-- #endif
 				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
 					["name"] = "Pyrium Legplates of Purified Evil",
 					["timeline"] = { ADDED_4_3_0 },
@@ -4374,6 +4514,88 @@ profession(BLACKSMITHING, {
 					["timeline"] = { ADDED_4_3_0 },
 					["recipeID"] = 101925,
 				}),
+				-- #if ANYCLASSIC
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Belt",
+					["recipeID"] = 1224178,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Boots",
+					["recipeID"] = 1224179,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Bracers",
+					["recipeID"] = 1224180,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Breastplate",
+					["recipeID"] = 1224181,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Gauntlets",
+					["recipeID"] = 1224182,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Helm",
+					["recipeID"] = 1224183,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Legguards",
+					["recipeID"] = 1224184,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Ornate Pyrium Shoulders",
+					["recipeID"] = 1224185,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Belt",
+					["recipeID"] = 1224186,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Boots",
+					["recipeID"] = 1224187,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Bracers",
+					["recipeID"] = 1224188,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Breastplate",
+					["recipeID"] = 1224189,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Gauntlets",
+					["recipeID"] = 1224190,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Helm",
+					["recipeID"] = 1224191,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Legguards",
+					["recipeID"] = 1224192,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				applyclassicphase(CATA_PHASE_HOUR_OF_TWILIGHT, {
+					["name"] = "Vicious Pyrium Shoulders",
+					["recipeID"] = 1224193,
+					["timeline"] = { ADDED_4_4_2 },
+				}),
+				-- #else
 				{
 					["name"] = "Vicious Ornate Pyrium Belt",
 					["recipeID"] = 76467,
@@ -4438,6 +4660,7 @@ profession(BLACKSMITHING, {
 					["name"] = "Vicious Pyrium Shoulders",
 					["recipeID"] = 76461,
 				},
+				-- #endif
 				applyclassicphase(CATA_PHASE_RAGE_OF_THE_FIRELANDS, {
 					["name"] = "Warboots of Mighty Lords",
 					["timeline"] = { ADDED_4_2_0 },

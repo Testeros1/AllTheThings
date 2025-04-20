@@ -315,18 +315,6 @@ root(ROOTS.Zones, {
 						["races"] = HORDE_ONLY,
 					}),
 				}),
-				prof(FISHING, {
-					o(182959, {	-- Bluefish School
-						["requireSkill"] = FISHING,
-					}),
-					o(182958, {	-- Mudfish School
-						["requireSkill"] = FISHING,
-					}),
-					o(182951, {	-- Pure Water (fishing school)
-						["requireSkill"] = FISHING,
-					}),
-					i(34868),	-- World's Largest Mudfish
-				}),
 				n(FLIGHT_PATHS, {
 					fp(120, {	-- Garadar, Nagrand
 						["cr"] = 18808,	-- Gursha <Wind Rider Master>
@@ -511,7 +499,9 @@ root(ROOTS.Zones, {
 						["coord"] = { 61.6, 67.0, NAGRAND },
 						["groups"] = {
 							objective(1, {	-- Attempt to Steal Egg
+								-- #IF BEFORE 4.2.0
 								["provider"] = { "i", 27808 },	-- Jump-a-tron 4000 Key
+								-- #ENDIF
 								["description"] = "You can also just fly up there if you have flying.",
 							}),
 							objective(2, {	-- Severed Talon of the Matriarch

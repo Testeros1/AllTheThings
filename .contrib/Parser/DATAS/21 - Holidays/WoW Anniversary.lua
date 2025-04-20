@@ -406,10 +406,19 @@ root(ROOTS.Holidays, applyevent(EVENTS.WOW_ANNIVERSARY, n(WOW_ANNIVERSARY_ROOT, 
 		ach(5863),	-- 7th Anniversary
 		i(71134),	-- Celebration Package
 	})),
-	n(WOW_ANNIVERSARY_EIGHT, bubbleDownSelf({ ["timeline"] = { ADDED_4_3_0, REMOVED_5_1_0 } }, {
+	n(WOW_ANNIVERSARY_EIGHT, bubbleDownSelf({
+		["timeline"] = { 
+			-- #if ANYCLASSIC
+			CREATED_4_3_0, -- 8th anniversary will not happen during Cataclysm version of the game
+			-- #else
+			ADDED_4_3_0, REMOVED_5_1_0
+			-- #endif
+		},
+	},
+	{
 		ach(6131),	-- 8th Anniversary
 		i(71134),	-- Celebration Package
-	})),
+	})),							
 	n(WOW_ANNIVERSARY_NINE, bubbleDownSelf({ ["timeline"] = { ADDED_5_1_0, REMOVED_6_0_2 } }, {
 		ach(7853),	-- 9th Anniversary
 		n(MAILBOX, {
@@ -2330,7 +2339,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.WOW_ANNIVERSARY, n(WOW_ANNIVERSARY_ROOT, 
 			},
 			["g"] = {
 				n(ACHIEVEMENTS, {
-					ach(41220),	-- WoW's 20th Anniversary
+					ach(41220, { ["timeline"] = { "removed 11.0.7.58238" } }),	-- WoW's 20th Anniversary
 					ach(40999, {		-- You're in Your Blackrock Depths
 						crit(70642, {	-- Lord Roccor
 							["_encounter"] = { ROCCOR, DIFFICULTY.RAID.MULTI.ALL_WITHOUT_MYTHIC },

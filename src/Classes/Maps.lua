@@ -465,6 +465,7 @@ local function CheckIfExplorationIsMissing()
 			-- we won't use regular caching since we're manually checking instead of the expected API utilization
 			-- maybe eventually blizzard will fix the API
 			characterExploration[areaID] = 2
+			CacheAndUpdateExploration({[areaID]=true})
 		end
 	end
 end
@@ -760,7 +761,7 @@ local function HarvestExploration()
 	if app.SetupExplorationEvents then app.SetupExplorationEvents(); end
 
 	-- setup our DB captures
-	local harvest = app.LocalizeGlobal("AllTheThingsHarvestItems", {})
+	local harvest = app.LocalizeGlobal("AllTheThingsHarvestItems", true)
 	harvest.ExplorationAreaPositionDB = ExplorationAreaPositionDB
 	-- ExplorationDB is only used internally while harvesting to populate Exploration headers
 	ExplorationDB =  setmetatable({}, app.MetaTable.AutoTable);
@@ -877,7 +878,7 @@ app.ChatCommands.Add("harvest-map", function(args)
 	local granularity = tonumber(args[3] or 200)
 	local simplify = args[4]
 	-- setup our DB captures
-	local harvest = app.LocalizeGlobal("AllTheThingsHarvestItems", {})
+	local harvest = app.LocalizeGlobal("AllTheThingsHarvestItems", true)
 	harvest.ExplorationAreaPositionDB = ExplorationAreaPositionDB
 	-- ExplorationDB is only used internally while harvesting to populate Exploration headers
 	ExplorationDB =  setmetatable({}, app.MetaTable.AutoTable);
@@ -955,7 +956,7 @@ app.CreateMap = app.CreateClass("Map", "mapID", {
 	end,
 	isMinilistHeader = function(t)
 		local mapinfo = C_Map_GetMapInfo(t.mapID)
-		local mapType = mapinfo.mapType or 0
+		local mapType = mapinfo and mapinfo.mapType or 0
 		local isHeader = mapType > 2
 		t.isMinilistHeader = isHeader
 		return isHeader

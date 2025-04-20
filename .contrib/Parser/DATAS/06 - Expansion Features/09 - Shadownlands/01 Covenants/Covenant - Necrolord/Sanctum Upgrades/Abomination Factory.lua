@@ -582,7 +582,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.SL, bubbleDown({ ["customColle
 									}),
 									q(59042, {	-- A Good Heart
 										["sourceQuests"] = { 58686 },	-- Weapon of Mass Construction
-										["provider"] = { "n", 162222 },	-- Rathan
+										["qgs"] = {
+											162222,	-- Rathan
+											162227,	-- Rathan
+										},
 										["coord"] = { 24.2, 38.6, MALDRAXXUS },
 									}),
 									q(59747, {    -- A Lost Soul
@@ -733,7 +736,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.SL, bubbleDown({ ["customColle
 									}),
 									q(58668, {	-- Find The Way
 										["sourceQuests"] = { 58665 },	-- Rebellious Souls
-										["provider"] = { "n", 162153 },	-- Rathan
+										["qgs"] = {
+											162108,	-- Rathan
+											162153,	-- Rathan
+										},
 										["coord"] = { 26.0, 42.6, MALDRAXXUS },
 									}),
 									q(62041, {	-- In A Bad Light
@@ -755,8 +761,14 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.SL, bubbleDown({ ["customColle
 										["coord"] = { 24.2, 38.8, MALDRAXXUS },
 										["g"] = {
 											i(174526),	-- Clotting Patches (QI!)
-											i(174534),	-- Razorthread Spool (QI!)
-											i(174524),	-- Skewering Needle (QI!)
+											o_repeated({
+												o(355915),	-- Razorthread Spool
+												o(340843),	-- Razorthread Spool
+												i(174534),	-- Razorthread Spool (QI!)
+											}),
+											o(340839, {	-- Skewering Needle
+												i(174524),	-- Skewering Needle (QI!)
+											}),
 										},
 									}),
 									q(60042, {	-- May I Take Your Order?
@@ -1569,54 +1581,54 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 		n(SANCTUM_UPGRADES, {
 			n(ABOMINATION_FACTORY, {
 				-- Recruiting Constructs
-				q(57577),	-- Triggered after recruiting Flytrap
-				q(57598),	-- Triggered after recruiting Gas Bag
-				q(57859),	-- Triggered after recruiting Guillotine
-				q(57610),	-- Triggered after recruiting Iron Phillip
-				q(57578),	-- Triggered after recruiting Marz
+				-- q(57577),	-- Triggered after recruiting Flytrap
+				-- q(57598),	-- Triggered after recruiting Gas Bag
+				-- q(57859),	-- Triggered after recruiting Guillotine
+				-- q(57610),	-- Triggered after recruiting Iron Phillip
+				-- q(57578),	-- Triggered after recruiting Marz
 				q(57858),	-- Triggered after recruiting Miru
-				q(57575),	-- Triggered after recruiting Naxx
+				-- q(57575),	-- Triggered after recruiting Naxx
 				q(57603),	-- Triggered after recruiting Neena
-				q(57606),	-- Triggered after recruiting Roseboil
+				-- q(57606),	-- Triggered after recruiting Roseboil
 				q(57607),	-- Triggered after recruiting Unity
-				q(57854),	-- Triggered after recruiting Sabrina
-				q(57857),	-- Triggered after recruiting Toothpick
-				q(57612),	-- Triggered after recruiting The Professor
+				-- q(57854),	-- Triggered after recruiting Sabrina
+				-- q(57857),	-- Triggered after recruiting Toothpick
+				-- q(57612),	-- Triggered after recruiting The Professor
 
 				-- Stitching Table Abomination 'Upgrades'
-				q(62575),	-- Crafted Armor Plating at Abominable Stitching Table
-				q(62824),	-- Crafted Back Mushrooms at Abominable Stitching Table (spellID 344796)
-				q(62580),	-- Crafted Barrel O'Fish at Abominable Stitching Table
-				q(62574),	-- Crafted Butterflies at Abominable Stitching Table
-				q(62762),	-- Crafted Chef Hat at Abominable Stitching Table
-				q(62570),	-- Crafted Collector Kash's Pack at Abominable Stitching Table
-				q(61560),	-- Crafted Dapper Top Hat at Abominable Stitching Table
-				q(62758),	-- Crafted Dundae's Hat at Abominable Stitching Table
-				q(62764),	-- Crafted Egg Hat at Abominable Stitching Table
-				q(62469),	-- Crafted Engineering Pack at Abominable Stitching Table
-				q(62572),	-- Crafted Faction Flag at Abominable Stitching Table
-				q(62471),	-- Crafted Flower Crown at Abominable Stitching Table
-				q(62472),	-- Crafted Halo of Purity at Abominable Stitching Table
-				q(62479),	-- Crafted Happiness Bird at Abominable Stitching Table
-				q(62583),	-- Crafted Hitchhiker at Abominable Stitching Table
-				q(61712),	-- Crafted Holiday Hat at Abominable Stitching Table
-				q(62759),	-- Crafted Lovely Candle Display at Abominable Stitching Table
-				q(62577),	-- Crafted Magician's Hat at Abominable Stitching Table
-				q(62470),	-- Crafted Operational Instructions at Abominable Stitching Table
-				q(61561),	-- Crafted Outlaw Flag at Abominable Stitching Table
-				q(62826),	-- Crafted Pirate Hat at Abominable Stitching Table (spellID 344769)
-				q(62576),	-- Crafted Plague Pack at Abominable Stitching Table
-				q(62476),	-- Crafted Red Eye Lens at Abominable Stitching Table
-				q(62571),	-- Crafted Safe Fall Pack at Abominable Stitching Table
-				q(62825),	-- Crafted Shoulder Sprouts at Abominable Stitching Table (spellID 344798)
-				q(62481),	-- Crafted Six-League Pack at Abominable Stitching Table
-				q(62817),	-- Crafted Skull Fungus at Abominable Stitching Table (spellID 344766)
-				q(62474),	-- Crafted Skull Protector at Abominable Stitching Table
-				q(62760),	-- Crafted Trained Corpselice at Abominable Stitching Table
-				q(61562),	-- Crafted Trustworthy Doll at Abominable Stitching Table
-				q(62823),	-- Crafted Underpowered Gravity Pack at Abominable Stitching Table (spellID 344797)
-				q(62819),	-- Crafted Unworthy Crown at Abominable Stitching Table (spellID 344770)
-				q(62468),	-- Crafted Vestigial Wings at Abominable Stitching Table
+				-- q(62575),	-- Crafted Armor Plating at Abominable Stitching Table
+				-- q(62824),	-- Crafted Back Mushrooms at Abominable Stitching Table (spellID 344796)
+				-- q(62580),	-- Crafted Barrel O'Fish at Abominable Stitching Table
+				-- q(62574),	-- Crafted Butterflies at Abominable Stitching Table
+				-- q(62762),	-- Crafted Chef Hat at Abominable Stitching Table
+				-- q(62570),	-- Crafted Collector Kash's Pack at Abominable Stitching Table
+				-- q(61560),	-- Crafted Dapper Top Hat at Abominable Stitching Table
+				-- q(62758),	-- Crafted Dundae's Hat at Abominable Stitching Table
+				-- q(62764),	-- Crafted Egg Hat at Abominable Stitching Table
+				-- q(62469),	-- Crafted Engineering Pack at Abominable Stitching Table
+				-- q(62572),	-- Crafted Faction Flag at Abominable Stitching Table
+				-- q(62471),	-- Crafted Flower Crown at Abominable Stitching Table
+				-- q(62472),	-- Crafted Halo of Purity at Abominable Stitching Table
+				-- q(62479),	-- Crafted Happiness Bird at Abominable Stitching Table
+				-- q(62583),	-- Crafted Hitchhiker at Abominable Stitching Table
+				-- q(61712),	-- Crafted Holiday Hat at Abominable Stitching Table
+				-- q(62759),	-- Crafted Lovely Candle Display at Abominable Stitching Table
+				-- q(62577),	-- Crafted Magician's Hat at Abominable Stitching Table
+				-- q(62470),	-- Crafted Operational Instructions at Abominable Stitching Table
+				-- q(61561),	-- Crafted Outlaw Flag at Abominable Stitching Table
+				-- q(62826),	-- Crafted Pirate Hat at Abominable Stitching Table (spellID 344769)
+				-- q(62576),	-- Crafted Plague Pack at Abominable Stitching Table
+				-- q(62476),	-- Crafted Red Eye Lens at Abominable Stitching Table
+				-- q(62571),	-- Crafted Safe Fall Pack at Abominable Stitching Table
+				-- q(62825),	-- Crafted Shoulder Sprouts at Abominable Stitching Table (spellID 344798)
+				-- q(62481),	-- Crafted Six-League Pack at Abominable Stitching Table
+				-- q(62817),	-- Crafted Skull Fungus at Abominable Stitching Table (spellID 344766)
+				-- q(62474),	-- Crafted Skull Protector at Abominable Stitching Table
+				-- q(62760),	-- Crafted Trained Corpselice at Abominable Stitching Table
+				-- q(61562),	-- Crafted Trustworthy Doll at Abominable Stitching Table
+				-- q(62823),	-- Crafted Underpowered Gravity Pack at Abominable Stitching Table (spellID 344797)
+				-- q(62819),	-- Crafted Unworthy Crown at Abominable Stitching Table (spellID 344770)
+				-- q(62468),	-- Crafted Vestigial Wings at Abominable Stitching Table
 			}),
 			n(ARMOR, {
 				-- Stitched Set (armor-type agnostic it seems by slot rewarded)
@@ -1653,10 +1665,10 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 			}),
 			n(QUESTS, {
 				q(63397),	-- Triggered when Completing weeklies with abominations/receiving Sitched set gear
-				q(62573),	-- Abomination level 3 sitching Chef hat/Sticky Cat.
+				-- q(62573),	-- Abomination level 3 sitching Chef hat/Sticky Cat.
 				q(61512),	-- Completing Something Old, Something Used first time. Confirmed first time 30.09.2021
-				q(63099),	-- Opening "Bag of Potions" (itemID 184589) from Atticus (spellID 346867)
-				q(60873),	-- Buying Bag of Sin Stones (180442) from Atticus
+				-- q(63099),	-- Opening "Bag of Potions" (itemID 184589) from Atticus (spellID 346867)
+				-- q(60873),	-- Buying Bag of Sin Stones (180442) from Atticus
 				q(62988),	-- digging with Chordy in Revendreth
 				q(64666),	-- Completing Baker's Dozen (59043) (next week's quest rewarded Tomalin's Seasoning Crystal (181809))
 			}),

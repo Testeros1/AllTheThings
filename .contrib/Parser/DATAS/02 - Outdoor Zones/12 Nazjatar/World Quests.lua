@@ -36,7 +36,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			}),
 			q(57338),	-- Depopulation Effort
 			q(56032),	-- Dirty Dozen
-			q(56386),	-- Elderspawn of Nalaada
+			petbattle(q(56386)),	-- Elderspawn of Nalaada
 			q(57340, {	-- Fathom Ray Feast
 				["g"] = {
 					i(171254),	-- Fathom Ray Meat (QI!)
@@ -119,7 +119,9 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			q(56022),	-- Runelocked Chest
 			q(57331, {	-- Salvage Operations
 				["g"] = {
-					i(167079),	-- Battered Supplies (QI!)
+					o(322358, {	-- Waterlogged Alliance Crate
+						i(167079),	-- Battered Supplies (QI!)
+					}),
 				},
 			}),
 			petbattle(q(56384)),	-- Shadowspike Lurker
@@ -335,6 +337,14 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 			q(57168),	-- triggered when completing #55889, "Champion Kyx'zhul the Deepspeaker," in nazjatar
 			q(57170),	-- triggered when completing #55888, "Champion Qalina, Spear of Ice," in nazjatar
 			q(57169),	-- triggered when completing WQ to kill Alzana, Arrow of Thunder (not WQ ID)
+			q(56913),	-- Triggers after completing the Glowing Arcane Trunk minigame in Broken Fin Hollow (24.8, 35.2)
+			q(55987),	-- Triggers after completing the Glowing Arcane Trunk minigame in Chitterspine Caverns (43.8, 16.5)
+			q(56343),	-- Triggers after completing the Glowing Arcane Trunk minigame in Mardivas's Hideaway (37.9, 6.5)
+			q(55999),	-- Triggers after completing the Glowing Arcane Trunk minigame in Zanj'ir Terrace (37.2, 19.1)
+			q(55996),	-- Triggers after completing the Glowing Arcane Trunk minigame in Azsh'ari Terrace (64.1, 28.5)
+			q(55998),	-- Triggers after completing the Glowing Arcane Trunk minigame in Shirakess Repository (55.8, 14.1)
+			q(56359),	-- Triggers after completing the Glowing Arcane Trunk minigame in Coldlight Cavern (61.4, 22.8)
+			q(56548),	-- Triggers after completing the Glowing Arcane Trunk minigame in Highborne Estates (80.5, 31.9)
 		}),
 	}),
 })));

@@ -191,13 +191,16 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				},
 			}),
 			o(446343, {	-- Loose Crystal Shard
-				["coord"] = { 59.9, 53.0, THE_RINGING_DEEPS },
+				["coords"] = {
+					{ 57.5, 49.5, THE_RINGING_DEEPS },
+					{ 59.9, 53.0, THE_RINGING_DEEPS },
+				},
 				["g"] = {
 					i(223878),	-- Rough Deepruby Shard
 				},
 			}),
 			o(446347, {	-- Loose Crystal Shard
-				["coord"] = { 67.1, 63.0, THE_RINGING_DEEPS },
+				["coord"] = { 62.5, 63.0, THE_RINGING_DEEPS },
 				["g"] = {
 					i(223879),	-- Rough Deeptopaz Shard
 				},

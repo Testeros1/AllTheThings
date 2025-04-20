@@ -10,7 +10,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			-- verify SQ for "the blood gate."  it may become available after "ateena's fall."  also, is "halting the empire's fall" (which sends you to baine, who offers this quest) a breadcrumb?  "the blood gate" isn't hidden like quests typically are when you have their breadcrumb in their log, so i'm not sure if "halting" is optional/disappears/becomes unavailable after doing "the blood gate."  also, is it available with *only* having done nazmir, or do you also have to finish the main zuldazar questline as well?
 			-- figure out if "The Warchief's Order" and "The Warfront Looms" are breadcrumbs.  they're both auto-popup quests after you hit 120, unlock WQs, and relog.  they both direct you to go to dazar'alor and speak with an NPC to pursue nazjatar and the arathi warfront, respectively.
 
-			n(-397, {	-- Outposts
+			n(OUTPOSTS, {
 				["description"] = "Horde Outposts allow you to set up additional bases in Kul Tiras.  You can buy Scouting Reports from Ransa, the vendor next to The Banshee's Wail.  Each one will start a mission on your Mission Command Table.  After you complete the initial questline, you'll be offered additional missions to upgrade your outposts.",
 				["g"] = {
 					i(165728, {	-- Outpost Upgrade: The Great Seal
@@ -121,6 +121,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
 										["g"] = {
+											i(161482),	-- Mudfisher Cove
 											i(161484),	-- Mission Report (QI!)
 										},
 									}),
@@ -141,6 +142,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
 										["g"] = {
+											i(163334),	-- Outpost Upgrade
 											i(163335),	-- Mission Report (QI!)
 										},
 									}),
@@ -187,6 +189,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
 										["g"] = {
+											i(163184),	-- Outpost Upgrade
 											i(163185),	-- Mission Report (QI!)
 										},
 									}),
@@ -213,6 +216,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["races"] = HORDE_ONLY,
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["g"] = {
+											i(162511),	-- Stonetusk Watch
 											i(162512),	-- Mission Report (QI!)
 										},
 									}),
@@ -233,6 +237,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
 										["g"] = {
+											i(163190),	-- Outpost Upgrade
 											i(163191),	-- Mission Report (QI!)
 										},
 									}),
@@ -258,6 +263,10 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["provider"] = { "n", 138704 },	-- Mission Command Table
 										["races"] = HORDE_ONLY,
 										["coord"] = { 51.59, 99.58, DAZARALOR },	-- The Banshee's Wail Location
+										["g"] = {
+											i(165362),	-- Swiftwind Post
+											i(161483),	-- Mission Report (QI!)
+										},
 									}),
 								},
 							}),
@@ -302,6 +311,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 										["coord"] = { 51.5, 99.5, DAZARALOR },	-- The Banshee's Wail Location
 										["races"] = HORDE_ONLY,
 										["g"] = {
+											i(161487),	-- Windfall Cavern
 											i(161488),	-- Mission Report (QI!)
 										},
 									}),
@@ -683,42 +693,24 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 67.3, 71.6, HALL_OF_CHRONICLERS },
 				["races"] = HORDE_ONLY,
 			}),
-			q(52834, {	-- Seal of Wartorn Fate: Gold
-				["coord"] = { 53.9, 88.4, DAZARALOR },
-				--["races"] = HORDE_ONLY,
-				["provider"] = { "n", 141584 },	-- Zurvan
+			n(QUESTS, sharedData({
+				["qgs"] = {
+					142063, -- Tezran
+					141584,	-- Zurvan
+				},
+				["coords"] = {
+					{ 71.6, 13.7, BORALUS },
+					{ 53.9, 88.4, DAZARALOR },
+				},
 				["isWeekly"] = true,
-			}),
-			q(52838, {	-- Seal of Wartorn Fate: Piles of Gold
-				["coord"] = { 53.9, 88.4, DAZARALOR },
-				--["races"] = HORDE_ONLY,
-				["provider"] = { "n", 141584 },	-- Zurvan
-				["isWeekly"] = true,
-			}),
-			q(52835, {	-- Seal of Wartorn Fate: Marks of Honor
-				["coord"] = { 53.9, 88.4, DAZARALOR },
-				--["races"] = HORDE_ONLY,
-				["provider"] = { "n", 141584 },	-- Zurvan
-				["isWeekly"] = true,
-			}),
-			q(52839, {	-- Seal of Wartorn Fate: Additional Marks of Honor
-				["coord"] = { 53.9, 88.4, DAZARALOR },
-				--["races"] = HORDE_ONLY,
-				["provider"] = { "n", 141584 },	-- Zurvan
-				["isWeekly"] = true,
-			}),
-			q(52837, {	-- Seal of Wartorn Fate: War Resources
-				["coord"] = { 53.9, 88.4, DAZARALOR },
-				--["races"] = HORDE_ONLY,
-				["provider"] = { "n", 141584 },	-- Zurvan
-				["isWeekly"] = true,
-			}),
-			q(52840, {	-- Seal of Wartorn Fate: Stashed War Resources
-				["coord"] = { 53.9, 88.4, DAZARALOR },
-				--["races"] = HORDE_ONLY,
-				["provider"] = { "n", 141584 },	-- Zurvan
-				["isWeekly"] = true,
-			}),
+			}, {
+				q(52834),	-- Seal of Wartorn Fate: Gold
+				q(52838),	-- Seal of Wartorn Fate: Piles of Gold
+				q(52835),	-- Seal of Wartorn Fate: Marks of Honor
+				q(52839),	-- Seal of Wartorn Fate: Additional Marks of Honor
+				q(52837),	-- Seal of Wartorn Fate: War Resources
+				q(52840),	-- Seal of Wartorn Fate: Stashed War Resources
+			})),
 			q(56044, {	-- Send the Fleet
 				["provider"] = { "n", 135691 },	-- Nathanos Blightcaller
 				["coord"] = { 58.4, 62.6, ZULDAZAR },
@@ -798,13 +790,14 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = HORDE_ONLY,
 			}),
 			q(57376, {	-- The Hidden Need
+				["sourceQuest"] = 57198,	-- Sense of Obligation
 				["coord"] = { 51.5, 99.4, DAZARALOR },
 				["races"] = HORDE_ONLY,
 				["provider"] = { "n", 141961 },	-- Lilian Voss
 			}),
 			q(53437, {	-- The MOTHERLODE!!: Raw Deal
 				["provider"] = { "n", 136683 },	-- Trade Prince Gallywix
-				["coord"] = { 58.4, 62.6, DAZARALOR },
+				["coord"] = { 58.4, 62.6, ZULDAZAR },
 				["races"] = HORDE_ONLY,
 			}),
 			q(50835, {	-- The Port of Zandalar
@@ -876,7 +869,10 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			}),
 			q(54042, {	-- Trouble in Darkshore
 				["provider"] = { "n", 149471 },	-- Dark Ranger Velonara
-				["coord"] = { 53.0, 94.3, DAZARALOR },
+				["coords"] = {
+					{ 53.0, 94.3, DAZARALOR },
+					{ 59.0, 60.5, ZULDAZAR },
+				},
 				["races"] = HORDE_ONLY,
 			}),
 			q(49615, {	-- Trust of a King
@@ -985,13 +981,18 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = HORDE_ONLY,
 				["g"] = {
 					i(155246),	-- Jambani Grips
-					i(155247),	-- Rastari Gauntlets
-					i(155248),	-- Zanchuli Handwraps
-					i(155249),	-- Torcalin Gloves
-					i(155263),	-- Rastari Waistguard
-					i(155264),	-- Zanchuli Sash
-					i(155265),	-- Torcalin Girdle
 					i(155266),	-- Jambani Waistwrap
+					i(155247),	-- Rastari Gauntlets
+					i(155263),	-- Rastari Waistguard
+					i(155265),	-- Torcalin Girdle
+					i(155249),	-- Torcalin Gloves
+					i(155248),	-- Zanchuli Handwraps
+					i(155264),	-- Zanchuli Sash
+					--
+					a(i(155047)),	-- Freebooter Belt
+					a(i(155045)),	-- Navigator's Sash
+					a(i(155046)),	-- Outrigger Belt
+					a(i(155044)),	-- Sea Raider's Girdle
 				},
 			}),
 			q(55650, {	-- Only the Best Will Do
@@ -1057,20 +1058,21 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 				-- Missions
 				q(53739),	-- Wolf's Den completed
 				q(53740),	-- Stonefist Watch completed
-				q(53741),	-- Windfall Cavern completed
-				q(53742),	-- Stonetusk Watch completed
+				-- q(53741),	-- Windfall Cavern completed
+				-- q(53742),	-- Stonetusk Watch completed
 				q(53743),	-- Hillcrest Pasture completed
 				q(53744),	-- Swiftwind Post completed
-				q(53745),	-- Mudfisher Cove completed
+				-- q(53745),	-- Mudfisher Cove completed
 				-- Outpost Upgrades
-				q(54226),	-- Upgrade: The Great Seal started
+				-- q(54226),	-- Upgrade: The Great Seal started
 				q(54294),	-- Upgrade: The Great Seal completed
-				q(54259),	-- Upgrade: Vulpera Hideaway started
+				-- q(54259),	-- Upgrade: Vulpera Hideaway started
 				q(54296),	-- Upgrade: Vulpera Hideaway completed
-				q(54238),	-- Upgrade: Zul'jan Ruins started
+				-- q(54238),	-- Upgrade: Zul'jan Ruins started
 				q(54297),	-- Upgrade: Zul'jan Ruins completed
 				-- Misc
 				q(54767),	-- Correctly answer 8 riddles from Rid'lah
+				q(50931),	-- Spoke to talanji when meeting with Rastakhan for the first time
 			}),
 		}),
 	}),

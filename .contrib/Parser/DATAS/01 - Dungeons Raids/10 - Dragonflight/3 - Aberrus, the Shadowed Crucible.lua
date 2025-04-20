@@ -358,6 +358,8 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					q(74924, {	-- Nasz'uro, the Unbound Legacy
 						["sourceQuests"] = { 74923 },	-- It Takes a Village to Make an Artifact
 						["provider"] = { "n", 187669 },	-- Nozdormu
+						["coord"] = { 60.8, 39.2, VALDRAKKEN },
+						["maps"] = { 2176 },	-- The Maelstrom
 						["g"] = {
 							i(204177),	-- Nasz'uro, the Unbound Legacy
 							ach(18256),	-- Nasz'uro, the Unbound Legacy
@@ -747,7 +749,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					i(206955),	-- Highland Drake: Embodiment of the Hellforged (MM!) [LFR, Normal, Heroic]
 				}),
 			}),
-			Difficulty(DIFFICULTY.RAID.LFR).AddGroups({
+			Difficulty(DIFFICULTY.RAID.LFR).AddGroups(bubbleDown({ ["timeline"] = { REMOVED_11_0_2 } }, {
 				-- #if AFTER TWW
 				o(382621, {	-- Revival Catalyst Console	-- LFR --
 					["description"] = "The Revival Catalyst is a system that lets you convert Zaralek Cavern's Weekly Event Zone Items (Researchers & A Worthy Ally: Niffen) & LFR Mode Non-set items from the Aberrus Raid into your class' LFR Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
@@ -902,7 +904,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 						}),
 					}),
 				}),
-			}),
+			})),
 			Difficulty(DIFFICULTY.RAID.MULTI.NORMAL_PLUS).AddGroups({
 				BossOnly(KAZZARA, {
 					ach(18229, {	-- Cosplate

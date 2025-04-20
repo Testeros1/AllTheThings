@@ -772,12 +772,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					}),
 				}),
 				n(TREASURES, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_5 } }, {
-					--o(xxxxx, {	-- Carved Eye
+					o(421151, {	-- Carved Eye
 						["coord"] = { 40.5, 53.6, SCARLET_MONASTERY_ENTRANCE },
+						["timeline"] = { ADDED_10_2_5 },
 						["g"] = {
 							i(212984),	-- Grimoire of the Zealous Observer (CI!)
 						},
-					--}),
+					}),
 				})),
 				n(ZONE_DROPS, {
 					["icon"] = 133154,
@@ -3096,3 +3097,14 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		},
 	}),
 }));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
+	m(EASTERN_KINGDOMS, {
+		m(TIRISFAL_GLADES, {
+			n(QUESTS, {
+				q(25040),	-- FLAG - Worgen Attacked — Tirisfal Glades — attacked by a worgen during "Darkhound Pounding" to trigger the "Escaped From Gilneas" quest
+				q(26136),	-- FLAG - Rigor Mortis Removed. Triggered on a fresh lvl 1 warlock undead on login
+			}),
+		}),
+	}),
+})));

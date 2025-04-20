@@ -701,6 +701,7 @@ root(ROOTS.ExpansionFeatures,
 							artifact(612),	-- Kill 1,000 Players Hidden
 						}),
 					}),
+					i(128869, {["collectible"] = false}),	-- The Kingslayers [Off Hand] is not actually a learned SourceID
 					i(128869, bubbleDown({ ["isOffHand"] = 1 }, {	-- The Kingslayers [Off Hand]
 						BaseAppearance(1259291, {
 							artifact(228),	-- Standard
@@ -2122,17 +2123,17 @@ root(ROOTS.ExpansionFeatures,
 					})),
 					i(128821, {	-- Claws of Ursoc [Main Hand]
 						BaseAppearance(1129695, {
-							artifact(265, {	-- Standard Troll
-								["races"] = { TROLL, ZANDALARI },
+							artifact(121, {	-- Standard Night Elf
+								["races"] = { NIGHTELF },
 							}),
 							artifact(264, {	-- Standard Tauren
 								["races"] = { TAUREN, HIGHMOUNTAIN_TAUREN },
 							}),
+							artifact(265, {	-- Standard Troll
+								["races"] = { TROLL, ZANDALARI },
+							}),
 							artifact(266, {	-- Standard Worgen / Kultiran
 								["races"] = { WORGEN, KULTIRAN },
-							}),
-							artifact(121, {	-- Standard Night Elf
-								["races"] = { NIGHTELF },
 							}),
 							artifact(267),	-- Recover one of the Pillars
 							artifact(268),	-- Recover Light's Heart
@@ -2173,17 +2174,17 @@ root(ROOTS.ExpansionFeatures,
 					}),
 					i(128822, bubbleDown({ ["isOffHand"] = 1 }, {	-- Claws of Ursoc [Offhand]
 						BaseAppearance(1129695, {
-							artifact(265, {	-- Standard Troll
-								["races"] = { TROLL, ZANDALARI },
+							artifact(121, {	-- Standard Night Elf
+								["races"] = { NIGHTELF },
 							}),
 							artifact(264, {	-- Standard Tauren
 								["races"] = { TAUREN, HIGHMOUNTAIN_TAUREN },
 							}),
+							artifact(265, {	-- Standard Troll
+								["races"] = { TROLL, ZANDALARI },
+							}),
 							artifact(266, {	-- Standard Worgen / Kultiran
 								["races"] = { WORGEN, KULTIRAN },
-							}),
-							artifact(121, {	-- Standard Night Elf
-								["races"] = { NIGHTELF },
 							}),
 							artifact(267),	-- Recover one of the Pillars
 							artifact(268),	-- Recover Light's Heart
@@ -2262,6 +2263,7 @@ root(ROOTS.ExpansionFeatures,
 							artifact(984),	-- Kill 1,000 Players Hidden
 						}),
 					}),
+					i(127830, {["collectible"] = false}),	-- Twinblades of the Deceiver [Off Hand] is not actually a learned SourceID
 					i(127830, bubbleDown({ ["isOffHand"] = 1 }, {	-- Twinblades of the Deceiver [Off Hand]
 						BaseAppearance(1117778, {
 							artifact(26),	-- Standard
@@ -2581,13 +2583,13 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 			q(43678),	-- Hidden Appearance Unlocked - Destruction Warlock
 		})),
 		-- Mage Tower
-		q(45849),	-- Tracking Quest - 3+ Targets Trait Complete - completed "A Gift From The Six" (questID 45862)
-		q(45850),	-- Tracking Quest - AoE Chosen - completed "A Gift From The Six" (questID 45861)
-		q(45851),	-- Dual Boss Trait Complete - completed "A Gift From The Six" (questID 45842)
-		q(45852),	-- Healer Trait Complete - completed "A Gift From The Six" (questID 45864)
-		q(45853),	-- Melee DPS Trait Complete - completed "A Gift From The Six" (questID 45865)
-		q(45854),	-- Ranged DPS Trait Complete - completed "A Gift From The Six" (questID 45866)
-		q(45855),	-- Tank Trait Complete - completed "A Gift From The Six" (questID 45863)
+		-- q(45849),	-- Tracking Quest - 3+ Targets Trait Complete - completed "A Gift From The Six" (questID 45862)
+		-- q(45850),	-- Tracking Quest - AoE Chosen - completed "A Gift From The Six" (questID 45861)
+		-- q(45851),	-- Dual Boss Trait Complete - completed "A Gift From The Six" (questID 45842)
+		-- q(45852),	-- Healer Trait Complete - completed "A Gift From The Six" (questID 45864)
+		-- q(45853),	-- Melee DPS Trait Complete - completed "A Gift From The Six" (questID 45865)
+		-- q(45854),	-- Ranged DPS Trait Complete - completed "A Gift From The Six" (questID 45866)
+		-- q(45855),	-- Tank Trait Complete - completed "A Gift From The Six" (questID 45863)
 
 		-- Various
 		q(41263),	-- Oh! So Powerful! - triggered after unholy dk artifact power questline
@@ -2598,7 +2600,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 		q(45915),	-- Triggers when you do any of "The Folly of Levia Laurence" quests
 		q(47234),	-- Unlocked the order hall storyline artifact appearance from "A Hero's Weapon" for mage
 		q(46790),	-- Unlocked the order hall storyline artifact appearance from "A Hero's Weapon" for rogue
-		q(48546, { ["timeline"] = { ADDED_7_3_0 } }),	-- Unlocking alternate Underlight Angler appearances from 'Fisherfriend of the Isles'
+		-- q(48546, { ["timeline"] = { ADDED_7_3_0 } }),	-- Unlocking alternate Underlight Angler appearances from 'Fisherfriend of the Isles'
 	}),
 })));
 -- Fill certain Artifacts into the Arch Achievement which is needed to earn them

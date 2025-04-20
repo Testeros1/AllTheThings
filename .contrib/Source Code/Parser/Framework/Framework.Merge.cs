@@ -819,12 +819,7 @@ namespace ATT
                             }
                             else
                             {
-                                Console.Write("Invalid Container format: ");
-                                Log(pair.Key);
-                                Console.ReadLine();
-                                Log(ToJSON(pair.Value));
-                                Console.ReadLine();
-                                throw new Exception("Invalid Container format!");
+                                throw new Exception($"Invalid Container format: {pair.Key}:{ToJSON(pair.Value)}");
                             }
                             break;
                         }
@@ -958,15 +953,16 @@ namespace ATT
             if (type == nameof(TransmogSetItem))
             {
                 CollectObjectsByValue<TransmogSetItem>(type, (se) => se.TransmogSetID);
+                CollectObjectsByValue<TransmogSetItem>(type, (se) => se.ItemModifiedAppearanceID, nameof(TransmogSetItem.ItemModifiedAppearanceID));
             }
         }
 
-        private static void CollectObjectsByValue<T>(string type, Func<T, long> valueFunc)
+        private static void CollectObjectsByValue<T>(string type, Func<T, long> valueFunc, string subname = null)
             where T : IDBType
         {
             IDictionary<long, IDBType> db = TypeDB[type];
             Dictionary<long, IDBType> group = new Dictionary<long, IDBType>();
-            TypeDB[type + nameof(TypeCollection<T>)] = group;
+            TypeDB[type + (subname ?? nameof(TypeCollection<T>))] = group;
 
             foreach (T obj in db.Values.AsTypedEnumerable<T>())
             {
@@ -1027,14 +1023,12 @@ namespace ATT
                     {
                         Log($" {key} ({data.GetType()}): {data.GetType().FullName}");
                         LogWarn("Functions are not directly supported at this time. Please use a [[ ]] surrounded string.");
-                        Console.ReadLine();
                         break;
                     }
                 default:
                     {
                         Log($" ({data.GetType()}): ");
                         LogWarn(data.GetType().FullName, data);
-                        Console.ReadLine();
                         break;
                     }
             }
@@ -1146,10 +1140,6 @@ namespace ATT
                 // KEY: Achievement ID, VALUE: Dictionary
                 if (achieveInfo is IDictionary<string, object> info && (info.TryGetValue("achID", out long achID) || info.TryGetValue("achievementID", out achID)))
                 {
-                    // if (achID == 9713)
-                    // {
-
-                    // }
                     if (ACHIEVEMENTS.TryGetValue(achID, out IDictionary<string, object> existingData))
                     {
                         if (onlyNew)

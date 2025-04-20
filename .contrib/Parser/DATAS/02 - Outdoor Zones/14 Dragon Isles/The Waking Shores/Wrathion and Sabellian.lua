@@ -15,7 +15,7 @@ local TALLSTRIDER_SINEW = 201404;
 local WILDERCLOTH = 193050;
 root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
 	m(THE_WAKING_SHORES, {
-		n(-1102, {	-- Wrathion & Sabellian
+		n(WRATHION_SABELLIAN, {
 			n(ACHIEVEMENTS, {
 				ach(16497, {	-- I'm Playing All Sides
 					crit(55860, {	-- Sabellian
@@ -983,13 +983,13 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
 	m(DRAGON_ISLES, {
 		m(THE_WAKING_SHORES, {
-			n(-1102, {	-- Wrathion & Sabellian
+			n(WRATHION_SABELLIAN, {
 				q(64277),	-- Triggered when choosing anyone in Allegiance To One (66419) -- triggered for both in 2 weeks
 				q(66808),	-- Triggered when choosing Seballian in Allegiance To One (66419) -- triggered for Seballian only
 				q(66802),	-- Triggered when choosing Wrathion in Allegiance To One (66419) -- triggered for Wrathion only
 				q(67168),	-- Triggered with completion of 'Dragon Eyes' (questID67051) (spellID 377997)
 				q(72378, {["timeline"] = {ADDED_10_0_5}}),	-- Triggered when refusing to activate the Wrathion and Sabellian skip for alts
-				q(72112),	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
+				-- q(72112),	-- Ensemble: Obsidian Dracthyr Battlegear Mail Armor
 			}),
 		}),
 	}),

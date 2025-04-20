@@ -44,7 +44,7 @@ root(ROOTS.Promotions, {
 		["timeline"] = { ADDED_11_0_0 },
 		["groups"] = {
 			n(RAZER, sharedDataSelf({
-				["timeline"] = { ADDED_11_0_7, "removed 11.1.7.99999" },
+				["timeline"] = { ADDED_11_0_7, "removed 11.1.5.99999" },
 				["u"] = REAL_MONEY,
 			}, {
 				i(190539, {	-- Coral-Stalker Waveray (MOUNT!)
@@ -112,22 +112,22 @@ root(ROOTS.Promotions, {
 			}),
 			i(228765, {	-- Gummi (PET!)
 				["description"] = "Trolli + Xbox promotional item. Available between 9/1/24 - 2/28/25 by purchasing Trolli Candy products in any retail store, photoing your receipt and uploading it as confirmation to trolli.com/xbox. Once processed, you should receive a code to your email to redeem on battle.net or in the launcher.\n\nYou must have a U.S. address and phone number to participate.\n\nThe code is usable in any region.",
-				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.99999" },
+				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.59466" },
 				["u"] = REAL_MONEY,
 			}),
 			i(228761, {	-- Classic Brick Tabard
 				["description"] = "Trolli + Xbox promotional item. Available between 9/1/24 - 2/28/25 by purchasing Trolli Candy products in |CFFFF0000Walgreens|r, photoing your receipt and uploading it as confirmation to trolli.com/xbox. Once processed, you should receive a code to your email to redeem on battle.net or in the launcher.\n\nYou must have a U.S. address and phone number to participate.\n\nThe code is usable in any region.",
-				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.99999" },
+				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.59466" },
 				["u"] = REAL_MONEY,
 			}),
 			i(228763, {	-- Classic Crimson Tabard
 				["description"] = "Trolli + Xbox promotional item. Available between 9/1/24 - 2/28/25 by purchasing Trolli Candy products in |CFFFF0000Circle K|r, photoing your receipt and uploading it as confirmation to trolli.com/xbox. Once processed, you should receive a code to your email to redeem on battle.net or in the launcher.\n\nYou must have a U.S. address and phone number to participate.\n\nThe code is usable in any region.",
-				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.99999" },
+				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.59466" },
 				["u"] = REAL_MONEY,
 			}),
 			i(228762, {	-- Classic Lively Tabard
 				["description"] = "Trolli + Xbox promotional item. Available between 9/1/24 - 2/28/25 by purchasing Trolli Candy products in |CFFFF0000Dollar General|r, photoing your receipt and uploading it as confirmation to trolli.com/xbox. Once processed, you should receive a code to your email to redeem on battle.net or in the launcher.\n\nYou must have a U.S. address and phone number to participate.\n\nThe code is usable in any region.",
-				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.99999" },
+				["timeline"] = { ADDED_11_0_2, "removed 11.1.0.59466" },
 				["u"] = REAL_MONEY,
 			}),
 			i(228764, {	-- Classic Sunny Tabard
@@ -243,14 +243,37 @@ root(ROOTS.Promotions, {
 			}),
 			i(238261, {	-- Tock the Clocker Spaniel (PET!)
 				["description"] = "Obtained through watching Twitch Streamers with Drops enabled for at least 4 hours between February 25th, 10:00 a.m. & March 25th, 10:00 a.m. PST.\n\nYour Twitch account has to be connected with your Battle.net Account & you have to redeem the drop on Twitch before receiving it in your in-game collection as gift.",
-				["timeline"] = { ADDED_11_1_0, "removed 11.1.0.9999" },
+				["timeline"] = { ADDED_11_1_0, "removed 11.1.0.59679" },
 			}),
-			iensemble(229822, {	-- Arsenal: Golden Crests of the Kingdom
+			i(229822, {	-- Arsenal: Golden Crests of the Kingdom (TODO: ensemble data unavailable)
 				["description"] = "Included as a code in the physical goodie bag given to attendees of 30th Anniversary Live events.",
 				["timeline"] = { ADDED_11_0_7 },
 				["u"] = REAL_MONEY,
+				["g"] = {
+					i(229820),	-- Golden Human Crest
+					i(229821),	-- Golden Night Elf Crest
+					i(229818),	-- Golden Orc Crest
+					i(229819),	-- Golden Scourge Crest
+				},
 			}),
-
+			-- Season 2
+			i(232306, {	-- Prized Champion's Prestigious Banner (TOY!)(PVP)
+				["description"] = "Arena World Championship: TWW Season 2\n\nSign up on Raider.io for any of the 3 Cups, available until April 11th 2025, and play in at least two game series (best of 5)\n\nWinning not required, for more details & requirements checkout: Raider.io/tournaments",
+				["timeline"] = { ADDED_11_1_5, REMOVED_11_2_0 },
+			}),
+			i(232302, {	-- Prized Banner of the Algari (TOY!)
+				["description"] = "Mythic Dungeon International: TWW Season 2\n\nThe Mythic Dungeon International (MDI) returns with its global competitions, pitting the best Mythic Dungeon teams in a head-to-head race to the finish line.\n\nAll registered teams that complete under time the two dungeons within the Proving Grounds will receive the exclusive Prized Banner of the Algari to use in-game!\nSign-ups close 14 April 2025 3PM PDT and The Time Trials are on 16 April 1PM PDT - 21 April (US) 3PM PDT.",
+				["timeline"] = { ADDED_11_1_5, REMOVED_11_2_0 },
+			}),
+			i(238796, {	-- Thrrrdgl
+				["description"] = "Included for free with any purchase from the World of Warcraft Bronze Murloc Collection on the Blizzard Gear Store. Available until March 31, 2025 while supplies last. The code will be emailed and can be redeemed on Battle.net or the launcher.",
+				["timeline"] = { ADDED_11_1_0, "removed 11.1.0.60037" },	-- Removed March 31, 2025
+				["u"] = REAL_MONEY,
+			}),
+			i(212791, {	-- Beetriz (PET!)
+				["description"] = "Obtained through watching Twitch Streamers with Drops enabled for at least 4 hours between April 22nd, 10:00 a.m. & May 20th, 10:00 a.m. PST.\n\nYour Twitch account has to be connected with your Battle.net Account & you have to redeem the drop on Twitch before receiving it in your in-game collection as gift.",
+				["timeline"] = { ADDED_11_1_5, "removed 11.1.5.99999" },	-- Removed May 20, 2025
+			}),
 		--	i(500001, {    -- The PVE/PVP Banner temporary item -- TEMPLATE
 		--		["sourceID"] = 500001,
 		--		["description"] = "Mythic Dungeon International: TWW Season 1\n\nThe Mythic Dungeon International (MDI) returns with its global competitions, pitting the best Mythic Dungeon teams in a head-to-head race to the finish line.\n\nAll registered teams that complete under time the two dungeons within the Proving Grounds will receive the exclusive Tempered Banner of the Algari to use in-game!\nSign-ups close 14 October 2024 1PM PDT and The Time Trials are on 16 October 1PM PDT - 21 October (US) 1PM PDT.",

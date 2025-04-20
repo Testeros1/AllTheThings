@@ -8,9 +8,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["crs"] = {
 					231012,	-- Candy Stickemup
 					230828,	-- Chief Foreman Gutso
+					231310,	-- Darkfuse Precipitant
 					230746,	-- Ephemeral Agent Lathyd
 					230840,	-- Flyboy Snooty
-					234499,	-- Glovante
+					234499,	-- Giovante
 					--230935,	-- Grease
 					--230936,	-- Grime
 					231017,	-- Grimewick
@@ -28,8 +29,6 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 					230951,	-- Thwack
 					230946,	-- V.V. Goosworth
 					233472,	-- Volstrike the Charged
-					--TODO: unsorted
-					--231310,	-- The Darkfuse Precipitant
 				},
 				["g"] = {
 					i(234415),	-- Handcrank Casing
@@ -45,17 +44,61 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 					i(234419),	-- Steamboil Mounting System
 				},
 			}),
-			-- currently daily lockout:
-			-- Candy Stickemup, Court of Rats, Grimewick, Nitro, S.A.L.,
-			-- Scrapbeak, Swigs Farsight, Tally Doublespeak, Thwack, V.V. Goosworth
+			n(QUESTS, {
+				-- Renown 6 + one of cartel hqt locked
+				-- TODO: as of 59241 kills count and quest also counted as completed, despite you cannot pop them by yourself, unless you are with proper contract
+				q(85013, {	-- Darkfuse Precipitant
+					["provider"] = { "n", 231329 },	-- De-Pollution Station X1119
+					["coord"] = { 41.2, 91.4, UNDERMINE },
+					["isDaily"] = true,
+				}),
+				q(86414, {	-- Magno-Scrapper 9000
+					--["sourceQuests"] = { 84951 },	-- HQT: Bilgewater Cartel weekly contract
+					["provider"] = { "n", 234819 },	-- Ragzy Cashgrab
+					["coord"] = { 40.0, 22.4, UNDERMINE },
+					["isDaily"] = true,
+					["g"] = {
+						o(503440),	-- Discarded Goods
+					},
+				}),
+				q(86390, {	-- Noggenfogger Nuisance
+					--["sourceQuests"] = { 84952 },	-- HQT: Steamwheedle Cartel weekly contract
+					["provider"] = { "n", 234751 },	-- Noggenfogger Recall Technician
+					["coord"] = { 32.0, 76.5, UNDERMINE },
+					["isDaily"] = true,
+				}),
+				q(86428, {	-- Voltstrike the Charged
+					--["sourceQuests"] = { 84954 },	-- HQT: Blackwater Cartel weekly contract
+					["provider"] = { "n", 234834 },	-- Boatwright Frankle
+					["coord"] = { 61.4, 25.2, UNDERMINE },
+					["isDaily"] = true,
+					["g"] = {
+						i(234971),	-- Chunk of Charged Glass (QI!)
+						o(503450),	-- Chunk of Charged Glass
+					},
+				}),
+				q(86431, {	-- Scrapchewer
+					--["sourceQuests"] = { 84953 },	-- HQT: Venture Co. weekly contract
+					["provider"] = { "n", 236035 },	-- Scrapminer Krazzik
+					["coord"] = { 56.7, 79.0, UNDERMINE },
+					["isDaily"] = true,
+					["g"] = {
+						i(234970),	-- Partially-Drained Battery (QI!)
+						o(508727),	-- Partially-Drained Battery
+					},
+				}),
+			}),
 			n(231012, {	-- Candy Stickemup
 				["coord"] = { 42.2, 76.7, UNDERMINE },
 				["questID"] = 84927,	-- Candy Stickemup
+				["isWeekly"] = true,
 				["g"] = {
 					i(235347),	-- 100% Sharp Glimmerblade
 					i(235348),	-- Back Alley Shank
-					i(234218),	-- Goo-blin Grenade
 					i(235304),	-- Gutter Rat Mask
+					i(235310),	-- Flashy Patchwork Trousers
+					i(235327),	-- Mend-and-Match Shoulderpads
+					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
 				},
 			}),
 			n(230828, {	-- Chief Foreman Gutso
@@ -64,19 +107,27 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["isWeekly"] = true,
 				["g"] = {
 					i(235357),	-- Bulletscar Barricade
+					i(235300),	-- Cloak of Mecha Shards
+					i(235351),	-- Hypersteel CX4 Greatsword
 					i(235311),	-- Rocket-Powered Shoulderguards
 				},
 			}),
 			n(231310, {	-- Darkfuse Precipitant
-				["description"] = "Requires someone with Renown 6 with the Cartels of Undermine and in possession of a 'Canister of Darkfuse Solution' to talk to the De-Pollution Station X1119 NPC to start an event to spawn it.",
-				["crs"] = {	231329 },	-- De-Pollution Station X1119
-				-- ToDO: Find the Source for Darkfuse Solutions
+				["description"] = "Requires someone with Renown 6 with the Cartels of Undermine and in possession of a 'Canister of Darkfuse Solution' to interact with the De-Pollution Station X1119 to start an event to spawn it.",
+				["crs"] = {
+					231329,	-- De-Pollution Station X1119
+					231336,	-- Vignette Bunny [DNT]
+				},
 				["cost"] = {{"i", 229823, 1}},	-- Canister of Darkfuse Solution
-			--	["coord"] = { 26.5, 68.4, UNDERMINE },
-			--	["questID"] = 84877,
+				["coord"] = { 41.2, 91.4, UNDERMINE },
+				["questID"] = 85010,
 				["isWeekly"] = true,
 				["g"] = {
 					i(229955),	-- Darkfuse Spy-Eye (MOUNT!)
+					i(235832),	-- Oil-Splattered Cloak
+					i(235467),	-- Ominous Oil Residue
+					i(235834),	-- Rocketgrip Turboslicer
+					i(235833),	-- Serrated Slickgrip
 				},
 			}),
 			n(230746, {	-- Ephemeral Agent Lathyd
@@ -85,6 +136,8 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["isWeekly"] = true,
 				["g"] = {
 					i(235309),	-- Gloomshroud Robe
+					i(235352),	-- Netherflare Wand
+					i(235350),	-- Void-forged Cudgel
 				},
 			}),
 			n(230840, {	-- Flyboy Snooty
@@ -92,23 +145,32 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["questID"] = 84911,
 				["isWeekly"] = true,
 				["g"] = {
+					i(235300),	-- Cloak of Mecha Shards
+					i(235351),	-- Hypersteel CX4 Greatsword
 					i(235312),	-- Snooty's Aviator Bindings
 					i(235316),	-- Whirly-Giggle Windwhir Wrap
 				},
 			}),
 			--n(234621, {	-- Gallagio Garbage <Luxury Trash>
 			-- Under Expansion Features => Scrap
-			n(234499, {	-- Glovante
-				["description"] = "Can be summoned by someone who has contract with Steamwheedle Cartel",
+			n(234499, {	-- Giovante
+				["description"] = "Can be summoned by anyone who has a contract with the Steamwheedle Cartel.",
 				["coord"] = { 32.0, 76.5, UNDERMINE },
+				["crs"] = { 234751 },	-- Noggenfogger Recall Technician
 				["questID"] = 86307,
+				["isWeekly"] = true,
 				["g"] = {
 					i(235824),	-- Flame Sputterer
+					i(235310),	-- Flashy Patchwork Trousers
+					i(235327),	-- Mend-and-Match Shoulderpads
+					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
+					i(235823),	-- Scrap-Plated Pants
 				},
 			}),
 			n(231017, {	-- Grimewick
 				["coord"] = { 67.5, 33.5, UNDERMINE },
 				["questID"] = 84928,
+				["isWeekly"] = true,
 				["g"] = {
 					i(235323),	-- Blastshell Bracers
 					i(235303),	-- Seafused Brimstone Band
@@ -116,13 +178,24 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				},
 			}),
 			n(234480, {	-- M.A.G.N.O. (Aurumensis)
-				["description"] = "Can be summoned by someone who has contract with Bilgewater Cartel",
+				["description"] = "Can be summoned by anyone who has a contract with the Bilgewater Cartel.",
 				["coord"] = { 36.7, 26.3, UNDERMINE },
+				["crs"] = {
+					234819,	-- Magno-Scrapper 9000
+				},
 				["questID"] = 86298,
+				["isWeekly"] = true,
+				["g"] = {
+					i(235835),	-- Braided Wire Wrap
+					i(235300),	-- Cloak of Mecha Shards
+					i(235351),	-- Hypersteel CX4 Greatsword
+					i(235836),	-- Gas-Powered Chainblade
+				},
 			}),
 			n(230995, {	-- Nitro
 				["coord"] = { 47.0, 55.7, UNDERMINE },
 				["questID"] = 84926,	-- Nitro
+				["isWeekly"] = true,
 				["g"] = {
 					i(235318),	-- Ironfang Plate Legguards
 					i(235325),	-- Rusthide Gloves
@@ -136,32 +209,50 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				},
 				["coord"] = { 25.3, 36.7, UNDERMINE },
 				["questID"] = 84918,	-- Court of Rats
+				["isWeekly"] = true,
 				["g"] = {
-					i(235359),	-- Ratfang Toxin (share with zone reward from cache)
+					i(235308),	-- Filthtread Boots
+					i(235359),	-- Ratfang Toxin
 					i(235326),	-- Ratspit's Heirloom Wristwraps
-					i(235356),	-- Sapper's Spark Reactor
-					i(235302),	-- Shockwave Pendant
 				},
 			}),
 			n(230979, {	-- S.A.L.
 				["coord"] = { 41.8, 25.3, UNDERMINE },
 				["questID"] = 84922,
+				["isWeekly"] = true,
 				["g"] = {
+					i(235300),	-- Cloak of Mecha Shards
+					i(235351),	-- Hypersteel CX4 Greatsword
 					i(235322),	-- Junkyard Clawguards
 					i(235315),	-- Rocketstep Boots
+					i(235356),	-- Sapper's Spark Reactor
+					i(235302),	-- Shockwave Pendant
 				},
 			}),
 			n(230931, {	-- Scrapbeak
 				["coord"] = { 68.6, 81.2, UNDERMINE },
 				["questID"] = 84917,	-- Scrapbeak
+				["isWeekly"] = true,
 				["g"] = {
+					i(235301),	-- Drape of the Dazzling Feather
 					i(235321),	-- Feather-Spike Girdle
+					i(235305),	-- Golfer's Truestrike Gloves
 				},
 			}),
 			n(233471, {	-- Scrapchewer
-				["description"] = "Can be summoned by someone who has contract with Venture Co.",
+				["description"] = "Can be summoned by anyone who has a contract with the Venture Co.",
 				["coord"] = { 56.8, 79, UNDERMINE },
+				["crs"] = {
+					234911,	-- Vignette Bunny [DNT]
+					234832,	-- Krazzik's Drill Rig
+				},
 				["questID"] = 85778,
+				["isWeekly"] = true,
+				["g"] = {
+					i(235831),	-- Battery-Powered Longshank
+					i(235830),	-- Unstable Missilecaps
+					i(235829),	-- Welded Scrap Hood
+				},
 			}),
 			n(230947, {	-- Slimesby (has its own criteria, so listing it to allow automation to nest the criteria into it, seems to only drop junk items however)
 				["crs"] = { 230946 },	-- V.V. Goosworth
@@ -172,15 +263,22 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["questID"] = 84895,
 				["isWeekly"] = true,
 				["g"] = {
+					i(235347),	-- 100% Sharp Glimmerblade
+					i(235310),	-- Flashy Patchwork Trousers
+					i(235327),	-- Mend-and-Match Shoulderpads
+					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
 					i(235349),	-- Shadowfume Club
-					i(235363),	-- Suspicious Energy Drink
 				},
 			}),
 			n(231288, {	-- Swigs Farsight
 				["coord"] = { 41.3, 43.6, UNDERMINE },
 				["questID"] = 85004,	-- Swigs Farsight
+				["isWeekly"] = true,
 				["g"] = {
+					i(235347),	-- 100% Sharp Glimmerblade
+					i(235310),	-- Flashy Patchwork Trousers
 					i(235314),	-- Knightrider's Steelfists
+					i(235327),	-- Mend-and-Match Shoulderpads
 					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
 					i(235307),	-- Smoketrail Belt
 				},
@@ -188,10 +286,12 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 			n(230940, {	-- Tally Doublespeak
 				["coord"] = { 36.2, 43.3, UNDERMINE },
 				["questID"] = 84919,	-- Tally Doublespeak
+				["isWeekly"] = true,
 				["g"] = {
 					i(235328),	-- Boots of the Silver Tongue
-					i(234218),	-- Goo-blin Grenade
+					i(235310),	-- Flashy Patchwork Trousers
 					i(235355),	-- Gossi-blin's Baton
+					i(235327),	-- Mend-and-Match Shoulderpads
 					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
 				},
 			}),
@@ -199,35 +299,66 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["coord"] = { 63.6, 50.3, UNDERMINE },
 				["questID"] = 84884,	-- Junk Wall
 				["isWeekly"] = true,
+				["g"] = {
+					i(235300),	-- Cloak of Mecha Shards
+					i(235351),	-- Hypersteel CX4 Greatsword
+					i(235315),	-- Rocketstep Boots
+					i(235354),	-- Scrapblaster Lance
+					i(235313),	-- Shockproof Helm
+				},
 			}),
 			n(230951, {	-- Thwack
 				["coord"] = { 54.1, 50.3, UNDERMINE },
 				["questID"] = 84921,	-- Thwack
+				["isWeekly"] = true,
 				["g"] = {
+					i(235347),	-- 100% Sharp Glimmerblade
 					i(235317),	-- Chestplate of the Ultimatum
 					i(235353),	-- Debtsmasher Axe
-					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots (TODO: 3rd source, are Blizzard okay/)
+					i(235310),	-- Flashy Patchwork Trousers
+					i(235327),	-- Mend-and-Match Shoulderpads
+					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
 				},
 			}),
 			n(230946, {	-- V.V. Goosworth
 				["crs"] = { 230947 },	-- Slimesby
 				["coord"] = { 36.9, 78.2, UNDERMINE },
 				["questID"] = 84920,
+				["isWeekly"] = true,
 				["g"] = {
+					i(235347),	-- 100% Sharp Glimmerblade
 					i(235329),	-- Cowl of Acidic Mire
+					i(235310),	-- Flashy Patchwork Trousers
+					i(235327),	-- Mend-and-Match Shoulderpads
 					i(235306),	-- Ooze-fused Mantle
+					i(235320),	-- S.1.Z.Z.L.E.S.T.E.P Boots
 				},
 			}),
-			n(233472, {	-- Volstrike the Charged
-				["description"] = "Can be summoned by someone who has contract with Blackwater Cartel",
+			n(233472, {	-- Voltstrike the Charged
+				["description"] = "Can be summoned by anyome who has a contract with the Blackwater Cartel.",
 				["coord"] = { 62.7, 26.1, UNDERMINE },
 				["questID"] = 85777,
+				["isWeekly"] = true,
+				["g"] = {
+					i(235373),	-- Abyssal Volt
+					i(235826),	-- Electric Wristrags
+					i(235828),	-- Electrocution Warning
+					i(235827),	-- Statically Charged Vest
+				},
 			}),
-			-- TODO: Sort it when you find them
-			n(231310, {	-- The Darkfuse Precipitant
-				-- NYI?
-				--["coord"] = { x, y, UNDERMINE },
-				--["questID"] = xx,
+		}),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+	m(KHAZ_ALGAR, {
+		m(UNDERMINE, {
+			n(RARES, {
+				q(90492),	-- Triggers on killing Darkfuse Precipitant
+				q(90488),	-- Triggers on killing M.A.G.N.O.
+				q(90489),	-- Triggers on killing Giovante
+				q(90490),	-- Triggers on killing Voltstrike
+				q(90491),	-- Triggers on killing Scrapchewer
 			}),
 		}),
 	}),

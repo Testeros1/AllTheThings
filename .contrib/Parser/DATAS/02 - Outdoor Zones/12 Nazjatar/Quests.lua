@@ -241,7 +241,10 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			["cost"] = { { "i", 171247, 15 } },	-- 15x Abyssal Shard
 		}),
 		q(56813, {	-- An Unexpected Friend
-			["provider"] = { "n", 149904 },	-- Neri Sharpfin
+			["qgs"] = {
+				149904,	-- Neri Sharpfin
+				151300,	-- Kelfin Scout
+			},
 			["races"] = HORDE_ONLY,
 			["description"] = "Offered when |cFFFFD700Neri Sharpfin|r reaches rank 2.",
 			["g"] = {
@@ -601,9 +604,15 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			["sourceQuests"] = { 56156 },	-- A Tempered Blade
 			["description"] = "Requires |cFFFFD700Hunter Akana|r as your friend.",
 			["isDaily"] = true,
-			["coord"] = { 66.8, 29.0, NAZJATAR },
+			["coords"] = {
+				{ 66.8, 29.2, NAZJATAR },
+				{ 67.1, 26.1, NAZJATAR },
+			},
 			["races"] = ALLIANCE_ONLY,
-			["provider"] = { "n", 154075 },	-- Tracker Kenji
+			["providers"] = {
+				{ "n", 154075 },	-- Tracker Kenji
+				{ "n", 155844 },	-- Apprentice Anako
+			},
 		}),
 		q(55986, {	-- Break a Few Eggs (H)
 			["description"] = "Requires |cFFFFD700Neri Sharpfin|r as your friend.",
@@ -999,7 +1008,20 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			["races"] = ALLIANCE_ONLY,
 			["provider"] = { "n", 152716 },	-- Arylina
 			["g"] = {
-				i(168238),	-- Arylina's Diary (QI!)
+				o(326595, {	-- Arylina's Diary
+					["coords"] = {
+						{ 76.2, 27.5, NAZJATAR },
+						{ 76.4, 29.7, NAZJATAR },
+						{ 76.6, 30.0, NAZJATAR },
+						{ 77.4, 29.4, NAZJATAR },
+						{ 77.6, 30.2, NAZJATAR },
+						{ 77.7, 26.1, NAZJATAR },
+						{ 79.1, 27.5, NAZJATAR },
+						{ 79.5, 27.7, NAZJATAR },
+						{ 80.3, 29.8, NAZJATAR },
+					},
+					["g"] = { i(168238) },	-- Arylina's Diary (QI!)
+				}),
 			},
 		}),
 		q(56640, {	-- Fortunate Souls
@@ -1108,7 +1130,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			["sourceQuests"] = { 56156 },	-- A Tempered Blade
 			["description"] = "Offered when |cFFFFD700Hunter Akana|r reaches rank 9.",
 			["races"] = ALLIANCE_ONLY,
-			["provider"] = { "n", 151626 },	-- Hunter Akana
+			["provider"] = { "n", 150202 },	-- Hunter Akana
 			["g"] = {
 				i(169911, {	-- Liberated Naga Cache
 					currency(1721),	-- Prismatic Manapearl x10
@@ -1640,7 +1662,9 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			["races"] = ALLIANCE_ONLY,
 			["provider"] = { "n", 152532 },	-- Shirelle McFadden
 			["g"] = {
-				i(168186),	-- Highborne Relic (QI!)
+				o(325883, {	-- Highborne Relic
+					i(168186),	-- Highborne Relic (QI!)
+				}),
 			},
 		}),
 		q(55723, {	-- Requisition: A Few Carp
@@ -1909,7 +1933,10 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 		}),
 		q(57024, {	-- Rumors of Mechagon
 			["provider"] = { "n", 156187 },	-- Disgruntled Laborer
-			["coord"] = { 48.4, 60.6, NAZJATAR },
+			["coords"] = {
+				{ 48.4, 60.6, NAZJATAR },
+				{ 50.1, 92.8, DAZARALOR },
+			},
 			["races"] = HORDE_ONLY,
 			["sourceQuest"] = 55500,	-- Save A Friend
 			["isBreadcrumb"] = true,
@@ -2680,7 +2707,7 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 			["coord"] = { 39.1, 54.1, NAZJATAR },
 			["races"] = ALLIANCE_ONLY,
 			["isDaily"] = true,
-			["provider"] = { "o", 326140 },	-- Bounty Board
+			["provider"] = { "o", 326141 },	-- Bounty Board
 			["description"] = "Requires |cFFFFD700Farseer Ori|r as your friend.",
 			["g"] = {
 				i(168319),	-- Lady Narjiss' Head (QI!)
@@ -2959,6 +2986,9 @@ root(ROOTS.Zones, m(NAZJATAR, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } },
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_2_0 } }, {
 	m(NAZJATAR, {
 		n(QUESTS, {
+			q(56212),	-- Triggered when opening the first glimmering chest during "Scrying Stones"
+			q(56220),	-- Triggered when opening the second glimmering chest during "Scrying Stones"
+			q(56221),	-- Triggered when opening the third glimmering chest during "Scrying Stones"
 			--	RECRUITMENT QUESTS
 			q(57040),	-- recruiting Hunter Akana / Vim Brineheart for the day
 			q(57041),	-- recruiting Farseer Ori / Neri Sharpfin for the day
@@ -3027,6 +3057,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 		}),
 		n(ZONE_DROPS, {
 			q(57139),	-- Getting the weekly Reefwalker Bark?
+			q(57140),	-- pretty sure this is for looting Ancient Reefwalker Bark
 			q(57143),	-- looting an Eel Filet
 			q(57144),	-- looting Barnacled Bag of Goods
 			q(57145),	-- looting Voidcaster's Supply Bag

@@ -487,10 +487,6 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 		n(QUESTS, {
 			q(70360, {	-- Dragon Isles Enchanting
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Enchanting.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 192055 },	-- Veeno <Enchanting Trainer>
 				["coord"] = { 75.8, 33.2, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1, "spellID", 366255 },	-- Dragon Isles Enchanting
@@ -604,8 +600,14 @@ root(ROOTS.Professions, prof(ENCHANTING, bubbleDownSelf({ ["requireSkill"] = ENC
 			}),
 			-- Patch 10.2.0
 			q(77910, {	-- Enchanted Shrubbery
-				["provider"] = { "n", 210162 },	-- Magnolia Oaken
-				["coord"] = { 36.8, 63.1, VALDRAKKEN },
+				["qgs"] = {
+					210162,	-- Magnolia Oaken
+					203172,	-- Dustmonger Topuiz
+				},
+				["coords"] = {
+					{ 36.8, 63.1, VALDRAKKEN },
+					{ 56.0, 56.8, ZARALEK_CAVERN },
+				},
 				["timeline"] = { ADDED_10_2_0 },
 				["g"] = {
 					i(208947),	-- Enchanted Watering Can (QI!)

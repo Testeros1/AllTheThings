@@ -28,6 +28,7 @@ root(ROOTS.Holidays, applyevent(EVENTS.TRIAL_OF_STYLE, n(TRIAL_OF_STYLE_HEADER, 
 				156663,	-- Warpweaver Ta'oren <Transmogrifier> (Neutral / Oribos)
 				99867,	-- Warpweaver Tuviss <Transmogrifier> (Neutral / Dalaran)
 				85291,	-- Warpweaver Tuviss <Transmogrifier> (Alliance / Lunarfall)
+				221848,	-- Warpweaver Voxin <Transmogrifier> (Dornogal)
 			},
 			["coord"] = { 74.4, 56.2, VALDRAKKEN },	-- Add all Coords if you want to..
 			["g"] = {
@@ -289,6 +290,115 @@ root(ROOTS.Holidays, applyevent(EVENTS.TRIAL_OF_STYLE, n(TRIAL_OF_STYLE_HEADER, 
 					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 25 }},
 					["timeline"] = { ADDED_10_2_6 },
 				}),
+				---
+				i(237243, {	-- Banded Aquatic War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237254, {	-- Banded Azure War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237250, {	-- Banded Brick War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237251, {	-- Banded Camo War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237247, {	-- Banded Carrot War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237253, {	-- Banded Cloudy War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237256, {	-- Banded Crimson War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237252, {	-- Banded Deep War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237248, {	-- Banded Faded War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237257, {	-- Banded Grassy War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237249, {	-- Banded Lively War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237255, {	-- Banded Midnight War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237245, {	-- Banded Plum War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237246, {	-- Banded Rosy War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237240, {	-- Banded Sepia War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(233171, {	-- Banded Sepia War Slippers
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(233154, {	-- Banded Sepia War Wraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237242, {	-- Banded Snowy War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237241, {	-- Banded Sunny War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(237244, {	-- Banded Violet War Legwraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 15 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				iensemble(230166, {	-- Ensemble: Prowler's Sepia Headgear
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 60 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(233098, {	-- Long Sepia War Skirt
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 25 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(233137, {	-- Long Sepia War Skirt and Leg Wraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 50 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(230035, {	-- Prowler's Sepia Shoulder Cape
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 25 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(233081, {	-- Short Sepia War Skirt
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 25 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(233120, {	-- Short Sepia War Skirt and Leg Wraps
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 50 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
+				i(235021, {	-- Vigilante's Sepia Mask
+					["cost"] = {{ "i", TRIAL_OF_STYLE_TOKEN, 25 }},
+					["timeline"] = { ADDED_11_1_0 },
+				}),
 			},
 		}),
 		n(QUESTS, bubbleDown({
@@ -299,10 +409,16 @@ root(ROOTS.Holidays, applyevent(EVENTS.TRIAL_OF_STYLE, n(TRIAL_OF_STYLE_HEADER, 
 				["providers"] = {
 					{ "n", 206252 },	-- Primo
 					{ "n", 206383 },	-- Don'a
+					-- #if AFTER 11.1.0
+					{ "n", 236405 },	-- Perfecto
+					-- #endif
 				},
 				["coords"] = {
 					{ 51.0, 72.5, STORMWIND_CITY },
 					{ 49.0, 76.4, ORGRIMMAR },
+					-- #if AFTER 11.1.0
+					{ 45.7, 52.7, DORNOGAL },
+					-- #endif
 				},
 				["description"] = "Blizzard messed up here, this should've been the second quest and not breadcrumb.",
 				["isBreadcrumb"] = true,
@@ -360,6 +476,46 @@ root(ROOTS.Holidays, applyevent(EVENTS.TRIAL_OF_STYLE, n(TRIAL_OF_STYLE_HEADER, 
 			q(76288, {	-- Work It
 				["provider"] = { "n", 206206 },	-- Cataloger Sandia
 				["coord"] = { 50.7, 24.9, ZARALEK_CAVERN },
+			}),
+			q(86698, {	-- Work It
+				["provider"] = { "n", 236334 },	-- Cataloger Ironshot
+				["coord"] = { 45.9, 54.8, DORNOGAL },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86704, {	-- Work It
+				["provider"] = { "n", 236365 },	-- Cataloger Moonsage
+				["coord"] = { 56.7, 40.7, AZJ_KAHET },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86705, {	-- Work It
+				["provider"] = { "n", 236366 },	-- Cataloger Simone
+				["coord"] = { 59.9, 18.6, HALLOWFALL },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86703, {	-- Work It
+				["provider"] = { "n", 236364 },	-- Cataloger Grilka
+				["coord"] = { 61.3, 31.1, HALLOWFALL },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86702, {	-- Work It
+				["provider"] = { "n", 236362 },	-- Cataloger Elaine
+				["coord"] = { 42.7, 54.6, HALLOWFALL },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86699, {	-- Work It
+				["provider"] = { "n", 236356 },	-- Cataloger Sunshot
+				["coord"] = { 56.5, 51.5, ISLE_OF_DORN },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86700, {	-- Work It
+				["provider"] = { "n", 236359 },	-- Cataloger Judith
+				["coord"] = { 43.0, 33.2, THE_RINGING_DEEPS },
+				["timeline"] = { ADDED_11_1_0 },
+			}),
+			q(86701, {	-- Work It
+				["provider"] = { "n", 236361 },	-- Cataloger Shotfrenzy
+				["coord"] = { 58.8, 78.9, THE_RINGING_DEEPS },
+				["timeline"] = { ADDED_11_1_0 },
 			}),
 		})),
 	},

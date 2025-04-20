@@ -601,7 +601,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 26.0, 15.8, THUNDER_BLUFF },
 					["timeline"] = { REMOVED_2_4_1 },
 					["classes"] = { PRIEST },
-					["races"] = { UNDEAD },
+					["races"] = { TROLL },
 					["lvl"] = 20,
 					-- #if BEFORE 2.4.1
 					["groups"] = {
@@ -909,6 +909,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						i(156986, {	-- Kodo Gavel
 							["timeline"] = { ADDED_7_3_5 },
 						}),
+						i(57793),	-- Kodo Saddlebag
 					},
 				}),
 			}),

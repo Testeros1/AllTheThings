@@ -29,6 +29,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				40762,	-- Khaz Algar Lore Hunter
 				20596,	-- Loremaster of Khaz Algar
 			}},
+			["g"] = { ws(7) },	-- Freywold Spring (WS!)
 		}),
 		-- #IF BEFORE 11.0.5
 		n(FAMILY_BATTLER, {

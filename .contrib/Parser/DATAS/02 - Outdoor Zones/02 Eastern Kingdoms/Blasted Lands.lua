@@ -482,7 +482,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["isBreadcrumb"] = true,
 					-- #if BEFORE 7.3.5
 					-- Cataclysm: Minimum is level 54. (TODO: Confirm this.)
-					-- Cataclysm: Maximum is level 57 (TODO: Test max level between 58 and 65)
+					-- Cataclysm: Maximum is level 57. (TODO: Test max level between 58 and 65)
 					["lvl"] = { 54, 57 },
 					-- #endif
 				})),
@@ -1603,7 +1603,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["providers"] = {
 								{ "i",  10759 },	-- Severed Horn of the Defiler
 								{ "i",  10757 },	-- Ward of the Defiler
-								{ "o", 153205 },	-- Altar of the Defiler
+								{ "o", 153205 },	-- Altar of the Defiler
 							},
 							["coord"] = { 47.6, 30.0, BLASTED_LANDS },
 							["cr"] = 7664,	-- Razelikh the Defiler
@@ -1828,10 +1828,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 			}),
 			-- #if AFTER 10.2.5
 			n(TREASURES, {
-				i(212983, {	-- Grimoire of the Blasted Observer (CI!)
-					["provider"] = { "o", 421154 },	-- Carved Eye
-					["coord"] = { 55.6, 53.1, BLASTED_LANDS },
+				o(421154, {	-- Carved Eye
+					["coord"] = { 55.7, 53.6, BLASTED_LANDS },
 					["timeline"] = { ADDED_10_2_5 },
+					["g"] = {
+						i(212983),	-- Grimoire of the Blasted Observer (CI!)
+					},
 				}),
 			}),
 			-- #endif
@@ -1927,7 +1929,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				i(8244, {	-- Flawless Draenethyst Sphere
-					["description"] = "A very rare zone drop. It has a higher chance to drop from rare mobs.",
+					["description"] = "A very rare zone drop. It has a higher chance to drop from Rare Creatures.",
 					["crs"] = {
 						7846,	-- Teremus the Devourer
 						7664,	-- Razelikh the Defiler
@@ -1946,7 +1948,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				i(10593, {	-- Imperfect Draenethyst Fragment (drops from pretty much the whole zone)
-					["description"] = "A rare zone drop from any mob in the zone.",
+					["description"] = "A rare zone drop from any creature in the zone.",
 				}),
 				i(57178, {	-- Nightstalker Leg
 					["timeline"] = { ADDED_4_0_3 },

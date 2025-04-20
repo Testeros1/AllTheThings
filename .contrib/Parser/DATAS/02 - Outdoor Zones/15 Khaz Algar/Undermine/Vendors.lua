@@ -21,6 +21,17 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 					i(235704),	-- Noggenfogger Select UP
 				},
 			}),
+			n(226994, {	-- Blair Bass <"Gold" Fish Exchange>
+				["sourceQuest"] = 83542,	-- Quick Gills for Gold Now
+				["coord"] = { 34.0, 71.4, UNDERMINE },
+				["g"] = sharedData({
+					["cost"] = {{ "i", 227673, 5 }},	-- "Gold" Fish
+				},{
+					i(237346),	-- Artisan Beverage Goblet Bobber (TOY!)
+					i(237345),	-- Limited Edition Rocket Bobber (TOY!)
+					i(237347),	-- Organically-Sourced Wellington Bobber (TOY!)
+				}),
+			}),
 			n(239112, {	-- Bombin' Bert
 				["coord"] = { 50.9, 31.8, UNDERMINE },
 				["g"] = {
@@ -49,7 +60,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["g"] = bubbleDownClassicRep(FACTION_TWW_BLACKWATER_CARTEL, {
 					{		-- Neutral
 					}, {	-- Friendly
-						i(236763),	-- Finder's Fee
+						i(236763, {	-- Finder's Fee
+							["sourceAchievement"] = 41627,	-- C.H.E.T.T.ing it Twice
+							["cost"] = {{ "i", 235053, 1 }},	-- Completed C.H.E.T.T. List
+						}),
 					}, {	-- Honored
 						i(236671, {	-- The Buzzer (MM!)
 							["cost"] = {{ "c", RESONANCE_CRYSTALS, 975 }},
@@ -87,20 +101,11 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 			n(236411, {	-- Ditty Fuzeboy
 				["coord"] = { 35.4, 41.4, UNDERMINE },
 				["g"] = {
-					i(229952, {	-- Asset Advocator (MOUNT!)
-						["cost"] = {{ "i", 234741, 25 }},	-- Miscellaneous Mechanica
-					}),
 					i(232850, {	-- Blackwater Kegmover (PET!)
 						["cost"] = {{ "i", 234741, 5 }},	-- Miscellaneous Mechanica
 					}),
 					i(232842, {	-- Crimson Mechasaur (PET!)
 						["cost"] = {{ "i", 234741, 10 }},	-- Miscellaneous Mechanica
-					}),
-					i(229941, {	-- Innovation Investigator (MOUNT!)
-						["cost"] = {{ "i", 234741, 25 }},	-- Miscellaneous Mechanica
-					}),
-					i(229954, {	-- Margin Manipulator (MOUNT!)
-						["cost"] = {{ "i", 234741, 25 }},	-- Miscellaneous Mechanica
 					}),
 					i(232840, {	-- Mechagopher (PET!)
 						["cost"] = {{ "i", 234741, 5 }},	-- Miscellaneous Mechanica
@@ -130,9 +135,9 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				},
 			}),
 			n(236849, {	-- Greexit Coarsebub
+				["description"] = "Sells different cosmetics depending on which cartel you have a contract with.",
 				["coord"] = { 24.5, 63.3, UNDERMINE },
 				["g"] = {
-					--locked out per week with hqt?
 					-- Bilgewater Cartel
 					i(231736),	-- Bilgewater Bruiser's Tabard
 					i(231748),	-- Bilgewater Bruiser's Spaulders
@@ -156,7 +161,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["g"] = bubbleDownClassicRep(FACTION_TWW_STEAMWHEEDLE_CARTEL, {
 					{		-- Neutral
 					}, {	-- Friendly
-						i(236689),	-- Finder's Fee
+						i(236689, {	-- Finder's Fee
+							["sourceAchievement"] = 41627,	-- C.H.E.T.T.ing it Twice
+							["cost"] = {{ "i", 235053, 1 }},	-- Completed C.H.E.T.T. List
+						}),
 					}, {	-- Honored
 						i(236670, {	-- Maniacal Melodies (MM!)
 							["cost"] = {{ "c", RESONANCE_CRYSTALS, 975 }},
@@ -189,7 +197,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["g"] = bubbleDownClassicRep(FACTION_TWW_BILGEWATER_CARTEL, {
 					{		-- Neutral
 					}, {	-- Friendly
-						i(236764),	-- Finder's Fee
+						i(236764, {	-- Finder's Fee
+							["sourceAchievement"] = 41627,	-- C.H.E.T.T.ing it Twice
+							["cost"] = {{ "i", 235053, 1 }},	-- Completed C.H.E.T.T. List
+						}),
 					}, {	-- Honored
 						i(236672, {	-- The Ol' Low-and-Slow (MM!)
 							["cost"] = {{ "c", RESONANCE_CRYSTALS, 975 }},
@@ -222,7 +233,10 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 				["g"] = bubbleDownClassicRep(FACTION_TWW_VENTURE_CO, {
 					{		-- Neutral
 					}, {	-- Friendly
-						i(236765),	-- Finder's Fee
+						i(236765, {	-- Finder's Fee
+							["sourceAchievement"] = 41627,	-- C.H.E.T.T.ing it Twice
+							["cost"] = {{ "i", 235053, 1 }},	-- Completed C.H.E.T.T. List
+						}),
 					}, {	-- Honored
 						i(236669, {	-- The Whole Brass Band (MM!)
 							["cost"] = {{ "c", RESONANCE_CRYSTALS, 975 }},
@@ -252,29 +266,54 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_1_0 } }, 
 			}),
 			n(228286, {	-- Skedgit Cinderbangs <Entrepreneur Inc.>
 				["coord"] = { 43.0, 82.8, UNDERMINE },
-				-- All the Loot is shared with Ditty
-				["sym"] = {{"select","itemID",
-					229952, 	-- Asset Advocator (MOUNT!)
-					232850, 	-- Blackwater Kegmover (PET!)
-					232842, 	-- Crimson Mechasaur (PET!)
-					229941, 	-- Innovation Investigator (MOUNT!)
-					229954, 	-- Margin Manipulator (MOUNT!)
-					232840, 	-- Mechagopher (PET!)
-					232841, 	-- Professor Punch (PET!)
-					232846, 	-- Steamwheedle Flunkie (PET!)
-					232849, 	-- Venture Companyman (PET!)
-				}},
+				["g"] = {
+					i(229952, {	-- Asset Advocator (MOUNT!)
+						["cost"] = {{ "i", 234741, 25 }},	-- Miscellaneous Mechanica
+					}),
+					i(229941, {	-- Innovation Investigator (MOUNT!)
+						["cost"] = {{ "i", 234741, 25 }},	-- Miscellaneous Mechanica
+					}),
+					i(229954, {	-- Margin Manipulator (MOUNT!)
+						["cost"] = {{ "i", 234741, 25 }},	-- Miscellaneous Mechanica
+					}),
+				},
 			}),
 			n(231396, {	-- Sitch Lowdown <Darkfuse Solutions Quartermaster>
-			--	["coord"] = { 63.4, 16.7, UNDERMINE },
+				["sourceQuest"] = 86961,	-- Diversified Investments
+				["coord"] = { 30.8, 38.2, UNDERMINE },
 				["g"] = bubbleDownClassicRep(FACTION_DARKFUSE_SOLUTIONS, {
 					{		-- Neutral
+						i(235558, {	-- Box of Darkfuse Miscellany
+							["cost"] = {{ "c", 3226, 100 }},	-- 100x Market Research
+							["g"] = {
+								currency(3177),	-- Darkfuse Solutions Commendation
+							},
+						}),
+						i(235532, {	-- Experimental Goblin-FUEL Supplement
+							["cost"] = {{ "c", RESONANCE_CRYSTALS, 100 }},
+						}),
+						i(237276),	-- Refurbished Rocket Glider
 					}, {	-- Friendly
+						i(229823, {	-- Canister of Darkfuse Solution
+							["cost"] = {{ "c", RESONANCE_CRYSTALS, 100 }},
+						}),
+						i(235533, {	-- Prototype Auto-Advertiser
+							["cost"] = {{ "c", RESONANCE_CRYSTALS, 100 }},
+						}),
 					}, {	-- Honored
+						i(234950, {	-- Atomic Regoblinator
+							["cost"] = {{ "c", RESONANCE_CRYSTALS, 5000 }},
+						}),
+						i(235534, {	-- Electropuncture Test Model
+							["cost"] = {{ "c", RESONANCE_CRYSTALS, 100 }},
+						}),
 					}, {	-- Revered
-					}, {	-- Exalted
 						i(229950, {	-- Darkfuse Demolisher (MOUNT!)
 							["cost"] = {{ "c", RESONANCE_CRYSTALS, 11375 }},
+						}),
+					}, {	-- Exalted
+						i(231550, {	-- Darkfuse Lowdown Coat
+							["cost"] = {{ "c", RESONANCE_CRYSTALS, 3250 }},
 						}),
 					},
 				}),

@@ -49,18 +49,14 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 						14141,	-- Solo Nightmares - Stormwind
 						14142,	-- Solo Nightmares - Orgrimmar
 					}},
-					["g"] = {
-						title(419),	-- <Name>, the Faceless One
-					},
+					["g"] = { title(419) },	-- <Name>, the Faceless One
 				})),
 				ach(14143, {	-- Reeking of Visions
 					["sym"] = {{"meta_achievement",
 						14065,	-- The Even More Horrific Vision of Orgrimmar
 						14064,	-- The Even More Horrific Vision of Stormwind
 					}},
-					["g"] = {
-						i(174463),	-- Reek (PET!)
-					},
+					["g"] = { i(174463) },	-- Reek (PET!)
 				}),
 				ach(14169),	-- Symphony of Masks
 				ach(14165),	-- Masked Soliloquy
@@ -74,9 +70,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 						14060,	-- Unwavering Resolve
 						14061,	-- We Have the Technology
 					}},
-					["g"] = {
-						i(174654),	-- Black Serpent of N'Zoth (MOUNT!)
-					},
+					["g"] = { i(174654) },	-- Black Serpent of N'Zoth (MOUNT!)
 				}),
 				ach(14060),	-- Unwavering Resolve
 				ach(14061),	-- We Have the Technology
@@ -215,9 +209,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 							{ 49.7, 87.0, HORRIFIC_STORMWIND },
 							{ 75.7, 64.6, HORRIFIC_STORMWIND },
 						},
-						["g"] = {
-							i(174653),	-- Mail Muncher (MOUNT!)
-						},
+						["g"] = { i(174653) },	-- Mail Muncher (MOUNT!)
 					}),
 				},
 			}),
@@ -243,9 +235,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 						o(342098, {	-- Coifcurl's Close Shave Kit
 							["description"] = "Requires entering the Valley of Spirits. The chest is inside the barber shop on the right.",
 							["coord"] = { 40.5, 60.3, HORRIFIC_ORGRIMMAR },
-							["g"] = {
-								i(174920),	-- Coifcurl's Close Shave Kit (TOY!)
-							},
+							["g"] = { i(174920) },	-- Coifcurl's Close Shave Kit (TOY!)
 						}),
 					}),
 					n(LOST_AREA, {
@@ -293,9 +283,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 							{ 62.6, 61.2, HORRIFIC_STORMWIND },
 							{ 69.6, 68.2, HORRIFIC_STORMWIND },
 						},
-						["g"] = {
-							i(174926),	-- Overly Sensitive Void Spectacles (TOY!)
-						},
+						["g"] = { i(174926) },	-- Overly Sensitive Void Spectacles (TOY!)
 					}),
 					i(174928, {	-- Rotten Apple (TOY!)
 						["description"] = "Repeatedly click the bouncing apples at the coordinates provided.  Supposedly, clicking them 100 times will guarantee that the toy is in your final chest, but any click should give you a chance if you're running short on time.",
@@ -310,9 +298,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 					o(343698, {	-- Void-Touched Skull
 						["description"] = "Behind the orphanage in Cathedral Square.  It's on the ground next to some crates, is very small, and doesn't have the typical interactable sparkle.",
 						["coord"] = { 58.9, 52.9, HORRIFIC_STORMWIND },
-						["g"] = {
-							i(174921),	-- Void-Touched Skull (TOY!)
-						},
+						["g"] = { i(174921) },	-- Void-Touched Skull (TOY!)
 					}),
 					n(CORRUPTED_AREA, {
 						n(156577, {	-- Therum Deepforge

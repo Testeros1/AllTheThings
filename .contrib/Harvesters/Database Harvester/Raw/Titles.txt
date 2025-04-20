@@ -151,14 +151,11 @@
 140@@@%s the Kingslayer
 141@@@%s of the Ashen Verdict
 142@@@Wrathful Gladiator %s
-3.4.1.47966
+3.4.0.46779
+210@@@Battlemaster %s
+3.4.1.47245
 143@@@%s, Soul of Iron
 144@@@%s, Survivor of the Firelord
-210@@@Battlemaster %s
-3.4.1.48019
-3.4.1.48120
-3.4.1.48340
-3.4.1.48503
 4.0.1.12911
 143@@@Recruit of %s
 144@@@Guardian of %s
@@ -429,9 +426,13 @@
 7.3.2.25079
 368@@@Dominant Gladiator %s
 369@@@%s, the Tactician
-7.3.5.25928
+7.3.5.25600
 370@@@Demonic Gladiator %s
+7.3.5.25632
+372@@@Courier %s
+7.3.5.25678
 372@@@Postmaster %s
+7.3.5.25804
 373@@@Prospector %s
 8.0.1.25902
 371@@@%s, No Good, Dirty, Rotten, Candy Stealer!
@@ -600,28 +601,25 @@
 477@@@%s the [PH Season 1 Title]
 478@@@Isles Racer %s
 479@@@Malicious %s
-10.0.2.45779
-480@@@%s, Knight of Feathersworth
-10.0.2.45969
+10.0.0.46479
+469@@@%s, the Worldbreaker
 470@@@%s the Thundering Hero
 477@@@%s the Thundering
+480@@@%s, Knight of Feathersworth
 481@@@%s the Elite Evoker
 482@@@Crimson Soloist %s
-10.0.2.46091
 483@@@%s, Paragon of the Obsidian Brood
 484@@@%s, Agent of the Black Prince
-10.0.2.46259
-469@@@%s, the Worldbreaker
 485@@@Merchant Artisan %s
 486@@@Personal Crafter %s
-10.0.2.46420
 487@@@%s, Famed Slayer of Raszageth
 488@@@%s the Storm-Eater
 10.0.2.47213
 491@@@Legend %s
-10.0.5.47799
-482@@@Crimson Legend %s
+10.0.5.47118
 490@@@Reverse Racer %s
+10.0.5.47481
+482@@@Crimson Legend %s
 492@@@Skyscourge %s
 10.0.7.47910
 489@@@Forbidden Reach Racer %s
@@ -814,3 +812,15 @@
 616@@@Part-Timer %s
 617@@@%s, "Employee" of the Month
 618@@@%s, the Reel Deal
+11.1.5.59571
+619@@@Recruit %s
+620@@@Reservist %s
+621@@@Field Sacredite %s
+622@@@Sentry %s
+623@@@Stalwart %s
+624@@@Ardent %s
+625@@@Aeroknight %s
+626@@@Flame Guard %s
+627@@@Radiant Officer %s
+628@@@Sacred Templar %s
+631@@@%s the Mad

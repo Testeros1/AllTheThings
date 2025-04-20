@@ -473,6 +473,11 @@ namespace ATT
                             item[field] = Convert.ToBoolean(value);
                             break;
                         }
+                    case "sr":
+                        {
+                            item[field] = Convert.ToBoolean(value);
+                            break;
+                        }
 
                     // String Data Type Fields
                     case "lore":
@@ -907,6 +912,7 @@ namespace ATT
                     case "customCollect":
                     case "type":
                     case "_wipe":
+                    case "collectible":
                         data[field] = value;
                         break;
                     // Conditional merges
@@ -956,6 +962,8 @@ namespace ATT
             /// <param name="data">The data dictionary to receive the merged data.</param>
             public static void MergeInto(decimal itemID, IDictionary<string, object> item, IDictionary<string, object> data)
             {
+                if (itemID < 1)
+                    return;
                 foreach (var pair in item) MergeInto(itemID, data, pair.Key, pair.Value);
             }
 
@@ -968,7 +976,7 @@ namespace ATT
             {
                 // Get the itemID, if it exists.
                 decimal itemID = GetSpecificItemID(data);
-                if (itemID == 0)
+                if (itemID < 1)
                     return;
 
                 // merge general item info into the data
@@ -990,7 +998,7 @@ namespace ATT
                     if (!data.ContainsKey("_generated"))
                     {
                         // Report that the specific, non-generated item is missing.
-                        Log($"Could not find item #{specificItemID} in the database", data);
+                        LogDebugWarn($"Could not find item #{specificItemID} in the database", data);
                     }
                 }
                 else

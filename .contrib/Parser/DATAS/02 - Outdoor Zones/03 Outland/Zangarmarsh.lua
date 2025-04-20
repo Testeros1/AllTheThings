@@ -276,23 +276,14 @@ root(ROOTS.Zones, {
 					}),
 				}),
 				n(PROFESSIONS, {
-					n(18911, {	-- Juno Dufrain <Fishing Trainer>
-						["coord"] = { 78.0, 66.0, ZANGARMARSH },
-						["groups"] = TBC_FISHING,
-					}),
 					prof(FISHING, {
-						o(182954, {	-- Brackish Mixed School
-							["requireSkill"] = FISHING,
+						n(18911, {	-- Juno Dufrain <Fishing Trainer>
+							["coord"] = { 78.0, 66.0, ZANGARMARSH },
+							["groups"] = TBC_FISHING,
 						}),
-						o(182952, {	-- Steam Pump Flotsam
-							i(27481),	-- Heavy Supply Crate
-							i(27516),	-- Enormous Barbed Gill Trout
-							i(34469, {	-- Strange Engine Part
-								["description"] = "\"Don't pay anybody in advance. And don't ride in anything with a Capissen 38 engine, they fall right out of the sky.\" - Kaylee Fry",
-							}),
-						}),
-						o(182953, {	-- Sporefish School
-							["requireSkill"] = FISHING,
+						i(34469, {	-- Strange Engine Part
+							["description"] = "\"Don't pay anybody in advance. And don't ride in anything with a Capissen 38 engine, they fall right out of the sky.\" - Kaylee Fry",
+							["provider"] = { "o", 182952 },	-- Steam Pump Flotsam
 						}),
 					}),
 				}),

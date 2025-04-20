@@ -374,8 +374,38 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 43.9, 72.1, ZULDAZAR },
 				["races"] = HORDE_ONLY,
 				["g"] = {
+					o_repeated({	-- Xibalan Fossil
+						["coords"] = {
+							{ 41.1, 75.0, ZULDAZAR },
+							{ 41.3, 73.5, ZULDAZAR },
+							{ 41.7, 72.8, ZULDAZAR },
+							{ 41.7, 75.3, ZULDAZAR },
+							{ 42.1, 74.9, ZULDAZAR },
+							{ 42.5, 73.8, ZULDAZAR },
+							{ 42.8, 72.9, ZULDAZAR },
+							{ 42.9, 73.5, ZULDAZAR },
+						},
+						["g"] = {
+							o(280490),	-- Xibalan Fossil
+							o(280491),	-- Xibalan Fossil
+							o(280493),	-- Xibalan Fossil
+							o(280495),	-- Xibalan Fossil
+							o(280496),	-- Xibalan Fossil
+							o(280497),	-- Xibalan Fossil
+							o(280500),	-- Xibalan Fossil
+							o(280501),	-- Xibalan Fossil
+							o(287048),	-- Xibalan Fossil
+							o(287049),	-- Xibalan Fossil
+							o(287050),	-- Xibalan Fossil
+							o(287051),	-- Xibalan Fossil
+							o(287052),	-- Xibalan Fossil
+							o(287053),	-- Xibalan Fossil
+							o(287054),	-- Xibalan Fossil
+							o(287055),	-- Xibalan Fossil
+							i(156597),	-- Xibalan Fossil Fragment (QI!)
+						},
+					}),
 					i(156596),	-- Sweeper Beacon (QI!)
-					i(156597),	-- Xibalan Fossil Fragment (QI!)
 				},
 			}),
 			q(49492, {	-- Arrogance of Vol'jamba
@@ -452,7 +482,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					51145,	-- Curse of Jani (A)
 					47442,	-- Curse of Jani (H)
 				},
-				["provider"] = { "n", 113490 },	-- Jani
+				["provider"] = { "n", 133490 },	-- Jani
 				["coord"] = { 66.2, 16.6, ZULDAZAR },
 			}),
 			q(50074, {	-- Brutal Boost
@@ -813,16 +843,13 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(156473),	-- Empowered Fire Mojo (QI!)
 					i(158667),	-- Blue Flame Spelltorch
 					i(159124),	-- Golden Fleet Buckler
+					i(159155),	-- Jambani Handguards
+					i(159154),	-- Rastari Gloves
 					i(159152),	-- Torcalin Grips
 					i(159153),	-- Zanchuli Grips
-					i(159154),	-- Rastari Gloves
-					i(159155),	-- Jambani Handguards
-					i(160090, {	-- Outrigger Graspers (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(160091, {	-- Sea Raider's Grips (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
+					--
+					h(i(160090)),	-- Outrigger Graspers
+					h(i(160091)),	-- Sea Raider's Grips
 				},
 			}),
 			q(47740, {	-- House of the King
@@ -1083,7 +1110,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			q(55506, {	-- One Road Ends
 				["sourceQuests"] = { 55503 },	-- The Direhorn and the Saurid
 				["provider"] = { "n", 154607 },	-- Image of Torcali
-				["coord"] = { 52.4, 23.2, DAZARALOR },	-- on the very edge
+				["coord"] = { 60.8, 0.9, DAZARALOR },	-- on the very edge
 				["races"] = HORDE_ONLY,
 			}),
 			q(50798, {	-- Out on a Limb
@@ -1145,7 +1172,6 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 135308 },	-- Wingminder Goja
 				["coord"] = { 70.8, 51.0, ZULDAZAR },
 				["races"] = HORDE_ONLY,
-				["cost"] = { { "i", 158913, 1 } },	-- Huge Dragon Kite
 			}),
 			q(47312, {	-- Queenfeather
 				["sourceQuests"] = {	-- probably!  might be available as early as picking up "the orphaned hatchling" or turning in "the missing handler."
@@ -1540,9 +1566,18 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 125047 },	-- Rokor
 				["coord"] = { 81.3, 45.8, ZULDAZAR },
 				["g"] = {
-					i(151852),	-- Edicts of Gral (QI!)
-					i(151854),	-- Scroll of Purify (QI!)
-					i(151853),	-- Waves of Power (QI!)
+					o(272563, {	-- Edicts of Gral
+						["coord"] = { 80.8, 43.3, ZULDAZAR },
+						["g"] = { i(151852) },	-- Edicts of Gral (QI!)
+					}),
+					o(272561, {	-- Scroll of Purify
+						["coord"] = { 80.0, 44.5, ZULDAZAR },
+						["g"] = { i(151854) },	-- Scroll of Purify (QI!)
+					}),
+					o(272562, {	-- Waves of Power
+						["coord"] = { 80.5, 45.0, ZULDAZAR },
+						["g"] = { i(151853) },	-- Waves of Power (QI!)
+					}),
 				},
 			}),
 			q(49679, {	-- The Sethrak Incursion
@@ -1718,7 +1753,11 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = HORDE_ONLY,
 				["coord"] = { 68.2, 29.6, ZULDAZAR },
 				["g"] = {
-					i(168005),	-- Mature Direbloom Petal (QI!)
+					o_repeated({
+						o(325476),	-- Direbloom
+						o(325478),	-- Direbloom
+						i(168005),	-- Mature Direbloom Petal (QI!)
+					}),
 				},
 			}),
 			q(51990, {	-- Wings for the Kraal
@@ -1819,13 +1858,43 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = ALLIANCE_ONLY,
 			}),
 			q(50044, {	-- Archaeological Efficiency (A)
-				["coord"] = { 44.4, 73.4, ZULDAZAR },
+				["coord"] = { 41.3, 71.5, ZULDAZAR },
 				["races"] = ALLIANCE_ONLY,
 				["provider"] = { "n", 131763 },	-- Excavator Morgrum Emberflint
 				["sourceQuests"] = { 49276 },	-- The Thrill of Exploration
 				["g"] = {
+					o_repeated({	-- Xibalan Fossil
+						["coords"] = {
+							{ 41.1, 75.0, ZULDAZAR },
+							{ 41.3, 73.5, ZULDAZAR },
+							{ 41.7, 72.8, ZULDAZAR },
+							{ 41.7, 75.3, ZULDAZAR },
+							{ 42.1, 74.9, ZULDAZAR },
+							{ 42.5, 73.8, ZULDAZAR },
+							{ 42.8, 72.9, ZULDAZAR },
+							{ 42.9, 73.5, ZULDAZAR },
+						},
+						["g"] = {
+							o(280490),	-- Xibalan Fossil
+							o(280491),	-- Xibalan Fossil
+							o(280493),	-- Xibalan Fossil
+							o(280495),	-- Xibalan Fossil
+							o(280496),	-- Xibalan Fossil
+							o(280497),	-- Xibalan Fossil
+							o(280500),	-- Xibalan Fossil
+							o(280501),	-- Xibalan Fossil
+							o(287048),	-- Xibalan Fossil
+							o(287049),	-- Xibalan Fossil
+							o(287050),	-- Xibalan Fossil
+							o(287051),	-- Xibalan Fossil
+							o(287052),	-- Xibalan Fossil
+							o(287053),	-- Xibalan Fossil
+							o(287054),	-- Xibalan Fossil
+							o(287055),	-- Xibalan Fossil
+							i(156597),	-- Xibalan Fossil Fragment (QI!)
+						},
+					}),
 					i(159640),	-- Elemental Summoning Stone (QI!)
-					i(156597),	-- Xibalan Fossil Fragment (QI!)
 				},
 			}),
 			q(49491, {	-- Fuel for the Voodoo
@@ -1878,7 +1947,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["races"] = ALLIANCE_ONLY,
 			}),
 			q(49282, {	-- Morgrum's Extended Survey
-				["coord"] = { 44.4, 73.4, ZULDAZAR },
+				["coord"] = { 41.3, 71.5, ZULDAZAR },
 				["races"] = ALLIANCE_ONLY,
 				["provider"] = { "n", 131763 },	-- Excavator Morgrum Emberflint
 				["sourceQuests"] = {
@@ -1888,7 +1957,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				},
 			}),
 			q(49274, {	-- Morgrum's Survey
-				["coord"] = { 44.4, 73.4, ZULDAZAR },
+				["coord"] = { 41.3, 71.5, ZULDAZAR },
 				["races"] = ALLIANCE_ONLY,
 				["provider"] = { "n", 131763 },	-- Excavator Morgrum Emberflint
 				["sourceQuests"] = { 49276 },	-- The Thrill of Exploration
@@ -2006,10 +2075,12 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				-- TODO: Check SQ, also probably can't do after a certain level
 				q(47527),	-- Rituals of Heresy
 				q(47797),	-- Occupation Hazard
-				q(49315),	-- Dreadpearl Collusion
 				q(49918),	-- Gorilla Gorge
 				q(50178),	-- Trouble in the Rootway
 			})),
+			n(BONUS_OBJECTIVES, {	-- Neither faction or level 50 restricted
+				q(49315),	-- Dreadpearl Collusion
+			}),
 		}),
 	}),
 })));
@@ -2018,7 +2089,17 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 	m(ZANDALAR, {
 		m(ZULDAZAR, {
 			n(QUESTS, {
+				q(55259),	-- Triggers after turning 'Sleep, Eat, Repeat' (ID 55258) in to finish the achievement criteria 'Sleep, Eat, Repeat' (3) for How to Train Your Direhorn (ID 13542)
+				q(52141),	-- after completing "SKREEEEE!" for How to Ptrain Your Pterrordax
+				q(47436),	-- Picked Pa'ku for "Picking a Side"
+				q(47443),	-- switched loa alignment in Zuldazar to Gonk by speaking to Chronicler Ash'tari
 				q(54738),	-- Loa Changer Jani to Paku
+				q(50844),	-- triggered when turning in #50900, "Maybe When You're Older," part of Kua'fon questline
+				q(50828),	-- triggered when turning in #50412, Back to the Nest, part of Kua'fon questline.
+				q(51992),	-- triggered when turning in "Of Dark Deeds and Dark Days"
+				q(51993),	-- triggered when turning in "Of Dark Deeds and Dark Days"
+				q(55257),	-- triggered after turning in "Held for Observation" in the "How to Train Your Direhorn" questline
+				q(55536),	-- triggered after turning in "Torcali's Blessing" in the "How to Train Your Direhorn" questline
 			}),
 		}),
 	}),

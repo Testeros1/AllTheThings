@@ -176,7 +176,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 		i(63127),	-- Highborne Scroll
 		i(87399, {["timeline"] = {ADDED_5_0_4}}),	-- Restored Artifact
 		i(63128),	-- Troll Tablet
-		currency(ARCH_CURRENCY_DWARF, {
+		header(HEADERS.Currency, ARCH_CURRENCY_DWARF, sharedData({["cost"]={{"c",ARCH_CURRENCY_DWARF,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 204282 },	-- Dwarf Archaeology Find
 			["maps"] = {
 				ARATHI_HIGHLANDS,
@@ -223,8 +223,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				i(64486),	-- Word of Empress Zoe
 				i(63110),	-- Worn Hunting Knife
 			},
-		}),
-		currency(ARCH_CURRENCY_FOSSIL, {
+		})),
+		header(HEADERS.Currency, ARCH_CURRENCY_FOSSIL, sharedData({["cost"]={{"c",ARCH_CURRENCY_FOSSIL,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 206836 },	-- Fossil Archaeology Find
 			["maps"] = {
 				BLASTED_LANDS,
@@ -263,8 +263,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				i(63527),	-- Twisted Ammonite Shell
 				i(64387),	-- Vicious Ancient Fish
 			},
-		}),
-		currency(ARCH_CURRENCY_NIGHTELF, {
+		})),
+		header(HEADERS.Currency, ARCH_CURRENCY_NIGHTELF, sharedData({["cost"]={{"c",ARCH_CURRENCY_NIGHTELF,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 203071 },	-- Night Elf Archaeology Find
 			["maps"] = {
 				ASHENVALE,
@@ -312,8 +312,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				i(64650),	-- Umbra Crescent
 				i(64651),	-- Wisp Amulet (TOY!)
 			},
-		}),
-		currency(ARCH_CURRENCY_TROLL, {
+		})),
+		header(HEADERS.Currency, ARCH_CURRENCY_TROLL, sharedData({["cost"]={{"c",ARCH_CURRENCY_TROLL,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 202655 },	-- Troll Archaeology Find
 			["maps"] = {
 				ARATHI_HIGHLANDS,
@@ -345,7 +345,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				i(63115),	-- Zandalari Voodoo Doll
 				i(64377),	-- Zin'rokh, Destroyer of Worlds
 			},
-		}),
+		})),
 	})),
 	prof(BLACKSMITHING, {
 		-- #if BEFORE TBC
@@ -548,7 +548,9 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 			})),
 			-- #endif
 			i(7916),	-- Barbaric Iron Boots
-			i(7914),	-- Barbaric Iron Breastplate
+			i(7914, {	-- Barbaric Iron Breastplate
+				["requireSkill"] = BLACKSMITHING,
+			}),
 			i(7917),	-- Barbaric Iron Gloves
 			i(7915),	-- Barbaric Iron Helm
 			i(163964, {["timeline"] = {ADDED_8_0_1}}),	-- Barbaric Iron Hauberk
@@ -743,6 +745,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				-- #if SEASON_OF_DISCOVERY
 				["timeline"] = { REMOVED_1_15_3 },
 				-- #endif
+				["requireSkill"] = BLACKSMITHING,
 			}),
 			i(12628, {["timeline"] = {REMOVED_4_0_3}}),	-- Demon Forged Breastplate
 			applyclassicphase(PHASE_THREE_RECIPES, i(12618, {["timeline"] = {REMOVED_4_0_3}})),	-- Enchanted Thorium Breastplate
@@ -922,7 +925,9 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 			})),
 			-- #endif
 			i(3853),	-- Moonsteel Broadsword
-			i(12773),	-- Ornate Thorium Handaxe
+			i(12773, {	-- Ornate Thorium Handaxe
+				["requireSkill"] = BLACKSMITHING,
+			}),
 			i(203811, {["timeline"] = {ADDED_10_0_7}}),	-- Pitchfork of Madness
 			i(5540),	-- Pearl-handled Dagger
 			i(7946),	-- Runed Mithril Hammer
@@ -974,6 +979,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				-- #if SEASON_OF_DISCOVERY
 				["timeline"] = { REMOVED_1_15_3 },
 				-- #endif
+				["requireSkill"] = BLACKSMITHING,
 			}),
 			i(17016),	-- Dark Iron Destroyer
 			i(11608),	-- Dark Iron Pulverizer
@@ -2856,8 +2862,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				-- #endif
 
 				-- #if AFTER CATA
-				applyclassicphase(TBC_PHASE_ONE, i(29964, {["timeline"] = {ADDED_2_0_5}})),	-- Blackstorm Leggings
-				applyclassicphase(TBC_PHASE_ONE, i(29970, {["timeline"] = {ADDED_2_0_5}})),	-- Wildfeather Leggings
+				applyclassicphase(TBC_PHASE_ONE, i(29964, {["requireSkill"] = LEATHERWORKING, ["timeline"] = {ADDED_2_0_5}})),	-- Blackstorm Leggings
+				applyclassicphase(TBC_PHASE_ONE, i(29970, {["requireSkill"] = LEATHERWORKING, ["timeline"] = {ADDED_2_0_5}})),	-- Wildfeather Leggings
 				-- #endif
 
 				-- #if SEASON_OF_DISCOVERY
@@ -3015,7 +3021,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				i(15047, {["timeline"] = {REMOVED_6_0_2}}),	-- Red Dragonscale Breastplate
 				-- #endif
 				-- #if AFTER CATA
-				applyclassicphase(TBC_PHASE_ONE, i(29971, {["timeline"] = {ADDED_2_0_5}})),	-- Dragonstrike Leggings
+				applyclassicphase(TBC_PHASE_ONE, i(29971, {["requireSkill"] = LEATHERWORKING, ["timeline"] = {ADDED_2_0_5}})),	-- Dragonstrike Leggings
 				-- #endif
 
 				-- #if SEASON_OF_DISCOVERY
@@ -3068,10 +3074,12 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 			})),
 			-- #endif
 		}),
+		-- #if AFTER 10.0.7
 		n(WEAPONS, {
 			i(203805, {["timeline"] = {ADDED_10_0_7}}),	-- Gurubashi's Grasp
 			i(206491, {["timeline"] = {ADDED_10_1_5}}),	-- Nerubian Persuader
 		}),
+		-- #endif
 	}),
 	prof(MINING, {
 		spell(2575, {	-- Mining
@@ -3295,7 +3303,25 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 				["timeline"] = { ADDED_1_15_1 },
 			})),
 			-- #endif
-			i(14342),	-- Mooncloth
+			i(14342, {	-- Mooncloth
+				["description"] = "Coordinates are for select Moonwells around the world.",
+				["coords"] = {
+					{ 43.10, 80.27, DARNASSUS }, -- Temple of the Moon
+					-- #if BEFORE 4.0.3
+					{ 21.0, 53.0, STORMWIND_CITY }, -- The Park
+					{ 60.0, 72.0, ASHENVALE }, -- Moonwell of Cleansing (exists after 4.0.3, but reduntant on practicality.)
+					-- #else
+					{ 57.11, 37.52, WETLANDS }, -- Greenwarden's Grove
+					{ 48.05, 18.54, DARNASSUS }, -- The Howling Oak
+					{ 10.77, 74.71, AZSHARA }, -- Talrendis Point
+					{ 49.06, 33.58, DUSKWOOD }, -- Twlight Grove (exists pre 4.0.3, but this area is then infested with world bosses.)
+					-- #endif
+					-- #if AFTER 2.0.1
+					{ 13.13, 26.23, GHOSTLANDS }, -- Shalandis Isle
+					{ 45.02, 23.54, TEROKKAR_FOREST }, -- Cenarion Thicket
+					-- #endif
+				},
+			}),
 		}),
 		category(233, {	-- Bags
 			applyclassicphase(PHASE_FIVE_RECIPES, i(22249)),	-- Big Bag of Enchantment
@@ -3481,13 +3507,18 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 			i(34085, {	-- Red Winter Clothes
 				["timeline"] = { ADDED_2_3_0, REMOVED_7_3_5 },
 			}),
-			i(7054),	-- Robe of Power
-			i(14152),	-- Robe of the Archmage
+			i(7054, {	-- Robe of Power
+				["requireSkill"] = TAILORING,
+			}),
+			i(14152, {	-- Robe of the Archmage
+				["requireSkill"] = TAILORING,
+			}),
 			i(14153, {	-- Robe of the Void
 				["timeline"] = { REMOVED_5_0_4, ADDED_10_1_5 },
 				-- #if BEFORE WRATH
 				["classes"] = { WARLOCK },
 				-- #endif
+				["requireSkill"] = TAILORING,
 			}),
 			i(14136, {	-- Robe of Winter Night
 				["timeline"] = { REMOVED_4_0_3, ADDED_8_1_5 },
@@ -3501,7 +3532,9 @@ root(ROOTS.Craftables, expansion(EXPANSION.CLASSIC, {
 			i(10053),	-- Simple Black Dress
 			i(6786),	-- Simple Dress
 			applyclassicphase(PHASE_FIVE_CATCH_UP, i(22756)),	-- Sylvan Vest
-			i(14154),	-- Truefaith Vestments
+			i(14154, {	-- Truefaith Vestments
+				["requireSkill"] = TAILORING,
+			}),
 			i(10036),	-- Tuxedo Jacket
 			i(6241),	-- White Linen Robe
 			i(10040),	-- White Wedding Dress

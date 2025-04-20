@@ -69,7 +69,7 @@ root(ROOTS.Zones, {
 				}),
 				q(40515, {	-- A Walk With the Spirits
 					["sourceQuests"] = { 38909 },	-- Get to High Ground
-					["coord"] = { 53.9, 63.9, 652 },	-- Thunder Totem
+					["coord"] = { 55.0, 63.0, 652 },	-- Thunder Totem
 					["provider"] = { "n", 93826 },	-- Mayla Highmountain
 				}),
 				q(39488, {	-- Balance of Elements
@@ -106,7 +106,7 @@ root(ROOTS.Zones, {
 						39025,	-- Grasp of the Underking
 						39026,	-- The Drogbar
 					},
-					["coord"] = { 11.4, 24.7, HIGHMOUNTAIN },
+					["coord"] = { 11.7, 25.9, 651 },	-- Bitestone Enclave
 					["provider"] = { "n", 97553 },	-- Warbrave Oro
 				}),
 				q(39426, {	-- Blood Debt
@@ -345,7 +345,6 @@ root(ROOTS.Zones, {
 				}),
 				q(39498, {	-- High Water
 					["sourceQuests"] = { 39487 },	-- Crystal Fury
-					["coord"] = { 42.6, 33.4, 656 },	-- Lifespring Cavern
 					["provider"] = { "n", 96038 },	-- Jale Rivermane
 				}),
 				q(40112, {	-- Huln's War - Malorne's Favored
@@ -715,7 +714,7 @@ root(ROOTS.Zones, {
 				}),
 				q(38912, {	-- The Bloodtotem Tribe
 					["sourceQuests"] = { 38909 },	-- Get to High Ground
-					["coord"] = { 53.9, 63.9, 652 },	-- Thunder Totem
+					["coord"] = { 55.0, 63.0, 652 },	-- Thunder Totem
 					["provider"] = { "n", 93826 },	-- Mayla Highmountain
 				}),
 				q(45564, {	-- The Burning Birds
@@ -799,7 +798,7 @@ root(ROOTS.Zones, {
 				}),
 				q(38913, {	-- The Skyhorn Tribe
 					["sourceQuests"] = { 38909 },	-- Get to High Ground
-					["coord"] = { 53.9, 63.9, 652 },	-- Thunder Totem
+					["coord"] = { 55.0, 63.0, 652 },	-- Thunder Totem
 					["provider"] = { "n", 93826 },	-- Mayla Highmountain
 				}),
 				q(39773, {	-- The Soulkeeper's Fate
@@ -1011,10 +1010,11 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 			}),
 			n(QUESTS, {
 				q(40609),	-- 7.0 Highmountain - Vignette - Windripper Peak - Taurson - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing The Beastly Boxer
-				q(40610),	-- 7.0 Highmountain - Vignette - Worm Treasure - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing Treasure Worm
-				q(40612),	-- 7.0 Highmountain - Vignette - Amateur Hunters - Tracking Quest Credit - See Treasure (JAP) - NYI. Triggered after killing Irewing during Scout It Out
+				-- q(40610),	-- 7.0 Highmountain - Vignette - Worm Treasure - Tracking Quest Credit - See Treasure (JLW/RKS). Triggered after killing Treasure Worm
+				-- q(40612),	-- 7.0 Highmountain - Vignette - Amateur Hunters - Tracking Quest Credit - See Treasure (JAP) - NYI. Triggered after killing Irewing during Scout It Out
 				q(39991),	-- Blessing of Cenarius - being blessed by Cenarius during "Huln's War - Shadowsong" (questID 40388)
 				q(43957),	-- Jade Darkhaven
+				q(42715),	-- Frost DK - Highmountain Event
 				q(42571),	-- Shaman Shrine - Highmountain Earth 01
 				q(42572),	-- Shaman Shrine - Highmountain Earth 02
 				q(42578),	-- Shaman Shrine - Highmountain Wind 01

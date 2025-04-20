@@ -23,7 +23,7 @@ MECHAGON_WORKSHOP = createHeader({
 		en = WOWAPI_GetSpellName(251998),
 	},
 });
-root(ROOTS.Instances, expansion(EXPANSION.BFA, {
+root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 	inst(1178, {	-- Operation: Mechagon
 		["coord"] = { 73.1, 36.3, MECHAGON },
 		["maps"] = {
@@ -222,6 +222,36 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					}),
 				},
 			}),
+			d(DIFFICULTY.DUNGEON.MULTI.HEROIC_PLUS, bubbleDown({ ["timeline"] = { ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0_SEASONSTART } }, {
+				n(MECHAGON_WORKSHOP, {
+					e(2339, {	-- K.U.-J.0.
+						["crs"] = { 144246 },	-- K.U.-J.0.
+						["g"] = {
+							i(232546),	-- K.U.-J.0.'s Flame Vents
+							i(199921, {	-- Trashmaster's Mantle
+								["modID"] = 2,
+							}),
+						},
+					}),
+					e(2331, {	-- King Mechagon
+						["crs"] = {
+							150396,	-- Aerial Unit R-21/X
+							150397,	-- King Mechagon
+							144249,	-- Omega Buster
+						},
+						["g"] = {
+							i(235222),	-- Apogee Inventor's Goggles
+							i(235810),	-- Circuit-Linked Chainmail
+							i(235811),	-- Extravagant Epaulets
+							i(235226),	-- Inventor's Ingenious Trifocals
+							i(235809),	-- Mechanized Plate Chasse
+							i(235224),	-- Mekgineer's Mindbending Headgear
+							i(235223),	-- Psychogenic Prognosticator's Lenses
+							i(235812),	-- Shoulderguards of Fraying Sanity
+						},
+					}),
+				}),
+			})),
 			d(DIFFICULTY.DUNGEON.MYTHIC, {
 				["difficulties"] = { DIFFICULTY.DUNGEON.KEYSTONE, DIFFICULTY.DUNGEON.MYTHIC },
 				["lvl"] = 120,
@@ -352,11 +382,15 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 								i(169529),	-- Plans: Monelite Reinforced Chassis (RECIPE!)
 								i(169609),	-- Schematic: Super-Charged Engine (RECIPE!)
 								n(MYTHIC_PLUS, {
-									-- This one I thoguht was confirmed, but all screenshots were removed once it was fixed...
 									i(199921, {	-- Trashmaster's Mantle
-										["description"] = "Blizzard didn't want the M+ version of this cloak to be able to be used for the related Quest. So they created a brand new ItemID along with new SourceIDs...\n\nConfirmed as a Great Vault +15 reward",
+										["description"] =
+										-- #IF AFTER 11.1
+											"Confirmed as a Great Vault +10 reward",
+										-- #ELSE
+											"Blizzard didn't want the M+ version of this cloak to be able to be used for the related Quest. So they created a brand new ItemID along with new SourceIDs...\n\nConfirmed as a Great Vault +15 reward",
+										 -- #ENDIF
 										["bonusID"] = 7359,
-										["timeline"] = { ADDED_9_2_7, REMOVED_10_0_2_LAUNCH },
+										["timeline"] = { ADDED_9_2_7, REMOVED_10_0_2_LAUNCH, ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0_SEASONSTART },
 									}),
 									i(199921, {	-- Trashmaster's Mantle
 										["description"] = "Blizzard didn't want the M+ version of this cloak to be able to be used for the related Quest. So they created a brand new ItemID along with new SourceIDs...\n\nConfirmed as a direct M+ drop.",
@@ -426,6 +460,23 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					}),
 				},
 			}),
+			n(MYTHIC_PLUS, bubbleDown({ ["timeline"] = { ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0_SEASONSTART } }, {
+				n(MECHAGON_WORKSHOP, {
+					e(2331, {	-- King Mechagon
+						["crs"] = {
+							150396,	-- Aerial Unit R-21/X
+							150397,	-- King Mechagon
+							144249,	-- Omega Buster
+						},
+						["g"] = {
+							i(235810, {["modID"] = 35 }),	-- Circuit-Linked Chainmail
+							i(235811, {["modID"] = 162 }),	-- Extravagant Epaulets
+							i(235809, {["modID"] = 162 }),	-- Mechanized Plate Chasse
+							i(235812, {["modID"] = 162 }),	-- Shoulderguards of Fraying Sanity
+						},
+					}),
+				}),
+			})),
 		},
 	}),
-}));
+})));

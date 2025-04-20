@@ -4,7 +4,7 @@
 root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_ONE, {
 	inst(274, {	-- Gundrak
 		["mapID"] = GUNDRAK,
-		["coord"] = { 28.6, 86.9, ZULDRAK },
+		["coord"] = { 76.3, 21.1, ZULDRAK },
 		["maps"] = { GUNDRAK_FLOOR2 },
 		["lvl"] = lvlsquish(71, 71, 20),
 		["groups"] = {
@@ -533,6 +533,7 @@ root(ROOTS.Instances, expansion(EXPANSION.WRATH, applyclassicphase(WRATH_PHASE_O
 							i(45298),	-- Razorscale Talon
 							i(45893),	-- Guise of the Midgard Serpent
 							i(45973),	-- Stylish Power Cape
+							i(45304),	-- Stormtempered Girdle
 						},
 					}),
 				},

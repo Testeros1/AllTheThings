@@ -96,25 +96,37 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 					{"select","encounterID",2636,},{"pop"},	-- Original WB
 				},
 			}),
-			e(3128,	-- The Gobfather
-			bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+			e(2683,	-- The Gobfather
+			bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0_SEASONSTART } }, {
 				["crs"] = { 231821 },	-- The Gobfather <Demodome Champion>
 				["coord"] = { 58.9, 11.2, UNDERMINE },
 				["questID"] = 85089,
-				--["g"] = sharedData({
-				--	["modID"] = 3,
-				--},{
-				--	i(),	-- missing journal loot table
-				--}),
+				["g"] = {
+					i(232730),	-- Cauldron Master Cleats
+					i(232727),	-- Cavern Stalker's Trophy Girdle
+					i(232732),	-- Champion's Gilded Stompers
+					i(232728),	-- Darkfuse Dinner Jacket
+					i(232733),	-- Gobfather's Gold Medal
+					i(232729),	-- Horn-Adorned Chausses
+					i(232725),	-- Pilot's Oiled Trousers
+					i(232731),	-- Steadfast Contender's Breastplate
+					i(232726),	-- Well-Trodden Mechanic's Shoes
+				},
 			})),
 			q(85088,	-- The Main Event (WQ)
-			bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+			bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0_SEASONSTART } }, {
 				["coord"] = { 58.9, 11.2, UNDERMINE },
 				["isWorldQuest"] = true,
-				--["sym"] = {
-				--	{"select","encounterID",3128,},{"pop"},
-				--},
+				["sym"] = {
+					{"select","encounterID",2683,},{"pop"},
+				},
 			})),
 		}),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0_SEASONSTART } }, {
+	n(WORLD_BOSSES, {
+		q(89401),	-- First weekly Gobfather account kill for warbound loot
 	}),
 })));

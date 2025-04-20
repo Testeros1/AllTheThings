@@ -11,7 +11,6 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 			-- verify SQ for "the forlorn soul" also, picked up at the same time as above.  actual non-breadcrumb SQ seems to be "A Tribute for Death," but could be something else?
 			-- verify SQ for "a poisonous touch."  it wasn't available w/0 prereqs and i didn't see it until after turning in "staying hidden," but it may be available earlier.
 			-- verify whether or not "crawg free zone" is needed for "it seems you've made a friend" by turning it in last of the 4 quests.  i turned it in second to last, and the previous person who quested through turned in "bad juju"/"off with her head" last, so it seems those 3 are required)
-			-- MAIL AZERITE REWARDS MISSING for #50087, "Ateena's Fall"
 			-- figure out if "what rots beneath" is a breadcrumb
 			-- this question is also in the dazar'alor file, but verify SQ for "the blood gate."  it may become available after "ateena's fall," not "halting the empire's fall."  also, is "halting the empire's fall" (which sends you to baine, who offers this quest) a breadcrumb?  "the blood gate" isn't hidden like quests typically are when you have their breadcrumb in their log, so i'm not sure if "halting" is optional/disappears/becomes unavailable after doing "the blood gate."  also, is it available with *only* having done nazmir, or do you also have to finish the main zuldazar questline as well?
 			q(50934, {	-- A Chance Sighting
@@ -20,6 +19,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 131993 },	-- Yash
 				["coord"] = { 66.9, 41.9, NAZMIR },
 				["races"] = HORDE_ONLY,
+				["g"] = { i(153676) },	-- Vial of Liquid (QI!)
 			}),
 			q(47244, {	-- A Culling of Souls
 				["sourceQuests"] = { 47241 },	-- The Shadow of Death
@@ -155,6 +155,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["provider"] = { "n", 129165 },	-- Guard Satao
 				["coord"] = { 63.1, 52.6, NAZMIR },
 				["races"] = HORDE_ONLY,
+				["g"] = { i(153678) },	-- Sample Bottle (QI!)
 			}),
 			q(49779, {	-- Bad to the Bone
 				["sourceQuests"] = { 49778 },	-- Don't Go into the Light
@@ -291,17 +292,16 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 72.5, 29.4, NAZMIR },
 				["races"] = HORDE_ONLY,
 				["g"] = {
-					i(159088),	-- Nazmani Hexblade
 					i(159085),	-- Ancient Loa-Blessed Mace
+					i(159086),	-- Corrupted Tribe Headsmasher
 					i(159083),	-- Degraded Empire Shortblade
-					i(159084),	-- Handscythe of the First City
-					i(159087),	-- Nazmani Longstaff
 					i(159082),	-- Fallen Nation Recurve
 					i(159081),	-- Fallen Nation Carver
-					i(159086),	-- Corrupted Tribe Headsmasher
-					i(161299, {	-- Stoat-Trapper's Bladefist
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
+					i(159084),	-- Handscythe of the First City
+					i(159088),	-- Nazmani Hexblade
+					i(159087),	-- Nazmani Longstaff
+					--
+					a(i(161299)),	-- Stoat-Trapper's Bladefist
 				},
 			}),
 			q(49938, {	-- Corrupted Earth
@@ -505,18 +505,11 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(159038),	-- Loa Speaker's Bands
 					i(159039),	-- Nazmani Warplate Armguards
 					i(159041),	-- Ritual Flayer's Armbands
-					i(158631, {	-- Wickerwoven Bindings (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158633, {	-- Crone-Seeker's Bindings (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158634, {	-- Waycrest Militia Wristguards (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158632, {	-- Banisher Bindings
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
+					--
+					a(i(158632)), 	-- Banisher Bindings
+					a(i(158633)), 	-- Crone-Seeker's Bindings
+					a(i(158634)), 	-- Waycrest Militia Wristguards
+					a(i(158631)), 	-- Wickerwoven Bindings
 				},
 			}),
 			q(49314, {	-- Hunting Zardrax
@@ -538,6 +531,7 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 47.2, 79.8, NAZMIR },
 				["races"] = HORDE_ONLY,
 				["g"] = {
+					i(154724),	-- Ceremonial Torch (QI!)
 					i(155322),	-- Death-Pledged Gauntlets
 					i(155329),	-- Death-Pledged Leggings
 					i(155321),	-- Loa Speaker's Gloves
@@ -546,7 +540,6 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(155327),	-- Nazmani Warplate Greaves
 					i(155330),	-- Ritual Flayer's Breeches
 					i(155319),	-- Ritual Flayer's Gloves
-					i(154724),	-- Ceremonial Torch
 				},
 			}),
 			q(47105, {	-- Into The Darkness
@@ -680,18 +673,11 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					i(159013),	-- Nazmani Warplate Stompers
 					i(159016),	-- Ritual Flayer's Footwraps
 					i(158983),	-- Ritual Flayer's Grips
-					i(158588, {	-- Wickerwoven Walkers (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158590, {	-- Crone-Seeker's Striders (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158591, {	-- Waycrest Militia Footguards (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158589, {	-- Banisher Striders
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
+					--
+					a(i(158589)),	-- Banisher Striders
+					a(i(158590)),	-- Crone-Seeker's Striders
+					a(i(158591)),	-- Waycrest Militia Footguards
+					a(i(158588)),	-- Wickerwoven Walkers
 				},
 			}),
 			q(47264, {	-- Leave None Standing
@@ -807,18 +793,17 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 63.1, 52.6, NAZMIR },
 				["races"] = HORDE_ONLY,
 				["g"] = {
-					i(159092),	-- Grim Ritual Mace
-					i(159094),	-- Bloodsinger Wand
+					i(153572),	-- Nagla's Head (QI!)
 					i(159089),	-- Amaki Scalper
-					i(159091),	-- Bloodrite Sticker
-					i(159093),	-- Marrow Drained Bonestaff
-					i(159090),	-- Crawgmother's Shortbow
-					i(159096),	-- Nagla's Headcracker
 					i(159095),	-- Bloodhunter Greatblade
-					i(161293, {	-- Thrasneck Greatblade (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-
+					i(159091),	-- Bloodrite Sticker
+					i(159094),	-- Bloodsinger Wand
+					i(159090),	-- Crawgmother's Shortbow
+					i(159092),	-- Grim Ritual Mace
+					i(159093),	-- Marrow Drained Bonestaff
+					i(159096),	-- Nagla's Headcracker
+					--
+					a(i(161293)),	-- Thrasneck Greatblade
 				},
 			}),
 			q(48854, {	-- Offer of Power
@@ -1192,26 +1177,19 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 44.1, 62.8, NAZMIR },
 				["races"] = HORDE_ONLY,
 				["g"] = {
-					i(159034),	-- Nazmani Warplate Greatbelt
-					i(159025),	-- Nazmani Warplate Legplates
-					i(159035),	-- Loa Speaker's Cincture
-					i(159026),	-- Loa Speaker's Legwraps
 					i(159036),	-- Death-Pledged Chain
 					i(159027),	-- Death-Pledged Breeches
+					i(159035),	-- Loa Speaker's Cincture
+					i(159026),	-- Loa Speaker's Legwraps
+					i(159034),	-- Nazmani Warplate Greatbelt
+					i(159025),	-- Nazmani Warplate Legplates
 					i(159037),	-- Ritual Flayer's Girdle
 					i(159028),	-- Ritual Flayer's Pants
-					i(158619, {	-- Wickerwoven Waistband (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158621, {	-- Crone-Seeker's Cincture (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158622, {	-- Waycrest Militia Buckle (confirmed)
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
-					i(158620, {	-- Banisher Waistwrap
-						["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-					}),
+					--
+					a(i(158620)),	-- Banisher Waistwrap
+					a(i(158621)),	-- Crone-Seeker's Cincture
+					a(i(158622)),	-- Waycrest Militia Buckle
+					a(i(158619)),	-- Wickerwoven Waistband
 				},
 			}),
 			q(48577, {	-- Terrorizing Their Eggs
@@ -1534,7 +1512,9 @@ root(ROOTS.Zones, m(ZANDALAR, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 24.1, 53.1, NAZMIR },
 				["races"] = HORDE_ONLY,
 				["g"] = {
-					i(155912),	-- Sweetleaf (QI!)
+					o(279293, {	-- Sweetleaf Bush
+						i(155912),	-- Sweetleaf (QI!)
+					}),
 				},
 			}),
 			q(53781, {	-- Eyir
@@ -1637,7 +1617,28 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 	m(ZANDALAR, {
 		m(NAZMIR, {
 			n(QUESTS, {
-				q(54773),	-- Warmode version of March on the Marsh
+				q(49179),	-- triggered after speaking to Witch Doctor Kejabu after killing Hir'eek, on quest "Upward and "Onward"
+				q(47531),	-- triggered when turning in "Krag'wa the Terrible"
+				q(47703),	-- triggered while on #47631, "Rendezvous with the Libation"
+				q(50465),	-- triggered with #49950, "Blood Purification"
+				q(52294),	-- triggers with Krag'wa after accepting "The Last Witch Doctor of Krag'wa"
+				q(47698),	-- Nazmir - Ticker is summoned
+				q(49294),	-- Nazmir - triggers when Hanzabu talks about the Zo'bal shrine
+				q(48779),	-- Nazmir - triggers after activating all the spirits in Zo'bal during "Spiritual Restoration"
+				q(48781),	-- Nazmir - Hir'eek is summoned in Zalamar
+				q(49367, {	-- Nazmir dialogue around the Necropolis: "What is happening?  I was sick in my bed... and now... where am I?"
+					["isWorldQuest"] = true,	-- without this field, this quest inexplicably shows up in /attwq for some characters
+				}),
+				q(49368, {	-- Nazmir dialogue around the Necropolis: "De voice... he is calling to us... we must obey!"
+					["isWorldQuest"] = true,	-- for some reason, this shows up in /attwq for characters who haven't done it.  haunted!
+				}),
+				q(49369, {	-- Nazmir dialogue around the Necropolis: "Do you hear it?  It's Bwonsamdi's call!  Eternity is near!"
+					["isWorldQuest"] = true, -- unsure if this erroneously shows up in /attwq like the others; if so, it needs to be marked as a WQ
+				}),
+				q(49695, {	-- immediately after channeling on the drum finishes during "A Tribute For Death"
+					["isWorldQuest"] = true, -- haunted HQT that shows in /attwq
+				}),
+				-- q(54773),	-- Warmode version of March on the Marsh
 			}),
 		}),
 	}),

@@ -21,12 +21,12 @@ local EncounterToCRS = {
 		229181,	-- Flarendo <The Furious>
 		229177,	-- Torq <The Tempest>
 	},
-	[RIK] = { 228652 },	-- Rik Reverb <Official Gallywix Hype Man>
+	[RIK] = { 228648, 228652 },	-- Rik Reverb <Official Gallywix Hype Man>
 	[STIX] = { 230322 },	-- Stix Bunkjunker
 	[LOCKENSTOCK] = { 230583 },	-- Sprocketmonger Lockenstock
 	[BANDIT] = { 228458 },	-- One-Armed Bandit
 	[MUGZEE] = { 229953 },	-- Mug'Zee <Heads of Security>
-	[GALLYWIX] = { 237194 },	-- Chrome King Gallywix
+	[GALLYWIX] = { 237194, 231075 },	-- Chrome King Gallywix
 };
 
 ------ EncounterToLoot ------
@@ -47,26 +47,62 @@ local EncounterToLoot = {
 		i(230019),	-- Vexie's Pit Whistle
 	};
 	[CARNAGE] = {
+		i(228803, {	-- Dreadful Bloody Gallybux
+			i(229254),	-- Cauldron Champion's Fistguards
+			i(229317),	-- Fel-Dealer's Underhandlers
+			i(229326),	-- Spliced Fiendtrader's Demonic Grasp
+		}),
+		i(228804, {	-- Mystic Bloody Gallybux
+			i(229344),	-- Aspectral Emissary's Hardened Grasp
+			i(229308),	-- Grips of Reclaiming Blight
+			i(229272),	-- Tireless Collector's Gauntlets
+		}),
+		i(228805, {	-- Venerated Bloody Gallybux
+			i(229245),	-- Aureate Sentry's Gauntlets
+			i(229335),	-- Confessor's Unshakable Mitts
+			i(229263),	-- Gale Sovereign's Grasps
+		}),
+		i(228806, {	-- Zenith Bloody Gallybux
+			i(229299),	-- Ageless Serpent's Handguards
+			i(229236),	-- Enforcer's Backalley Crushers
+			i(229281),	-- Opulent Treasurescale's Gold-Counters
+			i(229290),	-- Spectral Gambler's Gloves
+		}),
 		i(228856),	-- Competitor's Battle Cord
 		i(228904),	-- Crowd Favorite
-		i(228803),	-- Dreadful Bloody Gallybux
 		i(228840),	-- Faded Championship Ring
 		i(230191),	-- Flarendo's Pilot Light
 		i(228846),	-- Galvanic Graffiti Cuffs
 		i(228873),	-- Heaviestweight Title Belt
 		i(228847),	-- Hotstep Heel-Turners
-		i(228804),	-- Mystic Bloody Gallybux
 		i(228890),	-- Superfan's Beater-Buzzer
 		i(230190),	-- Torq's Big Red Button
 		i(228900),	-- Tournament Arc
-		i(228805),	-- Venerated Bloody Gallybux
-		i(228806),	-- Zenith Bloody Gallybux
 	};
 	[RIK] = {
-		i(228815),	-- Dreadful Polished Gallybux
+		i(228815, {	-- Dreadful Polished Gallybux
+			i(229251),	-- Cauldron Champion's Screamplate
+			i(229314),	-- Fel-Dealer's Recycled Reavers
+			i(229323),	-- Spliced Fiendtrader's Loyal Servants
+		}),
+		i(228816, {	-- Mystic Polished Gallybux
+			i(229341),	-- Aspectral Emissary's Arcane Vents
+			i(229305),	-- Jaws of Reclaiming Blight
+			i(229269),	-- Tireless Collector's Hunted Heads
+		}),
+		i(228817, {	-- Venerated Polished Gallybux
+			i(229242),	-- Aureate Sentry's Roaring Will
+			i(229332),	-- Confessor's Unshakable Radiance
+			i(229260),	-- Gale Sovereign's Zephyrs
+		}),
+		i(228818, {	-- Zenith Polished Gallybux
+			i(229296),	-- Ageless Serpent's Shoulderpads
+			i(229233),	-- Enforcer's Backalley Shoulderplates
+			i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+			i(229287),	-- Spectral Gambler's Bladed Mantle
+		}),
 		i(231311),	-- Frontman's Wondrous Wall
 		i(228869),	-- Killer Queen's Wristflickers
-		i(228816),	-- Mystic Polished Gallybux
 		i(228897),	-- Pyrotechnic Needle-Dropper
 		i(228895),	-- Remixed Ignition Saber
 		i(230194),	-- Reverb Radio
@@ -74,61 +110,107 @@ local EncounterToLoot = {
 		i(228845),	-- Sash of the Fierce Diva
 		i(228841),	-- Semi-Charmed Amulet
 		i(228857),	-- Underparty Admission Bracelet
-		i(228817),	-- Venerated Polished Gallybux
-		i(228818),	-- Zenith Polished Gallybux
 	};
 	[STIX] = {
+		i(228811, {	-- Dreadful Rusty Gallybux
+			i(229252),	-- Cauldron Champion's Tattered Cuisses
+			i(229315),	-- Fel-Dealer's Fur Kilt
+			i(229324),	-- Spliced Fiendtrader's Skin Tights
+		}),
+		i(228812, {	-- Mystic Rusty Gallybux
+			i(229342),	-- Aspectral Emissary's Trousers
+			i(229306),	-- Moccasins of Reclaiming Blight
+			i(229270),	-- Tireless Collector's Armored Breeches
+		}),
+		i(228813, {	-- Venerated Rusty Gallybux
+			i(229243),	-- Aureate Sentry's Legguards
+			i(229333),	-- Confessor's Unshakable Leggings
+			i(229261),	-- Gale Sovereign's Pantaloons
+		}),
+		i(228814, {	-- Zenith Rusty Gallybux
+			i(229297),	-- Ageless Serpent's Leggings
+			i(229234),	-- Enforcer's Backalley Chausses
+			i(229279),	-- Opulent Treasurescale's Petticoat
+			i(229288),	-- Spectral Gambler's Pantaloons
+		}),
 		i(228854),	-- Bilgerat's Discarded Slacks
 		i(228871),	-- Cleanup Crew's Wastemask
-		i(228811),	-- Dreadful Rusty Gallybux
 		i(228849),	-- Dumpmech Compactors
 		i(228903),	-- Dumpster Diver
 		i(230189),	-- Junkmaestro's Mega Magnet
-		i(228812),	-- Mystic Rusty Gallybux
 		i(228859),	-- Sanitized Scraphood
 		i(230026),	-- Scrapfield 9001
 		i(228896),	-- Stix's Metal Detector
-		i(228813),	-- Venerated Rusty Gallybux
-		i(228814),	-- Zenith Rusty Gallybux
 	};
 	[LOCKENSTOCK] = {
+		i(228799, {	-- Dreadful Greased Gallybux
+			i(229256),	-- Cauldron Champion's Ribcage
+			i(229319),	-- Fel-Dealer's Soul Engine
+			i(229328),	-- Spliced Fiendtrader's Surgical Gown
+		}),
+		i(228800, {	-- Mystic Greased Gallybux
+			i(229346),	-- Aspectral Emissary's Primal Robes
+			i(229310),	-- Robes of Reclaiming Blight
+			i(229274),	-- Tireless Collector's Battlegear
+		}),
+		i(228801, {	-- Venerated Greased Gallybux
+			i(229247),	-- Aureate Sentry's Encasement
+			i(229337),	-- Confessor's Unshakable Vestment
+			i(229265),	-- Gale Sovereign's Clouded Hauberk
+		}),
+		i(228802, {	-- Zenith Greased Gallybux
+			i(229301),	-- Ageless Serpent's Inked Coils
+			i(229238),	-- Enforcer's Backalley Vestplate
+			i(229283),	-- Opulent Treasurescale's Tunic
+			i(229292),	-- Spectral Gambler's Vest
+		}),
 		i(228898),	-- Alphacoil Ba-Boom Stick
-		i(228799),	-- Dreadful Greased Gallybux
 		i(228894),	-- GIGADEATH Chainblade
 		i(228867),	-- Gravi-Gunk Handlers
 		i(230193),	-- Mister Lock-N-Stalk
 		i(230186),	-- Mister Pick-Me-Up
-		i(228800),	-- Mystic Greased Gallybux
 		i(228882),	-- Refiner's Conveyor Belt
 		i(228888),	-- Rushed Beta Launchers
-		i(228844),	-- Test Pilot's Go-Pack
+		i(228844, {up=IGNORED_VALUE}),	-- Test Pilot's Go-Pack [drops pre-upgraded with lower appearance]
 		i(228884),	-- Test Subject's Clasps
-		i(228801),	-- Venerated Greased Gallybux
-		i(228802),	-- Zenith Greased Gallybux
 	};
 	[BANDIT] = {
-		i(232526),	-- Best-in-Slots
-		i(232805),	-- Best-in-Slots
+		i(228807, {	-- Dreadful Gilded Gallybux
+			i(229253),	-- Cauldron Champion's Crown
+			i(229316),	-- Fel-Dealer's Visor
+			i(229325),	-- Spliced Fiendtrader's Transcendence
+		}),
+		i(228808, {	-- Mystic Gilded Gallybux
+			i(229343),	-- Aspectral Emissary's Crystalline Cowl
+			i(229307),	-- Branches of Reclaiming Blight
+			i(229271),	-- Tireless Collector's Chained Cowl
+		}),
+		i(228809, {	-- Venerated Gilded Gallybux
+			i(229244),	-- Aureate Sentry's Pledge
+			i(229334),	-- Confessor's Unshakable Halo
+			i(229262),	-- Gale Sovereign's Charged Hood
+		}),
+		i(228810, {	-- Zenith Gilded Gallybux
+			i(229298),	-- Ageless Serpent's Mane
+			i(229235),	-- Enforcer's Backalley Faceshield
+			i(229280),	-- Opulent Treasurescale's Crowned Jewel
+			i(229289),	-- Spectral Gambler's Damned Visage
+		}),
 		i(228850),	-- Bottom-Dollar Blouse
 		i(228886),	-- Coin-Operated Girdle
-		i(228807),	-- Dreadful Gilded Gallybux
 		i(228883),	-- Dubious Table-Runners
 		i(230188),	-- Gallagio Bottle Service
 		i(228905),	-- Giga Bank-Breaker
 		i(230027),	-- House of Cards
 		i(228885),	-- Hustler's Ante-Uppers
 		i(228843),	-- Miniature Roulette Wheel
-		i(228808),	-- Mystic Gilded Gallybux
 		i(228906),	-- Operator's Fraud Detector
 		i(231266),	-- Random Number Perforator
-		i(228809),	-- Venerated Gilded Gallybux
-		i(228810),	-- Zenith Gilded Gallybux
 	};
 	[MUGZEE] = {
 		i(228851),	-- "Bullet-Proof" Vestplate
 		i(228893),	-- "Tiny Pal"
 		i(228901),	-- Big Earner's Bludgeon
-		i(232804),	-- Capo's Molten Knuckles
 		i(228879),	-- Cemented Murloc-Swimmers
 		i(228863),	-- Enforcer's Sticky Fingers
 		i(228860),	-- Epaulettes of Failed Enforcers
@@ -182,16 +264,18 @@ InstanceHelper.UpgradeMapping = {
 	[DIFFICULTY.RAID.NORMAL] = 5,
 	[DIFFICULTY.RAID.HEROIC] = 6,
 };
-root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+
+root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0_SEASONSTART } }, {
 	inst(1296, {	-- Liberation of Undermine
 		["isRaid"] = true,
-		--["coord"] = { X, Y, UNDERMINE },
+		["coord"] = { 42.0, 50.2, UNDERMINE },
 		["maps"] = {
 			2406,	-- Undermine
 			2407,	-- The Gallagio
 			2408,	-- The Lucky Heart
 			2409,	-- The House of Chrome
 			2411,	-- The Tower of Spades
+			2428,	-- Research and Destruction
 		},
 		["g"] = {
 			n(ACHIEVEMENTS, {
@@ -213,7 +297,6 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 					crit(71700, {	-- Sprocketmonger Lockenstock
 						["_encounter"] = { LOCKENSTOCK, DIFFICULTY.RAID.MULTI.ALL },
 					}),
-
 				}),
 				ach(41227, {	-- Beating the Odds
 					crit(71701, {	-- One-Armed Bandit
@@ -302,12 +385,11 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 						41596,	-- Garbage In, Garbage Out
 						--x,	--
 						41119,	-- One Rank Higher
-						41211,	-- A Good Day to Dye Hard [Both or One?]
-						41337,	-- Sleep with the Fishes [Both or One?]
+						41337,	-- Sleep with the Fishes
 						41347,	-- Scheming on a Thing
 					}},
 					["g"] = {
-						mount(468068),		-- Junkmaestro's Magnetomech (MOUNT!)
+						i(231173),		-- Junkmaestro's Magnetomech (MOUNT!)
 					},
 				}),
 				ach(41525),	-- Can You Please Spell "Gobanna?"
@@ -316,52 +398,121 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 			}),
 			n(FACTIONS, {
 				faction(FACTION_GLRC, {	-- Gallagio Loyalty Rewards Club
-					["g"] = bubbleDownRep(FACTION_GLRC, {	-- Gallagio Loyalty Rewards Club
-						{		-- RENOWN 1 --
-						}, {	-- RENOWN 2 --
-						}, {	-- RENOWN 3 --
-						}, {	-- RENOWN 4 --
-						}, {	-- RENOWN 5 --
-						}, {	-- RENOWN 6 --
-						}, {	-- RENOWN 7 --
-						}, {	-- RENOWN 8 --
-							mount(466012),		-- Thunderdrum Misfire	(MOUNT!)
-						}, {	-- RENOWN 9 --
-						}, {	-- RENOWN 10 --
-						}, {	-- RENOWN 11 --
-							i(237578),			-- Counterfeit Dealer's Chip
-						}, {	-- RENOWN 12 --
-						}, {	-- RENOWN 13 --
-						}, {	-- RENOWN 14 --
-						}, {	-- RENOWN 15 --
-							i(237578),			-- Counterfeit Dealer's Chip
-						}, {	-- RENOWN 16 --
-						}, {	-- RENOWN 17 --
-							mount(466000),		-- Darkfuse Chompactor (MOUNT!)
-						}, {	-- RENOWN 18 --
-						}, {	-- RENOWN 19 --
-						}, {	-- RENOWN 20 --
-							mount(466011),		-- Flarendo the Furious (MOUNT!)
-						--	title(xx),	-- High Roller <Name>
-						},
+					n(235621, {	-- Ando the Gat <Black Market Broker>
+						["g"] = bubbleDownRep(FACTION_GLRC, {	-- Gallagio Loyalty Rewards Club
+							{		-- RENOWN 1 --
+							}, {	-- RENOWN 2 --
+							}, {	-- RENOWN 3 --
+							}, {	-- RENOWN 4 --
+							}, {	-- RENOWN 5 --
+							}, {	-- RENOWN 6 --
+							}, {	-- RENOWN 7 --
+							}, {	-- RENOWN 8 --
+								i(229945),			-- Thunderdrum Misfire (MOUNT!)
+							}, {	-- RENOWN 9 --
+							}, {	-- RENOWN 10 --
+							}, {	-- RENOWN 11 --
+								i(237578),			-- Counterfeit Dealer's Chip
+							}, {	-- RENOWN 12 --
+							}, {	-- RENOWN 13 --
+							}, {	-- RENOWN 14 --
+							}, {	-- RENOWN 15 --
+								i(237578),			-- Counterfeit Dealer's Chip
+							}, {	-- RENOWN 16 --
+							}, {	-- RENOWN 17 --
+								i(229924),		-- Darkfuse Chompactor (MOUNT!)
+							}, {	-- RENOWN 18 --
+							}, {	-- RENOWN 19 --
+							}, {	-- RENOWN 20 --
+								i(229940),			-- Flarendo the Furious (MOUNT!)
+								title(602),			-- High Roller <Name>
+							},
+						}),
+					}),
+				}),
+				n(QUESTS, {
+					q(89016, {	-- Members Only
+						["provider"] = { "n", 235617 },	-- Paula Piranha <Renown Quartermaster>
+					}),
+					q(89027, {	-- Fast Food
+						["provider"] = { "n", 235617 },	-- Paula Piranha <Renown Quartermaster>
+						["minReputation"] = { FACTION_GLRC, 2 },
+					}),
+					q(89018, {	-- Loyal Customer: Silver
+						["provider"] = { "n", 235617 },	-- Paula Piranha <Renown Quartermaster>
+						["minReputation"] = { FACTION_GLRC, 4 },
+						["g"] = { i(234389) },	-- Gallagio Loyalty Rewards Card: Silver
+					}),
+					q(89252, {	-- Need a Jump?
+						["provider"] = { "n", 235617 },	-- Paula Piranha <Renown Quartermaster>
+						["minReputation"] = { FACTION_GLRC, 6 },
+					}),
+					q(89024, {	-- Time is Money!
+						["provider"] = { "n", 235617 },	-- Paula Piranha <Renown Quartermaster>
+						["minReputation"] = { FACTION_GLRC, 6 },
+					}),
+					q(89019, {	-- Loyal Customer: Gold
+						["provider"] = { "n", 235617 },	-- Paula Piranha <Renown Quartermaster>
+						["minReputation"] = { FACTION_GLRC, 7 },
+					}),
+				}),
+				n(TREASURES, {
+					o(505248, {	-- Rune Dispenser
+						["description"] = "Interact with for a 1 in 10 chance for a free Crystalized Augment Rune.\n\nAt renown 14, you are guaranteed at least one.",
+						["questID"]	= 89350,
+						["minReputation"] = { FACTION_GLRC, 2 },
+						["isWeekly"] = true,
+						["g"] = { i(224572) },	-- Crystallized Augment Rune
+					}),
+				}),
+				n(VENDORS, {
+					n(235624, {	-- Skitto Screwjack
+						i(236413),	-- "Shockproof" Soda
+						i(236749, {	-- Take-Home Torq (TOY!)
+							["minReputation"] = { FACTION_GLRC, 9 },
+						}),
+						i(232806, {	-- Tiny Torq (PET!)
+							["minReputation"] = { FACTION_GLRC, 9 },
+						}),
+					}),
+					n(235623, {	-- Snix Longpocket
+						i(236412),	-- "Fireproof" Punch
+						i(232844, {	-- Fuz-Size Flarendo (PET!)
+							["minReputation"] = { FACTION_GLRC, 9 },
+						}),
+						i(236751, {	-- Take-Home Flarendo (TOY!)
+							["minReputation"] = { FACTION_GLRC, 9 },
+						}),
 					}),
 				}),
 			}),
 			Difficulty(DIFFICULTY.RAID.MULTI.ALL).AddGroups({
-				BossOnly(VEXIE),
+				BossOnly(VEXIE, {
+					i(223048),	-- Plans: Siphoning Stiletto (RECIPE!)
+				}),
 				BossOnly(CARNAGE),
-				BossOnly(RIK),
+				BossOnly(RIK, {
+					i(224435),	-- Pattern: Duskthread Lining (RECIPE!)
+				}),
 				BossOnly(STIX, {
 					i(236687),	-- Explosive Hearthstone (TOY!)
 				}),
-				BossOnly(LOCKENSTOCK),
+				BossOnly(LOCKENSTOCK, {
+					i(223097),	-- Pattern: Adrenal Surge Clasp (RECIPE!)
+				}),
 				BossOnly(BANDIT, {
+					i(232526,{provider={"i",232805}}),	-- Best-in-Slots
+					i(232805,{provider={"i",232526}}),	-- Best-in-Slots
 					i(237578, {	-- Counterfeit Dealer's Chip
-						["description"] = "Has a small chance dropping as Personal Loot once you reached Renown 15 with Gallagio Loyalty Rewards Club",
+						["description"] = "Has a small chance dropping as Personal Loot once you have reached Renown 15 with the Gallagio Loyalty Rewards Club.",
 					}),
 				}),
-				BossOnly(MUGZEE),
+				BossOnly(MUGZEE, {
+					i(223094),	-- Design: Magnificent Jeweler's Setting (RECIPE!)
+					i(232804),	-- Capo's Molten Knuckles
+				}),
 				BossOnly(GALLYWIX, {
+					i(223144),	-- Formula: Enchant Weapon - Authority of the Depths (RECIPE!)
 					i(236960),	-- Prototype A.S.M.R. (MOUNT!)
 				}),
 			}),
@@ -370,23 +521,23 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 				}),
 				CommonBossDrops({
 					currency(WEATHERED_UNDERMINE_CREST, {
-						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
+						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART },
 					}),
 				}),
-				header(HEADERS.Achievement, 41225, {	-- Shock and Awesome
-					Boss(VEXIE),
+				header(HEADERS.LFGDungeon, 2780, {	-- Shock and Awesome
 					Boss(CARNAGE),
 					Boss(RIK),
 				}),
-				header(HEADERS.Achievement, 41226, {	-- Maniacle Machinist
+				header(HEADERS.LFGDungeon, 2781, {	-- Maniacle Machinist
 					Boss(STIX),
 					Boss(LOCKENSTOCK),
 				}),
-				header(HEADERS.Achievement, 41227, {	-- Beating the Odds
+				header(HEADERS.LFGDungeon, 2782, {	-- Two Heads Are Better
+					Boss(VEXIE),
 					Boss(BANDIT),
 					Boss(MUGZEE),
 				}),
-				header(HEADERS.Achievement, 41228, {	-- Fall of the Chrome King
+				header(HEADERS.LFGDungeon, 2783, {	-- The Chrome King
 					Boss(GALLYWIX, {
 						i(228819, {	-- Excessively Bejeweled Curio
 							--["crs"] = 227003,	-- Kir'xal (Vendor)
@@ -437,10 +588,14 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 			Difficulty(DIFFICULTY.RAID.NORMAL).AddGroupsWithUpgrades({
 				CommonBossDrops({
 					currency(CARVED_UNDERMINE_CREST, {
-						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
+						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART },
 					}),
 				}),
 				n(QUESTS, {
+					q(89351, {	-- Liberation of Undermine: Splitting Pairs [N]
+						["qg"] = 235619,	-- Lentil Sprocket <Gallagio "Chauffeur">
+						["minReputation"] = { FACTION_GLRC, 5 },
+					}),
 				}),
 				ZoneDrops({
 				}),
@@ -468,16 +623,20 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 				BossOnly(BANDIT),
 				BossOnly(MUGZEE),
 				BossOnly(GALLYWIX, {
-					ach(41298, {["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 }}),	-- Ahead of the Curve: Chrome King Gallywix
+					ach(41298, {["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART }}),	-- Ahead of the Curve: Chrome King Gallywix
 				}),
 			}),
 			Difficulty(DIFFICULTY.RAID.HEROIC).AddGroupsWithUpgrades({
 				CommonBossDrops({
 					currency(RUNED_UNDERMINE_CREST, {
-						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
+						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART },
 					}),
 				}),
 				n(QUESTS, {
+					q(89352, {	-- Liberation of Undermine: Splitting Pairs [H]
+						["qg"] = 235619,	-- Lentil Sprocket <Gallagio "Chauffeur">
+						["minReputation"] = { FACTION_GLRC, 5 },
+					}),
 				}),
 				ZoneDrops({
 				}),
@@ -499,10 +658,14 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 			Difficulty(DIFFICULTY.RAID.MYTHIC).AddGroups({
 				CommonBossDrops({
 					currency(GILDED_UNDERMINE_CREST, {
-						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 },
+						["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART },
 					}),
 				}),
 				n(QUESTS, {
+					q(89353, {	-- Liberation of Undermine: Splitting Pairs [M]
+						["qg"] = 235619,	-- Lentil Sprocket <Gallagio "Chauffeur">
+						["minReputation"] = { FACTION_GLRC, 5 },
+					}),
 				}),
 				ZoneDrops({
 				}),
@@ -531,8 +694,8 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 					ach(41236, {	-- Mythic: Chrome King Gallywix
 						title(605),	-- <Name>, Liberator of Undermine
 					}),
-					ach(41297, {["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 }}),	-- Cutting Edge: Chrome King Gallywix
-					ach(41296, bubbleDownSelf({["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 } }, {	-- Hall of Fame: Chrome King Gallywix
+					ach(41297, {["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART }}),	-- Cutting Edge: Chrome King Gallywix
+					ach(41296, bubbleDownSelf({["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0_SEASONSTART } }, {	-- Hall of Fame: Chrome King Gallywix
 						title(604),	-- <Name>, Famed Slayer of The Chrome King
 					})),
 					ach(41292),	-- Mythic: Chrome King Gallywix Guild Run
@@ -559,5 +722,80 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 				--]]
 			}),
 		},
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0_SEASONSTART } }, {
+	inst(1296, {	-- Liberation of Undermine
+		n(FACTIONS, {
+			header(HEADERS.Faction, FACTION_GLRC, {
+				n(QUESTS, {
+					q(86468),	-- Triggered with Members Only (89016)
+					q(89017),	-- Triggered with Members Only (89016)
+				}),
+			}),
+		}),
+
+		inst(1296, bubbleDown({	-- Liberation of Undermine
+			["isWeekly"] = true,
+		},{
+			-- LFR
+			q(88835),	-- Guk Boomdog Trash
+			q(88838),	-- Professor Boomspark Trash
+			q(88842),	-- King Flamespite Trash
+			q(88846),	-- Skiggy Muckheimer Trash
+			q(88867),	-- Trashmaster Blazedump Trash
+			q(88829),	-- Scraps Trash
+			q(88859),	-- Globikus Trash
+			q(88850),	-- Melbo The Magnificent Trash
+			q(88854),	-- The Junkmaker Trash
+			-- Normal
+			q(88833),	-- Guk Boomdog Trash
+			q(88840),	-- King Flamespite/Professor Boomspark Trash
+			q(88844),	-- King Flamespite/Professor Boomspark Trash
+			q(88848),	-- Skiggy Muckheimer Trash
+			q(88869),	-- Trashmaster Blazedump Trash
+			q(88830),	-- Scraps Trash
+			q(88861),	-- Globikus Trash
+			q(88852),	-- Melbo The Magnificent Trash
+			q(88856),	-- The Junkmaker Trash
+			-- Heroic
+			q(88836),	-- Guk Boomdog Trash
+			q(88837),	-- Professor Boomspark Trash
+			q(88841),	-- King Flamespite Trash
+			q(88845),	-- Skiggy Muckheimer Trash
+			q(88866),	-- Trashmaster Blazedump Trash
+			q(88831),	-- Scraps Trash
+			q(88858),	-- Globikus Trash
+			q(88849),	-- Melbo The Magnificent Trash
+			q(88853),	-- The Junkmaker Trash
+			-- Mythic
+			q(88834),	-- Guk Boomdog Trash
+			q(88839),	-- King Flamespite/Professor Boomspark Trash
+			q(88843),	-- King Flamespite/Professor Boomspark Trash
+			q(88847),	-- Skiggy Muckheimer Trash
+			q(88868),	-- Trashmaster Blazedump Trash
+			q(88832),	-- Scraps Trash
+			q(88860),	-- Globikus Trash
+			--q(),	-- Melbo The Magnificent Trash
+			--q(),	-- The Junkmaker Trash
+			-- All
+			q(89478),	-- Guk Boomdog Trash first per week any difficulty
+			q(89479),	-- Skiggy Muckheimer Trash first per week any difficulty
+			q(89484),	-- Trashmaster Blazedump Trash first per week any difficulty
+			q(89477),	-- Scraps Trash first per week any difficulty
+			q(89482),	-- Globikus Trash first per week any difficulty
+			q(89480),	-- Melbo The Magnificent Trash first per week any difficulty
+			q(89481),	-- The Junkmaker Trash first per week any difficulty
+
+			q(89452),	-- Vexie Fullthrottle
+			q(89453),	-- Cauldron of Carnage
+			q(89454),	-- Rik Reverb
+			q(89455),	-- Stix Bunkjunker
+			q(89456),	-- Sprocketmonger Lockenstock
+			q(89457),	-- One-Armed Bandit
+			q(89458),	-- Mug'Zee
+			q(89459),	-- Chrome King Gallywix
+		})),
 	}),
 })));

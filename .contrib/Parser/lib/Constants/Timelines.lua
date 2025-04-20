@@ -113,6 +113,9 @@ REMOVED_1_15_5 = "removed 1.15.5.57638";					-- World of Warcraft Classic 1.15.5
 CREATED_1_15_6 = "created 1.15.6.58844";					-- World of Warcraft Classic 1.15.6 launch on January 28, 2025
 ADDED_1_15_6 = "added 1.15.6.58844";						-- World of Warcraft Classic 1.15.6 launch on January 28, 2025
 REMOVED_1_15_6 = "removed 1.15.6.58844";					-- World of Warcraft Classic 1.15.6 launch on January 28, 2025
+CREATED_1_15_7 = "created 1.15.7.60141";					-- World of Warcraft Classic 1.15.7 launch on April 8, 2025
+ADDED_1_15_7 = "added 1.15.7.60141";						-- World of Warcraft Classic 1.15.7 launch on April 8, 2025
+REMOVED_1_15_7 = "removed 1.15.7.60141";					-- World of Warcraft Classic 1.15.7 launch on April 8, 2025
 --- AFTER SEASON OF DISCOVERY ---
 REMOVED_SOD_END = "removed 1.16.0";
 
@@ -335,6 +338,12 @@ REMOVED_5_4_7 = "removed 5.4.7.17898";					-- Mists of Pandaria 5.4.7 launch on 
 CREATED_5_5_0 = "created 5.5.0";				    	-- Mists of Pandaria Classic 5.5.0 launch in summer 2025
 ADDED_5_5_0 = "added 5.5.0";					    	-- Mists of Pandaria Classic 5.5.0 launch in summer 2025
 REMOVED_5_5_0 = "removed 5.5.0";				    	-- Mists of Pandaria Classic 5.5.0 launch in summer 2025
+CREATED_5_5_1 = "created 5.5.1";				    	-- Mists of Pandaria Classic 5.5.1 launch in summer 2025
+ADDED_5_5_1 = "added 5.5.1";					    	-- Mists of Pandaria Classic 5.5.1 launch in summer 2025
+REMOVED_5_5_1 = "removed 5.5.1";				    	-- Mists of Pandaria Classic 5.5.1 launch in summer 2025
+CREATED_5_5_2 = "created 5.5.2";				    	-- Mists of Pandaria Classic 5.5.2 launch in summer 2025
+ADDED_5_5_2 = "added 5.5.2";					    	-- Mists of Pandaria Classic 5.5.2 launch in summer 2025
+REMOVED_5_5_2 = "removed 5.5.2";				    	-- Mists of Pandaria Classic 5.5.2 launch in summer 2025
 
 -------------------------
 -- WARLORDS OF DRAENOR --
@@ -525,18 +534,24 @@ DELETED_11_0_5 = "deleted 11.0.5.57171";				-- The War Within 11.0.5 launch on O
 CREATED_11_0_7 = "created 11.0.7.58123";				-- The War Within 11.0.7 launch on December 17th, 2024
 ADDED_11_0_7 = "added 11.0.7.58123";					-- The War Within 11.0.7 launch on December 17th, 2024
 REMOVED_11_0_7 = "removed 11.0.7.58123";				-- The War Within 11.0.7 launch on December 17th, 2024
-CREATED_11_1_0 = "created 11.1.0";						-- The War Within 11.1.0 launch on February 25th, 2025
-ADDED_11_1_0 = "added 11.1.0";							-- The War Within 11.1.0 launch on February 25th, 2025
-REMOVED_11_1_0 = "removed 11.1.0";						-- The War Within 11.1.0 launch on February 25th, 2025
-CREATED_11_1_5 = "created 11.1.5";						-- The War Within 11.1.5 launch in spring 2025
-ADDED_11_1_5 = "added 11.1.5";							-- The War Within 11.1.5 launch in spring 2025
-REMOVED_11_1_5 = "removed 11.1.5";						-- The War Within 11.1.5 launch in spring 2025
+CREATED_11_1_0 = "created 11.1.0.59347";				-- The War Within 11.1.0 launch on February 25th, 2025
+ADDED_11_1_0 = "added 11.1.0.59347";					-- The War Within 11.1.0 launch on February 25th, 2025
+REMOVED_11_1_0 = "removed 11.1.0.59347";				-- The War Within 11.1.0 launch on February 25th, 2025
+CREATED_11_1_0_SEASONSTART = "created 11.1.0.59490";	-- The War Within 11.1.0 Season 2 launch on March 4th, 2025
+ADDED_11_1_0_SEASONSTART = "added 11.1.0.59490";		-- The War Within 11.1.0 Season 2 launch on March 4th, 2025
+REMOVED_11_1_0_SEASONSTART = "removed 11.1.0.59490";	-- The War Within 11.1.0 Season 2 launch on March 4th, 2025
+CREATED_11_1_5 = "created 11.1.5";						-- The War Within 11.1.5 launch on April 22nd, 2025
+ADDED_11_1_5 = "added 11.1.5";							-- The War Within 11.1.5 launch on April 22nd, 2025
+REMOVED_11_1_5 = "removed 11.1.5";						-- The War Within 11.1.5 launch on April 22nd, 2025
 CREATED_11_1_7 = "created 11.1.7";						-- The War Within 11.1.7 launch in spring 2025
 ADDED_11_1_7 = "added 11.1.7";							-- The War Within 11.1.7 launch in spring 2025
 REMOVED_11_1_7 = "removed 11.1.7";						-- The War Within 11.1.7 launch in spring 2025
 CREATED_11_2_0 = "created 11.2.0";						-- The War Within 11.2.0 launch in summer 2025
 ADDED_11_2_0 = "added 11.2.0";							-- The War Within 11.2.0 launch in summer 2025
 REMOVED_11_2_0 = "removed 11.2.0";						-- The War Within 11.2.0 launch in summer 2025
+CREATED_11_2_0_SEASONSTART = "created 11.2.0.99999";	-- The War Within 11.2.0 launch in summer 2025
+ADDED_11_2_0_SEASONSTART = "added 11.2.0.99999";		-- The War Within 11.2.0 launch in summer 2025
+REMOVED_11_2_0_SEASONSTART = "removed 11.2.0.99999";	-- The War Within 11.2.0 launch in summer 2025
 CREATED_11_2_5 = "created 11.2.5";						-- The War Within 11.2.5 launch in autumn 2025
 ADDED_11_2_5 = "added 11.2.5";							-- The War Within 11.2.5 launch in autumn 2025
 REMOVED_11_2_5 = "removed 11.2.5";						-- The War Within 11.2.5 launch in autumn 2025

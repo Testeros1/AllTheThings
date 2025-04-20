@@ -7,7 +7,7 @@ local IsQuestFlaggedCompleted, IsQuestReadyForTurnIn = app.IsQuestFlaggedComplet
 local DESCRIPTION_SEPARATOR = app.DESCRIPTION_SEPARATOR;
 local GetDeepestRelativeValue = app.GetDeepestRelativeValue;
 local GetProgressTextForRow = app.GetProgressTextForRow;
-local GetRelativeValue = app.GetRelativeValue;
+local GetRelativeField, GetRelativeValue = app.GetRelativeField, app.GetRelativeValue;
 local ResolveSymbolicLink = app.ResolveSymbolicLink;
 local SearchForField = app.SearchForField;
 local MergeObject = app.MergeObject;
@@ -529,19 +529,6 @@ local function StartMovingOrSizing(self)
 		end
 	end
 end
-local function SearchForMissingItemsRecursively(group, listing)
-	if group.visible then
-		if group.itemID and (group.collectible or (group.total and group.total > 0)) and not app.IsBoP(group) then
-			tinsert(listing, group);
-		end
-		if group.g and group.expanded then
-			-- Go through the sub groups and determine if any of them have a response.
-			for i, subgroup in ipairs(group.g) do
-				SearchForMissingItemsRecursively(subgroup, listing);
-			end
-		end
-	end
-end
 local function RowOnClick(self, button)
 	local reference = self.ref;
 	if reference then
@@ -575,7 +562,7 @@ local function RowOnClick(self, button)
 			local isTSMOpen = TSM_API and TSM_API.IsUIVisible("AUCTION");
 			if isTSMOpen or (AuctionFrame and AuctionFrame:IsShown()) or (AuctionHouseFrame and AuctionHouseFrame:IsShown()) then
 				local missingItems = {};
-				SearchForMissingItemsRecursively(reference, missingItems);
+				app.Search.SearchForMissingItemsRecursively(reference, missingItems);
 				local count = #missingItems;
 				if count < 1 then
 					app.print("No cached items found in search. Expand the group and view the items to cache the names and try again. Only Bind on Equip items will be found using this search.");
@@ -626,7 +613,11 @@ local function RowOnClick(self, button)
 				-- Attempt to search manually with the link.
 				local link = reference.link or reference.silentLink;
 				if link and HandleModifiedItemClick(link) then
-					AuctionFrameBrowse_Search();
+					if AuctionHouseFrame.SearchBar then
+						AuctionHouseFrame.SearchBar:StartSearch();
+					else
+						AuctionFrameBrowse_Search();
+					end
 				end
 				return true;
 			else
@@ -730,11 +721,15 @@ local function RowOnEnter(self)
 	local tooltipInfo = {};
 	tooltip:ClearLines();
 	app.ActiveRowReference = reference;
-	if self:GetCenter() > (UIParent:GetWidth() / 2) and (not AuctionFrame or not AuctionFrame:IsVisible()) then
-		tooltip:SetOwner(self, "ANCHOR_LEFT");
-	else
-		tooltip:SetOwner(self, "ANCHOR_RIGHT");
+	local anchor = self:GetParent():GetParent().TooltipAnchor;
+	if not anchor then
+		if self:GetCenter() > (UIParent:GetWidth() / 2) and (not AuctionFrame or not AuctionFrame:IsVisible()) then
+			anchor = "ANCHOR_LEFT";
+		else
+			anchor = "ANCHOR_RIGHT";
+		end
 	end
+	tooltip:SetOwner(self, anchor);
 
 	-- Attempt to show the object as a hyperlink in the tooltip
 	local linkSuccessful;
@@ -1072,7 +1067,9 @@ local function ApplySettingsForWindow(self, windowSettings)
 	if windowSettings.movable then
 		self:ClearAllPoints();
 		if windowSettings.x then
-			self:SetPoint(windowSettings.point or "CENTER", windowSettings.relativeTo or UIParent, windowSettings.relativePoint or "CENTER", windowSettings.x, windowSettings.y);
+			local relativeTo = windowSettings.relativeTo;
+			if relativeTo and not _G[relativeTo] then relativeTo = UIParent; end
+			self:SetPoint(windowSettings.point or "CENTER", relativeTo or UIParent, windowSettings.relativePoint or "CENTER", windowSettings.x, windowSettings.y);
 		else
 			self:SetPoint("CENTER", UIParent, "CENTER");
 		end
@@ -1422,7 +1419,7 @@ local BuildCategory = function(self, headers, searchResults, inst)
 	for key,value in pairs(mostAccessibleSource) do
 		inst[key] = value;
 	end
-	
+
 	local header, headerType = {}, self, nil;
 	for j,o in ipairs(searchResults) do
 		if o.parent then
@@ -1462,14 +1459,20 @@ local BuildCategory = function(self, headers, searchResults, inst)
 				headerType = "pvp";
 			elseif GetRelativeValue(o, "isEventCategory") then
 				headerType = "event";
-			elseif GetRelativeValue(o, "isWorldDropCategory") or o.parent.headerID == app.HeaderConstants.COMMON_BOSS_DROPS then
-				headerType = "drop";
-			elseif o.parent.npcID then
-				headerType = GetDeepestRelativeValue(o, "headerID") or o.parent.parent.headerID == app.HeaderConstants.VENDORS and app.HeaderConstants.VENDORS or "drop";
 			elseif GetRelativeValue(o, "isCraftedCategory") then
 				headerType = "crafted";
 			elseif o.parent.achievementID then
 				headerType = app.HeaderConstants.ACHIEVEMENTS;
+			elseif GetRelativeValue(o, "instanceID") then
+				headerType = "raid";
+			elseif GetRelativeValue(o, "isWorldDropCategory") or o.parent.headerID == app.HeaderConstants.COMMON_BOSS_DROPS then
+				headerType = "drop";
+			elseif o.parent.questID then
+				headerType = app.HeaderConstants.QUESTS;
+			elseif GetRelativeField(o.parent, "headerID", app.HeaderConstants.VENDORS) then
+				headerType = app.HeaderConstants.VENDORS;
+			elseif o.parent.npcID then
+				headerType = GetDeepestRelativeValue(o, "headerID") or "drop";
 			else
 				headerType = GetDeepestRelativeValue(o, "headerID") or "drop";
 				if headerType == true then	-- Seriously don't do this...
@@ -1495,6 +1498,10 @@ local BuildCategory = function(self, headers, searchResults, inst)
 	if not header then
 		if headerType == "holiday" then
 			header = app.CreateNPC(app.HeaderConstants.HOLIDAYS);
+		elseif headerType == "raid" then
+			header = {};
+			header.text = GROUP_FINDER;
+			header.icon = app.asset("Category_D&R");
 		elseif headerType == "promo" then
 			header = {};
 			header.text = BATTLE_PET_SOURCE_8;
@@ -1971,6 +1978,10 @@ function app:CreateWindow(suffix, settings)
 			window:RegisterEvent("PET_BATTLE_OPENING_START");
 			window:RegisterEvent("PET_BATTLE_CLOSE");
 		end
+		window.IsDynamicCategory = settings.IsDynamicCategory;
+		window.DynamicCategoryHeader = settings.DynamicCategoryHeader;
+		window.DynamicProfessionID = settings.DynamicProfessionID;
+		window.IsTopLevel = settings.IsTopLevel;
 		if settings.OnInit then
 			settings.OnInit(window, handlers);
 		end
@@ -1988,21 +1999,15 @@ function app:CreateWindow(suffix, settings)
 				end
 			end
 
-			-- Commands are forced lower case.
-			local commandRoot = settings.Commands[settings.RootCommandIndex or 1]:upper();
-			SlashCmdList[commandRoot] = onCommand;
-			local commands, cmd = {}, nil;
-			for i,command in ipairs(settings.Commands) do
-				cmd = command:lower();
-				_G["SLASH_" .. commandRoot .. i] = "/" .. cmd;
-				commands[i] = cmd;
-			end
-			window.Commands = commands;
+			settings.Commands.RootCommandIndex = settings.RootCommandIndex
+			app.AddSlashCommands(settings.Commands, onCommand)
+			window.Commands = settings.Commands;
 			window.HideFromSettings = settings.HideFromSettings;
 			window.SettingsName = settings.SettingsName or window.Suffix;
 		end
-		window.IsDynamicCategory = settings.IsDynamicCategory;
-		window.IsTopLevel = settings.IsTopLevel;
+		if settings.TooltipAnchor then
+			window.TooltipAnchor = settings.TooltipAnchor;
+		end
 		LoadSettingsForWindow(window);
 
 		-- Replace some functions.
@@ -2027,13 +2032,30 @@ end
 function app:GetWindow(suffix)
 	return app.Windows[suffix];
 end
+local function CloneReferenceForBuildRequests(group)
+	local clone = {};
+	if group.g then
+		local g = {};
+		for i,group in ipairs(group.g) do
+			if not group.IgnoreBuildRequests then
+				local child = CloneReferenceForBuildRequests(group);
+				child.parent = clone;
+				tinsert(g, child);
+			end
+		end
+		clone.g = g;
+	end
+	return setmetatable(clone, { __index = group });
+end
 function app:BuildFlatSearchFilteredResponse(groups, filter, t)
 	if groups then
 		for i,group in ipairs(groups) do
-			if filter(group) then
-				tinsert(t, CloneReference(group));
-			elseif group.g then
-				app:BuildFlatSearchFilteredResponse(group.g, filter, t);
+			if not group.IgnoreBuildRequests then
+				if filter(group) then
+					tinsert(t, CloneReferenceForBuildRequests(group));
+				elseif group.g then
+					app:BuildFlatSearchFilteredResponse(group.g, filter, t);
+				end
 			end
 		end
 	end
@@ -2041,11 +2063,13 @@ end
 function app:BuildFlatSearchResponse(groups, field, value, t)
 	if groups then
 		for i,group in ipairs(groups) do
-			local v = group[field];
-			if v and (v == value or (field == "requireSkill" and app.SpellIDToSkillID[app.SpecializationSpellIDs[v] or 0] == value)) then
-				tinsert(t, CloneReference(group));
-			elseif group.g then
-				app:BuildFlatSearchResponse(group.g, field, value, t);
+			if not group.IgnoreBuildRequests then
+				local v = group[field];
+				if v and (v == value or (field == "requireSkill" and app.SpellIDToSkillID[app.SpecializationSpellIDs[v] or 0] == value)) then
+					tinsert(t, CloneReferenceForBuildRequests(group));
+				elseif group.g then
+					app:BuildFlatSearchResponse(group.g, field, value, t);
+				end
 			end
 		end
 	end
@@ -2053,10 +2077,12 @@ end
 function app:BuildFlatSearchResponseForField(groups, field, t)
 	if groups then
 		for i,group in ipairs(groups) do
-			if group[field] then
-				tinsert(t, CloneReference(group));
-			elseif group.g then
-				app:BuildFlatSearchResponseForField(group.g, field, t);
+			if not group.IgnoreBuildRequests then
+				if group[field] then
+					tinsert(t, CloneReferenceForBuildRequests(group));
+				elseif group.g then
+					app:BuildFlatSearchResponseForField(group.g, field, t);
+				end
 			end
 		end
 	end
@@ -2065,14 +2091,16 @@ function app:BuildSearchFilteredResponse(groups, filter)
 	if groups then
 		local t;
 		for i,group in ipairs(groups) do
-			if filter(group) then
-				if not t then t = {}; end
-				tinsert(t, CloneReference(group));
-			else
-				local response = app:BuildSearchFilteredResponse(group.g, filter);
-				if response then
+			if not group.IgnoreBuildRequests then
+				if filter(group) then
 					if not t then t = {}; end
-					tinsert(t, setmetatable({g=response}, { __index = group }));
+					tinsert(t, CloneReferenceForBuildRequests(group));
+				else
+					local response = app:BuildSearchFilteredResponse(group.g, filter);
+					if response then
+						if not t then t = {}; end
+						tinsert(t, setmetatable({g=response}, { __index = group }));
+					end
 				end
 			end
 		end
@@ -2083,15 +2111,17 @@ function app:BuildSearchResponse(groups, field, value)
 	if groups then
 		local t;
 		for i,group in ipairs(groups) do
-			local v = group[field];
-			if v and (v == value or (field == "requireSkill" and app.SpellIDToSkillID[app.SpecializationSpellIDs[v] or 0] == value)) then
-				if not t then t = {}; end
-				tinsert(t, CloneReference(group));
-			else
-				local response = app:BuildSearchResponse(group.g, field, value);
-				if response then
+			if not group.IgnoreBuildRequests then
+				local v = group[field];
+				if v and (v == value or (field == "requireSkill" and app.SpellIDToSkillID[app.SpecializationSpellIDs[v] or 0] == value)) then
 					if not t then t = {}; end
-					tinsert(t, setmetatable({g=response}, { __index = group }));
+					tinsert(t, CloneReferenceForBuildRequests(group));
+				else
+					local response = app:BuildSearchResponse(group.g, field, value);
+					if response then
+						if not t then t = {}; end
+						tinsert(t, setmetatable({g=response}, { __index = group }));
+					end
 				end
 			end
 		end
@@ -2102,14 +2132,16 @@ function app:BuildSearchResponseForField(groups, field)
 	if groups then
 		local t;
 		for i,group in ipairs(groups) do
-			if group[field] then
-				if not t then t = {}; end
-				tinsert(t, CloneReference(group));
-			else
-				local response = app:BuildSearchResponseForField(group.g, field);
-				if response then
+			if not group.IgnoreBuildRequests then
+				if group[field] then
 					if not t then t = {}; end
-					tinsert(t, setmetatable({g=response}, { __index = group }));
+					tinsert(t, CloneReferenceForBuildRequests(group));
+				else
+					local response = app:BuildSearchResponseForField(group.g, field);
+					if response then
+						if not t then t = {}; end
+						tinsert(t, setmetatable({g=response}, { __index = group }));
+					end
 				end
 			end
 		end
@@ -2118,7 +2150,7 @@ function app:BuildSearchResponseForField(groups, field)
 end
 
 -- Dynamic Popouts for Quest Chains and other Groups
-local function OnInitForPopout(self, group)
+local function OnInitForPopout(self, questID, group)
 	if group.questID or group.sourceQuests then
 		local mainQuest = CloneReference(group);
 		if group.parent then mainQuest.sourceParent = group.parent; end
@@ -2568,7 +2600,7 @@ function app:CreateMiniListForGroup(group)
 		AllowCompleteSound = true,
 		--Debugging = true,
 		OnInit = function(self)
-			OnInitForPopout(self, (group.OnPopout and group:OnPopout()) or group);
+			OnInitForPopout(self, questID, (group.OnPopout and group:OnPopout()) or group);
 		end,
 		OnLoad = function(self, settings)
 			self.dynamic = true;

@@ -6,7 +6,350 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 		ach(41665, {	-- Dressed to the Mines (automated)
 			["timeline"] = { ADDED_11_1_0 },
 			["g"] = {
-				i(236852),	-- Gallagio Highroller's Boomstone
+				i(236852, {	-- Gallagio Highroller's Boomstone
+					d(DIFFICULTY.RAID.LFR, bubbleDown({ ["bonusID"] = 6894, ["modID"] = 0, }, {
+						cl(DEATHKNIGHT, {
+							i(229251),	-- Cauldron Champion's Screamplate
+							i(229253),	-- Cauldron Champion's Crown
+						}),
+						cl(DEMONHUNTER, {
+							i(229314),	-- Fel-Dealer's Recycled Reavers
+							i(229315),	-- Fel-Dealer's Fur Kilt
+							i(229316),	-- Fel-Dealer's Visor
+							i(229319),	-- Fel-Dealer's Soul Engine
+						}),
+						cl(DRUID, {
+							i(229305),	-- Jaws of Reclaiming Blight
+							i(229307),	-- Branches of Reclaiming Blight
+						}),
+						cl(EVOKER, {
+							i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+							i(229280),	-- Opulent Treasurescale's Crowned Jewel
+						}),
+						cl(HUNTER, {
+							i(229269),	-- Tireless Collector's Hunted Heads
+							i(229271),	-- Tireless Collector's Chained Cowl
+						}),
+						cl(MAGE, {
+							i(229341),	-- Aspectral Emissary's Arcane Vents
+							i(229343),	-- Aspectral Emissary's Crystalline Cowl
+						}),
+						cl(MONK, {
+							i(229296),	-- Ageless Serpent's Shoulderpads
+							i(229298),	-- Ageless Serpent's Mane
+						}),
+						cl(PALADIN, {
+							i(229242),	-- Aureate Sentry's Roaring Will
+							i(229244),	-- Aureate Sentry's Pledge
+						}),
+						cl(PRIEST, {
+							i(229332),	-- Confessor's Unshakable Radiance
+							i(229334),	-- Confessor's Unshakable Halo
+						}),
+						cl(ROGUE, {
+							i(229287),	-- Spectral Gambler's Bladed Mantle
+						}),
+						cl(SHAMAN, {
+							i(229259),	-- Gale Sovereign's Ritual Belt
+							i(229260),	-- Gale Sovereign's Zephyrs
+							i(229262),	-- Gale Sovereign's Charged Hood
+						}),
+						cl(WARLOCK, {
+							i(229323),	-- Spliced Fiendtrader's Loyal Servants
+							i(229325),	-- Spliced Fiendtrader's Transcendence
+						}),
+						cl(WARRIOR, {
+							i(229232),	-- Enforcer's Backalley Girdle
+							i(229233),	-- Enforcer's Backalley Shoulderplates
+							i(229235),	-- Enforcer's Backalley Faceshield
+						}),
+					})),
+					d(DIFFICULTY.RAID.NORMAL, bubbleDown({ ["bonusID"] = 6895, ["modID"] = 0, }, {
+						cl(DEATHKNIGHT, {
+							i(229251),	-- Cauldron Champion's Screamplate
+							i(229253),	-- Cauldron Champion's Crown
+						}),
+						cl(DEMONHUNTER, {
+							i(229314),	-- Fel-Dealer's Recycled Reavers
+							i(229315),	-- Fel-Dealer's Fur Kilt
+							i(229316),	-- Fel-Dealer's Visor
+							i(229319),	-- Fel-Dealer's Soul Engine
+						}),
+						cl(DRUID, {
+							i(229305),	-- Jaws of Reclaiming Blight
+							i(229307),	-- Branches of Reclaiming Blight
+						}),
+						cl(EVOKER, {
+							i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+							i(229280),	-- Opulent Treasurescale's Crowned Jewel
+						}),
+						cl(HUNTER, {
+							i(229269),	-- Tireless Collector's Hunted Heads
+							i(229271),	-- Tireless Collector's Chained Cowl
+						}),
+						cl(MAGE, {
+							i(229341),	-- Aspectral Emissary's Arcane Vents
+							i(229343),	-- Aspectral Emissary's Crystalline Cowl
+						}),
+						cl(MONK, {
+							i(229296),	-- Ageless Serpent's Shoulderpads
+							i(229298),	-- Ageless Serpent's Mane
+						}),
+						cl(PALADIN, {
+							i(229242),	-- Aureate Sentry's Roaring Will
+							i(229244),	-- Aureate Sentry's Pledge
+						}),
+						cl(PRIEST, {
+							i(229332),	-- Confessor's Unshakable Radiance
+							i(229334),	-- Confessor's Unshakable Halo
+						}),
+						cl(ROGUE, {
+							i(229287),	-- Spectral Gambler's Bladed Mantle
+						}),
+						cl(SHAMAN, {
+							i(229259),	-- Gale Sovereign's Ritual Belt
+							i(229260),	-- Gale Sovereign's Zephyrs
+							i(229262),	-- Gale Sovereign's Charged Hood
+						}),
+						cl(WARLOCK, {
+							i(229323),	-- Spliced Fiendtrader's Loyal Servants
+							i(229325),	-- Spliced Fiendtrader's Transcendence
+						}),
+						cl(WARRIOR, {
+							i(229232),	-- Enforcer's Backalley Girdle
+							i(229233),	-- Enforcer's Backalley Shoulderplates
+							i(229235),	-- Enforcer's Backalley Faceshield
+						}),
+					})),
+					d(DIFFICULTY.RAID.HEROIC, bubbleDown({ ["bonusID"] = 6896, ["modID"] = 0, }, {
+						cl(DEATHKNIGHT, {
+							i(229251),	-- Cauldron Champion's Screamplate
+							i(229253),	-- Cauldron Champion's Crown
+						}),
+						cl(DEMONHUNTER, {
+							i(229314),	-- Fel-Dealer's Recycled Reavers
+							i(229315),	-- Fel-Dealer's Fur Kilt
+							i(229316),	-- Fel-Dealer's Visor
+							i(229319),	-- Fel-Dealer's Soul Engine
+						}),
+						cl(DRUID, {
+							i(229305),	-- Jaws of Reclaiming Blight
+							i(229307),	-- Branches of Reclaiming Blight
+						}),
+						cl(EVOKER, {
+							i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+							i(229280),	-- Opulent Treasurescale's Crowned Jewel
+						}),
+						cl(HUNTER, {
+							i(229269),	-- Tireless Collector's Hunted Heads
+							i(229271),	-- Tireless Collector's Chained Cowl
+						}),
+						cl(MAGE, {
+							i(229341),	-- Aspectral Emissary's Arcane Vents
+							i(229343),	-- Aspectral Emissary's Crystalline Cowl
+						}),
+						cl(MONK, {
+							i(229296),	-- Ageless Serpent's Shoulderpads
+							i(229298),	-- Ageless Serpent's Mane
+						}),
+						cl(PALADIN, {
+							i(229242),	-- Aureate Sentry's Roaring Will
+							i(229244),	-- Aureate Sentry's Pledge
+						}),
+						cl(PRIEST, {
+							i(229332),	-- Confessor's Unshakable Radiance
+							i(229334),	-- Confessor's Unshakable Halo
+						}),
+						cl(ROGUE, {
+							i(229287),	-- Spectral Gambler's Bladed Mantle
+						}),
+						cl(SHAMAN, {
+							i(229259),	-- Gale Sovereign's Ritual Belt
+							i(229260),	-- Gale Sovereign's Zephyrs
+							i(229262),	-- Gale Sovereign's Charged Hood
+						}),
+						cl(WARLOCK, {
+							i(229323),	-- Spliced Fiendtrader's Loyal Servants
+							i(229325),	-- Spliced Fiendtrader's Transcendence
+						}),
+						cl(WARRIOR, {
+							i(229232),	-- Enforcer's Backalley Girdle
+							i(229233),	-- Enforcer's Backalley Shoulderplates
+							i(229235),	-- Enforcer's Backalley Faceshield
+						}),
+					})),
+					d(DIFFICULTY.RAID.MYTHIC, bubbleDown({ ["bonusID"] = 6897, ["modID"] = 0, }, {
+						cl(DEATHKNIGHT, {
+							i(229251),	-- Cauldron Champion's Screamplate
+							i(229253),	-- Cauldron Champion's Crown
+						}),
+						cl(DEMONHUNTER, {
+							i(229314),	-- Fel-Dealer's Recycled Reavers
+							i(229315),	-- Fel-Dealer's Fur Kilt
+							i(229316),	-- Fel-Dealer's Visor
+							i(229319),	-- Fel-Dealer's Soul Engine
+						}),
+						cl(DRUID, {
+							i(229305),	-- Jaws of Reclaiming Blight
+							i(229307),	-- Branches of Reclaiming Blight
+						}),
+						cl(EVOKER, {
+							i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+							i(229280),	-- Opulent Treasurescale's Crowned Jewel
+						}),
+						cl(HUNTER, {
+							i(229269),	-- Tireless Collector's Hunted Heads
+							i(229271),	-- Tireless Collector's Chained Cowl
+						}),
+						cl(MAGE, {
+							i(229341),	-- Aspectral Emissary's Arcane Vents
+							i(229343),	-- Aspectral Emissary's Crystalline Cowl
+						}),
+						cl(MONK, {
+							i(229296),	-- Ageless Serpent's Shoulderpads
+							i(229298),	-- Ageless Serpent's Mane
+						}),
+						cl(PALADIN, {
+							i(229242),	-- Aureate Sentry's Roaring Will
+							i(229244),	-- Aureate Sentry's Pledge
+						}),
+						cl(PRIEST, {
+							i(229332),	-- Confessor's Unshakable Radiance
+							i(229334),	-- Confessor's Unshakable Halo
+						}),
+						cl(ROGUE, {
+							i(229287),	-- Spectral Gambler's Bladed Mantle
+						}),
+						cl(SHAMAN, {
+							i(229259),	-- Gale Sovereign's Ritual Belt
+							i(229260),	-- Gale Sovereign's Zephyrs
+							i(229262),	-- Gale Sovereign's Charged Hood
+						}),
+						cl(WARLOCK, {
+							i(229323),	-- Spliced Fiendtrader's Loyal Servants
+							i(229325),	-- Spliced Fiendtrader's Transcendence
+						}),
+						cl(WARRIOR, {
+							i(229232),	-- Enforcer's Backalley Girdle
+							i(229233),	-- Enforcer's Backalley Shoulderplates
+							i(229235),	-- Enforcer's Backalley Faceshield
+						}),
+					})),
+					n(PVP_GLADIATOR, bubbleDown({ ["bonusID"] = 6898 }, {
+						cl(DEATHKNIGHT, {
+							i(229251),	-- Cauldron Champion's Screamplate
+							i(229253),	-- Cauldron Champion's Crown
+						}),
+						cl(DEMONHUNTER, {
+							i(229314),	-- Fel-Dealer's Recycled Reavers
+							i(229315),	-- Fel-Dealer's Fur Kilt
+							i(229316),	-- Fel-Dealer's Visor
+							i(229319),	-- Fel-Dealer's Soul Engine
+						}),
+						cl(DRUID, {
+							i(229305),	-- Jaws of Reclaiming Blight
+							i(229307),	-- Branches of Reclaiming Blight
+						}),
+						cl(EVOKER, {
+							i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+							i(229280),	-- Opulent Treasurescale's Crowned Jewel
+						}),
+						cl(HUNTER, {
+							i(229269),	-- Tireless Collector's Hunted Heads
+							i(229271),	-- Tireless Collector's Chained Cowl
+						}),
+						cl(MAGE, {
+							i(229341),	-- Aspectral Emissary's Arcane Vents
+							i(229343),	-- Aspectral Emissary's Crystalline Cowl
+						}),
+						cl(MONK, {
+							i(229296),	-- Ageless Serpent's Shoulderpads
+							i(229298),	-- Ageless Serpent's Mane
+						}),
+						cl(PALADIN, {
+							i(229242),	-- Aureate Sentry's Roaring Will
+							i(229244),	-- Aureate Sentry's Pledge
+						}),
+						cl(PRIEST, {
+							i(229332),	-- Confessor's Unshakable Radiance
+							i(229334),	-- Confessor's Unshakable Halo
+						}),
+						cl(ROGUE, {
+							i(229287),	-- Spectral Gambler's Bladed Mantle
+						}),
+						cl(SHAMAN, {
+							i(229259),	-- Gale Sovereign's Ritual Belt
+							i(229260),	-- Gale Sovereign's Zephyrs
+							i(229262),	-- Gale Sovereign's Charged Hood
+						}),
+						cl(WARLOCK, {
+							i(229323),	-- Spliced Fiendtrader's Loyal Servants
+							i(229325),	-- Spliced Fiendtrader's Transcendence
+						}),
+						cl(WARRIOR, {
+							i(229232),	-- Enforcer's Backalley Girdle
+							i(229233),	-- Enforcer's Backalley Shoulderplates
+							i(229235),	-- Enforcer's Backalley Faceshield
+						}),
+					})),
+					n(PVP_ELITE, bubbleDown({ ["bonusID"] = 8107 }, {
+						cl(DEATHKNIGHT, {
+							i(229251),	-- Cauldron Champion's Screamplate
+							i(229253),	-- Cauldron Champion's Crown
+						}),
+						cl(DEMONHUNTER, {
+							i(229314),	-- Fel-Dealer's Recycled Reavers
+							i(229315),	-- Fel-Dealer's Fur Kilt
+							i(229316),	-- Fel-Dealer's Visor
+							i(229319),	-- Fel-Dealer's Soul Engine
+						}),
+						cl(DRUID, {
+							i(229305),	-- Jaws of Reclaiming Blight
+							i(229307),	-- Branches of Reclaiming Blight
+						}),
+						cl(EVOKER, {
+							i(229278),	-- Opulent Treasurescale's Gleaming Mantle
+							i(229280),	-- Opulent Treasurescale's Crowned Jewel
+						}),
+						cl(HUNTER, {
+							i(229269),	-- Tireless Collector's Hunted Heads
+							i(229271),	-- Tireless Collector's Chained Cowl
+						}),
+						cl(MAGE, {
+							i(229341),	-- Aspectral Emissary's Arcane Vents
+							i(229343),	-- Aspectral Emissary's Crystalline Cowl
+						}),
+						cl(MONK, {
+							i(229296),	-- Ageless Serpent's Shoulderpads
+							i(229298),	-- Ageless Serpent's Mane
+						}),
+						cl(PALADIN, {
+							i(229242),	-- Aureate Sentry's Roaring Will
+							i(229244),	-- Aureate Sentry's Pledge
+						}),
+						cl(PRIEST, {
+							i(229332),	-- Confessor's Unshakable Radiance
+							i(229334),	-- Confessor's Unshakable Halo
+						}),
+						cl(ROGUE, {
+							i(229287),	-- Spectral Gambler's Bladed Mantle
+						}),
+						cl(SHAMAN, {
+							i(229259),	-- Gale Sovereign's Ritual Belt
+							i(229260),	-- Gale Sovereign's Zephyrs
+							i(229262),	-- Gale Sovereign's Charged Hood
+						}),
+						cl(WARLOCK, {
+							i(229323),	-- Spliced Fiendtrader's Loyal Servants
+							i(229325),	-- Spliced Fiendtrader's Transcendence
+						}),
+						cl(WARRIOR, {
+							i(229232),	-- Enforcer's Backalley Girdle
+							i(229233),	-- Enforcer's Backalley Shoulderplates
+							i(229235),	-- Enforcer's Backalley Faceshield
+						}),
+					})),
+				}),
 			},
 		}),
 		ach(40107, {	-- Harbinger of the Weatherd
@@ -57,14 +400,14 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
             },
 		}),
         -- INFO: Verified 2024-10-04, only shows one criteria without achraw
-		achraw(40660, bubbleDownSelf({ ["timeline"] = { REMOVED_11_1_0 }, }, {	-- The War Within Season 1: Spelunker Supreme
+		achraw(40660, bubbleDownSelf({ ["timeline"] = { REMOVED_11_1_0_SEASONSTART }, }, {	-- The War Within Season 1: Spelunker Supreme
 			crit(67375),	-- Attained 1600+ Rated PVP rating
 			crit(66890),	-- Attained 2000+ Mythic Plus rating
 			crit(67597),	-- Defeated Queen Ansurek on Heroic or Mythic difficulty
 			i(226206),	-- Mark of the Spelunker Supreme
 		})),
 		-- INFO: Verified 2025-01-12, shows no criteria without achraw
-		achraw(40911, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0, REMOVED_11_2_0 }, }, {	-- The War Within Season 2: Master Blaster
+		achraw(40911, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0 }, }, {	-- The War Within Season 2: Master Blaster
 			crit(70046),	-- Attained 1600+ Rated PVP rating
 			crit(70053),	-- Attained 2000+ Mythic Plus rating
 			crit(70052),	-- Defeated Gallywix on Heroic or Mythic difficulty
@@ -85,7 +428,9 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 							i(212065),	-- Impalers of the Hypogeal Nemesis
 						}),
 						cl(DRUID, {
-							-- Blizzard is trolling and nothing is rewarded here
+							i(212053),	-- Faulds of the Greatlynx
+							i(212056),	-- Mask of the Greatlynx
+							i(212054),	-- Maw of the Greatlynx
 						}),
 						cl(EVOKER, {
 							i(212027),	-- Fumaroles of the Destroyer

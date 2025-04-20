@@ -297,12 +297,12 @@
 1.13.2.30172
 2402@@@CTF - Flag - Horde
 2403@@@CTF - Flag - Alliance
+1.13.3.33155
+6@@@PLAYER, Tauren 
 1.14.1.41077
 1041@@@Frenzy
 1.14.2.41959
 2505@@@Dragonflight, Chromatic
-1.14.3.46575
-6@@@PLAYER, Tauren 
 1.15.0.52124
 2586@@@Azeroth Commerce Authority
 2587@@@Durotar Supply and Logistics
@@ -323,6 +323,9 @@
 2687@@@Hunter Quest Boss (Tamed Beast)
 1.15.6.58658
 2721@@@S03 - Scarlet Crusade
+1.15.7.59706
+2723@@@S03 - New Avalon - Scarlet Crusade - Disguise
+2724@@@S03 - New Avalon - Scarlet Crusade - Patrollers
 2.0.0.6080
 911@@@Silvermoon City
 914@@@PLAYER, Blood Elf
@@ -548,8 +551,6 @@
 1156@@@The Ashen Verdict
 1159@@@CTF - Flag - Alliance 2
 1160@@@CTF - Flag - Horde 2
-3.4.0.46158
-3.4.1.48503
 4.0.1.12911
 52@@@Orc, Fel Dragonmaw
 54@@@Gnomeregan
@@ -780,7 +781,7 @@
 2170@@@Argussian Reach
 7.3.0.24727
 2180@@@_JKL - test rep
-7.3.5.25928
+7.3.5.25727
 2229@@@PLAYER, Void Elf
 2230@@@PLAYER, Highmountain Tauren
 2231@@@PLAYER, Nightborne
@@ -1019,11 +1020,9 @@
 10.0.0.45141
 2554@@@Clan Toghus
 2555@@@Clan Kaighan
-10.0.2.45779
+10.0.0.45970
 2523@@@Dark Talons
 2524@@@Obsidian Warders
-10.0.2.46259
-10.0.2.47187
 10.0.7.47910
 2557@@@Hearthfire Fellowship
 10.1.0.48480
@@ -1115,3 +1114,6 @@
 11.1.0.58626
 2670@@@Venture Company (Paragon)
 2671@@@Venture Company
+11.1.5.59571
+2688@@@Flame's Radiance
+2689@@@Flame's Radiance (Paragon)

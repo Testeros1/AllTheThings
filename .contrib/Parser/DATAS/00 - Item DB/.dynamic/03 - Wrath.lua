@@ -44600,5 +44600,6 @@ _.ItemDB = {
 [54848]={["b"]=1,["class"]=4,["classes"]={7},["equippable"]=1,["iLvl"]=251,["inventoryType"]=3,["lvl"]=80,["name"]="Frost Witch's Shoulderpads (Test)",["q"]=4,["races"]={1,2,3,4,5,6,7,8,10,11},["subclass"]=3},
 [54857]={["b"]=1,["class"]=15,["equippable"]=0,["iLvl"]=20,["name"]="Murkimus' Little Spear",["q"]=3,["subclass"]=2},
 [54860]={["b"]=1,["class"]=15,["equippable"]=0,["iLvl"]=60,["lvl"]=60,["name"]="X-53 Touring Rocket",["q"]=4,["subclass"]=5},
-[56806]={["b"]=1,["class"]=15,["equippable"]=0,["iLvl"]=20,["name"]="Mini Thor",["q"]=3,["subclass"]=2},};
+[56806]={["b"]=1,["class"]=15,["equippable"]=0,["iLvl"]=20,["name"]="Mini Thor",["q"]=3,["subclass"]=2},
+};
 -- #endif

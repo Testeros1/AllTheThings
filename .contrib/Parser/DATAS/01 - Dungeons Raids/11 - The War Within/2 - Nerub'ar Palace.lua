@@ -419,9 +419,15 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 			})),
 			n(SPECIAL, {
 				n(228081, {	-- Ethereum Void Reaper
-					["description"] = "This rare has a chance to spawn while using the Trinket, Treacherous Transmitter, in an Outdoor zone.",
+					["description"] =
+					-- #if BEFORE 11.0.7
+					"This rare has a chance to spawn while using the Trinket, Treacherous Transmitter, in any outdoor Khaz Algar zone.",
+					-- #else
+					"This rare has a chance to spawn while using the Trinket, Treacherous Transmitter, in any outdoor zone.",
+					-- #endif
 					["crs"] = { 228078 },	-- Ethereum Void Reaper (Unsure which ID or both //Braghe)
 					["provider"] = { "i", 221023 },	-- Treacherous Transmitter
+					-- #if BEFORE 11.0.7
 					["maps"] = {
 						ISLE_OF_DORN,
 						HALLOWFALL,
@@ -429,12 +435,16 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 						AZJ_KAHET,
 						AZJ_KAHET_LOWER,
 					},
+					-- #endif
 					["g"] = {
 						i(226810),	-- Infiltrator's Shroud (TOY!)
 					},
 				})
 			}),
 			Difficulty(DIFFICULTY.RAID.MULTI.ALL).AddGroups({
+				CommonBossDrops({
+					currency(3093),	-- Nerub-ar Finery
+				}),
 				BossOnly(ULGRAX),
 				BossOnly(BLOODBOUND_HORROR),
 				BossOnly(SIKRAN, {
@@ -467,7 +477,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 				}),
 				CommonBossDrops({
 					currency(WEATHERED_HARBINGER_CREST, {
-						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART },
 					}),
 				}),
 				header(HEADERS.Achievement, 40247, {	-- The Skittering Battlements
@@ -525,7 +535,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 			Difficulty(DIFFICULTY.RAID.NORMAL).AddGroupsWithUpgrades({
 				CommonBossDrops({
 					currency(CARVED_HARBINGER_CREST, {
-						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART },
 					}),
 				}),
 				n(QUESTS, {
@@ -563,13 +573,13 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 				BossOnly(KYVEZA),
 				BossOnly(SILKEN_COURT),
 				BossOnly(ANSUREK, {
-					ach(40253, {["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 }}),	-- Ahead of the Curve: Queen Ansurek
+					ach(40253, {["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART }}),	-- Ahead of the Curve: Queen Ansurek
 				}),
 			}),
 			Difficulty(DIFFICULTY.RAID.HEROIC).AddGroupsWithUpgrades({
 				CommonBossDrops({
 					currency(RUNED_HARBINGER_CREST, {
-						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART },
 					}),
 				}),
 				n(QUESTS, {
@@ -601,7 +611,7 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 			Difficulty(DIFFICULTY.RAID.MYTHIC).AddGroups({
 				CommonBossDrops({
 					currency(GILDED_HARBINGER_CREST, {
-						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 },
+						["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART },
 					}),
 				}),
 				n(QUESTS, {
@@ -640,8 +650,8 @@ root(ROOTS.Instances, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = {
 					ach(40243, {	-- Mythic: Queen Ansurek
 						title(556),	-- Queenslayer <Name>
 					}),
-					ach(40254, {["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 }}),	-- Cutting Edge: Queen Ansurek
-					ach(40259, bubbleDownSelf({["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0 } }, {	-- Hall of Fame: Queen Ansurek
+					ach(40254, {["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART }}),	-- Cutting Edge: Queen Ansurek
+					ach(40259, bubbleDownSelf({["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART } }, {	-- Hall of Fame: Queen Ansurek
 						title(561),	-- <Name>, Famed Slayer of Ansurek
 					})),
 					ach(40258),	-- Mythic: Queen Ansurek Guild Run
@@ -709,4 +719,4 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["time
 			},
 		}),
 	})
-})))
+})));

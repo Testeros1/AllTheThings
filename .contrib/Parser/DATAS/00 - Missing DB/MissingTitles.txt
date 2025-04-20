@@ -1,10 +1,12 @@
-11.1.0.58221
-title(580),	-- Skyrocketer %s
-title(597),	-- Breaknecker %s
-title(598),	-- Delver %s
-title(599),	-- Infinite Delver %s
-title(602),	-- High Roller %s
-title(606),	-- Darkfuse Diplomat %s
-title(607),	-- Trade-Duke %s
-title(616),	-- Part-Timer %s
-title(617),	-- %s, "Employee" of the Month
+11.1.5.59571
+title(619),	-- Recruit %s
+title(620),	-- Reservist %s
+title(621),	-- Field Sacredite %s
+title(622),	-- Sentry %s
+title(623),	-- Stalwart %s
+title(624),	-- Ardent %s
+title(625),	-- Aeroknight %s
+title(626),	-- Flame Guard %s
+title(627),	-- Radiant Officer %s
+title(628),	-- Sacred Templar %s
+title(631),	-- %s the Mad

@@ -737,7 +737,13 @@ root(ROOTS.Holidays, applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_V
 			["timeline"] = { ADDED_4_3_0 },
 		}),
 		ach(7852, {	-- They're Both Footballs? (2012)
+			-- #if AFTER 6.0.0
+			-- #if BEFORE 11.0.7
+			["description"] = "If you have obtained both items but you didn't earn the achievement, try throwing both balls to a friend.\n\nIf you learned the toys on 2 different characters, the achievement cant be completed",
+			-- #else
 			["description"] = "If you have obtained both items but you didn't earn the achievement, try throwing both balls to a friend.",
+			-- #endif
+			-- #endif
 			["providers"] = {
 				{ "i", 90888 },	-- Special Edition Foot Ball (TOY!)
 				{ "i", 90883 },	-- The Pigskin (TOY!)
@@ -2134,9 +2140,9 @@ root(ROOTS.Holidays, applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_V
 				["races"] = HORDE_ONLY,
 			}),
 			["cost"] = {
-					{ "i", 17197, 5 },	-- Gingerbread Cookie
-					{ "i", 1179, 1 },	-- Ice Cold Milk
-				},
+				{ "i", 17197, 5 },	-- Gingerbread Cookie
+				{ "i", 1179, 1 },	-- Ice Cold Milk
+			},
 			["isYearly"] = true,
 			["lvl"] = 10,
 			["groups"] = {
@@ -2355,16 +2361,6 @@ root(ROOTS.Holidays, applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_V
 		},
 	}),
 	-- #if AFTER 8.3.0
-	n(RARES, {
-		i(174865, {	-- A Tiny Winter Hat (Pepe)
-			["questID"] = 58901,
-			["coords"] = {
-				{ 33.9, 68.1, IRONFORGE },
-				{ 52.9, 77.4, ORGRIMMAR },
-			},
-			["timeline"] = { CREATED_8_3_0, ADDED_9_0_1 },
-		}),
-	}),
 	n(TREASURES, {
 		o(180746, {	-- Gently Shaken Gift
 			i(178529, {	-- Gently Shaken Gift
@@ -2382,6 +2378,14 @@ root(ROOTS.Holidays, applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_V
 			i(218309, {	-- Gently Shaken
 				["timeline"] = { ADDED_11_0_7 },
 			}),
+		}),
+		o(341827, {	-- Greatfeather Pepe
+			["coords"] = {
+				{ 33.9, 68.1, IRONFORGE },
+				{ 52.9, 77.4, ORGRIMMAR },
+			},
+			["timeline"] = { CREATED_8_3_0, ADDED_9_0_1 },
+			["g"] = { i(174865) },	-- A Tiny Winter Hat (Pepe!)
 		}),
 		o(187236, {	-- Winter Veil Gift
 			i(178528, {	-- Winter Veil Gift
@@ -2718,11 +2722,11 @@ root(ROOTS.HiddenQuestTriggers, {
 			}),
 		})),
 	})),
-	expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_1_5 } }, {
-		applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_VEIL_HEADER, {
-			q(64628),	-- Triggered when learning the additional things for the Rockin' Rollin' Toy (spellID 358761)
-		})),
-	})),
+	-- expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_1_5 } }, {
+	-- 	applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_VEIL_HEADER, {
+	-- 		q(64628),	-- Triggered when learning the additional things for the Rockin' Rollin' Toy (spellID 358761)
+	-- 	})),
+	-- })),
 	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_0 } }, {
 		applyevent(EVENTS.FEAST_OF_WINTER_VEIL, n(FEAST_OF_WINTER_VEIL_HEADER, {
 			q(78130),	-- Looting Festive Trans-Dimensional Bird Whistle [209859]

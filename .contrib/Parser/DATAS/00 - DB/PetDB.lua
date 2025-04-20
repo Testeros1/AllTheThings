@@ -4061,7 +4061,6 @@ i(213133, 4411);	-- Reese
 i(212606, 4406);	-- Sarge
 i(211432, 4402);	-- Teele
 --- NYI ---
-i(212791, 4410);	-- Beetriz
 i(208446, 4264);	-- Fyrn
 
 ------------------
@@ -4110,7 +4109,6 @@ i(0, 4503);			-- Sporbit [Teal]
 i(0, 4508);			-- Sporbit [Yellow]
 i(0, 4584);			-- Tan Stagshell
 i(222969, 4474);	-- Anub'Rekyute
-i(221851, 4466);	-- Argos
 i(221764, 4519);	-- Burntram
 i(222979, 4545);	-- Clay Stonecharger
 i(221762, 4484);	-- Frenzied Bloodtick
@@ -4283,6 +4281,7 @@ i(234395, 4727);	-- Skitterbite
 i(233247, 4692);	-- Sparklesnap
 i(234396, 4728);	-- Teatuft Tamer
 i(231310, 4684);	-- Timbered Sky Snakelet
+i(233190, 4717);	-- Wanderer Liu (CN ONLY)
 i(233366, 4719);	-- Wind-Up Woofer
 i(233361, 4718);	-- Wind-Up Wuffi
 --- NPC ---
@@ -4298,9 +4297,8 @@ n(230394, 4628);	-- Tidal Kroling
 --- UNSORTED ---
 i(234905, 4730);	-- Mech-Friend Maya
 i(233057, 4709);	-- Rock Hound Mica
-i(233190, 4717);	-- Wanderer Liu
---- NYI? ---
---i(???, 4725);	-- Titan Orb
+--- NYI ---
+i(0, 4725);			-- Titan Orb
 
 ------------------
 -- PATCH 11.1.0 --
@@ -4313,16 +4311,24 @@ i(232842, 4638);	-- Crimson Mechasaur
 i(232858, 4655);	-- Cruncher
 i(232853, 4632);	-- Eepy
 i(232855, 4631);	-- Foreman
+i(232844, 4640);	-- Fuz-Size Flarendo
 i(232843, 4642);	-- Gorillion
+i(232807, 4664);	-- Iron Chick
 i(232859, 4653);	-- Lab Rat
 i(205013, 3518);	-- Lettuce
 i(232840, 4661);	-- Mechagopher
+i(232848, 4647);	-- Mr. DELVER
+i(232852, 4636);	-- Mutt
+i(232847, 4646);	-- Personal-Use Sapper
 i(232841, 4644);	-- Professor Punch
 i(232851, 4641);	-- Rocketfist
 i(232895, 4701);	-- Spotty
 i(232846, 4648);	-- Steamwheedle Flunkie
+i(238796, 4791);	-- Thrrrdgl
+i(232806, 4643);	-- Tiny Torq
 i(238261, 4762);	-- Tock the Clocker Spaniel
 i(232849, 4650);	-- Venture Companyman
+i(232838, 4639);	-- Viridian Mechasaur
 i(232839, 4637);	-- Wavebreaker Mechasaur
 --- NPC ---
 n(231470, 4652);	-- Acid-Drenched Rat
@@ -4332,35 +4338,49 @@ n(231570, 4658);	-- Cave Crab
 n(222420, 4484);	-- Frenzied Bloodtick
 n(222592, 4507);	-- Hemospore
 n(231572, 4659);	-- Kaja Crab
+n(231579, 4663);	-- Lime Roboclucker
 n(231574, 4660);	-- Paleshell Crab
+n(231684, 4667);	-- Spring-Loaded Ribbitron
 n(231616, 4666);	-- Tropical Frog
 n(231686, 4668);	-- Ultrahopper EX
 n(231481, 4654);	-- Underroach
 n(231577, 4662);	-- Varmint MK II
 n(231567, 4657);	-- Venture Bombshell
 n(231477, 4651);	-- Wily Rat
+--- TRAINER ---
+i(0, 4741);	-- Cannoneer
+i(0, 4739);	-- Fancier Rat
+i(0, 4740);	-- Handbag Hyena
+i(0, 4742);	-- Lookout
+i(0, 4744);	-- Muddy Croach
+i(0, 4737);	-- Precision Powerdrill
+i(0, 4745);	-- Rusty Croach
+i(0, 4746);	-- Sooty Croach
+i(0, 4738);	-- Status Symbol
+i(0, 4743);	-- Swabbie
 --- UNSORTED ---
---i(???, 4739);	-- Fancier Rat
-i(232844, 4640);	-- Fuz-Size Flarendo
 i(235909, 4755);	-- Gleam
-i(232857, 4635);	-- Goggles
 i(232854, 4634);	-- Grinner
---i(???, 4740);	-- Handbag Hyena
-i(232807, 4664);	-- Iron Chick
-i(232848, 4647);	-- Mr. DELVER
-i(232852, 4636);	-- Mutt
-i(232847, 4646);	-- Personal-Use Sapper
 i(232856, 4633);	-- Scruff
---i(???, 4738);	-- Status Symbol
-i(232806, 4643);	-- Tiny Torq
-i(232838, 4639);	-- Viridian Mechasaur
---- UNSORTED WILD ---
-n(237713, 4741);	-- Cannoneer
-n(231579, 4663);	-- Lime Roboclucker
-n(237714, 4742);	-- Lookout
-n(237720, 4744);	-- Muddy Croach
-n(237701, 4737);	-- Precision Powerdrill
-n(237721, 4745);	-- Rusty Croach
-n(237719, 4746);	-- Sooty Croach
-n(231684, 4667);	-- Spring-Loaded Ribbitron
-n(237715, 4743);	-- Swabbie
+
+------------------
+-- PATCH 11.1.5 --
+------------------
+--- ITEM ---
+i(212791, 4410);	-- Beetriz
+i(235794, 4747);	-- Eye of Chaos
+i(238986, 4794);	-- Mister Mans
+i(235980, 4756);	-- Scourge of the Aspects
+i(235793, 4748);	-- Void-Scarred Parrot
+i(235795, 4749);	-- Void-Scarred Scorpid
+i(235797, 4750);	-- Void-Scarred Tallstrider Chick
+--- UNSORTED ---
+i(0, 4792);	-- Ada the Sweetest
+i(221851, 4466);	-- Argos
+i(236409, 4757);	-- Frumpy Softpaw
+i(232857, 4635);	-- Goggles
+i(241193, 3245);	-- Helpful Workshop Bot
+i(0, 4761);	-- Pascal the Wonder Pup
+i(239019, 4806);	-- Spicy Mean-Ball
+i(241188, 4804);	-- Swiftpaw
+i(238942, 4793);	-- Weechi

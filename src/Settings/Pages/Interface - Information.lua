@@ -135,11 +135,16 @@ settings.InformationTypeConversionMethods = ConversionMethods;
 
 -- Class Template for creating an Information Type instance.
 local function GetValueForInformationType(t, reference)
-	return reference[t.informationTypeID];
+	local rowReference = app.ActiveRowReference
+	local informationTypeID = t.informationTypeID
+	return rowReference and rowReference[informationTypeID] or reference[informationTypeID]
 end
 local function GetRecursiveValueForInformationType(t, reference)
-	local informationTypeID = t.informationTypeID;
-	return reference[informationTypeID] or GetRelativeValue(reference, informationTypeID);
+	local rowReference = app.ActiveRowReference
+	local informationTypeID = t.informationTypeID
+	return rowReference and rowReference[informationTypeID]
+		or reference[informationTypeID]
+		or GetRelativeValue(rowReference or reference, informationTypeID)
 end
 local function ProcessInformationType(t, reference, tooltipInfo)
 	local val = t.GetValue(t, reference);
@@ -176,6 +181,14 @@ local CreateInformationType = app.CreateClass("InformationType", "informationTyp
 (function(t) return t.isRecursive; end));
 
 -- Known By / Completed By
+-- Types which have an ID which can be 'known' or 'completed' but is typically spammy to show when account-wide
+local KnownByIgnoredTypes = {
+	Achievement = app.IsRetail,
+	BattlePet = true,
+	Illusion = true,
+	IllusionWithItem = true,
+	Mount = true,
+}
 local knownBy = {};
 local function BuildKnownByInfoForKind(tooltipInfo, kind)
 	if #knownBy > 0 and kind then
@@ -195,7 +208,7 @@ local function ProcessForCompletedBy(t, reference, tooltipInfo)
 
 	-- Completed By for Quests
 	local id = reference.questID;
-	if id then
+	if id and (not KnownByIgnoredTypes[reference.__type] or reference.perCharacter) then
 		-- Account-Wide Quests
 		if app.AccountWideQuestsDB[id] then
 			if IsQuestFlaggedCompletedOnAccount(id) then
@@ -304,14 +317,8 @@ local function ProcessForCompletedBy(t, reference, tooltipInfo)
 	end
 end
 local function ProcessForKnownBy(t, reference, tooltipInfo)
-	if reference.illusionID then return; end
-	if app.IsRetail then
-		-- Classic can pre-emptively see 'fake' future achievements which are based on a spell
-		if reference.achievementID then return end
-	end
-
 	-- This is to show which characters have this profession.
-	local id = reference.spellID;
+	local id = reference.knownByID or reference.spellID
 	if id then
 		if reference.key == "professionID" and app.IsClassic then	-- Apparently Retail doesn't use ActiveSkills
 			for _,character in pairs(ATTCharacterData) do
@@ -341,10 +348,13 @@ local function ProcessForKnownBy(t, reference, tooltipInfo)
 			end
 		end
 
-		-- If the item is a recipe, then show which characters know this recipe.
-		if reference.filterID ~= 100 then
+		-- If the Thing is not ignored, then show which characters know this Thing/Spell
+		if not KnownByIgnoredTypes[reference.__type] or reference.perCharacter then
+			local cacheName = reference.CACHE
+			local knownByCache
 			for guid,character in pairs(ATTCharacterData) do
-				if character.Spells and character.Spells[id] then
+				knownByCache = character[cacheName] or character.Spells
+				if knownByCache and knownByCache[id] then
 					tinsert(knownBy, character);
 				end
 			end
@@ -460,24 +470,15 @@ local InformationTypes = {
 	}),
 
 	-- Quest Fields
-	CreateInformationType("providers", { text = L.PROVIDERS, priority = 2.05, ShouldDisplayInExternalTooltips = false,
-		limit = 25,
+	CreateInformationType("qgs", { text = L.QUEST_GIVERS, priority = 2.05, ShouldDisplayInExternalTooltips = false,
 		Process = function(t, reference, tooltipInfo)
-			local providers = t.GetValue(t, reference);
-			if providers then
-				local limit = t.limit
-				for i,provider in ipairs(providers) do
+			local qgs = reference.qgs;
+			if qgs then
+				for i,creatureID in ipairs(qgs) do
 					tinsert(tooltipInfo, {
-						left = (i == 1 and "Provider(s)"),
-						right = ConversionMethods.provider(provider, reference),
+						left = (i == 1 and L.QUEST_GIVER),
+						right = ConversionMethods.creatureName(creatureID, reference),
 					});
-					limit = limit - 1
-					if limit <= 0 then
-						tinsert(tooltipInfo, {
-							right =  LFG_LIST_AND_MORE:format(#reference.providers - t.limit),
-						});
-						break
-					end
 				end
 			end
 		end,
@@ -605,15 +606,18 @@ local InformationTypes = {
 			if maps and #maps > 0 then
 				local mapNames,uniques,name = {},{},nil;
 				local rootMapID = reference.mapID;
+				local myRealMapID = app.RealMapID
+				local onMyMap = rootMapID == myRealMapID
 				if rootMapID then uniques[app.GetMapName(rootMapID) or rootMapID] = true; end
 				for i,mapID in ipairs(maps) do
+					onMyMap = onMyMap or mapID == myRealMapID
 					name = app.GetMapName(mapID);
 					if name and not uniques[name] then
 						uniques[name] = true;
 						tinsert(mapNames, name);
 					end
 				end
-				if #mapNames > 0 then
+				if #mapNames > 1 or (not onMyMap and #mapNames > 0) then
 					-- If there's a description and it is visible, add some visual space.
 					local description = reference.description;
 					if description and app.Settings:GetTooltipSetting("description") then
@@ -653,6 +657,19 @@ local InformationTypes = {
 			if t.GetValue(t, reference) then
 				tinsert(tooltipInfo, {
 					left = L.REQUIRES_PVP,
+					wrap = true,
+				});
+			end
+		end,
+	});
+	CreateInformationType("sr", {
+		priority = 2.7,
+		isRecursive = true,
+		text = L.SHOW_SKYRIDING_CHECKBOX,
+		Process = function(t, reference, tooltipInfo)
+			if t.GetValue(t, reference) then
+				tinsert(tooltipInfo, {
+					left = L.REQUIRES_SKYRIDING,
 					wrap = true,
 				});
 			end
@@ -771,19 +788,15 @@ local InformationTypes = {
 		end
 	}),
 
-	CreateInformationType("questID", { text = L.QUEST_ID, priority = 8 }),
-	CreateInformationType("qgs", { text = L.QUEST_GIVERS, priority = 8,
+	CreateInformationType("questID", { text = L.QUEST_ID, priority = 8,
 		Process = function(t, reference, tooltipInfo)
-			local qgs = reference.qgs;
-			if qgs then
-				for i,creatureID in ipairs(qgs) do
-					tinsert(tooltipInfo, {
-						left = (i == 1 and L.QUEST_GIVER),
-						right = ConversionMethods.creatureName(creatureID, reference),
-					});
-				end
-			end
-		end,
+			local questID = reference.questID
+			if not questID then return end
+			tinsert(tooltipInfo, {
+				left = L.QUEST_ID,
+				right = reference.questID.." "..app.GetCompletionIcon(app.IsQuestFlaggedCompleted(questID)),
+			});
+		end
 	}),
 	CreateInformationType("factionID", { text = L.FACTION_ID, priority = 9 }),
 
@@ -809,6 +822,28 @@ local InformationTypes = {
 							left = (i == 1 and CREATURE),
 							right = ConversionMethods.creatureName(creatureID, reference),
 						});
+					end
+				end
+			end
+		end,
+	}),
+	CreateInformationType("providers", { text = L.PROVIDERS, ShouldDisplayInExternalTooltips = false,
+		limit = 25,
+		Process = function(t, reference, tooltipInfo)
+			local providers = t.GetValue(t, reference);
+			if providers then
+				local limit = t.limit
+				for i,provider in ipairs(providers) do
+					tinsert(tooltipInfo, {
+						left = (i == 1 and L.PROVIDERS),
+						right = ConversionMethods.provider(provider, reference),
+					});
+					limit = limit - 1
+					if limit <= 0 then
+						tinsert(tooltipInfo, {
+							right =  LFG_LIST_AND_MORE:format(#reference.providers - t.limit),
+						});
+						break
 					end
 				end
 			end
@@ -995,7 +1030,7 @@ local InformationTypes = {
 					tinsert(tooltipInfo, { left = L.UNSORTED_DESC, wrap = true, color = app.Colors.ChatLinkError });
 				else
 					-- removed BoE seen with a non-generic BonusID, potentially a level-scaled drop made re-obtainable
-					if reference.u == app.PhaseConstants.REMOVED_FROM_GAME and not app.IsBoP(reference) and (reference.bonusID or 3524) ~= 3524 then
+					if reference.u == app.PhaseConstants.REMOVED_FROM_GAME and not app.Modules.Filter.Filters.Bind(reference) and (reference.bonusID or 3524) ~= 3524 then
 						tinsert(tooltipInfo, { left = L.RECENTLY_MADE_OBTAINABLE });
 					end
 				end

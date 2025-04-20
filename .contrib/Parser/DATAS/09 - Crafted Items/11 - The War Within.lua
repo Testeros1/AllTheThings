@@ -535,6 +535,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = 
 			}),
 		}),
 		i(222727),	-- Angler's Delight
+		i(235805, {["timeline"] = {ADDED_11_1_0}}),	-- Authentic Undermine Clam Chowder
 		i(223971),	-- Azj-Kahet Special
 		i(222728),	-- Beledar's Bounty
 		i(222736),	-- Chippy Tea
@@ -555,6 +556,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = 
 		i(225855),	-- Ghoulfish Delight
 		i(222716),	-- Ginger-Glazed Fillet
 		i(222707),	-- Hallowfall Chili
+		i(235853, {["timeline"] = {ADDED_11_1_0}}),	-- Hearty Authentic Undermine Clam Chowder
 		i(222776),	-- Hearty Beledar's Bounty
 		i(222775),	-- Hearty Angler's Delight
 		i(222784),	-- Hearty Chippy Tea
@@ -824,9 +826,9 @@ root(ROOTS.Craftables, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = 
 			FirstCraft(81045, 445373);	-- Whisper of Silken Speed
 			-- Reagents
 			FirstCraft(81067, 445395);	-- Concentration Concentrate
-			FirstCraft(81027, 445354, ADDED_11_0_2, REMOVED_11_1_0);	-- Enchanted Gilded Harbinger Crest
-			FirstCraft(81020, 445347, ADDED_11_0_2, REMOVED_11_1_0);	-- Enchanted Runed Harbinger Crest
-			FirstCraft(81071, 445399, ADDED_11_0_2, REMOVED_11_1_0);	-- Enchanted Weathered Harbinger Crest
+			FirstCraft(81027, 445354, ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART);	-- Enchanted Gilded Harbinger Crest
+			FirstCraft(81020, 445347, ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART);	-- Enchanted Runed Harbinger Crest
+			FirstCraft(81071, 445399, ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART);	-- Enchanted Weathered Harbinger Crest
 			FirstCraft(81043, 445371);	-- Mirror Powder
 			-- Rods and Wants
 			FirstCraft(80997, 445324);	-- Enchanted Spearwood Wand
@@ -1441,6 +1443,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = 
 		i(224752),	-- Soaked Journal Entry
 		i(220141),	-- Specular Rainbowfish
 		i(220150),	-- Spiked Sea Raven
+		i(235846, {["timeline"] = {ADDED_11_1_0}}),	-- Undermine Clam
+		i(235845, {["timeline"] = {ADDED_11_1_0}}),	-- Undermine Clam Meat
 		i(220139),	-- Whispering Stargazer
 	}),
 	prof(HERBALISM, {
@@ -2347,8 +2351,11 @@ root(ROOTS.Craftables, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = 
 			i(213611),	-- Writhing Sample
 		}),
 		n(DISCOVERY, {
+			r(439713, {	-- Aqirite Seam
+				["description"] = "Best farmed in 'The Underkeep' Delve during a story that allows ores to spawn. The first room on the right can an Aqirite Seam.\n\nCan also be found very very rarely in Caves in Hallowfall & Ajzkahet as well as in the Sinkhole, Skittering Breach and Underkeep Delve",
+				["maps"] = { HALLOWFALL, AZJ_KAHET, THE_SINKHOLE, SKITTERING_BREACH, THE_UNDERKEEP,}
+			}),
 			r(439707),	-- Aqirite
-			r(439713),	-- Aqirite Seam
 			r(439712),	-- Bismuth Seam
 			r(439725),	-- Camouflaged Aqirite
 			r(439724),	-- Camouflaged Bismuth
@@ -2565,6 +2572,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = 
 			i(222871),	-- Duskthread Lining+
 			i(222872),	-- Duskthread Lining++
 			i(222873),	-- Duskthread Lining+++
+			i(222788),	-- Khaz Algar Unraveling
 			i(222876),	-- Gritty Polishing Cloth+
 			i(222877),	-- Gritty Polishing Cloth++
 			i(222878),	-- Gritty Polishing Cloth+++
@@ -2768,7 +2776,8 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["time
 			-- q(84476),	-- Contract: The Severed Threads [Rank 3] (spellID 454942)
 			-- Craftable / Sparks
 			q(82039),	-- first Fractured Spark of Omens
-			q(85395, {["timeline"]={ADDED_11_1_0}}),	-- Fractured Spark of Fortunes
+			q(85395, {["timeline"]={ADDED_11_1_0_SEASONSTART}}),	-- Fractured Spark of Fortunes
+			q(90664, {["timeline"]={ADDED_11_1_0_SEASONSTART}}),	-- Triggers wtih 90660 A Golden Circumstance
 		}),
 	}),
 })));

@@ -101,6 +101,12 @@ root(ROOTS.Zones, {
 						["coord"] = { 62.9, 77.8, KEZAN },
 						["qg"] = 34872,	-- Foreman Dampwick
 						["sourceQuest"] = 14120,	-- A Bazillion Macaroons?!
+						["groups"] = {
+							o(195492, {	-- Kaja'mite Chunk
+								i(48766),	-- Kaja'mite Chunk (QI!)
+							}),
+							i(48768),	-- Kablooey Bombs (QI!)
+						},
 					}),
 					q(14113, {	-- Life of the Party [Male Version]
 						["coord"] = { 56.3, 77.1, KEZAN },
@@ -248,3 +254,15 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
+	m(THE_MAELSTROM, {
+		m(KEZAN, {
+			n(QUESTS, {
+				q(14114),	-- Kezan - The New You tracking event. Triggers after you complete "The New You"
+				q(14139),	-- Kezan - Phase 1 complete. Triggers after turning in "Do it Yourself"
+				q(14158),	-- Kezan - Phase 6 complete. Triggers when quest "447" becomes available
+			}),
+		}),
+	}),
+})));

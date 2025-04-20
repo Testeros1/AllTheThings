@@ -129979,5 +129979,6 @@ _.ItemDB = {
 [191644]={["b"]=1,["class"]=12,["equippable"]=0,["lvl"]=1,["name"]="Memory of Unity",["q"]=5,["subclass"]=0},
 [191645]={["b"]=1,["class"]=12,["equippable"]=0,["lvl"]=1,["name"]="Memory of Unity",["q"]=5,["subclass"]=0},
 [191701]={["b"]=1,["class"]=0,["equippable"]=0,["iLvl"]=60,["minReputation"]={2478,9000},["name"]="Bag of Explored Souls",["q"]=5,["subclass"]=8},
-[191781]={["b"]=1,["class"]=7,["equippable"]=0,["iLvl"]=50,["minReputation"]={2478,9000},["name"]="Vestige of the Devourers",["q"]=5,["subclass"]=18},};
+[191781]={["b"]=1,["class"]=7,["equippable"]=0,["iLvl"]=50,["minReputation"]={2478,9000},["name"]="Vestige of the Devourers",["q"]=5,["subclass"]=18},
+};
 -- #endif

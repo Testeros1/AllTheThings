@@ -30,7 +30,9 @@ i(207097, 416158);	-- Nightmarish Emerald Drake
 i(0, 440915);		-- Auspicious Arborwyrm
 i(0, 423869);		-- Avatar of Flame
 i(0, 446902);		-- Polly Roger
-i(0, 471440);		-- Skybound Spectral Tiger (CN Only)
+i(0, 471440);		-- Skybound Spectral Tiger 		(CN Only)
+i(0, 1216542);		-- Blazing Royal Fire Hawk		(CN Only Classic Version)
+i(0, 459784);		-- Golden Ashes of Al'ar 		(CN Only Classic Version)
 
 -- Cata Classic --
 i(0, 463045);		-- Lava Drake
@@ -1705,14 +1707,12 @@ i(210070, 424534);	-- Vicious Moonbeast
 i(210069, 424535);	-- Vicious Moonbeast
 i(210059, 424476);	-- Winter Night Dreamsaber
 --- NYI ---
-i(210141, 424601);	-- [PH] Brown-Furred Spiky Bakar
 i(210143, 424608);	-- [PH] White-Furred Bakar
 i(210144, 424610);	-- [PH] Yellow-Furred Spiky Bakar
 i(210145, 424611);	-- [PH] YellowBlack-Furred Bakar
 -- #if BEFORE 11.0.5
 i(211075, 428013);	-- Deathbringer's Shadowcycle
 -- #endif
-i(211089, 428068);	-- Felreaver Deathcycle
 i(211086, 428065);	-- Jeweled Jade Scarab
 i(211085, 428062);	-- Jeweled Sapphire Scarab
 i(210140, 0);		-- [PH] Black-Furred Bakar
@@ -1832,7 +1832,6 @@ i(223154, 447156);	-- [PH] Firebee Mount (White Skin, White Saddle)
 i(222988, 447173);	-- [PH] Firefly2Mount (Green)
 i(222991, 447181);	-- [PH] Firefly2Mount (Purple)
 i(221778, 447161);	-- [PH] Firefly2Mount (Yellow)
-i(223265, 447189);	-- [PH] FlyingNerubian2 Mount (Tan Body, Orange Saddle)
 i(224413, 452768);	-- [PH] Goliathus (Blue)
 i(224414, 452777);	-- [PH] Goliathus (Green)
 i(224416, 452780);	-- [PH] Goliathus (Purple)
@@ -1964,48 +1963,81 @@ i(234721, 1214940);	-- Ur'zul Fleshripper
 -- PATCH 11.1.0 --
 ------------------
 i(229952, 466023);	-- Asset Advocator
-i(0, 466024);		-- Bildewater Bombardier
-i(0, 466001);		-- Blackwater Bonecrusher
+i(229957, 466024);	-- Bilgewater Bombardier
+i(229937, 466001);	-- Blackwater Bonecrusher
 i(229948, 466019);	-- Blackwater Shredder Deluxe Mk 2
 i(233064, 473188);	-- Bronze Goblin Wave Shredder
 i(229935, 465999);	-- Crimson Armored Growler
-i(0, 1217235);		-- Crimson Shreddertank
-i(0, 466000);		-- Darkfuse Chompactor
+i(235549, 1217235);	-- Crimson Shreddertank
+i(229924, 466000);	-- Darkfuse Chompactor
 i(229950, 466018);	-- Darkfuse Demolisher
 i(229955, 466027);	-- Darkfuse Spy-Eye
 i(229974, 466133);	-- Delver's Gob-Trotter
+i(235662, 1218069);	-- Emerald Snail
 i(237141, 1221694);	-- Enterprising Shreddertank
-i(0, 466011);		-- Flarendo the Furious
-i(232523, 460013);	-- G-99 Breakneck
+i(229940, 466011);	-- Flarendo the Furious
 i(229941, 466017);	-- Innovation Investigator
-i(0, 468068);		-- Junkmaestro's Magnetomech
+i(231173, 468068);	-- Junkmaestro's Magnetomech
+i(235555, 1217341);	-- Lively Darkmoon Charger
 i(229954, 466025);	-- Margin Manipulator
 i(229956, 466028);	-- Mean Green Flying Machine
+i(233286, 473745);	-- Meeksi Brewthief
+i(233284, 473743);	-- Meeksi Rollingpaw
+i(233282, 473739);	-- Meeksi Rufflefur
+i(233283, 473741);	-- Meeksi Softpaw
+i(233285, 473744);	-- Meeksi Teatuft
 i(229946, 466013);	-- Ocher Delivery Rocket
+i(235650, 1217994);	-- Pearlescent Butterfly
 i(229949, 466020);	-- Personalized Goblin S.C.R.A.Per
 i(229987, 466144);	-- Prized Gladiator's Fel Bat
 i(236960, 1221155);	-- Prototype A.S.M.R.
+i(235657, 1218012);	-- Ruby Butterfly
 i(229953, 466026);	-- Salvaged Goblin Gazillionaire's Flying Machine
-i(0, 466014);		-- Steamwheedle Supplier
+i(229943, 466014);	-- Steamwheedle Supplier
 i(235626, 1217760);	-- The Big G
 i(229944, 466016);	-- The Topskimmer Special
-i(0, 466012);		-- Thunderdrum Misfire
-i(0, 466022);		-- Venture Co-ordinator
-i(0, 466146);		-- Vicious Electro Eel [A]
-i(0, 466145);		-- Vicious Electro Eel [H]
+i(229945, 466012);	-- Thunderdrum Misfire
+i(229951, 466022);	-- Venture Co-ordinator
+i(229989, 466146);	-- Vicious Electro Eel [A]
+i(229988, 466145);	-- Vicious Electro Eel [H]
 i(229936, 466002);	-- Violet Armored Growler
+i(235556, 1217342);	-- Violet Darkmoon Charger
 i(229947, 466021);	-- Violet Goblin Shredder
 -- TRADING POST TAG
-i(235662, 1218069);	-- Emerald Snail
-i(235555, 1217341);	-- Lively Darkmoon Charger
 i(235659, 1218014);	-- Midnight Butterfly
 i(235554, 1217340);	-- Midnight Darkmoon Charger
-i(235650, 1217994);	-- Pearlescent Butterfly
-i(235657, 1218012);	-- Ruby Butterfly
 i(235646, 1217965);	-- Shimmermist Free Runner
 i(235557, 1217343);	-- Snowy Darkmoon Charger
 i(235658, 1218013);	-- Spring Butterfly
-i(235556, 1217342);	-- Violet Darkmoon Charger
---- Probably not real Mounts
+--- NYI ---
+i(232523, 460013);	-- G-99 Breakneck
 i(0, 466423);	-- Unstable Rocket
 i(0, 466464);	-- Unstable Rocket
+
+------------------
+-- PATCH 11.1.5 --
+------------------
+--- ITEM ---
+i(235711, 1218316);	-- Corruption of the Aspects
+i(223265, 447189);	-- Nesting Swarmite
+i(235709, 1218314);	-- Ny'alothan Shadow Worm
+i(238829, 1226421);	-- Radiant Imperial Lynx
+i(239020, 1227076);	-- Tyrannotort
+i(235712, 1218317);	-- Void-Crystal Panther
+i(235705, 1218305);	-- Void-Forged Stallion
+i(235700, 1218229);	-- Void-Scarred Gryphon
+i(235706, 1218306);	-- Void-Scarred Pack Mother
+i(235707, 1218307);	-- Void-Scarred Windrider
+i(211089, 428068);	-- Voidfire Deathcycle
+--- UNSORTED ---
+i(238902, 1226533);	-- Autumn Harvesthog
+i(210141, 424601);	-- Brown-Furred Spiky Bakar
+i(238941, 1226740);	-- Coldflame Cormaera
+i(238966, 1226851);	-- Felborn Cormaera
+i(238968, 1226856);	-- Lavaborn Cormaera
+i(238967, 1226855);	-- Molten Cormaera
+i(236415, 1219705);	-- Spotted Black Riding Goat
+i(238897, 1226511);	-- Spring Harvesthog
+i(238900, 1226531);	-- Summer Harvesthog
+i(239563, 1228865);	-- Void-Scarred Lynx
+i(238901, 1226532);	-- Winter Harvesthog

@@ -1515,9 +1515,9 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 56.6, 52.6, DARNASSUS },
 					["timeline"] = { ADDED_4_1_0 },
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {
-						{"sub", "common_recipes_vendor", 3356},	-- Sumi <Blacksmithing Supplies>
-					},
+					-- #if AFTER 4.3.0
+					["sym"] = {{ "sub", "common_recipes_vendor", 55684 }},	-- Jordan Smith <Blacksmithing Trainer & Supplies>
+					-- #endif
 					["groups"] = {
 						i(12162, {	-- Plans: Hardened Iron Shortsword (RECIPE!)
 							["isLimited"] = true,
@@ -1828,7 +1828,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				}),
 				n(4228, {	-- Vaean <Enchanting Supplies>
 					-- #if AFTER CATA
-					["coord"] = { 58.6, 14.6, DARNASSUS },
+					["coord"] = { 56.5, 32.2, DARNASSUS },
 					-- #else
 					["coord"] = { 58.6, 14.7, DARNASSUS },
 					-- #endif

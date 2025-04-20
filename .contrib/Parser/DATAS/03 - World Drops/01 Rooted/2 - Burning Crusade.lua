@@ -1030,12 +1030,65 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 		i(31326),	-- Truestrike Ring
 	}),
 	filter(MISC, {
-		i(29739),	-- Arcane Tome
-		i(29740),	-- Fel Armament
-		i(29426),	-- Firewing Signet [The Scryers]
-		i(29425),	-- Mark of Kil'jaeden [The Aldor]
-		i(30809),	-- Mark of Sargeras [The Aldor]
-		i(30810),	-- Sunfury Signet [The Scryers]
+		i(29739, {	-- Arcane Tome [The Scryers]
+			["coords"] = {
+				{ 25.3, 70.4, NETHERSTORM },	-- Manaforge B'naar
+				{ 50.5, 83.1, NETHERSTORM },	-- Manaforge Coruu
+				{ 55.9, 79.2, NETHERSTORM },	-- Sunfury Hold
+				{ 47.2, 65.7, SHADOWMOON_VALLEY },	-- Eclipse Point
+				-- #if AFTER 2.4.0
+				{ 42.7, 37.4, ISLE_OF_QUELDANAS },	-- Dawnstar Village
+				-- #endif
+			},
+			["maps"] = { TEMPEST_KEEP_BOTANICA, TEMPEST_KEEP_MECHANAR },
+		}),
+		i(29740, {	-- Fel Armament [The Aldor]
+			["coords"] = {
+				{ 10.7, 40.5, NAGRAND },	-- The Twilight Ridge
+				{ 63.4, 65.7, BLADES_EDGE_MOUNTAINS },	-- Death's Door
+				{ 73.7, 40.9, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Anger
+				{ 40.8, 72.5, NETHERSTORM },	-- Arklon Ruins
+				{ 41.3, 21.0, NETHERSTORM },	-- Forge Base: Gehenna
+				{ 40.2, 38.2, SHADOWMOON_VALLEY },	-- The Deathforge
+			},
+			["maps"] = { AUCHINDOUN_SHADOW_LABYRINTH, TEMPEST_KEEP_ARCATRAZ },
+		}),
+		i(29426, {	-- Firewing Signet [The Scryers]
+			["coord"] = { 71.2, 37.4, TEROKKAR_FOREST },
+		}),
+		i(29425, {	-- Mark of Kil'jaeden [The Aldor]
+			["coords"] = {
+				{ 40.2, 58.6, TEROKKAR_FOREST },	-- The Shadow Stair
+				{ 31.4, 52.7, TEROKKAR_FOREST },	-- Shadow Tomb
+				{ 70.8, 79.9, NAGRAND },	-- Kil'sorrow Fortress
+			},
+			-- #if AFTER 9.0.3
+			["description"] = "The Shadowlands level squish made this mark wonky to obtain, requiring low level character and specific conditions. Otherwise Mark of Sargeras drops in it's place.",
+			-- #endif
+		}),
+		i(30809, {	-- Mark of Sargeras [The Aldor]
+			["coords"] = {
+				{ 10.7, 40.5, NAGRAND },	-- The Twilight Ridge
+				{ 63.4, 65.7, BLADES_EDGE_MOUNTAINS },	-- Death's Door
+				{ 73.7, 40.9, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Anger
+				{ 40.8, 72.5, NETHERSTORM },	-- Arklon Ruins
+				{ 41.3, 21.0, NETHERSTORM },	-- Forge Base: Gehenna
+				{ 40.2, 38.2, SHADOWMOON_VALLEY },	-- The Deathforge
+			},
+			["maps"] = { AUCHINDOUN_SHADOW_LABYRINTH, TEMPEST_KEEP_ARCATRAZ },
+		}),
+		i(30810, {	-- Sunfury Signet [The Scryers]
+			["coords"] = {
+				{ 25.3, 70.4, NETHERSTORM },	-- Manaforge B'naar
+				{ 50.5, 83.1, NETHERSTORM },	-- Manaforge Coruu
+				{ 55.9, 79.2, NETHERSTORM },	-- Sunfury Hold
+				{ 47.2, 65.7, SHADOWMOON_VALLEY },	-- Eclipse Point
+				-- #if AFTER 2.4.0
+				{ 42.7, 37.4, ISLE_OF_QUELDANAS },	-- Dawnstar Village
+				-- #endif
+			},
+			["maps"] = { TEMPEST_KEEP_BOTANICA, TEMPEST_KEEP_MECHANAR },
+		}),
 		-- #IF AFTER 4.0.1
 		i(22146),	-- Book: Gift of the Wild
 		i(22153),	-- Tome of Arcane Brilliance
@@ -1098,6 +1151,7 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 			17160,	-- Living Cyclone
 			17159,	-- Storm Rager
 			22310,	-- Storming Wind-Ripper
+			24222,	-- Windy Cload (Gas cloud)
 		},
 		["description"] = "The given maps, coordinates and sources applies for how to obtain this element's motes.",
 	}, {
@@ -1121,6 +1175,13 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 			17156,	-- Tortured Earth Spirit
 		},
 		["description"] = "The given maps, coordinates and sources applies for how to obtain this element's motes.",
+		["_allowObjectProvider"] = true,
+		["providers"] = {
+			{ "o", 181556 },	-- Adamantite Deposit
+			{ "o", 181555 },	-- Fel Iron Deposit
+			{ "o", 181557 },	-- Khorium Vein
+			{ "o", 181569 },	-- Rich Adamantite Deposit
+		},
 	}, {
 		i(22573),	-- Mote of Earth
 		i(22452),	-- Primal Earth
@@ -1141,20 +1202,38 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 			22298,	-- Vile Fire-Soul
 		},
 		["description"] = "The given maps, coordinates and sources applies for how to obtain this element's motes.",
+		["_allowObjectProvider"] = true,
+		["providers"] = {
+			{ "o", 181555 },	-- Fel Iron Deposit
+			{ "o", 181557 },	-- Khorium Vein
+		},
 	}, {
 		i(22574),	-- Mote of Fire
 		i(21884),	-- Primal Fire
 	})),
 	filter(REAGENTS, sharedData({	-- Life
-		["maps"] = { COILFANG_RESERVOIR_UNDERBOG },
 		["crs"] = {
 			17723,	-- Bog Giant
 			17770,	-- Hungarfen
+			-- #if BEFORE 2.3.0
+			17378,	-- Swamp Gas (Gas cloud)
+			-- #endif
 			17734,	-- Underbog Lord
 			17725,	-- Underbog Lurker
 			17871,	-- Underbog Shambler
 		},
 		["description"] = "The given maps and sources applies for how to obtain this element's motes.",
+		["maps"] = { COILFANG_RESERVOIR_UNDERBOG },
+		["_allowObjectProvider"] = true,
+		["providers"] = {
+			{ "o", 181278 },	-- Ancient Lichen
+			{ "o", 181271 },	-- Dreaming Glory
+			{ "o", 181270 },	-- Felweed
+			{ "o", 181281 },	-- Mana Thistle
+			{ "o", 181280 },	-- Nightmare Vine
+			{ "o", 181275 },	-- Ragveil
+			{ "o", 181277 },	-- Terocone
+		},
 	}, {
 		i(22575),	-- Mote of Life
 		i(21886),	-- Primal Life
@@ -1177,6 +1256,7 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 		},
 		["crs"] = {
 			22181,	-- Aether Ray
+			17408,	-- Arcane Vortex (Gas cloud)
 			-- #if AFTER 2.4.0
 			24972, -- Erratic Sentry
 			-- #endif
@@ -1191,6 +1271,8 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 			20516,	-- Warp Monstrosity
 		},
 		["description"] = "The given maps, coordinates and sources applies for how to obtain this element's motes.",
+		["_allowObjectProvider"] = true,
+		["provider"] = { "o", 181279 },	-- Netherbloom
 	}, {
 		i(22576),	-- Mote of Mana
 		i(22457),	-- Primal Mana
@@ -1204,6 +1286,7 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 		},
 		["crs"] = {
 			17014,	-- Collapsing Voidwalker
+			17407,	-- Felmist (Gas cloud)
 			16974,	-- Rogue Voidwalker
 			16975,	-- Uncontrolled Voidwalker
 			18869,	-- Unstable Voidwrath
@@ -1217,7 +1300,6 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 		i(22456),	-- Primal Shadow
 	})),
 	filter(REAGENTS, sharedData({	-- Water
-		["provider"] = { "o", 182951 },	-- Pure Water (fishing school)
 		["coords"] = {
 			{ 62.1, 16.1, NAGRAND },	-- Elemental Plateu, watery
 			{ 40.5, 44.9, NAGRAND },	-- Halaa Basin
@@ -1239,8 +1321,13 @@ root(ROOTS.WorldDrops, applyclassicphase(TBC_PHASE_ONE, expansion(EXPANSION.TBC,
 			17154,	-- Muck spawn
 			18750,	-- Shimmerscale Eel
 			21728,	-- Skettis Surger
+			-- #if AFTER 2.3.0
+			17378,	-- Swamp Gas (Gas cloud)
+			-- #endif
 		},
 		["description"] = "The given maps, coordinates and sources applies for how to obtain this element's motes.",
+		["_allowObjectProvider"] = true,
+		["provider"] = { "o", 182951 },	-- Pure Water (fishing school)
 	}, {
 		i(22578),	-- Mote of Water
 		i(21885),	-- Primal Water

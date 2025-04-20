@@ -196,9 +196,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, {
 							["questID"] = 57680,
 							["coord"] = { 55.0, 53.0, NZOTH_ASSAULT_ULDUM },
 							["g"] = {
-								i(175142, {	-- All-Seeing Right Eye
-									i(175140),	-- All-Seeing Eyes (TOY!)
-								}),
+								i(175142),	-- All-Seeing Right Eye
 							},
 						}),
 						n(156002, {	-- Harbinger Raloam
@@ -378,10 +376,12 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, {
 						i(170553, {	-- Void Focus Splinter
 							["description"] = "The fastest way is to farm them inside Lesser Vision.",
 						}),
+						-- #IF BEFORE TWW
 						i(174768, {	-- Cursed Relic
 							["cost"] = { { "i", 174758, 6 } },	-- 6x Voidwarped Relic Fragment
 						}),
 						i(174758),	-- Voidwarped Relic Fragment
+						-- #ENDIF
 					}),
 					i(173372),	-- Cache of the Black Empire
 				},
@@ -1718,7 +1718,31 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, {
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_3_0 } }, {
 	m(NZOTH_ASSAULT_ULDUM, {	-- Uldum (under assault)
 		n(NZOTH_ASSAULTS, {
-			q(59061),	-- hatching Shadowbarb drone after the first phase
+			n(TREASURES, {
+				q(55689),	-- Uldum - Amathet cache
+				q(55690),	-- Uldum - Amathet cache
+				q(55691),	-- Uldum - Amathet cache
+				q(55692),	-- Uldum - Amathet Reliquary (requires tol'vir relic to open)
+				q(55698),	-- Uldum - Amathet cache
+				q(55699),	-- Uldum - Amathet cache
+				q(55700),	-- Uldum - Amathet cache
+				q(57623),	-- Uldum - Black Empire Cache
+				q(57624),	-- Uldum - Black Empire Cache
+				q(57625),	-- Uldum - Black Empire Cache
+				q(57626),	-- Uldum - Black Empire Cache
+				q(57627),	-- Uldum - Black Empire Cache
+				q(57635),	-- Uldum - Black Empire Cache
+				q(57628),	-- Uldum - Black Empire Coffer
+				q(58138),	-- Uldum - Infested Cache
+				q(58142),	-- Uldum - Infested Cache
+			}),
+			n(QUESTS, {
+				q(59060),	-- choosing "Bitey McStabface' as the name for your Aqir Hatchling
+				q(59062),	-- choosing "Spike" as the name for your Aqir Hatchling
+				q(59059),	-- choosing "Yu'gaz" as the name for your Aqir Hatchling
+				q(59061),	-- hatching Shadowbarb drone after the first phase
+				q(59073),	-- Triggers when turning in "Match the Hatch" for the Shadowbarb Drone. Probably a daily trigger ID so players can't do the entire chain in one day
+			}),
 		}),
 	}),
 })));

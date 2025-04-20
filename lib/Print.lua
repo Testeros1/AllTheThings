@@ -44,7 +44,7 @@ app.PrintGroup = function(group,depth)
 		for i=0,depth,1 do
 			p = p .. "-";
 		end
-		p = p .. tostring(group.key or group.text) .. ":" .. tostring(group[group.key or "NIL"]);
+		p = p .. tostring(group.key or group.text) .. ":" .. tostring(group.keyval);
 		print(p);
 		if group.g then
 			for i,sg in ipairs(group.g) do
@@ -70,13 +70,13 @@ app.PrintTable = function(t,depth)
 		app._PrintTable[t] = true;
 		print(p,tostring(t),"__type",t.__type," {");
 		for k,v in pairs(t) do
-			if type(v) == "table" then
-				print(p,k,":");
-				if k == "parent" or k == "sourceParent" then
-					print("SKIPPED")
-				elseif k == "g" then
-					print("#",v and #v)
+			if k == "parent" or k == "sourceParent" or k == "__merge" then
+				print(p,k,":",tostring(v), "[SKIPPED]")
+			elseif type(v) == "table" then
+				if k == "g" then
+					print(p,k,": #",v and #v)
 				else
+					print(p,k,":");
 					app.PrintTable(v,depth + 1);
 				end
 			else

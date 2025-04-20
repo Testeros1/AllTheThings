@@ -1411,9 +1411,6 @@ root(ROOTS.NeverImplemented, filter(BATTLE_PETS, {
 		-- 10.2.5
 		expansion(EXPANSION.DF, patch(2,5), bubbleDownSelf({ ["timeline"] = { CREATED_10_2_5 } }, {
 			-- With SpeciesID Attached
-			i(212791, {	-- Beetriz (PET!)
-				["displayID"] = 116643,
-			}),
 			i(208446, {	-- Fyrn (PET!)
 				["displayID"] = 113777,
 			}),
@@ -1549,6 +1546,14 @@ root(ROOTS.NeverImplemented, filter(BATTLE_PETS, {
 			pet(4556),	-- Tickler (PET!)
 			pet(4549),	-- Tiny Cragling (PET!)
 			pet(4560),	-- Zaedu (PET!)
+		})),
+
+		-- 11.0.7
+		expansion(EXPANSION.TWW, patch(0,7), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_7 } }, {
+			-- Only SpeciesID
+			pet(4725, {	-- Titan Orb PET!)
+				--["displayID"] = ,
+			}),
 		})),
 	}),
 }));

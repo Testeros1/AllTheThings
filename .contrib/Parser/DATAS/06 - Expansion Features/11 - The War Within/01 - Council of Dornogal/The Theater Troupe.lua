@@ -61,12 +61,30 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 						},
 						["isWeekly"] = true,
 						["groups"] = {
-							i(226263, {	-- Theater Troupe's Trove
-								i(228320),	-- Design: Binding of Binding (RECIPE!)
-								i(228708),	-- Formula: Gleeful Glamour - Earthen (RECIPE!)
-								i(223126),	-- Formula: Enchant Chest - Stormrider's Agility (RECIPE!)
-								i(223095),	-- Pattern: Rook Feather Wristwraps (RECIPE!)
-								i(223036),	-- Plans: Charged Runeaxe (RECIPE!)
+							i(226263, {	-- Theater Troupe's Trove (S1)
+								["sym"] = {{"select","itemID",228361},{"pop"}},	-- Seasoned Adventurer's Cache [Khaz Algar Zone Rewards content]
+								["timeline"] = { REMOVED_11_1_0_SEASONSTART },
+								["g"] = {
+									i(228320),	-- Design: Binding of Binding (RECIPE!)
+									i(228708),	-- Formula: Gleeful Glamour - Earthen (RECIPE!)
+									i(223126),	-- Formula: Enchant Chest - Stormrider's Agility (RECIPE!)
+									i(223095),	-- Pattern: Rook Feather Wristwraps (RECIPE!)
+									i(223036),	-- Plans: Charged Runeaxe (RECIPE!)
+								},
+							}),
+							i(239128, {	-- Theater Troupe's Trove (S2)
+								["sym"] = {{"select","itemID",228361},{"pop"}},	-- Seasoned Adventurer's Cache [Khaz Algar Zone Rewards content]
+								["timeline"] = { ADDED_11_1_0_SEASONSTART },
+								["g"] = {
+									i(228320),	-- Design: Binding of Binding (RECIPE!)
+									i(228708),	-- Formula: Gleeful Glamour - Earthen (RECIPE!)
+									i(223126),	-- Formula: Enchant Chest - Stormrider's Agility (RECIPE!)
+									i(223095),	-- Pattern: Rook Feather Wristwraps (RECIPE!)
+									i(223036),	-- Plans: Charged Runeaxe (RECIPE!)
+								},
+							}),
+							i(235151, {	-- Distinguished Actor's Chest
+								["timeline"] = { ADDED_11_1_0 },
 							}),
 						},
 					}),
@@ -85,5 +103,13 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 				}),
 			},
 		})),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+	n(COUNCIL_OF_DORNOGAL, {
+		header(HEADERS.Quest, 83240, {	-- Theater Troupe
+			q(86619),	-- Theater Troupe, completes along with regular quest.
+		}),
 	}),
 })));

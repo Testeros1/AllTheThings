@@ -444,12 +444,12 @@ root(ROOTS.Zones, {
 						q(44337, {	-- Goddess Watch Over You
 							["description"] = "There are two versions of this quest: One for players that have already finished the quest chain to recover the Tears of Elune and one for those that haven't yet.\n\nThis one is for players that have.",
 							["sourceQuest"] = 44153,	-- Light's Charge
-							["provider"] = { "n", 113857 },	-- Light's Heart
+							["provider"] = { "n", 113686 },	-- Archmage Khadgar
 						}),
 						q(44338, {	-- Goddess Watch Over You
 							["description"] = "There are two versions of this quest: One for players that have already finished the quest chain to recover the Tears of Elune and one for those that haven't yet.\n\nThis one is for players that haven't.",
 							["sourceQuest"] = 44153,	-- Light's Charge
-							["provider"] = { "n", 113857 },	-- Light's Heart
+							["provider"] = { "n", 113686 },	-- Archmage Khadgar
 						}),
 						q(44448, {	-- In the House of Light and Shadow
 							["sourceQuests"] = {
@@ -459,6 +459,7 @@ root(ROOTS.Zones, {
 							},
 							["provider"] = { "n", 90417 },	-- Archmage Khadgar
 							["coord"] = { 28.9, 48.4, LEGION_DALARAN },
+							["g"] = { i(141351) },	-- Tear of Elune (QI!)
 						}),
 						q(44464, {	-- Awakenings
 							["sourceQuest"] = 44448,	-- In the House of Light and Shadow
@@ -467,7 +468,6 @@ root(ROOTS.Zones, {
 						q(44466, {	-- An Unclear Path
 							["sourceQuest"] = 44464,	-- Awakenings
 							["provider"] = { "n", 113857 },	-- Light's Heart
-
 						}),
 						q(44479, {	-- Ravencrest's Legacy
 							["description"] = "This quest sends you to a scenario involving Kur'talos Ravencrest, Illidan Stormrage, and the ill-fated Moonguard. Before you kill the final boss, make sure to do everything contained within!",
@@ -576,6 +576,7 @@ root(ROOTS.Zones, {
 							["provider"] = { "n", 89398 },	-- Allari the Souleater <Illidari>
 							["maps"] = { 703, 704, 705 },	-- Halls of Valor
 							["g"] = {
+								i(143661),	-- Soul Prism of the Illidari (QI!)
 								i(139988),	-- Blazing Purpose Mantle
 								i(140021),	-- Crusader's Inferno Pauldrons
 								i(139941),	-- Gloves of the Shadow's Return
@@ -675,3 +676,14 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+	m(BROKEN_ISLES, {
+		n(QUESTS, {
+			q(43511),	-- Kalec Arrives - triggered when turning in "The Power Within" at Azurewing Repose (starting Balance of Power)
+			q(43775),	-- Kalec Arrives - triggered when completing Seeking the Valkyra (40603) in the Balance of Power questline
+			q(40627),	-- Triggers after looting heart for Halls of Valor: Odyn's Blessing (40615) in the Balance of Power questline
+			q(43529),	-- Triggered when turning in Preparing to Move (43898) in the Balance of Power questline
+		}),
+	}),
+})));

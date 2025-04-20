@@ -167,7 +167,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					}),
 				}),
 				prof(COOKING, {
-					n(3399, {	-- Zamja <Cooking Trainer>
+					n(3399, bubbleDownSelf({ ["timeline"] = { ADDED_1_11_1 }, }, {	-- Zamja <Cooking Trainer>
 						["coord"] = { 32.2, 69.6, ORGRIMMAR },
 						["races"] = HORDE_ONLY,
 						["groups"] = appendGroups(CLASSIC_COOKING,
@@ -177,7 +177,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							{}
 							-- #endif
 						),
-					}),
+					})),
 				}),
 				prof(ENCHANTING, {
 					n(3345, {	-- Godan <Enchanting Trainer>
@@ -836,7 +836,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["sourceQuest"] = 32471,	-- Light Camera Action (H)
 					["coord"] = { 34.5, 70.8, ORGRIMMAR },
 					["timeline"] = { ADDED_7_3_5 },
-					["collectible"] = false,
+					["lockCriteria"] = { 1, "toyID", 122674 },	-- S.E.L.F.I.E. Camera MkII
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						i(155832),	-- Pristine Crystal Shard (QI!)
@@ -1091,7 +1091,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				--	["description"] = "This quest is automatically offered to Horde players upon reaching level 110.",
 					["qg"] = 14720,	-- High Overlord Saurfang
 					["coord"] = { 48.6, 71.0, ORGRIMMAR },
-					["timeline"] = { ADDED_8_0_1 },
+					["timeline"] = { ADDED_8_0_1, REMOVED_9_0_1 },
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						i(163528),	-- Deathguard's Gladius
@@ -1278,7 +1278,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 34.5, 70.8, ORGRIMMAR },
 					["timeline"] = { ADDED_7_3_5 },
 					["cost"] = { { "i", 4406, 1 } },	-- Standard Scope
-					["collectible"] = false,
+					["lockCriteria"] = { 1, "toyID", 122674 },	-- S.E.L.F.I.E. Camera MkII
 					["races"] = HORDE_ONLY,
 					["groups"] = {
 						objective(1, {	-- 0/1 Iron Box
@@ -1307,7 +1307,10 @@ root(ROOTS.Zones, m(KALIMDOR, {
 				q(26293, {	-- Machines of War
 					["qg"] = 3144,	-- Eitrigg
 					["sourceQuest"] = 28717,	-- Warchief's Command: Twilight Highlands!
-					["coord"] = { 48.6, 71.0, ORGRIMMAR },
+					["coords"] = {
+						{ 48.6, 71.0, ORGRIMMAR },
+						{ 49.1, 72.4, ORGRIMMAR },
+					},
 					["timeline"] = { ADDED_4_0_3 },
 					["races"] = HORDE_ONLY,
 				}),
@@ -1507,7 +1510,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 					["timeline"] = { REMOVED_2_4_1 },
 					["classes"] = { PRIEST },
-					["races"] = { UNDEAD },
+					["races"] = { TROLL },
 					["lvl"] = 20,
 					-- #if BEFORE 2.4.1
 					["groups"] = {
@@ -1529,7 +1532,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					["coord"] = { 35.6, 87.6, ORGRIMMAR },
 					["timeline"] = { REMOVED_2_4_1 },
 					["classes"] = { PRIEST },
-					["races"] = { UNDEAD },
+					["races"] = { TROLL },
 					["lvl"] = 20,
 					-- #if BEFORE 2.4.1
 					["groups"] = {
@@ -1614,7 +1617,7 @@ root(ROOTS.Zones, m(KALIMDOR, {
 						{ 48.5, 70.7, ORGRIMMAR },
 						{ 49.0, 91.6, ORGRIMMAR },
 					},
-					["timeline"] = { ADDED_8_0_1 },
+					["timeline"] = { ADDED_8_0_1, REMOVED_9_0_1 },
 					["races"] = HORDE_ONLY,
 				}),
 				-- #if ANYCLASSIC
@@ -4557,6 +4560,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 					},
 					["races"] = HORDE_ONLY,
 					["groups"] = {
+						i(39684, { ["timeline"] = { ADDED_3_0_2 }}),	-- Hair Trigger
+						i(4400),	-- Heavy Stock
 						i(18647, {	-- Schematic: Red Firework (RECIPE!)
 							["isLimited"] = true,
 						}),
@@ -4576,6 +4581,8 @@ root(ROOTS.Zones, m(KALIMDOR, {
 							["timeline"] = { CREATED_1_12_1, ADDED_2_3_0 },
 							["isLimited"] = true,
 						}),
+						i(40533, { ["timeline"] = { ADDED_3_0_2 }}),	-- Walnut Stock
+						i(4399),	-- Wooden Stock
 					},
 				}),
 				n(50488, {	-- Stone Guard Nargol <Orgrimmar Quartermaster>

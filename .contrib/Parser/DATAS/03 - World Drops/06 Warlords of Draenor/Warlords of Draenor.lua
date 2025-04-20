@@ -412,6 +412,7 @@ root(ROOTS.WorldDrops, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { AD
 			i(118847),	-- Amulet of Quel'Riq
 			i(116686),	-- Ancestral Amulet
 			i(116677),	-- Coldsinger Amulet
+			i(118843),	-- Eleece's Braced Gorget
 			i(116679),	-- Growthshaper Amulet
 			i(111244),	-- Lovely Locket of the Luxurious Locks of Lor're
 			i(116678),	-- Moonwhisper Amulet
@@ -575,9 +576,10 @@ root(ROOTS.WorldDrops, expansion(EXPANSION.WOD, bubbleDown({ ["timeline"] = { AD
 			i(116707),	-- Zangarra Ring
 		}),
 		filter(TRINKET_F, {
+			i(118881),	-- Najheric Bangle
+			i(118883),	-- Bronze Elekk Statue
 			i(118877),	-- Fizzlebang's Folly
 			i(118876),	-- Lucky Double-Sided Coin
-			i(118883),	-- Bronze Elekk Statue
 		}),
 	}),
 	n(WEAPONS, {

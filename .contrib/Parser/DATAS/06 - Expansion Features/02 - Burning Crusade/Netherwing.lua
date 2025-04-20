@@ -91,13 +91,11 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHA
 					},
 				}),
 				q(11050, {	-- Accepting All Eggs
-					["providers"] = {
-						{ "n", 23141 },	-- Yarzill the Merc
-						{ "i", 32506 },	-- Netherwing Egg
-					},
+					["qg"] = 23141,	-- Yarzill the Merc
 					["sourceQuest"] = 11049,	-- The Great Netherwing Egg Hunt
 					["coord"] = { 65.9, 86.4, SHADOWMOON_VALLEY },
 					["maxReputation"] = { FACTION_NETHERWING, EXALTED },	-- Netherwing, Exalted.
+					["cost"] = {{ "i", 32506, 1 }},	-- Netherwing Egg
 					["repeatable"] = true,
 				}),
 				q(11012, {	-- Blood Oath of the Netherwing
@@ -328,8 +326,8 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHA
 					["minReputation"] = { FACTION_NETHERWING, FRIENDLY },	-- Netherwing, Friendly.
 					["groups"] = {
 						objective(1, {	-- 0/10 Knothide Leather
-							["providers"] = {
-								{ "i", 21887 },	-- Knothide Leather
+							["cost"] = {
+								{ "i", 21887, 10 },	-- Knothide Leather
 							},
 						}),
 						objective(2, {	-- 0/1 Hardened Hide of Tyrantus

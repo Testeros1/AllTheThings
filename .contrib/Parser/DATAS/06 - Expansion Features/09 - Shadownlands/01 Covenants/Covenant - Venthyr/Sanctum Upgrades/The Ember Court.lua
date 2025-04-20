@@ -132,7 +132,7 @@ local COUNTESS_GROUP = {
 	i(180956),	-- Axeblade Blunderbuss
 	i(180957),	-- Batwing Glaive
 };
-local SILVERTIP_DREDWING = i(181316, {	-- -- Silvertip Dredwing (MOUNT!)
+local SILVERTIP_DREDWING = i(181316, {	-- Silvertip Dredwing (MOUNT!)
 	["cost"] = { { "c", ANIMA, 5000 } },
 });
 
@@ -2071,7 +2071,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.SL, bubbleDown({ ["timeline"] 
 									["provider"] = { "n", 171106 },	-- The Countess
 									["coord"] = { 58.0, 27.4, REVENDRETH },
 									["g"] = {
-										i(180497),	-- House Iremoore Disguise (QI!)
+										o(354185, {	-- House Iremoore Formal Wear
+											["coord"] = { 56, 35.5, REVENDRETH },
+											["g"] = { i(180497) },	-- House Iremoore Disguise (QI!)
+										}),
 										i(176114),	-- RSVP: The Countess
 									},
 								}),
@@ -2461,43 +2464,43 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 					q(61890),	-- 4th free revoke RSVP per week
 
 				-- First Time Elated
-					q(62507),	-- First time Elated with 'Rendle & Cudgelface'
+					-- q(62507),	-- First time Elated with 'Rendle & Cudgelface'
 
 				-- Events
 					q(60785),	-- 'Party Crashers' started
 
 				-- RSVPs
-					q(59382),	-- when using "RSVP: Baroness Vashj" — every time
+					-- q(59382),	-- when using "RSVP: Baroness Vashj" — every time
 					q(59383),	-- when using "RSVP: Baroness Vashj" — first time only
-					q(59406),	-- when using "RSVP: Choofa" — every time
+					-- q(59406),	-- when using "RSVP: Choofa" — every time
 					q(59407),	-- when using "RSVP: Choofa" — first time only
-					q(59409),	-- when using "RSVP: Cryptkeeper Kassir" — every time
+					-- q(59409),	-- when using "RSVP: Cryptkeeper Kassir" — every time
 					q(59410),	-- when using "RSVP: Cryptkeeper Kassir" — first time only
-					q(59412),	-- when using "RSVP: Droman Aliothe" — every time
+					-- q(59412),	-- when using "RSVP: Droman Aliothe" — every time
 					q(59413),	-- when using "RSVP: Droman Aliothe" — first time only
-					q(59415),	-- when using "RSVP: Grandmaster Vole" — every time
+					-- q(59415),	-- when using "RSVP: Grandmaster Vole" — every time
 					q(59416),	-- when using "RSVP: Grandmaster Vole" — first time only
-					q(59397),	-- when using "RSVP: Hunt-Captain Korayn" — every time
+					-- q(59397),	-- when using "RSVP: Hunt-Captain Korayn" — every time
 					q(59398),	-- when using "RSVP: Hunt-Captain Korayn" — first time only
-					q(59418),	-- when using "RSVP: Kleia and Pelagos" — every time
+					-- q(59418),	-- when using "RSVP: Kleia and Pelagos" — every time
 					q(59419),	-- when using "RSVP: Kleia and Pelagos" — first time only
-					q(59385),	-- when using "RSVP: Lady Moonberry" — every time
+					-- q(59385),	-- when using "RSVP: Lady Moonberry" — every time
 					q(59386),	-- when using "RSVP: Lady Moonberry" — first time only
-					q(59388),	-- when using "RSVP: Mikanikos" — every time
+					-- q(59388),	-- when using "RSVP: Mikanikos" — every time
 					q(59389),	-- when using "RSVP: Mikanikos" — first time only
-					q(59421),	-- when using "RSVP: Plague Deviser Marileth" (176124) — every time
+					-- q(59421),	-- when using "RSVP: Plague Deviser Marileth" (176124) — every time
 					q(59422),	-- when using "RSVP: Plague Deviser Marileth" (176124) — first time only
-					q(59400),	-- when using 'RSVP: Polemarch Adrestes' (176117) — every time
+					-- q(59400),	-- when using 'RSVP: Polemarch Adrestes' (176117) — every time
 					q(59401),	-- when using 'RSVP: Polemarch Adrestes' (176117) — first time only
-					q(59403),	-- when using "RSVP: Rendle and Cudgelface" (176118) — every time
+					-- q(59403),	-- when using "RSVP: Rendle and Cudgelface" (176118) — every time
 					q(59404),	-- when using "RSVP: Rendle and Cudgelface" (176118) — first time only
-					q(59424),	-- when using "RSVP: Sika" — every time
+					-- q(59424),	-- when using "RSVP: Sika" — every time
 					q(59425),	-- when using "RSVP: Sika" — first time only
 					q(59618),	-- when using "RSVP: Stonehead" — every time
-					q(59619),	-- when using "RSVP: Stonehead" — first time only
-					q(59394),	-- when using "RSVP: Alexandros Morgraine" — every time
+					-- q(59619),	-- when using "RSVP: Stonehead" — first time only
+					-- q(59394),	-- when using "RSVP: Alexandros Morgraine" — every time
 					q(59395),	-- when using "RSVP: Alexandros Morgraine" — first time only
-					q(59391),	-- when using "RSVP: The Countess" — every time
+					-- q(59391),	-- when using "RSVP: The Countess" — every time
 					q(59392),	-- when using "RSVP: The Countess" — first time only
 
 				-- Preparations
@@ -2527,18 +2530,24 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 					q(59504),	-- using Contract: Divine Desserts
 
 				-- Misc.
+					q(59440),	-- triggered when entering the Ember Court, Week 1 (spellID 348696)
+					q(61924),	-- triggered when entering the Ember Court, Week 2
+					q(61928),	-- triggered when entering the Ember Court, Week 4
+					q(61921),	-- triggered when entering the Ember Court, Week 5
+					q(61933),	-- triggered when entering the Ember Court, Week 6
+					q(61927),	-- triggered when entering the Ember Court for the week
 					q(61918),	-- unflagged when completing Restock: Fashion Accessories (62078)
 					q(61919),	-- unflagged when completing Restock: Exploratory Meals (62094)
 					q(61938),	-- unflagged when completing Restock: My Favorite Table (62065)
 					q(61922),	-- seems to be an indicator that Restock: Stolen Rugs will be required for the next Ember Court (spellID 345206)
 					q(61937),	-- seems to be an indicator that Restock: Statues will be required for the next Ember Court
 					q(61925),	-- completed when completing a 'Restock' quest
-					q(62524),	-- triggered at end of Ember Court (Vashj/Koryan/Choofa/Stonehead)
-					q(62521),	-- 'Safe/Humble' criteria for It's Certainly Never Boring
-					q(62523),	-- 'Safe/Humble' criteria for It's Certainly Never Boring
-					q(62525),	-- 'Relaxing' criteria for It's Certainly Never Boring
-					q(62526),	-- 'Exciting' criteria for It's Certainly Never Boring
-					q(62520),	-- 'Clean' criteria for It's Certainly Never Boring
+					-- q(62524),	-- triggered at end of Ember Court (Vashj/Koryan/Choofa/Stonehead)
+					-- q(62521),	-- 'Safe/Humble' criteria for It's Certainly Never Boring
+					-- q(62523),	-- 'Safe/Humble' criteria for It's Certainly Never Boring
+					-- q(62525),	-- 'Relaxing' criteria for It's Certainly Never Boring
+					-- q(62526),	-- 'Exciting' criteria for It's Certainly Never Boring
+					-- q(62520),	-- 'Clean' criteria for It's Certainly Never Boring
 					q(61930),	-- Triggered after Restock: Medic's Tent
 					q(61931),	-- Restocked Ember Court security
 					q(61934),	-- triggered on first non-tutorial ember court when the preparation timer finished
@@ -2549,8 +2558,60 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 					--q(61825),	-- During Ember Court after finishin Glimpse of the Wilds Niya's minigame
 					q(61941),	-- Flagged at start and unflagged at end of Ember Court
 					q(61926),	-- Maybe Revendreth Etiquette?
-					q(63353),	-- Triggered after turning in Red Noggin Candle as criteria for Rendle's Big Day
+					-- q(63353),	-- Triggered after turning in Red Noggin Candle as criteria for Rendle's Big Day
 					q(61414),	-- Faulty Fireworks (+Safe)
+					q(61939),	-- triggered when Ember Court began for the week (after the initial wave of "Quest accepted," after the pre-event when you can mingle with guests)
+					q(61942),	-- also triggered completed upon finishing the "Animal Rescue" objective
+					q(61448),	-- triggered completed upon turning in the Blob of Slime to Prince Renathal for the "Blustery Boil" objective (assume this is the "release the slime" option since the other one is... sort of a real quest)
+					q(61450),	-- also part of the "Ember Skyterror" objective, for turning the seed in to Renathal
+					q(61998),	-- also part of "Legacy of Stone," not sure if they both triggered last week?  again, i chose Humble, but both versions went off this time
+					q(61161),	-- another "Party Crashers!" objective, automatically "accepted" when it started
+					q(61163),	-- also for the "Party Crashers" objective, but automatically "accepted" when it started
+					q(61929),	-- also completed when finishing "Theotar's Toast" objective
+					q(61164),	-- triggered completed upon finishing the #62117 "Party Crashers"
+					q(61162),	-- for the #62113 version of "Party Crashers"
+					q(60930),	-- "Lower Your Standards," sort of a real quest?  but repeatable, only available when certain choices are made for ember court, pointless in general, doesn't seem worth tracking
+					q(60957),	-- "Ansel's Lucky Violin," sort of a real quest?  but repeatable, only available when certain choices are made for ember court, pointless in general, doesn't seem worth tracking
+					q(60960),	-- "Chiu's Lute," sort of a real quest?  but repeatable, only available when certain choices are made for ember court, pointless in general, doesn't seem worth tracking
+					q(60955),	-- "Noko's Flute," same as above
+					q(61433),	-- "Lower Your Standards," for turning in Giant Lungcap to Picky Stefan
+					q(61445),	-- triggered completed upon turning in gossip to Prince Renathal for the "Venthyr Provocateur" objective (assume this is for sharing the gossip to make court +Exciting)
+					-- q(62496),	-- triggered when Ember Court ended, Week 1 (had Cryptkeeper Kassir as guest and he was Elated)
+					-- q(62512),	-- triggered when Ember Court ended, Week 1 (had Cryptkeeper Kassir as guest and he was Elated)
+					-- q(62499),	-- triggered when Ember Court ended, Week 2 (had Kleia + Pelagos as guests and they were Elated)
+					-- q(62515),	-- triggered when Ember Court ended, Week 2 (had Kleia + Pelagos as guests and they were Elated)
+					-- q(62500),	-- triggered when Ember Court ended, Week 4 (had Plague Deviser Marileth as guest and he was elated)
+					-- q(62516),	-- triggered when Ember Court ended, Week 4 (had Plague Deviser Marileth as guest and he was elated)
+					-- q(62498),	-- triggered when Ember Court ended, Week 5 (had Grandmaster Vole as guest and he was elated)
+					-- q(62514),	-- triggered when Ember Court ended, Week 5 (had Grandmaster Vole as guest and he was elated)
+					-- 			-- Ember Court End - (Choofa:Elated / Alexander Mograine:Miserable / Grandmaster Vole:Elated)
+					-- q(62504),	-- triggered when Ember Court ended, First Lady Moonberry Elated & "Messy" at Max?
+					-- q(62519),	-- triggered when Ember Court ended, First Lady Moonberry Elated & "Messy" at Max?
+					-- q(62497),	-- triggered when Ember Court ended, Week 6 (Droman Aliothe and Sika as guests and they were elated)
+					-- q(62501),	-- triggered when Ember Court ended, Week 6 (Droman Aliothe and Sika as guests and they were elated)
+					-- q(62513),	-- triggered when Ember Court ended, Week 6 (Droman Aliothe and Sika as guests and they were elated)
+					-- q(62517),	-- triggered when Ember Court ended, Week 6 (Droman Aliothe and Sika as guests and they were elated)
+					-- q(62528),	-- triggered when Ember Court Ended, i give up on tracking weeks, but had Kleia+Pelagos and Cryptkeeper Kassir as guests and they were Elated.  no previous K+P/Cryptkeeper quests triggered
+					-- q(62508),	-- Ember Court End - (Alexandros Mograine:Elated / Droman Aliothe: Uncomfortable / Sika: Elated - got Alexandros Mograine criteria for People Pleaser + Be Our Guest, possibly that, since i'd done ECs with the other 2 before)
+					-- q(62490),	-- Ember Court End - (Droman Aliothe:Elated / Cryptkeeper Kassir:Elated / Polemarch Adrestes:Elated / The Countess:Elated)
+					-- q(62491),	-- Ember Court End - (Choofa:Elated / Alexander Mograine:Miserable / Grandmaster Vole:Elated)
+					-- q(62495),	-- Ember Court End - (Choofa:Elated / Alexander Mograine:Miserable / Grandmaster Vole:Elated)
+					-- q(62511),	-- Ember Court End - (Choofa:Elated / Alexander Mograine:Miserable / Grandmaster Vole:Elated)
+					-- q(62492),	-- Ember Court End - (Choofa:Elated / Grandmaster Vole:Elated / Hunt-Captain Korayn:Elated)
+					-- q(62506),	-- Ember Court End - (Droman Aliothe:Elated / Cryptkeeper Kassir:Elated / Polemarch Adrestes:Elated / The Countess:Elated)
+					-- q(62509),	-- Ember Court End - (Choofa:Elated / Grandmaster Vole:Elated / Hunt-Captain Korayn:Elated)
+					-- q(62522),	-- Ember Court End - (Choofa:Elated / Grandmaster Vole:Elated / Hunt-Captain Korayn:Elated)
+					-- q(62489),	-- Ember Court End - (Kleia&Pelagos / Mikanikos / Alexandros / Sika, all elated - Mikanikos only one i hadn't done before.  also got We Happy Few, so possibly one of these is related to that) - next week's automatic assigned pickups were Choofa, Droman Aliothe, Rendle and Cudgelface, and Lady Moonberry
+					-- q(62505),	-- ""
+					-- q(62487),	-- Ember Court End - Baroness/H-C K/Choofa/Stonehead Elated
+					-- q(62503),	-- Ember Court End - Baroness/H-C K/Choofa/Stonehead Elated
+					-- q(62488),	-- Ember Court End - (Lady Moonberry / Rendle&Cudgelface as first-time guests, Elated and Very Happy respectively, had Casual maxed)
+					-- q(62494),	-- ""
+					-- q(62518),	-- ""
+					-- q(62527),	-- ""
+					-- q(62493),	-- Ember Court End (The Countess / Polemarch Adrestes as first-time guests, both Elated)
+					-- q(62510),	-- ""
+					q(61731),	-- Ember Court - after completing Magical Curios
 
 				-- Baroness Vashj Decrees
 					q(60471),	-- Decree: Baroness Vashj's Favor
@@ -2569,7 +2630,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 					q(61535),	-- Decree: Mikanikos's Esteem
 					q(61534),	-- Decree: Mikanikos's Boon
 
-			-- Misc
+				-- Misc
 				q(62035),	-- unlocking Soulbreaker's Court Vestments set (TransmogSetID 2065, Soulbreaker's Court items)
 				q(62031),	-- unlocking Court Death Shroud Armor set (TransmogSetID 2068, Court Death Shroud items)
 				q(62026),	-- unlocking Fearstalker's Court Battlegear set (TransmogSetID 2072, Fearstalker's Court items)

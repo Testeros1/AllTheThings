@@ -1,9 +1,16 @@
 local Items = root(ROOTS.Uncollectible);
-local i = function(itemID)
+local NonCollectibleItems = ItemDBConditional
+local i = function(itemID, t)
 	-- need the ID within the group even though it's saved via ID
-	local item = { ["itemID"] = itemID };
-	Items[itemID] = item;
-	return item;
+	local item = t or {}
+	item.itemID = itemID
+	if t then
+		-- if we're applying additional data for non-collectible items, they need to go into ItemDBConditional for proper merging
+		NonCollectibleItems[itemID] = item
+	else
+		Items[itemID] = item
+	end
+	return item
 end
 -------------------------------------------------------------------- LOADING DOCK --------------------------------------------------------------------
 -- Put items between these two bars if you dont want to sort them /Braghe
@@ -16,6 +23,8 @@ i(3914);	-- Journeyman's Backpack
 i(5571);	-- Small Black Pouch
 i(5572);	-- Small Green Pouch
 i(6457);	-- Rusted Engineering Parts
+i(23553,{collectible=false})	-- Living Branch
+i(16967,{collectible=false})	-- Feralas Ahi
 i(29570);	-- A Gnmome Effigy
 i(35953);	-- Mead-Basted Caribou
 i(44435);	-- Windle's Lighter
@@ -26,8 +35,7 @@ i(180786);	-- Empty Binding
 -- Legion
 i(138293);	-- Explorer's Pack
 i(139398);	-- Pant Loaf
-i(147348);	-- Bulky Armor Set
-i(147349);	-- Spiked Armor Set
+i(151492);	-- Bronze Drake
 -- Legion Mission Table Items
 i(139845);	-- Band of Primordial Strength
 i(152442);	-- Impervious Shadoweave Hood \\ rvious Shadowweave Hood \\ rvious Hood
@@ -36,11 +44,17 @@ i(162588);	-- Weathered Scrollcase
 -- BFA Minor Visions
 i(169294);	-- Resilient Soul
 i(173888);	-- Shard of Self Sacrifice \\ Lingering Soul
+-- BFA Trash drops available during quest
+i(168006);	-- Wilted Direbloom Petal
+i(168007);	-- Torn Direbloom Petal
+i(168008);	-- Young Direbloom Petal
+i(168009);	-- Rotten Direbloom Petal
 -- SL
 i(184412);	-- Title Reward: Spirestalker
 i(187499);	-- Sculpted Elethium Orb
 i(187501);	-- Understanding the Purpose
 i(187603);	-- The Mad Duke's Tea
+i(187497)	-- Delicate Razorwing Figurine [from i:186196]
 i(189560);	-- Deflectialic Crystallic Spheroid
 i(189722);	-- Alacrialic Crystallic Spheroid
 i(189723);	-- Absorptialic Crystallic Spheroid
@@ -966,7 +980,7 @@ i(185934);	-- Cracked Warhammer
 i(185483);	-- Cranial Disk
 i(187456);	-- Crucible of Soulforge Metal
 i(187444);	-- Crushed Mawshrooms
-i(185739);	-- Crystaline Shard
+i(185739);	-- Crystalline Shard
 i(187464);	-- Crystallized Soul Dust
 i(185478);	-- Dagger-Length Talons
 i(185932);	-- Damaged Flask
@@ -2077,7 +2091,7 @@ i(225842);	-- Whirling Sphere
 i(220491);	-- Wicked Blade Shard
 i(227320);	-- Wicker Wisps
 i(220232);	-- Worm-Eaten Burlap Robe
-i(228911);	-- Xalatath's Rusty Coin
+i(228911);	-- Xal'atath's Rusty Coin
 i(228628);	-- Yawning Basket of Aspect's Awakened Crests
 
 ------------------
@@ -2085,25 +2099,31 @@ i(228628);	-- Yawning Basket of Aspect's Awakened Crests
 ------------------
 i(232380);	-- Brivelthwerp's Sassafras Float
 i(232376);	-- Cherry Bombs
+i(232005);	-- Cryptic Crostini
 i(229830);	-- Dark Blue Balloon
 i(221485);	-- Defias Gunpowder
+i(232006);	-- Detective's Delight
 i(232385);	-- Elekk Ear
+i(224194);	-- Fashion Frenzy Ribbon
+i(232011);	-- Finder's Flare
 i(229831);	-- Gold Balloon
 i(232374);	-- Greasy Links
 i(232378);	-- Jenkins' No Nonsense Fried Chicken
 i(229829);	-- Light Blue Balloon
 i(232375);	-- Moon Bread
 i(232377);	-- Pappy Thunderbrew's Cough Syrup
-
+i(232009);	-- Riddle Wraps
+i(232007);	-- Sleuth's Sip
+i(230283);	-- Weird Egg
 
 ------------------
 -- PATCH 11.0.7 --
 ------------------
 i(234718);	-- Ancient Runic Hilt
-i(234733);	-- Ancient Runic Hilt
 i(234735);	-- Battered Vrykul Lantern
 i(234732);	-- Bloodied Medallion
 i(234754);	-- Bloodied Siren Pendant
+i(234733);	-- Bloodwake Ritual Bowl
 i(234722);	-- Carved Stone Fragment
 i(234752);	-- Coral-Pocked Scrying Stone
 i(234753);	-- Cracked Divining Scepter
@@ -2112,6 +2132,7 @@ i(233800);	-- Decorated Gunpowder Flask
 i(232634);	-- Emptied Turtle Shell
 i(234723);	-- Hollow Sigil
 i(234734);	-- Inscribed Drinking Horn
+i(235378);	-- Landro's Loot Box
 i(232638);	-- Loosened Naga Scales
 i(234720);	-- Memoric Residue
 i(234750);	-- Myrmidon's Osminium Bracer
@@ -2128,6 +2149,7 @@ i(232635);	-- Torn Bilgewater Bandage
 ------------------
 i(234212);	-- "Beaten by the House"
 i(234205);	-- Bent Lever
+i(235895);	-- Bloodstone
 i(236638);	-- Bundle of Kaja-Scented Incense
 i(236922);	-- Celebratory Pack of Runed Harbinger Crests
 i(237305);	-- Chalky Shungite
@@ -2137,11 +2159,13 @@ i(237335);	-- Collectible Pineappletini Mug
 i(233029);	-- Cracked Core
 i(236636);	-- Cracked Crysoberyl
 i(236640);	-- Cracked Earthen Singing Bowl
+i(236955);	-- Crimson Valorstone
 i(235038);	-- Crumpled Schematic
 i(236639);	-- Dented Censer
 i(234204);	-- Depleted Battery
 i(237330);	-- Disposable Hamburger
 i(237331);	-- Disposable Hotdog
+i(235280);	-- Extra Crispy Laundry
 i(228194);	-- Fully Scrapped Scrap
 i(234197);	-- Gilded Screwdriver
 i(236923);	-- Glorious Cluster of Gilded Harbinger Crests
@@ -2149,17 +2173,19 @@ i(237334);	-- Half-Eaten Takeout
 i(236680);	-- Imitation Crab Meat
 i(233031);	-- Intact Interlock
 i(236634);	-- Itty Bitty Bonsai
+i(239115);	-- L.O.S.E.R. Ticket
 i(235268);	-- Misprinted Card
 i(236637);	-- Not-Quite-Crystal Ball
 i(236926);	-- Pack of Runed Harbinger Crests
 i(236924);	-- Pouch of Weathered Harbinger Crests
 i(236652);	-- Re-Down-Upcycled Salvage
+i(236925);	-- Satchel of Carved Harbinger Crests
+i(237332);	-- Single-Use Grill
 i(228195);	-- Tattered Goblin Cap
 i(237313);	-- Totally Legit Samophlange
 i(231899);	-- Trash
 i(236921);	-- Triumphant Satchel of Carved Harbinger Crests
-i(237332);	-- Single-Use Grill
-i(236925);	-- Satchel of Carved Harbinger Crests
 i(236635);	-- Uncut Semi-Smoky Quartz
 i(236651);	-- Vince's Old Left Shoe
 i(229809);	-- Weighted Metal Ball
+i(235713);	-- Weird Sand

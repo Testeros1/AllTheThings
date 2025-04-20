@@ -228,7 +228,6 @@
 4.4.0.53627
 25706@@@Searing Scorchling
 40295@@@Blue Clockwork Rocket Bot
-4.4.0.54377
 4.4.0.54500
 34278@@@Withers
 42177@@@Blue Mini Jouster
@@ -299,7 +298,6 @@
 56266@@@Fetish Shaman
 58163@@@Soul of the Aspects
 59020@@@Eye of the Legion
-4.4.0.56014
 4.4.1.57359
 232527@@@Reven
 5.0.3.15882
@@ -10041,7 +10039,7 @@
 129871@@@Arator the Redeemer
 129872@@@Vereesa Windrunner
 129876@@@Grand Artificer Romuul
-7.3.5.25928
+7.3.5.25600
 96984@@@Oenia Skyhorn
 124252@@@Spiritwalker Ebonhorn
 125181@@@Spiritwalker Ebonhorn
@@ -10076,6 +10074,7 @@
 130200@@@Arcanist Valtrois
 130201@@@Silgryn
 130215@@@Magni Bronzebeard
+130216@@@Magni Bronzebeard
 130274@@@Creeping Sludge
 130381@@@Lightsworn Recruit
 130382@@@Lightsworn Recruit
@@ -10123,7 +10122,6 @@
 132334@@@Grand Artificer Romuul
 132357@@@Alleria Windrunner
 132366@@@Mailemental
-132371@@@General Purpose Stalker
 132380@@@Mayla Highmountain
 132387@@@Spiritwalker Ebonhorn
 132415@@@Rivermane Shaman (IGC)
@@ -10134,15 +10132,38 @@
 132674@@@Brown Bear - IGC
 132675@@@Thundertail Flapper - IGC
 132682@@@Healing Tide Totem - IGC
-133012@@@Magni Bronzebeard
+7.3.5.25632
+133012@@@Magni Bronzebeard (IGC)
 133053@@@Letter
-133064@@@Silithid Mini-Tank
+133064@@@Unevolved Silithid Grub
 133071@@@Wounded Vindicator - IGC
+133080@@@Highlord Darion Mograine (IGC)
+133081@@@Kor'vas Bloodthorn (IGC)
+133082@@@Rensar Greathoof (IGC)
+133083@@@Halduron Brightwing (IGC)
+133084@@@Archmage Kalec (IGC)
+133085@@@Iron-Body Ponshu (IGC)
+133086@@@Arator the Redeemer (IGC)
+133087@@@High Priestess Ishanah (IGC)
+133088@@@Valeera Sanguinar (IGC)
+133089@@@Rehgar Earthfury (IGC)
+133090@@@Ritssyn Flamescowl (IGC)
+133091@@@Eitrigg (IGC)
+7.3.5.25678
+132371@@@General Purpose Stalker
+133064@@@Silithid Mini-Tank
+133086@@@Lady Liadrin (IGC)
+133224@@@Beetle
+133312@@@Nighthold Protector - IGC
+133342@@@Allied Race
+133344@@@Magister Umbric (IGC)
+7.3.5.25716
+133012@@@Magni Bronzebeard
 133080@@@Highlord Darion Mograine
 133081@@@Kor'vas Bloodthorn
 133082@@@Rensar Greathoof
 133083@@@Halduron Brightwing
-133084@@@Archmage Vargoth
+133084@@@Archmage Kalec
 133085@@@Iron-Body Ponshu
 133086@@@Lady Liadrin
 133087@@@High Priestess Ishanah
@@ -10150,14 +10171,12 @@
 133089@@@Rehgar Earthfury
 133090@@@Ritssyn Flamescowl
 133091@@@Eitrigg
-133224@@@Beetle
-133312@@@Nighthold Protector - IGC
-133342@@@Allied Race
-133344@@@Magister Umbric (IGC)
 133387@@@Magni Bronzebeard
 133388@@@Magni Bronzebeard
 133395@@@Magni Bronzebeard
 133467@@@Anarys Lunastre
+7.3.5.25727
+133084@@@Archmage Vargoth
 133522@@@Trade Prince Gallywix
 133534@@@Magister Umbric (IGC)
 133543@@@Void Initiate (IGC)
@@ -10901,7 +10920,6 @@
 135736@@@Gore
 8.0.1.26032
 128553@@@Azer'tor
-130216@@@Magni Bronzebeard
 130236@@@Zul'nazan Undead
 135778@@@Channel Target (DNT)
 135801@@@Hexlord Raal
@@ -19135,12 +19153,64 @@
 198511@@@Troubled Tome
 198522@@@Off-Duty Defender
 198543@@@Pinkie
-10.0.2.45779
+10.0.0.45970
+183638@@@Ichabod
+187423@@@Neltharion
+187632@@@Winter Queen
+190754@@@Wrathion & Sabellian
+191499@@@Blacktalon Avenger
+191502@@@Sabellian
+191504@@@Sabellian
+191505@@@Armored Magmammoth Mount
+191514@@@Wrathion
+191522@@@Baskilan
+192734@@@Osoria
+192735@@@Evorian
+193185@@@Champion Ugi
+193186@@@Blacktalon Sentry
+193191@@@Champion Ugi's Mount
+193213@@@Zepharion
+193617@@@Keeper Tyr
+194542@@@Alexstrasza the Life-Binder
+194546@@@Wrathion
+196923@@@Nozdormu
+197089@@@Titan-Touched Elemental
+198158@@@Sabellian & Wrathion
+198317@@@Invisible Bunny (IGC)
+198318@@@Emmigosa
+198319@@@Eragosa
+198320@@@Senegos
+198321@@@Stellagosa
+198322@@@Tharkago
+198323@@@Vexalgos
+198324@@@Kalecgos
+198325@@@Raszageth
+198327@@@Archmage Khadgar
+198336@@@Chromie
+198338@@@Nozdormu
+198704@@@Wizened Stormrider
+198754@@@Ferocious Tarasek
+10.0.0.46112
+171025@@@Sunny
+10.0.0.46479
 185616@@@Kalecgos
 186328@@@Fiery Carver
+187491@@@Pond Duckling
+187671@@@Treeflitter
+188756@@@Potion Cauldron of Ultimate Power |A:Professions-Icon-Quality-Tier1-Small:20:20|a
+188839@@@Potion Cauldron of Ultimate Power |A:Professions-Icon-Quality-Tier2-Small:20:20|a
+188841@@@Potion Cauldron of Ultimate Power |A:Professions-Icon-Quality-Tier3-Small:20:20|a
 189117@@@Phoenix Wishwing
+193630@@@Qalashi Magmammoth
 193842@@@Arcane Disc
-197089@@@Titan-Touched Elemental
+195585@@@Stormbound Proto-Drake
+196757@@@Black Drake
+196785@@@Red Drake
+196787@@@Blue Drake
+196788@@@Bronze Drake
+197089@@@Sophic Amalgamation
+197656@@@Blue Drake
+197659@@@Blue Drake
 198591@@@Nokhud Brute
 198597@@@Sendrax
 198608@@@Tracker Dragon Glyph
@@ -19152,6 +19222,7 @@
 198622@@@Tracker Dragon Glyph
 198623@@@Tracker Dragon Glyph
 198624@@@Tracker Dragon Glyph
+198625@@@Sindragosa
 198628@@@Tracker Dragon Glyph
 198630@@@Tracker Dragon Glyph
 198631@@@Tracker Dragon Glyph
@@ -19196,49 +19267,17 @@
 198692@@@Tracker Dragon Glyph
 198693@@@Tracker Dragon Glyph
 198701@@@Dragonflight Reputation Catch-Up Credit
-198704@@@Wizened Stormrider
 198717@@@Proto-Drake
-198754@@@Ferocious Tarasek
-10.0.2.45969
-188756@@@Potion Cauldron of Ultimate Power |A:Professions-Icon-Quality-Tier1-Small:20:20|a
-188839@@@Potion Cauldron of Ultimate Power |A:Professions-Icon-Quality-Tier2-Small:20:20|a
-188841@@@Potion Cauldron of Ultimate Power |A:Professions-Icon-Quality-Tier3-Small:20:20|a
-191504@@@Sabellian
-193630@@@Qalashi Magmammoth
 198790@@@Sailor Oldenhook
 198825@@@Sailor Strongline
 198847@@@Swart
 198927@@@Temporal Attendant
+198929@@@Invisible Bunny (IGC)
 198957@@@Alliance Footsoldier
 198958@@@Horde Footsoldier
 198977@@@[DNT] Spell Bunny
-10.0.2.46091
 199171@@@Hornswog Chorus Sound Stalker A
 199172@@@Hornswog Chorus Sound Stalker B
-10.0.2.46259
-187491@@@Pond Duckling
-187671@@@Treeflitter
-190754@@@Wrathion & Sabellian
-191499@@@Blacktalon Avenger
-191502@@@Sabellian
-191505@@@Armored Magmammoth Mount
-191514@@@Wrathion
-191522@@@Baskilan
-192734@@@Osoria
-192735@@@Evorian
-193185@@@Champion Ugi
-193186@@@Blacktalon Sentry
-193191@@@Champion Ugi's Mount
-193213@@@Zepharion
-195585@@@Stormbound Proto-Drake
-196757@@@Black Drake
-196785@@@Red Drake
-196787@@@Blue Drake
-196788@@@Bronze Drake
-197089@@@Sophic Amalgamation
-197656@@@Blue Drake
-197659@@@Blue Drake
-198158@@@Sabellian & Wrathion
 199316@@@Time-Lost Devilsaur
 199317@@@Bronze Sentry
 199335@@@Zepharion
@@ -19250,45 +19289,10 @@
 199448@@@Tattukiaka
 199564@@@Naldormi
 199565@@@Xiddorm
+199585@@@Emerald Dragon
 199608@@@Siaszerathel
 199609@@@Andantenormu
 199611@@@Kivrok
-199689@@@Arrow
-199704@@@Snowball
-199706@@@Snowball
-10.0.2.46420
-199722@@@Emerald Dragon
-199723@@@Turbulent Gust
-199724@@@Howling Wind
-199725@@@Emerald Drake
-10.0.2.46781
-183638@@@Ichabod
-10.0.2.46879
-194542@@@Alexstrasza the Life-Binder
-194546@@@Wrathion
-198317@@@Invisible Bunny (IGC)
-198318@@@Emmigosa
-198319@@@Eragosa
-198320@@@Senegos
-198321@@@Stellagosa
-198322@@@Tharkago
-198323@@@Vexalgos
-198324@@@Kalecgos
-198325@@@Raszageth
-198327@@@Archmage Khadgar
-198336@@@Chromie
-198338@@@Nozdormu
-198625@@@Sindragosa
-198929@@@Invisible Bunny (IGC)
-199707@@@Saltfin Swimmer
-201041@@@Windsage Garuman
-10.0.2.46924
-193617@@@Keeper Tyr
-196923@@@Nozdormu
-10.0.2.46999
-187423@@@Neltharion
-187632@@@Winter Queen
-199585@@@Emerald Dragon
 199647@@@Vermera
 199648@@@Viranikus
 199650@@@Hesthera
@@ -19299,8 +19303,19 @@
 199655@@@Somnikus
 199656@@@Gerithus
 199657@@@Emerald Scaleguard
+199689@@@Arrow
+199704@@@Snowball
+199706@@@Snowball
+199707@@@Saltfin Swimmer
+199722@@@Emerald Dragon
+199723@@@Turbulent Gust
+199724@@@Howling Wind
+199725@@@Emerald Drake
+10.0.2.46802
+201041@@@Windsage Garuman
+10.0.2.46999
 201022@@@Soridormi
-10.0.5.47871
+10.0.5.47118
 183686@@@Pippin
 183708@@@Egbob
 185322@@@Lil' Maka'jin
@@ -20324,8 +20339,6 @@
 208462@@@Chromie
 208464@@@Morchie
 208466@@@Infinite Dragon
-10.1.5.50622
-171025@@@Sunny
 10.1.5.51130
 208436@@@Slyvy
 10.1.7.50442
@@ -22356,6 +22369,8 @@
 234439@@@Wanderer Liu
 11.0.7.58608
 232533@@@Timbered Sky Snakelet
+11.0.7.59302
+236783@@@Merriment
 11.1.0.58221
 220796@@@Delver's Gob-Trotter
 220835@@@Dagran Thaurissan II
@@ -22563,3 +22578,64 @@
 239119@@@Jastor Gallywix
 239120@@@Monte Gazlowe
 239138@@@Sami Flipspark
+11.1.0.58731
+233960@@@Grimla Fizzlecrank
+233962@@@Marin Noggenfogger
+233963@@@Baron Revilgaz
+236495@@@Monte Gazlowe
+239610@@@Johnny Awesome
+239796@@@Rebellious Citizen
+239797@@@Darkfuse Harasser
+239800@@@Darkfuse Enforcer
+239804@@@Hotel Maintenance
+239845@@@Monte Gazlowe
+11.1.0.58819
+239921@@@Unstable Rocket
+11.1.0.58945
+240137@@@Tock the Clocker Spaniel
+240528@@@Sound Stalker - 11.1 Amb - Undermine - Traffic Sound Stalker
+11.1.0.58999
+240761@@@Coastside Drill Control Panel
+240884@@@Brann Bronzebeard
+11.1.0.59347
+241456@@@Sound Stalker - 11.1 Amb - Undermine - Traffic Sound Stalker
+11.1.0.59570
+198989@@@Thrrrdgl
+239419@@@Monte Gazlowe
+11.1.0.60037
+185425@@@Survey Bot
+11.1.5.59571
+223691@@@Whoopy
+236382@@@Soridormi
+237850@@@Eye of Chaos
+237852@@@Void-Scarred Parrot
+237855@@@Void-Scarred Scorpid
+237856@@@Void-Scarred Tallstrider Chick
+238064@@@Scourge of the Aspects
+238159@@@Reek
+238178@@@Frumpy Softpaw
+238361@@@Time
+239362@@@Pascal the Wonder Pup
+240852@@@Lars Bronsmaelt
+240979@@@Vesper Churnmoat
+240994@@@Ada the Sweetest
+241029@@@Taryssa Lazuria
+241030@@@Marith Lazuria
+241150@@@The Wonder Pup
+241297@@@Mister Mans
+241346@@@Spicy Mean-Ball
+242407@@@Spindle
+242652@@@Swiftpaw
+242674@@@Anxious Hawkstrider Hatchling
+242675@@@Sneaky Lynx Cub
+242678@@@Tazkan
+242679@@@Friendly Saurolisk Hatchling
+242680@@@Helpful Rat Pup
+11.1.5.59651
+241150@@@Weechi
+242856@@@Spindle
+11.1.5.59735
+243270@@@Helpful Workshop Bot
+11.1.5.59919
+185425@@@Helpful Workshop Bot
+243253@@@Layne Pontelle

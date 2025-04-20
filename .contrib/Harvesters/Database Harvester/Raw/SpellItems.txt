@@ -1938,8 +1938,7 @@
 2825@@@+$i Attack Power
 2826@@@+$i Block
 3726@@@+$i Haste
-1.14.3.46575
-1.14.4.50252
+1.13.3.33155
 250@@@Weapon Damage +1 
 1.15.0.52124
 6708@@@Deadly Brew
@@ -2827,6 +2826,18 @@
 7883@@@Spell Damage +$1220735M1 and +$1220735M3% Critical Strike
 7884@@@Attack Power +$1220743M3 and +$1220743M2% Critical Strike
 7885@@@Stamina +$1220754s2 and Defense +$1220754s3
+1.15.6.58725
+7896@@@+200 Attack Power vs Undead
+1.15.7.59706
+7919@@@$@spelldesc1225951
+7920@@@$@spelldesc1225982
+7921@@@$@spelldesc1226001
+7940@@@Grand Crusader
+7941@@@Grand Arcanist
+7942@@@Grand Sorcerer
+7943@@@Grand Inquisitor
+1.15.7.60000
+7944@@@Poultry Precision Scope (+10 Damage)
 2.0.0.6080
 13@@@Sharpened (+3 Damage)
 14@@@Sharpened (+4 Damage)
@@ -3818,7 +3829,6 @@
 3340@@@+10 Critical Strike Rating
 2.5.4.42581
 2669@@@+40 Spell Damage and Healing
-2.5.4.44833
 3.0.1.8303
 2506@@@+28 Melee Critical Strike Rating
 2523@@@+30 Ranged Hit Rating
@@ -4887,18 +4897,17 @@
 3881@@@+17 Mana every 5 seconds
 3882@@@+8 Armor Penetration Rating
 3883@@@Rune of the Nerubian Carapace
-3.4.0.46158
-3.4.1.48503
-3.4.2.49311
-2888@@@+12 Block Value
-2975@@@+10 Block Value
+3.4.0.45854
 3045@@@+5 Strength and +6 Stamina 
 3050@@@+6 Spell Power and +4 Intellect 
 3155@@@Chance to Increase Melee/Ranged Attack Speed 
-3363@@@+27 Block Value
 3430@@@+6 Defense Rating and +9 Stamina 
 3643@@@Chance to Increase Melee/Ranged Attack Speed 
 3700@@@+7 Defense Rating and +11 Stamina 
+3.4.1.49822
+2888@@@+12 Block Value
+2975@@@+10 Block Value
+3363@@@+27 Block Value
 4.0.1.12911
 2@@@Frostbrand
 5@@@Flametongue
@@ -11661,20 +11670,7 @@
 6689@@@Illusory Adornment: Order
 6690@@@Illusory Adornment: Order
 6691@@@$spell@spelldesc393795
-10.0.2.45779
-6488@@@Fierce Armor Kit |A:Professions-Icon-Quality-Tier1-Small:20:20|a
-6489@@@Fierce Armor Kit |A:Professions-Icon-Quality-Tier2-Small:20:20|a
-6490@@@Fierce Armor Kit |A:Professions-Icon-Quality-Tier3-Small:20:20|a
-10.0.2.45969
-6382@@@Primal Razorstone
-6383@@@Primal Razorstone
-6384@@@Primal Razorstone
-6692@@@$spell@spelldesc384266
-6693@@@$spell@spelldesc384266
-10.0.2.46091
-6694@@@Chirping Rune
-6695@@@Chirping Rune
-10.0.2.46259
+10.0.0.46479
 6092@@@+$k1 Speed
 6147@@@+$k1 Speed
 6379@@@Sharpened: +$k1 Attack Power |A:Professions-Icon-Quality-Tier1-Small:20:20|a
@@ -11683,16 +11679,27 @@
 6382@@@Razor Sharp: +$k1 Finesse |A:Professions-Icon-Quality-Tier1-Small:20:20|a
 6383@@@Razor Sharp: +$k1 Finesse |A:Professions-Icon-Quality-Tier2-Small:20:20|a
 6384@@@Razor Sharp: +$k1 Finesse |A:Professions-Icon-Quality-Tier3-Small:20:20|a
+6488@@@Fierce Armor Kit |A:Professions-Icon-Quality-Tier1-Small:20:20|a
+6489@@@Fierce Armor Kit |A:Professions-Icon-Quality-Tier2-Small:20:20|a
+6490@@@Fierce Armor Kit |A:Professions-Icon-Quality-Tier3-Small:20:20|a
 6638@@@Sophic Writ |A:Professions-Icon-Quality-Tier1-Small:20:20|a
 6639@@@Sophic Writ |A:Professions-Icon-Quality-Tier2-Small:20:20|a
 6640@@@Sophic Writ |A:Professions-Icon-Quality-Tier3-Small:20:20|a
 6641@@@Sophic Devotion |A:Professions-Icon-Quality-Tier1-Small:20:20|a
 6642@@@Sophic Devotion |A:Professions-Icon-Quality-Tier2-Small:20:20|a
 6643@@@Sophic Devotion |A:Professions-Icon-Quality-Tier3-Small:20:20|a
+6692@@@$spell@spelldesc384266
+6693@@@$spell@spelldesc384266
+6694@@@Chirping Rune
+6695@@@Chirping Rune
 6696@@@Weighted: +$k1 Attack Power |A:Professions-Icon-Quality-Tier1-Small:20:20|a
 6697@@@Weighted: +$k1 Attack Power |A:Professions-Icon-Quality-Tier2-Small:20:20|a
 6698@@@Weighted: +$k1 Attack Power |A:Professions-Icon-Quality-Tier3-Small:20:20|a
-10.0.5.47871
+10.0.2.45969
+6382@@@Primal Razorstone
+6383@@@Primal Razorstone
+6384@@@Primal Razorstone
+10.0.5.47118
 6721@@@10.0.5 - Generic - Storm - Weapon Enchant - High - SK
 10.0.7.47910
 6379@@@Sharpened: +$k1 Attack Power |A:Professions-ChatIcon-Quality-Tier1:20:20|a
@@ -12599,3 +12606,36 @@
 7652@@@+$k2 Agility/Strength/Intellect & +$k1 Stamina |A:Professions-ChatIcon-Quality-Tier1:20:20|a
 7653@@@+$k2 Agility/Strength/Intellect & +$k1 Stamina |A:Professions-ChatIcon-Quality-Tier2:20:20|a
 7654@@@+$k2 Agility/Strength/Intellect & +$k1 Stamina |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+11.1.5.59571
+7052@@@|cnIQ4:Incandescent Essence|r
+7912@@@Twilight Devastation |A:Professions-ChatIcon-Quality-Tier1:20:20|a
+7913@@@Twilight Devastation |A:Professions-ChatIcon-Quality-Tier2:20:20|a
+7914@@@Twilight Devastation |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+7915@@@Echoing Void |A:Professions-ChatIcon-Quality-Tier1:20:20|a
+7916@@@Echoing Void |A:Professions-ChatIcon-Quality-Tier2:20:20|a
+7917@@@Echoing Void |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+7922@@@Infinite Stars |A:Professions-ChatIcon-Quality-Tier1:20:20|a
+7923@@@Infinite Stars |A:Professions-ChatIcon-Quality-Tier2:20:20|a
+7924@@@Infinite Stars |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+7925@@@Gushing Wound |A:Professions-ChatIcon-Quality-Tier1:20:20|a
+7926@@@Gushing Wound |A:Professions-ChatIcon-Quality-Tier2:20:20|a
+7927@@@Gushing Wound |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+7928@@@Twisted Appendage |A:Professions-ChatIcon-Quality-Tier1:20:20|a
+7929@@@Twisted Appendage |A:Professions-ChatIcon-Quality-Tier2:20:20|a
+7930@@@Twisted Appendage |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+7931@@@Void Ritual |A:Professions-ChatIcon-Quality-Tier1:20:20|a
+7932@@@Void Ritual |A:Professions-ChatIcon-Quality-Tier2:20:20|a
+7933@@@Void Ritual |A:Professions-ChatIcon-Quality-Tier3:20:20|a
+11.1.5.59919
+7912@@@Lesser Twilight Devastation
+7914@@@Greater Twilight Devastation
+7915@@@Lesser Echoing Void
+7917@@@Greater Echoing Void
+7922@@@Lesser Infinite Stars
+7924@@@Greater Infinite Stars
+7925@@@Lesser Gushing Wound
+7927@@@Greater Gushing Wound
+7928@@@Lesser Twisted Appendage
+7930@@@Greater Twisted Appendage
+7931@@@Lesser Void Ritual
+7933@@@Greater Void Ritual

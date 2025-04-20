@@ -1208,27 +1208,30 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] 
 			}},
 			["timeline"] = { ADDED_11_0_7 }
 		}),
-		ach(17978),	-- Stones Can Fly!
-		ach(17977),	-- Stones Can Try To Fly!
+		ach(17978, { ["timeline"] = { REMOVED_TWW_LAUNCH } }),	-- Stones Can Fly!
+		ach(17977, { ["timeline"] = { REMOVED_TWW_LAUNCH } }),	-- Stones Can Try To Fly!
 		ach(17830, {	-- Stones Can't Fly!
-			i(204195, {	-- Drake's Shadowflame Crest
-				["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 },
-			}),
-			i(210770, {	-- Satchel of Drake's Dreaming Crests
-				["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
-			}),
-			i(211952, {	-- Satchel of Drake's Awakened Crests
-				["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
-			}),
+			["timeline"] = { REMOVED_TWW_LAUNCH },
+			["g"] = {
+				i(204195, {	-- Drake's Shadowflame Crest
+					["timeline"] = { ADDED_10_1_0, REMOVED_10_2_0 },
+				}),
+				i(210770, {	-- Satchel of Drake's Dreaming Crests
+					["timeline"] = { ADDED_10_2_0, REMOVED_10_2_6_SEASON_FOUR },
+				}),
+				i(211952, {	-- Satchel of Drake's Awakened Crests
+					["timeline"] = { ADDED_10_2_6_SEASON_FOUR, REMOVED_TWW_LAUNCH },
+				}),
+			},
 		}),
 	}),
 })));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-	n(ACHIEVEMENTS, {
-		q(72248),	-- Triggered when using 'Gleaming Incarnate Thunderstone' (itemID 202047) (spellID 396597)
-		q(75968, {["timeline"] = {ADDED_10_1_0}}),	-- Triggered when using 'Obsidian Aspectral Earthstone' (itemID 205878) (spellID 410792)
-		q(77678, {["timeline"] = {ADDED_10_1_7}}),	-- Triggered when using 'Ambrosial Sporestone' (itemID 208551) (spellID 420046)
-		q(78422, {["timeline"] = {ADDED_10_2_0}}),	-- Triggered when using 'Emerald Blossom Dreamstone' (itemID 210468) (spellID 425847)
-	}),
-})));
+-- root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
+-- 	n(ACHIEVEMENTS, {
+-- 		q(72248),	-- Triggered when using 'Gleaming Incarnate Thunderstone' (itemID 202047) (spellID 396597)
+-- 		q(75968, {["timeline"] = {ADDED_10_1_0}}),	-- Triggered when using 'Obsidian Aspectral Earthstone' (itemID 205878) (spellID 410792)
+-- 		q(77678, {["timeline"] = {ADDED_10_1_7}}),	-- Triggered when using 'Ambrosial Sporestone' (itemID 208551) (spellID 420046)
+-- 		q(78422, {["timeline"] = {ADDED_10_2_0}}),	-- Triggered when using 'Emerald Blossom Dreamstone' (itemID 210468) (spellID 425847)
+-- 	}),
+-- })));

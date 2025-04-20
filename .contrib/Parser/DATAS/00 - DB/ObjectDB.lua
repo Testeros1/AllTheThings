@@ -201037,6 +201037,7 @@ local ObjectDB = ObjectDB; for objectID,objectData in pairs({
 			ru = "Ксал'атат, клинок Темной Империи",
 			ko = "잘아타스 - 검은 제국의 비수",
 			cn = "萨拉塔斯，黑暗帝国之刃",
+			tw = "薩拉塔斯，黑暗帝國之刃",
 		},
 	},
 	[311299] = {
@@ -202737,6 +202738,7 @@ local ObjectDB = ObjectDB; for objectID,objectData in pairs({
 			pt = "Xal'atath, a Lâmina do Império Negro",
 			ru = "Ксал'атат, клинок Темной Империи",
 			cn = "萨拉塔斯，黑暗帝国之刃",
+			tw = "薩拉塔斯，黑暗帝國之刃",
 		},
 	},
 	[316498] = {

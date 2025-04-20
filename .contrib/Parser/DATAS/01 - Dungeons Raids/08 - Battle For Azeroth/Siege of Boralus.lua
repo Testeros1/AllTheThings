@@ -1,8 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-
-root(ROOTS.Instances, expansion(EXPANSION.BFA, {
+root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
 	inst(1023, {	-- Siege of Boralus
 		["coords"] = {
 			{ 72.2, 15.5, BORALUS },	-- Alliance
@@ -219,13 +218,13 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					e(2140, {	-- Viq'Goth [4th Encounter - Both Factions]
 						["crs"] = { 128652 },-- Viq'Goth
 						["g"] = {
-							i(231824, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Circlet of the Enveloping Leviathan
-							i(231818, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Grasping Crown of the Deep
-							i(231826, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Hook-Barbed Spaulders
-							i(231830, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Kraken Shell Pauldrons
-							i(231822, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Cephalohide Jacket
-							i(231827, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Harpooner's Plate Cuirass
-							i(231825, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Tri-Heart Chestguard
+							i(231824, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Circlet of the Enveloping Leviathan
+							i(231818, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Grasping Crown of the Deep
+							i(231826, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Hook-Barbed Spaulders
+							i(231830, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Kraken Shell Pauldrons
+							i(231822, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Cephalohide Jacket
+							i(231827, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Harpooner's Plate Cuirass
+							i(231825, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Tri-Heart Chestguard
 						},
 					}),
 				},
@@ -251,12 +250,14 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 			}),
 			-- Outside of TWW Season 1
 			-- #else
-			d(DIFFICULTY.DUNGEON.MULTI.HEROIC_PLUS, {
-				["difficulties"] = { DIFFICULTY.DUNGEON.HEROIC, DIFFICULTY.DUNGEON.MYTHIC, DIFFICULTY.DUNGEON.KEYSTONE },
+			d(DIFFICULTY.DUNGEON.MULTI.NORMAL_PLUS, {
+				["difficulties"] = { DIFFICULTY.DUNGEON.NORMAL, DIFFICULTY.DUNGEON.HEROIC, DIFFICULTY.DUNGEON.MYTHIC, DIFFICULTY.DUNGEON.KEYSTONE },
 				["g"] = {
 					e(2132, {	-- Chopper Redhook [1st Encounter - Alliance]
-						-- This fight is Alliance-only.  We are going to set the boss as such, but leave the items not marked Alliance due to the fact that Horde should be able to transmog them, and in the event Blizzard makes them available for the opposite faction later.
+						-- This fight is was Alliance-only.  We are going to set the boss as such, but leave the items not marked Alliance due to the fact that Horde should be able to transmog them, and in the event Blizzard makes them available for the opposite faction later.
+						-- #if BEFORE 11.1.0
 						["races"] = ALLIANCE_ONLY,
+						-- #endif
 						["crs"] = { 128650 },	-- Chopper Redhook
 						["g"] = {
 							i(159972),	-- Mutineer's Fate
@@ -269,7 +270,8 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 							i(162541),	-- Band of the Roving Scalawag
 						},
 					}),
-					e(2133, {	-- Sergeant Bainbridge [1st Encounter - Horde]
+					e(2133, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1_LAUNCH, REMOVED_11_0_2 } }, {	-- Sergeant Bainbridge [1st Encounter - Horde]
+						-- This boss was removed in TWW season 1 and did not return when the season ended
 						-- This fight is Horde-only.  We are going to set the boss as such, but leave the items not marked Horde due to the fact that Alliance should be able to transmog them, and in the event Blizzard makes them available for the opposite faction later.
 						["races"] = HORDE_ONLY,
 						["crs"] = { 128649 },	-- Sergeant Bainbridge
@@ -283,7 +285,7 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 							i(159278),	-- Slippers of Unwavering Faith
 							i(162542),	-- Seal of the City Watch
 						},
-					}),
+					})),
 					e(2173, {	-- Dread Captain Lockwood [2nd Encounter - Both Factions]
 						["crs"] = { 129208 },	-- Dread Captain Lockwood
 						["g"] = {
@@ -315,21 +317,31 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 						["g"] = {
 							i(159651),	-- Coral-Edged Crescent
 							i(159310),	-- Circlet of the Enveloping Leviathan
-							i(231824, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Circlet of the Enveloping Leviathan
 							i(159252),	-- Grasping Crown of the Deep
-							i(231818, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Grasping Crown of the Deep
 							i(159376),	-- Hook-Barbed Spaulders
-							i(231826, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Hook-Barbed Spaulders
 							i(159431),	-- Kraken Shell Pauldrons
-							i(231830, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Kraken Shell Pauldrons
 							i(159314),	-- Cephalohide Jacket
-							i(231822, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Cephalohide Jacket
 							i(159416),	-- Harpooner's Plate Cuirass
-							i(231827, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Harpooner's Plate Cuirass
 							i(159362),	-- Tri-Heart Chestguard
-							i(231825, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0}}),	-- Tri-Heart Chestguard
 							i(159256),	-- Iron-Kelp Wristwraps
 							i(168130),	-- Essence of the Depths
+						},
+					}),
+				},
+			}),
+			d(DIFFICULTY.DUNGEON.MULTI.HEROIC_PLUS, {
+				["difficulties"] = { DIFFICULTY.DUNGEON.HEROIC, DIFFICULTY.DUNGEON.MYTHIC, DIFFICULTY.DUNGEON.KEYSTONE },
+				["g"] = {
+					e(2140, {	-- Viq'Goth [4th Encounter - Both Factions]
+						["crs"] = { 128652 },-- Viq'Goth
+						["g"] = {
+							i(231824, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Circlet of the Enveloping Leviathan
+							i(231818, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Grasping Crown of the Deep
+							i(231826, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Hook-Barbed Spaulders
+							i(231830, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Kraken Shell Pauldrons
+							i(231822, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Cephalohide Jacket
+							i(231827, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Harpooner's Plate Cuirass
+							i(231825, {["timeline"] = {ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART}}),	-- Tri-Heart Chestguard
 						},
 					}),
 				},
@@ -356,4 +368,4 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 			-- #endif
 		},
 	}),
-}));
+})));

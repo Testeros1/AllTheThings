@@ -476,7 +476,6 @@ root(ROOTS.NeverImplemented, filter(QUEST_ITEMS, {
 			i(200544),	-- Mistvale Map: Illegible
 			i(190191),	-- Muck-Covered Map
 			i(192783),	-- Nokhud Vanguard Orders
-			i(198450),	-- Old Crabshell
 			i(190964),	-- Ornate Chest Key
 			i(191947),	-- Parachutes
 			i(189362),	-- Pheromone Gland
@@ -491,7 +490,6 @@ root(ROOTS.NeverImplemented, filter(QUEST_ITEMS, {
 			i(199633),	-- Prepfoot Cell Key
 			i(193412),	-- Primal-Infused Dragon Egg
 			i(193267),	-- Pristine Hide
-			i(193260),	-- Prized Jewel
 			i(198812),	-- Rae'ana Alchemy Kit
 			i(199907),	-- Rebel Plans
 			i(191538),	-- Relic Fragment
@@ -700,6 +698,41 @@ root(ROOTS.NeverImplemented, filter(QUEST_ITEMS, {
 		expansion(EXPANSION.TWW, patch(0,02), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_2 } }, {
 			i(210873),	-- Earthen Identification Plaque
 			i(231019),	-- Hearthstone Invitation Letter
+		})),
+
+		-- 11.0.5
+		expansion(EXPANSION.TWW, patch(0,5), bubbleDownSelf({ ["timeline"] = { ADDED_11_0_5 } }, {
+			i(232510),	-- Electric Eel
+			i(232511),	-- Electric Eel
+			i(231773),	-- Lost & Found Chest
+		})),
+
+		-- 11.0.7
+		expansion(EXPANSION.TWW, patch(0,7), bubbleDownSelf({ ["timeline"] = { ADDED_11_0_7 } }, {
+			i(232654),	-- Compiled Tattered Journal
+			i(231760),	-- Notes on Ancient Treasure
+			i(228095),	-- Scroll of Empowered Time Warp
+			i(230211),	-- Singing Citrine
+		})),
+
+		-- 11.1.0
+		expansion(EXPANSION.TWW, patch(1,0), bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+			i(238395),	-- Barrel of Fireworks
+			i(228822),	-- Burgled Art
+			i(225931),	-- Contract Fee
+			i(227702),	-- Crumpled Report (TRAINING, DNT)
+			i(226525),	-- Demolition Control Code
+			i(226522),	-- Demolition Controller Fragment
+			i(230212),	-- Emergency Teleporter
+			i(232651),	-- Faded Journal Page
+			i(231021),	-- Imported Brews
+			i(226393),	-- Jetpack-in-a-Box
+			i(226216),	-- Kaja'Cola Can
+			i(226215),	-- Kaja'mite Powder
+			i(228794),	-- Purloined Loot
+			i(227386),	-- R.P.E.L
+			i(227540),	-- Skimmed Profits
+			i(230792),	-- X-Plo-Dar 64k
 		})),
 	}),
 }));

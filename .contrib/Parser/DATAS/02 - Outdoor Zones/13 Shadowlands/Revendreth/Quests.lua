@@ -474,7 +474,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["provider"] = { "n", 169238 },	-- Courier Araak
 					["coord"] = { 59.5, 66.7, REVENDRETH },
 					["g"] = {
-						i(180177),	-- Ruminations on True Names (QI!)
+						o(349303, {	-- Taskmaster Matyas' Ruminations
+							["coord"] = { 58.7, 69.3, REVENDRETH },
+							["g"] = { i(180177) },	-- Ruminations on True Names (QI!)
+						}),
 					},
 				}),
 				q(59846, {	-- Finders-Keepers, Sinners-Weepers
@@ -482,9 +485,19 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["provider"] = { "n", 165864 },	-- Nadjia the Mistblade
 					["coord"] = { 59.9, 68.9, REVENDRETH },
 					["g"] = {
-						i(179981),	-- Chipped Sinstone (QI!)
-						i(179980),	-- Cracked Sinstone (QI!)
-						i(179979),	-- Worn Sinstone (QI!)
+						o(349381, {	-- Sinstone Fragment
+							["coord"] = { 60.8, 72.1, REVENDRETH },
+							["g"] = { i(179981) },	-- Chipped Sinstone (QI!)
+						}),
+						o(349380, {	-- Sinstone Fragment
+							["coord"] = { 60.5, 69.8, REVENDRETH },
+							["g"] = { i(179980) },	-- Cracked Sinstone (QI!)
+						}),
+						o(349379, {	-- Sinstone Fragment (QI!)
+							["coord"] = { 61.0, 67.7, REVENDRETH },
+							["g"] = { i(179979) },	-- Worn Sinstone (QI!)
+						}),
+						---
 						i(178071),	-- Amice of Pained Absolution
 						i(178067),	-- Mitts of Pained Absolution
 						i(178065),	-- Nightcloaked Mitts
@@ -508,8 +521,20 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["provider"] = { "n", 165864 },	-- Nadjia the Mistblade
 					["coord"] = { 59.9, 68.9, REVENDRETH },
 					["g"] = {
+						o(349385, {	-- Scythe Bloom
+							["coords"] = {
+								{ 62.3, 70.7, REVENDRETH },
+								{ 62.4, 69.4, REVENDRETH },
+								{ 62.4, 69.6, REVENDRETH },
+								{ 62.6, 71.5, REVENDRETH },
+								{ 62.8, 70.6, REVENDRETH },
+								{ 62.9, 68.8, REVENDRETH },
+								{ 62.9, 70.1, REVENDRETH },
+								{ 63.1, 68.2, REVENDRETH },
+							},
+							["g"] = { i(177714) },	-- Scythe Bloom Pollen (QI!)
+						}),
 						i(177713),	-- Pristine Venom Gland (QI!)
-						i(177714),	-- Scythe Bloom Pollen (QI!)
 					},
 				}),
 				q(59715, {	-- Message for Matyas
@@ -705,9 +730,18 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 					["provider"] = { "n", 163073 },	-- Cryptkeeper Kassir
 					["coord"] = { 70.1, 56.1, REVENDRETH },
 					["g"] = {
-						i(173737),	-- Temel's Body (QI!)
-						i(173739),	-- Temel's Head (QI!)
-						i(173738),	-- Temel's Wings (QI!)
+						o(339224, {	-- Temel's Body
+							["coord"] = { 68.9, 53.3, REVENDRETH },
+							["g"] = { i(173737) },	-- Temel's Body (QI!)
+						}),
+						o(339226, {	-- Temel's Head
+							["coord"] = { 70.2, 53.8, REVENDRETH },
+							["g"] = { i(173739) },	-- Temel's Head (QI!)
+						}),
+						o(339225, {	-- Temel's Wings
+							["coord"] =  { 66.1, 53.1, REVENDRETH },
+							["g"] = { i(173738) },	-- Temel's Wings (QI!)
+						}),
 					},
 				}),
 				q(60128, {	-- Ready to Serve
@@ -1208,5 +1242,38 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_0_2_LAUNC
 				["provider"] = { "i", 173709 },	-- Vial of Dredger Muck
 			}),
 		})),
+	}),
+})));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timeline"] = { ADDED_9_0_1 } }, {
+	m(SHADOWLANDS, {
+		m(REVENDRETH, {
+			n(QUESTS, {
+				q(60845),	-- When looting [Bottle of Redelav Wine] (173718)
+				q(60846),	-- When looting [Dredger's Toolkit] (173715)
+				q(60849),	-- When looting [Ledger of Souls] (173712)
+				q(60850),	-- When looting [Love and Terror] (173721)
+				q(60853),	-- When looting [Portrait of the Sire] (173711)
+				q(60847),	-- Upon looting [Soul Hunter's Blade] (173707)
+				q(60707),	-- When looting [The Venthyr Diaries] (173705)
+				q(62659),	-- triggered when turning in #58078, Favor: Bottle of Redelav Wine
+				q(62660),	-- triggered when turning in #58075, Favor: Dredger's Toolkit
+				q(62662),	-- triggered when turning in #58074, Favor: Ledger of Souls
+				q(62663),	-- triggered when turning in #58081, Favor: Love and Terror
+				q(62664),	-- triggered when turning in #58077, Favor: Perfected Hand Mirror
+				q(62665),	-- triggered when turning in #58072, Favor: Petrified Stonefiend
+				q(62666),	-- triggered when turning in #58073, Favor: Portrait of the Sire
+				q(62667),	-- triggered when turning in #58079, Favor: Pristine Dredbat Fang
+				q(62670),	-- triggered when turning in #58069, Favor: The Venthyr Diaries
+				q(62671),	-- think this triggered when i turned in "Favor: Vial of Dredger Muck"
+				q(60523),	-- Triggered after reading Theotar's Diary
+				q(60527),	-- Triggered after reading Theotar's Diary
+				q(61843),	-- Triggered after completing Nipping at the Undergrowth (61839)
+				q(59222),	-- Triggered during #57536, "Mirror Making, Not Breaking" when speaking to Laurent
+				q(62661),	-- Triggered during first completion of #58080 [Favor: Glittering Primrose Necklace]
+				q(62669),	-- Triggered during first completion of #58070 [Favor: Soul Hunter Blade]
+				q(62641),	-- killing or looting Sabina during "Setting Sabina Free"
+			}),
+		}),
 	}),
 })));

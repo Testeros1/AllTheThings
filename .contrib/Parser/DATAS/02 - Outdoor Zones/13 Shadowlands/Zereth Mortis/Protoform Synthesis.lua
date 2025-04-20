@@ -24,17 +24,15 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 		prof(PROTOFORM_SYNTHESIS, {
 			n(ACHIEVEMENTS, {
 				ach(15406, {	-- Synthesized!
-					["_noautomation"] = true,
+					["sym"] = {{"partial_achievement",15411}},	-- Synthe-supersized!
 				}),
 				ach(15407, {	-- Synthe-fived!
-					["_noautomation"] = true,
+					["sym"] = {{"partial_achievement",15411}},	-- Synthe-supersized!
 				}),
 				ach(15410, {	-- Synthe-superfived!
-					["_noautomation"] = true,
+					["sym"] = {{"partial_achievement",15411}},	-- Synthe-supersized!
 				}),
-				ach(15411, {	-- Synthe-supersized!
-					["_noautomation"] = true,
-				}),
+				ach(15411),	-- Synthe-supersized!
 			}),
 			n(QUESTS, {
 				-- Unlock Pet Forge Available with Dealic Understanding
@@ -360,10 +358,13 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 					},
 				}),
 				q(65375, {	-- Schematic Reassimilation: Pale Regal Cervid
+					-- Quest item is now buyable from the vendor after 11.0.7
+					-- #if BEFORE 11.0.7
 					["lockCriteria"] = { 1,
 						"spellID", 365040,	-- Pale Regal Cervid (RECIPE!)
 						"achID", 15402,	-- Cyphers of the First Ones
 					},
+					-- #endif
 					["provider"] = { "i", 189455 },	-- Schematic: Pale Regal Cervid
 					["timeline"] = { ADDED_11_0_2 },	-- Added few years later as a fix for not auto-receiving the recipe
 					["g"] = {
@@ -593,6 +594,17 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_2_0 } }, 
 					["questID"] = 65651,
 					["g"] = {
 						i(189463),	-- Schematic: Unsuccessful Prototype Fleetpod
+					},
+				}),
+			}),
+			n(VENDORS, {
+				n(181135, {	-- Servitor Interface
+					["coord"] = { 70.2, 28.6, ZERETH_MORTIS },
+					["g"] = {
+						i(189455, {	-- Schematic: Pale Regal Cervid
+							["sourceAchievement"] = 15402,	-- Cyphers of the First Ones
+							["timeline"] = { ADDED_11_0_7 }
+						}),
 					},
 				}),
 			}),

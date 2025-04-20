@@ -4431,9 +4431,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(50487),	--
 			q(50523),	--
 			q(50532),	--
-			q(50555),	--
-			q(50556),	--
-			q(50557),	--
 			q(50560),	--
 			q(50575),	--
 			q(50579),	--
@@ -5713,10 +5710,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 				},
 			}),
 			q(55208, {
-			}),
-			q(57640, {
-				["description"] = "Type: |cFFf09f26PvP|r\nCategory: |cFFf09f26Korrak's Revenge|r",
-				["lvl"] = 10,
 			}),
 		}),
 	}),
@@ -8131,7 +8124,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(73935),	--
 			q(73969),	--
 			q(73970),	--
-			q(73971),	--
 			q(73975),	--
 			q(73977),	--
 			q(73982),	--
@@ -8363,7 +8355,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(75618),	--
 			q(75631),	--
 			q(75763),	--
-			q(75774),	--
 			q(75775),	--
 			q(75818),	--
 			q(75894),	--
@@ -8599,7 +8590,6 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			q(78928),	--
 			q(78955),	--
 			q(77837),	--
-			q(78048),	--
 			q(76383),	--
 			q(78176),	--
 			q(76279),	--
@@ -8687,6 +8677,12 @@ root(ROOTS.NeverImplemented, n(QUESTS, {
 			}),
 			q(85725),	-- (Argent Dawn Valor Token)
 			q(85726),	-- (Argent Dawn Valor Token)
+		})),
+
+		-- 11.1.0
+		expansion(EXPANSION.TWW, patch(1,0), bubbleDownSelf({ ["timeline"] = { CREATED_11_1_0 } }, {
+			q(83447),
+			q(86651),	-- [DNT] Test (causes Bolt of Silk Cloth to be Sourced when not under NYI)
 		})),
 	}),
 }));

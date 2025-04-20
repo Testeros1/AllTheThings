@@ -115,7 +115,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 		i(64394),	-- Draenei Tome
 		i(64392),	-- Orc Blood Text
 		i(87399, {["timeline"] = {ADDED_5_0_4}}),	-- Restored Artifact
-		currency(ARCH_CURRENCY_DRAENEI, {
+		header(HEADERS.Currency, ARCH_CURRENCY_DRAENEI, sharedData({["cost"]={{"c",ARCH_CURRENCY_DRAENEI,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 207188 },	-- Draenei Archaeology Find
 			["maps"] = {
 				HELLFIRE_PENINSULA,
@@ -137,8 +137,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 				i(64443),	-- Strange Silver Paperweight
 				i(64457),	-- The Last Relic of Argus
 			},
-		}),
-		currency(ARCH_CURRENCY_ORC, {
+		})),
+		header(HEADERS.Currency, ARCH_CURRENCY_ORC, sharedData({["cost"]={{"c",ARCH_CURRENCY_ORC,50}}},{ -- TODO: someone can add different fragment costs within as needed
 			["provider"] = { "o", 207187 },	-- Orc Archaeology Find
 			["maps"] = {
 				HELLFIRE_PENINSULA,
@@ -158,7 +158,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 				i(64437),	-- Tile of Glazed Clay
 				i(64389),	-- Tiny Bronze Scorpion
 			},
-		}),
+		})),
 	})),
 	prof(BLACKSMITHING, {
 		-- #if BEFORE CATA
@@ -579,6 +579,10 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			i(35581, {["timeline"] = {ADDED_2_4_0}}),	-- Rocket Boots Xtreme Lite
 			i(23768),	-- White Smoke Flare
 			i(23821),	-- Zapthrottle Mote Extractor
+			--	Danny Donkey:	The gas clouds are sourced in the zones they are located in, and listed as sources for their respective reagents.
+			--					This works fine in TBC where gas clouds are unique per zone (Nagrand - Windy Cloud; Zangarmarsh - Swamp Gas; Netherstorm - Arcane Vortex; Shadowmoon Valley - Felmist)
+			--					For WotLK it is more complicated where Arctic Cloud, Cinder Cloud and Steam Cloud all appears in at least two zones, some shared with other gas clouds.
+			--					It also does not helps that maps/coords/description does not appears on tooltips on creatures listed as sources in classic iterations of the game, while source path on cratures is broken in retail. it is a mess.
 		}),
 		filter(MOUNTS, {
 			i(34060, {["timeline"] = {ADDED_2_3_0}}),	-- Flying Machine (MOUNT!)
@@ -609,6 +613,25 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			i(23765),	-- Khorium Scope
 			i(23766),	-- Stabilized Eternium Scope
 		}),
+		i(23821, {	-- Zapthrottle Mote Extractor
+			n(17408, {	-- Arcane Vortex (Gas cloud)
+				["maps"] = { NETHERSTORM },
+				["requireSkill"] = ENGINEERING,
+			}),
+			n(17407, {	-- Felmist (Gas cloud)
+				["maps"] = { SHADOWMOON_VALLEY },
+				["requireSkill"] = ENGINEERING,
+			}),
+			n(17378, {	-- Swamp Gas (Gas cloud)
+				["maps"] = { ZANGARMARSH },
+				["requireSkill"] = ENGINEERING,
+			}),
+			n(24222, {	-- Windy Cload (Gas cloud)
+				["maps"] = { NAGRAND },
+				["requireSkill"] = ENGINEERING,
+				["timeline"] = { ADDED_2_3_0 },
+			}),
+		}),
 	}),
 	-- #if BEFORE 8.0.1
 	prof(FIRST_AID, {
@@ -617,6 +640,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 	}),
 	-- #endif
 	prof(FISHING, {
+		-- Fish
 		i(27422, {	-- Barbed Gill Trout
 			["maps"] = {
 				DEADWIND_PASS,
@@ -636,6 +660,10 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 				i(34866),	-- Giant Freshwater Shrimp
 			},
 		}),
+		applyclassicphase(TBC_PHASE_FIVE, i(35286, {	-- Bloated Giant Sunfish
+			["maps"] = { ISLE_OF_QUELDANAS },
+			["timeline"] = { ADDED_2_4_0 },
+		})),
 		applyclassicphase(TBC_PHASE_FOUR, i(33823, {	-- Bloodfin Catfish
 			["maps"] = { DEADWIND_PASS },
 			["timeline"] = { ADDED_2_3_0 },
@@ -644,13 +672,30 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			["maps"] = { DEADWIND_PASS },
 			["timeline"] = { ADDED_2_3_0 },
 		})),
-		i(27513),	-- Curious Crate
+		i(27513, {	-- Curious Crate
+			["providers"] = {
+				{ "o", 182959 },	-- Bluefish School
+				{ "o", 182954 },	-- Brackish Mixed School
+				{ "o", 182957 },	-- Highland Mixed School
+				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182951 },	-- Pure Water (fishing school)
+				{ "o", 182956 },	-- School of Darter
+				{ "o", 182953 },	-- Sporefish School
+				{ "o", 182952 },	-- Steam Pump Floatsam
+			},
+			["maps"] = {
+				NAGRAND,
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
+		}),
 		i(27516, {	-- Enormous Barbed Gill Trout
 			["providers"] = {
 				{ "o", 182959 },	-- Bluefish School
 				{ "o", 182954 },	-- Brackish Mixed School
 				{ "o", 182957 },	-- Highland Mixed School
 				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182951 },	-- Pure Water (fishing school)
 				{ "o", 182956 },	-- School of Darter
 				{ "o", 182953 },	-- Sporefish School
 				{ "o", 182952 },	-- Steam Pump Floatsam
@@ -666,15 +711,16 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			["maps"] = { NAGRAND },
 		}),
 		i(27439, {	-- Furious Crawdad
-			["provider"] = { "o", 182957 },	-- Highland Mixed School
 			["coords"] = {
 				{ 59.6, 59.85, TEROKKAR_FOREST },	-- Lake Ere'Noru
 				{ 46.6, 40.7, TEROKKAR_FOREST },	-- Lake Jorune
 				{ 66.0, 78.3, TEROKKAR_FOREST },	-- Skettis
 			},
+			["_allowObjectProvider"] = true,
+			["provider"] = { "o", 182957 },	-- Highland Mixed School
 		}),
 		applyclassicphase(TBC_PHASE_FIVE, i(35285, {	-- Giant Sunfish
-			["maps"] = ISLE_OF_QUELDANAS,
+			["maps"] = { ISLE_OF_QUELDANAS },
 			["timeline"] = { ADDED_2_4_0 },
 		})),
 		i(27438, {	-- Golden Darter
@@ -685,13 +731,33 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			},
 			["maps"] = TEROKKAR_FOREST,
 		}),
-		i(27481),	-- Heavy Supply Crate
+		i(27442, {	-- Goldenscale Vendorfish
+			["providers"] = {
+				{ "o", 182959 },	-- Bluefish School
+				{ "o", 182954 },	-- Brackish Mixed School
+				{ "o", 182957 },	-- Highland Mixed School
+				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182951 },	-- Pure Water (fishing school)
+				{ "o", 182956 },	-- School of Darter
+				{ "o", 182953 },	-- Sporefish School
+				{ "o", 182952 },	-- Steam Pump Floatsam
+			},
+			["maps"] = {
+				NAGRAND,
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
+		}),
+		i(27481, {	-- Heavy Supply Crate
+			["provider"] = { "o", 182952 },	-- Steam Pump Flotsam
+		}),
 		i(27515, {	-- Huge Spotted Feltail
 			["providers"] = {
 				{ "o", 182959 },	-- Bluefish School
 				{ "o", 182954 },	-- Brackish Mixed School
 				{ "o", 182957 },	-- Highland Mixed School
 				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182951 },	-- Pure Water (fishing school)
 				{ "o", 182956 },	-- School of Darter
 				{ "o", 182953 },	-- Sporefish School
 				{ "o", 182952 },	-- Steam Pump Floatsam
@@ -712,6 +778,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 				{ "o", 182954 },	-- Brackish Mixed School
 				{ "o", 182957 },	-- Highland Mixed School
 				{ "o", 182958 },	-- Mudfish School
+				{ "o", 182951 },	-- Pure Water (fishing school)
 				{ "o", 182956 },	-- School of Darter
 				{ "o", 182953 },	-- Sporefish School
 				{ "o", 182952 },	-- Steam Pump Floatsam
@@ -729,16 +796,71 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			},
 			["timeline"] = { ADDED_2_4_0 },
 		}),
+		i(27388, {	-- Mr. Pinchy
+			["coords"] = {
+				{ 59.6, 59.85, TEROKKAR_FOREST },	-- Lake Ere'Noru
+				{ 46.6, 40.7, TEROKKAR_FOREST },	-- Lake Jorune
+				{ 66.0, 78.3, TEROKKAR_FOREST },	-- Skettis
+			},
+			["description"] = "Fished up from Highland Mixed Schools. You have 3 wishes per Mr. Pinchy, each wish granting one of the following effects:\n\n1) Mr. Pinchy's Blessing (Flask)\n2) Summon Furious Mr. Pinchy (Enemy)\n3) Magical Crawdad Box (Rare Pet)\n4) Mr. Pinchy's Gift (Potions)\n5) Benevolent Mr. Pinchy (Guardian)",
+			["_allowObjectProvider"] = true,
+			["provider"] = { "o", 182957 },	-- Highland Mixed School
+			["groups"] = {
+				i(27445),	-- Magical Crawdad (PET!)
+				i(27446, {	-- Mr. Pinchy's Gift
+					["description"] = "Contains an assortment of potions.",
+					["groups"] = {
+						i(8350),	-- The 1 Ring
+					},
+				}),
+			},
+		}),
 		i(27425, {	-- Spotted Feltail
 			["maps"] = {
 				TEROKKAR_FOREST,
 				ZANGARMARSH,
 			},
 		}),
+		i(34868, {	-- World's Largest Mudfish (Quest Item for Terokkar Forest fishing daily q(11667) The One That Got Away)
+			["maps"] = { NAGRAND },
+		}),
 		i(27429, {	-- Zangarian Sporefish
 			["provider"] = { "o", 182953 },	-- Sporefish School
 			["maps"] = { ZANGARMARSH },
 		}),
+		-- Schools
+		o(182959, {	-- Bluefish School
+			["maps"] = { NAGRAND },
+		}),
+		o(182954, {	-- Brackish Mixed School
+			["maps"] = {
+				TEROKKAR_FOREST,
+				ZANGARMARSH,
+			},
+		}),
+		o(182957, {	-- Highland Mixed School
+			["coords"] = {
+				{ 59.6, 59.85, TEROKKAR_FOREST },	-- Lake Ere'Noru
+				{ 46.6, 40.7, TEROKKAR_FOREST },	-- Lake Jorune
+				{ 66.0, 78.3, TEROKKAR_FOREST },	-- Skettis
+			},
+		}),
+		o(182958, {	-- Mudfish School
+			["maps"] = { NAGRAND },
+		}),
+		o(182951, {	-- Pure Water (fishing school)
+			["maps"] = { NAGRAND },
+		}),
+		o(182956, {	-- School of Darter
+			["maps"] = { TEROKKAR_FOREST },
+		}),
+		o(182953, {	-- Sporefish School
+			["maps"] = { ZANGARMARSH },
+		}),
+		o(182952, {	-- Steam Pump Flotsam
+			["maps"] = { ZANGARMARSH },
+		}),
+		-- Recipe
 		filter(RECIPES, {
 			i(34109, {	-- Weather-Beaten Journal (RECIPE!)
 				["description"] = "Can be fished from schools.",
@@ -748,6 +870,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 	}),
 	prof(HERBALISM, {
 		spell(2366, {	-- Herb Gathering
+			-- Herbs
 			i(22790, {	-- Ancient Lichen
 				["maps"] = {
 					AUCHINDOUN_AUCHENAI_CRYPTS,
@@ -758,21 +881,17 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					COILFANG_RESERVOIR_STEAMVAULT,
 					COILFANG_RESERVOIR_UNDERBOG,
 				},
-				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
-				},
+				["provider"] = { "o", 181278 },	-- Ancient Lichen
 			}),
 			i(108348, {	-- Ancient Lichen Petal
+				["provider"] = { "o", 181278 },	-- Ancient Lichen
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(22790),	-- Ancient Lichen
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
 				},
 			}),
 			i(22786, {	-- Dreaming Glory
-				["description"] = "Found around edges and highly uneven terrain.",
+				["description"] = "Found near edges and highly uneven terrain.",
 				["maps"] = {
 					BLADES_EDGE_MOUNTAINS,
 					NAGRAND,
@@ -780,79 +899,111 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					SHADOWMOON_VALLEY,
 					TEROKKAR_FOREST,
 				},
-				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
-				},
+				["provider"] = { "o", 181271 },	-- Dreaming Glory
 			}),
 			i(108345, {	-- Dreaming Glory Petal
+				["provider"] = { "o", 181271 },	-- Dreaming Glory
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(22786),	-- Dreaming Glory
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
 				},
 			}),
-			i(22795),	-- Fel Blossom
+			i(22795, {	-- Fel Blossom
+				["provider"] = { "o", 181270 },	-- Felweed
+			}),
 			i(22794, {	-- Fel Lotus
-				["description"] = "Can uncommonly be looted when gathered TBC herbs.",
+				["description"] = "Can uncommonly be looted when gathering TBC herbs.",
+				["providers"] = {
+					{ "o", 181278 },	-- Ancient Lichen
+					{ "o", 181271 },	-- Dreaming Glory
+					{ "o", 181270 },	-- Felweed
+					{ "o", 181281 },	-- Mana Thistle
+					{ "o", 181279 },	-- Netherbloom
+					{ "o", 181280 },	-- Nightmare Vine
+					{ "o", 181275 },	-- Ragveil
+					{ "o", 181277 },	-- Terocone
+				},
 			}),
 			i(22785, {	-- Felweed
 				["maps"] = {
 					BLADES_EDGE_MOUNTAINS,
 					HELLFIRE_PENINSULA,
 					NAGRAND,
+					SHADOWMOON_VALLEY,
 					TEROKKAR_FOREST,
 					ZANGARMARSH,
 				},
-				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
-				},
+				["provider"] = { "o", 181270 },	-- Felweed
 			}),
 			i(108344, {	-- Felweed Stalk
+				["provider"] = { "o", 181270 },	-- Felweed
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(22785),	-- Felweed
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
 				},
 			}),
 			i(22788, {	-- Flame Cap
-				["maps"] = ZANGARMARSH,
+				["maps"] = {
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+					ZANGARMARSH,
+				},
+				["provider"] = { "o", 181276 },	-- Flame Cap
 			}),
 			i(22793, {	-- Mana Thistle
-				["maps"] = ISLE_OF_QUELDANAS,
-				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
-				},
+				["maps"] = { ISLE_OF_QUELDANAS },
+				["provider"] = { "o", 181281 },	-- Mana Thistle
 			}),
 			i(108351, {	-- Mana Thistle Leaf
+				["provider"] = { "o", 181281 },	-- Mana Thistle
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(22793),	-- Mana Thistle
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
 				},
 			}),
-			i(35229, {["timeline"] = { ADDED_2_4_0 }}),	-- Nether Residue (Quest Item for Shattrath q(11875) Gaining the Advantage) 
+			i(35229, {	-- Nether Residue (Quest Item for Shattrath q(11875) Gaining the Advantage)
+				["providers"] = {
+					{ "o", 181278 },	-- Ancient Lichen
+					{ "o", 181271 },	-- Dreaming Glory
+					{ "o", 181270 },	-- Felweed
+					{ "o", 181281 },	-- Mana Thistle
+					{ "o", 181279 },	-- Netherbloom
+					{ "o", 181280 },	-- Nightmare Vine
+					{ "o", 181275 },	-- Ragveil
+					{ "o", 181277 },	-- Terocone
+				},
+				["timeline"] = { ADDED_2_4_0 },
+			}),
 			i(22791, {	-- Netherbloom
-				["maps"] = NETHERSTORM,
+				["maps"] = { NETHERSTORM },
+				["provider"] = { "o", 181279 },	-- Netherbloom
 			}),
 			i(108349, {	-- Netherbloom Leaf
+				["provider"] = { "o", 181279 },	-- Netherbloom
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(22791),	-- Netherbloom
 				},
 			}),
 			i(22797, {	-- Nightmare Seed
+				["provider"] = { "o", 181280 },	-- Nightmare Vine
 				["timeline"] = { REMOVED_3_3_0 }, -- Danny Donkey: Must confirm how this applies to Classic!
 			}),
 			i(22792, {	-- Nightmare Vine
-				["maps"] = ISLE_OF_QUELDANAS,
+				["coords"] = {
+					{ 63.9, 68.3, BLADES_EDGE_MOUNTAINS },	-- Death's Door
+					{ 34.8, 40.4, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Wrath
+					{ 29.2, 81.3, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Terror
+					{ 62.7, 19.5, HELLFIRE_PENINSULA },	-- Throne of Kil'jaeden
+				},
+				["description"] = "Although it can be found all over Shadowmoon Valley, the more efficient farm is the listed coordinates.",
+				["maps"] = SHADOWMOON_VALLEY,
+				["_allowObjectProvider"] = true,
+				["provider"] = { "o", 181280 },	-- Nightmare Vine
 			}),
 			i(108350, {	-- Nightmare Vine Stem
+				["provider"] = { "o", 181280 },	-- Nightmare Vine
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(22792),	-- Nightmare Vine
@@ -860,36 +1011,114 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			}),
 			i(22787, {	-- Ragveil
 				["maps"] = ZANGARMARSH,
-				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
-				},
+				["provider"] = { "o", 181275 },	-- Ragveil
 			}),
 			i(108346, {	-- Ragveil Cap
+				["provider"] = { "o", 181275 },	-- Ragveil
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
 					i(22787),	-- Ragveil
 				},
 			}),
 			i(22789, {	-- Terocone
-				["maps"] = TEROKKAR_FOREST,
-				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
+				["coords"] = {
+					{ 43.4, 55.8, SHADOWMOON_VALLEY },	-- Sketh'lon Base Camp
+					{ 36.5, 32.5, SHADOWMOON_VALLEY },	-- Sketh'lon Wreckage
+					{ 29.2, 81.3, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Terror
+					{ 62.7, 19.5, HELLFIRE_PENINSULA },	-- Throne of Kil'jaeden
 				},
+				["description"] = "Found near the base of trees.",
+				["maps"] = TEROKKAR_FOREST,
+				["_allowObjectProvider"] = true,
+				["provider"] = { "o", 181277 },	-- Terocone
 			}),
 			i(108347, {	-- Terocone Leaf
+				["provider"] = { "o", 181277 },	-- Terocone
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
-					i(22575),	-- Mote of Life
-					i(21886),	-- Primal Life
 					i(22789),	-- Terocone
 				},
 			}),
 			i(24401, {	-- Unidentified Plant Parts (Quest Item for Zangarmarsh q(9802) and q(9784))
 				["maps"] = ZANGARMARSH,
+			}),
+			-- Nodes
+			o(181278, {	-- Ancient Lichen
+				["maps"] = {
+					AUCHINDOUN_AUCHENAI_CRYPTS,
+					AUCHINDOUN_MANA_TOMBS,
+					AUCHINDOUN_SETHEKK_HALLS,
+					AUCHINDOUN_SHADOW_LABYRINTH,
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+				},
+			}),
+			o(181271, {	-- Dreaming Glory
+				["description"] = "Found near edges and highly uneven terrain.",
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+				},
+			}),
+			o(181270, {	-- Felweed
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					HELLFIRE_PENINSULA,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+			}),
+			o(181276, {	-- Flame Cap
+				["maps"] = {
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+					ZANGARMARSH,
+				},
+			}),
+			o(181281, {	-- Mana Thistle
+				["maps"] = { ISLE_OF_QUELDANAS },
+			}),
+			o(181279, {	-- Netherbloom
+				["maps"] = { NETHERSTORM },
+			}),
+			o(181280, {	-- Nightmare Vine
+				["coords"] = {
+					{ 63.9, 68.3, BLADES_EDGE_MOUNTAINS },	-- Death's Door
+					{ 34.8, 40.4, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Wrath
+					{ 29.2, 81.3, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Terror
+					{ 62.7, 19.5, HELLFIRE_PENINSULA },	-- Throne of Kil'jaeden
+				},
+				["description"] = "Although this can be found all over Shadowmoon Valley, the more efficient farm is the listed coordinates.",
+				["maps"] = SHADOWMOON_VALLEY,
+			}),
+			o(181275, {	-- Ragveil
+				["maps"] = {
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+					ZANGARMARSH,
+				},
+			}),	-- Sanguine Hibiscus
+			o(183385, {
+				["maps"] = { COILFANG_RESERVOIR_UNDERBOG },
+			}),
+			o(181277, {	-- Terocone
+				["coords"] = {
+					{ 43.4, 55.8, SHADOWMOON_VALLEY },	-- Sketh'lon Base Camp
+					{ 36.5, 32.5, SHADOWMOON_VALLEY },	-- Sketh'lon Wreckage
+					{ 29.2, 81.3, BLADES_EDGE_MOUNTAINS },	-- Forge Camp: Terror
+					{ 62.7, 19.5, HELLFIRE_PENINSULA },	-- Throne of Kil'jaeden
+				},
+				["description"] = "Found near the base of trees.",
+				["maps"] = TEROKKAR_FOREST,
 			}),
 		}),
 	}),
@@ -1225,7 +1454,8 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 	}),
 	prof(MINING, {
 		spell(2575, {	-- Mining
-			i(23425, {	-- Adamantite Ore
+			-- Nodes
+			o(181556, {	-- Adamantite Deposit
 				["maps"] = {
 					BLADES_EDGE_MOUNTAINS,
 					ISLE_OF_QUELDANAS,
@@ -1236,7 +1466,70 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					ZANGARMARSH,
 				},
 			}),
+			o(181555, {	-- Fel Iron Deposit
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					HELLFIRE_PENINSULA,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+			}),
+			o(181557, {	-- Khorium Vein
+				["maps"] = {
+					AUCHINDOUN_AUCHENAI_CRYPTS,
+					AUCHINDOUN_MANA_TOMBS,
+					AUCHINDOUN_SETHEKK_HALLS,
+					AUCHINDOUN_SHADOW_LABYRINTH,
+					BLADES_EDGE_MOUNTAINS,
+					COILFANG_RESERVOIR_SLAVE_PENS,
+					COILFANG_RESERVOIR_STEAMVAULT,
+					COILFANG_RESERVOIR_UNDERBOG,
+					ISLE_OF_QUELDANAS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+				},
+			}),
+			o(181569, {	-- Rich Adamantite Deposit
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					ISLE_OF_QUELDANAS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+			}),
+			o(181570, {	-- Rich Adamantite Deposit (Another ID for deposits exclusive to Nagrand.)
+				["maps"] = { NAGRAND },
+			}),
+			-- Ores
+			i(23425, {	-- Adamantite Ore
+				["maps"] = {
+					BLADES_EDGE_MOUNTAINS,
+					ISLE_OF_QUELDANAS,
+					NAGRAND,
+					NETHERSTORM,
+					SHADOWMOON_VALLEY,
+					TEROKKAR_FOREST,
+					ZANGARMARSH,
+				},
+				["providers"] = {
+					{ "o", 181556 },	-- Adamantite Deposit
+					{ "o", 181569 },	-- Rich Adamantite Deposit
+					{ "o", 181570 },	-- Rich Adamantite Deposit (Nagrand special)
+				},
+			}),
 			i(108302, {	-- Adamantite Ore Nugget
+				["providers"] = {
+					{ "o", 181556 },	-- Adamantite Deposit
+					{ "o", 181569 },	-- Rich Adamantite Deposit
+				},
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(23425),	-- Adamantite Ore
@@ -1256,6 +1549,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					{ "o", 181556 },	-- Adamantite Deposit
 					{ "o", 181557 },	-- Khorium Vein
 					{ "o", 181569 },	-- Rich Adamantite Deposit
+					{ "o", 181570 },	-- Rich Adamantite Deposit (Nagrand special)
 				},
 			}),
 			i(108303, {	-- Eternium Ore Nugget
@@ -1274,8 +1568,10 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					TEROKKAR_FOREST,
 					ZANGARMARSH,
 				},
+				["provider"] = { "o", 181555 },	-- Fel Iron Deposit
 			}),
 			i(108301, {	-- Fel Iron Ore Nugget
+				["provider"] = { "o", 181555 },	-- Fel Iron Deposit
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(23424),	-- Fel Iron Ore
@@ -1297,8 +1593,10 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					SHADOWMOON_VALLEY,
 					TEROKKAR_FOREST,
 				},
+				["provider"] = { "o", 181557 },	-- Khorium Vein
 			}),
 			i(108304, {	-- Khorium Ore Nugget
+				["provider"] = { "o", 181557 },	-- Khorium Vein
 				["timeline"] = { ADDED_6_0_2 },
 				["groups"] = {
 					i(23426),	-- Khorium Ore
@@ -1366,7 +1664,7 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 		i(22055),	-- Wound Poison V
 	})),
 	prof(SKINNING, {
-		["description"] = "The following items can be gathered by skinning creatures on Outland. Note that Knothide Leader is the most common reagent to get from skinning. All other skinned reagents have a lower than 100% drop chance from skinning the respective mobs, thus you must expect having to skin multiple creatures to obtain the reagent.",
+		["description"] = "The following items can be gathered by skinning creatures on Outland. Note that Knothide Leader is the most common reagent to get from skinning. All other skinned reagents have a lower than 100% drop chance from skinning the respective mobs, thus you must expect having to skin multiple creatures to obtain the reagent.\n\nThis header will often not show everything uncollected it contains, even when enabling 'Debug Mode'. The best way to track specific reagents is to do /att item:[itemID] or pop out this header.",
 		["groups"] = {
 			i(29539, {    -- Cobra Scales
 				["crs"] = {
@@ -1466,11 +1764,11 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					{ 49.5, 71.5, HELLFIRE_PENINSULA }, -- Honour Hold, southwest of
 					{ 49.5, 31.3, HELLFIRE_PENINSULA }, -- Stonewall Canyon
 					{ 63.1, 70.7, HELLFIRE_PENINSULA }, -- Zeth'gor, west of
-					{ 72.1, 57.0, HELLFIRE_PENINSULA }, -- The Legion Front South
-					{ 72.8, 42.4, HELLFIRE_PENINSULA }, -- The Legion Front North
-					{ 40.8, 72.5, NETHERSTORM }, -- Arklon Ruins
-					{ 56.4, 60.0, NETHERSTORM }, -- The Vortex Fields west
-					{ 66.3, 61.8, NETHERSTORM }, -- The Vortex Fields east
+					{ 72.1, 57.0, HELLFIRE_PENINSULA },	-- The Legion Front South
+					{ 72.8, 42.4, HELLFIRE_PENINSULA },	-- The Legion Front North
+					{ 40.8, 72.5, NETHERSTORM },	-- Arklon Ruins
+					{ 56.4, 60.0, NETHERSTORM },	-- The Vortex Fields west
+					{ 66.3, 61.8, NETHERSTORM },	-- The Vortex Fields east
 					{ 65.9, 85.0, TEROKKAR_FOREST },	-- Blackwind Lake Southside
 					{ 60.3, 38.7, TEROKKAR_FOREST },	-- Tuurem, southeast of
 					{ 20.6, 73.5, TEROKKAR_FOREST },	-- Veil Lithic, vest of
@@ -1565,12 +1863,12 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 					20673,	-- Swiftwing Shredder
 				},
 				["coords"] = {
-					{ 68.5, 70.55, BLADES_EDGE_MOUNTAINS }, -- Scalewing Shelf
-					{ 66.0, 52.6, BLADES_EDGE_MOUNTAINS }, -- Razor Ridge
-					{ 71.5, 30.1, BLADES_EDGE_MOUNTAINS }, -- Bladed Gulch
-					{ 56.4, 60.0, NETHERSTORM }, -- The Vortex Fields west
-					{ 66.3, 61.8, NETHERSTORM }, -- The Vortex Fields east
-					{ 47.0, 64.5, SHADOWMOON_VALLEY }, -- Eclipse Point
+					{ 68.5, 70.55, BLADES_EDGE_MOUNTAINS },	-- Scalewing Shelf
+					{ 66.0, 52.6, BLADES_EDGE_MOUNTAINS },	-- Razor Ridge
+					{ 71.5, 30.1, BLADES_EDGE_MOUNTAINS },	-- Bladed Gulch
+					{ 56.4, 60.0, NETHERSTORM },	-- The Vortex Fields west
+					{ 66.3, 61.8, NETHERSTORM },	-- The Vortex Fields east
+					{ 47.0, 64.5, SHADOWMOON_VALLEY },	-- Eclipse Point
 				},
 			}),
 		},
@@ -1606,9 +1904,31 @@ root(ROOTS.Craftables, expansion(EXPANSION.TBC, applyclassicphase(TBC_PHASE_ONE,
 			i(21842),	-- Bolt of Imbued Netherweave
 			i(21840),	-- Bolt of Netherweave
 			i(21844),	-- Bolt of Soulcloth
-			i(21845),	-- Primal Mooncloth
-			i(24272),	-- Shadowcloth
-			i(24271),	-- Spellcloth
+			i(21845, {	-- Primal Mooncloth
+				["description"] = "Coordinates are for select Moonwells around the world.",
+				["coords"] = {
+					{ 43.10, 80.27, DARNASSUS }, -- Temple of the Moon
+					-- #if BEFORE 4.0.3
+					{ 21.0, 53.0, STORMWIND_CITY }, -- The Park
+					{ 60.0, 72.0, ASHENVALE }, -- Moonwell of Cleansing (exists after 4.0.3, but reduntant on practicality.)
+					-- #else
+					{ 57.11, 37.52, WETLANDS }, -- Greenwarden's Grove
+					{ 48.05, 18.54, DARNASSUS }, -- The Howling Oak
+					{ 10.77, 74.71, AZSHARA }, -- Talrendis Point
+					{ 49.06, 33.58, DUSKWOOD }, -- Twlight Grove (exists pre 4.0.3, but this area is then infested with world bosses.)
+					-- #endif
+					-- #if AFTER 2.0.1
+					{ 13.13, 26.23, GHOSTLANDS }, -- Shalandis Isle
+					{ 45.02, 23.54, TEROKKAR_FOREST }, -- Cenarion Thicket
+					-- #endif
+				},
+			}),
+			i(24272, {	-- Shadowcloth
+				["coord"] = { 58.3, 70.9, SHADOWMOON_VALLEY },
+			}),
+			i(24271, {	-- Spellcloth
+				["maps"] = { NETHERSTORM },
+			}),
 		}),
 		category(1001, {	-- Spellthreads
 			i(24276),	-- Golden Spellthread

@@ -158,6 +158,10 @@ root(ROOTS.Zones, {
 						{ "n", 90463 },	-- Archmage Karlain
 						{ "n", 115468 },	-- Archmage Karlain
 					},
+					["coords"] = {
+						{ 23.4, 39.8, LEGION_DALARAN },
+						{ 28.8, 48.6, LEGION_DALARAN },
+					},
 					["classes"] = { WARLOCK },
 					["lvl"] = 110,
 				}),
@@ -409,17 +413,26 @@ root(ROOTS.Zones, {
 						{ "n", 90417 },		-- Archmage Khadgar
 						{ "n", 115464 },	-- Archmage Khadgar
 					},
+					["coords"] = {
+						{ 22.8, 39.1, LEGION_DALARAN },
+						{ 28.5, 48.4, LEGION_DALARAN },
+					},
 					["classes"] = { WARLOCK },
-					["coord"] = { 28.5, 48.4, LEGION_DALARAN },
 				}),
 				q(45560, {	-- Destruction: Rumblings Near Feltotem
 					["sourceQuests"] = {
 						47031,	-- Legion Threat: Highmountain
 						44821,	-- In Dire Need
 					},
+					["qgs"] = {
+						90418,	-- Archmage Modera
+						115465,	-- Archmage Modera
+					},
+					["coords"] = {
+						{ 22.8, 39.4, LEGION_DALARAN },
+						{ 28.5, 48.9, LEGION_DALARAN },
+					},
 					["classes"] = { WARLOCK },
-					["provider"] = { "n", 90418 },	-- Archmage Modera
-					["coord"] = { 28.5, 48.9, LEGION_DALARAN },
 				}),
 				q(47020, {	-- Discipline: Rumblings Near Feltotem
 					["sourceQuests"] = {
@@ -475,26 +488,32 @@ root(ROOTS.Zones, {
 				}),
 				q(43473, {	-- Experimental Potion: Test Subjects Needed
 					["provider"] = { "n", 110642 },	-- Fizzi Liverzapper
+					["coord"] = { 75.4, 83.4, LEGION_THE_UNDERBELLY },
 					["isDaily"] = true,
 				}),
 				q(43474, {	-- Experimental Potion: Test Subjects Needed
 					["provider"] = { "n", 110642 },	-- Fizzi Liverzapper
+					["coord"] = { 75.4, 83.4, LEGION_THE_UNDERBELLY },
 					["isDaily"] = true,
 				}),
 				q(43475, {	-- Experimental Potion: Test Subjects Needed
 					["provider"] = { "n", 110642 },	-- Fizzi Liverzapper
+					["coord"] = { 75.4, 83.4, LEGION_THE_UNDERBELLY },
 					["isDaily"] = true,
 				}),
 				q(43477, {	-- Experimental Potion: Test Subjects Needed
 					["provider"] = { "n", 110642 },	-- Fizzi Liverzapper
+					["coord"] = { 75.4, 83.4, LEGION_THE_UNDERBELLY },
 					["isDaily"] = true,
 				}),
 				q(43476, {	-- Experimental Potion: Test Subjects Needed
 					["provider"] = { "n", 110642 },	-- Fizzi Liverzapper
+					["coord"] = { 75.4, 83.4, LEGION_THE_UNDERBELLY },
 					["isDaily"] = true,
 				}),
 				q(43478, {	-- Experimental Potion: Test Subjects Needed
 					["provider"] = { "n", 110642 },	-- Fizzi Liverzapper
+					["coord"] = { 75.4, 83.4, LEGION_THE_UNDERBELLY },
 					["isDaily"] = true,
 				}),
 				q(47059, {	-- Feral: The Folly of Levia Laurence
@@ -630,6 +649,10 @@ root(ROOTS.Zones, {
 					["providers"] = {
 						{ "n", 115467 },	-- Archmage Kalec
 						{ "n", 105081 },	-- Archmage Kalec
+					},
+					["coords"] = {
+						{ 22.9, 41.1, LEGION_DALARAN },
+						{ 28.7, 49.9, LEGION_DALARAN },
 					},
 					["classes"] = { DEMONHUNTER },
 					["lvl"] = 110,
@@ -1253,7 +1276,10 @@ root(ROOTS.Zones, {
 						{ "n", 90431 },		-- Archmage Ansirem Runeweaver
 						{ "n", 115466 },	-- Archmage Ansirem Runeweaver
 					},
-					["coord"] = { 28.5, 49.5, LEGION_DALARAN },
+					["coords"] = {
+						{ 22.5, 40.6, LEGION_DALARAN },
+						{ 28.5, 49.5, LEGION_DALARAN },
+					},
 					["classes"] = { DEMONHUNTER },
 					["lvl"] = 110,
 				}),

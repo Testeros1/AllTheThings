@@ -30,14 +30,11 @@ root(ROOTS.Zones, {
 					exploration(4556),	-- Violet Stand
 					exploration(4559),	-- Windrunner's Overlook
 				}),
-				prof(COOKING, {
-					i(43148, {	-- Crystalsong Carrot
-						["provider"] = { "o", 192828 },	-- Crystalsong Carrot
-					}),
-				}),
-				prof(FISHING, {
-					o(192059, {	-- Glassfin Minnow School
-						["requireSkill"] = FISHING,
+				n(PROFESSIONS, {
+					prof(COOKING, {
+						i(43148, {	-- Crystalsong Carrot (QI!)
+							["provider"] = { "o", 192828 },	-- Crystalsong Carrot
+						}),
 					}),
 				}),
 				n(FLIGHT_PATHS, {
@@ -67,8 +64,9 @@ root(ROOTS.Zones, {
 						["cr"] = 33499,	-- Skeletal Woodcutter
 					})),
 					applyclassicphase(WRATH_PHASE_TWO, i(45000, {	-- Winter Hyacinth
-						["provider"] = { "o", 194213 },	-- Winter Hyacinth
 						["coord"] = { 18.5, 15.7, CRYSTALSONG_FOREST },
+						["_allowObjectProvider"] = true,
+						["provider"] = { "o", 194213 },	-- Winter Hyacinth
 					})),
 				}),
 			},

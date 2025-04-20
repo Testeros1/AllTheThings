@@ -177,7 +177,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 		i(135543, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3, REMOVED_9_0_1 } }, {	-- Rival's Crate of Battlefield Goods 80-89 before 9.0; splitting this box into two categories, loot table varies with level
 			["description"] = "Rewarded for winning a random battleground in the level 80-89 range before 9.0.",
 			["groups"] = {
-				n(-302, {	-- Level 80-84 before 9.0
+				n(LEVEL_RANGE_80_84, {
 					["description"] = "Rewarded for winning a random battleground in the level 80-84 range before 9.0.",
 					["groups"] = {
 						i(134616),	-- Inflammatory Cord*
@@ -207,7 +207,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 						i(134627),	-- Scorching Pendant*
 					},
 				}),
-				n(-303, {	-- Level 85-89 before 9.0
+				n(LEVEL_RANGE_85_89, {
 					["description"] = "Rewarded for winning a random battleground in the level 85-89 range before 9.0.",
 					["groups"] = {
 						i(134754),	-- Veiled Cuffs*
@@ -322,7 +322,7 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 			["races"] = HORDE_ONLY,
 		}),
 		i(203724, {	-- Field Medic's Hazard Payout
-			["timeline"] = { ADDED_10_0_7, REMOVED_TWW_LAUNCH },
+			["timeline"] = { ADDED_10_0_7 },
 			["g"] = {
 				i(208567, {	-- Cracked Medal of Conquest
 					["timeline"] = { ADDED_10_1_5, REMOVED_10_2_0 },
@@ -346,9 +346,12 @@ root(ROOTS.PVP, pvp(n(BATTLEGROUNDS, {
 				}),
 			},
 		}),
-		-- Reward for winning Epic Battleground
+		-- Reward for winning first battleground per season
 		i(225772, {	-- Artisan's Consortium Advertisement (QS!/QI!)
-			["timeline"] = { ADDED_11_0_2 },
+			["timeline"] = { ADDED_11_0_2, REMOVED_11_1_0_SEASONSTART },
+		}),
+		i(229401, {	-- Artisan's Consortium Pamphlet (QS!/QI!)
+			["timeline"] = { ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0_SEASONSTART},
 		}),
 	})),
 })));

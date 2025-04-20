@@ -179,7 +179,8 @@ root(ROOTS.Zones, {
 						["coord"] = { 49.8, 57.0, DEEPHOLM },
 					}),
 				}),
-				n(PROFESSIONS, {
+				-- #if ANYCLASSIC
+ 				n(PROFESSIONS, {
 					prof(FISHING, {
 						o(202778, {	-- Albino Cavefish School
 							i(22739),	-- Tome of Polymorph: Turtle (CI!)
@@ -192,6 +193,7 @@ root(ROOTS.Zones, {
 						},
 					}),
 				}),
+				-- #endif
 				n(QUESTS, {
 					q(26581, {	-- A Head Full of Wind
 						["qg"] = 43395,	-- Windspeaker Lorvarius
@@ -1487,7 +1489,7 @@ root(ROOTS.Zones, {
 					}),
 					q(27203, {	-- The Maelstrom
 						["providers"] = {
-							{ "n", 45224 },	-- Farseer Krogar
+							{ "n", 45244 },	-- Farseer Krogar
 							{ "n", 45226 },	-- Naraat the Earthspeaker
 						},
 						["sourceQuests"] = {
@@ -2088,3 +2090,16 @@ root(ROOTS.Zones, {
 		}),
 	}),
 });
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
+	m(THE_MAELSTROM, {
+		m(DEEPHOLM, {
+			n(QUESTS, {
+				q(26415),	-- Questflag for Captain's Log — while on #26246, "Captain's Log" in Deepholm
+				q(27079),	-- Twilight Gate Tracking — blowing up the gate during #26861, "Block the Gates" in Deepholm
+				q(27080),	-- Twilight Gate Tracking — blowing up elemental during #26861, "Block the Gates" in Deepholm
+				q(36587),	-- Twilight Gate Tracking — blowing up elemental during #26861, "Block the Gates" in Deepholm
+			}),
+		}),
+	}),
+})));

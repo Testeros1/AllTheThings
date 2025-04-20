@@ -11,7 +11,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 		q(51513, {	-- Zalazane Returns
 			["sourceQuest"] = 50954,	-- Zandalar Forever!
 			["provider"] = { "n", 120171 },	-- Rokhan
-			["coord"] = { 57.6, 62.4, ZULDAZAR },
+			["coords"] = {
+				{ 39.3, 72.3, DAZARALOR },
+				{ 57.6, 62.4, ZULDAZAR },
+			},
 			["minReputation"] = { FACTION_ZANDALARI_EMPIRE, REVERED },
 		}),
 		q(51514, {	-- Broken Bargain
@@ -45,7 +48,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 		}),
 		q(52113, {	-- Vol'jin, Son of Sen'jin
 			["sourceQuest"] = 52114,	-- Honoring a True Leader
-			["provider"] = { "n", 137878 },	-- Master Gadrin
+			["provider"] = { "n", 139928 },	-- Master Gadrin
 			["coord"] = { 45.5, 35.8, ZULDAZAR },
 		}),
 		q(51516, {	-- Atal'Dazr: Ashes of a Warchief
@@ -58,7 +61,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"]
 		}),
 		q(51517, {	-- You Owe Me a Spirit
 			["sourceQuest"] = 51516,	-- Atal'Dazar: Ashes of a Warchief
-			["provider"] = { "n", 140405 },	-- Bwonsamdi
+			["provider"] = { "n", 138148 },	-- Bwonsamdi
 			["maps"] = { 934, 935 },	-- Atal'Dazar
 			["g"] = {
 				crit(40709, {	-- The Fallen Chieftain

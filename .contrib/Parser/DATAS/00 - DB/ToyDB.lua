@@ -5,26 +5,23 @@ local i = function(itemID)
 	Items[itemID] = { ["type"] = "toyID" };
 end
 
+-- #if ANYCLASSIC
 -----------------
 -- CLASSIC WOW --
 -----------------
 -- TBC Classic --
 i(184871);	-- Dark Portal
--- #if ANYCLASSIC
 i(38233);	-- Path of Illidan
--- #endif
 
 -- Wrath Classic --
--- #if ANYCLASSIC
 i(40110);	-- Haunted Momento (Should be a toy...)
--- #endif
 i(198647);	-- Fishspeaker's Lucky Lure
--- #if ANYCLASSIC
 i(38506);	-- Don Carlos' Famous Hat -- With ICC Patch of Wrath Classic, they made the hat (the original removed version) into a Toy. Whether it also functions as a transmog still is not known.
--- #endif
 
 -- Cata Classic
 i(216893);	-- Goblin Town-in-a-Box
+i(235464);	-- Sha-Touched Tea Set
+-- #endif
 
 -----------------
 --   CLASSIC   --
@@ -1312,8 +1309,6 @@ i(206347);	-- Mannequin Charm
 i(212337);	-- Stone of the Hearth
 i(211788);	-- Tess's Peacebloom
 i(212518);	-- Vial of Endless Draconic Scales
---- NYI ---
-i(212525);	-- Delicate Ebony Parasol
 
 ------------------
 -- PATCH 10.2.6 --
@@ -1363,6 +1358,7 @@ i(215147);	-- Beautification Iris
 i(228698);	-- Candleflexer's Dumbbell
 i(224552);	-- Cave Spelunker's Torch
 i(221962);	-- Defective Escape Pod
+i(212525);	-- Delicate Ebony Parasol
 i(221964);	-- Filmless Camera
 i(225969);	-- Forged Flag of Victory
 i(225933);	-- Forged Legend's Pennant
@@ -1398,10 +1394,8 @@ i(232305);	-- Forged Champion's Prestigious Banner
 i(224192);	-- Practice Ravager
 i(232301);	-- Tempered Banner of the Algari
 --- UNSORTED ---
-i(232302);	-- Unknown
 i(232303);	-- Unknown
 i(232304);	-- Unknown
-i(232306);	-- Unknown
 i(232307);	-- Unknown
 i(232308);	-- Unknown
 
@@ -1414,6 +1408,9 @@ i(235041);	-- Cyrce's Circlet
 i(235017);	-- Glittering Vault Shard
 i(233486);	-- Hallowfall Supply Cache
 i(235288);	-- Sha-Warped Tea Set
+-- #if AFTER 11.0.7
+i(228966);	-- Starry-Eyed Goggles
+-- #endif
 i(234473);	-- Soweezi's Comfy Lawn Chair
 i(218308);	-- Winter Veil Cracker
 --- NYI ---
@@ -1422,6 +1419,8 @@ i(235016);	-- Redeployment Module
 ------------------
 -- PATCH 11.1.0 --
 ------------------
+i(237346);	-- Artisan Beverage Goblet Bobber
+i(234950);	-- Atomic Regoblinator
 i(235670);	-- Bilgewater Cartel Banner
 i(235671);	-- Blackwater Cartel Banner
 i(230850);	-- Delve-O-Bot 7001
@@ -1432,21 +1431,33 @@ i(230727);	-- Explosive Victory
 i(235220);	-- Fireworks Hat
 i(233202);	-- G.O.L.E.M Jr.
 i(236769);	-- Gallagio Pipeline Rerouter
+i(237345);	-- Limited Edition Rocket Bobber
+i(237347);	-- Organically-Sourced Wellington Bobber
 i(235801);	-- Personal Fishing Barge
 i(235519);	-- Prized Legend's Pennant
 i(230924);	-- Spotlight Materializer 1000
 i(235669);	-- Steamwheedle Cartel Banner
 i(235807);	-- Storefront-in-a-Box
+i(236751);	-- Take-Home Flarendo
+i(236749);	-- Take-Home Torq
 i(231064);	-- Throwaway Gangster Disguise
 i(235799);	-- Throwin' Sawblade
 i(234951);	-- Uncracked Cold Ones
 i(237382);	-- Undermine Supply Crate
 i(235672);	-- Venture Co. Banner
---- UNSORTED ---
-i(237346);	-- Artisan Beverage Goblet Bobber
-i(234950);	-- Atomic Regoblinator
-i(237345);	-- Limited Edition Rocket Bobber
-i(237347);	-- Organically-Sourced Wellington Bobber
 i(235519);	-- Prized Legend's Pennant
-i(236751);	-- Take-Home Flarendo
-i(236749);	-- Take-Home Torq
+
+------------------
+-- PATCH 11.1.5 --
+------------------
+-- #if AFTER 11.1.5
+i(167698);	-- Secret Fish Goggles
+-- #endif
+i(238850);	-- Arathi Entertainer's Flame
+i(239007);	-- Dastardly Banner
+i(238852);	-- Flame's Radiance Banner
+i(232302);	-- Prized Banner of the Algari
+i(232306);	-- Prized Champion's Prestigious Banner
+i(239693);	-- Radiant Lynx Whistle
+i(239018);	-- Winner's Podium
+--- UNSORTED ---

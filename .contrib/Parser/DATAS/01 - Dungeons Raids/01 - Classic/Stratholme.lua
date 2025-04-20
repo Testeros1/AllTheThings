@@ -35,12 +35,15 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		["lore"] = "Once the jewel of northern Lordaeron, the city of Stratholme is where Prince Arthas turned against his mentor, Uther Lightbringer, and slaughtered hundreds of his own subjects who were believed to have contracted the dreaded plague of undeath. Arthas' downward spiral and ultimate surrender to the Lich King soon followed. The broken city is now inhabited by the undead Scourge -- led by the powerful lich, Kel'Thuzad. A contingent of Scarlet Crusaders, led by Grand Crusader Dathrohan, also holds a portion of the ravaged city. The two sides are locked in constant, violent combat. Those adventurers brave (or foolish) enough to enter Stratholme will be forced to contend with both factions before long. It is said that the city is guarded by three massive watchtowers, as well as powerful necromancers, banshees and abominations. There have also been reports of a malefic Death Knight riding atop an unholy steed, dispensing indiscriminate wrath on all those who venture within the realm of the Scourge.",
 		-- #endif
 		["zone-text-areaID"] = 2017,	-- Stratholme
-		-- #if AFTER 4.0.3
-		["lvl"] = 37,
-		-- #else
+		["lvl"] =
+			-- #if AFTER 4.0.3
+			37,
+			-- #else
+			48,
+			-- #endif
+		-- #if BEFORE 4.0.3
 		["mapID"] = STRATHOLME,
 		["maps"] = { 318 },	-- Stratholme (OLD)
-		["lvl"] = 48,
 		-- #endif
 		["groups"] = {
 			n(ACHIEVEMENTS, {
@@ -447,12 +450,15 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					},
 				}),
 				q(27192, {	-- The Great Ezra Grimm
-					["qg"] = 45328,	-- Packmaster Stonebruiser
+					["qg"] = 45323,	-- Packmaster Stonebruiser
 					["timeline"] = { ADDED_4_0_3 },
 					["lvl"] = lvlsquish(42, 42, 15),
 					["groups"] = {
 						objective(1, {	-- 0/1 Grimm's Premium Tobacco
-							["provider"] = { "i", 13172 },	-- Grimm's Premium Tobacco
+						["providers"] = {
+							{ "i", 13172 },	-- Grimm's Premium Tobacco
+							{ "o", 176248 },	-- Premium Grimm Tobacco
+						},
 							["cr"] = 11058,	-- Ezra Grimm
 						}),
 					},
@@ -538,13 +544,13 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				applyclassicphase(PHASE_SIX, i(22526)),	-- Bone Fragments
 				i(12843, {	-- Corruptor's Scourgestone / Inert Corruptor's Scourgestone
 					-- #if BEFORE 4.0.3
-					["description"] = "Can drop from any Undead rare mob or boss in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
+					["description"] = "Can drop from any Undead creature in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
 				i(12841, {	-- Invader's Scourgestone / Inert Invader's Scourgestone
 					-- #if BEFORE 4.0.3
-					["description"] = "Can drop from any Undead mobs in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
+					["description"] = "Can drop from any Undead creature in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
@@ -553,7 +559,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				}),
 				i(12840, {	-- Minion's Scourgestone / Inert Minion's Scourgestone
 					-- #if BEFORE 4.0.3
-					["description"] = "Can drop from weak Undead mobs in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
+					["description"] = "Can drop from weak Undead creature in the Plaguelands and associated dungeons so long as you are equipped with one of the Argent Dawn trinkets.",
 					-- #endif
 					["timeline"] = { REMOVED_4_0_3 },
 				}),
@@ -836,12 +842,11 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							-- #if BEFORE 4.0.3
 							["description"] = "These can be found in 4 places in the Scarlet Enclave.\n\n1&2: Malor's Room on the Table\n3: In the next room before you split to Cannon Master or Archivist.\n4: In Archivist's room on a box in the back.",
 							-- #endif
-							["timeline"] = { REMOVED_4_0_3 },
 						}),
 						i(16249, {	-- Formula: Enchant 2H Weapon - Major Intellect (RECIPE!)
 							["cr"] = 10422,	-- Crimson Sorcerer / Risen Sorcerer [CATA+]
 						}),
-						i(14495, {	-- Pattern: Ghostweave Pants
+						i(14495, {	-- Pattern: Ghostweave Pants (RECIPE!)
 							["timeline"] = { REMOVED_4_0_3 },	-- Moved to Trainer
 							["cr"] = 10384,	-- Spectral Citizen
 						}),
@@ -857,7 +862,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						}),
 					}),
 					n(10393, {	-- Skul
-						["description"] = "This is a rare that is not always present.",
+						["description"] = "This is a Rare Creature and, as such, is not always present.",
 						["groups"] = {
 							i(13396),	-- Skul's Ghastly Touch
 							i(13394),	-- Skul's Cold Embrace
@@ -899,10 +904,13 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					}),
 					-- #endif
 					n(11143, {	-- Postmaster Malown
-						-- #if AFTER 4.0.3
-						["description"] = "Click any 3 mailboxes in the instance to get Postmaster Malown to spawn.",
-						-- #else
-						["description"] = "Use the keys dropped by the Courier to open 3 mailboxes in the instance to get Postmaster Malown to spawn.",
+						["description"] =
+							-- #if AFTER 4.0.3
+							"Click any 3 mailboxes in the instance to get Postmaster Malown to spawn.",
+							-- #else
+							"Use the keys dropped by the Courier to open 3 mailboxes in the instance to get Postmaster Malown to spawn.",
+							-- #endif
+						-- #if BEFORE 4.0.3
 						["cost"] = {
 							{ "i", 13303, 1 },	-- Crusaders' Square Postbox Key
 							{ "i", 13305, 1 },	-- Elders' Square Postbox Key
@@ -1237,7 +1245,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							}),
 							i(14679, {	-- Of Love and Family
 								-- #if BEFORE 4.0.3
-								["description"] = "Found the wall near Archivist Galford.",
+								["description"] = "Found on the wall near Archivist Galford.",
 								-- #endif
 							}),
 							applyclassicphase(PHASE_SIX_CLASS_BOOKS, {
@@ -1272,7 +1280,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						["crs"] = { 10812 },	-- Grand Crusader Dathrohan
 						["groups"] = {
 							i(13250),	-- Head of Balnazzar
-							i(14512),	-- Pattern: Truefaith Vestments
+							i(14512),	-- Pattern: Truefaith Vestments (RECIPE!)
 							i(13520),	-- Recipe: Flask of Distilled Wisdom (RECIPE!)
 							i(13348),	-- Demonshear
 							-- #if SEASON_OF_DISCOVERY
@@ -1368,11 +1376,12 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 							16101,	-- Jarien
 							16102,	-- Sothos
 						},
-						-- #if BEFORE 10.1.5
-						["description"] = "This boss can be summoned using the Brazier of Beckoning or the Brazier of Invocation, which can summon any of the spirits. Unfortunately, after the modifications made to the instance with 4.0.3, these drops become truly unobtainable even with the brazier.",
-						-- #else
-						["description"] = "This boss can be summoned using the Brazier of Beckoning or the Brazier of Invocation, which can summon any of the spirits.",
-						-- #endif
+						["description"] =
+							-- #if BEFORE 10.1.5
+							"This boss can be summoned using the Brazier of Beckoning or the Brazier of Invocation, which can summon any of the spirits. Unfortunately, after the modifications made to the instance with 4.0.3, these drops become truly unobtainable even with the brazier.",
+							-- #else
+							"This boss can be summoned using the Brazier of Beckoning or the Brazier of Invocation, which can summon any of the spirits.",
+							-- #endif
 						["timeline"] = { REMOVED_4_0_3, ADDED_10_1_5 },
 						["cost"] = {
 							{ "i", 22051, 1 },	-- Brazier of Beckoning [Jarien & Sothos]
@@ -1498,7 +1507,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						}),
 					}),
 					n(10809, {	-- Stonespine
-						["description"] = "This is a rare that is not always present.",
+						["description"] = "This is a Rare Creature and, as such, is not always present.",
 						["groups"] = {
 							i(13399),	-- Gargoyle Shredder Talons
 							i(13397),	-- Stoneskin Gargoyle Cape

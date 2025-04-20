@@ -127,18 +127,18 @@ root(ROOTS.TradingPost, bubbleDown({ ["timeline"] = { ADDED_10_0_5 } }, {
 			["isYearly"] = true,
 			["maps"] = { DORNOGAL },
 		}),
-		-- Future trading post quests - unknown timeline
-		--[[
 		q(81717, {	-- Report to the Trading Post -- March 2025
-			["timeline"] = { TODO },
+			["timeline"] = { ADDED_11_1_0 },
 			["isYearly"] = true,
 			["maps"] = { DORNOGAL },
 		}),
 		q(81718, {	-- Report to the Trading Post -- April 2025
-			["timeline"] = { TODO },
+			["timeline"] = { ADDED_11_1_0 },
 			["isYearly"] = true,
 			["maps"] = { DORNOGAL },
 		}),
+		-- Future trading post quests - unknown timeline
+		--[[
 		q(81719, {	-- Report to the Trading Post -- May 2025
 			["timeline"] = { TODO },
 			["isYearly"] = true,
@@ -2457,7 +2457,7 @@ root(ROOTS.TradingPost, bubbleDown({ ["timeline"] = { ADDED_10_0_5 } }, {
 				}),
 			}),
 		})),
-		n(FEBRUARY, bubbleDownSelf({ ["timeline"] = { "added 11.0.7.58867", "removed 11.1.0.99999" } }, {	-- TODO: Timeline out correctly
+		n(FEBRUARY, bubbleDownSelf({ ["timeline"] = { "added 11.0.7.58867", "removed 11.1.0.59466" } }, {
 			n(FILLED_TRAVELERS_LOG, {
 				iensemble(234058),	-- Ensemble: Ornate Pink Lunar Festival Attire
 			}),
@@ -2856,6 +2856,234 @@ root(ROOTS.TradingPost, bubbleDown({ ["timeline"] = { ADDED_10_0_5 } }, {
 					},
 				}),
 			})
+		})),
+		n(MARCH, bubbleDownSelf({ ["timeline"] = { "added 11.1.0.59466", "removed 11.1.0.60037" } }, {
+			n(FILLED_TRAVELERS_LOG, {
+				iensemble(235217),	-- Ensemble: Ornaments of the Pearlescent Monarch
+			}),
+			filter(MOUNTS, {
+				i(235650, {	-- Pearlescent Butterfly (MOUNT!)
+					["cost"] = {{"c", TRADERS_TENDER, 700}},
+				}),
+				i(212229, {	-- Reins of the Twilight Sky Prowler (MOUNT!)
+					["cost"] = {{"c", TRADERS_TENDER, 750}},
+				}),
+				i(235657, {	-- Ruby Butterfly (MOUNT!)
+					["cost"] = {{"c", TRADERS_TENDER, 700}},
+				}),
+				i(235646, {	-- Shimmermist Free Runner (MOUNT!
+					["cost"] = {{"c", TRADERS_TENDER, 325}},
+				}),
+			}),
+			filter(TOYS, {
+				i(212523, {	-- Delicate Jade Parasol (TOY!)
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+			}),
+			filter(COSMETIC, {
+				i(233174, {	-- Banded Deep War Slippers
+					["cost"] = {{"c", TRADERS_TENDER, 20}},
+				}),
+				i(233157, {	-- Banded Deep War Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 20}},
+				}),
+				i(235655, {	-- Blood Monarch's Longbow
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235272, {	-- Blood Monarch's Mace
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235401, {	-- Blood Monarch's Polearm
+					["cost"] = {{"c", TRADERS_TENDER, 300}},
+				}),
+				i(235291, {	-- Blood Monarch's Sword
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235295, {	-- Blood Monarch's Wand
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+				iensemble(235228, {	-- Ensemble: Ornaments of the Blood Monarch
+					["cost"] = {{"c", TRADERS_TENDER, 370}},
+				}),
+				iensemble(230169, {	-- Ensemble: Prowler's Deep Headgear
+					["cost"] = {{"c", TRADERS_TENDER, 100}},
+				}),
+				iensemble(212222, {	-- Ensemble: Twilight Witch's Attire
+					["cost"] = {{"c", TRADERS_TENDER, 750}},
+				}),
+				i(233101, {	-- Long Deep War Skirt
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(233140, {	-- Long Deep War Skirt and Leg Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(212376, {	-- Lovely Gothic Longbow
+					["cost"] = {{"c", TRADERS_TENDER, 300}},
+				}),
+				i(235652, {	-- Pearlescent Monarch's Longbow
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235270, {	-- Pearlescent Monarch's Mace
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235402, {	-- Pearlescent Monarch's Polearm
+					["cost"] = {{"c", TRADERS_TENDER, 300}},
+				}),
+				i(235290, {	-- Pearlescent Monarch's Sword
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235294, {	-- Pearlescent Monarch's Wand
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+				i(230038, {	-- Prowler's Deep Shoulder Cape
+					["cost"] = {{"c", TRADERS_TENDER, 75}},
+				}),
+				i(235623, {	-- Ruby Scale Treads
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(235624, {	-- Sapphire Scale Treads
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(233123, {	-- Short Deep War Skirt and Leg Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(233084, {	-- Short Deep War Skirt
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(212378, {	-- Twilight Witch's Gothic Scepter
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+				i(212380, {	-- Twilight Witch's Gothic Stave
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(235024, {	-- Vigilante's Deep Mask
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(238394, {	-- Warblades of the Monarch
+					["cost"] = {{"c", TRADERS_TENDER, 250}},
+				}),
+				i(234602, {	-- Wings of the Blood Monarch
+					["cost"] = {{"c", TRADERS_TENDER, 225}},
+				}),
+				i(234603, {	-- Wings of the Pearlescent Monarch
+					["cost"] = {{"c", TRADERS_TENDER, 225}},
+				}),
+			}),
+		})),
+		n(APRIL, bubbleDownSelf({ ["timeline"] = { "added 11.1.0.60037", "removed 11.1.5.99999" } }, {	-- TODO: Timeline out correctly
+			n(FILLED_TRAVELERS_LOG, {
+				iensemble(235664),	-- Ensemble: Topsy Turvy Mask Set
+			}),
+			filter(MOUNTS, {
+				i(235662, {	-- Emerald Snail (Mount!)
+					["cost"] = {{"c", TRADERS_TENDER, 350}},
+				}),
+				i(235555, {	-- Lively Darkmoon Charger (MOUNT!)
+					["cost"] = {{"c", TRADERS_TENDER, 575}},
+				}),
+				i(235556, {	-- Violet Darkmoon Charger (MOUNT!)
+					["cost"] = {{"c", TRADERS_TENDER, 575}},
+				}),
+			}),
+			filter(BATTLE_PETS, {
+			}),
+			filter(TOYS, {
+				i(212500, {	-- Delicate Silk Parasol (TOY!)
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+			}),
+			filter(COSMETIC, {
+				i(233175, {	-- Banded Camo War Slippers
+					["cost"] = {{"c", TRADERS_TENDER, 20}},
+				}),
+				i(233158, {	-- Banded Camo War Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 20}},
+				}),
+				i(233181, {	-- Banded Plum War Slippers
+					["cost"] = {{"c", TRADERS_TENDER, 20}},
+				}),
+				i(233164, {	-- Banded Plum War Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 20}},
+				}),
+				i(212789, {	-- Champion's Jade Cleaver
+					["cost"] = {{"c", TRADERS_TENDER, 150}},
+				}),
+				i(234612, {	-- Double-Bladed Blooming Garden Trowel
+					["cost"] = {{"c", TRADERS_TENDER, 125}},
+				}),
+				i(234613, {	-- Double-Bladed Rooted Garden Trowel
+					["cost"] = {{"c", TRADERS_TENDER, 125}},
+				}),
+				iensemble(235594, {	-- Ensemble: Forest Dweller's Blooming Attire
+					["cost"] = {{"c", TRADERS_TENDER, 380}},
+				}),
+				iensemble(235595, {	-- Ensemble: Forest Dweller's Rooted Attire
+					["cost"] = {{"c", TRADERS_TENDER, 380}},
+				}),
+				iensemble(213084, {	-- Ensemble: Spring Reveler's Lavender Apparel
+					["cost"] = {{"c", TRADERS_TENDER, 300}},
+				}),
+				iensemble(212940, {	-- Ensemble: Spring Reveler's Lavender Collection
+					["cost"] = {{"c", TRADERS_TENDER, 500}},
+				}),
+				i(230170, {	-- Ensemble: Prowler's Camo Headgear
+					["cost"] = {{"c", TRADERS_TENDER, 100}},
+				}),
+				i(212787, {	-- Gloves of the Violet Gala
+					["cost"] = {{"c", TRADERS_TENDER, 100}},
+				}),
+				i(233102, {	-- Long Camo War Skirt
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(233141, {	-- Long Camo War Skirt and Leg Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(233108, {	-- Long Plum War Skirt
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(233147, {	-- Long Plum War Skirt and Leg Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(230040, {	-- Prowler's Camo Shoulder Cape
+					["cost"] = {{"c", TRADERS_TENDER, 75}},
+				}),
+				i(233085, {	-- Short Camo War Skirt
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(233124, {	-- Short Camo War Skirt and Leg Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(233091, {	-- Short Plum War Skirt
+					["cost"] = {{"c", TRADERS_TENDER, 40}},
+				}),
+				i(233130, {	-- Short Plum War Skirt and Leg Wraps
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(234573, {	-- Topsy Turvy Clown's Blade
+					["cost"] = {{"c", TRADERS_TENDER, 140}},
+				}),
+				i(234725, {	-- Topsy Turvy Jester's Cleaver
+					["cost"] = {{"c", TRADERS_TENDER, 140}},
+				}),
+				i(235641, {	-- Topsy Turvy Clown's Die
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+				i(234575, {	-- Topsy Turvy Jester's Blade
+					["cost"] = {{"c", TRADERS_TENDER, 140}},
+				}),
+				i(234725, {	-- Topsy Turvy Jester's Cleaver
+					["cost"] = {{"c", TRADERS_TENDER, 140}},
+				}),
+				i(235642, {	-- Topsy Turvy Jester's Die
+					["cost"] = {{"c", TRADERS_TENDER, 200}},
+				}),
+				i(235025, {	-- Vigilante's Camo Mask
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+				i(235031, {	-- Vigilante's Plum Mask
+					["cost"] = {{"c", TRADERS_TENDER, 50}},
+				}),
+			}),
 		})),
 	}),
 }));

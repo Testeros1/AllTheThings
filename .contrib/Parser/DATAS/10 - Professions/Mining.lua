@@ -16,13 +16,13 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 		r(102163, {["timeline"] = {ADDED_5_0_4, REMOVED_6_0_2}}),	-- Toughness [Rank 8]
 	}),
 	-- #endif
-	expansion(EXPANSION.CLASSIC, {
-		n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
+	expansion(EXPANSION.CLASSIC, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
+		n(ACHIEVEMENTS, {
 			ach(18841, {	-- Doing Your Share
 				["cost"] = {{ "i", 17771, 5 }},	-- 5x Enchanted Elementium Bar
 			}),
-		})),
-	}),
+		}),
+	})),
 	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3_LAUNCH } }, {
 		n(ACHIEVEMENTS, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
 			ach(18839, {	-- Broken Isles Mining Techniques
@@ -1026,7 +1026,27 @@ root(ROOTS.Professions, prof(MINING, bubbleDownSelf({ ["requireSkill"] = MINING 
 				crit(61378, {	-- Metamorphic Draconium
 					["provider"] = { "o", 390138 },	-- Metamorphic Draconium
 					["_quests"] = { 75140 },	-- Metamorphic Draconium
-					["maps"] = { ZARALEK_CAVERN },
+					-- TODO: move to an ObjectDB eventually
+					-- worth coords since it cannot actually be found throughout the entire zone it seems
+					["coords"] = {
+						{ 29.7, 41.4, ZARALEK_CAVERN },
+						{ 29.9, 42.2, ZARALEK_CAVERN },
+						{ 30.6, 50.4, ZARALEK_CAVERN },
+						{ 30.8, 41.3, ZARALEK_CAVERN },
+						{ 31.2, 44.5, ZARALEK_CAVERN },
+						{ 31.9, 42.3, ZARALEK_CAVERN },
+						{ 32.5, 43.1, ZARALEK_CAVERN },
+						{ 32.7, 44.0, ZARALEK_CAVERN },
+						{ 33.1, 45.1, ZARALEK_CAVERN },
+						{ 33.6, 41.8, ZARALEK_CAVERN },
+						{ 33.7, 44.4, ZARALEK_CAVERN },
+						{ 34.3, 54.0, ZARALEK_CAVERN },
+						{ 34.7, 49.0, ZARALEK_CAVERN },
+						{ 35.3, 43.4, ZARALEK_CAVERN },
+						{ 35.3, 51.8, ZARALEK_CAVERN },
+						{ 36.0, 42.2, ZARALEK_CAVERN },
+						{ 49.5, 40.4, ZARALEK_CAVERN },
+					},
 				}),
 			}),
 			ach(18818, {	-- Geologist's Ledger - Serevite

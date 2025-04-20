@@ -2,7 +2,7 @@
 --      P L A Y E R   V S   P L A Y E R      --
 -----------------------------------------------
 
-root(ROOTS.PVP, pvp(n(-240, {	-- Rated
+root(ROOTS.PVP, pvp(n(RATED, {
 	n(ACHIEVEMENTS, {
 		ach(5351, {	-- Blood Guard
 			["races"] = HORDE_ONLY,
@@ -346,14 +346,10 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 	i(103533, {	-- Vicious Saddle
 		-- #if BEFORE 10.0.2
 		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n60 points in RBG (2.5%)",
-		-- #endif
-		-- #if AFTER 10.0.2
-		-- #if BEFORE 11.0.0
-		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win (3 round wins or more for Solo Shuffle) above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n50 points in Solo Shuffle (2.08%)\n60 points in RBG (2.5%)",
-		-- #endif
-		-- #endif
-		-- #if AFTER 11.0.0
+		-- #elseif AFTER 11.0.0
 		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win (3 round wins or more for Solo Shuffle) above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n50 points in Solo Shuffle (2.08%)\n50 points in BGBlitz (2.08%)\n60 points in RBG (2.5%)",
+		-- #else
+		["description"] = "Offered as Season Reward Cap after you received your Seasonal Mount, up to 10 times per Season.\nAny win (3 round wins or more for Solo Shuffle) above 1000 rating will reward:\n10 points in 2v2 (0.42%)\n30 points in 3v3 (1.25%)\n50 points in Solo Shuffle (2.08%)\n60 points in RBG (2.5%)",
 		-- #endif
 	}),
 	i(165717),	-- Steel Strong Box, 2v2/3v3/RBG sometimes on Lose, contains only BFA Mats - Ally
@@ -368,7 +364,7 @@ root(ROOTS.PVP, pvp(n(-240, {	-- Rated
 })));
 
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_0_2_LAUNCH } }, {
-	pvp(n(-240, {	-- Rated
+	pvp(n(RATED, {
 		q(70714),	-- completion of a Rated 'Solo Shuffle'
 	})),
 })));

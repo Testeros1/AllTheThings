@@ -3699,7 +3699,7 @@ root(ROOTS.Holidays, n(TIMEWALKING_HEADER, applyevent(EVENTS.TIMEWALKING_CATACLY
 		}),
 		n(QUESTS, {
 			-- TW Cata Quest under level 80
-			q(86556, {	-- -- A Shattered Journey Through Time
+			q(86556, {	-- A Shattered Journey Through Time
 				["provider"] = { "n", 101759 },	-- Kiatke
 				["coords"] = {
 					{ 76.6, 16.6, STORMWIND_CITY },
@@ -5269,14 +5269,6 @@ AddInstancesToRotation(EXPANSION.CLASSIC, {
 
 
 -- Warlords of Draenor Timewalking
-local AUCH = -140;
-local BSM =	-141;
-local RAIL = -142;
-local DOCKS = -143;
-local SBG =	-144;
-local SKY = -145;
-local BLOOM = -146;
--- local UBRS = -147;
 root(ROOTS.Holidays, n(TIMEWALKING_HEADER, applyevent(EVENTS.TIMEWALKING_WARLORDS_OF_DRAENOR_DUNGEON_EVENT, {
 	expansion(EXPANSION.WOD, bubbleDownSelf({ ["timeline"] = { ADDED_8_1_5 }},{
 		n(GROUP_FINDER, {
@@ -5396,10 +5388,6 @@ root(ROOTS.Holidays, n(TIMEWALKING_HEADER, applyevent(EVENTS.TIMEWALKING_WARLORD
 							}),
 							i(127320, {	-- Mo'gruth's Discarded Parade Helm
 								["cost"] = {{ "c", TIMEWARPED_BADGE, 25 }},
-							}),
-							i(234862, {	-- Ogre Captains Armor
-								["cost"] = {{ "c", TIMEWARPED_BADGE, 100 }},
-								["timeline"] = { ADDED_11_0_7 },
 							}),
 						}),
 					}),
@@ -5538,10 +5526,6 @@ root(ROOTS.Holidays, n(TIMEWALKING_HEADER, applyevent(EVENTS.TIMEWALKING_WARLORD
 							}),
 							i(127320, {	-- Mo'gruth's Discarded Parade Helm
 								["cost"] = {{ "c", TIMEWARPED_BADGE, 25 }},
-							}),
-							i(234862, {	-- Ogre Captains Armor
-								["cost"] = {{ "c", TIMEWARPED_BADGE, 100 }},
-								["timeline"] = { ADDED_11_0_7 },
 							}),
 						}),
 					}),
@@ -6963,6 +6947,19 @@ root(ROOTS.Holidays, n(TIMEWALKING_HEADER, applyevent(EVENTS.TIMEWALKING_LEGION_
 		}),
 	})),
 })));
+
+root(ROOTS.HiddenQuestTriggers, {
+	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_7 } }, {
+		applyevent(EVENTS.TIMEWALKING, n(TIMEWALKING_HEADER, {
+			q(78204),	-- Gain Mastery of Timeways for 5 weeks during Turbulent Timeways I (spellID 423861)
+		})),
+	})),
+	expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeline"] = { ADDED_11_0_7 } }, {
+		applyevent(EVENTS.TIMEWALKING, n(TIMEWALKING_HEADER, {
+			q(85877),	-- Gain Mastery of Timeways for 5 weeks during Turbulent Timeways II (spellID 471544)
+		})),
+	})),
+});
 
 -- Only instances still in rotation should be in this list.
 -- This will prevent instances that don't have Timewalking currently from showing in the mini list.

@@ -171,7 +171,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					}),
 				}),
 				prof(COOKING, {
-					n(5482, {	-- Stephen Ryback <Cooking Trainer>
+					n(5482, bubbleDownSelf({ ["timeline"] = { ADDED_1_11_1 }, }, {	-- Stephen Ryback <Cooking Trainer>
 						["coords"] = {
 							-- #if AFTER LEGION
 							{ 76.8, 53.6, STORMWIND_CITY },
@@ -189,7 +189,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							{}
 							-- #endif
 						),
-					}),
+					})),
 				}),
 				prof(ENCHANTING, {
 					n(1317, {	-- Lucan Cordell <Enchanting Trainer>
@@ -953,11 +953,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					-- #endif
 				}),
-				-- #if AFTER SHADOWLANDS
 				q(53370, {	-- Battle for Azeroth: Hour of Reckoning [SL+] / Hour of Reckoning
 					["qg"] = 144095,	-- Master Mathias Shaw
 					["description"] = "If this quest is not automatically offered, you can try picking it up from a War Board, or taking the boat from Stormwind to Boralus.",
-					["timeline"] = { ADDED_8_0_1 },
+					["timeline"] = { ADDED_8_0_1, REMOVED_9_0_1 },
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(163542, {	-- Footman's Warmace
@@ -992,7 +991,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 					},
 				}),
-				-- #endif
 				q(46727, {	-- Battle for Azeroth: Tides of War (BfA version)
 				["qgs"] = {
 					142930,	-- Halford Wyrmbane
@@ -1001,8 +999,10 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					-- #endif
 				},
 				["coords"] = {
-					{ 27.6, 21.2, STORMWIND_CITY },
-					{ 62.3, 30.3, STORMWIND_CITY },
+					{ 27.6, 21.2, STORMWIND_CITY },	-- Halford Wyrmbane
+					{ 62.3, 30.3, STORMWIND_CITY },	-- Hero's Herald
+					{ 63.2, 71.4, STORMWIND_CITY },	-- Hero's Herald
+					{ 45.2, 50.2, DARNASSUS },	-- Hero's Herald
 				},
 				["timeline"] = { ADDED_8_0_1 },
 				["races"] = ALLIANCE_ONLY,
@@ -1226,7 +1226,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["sourceQuest"] = 32470,	-- Light Camera Action (A)
 					["coord"] = { 61.2, 22.8, STORMWIND_CITY },
 					["timeline"] = { ADDED_7_3_5 },
-					["collectible"] = false,
+					["lockCriteria"] = { 1, "toyID", 122674 },	-- S.E.L.F.I.E. Camera MkII
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(155832),	-- Pristine Crystal Shard (QI!)
@@ -2171,7 +2171,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 61.2, 22.8, STORMWIND_CITY },
 					["timeline"] = { ADDED_7_3_5 },
 					["cost"] = { { "i", 4406, 1 } },	-- Standard Scope
-					["collectible"] = false,
+					["lockCriteria"] = { 1, "toyID", 122674 },	-- S.E.L.F.I.E. Camera MkII
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						objective(1, {	-- 0/1 Iron Box
@@ -2460,13 +2460,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["groups"] = JEWELCRAFTING_AWARD_GROUPS,
 				}),
 				q(6187, {	-- Order Must Be Restored
-					-- #if AFTER WRATH
-					["qg"] = 29611,	-- King Varian Wrynn <King of Stormwind>
-					["coord"] = { 79.8, 38.6, STORMWIND_CITY },
-					-- #else
-					["qg"] = 1748,	-- Highlord Bolvar Fordragon
-					["coord"] = { 78, 18, STORMWIND_CITY },
-					-- #endif
+					["qgs"] = {
+						-- #if AFTER WRATH
+						29611,	-- King Varian Wrynn <King of Stormwind>
+						-- #else
+						1748,	-- Highlord Bolvar Fordragon
+						-- #endif
+					},
+					["coords"] = {
+						-- #if AFTER WRATH
+						{ 79.8, 38.6, STORMWIND_CITY },	-- King Varian Wrynn <King of Stormwind>
+						-- #else
+						{ 78.0, 18.0, STORMWIND_CITY },	-- Highlord Bolvar Fordragon
+						-- #endif
+					},
 					["sourceQuest"] = 6186,	-- The Blightcaller Cometh
 					["timeline"] = { REMOVED_4_0_3 },
 					["maps"] = { EASTERN_PLAGUELANDS },
@@ -3040,7 +3047,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["qg"] = 144095,	-- Master Mathias Shaw
 					["sourceQuest"] = 53370,	-- Hour of Reckoning
 					["coord"] = { 22.4, 32.6, STORMWIND_CITY },
-					["timeline"] = { ADDED_8_0_1 },
+					["timeline"] = { ADDED_8_0_1, REMOVED_9_0_1 },
 					["races"] = ALLIANCE_ONLY,
 				}),
 				-- #if ANYCLASSIC
@@ -3191,13 +3198,20 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				q(6182, {	-- The First and the Last
-					-- #if AFTER WRATH
-					["qg"] = 29611,	-- King Varian Wrynn <King of Stormwind>
-					["coord"] = { 79.8, 38.6, STORMWIND_CITY },
-					-- #else
-					["qg"] = 1748,	-- Highlord Bolvar Fordragon
-					["coord"] = { 78, 18, STORMWIND_CITY },
-					-- #endif
+					["qgs"] = {
+						-- #if AFTER WRATH
+						29611,	-- King Varian Wrynn <King of Stormwind>
+						-- #else
+						1748,	-- Highlord Bolvar Fordragon
+						-- #endif
+					},
+					["coords"] = {
+						-- #if AFTER WRATH
+						{ 79.8, 38.6, STORMWIND_CITY },	-- King Varian Wrynn <King of Stormwind>
+						-- #else
+						{ 78.0, 18.0, STORMWIND_CITY },	-- Highlord Bolvar Fordragon
+						-- #endif
+					},
 					["timeline"] = { REMOVED_4_0_3 },
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = 56,
@@ -3508,11 +3522,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["groups"] = {
 						objective(1, {	-- 0/1 Perenolde Tiara
 							["provider"] = { "i", 3684 },	-- Perenolde Tiara
-							-- #if AFTER CATA
-							["coord"] = { 45.0, 24.5, HILLSBRAD_FOOTHILLS },
-							-- #else
-							["coord"] = { 39.6, 52.8, ALTERAC_MOUNTAINS },
-							-- #endif
+							["coords"] = {
+								-- #if AFTER CATA
+								{ 45.0, 24.5, HILLSBRAD_FOOTHILLS },
+								-- #else
+								{ 39.6, 52.8, ALTERAC_MOUNTAINS },
+								-- #endif
+							},
 							["cr"] = 2417,	-- Grel'borg the Miser
 						}),
 					},
@@ -4251,8 +4267,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				n(3581, {	-- Sewer Beast
-					-- #if AFTER CATA
 					["coords"] = {
+						-- #if AFTER CATA
 						{ 48.4, 61.8, STORMWIND_CITY },
 						{ 54.6, 65.6, STORMWIND_CITY },
 						{ 56.0, 72.8, STORMWIND_CITY },
@@ -4264,9 +4280,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 66.0, 61.2, STORMWIND_CITY },
 						{ 68.8, 64.2, STORMWIND_CITY },
 						{ 70.6, 68.0, STORMWIND_CITY },
-					},
-					-- #else
-					["coords"] = {
+						-- #else
 						{ 49.8, 22.6, STORMWIND_CITY },
 						{ 53.8, 30.6, STORMWIND_CITY },
 						{ 66.8, 32.2, STORMWIND_CITY },
@@ -4279,8 +4293,8 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 34.2, 60.2, STORMWIND_CITY },
 						{ 50.0, 69.6, STORMWIND_CITY },
 						{ 47.2, 61.6, STORMWIND_CITY },
+						-- #endif
 					},
-					-- #endif
 				}),
 				-- #if SEASON_OF_DISCOVERY
 				applyclassicphase(SOD_PHASE_ONE, n(204070, {	-- Soboz
@@ -4366,17 +4380,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 				n(1347, {	-- Alexandra Bolero <Tailoring Supplies>
-					-- #if AFTER WRATH
-					["coord"] = { 53.2, 81.6, STORMWIND_CITY },
-					-- #else
-					["coord"] = { 43.4, 74.0, STORMWIND_CITY },
-					-- #endif
+					["coords"] = {
+						-- #if AFTER WRATH
+						{ 53.2, 81.6, STORMWIND_CITY },
+						-- #else
+						{ 43.4, 74.0, STORMWIND_CITY },
+						-- #endif
+					},
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = appendGroups(COMMON_CATACLYSM_TAILORING_RECIPES, {
-						i(6274, {	-- Pattern: Blue Overalls
+						i(6274, {	-- Pattern: Blue Overalls (RECIPE!)
 							["isLimited"] = true,
 						}),
-						i(10325, {	-- Pattern: White Wedding Dress
+						i(10325, {	-- Pattern: White Wedding Dress (RECIPE!)
 							["isLimited"] = true,
 						}),
 					}),
@@ -4601,6 +4617,22 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						i(3421),	-- Simple Wildflowers
 					},
 				}),
+				n(5519, {	-- Billibub Cogspinner <Engineering Supplies>
+					["coords"] = {
+						-- #if AFTER 3.0.2
+						{ 63.07, 31.97, STORMWIND_CITY },
+						-- #else
+						{ 55.0, 7.0, STORMWIND_CITY },
+						-- #endif
+					},
+					["races"] = ALLIANCE_ONLY,
+					["groups"] = {
+						i(39684, { ["timeline"] = { ADDED_3_0_2 }}),	-- Hair Trigger
+						i(4400),	-- Heavy Stock
+						i(40533, { ["timeline"] = { ADDED_3_0_2 }}),	-- Walnut Stock
+						i(4399),	-- Wooden Stock
+					},
+				}),
 				n(1319, {	-- Bryan Cross <Shield Merchant>
 					["coords"] = {
 						-- #if AFTER WRATH
@@ -4755,28 +4787,28 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["groups"] = pvp({
 						-- #if BEFORE 4.0.3
 						-- Moves to Tiffany in Dalaran
-						i(41563),	-- Design: Durable Huge Citrine [WRATH] / Design: Willful Huge Citrine [CATA+]
+						i(41563),	-- Design: Durable Huge Citrine [WRATH] / Design: Willful Huge Citrine [CATA+] (RECIPE!)
 						-- #endif
-						i(41564, {	-- Design: Empowered Huge Citrine [WRATH] / Design: Lucent Huge Citrine [CATA+]
+						i(41564, {	-- Design: Empowered Huge Citrine [WRATH] / Design: Lucent Huge Citrine [CATA+] (RECIPE!)
 							["timeline"] = { REMOVED_4_0_3 },
 						}),
 						-- #if BEFORE 4.0.3
 						-- These move to Tiffany in Dalaran
-						i(41565),	-- Design: Lucent Huge Citrine
-						i(41575),	-- Design: Mysterious Shadow Crystal
-						i(41559),	-- Design: Mystic Sun Crystal
+						i(41565),	-- Design: Lucent Huge Citrine (RECIPE!)
+						i(41575),	-- Design: Mysterious Shadow Crystal (RECIPE!)
+						i(41559),	-- Design: Mystic Sun Crystal (RECIPE!)
 						-- #endif
-						i(41573, {	-- Design: Opaque Dark Jade [WRATH] / Design: Turbid Dark Jade [CATA+]
+						i(41573, {	-- Design: Opaque Dark Jade [WRATH] / Design: Turbid Dark Jade [CATA+] (RECIPE!)
 							["timeline"] = { REMOVED_4_0_3 },
 						}),
 						-- #if BEFORE 4.0.3
 						-- These move to Tiffany in Dalaran
-						i(41566),	-- Design: Resplendent Huge Citrine
-						i(41569),	-- Design: Shattered Dark Jade
-						i(41572),	-- Design: Steady Dark Jade
-						i(41560),	-- Design: Stormy Chalcedony
-						i(41570),	-- Design: Radiant Dark Jade [CATA+] / Design: Tense Dark Jade [WRATH]
-						i(41571),	-- Design: Turbid Dark Jade
+						i(41566),	-- Design: Resplendent Huge Citrine (RECIPE!)
+						i(41569),	-- Design: Shattered Dark Jade (RECIPE!)
+						i(41572),	-- Design: Steady Dark Jade (RECIPE!)
+						i(41560),	-- Design: Stormy Chalcedony (RECIPE!)
+						i(41570),	-- Design: Radiant Dark Jade [CATA+] / Design: Tense Dark Jade [WRATH] (RECIPE!)
+						i(41571),	-- Design: Turbid Dark Jade (RECIPE!)
 						-- #endif
 						moh(1, i(28118, {	-- Brilliant Ornate Ruby
 							["timeline"] = { ADDED_2_0_1 },
@@ -5158,7 +5190,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
-						i(20856, {	-- Design: Heavy Golden Necklace of Battle
+						i(20856, {	-- Design: Heavy Golden Necklace of Battle (RECIPE!)
 							["isLimited"] = true,
 						}),
 					},
@@ -5686,7 +5718,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						}),
 						i(20752),	-- Formula: Minor Mana Oil (RECIPE!)
 						i(20758),	-- Formula: Minor Wizard Oil (RECIPE!)
-						i(22307),	-- Pattern: Enchanted Mageweave Pouch
+						i(22307),	-- Pattern: Enchanted Mageweave Pouch (RECIPE!)
 					}),
 				}),
 				-- #if AFTER CATA
@@ -5754,7 +5786,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 56.3, 17.2, STORMWIND_CITY },
 						-- #endif
 					},
-					["sym"] = {{ "sub", "common_recipes_vendor", 3356 }},	-- Sumi <Blacksmithing Supplies>
+					-- #if AFTER 4.3.0
+					["sym"] = {{ "sub", "common_recipes_vendor", 55684 }},	-- Jordan Smith <Blacksmithing Trainer & Supplies>
+					-- #endif
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(12162, {	-- Plans: Hardened Iron Shortsword (RECIPE!)
@@ -5967,14 +6001,16 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				}),
 				-- #endif
 				n(12784, {	-- Lieutenant Jackspring <Legacy Weapon Quartermaster> [WRATH+] / Lieutenant Jackspring <Weapons Quartermaster>
-					-- #if AFTER WRATH
-					["coord"] = { 75.2, 67.2, STORMWIND_CITY },
 					-- #if NOT ANYCLASSIC
 					["description"] = "Blizzard strikes again. In order to transmog these, you need to have the original title associated with the gear. However, you can still collect them even if you've never had the title.\n\nThese items will require a refresh/reload to register as collected, and it's highly recommended that you keep them in your bank/void storage for later. You'll likely randomly lose credit for them and have to re-equip them to remind the game they exist.",
 					-- #endif
-					-- #else
-					["coord"] = { 71.9, 55.6, STORMWIND_CITY },
-					-- #endif
+					["coords"] = {
+						-- #if AFTER WRATH
+						{ 75.2, 67.2, STORMWIND_CITY },
+						-- #else
+						{ 71.9, 55.6, STORMWIND_CITY },
+						-- #endif
+					},
 					["timeline"] = { ADDED_2_0_1 },	-- Prior to TBC, was just a Reagent Vendor.
 					["sym"] = {
 						-- #IF ANYCLASSIC
@@ -6041,13 +6077,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(12778, {	-- Lieutenant Rachel Vaccar <Outland Armor Quartermaster>
 					["coord"] = { 75.2, 67.2, STORMWIND_CITY },
 					["timeline"] = { ADDED_3_0_2, REMOVED_5_0_4 },
-					-- #IF ANYCLASSIC
+					-- #if ANYCLASSIC
 					["sym"] = {
 						{ "select", "expansionID", EXPANSION.TBC },	{ "pop" },
 						{ "contains", "headerID", SEASON_BRUTAL, SEASON_VENGEFUL, SEASON_MERCILESS, SEASON_GLADIATOR }, { "pop" },
 						{ "where", "headerID", PVP_GLADIATOR }, { "pop" },
 					},
-					-- #ENDIF
+					-- #endif
 					["races"] = ALLIANCE_ONLY,
 				}),
 				-- #if AFTER LEGION
@@ -6152,11 +6188,12 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 						{ 55.6, 58.8, STORMWIND_CITY },
 						-- #endif
 					},
-					-- #if BEFORE 10.1
-					["description"] = "This NPC is only available on July 4th (US) or September 30th (EU).",
-					-- #else
-					["description"] = "This NPC is only available on July 4th.",
-					-- #endif
+					["description"] =
+						-- #if BEFORE 10.1
+						"This NPC is only available on July 4th (US) or September 30th (EU).",
+						-- #else
+						"This NPC is only available on July 4th.",
+						-- #endif
 					["races"] = ALLIANCE_ONLY,
 					["groups"] = {
 						i(8626),	-- Blue Sparkler
@@ -7086,13 +7123,25 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 	}),
 }));
 
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
-	m(EASTERN_KINGDOMS, {
-		m(STORMWIND_CITY, {
-			n(QUESTS, {
-				q(53645),	-- triggered during 'Molten Core' (53342) when porting to Molten Core
-				q(59255),	-- completed when turning in 'Fame Waits for Gnome One' (58708)
+root(ROOTS.HiddenQuestTriggers, {
+	expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_0_3 } }, {
+		m(EASTERN_KINGDOMS, {
+			m(STORMWIND_CITY, {
+				n(QUESTS, {
+					q(43463),	-- Ashes of a Fallen Crusader Tracking Quest - Looting Charred Locket from Ashes of a Fallen Crusader
+					q(41306),	-- The Fallen Lion. Triggers with regular "The Fallen Lion" 40517
+				}),
 			}),
 		}),
-	}),
-})));
+	})),
+	expansion(EXPANSION.BFA, bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
+		m(EASTERN_KINGDOMS, {
+			m(STORMWIND_CITY, {
+				n(QUESTS, {
+					q(59255),	-- completed when turning in 'Fame Waits for Gnome One' (58708)
+					q(53645),	-- triggered during 'Molten Core' (53342) when porting to Molten Core
+				}),
+			}),
+		}),
+	})),
+});

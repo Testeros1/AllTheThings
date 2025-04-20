@@ -483,7 +483,7 @@ i(233196, 86296);	-- Delver's Gob-Trotter Schematic: Gold
 i(230220, 85183);	-- Delver's Gob-Trotter Schematic: Green
 i(230216, 85175);	-- Delver's Gob-Trotter Schematic: Harpoon
 i(230218, 85179);	-- Delver's Gob-Trotter Schematic: Pipes
-
+i(232982, 85775);	-- Engine: The Pozzik Standard
 i(232985, 85782);	-- 22H Slicks
 i(232986, 85781);	-- GE86 Advance
 i(232981, 85776);	-- GNZ Airmaster 9000
@@ -509,8 +509,12 @@ i(235695, 82189);	-- Delver's Dirigible Schematic: Red Paint
 i(235693, 82175);	-- Delver's Dirigible Schematic: Rocket
 i(235692, 82177);	-- Delver's Dirigible Schematic: Thrusters
 i(235691, 82191);	-- Delver's Dirigible Schematic: Yellow Paint
-i(232980, 85787);	-- Axel Sneakfoot
-i(232979, 85785);	-- Jaks Jabberjaw
-i(232978, 85786);	-- Louie Firehands
+-- i(232980, 85787);	-- Axel Sneakfoot [think this questID is wrong, it's duped with Maniacal Melodies]
+-- i(232979, 85785);	-- Jaks Jabberjaw [think this questID is wrong, it's duped with The Ol' Low-and-Slow]
+-- i(232978, 85786);	-- Louie Firehands [think this questID is wrong, it's duped with The Buzzer]
 
-i(232982, 85775);	-- G77C Ultra
+------------------
+-- PATCH 11.1.5 --
+------------------
+i(238839, 86199);	-- Delver's Dirigible Schematic: Arathi Decal
+i(238837, 86198);	-- Delver's Dirigible Schematic: Pale Paint

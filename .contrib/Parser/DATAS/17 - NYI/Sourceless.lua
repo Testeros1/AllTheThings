@@ -45,11 +45,7 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 				-- Drustvar items = Nazmir quest rewards
 				filter(CLOTH, {
 					-- Loads on Wowhead & ingame
-					--i(155465),	-- Wickerwoven Cord
-					--i(158588),	-- Wickerwoven Walkers
 					i(158603),	-- Wickerwoven Handwraps
-					--i(158619),	-- Wickerwoven Waistband
-					--i(158631),	-- Wickerwoven Bindings
 					i(160197),	-- Wickerwoven Pantaloons
 
 					-- Loads on Wowhead but not ingame
@@ -58,17 +54,13 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(155464),	-- Wickerwoven Shoulderpads
 					i(160862),	-- Wickerwoven Mantle
 					i(160866),	-- Wickerwoven Circlet
-
 				}),
 				filter(LEATHER, {
 					i(155467),	-- Banisher Chestpiece
 					i(155470),	-- Banisher Headcover
 					i(155472),	-- Banisher Shoulderguards
 					i(155473),	-- Banisher Cinch
-					-- i(158589),	-- Banisher Striders
 					i(158604),	-- Banisher Mitts
-					-- i(158620),	-- Banisher Waistwrap
-					-- i(158632),	-- Banisher Bindings
 					i(160198),	-- Banisher Britches
 					i(160863),	-- Banisher Mantle
 					i(160867),	-- Banisher Hood
@@ -77,11 +69,7 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(155475),	-- Crone-Seeker's Chestguard
 					i(155478),	-- Crone-Seeker's Skullguard
 					i(155480),	-- Crone-Seeker's Spaulders
-					--i(155481),	-- Crone-Seeker's Chain
-					--i(158590),	-- Crone-Seeker's Striders
 					i(158605),	-- Crone-Seeker's Grips
-					--i(158621),	-- Crone-Seeker's Cincture
-					--i(158633),	-- Crone-Seeker's Bindings
 					i(160199),	-- Crone-Seeker's Leggings
 					i(160864),	-- Crone-Seeker's Pauldrons
 					i(160868),	-- Crone-Seeker's Coif
@@ -90,65 +78,46 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(155483),	-- Waycrest Militia Chestplate
 					i(155486),	-- Waycrest Militia Warhelm
 					i(155488),	-- Waycrest Militia Shoulderplates
-					--i(155489),	-- Waycrest Militia Belt
-					--i(158591),	-- Waycrest Militia Footguards
 					i(158606),	-- Waycrest Militia Gloves
-					--i(158622),	-- Waycrest Militia Buckle
-					--i(158634),	-- Waycrest Militia Wristguards
 					i(160200),	-- Waycrest Militia Pants
 					i(160865),	-- Waycrest Militia Shoulderplates
 					i(160869),	-- Waycrest Militia Greathelm
 				}),
-
 				-- Stormsong Valley items = Vol'dun quest rewards
 				filter(CLOTH, {
-					--i(158696),	-- Tidespeaker Mitts
-					--i(158704),	-- Tidespeaker Legwraps
 					i(160233),	-- Tidespeaker Wrap
 					i(160234),	-- Tidespeaker Headpiece
 					i(160235),	-- Tidespeaker Shoulderpads
 					i(160372),	-- Tidespeaker Cinch
-					--i(160385),	-- Tidespeaker Bracers
 					i(160873),	-- Tidespeaker Crown
 					i(160881),	-- Tidespeaker Robes
 				}),
 				filter(LEATHER, {
-					--i(158694),	-- Darkwater Grips
-					-- i(158706),	-- Darkwater Trousers
 					i(160236),	-- Darkwater Chestpiece
 					i(160237),	-- Darkwater Headcover
 					i(160238),	-- Darkwater Mantle
 					i(160375),	-- Darkwater Waistwrap
-					-- i(160388),	-- Darkwater Bands
 					i(160874),	-- Darkwater Cowl
 					i(160882),	-- Darkwater Jerkin
 				}),
 				filter(MAIL, {
-					--i(158697),	-- Stormchaser Grips
-					--i(158705),	-- Stormchaser Links
 					i(160239),	-- Stormchaser Chestguard
 					i(160240),	-- Stormchaser Skullcover
 					i(160241),	-- Stormchaser Spaulders
 					i(160378),	-- Stormchaser Clutch
-					-- i(160391),	-- Stormchaser Coils
 					i(160875),	-- Stormchaser Helm
 					i(160883),	-- Stormchaser Hauberk
 				}),
 				filter(PLATE, {
-					--i(158695),	-- Dread Corsair Handguards
-					--i(158703),	-- Dread Corsair Chausses
 					i(160242),	-- Dread Corsair Chestguard
 					i(160243),	-- Dread Corsair Helmet
 					i(160244),	-- Dread Corsair Spaulders
 					i(160381),	-- Dread Corsair Clasp
-					--i(160394),	-- Dread Corsair Shackles
 					i(160876),	-- Dread Corsair Warhelm
 					i(160884),	-- Dread Corsair Chestplate
 				}),
-
 				-- Tiragarde Sound items = Zuldazar quest rewards
 				filter(CLOTH, {
-					i(155045),	-- Navigator's Sash
 					i(155048),	-- Navigator's Cuffs
 					i(158231),	-- Navigator's Slippers
 					i(160066),	-- Navigator's Wrap
@@ -157,10 +126,8 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(160078),	-- Navigator's Pantaloons
 					i(160088),	-- Navigator's Mittens
 					i(160854),	-- Navigator's Amice
-					--i(160891),	-- Navigator's Vestments
 				}),
 				filter(LEATHER, {
-					i(155047),	-- Freebooter Belt
 					i(155051),	-- Freebooter Bracers
 					i(158233),	-- Freebooter Treads
 					i(160069),	-- Freebooter Chestpiece
@@ -172,33 +139,28 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(160892),	-- Freebooter Jerkin
 				}),
 				filter(MAIL, {
-					i(155046),	-- Outrigger Belt
 					i(155050),	-- Outrigger Bracers
 					i(158232),	-- Outrigger Footguards
 					i(160072),	-- Outrigger Chestguard
 					i(160073),	-- Outrigger Skullguard
 					i(160074),	-- Outrigger Shoulderguards
 					i(160080),	-- Outrigger Chain Leggings
-					--i(160090),	-- Outrigger Graspers
 					i(160856),	-- Outrigger Spaulders
 					i(160893),	-- Outrigger Breastplate
 				}),
 				filter(PLATE, {
-					i(155044),	-- Sea Raider's Girdle
 					i(155049),	-- Sea Raider's Bracers
 					i(158230),	-- Sea Raider's Warboots
 					i(160075),	-- Sea Raider's Warplate
 					i(160076),	-- Sea Raider's Headgear
 					i(160077),	-- Sea Raider's Shoulderplates
 					i(160081),	-- Sea Raider's Pants
-					--i(160091),	-- Sea Raider's Grips
 					i(160857),	-- Sea Raider's Pauldrons
 					i(160894),	-- Sea Raider's Chestplate
 				}),
 
 				-- Nazmir items = Drustvar quest rewards
 				filter(CLOTH, {
-					--i(155316),	-- Loa Speaker's Treads
 					i(159019),	-- Loa Speaker's Handguards
 					i(159022),	-- Loa Speaker's Crest
 					i(159032),	-- Loa Speaker's Mantle
@@ -206,11 +168,8 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(159058),	-- Loa Speaker's Britches
 					i(159061),	-- Loa Speaker's Garment
 					i(159064),	-- Loa Speaker's Amice
-					--i(159067),	-- Loa Speaker's Waistwrap
-					--i(159070),	-- Loa Speaker's Cuffs
 				}),
 				filter(LEATHER, {
-					--i(155318),	-- Ritual Flayer's Boots
 					i(159017),	-- Ritual Flayer's Handwraps
 					i(159024),	-- Ritual Flayer's Guise
 					i(159030),	-- Ritual Flayer's Shoulderpads
@@ -218,8 +177,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(159056),	-- Ritual Flayer's Helm
 					i(159060),	-- Ritual Flayer's Leggings
 					i(159062),	-- Ritual Flayer's Mantle
-					--i(159069),	-- Ritual Flayer's Cord
-					--i(159073),	-- Ritual Flayer's Bracers
 				}),
 				filter(MAIL, {
 					i(155317),	-- Death-Pledged Sabatons
@@ -229,8 +186,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(159043),	-- Death-Pledged Chainmail
 					i(159055),	-- Death-Pledged Headpiece
 					i(159065),	-- Death-Pledged Spaulders
-					--i(159068),	-- Death-Pledged Waistguard
-					--i(159072),	-- Death-Pledged Armguards
 				}),
 				filter(PLATE, {
 					i(159018),	-- Nazmani Warplate Crushers
@@ -243,7 +198,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(159066),	-- Nazmani Warplate Belt
 					i(159071),	-- Nazmani Warplate Armsplints
 				}),
-
 				-- Vol'dun items = Stormsong Valley quest rewards
 				filter(CLOTH, {
 					i(161157),	-- Lastwind Crest
@@ -251,8 +205,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(161255),	-- Lastwind Cowl
 					i(161259),	-- Lastwind Amice
 					i(161264),	-- Lastwind Raiment
-					--i(161276),	-- Lastwind Legguards
-					--i(161280),	-- Lastwind Shoes
 				}),
 				filter(LEATHER, {
 					i(161156),	-- Scorching Sands Guise
@@ -261,7 +213,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(161260),	-- Scorching Sands Mantle
 					i(161265),	-- Scorching Sands Tunic
 					i(161277),	-- Scorching Sands Britches
-					i(161281),	-- Scorching Sands Treads
 				}),
 				filter(MAIL, {
 					i(161155),	-- Resilient Outcast's Helmet
@@ -269,8 +220,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(161257),	-- Resilient Outcast's Warhelm
 					i(161261),	-- Resilient Outcast's Mantle
 					i(161266),	-- Resilient Outcast's Chestguard
-					--i(161278),	-- Resilient Outcast's Leggings
-					--i(161282),	-- Resilient Outcast's Footguards
 				}),
 				filter(PLATE, {
 					i(161154),	-- Exiled Veteran's Headguard
@@ -279,41 +228,31 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(161262),	-- Exiled Veteran's Shoulderguards
 					i(161267),	-- Exiled Veteran's Chestplate
 					i(161279),	-- Exiled Veteran's Greaves
-					--i(161283),	-- Exiled Veteran's Sabatons
 				}),
-
 				-- Zuldazar items = Tiragarde Sound quest rewards
 				filter(CLOTH, {
-					--i(158657),	-- Zanchuli Shoes
 					i(158663),	-- Zanchuli Grasps
-					--i(158675),	-- Zanchuli Bracelets
 					i(161144),	-- Zanchuli Vestments
 					i(161149),	-- Zanchuli Shoulderpads
 					i(161224),	-- Zanchuli Hood
 					i(161228),	-- Zanchuli Amice
 					i(161232),	-- Zanchuli Robes
-					--i(161236),	-- Zanchuli Bracers
-					--i(161242),	-- Zanchuli Belt
-					--i(161246),	-- Zanchuli Woolies
 					i(161248),	-- Zanchuli Pantaloons
 				}),
 				filter(LEATHER, {
 					i(158655),	-- Jambani Boots
 					i(158665),	-- Jambani Grasps
-					--i(158672),	-- Jambani Bracers
 					i(161145),	-- Jambani Tunic
 					i(161151),	-- Jambani Mantle
 					i(161225),	-- Jambani Guise
 					i(161229),	-- Jambani Shoulderguards
 					i(161233),	-- Jambani Chestpiece
-					--i(161237),	-- Jambani Bands
 					i(161243),	-- Jambani Cincture
 					i(161249),	-- Jambani Britches
 					i(161250),	-- Jambani Leggings
 				}),
 				filter(MAIL, {
 					i(158656),	-- Torcalin Striders
-					i(158662),	-- Torcalin Grasps
 					i(158673),	-- Torcalin Armguards
 					i(161146),	-- Torcalin Harness
 					i(161148),	-- Torcalin Shoulderguards
@@ -326,17 +265,11 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 					i(161252),	-- Torcalin Pants
 				}),
 				filter(PLATE, {
-					--i(158658),	-- Rastari Greatboots
-					--i(158664),	-- Rastari Grips
-					--i(158674),	-- Rastari Wristwraps
 					i(161147),	-- Rastari Chestguard
 					i(161150),	-- Rastari Spaulders
 					i(161227),	-- Rastari Greathelm
 					i(161231),	-- Rastari Shoulderplates
 					i(161235),	-- Rastari Chestplate
-					--i(161239),	-- Rastari Armbands
-					--i(161245),	-- Rastari Cincture
-					--i(161253),	-- Rastari Greaves
 					i(161254),	-- Rastari Pants
 				}),
 			})),
@@ -449,11 +382,7 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 				i(158566),	-- Scalebeast Claws
 				i(158569),	-- Dinomancy Cudgel
 				i(158577),	-- Devilsaur Voodoo Figure
-				i(161284),	-- Faithless Dinorider's Focus
-				i(161285),	-- Faithless Wingrider's Focus
 				i(158565),	-- Tiki-Thumper
-				i(161311),	-- Crescent of Zak'rajan
-				i(161286),	-- Faithless Dinorider's Shield
 				i(161287),	-- Faithless Wingrider's Shield
 				i(158562),	-- Howdah-Rider's Bow
 				i(154971),	-- Howdah-Rider's Bow
@@ -543,7 +472,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 
 			-- 7.3.0
 			expansion(EXPANSION.LEGION, patch(3,0), bubbleDownSelf({ ["timeline"] = { ADDED_7_3_0 } }, {
-				q(48546),	-- Tracking Quest
 				q(49163),	--
 			})),
 
@@ -567,7 +495,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 		expansion(EXPANSION.BFA, {
 			-- 8.0.1
 			expansion(EXPANSION.BFA, patch(0,1), bubbleDownSelf({ ["timeline"] = { ADDED_8_0_1 } }, {
-				q(50554),	--
 				q(50668, {
 					["description"] = "Area: |cFFf09f26Orgrimmar|r",
 					["lvl"] = 10,
@@ -591,8 +518,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 				q(54221),	--
 				q(54222),	--
 				q(54223),	--
-				q(54445),	--
-				q(54446),	--
 				q(54860),	--
 			})),
 
@@ -619,21 +544,25 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 				q(56065),	--
 				q(56127),	--
 				q(56607),	--
-				q(56618),	--
+				q(56618),	-- killed Tidelord Aquatus (153898)?
 				q(56667),	--
 				q(56742),	--
 				q(56744),	--
-				q(56766),	--
 				q(56844),	--
 				q(56898),	--
 				q(57193),	--
 				q(57408),	--
-				q(54866),	--
 			})),
 
 			-- 8.2.5
 			expansion(EXPANSION.BFA, patch(2,5), bubbleDownSelf({ ["timeline"] = { ADDED_8_2_5 } }, {
 				q(57550),	--
+				q(57640, {	-- Master Ryson's All Seeing Eye
+					["description"] = "Type: |cFFf09f26PvP|r\nCategory: |cFFf09f26Korrak's Revenge|r",
+					["qg"] = 13151,	-- Syndicate Master Ryson
+					["maps"] = 1537,	-- Alterac Valley
+					["lvl"] = 10,
+				}),
 			})),
 
 			-- 8.3.0
@@ -657,7 +586,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 				q(62377),	--
 				q(62381),	-- Encountered after swapping covenant to necrolord ??
 				q(62578),	--
-				q(62681),	-- Encountered after using Focused Life Anima to create Stabilizing Lens of the Focusing Iris (168622)
 				q(62687),	--
 				q(62690),	-- Encountered after using Focused Life Anima to create the final possible azerite power available from it (according to ATT), which was Fetish of the Hidden Labyrinths (Anima of Life and Death, Rank 3)?? Maybe new HQT for tracking?
 				q(60693),	--
@@ -677,7 +605,7 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 				q(64116),	--
 				q(64117),	--
 				q(64118),	--
-				q(64119),	--
+				q(64119),	-- Tormentors of Torghast related
 				q(64192),	--
 				q(64369),	--
 				q(64516),	--
@@ -706,12 +634,13 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 			-- 10.0.5
 			expansion(EXPANSION.DF, patch(0,5), bubbleDownSelf({ ["timeline"] = { ADDED_10_0_5 } }, {
 				q(74897),	-- L70 Human Hunter Achieved Duelist and Clock Mog 2023-03-15
-				q(76157),	--
+				-- q(76157),	--
 			})),
 
 			-- 10.1.0
 			expansion(EXPANSION.DF, patch(1,0), bubbleDownSelf({ ["timeline"] = { ADDED_10_1_0 } }, {
 				q(75443),	-- Flag Tracking Quest (spellID 431951)
+				q(75774),	-- completed researchers under fire?
 			})),
 
 			-- 10.1.5
@@ -734,7 +663,6 @@ root(ROOTS.Sourceless, bubbleDownFiltered({
 			expansion(EXPANSION.DF, patch(2,5), bubbleDownSelf({ ["timeline"] = { ADDED_10_2_5 } }, {
 				q(78976),	--
 				q(79353),	--
-				q(79474),	--
 			})),
 
 			-- 10.2.6

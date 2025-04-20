@@ -154,13 +154,19 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				q(34039, {	-- WANTED: Overlord Blackhammer
 					["races"] = HORDE_ONLY,
 					["sourceQuests"] = { 34042 },	-- A Fellow Gearhead
-					["provider"] = { "n", 77928 },	-- Gazlowe
-					["coord"] = { 85.8, 45.8, FROSTFIRE_RIDGE },
+					["qgs"] = {
+						77928,	-- Gazlowe
+						78323,	-- Goblin Engineer
+					},
+					["coord"] = { 88.4, 49.6, FROSTFIRE_RIDGE },
 				}),
 				q(34078, {	-- Payment Due for Services Rendered
 					["races"] = HORDE_ONLY,
 					["sourceQuests"] = { 34039 },	-- WANTED: Overlord Blackhammer
-					["provider"] = { "n", 77928 },	-- Gazlowe
+					["qgs"] = {
+						77928,	-- Gazlowe
+						78323,	-- Goblin Engineer
+					},
 					["coord"] = { 85.8, 45.8, FROSTFIRE_RIDGE },
 				}),
 
@@ -287,7 +293,13 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 						["sourceQuest"] = 35186,	-- Garrison Campaign: The Sargerei (H)
 					},
 					["provider"] = { "n", 88276 },	-- Archmage Modera
-					["coord"] = { 43.6, 77.2, FROSTFIRE_RIDGE },
+					["coord"] = { 43.6, 77.2, DRAENOR_SHADOWMOON_VALLEY },
+					["g"] = {
+						i(112791),	-- Sargerei Cowl (QI!)
+						i(112904),	-- Sargerei Disguise (QI!)
+						i(112891),	-- Sargerei Robe (QI!)
+						i(112893),	-- Sargerei Slippers (QI!)
+					},
 				}),
 				q(35188, {	-- Pesky Podlings
 					["sourceQuests"] = { 35187 },	-- Infiltrating the Sargerei
@@ -981,6 +993,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				q(38568, {	-- We Need a Shipwright
 					["races"] = HORDE_ONLY,
 					["provider"] = { "n", 92400 },	-- Vol'jin
+					["coord"] = { 39.2, 54.9, FROSTWALL },
 					["sourceQuests"] = {
 						38567,	-- Garrison Campaign: War Council
 						40417,	-- To Tanaan!
@@ -1544,6 +1557,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				["providers"] = {
 					{ "n", 90894 },	-- Alexi Hackercam
 					{ "n", 91030 },	-- Trixxy Volt
+				},
+				["coords"] = {
+					{ 40.4, 56.0, FROSTWALL },
+					{ 34.4, 33.0, LUNARFALL },
 				},
 				["isDaily"] = true,
 			}),
@@ -2344,6 +2361,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				["isDaily"] = true,
 			}),
 			q(37773, {	-- Death to Amethon!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2363,6 +2381,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				}},
 			}),
 			q(37774, {	-- Death to Gor'thul!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2382,6 +2401,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				}},
 			}),
 			q(37778, {	-- Death to Hivelord Ik'rix!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2401,6 +2421,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				}},
 			}),
 			q(37775, {	-- Death to Nullifier Darkoor!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2420,6 +2441,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				}},
 			}),
 			q(37948, {	-- Death to Nullifier Darkoor!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2439,6 +2461,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				}},
 			}),
 			q(37777, {	-- Death to Tremor!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2458,6 +2481,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 				}},
 			}),
 			q(37776, {	-- Death to Undertow!
+				["coord"] = { 34.4, 32.5, LUNARFALL },
 				["provider"] = { "n", 89805 },	-- Renzik "The Shiv"
 				["isDaily"] = true,
 				["races"] = ALLIANCE_ONLY,
@@ -2987,6 +3011,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.WOD, {
 			}),
 			q(36522, {	-- Solidarity in Death
 				["provider"] = { "n", 85777 },	-- Ahm
+				["coords"] = {
+					{ 50.5, 15.7, FROSTWALL },
+					{ 53.4, 69.2, LUNARFALL },
+				},
 				["sourceQuest"] = 33973,	-- Dying Wish
 				["g"] = {
 					follower(208),	-- Ahm
@@ -3449,6 +3477,28 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["time
 			q(36559),	-- Garrison Max-level Choice Tracker: Spires Upper Skettis
 			q(36560),	-- Garrison Max-level Choice Tracker: Talador Shattrath City, East
 			q(36561),	-- Garrison Max-level Choice Tracker: Talador Shattrath City, East
+			q(36534),	-- Garrison Max-level Choice Tracker: (GROUP) Talador Shattrath City, West (When picking up Assault on the Heart of Shattrath on Horde character)
+			q(36547),	-- Garrison Max-level Choice Tracker: (GROUP) Talador Shattrath City, West (When picking up Assault on the Heart of Shattrath on Horde character)
+			q(36663),	-- Garrison Max-level Choice Tracker: ANY CHOICE MADE (When picking up Assault on the Heart of Shattrath on Horde character)
+			q(36664),	-- Garrison Max-level Choice Tracker: ANY CHOICE MADE (When picking up Assault on the Heart of Shattrath on Alliance character)
+			q(36537),	-- Garrison Max-level Choice Tracker: Spires Shadowmoon Cliffs
+			q(36558),	-- Garrison Max-level Choice Tracker: Spires Shadowmoon Cliffs
+			q(36532),	-- Garrison Max-level Choice Tracker: (GROUP) Gorgrond Blackrock Foundry
+			q(36545),	-- Garrison Max-level Choice Tracker: (GROUP) Gorgrond Blackrock Foundry
+			q(36527),	-- Garrison Max-level Choice Tracker: Frostfire Bloodmaul Compound
+			q(36549),	-- Garrison Max-level Choice Tracker: Frostfire Bloodmaul Compound
+			q(36528),	-- Garrison Max-level Choice Tracker: Shadowmoon Darktide Roost
+			q(36555),	-- Garrison Max-level Choice Tracker: Shadowmoon Darktide Roost
+			q(36533),	-- Garrison Max-level Choice Tracker: Gorgrond Primal Forest
+			q(36552),	-- Garrison Max-level Choice Tracker: Gorgrond Primal Forest
+			q(36531),	-- Garrison Max-level Choice Tracker: Shadowmoon Sanctum of Othaar
+			q(36556),	-- Garrison Max-level Choice Tracker: Shadowmoon Sanctum of Othaar
+			q(36539),	-- Garrison Max-level Choice Tracker: Spires Mushroom Swamp
+			q(36557),	-- Garrison Max-level Choice Tracker: Spires Mushroom Swamp
+			q(36540),	-- Garrison Max-level Choice Tracker: Nagrand Broken Precipice
+			q(36553),	-- Garrison Max-level Choice Tracker: Nagrand Broken Precipice
+			q(36541),	-- Garrison Max-level Choice Tracker: Nagrand Mok'gol Watchpost
+			q(36554),	-- Garrison Max-level Choice Tracker: Nagrand Mok'gol Watchpost
 			q(36799),	-- Garrison Nodes - Tracking Quest - triggers after unlocking the mine, picking herbs
 			q(36492),	-- Garrison Pet Battle — discord report, "for today's EU garrison menagerie fight, the Blingtron/protectron one"
 			q(39408, { ["timeline"] = { ADDED_6_2_0 } }),	-- Tracking Quest - interact with the mission table.

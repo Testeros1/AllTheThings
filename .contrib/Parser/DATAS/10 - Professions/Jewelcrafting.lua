@@ -471,31 +471,13 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 					["provider"] = { "i", 193885 },	-- Jeweled Amber Whelpling
 				}),
 			-- #else
-				crit(63214, {	-- Jeweled Ruby Whelpling
-					["provider"] = { "i", 193887 },	-- Jeweled Ruby Whelpling
-				}),
-				crit(63215, {	-- Jeweled Emerald Whelpling
-					["provider"] = { "i", 193888 },	-- Jeweled Emerald Whelpling
-				}),
-				crit(63216, {	-- Jeweled Sapphire Whelpling
-					["provider"] = { "i", 193886 },	-- Jeweled Sapphire Whelpling
-				}),
-				crit(63217, {	-- Jeweled Onyx Whelpling
-					["provider"] = { "i", 193889 },	-- Jeweled Onyx Whelpling
-				}),
-				crit(63218, {	-- Jeweled Amber Whelpling
-					["provider"] = { "i", 193885 },	-- Jeweled Amber Whelpling
-				}),
+				-- automated properly
 			-- #endif
 			}),
 		})),
 		n(QUESTS, {
 			q(70365, {	-- To the Dragon Isles: Jewelcrafting
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Jewelcrafting.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 192121 },	-- Falron Greygold
 				["coord"] = { 25.4, 54.2, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1,
@@ -505,10 +487,6 @@ root(ROOTS.Professions, prof(JEWELCRAFTING, bubbleDownSelf({ ["requireSkill"] = 
 			}),
 			q(72247, {	-- To the Dragon Isles: Jewelcrafting
 				["description"] = "This quest can only be picked up PRIOR to learning Dragon Isles Jewelcrafting.",
-				["sourceQuests"] = {
-					67700,	-- To the Dragon Isles! [A]
-					65444,	-- To the Dragon Isles! [H]
-				},
 				["provider"] = { "n", 198398 },	-- Misty Catseye
 				["coord"] = { 76.2, 33.6, THE_WAKING_SHORES },
 				["lockCriteria"] = { 1,

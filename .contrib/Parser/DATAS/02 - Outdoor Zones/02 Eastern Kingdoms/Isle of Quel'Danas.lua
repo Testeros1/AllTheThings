@@ -1033,6 +1033,8 @@ local SORYN_GROUPS = {
 			["cost"] = { { "i", 31099, 1 }, },	-- Leggings of the Forgotten Vanquisher
 		}),
 	}),
+	-- #else
+		-- TOOD: in Retail all the S2 Merciless content is sold by Soryn as well but for different Cost Tokens... sigh
 	-- #endif
 };
 local EPIC_GEM_COSTS
@@ -1075,9 +1077,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, applyclassicphase(TBC_PHASE_FIVE, {
 					["cr"] = 26560,	-- Ohura <Dragonhawk Master>
 					["coord"] = { 48.4, 25.2, ISLE_OF_QUELDANAS },
 				}),
-			}),
-			prof(FISHING, {
-				i(35286),		-- Bloated Giant Sunfish
 			}),
 			n(QUESTS, {
 				applyclassicphase(TBC_PHASE_FIVE_OFFENSIVE_PHASE_FOUR, q(11545, {	-- A Charitable Donation (Removed completion of Phase 4)

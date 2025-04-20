@@ -113329,7 +113329,7 @@
 	},
 	{
 	["criteriaID"] = 3,
-	["name"] = "0/1 Blazing Chest",
+	["name"] = "1/1 Blazing Chest",
 	["_objects"] = {
 	221673,
 	},
@@ -113338,7 +113338,7 @@
 	{
 	["criteriaID"] = 4,
 	["criteriaUID"] = 0,
-	["name"] = "1/4 Sturdy Chests",
+	["name"] = "2/4 Sturdy Chests",
 	["criteriaType"] = 0,
 	["rank"] = 4,
 	},
@@ -129092,7 +129092,7 @@
 	},
 	{
 	["criteriaID"] = 7,
-	["name"] = "0/1 Orgrimmar",
+	["name"] = "1/1 Orgrimmar",
 	["_quests"] = {
 	38070,
 	},
@@ -129100,7 +129100,7 @@
 	},
 	{
 	["criteriaID"] = 8,
-	["name"] = "0/1 War March",
+	["name"] = "1/1 War March",
 	["_quests"] = {
 	38072,
 	},
@@ -129108,7 +129108,7 @@
 	},
 	{
 	["criteriaID"] = 9,
-	["name"] = "0/1 Thunder Bluff",
+	["name"] = "1/1 Thunder Bluff",
 	["_quests"] = {
 	38074,
 	},
@@ -129116,7 +129116,7 @@
 	},
 	{
 	["criteriaID"] = 10,
-	["name"] = "0/1 Mulgore Plains",
+	["name"] = "1/1 Mulgore Plains",
 	["_quests"] = {
 	38076,
 	},
@@ -129124,7 +129124,7 @@
 	},
 	{
 	["criteriaID"] = 11,
-	["name"] = "0/1 Undercity",
+	["name"] = "1/1 Undercity",
 	["_quests"] = {
 	38078,
 	},
@@ -129132,7 +129132,7 @@
 	},
 	{
 	["criteriaID"] = 12,
-	["name"] = "0/1 Zul'Gurub Voo Doo",
+	["name"] = "1/1 Zul'Gurub Voo Doo",
 	["_quests"] = {
 	38080,
 	},
@@ -129140,7 +129140,7 @@
 	},
 	{
 	["criteriaID"] = 13,
-	["name"] = "0/1 The Zandalari",
+	["name"] = "1/1 The Zandalari",
 	["_quests"] = {
 	38082,
 	},
@@ -129148,7 +129148,7 @@
 	},
 	{
 	["criteriaID"] = 14,
-	["name"] = "0/1 Silvermoon",
+	["name"] = "1/1 Silvermoon",
 	["_quests"] = {
 	38084,
 	},
@@ -129156,7 +129156,7 @@
 	},
 	{
 	["criteriaID"] = 15,
-	["name"] = "0/1 Rescue the Warchief",
+	["name"] = "1/1 Rescue the Warchief",
 	["_quests"] = {
 	38086,
 	},
@@ -129790,7 +129790,7 @@
 	},
 	{
 	["criteriaID"] = 7,
-	["name"] = "0/1 Orgrimmar",
+	["name"] = "1/1 Orgrimmar",
 	["_quests"] = {
 	38070,
 	},
@@ -129798,7 +129798,7 @@
 	},
 	{
 	["criteriaID"] = 8,
-	["name"] = "0/1 War March",
+	["name"] = "1/1 War March",
 	["_quests"] = {
 	38072,
 	},
@@ -129806,7 +129806,7 @@
 	},
 	{
 	["criteriaID"] = 9,
-	["name"] = "0/1 Thunder Bluff",
+	["name"] = "1/1 Thunder Bluff",
 	["_quests"] = {
 	38074,
 	},
@@ -129814,7 +129814,7 @@
 	},
 	{
 	["criteriaID"] = 10,
-	["name"] = "0/1 Mulgore Plains",
+	["name"] = "1/1 Mulgore Plains",
 	["_quests"] = {
 	38076,
 	},
@@ -129822,7 +129822,7 @@
 	},
 	{
 	["criteriaID"] = 11,
-	["name"] = "0/1 Undercity",
+	["name"] = "1/1 Undercity",
 	["_quests"] = {
 	38078,
 	},
@@ -129830,7 +129830,7 @@
 	},
 	{
 	["criteriaID"] = 12,
-	["name"] = "0/1 Zul'Gurub Voo Doo",
+	["name"] = "1/1 Zul'Gurub Voo Doo",
 	["_quests"] = {
 	38080,
 	},
@@ -129838,7 +129838,7 @@
 	},
 	{
 	["criteriaID"] = 13,
-	["name"] = "0/1 The Zandalari",
+	["name"] = "1/1 The Zandalari",
 	["_quests"] = {
 	38082,
 	},
@@ -129846,7 +129846,7 @@
 	},
 	{
 	["criteriaID"] = 14,
-	["name"] = "0/1 Silvermoon",
+	["name"] = "1/1 Silvermoon",
 	["_quests"] = {
 	38084,
 	},
@@ -129854,7 +129854,7 @@
 	},
 	{
 	["criteriaID"] = 15,
-	["name"] = "0/1 Rescue the Warchief",
+	["name"] = "1/1 Rescue the Warchief",
 	["_quests"] = {
 	38086,
 	},
@@ -178444,14 +178444,6 @@
 	},
 	{
 	["criteriaID"] = 5,
-	["name"] = "Trove Tracker",
-	["_achievements"] = {
-	13549,
-	},
-	["criteriaUID"] = 45841,
-	},
-	{
-	["criteriaID"] = 6,
 	["name"] = "A Fistful of Manapearls",
 	["_achievements"] = {
 	13711,
@@ -178459,7 +178451,7 @@
 	["criteriaUID"] = 45840,
 	},
 	{
-	["criteriaID"] = 7,
+	["criteriaID"] = 6,
 	["name"] = "Terror of the Tadpoles",
 	["_achievements"] = {
 	13722,
@@ -178467,7 +178459,7 @@
 	["criteriaUID"] = 45842,
 	},
 	{
-	["criteriaID"] = 8,
+	["criteriaID"] = 7,
 	["name"] = "Periodic Destruction",
 	["_achievements"] = {
 	13699,
@@ -178475,7 +178467,7 @@
 	["criteriaUID"] = 45843,
 	},
 	{
-	["criteriaID"] = 9,
+	["criteriaID"] = 8,
 	["name"] = "Nothing To Scry About",
 	["_achievements"] = {
 	13713,
@@ -178483,7 +178475,7 @@
 	["criteriaUID"] = 45844,
 	},
 	{
-	["criteriaID"] = 10,
+	["criteriaID"] = 9,
 	["name"] = "Mrrl's Secret Stash",
 	["_achievements"] = {
 	13707,
@@ -178491,7 +178483,7 @@
 	["criteriaUID"] = 45845,
 	},
 	{
-	["criteriaID"] = 11,
+	["criteriaID"] = 10,
 	["name"] = "Back to the Depths!",
 	["_achievements"] = {
 	13763,
@@ -178499,7 +178491,7 @@
 	["criteriaUID"] = 45868,
 	},
 	{
-	["criteriaID"] = 12,
+	["criteriaID"] = 11,
 	["name"] = "Puzzle Performer",
 	["_achievements"] = {
 	13764,
@@ -178507,7 +178499,7 @@
 	["criteriaUID"] = 45869,
 	},
 	{
-	["criteriaID"] = 13,
+	["criteriaID"] = 12,
 	["name"] = "Explore Nazjatar",
 	["_achievements"] = {
 	13712,
@@ -178515,7 +178507,7 @@
 	["criteriaUID"] = 45925,
 	},
 	{
-	["criteriaID"] = 14,
+	["criteriaID"] = 13,
 	["name"] = "Waveblade Ankoan",
 	["_achievements"] = {
 	13558,
@@ -178523,7 +178515,7 @@
 	["criteriaUID"] = 45270,
 	},
 	{
-	["criteriaID"] = 15,
+	["criteriaID"] = 14,
 	["name"] = "Subaquatic Support",
 	["_achievements"] = {
 	13765,
@@ -178531,7 +178523,7 @@
 	["criteriaUID"] = 45926,
 	},
 	{
-	["criteriaID"] = 16,
+	["criteriaID"] = 15,
 	["name"] = "Sunken Ambitions",
 	["_achievements"] = {
 	13710,
@@ -178539,7 +178531,7 @@
 	["criteriaUID"] = 45928,
 	},
 	{
-	["criteriaID"] = 17,
+	["criteriaID"] = 16,
 	["name"] = "Feline Figurines Found",
 	["_achievements"] = {
 	13836,
@@ -268400,10 +268392,11 @@
 	["criteria"] = {
 	{
 	["criteriaID"] = 1,
-	["criteriaUID"] = 65553,
+	["name"] = "Abomination of Anger",
 	["_npcs"] = {
 	61707,
 	},
+	["criteriaUID"] = 65553,
 	},
 	},
 	["description"] = "Complete the Crypt of Forgotten Kings scenario with a Timerunner.",
@@ -268416,10 +268409,11 @@
 	["criteria"] = {
 	{
 	["criteriaID"] = 1,
-	["criteriaUID"] = 65554,
+	["name"] = "Abomination of Anger",
 	["_npcs"] = {
 	61707,
 	},
+	["criteriaUID"] = 65554,
 	},
 	},
 	["description"] = "Complete the Crypt of Forgotten Kings scenario on Heroic difficulty with a Timerunner.",
@@ -274500,25 +274494,25 @@
 	["icon"] = 136243,
 	},
 	{
-	["parentCategoryID"] = 130,
+	["parentCategoryID"] = 15176,
 	["achievementID"] = 20489,
 	["name"] = "Weathered Harbinger Crests earned",
 	["icon"] = 136243,
 	},
 	{
-	["parentCategoryID"] = 130,
+	["parentCategoryID"] = 15176,
 	["achievementID"] = 20490,
 	["name"] = "Carved Harbinger Crests earned",
 	["icon"] = 136243,
 	},
 	{
-	["parentCategoryID"] = 130,
+	["parentCategoryID"] = 15176,
 	["achievementID"] = 20491,
 	["name"] = "Runed Harbinger Crests earned",
 	["icon"] = 136243,
 	},
 	{
-	["parentCategoryID"] = 130,
+	["parentCategoryID"] = 15176,
 	["achievementID"] = 20492,
 	["name"] = "Gilded Harbinger Crests earned",
 	["icon"] = 136243,
@@ -302501,7 +302495,7 @@
 	["criteria"] = {
 	{
 	["criteriaID"] = 1,
-	["name"] = "5/5 Elemental Excavation",
+	["name"] = "3/5 Elemental Excavation",
 	["_quests"] = {
 	80395,
 	},
@@ -302519,7 +302513,7 @@
 	},
 	{
 	["criteriaID"] = 3,
-	["name"] = "2/5 Digging into Trouble",
+	["name"] = "1/5 Digging into Trouble",
 	["_quests"] = {
 	80208,
 	},
@@ -302528,7 +302522,7 @@
 	},
 	{
 	["criteriaID"] = 4,
-	["name"] = "4/5 Foggy Faceoff",
+	["name"] = "2/5 Foggy Faceoff",
 	["_quests"] = {
 	80323,
 	},
@@ -302537,7 +302531,7 @@
 	},
 	{
 	["criteriaID"] = 5,
-	["name"] = "2/5 Fending off Darkness",
+	["name"] = "1/5 Fending off Darkness",
 	["_quests"] = {
 	80412,
 	},
@@ -302546,7 +302540,7 @@
 	},
 	{
 	["criteriaID"] = 6,
-	["name"] = "2/5 Bells of the Light",
+	["name"] = "1/5 Bells of the Light",
 	["_quests"] = {
 	81622,
 	},
@@ -302555,7 +302549,7 @@
 	},
 	{
 	["criteriaID"] = 7,
-	["name"] = "2/5 Polarized",
+	["name"] = "1/5 Polarized",
 	["_quests"] = {
 	80409,
 	},
@@ -302564,7 +302558,7 @@
 	},
 	{
 	["criteriaID"] = 8,
-	["name"] = "2/5 Serving the Queen",
+	["name"] = "1/5 Serving the Queen",
 	["_quests"] = {
 	80457,
 	},
@@ -324561,7 +324555,7 @@
 	{
 	["assetID"] = 2900,
 	["criteriaID"] = 1,
-	["name"] = "1/25 renown with Council of Dornogal",
+	["name"] = "25/25 renown with Council of Dornogal",
 	["criteriaUID"] = 71181,
 	["criteriaType"] = 261,
 	["rank"] = 25,
@@ -324569,7 +324563,7 @@
 	{
 	["assetID"] = 2898,
 	["criteriaID"] = 2,
-	["name"] = "0/25 renown with The Assembly of the Deeps",
+	["name"] = "25/25 renown with The Assembly of the Deeps",
 	["criteriaUID"] = 71180,
 	["criteriaType"] = 261,
 	["rank"] = 25,
@@ -324577,7 +324571,7 @@
 	{
 	["assetID"] = 2901,
 	["criteriaID"] = 3,
-	["name"] = "0/25 renown with Hallowfall Arathi",
+	["name"] = "25/25 renown with Hallowfall Arathi",
 	["criteriaUID"] = 71179,
 	["criteriaType"] = 261,
 	["rank"] = 25,
@@ -324585,7 +324579,7 @@
 	{
 	["assetID"] = 2904,
 	["criteriaID"] = 4,
-	["name"] = "0/25 renown with The Severed Threads",
+	["name"] = "25/25 renown with The Severed Threads",
 	["criteriaUID"] = 71177,
 	["criteriaType"] = 261,
 	["rank"] = 25,
@@ -325221,7 +325215,7 @@
 	["parentCategoryID"] = 15531,
 	["achievementID"] = 41193,
 	["name"] = "War Within Delves: Tier 7 (Season 2)",
-	["description"] = "Complete a Tier 6 delve with lives remaining during The War Within Season 2.",
+	["description"] = "Complete a Tier 7 delve with lives remaining during The War Within Season 2.",
 	["icon"] = 6025441,
 	},
 	{
@@ -325704,14 +325698,6 @@
 	},
 	{
 	["criteriaID"] = 4,
-	["name"] = "Better, Faster, Stronger",
-	["_achievements"] = {
-	13083,
-	},
-	["criteriaUID"] = 71364,
-	},
-	{
-	["criteriaID"] = 5,
 	["name"] = "Drust the Facts, Ma'am",
 	["_achievements"] = {
 	13064,
@@ -325719,7 +325705,7 @@
 	["criteriaUID"] = 71365,
 	},
 	{
-	["criteriaID"] = 6,
+	["criteriaID"] = 5,
 	["name"] = "Cursed Game Hunter",
 	["_achievements"] = {
 	13094,
@@ -325727,7 +325713,7 @@
 	["criteriaUID"] = 71366,
 	},
 	{
-	["criteriaID"] = 7,
+	["criteriaID"] = 6,
 	["name"] = "Everything Old Is New Again",
 	["_achievements"] = {
 	13082,
@@ -326306,6 +326292,16 @@
 	["parentCategoryID"] = 15455,
 	["achievementID"] = 41218,
 	["name"] = "<DNT> Plunderstorm Plunder Tracker - V1.5 11.0.7 - Mainline Power",
+	["criteria"] = {
+	{
+	["criteriaID"] = 1,
+	["name"] = "NEVER",
+	["_npcs"] = {
+	7999,
+	},
+	["criteriaUID"] = 490,
+	},
+	},
 	["icon"] = 136243,
 	},
 	0,
@@ -326357,7 +326353,7 @@
 	{
 	["assetID"] = 3013,
 	["criteriaID"] = 5,
-	["name"] = "Sprocketmonger Locknstock",
+	["name"] = "Sprocketmonger Lockenstock",
 	["criteriaUID"] = 71700,
 	["criteriaType"] = 165,
 	["rank"] = 1,
@@ -326430,7 +326426,7 @@
 	{
 	["assetID"] = 3013,
 	["criteriaID"] = 5,
-	["name"] = "Sprocketmonger Locknstock",
+	["name"] = "Sprocketmonger Lockenstock",
 	["criteriaUID"] = 71708,
 	["criteriaType"] = 165,
 	["rank"] = 1,
@@ -326572,7 +326568,7 @@
 	{
 	["parentCategoryID"] = 15526,
 	["achievementID"] = 41226,
-	["name"] = "Maniacle Machinist",
+	["name"] = "Maniacal Machinist",
 	["criteria"] = {
 	{
 	["assetID"] = 3012,
@@ -326762,6 +326758,54 @@
 	},
 	["criteriaUID"] = 71783,
 	},
+	{
+	["criteriaID"] = 3,
+	["name"] = "The Splash Zone",
+	["_achievements"] = {
+	41554,
+	},
+	["criteriaUID"] = 103847,
+	},
+	{
+	["criteriaID"] = 4,
+	["name"] = "Just /Dance",
+	["_achievements"] = {
+	41338,
+	},
+	["criteriaUID"] = 103848,
+	},
+	{
+	["criteriaID"] = 5,
+	["name"] = "Conveyor Slayer",
+	["_achievements"] = {
+	41711,
+	},
+	["criteriaUID"] = 103849,
+	},
+	{
+	["criteriaID"] = 6,
+	["name"] = "Garbage In, Garbage Out",
+	["_achievements"] = {
+	41596,
+	},
+	["criteriaUID"] = 103850,
+	},
+	{
+	["criteriaID"] = 7,
+	["name"] = "Sleep with the Fishes",
+	["_achievements"] = {
+	41337,
+	},
+	["criteriaUID"] = 103851,
+	},
+	{
+	["criteriaID"] = 8,
+	["name"] = "Scheming on a Thing",
+	["_achievements"] = {
+	41347,
+	},
+	["criteriaUID"] = 103852,
+	},
 	},
 	["description"] = "Complete the Liberation of Undermine raid achievements listed below.",
 	["icon"] = 6392621,
@@ -326839,7 +326883,7 @@
 	},
 	},
 	["description"] = "Defeat the following bosses in the Liberation of Undermine on Normal difficulty or higher while in a guild group.",
-	["icon"] = 136243,
+	["icon"] = 6245983,
 	["isGuild"] = true,
 	},
 	{
@@ -326913,7 +326957,7 @@
 	},
 	},
 	["description"] = "Defeat the following bosses in the Liberation of Undermine on Heroic difficulty or higher while in a guild group.",
-	["icon"] = 136243,
+	["icon"] = 6245983,
 	["isGuild"] = true,
 	},
 	0,
@@ -326922,7 +326966,7 @@
 	["achievementID"] = 41292,
 	["name"] = "Mythic: Chrome King Gallywix Guild Run",
 	["description"] = "Defeat Chrome King Gallywix in the Liberation of Undermine on Mythic difficulty while in a guild group.",
-	["icon"] = 136243,
+	["icon"] = 6245983,
 	["isGuild"] = true,
 	},
 	0,
@@ -327025,25 +327069,25 @@
 	{
 	["parentCategoryID"] = 15520,
 	["achievementID"] = 41311,
-	["name"] = "Stix Bunkumker (Raid Finder Liberation of Undermine)",
+	["name"] = "Stix Bunkjunker (Raid Finder Liberation of Undermine)",
 	["icon"] = 136243,
 	},
 	{
 	["parentCategoryID"] = 15520,
 	["achievementID"] = 41312,
-	["name"] = "Stix Bunkumker (Normal Liberation of Undermine)",
+	["name"] = "Stix Bunkjunker (Normal Liberation of Undermine)",
 	["icon"] = 136243,
 	},
 	{
 	["parentCategoryID"] = 15520,
 	["achievementID"] = 41313,
-	["name"] = "Stix Bunkumker (Heroic Liberation of Undermine)",
+	["name"] = "Stix Bunkjunker (Heroic Liberation of Undermine)",
 	["icon"] = 136243,
 	},
 	{
 	["parentCategoryID"] = 15520,
 	["achievementID"] = 41314,
-	["name"] = "Stix Bunkumker (Mythic Liberation of Undermine)",
+	["name"] = "Stix Bunkjunker (Mythic Liberation of Undermine)",
 	["icon"] = 136243,
 	},
 	{
@@ -327271,7 +327315,7 @@
 	["name"] = "Bilgewater Cartel",
 	["minReputation"] = {
 	2673,
-	6000,
+	9000,
 	},
 	["criteriaUID"] = 102751,
 	},
@@ -327280,7 +327324,7 @@
 	["name"] = "Blackwater Cartel",
 	["minReputation"] = {
 	2675,
-	6000,
+	9000,
 	},
 	["criteriaUID"] = 102752,
 	},
@@ -327289,7 +327333,7 @@
 	["name"] = "Steamwheedle Cartel",
 	["minReputation"] = {
 	2677,
-	6000,
+	9000,
 	},
 	["criteriaUID"] = 102753,
 	},
@@ -327298,7 +327342,7 @@
 	["name"] = "Venture Co.",
 	["minReputation"] = {
 	2671,
-	6000,
+	9000,
 	},
 	["criteriaUID"] = 102754,
 	},
@@ -327323,7 +327367,7 @@
 	["name"] = "Bilgewater Cartel",
 	["minReputation"] = {
 	2673,
-	18000,
+	21000,
 	},
 	["criteriaUID"] = 102751,
 	},
@@ -327332,7 +327376,7 @@
 	["name"] = "Blackwater Cartel",
 	["minReputation"] = {
 	2675,
-	18000,
+	21000,
 	},
 	["criteriaUID"] = 102752,
 	},
@@ -327341,7 +327385,7 @@
 	["name"] = "Steamwheedle Cartel",
 	["minReputation"] = {
 	2677,
-	18000,
+	21000,
 	},
 	["criteriaUID"] = 102753,
 	},
@@ -327350,7 +327394,7 @@
 	["name"] = "Venture Co.",
 	["minReputation"] = {
 	2671,
-	18000,
+	21000,
 	},
 	["criteriaUID"] = 102754,
 	},
@@ -327368,7 +327412,7 @@
 	["name"] = "Bilgewater Cartel",
 	["minReputation"] = {
 	2673,
-	39000,
+	42000,
 	},
 	["criteriaUID"] = 102751,
 	},
@@ -327377,7 +327421,7 @@
 	["name"] = "Blackwater Cartel",
 	["minReputation"] = {
 	2675,
-	39000,
+	42000,
 	},
 	["criteriaUID"] = 102752,
 	},
@@ -327386,7 +327430,7 @@
 	["name"] = "Steamwheedle Cartel",
 	["minReputation"] = {
 	2677,
-	39000,
+	42000,
 	},
 	["criteriaUID"] = 102753,
 	},
@@ -327395,7 +327439,7 @@
 	["name"] = "Venture Co.",
 	["minReputation"] = {
 	2671,
-	39000,
+	42000,
 	},
 	["criteriaUID"] = 102754,
 	},
@@ -330027,6 +330071,107 @@
 	0,
 	0,
 	0,
+	{
+	["parentCategoryID"] = 130,
+	["achievementID"] = 41786,
+	["name"] = "Weathered Undermine Crests earned",
+	["icon"] = 136243,
+	},
+	0,
+	0,
+	{
+	["parentCategoryID"] = 130,
+	["achievementID"] = 41789,
+	["name"] = "Carved Undermine Crests earned",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 130,
+	["achievementID"] = 41790,
+	["name"] = "Runed Undermine Crests earned",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 130,
+	["achievementID"] = 41791,
+	["name"] = "Gilded Undermine Crests earned",
+	["icon"] = 136243,
+	},
+	0,
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41793,
+	["name"] = "[HIDDEN] Renown 20 with Gallagio Loyalty Rewards / Teach Raid Teleport Spell",
+	["criteria"] = {
+	{
+	["assetID"] = 3137,
+	["criteriaID"] = 1,
+	["criteriaUID"] = 103878,
+	["criteriaType"] = 261,
+	["rank"] = 20,
+	},
+	},
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41794,
+	["name"] = "<DNT> Vexie and the Geargrinders defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41795,
+	["name"] = "<DNT> Cauldron of Carnage defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41796,
+	["name"] = "<DNT> Rik Reverb defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41797,
+	["name"] = "<DNT> Stix Bunkjunker defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41798,
+	["name"] = "<DNT> Sprocketmonger Lockenstock defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41799,
+	["name"] = "<DNT> The One-Armed Bandit defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41800,
+	["name"] = "<DNT> Mug'Zee, Heads of Security defeated",
+	["icon"] = 136243,
+	},
+	{
+	["parentCategoryID"] = 15526,
+	["achievementID"] = 41801,
+	["name"] = "<DNT> Chrome King Gallywix defeated",
+	["icon"] = 136243,
+	},
+	0,
+	0,
+	0,
+	0,
+	0,
+	{
+	["parentCategoryID"] = 15506,
+	["achievementID"] = 41807,
+	["name"] = "11.0.7 Plunderstorm - Mainline Power Reward - Fixup Achievement",
+	["icon"] = 136243,
+	},
 	0,
 	0,
 	0,
@@ -330035,29 +330180,12 @@
 	0,
 	0,
 	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
+	{
+	["parentCategoryID"] = 15506,
+	["achievementID"] = 41816,
+	["name"] = "[DNT] 11.0.7 Plunderstorm - Mainline Power Reward - Fixup Quest Tracker",
+	["icon"] = 136243,
+	},
 	0,
 	0,
 	0,

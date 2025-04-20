@@ -160,8 +160,8 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 						{ 12.2, 85.8, MECHAGON },
 					},
 				}),
-				o(325668, {	-- Mechanized Chest
-					--["questID"] = ,
+				o(330184, {	-- Mechanized Supply Chest
+					["questID"] = 56307,
 					["isDaily"] = true,
 					["coord"] = { 20.6, 71.4, MECHAGON },
 					["cost"] = { { "i", 169873, 1 } },	-- 1x Mechanized Supply Key
@@ -172,6 +172,11 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_2_0 } }, {
 					["coord"] = { 20.9, 80.3, MECHAGON },
 					["cost"] = { { "i", 169218, 1 } },	-- 1x Old Rusty Key
 				}),
+			}),
+			o(330634, {	-- P3-P3
+				["description"] = "Located in the alternate Timeline.",
+				["coord"] = { 68.5, 47.9, MECHAGON },
+				["g"] = { i(170151) },	-- A Tiny Clockwork Key (Pepe!)
 			}),
 			o(327548, {	-- Powerpack Blueprints
 				["coord"] = { 60.9, 41.5, MECHAGON },

@@ -417,6 +417,7 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 					["coord"] = { 53.7, 55.8, VALSHARAH },
 					["icon"] = 237230,
 					["g"] = {
+						i(139043),	-- Tear of Elune (QI!)
 						i(130001),	-- Shaladrassil Cuirass
 						i(129993),	-- Shaladrassil Tunic
 						i(129985),	-- Shaladrassil Vestments
@@ -512,6 +513,7 @@ root(ROOTS.Zones, m(BROKEN_ISLES, bubbleDown({ ["timeline"] = { ADDED_7_0_3_LAUN
 					},
 					["coord"] = { 43.7, 50.2, VALSHARAH },
 					["provider"] = { "n", 92842 },	-- Commander Jarod Shadowsong
+					["groups"] = { i(127863) },	-- Prison Keys (QI!)
 				}),
 				q(38724, {	-- Brotherly Love
 					["sourceQuests"] = { 38717 },		-- Black Rook Prison
@@ -787,6 +789,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 				q(45490),	-- Lytheron
 				q(44881),	-- Sharptalon Matriarch Tracking Q From the WQ Sharptalon
 				q(44079),	-- Druids of the Scythe - 1 (Killing Feral Worgen 112820)
+				q(42716),	-- Frost DK - Val'sharah Event
 				q(42575),	-- Shaman Shrine - Valsharah Earth 01
 				q(42576),	-- Shaman Shrine - Valsharah Earth 02
 				q(42581),	-- Shaman Shrine - Valsharah Wind 01

@@ -200,12 +200,30 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "o", 377499 },	-- On the Origin of Draconic Species
 					["coord"] = { 55.3, 24.7, THE_WAKING_SHORES },
 					["g"] = {
-						i(192754),	-- Dracuixote (QI!)
-						i(192757),	-- Pride and Protodrakes (QI!)
-						i(192755),	-- The Lord of the Wings (QI!)
-						i(192756),	-- The Red and the Black Flights (QI!)
-						i(192753),	-- The Scales of Wrath (QI!)
-						i(192745),	-- The Titanic Comedy (QI!)
+						o(376943, {	-- Dracuixote
+							["coord"] = { 53.5, 22.0, THE_WAKING_SHORES },
+							["g"] = { i(192754) },	-- Dracuixote (QI!)
+						}),
+						o(376946, {	-- Pride and Protodrakes
+							["coord"] = { 54.7, 20.5, THE_WAKING_SHORES },
+							["g"] = { i(192757) },	-- Pride and Protodrakes (QI!)
+						}),
+						o(376944, {	-- The Lord of the Wings
+							["coord"] = { 54.6, 20.6, THE_WAKING_SHORES },
+							["g"] = { i(192755) },	-- The Lord of the Wings (QI!)
+						}),
+						o(376945, {	-- The Red and the Black Flights
+							["coord"] = { 57.6, 23.8, THE_WAKING_SHORES },
+							["g"] = { i(192756) },	-- The Red and the Black Flights (QI!)
+						}),
+						o(376942, {	-- The Scales of Wrath
+							["coord"] = { 53.4, 22.5, THE_WAKING_SHORES },
+							["g"] = { i(192753) },	-- The Scales of Wrath (QI!)
+						}),
+						o(376941, {	-- The Titanic Comedy
+							["coord"] = { 57.1, 23.8, THE_WAKING_SHORES },
+							["g"] = { i(192745) },	-- The Titanic Comedy (QI!)
+						}),
 					},
 				}),
 				q(65999, {	-- Red in Tooth and Claw
@@ -938,13 +956,11 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 			}),
 			header(HEADERS.AchCriteria, 16406.01, {	-- Captain Garrick & Shuja Grimaxe
 				q(67053, {	-- Give Peace a Chance [A]
-					["sourceQuests"] = { 67700 },	-- To The Dragon Isles! [A]
 					["provider"] = { "n", 184449 },	-- Captain Garrick
 					["coord"] = { 76.7, 34.6, THE_WAKING_SHORES },
 					["races"] = ALLIANCE_ONLY,
 				}),
 				q(66110, {	-- Give Peace a Chance [H]
-					["sourceQuests"] = { 65444 },	-- To the Dragon Isles! [H]
 					["provider"] = { "n", 184452 },	-- Warlord Breka Grimaxe
 					["coord"] = { 76.4, 33.1, THE_WAKING_SHORES },
 					["races"] = HORDE_ONLY,
@@ -977,10 +993,25 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 					["provider"] = { "n", 194805 },	-- Bathoras
 					["coord"] = { 57.4, 65.7, THE_WAKING_SHORES },
 					["g"] = {
-						i(198668),	-- Blooming Shallowlily (QI!)
+						o(380575, {	-- Blooming Shallowlily
+							["coords"] = {
+								{ 55.9, 64.4, THE_WAKING_SHORES },
+								{ 56.0, 65.3, THE_WAKING_SHORES },
+								{ 56.0, 65.6, THE_WAKING_SHORES },
+								{ 56.8, 64.5, THE_WAKING_SHORES },
+							},
+							["g"] = { i(198668) },	-- Blooming Shallowlily (QI!)
+						}),
 						i(198673),	-- Empty Life Pool Vial
 						i(200109),	-- Medicative Potion (QI!)
-						i(198666),	-- Milky Snapflower (QI!)
+						o(380576, {	-- Milky Snapflower
+							["coords"] = {
+								{ 55.8, 64.4, THE_WAKING_SHORES },
+								{ 56.9, 64.0, THE_WAKING_SHORES },
+								{ 56.9, 65.5, THE_WAKING_SHORES },
+							},
+							["g"] = { i(198666) },	-- Milky Snapflower (QI!)
+						}),
 					},
 				}),
 				q(70241, {	-- The Bitter End
@@ -1421,7 +1452,7 @@ root(ROOTS.Zones, m(DRAGON_ISLES, bubbleDown({ ["timeline"] = { ADDED_10_0_2_LAU
 				}),
 				q(72096, {	-- Release Kite: Wingrest Embassy
 					["name"] = "Release Kite: Wingrest Embassy",
-					["coord"] = { 57.8, 66.7, THE_WAKING_SHORES },
+					["coord"] = { 73.2, 37.8, THE_WAKING_SHORES },
 				}),
 				q(72059, {	-- Stay awhile and listen: Commander Lethanak
 					["name"] = "Stay awhile and listen: Commander Lethanak",
@@ -1518,7 +1549,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timel
 				q(70774),	-- triggers when 'Tale of the Slumbering' becomes available for Tarjin the Blind
 				q(70773),	-- triggers when 'Tale of the Slumbering' completes (spellID 388147)
 				q(70778),	-- triggers when 'Tale of the Weakling' becomes available for Tarjin the Blind
-				q(70777),	-- triggers when 'Tale of the Weakling' completes (spellID 388149)
+				-- q(70777),	-- triggers when 'Tale of the Weakling' completes (spellID 388149)
 				q(72804),	-- Flag Weekly Tracking Quest [DNT] (spellID 397184) [triggers when 'Tale of the Phoenix' completes]
 				q(70218),	-- Dialogue before you can pick up the quest "A Dragon's Day Off"
 

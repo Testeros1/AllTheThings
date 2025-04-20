@@ -537,12 +537,14 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 				}),
 				q(72259, {	-- Vault Artifacts
 					["provider"] = { "n", 197095 },	-- Lillian Brightmoon
+					["coord"] = { 35.2, 24.6, VALDRAKKEN },
 					["maxReputation"] = { FACTION_DRAGONSCALE_EXPEDITION, 25 },
 					["cost"] = { { "i", 201411, 1 } },	-- 1x Ancient Vault Artifact
 					["repeatable"] = true,
 				}),
 				q(72260, {	-- Vault Artifacts
 					["provider"] = { "n", 197095 },	-- Lillian Brightmoon
+					["coord"] = { 35.2, 24.6, VALDRAKKEN },
 					["maxReputation"] = { FACTION_DRAGONSCALE_EXPEDITION, 25 },
 					["cost"] = { { "i", 201411, 5 } },	-- 5x Ancient Vault Artifact
 					["repeatable"] = true,
@@ -566,7 +568,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					i(201790),	-- Renewed Proto-Drake: Embodiment of the Storm-Eater (MM!)
 				}),
 			}),
-			Difficulty(DIFFICULTY.RAID.LFR).AddGroups({
+			Difficulty(DIFFICULTY.RAID.LFR).AddGroups(bubbleDown({ ["timeline"] = { REMOVED_11_0_2 } }, {
 				-- #if AFTER TWW
 				o(382621, {	-- Revival Catalyst Console	-- LFR --
 					["description"] = "The Revival Catalyst is a system that lets you convert LFR Mode Non-set items from the Vault of the Incarnates Raid into your class' LFR Transmog Set.\n\nThe catalyst is in Tyrhold in Thaldraszus, Dragon Isles.\n\nMake sure to equip your item first before converting it.",
@@ -708,7 +710,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 					Boss(DIURNA),
 					Boss(RASZAGETH),
 				}),
-			}),
+			})),
 			Difficulty(DIFFICULTY.RAID.MULTI.NORMAL_PLUS).AddGroups({
 				BossOnly(ERANOG, {
 					ach(16335),	-- What Frozen Things Do

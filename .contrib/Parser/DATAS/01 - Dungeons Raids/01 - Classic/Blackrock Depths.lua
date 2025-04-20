@@ -15,33 +15,30 @@ SHADOWFORGE_CITY = createHeader({
 		en = [[~DUNGEON_FLOOR_BLACKROCKDEPTHS2]],
 	},
 });
+local REPUTATION_FROM_CORES, REPUTATION_FROM_LEATHER, REPUTATION_FROM_DARKIRON = 500, 350, 75;	-- These are the reputation values after TBC, other than for Classic.
+-- #if BEFORE TBC
+-- Reputation in Classic
+REPUTATION_FROM_CORES = 200;
+REPUTATION_FROM_LEATHER = 150;
+REPUTATION_FROM_DARKIRON = 50;
+-- #else
+-- #if ANYCLASSIC
+-- #if AFTER CATA
+-- Reputation in Cata Classic
+-- CRIEVE NOTE: Not sure if it is indended, but the reputation gained from these skyrocketed in Cataclysm Classic. It might be unintentional.
+REPUTATION_FROM_CORES = 2200;
+REPUTATION_FROM_LEATHER = 1540;
+REPUTATION_FROM_DARKIRON = 300;
+-- #endif
+-- #endif
+-- #endif
 ExportDB.OnTooltipDB.ThoriumBrotherhood = [[~function(t, tooltipInfo)
 	local reputation = t.reputation;
 	if reputation < 42000 then
 		local addRepInfo = _.Modules.FactionData.AddReputationTooltipInfo;
-		addRepInfo(tooltipInfo, reputation, "Turn In Blood & Cores (1x each)",
--- #if AFTER TBC
-		500,
--- #else
-		200,
--- #endif
-		42000);
-
-		addRepInfo(tooltipInfo, reputation, "Turn In Core Leather (2x each)",
--- #if AFTER TBC
-		350,
--- #else
-		150,
--- #endif
-		42000);
-
-		addRepInfo(tooltipInfo, reputation, "Turn In Dark Iron Ore (10x each)",
--- #if AFTER TBC
-		75,
--- #else
-		50,
--- #endif
-		42000);
+		addRepInfo(tooltipInfo, reputation, "Turn In Blood & Cores (1x each)",]] .. REPUTATION_FROM_CORES .. [[, 42000);
+		addRepInfo(tooltipInfo, reputation, "Turn In Core Leather (2x each)",]] .. REPUTATION_FROM_LEATHER .. [[, 42000);
+		addRepInfo(tooltipInfo, reputation, "Turn In Dark Iron Ore (10x each)",]] .. REPUTATION_FROM_DARKIRON .. [[, 42000);
 	end
 end]];
 root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
@@ -1351,7 +1348,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						objective(1, {	-- 0/20 Dark Iron Fanny Pack
 							["provider"] = { "i", 11468 },	-- Dark Iron Fanny Pack
 						}),
-						i(11883, {	-- -- A Dingy Fanny Pack
+						i(11883, {	-- A Dingy Fanny Pack
 							["timeline"] = { REMOVED_4_0_3 },
 						}),
 					},
@@ -3133,11 +3130,12 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					},
 					["groups"] = {
 						o(160845, {	-- Dark Coffer
-							-- #if BEFORE 4.0.3
-							["sharedDescription"] = "Is used to turn in Librams.",
-							-- #else
-							["sharedDescription"] = "Was used to turn in Librams prior to Cataclysm, is now without any purpose.",
-							-- #endif
+							["sharedDescription"] =
+								-- #if BEFORE 4.0.3
+								"Is used to turn in Librams.",
+								-- #else
+								"Was used to turn in Librams prior to Cataclysm, is now without any purpose.",
+								-- #endif
 							["cost"] = {{ "i", 11197, 1 }},	-- Dark Keeper Key
 							["groups"] = {
 								i(11752),	-- Black Blood of the Tormented
@@ -3368,7 +3366,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					},
 				}),
 				n(8923, {	-- Panzor the Invincible
-					["description"] = "This is a rare that is not always present.",
+					["description"] = "This is a Rare Creature and, as such, is not always present.",
 					["groups"] = {
 						i(11786),	-- Stone of the Earth
 						i(11785),	-- Rock Golem Bulwark

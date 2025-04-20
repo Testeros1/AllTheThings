@@ -7,12 +7,9 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using static ATT.Export;
-using static ATT.Framework;
 
 namespace ATT
 {
@@ -28,6 +25,11 @@ namespace ATT
         /// Whether or not Debug Mode is turned on.
         /// </summary>
         public static bool DebugMode = false;
+
+        /// <summary>
+        /// Represents whether any read-key delays for user input will be ignored
+        /// </summary>
+        public static bool Automated { get; set; }
 
         /// <summary>
         /// Used to represent a Lua object value which will be ignored by the Parser
@@ -153,23 +155,23 @@ namespace ATT
                 //{ "questID", new Dictionary<long, bool>() },
             };
 
-        private static readonly Dictionary<string, Dictionary<long, List<IDictionary<string, object>>>> SOURCED =
-            new Dictionary<string, Dictionary<long, List<IDictionary<string, object>>>>
+        private static readonly Dictionary<string, Dictionary<long, HashSet<IDictionary<string, object>>>> SOURCED =
+            new Dictionary<string, Dictionary<long, HashSet<IDictionary<string, object>>>>
         {
-            { "achID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "itemID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "headerID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "factionID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "flightpathID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "followerID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "missionID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "mountID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "npcID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "objectID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "questID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "recipeID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "spellID", new Dictionary<long, List<IDictionary<string, object>>>() },
-            { "sourceID", new Dictionary<long, List<IDictionary<string, object>>>() },
+            { "achID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "itemID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "headerID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "factionID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "flightpathID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "followerID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "missionID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "mountID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "npcID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "objectID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "questID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "recipeID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "spellID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
+            { "sourceID", new Dictionary<long, HashSet<IDictionary<string, object>>>() },
         };
 
         // TODO: clean all these separate collections into the above
@@ -224,7 +226,7 @@ namespace ATT
         private static IDictionary<long, bool> QUESTS_WITH_REFERENCES = new Dictionary<long, bool>();
 
         /// <summary>
-        /// All of the Quest IDs that have been referenced somewhere in the database.
+        /// All of the Export Data Keys that have been referenced somewhere in the database.
         /// </summary>
         private static IDictionary<string, List<string>> EXPORTDATA_WITH_REFERENCES = new Dictionary<string, List<string>>();
 
@@ -257,6 +259,11 @@ namespace ATT
         /// Represents the file currently being processed
         /// </summary>
         public static string CurrentFileName { get; set; }
+
+        /// <summary>
+        /// Represents the sub-file currently being processed from within an IMPORT command section
+        /// </summary>
+        public static string CurrentSubFileName => Program.CurrentSubFilename;
 
         /// <summary>
         /// Represents the group which set the NestedDifficultyID
@@ -304,6 +311,19 @@ namespace ATT
         private static IDictionary<string, object> Exports { get; } = new Dictionary<string, object>();
 
         private static IDictionary<string, object> IncorporationReferences { get; } = new Dictionary<string, object>();
+
+
+        /// <summary>
+        /// Performs a ReadKey if the parser is not in an Automated run
+        /// </summary>
+        public static void WaitForUser()
+        {
+            if (!Automated)
+            {
+                Trace.WriteLine("Press Enter once you have resolved the issue.");
+                Console.ReadKey();
+            }
+        }
 
         /// <summary>
         /// Assign the custom headers to the Framework's internal reference.
@@ -537,6 +557,11 @@ namespace ATT
         private static bool ProcessingUnsortedCategory { get; set; }
 
         /// <summary>
+        /// Represents whether we are currently processing a category which is entirely NYI
+        /// </summary>
+        private static bool ProcessingNYICategory { get; set; }
+
+        /// <summary>
         /// A Dictionary of key-ID types and how many times each value of key-type has been referenced in the final DB
         /// </summary>
         public static Dictionary<string, Dictionary<decimal, int>> TypeUseCounts { get; } = new Dictionary<string, Dictionary<decimal, int>>();
@@ -708,14 +733,14 @@ namespace ATT
             if (CURRENT_RELEASE_PHASE_NAME == "UNKNOWN")
             {
                 Console.Write("CURRENT_RELEASE_PHASE_NAME is UNKNOWN. Please make sure to assign 'DataPhase' in your config file.");
-                Console.ReadLine();
+                Framework.WaitForUser();
                 throw new ArgumentNullException("DataPhase");
             }
             int[] configPatch = Config["DataPatch"];
             if (configPatch == null)
             {
                 Console.Write("CURRENT_RELEASE_VERSION is missing. Please make sure to assign 'DataPatch' in your config file.");
-                Console.ReadLine();
+                Framework.WaitForUser();
                 throw new ArgumentNullException("DataPatch");
             }
             CURRENT_RELEASE_VERSION = configPatch.ConvertVersion();
@@ -2316,7 +2341,7 @@ namespace ATT
                                     {
                                         Trace.WriteLine(MiniJSON.Json.Serialize(objectData));
                                         Trace.WriteLine("Uhhh, you missing an english locale here");
-                                        Console.ReadLine();
+                                        Framework.WaitForUser();
                                         foreach (var localeKey in supportedLocales)
                                         {
                                             builder.Append("\t\t\t").Append(localeKey).Append(" = ");
@@ -3717,6 +3742,7 @@ setmetatable(_.HeaderConstants, {
                 foreach (var exportDB in new SortedDictionary<string, object>(Exports))
                 {
                     IncludePureNewlines = !compressedDBs?.ContainsKey(exportDB.Key) ?? true;
+                    CompressedLua = !IncludePureNewlines;
 
                     // some export DBs can filter unreferenced keys from data
                     switch (exportDB.Key)

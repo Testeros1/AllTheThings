@@ -474,8 +474,6 @@
 438@@@Durotar - ET - CC Prologue Troll Taxi Bat Start
 439@@@Durotar - ET - CC Prologue Troll Recruit End
 440@@@Durotar - ET - CC Prologue - Troll Battle End
-3.4.0.46158
-3.4.1.48503
 4.0.1.12911
 25@@@Crossroads, Northern Barrens
 26@@@Lor'danel, Darkshore
@@ -1086,7 +1084,11 @@
 2018@@@Quest Path 6440: 7.3 QA - TEST HOTFIX - Task 110012 - TaxiPathNode - RRB
 7.3.0.24829
 2020@@@Quest Path 6443: 7.3 QA - TEST HOTFIX - Task 110012 - TaxiPathNode - 2 - RRB
-7.3.5.25928
+7.3.5.25600
+951@@@Quest Path 3004: Quest - Jade Forest - Fort Grookin -> Ka Pao Rise 
+963@@@Quest Path 3018: Quest - Jade Forest - Glassfin Village -> Ka Pao Rise 
+1495@@@Quest Path 4342: Shadowmoon Valley 6.0:JP3 - A - Broken Precipice - Taxi Path to Broken Precipice 
+7.3.5.25632
 2058@@@Staghelm Point, Silithus
 2059@@@Southwind Village, Silithus
 8.0.1.25902
@@ -2642,21 +2644,19 @@
 2840@@@Shady Sanctuary, Ohn'ahran Plains
 10.0.0.45454
 2842@@@Rubyscale Outpost, The Waking Shores
-10.0.2.46259
-951@@@Quest Path 3004: Quest - Jade Forest - Fort Grookin -> Ka Pao Rise 
-963@@@Quest Path 3018: Quest - Jade Forest - Glassfin Village -> Ka Pao Rise 
-1495@@@Quest Path 4342: Shadowmoon Valley 6.0:JP3 - A - Broken Precipice - Taxi Path to Broken Precipice 
+10.0.0.45970
 2392@@@Quest Path 7569: 8.2 Nazjatar - Kal'methir - Boss Path 
 2711@@@Quest Path 8617: 9.0 Maw - Outdoor - Mawsworn Rifts - Perdition Hold -> Desmotaeron 
+10.0.0.46479
 2800@@@Uktulut Outpost, The Waking Shores
 2847@@@Maruukai, The Nokhud Offensive
-2848@@@Ohn'iri Springs, The Nokhud Offensive
-2849@@@The Battle of Spears, The Nokhud Offensive
-2850@@@The Eternal Kurgans, The Nokhud Offensive
-2851@@@Ohn'iri Springs, The Nokhud Offensive
-10.0.2.46420
 2848@@@The Nokhud Approach, The Nokhud Offensive
+2849@@@The Battle of Spears, The Nokhud Offensive
 2850@@@Teerakai, The Nokhud Offensive
+2851@@@Ohn'iri Springs, The Nokhud Offensive
+10.0.2.46259
+2848@@@Ohn'iri Springs, The Nokhud Offensive
+2850@@@The Eternal Kurgans, The Nokhud Offensive
 10.0.7.47910
 2855@@@Morqut Village, The Forbidden Reach
 2856@@@Quest Path 9315: 10.0.7 Forbidden Reach - War Creche - Taxi - Go Up - EJC

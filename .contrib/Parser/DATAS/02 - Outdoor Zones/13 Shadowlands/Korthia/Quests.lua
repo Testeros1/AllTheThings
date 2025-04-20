@@ -1030,7 +1030,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 			q(63861, {	-- Beginning the Collection
 				["sourceQuests"] = { 63738 },	-- Establishing the Archive
 				["provider"] = { "n", 178257 },	-- Archivist Roh-Suir
-				["coord"] = { 62.7, 22.5, KORTHIA },
+				["coords"] = {
+					{ 62.7, 22.5, KORTHIA },
+					{ 61.6, 21.8, KORTHIA },
+				},
 				["g"] = {
 					i(185636),	-- The Archivist's Codex
 					i(185916),	-- Codex of Memories (QI!)
@@ -1251,7 +1254,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 			q(64290, {	-- Collecting Research
 				["sourceQuests"] = { 64289 },	-- Picking Up the Pieces
 				["provider"] = { "n", 178257 },	-- Archivist Roh-Suir
-				["coord"] = { 61.6, 21.7, KORTHIA },
+				["coords"] = {
+					{ 62.7, 22.5, KORTHIA },
+					{ 61.6, 21.8, KORTHIA },
+				},
 				["g"] = {
 					i(186664),	-- Korthian Caretaker's Sandals
 					i(186665),	-- Korthian Caretaker's Mitts
@@ -1264,7 +1270,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 			q(64438, {	-- Empowering Equipment
 				["sourceQuests"] = { 64290 },	-- Collecting Research
 				["provider"] = { "n", 178257 },	-- Archivist Roh-Suir
-				["coord"] = { 61.6, 21.7, KORTHIA },
+				["coords"] = {
+					{ 62.7, 22.5, KORTHIA },
+					{ 61.6, 21.8, KORTHIA },
+				},
 			}),
 			q(64530, bubbleDownSelf({ ["customCollect"] = "SL_COV_VEN" }, {	-- Gravewing Crystal
 				["sourceQuests"] = { 64556 },	-- In Need of Assistance
@@ -1296,9 +1305,11 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 			q(64289, {	-- Picking Up the Pieces
 				["sourceQuests"] = { 63738 },	-- Establishing the Archive
 				["provider"] = { "n", 178257 },	-- Archivist Roh-Suir
-				["coord"] = { 62.7, 22.5, KORTHIA },
+				["coords"] = {
+					{ 62.7, 22.5, KORTHIA },
+					{ 61.6, 21.8, KORTHIA },
+				},
 			}),
-
 			q(65145, {	-- Relic Clues
 				["sourceQuest"] = 63861,	-- Beginning the Collection
 				["provider"] = { "n", 178257 },	-- Archivist Roh-Suir
@@ -1682,7 +1693,10 @@ root(ROOTS.Zones, m(SHADOWLANDS, bubbleDown({ ["timeline"] = { ADDED_9_1_0 } }, 
 			}),
 			q(65266, {	-- Lost Research
 				["provider"] = { "n", 178257 },	-- Archivist Roh-Suir
-				["coord"] = { 62.8, 22.6, KORTHIA },
+				["coords"] = {
+					{ 62.7, 22.5, KORTHIA },
+					{ 61.6, 21.8, KORTHIA },
+				},
 				["timeline"] = { ADDED_9_1_5 },
 				["isWeekly"] = true,
 				["g"] = {
@@ -1859,6 +1873,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.SL, bubbleDownSelf({ ["timel
 	m(SHADOWLANDS, {
 		m(KORTHIA, {
 			n(QUESTS, {
+				q(64262),	-- triggered when turning in 'Charge of the Covenants' (questID 64007) (spellID 356441)
 				q(64563),	-- triggered when turning in 'In Need of Assistance' (questID 64556) (spellID 357754)
 				q(64737),	-- triggered when turning in 'A More Civilized Way' (questID 64271) - received i(185115), Redeemed Inquisitor's Drape - perhaps a universal 'received covenant transmog' tracking quest?  got it the next day on my Kyrian shaman, who received i(184989), Forsworn Aspirant's Wraps.  was the first covenant mog for both characters ever but perhaps could be a weekly lockout or something? (See Errors for other ways to get this)
 				q(64507),	-- triggered after picking up 'Doorway in the Dark' (questID 64211) (spellID 356686)

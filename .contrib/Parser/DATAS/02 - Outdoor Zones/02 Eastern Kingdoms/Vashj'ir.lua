@@ -1416,6 +1416,11 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							["races"] = ALLIANCE_ONLY,
 						}),
 						q(27729, {	-- Once More, With Eeling
+							["description"] = "Granted automatically from killing any eel.",
+							["providers"] = {
+								{ "n", 40855},	-- Slitherfin Eel
+								{ "n", 41002},	-- Slickskin Eel
+							},
 							["groups"] = {
 								objective(1, {	-- 0/8 Disgusting Eels Justifiably Slain
 									["providers"] = {
@@ -2436,9 +2441,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 							},
 						}),
 						q(25969, {	-- Hostile Waters (H)
-							["qg"] = 40917,	-- Legionnaire Nazgrim
+							["qg"] = 40921,	-- Blood Guard Toldrek
 							["sourceQuest"] = 25968,	-- Desperate Plan
-							["coord"] = { 51.2, 62.9, VASHJIR_SHIMMERING_EXPANSE },
+							["coord"] = { 50.4, 79.0, VASHJIR_SHIMMERING_EXPANSE },
 							["races"] = HORDE_ONLY,
 							["groups"] = {
 								objective(1, {	-- 0/10 Muckskin Scrounger slain
@@ -3226,3 +3231,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		},
 	}),
 }));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
+	m(EASTERN_KINGDOMS, {
+		m(VASHJIR, {
+			n(QUESTS, {
+				q(26119),	-- Vashj'ir - FLAG - Claim Our Stake Launched
+			}),
+		}),
+	}),
+})));

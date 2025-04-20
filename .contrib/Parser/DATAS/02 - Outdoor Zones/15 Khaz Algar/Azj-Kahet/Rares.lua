@@ -43,6 +43,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					{ 65.5, 81.9, AZJ_KAHET_LOWER},	-- End
 				},
 				["g"] = {
+					i(223917),	-- Nerubian Covert's Cloak
 					i(223941),	-- Nerubian Cultivator's Girdle
 					i(223916),	-- Nerubian Cutthroat's Reach
 					i(223915),	-- Nerubian Orator's Stiletto
@@ -79,7 +80,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["g"] = {
 					i(221217),	-- Nerubian Bomber's Leggings
 					i(221252),	-- Nerubian Slayer's Claymore
-					i(221263),	-- Nerubian Venom-Tipped Dart (dupe from Tka'ktath - nerubian bugs-like?)
+					i(221263),	-- Nerubian Venom-Tipped Dart
 				},
 			}),
 			n(216043, {	-- Monstrous Lasharoth
@@ -112,7 +113,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 					i(221214),	-- Chitin Chain Headpiece
 				},
 			}),
-			n(216047, {	-- The One Left [This is the only Weird Rare....]
+			n(216047, {	-- The One Left
 				["questID"] = 82290,
 				["coord"] = { 63.5, 95.2, AZJ_KAHET },
 				["g"] = {
@@ -134,6 +135,7 @@ root(ROOTS.Zones, m(KHAZ_ALGAR, bubbleDown({ ["timeline"] = { ADDED_11_0_2 } }, 
 				["coord"] = { 62.8, 66.7, AZJ_KAHET },
 				["g"] = {
 					i(221252),	-- Nerubian Slayer's Claymore
+					i(221240),	-- Nerubian Stagshell Gouger
 					i(221263),	-- Nerubian Venom-Tipped Dart
 					i(225952),	-- Vial of Tka'ktath's Blood (QS!)
 				},

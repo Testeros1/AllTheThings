@@ -3,6 +3,7 @@
 -----------------------------------------------------
 local MATRIX_PUNCHOGRAPH_A = o(142345, {	-- Matrix Punchograph 3005-A
 	["description"] = "This is located outside of the instance just to the north of both the elevator or the transporter.",
+	["timeline"] = { REMOVED_5_0_4 },	-- guessed from WH comments
 	["cost"] = { { "i", 9279, 1 } },	-- White Punch Card
 	["groups"] = {
 		i(9280),	-- Yellow Punch Card
@@ -32,7 +33,18 @@ local MATRIX_PUNCHOGRAPH_D = o(142696, {	-- Matrix Punchograph 3005-D
 		i(9316),	-- Prismatic Punch Card
 		i(4413, {	-- Schematic: Discombobulator Ray (RECIPE!)
 			["description"] = "If you are an Engineer and have a 'Security DELTA Access Card', you will also get these plans when you turn in your Red Punch Card.",
-			["cost"] = { { "i", 9327, 1 } },	-- Security DELTA Data Access Card
+			["provider"] = { "i", 9327 },	-- Security DELTA Data Access Card
+		}),
+	},
+});
+local MATRIX_PUNCHOGRAPH_E = o(251048, {	-- Matrix Punchograph 3005-E
+	["description"] = "This is located in the Dormitory, in the top-left cubby hole of the sloped southern wall.",
+	["timeline"] = { ADDED_7_0_3 },
+	["cost"] = { { "i", 9316, 1 } },	-- Prismatic Punch Card
+	["groups"] = {
+		n(108106, {	-- Sentient Mechanostrider
+			-- special hunter pet spawn
+			["provider"] = { "i", 9446 },	-- Electrocutioner Leg
 		}),
 	},
 });
@@ -40,10 +52,14 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 	inst(231, {	-- Gnomeregan
 		-- #if BEFORE MOP
 		["lore"] = "Located in Dun Morogh, the technological wonder known as Gnomeregan has been the gnomes' capital city for generations. Recently, a hostile race of mutant troggs infested several regions of Dun Morogh - including the great gnome city. In a desperate attempt to destroy the invading troggs, High Tinker Mekkatorque ordered the emergency venting of the city's radioactive waste tanks. Several gnomes sought shelter from the airborne pollutants as they waited for the troggs to die or flee. Unfortunately, though the troggs became irradiated from the toxic assault - their siege continued, unabated. Those gnomes who were not killed by noxious seepage were forced to flee, seeking refuge in the nearby dwarven city of Ironforge. There, High Tinker Mekkatorque set out to enlist brave souls to help his people reclaim their beloved city.\n\nIt is rumored that Mekkatorque's once-trusted advisor, Mekgineer Thermaplug, betrayed his people by allowing the invasion to happen. Now, his sanity shattered, Thermaplug remains in Gnomeregan - furthering his dark schemes and acting as the city's new techno-overlord.",
-		["coord"] = { 18.38, 38.62, DUN_MOROGH },	-- Gnomeregan [Dun Morogh]
-		-- #else
-		["coord"] = { 30.11, 74.64, NEW_TINKERTOWN_LOWER },	-- Gnomeregan [Dun Morogh]
 		-- #endif
+		["coords"] = {
+			-- #if AFTER MOP
+			{ 30.1, 74.6, NEW_TINKERTOWN_LOWER },	-- Gnomeregan [Dun Morogh]
+			-- #else
+			{ 18.4, 38.6, DUN_MOROGH },	-- Gnomeregan [Dun Morogh]
+			-- #endif
+		},
 		-- #if AFTER 4.0.6
 		["description"] = "Horde players can access Gnomeregan from the teleporter in Grom'gol Base Camp, Northen Stranglethorn.", -- The teleporter was removed from Booty Bay with 4.0.3, and returned to the game with 4.0.6.
 		-- #endif
@@ -63,20 +79,6 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 		-- #endif
 		["lvl"] = lvlsquish(19, 19, 10),
 		["groups"] = {
-			n(REWARDS, {
-				i(9363, {	-- Sparklematic-Wrapped Box
-					["description"] = "Kill mobs for [Grime-Encrusted Object], clean them at the Sparklematic 5200 to receive this box.",
-					["groups"] = {
-						i(122207, {	-- Music Roll: Tinkertown
-							["timeline"] = { ADDED_6_1_0 },
-							["races"] = ALLIANCE_ONLY,
-						}),
-						i(9280),	-- Yellow Punch Card
-						i(10299),	-- Gnomeregan Amulet
-						i(10298),	-- Gnomeregan Band
-					},
-				}),
-			}),
 			n(ZONE_DROPS, {
 				i(9510, {	-- Caverndeep Trudgers
 					["crs"] = {
@@ -243,7 +245,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				}),
 				-- #if AFTER 10.1.7
 				i(9444, {	-- Techbot CPU Shell
-					["timeline"] = { ADDED_10_1_7 },	-- ATT Discord 20.09.2023
+					["timeline"] = { ADDED_10_1_7 },
 				}),
 				-- #endif
 				i(9485, {	-- Vibroblade
@@ -264,7 +266,8 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					},
 				}),
 				i(9279, {	-- White Punch Card
-					["description"] = "This can be looted from mobs outside of the instance.",
+					["description"] = "This can be looted from creatures outside of the instance.",
+					["timeline"] = { REMOVED_5_0_4 },	-- guessed from WH comments
 				}),
 				i(140781, {	-- X-87 Battle Circuit
 					["timeline"] = { ADDED_7_0_3 },
@@ -291,6 +294,121 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 			d(DIFFICULTY.DUNGEON.NORMAL, bubbleDownTimelineEventSelf(REMOVED_1_15_1, {
 			-- #endif
 			n(QUESTS, {
+				header(HEADERS.Object, 142487, {	-- The Sparklematic 5200
+					n(REWARDS, {
+						i(9363, {	-- Sparklematic-Wrapped Box
+							["description"] = "Kill hostile creatures for [Grime-Encrusted Object], clean them at the Sparklematic 5200 to receive this box.",
+							["groups"] = {
+								i(122207, {	-- Music Roll: Tinkertown
+									["timeline"] = { ADDED_6_1_0 },
+									["races"] = ALLIANCE_ONLY,
+								}),
+								i(9280),	-- Yellow Punch Card
+								i(10299),	-- Gnomeregan Amulet
+								i(10298),	-- Gnomeregan Band
+							},
+						}),
+					}),
+					q(2951, {	-- The Sparklematic 5200!
+						["provider"] = { "o", 142487 },	-- The Sparklematic 5200
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+					}),
+					q(4601, {	-- The Sparklematic 5200!
+						["providers"] = {
+							-- #if AFTER LEGION
+							{ "o", 175084 },	-- The Sparklematic 5200
+							-- #else
+							{ "o", 15084 },	-- The Sparklematic 5200
+							-- #endif
+						},
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+					}),
+					q(4602, {	-- The Sparklematic 5200!
+						["providers"] = {
+							-- #if AFTER LEGION
+							{ "o", 175085 },	-- The Sparklematic 5200
+							-- #else
+							{ "o", 15085 },	-- The Sparklematic 5200
+							-- #endif
+						},
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+					}),
+					q(2952, {	-- The Sparklematic 5200!
+						["provider"] = { "o", 142487 },	-- The Sparklematic 5200
+						["sourceQuest"] = 2951,	-- The Sparklematic 5200!
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+						["groups"] = {
+							i(9363, {["sym"] = {{"fill"}}}),	-- Sparklematic-Wrapped Box
+						},
+					}),
+					q(4605, {	-- The Sparklematic 5200!
+						["providers"] = {
+							-- #if AFTER LEGION
+							{ "o", 175084 },	-- The Sparklematic 5200
+							-- #else
+							{ "o", 15084 },	-- The Sparklematic 5200
+							-- #endif
+						},
+						["sourceQuest"] = 4601,	-- The Sparklematic 5200!
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+						["groups"] = {
+							i(9363, {["sym"] = {{"fill"}}}),	-- Sparklematic-Wrapped Box
+						},
+					}),
+					q(4606, {	-- The Sparklematic 5200!
+						["providers"] = {
+							-- #if AFTER LEGION
+							{ "o", 175085 },	-- The Sparklematic 5200
+							-- #else
+							{ "o", 15085 },	-- The Sparklematic 5200
+							-- #endif
+						},
+						["sourceQuest"] = 4602,	-- The Sparklematic 5200!
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+						["groups"] = {
+							i(9363, {["sym"] = {{"fill"}}}),	-- Sparklematic-Wrapped Box
+						},
+					}),
+					q(2953, {	-- More Sparklematic Action
+						["provider"] = { "o", 142487 },	-- The Sparklematic 5200
+						["sourceQuest"] = 2952,	-- The Sparklematic 5200!
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+						["repeatable"] = true,
+						["groups"] = {
+							i(9363, {["sym"] = {{"fill"}}}),	-- Sparklematic-Wrapped Box
+						},
+					}),
+					q(4603, {	-- More Sparklematic Action
+						["providers"] = {
+							-- #if AFTER LEGION
+							{ "o", 175084 },	-- The Sparklematic 5200
+							-- #else
+							{ "o", 15084 },	-- The Sparklematic 5200
+							-- #endif
+						},
+						["sourceQuest"] = 4605,	-- The Sparklematic 5200!
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+						["repeatable"] = true,
+						["groups"] = {
+							i(9363, {["sym"] = {{"fill"}}}),	-- Sparklematic-Wrapped Box
+						},
+					}),
+					q(4604, {	-- More Sparklematic Action
+						["providers"] = {
+							-- #if AFTER LEGION
+							{ "o", 175085 },	-- The Sparklematic 5200
+							-- #else
+							{ "o", 15085 },	-- The Sparklematic 5200
+							-- #endif
+						},
+						["sourceQuest"] = 4606,	-- The Sparklematic 5200!
+						["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
+						["repeatable"] = true,
+						["groups"] = {
+							i(9363, {["sym"] = {{"fill"}}}),	-- Sparklematic-Wrapped Box
+						},
+					}),
+				}),
 				q(2904, {	-- A Fine Mess
 					["qg"] = 7850,	-- Kernobee
 					["timeline"] = { REMOVED_4_0_3 },
@@ -464,33 +582,6 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					["isBreadcrumb"] = true,
 					["lvl"] = 24,
 				}),
-				q(2953, {	-- More Sparklematic Action
-					["provider"] = { "o", 142487 },	-- The Sparklematic 5200
-					["sourceQuest"] = 2952,	-- The Sparklematic 5200!
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["repeatable"] = true,
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(4603, {	-- More Sparklematic Action
-					["provider"] = { "o", 15084 },	-- The Sparklematic 5200
-					["sourceQuest"] = 4605,	-- The Sparklematic 5200!
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["repeatable"] = true,
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(4604, {	-- More Sparklematic Action
-					["provider"] = { "o", 15085 },	-- The Sparklematic 5200
-					["sourceQuest"] = 4606,	-- The Sparklematic 5200!
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["repeatable"] = true,
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
 				q(2950, {	-- Nogg's Ring Redo
 					["qg"] = 3412,	-- Nogg <Expert Engineer>
 					["sourceQuest"] = 2949,	-- Return of the Ring [Horde]
@@ -514,24 +605,24 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 					},
 				}),
 				q(2947, {	-- Return of the Ring [Alliance]
-					["providers"] = {
-						{ "i", 9362 },	-- Brilliant Gold Ring
-						{ "o", 142487 },	-- The Sparklematic 5200
-					},
+					["provider"] = { "o", 142487 },	-- The Sparklematic 5200
 					["sourceQuest"] = 2945,	-- Grime-Encrusted Ring
 					["maps"] = { IRONFORGE },
 					["races"] = ALLIANCE_ONLY,
 					["lvl"] = lvlsquish(28, 28, 10),
+					["groups"] = {
+						i(9362),	-- Brilliant Gold Ring
+					},
 				}),
 				q(2949, {	-- Return of the Ring [Horde]
-					["providers"] = {
-						{ "i", 9362 },	-- Brilliant Gold Ring
-						{ "o", 142487 },	-- The Sparklematic 5200
-					},
+					["provider"] = { "o", 142487 },	-- The Sparklematic 5200
 					["sourceQuest"] = 2945,	-- Grime-Encrusted Ring
 					["maps"] = { ORGRIMMAR },
 					["races"] = HORDE_ONLY,
 					["lvl"] = lvlsquish(28, 28, 10),
+					["groups"] = {
+						i(9362),	-- Brilliant Gold Ring
+					},
 				}),
 				q(2841, {	-- Rig Wars
 					["qg"] = 3412,	-- Nogg <Expert Engineer>
@@ -726,51 +817,6 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						}),
 					},
 				}),
-				q(2951, {	-- The Sparklematic 5200!
-					["provider"] = { "o", 142487 },	-- The Sparklematic 5200
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(2952, {	-- The Sparklematic 5200!
-					["provider"] = { "o", 142487 },	-- The Sparklematic 5200
-					["sourceQuest"] = 2951,	-- The Sparklematic 5200!
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(4601, {	-- The Sparklematic 5200!
-					["provider"] = { "o", 15084 },	-- The Sparklematic 5200
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(4605, {	-- The Sparklematic 5200!
-					["provider"] = { "o", 15084 },	-- The Sparklematic 5200
-					["sourceQuest"] = 4601,	-- The Sparklematic 5200!
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(4602, {	-- The Sparklematic 5200!
-					["provider"] = { "o", 15085 },	-- The Sparklematic 5200
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
-				q(4606, {	-- The Sparklematic 5200!
-					["provider"] = { "o", 15085 },	-- The Sparklematic 5200
-					["sourceQuest"] = 4602,	-- The Sparklematic 5200!
-					["cost"] = { { "i", 9308, 1 } },	-- Grime-Encrusted Object
-					["groups"] = {
-						i(9363),	-- Sparklematic-Wrapped Box
-					},
-				}),
 				q(2923, {	-- Tinkmaster Overspark
 					["qg"] = 7917,	-- Brother Sarno
 					["coords"] = {
@@ -820,6 +866,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 			-- #if NOT SEASON_OF_DISCOVERY
 			MATRIX_PUNCHOGRAPH_B,
 			MATRIX_PUNCHOGRAPH_C,
+			MATRIX_PUNCHOGRAPH_E,
 			-- #endif
 			-- #if AFTER 4.0.3
 			n(7850, {	-- Kernobee
@@ -847,11 +894,14 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				["creatureID"] = 6235,
 				["groups"] = {
 					i(6893, {	-- Workshop Key
-						-- #if BEFORE 4.0.3
-						["description"] = "This key allows you to get into the back door of Gnomeregan.",
-						-- #elseif AFTER 5.2.0
-						["description"] = "This key no longer have any practical use, and disappears from the inventory like a conjured item. Entering through the Workshop entrance will zone you into the main entrance.", -- Removed with 4.0.3, and started dropping again with 5.2.0 for no apparent reason.
-						-- #endif
+						["description"] =
+							-- #if AFTER 5.2.0
+							"This key no longer has any practical use, and disappears from the inventory like a conjured item. Entering through the Workshop entrance will zone you into the main entrance.", -- Removed with 4.0.3, and started dropping again with 5.2.0 for no apparent reason.
+							-- #elseif AFTER 4.0.3
+							"This key no longer has any practical use.",
+							-- #else
+							"This key allows you to get into the back door of Gnomeregan.",
+							-- #endif
 					}),
 					i(9446),	-- Electrocutioner Leg
 					i(9448),	-- Spidertank Oilrag
@@ -878,7 +928,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 				},
 			}),
 			n(6228, {	-- Dark Iron Ambassador
-				["description"] = "This is a rare that is not always present.",
+				["description"] = "This is a Rare Creature and, as such, is not always present.",
 				["groups"] = {
 					i(5108),	-- Dark Iron Leather
 					i(9456),	-- Glass Shooter
@@ -1375,46 +1425,46 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 								i(215141, {	-- Enchanted Sigil: Innovation
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215138, {	-- Formula: Enchant Chest - Retricutioner
+								i(215138, {	-- Formula: Enchant Chest - Retricutioner (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215129, {	-- Formula: Enchant Weapon - Dismantle
+								i(215129, {	-- Formula: Enchant Weapon - Dismantle (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215367, {	-- Pattern: Faintly Glowing Leather
+								i(215367, {	-- Pattern: Faintly Glowing Leather (RECIPE!)
 									["cost"] = 150000,	-- 15g
 								}),
-								i(215152, {	-- Pattern: Glowing Gneuro-Linked Cowl
+								i(215152, {	-- Pattern: Glowing Gneuro-Linked Cowl (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215422, {	-- Pattern: Glowing Hyperconductive Scale Coif
+								i(215422, {	-- Pattern: Glowing Hyperconductive Scale Coif (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215423, {	-- Pattern: Gneuro-Conductive Channeler's Hood
+								i(215423, {	-- Pattern: Gneuro-Conductive Channeler's Hood (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215149, {	-- Pattern: Gneuro-Linked Arcano-Filament Monocle
+								i(215149, {	-- Pattern: Gneuro-Linked Arcano-Filament Monocle (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215368, {	-- Pattern: Hyperconductive Arcano-Filament
+								i(215368, {	-- Pattern: Hyperconductive Arcano-Filament (RECIPE!)
 									["cost"] = 150000,	-- 15g
 								}),
-								i(215424, {	-- Pattern: Rad-Resistant Scale Hood
+								i(215424, {	-- Pattern: Rad-Resistant Scale Hood (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215384, {	-- Plans: Low-Background Truesilver Plates
+								i(215384, {	-- Plans: Low-Background Truesilver Plates (RECIPE!)
 									["cost"] = 150000,	-- 15g
 								}),
-								i(215383, {	-- Plans: Reflective Truesilver Braincage
+								i(215383, {	-- Plans: Reflective Truesilver Braincage (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215155, {	-- Plans: Tempered Interference-Negating Helmet
+								i(215155, {	-- Plans: Tempered Interference-Negating Helmet (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
-								i(215433, {	-- Recipe: Insulating Gniodine
+								i(215433, {	-- Recipe: Insulating Gniodine (RECIPE!)
 									["cost"] = 150000,	-- 15g
 								}),
-								i(215163, {	-- Recipe: Mildly-Irradiated Rejuvenation Potion
+								i(215163, {	-- Recipe: Mildly-Irradiated Rejuvenation Potion (RECIPE!)
 									["cost"] = 250000,	-- 25g
 								}),
 								i(215432, {	-- Schematic: Ez-Thro Radiation Bomb (RECIPE!)
@@ -1544,7 +1594,7 @@ root(ROOTS.Instances, expansion(EXPANSION.CLASSIC, {
 						},
 					}),
 					n(217280, {	-- Grubbis
-						["description"] = "The Grubbis fight starts with a short gauntlet style fight, a mix of Troggs will spawn in small waves followed by Poison Clouds, you should kite the the Troggs into the Poison Clouds. This causes the Poison Clouds to explode and kill the Troggs and then despawn.\n\nAfter a few waves, Grubbis spawns alongside his basilisk pet - Chomper, because of his pet this fight easier to manage with two tanks, but not required with disciplined damage dealers who focus Grubbis himself - this makes threat more manageable. Additionally, everyone with an interrupt must be paying close attention to Chomper's casts, to kick the Petrify cast - otherwise the only tank will lose threat of both bosses.\n\nOnce he spawns, the waves of Troggs and Poison Clouds continue to spawn, these can be managed through the same means as during the gauntlet by kiting the mobs into the clouds. It is possible to ignore the clouds for uptime and cleave or ignore the adds while focusing the boss but it is not recommended for the average raid.",
+						["description"] = "The Grubbis fight starts with a short gauntlet style fight, a mix of Troggs will spawn in small waves followed by Poison Clouds, you should kite the the Troggs into the Poison Clouds. This causes the Poison Clouds to explode and kill the Troggs and then despawn.\n\nAfter a few waves, Grubbis spawns alongside his basilisk pet - Chomper, because of his pet this fight easier to manage with two tanks, but not required with disciplined damage dealers who focus Grubbis himself - this makes threat more manageable. Additionally, everyone with an interrupt must be paying close attention to Chomper's casts, to kick the Petrify cast - otherwise the only tank will lose threat of both bosses.\n\nOnce he spawns, the waves of Troggs and Poison Clouds continue to spawn, these can be managed through the same means as during the gauntlet by kiting the creatures into the clouds. It is possible to ignore the clouds for uptime and cleave or ignore the adds while focusing the boss but it is not recommended for the average raid.",
 						["groups"] = {
 							i(213542),	-- The Necro-Gnomicon
 							i(213351),	-- Irradiated Tower Shield

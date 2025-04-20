@@ -302,23 +302,6 @@ root(ROOTS.Zones, {
 						["races"] = HORDE_ONLY,
 					}),
 				}),
-				prof(FISHING, {
-					i(44703, {	-- Dark Herring
-						["provider"] = { "o", 192049 },	-- Fangtooth Herring School
-					}),
-					o(192053, {	-- Deep Sea Monsterbelly School
-						["requireSkill"] = FISHING,
-					}),
-					o(192049, {	-- Fangtooth Herring School
-						["requireSkill"] = FISHING,
-					}),
-					o(192052, {	-- Northrend Angler
-						["requireSkill"] = FISHING,
-					}),
-					o(192054, {	-- Moonglow Cuttlefish School
-						["requireSkill"] = FISHING,
-					}),
-				}),
 				n(FLIGHT_PATHS, {
 					fp(248, {	-- Apothecary Camp
 						["cr"] = 26844,	-- Lilleth Radescu <Bat Handler>
@@ -713,6 +696,7 @@ root(ROOTS.Zones, {
 						["sourceQuest"] = 11309,	-- Parts for the Job
 						["coord"] = { 53.0, 66.0, HOWLING_FJORD },
 						["races"] = HORDE_ONLY,
+						["lockCriteria"] = {1, "questID", 12566},	-- Help for Camp Winterhoof
 					}),
 					q(13268, {	-- Cloth Scavenging (A)
 						["isBreadcrumb"] = true,	-- if you learn the recipe from the book (which will drop from the first handful of mobs you kill upon entering Northrend) the Cloth Scavenging quests become unobtainable
@@ -1147,6 +1131,7 @@ root(ROOTS.Zones, {
 						["coord"] = { 71.4, 39.2, HOWLING_FJORD },
 						["races"] = HORDE_ONLY,
 						["qg"] = 28314,	-- Longrunner Nanik
+						["lockCriteria"] = {1, "questID", 11411},	-- Camp Winterhoof
 					}),
 					heroscall(q(49551, {	-- Hero's Call: Howling Fjord!
 						["timeline"] = { ADDED_7_3_5 },
@@ -3053,3 +3038,13 @@ root(ROOTS.Zones, {
 		}),
 	})),
 });
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WRATH, bubbleDownSelf({ ["timeline"] = { ADDED_3_0_3 } }, {
+	m(NORTHREND, {
+		m(HOWLING_FJORD, {
+			n(QUESTS, {
+				q(12485),	-- Howling Fjord - triggers during "The Echo of Ymiron" when you see the RP between two vrykul in Wyrmskull Village
+			}),
+		}),
+	}),
+})));

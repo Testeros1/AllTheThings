@@ -4,7 +4,7 @@
 
 root(ROOTS.ExpansionFeatures,
 	expansion(EXPANSION.LEGION, {
-		n(-543, {	-- Broken Isles: Legion Invasions
+		n(LEGION_INVASIONS, {
 			["description"] = "Complete 4 Legion Invasion World Quests, then complete the Scenario in the respective zone",
 			["maps"] = {
 				VALSHARAH,
@@ -37,6 +37,7 @@ root(ROOTS.ExpansionFeatures,
 						["sourceQuests"] = { 45795 },	-- Presence of Power
 						["repeatable"] = true,
 						["provider"] = { "n", 117774 },	-- Prince Farondis
+						["coord"] = { 55.1, 67.4, AZSUNA },
 					}),
 					q(45838, {	-- Assault on Azsuna
 						["repeatable"] = true,
@@ -70,36 +71,43 @@ root(ROOTS.ExpansionFeatures,
 						["sourceQuests"] = { 46205 },	-- A Conduit No More
 						["repeatable"] = true,
 						["provider"] = { "n", 119002 },	-- Prince Farondis
+						["coord"] = { 58.4, 21.4, AZSUNA },
 					}),
 					q(46182, {	-- Battle for Highmountain
 						["sourceQuests"] = { 45572 },	-- Holding Our Ground
 						["repeatable"] = true,
 						["provider"] = { "n", 119676 },	-- Lasan Skyhorn
+						["coord"] = { 50.2, 64.4, HIGHMOUNTAIN },
 					}),
 					q(45856, {	-- Battle for Val'sharah
 						["sourceQuests"] = { 44789 },	-- Holding the Ramparts
 						["repeatable"] = true,
 						["provider"] = { "n", 118250 },	-- Commander Jarod Shadowsong
+						["coord"] = { 44.0, 50.6, VALSHARAH },
 					}),
 					q(46110, {	-- Battle for Stormheim
 						["sourceQuests"] = { 45406 },	-- The Storm's Fury
 						["repeatable"] = true,
 						["provider"] = { "n", 118778 },	-- Val'kyr of Odyn
+						["coord"] = { 81.7, 7.1, STORMHEIM },
 					}),
 					q(45572, {	-- Holding Our Ground
 						["sourceQuests"] = { 45840 },	-- Assault on Highmountain
 						["repeatable"] = true,
 						["provider"] = { "n", 119944 },	-- Lasan Skyhorn
+						["coord"] = { 25.2, 22.6, 750 },	-- Thunder Totem
 					}),
 					q(44789, {	-- Holding the Ramparts
 						["sourceQuests"] = { 45812 },	-- Assault on Val'sharah
 						["repeatable"] = true,
 						["provider"] = { "n", 118183 },	-- Commander Jarod Shadowsong
+						["coord"] = { 39.0, 51.6, VALSHARAH },
 					}),
 					q(45795, {	-- Presence of Power
 						["sourceQuests"] = { 45838 },	-- Assault on Azsuna
 						["repeatable"] = true,
 						["provider"] = { "n", 118942 },	-- Prince Farondis
+						["coord"] = { 56.0, 60.8, AZSUNA },
 					}),
 					q(45406, {	-- The Storm's Fury
 						["sourceQuests"] = { 45839 },	-- Assault on Stormheim
@@ -115,7 +123,7 @@ root(ROOTS.ExpansionFeatures,
 						118975,	-- Xeritas
 					},
 					["sym"] = {
-						{"select", "headerID", -543},	-- Select Legion Invasions
+						{"select", "headerID", LEGION_INVASIONS},
 						{"pop"},	-- Push all of the groups contained to the processing layer.
 						{"where", "headerID", WORLD_QUESTS },
 						{"pop"},	-- Push all of the groups contained to the processing layer.
@@ -194,7 +202,7 @@ root(ROOTS.ExpansionFeatures,
 root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["timeline"] = { ADDED_7_2_0 } }, {
 	m(BROKEN_ISLES, {
 		m(AZSUNA, {
-			n(-543, {
+			n(LEGION_INVASIONS, {
 				q(46964),	-- Assault Treasure - Azsuna
 				q(46966),	-- Assault Treasure - Azsuna
 				q(46967),	-- Assault Treasure - Azsuna
@@ -211,7 +219,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 			}),
 		}),
 		m(HIGHMOUNTAIN, {
-			n(-543, {
+			n(LEGION_INVASIONS, {
 				q(46985),	-- Assault Treasure - Highmountain
 				q(46986),	-- Assault Treasure - Highmountain
 				q(46987),	-- Assault Treasure - Highmountain
@@ -227,7 +235,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 			}),
 		}),
 		m(STORMHEIM, {
-			n(-543, {
+			n(LEGION_INVASIONS, {
 				q(46975),	-- Assault Treasure - Stormheim
 				q(46976),	-- Assault Treasure - Stormheim
 				q(46977),	-- Assault Treasure - Stormheim
@@ -241,7 +249,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 			}),
 		}),
 		m(VALSHARAH, {
-			n(-543, {
+			n(LEGION_INVASIONS, {
 				q(46954),	-- Assault Treasure - Val'sharah
 				q(46956),	-- Assault Treasure - Val'sharah
 				q(46958),	-- Assault Treasure - Val'sharah
@@ -256,7 +264,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.LEGION, bubbleDownSelf({ ["t
 			}),
 		}),
 	}),
-	n(-543, {
+	n(LEGION_INVASIONS, {
 		q(47185),	-- Invasion Boss Weekly Bonus
 	}),
 })));

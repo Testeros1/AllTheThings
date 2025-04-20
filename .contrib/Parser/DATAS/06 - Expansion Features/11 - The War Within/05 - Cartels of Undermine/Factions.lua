@@ -22,7 +22,7 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					crit(102754, {	-- Venture Co
 						["minReputation"] = { FACTION_TWW_VENTURE_CO, HONORED },	-- Venture Co Honored
 					}),
-					i(232807),	-- Iron Chick
+					i(232807),	-- Iron Chick (PET!)
 				}),
 				ach(41351, {	-- Cartels Bestie
 					crit(102751, {	-- Bilgewater Cartel
@@ -37,7 +37,10 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					crit(102754, {	-- Venture Co
 						["minReputation"] = { FACTION_TWW_VENTURE_CO, REVERED },	-- Venture Co Revered
 					}),
-					-- TODO: Ensemble: Goblin Bruiser's Attire
+					-- Reward
+					i(231739),	-- Black Bruiser's Helm
+					i(231745),	-- Black Bruiser's Shoulderspikes
+					i(231733),	-- Black Bruiser's Tabard
 				}),
 				ach(41352, {	-- Trade-Duke
 					crit(102751, {	-- Bilgewater Cartel
@@ -52,7 +55,8 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 					crit(102754, {	-- Venture Co
 						["minReputation"] = { FACTION_TWW_VENTURE_CO, EXALTED },	-- Venture Co Exalted
 					}),
-					-- TODO: Title: Trade-duke
+					-- Reward
+					title(607),	-- Trade-Duke <Name>
 				}),
 				ach(41086, {	-- Ally of Undermine
 					["minReputation"] = { FACTION_CARTELS_OF_UNDERMINE, 20 },	-- Cartels of Undermine 20
@@ -64,6 +68,9 @@ root(ROOTS.ExpansionFeatures, expansion(EXPANSION.TWW, bubbleDownSelf({ ["timeli
 			faction(FACTION_DARKFUSE_SOLUTIONS, {
 				ach(41350, {	-- A Long Fuse
 					["minReputation"] = { FACTION_DARKFUSE_SOLUTIONS, EXALTED },	-- Darkfuse Solutions Exalted
+					["g"] = {
+						title(606),	-- Darkfuse Diplomat <Name>
+					},
 				}),
 			}),
 		}),

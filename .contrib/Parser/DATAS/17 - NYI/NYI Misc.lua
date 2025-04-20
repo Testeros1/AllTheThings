@@ -799,7 +799,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(187546),	-- Consumed Weapon Essence
 			i(187547),	-- Consumed Weapon Essence
 			i(187548),	-- Consumed Weapon Essence
-			i(187497),	-- Delicate Razorwing Figurine
 			i(187123),	-- Empowerment Bauble
 			i(186971),	-- Feeder's Hand
 			i(187151),	-- Field Recovery: Partial Conduit Index
@@ -1307,7 +1306,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(208545),	-- Kindled Bonfire
 			i(209020),	-- Loot-Filled Pumpkin
 			i(209025),	-- Loot-Filled Pumpkin
-			i(115460),	-- Northrend Alchemy Research
 			i(208784),	-- Primeval Fin
 			i(209870),	-- Surge Catcher
 				------ Secrets of Azeroth ------
@@ -1575,7 +1573,6 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(219743),	-- Khaz Algar Olive (Vendor)
 			i(219744),	-- Khaz Algar Vegetable
 			i(225214),	-- List of Activities
-			i(213085),	-- Lost Treasure
 			i(210697),	-- Luckstone
 			i(220340),	-- Meatball Cluster
 			i(217984),	-- Miner's Rune of Decyphering
@@ -1707,6 +1704,19 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 
 		-- 11.0.5
 		expansion(EXPANSION.TWW, patch(0,05), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_5 } }, {
+			i(223620),	-- 20th Anniversary Cache
+			i(223621),	-- 20th Anniversary Cache
+			i(223622),	-- 20th Anniversary Cache
+			i(229198),	-- Ace of Air
+			i(229222),	-- Ace of Earth
+			i(229206),	-- Ace of Fire
+			i(229214),	-- Ace of Frost
+			i(223619),	-- Bronze Celebration Goodie Bag
+			i(225252),	-- Bronze Celebration Token
+			i(232472),	-- Cache of Dark Iron Treasures
+			i(232473),	-- Cache of Dark Iron Treasures
+			i(228910),	-- Cache of Nerubian Treasures
+			i(226101),	-- Chromie's Tour Goodie Bag
 			i(224569),	-- Commendation of the Defilers
 			i(224563),	-- Commendation of the Frostwolf Clan
 			i(224568),	-- Commendation of the League of Arathor
@@ -1714,6 +1724,86 @@ root(ROOTS.NeverImplemented, filter(MISC, {
 			i(224559),	-- Commendation of the Silverwing Sentinels
 			i(224562),	-- Commendation of the Stormpike Guard
 			i(224560),	-- Commendation of the Warsong Outriders
+			i(229205),	-- Eight of Air
+			i(229229),	-- Eight of Earth
+			i(229221),	-- Eight of Frost
+			i(229202),	-- Five of Air
+			i(229226),	-- Five of Earth
+			i(229218),	-- Five of Frost
+			i(229201),	-- Four of Air
+			i(229209),	-- Four of Fire
+			i(229217),	-- Four of Frost
+			i(228783),	-- PH - Sandbox Horse
+			i(228782),	-- PH - Sandbox Wolf
+			i(231511),	-- Relic Coffer Key Fragment
+			i(229204),	-- Seven of Air
+			i(229228),	-- Seven of Earth
+			i(229220),	-- Seven of Frost
+			i(229203),	-- Six of Air
+			i(229227),	-- Six of Earth
+			i(229200),	-- Three of Air
+			i(229224),	-- Three of Earth
+			i(227698),	-- Torn Diary, Page 2
+			i(229223),	-- Two of Earth
+			i(229215),	-- Two of Frost
+			i(232631),	-- Wrapped Spear
+		})),
+
+		-- 11.0.7
+		expansion(EXPANSION.TWW, patch(0,7), bubbleDownSelf({ ["timeline"] = { ADDED_11_0_7 } }, {
+			i(234313),	-- [DNT] Item
+			i(234969),	-- Archivist Chassis
+			i(233331),	-- Aura of Zealotry
+			i(233650),	-- Call Galefeather
+			i(232645),	-- Celestial Barrage
+			i(228637),	-- Delete Me
+			i(228641),	-- Delete Me
+			i(228645),	-- Delete Me
+			i(228649),	-- Delete Me
+			i(232629),	-- Distilled Knowledge of Timeways
+			i(234472),	-- Earthen Crystal
+			i(234471),	-- Earthen Device
+			i(234470),	-- Forgemaster's Focus
+			i(233051),	-- G.R.A.V. Glove
+			i(230207),	-- N.U.K.U.L.A.R. Target Painter
+			i(232988),	-- Void Tear
+		})),
+
+		-- 11.1.0
+		expansion(EXPANSION.TWW, patch(1,0), bubbleDownSelf({ ["timeline"] = { ADDED_11_1_0 } }, {
+			i(235667),	-- Add Keystone Affix: Xal'atath's Bargain: Pulsar
+			i(232076),	-- Adventurer's Warbound Battlegear Drop
+			i(232069),	-- Adventurer's Warbound Boots
+			i(232068),	-- Adventurer's Warbound Chestpiece
+			i(232070),	-- Adventurer's Warbound Gloves
+			i(232071),	-- Adventurer's Warbound Headpiece
+			i(232072),	-- Adventurer's Warbound Legs
+			i(232073),	-- Adventurer's Warbound Shoulders
+			i(232074),	-- Adventurer's Warbound Waist
+			i(232075),	-- Adventurer's Warbound Wrists
+			i(236785),	-- C.H.E.T.T. Card
+			i(235018),	-- Cracked Cold One
+			i(232898),	-- Delver's Bounty
+			i(235535),	-- Discretely-Packaged Invention
+			i(230807),	-- Drill Hands
+			i(237260),	-- Glass of Daylight Dew
+			i(228798),	-- Gob-Glider
+			i(237036),	-- Golden Valorstone
+			i(235559),	-- Hidden Trove
+			i(237259),	-- Kapow Kanapes
+			i(230017),	-- Master Blaster's Insignia
+			i(234618),	-- Omega Oyster Outbreak
+			i(234620),	-- Perfectly Preserved Kaja'Classic Original Taste
+			i(231291),	-- Radar
+			i(235627),	-- Scribbles' Favorite Candies
+			i(230990),	-- Set Keystone Map: Operation: Floodgate
+			i(231787),	-- Vigilante's Disposable Falling Shadow Grapple Gun
+			i(236956),	-- Void-Touched Valorstone
+			i(233054),	-- Wonder Ball
+			i(225766),	-- Zoom-Zoom Boosters
+			i(232929),	-- [DNT] Large Surge Chest
+			i(232928),	-- [DNT] Medium Surge Chest
+			i(232927),	-- [DNT] Small Surge Chest
 		})),
 	}),
 }));

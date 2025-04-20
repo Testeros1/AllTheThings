@@ -1,7 +1,7 @@
 -----------------------------------------------------
 --   D U N G E O N S  &  R A I D S  M O D U L E    --
 -----------------------------------------------------
-root(ROOTS.Instances, expansion(EXPANSION.BFA, {
+root(ROOTS.Instances, expansion(EXPANSION.BFA, bubbleDown({ ["timeline"] = { ADDED_8_0_1_LAUNCH } }, {
 	inst(1012, {	-- The MOTHERLODE!!
 		["coords"] = {
 			{ 39.2, 71.5, ZULDAZAR },	-- Alliance
@@ -132,6 +132,7 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 				}),
 			}),
 			d(DIFFICULTY.DUNGEON.HEROIC, {
+				-- TWW Season 2 removed all heroic sources
 				["g"] = {
 					e(2109, {	-- Coin-Operated Crowd Pummeler
 						["crs"] = { 129214 },	-- Coin-Operated Crowd Pummeler
@@ -193,6 +194,23 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					}),
 				},
 			}),
+			d(DIFFICULTY.DUNGEON.MULTI.HEROIC_PLUS, bubbleDown({ ["timeline"] = { ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0_SEASONSTART } }, {
+				e(2116, {	-- Mogul Razdunk
+					["crs"] = {
+						129232,	-- Mogul Razdunk
+						132713,	-- Mogul Razdunk
+					},
+					["g"] = {
+						i(235416),	-- Crashguard Spaulders
+						i(235418),	-- Exquisitely Aerodynamic Shoulderpads
+						i(235419),	-- High Altitude Turban
+						i(235420),	-- Petticoat of the Self-Stylized Azerite Baron
+						i(235460),	-- Shrapnel-Dampening Chestguard
+						i(235415),	-- Skyscorcher Pauldrons
+						i(235417),	-- Venture Co. Plenipotentiary Vest
+					},
+				}),
+			})),
 			d(DIFFICULTY.DUNGEON.MYTHIC, {
 				["difficulties"] = { DIFFICULTY.DUNGEON.KEYSTONE, DIFFICULTY.DUNGEON.MYTHIC },
 				["g"] = {
@@ -228,6 +246,7 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					})),
 					e(2109, {	-- Coin-Operated Crowd Pummeler
 						["crs"] = { 129214 },	-- Coin-Operated Crowd Pummeler
+						-- TWW Season 2 removed all mythic sources
 						["g"] = {
 							ach(12855),	-- Pitch Invasion
 							i(159638),	-- Electro-Arm Bludgeoner
@@ -241,6 +260,7 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					}),
 					e(2114, {	-- Azerokk
 						["crs"] = { 129227 },	-- Azerokk
+						-- TWW Season 2 removed all mythic sources
 						["g"] = {
 							i(158357),	-- Bindings of Enraged Earth
 							i(158359),	-- Stonefury Vambraces
@@ -257,6 +277,7 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					}),
 					e(2115, {	-- Rixxa Fluxflame
 						["crs"] = { 129231 },	-- Rixxa Fluxflame
+						-- TWW Season 2 removed all mythic sources
 						["g"] = {
 							i(159639),	-- P.A.C.I.F.I.S.T.  Mk7
 							i(159287),	-- Cloak of Questionable Intent
@@ -272,6 +293,7 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 							129232,	-- Mogul Razdunk
 							132713,	-- Mogul Razdunk
 						},
+						-- TWW Season 2 removed all mythic sources
 						["g"] = {
 							ach(12846),	-- Mythic: The MOTHERELODE!!
 							ach(13006),	-- Mythic: The MOTHERLODE!! Guild Run
@@ -290,6 +312,35 @@ root(ROOTS.Instances, expansion(EXPANSION.BFA, {
 					}),
 				},
 			}),
+			n(MYTHIC_PLUS, bubbleDown({ ["timeline"] = { ADDED_11_1_0_SEASONSTART, REMOVED_11_2_0_SEASONSTART } }, {
+				e(2116, {	-- Mogul Razdunk
+					["crs"] = {
+						129232,	-- Mogul Razdunk
+						132713,	-- Mogul Razdunk
+					},
+					["g"] = {
+						-- Hero Track
+						iupgrade(235416, 162, 0, {["modID"] = 35 }),	-- Crashguard Spaulders
+						iupgrade(235418, 162, 0, {["modID"] = 35 }),	-- Exquisitely Aerodynamic Shoulderpads
+						iupgrade(235419, 162, 0, {["modID"] = 35 }),	-- High Altitude Turban
+						iupgrade(235420, 162, 0, {["modID"] = 35 }),	-- Petticoat of the Self-Stylized Azerite Baron
+						iupgrade(235460, 162, 0, {["modID"] = 35 }),	-- Shrapnel-Dampening Chestguard
+						iupgrade(235415, 162, 0, {["modID"] = 35 }),	-- Skyscorcher Pauldrons
+						iupgrade(235417, 162, 0, {["modID"] = 35 }),	-- Venture Co. Plenipotentiary Vest
+						-- Myth Track
+						-- Hero 5/6 should be enough for sourceID collection, but good luck trying to find exact mod/bonus ID for tooltip
+						n(UPGRADE, {
+							i(235418, {["modID"] = 162 }),	-- Exquisitely Aerodynamic Shoulderpads
+							i(235420, {["modID"] = 162 }),	-- Petticoat of the Self-Stylized Azerite Baron
+							i(235419, {["modID"] = 162 }),	-- High Altitude Turban
+							i(235417, {["modID"] = 162 }),	-- Venture Co. Plenipotentiary Vest
+							i(235416, {["modID"] = 162 }),	-- Crashguard Spaulders
+							i(235460, {["modID"] = 162 }),	-- Shrapnel-Dampening Chestguard
+							i(235415, {["modID"] = 162 }),	-- Skyscorcher Pauldrons
+						}),
+					},
+				}),
+			})),
 		},
 	}),
-}));
+})));

@@ -402,6 +402,14 @@ root(ROOTS.NeverImplemented, n(ACHIEVEMENTS, {
 		expansion(EXPANSION.LEGION, patch(3,2), bubbleDownSelf({ ["timeline"] = { CREATED_7_3_2 } }, {
 			ach(12138),	-- Fierce Gladiator's Storm Dragon
 		})),
+
+		-- 7.3.5
+		expansion(EXPANSION.LEGION, patch(3,5), bubbleDownSelf({ ["timeline"] = { CREATED_7_3_5 } }, {
+			ach(12216),	-- Prestige 26
+			ach(12217),	-- Prestige 27
+			ach(12218),	-- Prestige 28
+			ach(12219),	-- Prestige 29
+		})),
 	}),
 	expansion(EXPANSION.BFA, {
 		-- 8.0.1
@@ -667,6 +675,12 @@ root(ROOTS.NeverImplemented, n(ACHIEVEMENTS, {
 		expansion(EXPANSION.TWW, patch(0,07), bubbleDownSelf({ ["timeline"] = { CREATED_11_0_7 } }, {
 			-- 11.0.7.57361
 			ach(41219),	-- Explore Siren Isle => Appeared in build 11.0.7.57361, but hasn't been seen since
+		})),
+
+		-- CREATED_11_1_5
+		expansion(EXPANSION.TWW, patch(1,5), bubbleDownSelf({ ["timeline"] = { CREATED_11_1_5 } }, {
+			-- 11.1.5.60008
+			ach(15558),	-- Survey Bot (Added in 11.1.5.60008, removed in 11.1.5.60067)
 		})),
 	}),
 }));

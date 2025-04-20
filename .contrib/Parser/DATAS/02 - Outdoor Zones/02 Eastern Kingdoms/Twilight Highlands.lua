@@ -337,12 +337,6 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["races"] = ALLIANCE_ONLY,
 				}),
 			}),
-			prof(FISHING, {
-				i(68050, {	-- Shatterscale Mightfish
-					["provider"] = { "i", 68049 },	-- Heat-Treated Spinning Lure
-					["description"] = "Can be caught by fishing in lava using a special lure.",
-				}),
-			}),
 			n(FLIGHT_PATHS, {
 				fp(659, {	-- Bloodgulch, Twilight Highlands
 					["cr"] = 47156,	-- Bramok Gorewing <Wind Rider Master>
@@ -404,13 +398,19 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					["coord"] = { 56.6, 56.8, TWILIGHT_HIGHLANDS },
 				}),
 			}),
-			n(PROFESSIONS, {
+			-- #if ANYCLASSIC
+ 			n(PROFESSIONS, {
 				prof(FISHING, {
 					o(208311, {	-- Deepsea Sagefish School
 						i(22739),	-- Tome of Polymorph: Turtle (CI!)
 					}),
 					o(202777, {	-- Highland Guppy School
 						i(22739),	-- Tome of Polymorph: Turtle (CI!)
+					}),
+					i(68050, {	-- Shatterscale Mightfish
+						["provider"] = { "i", 68049 },	-- Heat-Treated Spinning Lure
+						["coord"] = { 41.0, 79.1, TWILIGHT_HIGHLANDS },	-- Cannon's Inferno
+						["description"] = "Can be caught by fishing in lava using a special lure.",
 					}),
 				}),
 				prof(MINING, {
@@ -420,6 +420,7 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 					},
 				}),
 			}),
+			-- #endif
 			n(QUESTS, {
 				q(28001, {	-- A Coward's Due
 					["sourceQuest"] = 27817,	-- Dropping the Hammer
@@ -3304,9 +3305,9 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(50382, {	-- Brundall Chiselgut <Metal Trader>
 					["coord"] = { 79.0, 76.6, TWILIGHT_HIGHLANDS },
 					["races"] = ALLIANCE_ONLY,
-					["sym"] = {
-						{"sub", "common_recipes_vendor", 3356},	-- Sumi <Blacksmithing Supplies>
-					},
+					-- #if AFTER 4.3.0
+					["sym"] = {{ "sub", "common_recipes_vendor", 55684 }},	-- Jordan Smith <Blacksmithing Trainer & Supplies>
+					-- #endif
 				}),
 				-- #if BEFORE 6.0.2
 				n(49703, {	-- Casandra Downs <Alchemy & Inscription Supplies>
@@ -3394,7 +3395,24 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 				n(49549, {	-- Jodan <Dragonmaw Armorsmith>
 					["coord"] = { 77.2, 52.8, TWILIGHT_HIGHLANDS },
 					["races"] = HORDE_ONLY,
-					["sym"] = { { "sub", "common_vendor", 46512 } },	-- Naros <Plate Armor Merchant>
+					["sym"] = {{"select","itemID",
+						2451,	-- Crested Heater Shield
+						62260,	-- Grunts Chain Belt
+						62261,	-- Grunts Chain Boots
+						62262,	-- Grunts Chain Bracers
+						62266,	-- Grunts Chain Circlet
+						62263,	-- Grunts Chain Gloves
+						62264,	-- Grunts Chain Leggings
+						62265,	-- Grunts Chain Vest
+						62253,	-- Grunts Plate Armor
+						62254,	-- Grunts Plate Belt
+						62255,	-- Grunts Plate Boots
+						62256,	-- Grunts Plate Bracers
+						62257,	-- Grunts Plate Gloves
+						62259,	-- Grunts Plate Helm
+						62258,	-- Grunts Plate Leggings
+						17190,	-- Ornate Buckler
+					}},
 				}),
 				n(50375, {	-- Kuldar Steeltooth <Metal Trader>
 					["coord"] = { 77.2, 53.0, TWILIGHT_HIGHLANDS },
@@ -3457,3 +3475,13 @@ root(ROOTS.Zones, m(EASTERN_KINGDOMS, {
 		},
 	}),
 }));
+
+root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.CATA, bubbleDownSelf({ ["timeline"] = { ADDED_4_0_3_LAUNCH } }, {
+	m(EASTERN_KINGDOMS, {
+		m(TWILIGHT_HIGHLANDS, {
+			n(QUESTS, {
+				q(28106),	-- Twilight Highlands - triggers when the Grim Batol gates are broken open during "If The Key Fits"
+			}),
+		}),
+	}),
+})));

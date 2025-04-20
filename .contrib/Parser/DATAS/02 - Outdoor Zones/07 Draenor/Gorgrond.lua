@@ -328,7 +328,7 @@ root(ROOTS.Zones, {
 						34223 - Creature Treasure: Iron Horde Stable Master
 						34411 - Creature Treasure: King Slime
 					]]--
-					n(-358, {	-- Lumber Yard
+					header(HEADERS.Spell, 164028, {	-- Lumber Yard
 						q(36523, {	-- A Green Ogron? (A)
 							["provider"] = { "n", 81601 },	-- Burrian Coalpart
 							["races"] = ALLIANCE_ONLY,
@@ -713,10 +713,10 @@ root(ROOTS.Zones, {
 							["provider"] = { "n", 75127 },	-- Vindicator Maraad
 							["races"] = ALLIANCE_ONLY,
 							["sourceQuests"] = {
-								35508,	-- Chapter I: Plant Food (Lumber Yard)
-								35527,	-- Chapter II: The Harvest (Lumber Yard)
-								35524,	-- Chapter III: Ritual of the Charred (Lumber Yard)
-								35652,	-- Growing Wood (Lumber Yard)
+								35508,	-- Chapter I: Plant Food
+								35527,	-- Chapter II: The Harvest
+								35524,	-- Chapter III: Ritual of the Charred
+								35652,	-- Growing Wood
 								35255,	-- Power of the Genesaur
 							},
 							["g"] = {
@@ -726,12 +726,14 @@ root(ROOTS.Zones, {
 							},
 						}),
 						q(36574, {	-- Strike While the Iron is Hot (H)
+							["provider"] = { "n", 74594 },	-- Durotan <Chieftain of the Frostwolf Clan>
 							["races"] = HORDE_ONLY,
 							["sourceQuests"] = {
 								35508,	-- Chapter I: Plant Food
 								35527,	-- Chapter II: The Harvest
 								35524,	-- Chapter III: Ritual of the Charred
 								35506,	-- Growing Wood
+								35416,	-- Power of the Genesaur
 							},
 							["g"] = {
 								i(112885),	-- Commander Gar's Iron Insignia
@@ -881,7 +883,7 @@ root(ROOTS.Zones, {
 							}),
 						}),
 					}),
-					n(-357, {	-- Sparring Arena
+					header(HEADERS.Spell, 171866, {	-- Sparring Arena
 						q(35210, {	-- A Great Escape
 							["provider"] = { "o", 236140 },	-- Goren Tunnel
 							["coord"] = { 34.7, 66.9, 547 },
@@ -1227,7 +1229,7 @@ root(ROOTS.Zones, {
 							},
 						}),
 						q(36573, {	-- Strike While the Iron is Hot (H)
-							["provider"] = { "n", 74594 },	-- Durotan
+							["provider"] = { "n", 74594 },	-- Durotan <Chieftain of the Frostwolf Clan>
 							["coord"] = { 46.1, 70.1, GORGROND },
 							["races"] = HORDE_ONLY,
 							["sourceQuests"] = {
@@ -1438,7 +1440,7 @@ root(ROOTS.Zones, {
 							}),
 						}),
 					}),
-					n(-357, sharedData({	-- Sparring Arena (A) (Proofs of Strength)
+					header(HEADERS.Spell, 171866, sharedData({	-- Sparring Arena (A) (Proofs of Strength)
 						["sharedDescription"] = "Quest Item will only drop from mobs killed while your Sparring Arena follower is summoned, they do not need to hit any.",
 						["sourceQuest"] = 35137,	-- The Sparring Arena (A)
 						["races"] = ALLIANCE_ONLY,
@@ -1528,7 +1530,7 @@ root(ROOTS.Zones, {
 							},
 						}),
 					})),
-					n(-357, sharedData({	-- Sparring Arena (H) (Proofs of Strength)
+					header(HEADERS.Spell, 171866, sharedData({	-- Sparring Arena (H) (Proofs of Strength)
 						["sharedDescription"] = "Quest Item will only drop from mobs killed while your Sparring Arena follower is summoned, they do not need to hit any.",
 						["sourceQuest"] = 35152,	-- The Sparring Arena (H)
 						["races"] = HORDE_ONLY,
@@ -1812,7 +1814,7 @@ root(ROOTS.Zones, {
 					}),
 					q(33706, {	-- Laying Dionor to Rest (H)
 						["provider"] = { "n", 82302 },	-- Birchus
-						["coord"] = { 52.8, 51.7, GORGROND },
+						["coord"] = { 50.3, 47.5, GORGROND },
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 33695,	-- Taking the Death Bloom
 						["g"] = {
@@ -2721,7 +2723,7 @@ root(ROOTS.Zones, {
 					}),
 				}),
 				n(TREASURES, {
-					n(-357, {	-- Sparring Arena
+					header(HEADERS.Spell, 171866, {	-- Sparring Arena
 						o(233455, {	-- Aged Stone Container
 							["questID"] = 36734,
 							["coord"] = { 51.3, 40.6, GORGROND },
@@ -2899,7 +2901,7 @@ root(ROOTS.Zones, {
 							},
 						}),
 					}),
-					n(-358, {	-- Lumber Mill
+					header(HEADERS.Spell, 164028, {	-- Lumber Mill
 						o(236350, {	-- Aged Stone Container
 							["questID"] = 36003,
 							["coord"] = { 42.4, 54.8, GORGROND },
@@ -3018,6 +3020,11 @@ root(ROOTS.Zones, {
 							["g"] = {
 								currency(824),	-- Garrison Resources
 							},
+						}),
+						o(243281, {	-- Ninja Pepe
+							["coord"] = { 47.51, 41.31, GORGROND },
+							["timeline"] = { ADDED_6_2_0 },
+							["g"] = { i(127867) },	-- A Tiny Ninja Shroud (Pepe!)
 						}),
 						o(236282, {	-- Obsidian Crystal Formation
 							["questID"] = 35979,

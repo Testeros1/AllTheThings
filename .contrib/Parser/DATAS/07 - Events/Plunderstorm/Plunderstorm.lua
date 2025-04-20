@@ -11,11 +11,15 @@ PLUNDERSTORM = createHeader({
 	eventID = EVENTS.PLUNDERSTORM,
 	eventSchedule = {
 		0, --
-		2025, 01, 14,	-- 15/01/2025
-		2025, 02, 18,	-- 18/02/2024
+		2025, 01, 14,	-- 14/01/2025
+		2025, 02, 26,	-- 26/02/2025
 	},
 	text = {
+		-- #if ANYCLASSIC
+		en = "Plunderstorm",
+		-- #else
 		en = [[~WOWLABS_GAMEMODE_HEADER]],
+		-- #endif
 	},
 	description = {
 		en = "Get swept away in the Plunderstorm— a fun, new, limited-time, pirate-themed event of prodigious proportions lasting the next several weeks. Scour the map and try to be the last pirate standing while dashing across the Arathi Highlands to find abilities, upgrades, and loot to plunder just to survive!\n\nTo Play: Login to Retail WoW and select 'Plunderstorm' from the Game Mode on the top left of your Character Select screen.",
@@ -172,9 +176,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.PLUNDERSTORM, bubbleDown({ ["timeline"
 			},{ -- RENOWN 23 --
 				i(216731),	-- Plunderlord's Cuffs
 			},{ -- RENOWN 24 --
-				i(216907, {	-- A Tiny Plumed Tricorne
-					["questID"] = 80093,
-				}),
+				i(216907),	-- A Tiny Plumed Tricorne (Pepe!)
 			},{ -- RENOWN 25 --
 				i(216732),	-- Plunderlord's Golden Cinch
 			},{ -- RENOWN 26 --
@@ -462,8 +464,7 @@ root(ROOTS.WorldEvents, applyevent(EVENTS.PLUNDERSTORM, bubbleDown({ ["timeline"
 				}),
 			}),
 			filter(TOYS, {
-				i(216907, {	-- A Tiny Plumed Tricorne
-					["questID"] = 80093,
+				i(216907, {	-- A Tiny Plumed Tricorne (Pepe!)
 					["cost"] = {{"c", PLUNDER, 500}},
 				}),
 				i(170197, {	-- Swarthy Warning Sign
@@ -502,7 +503,7 @@ root(ROOTS.HiddenQuestTriggers, {
 	expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_2_6, REMOVED_PLUNDERSTORM_END } }, {
 		n(PLUNDERSTORM, {
 			q(80110),	-- First WQ of the Day
-			q(80436),	-- Purchasing Pirate's Booty -- Once per account lockout
+			-- q(80436),	-- Purchasing Pirate's Booty -- Once per account lockout
 			q(80262),	-- Renown 6 - Shabby Swabbie outfit unlocked in Plunderstorm
 			q(81657),	-- Renown 16 - Marveouls Multi-Shot unlocked in Plunderstorm
 			q(80263),	-- Renown 17 - Snazzy Swabbie outfit unlocked in Plunderstorm

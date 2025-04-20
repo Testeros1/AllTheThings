@@ -16,6 +16,8 @@ namespace ATT.FieldTypes
 
         private long Gold { get; set; }
 
+        public bool HasData => Gold > 0 || (_costTypes?.Any() ?? false);
+
         public override string ToString() => ToJSON(AsExportType());
 
         private Dictionary<string, IDictionary<decimal, long>> _costTypes;
@@ -48,12 +50,12 @@ namespace ATT.FieldTypes
             return null;
         }
 
-        public static Cost Merge(IDictionary<string, object> data, string type, decimal id, long amount)
+        public static void Merge(IDictionary<string, object> data, string type, decimal id, long amount)
         {
-            return Merge(data, new object[] { new object[] { type, id, amount } });
+            Merge(data, new object[] { new object[] { type, id, amount } });
         }
 
-        public static Cost Merge(IDictionary<string, object> data, object value)
+        public static void Merge(IDictionary<string, object> data, object value)
         {
             Cost cost;
             if (!data.TryGetValue("cost", out object costobj))
@@ -63,7 +65,6 @@ namespace ATT.FieldTypes
                 if (value is Cost newCost)
                 {
                     cost.Merge(newCost);
-                    return cost;
                 }
             }
             else
@@ -74,12 +75,10 @@ namespace ATT.FieldTypes
             if (value is Cost mergeCost)
             {
                 cost.Merge(mergeCost);
-                return cost;
             }
             else
             {
                 cost.Merge(value);
-                return cost;
             }
         }
 
@@ -136,6 +135,7 @@ namespace ATT.FieldTypes
             }
 
             List<decimal> clean = new List<decimal>();
+            List<string> cleanTypes = new List<string>();
             foreach (var costType in _costTypes)
             {
                 switch (costType.Key)
@@ -205,6 +205,19 @@ namespace ATT.FieldTypes
             foreach (decimal id in clean)
             {
                 _costTypes["i"].Remove(id);
+            }
+
+            foreach(var costType in _costTypes)
+            {
+                if (costType.Value.Count == 0)
+                {
+                    cleanTypes.Add(costType.Key);
+                }
+            }
+
+            foreach(var costType in cleanTypes)
+            {
+                _costTypes.Remove(costType);
             }
         }
 
@@ -325,9 +338,9 @@ namespace ATT.FieldTypes
             {
                 if (Gold != 0 && Gold != merge.Gold)
                 {
-                    LogWarn($"'{Field}' '{Gold}' replaced with '{merge.Gold}'", _data);
+                    LogDebugWarn($"'{Field}' '{Gold}' added with '{merge.Gold}'", _data);
                 }
-                Gold = merge.Gold;
+                Gold = Gold + merge.Gold;
             }
 
             if (merge._costTypes == null)

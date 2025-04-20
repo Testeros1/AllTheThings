@@ -71,9 +71,15 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				}),
 				q(56648, {	-- Call to Arms: Nazjatar
 					["sourceQuests"] = { 56156 },	-- A Tempered Blade
-					["provider"] = { "n", 143559 },	-- Grand Marshal Tremblade
+					["qgs"] = {
+						143559,	-- Grand Marshal Tremblade
+						154640,	-- Grand Marshal Tremblade
+					},
 					["isWeekly"] = true,
-					["coord"] = { 56.4, 26.0, BORALUS },
+					["coords"] = {
+						{ 56.4, 26.0, BORALUS },
+						{ 38.0, 55.4, NAZJATAR },
+					},
 					["races"] = ALLIANCE_ONLY,
 					["g"] = {
 						ASPIRANTS_EQUIPMENT_CACHE,
@@ -182,7 +188,7 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 					},
 				}),
 			})),
-			n(-397, {	-- Outposts
+			n(OUTPOSTS, {
 				["description"] = "Alliance Outposts allow you to set up additional bases in Zandalar.  You can buy Scouting Reports from Vindicator Jaelaana, the vendor next to Wind's Redemption.  Each one will start a mission on your Mission Command Table.  After you complete the initial questline, you'll be offered additional missions to upgrade your outposts.",
 				["g"] = {
 					i(165880, {	-- Outpost Upgrade: Arom's Stand
@@ -690,6 +696,24 @@ root(ROOTS.Zones, m(KUL_TIRAS, bubbleDown({ ["timeline"] = { ADDED_8_0_1 } }, {
 				["coord"] = { 69.34, 27.15, BORALUS },
 				["races"] = ALLIANCE_ONLY,
 			}),
+			n(QUESTS, sharedData({
+				["qgs"] = {
+					142063, -- Tezran
+					141584,	-- Zurvan
+				},
+				["coords"] = {
+					{ 71.6, 13.7, BORALUS },
+					{ 53.9, 88.4, DAZARALOR },
+				},
+				["isWeekly"] = true,
+			}, {
+				q(52834),	-- Seal of Wartorn Fate: Gold
+				q(52838),	-- Seal of Wartorn Fate: Piles of Gold
+				q(52835),	-- Seal of Wartorn Fate: Marks of Honor
+				q(52839),	-- Seal of Wartorn Fate: Additional Marks of Honor
+				q(52837),	-- Seal of Wartorn Fate: War Resources
+				q(52840),	-- Seal of Wartorn Fate: Stashed War Resources
+			})),
 			q(51487, {	-- Searching for Answers
 				["sourceQuests"] = { 47952 },	-- The Missing Fleet
 				["provider"] = { "n", 137866 },	-- Taelia
@@ -846,12 +870,12 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.BFA, bubbleDownSelf({ ["time
 				q(53751),	-- Grimwatt's Crash completed
 				-- Outpost Upgrades
 				q(54292),	-- Brennadam completed
-				q(54261),	-- Upgrade: Brennadam started
+				-- q(54261),	-- Upgrade: Brennadam started
 				q(54296),	-- Castaway Point completed
 				q(54305),	-- Mission Report: Arom's Stand
 				q(54293),	-- Mission Report: Castaway Point
-				q(54283),	-- Upgrade: Castaway Point started
-				q(54304),	-- Upgrade: Arom's Stand started
+				-- q(54283),	-- Upgrade: Castaway Point started
+				-- q(54304),	-- Upgrade: Arom's Stand started
 				------ Stay awhile and listen ------ (TODO upgrade to proper HQT in Boralus)
 				hqt(54870),	-- "Stay a while and listen" type conversation between Jaina and Katherine Proudmoore next to the flight master. Available during the war campaign after Clearing Out the Cache.
 				hqt(55464),	-- "Stay a while and listen" type conversation between Jaina and Tandred Proudmoore in Proudmoore Keep at 48, 60. Obtainable after Sail with the Tides completed.

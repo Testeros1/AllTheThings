@@ -406,12 +406,14 @@ root(ROOTS.Zones, {
 						["coord"] = { 31.8, 11.8, FROSTFIRE_RIDGE },
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 34280,	-- All is Revealed
+						["lockCriteria"] = {1,"questID", 34293},	-- Eliminate the Shadow Council
 					}),
 					q(34293, {	-- Eliminate the Shadow Council
 						["provider"] = { "n", 73480 },	-- Image of Archmage Khadgar
 						["coord"] = { 21.9, 14.6, FROSTFIRE_RIDGE },
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 34280,	-- All is Revealed
+						["lockCriteria"] = {1,"questID", 34292},	-- Eliminate the Shadow Council
 					}),
 					q(32994, {	-- Enfilade
 						["provider"] = { "n", 73097 },	-- Frostwolf Champion
@@ -915,7 +917,10 @@ root(ROOTS.Zones, {
 					}),
 					q(34294, {	-- The Fel Crystals
 						["provider"] = { "n", 73480 },	-- Image of Archmage Khadgar
-						["coord"] = { 31.7, 11.8, FROSTFIRE_RIDGE },
+						["coords"] = {
+							{ 22.0, 14.7, FROSTFIRE_RIDGE },
+							{ 31.7, 11.8, FROSTFIRE_RIDGE },
+						},
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 34291,	-- Have a Heart
 					}),
@@ -1009,6 +1014,7 @@ root(ROOTS.Zones, {
 					}),
 					q(36230, {	-- The Restless Spirit
 						["provider"] = { "n", 84494 },	-- Waruk the Frostforger
+						["coord"] = { 46.0, 48.6, FROSTFIRE_RIDGE },
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 36207,	-- Waruk the Frostforger
 						["requireSkill"] = BLACKSMITHING,
@@ -1053,18 +1059,11 @@ root(ROOTS.Zones, {
 							i(106134),	-- Frostwolf Scout's Armwraps
 							i(106145),	-- Frostwolf Stalwart Bracers
 							i(106158),	-- Frostwolf Wind-Talker Cuffs
-							i(106155, {	-- Karabor Honor Guard Wristwraps
-								["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-							}),
-							i(106165, {	-- Karabor Sage Wristwraps
-								["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-							}),
-							i(106144, {	-- Karabor Skirmisher Wristwraps
-								["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-							}),
-							i(106178, {	-- Rangari Initiate Wristwraps
-								["races"] = ALLIANCE_ONLY,	-- Alliance appearance with no other source, granted by learning Horde appearance
-							}),
+							--
+							a(i(106155)),	-- Karabor Honor Guard Wristwraps
+							a(i(106165)),	-- Karabor Sage Wristwraps
+							a(i(106144)),	-- Karabor Skirmisher Wristwraps
+							a(i(106178)),	-- Rangari Initiate Wristwraps
 						},
 					}),
 					q(33526, {	-- These Colors Don't Run
@@ -1125,7 +1124,10 @@ root(ROOTS.Zones, {
 					}),
 					q(32796, {	-- To the Garrison
 						["provider"] = { "n", 70941 },	-- Ga'nar
-						["coord"] = { 52.6, 66.9, 532 },
+						["coords"] = {
+							{ 51.3, 64.3, 532 },	-- Grulloc's Grotto
+							{ 52.6, 66.9, 532 },	-- Grulloc's Grotto
+						},
 						["races"] = HORDE_ONLY,
 						["sourceQuest"] = 32795,	-- The Eldest
 					}),
@@ -2089,7 +2091,7 @@ root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.WOD, bubbleDownSelf({ ["time
 				q(34332),	-- Shamanstone: Touched By Fire selected. Only procs once
 				q(34333),	-- Shamanstone: Touched By Ice selected. Only procs once
 				q(34328),	-- Shamanstone: Blessing of the WOlf selected. Only procs once
-				q(34521),	-- Treasure: Glowing Obsidian Shard - secondary quest triggered when looting Burning Pearl in Frostfire Ridge
+				-- q(34521),	-- Treasure: Glowing Obsidian Shard - secondary quest triggered when looting Burning Pearl in Frostfire Ridge
 				q(34968),	-- Treasure: Ice-Covered Supplies - secondary quest triggered when looting Forgotten Supplies in Frostfire Ridge
 			}),
 		}),

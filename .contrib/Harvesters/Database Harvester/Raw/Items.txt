@@ -17665,7 +17665,7 @@
 191313@@@Mask of Death
 191414@@@Skeletal Artifact
 191427@@@Corrupted Whetstone
-1.14.3.46575
+1.14.3.44834
 191249@@@Greater Deathstone
 191312@@@Failsafe Phylactery
 191458@@@Shattered Phylactery
@@ -17689,8 +17689,6 @@
 191661@@@Monstrous Spider Fang
 191664@@@Book of Deathstones: Thaddius' Lightning Bolts
 191666@@@Book of Deathstones: Monstrous Spider Fang
-1.14.3.49821
-1.14.4.50252
 1.14.4.50753
 209611@@@Insignia of the Alliance
 209612@@@Insignia of the Alliance
@@ -21312,8 +21310,7 @@
 229380@@@Shadowstrike
 229381@@@Thunderstrike
 229382@@@Hyperthermically Insulated Lava Dredger
-1.15.4.56400
-16569@@@General's Chain Sabatons
+1.15.3.56488
 220610@@@Rune of Mental Dexterity
 220612@@@Rune of Tidal Waves
 220613@@@Rune of Rolling Thunder
@@ -21321,17 +21318,19 @@
 220616@@@Rune of Overcharged
 220617@@@Rune of Pandemic
 220618@@@Rune of Immolation Aura
-224122@@@Dream Eater
-224279@@@Terrestris
-224280@@@Suzerain, Defender of the Dragonflights
-224281@@@Gla'sir
-224282@@@Rae'lar
 225686@@@Rune of Decimation
 225687@@@Rune of Infernal Armor
 225688@@@Rune of Mark of Chaos
 225689@@@Spell Notes: Arcane Barrage
 225690@@@Spell Notes: Frozen Orb
 225691@@@Spell Notes: Overheat
+1.15.4.56400
+16569@@@General's Chain Sabatons
+224122@@@Dream Eater
+224279@@@Terrestris
+224280@@@Suzerain, Defender of the Dragonflights
+224281@@@Gla'sir
+224282@@@Rae'lar
 227764@@@Scorched Core Helm
 228105@@@Everburning Flame Core
 229352@@@Intelligence Findings
@@ -23966,6 +23965,612 @@
 237504@@@Supply Shipment
 237512@@@Blade of Inquisition
 237577@@@Totem of Unholy Might
+1.15.6.58725
+237773@@@Word of Thawing
+237810@@@Weighted Consecrated Sharpening Stone
+237814@@@Sentinel's Lamellar Legguards
+237815@@@Sentinel's Silk Leggings
+237817@@@Sentinel's Lizardhide Pants
+237818@@@Sentinel's Leather Pants
+237819@@@Sentinel's Chain Leggings
+237820@@@Outrider's Silk Leggings
+237821@@@Outrider's Lizardhide Pants
+237822@@@Outrider's Leather Pants
+237823@@@Outrider's Mail Leggings
+237824@@@Outrider's Chain Leggings
+237825@@@Sentinel's Plate Legguards
+237826@@@Outrider's Plate Legguards
+1.15.6.58866
+236002@@@List of Components
+236878@@@Mysterious Relic
+236879@@@Mysterious Relic
+236880@@@Mysterious Relic
+237024@@@Opera Ticket
+238234@@@Blessed Wizard Oil
+238241@@@Consecrated Sharpening Stone
+238348@@@The Axe of Severing
+238349@@@Abomination Skin Leggings
+238350@@@Scorn's Focal Dagger
+238351@@@The Frozen Clutch
+238352@@@Scorn's Icy Choker
+238353@@@Mantle of Lady Falther'ess
+238354@@@Lady Falther'ess' Finger
+238355@@@Chains of the Lich
+238356@@@Waistband of Balzaphon
+238357@@@Staff of Balzaphon
+238358@@@Blackwood's Thigh
+238360@@@Lord Blackwood's Buckler
+238361@@@Lord Blackwood's Blade
+238362@@@Bracers of Mending
+238363@@@The Shadow's Grasp
+238364@@@Cloak of Revanchion
+1.15.6.58912
+238681@@@Dusty Bag
+1.15.6.59415
+236864@@@Soulfrost Quiver
+236869@@@Soulfrost Ammo Pouch
+1.15.7.59706
+190325@@@Monster - Incubus Whip Mace1H
+223323@@@Shirt
+232324@@@Bird Whistle
+236317@@@Vis'era the Gutrender
+237020@@@Scarlet Insignia
+237023@@@Pop-Up Shrub
+237037@@@Haute Club Membership Card
+237143@@@Orders from the Commander
+237163@@@Ancient Hero's Skull
+238264@@@Scarlet Augur's Hood
+238265@@@Scarlet Augur's Mantle
+238266@@@Scarlet Augur's Vestaments
+238267@@@Scarlet Augur's Cuffs
+238268@@@Scarlet Augur's Mitts
+238269@@@Scarlet Augur's Strap
+238270@@@Scarlet Augur's Leggings
+238271@@@Scarlet Augur's Soles
+238272@@@Scarlet Infiltrator's Bandana
+238273@@@Scarlet Infiltrator's Shoulderpads
+238274@@@Scarlet Infiltrator's Vest
+238275@@@Scarlet Infiltrator's Bracers
+238276@@@Scarlet Infiltrator's Gloves
+238277@@@Scarlet Infiltrator's Belt
+238278@@@Scarlet Infiltrator's Trousers
+238279@@@Scarlet Infiltrator's Shoes
+238280@@@Scarlet Huntsman's Coif
+238281@@@Scarlet Huntsman's Pauldrons
+238282@@@Scarlet Huntsman's Chain
+238283@@@Scarlet Huntsman's Wristguards
+238284@@@Scarlet Huntsman's Handguards
+238285@@@Scarlet Huntsman's Clasp
+238286@@@Scarlet Huntsman's Legguards
+238287@@@Scarlet Huntsman's Boots
+238288@@@Scarlet Soldier's Helmet
+238289@@@Scarlet Soldier's Spaulders
+238290@@@Scarlet Soldier's Chestplate
+238291@@@Scarlet Soldier's Protectors
+238292@@@Scarlet Soldier's Grips
+238293@@@Scarlet Soldier's Waistguard
+238294@@@Scarlet Soldier's Legplates
+238295@@@Scarlet Soldier's Stompers
+238298@@@Pattern: Scarlet Augur's Hood
+238299@@@Pattern: Scarlet Augur's Mantle
+238300@@@Pattern: Scarlet Augur's Vestaments
+238301@@@Pattern: Scarlet Augur's Cuffs
+238302@@@Pattern: Scarlet Augur's Mitts
+238303@@@Pattern: Scarlet Augur's Strap
+238304@@@Pattern: Scarlet Augur's Leggings
+238305@@@Pattern: Scarlet Augur's Soles
+238306@@@Pattern: Scarlet Infiltrator's Bandana
+238307@@@Pattern: Scarlet Infiltrator's Shoulderpads
+238308@@@Pattern: Scarlet Infiltrator's Vest
+238309@@@Pattern: Scarlet Infiltrator's Bracers
+238310@@@Pattern: Scarlet Infiltrator's Gloves
+238311@@@Pattern: Scarlet Infiltrator's Belt
+238312@@@Pattern: Scarlet Infiltrator's Trousers
+238313@@@Pattern: Scarlet Infiltrator's Shoes
+238314@@@Pattern: Scarlet Huntsman's Coif
+238315@@@Pattern: Scarlet Huntsman's Pauldrons
+238316@@@Pattern: Scarlet Huntsman's Chain
+238317@@@Pattern: Scarlet Huntsman's Wristguards
+238318@@@Pattern: Scarlet Huntsman's Handguards
+238319@@@Pattern: Scarlet Huntsman's Clasp
+238320@@@Pattern: Scarlet Huntsman's Legguards
+238321@@@Pattern: Scarlet Huntsman's Boots
+238322@@@Plans: Scarlet Soldier's Helmet
+238323@@@Plans: Scarlet Soldier's Spaulders
+238324@@@Plans: Scarlet Soldier's Chestplate
+238325@@@Plans: Scarlet Soldier's Protectors
+238326@@@Plans: Scarlet Soldier's Grips
+238327@@@Plans: Scarlet Soldier's Waistguard
+238328@@@Plans: Scarlet Soldier's Legplates
+238329@@@Plans: Scarlet Soldier's Stompers
+238637@@@Prowler Steak
+238638@@@Filet o' Flank
+238639@@@Sunrise Omelette
+238641@@@Specklefin Feast
+238642@@@Grand Lobster Banquet
+238645@@@Recipe: Prowler Steak
+238646@@@Recipe: Filet o' Flank
+238647@@@Recipe: Sunrise Omelette
+238649@@@Recipe: Specklefin Feast
+238650@@@Recipe: Grand Lobster Banquet
+238687@@@Maul of Onslaught
+238734@@@Tinkerbox: Teleport
+238735@@@Tinkerbox: Nitro Boosts
+238736@@@Tinkerbox: Magnetic Displacement
+238737@@@Tinkerbox
+238781@@@Semisafe Transporter: New Avalon
+238782@@@Schematic: Tinkerbox
+238783@@@Schematic: Tinkerbox: Teleport
+238784@@@Schematic: Tinkerbox: Nitro Boosts
+238785@@@Schematic: Tinkerbox: Magnetic Displacement
+238786@@@Schematic: Tinker: Teleport
+238787@@@Schematic: Tinker: Nitro Boosts
+238788@@@Schematic: Tinker: Magnetic Displacement
+238789@@@Schematic: Semisafe Transporter: New Avalon
+238794@@@Unappetizing Leftovers
+238811@@@Juicy Apple
+238830@@@Apple Scope
+238831@@@Apple Rope
+238899@@@Assorted Fish
+238925@@@Scarlet Quiver
+238926@@@Scarlet Ammo Pouch
+238927@@@Pattern: Scarlet Quiver
+238928@@@Pattern: Scarlet Ammo Pouch
+238935@@@Gently Plagued Meat
+238945@@@Caladboulder
+238960@@@Quartermaster's Crate
+238961@@@Caladbolg
+238985@@@Heavy Crate
+239010@@@Hilt of the Ashbringer
+239011@@@Shard of Crystallized Light
+239012@@@Splinter of Crystallized Light
+239013@@@Crystalline Axe
+239016@@@Holy Salts
+239017@@@Exquisite Spices
+239021@@@Carrie's Cookbook
+239060@@@Will of the Mountain
+239061@@@Flawless Obsidian Hammer
+239092@@@Preposterously Prosed Postage
+239097@@@Key to the Cathedral
+239117@@@Crusader's Chalice
+239119@@@Holy Arrow
+239123@@@Monster - BOW_1H_STANDARD_C_01 - Red
+239147@@@Crusader's Knapsack
+239148@@@Crimson Dawnwoven Bag
+239149@@@Pattern: Crusader's Knapsack
+239150@@@Pattern: Crimson Dawnwoven Bag
+239159@@@S03 - Scarlet Enclave - Captains Shield
+239196@@@Ruined Lightforged Blade
+239197@@@Reforged Blade of the Ashbringer
+239215@@@Corrupted Emblem
+239216@@@Lightforged Iron
+239218@@@Stoneshaper's Notes
+239219@@@Emblem of the Ashbringer
+239221@@@Monster - Sword1H, Basic
+239222@@@Schematic: Pop-Up Shrub
+239223@@@House Prop
+239225@@@Classy Quill
+239246@@@Fizzlefuse's Shopping List
+239248@@@Scarlet Junkbox
+239292@@@Forgewright's Notes
+239301@@@Corrupted Ashbringer
+239302@@@Scarlet Uniform Belt
+239316@@@Triangulation Samophlange
+239512@@@Lightbreaker Wrists
+239513@@@Lightbreaker Belt
+239514@@@Lightbreaker Grips
+239515@@@Lightbreaker Greaves
+239516@@@Lightbreaker Shoulders
+239517@@@Lightbreaker Greathelm
+239518@@@Lightbreaker Tassets
+239519@@@Lightbreaker Cuirass
+239520@@@Lightbreaker Bracers
+239521@@@Lightbreaker Waistguard
+239522@@@Lightbreaker Gauntlets
+239523@@@Lightbreaker Sabatons
+239524@@@Lightbreaker Pauldrons
+239525@@@Lightbreaker Helmet
+239526@@@Lightbreaker Legplates
+239527@@@Lightbreaker Breastplate
+239529@@@Dawnstalker Breastplate
+239530@@@Dawnstalker Greaves
+239531@@@Dawnstalker Gauntlets
+239532@@@Dawnstalker Visor
+239533@@@Dawnstalker Leggings
+239534@@@Dawnstalker Pauldrons
+239535@@@Dawnstalker Belt
+239536@@@Dawnstalker Vambraces
+239537@@@Dawnstalker Boots
+239538@@@Dawnstalker Girdle
+239539@@@Dawnstalker Handguards
+239540@@@Dawnstalker Headpiece
+239541@@@Dawnstalker Legguards
+239542@@@Dawnstalker Spaulders
+239543@@@Dawnstalker Tunic
+239544@@@Dawnstalker Wristguards
+239547@@@Duskwraith Wristguards
+239548@@@Duskwraith Chestguard
+239549@@@Duskwraith Grips
+239550@@@Duskwraith Mask
+239551@@@Duskwraith Leggings
+239552@@@Duskwraith Mantle
+239553@@@Duskwraith Treads
+239554@@@Duskwraith Belt
+239555@@@Duskwraith Bracers
+239556@@@Duskwraith Waistguard
+239557@@@Duskwraith Gauntlets
+239558@@@Duskwraith Sabatons
+239559@@@Duskwraith Pauldrons
+239560@@@Duskwraith Helmet
+239561@@@Duskwraith Legplates
+239562@@@Duskwraith Breastplate
+239565@@@Garb of Revelation
+239572@@@Boots of Revelation
+239574@@@Hands of Revelation
+239575@@@Crown of Revelation
+239577@@@Pants of Revelation
+239581@@@Mantle of Revelation
+239582@@@Girdle of Revelation
+239583@@@Wrists of Revelation
+239584@@@Gloves of Revelation
+239585@@@Circlet of Revelation
+239586@@@Shoulderpads of Revelation
+239587@@@Leggings of Revelation
+239588@@@Bindings of Revelation
+239589@@@Sandals of Revelation
+239590@@@Belt of Revelation
+239591@@@Robe of Revelation
+239618@@@Monster - Sword 1H - Vanquisher's Sword (Alt)
+239688@@@Monster - Spear 2H - Scarlet Cavalry - Spear
+239694@@@Covenant of Light
+239695@@@Scarlet Steed
+239696@@@Hilt of the Ashbringer
+239698@@@Dawnwoven Fabric
+239706@@@Consecrated Sabatons
+239707@@@Consecrated Helmet
+239708@@@Consecrated Pauldrons
+239709@@@Consecrated Legplates
+239710@@@Consecrated Sandals
+239712@@@Consecrated Shoulderpads
+239714@@@Consecrated Circlet
+239715@@@Consecrated Robe
+239716@@@Consecrated Gloves
+239718@@@Consecrated Belt
+239719@@@Consecrated Bindings
+239721@@@Consecrated Leggings
+239722@@@Consecrated Wristguards
+239726@@@Consecrated Boots
+239729@@@Consecrated Headpiece
+239730@@@Consecrated Handguards
+239731@@@Consecrated Tunic
+239756@@@Consecrated Girdle
+239757@@@Consecrated Legguards
+239758@@@Consecrated Spaulders
+239759@@@Consecrated Bracers
+239760@@@Consecrated Waistguard
+239761@@@Consecrated Breastplate
+239762@@@Consecrated Gauntlets
+239764@@@Crimson Bladeleaf
+240018@@@Fizzlefuse's Tinker Manual
+240020@@@Inquisition Legguards
+240021@@@Inquisition Spaulders
+240022@@@Inquisition Boots
+240023@@@Inquisition Vambraces
+240024@@@Inquisition Belt
+240025@@@Inquisition Shoulderplates
+240026@@@Inquisition Leggings
+240027@@@Inquisition Helmet
+240028@@@Inquisition Gloves
+240029@@@Inquisition Greaves
+240030@@@Inquisition Breastplate
+240031@@@Inquisition Bracers
+240032@@@Inquisition Waistguard
+240033@@@Inquisition Pauldrons
+240034@@@Inquisition Legplates
+240035@@@Inquisition Crown
+240036@@@Inquisition Gauntlets
+240037@@@Inquisition Sabatons
+240038@@@Inquisition Chestguard
+240039@@@Inquisition Tunic
+240040@@@Inquisition Headpiece
+240041@@@Inquisition Handguards
+240042@@@Inquisition Wristguards
+240043@@@Inquisition Girdle
+240044@@@Fireleaf Wristwraps
+240045@@@Fireleaf Waistguard
+240046@@@Fireleaf Mantle
+240047@@@Fireleaf Pants
+240048@@@Fireleaf Hood
+240049@@@Fireleaf Mitts
+240050@@@Fireleaf Boots
+240051@@@Fireleaf Garb
+240052@@@Fireleaf Bindings
+240053@@@Fireleaf Belt
+240054@@@Fireleaf Shoulderpads
+240055@@@Fireleaf Leggings
+240056@@@Fireleaf Circlet
+240057@@@Fireleaf Gloves
+240058@@@Fireleaf Sandals
+240059@@@Fireleaf Robe
+240060@@@Waywatcher Wraps
+240061@@@Waywatcher Sash
+240062@@@Waywatcher Shoulderpads
+240063@@@Waywatcher Trousers
+240064@@@Waywatcher Cowl
+240065@@@Waywatcher Grips
+240066@@@Waywatcher Stompers
+240067@@@Waywatcher Vest
+240068@@@Waywatcher Bindings
+240069@@@Waywatcher Cord
+240070@@@Waywatcher Mantle
+240071@@@Waywatcher Kilt
+240072@@@Waywatcher Hood
+240073@@@Waywatcher Mitts
+240074@@@Waywatcher Sandals
+240075@@@Waywatcher Leathers
+240076@@@Waywatcher Bracers
+240077@@@Waywatcher Waistguard
+240078@@@Waywatcher Pauldrons
+240079@@@Waywatcher Leggings
+240080@@@Waywatcher Headdress
+240081@@@Waywatcher Gauntlets
+240082@@@Waywatcher Sabatons
+240083@@@Waywatcher Armor
+240084@@@Waywatcher Wristguards
+240085@@@Waywatcher Girdle
+240086@@@Waywatcher Spaulders
+240087@@@Waywatcher Legguards
+240088@@@Waywatcher Headpiece
+240089@@@Waywatcher Handguards
+240090@@@Waywatcher Boots
+240091@@@Waywatcher Tunic
+240092@@@Soulcrusher Tunic
+240093@@@Soulcrusher Boots
+240095@@@Soulcrusher Handguards
+240096@@@Soulcrusher Headpiece
+240097@@@Soulcrusher Legguards
+240098@@@Soulcrusher Spaulders
+240099@@@Soulcrusher Girdle
+240100@@@Soulcrusher Wristguards
+240101@@@Soulcrusher Chestguard
+240102@@@Soulcrusher Sabatons
+240103@@@Soulcrusher Gloves
+240104@@@Soulcrusher Faceguard
+240105@@@Soulcrusher Legplates
+240106@@@Soulcrusher Pauldrons
+240107@@@Soulcrusher Waistguard
+240108@@@Soulcrusher Bracers
+240109@@@Soulcrusher Embrace
+240110@@@Soulcrusher Greaves
+240122@@@Soulcrusher Mitts
+240123@@@Soulcrusher Crown
+240124@@@Soulcrusher Kilt
+240125@@@Soulcrusher Mantle
+240126@@@Soulcrusher Cord
+240127@@@Soulcrusher Bindings
+240128@@@Soulcrusher Armor
+240129@@@Soulcrusher Treads
+240130@@@Soulcrusher Grips
+240131@@@Soulcrusher Helmet
+240132@@@Test Staff
+240134@@@Soulcrusher Leggings
+240135@@@Soulcrusher Epaulets
+240136@@@Soulcrusher Belt
+240137@@@Soulcrusher Vambraces
+240138@@@Heretic Robe
+240139@@@Heretic Sandals
+240140@@@Heretic Gloves
+240141@@@Heretic Cowl
+240142@@@Heretic Leggings
+240143@@@Heretic Shoulderpads
+240144@@@Heretic Belt
+240145@@@Heretic Bindings
+240146@@@Heretic Garb
+240147@@@Heretic Handguards
+240148@@@Heretic Hood
+240149@@@Heretic Pants
+240150@@@Heretic Mantle
+240151@@@Heretic Waistguard
+240152@@@Heretic Wristguards
+240153@@@Heretic Boots
+240174@@@Solistra, Fang of the First Light
+240195@@@Invisible Sword
+240217@@@Monster Item - Stave_2H_Jeweled_A_02 - Red
+240742@@@Monster - 1H, Shortsword, Red
+240832@@@Nivifacient Gland
+240835@@@Crate of Moonglade Supplies
+240836@@@Thisalee's Whistle
+240837@@@Strings of Fate
+240839@@@Thal'kituun, the Unseen Guest
+240841@@@High Commander's Guard
+240842@@@Scarlet Rotbringer
+240843@@@Starter's Pistol
+240844@@@Putress' Poker
+240845@@@Prototype Magnet
+240846@@@Magnetic Scrap
+240848@@@Nordrassil Detritus
+240849@@@Staff of the Glade
+240850@@@Lightfist Hammer
+240851@@@Regicide
+240852@@@Crimson Cleaver
+240853@@@Queensfall
+240854@@@Mercy
+240919@@@Ravagane
+240920@@@Leogan
+240921@@@Scarlet Smashbringer
+240922@@@Deception
+240923@@@Duplicity
+240924@@@Poleaxe of the Beast
+240925@@@Experiment-800M
+240936@@@Inert Ashbringer
+240945@@@Slice of Carrie's Apple Pie
+240994@@@Tim's Test Ranged Weapon 2
+240997@@@Fratley's Spur
+240998@@@Soporific Blade
+241001@@@Tyr's Fall
+241002@@@Remnants of the Red
+241003@@@Mirage, Rod of Illusion
+241004@@@Conundrum
+241006@@@Spire of Sacrifice
+241008@@@Condemnation
+241011@@@Greatstaff of Fealty
+241012@@@Wand of Reanimation
+241015@@@Aegis of the Scarlet Bastion
+241017@@@Demon's Folly
+241018@@@Nathrezim Heart
+241020@@@Putress' Completed Diary
+241021@@@The Light
+241022@@@Dawnbringer's Cloak
+241023@@@Drape of the Dastardly
+241024@@@Scarlet Commander's Cape
+241025@@@Flag of the Broken Admiral
+241026@@@Cardinal's Shawl
+241027@@@Shield Warden's Guard
+241028@@@Nathrezim Loop
+241029@@@Baelin's Band
+241030@@@Mason's Fraternity Ring
+241031@@@Barthalomew's Promise
+241032@@@Ring of Resurrection
+241034@@@Heart of Light
+241037@@@Abandoned Experiment
+241038@@@Sir Dornel's Didgeridoo
+241039@@@Infusion of Souls
+241068@@@Stiltz's Standard
+241069@@@Choke Chain
+241070@@@Hope of Herod
+241071@@@Talisman of the Scarlet Scoundrel
+241072@@@Vial of Pus
+241073@@@Touch of Light
+241074@@@Helm of the Red Crusade
+241075@@@Raging Destroyer's Helm
+241076@@@Cowl of the Covenant
+241077@@@Cardinal's Chapeau
+241078@@@Shroud of the Embalmed
+241079@@@Weight of the World
+241080@@@Herod's Pauldron
+241081@@@Corrupted Ashbringer
+241082@@@Ashbringer
+241083@@@S03 - Scarlet Enclave - Sword 2h Raid
+241084@@@S03 - Scarlet Enclave - Herod's Sword - Normal
+241085@@@S03 - Scarlet Enclave - Sword 1h
+241086@@@Scarlet Tower Shield
+241087@@@Scarlet Staff
+241088@@@Scarlet Staff
+241089@@@Scarlet Dagger
+241090@@@Scarlet Great Axe
+241091@@@Scarlet Mace
+241092@@@Scarlet Edge
+241120@@@S03 - Scarlet Enclave - Herod's Sword - Molten
+241121@@@Reborn Dagger
+241122@@@Reborn Knife
+241123@@@Reborn Dagger
+241124@@@Reborn Knife
+241128@@@Pile of Portiporters
+241152@@@Dawnwrought Shoulders
+241153@@@Doan's Mantle
+241154@@@Bearskin Mantle
+241156@@@Blighted Robes
+241157@@@Scarlet Chestplate
+241158@@@Chains of the Abandoned
+241159@@@Monastery Garb
+241160@@@Dawnworn Chainmail
+241161@@@Templar Breastplate
+241162@@@Sunblessed Leathers
+241163@@@Sunblaze Bracers
+241164@@@Scrapped Argent Leathers
+241165@@@Penitent Wraps
+241166@@@Dawnstripped Bands
+241167@@@Prisoner Shackles
+241168@@@Sunblaze Grips
+241169@@@Prototype Nitro Boosts
+241170@@@Enclave Protectors
+241171@@@Gloves of Departed Souls
+241172@@@Caldoran's Locked Gauntlets
+241173@@@High Wizard Wrap
+241174@@@Girdle of the Reborn Champion
+241175@@@Torturer's Toolbelt
+241176@@@Diesalven's Demise
+241177@@@Kilt of the Scarlet Arcanist
+241178@@@Stalwart Pain Plate
+241179@@@Leggings of Catastrophe
+241180@@@Lightscale Leggings
+241181@@@Dawnworn Chain Leggings
+241182@@@Templar Plate Legguards
+241183@@@Ashwalkers
+241184@@@Savior Sandals
+241185@@@Bear Training Boots
+241186@@@Polished Scarlet Mail Boots
+241187@@@Crimson Wartreads
+241190@@@Bird Whistle
+241191@@@Formula: Enchant Weapon - Grand Crusader
+241195@@@Formula: Enchant 2H Weapon - Grand Arcanist
+241201@@@Formula: Enchant Weapon - Grand Sorcerer
+241212@@@Cluck Cannon
+241233@@@[DNT] Super Strong Lockbox
+241241@@@Lucky Doubloon
+241613@@@No Longer Used
+241629@@@Scarlet Cannonball
+241649@@@Gauntlets of the Hillsbrad Guard
+241650@@@Major Discolored Healing Potion
+241651@@@Recipe: Major Discolored Healing Potion
+241652@@@Discolored Beast Heart
+241653@@@Heated Blade
+241654@@@Inert Ashbringer
+241655@@@Mishandled Healing Potion
+241656@@@Mishandled Healing Potion
+241657@@@Tempered Blade
+242018@@@Plaguelands Bleeding Heart
+242224@@@Basket of Hearts
+242256@@@Satchel of Incendiary Bombs
+242257@@@Mysterious Alchemical Sample
+242258@@@Research Notes
+242266@@@World of Wardcraft
+242267@@@From Arcanist to Archmage
+242268@@@If You Give a Crusader an Enchant
+242269@@@Brilliance of the Grand Sorcerer
+242270@@@Brilliance of the Grand Arcanist
+242271@@@Brilliance of the Grand Crusader
+242310@@@Hand of Reborn Justice
+242311@@@Leonid's Charm
+242312@@@Bartholomew Family Seal
+242313@@@Journal of the Revered
+242314@@@Cinders of the Fallen Crusade
+242315@@@Ashes of Arrogance
+242316@@@Dust of the Defiant
+242317@@@Desecrated Prayerbook
+242319@@@New Plague Samples
+242320@@@New Plague Samples
+242361@@@Formula: Enchant 2H Weapon - Grand Inquisitor
+242362@@@Brilliance of the Grand Inquisitor
+242363@@@Who, What, Where, When, and Die! Five Keys to a Good Inquisition
+242364@@@Mature Light Dragon Sinew
+242365@@@Wing of Balnazzar
+242366@@@Inescapable Fate
+242367@@@Wing and String
+242425@@@Torn Diary Page - Page 1
+242426@@@Torn Diary Page - Page 2
+242427@@@Putress' Diary
+242428@@@Torn Diary Page - Page 3
+242429@@@Putress' Diary
+242430@@@Torn Diary Page - Page 4
+242431@@@Torn Diary Page - Page 5
+242432@@@Putress' Diary
+242433@@@Torn Diary Page - Page 6
+242434@@@Putress' Diary
+242435@@@Putress' Diary
+242436@@@Putress' Diary
+1.15.7.59856
+231806@@@Searing Arrow
+231807@@@Searing Shot
+242312@@@Barthalomew Family Seal
+242710@@@Monster Weapon [DNT]
+1.15.7.60000
+242793@@@Portable Cannon
+243010@@@Corrupted Ashbringer
+243064@@@Long Staff
+243177@@@Ingenious Toy
+243229@@@Hearthstone of the Dawn
+243230@@@Ruined Lightforged Blade
 2.5.1.38043
 1500@@@Master Totem
 2444@@@Rusted Buckler
@@ -36574,8 +37179,6 @@
 2.5.3.41531
 190186@@@[NYI] Stormwind Incubus Summon
 190309@@@[PH] Love Artifact
-2.5.3.41750
-190325@@@Monster - Incubus Whip Mace1H
 2.5.4.42581
 191060@@@Black Sack of Gems
 191061@@@Brilliant Glass
@@ -51582,20 +52185,20 @@
 200238@@@Northrend Adventuring Supplies
 200239@@@Northrend Adventuring Supplies
 200240@@@Northrend Adventuring Supplies
-3.4.0.45435
-3.4.0.46158
+3.4.0.45854
 200060@@@Hoplet
+3.4.0.46158
 201993@@@Deadly Gladiator's Tabard
-3.4.1.47966
+3.4.0.46779
 201699@@@Festering Emerald Drake
-202195@@@Pure Stratholme Holy Water
+3.4.1.46722
+202195@@@Stratholme Holy Water
 202269@@@Bounty Satchel
-3.4.1.48019
-3.4.1.48120
-3.4.1.48340
-3.4.1.48503
-3.4.2.49311
+3.4.1.46917
+202195@@@Pure Stratholme Holy Water
+3.4.1.49822
 204385@@@Glyph of Reckoning
+3.4.2.49311
 206272@@@Holy Hand Grenade
 206392@@@Tabard of the Sons of Hodir
 3.4.2.49442
@@ -51828,6 +52431,85 @@
 235561@@@Joyous
 3.4.3.58629
 235404@@@Landro's Loot Box
+3.4.3.58936
+237042@@@Signet of the Traitor King
+237043@@@Ring of the Darkmender
+237044@@@Band of the Violent Temperment
+237045@@@Ring of Callous Aggression
+237046@@@Band of Deplorable Violence
+237047@@@Bracers of the Shieldmaiden
+237048@@@Bracers of the Untold Massacre
+237049@@@Bracers of Dark Determination
+237050@@@Girdle of Bloodied Scars
+237051@@@Bloodbath Belt
+237052@@@Belt of the Ice Burrower
+237053@@@Belt of the Merciless Killer
+237054@@@Dawnbreaker Greaves
+237055@@@Sabatons of Ruthless Judgment
+237056@@@Treads of the Icewalker
+237059@@@Misery's End
+237060@@@Bastion of Purity
+237061@@@Crystal Plated Vanguard
+237062@@@Blade of Tarasque
+237063@@@Stormpike Cleaver
+237064@@@Steel Bladebreaker
+237065@@@Justicebringer
+237066@@@Archon Glaive
+237067@@@Lupine Longstaff
+237068@@@Crusader's Glory
+237069@@@Band of the Traitor King
+237070@@@Circle of the Darkmender
+237071@@@Ring of the Violent Temperament
+237072@@@Band of Callous Aggression
+237073@@@Lurid Manifestation
+237074@@@Armguards of the Shieldmaiden
+237075@@@Bracers of the Silent Massacre
+237076@@@Armbands of Dark Determination
+237077@@@Belt of Bloodied Scars
+237078@@@Bloodbath Girdle
+237079@@@Binding of the Ice Burrower
+237080@@@Belt of the Pitiless Killer
+237081@@@Dawnbreaker Sabatons
+237082@@@Greaves of Ruthless Judgment
+237083@@@Icewalker Treads
+237084@@@Suffering's End
+237085@@@Ardent Guard
+237086@@@Bastion of Resolve
+237087@@@Forlorn Barrier
+237088@@@Barb of Tarasque
+237089@@@Hellscream Slicer
+237090@@@Stygian Bladebreaker
+237091@@@Dual-blade Butcher
+237092@@@Hellion Glaive
+237093@@@Twin's Pact
+238339@@@Choker of the Pure Heart
+238340@@@Sweet Perfume Broach
+238341@@@Shard of Pirouetting Happiness
+238342@@@Heartbreak Charm
+238343@@@Winking Eye of Love
+3.4.4.59817
+71739@@@Monster - Mace, 1H Wand Auchindoin D01 (Purple Flame, Low)
+71741@@@Monster - Item, Draenei A 02 Purple (Offhand)
+134110@@@Hidden Helm
+134111@@@Hidden Cloak
+134112@@@Hidden Shoulder
+135510@@@Transmog UI Trim Head Item
+135522@@@Transmog UI Chest Item
+135548@@@Transmog UI Legs Item
+135549@@@Transmog UI Hand Item
+135550@@@Transmog UI Feet Item
+142503@@@Hidden Shirt
+142504@@@Hidden Tabard
+143539@@@Hidden Belt
+158329@@@Hidden Gloves
+168659@@@Hidden Chestpiece
+168664@@@Hidden Boots
+168665@@@Hidden Bracers
+216696@@@Hidden Pants
+235562@@@Flaming Royal Fire Hawk
+3.4.4.59853
+242550@@@Warglaive of Azzinoth
+242551@@@Warglaive of Azzinoth
 4.4.0.53627
 80@@@Soft Fur-Lined Shoes
 732@@@Ripe Okra
@@ -69644,8 +70326,6 @@
 71726@@@Murky's Little Soulstone
 71732@@@Monster - Staff - 2H Crystal - Ethereal, White (Purple Glow)
 71736@@@Monster - Item, Draenei A 01 Pink (Offhand)
-71739@@@Monster - Mace, 1H Wand Auchindoin D01 (Purple Flame, Low)
-71741@@@Monster - Item, Draenei A 02 Purple (Offhand)
 71744@@@Art Template Mail Chest - Mail_RaidShaman_J - Red
 71745@@@Art Template Mail Wrist - Mail_RaidShaman_J - Red
 71746@@@Art Template Mail Head - Mail_RaidShaman_J - Red
@@ -73430,16 +74110,9 @@
 4.4.0.54137
 46754@@@Tweedle's Tiny Parcel
 53061@@@Crate of Crab Meat
-135510@@@Transmog UI Trim Head Item
-135522@@@Transmog UI Chest Item
-135548@@@Transmog UI Legs Item
-135549@@@Transmog UI Hand Item
-135550@@@Transmog UI Feet Item
-142503@@@Hidden Shirt
 4.4.0.54339
 224452@@@Teleport Scroll: Stormwind
 224458@@@Teleport Scroll: Orgrimmar
-4.4.0.54377
 4.4.0.54500
 204385@@@Charred Glyph
 206580@@@Charred Glyph
@@ -73552,22 +74225,12 @@
 232544@@@The Horseman's Horrific Helmet
 232548@@@The Horseman's Sinister Saber
 4.4.1.56464
-134110@@@Hidden Helm
-134111@@@Hidden Cloak
-134112@@@Hidden Shoulder
-142504@@@Hidden Tabard
-143539@@@Hidden Belt
-158329@@@Hidden Gloves
-168659@@@Hidden Chestpiece
-168664@@@Hidden Boots
-168665@@@Hidden Bracers
 209528@@@Secondhand Faceguard
 209529@@@Secondhand Crown
 209530@@@Secondhand Crown
 209531@@@Secondhand Headguard
 209532@@@Secondhand Cowl
 209533@@@Secondhand Headguard
-216696@@@Hidden Pants
 231997@@@Commendation of the World Tree
 231998@@@Rock-Hard Biscuit
 4.4.1.56859
@@ -73663,6 +74326,467 @@
 67093@@@Pattern: Bloodthirsty Dragonscale Chest
 232947@@@Satchel of the Cloudburst Cloak
 234446@@@Commendation of Service
+4.4.1.59069
+238334@@@Heartbreak Charm
+238335@@@Winking Eye of Love
+238336@@@Sweet Perfume Broach
+238337@@@Choker of the Pure Heart
+238338@@@Shard of Pirouetting Happiness
+4.4.2.58723
+92074@@@Martial Sword
+92075@@@Scourgeheart Vambraces
+92076@@@Scourgeheart Armguards
+92077@@@Naturalist Bracers
+92078@@@Naturalist Cuffs
+92079@@@Forestwalker Bracers
+92080@@@Naturalist Bindings
+92081@@@Enlightened Wristwraps
+92082@@@Partisan Armplates
+92083@@@Partisan Vambraces
+92084@@@Partisan Armguards
+92085@@@Deliverer Bindings
+92086@@@Deliverer Wristwraps
+92087@@@Darkwalker Bindings
+92088@@@Thundercaller Armbands
+92089@@@Thundercaller Armguard
+92090@@@Thundercaller Bracers
+92091@@@Martial Vambraces
+92092@@@Soulseizer Wristwraps
+92093@@@Martial Armguards
+92094@@@Naturalist Cord
+92095@@@Forestwalker Belt
+92096@@@Naturalist Waistband
+92097@@@Enlightened Cord
+92098@@@Partisan Belt
+92099@@@Partisan Girdle
+92100@@@Partisan Waistband
+92101@@@Deliverer Sash
+92102@@@Deliverer Cord
+92103@@@Darkwalker Waistband
+92104@@@Thundercaller Belt
+92105@@@Thundercaller Waistguard
+92106@@@Thundercaller Girdle
+92107@@@Martial Girdle
+92108@@@Soulseizer Cord
+92109@@@Martial Waistband
+92110@@@Scourgeheart Blade
+92111@@@Partisan Sword
+92112@@@Thundercaller Mace
+92113@@@Deliverer Idol of Destruction
+92114@@@Partisan Defender Stone
+92115@@@Deliverer Stone of Wisdom
+92116@@@Thundercaller Idol of Rage
+92117@@@Darkwalker Stone of Rage
+92118@@@Darkwalker Idol of Rage
+92119@@@Thundercaller Stone of Destruction
+92120@@@Thundercaller Idol of Destruction
+92121@@@Thundercaller Stone of Rage
+92122@@@Thundercaller Stone of Wisdom
+92123@@@Thundercaller Idol of Wisdom
+92124@@@Soulseizer Stone of Destruction
+92125@@@Soulseizer Idol of Destruction
+92126@@@Martial Defender Stone
+92127@@@Martial Defender Idol
+92128@@@Martial Idol of Battle
+92129@@@Martial Stone of Battle
+92130@@@Scourgeheart Girdle
+92131@@@Scourgeheart Waistband
+92132@@@Naturalist Belt
+92133@@@Naturalist Idol of Rage
+92134@@@Scourgeheart Defender Stone
+92135@@@Scourgeheart Defender Idol
+92136@@@Naturalist Stone of Destruction
+92137@@@Naturalist Idol of Destruction
+92138@@@Naturalist Stone of Rage
+92139@@@Naturalist Stone of Wisdom
+92140@@@Naturalist Idol of Wisdom
+92141@@@Forestwalker Stone of Rage
+92142@@@Forestwalker Idol of Rage
+92143@@@Enlightened Stone of Destruction
+92144@@@Enlightened Idol of Destruction
+92145@@@Partisan Stone of Wisdom
+92146@@@Partisan Idol of Wisdom
+92147@@@Partisan Defender Idol
+92148@@@Partisan Idol of Battle
+92149@@@Partisan Stone of Battle
+92150@@@Deliverer Idol of Wisdom
+92151@@@Deliverer Stone of Destruction
+92152@@@Naturalist Pauldrons
+92153@@@Forestwalker Spaulders
+92154@@@Enlightened Shoulderpads
+92155@@@Partisan Spaulders
+92156@@@Partisan Pauldrons
+92157@@@Partisan Shoulderguards
+92158@@@Deliverer Mantle
+92159@@@Deliverer Shoulderpads
+92160@@@Darkwalker Shoulders
+92161@@@Thundercaller Pauldrons
+92162@@@Thundercaller Shoulderguards
+92163@@@Soulseizer Shoulderpads
+92164@@@Thundercaller Spaulders
+92165@@@Martial Pauldrons
+92166@@@Martial Shoulderguards
+92167@@@Scourgeheart Idol of Battle
+92168@@@Scourgeheart Stone of Battle
+92169@@@Enlightened Robe
+92170@@@Deliverer Robe
+92171@@@Deliverer Vestments
+92172@@@Soulseizer Robe
+92173@@@Partisan Bulwark
+92174@@@Partisan Shield
+92175@@@Thundercaller Aegis
+92176@@@Thundercaller Shield
+92177@@@Martial Bulwark
+92178@@@Scourgeheart Pauldrons
+92179@@@Scourgeheart Shoulderguards
+92180@@@Naturalist Spaulders
+92181@@@Naturalist Shoulders
+92182@@@Partisan Pendant
+92183@@@Deliverer Necklace
+92184@@@Deliverer Medallion
+92185@@@Thundercaller Choker
+92186@@@Darkwalker Choker
+92187@@@Thundercaller Medallion
+92188@@@Thundercaller Necklace
+92189@@@Soulseizer Medallion
+92190@@@Martial Pendant
+92191@@@Martial Amulet
+92192@@@Darkwalker Shiv
+92193@@@Forestwalker Rifle
+92194@@@Enlightened Wand
+92195@@@Deliverer Wand
+92196@@@Soulseizer Wand
+92197@@@Thundercaller Legguards
+92198@@@Soulseizer Leggings
+92199@@@Thundercaller Leggings
+92200@@@Martial Legplates
+92201@@@Martial Legguards
+92202@@@Partisan Scepter
+92203@@@Darkwalker Sword
+92204@@@Darkwalker Dagger
+92205@@@Thundercaller Gavel
+92206@@@Thundercaller Scepter
+92207@@@Scourgeheart Pendant
+92208@@@Naturalist Choker
+92209@@@Scourgeheart Amulet
+92210@@@Naturalist Medallion
+92211@@@Naturalist Necklace
+92212@@@Enlightened Medallion
+92213@@@Forestwalker Choker
+92214@@@Partisan Necklace
+92215@@@Partisan Amulet
+92216@@@Thundercaller Coif
+92217@@@Thundercaller Helm
+92218@@@Soulseizer Cowl
+92219@@@Thundercaller Cowl
+92220@@@Martial Helm
+92221@@@Martial Faceguard
+92222@@@Scourgeheart Legplates
+92223@@@Scourgeheart Legguards
+92224@@@Naturalist Legguards
+92225@@@Naturalist Leggings
+92226@@@Naturalist Britches
+92227@@@Forestwalker Legguards
+92228@@@Enlightened Leggings
+92229@@@Partisan Leggings
+92230@@@Partisan Legplates
+92231@@@Partisan Legguards
+92232@@@Deliverer Leggings
+92233@@@Deliverer Pants
+92234@@@Darkwalker Britches
+92235@@@Thundercaller Legwraps
+92236@@@Thundercaller Gloves
+92237@@@Thundercaller Handguards
+92238@@@Soulseizer Handwraps
+92239@@@Thundercaller Grips
+92240@@@Martial Gauntlets
+92241@@@Martial Handguards
+92242@@@Scourgeheart Helm
+92243@@@Scourgeheart Faceguard
+92244@@@Naturalist Helm
+92245@@@Naturalist Headpiece
+92246@@@Naturalist Hood
+92247@@@Forestwalker Helm
+92248@@@Partisan Helm
+92249@@@Enlightened Hood
+92250@@@Partisan Headpiece
+92251@@@Partisan Faceguard
+92252@@@Deliverer Hood
+92253@@@Deliverer Cowl
+92254@@@Darkwalker Hood
+92255@@@Thundercaller Ring of Wisdom
+92256@@@Soulseizer Band of Destruction
+92257@@@Soulseizer Ring of Destruction
+92258@@@Martial Band of Might
+92259@@@Martial Ring of Stoicism
+92260@@@Martial Band of Stoicism
+92261@@@Martial Ring of Might
+92262@@@Scourgeheart Gauntlets
+92263@@@Scourgeheart Handguards
+92264@@@Naturalist Handguards
+92265@@@Naturalist Grips
+92266@@@Naturalist Gloves
+92267@@@Forestwalker Gauntlets
+92268@@@Partisan Gauntlets
+92269@@@Enlightened Handwraps
+92270@@@Partisan Gloves
+92271@@@Partisan Handguards
+92272@@@Deliverer Handwraps
+92273@@@Deliverer Gloves
+92274@@@Darkwalker Gloves
+92275@@@Enlightened Band of Destruction
+92276@@@Enlightened Ring of Destruction
+92277@@@Partisan Ring of Wisdom
+92278@@@Partisan Band of Wisdom
+92279@@@Partisan Ring of Might
+92280@@@Partisan Band of Might
+92281@@@Deliverer Band of Destruction
+92282@@@Deliverer Ring of Destruction
+92283@@@Partisan Ring of Stoicism
+92284@@@Partisan Band of Stoicism
+92285@@@Deliverer Band of Wisdom
+92286@@@Deliverer Ring of Wisdom
+92287@@@Darkwalker Band of Onslaught
+92288@@@Darkwalker Ring of Onslaught
+92289@@@Thundercaller Band of Destruction
+92290@@@Thundercaller Ring of Destruction
+92291@@@Thundercaller Band of Onslaught
+92292@@@Thundercaller Ring of Onslaught
+92293@@@Thundercaller Band of Wisdom
+92294@@@Deliverer Boots
+92295@@@Darkwalker Boots
+92296@@@Thundercaller Boots
+92297@@@Thundercaller Greaves
+92298@@@Soulseizer Sandals
+92299@@@Thundercaller Sabatons
+92300@@@Martial Sabatons
+92301@@@Martial Greaves
+92302@@@Scourgeheart Ring of Might
+92303@@@Scourgeheart Band of Might
+92304@@@Naturalist Ring of Onslaught
+92305@@@Naturalist Band of Onslaught
+92306@@@Scourgeheart Band of Stoicism
+92307@@@Scourgeheart Ring of Stoicism
+92308@@@Naturalist Band of Destruction
+92309@@@Naturalist Ring of Destruction
+92310@@@Naturalist Band of Wisdom
+92311@@@Naturalist Ring of Wisdom
+92312@@@Forestwalker Ring of Onslaught
+92313@@@Forestwalker Band of Onslaught
+92314@@@Darkwalker Cloak of Rage
+92315@@@Deliverer Cloak of Destruction
+92316@@@Thundercaller Cloak of Rage
+92317@@@Thundercaller Cloak of Destruction
+92318@@@Thundercaller Cloak of Wisdom
+92319@@@Martial Cloak of Battle
+92320@@@Soulseizer Cloak of Destruction
+92321@@@Martial Cloak of Stoicism
+92322@@@Scourgeheart Greaves
+92323@@@Scourgeheart Sabatons
+92324@@@Naturalist Footpads
+92325@@@Naturalist Treads
+92326@@@Naturalist Boots
+92327@@@Forestwalker Greaves
+92328@@@Partisan Sabatons
+92329@@@Enlightened Sandals
+92330@@@Partisan Boots
+92331@@@Partisan Greaves
+92332@@@Deliverer Sandals
+92333@@@Partisan Battleplate
+92334@@@Partisan Breastplate
+92335@@@Partisan Chestguard
+92336@@@Darkwalker Jerkin
+92337@@@Thundercaller Tunic
+92338@@@Thundercaller Vest
+92339@@@Thundercaller Chestguard
+92340@@@Martial Breastplate
+92341@@@Martial Chestguard
+92342@@@Scourgeheart Cloak of Stoicism
+92343@@@Scourgeheart Cloak of Battle
+92344@@@Naturalist Cloak of Rage
+92345@@@Naturalist Cloak of Destruction
+92346@@@Naturalist Cloak of Wisdom
+92347@@@Forestwalker Cloak of Rage
+92348@@@Enlightened Cloak of Destruction
+92349@@@Partisan Cloak of Wisdom
+92350@@@Partisan Cloak of Stoicism
+92351@@@Partisan Cloak of Battle
+92352@@@Deliverer Cloak of Wisdom
+92353@@@Scourgeheart Maul
+92354@@@Scourgeheart Hammer
+92355@@@Naturalist Stave
+92356@@@Naturalist Spear
+92357@@@Forestwalker Spear
+92358@@@Naturalist Staff
+92359@@@Enlightened Staff
+92360@@@Partisan Greatsword
+92361@@@Deliverer Stave
+92362@@@Deliverer Staff
+92363@@@Martial Maul
+92364@@@Martial Greatsword
+92365@@@Soulseizer Staff
+92366@@@Scourgeheart Chestguard
+92367@@@Scourgeheart Breastplate
+92368@@@Naturalist Vest
+92369@@@Naturalist Tunic
+92370@@@Naturalist Jerkin
+92371@@@Forestwalker Vest
+92372@@@Waterdancer Spire
+92373@@@Waterdancer Staff
+92374@@@Waterdancer Jerkin
+92375@@@Waterdancer Vest
+92376@@@Waterdancer Cloak of Wisdom
+92377@@@Waterdancer Cloak of Rage
+92378@@@Waterdancer Boots
+92379@@@Waterdancer Footpads
+92380@@@Waterdancer Band of Onslaught
+92381@@@Waterdancer Ring of Onslaught
+92382@@@Waterdancer Ring of Wisdom
+92383@@@Waterdancer Band of Wisdom
+92384@@@Waterdancer Band of Stoicism
+92385@@@Waterdancer Ring of Stoicism
+92386@@@Waterdancer Gloves
+92387@@@Waterdancer Handguards
+92388@@@Waterdancer Hood
+92389@@@Waterdancer Helm
+92390@@@Waterdancer Britches
+92391@@@Waterdancer Legguards
+92392@@@Waterdancer Choker
+92393@@@Waterdancer Necklace
+92394@@@Waterdancer Amulet
+92395@@@Waterdancer Shoulders
+92396@@@Waterdancer Pauldrons
+92397@@@Waterdancer Idol of Wisdom
+92398@@@Waterdancer Defender Stone
+92399@@@Waterdancer Defender Idol
+92400@@@Waterdancer Stone of Rage
+92401@@@Waterdancer Idol of Rage
+92402@@@Waterdancer Stone of Wisdom
+92403@@@Waterdancer Waistband
+92404@@@Waterdancer Cord
+92405@@@Waterdancer Sword
+92406@@@Waterdancer Bindings
+92407@@@Waterdancer Cuffs
+237808@@@Azeroth Survival Kit
+4.4.2.58884
+238068@@@Pattern: Vicious Embersilk Cowl
+238069@@@Pattern: Vicious Embersilk Pants
+238070@@@Pattern: Vicious Embersilk Robe
+238071@@@Pattern: Vicious Fireweave Cowl
+238072@@@Pattern: Vicious Fireweave Pants
+238073@@@Pattern: Vicious Fireweave Robe
+238074@@@Plans: Vicious Pyrium Bracers
+238075@@@Plans: Vicious Pyrium Gauntlets
+238076@@@Plans: Vicious Pyrium Belt
+238077@@@Plans: Vicious Pyrium Boots
+238078@@@Plans: Vicious Pyrium Shoulders
+238079@@@Plans: Vicious Pyrium Legguards
+238080@@@Plans: Vicious Pyrium Helm
+238081@@@Plans: Vicious Pyrium Breastplate
+238082@@@Plans: Vicious Ornate Pyrium Bracers
+238083@@@Plans: Vicious Ornate Pyrium Gauntlets
+238084@@@Plans: Vicious Ornate Pyrium Belt
+238085@@@Plans: Vicious Ornate Pyrium Boots
+238086@@@Plans: Vicious Ornate Pyrium Shoulders
+238087@@@Plans: Vicious Ornate Pyrium Legguards
+238088@@@Plans: Vicious Ornate Pyrium Helm
+238089@@@Plans: Vicious Ornate Pyrium Breastplate
+238090@@@Pattern: Vicious Wyrmhide Bracers
+238091@@@Pattern: Vicious Wyrmhide Belt
+238092@@@Pattern: Vicious Leather Bracers
+238093@@@Pattern: Vicious Leather Gloves
+238094@@@Pattern: Vicious Charscale Bracers
+238095@@@Pattern: Vicious Charscale Gloves
+238096@@@Pattern: Vicious Dragonscale Bracers
+238097@@@Pattern: Vicious Dragonscale Shoulders
+238098@@@Pattern: Vicious Wyrmhide Gloves
+238099@@@Pattern: Vicious Wyrmhide Boots
+238100@@@Pattern: Vicious Leather Boots
+238101@@@Pattern: Vicious Leather Shoulders
+238102@@@Pattern: Vicious Charscale Boots
+238103@@@Pattern: Vicious Charscale Belt
+238104@@@Pattern: Vicious Dragonscale Boots
+238105@@@Pattern: Vicious Dragonscale Gloves
+238106@@@Pattern: Vicious Wyrmhide Shoulders
+238107@@@Pattern: Vicious Wyrmhide Chest
+238108@@@Pattern: Vicious Leather Belt
+238109@@@Pattern: Vicious Leather Helm
+238110@@@Pattern: Vicious Charscale Shoulders
+238111@@@Pattern: Vicious Charscale Legs
+238112@@@Pattern: Vicious Dragonscale Belt
+238113@@@Pattern: Vicious Dragonscale Helm
+238114@@@Pattern: Vicious Wyrmhide Legs
+238115@@@Pattern: Vicious Wyrmhide Helm
+238116@@@Pattern: Vicious Leather Chest
+238117@@@Pattern: Vicious Leather Legs
+238118@@@Pattern: Vicious Charscale Chest
+238119@@@Pattern: Vicious Charscale Helm
+238120@@@Pattern: Vicious Dragonscale Legs
+238121@@@Pattern: Vicious Dragonscale Chest
+238123@@@Pattern: Emberfire Cowl
+238124@@@Pattern: Emberfire Pants
+238125@@@Pattern: Emberfire Robe
+238126@@@Pattern: Fireweave Cowl
+238127@@@Pattern: Fireweave Pants
+238128@@@Pattern: Fireweave Robe
+238129@@@Plans: Bloodied Pyrium Bracers
+238130@@@Plans: Bloodied Pyrium Gauntlets
+238131@@@Plans: Bloodied Pyrium Belt
+238132@@@Plans: Bloodied Pyrium Boots
+238133@@@Plans: Bloodied Pyrium Shoulders
+238134@@@Plans: Bloodied Pyrium Legguards
+238135@@@Plans: Bloodied Pyrium Helm
+238136@@@Plans: Bloodied Pyrium Breastplate
+238137@@@Plans: Ornate Pyrium Bracers
+238138@@@Plans: Ornate Pyrium Gauntlets
+238139@@@Plans: Ornate Pyrium Belt
+238140@@@Plans: Ornate Pyrium Boots
+238141@@@Plans: Ornate Pyrium Shoulders
+238142@@@Plans: Ornate Pyrium Legguards
+238143@@@Plans: Ornate Pyrium Helm
+238144@@@Plans: Ornate Pyrium Breastplate
+238145@@@Pattern: Bloodied Wyrmhide Bracers
+238146@@@Pattern: Bloodied Wyrmhide Belt
+238147@@@Pattern: Bloodied Leather Bracers
+238148@@@Pattern: Bloodied Leather Gloves
+238149@@@Pattern: Bloodied Scale Bracers
+238150@@@Pattern: Bloodied Scale Gloves
+238151@@@Pattern: Bloodied Dragonscale Bracers
+238152@@@Pattern: Bloodied Dragonscale Shoulders
+238153@@@Pattern: Bloodied Wyrmhide Gloves
+238154@@@Pattern: Bloodied Wyrmhide Boots
+238155@@@Pattern: Bloodied Leather Boots
+238156@@@Pattern: Bloodied Leather Shoulders
+238157@@@Pattern: Bloodied Scale Boots
+238158@@@Pattern: Bloodied Scale Belt
+238159@@@Pattern: Bloodied Dragonscale Boots
+238160@@@Pattern: Bloodied Dragonscale Gloves
+238161@@@Pattern: Bloodied Wyrmhide Shoulders
+238162@@@Pattern: Bloodied Wyrmhide Chest
+238163@@@Pattern: Bloodied Leather Belt
+238164@@@Pattern: Bloodied Leather Helm
+238165@@@Pattern: Bloodied Scale Shoulders
+238166@@@Pattern: Bloodied Scale Legs
+238167@@@Pattern: Bloodied Dragonscale Belt
+238168@@@Pattern: Bloodied Dragonscale Helm
+238169@@@Pattern: Bloodied Wyrmhide Legs
+238170@@@Pattern: Bloodied Wyrmhide Helm
+238171@@@Pattern: Bloodied Leather Chest
+238172@@@Pattern: Bloodied Leather Legs
+238173@@@Pattern: Bloodied Scale Chest
+238174@@@Pattern: Bloodied Scale Helm
+238175@@@Pattern: Bloodied Dragonscale Legs
+238176@@@Pattern: Bloodied Dragonscale Chest
+238253@@@Heroic Will
+238392@@@Signet of the Wyrmrest Accord
+4.4.2.59185
+239110@@@Commendation of Service
+239111@@@Satchel of the Flickering Cowl
+239112@@@Satchel of the Flickering Shoulders
+239113@@@Satchel of the Flickering Wristbands
+239114@@@Satchel of the Flickering Handguards
+4.4.2.59297
+239220@@@Satchel of the Flickering Shoulderpads
 7.3.0.24473
 25@@@ Shortsword
 35@@@ Staff
@@ -160985,7 +162109,7 @@
 133586@@@dari Waterskin
 133587@@@en Eye Protectors
 133588@@@ed Sea Salt
-133589@@@peï¿½o Pepper
+133589@@@peï¿½o Pepper 
 133590@@@enbutter
 133591@@@r Onion
 133592@@@edark Snail
@@ -229553,15 +230677,13 @@
 155854@@@Root of the Lifebinder
 155855@@@Mote of the Forgemaster
 155880@@@Scythe of the Unmaker
-7.3.5.25928
+7.3.5.25600
 11151@@@Ancient Enchanting Vellum
-16204@@@Light Illusion Dust
 22628@@@Janeda's Restorative Draught
 24118@@@Signet of Argus
 24119@@@Band of Argus
 24120@@@Seal of Argus
 84582@@@Formula: Enchant Weapon - Windsong
-89072@@@Simple Harmonious Ring
 93227@@@Blood-Soaked Invitation
 96194@@@Chest of the Crackling Vanquisher
 96195@@@Chest of the Crackling Conqueror
@@ -229840,7 +230962,6 @@
 134831@@@Doomsayer's Robes
 137467@@@Shimmerfield Crystal
 142214@@@7.1 Dungeon - Karazhan - Cloth SHOULDER 2
-150845@@@Bracers of Ley-Line Eradication
 151421@@@Scorched Blazehound Boots
 151422@@@Bonecoal Waistguard
 151424@@@Belt of Boundless Fury
@@ -229881,10 +231002,8 @@
 151461@@@Ukorz's Chain Leggings
 151625@@@Ruby Qiraji Resonating Crystal
 151626@@@Sapphire Qiraji Resonating Crystal
-152015@@@Greaves of Mercurial Allegiance
 155656@@@Lightforged Felcrusher
 155662@@@Highmountain Thunderhoof
-155685@@@Scythe of the Unmaker
 155832@@@Pristine Crystal Shard
 155856@@@Iron Box
 155905@@@Cursed Rabbit's Foot
@@ -230338,7 +231457,7 @@
 156688@@@Icy Satchel of Helpful Goods
 156689@@@Scorched Satchel of Helpful Goods
 156690@@@Ren'dorei Helm
-156691@@@Ren'dorei Pauldrons
+156691@@@Ren'dorei Mantle
 156692@@@Ren'dorei Mantle
 156693@@@Ren'dorei Gloves
 156694@@@Ren'dorei Belt
@@ -230355,20 +231474,151 @@
 156705@@@Lightforged Hoofguards
 156706@@@Lightforged Bracers
 156707@@@Bret's Satchel of Helpful Goods
-156711@@@Mysterious Ore
-156718@@@Stolen Ore
+156711@@@Azerite Sample
+156718@@@Stolen Azerite
 156721@@@Mailemental
 156794@@@Silithid Brain
 156795@@@Silithid Broodling
 156796@@@Michiel Voidstrider's Head
 156797@@@Twilight Silk
+156802@@@Mana-Saber Eye
+156803@@@Seawitch's Foci
+156804@@@Bloody Kvaldir Pennant
+156805@@@Bloodtotem Brand
+156810@@@Felskorn Mania
+156811@@@Gift of Flame
+156812@@@Fires of Heaven
+156813@@@Frozen Ley Scar
+156814@@@Snowmane Totem
+156815@@@Shieldmaiden's Prayer
+156816@@@Hatecoil Badge of Glory
+156817@@@Stonedark Idol
+156818@@@Tranquil Clipping
+156819@@@Fertile Soil
+156820@@@Specter of Helheim
+156821@@@Darkened Brulstone
+156822@@@Stormwing's Roar
+156823@@@Whirlpool Seed
+7.3.5.25632
+152015@@@Greaves of Mercurial Allegiance
 156833@@@Katy's Stampwhistle
 156836@@@Bulging Package
+156851@@@Unevolved Silithid Grub
+156852@@@Journal of Ogmot the Mad
+7.3.5.25678
+16204@@@Light Illusion Dust
+156691@@@Ren'dorei Pauldrons
 156851@@@Silithid Mini-Tank
-156852@@@Ogmot's Dream Journal
 156862@@@Trial of Style Dance Floor
 156863@@@Trial of Style Spotlight
 156864@@@Trial of Style Flames
+156888@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Spaulders
+156889@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Legguards
+156890@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Helm
+156891@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Greaves
+156892@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Fists
+156893@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Chestpiece
+156894@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Bracer
+156895@@@7.3.5 Holiday - Trial of Style - Season 2 Plate Belt
+156896@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Spaulders
+156897@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Legguards
+156898@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Helm
+156899@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Greaves
+156900@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Fists
+156901@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Chestpiece
+156902@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Bracer
+156903@@@7.3.5 Holiday - Trial of Style - Season 2 Mail Belt
+156904@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Spaulders
+156905@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Legguards
+156906@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Helm
+156907@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Greaves
+156908@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Fists
+156909@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Chestpiece
+156910@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Bracer
+156911@@@7.3.5 Holiday - Trial of Style - Season 2 Leather Belt
+156912@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Spaulders
+156913@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Legguards
+156914@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Helm
+156915@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Greaves
+156916@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Fists
+156917@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Chestpiece
+156918@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Bracer
+156919@@@7.3.5 Holiday - Trial of Style - Season 2 Cloth Belt
+156930@@@Rich Illusion Dust
+156932@@@Surveyor's Staff
+156933@@@Mori's Pocketknife
+156934@@@House Wrynn Gavel
+156935@@@Kobold Torch
+156936@@@Dark Iron Pike
+156937@@@Dark Iron Blackjack
+156938@@@Simmer's Cudgel
+156941@@@Staff of Radiance
+156943@@@Hort's Motivator
+156944@@@Worgen Training Stick
+156945@@@Talon Hatchet
+156946@@@Goopy Mallet
+156947@@@Hammerfall Cudgel
+156948@@@Waterlogged Elven Spear
+7.3.5.25716
+156852@@@Visions of Ogmot the Steadfast
+156952@@@Adversarial Blackjack
+156953@@@'Liberated' Greataxe
+156954@@@Refurbished Archeus
+156955@@@Reconditioned Archeus
+156956@@@Rugged Walking Staff
+156957@@@Shredder Piston
+156958@@@Scepter of Questionable Decision Making
+156959@@@Emil's Staff
+156960@@@Hammerfall Gavel
+156961@@@Martek's Stick of Truthiness
+156962@@@Genuine Deathwing Fang
+156964@@@Clutch Rearrangement Tool
+156965@@@Enchanted Scorpid Tail
+156966@@@Cerellean's Spellsword
+156967@@@Spinescale Hammer
+156968@@@Kolkar Polearm
+156969@@@Quilboar Crusher
+156970@@@Razor Hill Axe
+156973@@@Archivist's Staff
+156974@@@Archivist's Walking Stick
+156975@@@Exorcist's Dagger
+156976@@@Staff of Memory
+156977@@@Serrated Gladius
+156978@@@Cauldron Cracker
+156979@@@Cauldron Dredger
+156980@@@Solid Wooden Club
+156981@@@Field Tested Spear
+156982@@@Shadow Hold Dagger
+156983@@@Runetotem Slicer
+156984@@@Windflight Knife
+156985@@@Staff of Earned Tranquility
+156986@@@Kodo Gavel
+156993@@@Long-Reach Elekk Prod
+156994@@@Stillpine Family Letter Opener
+156995@@@Beastflayer
+156996@@@Tailspike Pike
+156999@@@Mok'Morokk's Headcracker
+157003@@@Corpseweed Hewer
+157004@@@Old Guard's Poleaxe
+157007@@@Militia Dagger
+157009@@@Dark Iron Shank
+157010@@@Dark Iron Maul
+157011@@@Envenomed Scorpid Tail
+157012@@@Broken Silversnap Bottle
+157013@@@Ogre Mage Club
+157016@@@Gnarled Gavel
+157019@@@Lakota's Gavel
+157020@@@Humble Cudgel
+157023@@@Power of the Forest
+157025@@@Windserpent Fang
+157026@@@Fresh-Haft Axe
+157030@@@Titan Prison Fragment
+7.3.5.25727
+89072@@@Simple Harmonious Ring
+150845@@@Bracers of Ley-Line Eradication
+156711@@@Mysterious Ore
+156718@@@Stolen Ore
+156852@@@Visions of Ogmot the Mad
 156888@@@Goldspine Pauldrons
 156889@@@Goldspine Legguards
 156890@@@Goldspine Helm
@@ -230401,126 +231651,15 @@
 156917@@@Mindwrack Robes
 156918@@@Mindwrack Bracers
 156919@@@Mindwrack Cord
-156930@@@Rich Illusion Dust
-156932@@@Surveyor's Staff
-156933@@@Mori's Pocketknife
-156934@@@House Wrynn Gavel
-156935@@@Kobold Torch
-156936@@@Dark Iron Pike
-156937@@@Dark Iron Blackjack
-156938@@@Simmer's Cudgel
-156940@@@Snubnose Blunderbuss
-156941@@@Staff of Radiance
-156942@@@Spiky Legbone
-156943@@@Hort's Motivator
-156944@@@Worgen Training Stick
-156945@@@Talon Hatchet
-156946@@@Goopy Mallet
-156947@@@Hammerfall Cudgel
-156948@@@Waterlogged Elven Spear
-156952@@@Adversarial Blackjack
-156953@@@'Liberated' Greataxe
-156954@@@Refurbished Archeus
-156955@@@Reconditioned Archeus
-156956@@@Rugged Walking Staff
-156957@@@Shredder Piston
-156958@@@Scepter of Questionable Decision Making
-156959@@@Emil's Staff
-156960@@@Hammerfall Gavel
-156961@@@Martek's Stick of Truthiness
-156962@@@Genuine Deathwing Fang
-156964@@@Clutch Rearrangement Tool
-156965@@@Enchanted Scorpid Tail
-156966@@@Cerellean's Spellsword
-156967@@@Spinescale Hammer
-156968@@@Kolkar Polearm
-156969@@@Quilboar Crusher
-156970@@@Razor Hill Axe
-156973@@@Archivist's Staff
-156974@@@Archivist's Walking Stick
-156975@@@Exorcist's Dagger
-156976@@@Staff of Memory
-156977@@@Serrated Gladius
-156978@@@Cauldron Cracker
-156979@@@Cauldron Dredger
-156980@@@Solid Wooden Club
-156981@@@Field Tested Spear
-156982@@@Shadow Hold Dagger
-156983@@@Runetotem Slicer
-156984@@@Windflight Knife
-156985@@@Staff of Deserved Tranquility
-156986@@@Kodo Gavel
-156989@@@Gan'zulah's Headchopper
-156990@@@Crystal-Chipping Mallet
-156991@@@Shredder Arm Extension
-156992@@@Carved Ashwood Stick
-156993@@@Long-Reach Elekk Prod
-156994@@@Stillpine Family Letter Opener
-156995@@@Beastflayer
-156996@@@Tailspike Pike
-156997@@@Scepter of Naralex
-156998@@@Cudgel of Naralex
-156999@@@Mok'Morokk's Headcracker
-157000@@@Fuse-Cutter Knife
-157001@@@Everstill Hewer
-157002@@@Exorcist's Crossbow
-157003@@@Corpseweed Hewer
-157004@@@Old Guard's Poleaxe
-157005@@@Stout Fist
-157006@@@Old Guard's Bow
-157007@@@Militia Dagger
-157008@@@Blam-Hatchet
-157009@@@Dark Iron Shank
-157010@@@Dark Iron Maul
-157011@@@Envenomed Scorpid Tail
-157012@@@Broken Silversnap Bottle
-157013@@@Ogre Mage Club
-157014@@@Dunemaul Skullcracker
-157015@@@Meatface's Tenderizer
-157016@@@Gnarled Gavel
-157017@@@Deep-Sea Retrieval Hook
-157018@@@Oversized Mixing Agitator
-157019@@@Lakota's Gavel
-157020@@@Humble Cudgel
-157021@@@Staff of Haunted Memory
-157022@@@Letter from King Anduin Wrynn
-157023@@@Power of the Forest
-157024@@@Sandfury Hatchet
-157025@@@Windserpent Fang
-157026@@@Fresh-Haft Axe
-157028@@@Letter from Lady Sylvanas Windrunner
-157030@@@Titan Prison Fragment
 157547@@@Keen Marshfang Shanker
 157548@@@Warden's Longbow
 157549@@@Vibro Knuckles
 157550@@@Vir'naal Cleaver
 157551@@@Tombbreaker Gavel
-157555@@@Constructor's Worklight
-157558@@@Shoddily Stitched Shoulderguards
-157559@@@Chilly Cinch
-157560@@@Skadi's Scaled Boots
-157561@@@Dino-Toothed Waistguard
-157562@@@Rod of Aggressive Questioning
-157563@@@Freshly Sewn Leggings
-157564@@@Marbled Bracers
-157565@@@Tangler-Leather Gloves
-157566@@@Vest of the Observant
-157567@@@Bodyguard's Treads
-157568@@@Helm of Dire Vision
-157569@@@Chain Leggings of the Tide
-157570@@@Helm of Cauterization
-157571@@@Gauntlets of Stuttering Reality
-157572@@@Pauldrons of the Great Tide
 157573@@@Ensemble: Mindwrack Raiment
 157574@@@Ensemble: Tundraspite Armor
-157575@@@Crystal of Ensnared Power
 157576@@@Ensemble: Crimson Sentinel Garb
 157577@@@Ensemble: Goldspine Plate
-157578@@@Belt of Vile Concoctions
-157579@@@Slag-Stained Legplates
-157580@@@Spark of the Forge
-157581@@@Skittering Gauntlets
-157582@@@Nerubian Mantle
 157583@@@Protector's Buckler
 157584@@@Drape of Moorabi
 157586@@@Stonespeaker's Spare Cinch
@@ -230554,7 +231693,7 @@
 157614@@@Flame Invoker's Treads
 157615@@@Flamescale Chain Leggings
 157616@@@Chestguard of Futility
-157617@@@Wolfshide Vest
+157617@@@Woflshide Vest
 157618@@@Unholy Runeblade
 157619@@@Spire of Astral Force
 157620@@@Halberd of Ferocity
@@ -230697,8 +231836,61 @@
 157757@@@Highmountain Tabard
 157758@@@Ren'dorei Tabard
 157759@@@Shal'dorei Tabard
+7.3.5.25744
+156852@@@Ogmot's Dream Journal
+156940@@@Snubnose Blunderbuss
+156942@@@Spiky Legbone
+156989@@@Gan'zulah' Headchopper
+156990@@@Crystal-Chipping Mallet
+156991@@@Shredder Arm Extension
+156992@@@Carved Ashwood Stick
+156997@@@Scepter of Naralex
+156998@@@Cudgel of Naralex
+157000@@@Fuse-Cutter Knife
+157001@@@Everstill Hewer
+157002@@@Exorcist's Crossbow
+157005@@@Stout Fist
+157006@@@Old Guard's Bow
+157008@@@Blam-Hatchet
+157014@@@Dunemaul Skullcracker
+157015@@@Meatface's Tenderizer
+157017@@@Deep-Sea Retrieval Hook
+157018@@@Oversized Mixing Agitator
+157021@@@Staff of Haunted Memory
+157022@@@Letter from King Anduin Wrynn
+157024@@@Sandfury Hatchet
+157028@@@Letter from Lady Sylvanas Windrunner
+157555@@@Constructor's Worklight
+157558@@@Shoddily Stitched Shoulderguards
+157559@@@Chilly Cinch
+157560@@@Skadi's Scaled Boots
+157561@@@Dino-Toothed Waistguard
+157562@@@Rod of Aggressive Questioning
+157563@@@Freshly Sewn Leggings
+157564@@@Marbled Bracers
+157565@@@Tangler-Leather Gloves
+157566@@@Vest of the Observant
+157567@@@Bodyguard's Treads
+157568@@@Helm of Dire Vision
+157569@@@Chain Leggings of the Tide
+157570@@@Helm of Cauterization
+157571@@@Gauntlets of Stuttering Reality
+157572@@@Pauldrons of the Great Tide
+157575@@@Crystal of Ensnared Power
+157578@@@Belt of Vile Concoctions
+157579@@@Slag-Stained Legplates
+157580@@@Spark of the Forge
+157581@@@Skittering Gauntlets
+157582@@@Nerubian Mantle
+157617@@@Wolfshide Vest
+7.3.5.25804
+156989@@@Gan'zulah's Headchopper
 157787@@@Large Red Sack
+7.3.5.25807
+155685@@@Scythe of the Unmaker
+156985@@@Staff of Deserved Tranquility
 157796@@@Purified Titan Essence
+7.3.5.25826
 157822@@@Dreamweaver Provisions
 157823@@@Highmountain Tribute
 157824@@@Valarjar Cache
@@ -233400,24 +234592,6 @@
 155874@@@Belt of Transmufusion
 155903@@@Ritual Incantation
 156661@@@REUSE ME
-156802@@@Mana-Saber Eye
-156803@@@Seawitch's Foci
-156804@@@Bloody Kvaldir Pennant
-156805@@@Bloodtotem Brand
-156810@@@Felskorn Mania
-156811@@@Gift of Flame
-156812@@@Fires of Heaven
-156813@@@Frozen Ley Scar
-156814@@@Snowmane Totem
-156815@@@Shieldmaiden's Prayer
-156816@@@Hatecoil Badge of Glory
-156817@@@Stonedark Idol
-156818@@@Tranquil Clipping
-156819@@@Fertile Soil
-156820@@@Specter of Helheim
-156821@@@Darkened Brulstone
-156822@@@Stormwing's Roar
-156823@@@Whirlpool Seed
 156868@@@Crawg Poison Gland
 157606@@@Time-Desiccated Girdle
 157636@@@Serrated Poniard
@@ -278373,207 +279547,31 @@
 201725@@@Flappuccino
 201726@@@Progress Report: Uldorus
 201727@@@To My Staunchest Allies
-10.0.2.45698
-198727@@@Expedition Explosives
-10.0.2.45779
-193361@@@zzOldIncomplete Hunting Necklace
-193373@@@Phoenix Wishwing
-193404@@@Core of Aqueous Corruption
-193405@@@Headteacher's Ledger
-193557@@@Fierce Armor Kit
-193561@@@Fierce Armor Kit
-193565@@@Fierce Armor Kit
-194060@@@Dragonscale Expedition's Expedition Tent
-194268@@@Pattern: Dragonscale Expedition's Expedition Tent
-194389@@@Brush-Clearing Axe
-194397@@@Darkscale Twinblade
-194504@@@Plans: Primal Whetstone
-194505@@@Plans: Primal Weightstone
-194506@@@Plans: Primal Razorstone
-195480@@@Seal of Diurna's Chosen
-197760@@@Mackerel Snackerel
-198094@@@Recipe: Mackerel Snackerel
-198627@@@Blood of the Khansguard
-198654@@@Otterworldly Ottuk Carrier
-198783@@@Schematic: Spring-Loaded Khaz'gorite Fabric Cutters
-198807@@@Titan-Infused Creature Bait
-198818@@@Sneaky Mud Mask
-198834@@@Slimy Sunglasses
-198882@@@Technique: Bundle O' Cards: Dragon Isles
-198891@@@Technique: Cliffside Wylderdrake: Conical Head
-198892@@@Technique: Cliffside Wylderdrake: Red Hair
-198893@@@Technique: Cliffside Wylderdrake: Triple Head Horns
-198894@@@Technique: Highland Drake: Black Hair
-198895@@@Technique: Highland Drake: Spined Crest
-198896@@@Technique: Highland Drake: Spined Throat
-198899@@@Technique: Renewed Proto-Drake: Predator Pattern
-198901@@@Technique: Renewed Proto-Drake: Spined Hair
-198902@@@Technique: Windborne Velocidrake: Black Fur
-198903@@@Technique: Windborne Velocidrake: Spined Crest
-198904@@@Technique: Windborne Velocidrake: Windswept Pattern
-198913@@@Technique: Chilled Rune
-198957@@@Technique: Crackling Codex of the Isles
-199005@@@Hornstrider's Bracers
-199020@@@Drake Race Starting Rifle
-199027@@@Drakeslayer's Greatsword
-199032@@@Drakescale Shield
-199038@@@Runecarving Knife
-199043@@@Skullsplitting Axe
-199812@@@Formula: Enchant Boots - Rider's Reassurance
-199859@@@Burgundy Tuskarr Traders Pack
-199863@@@Burgundy Tuskarr Backpack
-200333@@@Scalesworn Cultist's Frock
-200479@@@Titan-Touched Elemental
-201010@@@Qalashi Weapon Diagram
-201048@@@Tyrhold Epaulets
-201049@@@Tyrhold Robe
-201050@@@Tyrhold Leggings
-201051@@@Tyrhold Slippers
-201052@@@Tyrhold Visage
-201053@@@Tyrhold Gloves
-201054@@@Tyrhold Drape
-201055@@@Tyrhold Bindings
-201056@@@Tyrhold Sash
-201244@@@Dreamfire-Infused Broadsword
-201380@@@Nokhud Hunter's Bow
-201382@@@Centaur Warglaives
-201383@@@Nokhud Stalker's Spear
-201385@@@Nokhud Centaur Warstaff
-201403@@@Mastodon Tusk
-201404@@@Tallstrider Sinew
-201429@@@Obsidian Fist
-201430@@@Burning Mallet
-201432@@@Obsidian Dragontooth
-201433@@@Citadel Warden's Mace
-201434@@@Obsidian Barrier
-201447@@@Primalist Tomorrow's Breezeblade
-201455@@@Tyrhold Broadsword
-201456@@@Tyrhold Carbine
-201457@@@Tyrhold Relic
-201458@@@Aegis of Tyrhold
-201459@@@Tyrhold Shortsword
-201460@@@Gavel of Tyrhold
-201461@@@Tyrhold Pinnacle
-201728@@@Vakril's Strongbox
-201729@@@Spiked Horseshoe
-201730@@@Nokhud Centaur Spear
-201731@@@Nokhud Centaur Staff
-201732@@@Pattern: Fierce Armor Kit
-201733@@@Pattern: Frosted Armor Kit
-201734@@@Technique: Cliffside Wylderdrake: Silver and Blue Armor
-201735@@@Technique: Highland Drake: Silver and Blue Armor
-201736@@@Technique: Cliffside Wylderdrake: Steel and Yellow Armor
-201737@@@Technique: Highland Drake: Steel and Yellow Armor
-201738@@@Technique: Renewed Proto-Drake: Steel and Yellow Armor
-201739@@@Technique: Windborne Velocidrake: Steel and Yellow Armor
-201740@@@Elemental Codex of Ultimate Power
-201741@@@Technique: Renewed Proto-Drake: Bovine Horns
-201742@@@Technique: Renewed Proto-Drake: Silver and Blue Armor
-201743@@@Technique: Windborne Velocidrake: Silver and Blue Armor
-201744@@@Crimson Aspirant's Ring
-201745@@@Crimson Aspirant's Band
-201746@@@Crimson Aspirant's Signet
-201747@@@Crimson Aspirant's Necklace
-201748@@@Crimson Aspirant's Choker
-201749@@@Crimson Aspirant's Pendant
-201750@@@Crimson Aspirant's Cloak
-201751@@@Crimson Aspirant's Drape
-201752@@@Crimson Aspirant's Cape
-201753@@@Crimson Aspirant's Greatcloak
-201754@@@Obsidian Forgemaster's Cache
-201755@@@Obsidian Forgemaster's Strongbox
-201756@@@Bulging Coin Purse
-201757@@@Plundered Supplies
-201759@@@Torc of Passed Time
-201760@@@Crimson Aspirant's Battleaxe
-201761@@@Crimson Aspirant's Dagger
-201762@@@Crimson Aspirant's Mace
-201763@@@Crimson Aspirant's Polearm
-201764@@@Crimson Aspirant's Staff
-201765@@@Crimson Aspirant's Greatsword
-201766@@@Crimson Aspirant's Horn
-201767@@@Crimson Aspirant's Warglaive
-201768@@@Crimson Aspirant's Gavel
-201769@@@Crimson Aspirant's Shield
-201770@@@Crimson Aspirant's Hatchet
-201771@@@Crimson Aspirant's Hand Cannon
-201772@@@Crimson Aspirant's Longspear
-201773@@@Crimson Aspirant's Morning Star
-201774@@@Crimson Aspirant's Crescent
-201775@@@Crimson Aspirant's Wand
-201779@@@Merithra's Blessing
-201781@@@Memory of Tyr
-201782@@@Tyr's Blessing
-201783@@@Tutaqan's Commendation
-201784@@@Recipe: Timely Demise
-201785@@@Recipe: Seamoth Surprise
-201786@@@Recipe: Salt-Baked Fishcake
-201787@@@Recipe: Filet of Fangs
-201788@@@Vicious Sabertooth
-201789@@@Vicious Sabertooth
-201790@@@Renewed Proto-Drake: Embodiment of the Storm-Eater
-201791@@@How to Train a Dragonkin
-201792@@@Highland Drake: Embodiment of the Crimson Gladiator
-201793@@@Resplendent Gemstone
-201794@@@Schematic: Tranquil Mechanical Yeti
-201795@@@Valdrakken Guard's Claw
-201796@@@Valdrakken Drakonid's Claw
-10.0.2.45969
-189974@@@Creekborne's Core
-190511@@@Obsidian Seared Hexsword
-190512@@@Obsidian Seared Runeaxe
-190513@@@Obsidian Seared Facesmasher
-190514@@@Obsidian Seared Claymore
-190515@@@Obsidian Seared Halberd
-190516@@@Obsidian Seared Crusher
-190517@@@Obsidian Seared Invoker
-190518@@@Obsidian Seared Slicer
-190520@@@zzOldPauldrons of the Dragon
-190521@@@zzOldTraitorous Primal Gauntlets of the Dragon
-190533@@@Obsidian Seared Alloy
-190534@@@Obsidian Seared Alloy
-190535@@@Obsidian Seared Alloy
-191084@@@Reptilian Eggshell
-191829@@@Cobalt Guardian's Hauberk
-191830@@@Cobalt Guardian's Grips
-191831@@@Cobalt Guardian's Helm
-191832@@@Cobalt Guardian's Leggings
-191833@@@Cobalt Guardian's Pauldron
-191834@@@Cobalt Guardian's Belt
-191835@@@Cobalt Guardian's Bracers
-191836@@@Cobalt Guardian's Cover
-192784@@@Shellack
-193460@@@Venom-Steeped Stompers
-193632@@@Tz'onna, Fear-Striker
-193643@@@Stasis-Freed Leggings
-193644@@@Cuirass of Irreparable Madness
-193647@@@Custodian's Medallion of Delusion
-193650@@@Illusion Breaker's Waistguard
-193654@@@Ancient Rotwalkers
-193658@@@Bough of Deterioration
-193661@@@Blightweaver's Clutches
-193662@@@Tassets of Densified Ooze
-193674@@@Ancestral Stoneshaper
-193694@@@Drake Hunter's Greaves
-193695@@@Quarryslayer Glaive
-193703@@@Organized Pontificator's Mask
-193744@@@Watcher's Clasp of Purpose
-193758@@@Subjugator's Chilling Grips
-193763@@@Fireproof Drape
-193787@@@Mammoth-Trainer's Drape
-193883@@@Pattern: Venom-Steeped Stompers
-194018@@@Azureweave Expedition Pack
-194285@@@Pattern: Azureweave Expedition Pack
-194476@@@Plans: Obsidian Seared Hexsword
-194477@@@Plans: Obsidian Seared Runeaxe
-194478@@@Plans: Obsidian Seared Facesmasher
-194479@@@Plans: Obsidian Seared Claymore
-194480@@@Plans: Obsidian Halberd
-194481@@@Plans: Obsidian Seared Crusher
-194482@@@Plans: Obsidian Seared Invoker
-194483@@@Plans: Obsidian Seared Slicer
-194963@@@Plans: Obsidian Seared Alloy
-197355@@@Renewed Proto-Drake: Thick Spined Jaw
+10.0.0.45970
+188932@@@Luminous Chevalier's Epaulettes
+190583@@@Ichabod
+191114@@@Reins of the Amalgam of Rage
+191616@@@Fireplume Crest
+191617@@@Fireplume Vestments
+191618@@@Fireplume Coverts
+191619@@@Fireplume Flarewraps
+191620@@@Fireplume Plumage
+191621@@@Fireplume Insignia
+191622@@@Fireplume Talons
+191627@@@Fireplume Blouse
+191628@@@Fireplume Tailwinds
+191774@@@Fireplume Claws
+191775@@@Fireplume Shorts and Stockings
+191776@@@Fireplume Coverts
+191779@@@Fireplume Halter
+191855@@@Qalashi Trophy
+191859@@@Half-Boiled Fish
+192555@@@Borrowed Breath
+192744@@@Rymek's Gift
+192768@@@Titan Disc
+197845@@@Silver Scale
+197862@@@Primary Security Disc
+197863@@@Secondary Security Disc
 197988@@@Frozen Shard Ring
 197989@@@Water Ordained Signet
 197990@@@Solemn Seashell String
@@ -278622,13 +279620,280 @@
 198035@@@Archer's Decorated Bow
 198036@@@Spineripper's Fang
 198037@@@Brimming Arcanocrystal
+198038@@@Ancient Titansteel Ingot
+198355@@@Tyrhold Conduit
 198432@@@Crude Wind Charm
 198671@@@Mystic's String of Slime
 198676@@@Divo's Worn Cloth
+199790@@@Makko's Journal Cover
+199792@@@Makko's Journal - Page One
+199793@@@Makko's Journal - Page Two
+199794@@@Makko's Journal - Page Three
+199795@@@Makko's Journal - Page Four
+199796@@@Makko's Journal - Page Five
+199797@@@Makko's Journal - Page Six
+199798@@@Makko's Journal - Page Seven
+199826@@@Tuskarr Puddle Steppers
+199827@@@Tuskarr Water Kickers
+199828@@@Tuskarr Feet Buckets
+199829@@@Tuskarr Wading Boots
+199830@@@Tuskarr Training Dummy
+200188@@@Broken Fishing Pole
+200190@@@Stuffed Duckling Toy
+200479@@@Titan-Touched Elemental
+201290@@@Windswept Sash
+201291@@@Twisted Leather Belt
+201292@@@Bramble Chain Belt
+201293@@@Sleet Shined Waistguard
+201294@@@Salt Crystal Ring
+201295@@@Neelo's Spare Blanket
+201744@@@Crimson Aspirant's Ring
+201745@@@Crimson Aspirant's Band
+201746@@@Crimson Aspirant's Signet
+201747@@@Crimson Aspirant's Necklace
+201748@@@Crimson Aspirant's Choker
+201749@@@Crimson Aspirant's Pendant
+201750@@@Crimson Aspirant's Cloak
+201751@@@Crimson Aspirant's Drape
+201752@@@Crimson Aspirant's Cape
+201753@@@Crimson Aspirant's Greatcloak
+201760@@@Crimson Aspirant's Battleaxe
+201761@@@Crimson Aspirant's Dagger
+201762@@@Crimson Aspirant's Mace
+201763@@@Crimson Aspirant's Polearm
+201764@@@Crimson Aspirant's Staff
+201765@@@Crimson Aspirant's Greatsword
+201766@@@Crimson Aspirant's Horn
+201767@@@Crimson Aspirant's Warglaive
+201768@@@Crimson Aspirant's Gavel
+201769@@@Crimson Aspirant's Shield
+201770@@@Crimson Aspirant's Hatchet
+201771@@@Crimson Aspirant's Hand Cannon
+201772@@@Crimson Aspirant's Longspear
+201773@@@Crimson Aspirant's Morning Star
+201774@@@Crimson Aspirant's Crescent
+201775@@@Crimson Aspirant's Wand
+10.0.0.46112
+190601@@@Sunny
+201989@@@Twisted Heart
+10.0.0.46479
+189454@@@Feather-Plucker 3300
+189974@@@Creekborne's Core
+190394@@@Serevite Ore
+190395@@@Serevite Ore
+190396@@@Serevite Ore
+190450@@@Awakened Ire
+190451@@@Rousing Ire
+190511@@@Obsidian Seared Hexsword
+190512@@@Obsidian Seared Runeaxe
+190513@@@Obsidian Seared Facesmasher
+190514@@@Obsidian Seared Claymore
+190515@@@Obsidian Seared Halberd
+190516@@@Obsidian Seared Crusher
+190517@@@Obsidian Seared Invoker
+190518@@@Obsidian Seared Slicer
+190520@@@zzOldPauldrons of the Dragon
+190521@@@zzOldTraitorous Primal Gauntlets of the Dragon
+190522@@@Infurious Helm of Vengeance
+190533@@@Obsidian Seared Alloy
+190534@@@Obsidian Seared Alloy
+190535@@@Obsidian Seared Alloy
+190536@@@Infurious Alloy
+190537@@@Infurious Alloy
+190538@@@Infurious Alloy
+190954@@@Serevite Lockbox
+191084@@@Reptilian Eggshell
+191256@@@Serevite Skeleton Key
+191260@@@Serevite Repair Hammer
+191526@@@Lesser Illustrious Insight
+191529@@@Illustrious Insight
+191596@@@Recipe: Illustrious Insight
+191681@@@Im-PECK-able Screechflight Disguise
+191763@@@Im-PECK-able Screechflight Disguise v2
+191829@@@Cobalt Guardian's Hauberk
+191830@@@Cobalt Guardian's Grips
+191831@@@Cobalt Guardian's Helm
+191832@@@Cobalt Guardian's Leggings
+191833@@@Cobalt Guardian's Pauldron
+191834@@@Cobalt Guardian's Belt
+191835@@@Cobalt Guardian's Bracers
+191836@@@Cobalt Guardian's Cover
+191849@@@Serevite Angle Iron
+191850@@@Broken Serevite Blade Tip
+191857@@@Warmwater Riverfish
+191858@@@Succulent Snapper Meat
+191862@@@Whalebone Fragment
+191863@@@Waterlogged Wood
+191985@@@Infurious Warboots of Impunity
+192784@@@Shellack
+192883@@@Glossy Stone
+192884@@@Glossy Stone
+192885@@@Glossy Stone
+193037@@@Sundered Onyx Loupe
+193049@@@Earth Key [DNT/UNUSED]
+193053@@@Contoured Fowlfeather
+193222@@@Lustrous Scaled Hide
+193223@@@Lustrous Scaled Hide
+193224@@@Lustrous Scaled Hide
+193236@@@Infurious Hide
+193237@@@Infurious Hide
+193238@@@Infurious Hide
+193248@@@Infurious Scales
+193249@@@Infurious Scales
+193250@@@Infurious Scales
+193368@@@Silken Gemdust
+193369@@@Silken Gemdust
+193370@@@Silken Gemdust
+193373@@@Phoenix Wishwing
+193386@@@Pioneer's Leather Boots
+193388@@@Pioneer's Leather Wristguards
+193390@@@Pioneer's Leather Tunic
+193392@@@Trailblazer's Scale Boots
+193393@@@Trailblazer's Scale Bracers
+193394@@@Trailblazer's Scale Vest
+193404@@@Core of Aqueous Corruption
+193405@@@Headteacher's Ledger
+193455@@@Infurious Footwraps of Indemnity
+193456@@@Infurious Spirit's Hood
+193459@@@Ancestor's Dew Drippers
+193460@@@Venom-Steeped Stompers
+193461@@@Infurious Boots of Reprieve
+193462@@@Infurious Chainhelm Protector
+193478@@@Tuskarr Beanbag
+193497@@@Surveyor's Cloth Bands
+193498@@@Surveyor's Cloth Treads
+193500@@@Surveyor's Tailored Cloak
+193513@@@Infurious Binding of Gesticulation
+193515@@@Surveyor's Cloth Robe
+193524@@@Infurious Legwraps of Possibility
+193530@@@Allied Wristguards of Time Dilation
+193557@@@Fierce Armor Kit
+193561@@@Fierce Armor Kit
+193565@@@Fierce Armor Kit
+193629@@@Cloak of Lost Devotion
+193632@@@Tz'onna, Fear-Striker
+193643@@@Stasis-Freed Leggings
+193644@@@Cuirass of Irreparable Madness
+193647@@@Custodian's Medallion of Delusion
+193650@@@Illusion Breaker's Waistguard
+193654@@@Ancient Rotwalkers
+193658@@@Bough of Deterioration
+193661@@@Blightweaver's Clutches
+193662@@@Tassets of Densified Ooze
+193674@@@Ancestral Stoneshaper
+193694@@@Drake Hunter's Greaves
+193695@@@Quarryslayer Glaive
+193703@@@Organized Pontificator's Mask
+193744@@@Watcher's Clasp of Purpose
+193758@@@Subjugator's Chilling Grips
+193763@@@Fireproof Drape
+193787@@@Mammoth-Trainer's Drape
+193871@@@Pattern: Infurious Spirit's Hood
+193877@@@Pattern: Infurious Boots of Reprieve
+193878@@@Pattern: Ancestor's Dew Drippers
+193879@@@Pattern:  Infurious Footwraps of Indemnity
+193883@@@Pattern: Venom-Steeped Stompers
+193884@@@Pattern: Infurious Chainhelm Protector
+193932@@@Infurious Wildercloth Bolt
+193933@@@Infurious Wildercloth Bolt
+193934@@@Infurious Wildercloth Bolt
+194018@@@Azureweave Expedition Pack
+194042@@@Explorer's Banner of Herbology
+194043@@@Explorer's Banner of Herbology
+194044@@@Explorer's Banner of Herbology
+194045@@@Explorer's Banner of Geology
+194046@@@Explorer's Banner of Geology
+194047@@@Explorer's Banner of Geology
+194060@@@Dragonscale Expedition's Expedition Tent
+194079@@@Pure Serevite Nugget
+194115@@@Stone Sculpture
+194119@@@Ornamented Shield
+194120@@@Decorated Teapot
+194121@@@Handcrafted Boat
+194257@@@Pattern: Infurious Binding of Gesticulation
+194258@@@Pattern: Infurious Legwraps of Possibility
+194259@@@Pattern: Allied Wristguards of Time Dilation
+194268@@@Pattern: Dragonscale Expedition's Expedition Tent
+194269@@@Pattern: Infurious Wildercloth Bolt
+194285@@@Pattern: Azureweave Expedition Pack
+194294@@@Pattern: Explorer's Banner of Herbology
+194295@@@Pattern: Explorer's Banner of Geology
+194311@@@Pattern: Tuskarr Beanbag
+194389@@@Brush-Clearing Axe
+194397@@@Darkscale Twinblade
+194447@@@Totem of Respite
+194476@@@Plans: Obsidian Seared Hexsword
+194477@@@Plans: Obsidian Seared Runeaxe
+194478@@@Plans: Obsidian Seared Facesmasher
+194479@@@Plans: Obsidian Seared Claymore
+194480@@@Plans: Obsidian Seared Halberd
+194481@@@Plans: Obsidian Seared Crusher
+194482@@@Plans: Obsidian Seared Invoker
+194483@@@Plans: Obsidian Seared Slicer
+194484@@@Plans: Infurious Helm of Vengeance
+194485@@@Plans: Infurious Warboots of Impunity
+194504@@@Plans: Primal Whetstone
+194505@@@Plans: Primal Weightstone
+194506@@@Plans: Primal Razorstone
+194507@@@Plans: Serevite Skeleton Key
+194715@@@Gatherer's Reagent Pouch
+194747@@@Frozen Venom Gland
+194838@@@Highland Drake Manuscript: Spined Head
+194963@@@Plans: Obsidian Seared Alloy
+195359@@@Dry Snapper Meat
+195360@@@Scorched Snapper Meat
+195480@@@Seal of Diurna's Chosen
+195481@@@Scepter of Drastic Measures
+195483@@@Awak'mani, Grimtotem's Legacy
+195490@@@Searing Blazecaster
+195502@@@Terros's Captive Core
+195518@@@Imbued Qalashi Crusher
+197355@@@Renewed Proto-Drake: Thick Spined Jaw
+197743@@@Waterfowl Filet
+197748@@@Burly Bear Haunch
+197760@@@Mackerel Snackerel
+198072@@@Gold-Banded Dragon Tooth
+198094@@@Recipe: Mackerel Snackerel
+198183@@@Handful of Serevite Bolts
+198184@@@Handful of Serevite Bolts
+198185@@@Handful of Serevite Bolts
+198627@@@Blood of the Khansguard
+198654@@@Otterworldly Ottuk Carrier
+198695@@@Bottomless Reliquary Satchel
+198701@@@Inert Vessel
+198727@@@Expedition Explosives
+198783@@@Schematic: Spring-Loaded Khaz'gorite Fabric Cutters
+198807@@@Titan-Infused Creature Bait
+198818@@@Sneaky Mud Mask
+198834@@@Slimy Sunglasses
+198870@@@Otto
+198882@@@Technique: Bundle O' Cards: Dragon Isles
+198891@@@Technique: Cliffside Wylderdrake: Conical Head
+198892@@@Technique: Cliffside Wylderdrake: Red Hair
+198893@@@Technique: Cliffside Wylderdrake: Triple Head Horns
+198894@@@Technique: Highland Drake: Black Hair
+198895@@@Technique: Highland Drake: Spined Head
+198896@@@Technique: Highland Drake: Spined Neck
+198899@@@Technique: Renewed Proto-Drake: Predator Pattern
+198901@@@Technique: Renewed Proto-Drake: Spined Crest
+198902@@@Technique: Windborne Velocidrake: Black Fur
+198903@@@Technique: Windborne Velocidrake: Spined Head
+198904@@@Technique: Windborne Velocidrake: Windswept Pattern
+198913@@@Technique: Chilled Rune
+198957@@@Technique: Crackling Codex of the Isles
 198966@@@Molten Globule
+199005@@@Hornstrider's Bracers
+199020@@@Drake Race Starting Rifle
+199027@@@Drakeslayer's Greatsword
+199032@@@Drakescale Shield
+199038@@@Runecarving Knife
+199043@@@Skullsplitting Axe
+199176@@@Thick Bear Fur
+199199@@@Tough Moose Flank
+199200@@@Tender Vorquin Meat
+199201@@@Tender Vorquin Meat
 199341@@@Regurgitated Sac of Swog Treasures
 199342@@@Weighted Sac of Swog Treasures
-199343@@@Immaculate Sac of Swog Treasures
 199412@@@Hailstorm Armoredon
 199703@@@Steadfast Cobalt Bulwark
 199706@@@Cobalt Stalker's Lancet
@@ -278638,21 +279903,80 @@
 199731@@@Cobalt Bladewing Staff
 199733@@@Cobalt Defender's Wingglaive
 199735@@@Cobalt Guardian's Cutlass
-199826@@@Tuskarr Puddle Steppers
-199827@@@Tuskarr Water Kickers
-199828@@@Tuskarr Feet Buckets
-199829@@@Tuskarr Wading Boots
+199757@@@Magic Nibbler
+199812@@@Formula: Enchant Boots - Rider's Reassurance
+199844@@@Serevite Harpoon Head
+199845@@@Jagged Serevite Harpoon Head
+199859@@@Burgundy Tuskarr Traders Pack
+199863@@@Burgundy Tuskarr Backpack
+199894@@@Fisherman's Folly
+199897@@@Blue-Covered Beanbag
+199970@@@Enchant Weapon - Sophic Devotion
+199971@@@Enchant Weapon - Sophic Writ
+200012@@@Enchant Weapon - Sophic Devotion
+200013@@@Enchant Weapon - Sophic Writ
+200054@@@Enchant Weapon - Sophic Devotion
+200055@@@Enchant Weapon - Sophic Writ
+200072@@@Dragonbane Keep Strongbox
+200081@@@Strong Seavine
+200084@@@Salinated Serevite
+200094@@@Caravan Strongbox
+200095@@@Supply-Laden Soup Pot
+200102@@@Plans: Infurious Alloy
+200103@@@Pattern: Infurious Hide
+200104@@@Pattern: Infurious Scales
+200109@@@Medicative Potion
+200129@@@Kolgar's Pack
+200191@@@Ottuk Lure
+200221@@@Gorloc Crystals
+200333@@@Scalesworn Cultist's Frock
+200468@@@Grand Hunt Spoils
+200479@@@Sophic Amalgamation
+200513@@@Grand Hunt Spoils
+200515@@@Grand Hunt Spoils
+200516@@@Grand Hunt Spoils
 200559@@@Cobalt Duelist's Saber
 200667@@@Grim Morsel
 200821@@@Celsius 232
+201010@@@Qalashi Weapon Diagram
+201024@@@Nokhudon Mantle
+201025@@@Nokhudon Harness
+201027@@@Nokhudon Breeches
+201028@@@Nokhudon Boots
+201029@@@Nokhudon Hood
+201030@@@Nokhudon Grips
+201031@@@Nokhudon Cloak
+201032@@@Nokhudon Wraps
+201034@@@Nokhudon Girdle
+201035@@@Citadel Crusher's Pauldrons
+201036@@@Citadel Crusher's Chestplate
+201037@@@Citadel Crusher's Legguards
+201038@@@Citadel Crusher's Footwraps
+201039@@@Citadel Crusher's Helm
+201040@@@Citadel Crusher's Gauntlets
+201041@@@Citadel Crusher's Cloak
+201042@@@Obsidian Crusher's Bracers
+201043@@@Obsidian Crusher's Belt
 201047@@@Arcanostabilized Provisions
-201290@@@Windswept Sash
-201291@@@Twisted Leather Belt
-201292@@@Bramble Chain Belt
-201293@@@Sleet Shined Waistguard
-201294@@@Salt Crystal Ring
-201295@@@Neelo's Spare Blanket
+201048@@@Tyrhold Epaulets
+201049@@@Tyrhold Robe
+201050@@@Tyrhold Leggings
+201051@@@Tyrhold Slippers
+201052@@@Tyrhold Visage
+201053@@@Tyrhold Gloves
+201054@@@Tyrhold Drape
+201055@@@Tyrhold Bindings
+201056@@@Tyrhold Sash
+201244@@@Dreamfire-Infused Broadsword
+201256@@@Bloodstained Plans: Infurious Alloy
+201257@@@Bloodstained Pattern: Infurious Hide
+201258@@@Bloodstained Pattern: Infurious Wildercloth Bolt
+201259@@@Bloodstained Pattern: Infurious Scales
 201371@@@Cobalt Defender's Shredder
+201380@@@Nokhud Hunter's Bow
+201382@@@Centaur Warglaives
+201383@@@Nokhud Stalker's Spear
+201385@@@Nokhud Centaur Warstaff
 201386@@@Drakonid Defender's Pike
 201387@@@Drakonid Stalker's Halberd
 201388@@@Dragonspawn Wingtipped Staff
@@ -278664,6 +279988,75 @@
 201394@@@Drakonid's Jade Bulwark
 201395@@@Wingcrest Scimitar
 201396@@@Hidepiercing Claw Extensions
+201401@@@Iridescent Plume
+201403@@@Mastodon Tusk
+201404@@@Tallstrider Sinew
+201424@@@Unusable Plant Matter
+201429@@@Obsidian Fist
+201430@@@Burning Mallet
+201432@@@Obsidian Dragontooth
+201433@@@Citadel Warden's Mace
+201434@@@Obsidian Barrier
+201435@@@Shuffling Sands
+201442@@@Primal Revenant's Frostblade
+201443@@@Primal Revenant's Icewall
+201444@@@Primal Revenant's Earthblade
+201445@@@Primal Revenant's Emberblade
+201446@@@Primal Revenant's Firewall
+201447@@@Primal Revenant's Breezeblade
+201448@@@Primal Revenant's Windwall
+201455@@@Tyrhold Broadsword
+201456@@@Tyrhold Carbine
+201457@@@Tyrhold Relic
+201458@@@Aegis of Tyrhold
+201459@@@Tyrhold Shortsword
+201460@@@Gavel of Tyrhold
+201461@@@Tyrhold Pinnacle
+201584@@@Serevite Rod
+201601@@@Runed Serevite Rod
+201728@@@Vakril's Strongbox
+201729@@@Spiked Horseshoe
+201730@@@Nokhud Centaur Spear
+201731@@@Nokhud Centaur Staff
+201732@@@Pattern: Fierce Armor Kit
+201733@@@Pattern: Frosted Armor Kit
+201734@@@Technique: Cliffside Wylderdrake: Silver and Blue Armor
+201735@@@Technique: Highland Drake: Silver and Blue Armor
+201736@@@Technique: Cliffside Wylderdrake: Steel and Yellow Armor
+201737@@@Technique: Highland Drake: Steel and Yellow Armor
+201738@@@Technique: Renewed Proto-Drake: Steel and Yellow Armor
+201739@@@Technique: Windborne Velocidrake: Steel and Yellow Armor
+201740@@@Elemental Codex of Ultimate Power
+201741@@@Technique: Renewed Proto-Drake: Bovine Horns
+201742@@@Technique: Renewed Proto-Drake: Silver and Blue Armor
+201743@@@Technique: Windborne Velocidrake: Silver and Blue Armor
+201754@@@Obsidian Forgemaster's Cache
+201755@@@Obsidian Forgemaster's Strongbox
+201756@@@Bulging Coin Purse
+201757@@@Plundered Supplies
+201759@@@Torc of Passed Time
+201766@@@Crimson Aspirant's Torch
+201770@@@Crimson Aspirant's Ripper
+201771@@@Crimson Aspirant's Recurve
+201773@@@Crimson Aspirant's Hammer
+201774@@@Crimson Aspirant's Knife
+201779@@@Merithra's Blessing
+201781@@@Memory of Tyr
+201782@@@Tyr's Blessing
+201783@@@Tutaqan's Commendation
+201784@@@Recipe: Timely Demise
+201785@@@Recipe: Seamoth Surprise
+201786@@@Recipe: Salt-Baked Fishcake
+201787@@@Recipe: Filet of Fangs
+201788@@@Vicious Sabertooth
+201789@@@Vicious Sabertooth
+201790@@@Renewed Proto-Drake: Embodiment of the Storm-Eater
+201791@@@How to Train a Dragonkin
+201792@@@Highland Drake: Embodiment of the Crimson Gladiator
+201793@@@Resplendent Gemstone
+201794@@@Schematic: Tranquil Mechanical Yeti
+201795@@@Valdrakken Guard's Claw
+201796@@@Valdrakken Drakonid's Claw
 201797@@@Crimson Gladiator's Cloak
 201798@@@Crimson Gladiator's Drape
 201799@@@Crimson Gladiator's Shawl
@@ -278782,97 +280175,6 @@
 201922@@@Iskaara Tuskarr Insignia
 201923@@@Maruuk Centaur Insignia
 201924@@@Valdrakken Accord Insignia
-10.0.2.46091
-189454@@@Feather-Plucker 3300
-190394@@@Serevite Ore
-190395@@@Serevite Ore
-190396@@@Serevite Ore
-190450@@@Awakened Ire
-190451@@@Rousing Ire
-190522@@@Infurious Helm of Vengeance
-190536@@@Infurious Alloy
-190537@@@Infurious Alloy
-190538@@@Infurious Alloy
-190954@@@Serevite Lockbox
-191256@@@Serevite Skeleton Key
-191260@@@Serevite Repair Hammer
-191526@@@Lesser Illustrious Insight
-191529@@@Illustrious Insight
-191596@@@Recipe: Illustrious Insight
-191681@@@Im-PECK-able Screechflight Disguise
-191763@@@Im-PECK-able Screechflight Disguise v2
-191849@@@Serevite Angle Iron
-191850@@@Broken Serevite Blade Tip
-191882@@@Serevite Repair Hammer
-191883@@@Serevite Repair Hammer
-191985@@@Infurious Warboots of Impunity
-192883@@@Glossy Stone
-192884@@@Glossy Stone
-192885@@@Glossy Stone
-193053@@@Contoured Fowlfeather
-193222@@@Lustrous Scaled Hide
-193223@@@Lustrous Scaled Hide
-193224@@@Lustrous Scaled Hide
-193236@@@Infurious Hide
-193237@@@Infurious Hide
-193238@@@Infurious Hide
-193248@@@Infurious Scales
-193249@@@Infurious Scales
-193250@@@Infurious Scales
-193368@@@Silken Gemdust
-193369@@@Silken Gemdust
-193370@@@Silken Gemdust
-193386@@@Pioneer's Leather Boots
-193388@@@Pioneer's Leather Wristguards
-193390@@@Pioneer's Leather Tunic
-193392@@@Trailblazer's Scale Boots
-193393@@@Trailblazer's Scale Bracers
-193394@@@Trailblazer's Scale Vest
-193497@@@Surveyor's Cloth Bands
-193498@@@Surveyor's Cloth Treads
-193500@@@Surveyor's Tailored Cloak
-193513@@@Infurious Handwraps of Gesticulation
-193515@@@Surveyor's Cloth Robe
-193524@@@Infurious Legwraps of Possibility
-193932@@@Infurious Wildercloth Bolt
-193933@@@Infurious Wildercloth Bolt
-193934@@@Infurious Wildercloth Bolt
-194079@@@Pure Serevite Nugget
-194257@@@Pattern: Infurious Handwraps of Gesticulation
-194258@@@Pattern: Infurious Legwraps of Possibility
-194269@@@Pattern: Infurious Wildercloth Bolt
-194447@@@Totem of Respite
-194484@@@Plans: Infurious Helm of Vengeance
-194485@@@Plans: Infurious Warboots of Impunity
-194507@@@Plans: Serevite Skeleton Key
-197743@@@Waterfowl Filet
-197748@@@Burly Bear Haunch
-198183@@@Handful of Serevite Bolts
-198184@@@Handful of Serevite Bolts
-198185@@@Handful of Serevite Bolts
-199176@@@Thick Bear Fur
-199199@@@Tough Moose Flank
-199200@@@Tender Vorquin Meat
-199201@@@Tender Vorquin Meat
-199844@@@Serevite Harpoon Head
-199845@@@Jagged Serevite Harpoon Head
-200084@@@Salinated Serevite
-200102@@@Plans: Infurious Alloy
-200103@@@Pattern: Infurious Hide
-200104@@@Pattern: Infurious Scales
-201256@@@Bloodstained Plans: Infurious Alloy
-201257@@@Bloodstained Pattern: Infurious Hide
-201258@@@Bloodstained Pattern: Infurious Wildercloth Bolt
-201259@@@Bloodstained Pattern: Infurious Scales
-201401@@@Iridescent Plume
-201424@@@Unusable Plant Matter
-201584@@@Serevite Rod
-201601@@@Runed Serevite Rod
-201766@@@Crimson Aspirant's Torch
-201770@@@Crimson Aspirant's Ripper
-201771@@@Crimson Aspirant's Recurve
-201773@@@Crimson Aspirant's Hammer
-201774@@@Crimson Aspirant's Knife
 201925@@@Obsidian Genealogy
 201926@@@Crushing
 201927@@@Assorted Arcanocrystals
@@ -278922,98 +280224,14 @@
 201984@@@Crimson Gladiator's Knife
 201985@@@Crimson Gladiator's Mace
 201987@@@Crimson Gladiator's Polearm
-201989@@@Twisted Heart
 201991@@@Sargha's Signet
-201992@@@[PH] BoE Ring
+201992@@@Emissary's Flamewrought Seal
 201994@@@Felsworn Covenant Crossbow
 201995@@@Crux of Blind Faith
 201996@@@Edge of the First Blade
 201997@@@Key to the Halls
 201998@@@Fenryr's Bloodstained Fang
 201999@@@Skovald's Resolve
-202003@@@[PH] BoE Cloth Pants
-202004@@@[PH] BoE Leather Chest
-202005@@@[PH] BoE Mail Shoulder
-202006@@@[PH] BoE Plate Head
-202007@@@[PH] Cloth Wrist
-202008@@@[PH] BoE Leather Feet
-202009@@@[PH] BoE Mail Waist
-202010@@@[PH] BoE Plate Wrist
-10.0.2.46259
-191857@@@Warmwater Riverfish
-193049@@@Earth Key [DNT/UNUSED]
-193455@@@Infurious Footwraps of Indemnity
-193456@@@Infurious Spirit's Hood
-193459@@@Ancestor's Dew Drippers
-193461@@@Infurious Boots of Reprieve
-193462@@@Infurious Chainhelm Protector
-193478@@@Tuskarr Beanbag
-193513@@@Infurious Binding of Gesticulation
-193530@@@Allied Wristguards of Time Dilation
-193871@@@Pattern: Infurious Spirit's Hood
-193877@@@Pattern: Infurious Boots of Reprieve
-193878@@@Pattern: Ancestor's Dew Drippers
-193879@@@Pattern:  Infurious Footwraps of Indemnity
-193884@@@Pattern: Infurious Chainhelm Protector
-194042@@@Explorer's Banner of Herbology
-194043@@@Explorer's Banner of Herbology
-194044@@@Explorer's Banner of Herbology
-194045@@@Explorer's Banner of Geology
-194046@@@Explorer's Banner of Geology
-194047@@@Explorer's Banner of Geology
-194257@@@Pattern: Infurious Binding of Gesticulation
-194259@@@Pattern: Allied Wristguards of Time Dilation
-194294@@@Pattern: Explorer's Banner of Herbology
-194295@@@Pattern: Explorer's Banner of Geology
-194311@@@Pattern: Tuskarr Beanbag
-194747@@@Frozen Venom Gland
-195483@@@Awak'mani, Grimtotem's Legacy
-195502@@@Terros's Captive Core
-195518@@@Imbued Qalashi Crusher
-198701@@@Inert Vessel
-198870@@@Otto
-199757@@@Magic Nibbler
-199894@@@Fisherman's Folly
-199897@@@Blue-Covered Beanbag
-199970@@@Enchant Weapon - Sophic Devotion
-199971@@@Enchant Weapon - Sophic Writ
-200012@@@Enchant Weapon - Sophic Devotion
-200013@@@Enchant Weapon - Sophic Writ
-200054@@@Enchant Weapon - Sophic Devotion
-200055@@@Enchant Weapon - Sophic Writ
-200081@@@Strong Seavine
-200095@@@Supply-Laden Soup Pot
-200109@@@Medicative Potion
-200129@@@Kolgar's Pack
-200221@@@Gorloc Crystals
-200479@@@Sophic Amalgamation
-201024@@@Nokhudon Mantle
-201025@@@Nokhudon Harness
-201027@@@Nokhudon Breeches
-201028@@@Nokhudon Boots
-201029@@@Nokhudon Hood
-201030@@@Nokhudon Grips
-201031@@@Nokhudon Cloak
-201032@@@Nokhudon Wraps
-201034@@@Nokhudon Girdle
-201035@@@Citadel Crusher'sl Pauldrons
-201036@@@Citadel Crusher's Chestplate
-201037@@@Citadel Crusher's Legguards
-201038@@@Citadel Crusher's Footwraps
-201039@@@Citadel Crusher's Helm
-201040@@@Citadel Crusher's Gauntlets
-201041@@@Citadel Crusher'sl Cloak
-201042@@@Obsidian Crusher's Bracers
-201043@@@Obsidian Crusher's Belt
-201435@@@Shuffling Sands
-201442@@@Primal Revenant's Frostblade
-201443@@@Primal Revenant's Icewall
-201444@@@Primal Revenant's Earthblade
-201445@@@Primal Revenant's Emberblade
-201446@@@Primal Revenant's Firewall
-201447@@@Primal Revenant's Breezeblade
-201448@@@Primal Revenant's Windwall
-201992@@@Emissary's Flamewrought Seal
 202003@@@Primal Seeker's Leggings
 202004@@@Brawler's Earthen Cuirass
 202005@@@Frozen Claw Mantle
@@ -279093,7 +280311,7 @@
 202137@@@Crimson Gladiator's Greataxe
 202138@@@Crimson Gladiator's Greatmace
 202140@@@Crimson Gladiator's Claw
-202142@@@Dragonbane Strongbox
+202142@@@Dragonbane Keep Strongbox
 202143@@@Woven Stone Bracelets
 202144@@@Greathelm of Horned Fury
 202145@@@Frozen Claw Mantle
@@ -279104,32 +280322,9 @@
 202150@@@Galvanic Gaiters
 202151@@@Lavamancer's Ceremonial Waistguard
 202152@@@Storm-Charged Manipulator
-202171@@@Small Dragon Purse
+202171@@@Dragon Purse
 202172@@@Overflowing Satchel of Coins
 202173@@@Magmote
-10.0.2.46420
-193037@@@Sundered Onyx Loupe
-193629@@@Cloak of Lost Devotion
-194115@@@Stone Sculpture
-194119@@@Ornamented Shield
-194120@@@Decorated Teapot
-194121@@@Handcrafted Boat
-194480@@@Plans: Obsidian Seared Halberd
-194715@@@Gatherer's Reagent Pouch
-194838@@@Highland Drake Manuscript: Spined Head
-198072@@@Gold-Banded Dragon Tooth
-198895@@@Technique: Highland Drake: Spined Head
-198896@@@Technique: Highland Drake: Spined Neck
-198901@@@Technique: Renewed Proto-Drake: Spined Crest
-198903@@@Technique: Windborne Velocidrake: Spined Head
-200072@@@Dragonbane Keep Strongbox
-200094@@@Caravan Strongbox
-200468@@@Grand Hunt Spoils
-200513@@@Grand Hunt Spoils
-200515@@@Grand Hunt Spoils
-200516@@@Grand Hunt Spoils
-202142@@@Dragonbane Keep Strongbox
-202171@@@Dragon Purse
 202184@@@Trophy of Strife
 202188@@@Storm-Battered Reagent Bag
 202190@@@Dead Man's Chains
@@ -279141,33 +280336,89 @@
 202199@@@Frozen Shard Ring
 202200@@@Solemn Seashell String
 202201@@@Tuskarr Spirit Shawl
-10.0.2.46479
-195481@@@Scepter of Drastic Measures
-195490@@@Searing Blazecaster
-198695@@@Bottomless Reliquary Satchel
-201035@@@Citadel Crusher's Pauldrons
-201041@@@Citadel Crusher's Cloak
+10.0.2.45779
+193361@@@zzOldIncomplete Hunting Necklace
+198895@@@Technique: Highland Drake: Spined Crest
+198896@@@Technique: Highland Drake: Spined Throat
+198901@@@Technique: Renewed Proto-Drake: Spined Hair
+198903@@@Technique: Windborne Velocidrake: Spined Crest
+201447@@@Primalist Tomorrow's Breezeblade
+10.0.2.45969
+194480@@@Plans: Obsidian Halberd
+199343@@@Immaculate Sac of Swog Treasures
+10.0.2.46091
+191882@@@Serevite Repair Hammer
+191883@@@Serevite Repair Hammer
+193513@@@Infurious Handwraps of Gesticulation
+194257@@@Pattern: Infurious Handwraps of Gesticulation
+201992@@@[PH] BoE Ring
+202003@@@[PH] BoE Cloth Pants
+202004@@@[PH] BoE Leather Chest
+202005@@@[PH] BoE Mail Shoulder
+202006@@@[PH] BoE Plate Head
+202007@@@[PH] Cloth Wrist
+202008@@@[PH] BoE Leather Feet
+202009@@@[PH] BoE Mail Waist
+202010@@@[PH] BoE Plate Wrist
+10.0.2.46144
+201035@@@Citadel Crusher'sl Pauldrons
+201041@@@Citadel Crusher'sl Cloak
+202083@@@Tyler's Test Box
+202103@@@Immaculate Sac of Swog Treasures
+202104@@@Weighted Sac of Swog Treasures
+10.0.2.46259
+202142@@@Dragonbane Strongbox
+202171@@@Small Dragon Purse
+10.0.2.46658
+198808@@@Guardian Vorquin
+201724@@@Dracthyr Token of Cavalry Excellence
+201836@@@Aspects' Token of Merit
+202197@@@Emboldened Dracthyr's Tabard
+10.0.2.46689
+199648@@@Dragon Dinner Fork
+10.0.2.46741
+193717@@@Mystakria's Harvester
+201159@@@Aloom's Token
 10.0.2.46781
 133589@@@DalapeÃ±o Pepper
-190583@@@Ichabod
-193717@@@Mystakria's Harvester
 198083@@@Expedition Supply Kit
-198808@@@Guardian Vorquin
-199648@@@Dragon Dinner Fork
 199651@@@Dragon Garden Hoe
 199652@@@Dragon Garden Rake
 199653@@@Dragon Garden Hand Shovel
 199654@@@Dragon Garden Shovel
 200750@@@Dragon Dinner Knife
-201159@@@Aloom's Token
 201373@@@Imbu Net Cutter
 201470@@@Story of a Memorable Victory
 201471@@@Story of a Spectacular Victory
-201724@@@Dracthyr Token of Cavalry Excellence
-201836@@@Aspects' Token of Merit
 202139@@@Crimson Gladiator's Scepter
-202197@@@Emboldened Dracthyr's Tabard
 202712@@@Rubber Fish
+10.0.2.46802
+194421@@@Teera's Bow
+194423@@@Maruuk's Spear
+198073@@@Karha, the Serene Wind
+198074@@@Josanak, the Certain Victory
+198075@@@Tsegzaya, the Brambled Bow
+198672@@@Decryption Key
+198814@@@Boom Fumes
+198815@@@Ash
+198816@@@Aerospace Grade Draconium
+198817@@@Durable Crystal
+198982@@@Broken Part: Head
+198983@@@Broken Part: Arm
+198984@@@Broken Part: Shattered Orb
+199197@@@Bottled Essence
+199215@@@Worldbreaker Membership
+199900@@@Secondhand Survey Tools
+200108@@@Irideus' Power Core
+200120@@@Irideus' Power Core
+200675@@@Elemental Overflow Cluster
+201927@@@Gleaming Arcanocrystal
+201928@@@Ohn'ir Windprayer Talisman
+201929@@@Stolen Breath of Ohn'ahra
+202082@@@Petrified Dragon Egg
+202084@@@Eroded Fossil
+202692@@@Gnoll Fiend Flail
+202711@@@Lost Compass
 10.0.2.46879
 123865@@@Relic of Ursol
 133755@@@Underlight Angler
@@ -279297,38 +280548,19 @@
 193447@@@Thunder Thigh
 193448@@@Arcane Cell
 193450@@@Arakkoa Doll
-194421@@@Teera's Bow
-194423@@@Maruuk's Spear
-198073@@@Karha, the Serene Wind
-198074@@@Josanak, the Certain Victory
-198075@@@Tsegzaya, the Brambled Bow
 198173@@@Atomic Recalibrator
 198335@@@Ol' Smoky
-198672@@@Decryption Key
-198814@@@Boom Fumes
-198815@@@Ash
-198816@@@Aerospace Grade Draconium
-198817@@@Durable Crystal
 198848@@@Flyspawn Thorax
 198859@@@Revealing Dragon's Eye
-198982@@@Broken Part: Head
-198983@@@Broken Part: Arm
-198984@@@Broken Part: Shattered Orb
-199197@@@Bottled Essence
-199215@@@Worldbreaker Membership
 199227@@@Schematic: Ol' Smoky
 199294@@@Schematic: Atomic Recalibrator
-199900@@@Secondhand Survey Tools
 200105@@@Muck Covered Flotsam
 200106@@@Slimy Old Boot
 200107@@@Tarnished Engagement Ring
-200108@@@Irideus' Power Core
-200120@@@Irideus' Power Core
 200451@@@Deep Sea Star
 200531@@@Worn Chitin Fragment
 200532@@@Damaged Qiraji Ring
 200533@@@Bygone Idol
-200675@@@Elemental Overflow Cluster
 200933@@@Mushy Vegtable
 200937@@@Flavorful Soup Bone
 201162@@@Shiny Metal Scraps
@@ -279395,15 +280627,8 @@
 201723@@@Indecipherable Pages
 201823@@@Arcane-Infused Webbing
 201824@@@Arcane Fluid
-201927@@@Gleaming Arcanocrystal
-201928@@@Ohn'ir Windprayer Talisman
-201929@@@Stolen Breath of Ohn'ahra
 202070@@@Exceptional Pelt
 202071@@@Elemental Mote
-202082@@@Petrified Dragon Egg
-202084@@@Eroded Fossil
-202692@@@Gnoll Fiend Flail
-202711@@@Lost Compass
 203206@@@Elegant Canvas Brush
 203366@@@Blue Winglord's Staff
 203367@@@Blue Winglord's Hauberk
@@ -279417,40 +280642,12 @@
 10.0.2.46924
 102463@@@Fire-Watcher's Oath
 123869@@@Relic of Elune
-191855@@@Qalashi Trophy
-191858@@@Succulent Snapper Meat
-191859@@@Half-Boiled Fish
-191862@@@Whalebone Fragment
-191863@@@Waterlogged Wood
-195359@@@Dry Snapper Meat
-195360@@@Scorched Snapper Meat
-197845@@@Silver Scale
-197862@@@Primary Security Disc
-197863@@@Secondary Security Disc
-198038@@@Ancient Titansteel Ingot
-198355@@@Tyrhold Conduit
-199830@@@Tuskarr Training Dummy
-200188@@@Broken Fishing Pole
-200190@@@Stuffed Duckling Toy
-200191@@@Ottuk Lure
 202001@@@Passing Renascence
 10.0.2.46999
 123868@@@Relic of Shakama
-191114@@@Reins of the Amalgam of Rage
-192555@@@Borrowed Breath
-192744@@@Rymek's Gift
-192768@@@Titan Disc
 199178@@@Bronze Horn Flower
 199179@@@Dragon Foil
 199180@@@Dragon's Blood Berry
-199790@@@Makko's Journal Cover
-199792@@@Makko's Journal - Page One
-199793@@@Makko's Journal - Page Two
-199794@@@Makko's Journal - Page Three
-199795@@@Makko's Journal - Page Four
-199796@@@Makko's Journal - Page Five
-199797@@@Makko's Journal - Page Six
-199798@@@Makko's Journal - Page Seven
 200100@@@Batubar the Relentless
 200115@@@Sarantuya the Ever-True
 200617@@@Shattering Totem
@@ -279478,20 +280675,6 @@
 203448@@@Bottomless Bag of Ore
 203449@@@Bottomless Bag of Herbs
 203450@@@Bottomless Bag of Skins
-10.0.2.47120
-191616@@@Fireplume Crest
-191617@@@Fireplume Vestments
-191618@@@Fireplume Coverts
-191619@@@Fireplume Flarewraps
-191620@@@Fireplume Plumage
-191621@@@Fireplume Insignia
-191622@@@Fireplume Talons
-191627@@@Fireplume Blouse
-191628@@@Fireplume Tailwinds
-191774@@@Fireplume Claws
-191775@@@Fireplume Shorts and Stockings
-191776@@@Fireplume Coverts
-191779@@@Fireplume Halter
 10.0.2.47187
 191042@@@Flask of Dwarven Antifreeze
 191135@@@Nai'jin's Runestone
@@ -279639,94 +280822,67 @@
 203604@@@Draconic Hierophant's Sash
 203605@@@Draconic Hierophant's Wristbands
 203606@@@Draconic Hierophant's Drape
-10.0.5.47799
-137295@@@Bottle of Arcwine
-151974@@@Eye of Shatug
-189792@@@Glorious Dragonrider's Grips
-189869@@@Distinguished Warcloak
-189870@@@Arcanofire Wrap
+10.0.5.47118
 189871@@@Squire's Warhammer
-189872@@@Shattered Krokul Edge
-189873@@@Sylvan Stalker's Boots
-189874@@@Glorious Dragonrider's Wristguards
-189875@@@Corrupted Runelord's Sash
-189876@@@Corrupted Runelord's Handguards
-189877@@@Glorious Dragonrider's Spaulders
-189878@@@Glorious Dragonrider's Runeward
-189879@@@Corrupted Runelord's Leggings
-189880@@@Corrupted Runelord's Mantle
-189881@@@Val'sharah Protector's Greaves
-189883@@@Lordaeron Sentry's Bulwark
-189884@@@Vengeful Nemesis Warblades
-189886@@@Might of the Titanforged
+189882@@@Dread Admiral's Bicorne
+189885@@@The Battlespoon
+189895@@@Watchman's Flare
+189896@@@Forsaken Cresset
 189897@@@Infiltrator's Bandolier
 189898@@@Fury of the Firelord
-190064@@@Ymirjar Berserker's Girdle
-190066@@@Primeval Maul
-190067@@@Tidecaller's Grips
-190068@@@Emerald Drape
-190069@@@Val'sharah Protector's Sabatons
-190070@@@Highborne Scholar's Gloves
+189938@@@Ensemble: Fel-Automaton Exoplate
+189978@@@Reins of the Magenta Cloud Serpent
+190063@@@Greatcloak of the Virtuous Protector
+190065@@@Gnomish Liquid Transfer Apparatus
 190071@@@Azure Scalesworn Longbow
-190072@@@Tidecaller's Hauberk
-190073@@@Sylvan Stalker's Hood
-190074@@@Val'sharah Protector's Spaulders
-190075@@@Mantle of the Scholarly Raven
-190076@@@Granny's Old Hat
-190078@@@Blade of Brutal Sacrifice
-190079@@@Smoldering Forgeblade
-190080@@@Catastrophe's Edge
-190131@@@Brick-on-a-Stick
-190132@@@Krokul Battlescythe
-190134@@@Helarjar Berserker Warboots
-190135@@@Helarjar Berserker Gauntlets
-190136@@@Kvaldir Scout Treads
-190137@@@Kvaldir Scout Grips
-190138@@@Helarjar Berserker Horns
-190139@@@Helarjar Berserker Greaves
-190140@@@Kvaldir Scout Trousers
-190141@@@Kvaldir Scout Chestguard
-190142@@@Sylvan Stalker's Legguards
+190077@@@Scarlet Zealot's Heater Shield
+190092@@@Triumphant Blademaster's Greatsword
+190095@@@Ensemble: Vestment of the Honored Valarjar
+190097@@@Fabulously Flashy Finery
+190130@@@Drape of Foreboding Mists
+190133@@@Honed Bastard Sword
 190143@@@Shard of Frozen Secrets
-190144@@@Irontide Raider's Bicorne
-190146@@@Antoran Felspire
-190147@@@Longbow of the Twisted Grove
-190148@@@Ravencrest's Razor
-190152@@@Solemn Watchman's Gauntlets
-190165@@@Ensemble: Twisted Arcanum Regalia
-190167@@@Vault Stalker's Greaves
-190168@@@Crusty Crawler
-190173@@@Lil' Maka'jin
-190176@@@Drazka'zet the Wrathful
-190201@@@Sin'dorei Assassin's Shroud
-190202@@@Scoundrel's Missing Boots
-190203@@@Woodsman's Timber Mallet
-190206@@@Corrupted Runelord's Glyphbands
-190207@@@Corrupted Runelord's Slippers
-190208@@@Glorious Dragonrider's Sabatons
-190209@@@Glorious Dragonrider's Chains
-190210@@@Corrupted Runelord's Cowl
-190211@@@Corrupted Runelord's Robe
-190212@@@Glorious Dragonrider's Hood
-190213@@@Val'sharah Protector's Cuirass
-190218@@@Jeweled Ripper
-190219@@@Virulent Gavel
-190230@@@Glorious Dragonrider's Cuisses
+190145@@@Gilded Drakkonid Morningstar
+190153@@@Libram of Righteous Light
+190154@@@Tome of Sin'dorei Secrets
+190164@@@Arsenal: Blades of Elune
+190166@@@Ensemble: Vagabond's Midnight Threads
+190169@@@Quawks
+190175@@@Pippin
+190199@@@Well-Worn Grimskull Cinch
+190200@@@Feathered Drape of the Guardian
+190204@@@Huntsman's Recurve Bow
+190214@@@Tiercel's Wing
+190215@@@Lost Crown of the Arcane
+190216@@@Feathered Cowl of the Guardian
+190217@@@Fang of the Mountain
+190220@@@Standard of the Guardian
 190231@@@Ash'adar, Harbinger of Dawn
-190428@@@Regal Warcloak
+190377@@@Ensemble: Wanderer's Midnight Trappings
+190427@@@Scarlet Zealot's Cloak
 190429@@@Clasp of Ursine Rage
-190430@@@Chipped Gladius
+190431@@@Veteran Grunt's Chopper
 190432@@@Tidecaller's Bracers
+190433@@@Shifty Merchant's Tunic
 190434@@@Iridescent Warcloak
 190435@@@Highborne Scholar's Belt
 190436@@@Sylvan Stalker's Baldric
 190437@@@Highborne Scholar's Collar
+190438@@@Crimson Nexus Crescent
+190439@@@Merciless Trapper's Staff
 190440@@@Tidecaller's Crown
-190442@@@Illidari Bladeward
-190445@@@Envenomed Gutripper
-190446@@@Blazing Forgehammer
-190539@@@Coral-Stalker Waveray
+190441@@@Black Iron Blunderbuss
+190443@@@Pustulent Demonheart Fetish
+190444@@@Scarlet Zealot's Cassock
+190447@@@Soulburner Bardiche
+190448@@@Trapper's Shot Pouch
+190449@@@Trapper's Fur-Lined Quiver
+190504@@@Ensemble: Darkmoon Harlequin's Bells
+190540@@@Ensemble: Trapper's Munitions
+190543@@@Silvered Warcloak
 190544@@@Ultramafic Girdle
+190545@@@Primeval Basher
+190546@@@Polished Shortsword
 190547@@@Val'Sharah Protector's Bracers
 190548@@@Kvaldir Scout Belt
 190549@@@Kvaldir Scout Wristguard
@@ -279737,14 +280893,22 @@
 190554@@@Helarjar Berserker Pauldrons
 190555@@@Highborne Scholar's Robe
 190556@@@Tidecaller's Legguards
+190557@@@Sinister Fel Staff
+190558@@@Helm of the Fierce
+190559@@@Helm of the Swift
+190560@@@Apocalypse
+190561@@@Crystalblade of Shifting Magic
+190562@@@Aldori War Mace
 190574@@@Kvaldir Scout Hood
-190575@@@Ensemble: Chains of the Honored Valarjar
+190576@@@Ensemble: Vagabond's Azure Threads
+190577@@@Ensemble: Wanderer's Azure Trappings
+190578@@@Headmaster's Command
 190599@@@Operative's Bandolier
-190604@@@Buzzworth
+190600@@@Shadowy Blademaster's Greatsword
+190603@@@Egbob
 190607@@@Garrlok
-190672@@@Deathguard Acolyte's Cloak
+190613@@@Savage Green Battle Turtle
 190673@@@Waistguard of the Infernal Eye
-190675@@@Arborcidal Peon's Chopper
 190676@@@Val'Sharah Protector's Gauntlets
 190677@@@Void-Bound Boots
 190678@@@Void-Bound Chain
@@ -279754,15 +280918,8 @@
 190682@@@Void-Bound Circlet
 190683@@@Void-Bound Mantle
 190684@@@Void-Bound Trousers
-190685@@@Lost Crusader's Azure Battleaxe
-190686@@@Anetheron's Edge
-190687@@@Painted Warblade
-190689@@@Corrupted Bladefist
-190691@@@Twisted Guardian's Profane Barrier
-190696@@@Magister's Jeweled Drape
+190690@@@Flame-Forged Fel Fang
 190697@@@Boots of a Broken World
-190698@@@Gently-Used Cleaver
-190699@@@Gorian Mining Pick
 190700@@@Tidecaller's Boots
 190701@@@Void-Bound Girdle
 190702@@@Void-Bound Vambraces
@@ -279773,16 +280930,9 @@
 190707@@@Void-Bound Vest
 190708@@@Void-Bound Shoulderguards
 190709@@@Tidecaller's Pauldrons
-190710@@@Caged Eye of the Watcher
-190711@@@Arcanist's Barbed Baton
-190713@@@Imperator's Command
-190714@@@Gorian Pulverizer
-190715@@@Anodized Sniper Rifle
 190718@@@Drape of the Honored Valarjar
-190767@@@Armored Golden Pterrordax
-190772@@@Ensemble: Vestments of the Nightmare Forest
-190787@@@Highborne Scholar's Cuffs
-190788@@@Sylvan Stalker's Wristguards
+190725@@@Ensemble: Battlewraps of the Honored Valarjar
+190796@@@Ensemble: Slumbering Caldera Regalia
 190799@@@Ensemble: Swashbuckling Buccaneer's Slops
 190803@@@Lost Acolyte's Boots
 190806@@@Tidecaller's Cinch
@@ -279799,6 +280949,7 @@
 190839@@@Void-Bound Crown
 190840@@@Void-Bound Hauberk
 190841@@@Void-Bound Spaulders
+190842@@@Fists of Polar Fury
 190846@@@Shattered Voidspire
 190855@@@Rosy Corsage
 190856@@@Fetid Bouquet
@@ -279811,35 +280962,43 @@
 190866@@@Void-Bound Breastplate
 190867@@@Void-Bound Pauldrons
 190868@@@Highborne Scholar's Scrollmantle
+190876@@@Filigreed Lion's Maw
 190879@@@Void-Bound Mask
+190886@@@Fine White Evening Gloves
 190888@@@Embrace of the Great Dark Beyond
 190894@@@Sylvan Stalker's Mantle
 190897@@@Val'Sharah Protector's Crown
+190898@@@Red Pith Helmet
 191143@@@Mudfin Totem
 191539@@@Sarnai's Collar
 191540@@@Batu's Collar
 191541@@@Shikaar Supplies
-193257@@@Clump of Sacred Soil
-193879@@@Pattern: Infurious Footwraps of Indemnity
+192631@@@Scale-Piercing Fang
+193003@@@Idol of the Life-Binder
+193006@@@Idol of the Earth-Warder
 193915@@@Flag of the Black Dragonflight
 194632@@@Design: Idol of the Life-Binder
 194635@@@Design: Idol of the Earth-Warder
-199704@@@Artifact Fragment
 200842@@@Power-Depleted Staff
+200884@@@Ensemble: Glorious Dragonrider's Mail
+200909@@@Ensemble: Corrupted Runelord's Regalia
+200917@@@Ensemble: Tidecaller's Chainmail
 200919@@@Void-Bound Leggings
 200920@@@Void-Bound Cloak
 200921@@@Void-Bound Greatcloak
 200922@@@Void-Bound Shroud
 200923@@@Void-Bound Drape
+201229@@@Ensemble: Kvaldir Scout Leathers
+201230@@@Ensemble: Helarjar Berserker Warplate
 201960@@@Chronologically Unstable Loop
 201961@@@Bronze Band of Destinies
-201962@@@Heat of Primal Winter
+201962@@@Remnant of Primal Winter
 201990@@@Primal Mote
 202015@@@Sands of Temporal Perfection
 202020@@@Chasing Storm
 202035@@@Self-Heating Rations
 202039@@@Essence of the Storm
-202096@@@Armaments of the Scale
+202096@@@Blistering Heat Armaments
 202112@@@Crystal Shattering Armaments
 202165@@@Wanderer's Rosy Scarf
 202166@@@Wanderer's Rosy Cloak
@@ -279847,6 +281006,12 @@
 202168@@@Vagabond's Rosy Cape
 202169@@@Vagabond's Rosy Hood
 202170@@@Ensemble: Vagabond's Rosy Threads
+202174@@@Wanderer's Carrot Scarf
+202175@@@Wanderer's Carrot Cloak
+202176@@@Vagabond's Carrot Hood
+202177@@@Vagabond's Carrot Cape
+202178@@@Ensemble: Vagabond's Carrot Threads
+202179@@@Ensemble: Wanderer's Carrot Trappings
 202207@@@Reusable Oversized Bobber
 202208@@@Impressive Steelforged Essence
 202209@@@Remarkable Steelforged Essence
@@ -279876,6 +281041,7 @@
 202235@@@Pattern: Remarkable Hexweave Essence
 202236@@@Technique: Impressive Weapon Crystal
 202237@@@Technique: Remarkable Weapon Crystal
+202248@@@Frozen Shadow
 202249@@@Recipe: Goldthorn Tea
 202252@@@Relic of the Future (prototype)
 202295@@@Anointed Crusader's Claymore
@@ -279892,16 +281058,123 @@
 202308@@@Alley Skulker's Bandana
 202309@@@Defective Doomsday Device
 202310@@@Defective Doomsday Device
-202371@@@Glowing Primalist Cache
+202311@@@Sunbleached Grimskull Cinch
+202371@@@Primalist Cache
 202691@@@Henry's Handbag
 203226@@@Stormfused Salamanther
 203382@@@Peripheral Vision Projectors
 203461@@@Chronologically Reallocated Rations
 203469@@@Coalesced Storm Remnants
+10.0.5.47186
+193879@@@Pattern: Infurious Footwraps of Indemnity
+199704@@@Artifact Fragment
+202096@@@Armaments of the Scale
+202371@@@Glowing Primalist Cache
 203471@@@Tasty Candy
 203476@@@Primalist Cache
 203478@@@Field Deployable Heat Source
 203598@@@Makko's Journal Cover
+10.0.5.47481
+151974@@@Eye of Shatug
+189792@@@Glorious Dragonrider's Grips
+189869@@@Distinguished Warcloak
+189870@@@Arcanofire Wrap
+189872@@@Shattered Krokul Edge
+189873@@@Sylvan Stalker's Boots
+189874@@@Glorious Dragonrider's Wristguards
+189875@@@Corrupted Runelord's Sash
+189876@@@Corrupted Runelord's Handguards
+189877@@@Glorious Dragonrider's Spaulders
+189878@@@Glorious Dragonrider's Runeward
+189879@@@Corrupted Runelord's Leggings
+189880@@@Corrupted Runelord's Mantle
+189881@@@Val'sharah Protector's Greaves
+189883@@@Lordaeron Sentry's Bulwark
+189884@@@Vengeful Nemesis Warblades
+189886@@@Might of the Titanforged
+190064@@@Ymirjar Berserker's Girdle
+190066@@@Primeval Maul
+190067@@@Tidecaller's Grips
+190068@@@Emerald Drape
+190069@@@Val'sharah Protector's Sabatons
+190070@@@Highborne Scholar's Gloves
+190072@@@Tidecaller's Hauberk
+190073@@@Sylvan Stalker's Hood
+190074@@@Val'sharah Protector's Spaulders
+190075@@@Mantle of the Scholarly Raven
+190076@@@Granny's Old Hat
+190078@@@Blade of Brutal Sacrifice
+190079@@@Smoldering Forgeblade
+190080@@@Catastrophe's Edge
+190131@@@Brick-on-a-Stick
+190132@@@Krokul Battlescythe
+190134@@@Helarjar Berserker Warboots
+190135@@@Helarjar Berserker Gauntlets
+190136@@@Kvaldir Scout Treads
+190137@@@Kvaldir Scout Grips
+190138@@@Helarjar Berserker Horns
+190139@@@Helarjar Berserker Greaves
+190140@@@Kvaldir Scout Trousers
+190141@@@Kvaldir Scout Chestguard
+190142@@@Sylvan Stalker's Legguards
+190144@@@Irontide Raider's Bicorne
+190146@@@Antoran Felspire
+190147@@@Longbow of the Twisted Grove
+190148@@@Ravencrest's Razor
+190152@@@Solemn Watchman's Gauntlets
+190155@@@Trusty Treasure Trove
+190165@@@Ensemble: Twisted Arcanum Regalia
+190167@@@Vault Stalker's Greaves
+190168@@@Crusty Crawler
+190173@@@Lil' Maka'jin
+190176@@@Drazka'zet the Wrathful
+190201@@@Sin'dorei Assassin's Shroud
+190202@@@Scoundrel's Missing Boots
+190203@@@Woodsman's Timber Mallet
+190205@@@Sharpened Shank
+190206@@@Corrupted Runelord's Glyphbands
+190207@@@Corrupted Runelord's Slippers
+190208@@@Glorious Dragonrider's Sabatons
+190209@@@Glorious Dragonrider's Chains
+190210@@@Corrupted Runelord's Cowl
+190211@@@Corrupted Runelord's Robe
+190212@@@Glorious Dragonrider's Hood
+190213@@@Val'sharah Protector's Cuirass
+190218@@@Jeweled Ripper
+190219@@@Virulent Gavel
+190230@@@Glorious Dragonrider's Cuisses
+190428@@@Regal Warcloak
+190430@@@Chipped Gladius
+190442@@@Illidari Bladeward
+190445@@@Envenomed Gutripper
+190446@@@Blazing Forgehammer
+190539@@@Coral-Stalker Waveray
+190575@@@Ensemble: Chains of the Honored Valarjar
+190604@@@Buzzworth
+190672@@@Deathguard Acolyte's Cloak
+190675@@@Arborcidal Peon's Chopper
+190685@@@Lost Crusader's Azure Battleaxe
+190686@@@Anetheron's Edge
+190687@@@Painted Warblade
+190689@@@Corrupted Bladefist
+190691@@@Twisted Guardian's Profane Barrier
+190696@@@Magister's Jeweled Drape
+190698@@@Gently-Used Cleaver
+190699@@@Gorian Mining Pick
+190710@@@Caged Eye of the Watcher
+190711@@@Arcanist's Barbed Baton
+190713@@@Imperator's Command
+190714@@@Gorian Pulverizer
+190715@@@Anodized Sniper Rifle
+190767@@@Armored Golden Pterrordax
+190772@@@Ensemble: Vestments of the Nightmare Forest
+190787@@@Highborne Scholar's Cuffs
+190788@@@Sylvan Stalker's Wristguards
+201094@@@Crimson Aspirant's Silk Robe
+201126@@@Crimson Aspirant's Silk Vestments
+201650@@@Crimson Gladiator's Chain Vestments
+201651@@@Crimson Gladiator's Chain Robe
+201962@@@Heat of Primal Winter
 203658@@@Graniteclaw's Vest
 203659@@@Waterpot's Halfpot Deflector
 203660@@@Rockknell's Groundpounders
@@ -279924,49 +281197,20 @@
 203677@@@Watcher's 'Neck' Ring
 203681@@@Stormed Primalist Cache
 203716@@@Thundering Banner of the Aspects
-10.0.5.47871
-190065@@@Gnomish Liquid Transfer Apparatus
-190204@@@Huntsman's Recurve Bow
-190448@@@Trapper's Shot Pouch
-190449@@@Trapper's Fur-Lined Quiver
-190540@@@Ensemble: Trapper's Munitions
-190725@@@Ensemble: Battlewraps of the Honored Valarjar
-192631@@@Scale-Piercing Fang
-193003@@@Idol of the Life-Binder
-193006@@@Idol of the Earth-Warder
-201094@@@Crimson Aspirant's Silk Robe
-201126@@@Crimson Aspirant's Silk Vestments
-201229@@@Ensemble: Kvaldir Scout Leathers
-201650@@@Crimson Gladiator's Chain Vestments
-201651@@@Crimson Gladiator's Chain Robe
+10.0.5.47799
+137295@@@Bottle of Arcwine
+193257@@@Clump of Sacred Soil
+10.0.5.47825
 202000@@@Minor Renascence
 202002@@@Enlightened Renascence
+10.0.5.47849
 202089@@@Crimson Gladiator's Prestigious Cloak
 202090@@@Crimson Gladiator's Tabard
+10.0.5.47871
 204236@@@Sack of Stolen Dragon Glyphs
 204277@@@Ruby Whelp Treat
-10.0.5.47884
-10.0.5.47936
 10.0.5.47967
 204339@@@Satchel of Coalescing Chaos
-10.0.5.48001
-10.0.5.48069
-10.0.5.48317
-10.0.5.48397
-189882@@@Dread Admiral's Bicorne
-189938@@@Ensemble: Fel-Automaton Exoplate
-190063@@@Greatcloak of the Virtuous Protector
-190092@@@Triumphant Blademaster's Greatsword
-190097@@@Fabulously Flashy Finery
-190155@@@Trusty Treasure Trove
-190166@@@Ensemble: Vagabond's Midnight Threads
-190377@@@Ensemble: Wanderer's Midnight Trappings
-190504@@@Ensemble: Darkmoon Harlequin's Bells
-190600@@@Shadowy Blademaster's Greatsword
-190876@@@Filigreed Lion's Maw
-200884@@@Ensemble: Glorious Dragonrider's Mail
-202248@@@Frozen Shadow
-10.0.5.48526
 10.0.7.47910
 20748@@@Expired Mana Oil
 20749@@@Expired Wizard Oil
@@ -280677,24 +281921,6 @@
 204214@@@Drakefire Amulet
 204793@@@Suja's Sweet Salt
 205289@@@Crimson Equipment Chest
-10.0.7.48838
-10.0.7.48865
-10.0.7.48892
-189895@@@Watchman's Flare
-189896@@@Forsaken Cresset
-189978@@@Reins of the Magenta Cloud Serpent
-190130@@@Drape of Foreboding Mists
-190133@@@Honed Bastard Sword
-190145@@@Gilded Drakkonid Morningstar
-190153@@@Libram of Righteous Light
-190154@@@Tome of Sin'dorei Secrets
-190164@@@Arsenal: Blades of Elune
-190438@@@Crimson Nexus Crescent
-190603@@@Egbob
-190842@@@Fists of Polar Fury
-190886@@@Fine White Evening Gloves
-190898@@@Red Pith Helmet
-200909@@@Ensemble: Corrupted Runelord's Regalia
 10.0.7.48966
 204874@@@Waveborne Diplomat's Cavalier Hat
 204875@@@Waveborne Diplomat's Puffed Pauldrons
@@ -280705,13 +281931,9 @@
 204881@@@Waveborne Diplomat's Cape
 204882@@@Waveborne Diplomat's Belt
 204888@@@Ensemble: Waveborne Diplomat's Regalia
-10.0.7.48999
 10.0.7.49267
-190199@@@Well-Worn Grimskull Cinch
-190439@@@Merciless Trapper's Staff
 190921@@@Ensemble: Wanderer's Snowy Trappings
 190922@@@Ensemble: Vagabond's Snowy Threads
-202311@@@Sunbleached Grimskull Cinch
 10.1.0.48480
 87829@@@Technique: Incarnadine Ink
 87830@@@Technique: Tigersblood Tincture
@@ -283623,21 +284845,7 @@
 206343@@@Crimson Legend's Pennant
 206366@@@Trophy of Strife
 206367@@@Cracked Trophy of Strife
-10.1.0.49222
-10.1.0.49255
 10.1.0.49365
-189885@@@The Battlespoon
-190095@@@Ensemble: Vestment of the Honored Valarjar
-190175@@@Pippin
-190200@@@Feathered Drape of the Guardian
-190205@@@Sharpened Shank
-190214@@@Tiercel's Wing
-190215@@@Lost Crown of the Arcane
-190216@@@Feathered Cowl of the Guardian
-190217@@@Fang of the Mountain
-190220@@@Standard of the Guardian
-190441@@@Black Iron Blunderbuss
-190613@@@Savage Green Battle Turtle
 190808@@@High Priestess's Ceremonial Drape
 190899@@@Crimson Bicorne
 10.1.0.49426
@@ -283695,26 +284903,9 @@
 10.1.0.49801
 205419@@@Dinn's Drum
 10.1.0.49890
-190077@@@Scarlet Zealot's Heater Shield
-190169@@@Quawks
-190427@@@Scarlet Zealot's Cloak
-190431@@@Veteran Grunt's Chopper
-190433@@@Shifty Merchant's Tunic
-190443@@@Pustulent Demonheart Fetish
-190444@@@Scarlet Zealot's Cassock
-190447@@@Soulburner Bardiche
-190690@@@Flame-Forged Fel Fang
-190796@@@Ensemble: Slumbering Caldera Regalia
 190817@@@Sentinel's Tower Shield
 190821@@@Sunspire Battle Staff
 190869@@@Emberstone Dress
-201230@@@Ensemble: Helarjar Berserker Warplate
-202174@@@Wanderer's Carrot Scarf
-202175@@@Wanderer's Carrot Cloak
-202176@@@Vagabond's Carrot Hood
-202177@@@Vagabond's Carrot Cape
-202178@@@Ensemble: Vagabond's Carrot Threads
-202179@@@Ensemble: Wanderer's Carrot Trappings
 204686@@@Titan's Containment Device
 206976@@@Royal Swarmer's Reins
 10.1.5.49516
@@ -284964,21 +286155,9 @@
 10.1.5.50355
 190528@@@Ensemble: Vagabond's Violet Threads
 190529@@@Ensemble: Wanderer's Violet Trappings
-190543@@@Silvered Warcloak
-190545@@@Primeval Basher
-190546@@@Polished Shortsword
-190557@@@Sinister Fel Staff
-190558@@@Helm of the Fierce
-190559@@@Helm of the Swift
 190560@@@Conquest
-190561@@@Crystalblade of Shifting Magic
-190562@@@Aldori War Mace
-190576@@@Ensemble: Vagabond's Azure Threads
-190577@@@Ensemble: Wanderer's Azure Trappings
-190578@@@Headmaster's Command
 190814@@@Mephistroth's Razor
 200915@@@Ensemble: Sylvan Stalker's Leathers
-200917@@@Ensemble: Tidecaller's Chainmail
 206156@@@Grotto Netherwing Drake
 10.1.5.50379
 206167@@@Way of the Wonderous Wavewhisker
@@ -284993,8 +286172,6 @@
 208945@@@Paracausal Crate
 208951@@@Paracausal Cluster
 208952@@@Soridormi's Letter of Commendation
-10.1.5.50622
-190601@@@Sunny
 10.1.5.50747
 190091@@@Fanciful Corsage
 190694@@@Solemn Watchman's Belt
@@ -285468,8 +286645,6 @@
 10.1.7.51536
 211271@@@Arfus
 10.1.7.51754
-133589@@@Dalapeño Pepper
-188932@@@Luminous Chevalier's Epaulettes
 190800@@@Gleaming Mail Tabard
 190801@@@Shadowy Mail Tabard
 190802@@@Drape of Endless Twilight
@@ -306083,6 +307258,19 @@
 231297@@@Timbered Sky Snake
 231310@@@Timbered Sky Snakelet
 235344@@@Blazing Royal Fire Hawk
+11.0.7.59207
+229818@@@Golden Orc Crest
+229819@@@Golden Scourge Crest
+229820@@@Golden Human Crest
+229821@@@Golden Night Elf Crest
+229822@@@Arsenal: Golden Crests of the Kingdom
+239015@@@Rock Candy Package
+11.0.7.59302
+235286@@@Sha-Warped Cloud Serpent
+235287@@@Sha-Warped Riding Tiger
+235288@@@Sha-Warped Tea Set
+235358@@@Merriment
+238946@@@Letter from Keg Leg
 11.1.0.58221
 211773@@@Cracked Medal of Conquest
 212170@@@Brann's Spare Hat
@@ -308259,3 +309447,956 @@
 237347@@@Organically-Sourced Wellington Bobber
 237355@@@Golden Coffer Key
 237358@@@Siilver Coffer Key
+11.1.0.58731
+229955@@@Darkfuse Spy-Eye
+232922@@@Resold Goods
+232982@@@The Pozzik Standard
+235050@@@Desk-in-a-Box
+235532@@@Experimental Goblin-FUEL Supplement
+235533@@@Prototype Auto-Advertiser
+235534@@@Electropuncture Test Model
+235535@@@Discretely-Packaged Invention
+236669@@@The Whole Brass Band
+236671@@@The Buzzer
+236672@@@The Ol' Low-and-Slow
+237358@@@Silver Coffer Key
+237382@@@Undermine Supply Crate
+237502@@@Puzzling Cartel Chip
+237578@@@Counterfeit Dealer's Chip
+237762@@@"Harmless" Sniper Dislodger XL
+237900@@@C.H.E.T.T. Pack
+11.1.0.58819
+225415@@@Caddy Caller
+233202@@@G.O.L.E.M, Jr.
+238207@@@Nanny's Surge Dividends
+238208@@@Nanny's Surge Dividends
+238243@@@Hidden Boots
+238249@@@Boreal Greatsword
+238250@@@Boreal Cleaver
+238251@@@Grateful Goblin's Blade
+11.1.0.58945
+235339@@@Powdery Crab Meat
+238261@@@Tock the Clocker Spaniel
+238394@@@Warblades of the Monarch
+238395@@@Barrel of Fireworks
+11.1.0.58999
+222922@@@Heavy Trunk
+225178@@@Bountiful Heavy Trunk
+229945@@@Thunderdrum Misfire
+238688@@@Gallagio Radier's Venture Co. Torchblade
+238689@@@Gallagio Radier's Bilgewater Torchblade
+238690@@@Gallagio Radier's Blackwater Torchblade
+238691@@@Gallagio Radier's Darkfuse Torchblade
+238692@@@Gallagio Raider's Venture Co. Coilstaff
+238693@@@Gallagio Raider's Bilgewater Coilstaff
+238694@@@Gallagio Raider's Blackwater Coilstaff
+238695@@@Gallagio Raider's Darkfuse Coilstaff
+238696@@@Gallagio Raider's Venture Co. Boomfist
+238697@@@Gallagio Raider's Bilgewater Boomfist
+238698@@@Gallagio Raider's Blackwater Boomfist
+238699@@@Gallagio Raider's Darkfuse Boomfist
+238700@@@Gallagio Raider's Venture Co. Shockbow
+238701@@@Gallagio Raider's Bilgewater Shockbow
+238702@@@Gallagio Raider's Blackwater Shockbow
+238703@@@Gallagio Raider's Darkfuse Shockbow
+238704@@@Gallagio Raider's Venture Co. Generator
+238705@@@Gallagio Raider's Bilgewater Generator
+238706@@@Gallagio Raider's Blackwater Generator
+238707@@@Gallagio Raider's Darkfuse Generator
+238708@@@Gallagio Raider's Venture Co. Shivlighter
+238709@@@Gallagio Raider's Bilgewater Shivlighter
+238710@@@Gallagio Raider's Blackwater Shivlighter
+238711@@@Gallagio Raider's Darkfuse Shivlighter
+238712@@@Gallagio Raider's Venture Co. Motorshield
+238713@@@Gallagio Raider's Bilgewater Motorshield
+238714@@@Gallagio Raider's Blackwater Motorshield
+238715@@@Gallagio Raider's Darkfuse Motorshield
+238716@@@Gallagio Raider's Venture Co. Chainsaw
+238717@@@Gallagio Raider's Bilgewater Chainsaw
+238718@@@Gallagio Raider's Blackwater Chainsaw
+238719@@@Gallagio Raider's Darkfuse Chainsaw
+238741@@@Gallagio Raider's Venture Co. Zapdagger
+238742@@@Gallagio Raider's Bilgewater Zapdagger
+238743@@@Gallagio Raider's Blackwater Zapdagger
+238744@@@Gallagio Raider's Darkfuse Zapdagger
+238745@@@Gallagio Raider's Venture Co. Eelspire
+238746@@@Gallagio Raider's Bilgewater Eelspire
+238747@@@Gallagio Raider's Blackwater Eelspire
+238748@@@Gallagio Raider's Darkfuse Eelspire
+238749@@@Gallagio Raider's Venture Co. Exhaustglaive
+238750@@@Gallagio Raider's Bilgewater Exhaustglaive
+238751@@@Gallagio Raider's Blackwater Exhaustglaive
+238752@@@Gallagio Raider's Darkfuse Exhaustglaive
+238753@@@Gallagio Raider's Venture Co. Gold Digger
+238754@@@Gallagio Raider's Bilgewater Gold Digger
+238755@@@Gallagio Raider's Blackwater Gold Digger
+238756@@@Gallagio Raider's Darkfuse Gold Digger
+238757@@@Gallagio Raider's Venture Co. Thing-a-ma-tool
+238758@@@Gallagio Raider's Bilgewater Thing-a-ma-tool
+238759@@@Gallagio Raider's Blackwater Thing-a-ma-tool
+238760@@@Gallagio Raider's Darkfuse Thing-a-ma-tool
+238761@@@Gallagio Raider's Bootleg Lever
+238762@@@Gallagio Raider's Venture Co. Gyroclub
+238763@@@Gallagio Raider's Bilgewater Gyroclub
+238764@@@Gallagio Raider's Blackwater Gyroclub
+238765@@@Gallagio Raider's Darkfuse Gyroclub
+238766@@@Gallagio Raider's Venture Co. Naval Mine
+238767@@@Gallagio Raider's Bilgewater Naval Mine
+238768@@@Gallagio Raider's Blackwater Naval Mine
+238769@@@Gallagio Raider's Darkfuse Naval Mine
+238770@@@Gallagio Raider's Venture Co. Repeater
+238771@@@Gallagio Raider's Bilgewater Repeater
+238772@@@Gallagio Raider's Blackwater Repeater
+238773@@@Gallagio Raider's Darkfuse Repeater
+238774@@@Gallagio Raider's Knuckle Dusters
+238775@@@Gallagio Raider's Venture Co. Blasthammer
+238776@@@Gallagio Raider's Bilgewater Blasthammer
+238777@@@Gallagio Raider's Blackwater Blasthammer
+238778@@@Gallagio Raider's Darkfuse Blasthammer
+11.1.0.59347
+239118@@@Pinnacle Cache
+239120@@@Seasoned Adventurer's Cache
+239121@@@Awakened Mechanical Cache
+239122@@@The General's War Chest
+239124@@@The Vizier's Capital
+239125@@@The Weaver's Gratuity
+239126@@@Radiant Cache
+239128@@@Theater Troupe's Trove
+11.1.0.59466
+233282@@@Meeksi Rufflefur
+233283@@@Meeksi Softpaw
+233284@@@Meeksi Rollingpaw
+233285@@@Meeksi Teatuft
+233286@@@Meeksi Brewthief
+11.1.0.59538
+229940@@@Flarendo the Furious
+229988@@@Vicious Electro Eel
+229989@@@Vicious Electro Eel
+231173@@@Junkmaestro's Magnetomech
+235549@@@Crimson Shreddertank
+237141@@@Enterprising Shreddertank
+11.1.0.59570
+229924@@@Darkfuse Chompactor
+229936@@@Violet Armored Growler
+229937@@@Blackwater Bonecrusher
+229941@@@Innovation Investigator
+229944@@@The Topskimmer Special
+229946@@@Ocher Delivery Rocket
+229947@@@Violet Goblin Shredder
+229948@@@Blackwater Shredder Deluxe Mk 2
+229950@@@Darkfuse Demolisher
+229951@@@Venture Co-ordinator
+229952@@@Asset Advocator
+229954@@@Margin Manipulator
+229957@@@Bilgewater Bombardier
+233655@@@Well-Worn Throwing Knives
+233656@@@Pristine Fishing Gear
+233657@@@Old Copy of "Undermine Weekly"
+238796@@@Thrrrdgl
+239115@@@L.O.S.E.R. Ticket
+11.1.0.59888
+133589@@@Dalapeño Pepper
+11.1.5.59571
+161942@@@Coarse Leather Leggings
+210141@@@Brown-Furred Spiky Bakar
+221851@@@Argos's Bell
+223265@@@Nesting Swarmite
+223498@@@Whoopy
+229946@@@Ochre Delivery Rocket
+232302@@@Prized Banner of the Algari
+232306@@@Prized Champion's Prestigious Banner
+232352@@@Ashjra'kamas, Shroud of Resolve
+232857@@@Goggles's Favorite Chew-Wrench
+232917@@@Faceless Mask of the Burned Bridge
+232918@@@Faceless Mask of the Daredevil
+232919@@@Faceless Mask of Dark Imagination
+232920@@@Faceless Mask of the Pained
+232921@@@Faceless Mask of the Long Night
+233288@@@Radiant Recruit's Tabard
+233289@@@Radiant Stalwart's Tabard
+233290@@@Sacred Templar's Tabard
+233297@@@Radiant Recruit's Buckle
+233298@@@Radiant Stalwart's Buckle
+233299@@@Sacred Templar's Buckle
+234449@@@Dastardly Invitation
+235052@@@Weathered Mysterious Satchel
+235054@@@Pristine Mysterious Satchel
+235274@@@Echo of N'zoth
+235284@@@Echo of N'zoth
+235285@@@Echo of N'zoth
+235414@@@Faceless Mask of Multitudes
+235631@@@[NOT USED] Mysterious Large Satchel of Goodies
+235700@@@Reins of the Void-Scarred Gryphon
+235701@@@Decaying MechaScrapper Construction Kit
+235705@@@Void-Forged Stallion's Reins
+235706@@@Void-Scarred Pack Mother's Harness
+235707@@@Reins of the Void-Scarred Windrider
+235709@@@Ny'alothan Shadow Worm
+235711@@@Corruption of the Aspects
+235712@@@Void-Crystal Panther
+235793@@@Parrot Cage (Void-Scarred Parrot)
+235794@@@Eye of Chaos
+235795@@@Void-Scarred Scorpid
+235797@@@Void-Scarred Egg
+235798@@@Diluted Potion of Celerity
+235803@@@Potion of Mysterious Celerity
+235804@@@Concentrated Potion of Celerity
+235815@@@Diluted Potion of Swiftstrike
+235816@@@Potion of Mysterious Swiftstrike
+235817@@@Concentrated Potion of Swiftstrike
+235837@@@Concentrated Potion of Tenacity
+235838@@@Potion of Mysterious Tenacity
+235839@@@Diluted Potion of Tenacity
+235842@@@Diluted Potion of Revivification
+235843@@@Potion of Mysterious Revivification
+235844@@@Concentrated Potion of Revivification
+235911@@@Weathered Mysterious Satchel
+235922@@@Mysterious Shield
+235923@@@Mysterious Lantern
+235924@@@Mysterious Drill-Tipped Stave
+235925@@@Mysterious Beacon Staff
+235926@@@Mysterious Polearm
+235927@@@Mysterious Spade
+235928@@@Mysterious Waraxe
+235929@@@Mysterious Torch
+235930@@@Mysterious Sharpshooter
+235931@@@Mysterious Sword
+235932@@@Mysterious Blade
+235933@@@Mysterious Hammer
+235934@@@Mysterious Pummeler
+235935@@@Mysterious Ritual Knife
+235936@@@Mysterious Shank
+235937@@@Mysterious Cleaver
+235938@@@Mysterious Hatchet
+235939@@@Mysterious Chisel
+235940@@@Mysterious Spellblade
+235941@@@Mysterious Bolthrower
+235942@@@Mysterious Cuffs
+235943@@@Mysterious Cord
+235944@@@Mysterious Shoulderpads
+235945@@@Mysterious Leggings
+235946@@@Mysterious Cowl
+235947@@@Mysterious Handwraps
+235948@@@Mysterious Sandals
+235949@@@Mysterious Robes
+235950@@@Mysterious Bindings
+235951@@@Mysterious Sash
+235952@@@Mysterious Epaulets
+235953@@@Mysterious Pants
+235954@@@Mysterious Headgear
+235955@@@Mysterious Gloves
+235956@@@Mysterious Boots
+235957@@@Mysterious Vest
+235958@@@Mysterious Bracers
+235959@@@Mysterious Belt
+235960@@@Mysterious Shoulderguards
+235961@@@Mysterious Greaves
+235962@@@Mysterious Coif
+235963@@@Mysterious Grips
+235964@@@Mysterious Striders
+235965@@@Mysterious Chainmail
+235966@@@Mysterious Vambraces
+235967@@@Mysterious Girdle
+235968@@@Mysterious Pauldrons
+235969@@@Mysterious Helm
+235970@@@Mysterious Legguards
+235971@@@Mysterious Gauntlets
+235972@@@Mysterious Sabatons
+235973@@@Mysterious Breastplate
+235974@@@Mysterious Cloak
+235975@@@Mysterious Shawl
+235976@@@Mysterious Pendant
+235977@@@Mysterious Ring
+235978@@@Mysterious Signet
+235979@@@Mysterious Band
+235980@@@Scourge of the Aspects
+235985@@@Heroic Half Shell
+235986@@@Evil King's Half Shell
+235987@@@Adorned Half Shell
+236402@@@Deathwarder's Night Stave
+236403@@@Deathwarder's Grove Stave
+236404@@@Deathwarder's Twilight Stave
+236405@@@Deathwarder's Blood Stave
+236409@@@Frumpy Softpaw
+236415@@@Reins of the Spotted Black Riding Goat
+236627@@@Deathwarder's Night Blade
+236628@@@Deathwarder's Grove Blade
+236629@@@Deathwarder's Twilight Blade
+236630@@@Deathwarder's Blood Blade
+236787@@@Vision Manipulator's Footwraps
+236788@@@Vision Manipulator's Handwraps
+236789@@@Vision Manipulator's Leggings
+236790@@@Vision Manipulator's Cinch
+236791@@@Vision Manipulator's Wristwraps
+236792@@@Footpads of the Insatiable Vision
+236793@@@Grips of the Insatiable Vision
+236794@@@Legwraps of the Insatiable Vision
+236795@@@Waistguard of the Insatiable Vision
+236796@@@Wristwraps of the Insatiable Vision
+236797@@@Vision Tormentor's Footguards
+236798@@@Vision Tormentor's Handguards
+236799@@@Vision Tormentor's Legguards
+236800@@@Vision Tormentor's Belt
+236801@@@Vision Tormentor's Vambraces
+236802@@@Malignant Vision's Stompers
+236803@@@Malignant Vision's Crushers
+236804@@@Malignant Vision's Wargreaves
+236805@@@Malignant Vision's Greatbelt
+236806@@@Malignant Vision's Armguards
+236807@@@Vision Manipulator's Gloves
+236808@@@Gloves of the Insatiable Vision
+236809@@@Vision Tormentor's Gloves
+236810@@@Malignant Vision's Gauntlets
+236811@@@Vision Manipulator's Legwraps
+236812@@@Leggings of the Insatiable Vision
+236813@@@Vision Tormentor's Greaves
+236814@@@Malignant Vision's Legguards
+236815@@@Vision Manipulator's Cuffs
+236816@@@Armguards of the Insatiable Vision
+236817@@@Vision Tormentor's Bracers
+236818@@@Malignant Vision's Vambraces
+236819@@@Malignant Vision's Warboots
+236820@@@Vision Tormentor's Boots
+236821@@@Boots of the Insatiable Vision
+236822@@@Vision Manipulator's Treads
+236823@@@Vision Manipulator's Belt
+236824@@@Grasp of the Insatiable Vision
+236825@@@Vision Tormentor's Chain
+236826@@@Malignant Vision's Girdle
+236827@@@Vision Manipulator's Robe
+236828@@@Vision Manipulator's Cowl
+236829@@@Vision Manipulator's Mantle
+236830@@@Chestguard of the Insatiable Vision
+236831@@@Guise of the Insatiable Vision
+236832@@@Shoulderpads of the Insatiable Vision
+236833@@@Vision Tormentor's Breastplate
+236834@@@Vision Tormentor's Mask
+236835@@@Vision Tormentor's Spaulders
+236836@@@Malignant Vision's Chestplate
+236837@@@Malignant Vision's Headguard
+236838@@@Malignant Vision's Spaulders
+236839@@@Vision Manipulator's Vestments
+236840@@@Vision Manipulator's Mask
+236841@@@Vision Manipulator's Shoulders
+236842@@@Vest of the Insatiable Vision
+236843@@@Mask of the Insatiable Vision
+236844@@@Shoulders of the Insatiable Vision
+236845@@@Vision Tormentor's Chestplate
+236846@@@Vision Tormentor's Helmet
+236847@@@Vision Tormentor's Shoulders
+236848@@@Malignant Vision's Breastplate
+236849@@@Malignant Vision's Helm
+236850@@@Malignant Vision's Pauldrons
+236854@@@Potion of Mysterious Conflagration
+236856@@@Potion of Mysterious Systemshock
+236857@@@Potion of Mysterious Frostbound
+236870@@@Potion of Mysterious Tremorshards
+236881@@@Void-Touched Shank
+236882@@@Void-Touched Ritual Knife
+236883@@@Void-Touched Pummeler
+236884@@@Void-Touched Blungeon
+236885@@@Void-Touched Gladius
+236886@@@Void-Touched Sword
+236887@@@Void-Touched Sharpshooter
+236888@@@Void-Touched Occular
+236889@@@Void-Touched Waraxe
+236890@@@Void-Touched Spear
+236891@@@Void-Touched Polearm
+236892@@@Void-Touched Battle Staff
+236893@@@Void-Touched Stave
+236894@@@Void-Touched Bow
+236895@@@Void-Touched Spellblade
+236896@@@Void-Touched Blade
+236897@@@Void-Touched Hacker
+236898@@@Void-Touched Cleaver
+236899@@@Void-Touched Wand
+236900@@@Void-Touched Claws
+236901@@@Void-Touched Broadsword
+236902@@@Void-Touched Greatsword
+236903@@@Void-Touched Glaive
+236904@@@Void-Touched Lantern
+236905@@@Void-Touched Shield
+236906@@@Vision Manipulator's Ring
+236907@@@Vision Tormentor's Band
+236908@@@Signet of Malignant Vision
+236909@@@Loop of Insatiable Vision
+236910@@@Choker of the Malignant Vision
+236911@@@Vision Tormentor's Bone Necklace
+236912@@@Vision Manipulator's Choker
+236913@@@Pendant of Insatiable Vision
+236914@@@Unbound Vision Journal
+236915@@@Book of Dark Visions
+236916@@@Void-Whittled Spike
+236917@@@Dark Dreamer's Talisman
+236918@@@Pulsating Void Disk
+236919@@@Void Spike
+236939@@@[DNT] TEST
+236940@@@[NOT USED] Mysterious Outfitters Satchel
+236941@@@[NOT USED] Mysterious Accessories Satchel
+236942@@@[NOT USED] Mysterious Outfitters Satchel
+236943@@@[NOT USED] Mysterious Accessories Satchel
+236944@@@Weathered Mysterious Satchel
+236945@@@[NOT USED] Mysterious Outfitters Satchel
+236946@@@[NOT USED] Mysterious Accessories Satchel
+236958@@@[NOT USED] Empty Mysterious Potion
+236959@@@Empty Mysterious Potion
+236968@@@Malignant Vision's Drape
+236969@@@Vision Tormentor's Tentacles
+236970@@@Cloak of Insatiable Vision
+236971@@@Vision Manipulator's Cloak
+236973@@@Vision Manipulator's Footwraps
+236974@@@Vision Manipulator's Handwraps
+236975@@@Vision Manipulator's Leggings
+236976@@@Vision Manipulator's Cinch
+236977@@@Vision Manipulator's Wristwraps
+236978@@@Footpads of the Insatiable Vision
+236979@@@Grips of the Insatiable Vision
+236980@@@Legwraps of the Insatiable Vision
+236981@@@Waistguard of the Insatiable Vision
+236982@@@Wristwraps of the Insatiable Vision
+236983@@@Vision Tormentor's Footguards
+236984@@@Vision Tormentor's Handguards
+236985@@@Vision Tormentor's Legguards
+236986@@@Vision Tormentor's Belt
+236987@@@Vision Tormentor's Vambraces
+236988@@@Malignant Vision's Stompers
+236989@@@Malignant Vision's Crushers
+236990@@@Malignant Vision's Wargreaves
+236991@@@Malignant Vision's Greatbelt
+236992@@@Malignant Vision's Armguards
+236993@@@Vision Manipulator's Robe
+236994@@@Vision Manipulator's Cowl
+236995@@@Vision Manipulator's Mantle
+236996@@@Chestguard of the Insatiable Vision
+236997@@@Guise of the Insatiable Vision
+236998@@@Shoulderpads of the Insatiable Vision
+236999@@@Vision Tormentor's Breastplate
+237000@@@Vision Tormentor's Mask
+237001@@@Vision Tormentor's Spaulders
+237002@@@Malignant Vision's Chestplate
+237003@@@Malignant Vision's Headguard
+237004@@@Malignant Vision's Spaulders
+237005@@@Malignant Vision's Drape
+237006@@@Vision Tormentor's Tentacles
+237007@@@Cloak of the Insatiable Vision
+237008@@@Vision Manipulator's Cloak
+237176@@@Deathwarder's Night Fist
+237177@@@Deathwarder's Grove Fist
+237178@@@Deathwarder's Twilight Fist
+237179@@@Deathwarder's Blood Fist
+237180@@@Deathwarder's Night Fetish
+237181@@@Deathwarder's Grove Fetish
+237182@@@Deathwarder's Twilight Fetish
+237183@@@Deathwarder's Blood Fetish
+237190@@@Woodland Vestments of the Racoon
+237191@@@Woodland Vestments of the Grey Wolf
+237192@@@Woodland Vestments of the Fox
+237193@@@Woodland Vestments of the Gilneas Fox
+237194@@@Woodland Boots of the Racoon
+237195@@@Woodland Boots of the Grey Wolf
+237197@@@Woodland Boots of the Fox
+237198@@@Woodland Boots of the Gilneas Fox
+237199@@@Woodland Gloves of the Racoon
+237201@@@Woodland Gloves of the Grey Wolf
+237202@@@Woodland Gloves of the Fox
+237203@@@Woodland Gloves of the Gilneas Fox
+237205@@@Woodland Cowl of the Racoon
+237206@@@Woodland Cowl of the Grey Wolf
+237207@@@Woodland Cowl of the Fox
+237208@@@Woodland Cowl of the Gilneas Fox
+237209@@@Woodland Pants of the Racoon
+237210@@@Woodland Pants of the Grey Wolf
+237211@@@Woodland Pants of the Fox
+237212@@@Woodland Pants of the Gilneas Fox
+237213@@@Woodland Mantle of the Racoon
+237214@@@Woodland Mantle of the Grey Wolf
+237215@@@Woodland Mantle of the Fox
+237216@@@Woodland Mantle of the Gilneas Fox
+237217@@@Woodland Belt of the Racoon
+237218@@@Woodland Belt of the Grey Wolf
+237219@@@Woodland Belt of the Fox
+237220@@@Woodland Belt of the Gilneas Fox
+237222@@@Ensemble: Woodland Attire of the Racoon
+237223@@@Ensemble: Woodland Attire of the Grey Wolf
+237224@@@Ensemble: Woodland Attire of the Fox
+237225@@@Ensemble: Woodland Attire of the Gilneas Fox
+237226@@@Woodland Cloak of the Racoon
+237227@@@Woodland Cloak of the Grey Wolf
+237228@@@Woodland Cloak of the Fox
+237229@@@Woodland Cloak of the Gilneas Fox
+237342@@@Dagger of the Renaissance
+237343@@@Flail of the Renaissance
+237344@@@Blade of the Renaissance
+237374@@@Stormstout's Tunic
+237375@@@Stormstout's Hat
+237376@@@Stormstout's Belt
+237377@@@Stormstout's Pants
+237378@@@Stormstout's Boots
+237379@@@Ensemble: Stormstout's Collection
+237394@@@Arathi Abbot's Cloak
+237395@@@Arathi Abbot's Vestment
+237396@@@Arathi Abbot's Sandals
+237397@@@Arathi Abbot's Handwraps
+237398@@@Arathi Abbot's Cowl
+237399@@@Arathi Abbot's Leggings
+237400@@@Arathi Abbot's Mantle
+237401@@@Arathi Abbot's Cord
+237402@@@Arathi Abbot's Cuffs
+237403@@@Arathi Zealot's Cape
+237404@@@Arathi Zealot's Vest
+237405@@@Arathi Zealot's Waders
+237406@@@Arathi Zealot's Grips
+237407@@@Arathi Zealot's Breeches
+237408@@@Arathi Zealot's Shoulderpads
+237409@@@Arathi Zealot's Sash
+237410@@@Arathi Zealot's Bindings
+237411@@@Arathi Cleric's Shawl
+237412@@@Arathi Cleric's Chainmail
+237413@@@Arathi Cleric's Striders
+237414@@@Arathi Cleric's Grips
+237415@@@Arathi Cleric's Coif
+237416@@@Arathi Cleric's Greaves
+237417@@@Arathi Cleric's Shoulderguards
+237418@@@Arathi Cleric's Cinch
+237419@@@Arathi Cleric's Bracers
+237420@@@Arathi Crusader's Drape
+237421@@@Arathi Crusader's Breastplate
+237422@@@Arathi Crusader's Sabatons
+237423@@@Arathi Crusader's Gauntlets
+237424@@@Arathi Crusader's Helm
+237425@@@Arathi Crusader's Legguards
+237426@@@Arathi Crusader's Mantle
+237427@@@Arathi Crusader's Girdle
+237428@@@Arathi Crusader's Armplates
+237429@@@Arathi Zealot's Cape
+237430@@@Consecrated Seal
+237431@@@Divine Loop of the Crusader
+237432@@@Clergyman's Anointed Pendant
+237433@@@Necklace of the Devout
+237434@@@Faceless Mask of the Nemesis
+237435@@@Nightfall Darkcaster's Cloak
+237436@@@Nightfall Darkcaster's Vestment
+237437@@@Nightfall Darkcaster's Sandals
+237438@@@Nightfall Darkcaster's Handwraps
+237439@@@Nightfall Darkcaster's Cowl
+237440@@@Nightfall Darkcaster's Leggings
+237441@@@Nightfall Darkcaster's Mantle
+237442@@@Nightfall Darkcaster's Cord
+237443@@@Nightfall Darkcaster's Cuffs
+237444@@@Nightfall Curseblade's Cape
+237445@@@Nightfall Curseblade's Vest
+237446@@@Nightfall Curseblade's Waders
+237447@@@Nightfall Curseblade's Grips
+237448@@@Nightfall Curseblade's Breeches
+237449@@@Nightfall Curseblade's Shoulderpads
+237450@@@Nightfall Curseblade's Sash
+237451@@@Nightfall Curseblade's Bindings
+237452@@@Nightfall Shadowalker's Shawl
+237453@@@Nightfall Shadowalker's Chainmail
+237454@@@Nightfall Shadowalker's Striders
+237455@@@Nightfall Shadowalker's Grips
+237456@@@Nightfall Shadowalker's Coif
+237457@@@Nightfall Shadowalker's Greaves
+237458@@@Nightfall Shadowalker's Shoulderguards
+237459@@@Nightfall Shadowalker's Cinch
+237460@@@Nightfall Shadowalker's Bracers
+237461@@@Nightfall Executioner's Drape
+237462@@@Nightfall Executioner's Breastplate
+237463@@@Nightfall Executioner's Sabatons
+237464@@@Nightfall Executioner's Gauntlets
+237465@@@Nightfall Executioner's Helm
+237466@@@Nightfall Executioner's Legguards
+237467@@@Nightfall Executioner's Mantle
+237468@@@Nightfall Executioner's Girdle
+237469@@@Nightfall Executioner's Armplates
+237470@@@Nightfall Curseblade's Cape
+237471@@@Band of the Voidmancer
+237472@@@Seal of Cosmic Embrace
+237473@@@Dark Bargainer's Chain
+237474@@@Cult Former's Charm
+237494@@@Hallowed Tome
+237495@@@Excerpt
+237743@@@Arathi Soldier's Coffer
+237759@@@Arathi Cleric's Chest
+237760@@@Arathi Champion's Spoils
+237775@@@Nightfall Curseblade's Cleaver
+237776@@@Nightfall Executioner's Halberd
+237777@@@Nightfall Shadowalker's Bulwark
+237778@@@Nightfall Executioner's Greatsword
+237779@@@Nightfall Darkcaster's Gavel
+237780@@@Nightfall Curseblade's Cudgel
+237781@@@Nightfall Shadowalker's Dagger
+237782@@@Nightfall Curseblade's Knife
+237783@@@Nightfall Darkcaster's Greatstaff
+237784@@@Nightfall Shadowalker's Rod
+237785@@@Nightfall Darkcaster's Implement
+237786@@@Nightfall Curseblade's Blunderbuss
+237787@@@Nightfall Darkcaster's Kris
+237788@@@Nightfall Shadowalker's Shotgun
+237789@@@Nightfall Curseblade's Warglaive
+237790@@@Nightfall Darkcaster's Wand
+237791@@@Arathi Zealot's Cleaver
+237792@@@Arathi Crusader's Halberd
+237793@@@Arathi Crusader's Bulwark
+237794@@@Arathi Crusader's Greatsword
+237795@@@Arathi Abbot's Gavel
+237796@@@Arathi Zealot's Cudgel
+237797@@@Arathi Zealot's Dagger
+237798@@@Arathi Zealot's Knife
+237799@@@Arathi Abbot's Greatstaff
+237800@@@Arathi Cleric's Rod
+237801@@@Arathi Abbot's Implement
+237802@@@Arathi Cleric's Blunderbuss
+237803@@@Arathi Abbot's Kris
+237804@@@Arathi Zealot's Shotgun
+237805@@@Arathi Zealot's Warglaive
+237806@@@Arathi Abbot's Wand
+237854@@@Netherstorm Flame's Bardiche
+237855@@@Shadowmoon Flame's Bardiche
+237856@@@Hellfire Flame's Bardiche
+237857@@@Sunwell Flame's Bardiche
+238217@@@Offhand Flail of the Renaissance
+238252@@@Great Blade of the Renaissance
+238255@@@Bronze Dragonscale Backpack
+238260@@@Faceless Mask of Vengeance
+238391@@@Arathi Minister's Receptacle
+238397@@@Lavaborn Azure Choper
+238398@@@Lavaborn Emerald Choper
+238399@@@Lavaborn Ruby Choper
+238400@@@Lavaborn Citrine Choper
+238403@@@Enchant Weapon - Twilight Devastation
+238404@@@Enchant Weapon - Twilight Devastation
+238405@@@Enchant Weapon - Twilight Devastation
+238406@@@Formula: Enchant Weapon - Twilight Devastation
+238407@@@Black Blood Residue
+238408@@@Lavaborn Azure Cinch
+238409@@@Lavaborn Azure Mantle
+238410@@@Lavaborn Azure Pants
+238411@@@Lavaborn Azure Helm
+238412@@@Lavaborn Azure Glove
+238413@@@Lavaborn Azure Treads
+238414@@@Lavaborn Azure Chestguard
+238415@@@Lavaborn Azure Bracer
+238416@@@Lavaborn Azure Cloak
+238418@@@Ensemble: Lavaborn Azure Attire
+238419@@@Lavaborn Emerald Cinch
+238420@@@Lavaborn Emerald Mantle
+238421@@@Lavaborn Emerald Pants
+238422@@@Lavaborn Emerald Helm
+238423@@@Lavaborn Emerald Glove
+238424@@@Lavaborn Emerald Treads
+238425@@@Lavaborn Emerald Chestguard
+238426@@@Lavaborn Emerald Bracer
+238427@@@Lavaborn Emerald Cloak
+238428@@@Ensemble: Lavaborn Emerald Attire
+238429@@@Lavaborn Ruby Cinch
+238430@@@Lavaborn Ruby Mantle
+238431@@@Lavaborn Ruby Pants
+238432@@@Lavaborn Ruby Helm
+238433@@@Lavaborn Ruby Glove
+238434@@@Lavaborn Ruby Treads
+238435@@@Lavaborn Ruby Chestguard
+238436@@@Lavaborn Ruby Bracer
+238437@@@Lavaborn Ruby Cloak
+238438@@@Ensemble: Lavaborn Ruby Attire
+238439@@@Lavaborn Citrine Cinch
+238440@@@Lavaborn Citrine Mantle
+238441@@@Lavaborn Citrine Pants
+238442@@@Lavaborn Citrine Helm
+238443@@@Lavaborn Citrine Glove
+238444@@@Lavaborn Citrine Chestguard
+238445@@@Lavaborn Citrine Bracer
+238446@@@Lavaborn Citrine Cloak
+238447@@@Ensemble: Lavaborn Citrine Attire
+238448@@@Lavaborn Citrine Treads
+238620@@@Darkfuse Pinchzapper
+238621@@@Blackwater Pinchzapper
+238622@@@Steamweedle Pinchzapper
+238623@@@Undermine City Pinchzapper
+238624@@@Dastardly Pinchzapper
+238666@@@Ashjra'kamas, The Corrupted
+238667@@@Ashjra'kamas, The Purified
+238668@@@Ashjra'kamas, The Celestial
+238678@@@Enchant Weapon - Echoing Void
+238679@@@Enchant Weapon - Echoing Void
+238680@@@Enchant Weapon - Echoing Void
+238683@@@Formula: Enchant Weapon - Echoing Void
+238824@@@Radiant Traveler's Backpack
+238837@@@Delver's Dirigible Schematic: Pale Paint
+238839@@@Delver's Dirigible Schematic: Arathi Decal
+238850@@@Arathi Entertainer's Flame
+238852@@@Flame's Radiance Banner
+238892@@@Lavaborn Azure Blade
+238893@@@Lavaborn Emerald Blade
+238894@@@Lavaborn Ruby Blade
+238895@@@Lavaborn Citrine Blade
+238896@@@Macho's Magnificent "Fish" Tacos
+238897@@@Spring Harvesthog
+238900@@@Summer Harvesthog
+238901@@@Winter Harvesthog
+238902@@@Autumn Harvesthog
+238920@@@Radiant Emblem of Service
+238922@@@Design: Void-Crystal Panther
+238924@@@Voidbound Orb of Mystery
+238929@@@Cloak of Whispering Shells
+238930@@@Scintillating Coral Band
+238932@@@Gauntlets of the Bold
+238934@@@Boots of the Darkwalker
+238936@@@Scale Leggings of the Skirmisher
+238937@@@Light-Touched Breastplate
+238938@@@Vest of the Curious Visitor
+238939@@@Missing Diplomat's Pauldrons
+238940@@@Defias Brotherhood Vest
+238941@@@Lavaborn Azure Chimaera
+238942@@@Chihuahua
+238947@@@Blue Inferno Helm
+238948@@@Green Inferno Helm
+238949@@@Yellow Inferno Helm
+238950@@@Red Inferno Helm
+238951@@@Blue Flame Burner
+238952@@@Green Flame Burner
+238953@@@Red Flame Burner
+238955@@@Yellow Flame Burner
+238956@@@Deathwarder's Great Night Blade
+238957@@@Deathwarder's Great Grove Blade
+238958@@@Deathwarder's Great Twilight Blade
+238959@@@Deathwarder's Great Blood Blade
+238966@@@Lavaborn Emerald Chimaera
+238967@@@Lavaborn Ruby Chimaera
+238968@@@Lavaborn Citrine Chimaera
+238976@@@Blinders of the Follower
+238977@@@Iron Will Girdle
+238978@@@Burden of Lost Humanity
+238979@@@Phantom Armor
+238980@@@Pendant of the Keep
+238981@@@Gloves of the Uplifted Cup
+238982@@@Baron Silverlaine's Greaves
+238983@@@Boots of Lingering Sorrow
+238984@@@Baroness Silverlaine's Locket
+238986@@@Mister Mans
+238988@@@Earth Mantle Handwraps
+238989@@@Steam-Hinge Chain of Valor
+238990@@@Necklace of the Chrono-Lord
+238991@@@Gloves of Distorted Time
+238992@@@Mobius Band
+238993@@@Cracked Epoch Grasps
+239004@@@Radiant Service Satchel
+239007@@@Dastardly Banner
+239008@@@Moonchild Leggings
+239009@@@Signet of Repose
+239018@@@Winner's Podium
+239019@@@Spicy Mean-Ball
+239020@@@Tyrannotort's Snack
+239078@@@Enchant Weapon - Infinite Stars
+239079@@@Enchant Weapon - Infinite Stars
+239080@@@Enchant Weapon - Infinite Stars
+239081@@@Formula: Enchant Weapon - Infinite Stars
+239084@@@Enchant Weapon - Gushing Wound
+239085@@@Enchant Weapon - Gushing Wound
+239086@@@Enchant Weapon - Gushing Wound
+239087@@@Formula: Enchant Weapon - Gushing Wound
+239088@@@Enchant Weapon - Twisted Appendage
+239089@@@Enchant Weapon - Twisted Appendage
+239090@@@Enchant Weapon - Twisted Appendage
+239091@@@Formula: Enchant Weapon - Twisted Appendage
+239093@@@Enchant Weapon - Void Ritual
+239094@@@Enchant Weapon - Void Ritual
+239095@@@Enchant Weapon - Void Ritual
+239096@@@Formula: Enchant Weapon - Void Ritual
+239105@@@Unusual Gems
+239106@@@Shadow Infused Onyx
+239107@@@Black Blood Infused Bar
+239142@@@Bottle of Mysterious Wisdom
+239157@@@Nemesis Shard
+239158@@@Nemesis Shard
+239442@@@Dastardly Epaulet, Black
+239489@@@Radiant Officer's Cache
+239503@@@Dastardly Epaulet, Blue
+239504@@@Dastardly Epaulet, Green
+239505@@@Dastardly Epaulet, Purple
+239506@@@Dastardly Epaulet, Red
+239507@@@Dastardly Epaulet, Yellow
+239546@@@Confiscated Cultist's Bag
+239689@@@Khaz Algar Orphan Whistle
+239693@@@Radiant Lynx Whistle
+240178@@@Voidflame-Resistant Hide
+240179@@@Voidflame Wheel
+240180@@@Void-Scarred Boarhide
+240181@@@Boarhide Deathcycle Seat
+240182@@@Skull-Scythe Handlebars
+240183@@@Twisted Skull-Scythe Handlebars
+240185@@@Pulsing Void Crystal
+240186@@@Depleted Void Crystal
+240187@@@Refulgent Crystal Shards
+240188@@@Void-Forged Inline Four Engine
+240189@@@Void-Forged Engine Block
+240190@@@Deathcycle Exhaust System
+240191@@@Magic-Lined Manifold
+240193@@@Tentacle Spokes
+240196@@@Khaz Algar Orphan Whistle
+240197@@@Khaz Algar Orphan Whistle
+240198@@@Khaz Algar Orphan Whistle
+240215@@@Fungal Sample
+240995@@@Fortuitous Satchel
+241007@@@Mereldar Blacksmithing Hammer
+241016@@@Arathi Lancer's Polearm
+241019@@@Arathi Camper's Knife
+241033@@@Arathi Templar's Claymore
+241035@@@Arathi Soldier's Morningstar
+241036@@@Arathi Anointer's Wand
+241126@@@Sovereign Sureki Emblem
+241188@@@Swiftpaw
+241193@@@Threadis's Survey Bot 2.0
+241215@@@Well-loved Figurine
+241234@@@Painted Fighting Prop
+241235@@@Painted Wooden Sword
+241236@@@Painted Wooden Dagger
+11.1.5.59651
+235701@@@Decaying Mecha-Scrapper Construction Kit
+236402@@@Night Hag's Stave
+236627@@@Night Hag's Blade
+237176@@@Night Hag's Claw
+237180@@@Night Hag's Fetish
+237190@@@Vestments of the Woodland Racoon
+237192@@@Vestments of the Swift Fox
+237194@@@Boots of the Woodland Racoon
+237197@@@Boots of the Swift Fox
+237199@@@Gloves of the Woodland Racoon
+237202@@@Gloves of the Swift Fox
+237205@@@Cowl of the Woodland Racoon
+237207@@@Cowl of the Swift Fox
+237209@@@Pants of the Woodland Racoon
+237211@@@Pants of the Swift Fox
+237213@@@Mantle of the Woodland Racoon
+237215@@@Mantle of the Swift Fox
+237217@@@Belt of the Woodland Racoon
+237219@@@Belt of the Swift Fox
+237222@@@Ensemble: Attire of the Woodland Racoon
+237224@@@Ensemble: Attire of the Swift Fox
+237226@@@Cloak of the Woodland Racoon
+237228@@@Cloak of the Swift Fox
+237342@@@Renaissance Sai
+237343@@@Nunchuck of the Renaissance
+237344@@@Renaissance Katana
+237854@@@Voidstorm Bardiche
+237856@@@Sunwell Bardiche
+238217@@@Offhand Renaissance Nunchuck
+238252@@@Large Renaissance Katana
+238397@@@Coldflame Chopper
+238398@@@Lavaborn Emerald Chopper
+238399@@@Lavaborn Ruby's Edge
+238400@@@Lavaborn Citrine Chopper
+238408@@@Coldflame Cinch
+238409@@@Coldflame Mantle
+238410@@@Coldflame Pants
+238411@@@Coldflame Helm
+238412@@@Coldflame Glove
+238413@@@Coldflame Treads
+238414@@@Coldflame Chestguard
+238415@@@Coldflame Bracer
+238416@@@Coldflame Cloak
+238418@@@Ensemble: Coldflame Battlegear
+238429@@@Lavaborn Cinch
+238430@@@Lavaborn Mantle
+238431@@@Lavaborn Pants
+238432@@@Lavaborn Helm
+238433@@@Lavaborn Glove
+238434@@@Lavaborn Treads
+238435@@@Lavaborn Chestguard
+238436@@@Lavaborn Bracer
+238437@@@Lavaborn Cloak
+238438@@@Ensemble: Lavaborn Battleplate
+238892@@@Coldflame's Bite
+238894@@@Lavaborn Barb
+238941@@@Coldflame Cormaera
+238942@@@Weechi
+238947@@@Arcano-Stone Greathelm
+238948@@@Fel Inferno Helm
+238949@@@Inferno Helm
+238950@@@Molten Inferno Helm
+238951@@@Coldflame Burner
+238956@@@Night Hag's Great Blade
+238966@@@Felborn Cormaera
+238967@@@Molten Cormaera
+238968@@@Lavaborn Cormaera
+239019@@@Mean-Ball Bed
+239020@@@Tyrannotort's Treat
+241193@@@Threadis's Workshop Bot 2.0
+241267@@@Sacredite's Research Tunic
+241268@@@Sentry's Padded Doublet
+241269@@@Aeroknight's Undercoat
+241278@@@Stalwart's Waistcoat
+241616@@@The Underpin
+241632@@@Heroic Waxy Figurine
+241633@@@Tiny Decorative Rocket
+241635@@@Patchy Spider-Silk Square
+241636@@@Storm Glass and Feather Necklace
+242242@@@Khaz Algar Orphan Whistle
+242259@@@Wooden Stormwind Shield
+242260@@@Arsenal: Children's Stormwind Guard Weapon Set
+242261@@@Painted Axe Prop
+242262@@@Painted Wooden Axe
+242263@@@Painted Wooden Hatchet
+242264@@@Wooden Orgrimmar Shield
+242265@@@Arsenal: Children's Orgrimmar Guard Weapon Set
+242318@@@Wooden Orgrimmar Shield
+11.1.5.59735
+235495@@@Missile-Guided Throat Slitter
+236884@@@Void-Touched Bludgeon
+236888@@@Void-Touched Ocular
+237495@@@Baleful Excerpt
+238924@@@Void-Bound Orb of Mystery
+239442@@@Black Dastardly Epaulet
+239503@@@Blue Dastardly Epaulet
+239504@@@Green Dastardly Epaulet
+239505@@@Purple Dastardly Epaulet
+239506@@@Red Dastardly Epaulet
+239507@@@Yellow Dastardly Epaulet
+11.1.5.59919
+229306@@@Breeches of Reclaiming Blight
+229309@@@Moccasins of Reclaiming Blight
+237429@@@Arathi Zealot's Hood
+237470@@@Nightfall Curseblade's Hood
+238403@@@Lesser Rune of Twilight Devastation
+238405@@@Greater Rune of Twilight Devastation
+238678@@@Lesser Rune of Echoing Void
+238680@@@Greater Rune of Echoing Void
+239019@@@Mean-Ball Ball Bag
+239078@@@Lesser Rune of Infinite Stars
+239080@@@Greater Rune of Infinite Stars
+239084@@@Lesser Rune of Gushing Wound
+239086@@@Greater Rune of Gushing Wound
+239088@@@Lesser Rune of the Twisted Appendage
+239090@@@Greater Rune of the Twisted Appendage
+239093@@@Lesser Rune of the Void Ritual
+239095@@@Greater Rune of the Void Ritual
+242622@@@Warbound Purifying Kit
+242623@@@Enchanted Warbound Purifying Kit
+242648@@@Black Blood Coagulate
+242711@@@Pungent Truffle
+242919@@@Cracked Keystone
+11.1.5.60008
+235665@@@Burner Clock
+237384@@@Master Key
+237508@@@Can of Amps
+237509@@@Bottle of Invisibility
+237510@@@Goblet
+237511@@@Vial of Healing
+237774@@@Bullhorn of Calling
+239440@@@Dastardly Prize Purse
+240199@@@Podium Upgrade: Scrappiest
+240200@@@Podium Upgrade: Longest Survival Run
+240201@@@Podium Upgrade: Longest Time in Spotlights
+240202@@@Podium Upgrade: Most Yards Traveled
+240203@@@Podium Upgrade: Scrappy
+240204@@@Podium Upgrade: Survival Run
+240205@@@Podium Upgrade: Time in Spotlights
+240206@@@Podium Upgrade: Yards Traveled
+11.1.5.60067
+237385@@@BIG Burner Clock
+243245@@@Gears Grabbed
+243249@@@Khaz Algar Gift Pack
+11.1.5.60179
+238829@@@Radiant Imperial Lynx
+239563@@@Shadowbound Leash
+243249@@@Khaz Algar Adventurer Pack

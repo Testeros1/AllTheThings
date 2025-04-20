@@ -12,7 +12,7 @@ DIVERGENT = createHeader({
 	},
 });
 local QUANTUM_GROUP = sharedData({
-	["description"] = "This Item turns into one (1) unlearned Item based on ItemID/SourceID from before Dragonflight (10.0).\nOnly items with no alternative source will be attached to the Quantum Tokens.\n\n|cFF1EFF0CPossible Items: The Quantum token will transform into an item from one of these sources:\nAny available Raid\nAny Dungeon (including removed Deadmines&Stockages)\nCrate Items from lowlevel PvP (including removed)\nEvents such as Dungeon Timewalking (including removed Events)\nGarrison Tokens (WoD)\nIsland Expeditions\nNever obtainable Items (if listed in the appearance journal)\nOutdoor Drops&Rewards (including removed)\nSatchel Items from random leveling Dungeons (including removed)\nScenarios (MoP&Torghast)|r\n\n|CFFFF0000Impossible Items: The Quantum Token will not grant you an item from these sources:\nAppearances not listed in the Journal\nChallenge Mode Items\nDragonflight+ Items\nCrafted Items\nQuest Rewards\nRemoved Raids\nVendor Items\nTier3 Set Items|r\n\n|cFFFF0000If you come across an Item that has been removed from the game or was previously unavailable,\nplease notify us on the ATT Discord.|r",
+	["description"] = "This Item turns into one (1) unlearned Item based on ItemID/SourceID from before Dragonflight (10.0).\nOnly items with no alternative source will be attached to the Quantum Tokens.\n\n|cFF1EFF0CPossible Items: The Quantum token will transform into an item from one of these sources:\nAny available Raid\nAny Dungeon (including removed Deadmines&Stockades)\nCrate Items from lowlevel PvP (including removed)\nEvents such as Dungeon Timewalking (including removed Events)\nGarrison Tokens (WoD)\nIsland Expeditions\nNever obtainable Items (if listed in the appearance journal)\nOutdoor Drops&Rewards (including removed)\nSatchel Items from random leveling Dungeons (including removed)\nScenarios (MoP&Torghast)|r\n\n|CFFFF0000Impossible Items: The Quantum Token will not grant you an item from these sources:\nAppearances not listed in the Journal\nChallenge Mode Items\nDragonflight+ Items\nCrafted Items\nQuest Rewards\nRemoved Raids\nVendor Items\nTier3 Set Items|r\n\n|cFFFF0000If you come across an Item that has been removed from the game or was previously unavailable,\nplease notify us on the ATT Discord.|r",
 },{
 	-- Please use 'ig()' to make sure Mythic ModID isn't attached to all of these sourced items
 	-- If the item needs different/other ModID or BonusID you need to use 'i()' instead
@@ -505,6 +505,7 @@ local QUANTUM_GROUP = sharedData({
 		ig(37597),	-- Direbrew's Shanker					(Removed)
 		ig(107217),	-- Direbrew's Bloodied Shanker			(Removed)
 		ig(49120),	-- Direbrew's Bloody Shanker			(Removed)
+		ig(93625),	-- Miniature Winter Veil Tree			(Removed)(MOP Version)
 		ig(66540),	-- Miniature Winter Veil Tree			(Removed)
 		ig(2941),	-- Prison Shank							(Removed)
 		ig(134610),	-- Scorching Shanker					(Removed)
@@ -862,7 +863,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 			}),
 			d(DIFFICULTY.DUNGEON.MYTHIC, {
 				n(ACHIEVEMENTS, {
-					ach(18705, bubbleDown({ ["timeline"] = { ADDED_10_1_5, REMOVED_10_2_0 } }, {	-- Defender of the Timeways
+					ach(18705, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5, REMOVED_10_2_0 } }, {	-- Defender of the Timeways
 						title(514),	-- <Name> of the Infinite
 						crit(60810, {	-- Chronikar
 							["_encounter"] = { 2521, DIFFICULTY.DUNGEON.MYTHIC },
@@ -956,7 +957,7 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 			-- #else
 			d(DIFFICULTY.DUNGEON.MYTHIC, {
 				n(ACHIEVEMENTS, {
-					ach(18705,bubbleDown({ ["timeline"] = { ADDED_10_1_5, REMOVED_10_2_0 } }, {	-- Defender of the Timeways
+					ach(18705, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5, REMOVED_10_2_0 } }, {	-- Defender of the Timeways
 						title(514),	-- <Name> of the Infinite
 						crit(60810, {	-- Chronikar
 							["_encounter"] = { 2521, DIFFICULTY.DUNGEON.MYTHIC },
@@ -1151,15 +1152,15 @@ root(ROOTS.Instances, expansion(EXPANSION.DF, bubbleDown({ ["timeline"] = { ADDE
 		},
 	}),
 })));
-root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {
-	inst(1209, {	-- Dawn of the Infinite
-		-- Ensembles
-		q(77850),	-- Ensemble: Infinite Acolyte's Regalia (spellID 419820)
-		q(77851),	-- Ensemble: Infinite Acolyte's Regalia (spellID 421485)
-		q(77852),	-- Ensemble: Infinite Acolyte's Regalia (spellID 421486)
-		q(77853),	-- Ensemble: Infinite Acolyte's Regalia (spellID 421487)
-	}),
-})));
+-- root(ROOTS.HiddenQuestTriggers, expansion(EXPANSION.DF, bubbleDownSelf({ ["timeline"] = { ADDED_10_1_5 } }, {
+-- 	inst(1209, {	-- Dawn of the Infinite
+-- 		-- Ensembles
+-- 		q(77850),	-- Ensemble: Infinite Acolyte's Regalia (spellID 419820)
+-- 		q(77851),	-- Ensemble: Infinite Acolyte's Regalia (spellID 421485)
+-- 		q(77852),	-- Ensemble: Infinite Acolyte's Regalia (spellID 421486)
+-- 		q(77853),	-- Ensemble: Infinite Acolyte's Regalia (spellID 421487)
+-- 	}),
+-- })));
 
 -- History for items between 10.1.5 & 10.1.7
 --[[	i(208061, {	-- Quantum Headpiece
